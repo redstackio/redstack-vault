@@ -1,0 +1,36 @@
+---
+id: 6adced8e-34e7-416d-8c7b-9b0f4b65eb58
+name: Determine Physical Locations
+type: sub-technique
+mitre_id: T1591.001
+mitre_url: null
+created_at: '2023-04-06T00:31:27.143716+00:00'
+updated_at: '2023-04-06T00:31:27.143716+00:00'
+parent_technique: '[[Gather Victim Org Information|T1591 - Gather Victim Org Information]]'
+tactics:
+- '[[Reconnaissance|TA0043 - Reconnaissance]]'
+---
+
+# Determine Physical Locations
+
+**MITRE ID**: T1591.001
+
+**Parent Technique**: [[Gather Victim Org Information|T1591 - Gather Victim Org Information]]
+
+This is a sub-technique of T1591 - Gather Victim Org Information.
+
+## Summary
+
+Adversaries may gather the victim's physical location(s) that can be used during targeting. Information about physical locations of a target organization may include a variety of details, including where key resources and infrastructure are housed. Physical locations may also indicate what legal jur
+
+## Description
+
+Adversaries may gather the victim's physical location(s) that can be used during targeting. Information about physical locations of a target organization may include a variety of details, including where key resources and infrastructure are housed. Physical locations may also indicate what legal jurisdiction and/or authorities the victim operates within.
+
+Adversaries may gather this information in various ways, such as direct elicitation via [Phishing for Information](https://attack.mitre.org/techniques/T1598). Physical locations of a target organization may also be exposed to adversaries via online or other accessible data sets (ex: [Search Victim-Owned Websites](https://attack.mitre.org/techniques/T1594) or [Social Media](https://attack.mitre.org/techniques/T1593/001)).(Citation: ThreatPost Broadvoice Leak)(Citation: SEC EDGAR Search) Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593)), establishing operational resources (ex: [Develop Capabilities](https://attack.mitre.org/techniques/T1587) or [Obtain Capabilities](https://attack.mitre.org/techniques/T1588)), and/or initial access (ex: [Phishing](https://attack.mitre.org/techniques/T1566) or [Hardware Additions](https://attack.mitre.org/techniques/T1200)).
+
+## Tactics
+
+This sub-technique is used in the following tactics:
+
+- [[Reconnaissance|TA0043 - Reconnaissance]]

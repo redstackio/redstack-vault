@@ -1,0 +1,55 @@
+---
+id: 074f5074-1652-4fcd-8e25-0f067fe187dc
+name: CSRF Token not Dependent on User Session(CSRF Poc Generator)
+type: procedure
+verified: true
+submitted: true
+created_at: '2020-08-24T08:56:23.032875+00:00'
+updated_at: '2023-05-26T18:38:12.304331+00:00'
+platforms:
+- Web
+tags:
+- '[[CSRF]]'
+- '[[Session Management]]'
+- '[[Web Applications]]'
+---
+
+# CSRF Token not Dependent on User Session(CSRF Poc Generator)
+
+**Status**: ✓ Verified
+
+## Summary
+
+Descritpion CSRF PoC generator is used to create form based on the request and a CSRF token has to be generated and changed for every form submission.CSRF tokens are used to prevent CSRF attacks, but if the token is not associated to the user's session an attacker can simply use random token from a
+
+## Description
+
+# Descritpion
+
+CSRF PoC generator is used to create form based on the request and a CSRF token has to be generated and changed for every form submission.CSRF tokens are used to prevent CSRF attacks, but if the token is not associated to the user's session an attacker can simply use random token from a pool of tokens genrated by the application server to take over the user's account.
+
+# Instructions
+
+1. With Burp proxying the requests from the browser and intercept off, browse the application. Identify the submit *change email form*.
+
+2.Navigate to change email form and enter the new email and intercept the request using burp.
+
+3. Copy the CSRF token to the notepad.
+
+4.Open incognito window in the chrome browser , login to the application and send the change email request to the burp repeater tab.
+
+5.Change the CSRF token value in step4 to the value copied in step 3. Send the request to the server and observe that request is accepted.
+
+6.Use CSRF PoC generator to create a form with the request change email. CSRF tokens are single use, need to geenrate a new csrf token for every form submitted.
+
+ With the form created , an attacker can change victim's email ID.
+
+## Platforms
+
+- Web
+
+## Tags
+
+- [[CSRF]]
+- [[Session Management]]
+- [[Web Applications]]

@@ -1,0 +1,37 @@
+---
+id: 543482db-1866-41ce-a2a0-ecd7503f58ee
+name: Credentials
+type: sub-technique
+mitre_id: T1589.001
+mitre_url: null
+created_at: '2023-04-06T00:31:26.828998+00:00'
+updated_at: '2023-04-06T00:31:26.828998+00:00'
+parent_technique: '[[Gather Victim Identity Information|T1589 - Gather Victim Identity
+  Information]]'
+tactics:
+- '[[Reconnaissance|TA0043 - Reconnaissance]]'
+---
+
+# Credentials
+
+**MITRE ID**: T1589.001
+
+**Parent Technique**: [[Gather Victim Identity Information|T1589 - Gather Victim Identity Information]]
+
+This is a sub-technique of T1589 - Gather Victim Identity Information.
+
+## Summary
+
+Adversaries may gather credentials that can be used during targeting. Account credentials gathered by adversaries may be those directly associated with the target victim organization or attempt to take advantage of the tendency for users to use the same passwords across personal and business account
+
+## Description
+
+Adversaries may gather credentials that can be used during targeting. Account credentials gathered by adversaries may be those directly associated with the target victim organization or attempt to take advantage of the tendency for users to use the same passwords across personal and business accounts.
+
+Adversaries may gather credentials from potential victims in various ways, such as direct elicitation via [Phishing for Information](https://attack.mitre.org/techniques/T1598). Adversaries may also compromise sites then include malicious content designed to collect website authentication cookies from visitors.(Citation: ATT ScanBox) Credential information may also be exposed to adversaries via leaks to online or other accessible data sets (ex: [Search Engines](https://attack.mitre.org/techniques/T1593/002), breach dumps, code repositories, etc.).(Citation: Register Deloitte)(Citation: Register Uber)(Citation: Detectify Slack Tokens)(Citation: Forbes GitHub Creds)(Citation: GitHub truffleHog)(Citation: GitHub Gitrob)(Citation: CNET Leaks) Adversaries may also purchase credentials from dark web or other black-markets. Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593) or [Phishing for Information](https://attack.mitre.org/techniques/T1598)), establishing operational resources (ex: [Compromise Accounts](https://attack.mitre.org/techniques/T1586)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Valid Accounts](https://attack.mitre.org/techniques/T1078)).
+
+## Tactics
+
+This sub-technique is used in the following tactics:
+
+- [[Reconnaissance|TA0043 - Reconnaissance]]

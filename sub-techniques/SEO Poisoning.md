@@ -1,0 +1,40 @@
+---
+id: e1c4ba3b-7611-40bd-bdba-6f08d94a5366
+name: SEO Poisoning
+type: sub-technique
+mitre_id: T1608.006
+mitre_url: null
+created_at: '2023-04-06T00:31:27.100741+00:00'
+updated_at: '2023-04-06T00:31:27.100741+00:00'
+parent_technique: '[[Stage Capabilities|T1608 - Stage Capabilities]]'
+tactics:
+- '[[Resource Development|TA0042 - Resource Development]]'
+---
+
+# SEO Poisoning
+
+**MITRE ID**: T1608.006
+
+**Parent Technique**: [[Stage Capabilities|T1608 - Stage Capabilities]]
+
+This is a sub-technique of T1608 - Stage Capabilities.
+
+## Summary
+
+Adversaries may poison mechanisms that influence search engine optimization (SEO) to further lure staged capabilities towards potential victims. Search engines typically display results to users based on purchased ads as well as the site’s ranking/score/reputation calculated by their web crawlers an
+
+## Description
+
+Adversaries may poison mechanisms that influence search engine optimization (SEO) to further lure staged capabilities towards potential victims. Search engines typically display results to users based on purchased ads as well as the site’s ranking/score/reputation calculated by their web crawlers and algorithms.(Citation: Atlas SEO)(Citation: MalwareBytes SEO)
+
+To help facilitate [Drive-by Compromise](https://attack.mitre.org/techniques/T1189), adversaries may stage content that explicitly manipulates SEO rankings in order to promote sites hosting their malicious payloads (such as [Drive-by Target](https://attack.mitre.org/techniques/T1608/004)) within search engines. Poisoning SEO rankings may involve various tricks, such as stuffing keywords (including in the form of hidden text) into compromised sites. These keywords could be related to the interests/browsing habits of the intended victim(s) as well as more broad, seasonably popular topics (e.g. elections, trending news).(Citation: ZScaler SEO)(Citation: Atlas SEO)
+
+Adversaries may also purchase or plant incoming links to staged capabilities in order to boost the site’s calculated relevance and reputation.(Citation: MalwareBytes SEO)(Citation: DFIR Report Gootloader)
+
+SEO poisoning may also be combined with evasive redirects and other cloaking mechanisms (such as measuring mouse movements or serving content based on browser user agents, user language/localization settings, or HTTP headers) in order to feed SEO inputs while avoiding scrutiny from defenders.(Citation: ZScaler SEO)(Citation: Sophos Gootloader)
+
+## Tactics
+
+This sub-technique is used in the following tactics:
+
+- [[Resource Development|TA0042 - Resource Development]]

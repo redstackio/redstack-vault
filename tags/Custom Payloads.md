@@ -1,0 +1,14 @@
+---
+id: ccf77030-178e-4ba5-b43f-7691269be774
+name: Custom Payloads
+type: tag
+usage_count: 1
+created_at: '2023-04-06T03:56:16.382654+00:00'
+updated_at: '2023-04-06T03:56:16.382654+00:00'
+---
+
+# Custom Payloads
+
+**Usage**: Used in 1 entities
+
+This tag helps categorize and organize related content across the vault.

@@ -1,0 +1,19 @@
+---
+id: e4ca7976-cad1-4fea-8716-6c3cf2b9afd3
+name: Find shares on hosts local domain
+type: command
+executor: bash
+data: 'Invoke-ShareFinder
+
+  '
+output: null
+created_at: '2020-07-14T18:21:04.687672+00:00'
+updated_at: '2023-05-29T16:48:52.884824+00:00'
+---
+
+# Find shares on hosts local domain
+
+```bash
+Invoke-ShareFinder
+
+```
