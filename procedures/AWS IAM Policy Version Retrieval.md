@@ -39,9 +39,13 @@ To execute this procedure, the attacker needs to have access to an IAM role that
 
 The business value of this procedure is that it allows an attacker to gain access to additional credentials and escalate privileges. This can be used to gain unauthorized access to sensitive data or resources, and can result in financial loss or damage to a company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to an IAM role with the necessary permissions to retrieve the specified version of the policy
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Enable AWS CloudTrail to monitor and log all API activity in your AWS account
 
+ 
+
 ## Objectives
 
 1. Retrieve information about the specified version of the IAM policy
@@ -59,17 +65,25 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Identify misconfigurations in the IAM policy
 
+ 
+
 # Instructions
 
 1. To get a specific version of an IAM policy, use the 'aws iam get-policy-version' command.
 
+ 
+
 This command retrieves a specific version of an IAM policy. To use this command, you need to specify the policy ARN and version ID. The policy ARN uniquely identifies the IAM policy and the version ID is the identifier for the specific version of the policy. The output of this command includes the policy version details, including the policy document, the policy name, and the version ID. This command is useful when you need to retrieve a specific version of an IAM policy for auditing or troubleshooting purposes.
+
+
 
 **Command** ([[Get IAM policy version]]):
 
 ```bash
 aws iam get-policy-version --policy-arn policy_arn --version-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws iam get-policy-version --policy-arn policy_arn --version-id ID
 - [[Cloud - AWS]]
 - [[Persistence & Backdooring]]
 - [[Retrieving information about the specified version of the policy]]
+
+

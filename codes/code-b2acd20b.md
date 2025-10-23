@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:59.719096+00:00'
 ```powershell
 ADACLScan.ps1 -Base "DC=contoso;DC=com" -Filter "(&(AdminCount=1))" -Scope subtree -EffectiveRightsPrincipal User1 -Output HTML -Show
 ```
+
+

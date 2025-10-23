@@ -35,7 +35,7 @@ public partial class StoredProcedures
 
         // Create the record and specify the metadata for the columns.
         SqlDataRecord record = new SqlDataRecord(new SqlMetaData("output", SqlDbType.NVarChar, 4000));
-
+        
         // Mark the beginning of the result set.
         SqlContext.Pipe.SendResultsStart(record);
 
@@ -44,12 +44,14 @@ public partial class StoredProcedures
 
         // Send the row back to the client.
         SqlContext.Pipe.SendResultsRow(record);
-
+        
         // Mark the end of the result set.
         SqlContext.Pipe.SendResultsEnd();
-
+        
         proc.WaitForExit();
         proc.Close();
     }
 };
 ```
+
+

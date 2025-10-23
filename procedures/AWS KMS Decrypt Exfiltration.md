@@ -39,9 +39,13 @@ From a technical standpoint, this technique requires the attacker to have access
 
 The business value of this technique is that it allows attackers to obtain sensitive information that can be used to further their attack or gain access to other systems. It is important for organizations to have proper access controls in place to prevent unauthorized access to the AWS KMS and encrypted secrets.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS KMS and encrypted secrets
+
+ 
 
 ## Defense
 
@@ -51,23 +55,37 @@ The business value of this technique is that it allows attackers to obtain sensi
 
 1. Implement network segmentation to limit access to sensitive systems and data.
 
+ 
+
 ## Objectives
 
 1. Obtain sensitive information such as credentials and access keys
+
+ 
 
 # Instructions
 
 1. To decrypt a file using AWS KMS, run the following command:
 
+ 
+
+
+
 **Code**: [[aws kms decrypt --ciphertext-blob fileb://Encrypte]]
 
+
+
 > This command decrypts a file using the AWS Key Management Service (KMS). The --ciphertext-blob parameter specifies the encrypted file, which should be in binary format. The --output parameter specifies the format of the output, which is set to text in this case. The --query parameter specifies that we want to retrieve the plaintext value from the output.
+
+
 
 **Command** ([[Decrypt EncryptedFile using AWS KMS]]):
 
 ```bash
 aws kms decrypt --ciphertext-blob fileb://EncryptedFile --output text --query plaintext
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ aws kms decrypt --ciphertext-blob fileb://EncryptedFile --output text --query pl
 - [[Credential Exfiltration]]
 - [[Decrypt the secret using the key]]
 - [[KMS]]
+
+

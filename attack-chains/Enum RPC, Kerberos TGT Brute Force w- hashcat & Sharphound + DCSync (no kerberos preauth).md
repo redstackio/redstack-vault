@@ -11,31 +11,31 @@ step_count: 12
 created_at: '2020-03-13T23:58:22.902373+00:00'
 updated_at: '2023-05-29T16:48:53.162677+00:00'
 procedures:
+- '[[List Domain Users and Groups with MS-RPC/SMB Service]]'
+- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
 - '[[Analyze BloodHound Data for Relationships]]'
+- '[[Add DCSync Rights with WriteDACL Active Directory Permissions]]'
+- '[[Basic Port Scan with Service Enumeration]]'
+- '[[Brute Force Password Hashes (Hashcat)]]'
 - '[[Spawn an Interactive Shell with WinRM (Linux)]]'
 - '[[Dump Secrets from a Remote System]]'
-- '[[Identify a Password Hash (Hashcat)]]'
-- '[[Basic Port Scan with Service Enumeration]]'
-- '[[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]'
-- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
-- '[[List Domain Users and Groups with MS-RPC/SMB Service]]'
-- '[[Add DCSync Rights with WriteDACL Active Directory Permissions]]'
 - '[[Map an Active Directory Environment (SharpHound)]]'
-- '[[Brute Force Password Hashes (Hashcat)]]'
+- '[[Identify a Password Hash (Hashcat)]]'
 - '[[Add User to Active Directory Domain Group]]'
+- '[[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]'
 techniques:
-- '[[Brute Force|T1110 - Brute Force]]'
-- '[[Remote Services|T1021 - Remote Services]]'
-- '[[Account Manipulation|T1098 - Account Manipulation]]'
-- '[[Credential Dumping|T1003 - Credential Dumping]]'
-- '[[Network Service Scanning|T1046 - Network Service Scanning]]'
-- '[[Pass the Hash|T1075 - Pass the Hash]]'
-- '[[Account Discovery|T1087 - Account Discovery]]'
 - '[[Kerberoasting|T1208 - Kerberoasting]]'
+- '[[Account Discovery|T1087 - Account Discovery]]'
+- '[[Account Manipulation|T1098 - Account Manipulation]]'
+- '[[Brute Force|T1110 - Brute Force]]'
+- '[[Pass the Hash|T1075 - Pass the Hash]]'
+- '[[Network Service Scanning|T1046 - Network Service Scanning]]'
+- '[[Remote Services|T1021 - Remote Services]]'
+- '[[Credential Dumping|T1003 - Credential Dumping]]'
 tactics:
-- '[[Lateral Movement|TA0008 - Lateral Movement]]'
 - '[[Credential Access|TA0006 - Credential Access]]'
 - '[[Discovery|TA0007 - Discovery]]'
+- '[[Lateral Movement|TA0008 - Lateral Movement]]'
 tags:
 - windows
 - rpc
@@ -52,141 +52,313 @@ tags:
 - UF_DONT_REQUIRE_PREAUTH
 ---
 
-# Enum RPC, Kerberos TGT Brute Force w/ hashcat & Sharphound + DCSync (no kerberos preauth)
+# 🎯 Enum RPC, Kerberos TGT Brute Force w/ hashcat & Sharphound + DCSync (no kerberos preauth)
 
-**Description**: windows, rpc, kerberos, tgt, hashcat, , sharphound, bloodhound, active directory, domain controller, dcsync, WinRM, remote, UF_DONT_REQUIRE_PREAUTH
-
-## Overview
-
-This attack chain progresses through the following MITRE ATT&CK tactics:
-
-**TA0007** Discovery → **TA0006** Credential Access → **TA0008** Lateral Movement
-
-## Attack Steps
-
-### Step 1: Basic Port Scan with Service Enumeration
-
-**MITRE ATT&CK**: [[Discovery|TA0007 - Discovery]] → [[Network Service Scanning|T1046 - Network Service Scanning]]
-
-**Procedure**: [[Basic Port Scan with Service Enumeration]]
-
-> Perform an Nmap port scan on a target and enumerate banners of ports 1-1024, as well as popular services (a full list can be found in /usr/share/nmap/nmap-services). 
+> **Enhanced Attack Chain Dashboard** — Complete Active Directory Compromise Chain
 
 ---
 
-### Step 2: List Domain Users and Groups with MS-RPC/SMB Service
+## 📊 Chain Metrics Dashboard
 
-**MITRE ATT&CK**: [[Discovery|TA0007 - Discovery]] → [[Account Discovery|T1087 - Account Discovery]]
-
-**Procedure**: [[List Domain Users and Groups with MS-RPC/SMB Service]]
-
-> Connect to a Microsoft SMB server using rpcclient, and enumerate domain users and groups. 
-
----
-
-### Step 3: Brute Force Users with "Do Not Require Kerberos Preauth." Set
-
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]] → [[Kerberoasting|T1208 - Kerberoasting]]
-
-**Procedure**: [[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]
-
-> Users with "Do not require Kerberos preauthentication" will disclose their TGT without authenticating with a valid password, as long as the username is correct. This allows attackers to build a wordlist and brute force valid users with GetNPUsers.py, also retreiving their TGT. 
+| Metric | Value |
+|--------|-------|
+| **Chain Status** | ⚠️ **UNVERIFIED** |
+| **Total Steps** | `12` |
+| **Execution Time** | ~4-8 hours |
+| **Skill Level** | 🟡 Intermediate-Advanced |
+| **Complexity** | Very High |
+| **Impact Level** | 🔴 **CRITICAL** |
 
 ---
 
-### Step 4: Identify a Password Hash (Hashcat)
+## 🎭 Attack Flow Visualization
 
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]]
-
-**Procedure**: [[Identify a Password Hash (Hashcat)]]
-
-> Analyze a password hash to identify the type and Hashcat mode. 
-
----
-
-### Step 5: Brute Force Password Hashes (Hashcat)
-
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]] → [[Brute Force|T1110 - Brute Force]]
-
-**Procedure**: [[Brute Force Password Hashes (Hashcat)]]
-
-> Use Hashcat to brute force hashes with a dictionary. See Example Hashes for help identifying the mode. 
-
----
-
-### Step 6: Spawn an Interactive Shell with WinRM (Linux)
-
-**MITRE ATT&CK**: [[Lateral Movement|TA0008 - Lateral Movement]] → [[Remote Services|T1021 - Remote Services]]
-
-**Procedure**: [[Spawn an Interactive Shell with WinRM (Linux)]]
-
-> Spawn a PowerShell session  on a remote system using the WinRM service (usually port 5985).  See the Evil-WinRM tools page for installation instructions. 
-
----
-
-### Step 7: Map an Active Directory Environment (SharpHound)
-
-**MITRE ATT&CK**: [[Discovery|TA0007 - Discovery]] → [[Account Discovery|T1087 - Account Discovery]]
-
-**Procedure**: [[Map an Active Directory Environment (SharpHound)]]
-
-> Use SharpHound to connect to an Active Directory environment and enumerate objects such as users, groups, ACLs, trusts, etc. This data then can be imported into BloodHound for analysis of objects, their relationships, and potential vulnerabilities. 
+```mermaid
+graph TD
+    A[🌐 Initial Recon]
+    B[👥 Enumeration]
+    C[🎫 Exploitation]
+    D[🔑 Analysis]
+    E[💥 Cracking]
+    F[🔓 Initial Access]
+    G[🩸 Deep Enumeration]
+    H[📊 Analysis]
+    I[⚙️ Privilege Escalation]
+    J[🎯 Rights Escalation]
+    K[💎 Credential Harvest]
+    L[👑 Domain Compromise]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    
+    style A fill:#4a90e2,stroke:#2e5c8a,stroke-width:3px,color:#fff
+    style C fill:#e25555,stroke:#8a2e2e,stroke-width:3px,color:#fff
+    style E fill:#e25555,stroke:#8a2e2e,stroke-width:3px,color:#fff
+    style H fill:#9b59b6,stroke:#6c3483,stroke-width:3px,color:#fff
+    style K fill:#e74c3c,stroke:#a93226,stroke-width:3px,color:#fff
+    style L fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
+```
 
 ---
 
-### Step 8: Analyze BloodHound Data for Relationships
+## 🗺️ Tactical Progression Map
 
-**MITRE ATT&CK**: [[Discovery|TA0007 - Discovery]] → [[Account Discovery|T1087 - Account Discovery]]
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ CREDENTIAL  │ ══►│  DISCOVERY   │ ══►│  LATERAL MOV │
+│  TA0006     │    │   TA0007    │    │  TA0008     │
+│             │    │   TA0006    │    │  TA0008     │
+└─────────────┘    └─────────────┘    └─────────────┘
+```
 
-**Procedure**: [[Analyze BloodHound Data for Relationships]]
-
-> Prepare BloodHound data to query relationships and view suggested attacks. 
-
----
-
-### Step 9: Add User to Active Directory Domain Group
-
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]] → [[Account Manipulation|T1098 - Account Manipulation]]
-
-**Procedure**: [[Add User to Active Directory Domain Group]]
-
-> Use PowerView's "Add-DomainGroupMember" cmdlet to add a user  to a domain group, assuming the current user has sufficient domain privileges (eg: GenericAll). 
+**Tactics Distribution:**
+- 🔍 **Credential Access** — 33% of chain
+- 🔍 **Discovery** — 33% of chain
+- 🔍 **Lateral Movement** — 33% of chain
 
 ---
 
-### Step 10: Add DCSync Rights with WriteDACL Active Directory Permissions
+## 🛠️ Prerequisites & Requirements
 
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]] → [[Account Manipulation|T1098 - Account Manipulation]]
+### Required Tools
+```bash path=null start=null
+bloodhound           # Graph analysis
+hashcat              # Password cracking
+kerberos             # AS-REP roasting
+sharphound           # AD collector
+winrm                # WinRM shell
+```
 
-**Procedure**: [[Add DCSync Rights with WriteDACL Active Directory Permissions]]
+### Target Environment
+- ✅ Windows target system
+- ✅ Windows Active Directory domain
+- ✅ Network connectivity to target
 
-> Users with WriteDACL permissions to a domain can add the appropriate ACE in order to perform a DCSync attack. DCSync involves the simulation of a domain controller, which is used to connect to a legitimate domain controller and dump password hashes. 
-
----
-
-### Step 11: Dump Secrets from a Remote System
-
-**MITRE ATT&CK**: [[Credential Access|TA0006 - Credential Access]] → [[Credential Dumping|T1003 - Credential Dumping]]
-
-**Procedure**: [[Dump Secrets from a Remote System]]
-
-> Use Impacket's secretsdump.py to dump password hashes on a remote system, using a variety of methods, including SAM/SYSTEM hive dumps, NTDS, LSA, etc. This typically requires authentication with Administrator rights. 
-
----
-
-### Step 12: Connect to WinRM from a Linux System (Pass-the-Hash)
-
-**MITRE ATT&CK**: [[Lateral Movement|TA0008 - Lateral Movement]] → [[Pass the Hash|T1075 - Pass the Hash]]
-
-**Procedure**: [[Connect to WinRM from a Linux System (Pass-the-Hash)]]
-
-> Spawn a PowerShell instance on a remote system using the WinRM service (usuallyport 5985) using an NTLM password hash instead of a password. 
+### Initial Access Requirements
+- 🔓 Requirements based on first step of chain
+- 🔓 See detailed procedures below
 
 ---
 
-## Chain Summary
+## 🔬 Detailed Attack Procedures
 
-- **Total Steps**: 12
-- **Tactics Used**: [[Lateral Movement|TA0008 - Lateral Movement]], [[Credential Access|TA0006 - Credential Access]], [[Discovery|TA0007 - Discovery]]
-- **Techniques Used**: [[Brute Force|T1110 - Brute Force]], [[Remote Services|T1021 - Remote Services]], [[Account Manipulation|T1098 - Account Manipulation]], [[Credential Dumping|T1003 - Credential Dumping]], [[Network Service Scanning|T1046 - Network Service Scanning]], [[Pass the Hash|T1075 - Pass the Hash]], [[Account Discovery|T1087 - Account Discovery]], [[Kerberoasting|T1208 - Kerberoasting]]
-- **Key Procedures**: 12 procedures
+### **[Step 1]** Basic Port Scan with Service Enumeration
+
+**Progress:** `░░░░░░░░░░` 8% | **Risk:** 🟢 Low
+
+**Procedure:** [[Basic Port Scan with Service Enumeration]]
+
+> 📝 **Objective:** Perform an Nmap port scan on a target and enumerate banners of ports 1-1024, as well as popular services (a full list can be found in /usr/share/nmap/nmap-services).
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 2]** List Domain Users and Groups with MS-RPC/SMB Service
+
+**Progress:** `█░░░░░░░░░` 16% | **Risk:** 🟢 Low
+
+**Procedure:** [[List Domain Users and Groups with MS-RPC/SMB Service]]
+
+> 📝 **Objective:** Connect to a Microsoft SMB server using rpcclient, and enumerate domain users and groups.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 3]** Brute Force Users with "Do Not Require Kerberos Preauth." Set
+
+**Progress:** `██░░░░░░░░` 25% | **Risk:** 🔴 High
+
+**Procedure:** [[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]
+
+> 📝 **Objective:** Users with "Do not require Kerberos preauthentication" will disclose their TGT without authenticating with a valid password, as long as the username is correct. This allows attackers to build a wordlist and brute force valid users with GetNPUsers.py, also retreiving their TGT.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 4]** Identify a Password Hash (Hashcat)
+
+**Progress:** `███░░░░░░░` 33% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Identify a Password Hash (Hashcat)]]
+
+> 📝 **Objective:** Analyze a password hash to identify the type and Hashcat mode.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 5]** Brute Force Password Hashes (Hashcat)
+
+**Progress:** `████░░░░░░` 41% | **Risk:** 🔴 High
+
+**Procedure:** [[Brute Force Password Hashes (Hashcat)]]
+
+> 📝 **Objective:** Use Hashcat to brute force hashes with a dictionary. See Example Hashes for help identifying the mode.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 6]** Spawn an Interactive Shell with WinRM (Linux)
+
+**Progress:** `█████░░░░░` 50% | **Risk:** 🔴 High
+
+**Procedure:** [[Spawn an Interactive Shell with WinRM (Linux)]]
+
+> 📝 **Objective:** Spawn a PowerShell session  on a remote system using the WinRM service (usually port 5985).  See the Evil-WinRM tools page for installation instructions.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 7]** Map an Active Directory Environment (SharpHound)
+
+**Progress:** `█████░░░░░` 58% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Map an Active Directory Environment (SharpHound)]]
+
+> 📝 **Objective:** Use SharpHound to connect to an Active Directory environment and enumerate objects such as users, groups, ACLs, trusts, etc. This data then can be imported into BloodHound for analysis of objects, their relationships, and potential vulnerabilities.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 8]** Analyze BloodHound Data for Relationships
+
+**Progress:** `██████░░░░` 66% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Analyze BloodHound Data for Relationships]]
+
+> 📝 **Objective:** Prepare BloodHound data to query relationships and view suggested attacks.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 9]** Add User to Active Directory Domain Group
+
+**Progress:** `███████░░░` 75% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Add User to Active Directory Domain Group]]
+
+> 📝 **Objective:** Use PowerView's "Add-DomainGroupMember" cmdlet to add a user  to a domain group, assuming the current user has sufficient domain privileges (eg: GenericAll).
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 10]** Add DCSync Rights with WriteDACL Active Directory Permissions
+
+**Progress:** `████████░░` 83% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Add DCSync Rights with WriteDACL Active Directory Permissions]]
+
+> 📝 **Objective:** Users with WriteDACL permissions to a domain can add the appropriate ACE in order to perform a DCSync attack. DCSync involves the simulation of a domain controller, which is used to connect to a legitimate domain controller and dump password hashes.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 11]** Dump Secrets from a Remote System
+
+**Progress:** `█████████░` 91% | **Risk:** 🔴 High
+
+**Procedure:** [[Dump Secrets from a Remote System]]
+
+> 📝 **Objective:** Use Impacket's secretsdump.py to dump password hashes on a remote system, using a variety of methods, including SAM/SYSTEM hive dumps, NTDS, LSA, etc. This typically requires authentication with Administrator rights.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+### **[Step 12]** Connect to WinRM from a Linux System (Pass-the-Hash)
+
+**Progress:** `██████████` 100% | **Risk:** 🟡 Medium
+
+**Procedure:** [[Connect to WinRM from a Linux System (Pass-the-Hash)]]
+
+> 📝 **Objective:** Spawn a PowerShell instance on a remote system using the WinRM service (usuallyport 5985) using an NTLM password hash instead of a password.
+
+**Expected Output:**
+- Refer to procedure documentation for details
+
+**Success Indicators:** ✅ Objective achieved
+
+---
+
+## 🎯 Attack Chain Summary
+
+### Key Achievements
+- ✅ List Domain Users and Groups with MS-RPC/SMB Service
+- ✅ Connect to WinRM from a Linux System (Pass-the-Hash)
+- ✅ Analyze BloodHound Data for Relationships
+- ✅ Add DCSync Rights with WriteDACL Active Directory Permissions
+- ✅ Basic Port Scan with Service Enumeration
+- ... and 7 more procedures
+
+---
+
+## 📈 Technique & Tactic Coverage
+
+### MITRE ATT&CK Techniques
+- [[Kerberoasting|T1208 - Kerberoasting]]
+- [[Account Discovery|T1087 - Account Discovery]]
+- [[Account Manipulation|T1098 - Account Manipulation]]
+- [[Brute Force|T1110 - Brute Force]]
+- [[Pass the Hash|T1075 - Pass the Hash]]
+- [[Network Service Scanning|T1046 - Network Service Scanning]]
+- [[Remote Services|T1021 - Remote Services]]
+- [[Credential Dumping|T1003 - Credential Dumping]]
+
+### MITRE ATT&CK Tactics
+- [[Credential Access|TA0006 - Credential Access]]
+- [[Discovery|TA0007 - Discovery]]
+- [[Lateral Movement|TA0008 - Lateral Movement]]
+
+---
+
+**Last Updated:** 2023-05-29T16:48:53.162677+00:00 | **Chain Version:** 2.0 Enhanced | **Status:** ⚠️ Draft

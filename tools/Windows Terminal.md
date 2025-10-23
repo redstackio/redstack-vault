@@ -27,7 +27,19 @@ The Windows Terminal is an update to the traditional terminal with various enhan
 
 The Windows Terminal is an update to the traditional terminal with various enhancements including tabs, panes, additional character support, and more. While useless to remote users, local users will find it similar to terminals on LInux and MacOS.
 
+
+
 Default shortcuts:
+
+
+
+{{EMBEDDED_CODE_c4f8e213-0c1c-4948-97e4-13f31b945adc}}
+
+
+
+
+
+
 
 # Installation
 
@@ -35,7 +47,11 @@ Default shortcuts:
 
 The most reliable method of installing Windows Terminal is via Microsoft Store, using the app or by browsing to: [https://aka.ms/windowsterminal](https://aka.ms/windowsterminal)
 
+
+
 Tip: Skip the login prompt by closing it and Windows Terminal will be installed anyways.
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ Tip: Skip the login prompt by closing it and Windows Terminal will be installed 
 - [[administrator]]
 - [[Setup]]
 - [[terminal]]
+
+

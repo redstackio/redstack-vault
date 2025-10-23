@@ -34,6 +34,8 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 
 Exotic payloads and filter bypass techniques can be used to evade detection and execute successful cross-site scripting attacks. In this procedure, we will explore how to bypass dot filters by using base64 encoding and decoding, and alert domain commands. By using these techniques, attackers can execute arbitrary code and steal sensitive data from unsuspecting victims. Successful XSS attacks can lead to data breaches, financial loss, and damage to a company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to vulnerable web application
@@ -41,6 +43,8 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 1. Knowledge of base64 encoding and decoding
 
 1. Command line interface
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 
 1. Regularly scan web applications for vulnerabilities and apply patches and updates
 
+ 
+
 ## Objectives
 
 1. Execute successful cross-site scripting attacks
@@ -58,11 +64,19 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 
 1. Steal sensitive data from unsuspecting victims
 
+ 
+
 # Instructions
 
 1. To execute this command, simply paste the provided code into the console of a web browser and press enter. This will trigger an alert box that displays the domain of the current webpage.
 
+ 
+
+
+
 **Code**: [[<script>window['alert'](document['domain'])</scrip]]
+
+
 
 > This command uses JavaScript to access the 'document' object, which contains information about the current webpage. The 'domain' property of the 'document' object returns the domain name of the current webpage. The provided code creates an alert box that displays the domain name when executed.
 
@@ -72,7 +86,13 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 3. Combine the four binary octets into a single 32-bit binary number.
 4. Convert the 32-bit binary number to decimal format.
 
+ 
+
+
+
 **Code**: [[http://192.168.1.1]]
+
+
 
 > For example, to convert the IP address 192.168.1.1 into decimal format, follow these steps:
 1. 192 in binary format is 11000000
@@ -83,33 +103,61 @@ Exotic payloads and filter bypass techniques can be used to evade detection and 
 6. Convert the 32-bit binary number to decimal format: 3232235777
 Therefore, the decimal format of the IP address 192.168.1.1 is 3232235777.
 
+
+
 **Command** ([[Access Router]]):
 
 ```bash
 http://192.168.1.1
 ```
 
+
+
 3. Converts an IP address from decimal format to dotted-quad format.
 
+ 
+
+
+
 **Code**: [[http://3232235777]]
+
+
 
 > The argument of this command is a decimal format IP address. The command will convert the decimal format to dotted-quad format, which is a more commonly used format for IP addresses.
 
 4. To decode a Base64 encoded string, use the following command:
 
+ 
+
+
+
 **Code**: [[<script>eval(atob("YWxlcnQoZG9jdW1lbnQuY29va2llKQ=]]
+
+
 
 > The command uses the 'atob' function in JavaScript to decode the Base64 string. The 'eval' function is used to execute the decoded string as JavaScript code. The argument of 'atob' function should be the Base64 encoded string that you want to decode.
 
 5. Use this command to encode your XSS payload in Base64 format. This command is useful when you need to transmit your payload over a network that only supports ASCII characters.
 
+ 
+
+
+
 **Code**: [[echo -n &quot;alert(document.cookie)&quot; | base6]]
+
+
 
 > The 'echo' command is used to print the specified text to the console. The '-n' option is used to suppress the newline character that is usually printed after the text. The '|' (pipe) symbol is used to redirect the output of the 'echo' command to the 'base64' command. The 'base64' command is used to encode the input in Base64 format. The resulting output can then be used in your XSS payload.
 
 6. base64_decode
 
+ 
+
+
+
 **Code**: [[YWxlcnQoZG9jdW1lbnQuY29va2llKQ==]]
+
+
 
 > This command decodes a given Base64 encoded string. The argument of the command should be a Base64 encoded string that needs to be decoded.
 
@@ -136,3 +184,5 @@ http://192.168.1.1
 - [[Bypass dot filter]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

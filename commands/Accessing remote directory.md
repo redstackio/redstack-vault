@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:26.278263+00:00'
 ```bash
 dir \\dc.domain.com\c$
 ```
+
+

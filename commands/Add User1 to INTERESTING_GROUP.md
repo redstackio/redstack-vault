@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:10.633986+00:00'
 ```bash
 net group "INTERESTING_GROUP" User1 /add /domain
 ```
+
+

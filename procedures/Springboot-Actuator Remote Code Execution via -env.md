@@ -35,11 +35,15 @@ An attacker can exploit this vulnerability by sending a specially crafted POST r
 
 The business value of this attack is that it can be used to gain access to sensitive data and systems, which can be used for financial gain, espionage, or sabotage.
 
+ 
+
 ## Requirements
 
 1. Access to the victim's Spring Boot application
 
 1. Knowledge of the victim's Springboot-Actuator configuration
+
+ 
 
 ## Defense
 
@@ -49,19 +53,29 @@ The business value of this attack is that it can be used to gain access to sensi
 
 1. Monitor the network for suspicious activity and block IP addresses that are attempting to exploit this vulnerability.
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the victim's machine
 
 1. Gain access to sensitive data and systems
 
+ 
+
 # Instructions
 
 1. Send POST request to /refresh endpoint
 
+ 
+
+
+
 **Code**: [[POST /refresh HTTP/1.1
 Host: victim.example:8090
 C]]
+
+
 
 > The payload should contain the malicious code that will be executed on the victim's machine. The attacker should modify the payload to contain their own code.
 
@@ -83,3 +97,5 @@ C]]
 - [[Remote Code Execution via `/env`]]
 - [[Springboot-Actuator]]
 - [[Steps]]
+
+

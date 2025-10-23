@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:36.373522+00:00'
 ```bash
 python altdns.py -i subdomains.txt -o data_output -w words.txt
 ```
+
+

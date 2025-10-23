@@ -20,3 +20,5 @@ nmap -sA -PN -sN $ip
 nmap -sS -sV -T4 -F -A -O $ip
 
 ```
+
+

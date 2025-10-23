@@ -16,3 +16,5 @@ certipy req -username jane@corp.local -hashes ... -ca corp-DC-CA -template ESC9
 # userPrincipalName in the certificate is Administrator 
 # the issued certificate contains no "object SID"
 ```
+
+

@@ -20,3 +20,5 @@ SharPersist -t schtaskbackdoor -m list
 SharPersist -t startupfolder -m list
 SharPersist -t schtask -m list
 ```
+
+

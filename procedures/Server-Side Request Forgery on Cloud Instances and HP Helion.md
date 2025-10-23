@@ -36,11 +36,15 @@ Technical Explanation: The attacker sends a crafted request to the server, which
 
 Business Value: An attacker can gain access to sensitive data, credentials, or other information that can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
 
 1. Knowledge of a vulnerability that can be exploited
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ Business Value: An attacker can gain access to sensitive data, credentials, or o
 
 1. Restrict access to sensitive data and credentials to only authorized users and applications
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data or credentials
 
 1. Perform unauthorized actions
 
+ 
+
 # Instructions
 
 1. To retrieve metadata about an EC2 instance, use the above URL and append the desired metadata category and specific data item to the end of the URL. For example, to retrieve the instance ID, use the URL http://169.254.169.254/2009-04-04/meta-data/instance-id
 
+ 
+
+
+
 **Code**: [[http://169.254.169.254/2009-04-04/meta-data/]]
 
+
+
 > The EC2 instance metadata provides information about the instance such as its ID, hostname, public and private IP addresses, and more. The metadata is available to any application running on the instance and can be accessed using the above URL. Some metadata categories include ami-id, instance-type, and security-groups. To retrieve a specific data item, append it to the end of the URL separated by forward slashes. It is important to note that the metadata is only available from within the instance and cannot be accessed from outside the instance.
+
+
 
 **Command** ([[Retrieve metadata]]):
 
 ```bash
 http://169.254.169.254/2009-04-04/meta-data/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ http://169.254.169.254/2009-04-04/meta-data/
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for HP Helion]]
+
+

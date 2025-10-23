@@ -33,11 +33,15 @@ Wrapper Expect LFI/RFI is a technique that leverages the expect:// wrapper to pe
 
 Wrapper Expect LFI/RFI is a technique that leverages the expect:// wrapper to perform Local File Inclusion (LFI) or Remote File Inclusion (RFI) attacks. This technique works by passing the path of the file to be included as an argument to the expect:// wrapper, which then executes the specified command and returns its output. By using this technique, an attacker can execute arbitrary commands on the target system, which can lead to sensitive data disclosure, system compromise, or further attacks. This technique can be used to bypass access controls and execute code on a target system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses the expect:// wrapper
 
 1. Knowledge of the path of the file to be included
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Wrapper Expect LFI/RFI is a technique that leverages the expect:// wrapper to pe
 
 1. File permissions should be configured to prevent the execution of arbitrary commands.
 
+ 
+
 ## Objectives
 
 1. To obtain sensitive data from the target system
@@ -55,6 +61,8 @@ Wrapper Expect LFI/RFI is a technique that leverages the expect:// wrapper to pe
 
 1. To bypass access controls on the target system
 
+ 
+
 # Instructions
 
 1. 1. Replace 'id' or 'ls' with the path of the file to be included.
@@ -62,10 +70,18 @@ Wrapper Expect LFI/RFI is a technique that leverages the expect:// wrapper to pe
 3. Execute the command by passing the URL to the vulnerable web application.
 4. The output of the command will be returned by the expect:// wrapper.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=expect://id
 http]]
 
+
+
 > The 'http://example.com/index.php?page=' parameter is vulnerable to LFI/RFI attacks. By using the expect:// wrapper, an attacker can execute arbitrary commands on the target system. In the provided example, the attacker is executing the 'id' and 'ls' commands to obtain information about the target system.
+
+
 
 **Command** ([[Expect id command on http://example.com]]):
 
@@ -74,11 +90,17 @@ http://example.com/index.php?page=expect://id
 
 ```
 
+
+
+
+
 **Command** ([[Expect ls command on http://example.com]]):
 
 ```bash
 http://example.com/index.php?page=expect://ls
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +124,5 @@ http://example.com/index.php?page=expect://ls
 - [[File Inclusion]]
 - [[LFI / RFI using wrappers]]
 - [[Wrapper expect://]]
+
+

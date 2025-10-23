@@ -29,16 +29,60 @@ CSRF can be performed by placing a hidden FORM request in a web page and sharing
 
 CSRF can be performed by placing a hidden FORM request in a web page and sharing it with the victim. If the victim access the page, the request gets submitted using the existing session ID in the browser.
 
+
+
 # Instructions
+
+
+
+
 
 1. Identify any operation in the application. Here we have selected change password page.
 
+
+
+
+
+
+
+
+
+![6f6badef-1da5-45c0-ab6a-53e17b8a5f59.PNG](_assets/images/Mash/6f6badef-1da5-45c0-ab6a-53e17b8a5f59.PNG)
+
+
+
+
+
 2. Create a HTML page with the request that is submitted when a password is changed.
+
+
+
+
+
+
+
+
 
 **Code**: [[<html>
   <body onload="document.getElementById('x]]
 
+
+
+
+
+
+
 3. Save the page and open it in  the browser. The change password request gets submitted and the password of current user gets changed.
+
+
+
+
+
+![99b1efdf-d3b8-43ef-902c-e94b16704ec0.PNG](_assets/images/Mash/99b1efdf-d3b8-43ef-902c-e94b16704ec0.PNG)
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +94,5 @@ CSRF can be performed by placing a hidden FORM request in a web page and sharing
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

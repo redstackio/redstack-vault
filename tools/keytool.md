@@ -29,11 +29,27 @@ Keytool is a key and certificate management utility. It allows users to administ
 
 Keytool is a key and certificate management utility. It allows users to administer their own public/private key pairs and associated certificates for use in self-authentication or data integrity and authentication services, using digital signatures. It also allows users to cache the public keys (in the form of certificates) of their communicating peers.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_7e2ea09c-090f-4481-a1d7-eedfe67f6a47}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +64,5 @@ Keytool is a key and certificate management utility. It allows users to administ
 ## Tags
 
 - [[Cryptography]]
+
+

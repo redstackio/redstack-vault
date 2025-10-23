@@ -30,19 +30,71 @@ Description
 
 DOM Clobbering defiens the techniwue wherein HTML is injected into the page to manipulate DOM.
 
+
+
 Instructions
+
+
+
+
 
 1. Paste the following payload in the comment section of the application.
 
+
+
 *<form id=x tabindex=0 onfocus=alert(document.cookie)><input id=attributes>*
+
+
+
+
+
+
+
+![5353fe46-ca64-4279-9645-968a10211d52.png](_assets/images/Mash/5353fe46-ca64-4279-9645-968a10211d52.png)
+
+
+
+
+
+
 
 2.Submit the comment .
 
+
+
+
+
+
+
+![4887d355-e216-4b22-bcc3-487b75a9fbe9.png](_assets/images/Mash/4887d355-e216-4b22-bcc3-487b75a9fbe9.png)
+
+
+
 3. Save the following code with .html extension. 
+
+
+
+
+
+
 
 **Code**: [[<iframe src=https://ac301f571f57bb498033200f00cb00]]
 
+
+
+
+
+
+
 4. The iframe is loaded with a time delay of 500ms and it adds the x fragment element to the end of url. The x fragment id is defined in step 1.The delay is essential to load the comment section which contains the payload . It gets executed before JS is executed.
+
+
+
+
+
+![979b7bb1-dbf9-4f0f-8680-c76e8ce4eb94.png](_assets/images/Mash/979b7bb1-dbf9-4f0f-8680-c76e8ce4eb94.png)
+
+
 
 ## Platforms
 
@@ -55,3 +107,5 @@ Instructions
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

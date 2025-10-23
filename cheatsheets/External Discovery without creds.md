@@ -27,11 +27,19 @@ Look for:
 
 - Relay / Poisoning on the local network
 
+
+
 ## Instructions
 
 1. Scan the network to find vulnerable hosts
 
+
+
 Enumerate SMB hosts with CME
+
+
+
+
 
 **Command** ([[crackmapexec scan smb ip range]]):
 
@@ -39,7 +47,15 @@ Enumerate SMB hosts with CME
 crackmapexec smb $IPRANGE
 ```
 
+
+
+
+
 Run an aggressive full network scan
+
+
+
+
 
 **Command** ([[More aggressive Full TCP Scan]]):
 
@@ -49,7 +65,15 @@ nmap -sS -sV -T4 -F -A -O $ip
 
 ```
 
+
+
+
+
+
+
 Scan the top 50 ports
+
+
 
 **Command** ([[nmap top 50 ports]]):
 
@@ -57,7 +81,17 @@ Scan the top 50 ports
 nmap -PN -sV --top-ports 50 --open $IPRANGE
 ```
 
+
+
+
+
+
+
+
+
 Search SMB ports for vulns on port 139,445
+
+
 
 **Command** ([[NSE SMB unsafe]]):
 
@@ -66,7 +100,13 @@ nmap --script=smb-* -p139,445 --script-args=unsafe=1 $ip
 
 ```
 
+
+
+
+
 Scan for UDP ports
+
+
 
 **Command** ([[Nmap Service Scan of UDP ports]]):
 
@@ -74,7 +114,15 @@ Scan for UDP ports
 nmap -sU -sV $_TARGET_IP
 ```
 
+
+
+
+
 2. Find Active Directory
+
+
+
+
 
 **Command** ([[Get list of DCs]]):
 
@@ -83,7 +131,15 @@ nslookup -type=srv _ldap._tcp.dc._msdcs.corp.test.com
 
 ```
 
+
+
+
+
 3. DNS one transfer
+
+
+
+
 
 **Command** ([[Dig zone transfer]]):
 
@@ -91,7 +147,15 @@ nslookup -type=srv _ldap._tcp.dc._msdcs.corp.test.com
 dig axfr $DOMAIN@$NAMESERVER
 ```
 
+
+
+
+
 4. Enumerate for anonymous or guest access
+
+
+
+
 
 **Command** ([[enum4linux anonymous]]):
 
@@ -99,19 +163,45 @@ dig axfr $DOMAIN@$NAMESERVER
 enu4linux -a -u"" -p "" $AD_IP
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[enum4linux guest]]):
 
 ```bash
 enum4linux -a -u "guest" -p "" $AD_IP
 ```
 
+
+
+
+
 5. Identify SMB shares with guest access
+
+
+
+
+
+
 
 **Command** ([[SMBMap list guest access on smb share]]):
 
 ```bash
 smbmap -u "" -p "" -P 445 -H $DC_IP
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[SMBMap list guest access tricks]]):
 
@@ -120,11 +210,27 @@ smbmap -U '%' -L //$DC_IP
 smbmap -U 'guest%' -L //$DC_IP
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[CrackMapExec enumerate null sessions]]):
 
 ```bash
 crackmapexec $IP -u "" -p ""
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[CrackMapExec enumerate anonymous access]]):
 
@@ -132,7 +238,15 @@ crackmapexec $IP -u "" -p ""
 crackmapexec smb $IP -u 'a' -p ''
 ```
 
+
+
 6. Enumerate LDAP to find users
+
+
+
+
+
+
 
 **Command** ([[Nmap Query LDAP for Root DSE Object Information]]):
 
@@ -140,13 +254,27 @@ crackmapexec smb $IP -u 'a' -p ''
 nmap -script ldap-rootdse -p 389 $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[Query LDAP Root DSE with Anonymous Bind]]):
 
 ```bash
 ldapsearch -x -h $_TARGET_IP -s base
 ```
 
+
+
+
+
 7.Enumerate to find users
+
+
+
+
 
 **Command** ([[enum4linux find users]]):
 
@@ -154,14 +282,40 @@ ldapsearch -x -h $_TARGET_IP -s base
 enum4linux -U $DC_IP | grep 'user:'
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[CrackMapExec Brute Force SMB Usernames and Passwords]]):
 
 ```bash
 crackmapexec smb $_TARGET_IP -u $_USERNAME -p $_PASSWORD
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[nmap nse krb5-enum-users ]]):
 
 ```bash
 nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm='$DOMAIN',userdb=$USER_LIST_FILE" $IP
 ```
+
+
+
+
+
+
+
+
+
+

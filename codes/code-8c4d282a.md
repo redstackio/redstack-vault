@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:13.144907+00:00'
 msf > use exploit/windows/smb/smb_relay
 msf exploit(smb_relay) > show targets
 ```
+
+

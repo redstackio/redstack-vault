@@ -28,15 +28,83 @@ Description Google dorks can be used to find the referenced pages of an website 
 
 Google dorks can be used to find the referenced pages of an website . An attacker can use them to find the directory listing which otherwise invisible in the application.
 
+
+
 # Instructions
+
+
 
 1. Open google search and use the dork *site to search *for referenced pages by google.
 
+
+
 *Paylaod : site : zero.webappsecurity,com*
+
+
+
+
+
+
+
+
+
+
+
+![1a685b64-3a31-4e0e-862f-584b21a9350c.PNG](_assets/images/Mash/1a685b64-3a31-4e0e-862f-584b21a9350c.PNG)
+
+
+
+
+
+
+
+
+
+
 
 2. Open the listed reference pages from search results in a browser to confirm. 
 
+
+
+
+
+
+
+![2e485732-899e-4184-b5cd-6edb1daadf70.PNG](_assets/images/Mash/2e485732-899e-4184-b5cd-6edb1daadf70.PNG)
+
+
+
+
+
+
+
+
+
 3. *Errors *page referenced by google dork opened in a browser can be seen in the below image.
+
+
+
+
+
+
+
+
+
+![acfff609-024e-40da-b636-e589e1515c22.PNG](_assets/images/Mash/acfff609-024e-40da-b636-e589e1515c22.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +115,5 @@ Google dorks can be used to find the referenced pages of an website . An attacke
 - [[Directory Listing]]
 - [[google dork]]
 - [[Web Applications]]
+
+

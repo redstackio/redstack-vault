@@ -33,15 +33,23 @@ Organizations include information in their SSL certificates which can disclose d
 
 Organizations include information in their SSL certificates which can disclose details and aid attackers in the enumeration and development of attack vectors. SSL certificates will often list alternate DNS names (suggesting virtual hosts are configured on the target), registration dates, validity, etc, and should be enumerated whenever possible.
 
+
+
 # Instructions
 
 View SSL Certificate information
+
+
+
+
 
 **Command** ([[SSLyze Enumerate a Web Server's SSL/TLS Certificate]]):
 
 ```bash
 sslyze --regular $_TARGET_HOST
 ```
+
+
 
 **Useful fields:**
 
@@ -55,11 +63,19 @@ sslyze --regular $_TARGET_HOST
 
 - Cipher Suites
 
+
+
+
+
 **Command** ([[Keytool Extract Owner Information from SSL Certificate]]):
 
 ```bash
 keytool -printcert -sslserver $_TARGET_IP:$_TARGET_PORT
 ```
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +101,5 @@ keytool -printcert -sslserver $_TARGET_IP:$_TARGET_PORT
 - [[Cryptography]]
 - [[data exposure]]
 - [[Web Applications]]
+
+

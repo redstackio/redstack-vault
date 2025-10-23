@@ -32,11 +32,27 @@ xprobe2 is an active operating system fingerprinting tool. xprobe2 relies on fuz
 
 xprobe2 is an active operating system fingerprinting tool. xprobe2 relies on fuzzy signature matching, probabilistic guesses, multiple match criteria, and a signature database, unlike other fingerprinting tools which often rely on signatures alone.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_b295bff0-542c-49d6-90a9-8dc37165d14a}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +70,5 @@ xprobe2 is an active operating system fingerprinting tool. xprobe2 relies on fuz
 - [[Enumeration]]
 - [[Fingerprint]]
 - [[Network]]
+
+

@@ -20,3 +20,5 @@ sudo useradd -ou 0 -g 0 john
 sudo passwd john
 echo "linuxpassword" | passwd --stdin john
 ```
+
+

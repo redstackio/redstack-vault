@@ -35,11 +35,15 @@ Technical Explanation: The 'Decrypt-SQLDatabase' command is used to decrypt an e
 
 Business Value: This technique can be used by attackers to gain access to sensitive information stored in encrypted databases. By identifying and decrypting these databases, attackers can gain unauthorized access to sensitive data which can be used for financial gain or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the MSSQL Server
 
 1. Access to the master key or password
+
+ 
 
 ## Defense
 
@@ -49,17 +53,27 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Monitor MSSQL Server logs for any suspicious activity, such as attempts to access encrypted databases
 
+ 
+
 ## Objectives
 
 1. Identify encrypted databases via MSSQL Server
 
 1. Decrypt encrypted databases to access sensitive information
 
+ 
+
 # Instructions
 
 1. This command retrieves a list of encrypted SQL databases and automatically decrypts them for admins.
 
+ 
+
+
+
 **Code**: [[Get-SQLDatabase -Username sa -Password Password123]]
+
+
 
 > The command uses the Get-SQLDatabase cmdlet to retrieve a list of SQL databases that are encrypted. The Where-Object cmdlet is used to filter the results to only include databases where the 'is_encrypted' property is equal to 'True'. The ForEach-Object cmdlet is then used to loop through each database and call the 'Decrypt()' method to automatically decrypt the database for admins. The '-Username' and '-Password' parameters are used to provide the necessary authentication credentials, and the '-Instance' parameter specifies the name of the SQL Server instance to connect to.
 
@@ -81,3 +95,5 @@ Business Value: This technique can be used by attackers to gain access to sensit
 - [[Identify Encrypted databases]]
 - [[Identify Instances and Databases]]
 - [[MSSQL Server]]
+
+

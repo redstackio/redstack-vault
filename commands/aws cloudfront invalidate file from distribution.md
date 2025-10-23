@@ -25,3 +25,5 @@ aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID  --paths $
 ```
 aws cloudfront create-invalidation --distribution-id Z2W2LX9VBMAPRX --paths /index.html /error.html
 ```
+
+

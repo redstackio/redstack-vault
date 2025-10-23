@@ -43,9 +43,13 @@ Azure Managed Identity Token Retrieval is a technique used to obtain access toke
 
 To retrieve tokens from a managed identity, the user must have permissions to access the Azure resource that the managed identity is assigned to. Once the user has access to the resource, they can retrieve the access token by running the appropriate command. This token can then be used to authenticate to Azure services.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure resource that the managed identity is assigned to
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ To retrieve tokens from a managed identity, the user must have permissions to ac
 
 1. Enable Azure AD Multi-Factor Authentication (MFA) to add an extra layer of security to user authentication
 
+ 
+
 ## Objectives
 
 1. Retrieve access tokens for Azure CLI and Az without having to provide user credentials
@@ -62,6 +68,8 @@ To retrieve tokens from a managed identity, the user must have permissions to ac
 1. Leverage the security of managed identities to authenticate to Azure services
 
 1. Perform actions on Azure resources that the user has been granted permission to access
+
+ 
 
 # Instructions
 
@@ -71,10 +79,18 @@ To retrieve tokens from a managed identity, the user must have permissions to ac
 
 Note: The lifetime of a Primary Refresh Token is 14 days.
 
+ 
+
+
+
 **Code**: [[# az cli - get tokens 
 az account get-access-token]]
 
+
+
 > The access tokens are used to authenticate and authorize requests to Azure resources. The commands provided will retrieve access tokens for Azure CLI and Az. The first command is for Azure CLI and it can be used to get the access token for a specific resource type, in this case aad-graph. The second command is for Az and it retrieves the access token for the specified resource URL. It's important to note that the lifetime of a Primary Refresh Token is 14 days and it should be refreshed before it expires to avoid any disruptions in access to Azure resources.
+
+
 
 **Command** ([[Get Azure CLI Tokens]]):
 
@@ -87,13 +103,31 @@ az account get-access-token --resource-type aad-graph
 # or from a managed identity using IDENTITY_HEADER and IDENTITY_ENDPOINT
 ```
 
+
+
 2a. (Optional) Get access token from KUDU Service - System Assigned Managed Identity
+
+
+
+
+
+
 
 **Code**: [[# or KUDU Debug Console Powershell - System Assign]]
 
+
+
 2b. (Optional) Get access token from Kudu Service - User Assigned Managed Identity
 
+
+
+
+
 **Code**: [[# or KUDU Debug Console Powershell - User Assigned]]
+
+
+
+
 
 ## Platforms
 
@@ -125,3 +159,5 @@ az account get-access-token --resource-type aad-graph
 - [[Managed Identity]]
 - [[powershell]]
 - [[Token from Managed Identity]]
+
+

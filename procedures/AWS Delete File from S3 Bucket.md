@@ -39,6 +39,8 @@ You can delete individual files, folders or empty an entire bucket folder.
 
 1. Delete a file from a S3 Bucket
 
+
+
 **Command** ([[aws s3 delete file from S3 Bucket]]):
 
 ```bash
@@ -46,7 +48,13 @@ aws s3 rm s3://<bucket_name>/<object_name>
 
 ```
 
+
+
+
+
 2. (Optional) Delete all objects in an S3 Bucket
+
+
 
 **Command** ([[aws s3 delete objects from S3 Bucket]]):
 
@@ -55,7 +63,15 @@ aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT
 
 ```
 
+
+
+
+
+
+
 3. (Optional) Empty the contents of a S3 Bucket
+
+
 
 **Command** ([[aws s3 delete contents of S3 Bucket recursively]]):
 
@@ -63,6 +79,12 @@ aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT
 aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT --recursive
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -88,3 +110,5 @@ aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT --recursive
 
 - [[AWS]]
 - [[Cloud]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-05-23T19:33:22.785549+00:00'
 ```bash
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
+
+

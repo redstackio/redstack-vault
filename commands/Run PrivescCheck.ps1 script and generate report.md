@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:50.966188+00:00'
 ```bash
 powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck -Report PrivescCheck_%COMPUTERNAME% -Format TXT,CSV,HTML"
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-05-24T22:50:54.391095+00:00'
 ```bash
 Get-AzRoleAssignment -Scope /subscriptions/<ID>/resourceGroups/<RG-NAME>/providers/Microsoft.Automation/automationAccounts/<AUTOMATION-ACCOUNT>
 ```
+
+

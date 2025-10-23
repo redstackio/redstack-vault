@@ -34,11 +34,15 @@ From a technical standpoint, this procedure involves implementing input validati
 
 The business value of this procedure is that it helps to protect sensitive information and prevent unauthorized access to web applications. By preventing XSS attacks in XML and files, organizations can ensure the confidentiality, integrity, and availability of their data and systems.
 
+ 
+
 ## Requirements
 
 1. Access to the web application source code
 
 1. Ability to modify the web application code
+
+ 
 
 ## Defense
 
@@ -48,20 +52,30 @@ The business value of this procedure is that it helps to protect sensitive infor
 
 1. Train users to identify and report potential XSS attacks
 
+ 
+
 ## Objectives
 
 1. Prevent XSS attacks in XML and files
 
 1. Ensure the confidentiality, integrity, and availability of data and systems
 
+ 
+
 # Instructions
 
 1. To prevent script injection attacks, it is important to sanitize user input by removing any potentially harmful characters or strings. This can be achieved by using input validation and sanitization libraries or functions. It is also recommended to use Content Security Policy (CSP) headers to restrict the sources of executable scripts on a web page.
+
+ 
+
+
 
 **Code**: [[<html>
 <head></head>
 <body>
 <something:script xmln]]
+
+
 
 > The 'data' field in this JSON object contains an example of a script injection attack, where a script tag is used to execute malicious code on the user's browser. The 'instruction' field provides guidance on how to prevent such attacks, while the 'explain' field provides a brief explanation of what script injection attacks are and why they are dangerous.
 
@@ -82,3 +96,5 @@ The business value of this procedure is that it helps to protect sensitive infor
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in XML]]
+
+

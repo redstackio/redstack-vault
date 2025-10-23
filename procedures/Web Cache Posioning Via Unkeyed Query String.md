@@ -29,17 +29,67 @@ In this kind of attack, an attacker will craft a malicious url and induce the vi
 
 # Instructions
 
+
+
 1.With burp running and proxying requests, browse through the application. Identify home page request from the HTTP history tab under proxy and send the reqeust to the the repeater tab.
+
+
+
+
+
+![fc09e151-4fc0-4dbd-aeb5-6f12506793bc.png](_assets/images/Mash/fc09e151-4fc0-4dbd-aeb5-6f12506793bc.png)
+
+
+
+
+
+
 
 2.Add parameters to the request url and send the request to the server. Notice the *X*-*cache hit *in the response headers which indicate that the parameters are not included in the cache key
 
+
+
+
+
+![10988f92-437d-42f4-aa9f-ed64fc102ebd.png](_assets/images/Mash/10988f92-437d-42f4-aa9f-ed64fc102ebd.png)
+
+
+
+
+
 3.Add the origin header to the request and observe the response. Origin header acts as a cache buster.
+
+
+
+
+
+![645b0ff6-f57e-433a-aad2-58d8d516dcb6.png](_assets/images/Mash/645b0ff6-f57e-433a-aad2-58d8d516dcb6.png)
+
+
+
+
 
 4.Modify the parameters in the url from step 2 to add the payload as below. Keep sending the request to the server until the payload is relfected in the response. Once the cache is poisoned , remove the query parameters from the request and send the request to the server . Notice that cached response containing payload can be seen in the response tab.
 
 *`/?evil='/><script>alert(1)</script*>`
 
+
+
+
+
+
+
+![42c70ebe-7564-41fe-b0d4-b42590d7aa26.png](_assets/images/Mash/42c70ebe-7564-41fe-b0d4-b42590d7aa26.png)
+
+
+
+
+
 5.
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +99,5 @@ In this kind of attack, an attacker will craft a malicious url and induce the vi
 
 - [[Web Applications]]
 - [[web cache posioning]]
+
+

@@ -36,9 +36,15 @@ Various tools can be used to brute force valid SMB users using their relative id
 
 Various tools can be used to brute force valid SMB users using their relative identifier (RID). This allows attackers to easily enumerate additional users on a system with which they've already authenticated.
 
+
+
 # Instructions
 
 ## Using CrackMapExec
+
+
+
+
 
 **Command** ([[CrackMapExec Brute Force SMB Users Using RID]]):
 
@@ -46,15 +52,27 @@ Various tools can be used to brute force valid SMB users using their relative id
 crackmapexec smb $_TARGET_IP -u $_USERNAME -p $_PASSWORD --rid-brute
 ```
 
+
+
 Note: CrackMapExec 3 may have issues brute forcing users using RID, and it is recommended to use version 4+.
 
+
+
 ## Using Impacket's lookupsid.py
+
+
+
+
 
 **Command** ([[lookupsid.py Brute Force SMB Users Using RID]]):
 
 ```bash
 lookupsid.py '$_USERNAME:$_PASSWORD'@$_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -81,3 +99,5 @@ lookupsid.py '$_USERNAME:$_PASSWORD'@$_TARGET_IP
 
 - [[Network]]
 - [[Service Attacks]]
+
+

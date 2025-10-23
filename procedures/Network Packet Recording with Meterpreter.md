@@ -34,11 +34,15 @@ This procedure is used to monitor network traffic by capturing packets on the ta
 
 The Packet Recorder Interface Listing and Recording command in Meterpreter provides a powerful tool for reconnaissance and attack. By capturing packets on the target network, an attacker can gain valuable information about the network and its hosts. This technique can be used to identify vulnerable hosts, discover open ports and services, and gather information about the network topology. Additionally, by capturing sensitive information such as usernames and passwords, an attacker can perform further attacks such as password cracking and privilege escalation. Finally, by performing man-in-the-middle attacks, an attacker can intercept and modify network traffic, allowing them to perform further attacks or exfiltrate sensitive data.
 
+ 
+
 ## Requirements
 
 1. Meterpreter access to a target machine on the target network
 
 1. Sufficient network access to capture desired traffic
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The Packet Recorder Interface Listing and Recording command in Meterpreter provi
 1. Use encrypted protocols such as HTTPS and SSH to protect sensitive information in transit
 
 1. Monitor network traffic for suspicious activity and anomalous behavior
+
+ 
 
 ## Objectives
 
@@ -58,6 +64,8 @@ The Packet Recorder Interface Listing and Recording command in Meterpreter provi
 
 1. Perform man-in-the-middle attacks
 
+ 
+
 # Instructions
 
 1. This command is used to list interfaces and record packets from a specific interface. 
@@ -66,14 +74,22 @@ To list all available interfaces, run the command 'run packetrecorder -li'. This
 
 To record packets from a specific interface, run the command 'run packetrecorder -i [interface_number]'. Replace [interface_number] with the number of the interface you want to record packets from. For example, if you want to record packets from interface number 1, run the command 'run packetrecorder -i 1'.
 
+ 
+
+
+
 **Code**: [[# list interfaces
 run packetrecorder -li
 
 # record]]
 
+
+
 > The '-li' option is used to list all available interfaces on your system.
 
 The '-i' option is used to specify the interface from which packets will be recorded. Replace [interface_number] with the number of the interface you want to record packets from.
+
+
 
 **Command** ([[List interfaces using packetrecorder]]):
 
@@ -81,11 +97,17 @@ The '-i' option is used to specify the interface from which packets will be reco
 run packetrecorder -li
 ```
 
+
+
+
+
 **Command** ([[Record packets on interface 1 using packetrecorder]]):
 
 ```bash
 run packetrecorder -i 1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +130,5 @@ run packetrecorder -i 1
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
 - [[Network Monitoring]]
+
+

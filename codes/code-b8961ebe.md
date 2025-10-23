@@ -45,3 +45,5 @@ XNMI | Insert substring of length M starting from position N of word saved to me
 6    | Prepend the word saved to memory to current word
 M    | Memorize current word
 ```
+
+

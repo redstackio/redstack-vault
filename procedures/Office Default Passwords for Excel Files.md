@@ -36,11 +36,15 @@ To execute this procedure, the attacker would need to identify the target Excel 
 
 This procedure can be used to gain access to sensitive financial, customer, or employee data.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Knowledge of default passwords for Excel files
+
+ 
 
 ## Defense
 
@@ -50,9 +54,13 @@ This procedure can be used to gain access to sensitive financial, customer, or e
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information contained within password-protected Excel files
+
+ 
 
 # Instructions
 
@@ -63,9 +71,17 @@ This procedure can be used to gain access to sensitive financial, customer, or e
 4. In the 'Password to Modify' field, enter the password if you want to prevent others from modifying the file.
 5. Click 'OK' and then 'Save'.
 
+ 
+
+
+
 **Code**: [[VelvetSweatshop]]
 
+
+
 > The 'Password to Open' field is used to set a password that is required to open the file. The 'Password to Modify' field is used to set a password that is required to modify the file. If you do not want to set a password for either of these fields, simply leave them blank. It is important to note that if you forget your password, there is no way to recover it, so make sure to choose a password that you can remember.
+
+
 
 **Command** ([[Download VelvetSweatshop]]):
 
@@ -73,11 +89,17 @@ This procedure can be used to gain access to sensitive financial, customer, or e
 wget http://www.ifarchive.org/if-archive/games/zcode/VelvetSweatshop.z5
 ```
 
+
+
+
+
 **Command** ([[Run VelvetSweatshop]]):
 
 ```bash
 frotz VelvetSweatshop.z5
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +120,5 @@ frotz VelvetSweatshop.z5
 
 - [[Office - Attacks]]
 - [[Office Default Passwords]]
+
+

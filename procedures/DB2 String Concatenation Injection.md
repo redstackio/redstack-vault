@@ -37,11 +37,15 @@ From a technical perspective, an attacker can use the CONCAT function to inject 
 
 The business value of this technique for an attacker is that it can provide access to sensitive data, such as customer information, financial data, and intellectual property. This can lead to reputational damage, loss of revenue, and legal liabilities for the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses a DB2 database
 
 1. Knowledge of SQL syntax and the CONCAT function
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this technique for an attacker is that it can provide acce
 
 1. Regularly patch and update the DB2 database and the application to prevent known vulnerabilities from being exploited
 
+ 
+
 ## Objectives
 
 1. To execute arbitrary SQL code in a DB2 database
@@ -59,13 +65,23 @@ The business value of this technique for an attacker is that it can provide acce
 
 1. To modify data in a DB2 database
 
+ 
+
 # Instructions
 
 1. To concatenate strings in SQL, you can use the CONCAT function or the double pipe (||) operator. The CONCAT function takes two or more string arguments and returns a single string that is the concatenation of all the arguments. The double pipe operator is a shorthand for the CONCAT function and is used to concatenate two strings. In the example provided, the first SELECT statement uses the CONCAT function to concatenate three strings 'a', 'b', and 'c' and returns the result 'abc'. The second SELECT statement uses the double pipe operator to concatenate two strings 'a' and 'b' and returns the result 'ab'.
 
+ 
+
+
+
 **Code**: [[select 'a' concat 'b' concat 'c' from sysibm.sysdu]]
 
+
+
 > The CONCAT function takes two or more string arguments and returns a single string that is the concatenation of all the arguments. The double pipe (||) operator is a shorthand for the CONCAT function and is used to concatenate two strings. In the example provided, the first SELECT statement uses the CONCAT function to concatenate three strings 'a', 'b', and 'c' and returns the result 'abc'. The second SELECT statement uses the double pipe operator to concatenate two strings 'a' and 'b' and returns the result 'ab'.
+
+
 
 **Command** ([[Concatenation of Strings using CONCAT function]]):
 
@@ -73,11 +89,17 @@ The business value of this technique for an attacker is that it can provide acce
 select 'a' concat 'b' concat 'c' from sysibm.sysdummy1
 ```
 
+
+
+
+
 **Command** ([[Concatenation of Strings using Double Pipe Operator]]):
 
 ```bash
 select 'a' || 'b' from sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +123,5 @@ select 'a' || 'b' from sysibm.sysdummy1
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[String Concat]]
+
+

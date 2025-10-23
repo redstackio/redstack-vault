@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:36.106242+00:00'
 ```bash
 sp_addextendedproc 'xp_calc', 'C:\mydll\xp_calc.dll'
 ```
+
+

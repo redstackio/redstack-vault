@@ -26,11 +26,27 @@ Linux-smart-enumeration (lse) shows relevant information about the security of t
 
 Linux-smart-enumeration (lse) shows relevant information about the security of the local Linux system. It has 3 levels of verbosity (specified using the "-l" argument), allowing the user to control what is displayed. This feature makes it easier to get a high level view of a system, before digging into the interesting areas.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_111ae502-6b1f-4390-9462-081070d30d29}}
+
+
 
 # Installation
 
 Clone the repo and copy lse.sh to the target.
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Clone the repo and copy lse.sh to the target.
 
 - [[Enumeration]]
 - [[Linux]]
+
+

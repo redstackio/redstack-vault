@@ -28,11 +28,27 @@ Grep is a flexible pattern matching tool commonly found on Linux/Unix distributi
 
 Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Grep also supports regex and wildcards, and has extensive features handling formatting, output, and metrics.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0db9e66b-66a6-404a-9eb0-ab25b367fb03}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ Grep is a flexible pattern matching tool commonly found on Linux/Unix distributi
 
 - [[Enumeration]]
 - [[File System]]
+
+

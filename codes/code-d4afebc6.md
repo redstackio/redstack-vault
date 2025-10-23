@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:10.381583+00:00'
 ```bash
 nmap -p- -sV -oX a.xml IP_ADDRESS; searchsploit --nmap a.xml
 ```
+
+

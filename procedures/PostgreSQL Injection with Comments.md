@@ -27,6 +27,8 @@ In this procedure, we will focus on injecting comments into a SQL query to bypas
 
 This technique can be used by attackers to gain unauthorized access to sensitive data, escalate privileges, and execute arbitrary code on the target system. It can also be used to perform reconnaissance and gather information about the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -35,6 +37,8 @@ This technique can be used by attackers to gain unauthorized access to sensitive
 
 1. A tool to send SQL queries to the target system (e.g. SQLMap)
 
+ 
+
 ## Defense
 
 1. Use parameterized queries to prevent SQL injection attacks
@@ -42,6 +46,8 @@ This technique can be used by attackers to gain unauthorized access to sensitive
 1. Implement input validation and sanitization to prevent malicious input
 
 1. Limit the privileges of database users to prevent privilege escalation
+
+ 
 
 ## Objectives
 
@@ -53,12 +59,20 @@ This technique can be used by attackers to gain unauthorized access to sensitive
 
 1. Perform reconnaissance and gather information about the target system
 
+ 
+
 # Instructions
 
 1. To execute a SQL query, replace the comment '--/**/  ' with your SQL code.
 
+ 
+
+
+
 **Code**: [[--
 /**/  ]]
+
+
 
 > This JSON object represents an empty SQL query. To use this command, replace the comment '--/**/  ' with your SQL code and execute the query. The 'lang' field specifies that the code is written in SQL. The 'text' field is null, indicating that there is no text associated with the query. The 'instruction' field provides guidance on how to use this command, and the 'name' field gives a descriptive name to the command.
 
@@ -66,3 +80,5 @@ This technique can be used by attackers to gain unauthorized access to sensitive
 
 - [[PostgreSQL Comments]]
 - [[PostgreSQL injection]]
+
+

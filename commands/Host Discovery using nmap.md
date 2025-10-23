@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:09.485621+00:00'
 ```bash
 nmap -sn -n --disable-arp-ping 192.168.1.1-254 | grep -v "host down"
 ```
+
+

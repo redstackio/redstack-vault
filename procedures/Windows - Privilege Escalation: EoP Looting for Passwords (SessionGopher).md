@@ -32,6 +32,8 @@ From a technical perspective, SessionGopher works by using Windows API calls to 
 
 The business value of this procedure lies in its ability to provide attackers with access to sensitive information and elevated privileges. This can lead to further compromise of the network and theft of valuable data.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system
@@ -39,6 +41,8 @@ The business value of this procedure lies in its ability to provide attackers wi
 1. PowerShell installed on the system
 
 1. User context with administrative privileges
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure lies in its ability to provide attackers wi
 
 1. Use multi-factor authentication to protect against stolen credentials
 
+ 
+
 ## Objectives
 
 1. Gather data about user sessions and passwords stored in memory on Windows systems
@@ -56,11 +62,19 @@ The business value of this procedure lies in its ability to provide attackers wi
 
 1. Gain access to sensitive information and elevate privileges on the compromised system
 
+ 
+
 # Instructions
 
 1. To use SessionGopher, first download the script from the provided link. Import the module by specifying the path to the downloaded script. Then, run the Invoke-SessionGopher command with the desired arguments. The '-AllDomain' argument will search for saved sessions across all domains. The '-o' argument will output the results to a file. The '-u' and '-p' arguments can be used to specify a username and password for authentication if necessary.
 
+ 
+
+
+
 **Code**: [[https://raw.githubusercontent.com/Arvanaghi/Sessio]]
+
+
 
 > SessionGopher is a PowerShell script that searches for and saves session information for various remote access tools, including PuTTY, WinSCP, FileZilla, SuperPuTTY, and RDP. This can be useful for post-exploitation activities, as it allows an attacker to easily access previously saved credentials and session information.
 
@@ -79,3 +93,5 @@ The business value of this procedure lies in its ability to provide attackers wi
 - [[EoP - Looting for passwords]]
 - [[Passwords stored in services]]
 - [[Windows - Privilege Escalation]]
+
+

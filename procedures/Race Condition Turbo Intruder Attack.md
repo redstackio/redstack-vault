@@ -37,11 +37,15 @@ Technical Explanation: The attacker sends multiple requests to the server and th
 
 Business Value: This attack can result in unauthorized access to sensitive data, such as customer information, financial data, or intellectual property. It can also lead to system downtime and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
 
 1. Turbo Intruder tool installed
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: This attack can result in unauthorized access to sensitive data,
 
 1. Monitor server logs for unusual activity and implement alerting mechanisms
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive data or resources
@@ -59,14 +65,24 @@ Business Value: This attack can result in unauthorized access to sensitive data,
 
 1. Damage the organization's reputation
 
+ 
+
 # Instructions
 
 1. Fill in the 'target' and 'wordlists' parameters with the appropriate values. 'target' should have an 'endpoint' attribute and 'req' and 'baseInput' methods. 'wordlists' should be a list of wordlists to use in the requests.
 
+ 
+
+
+
 **Code**: [[def queueRequests(target, wordlists):
     engine =]]
 
+
+
 > This Python code can be used as a payload for the Turbo Intruder tool. It queues multiple requests with different parameters and starts the engine with a timeout of 5 seconds. It also opens a gate for race condition and completes the engine with a timeout of 60 seconds. The 'handleResponse' function adds the request to a table. The 'target' and 'wordlists' parameters need to be filled in with appropriate values for the code to work.
+
+
 
 **Command** ([[Queue Requests]]):
 
@@ -88,7 +104,12 @@ def queueRequests(target, wordlists):
     engine.openGate('race1')
     engine.complete(timeout=60)
 
+
 ```
+
+
+
+
 
 **Command** ([[Handle Response]]):
 
@@ -97,6 +118,8 @@ def handleResponse(req, interesting):
     # Add request to table
     table.add(req)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +143,5 @@ def handleResponse(req, interesting):
 
 - [[Race Condition]]
 - [[Turbo Intruder Examples]]
+
+

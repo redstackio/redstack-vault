@@ -30,9 +30,13 @@ Spring Boot Actuator provides endpoints that allow you to monitor and interact w
 
 Spring Boot Actuator provides endpoints that allow you to monitor and interact with your application. These endpoints can be used for both diagnostic and production purposes. However, if not properly secured, an attacker could exploit these endpoints to gain sensitive information about the application, such as system configuration, environment variables, and more. An attacker could also use these endpoints to disrupt the application's normal functionality, causing a denial of service. By accessing /health and /info endpoints, an attacker can get a lot of information about the application and use it for further attacks. 
 
+ 
+
 ## Requirements
 
 1. Access to the management interface of a Springboot application
+
+ 
 
 ## Defense
 
@@ -42,19 +46,31 @@ Spring Boot Actuator provides endpoints that allow you to monitor and interact w
 
 1. Regularly monitor the logs and network traffic for any suspicious activity.
 
+ 
+
 ## Objectives
 
 1. To obtain sensitive information about the application
 
 1. To disrupt the application's normal functionality
 
+ 
+
 # Instructions
 
 1. Send an HTTP GET request to the /health endpoint of the target application.
 
+ 
+
+
+
 **Code**: [[/health]]
 
+
+
 > This endpoint returns the health status of the application. An attacker can use this information to determine if the application is vulnerable to certain attacks or not. For example, if the health status is 'DOWN', it could indicate that the application is experiencing issues and may be more susceptible to a denial of service attack.
+
+
 
 **Command** ([[Check system health]]):
 
@@ -62,17 +78,29 @@ Spring Boot Actuator provides endpoints that allow you to monitor and interact w
 /health
 ```
 
+
+
 2. Send an HTTP GET request to the /info endpoint of the target application.
+
+ 
+
+
 
 **Code**: [[/info]]
 
+
+
 > This endpoint returns information about the application, such as its name, version, and environment variables. An attacker can use this information to better understand the target environment and tailor their attack accordingly.
+
+
 
 **Command** ([[System Information]]):
 
 ```bash
 systeminfo
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +121,5 @@ systeminfo
 
 - [[Insecure Management Interface]]
 - [[Springboot-Actuator]]
+
+

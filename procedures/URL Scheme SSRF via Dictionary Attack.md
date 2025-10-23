@@ -32,6 +32,8 @@ To carry out this attack, the attacker needs to have access to the web applicati
 
 The business value of this attack is that an attacker can gain access to sensitive data or take control of a system, which can lead to financial loss or damage to reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the web application
@@ -39,6 +41,8 @@ The business value of this attack is that an attacker can gain access to sensiti
 1. Knowledge of the URL scheme being used
 
 1. A tool to automate the process of trying different URLs
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ The business value of this attack is that an attacker can gain access to sensiti
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. To gain access to sensitive data
 
 1. To take control of a system
 
+ 
+
 # Instructions
 
 1. Use this command to perform a dictionary attack on a target using the Dictionary protocol.
 
+ 
+
+
+
 **Code**: [[dict://<user>;<auth>@<host>:<port>/d:<word>:<datab]]
+
+
 
 > This command can be used to perform a dictionary attack on a target using the Dictionary protocol. The 'data' field should be filled in with the necessary parameters for the attack, including the user, authentication, host, port, word, database, and n values. The 'text' field provides a visual representation of what an SSRF stream may look like. The 'instruction' field provides guidance on how to use this command, while the 'explain' field provides additional information on the purpose and functionality of the command.
 
@@ -77,3 +91,5 @@ The business value of this attack is that an attacker can gain access to sensiti
 - [[Dict]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

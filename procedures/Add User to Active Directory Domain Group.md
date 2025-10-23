@@ -33,17 +33,35 @@ Use PowerView's "Add-DomainGroupMember" cmdlet to add a user  to a domain group,
 
 Use PowerView's "Add-DomainGroupMember" cmdlet to add a user  to a domain group, assuming the current user has sufficient domain privileges (eg: GenericAll). 
 
+
+
+
+
+
+
 ## Objectives
 
 Account manipulation is a critical step in the lateral movement process, as it allows the attacker to move from one system to another by compromising the credentials of legitimate users. This technique can be used to escalate privileges, gain access to sensitive data, and further compromise the target network.
 
+
+
 1. Use PowerView to add AD group privileges to a user
+
+
+
+
+
+
 
 # Instructions
 
 1. Download PowerView (dev branch), and import it on the target machine: [Download from GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
 
 2. (Optional) It may be necessary to create a PS Credentials object of the user who is authorized to modify group membership.
+
+
+
+
 
 **Command** ([[Create a Windows PSCredential Object]]):
 
@@ -52,7 +70,15 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_DOMAIN\$_USER", $Pass
 ```
 
+
+
+
+
 3. Execute the cmdlet
+
+
+
+
 
 **Command** ([[PowerView Add Active Directory Group Privileges]]):
 
@@ -60,7 +86,11 @@ $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument
 Add-DomainGroupMember -Identity '$_GROUP' -Members '$_USER'
 ```
 
+
+
 Note: The "Credential" argument may not be necessary if the current session is already running as that user.
+
+
 
 ## Platforms
 
@@ -86,3 +116,5 @@ Note: The "Credential" argument may not be necessary if the current session is a
 
 - [[Active Directory]]
 - [[privileges]]
+
+

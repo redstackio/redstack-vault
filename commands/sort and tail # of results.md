@@ -53,3 +53,5 @@ root@kali ~# cat resolvers.txt | sort | tail -n 10
 95.174.99.179
 
 ```
+
+

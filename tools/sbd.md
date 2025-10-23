@@ -16,3 +16,9 @@ sbd is a Netcat-clone, designed to be portable and offer strong encryption. It r
 ## Description
 
 sbd is a Netcat-clone, designed to be portable and offer strong encryption. It runs on Unix-like operating systems and on Microsoft Win32. sbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. sbd supports TCP/IP communication only.sbd Homepage | Kali sbd Repo
+
+
+
+
+
+

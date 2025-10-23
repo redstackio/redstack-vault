@@ -31,9 +31,13 @@ Command injection is a technique used by attackers to execute arbitrary commands
 
 Command injection is a technique used by attackers to execute arbitrary commands on a system. In this case, the attacker is able to inject additional arguments to the curl command to execute commands on the system. This can be used to download and execute malicious files, exfiltrate data, or perform other malicious activities. By injecting additional arguments, the attacker can bypass input validation and execute any command they want. This technique is often used in combination with other attack techniques to achieve persistence or escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system with curl installed
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ Command injection is a technique used by attackers to execute arbitrary commands
 
 1. Limit access to system resources to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the system
@@ -51,13 +57,23 @@ Command injection is a technique used by attackers to execute arbitrary commands
 
 1. Exfiltrate data from the system
 
+ 
+
 # Instructions
 
 1. python python_rce.py "https://www.google.fr -o test.py"
 
+ 
+
+
+
 **Code**: [[curl]]
 
+
+
 > This command will generate a curl command that downloads the Google France homepage and saves it to a file named test.py.
+
+
 
 **Command** ([[Get Post]]):
 
@@ -65,13 +81,23 @@ Command injection is a technique used by attackers to execute arbitrary commands
 curl -X GET https://jsonplaceholder.typicode.com/posts/1
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[from shlex import quote,split
 import sys
 import su]]
 
+
+
 > This Python script takes the generated curl command and executes it on the system. The additional arguments are split and added to the curl command, allowing the attacker to execute arbitrary commands.
+
+
 
 **Command** ([[Execute Curl Command]]):
 
@@ -87,11 +113,21 @@ if __name__=="__main__":
     r = subprocess.Popen(command)
 ```
 
+
+
 3. 
+
+ 
+
+
 
 **Code**: [[curl]]
 
+
+
 > By injecting additional arguments to the curl command, the attacker can execute arbitrary commands on the system. This can be used to download and execute malicious files, exfiltrate data, or perform other malicious activities.
+
+
 
 **Command** ([[Retrieve post data from jsonplaceholder]]):
 
@@ -99,17 +135,29 @@ if __name__=="__main__":
 curl -X GET https://jsonplaceholder.typicode.com/posts/1
 ```
 
+
+
 4. 
+
+ 
+
+
 
 **Code**: [[['curl', 'https://www.google.fr', '-o', 'test.py']]]
 
+
+
 > This command prints the generated curl command to the console, showing how the additional arguments are split and added to the command.
+
+
 
 **Command** ([[Download Python file from Google France homepage]]):
 
 ```bash
 ['curl', 'https://www.google.fr', '-o', 'test.py']
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -131,3 +179,5 @@ curl -X GET https://jsonplaceholder.typicode.com/posts/1
 ## Tags
 
 - [[Argument Injection]]
+
+

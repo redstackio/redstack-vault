@@ -36,15 +36,29 @@ Enumerate SNMP with a valid community string.
 
 Enumerate SNMP with a valid community string.
 
+
+
 # Instructions
 
 Optional: Install mibs downloader to improve readability
 
+
+
+
+
 **Code**: [[apt update && apt install snmp-mibs-downloader -y ]]
+
+
+
+
 
 Note: If no results are returned when querying SMNP with the following commands, it may be attempting to use the wrong version. If so, try another versions (1, 2c, 3).
 
 SNMP
+
+
+
+
 
 **Command** ([[snmpwalk Enumerate SNMP Server]]):
 
@@ -52,11 +66,25 @@ SNMP
 snmpwalk -c $_COMMUNITY_STRING -v $_VERSION $_TARGET_IP
 ```
 
+
+
+
+
+
+
+
+
+
+
 **Command** ([[snmp-check Enumerate SNMP Server]]):
 
 ```bash
 snmp-check -c $_COMMUNITY_STRING -v $_VERSION $_TARGET_IP
 ```
+
+
+
+
 
 SNMP can be queried directly for specific information using the OID of the intended result. A list of valid OID can be found: [here](http://oid-info.com/)
 
@@ -85,3 +113,5 @@ SNMP can be queried directly for specific information using the OID of the inten
 - [[data exposure]]
 - [[Enumeration]]
 - [[Network]]
+
+

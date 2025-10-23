@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:27.892616+00:00'
 ```powershell
 PS> Set-AzureADUser -ObjectId <OBJECT-ID> -OtherMails <Username>@<TENANT NAME>.onmicrosoft.com -Verbose
 ```
+
+

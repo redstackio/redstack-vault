@@ -42,13 +42,23 @@ Enumerate the common Windows privilege escalation paths, including vulnerable so
 
 Enumerate the common Windows privilege escalation paths, including vulnerable software, misconfigurations, sensitive information and more.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Enumeate Windows for Privilesge Escalation Paths]]):
 
 ```bash
 winPEAS.exe
 ```
+
+
+
+
 
 ## Platforms
 
@@ -81,3 +91,5 @@ winPEAS.exe
 
 - [[Enumeration]]
 - [[privileges]]
+
+

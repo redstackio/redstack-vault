@@ -14,3 +14,5 @@ updated_at: '2023-04-06T23:33:08.429093+00:00'
 ```bash
 AddType application/x-httpd-php .rce
 ```
+
+

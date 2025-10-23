@@ -36,11 +36,15 @@ From a technical perspective, GoGitDumper works by downloading the files and his
 
 The business value of this procedure is that attackers can gain access to sensitive information that can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to the target's Git repository URL
 
 1. GoGitDumper tool installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this procedure is that attackers can gain access to sensit
 
 1. Regularly monitor the repository for any unauthorized access or changes
 
+ 
+
 ## Objectives
 
 1. Dump the contents of a Git repository
@@ -57,6 +63,8 @@ The business value of this procedure is that attackers can gain access to sensit
 1. Extract sensitive information from the repository
 
 1. Perform automatic recovery of deleted files and branches
+
+ 
 
 # Instructions
 
@@ -68,8 +76,14 @@ The `git checkout` command can be used with the following arguments:
 - `-b`: Create and checkout a new branch
 - `-f`: Force checkout, discarding local changes
 
+ 
+
+
+
 **Code**: [[go get github.com/c-sto/gogitdumper
 gogitdumper -u]]
+
+
 
 > The `gogitdumper` command downloads the files and history of the Git repository. The `-u` argument specifies the URL of the .git directory, and the `-o` argument specifies the output directory for the downloaded files. 
 
@@ -94,3 +108,5 @@ The `git log` command displays the commit history of the repository. The `git ch
 - [[GoGitDumper]]
 - [[Insecure Source Code Management]]
 - [[Tools]]
+
+

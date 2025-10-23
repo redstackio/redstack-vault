@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:38.969554+00:00'
 ```bash
 Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>" -Query 'select TOP 5 * from <DatabaseName>.dbo.<TableName>'
 ```
+
+

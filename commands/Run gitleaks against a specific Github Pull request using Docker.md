@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:33:56.272566+00:00'
 ```bash
 docker run --rm --name=gitleaks -e GITHUB_TOKEN={your token} zricethezav/gitleaks --github-pr=https://github.com/owner/repo/pull/9000
 ```
+
+

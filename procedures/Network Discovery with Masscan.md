@@ -27,11 +27,15 @@ Network Discovery with Masscan is a reconnaissance technique that allows an atta
 
 Network Discovery with Masscan is a reconnaissance technique that allows an attacker to scan a network for open ports and services. Masscan is a high-speed tool that can scan large networks in a short amount of time. Once the attacker has identified open ports and services, they can use this information to identify potential vulnerabilities and plan their attack. From a technical perspective, Masscan sends packets to the target network and listens for responses. The tool can scan a range of IP addresses and ports simultaneously. The business value of this procedure is that it allows an attacker to gain a better understanding of the target network and identify potential entry points for a successful attack.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Masscan tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ Network Discovery with Masscan is a reconnaissance technique that allows an atta
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify open ports and services on the target network
@@ -48,6 +54,8 @@ Network Discovery with Masscan is a reconnaissance technique that allows an atta
 1. Identify potential vulnerabilities on the target network
 
 1. Plan an attack based on the information gathered
+
+ 
 
 # Instructions
 
@@ -66,7 +74,13 @@ The command takes in the following arguments:
 
 Note that sudo privileges are required to run this command.
 
+ 
+
+
+
 **Code**: [[masscan -iL ips-online.txt --rate 10000 -p1-65535 ]]
+
+
 
 > This command is useful for identifying machines on a network and their open ports. It can help identify potential vulnerabilities and services that are running on the machines. The command can be used by security professionals and network administrators to perform regular network scans and identify potential security risks.
 
@@ -84,3 +98,5 @@ Note that sudo privileges are required to run this command.
 
 - [[Masscan]]
 - [[Network Discovery]]
+
+

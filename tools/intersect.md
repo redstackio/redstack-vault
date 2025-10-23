@@ -17,12 +17,32 @@ Intersect 2.5 is the second major release in the project line. This release is m
 
 Intersect 2.5 is the second major release in the project line. This release is much different from the previous,
 
+
+
 in that it gives the user complete control over which features the Intersect script includes and lets them easily
+
+
 
 import their own features, among other new functionality. This release focuses mainly on the individual modules(features) and the capability to generate your own customized
 
+
+
 Intersect scripts. By using the Create.py application, the user is guided through a menu-driven process which allows
+
+
 
 them to select which modules they would like to include, import their own custom modules and ultimately create an
 
+
+
 Intersect script that is built around the specific modules they choose.
+
+
+
+
+
+
+
+
+
+

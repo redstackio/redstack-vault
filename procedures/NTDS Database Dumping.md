@@ -31,6 +31,8 @@ From a technical perspective, the NTDS database is a binary file that is stored 
 
 The business value of this procedure is that it allows attackers to obtain valuable credentials that can be used to move laterally within the network and gain access to sensitive data and systems.
 
+ 
+
 ## Requirements
 
 1. Domain administrator privileges
@@ -38,6 +40,8 @@ The business value of this procedure is that it allows attackers to obtain valua
 1. Access to the domain controller
 
 1. Tools such as Mimikatz or similar password dumping tools
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The business value of this procedure is that it allows attackers to obtain valua
 
 1. Monitor for suspicious activity, such as unusual file access or unusual network traffic
 
+ 
+
 ## Objectives
 
 1. Extract password hashes from the NTDS database
@@ -55,11 +61,19 @@ The business value of this procedure is that it allows attackers to obtain valua
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. To get the current location of the NTDS database file, run the following command:
 
+ 
+
+
+
 **Code**: [[reg query HKLM\SYSTEM\CurrentControlSet\Services\N]]
+
+
 
 > This command queries the registry for the current location of the NTDS database file. The location is stored in the 'DSA Database file' value under the 'HKLM\SYSTEM\CurrentControlSet\Services\NTDS\Parameters' key.
 
@@ -77,3 +91,5 @@ The business value of this procedure is that it allows attackers to obtain valua
 
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
+
+

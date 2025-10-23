@@ -36,11 +36,15 @@ Technical Explanation: Hekatomb uses the DPAPIck library to extract DPAPI hashes
 
 Business Value: This technique can be used by attackers to gain access to sensitive information, such as financial data or intellectual property, and to escalate privileges on a target network.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system with DPAPI hashes
 
 1. Hekatomb tool
+
+ 
 
 ## Defense
 
@@ -50,20 +54,32 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Disable or restrict access to tools that can be used to extract DPAPI hashes
 
+ 
+
 ## Objectives
 
 1. Steal all credentials on a target domain
 
 1. Escalate privileges on a target network
 
+ 
+
 # Instructions
 
 1. To extract the NTLM hash of the specified domain user, first install the Hekatomb tool using pip3. Then, run the command 'hekatomb -hashes :<hash type> <domain>/<username>@<ip address> -debug -dnstcp', replacing the hash type, domain, username, and IP address with the appropriate values. The tool will perform a DNS request to the specified IP address to extract the hash.
 
+ 
+
+
+
 **Code**: [[pip3 install hekatomb
 hekatomb -hashes :ed0052e5a6]]
 
+
+
 > The '-hashes' option specifies the type of hash to extract. The ':ed' prefix indicates an NTLM hash. The '<domain>/<username>@<ip address>' argument specifies the domain, username, and IP address of the user whose hash is being extracted. The '-debug' option enables verbose output, while the '-dnstcp' option forces the tool to use TCP instead of UDP for the DNS request.
+
+
 
 **Command** ([[Install Hekatomb and Perform Hashes]]):
 
@@ -71,6 +87,8 @@ hekatomb -hashes :ed0052e5a6]]
 pip3 install hekatomb
 hekatomb -hashes :ed0052e5a66b1c8e942cc9481a50d56 DOMAIN.local/administrator@10.0.0.1 -debug -dnstcp
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ hekatomb -hashes :ed0052e5a66b1c8e942cc9481a50d56 DOMAIN.local/administrator@10.
 - [[Data Protection API]]
 - [[Hekatomb - Steal all credentials on domain]]
 - [[Windows - DPAPI]]
+
+

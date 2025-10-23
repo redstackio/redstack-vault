@@ -27,11 +27,25 @@ Pwdump7 is a password dumping utility for Windows. The main difference between P
 
 Pwdump7 is a password dumping utility for Windows. The main difference between PwDump7 and other Windows password extraction tools is that PwDump7 runs by extracting the binary SAM and SYSTEM files from the filesystem and then the hashes are extracted. For that task Rkdetector NTFS and FAT32 filesystem drivers are used.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_b22038c2-b5b3-4b3a-ad8d-cf423feab193}}
+
+
 
 # Installation
 
 Download and extract the program to the target: [https://www.tarasco.org/security/pwdump_7/pwdump7.zip](https://www.tarasco.org/security/pwdump_7/pwdump7.zip)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ Download and extract the program to the target: [https://www.tarasco.org/securit
 - [[administrator]]
 - [[Cryptography]]
 - [[NTLM]]
+
+

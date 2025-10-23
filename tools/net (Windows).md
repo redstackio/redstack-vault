@@ -27,11 +27,25 @@ net is a simple tool used to configure a computer's policy settings, including a
 
 net is a simple tool used to configure a computer's policy settings, including account policies, password policies, shares, etc.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_d06f9987-4b1b-436c-a36c-ec11beaa29b9}}
+
+
 
 # Installation
 
 Net is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +58,5 @@ Net is installed with all modern Windows releases
 ## Tags
 
 - [[configure]]
+
+

@@ -35,3 +35,5 @@ PS C:\Tools> Copy-Item C:\Users\Username\.evilginx\crt\private.key C:\Users\User
 : lures create o365
 : lures get-url 0
 ```
+
+

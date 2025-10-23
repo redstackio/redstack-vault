@@ -16,3 +16,9 @@ Python script to gather gmail artifacts from a pd process memory dump. It’ll f
 ## Description
 
 Python script to gather gmail artifacts from a pd process memory dump. It’ll find what it can out of the memory image including contacts, emails, last acccess times, IP addresses etc.pdgmail Homepage | Kali pdgmail Repo
+
+
+
+
+
+

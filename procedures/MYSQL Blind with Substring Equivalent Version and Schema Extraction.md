@@ -28,6 +28,8 @@ Technical Explanation: MYSQL Blind with Substring Equivalent is a technique that
 
 Business Value: This technique can be used to gain access to sensitive information such as usernames and passwords. Attackers can use this information to gain access to other systems and networks that use the same credentials. This technique can also be used to gather information about the target's infrastructure, which can be used for future attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target's MYSQL database
@@ -35,6 +37,8 @@ Business Value: This technique can be used to gain access to sensitive informati
 1. Knowledge of MYSQL Blind with Substring Equivalent technique
 
 1. Ability to inject malicious code into a MYSQL query
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Business Value: This technique can be used to gain access to sensitive informati
 
 1. Monitor MYSQL logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract the version and schema of the MYSQL database
@@ -52,12 +58,20 @@ Business Value: This technique can be used to gain access to sensitive informati
 
 1. Gather information about the target's infrastructure
 
+ 
+
 # Instructions
 
 1. This command is used to extract the version and schema of a MySQL database. It uses various SQL injection techniques to extract the information.
 
+ 
+
+
+
 **Code**: [[?id=1 and substring(version(),1,1)=5
 ?id=1 and rig]]
+
+
 
 > The 'version()' function returns the version of the MySQL database. The 'substring()' function is used to extract the first character of the version number. The 'right()' and 'left()' functions are used to extract the first and second characters of the version number respectively. The 'ascii()' function is used to convert the first character of the version number to its ASCII value. The 'mid()' function is used to extract the first character of the version number. The 'SELECT' statement is used to retrieve information from the 'information_schema' database. The 'SUBSTR()' function is used to extract the first character of the table and column names. The '>' operator is used to compare the ASCII value of the first character of the table and column names with the ASCII value of 'A'.
 
@@ -66,3 +80,5 @@ Business Value: This technique can be used to gain access to sensitive informati
 - [[MYSQL Blind]]
 - [[MYSQL Blind with substring equivalent]]
 - [[MYSQL Injection]]
+
+

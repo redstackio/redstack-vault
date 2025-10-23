@@ -38,11 +38,15 @@ Technical Explanation: The window.cookieStore.get() method is used to retrieve c
 
 Business Value: This attack can have severe consequences for businesses, as it can lead to the theft of sensitive information and the compromise of user accounts. By using this technique, attackers can gain access to internal systems and steal intellectual property or financial information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website
 
 1. Knowledge of the window.cookieStore.get() method
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: This attack can have severe consequences for businesses, as it c
 1. Use HttpOnly and Secure flags to protect cookies
 
 1. Regularly update and patch web applications to prevent vulnerabilities
+
+ 
 
 ## Objectives
 
@@ -62,17 +68,25 @@ Business Value: This attack can have severe consequences for businesses, as it c
 
 1. Escalate privileges once access has been gained
 
+ 
+
 # Instructions
 
 1. To access a specific cookie using window.cookieStore.get() method, replace 'COOKIE NAME' with the name of the cookie you want to access. The method returns a Promise which resolves to the cookie value. You can then use the value as per your requirements.
 
+ 
+
 The 'window.cookieStore.get()' method is used to retrieve the value of a specific cookie. The method takes the name of the cookie as an argument and returns a Promise which resolves to the cookie value. The 'then()' method is used to handle the resolved Promise and the cookie value is passed as an argument to the callback function. In this case, the value is displayed using the 'alert()' method. You can replace the 'alert()' method with any other method to use the cookie value as per your requirements. This method can be used on Chrome, Edge, and Opera browsers.
+
+
 
 **Command** ([[Get Cookie Value]]):
 
 ```bash
 window.cookieStore.get('COOKIE NAME').then((cookieValue)=>{alert(cookieValue.value);});
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -96,3 +110,5 @@ window.cookieStore.get('COOKIE NAME').then((cookieValue)=>{alert(cookieValue.val
 - [[Bypass document.cookie blacklist]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

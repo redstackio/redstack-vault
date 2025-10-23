@@ -40,3 +40,5 @@ root@kali:~# smbmap -u bob -p secretpass -H 10.10.10.10
         msfadmin                                                READ ONLY
 
 ```
+
+

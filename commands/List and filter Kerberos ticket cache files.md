@@ -11,6 +11,7 @@ data: '$ ls /tmp/ | grep krb5cc
 
   krb5cc_1569901115
 
+
   '
 output: null
 created_at: '2023-04-06T03:56:08.525014+00:00'
@@ -25,4 +26,7 @@ krb5cc_1000
 krb5cc_1569901113
 krb5cc_1569901115
 
+
 ```
+
+

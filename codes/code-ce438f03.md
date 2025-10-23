@@ -42,3 +42,5 @@ Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-A
 # Get all custom role definitions
 Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False} | select DisplayName
 ```
+
+

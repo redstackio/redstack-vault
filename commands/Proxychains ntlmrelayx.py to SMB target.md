@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:24.947953+00:00'
 ```bash
 proxychains python3 /usr/local/bin/ntlmrelayx.py -t smb://<IP_TARGET>
 ```
+
+

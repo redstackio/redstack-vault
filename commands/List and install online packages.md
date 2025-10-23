@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:37:23.969433+00:00'
 wsl --list --online
 wsl --install -d kali-linux
 ```
+
+

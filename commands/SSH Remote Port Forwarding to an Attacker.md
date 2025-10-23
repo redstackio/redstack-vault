@@ -20,3 +20,5 @@ ssh -f -N -R $_REMOTE_PORT:$_REMOTE_IP:$_LOCAL_PORT $_USER@$_TARGET_IP
 ```
 root@kali:~# ssh -f -N -R 4444:127.0.0.1:4444 root@10.10.10.10
 ```
+
+

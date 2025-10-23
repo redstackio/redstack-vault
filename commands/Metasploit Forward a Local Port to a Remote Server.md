@@ -23,3 +23,5 @@ portfwd add -l $_LOCAL_PORT -p $_REMOTE_PORT -r $_TARGET_IP
 meterpreter > portfwd add -l 5985 -p 5985 -r 10.10.1.5
 [*] Local TCP relay created: :5985 <-> 10.10.1.5:5985
 ```
+
+

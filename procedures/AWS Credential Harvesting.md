@@ -31,11 +31,15 @@ Technical Explanation: This technique involves retrieving AWS security credentia
 
 Business Value: This technique can be used by attackers to gain access to sensitive data, launch further attacks, and potentially cause significant damage to the target's business. By stealing AWS access keys and secret keys, the attacker can bypass security controls and gain access to resources that they would not normally have access to.
 
+ 
+
 ## Requirements
 
 1. Access to the target's AWS environment
 
 1. Knowledge of AWS CLI or SDKs
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Regularly rotate AWS access keys and secret keys
 
+ 
+
 ## Objectives
 
 1. Steal AWS access keys and secret keys
@@ -53,17 +59,25 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Access sensitive resources within the AWS environment
 
+ 
+
 # Instructions
 
 1. To retrieve the security credentials for an AWS IAM Role, use the following command:
 
+ 
+
 This command uses the cURL tool to query the AWS metadata service for the security credentials associated with an IAM Role. The 'ROLE_OF_PREVIOUS_COMMAND' argument should be replaced with the name of the IAM Role for which you want to retrieve the security credentials. The output of this command will be a JSON document containing the access key, secret access key, and security token for the specified IAM Role.
+
+
 
 **Command** ([[Retrieve IAM Security Credentials]]):
 
 ```bash
 curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_OF_PREVIOUS_COMMAND
 ```
+
+
 
 ## Commands Used
 
@@ -75,3 +89,5 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_OF_PR
 - [[Cloud - AWS]]
 - [[Credential Access]]
 - [[Exploitation]]
+
+

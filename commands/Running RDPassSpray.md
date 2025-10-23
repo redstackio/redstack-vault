@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:55.680618+00:00'
 ```bash
 python3 RDPassSpray.py -u [USERNAME] -p [PASSWORD] -d [DOMAIN] -t [TARGET IP]
 ```
+
+

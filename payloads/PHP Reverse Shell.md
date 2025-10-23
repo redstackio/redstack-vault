@@ -21,10 +21,48 @@ Generate a PHP script reverse shell payload with MSFVenom.
 
 Creating a Meterpreter listener with a one liner.
 
+
+
 ## Payload
+
+
 
 **Command**: [[msfvenom Meterpreter PHP script reverse shell]]
 
+
+
+
+
 ## Listener
 
+
+
 **Command**: [[msfconsole Meterpreter PHP script listener]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

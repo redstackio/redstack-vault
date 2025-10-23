@@ -24,11 +24,15 @@ Exotic payloads can be used to bypass filters and execute malicious scripts in a
 
 Exotic payloads can be used to bypass filters and execute malicious scripts in a web application. In this case, we are using exotic payloads to bypass parenthesis for string XSS attacks. This technique can be used to inject scripts into a vulnerable web page and steal sensitive information, such as login credentials or personal data. Technical explanation: An attacker can use exotic payloads to bypass filters that are designed to prevent XSS attacks. By using a combination of characters, such as brackets and quotes, the attacker can inject malicious scripts into the web page. Business value: By exploiting XSS vulnerabilities, attackers can gain access to sensitive data and compromise the security of a web application.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of exotic payloads and XSS attacks
+
+ 
 
 ## Defense
 
@@ -38,11 +42,15 @@ Exotic payloads can be used to bypass filters and execute malicious scripts in a
 
 1. Train employees on how to identify and report suspicious activity on web applications
 
+ 
+
 ## Objectives
 
 1. Inject malicious scripts into a vulnerable web page
 
 1. Steal sensitive information, such as login credentials or personal data
+
+ 
 
 # Instructions
 
@@ -52,8 +60,16 @@ The 'alert' command will display a message box with the text '1'.
 
 The 'setTimeout' command will execute the 'alert(document.domain)' command after a specified amount of time has elapsed. In this case, the command will execute immediately because the time parameter is not specified.
 
+
+
+ 
+
+
+
 **Code**: [[alert`1`
 setTimeout`alert\u0028document.domain\u00]]
+
+
 
 > The 'alert' command is used to display a message box with a specified message.
 
@@ -66,3 +82,5 @@ In this case, the 'alert(document.domain)' command will display a message box wi
 - [[Bypass parenthesis for string]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

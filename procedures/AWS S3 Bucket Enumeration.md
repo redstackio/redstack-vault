@@ -30,9 +30,13 @@ AWS S3 Bucket Enumeration is a technique used to discover information about the 
 
 To perform this technique, the attacker uses the 'List S3 Buckets' command to obtain a list of all the buckets in the AWS account. The attacker can then use this information to identify buckets that may contain sensitive data.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list S3 buckets
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ To perform this technique, the attacker uses the 'List S3 Buckets' command to ob
 
 1. Implement strong authentication and access control measures for S3 buckets
 
+ 
+
 ## Objectives
 
 1. Identify all S3 buckets in an AWS account
@@ -50,9 +56,13 @@ To perform this technique, the attacker uses the 'List S3 Buckets' command to ob
 
 1. Identify buckets that may contain sensitive data
 
+ 
+
 # Instructions
 
 1. The 'list-buckets' command is used to retrieve a list of all S3 buckets in your AWS account.
+
+ 
 
 This command does not require any arguments. It will simply return a JSON object with the details of each bucket, such as the name, creation date, and region. Note that this command requires the 's3:ListAllMyBuckets' permission to be granted to the user or role executing the command.
 
@@ -71,3 +81,5 @@ This command does not require any arguments. It will simply return a JSON object
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing all buckets in aws account]]
+
+

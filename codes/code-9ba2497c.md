@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:18.453636+00:00'
 ```php
 "SELECT * FROM admin WHERE pass = '".md5($password,true)."'"
 ```
+
+

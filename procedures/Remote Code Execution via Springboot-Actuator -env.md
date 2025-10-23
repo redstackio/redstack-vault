@@ -36,9 +36,13 @@ Technical Description: An attacker can craft a malicious YAML file that contains
 
 Business Value: An attacker can use this vulnerability to gain complete control of the target system, allowing them to steal sensitive data, install malware, or use the system as a jumping-off point for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the Springboot-Actuator endpoint
+
+ 
 
 ## Defense
 
@@ -48,15 +52,25 @@ Business Value: An attacker can use this vulnerability to gain complete control 
 
 1. Regularly update the SnakeYAML library to the latest version to patch any known vulnerabilities.
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
+
+ 
 
 # Instructions
 
 1. Execute the following commands:
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/artsploit/yaml-payloa]]
+
+
 
 > 
 - `git clone https://github.com/artsploit/yaml-payload.git`: Clone the yaml-payload repository from GitHub.
@@ -64,11 +78,17 @@ Business Value: An attacker can use this vulnerability to gain complete control 
 - `javac src/artsploit/AwesomeScriptEngineFactory.java`: Compile the AwesomeScriptEngineFactory.java class.
 - `jar -cvf yaml-payload.jar -C src/ .`: Create a JAR file containing the compiled class.
 
+
+
 **Command** ([[Clone yaml-payload repository]]):
 
 ```bash
 git clone https://github.com/artsploit/yaml-payload.git
 ```
+
+
+
+
 
 **Command** ([[Change directory to yaml-payload]]):
 
@@ -76,17 +96,27 @@ git clone https://github.com/artsploit/yaml-payload.git
 cd yaml-payload
 ```
 
+
+
+
+
 **Command** ([[Compile AwesomeScriptEngineFactory.java]]):
 
 ```bash
 javac src/artsploit/AwesomeScriptEngineFactory.java
 ```
 
+
+
+
+
 **Command** ([[Create jar file]]):
 
 ```bash
 jar -cvf yaml-payload.jar -C src/ .
 ```
+
+
 
 ## Commands Used
 
@@ -101,3 +131,5 @@ jar -cvf yaml-payload.jar -C src/ .
 - [[Remote Code Execution via `/env`]]
 - [[Springboot-Actuator]]
 - [[Steps]]
+
+

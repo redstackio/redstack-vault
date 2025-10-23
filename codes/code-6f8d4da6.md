@@ -20,3 +20,5 @@ gpresult /r
 $Env:LOGONSERVER 
 echo %LOGONSERVER%
 ```
+
+

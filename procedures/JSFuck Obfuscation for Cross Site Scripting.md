@@ -32,11 +32,15 @@ From a technical perspective, JSFuck works by using a limited set of characters 
 
 From a business perspective, this technique can be used by attackers to steal sensitive information, such as login credentials or personal data, from users of a vulnerable website. By injecting malicious JavaScript code into the website, the attacker can execute arbitrary code in the context of the victim's browser, giving them access to any data that the victim has access to.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web page with a Cross Site Scripting vulnerability
 
 1. Knowledge of JavaScript and JSFuck obfuscation techniques
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Regularly scan web applications for vulnerabilities and apply patches as needed
 
+ 
+
 ## Objectives
 
 1. Inject malicious JavaScript code into a vulnerable web page
@@ -54,11 +60,19 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Steal sensitive information from users of the vulnerable website
 
+ 
+
 # Instructions
 
 1. Copy and paste the jsfuck code into the browser console and execute it to bypass any JavaScript filters
 
+ 
+
+
+
 **Code**: [[[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+]]
+
+
 
 > JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript. It uses only six different characters to write and execute code. This technique can be used to bypass JavaScript filters that are in place to protect against malicious code.
 
@@ -77,3 +91,5 @@ From a business perspective, this technique can be used by attackers to steal se
 - [[Bypass using jsfuck]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

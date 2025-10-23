@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:11.077852+00:00'
 ```bash
 $ dig www.example.com +noall +answer
 ```
+
+

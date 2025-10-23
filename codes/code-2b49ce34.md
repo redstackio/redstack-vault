@@ -16,6 +16,8 @@ proc Stealth() =
   discard AllocConsole()
   Stealth = FindWindowA("ConsoleWindowClass", nil);
   discard ShowWindow(Stealth,0)
-
+  
 Stealth()
 ```
+
+

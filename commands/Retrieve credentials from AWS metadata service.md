@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:01.262493+00:00'
 ```bash
 curl http://169.254.170.2/v2/credentials/<UUID>
 ```
+
+

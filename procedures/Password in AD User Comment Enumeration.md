@@ -38,11 +38,15 @@ Password in AD User Comment Enumeration is a technique used to extract passwords
 
 Password in AD User Comment Enumeration is a technique used to extract passwords that are saved in the description field of an Active Directory user account. This technique can be used to gain access to a domain user's password, which can then be used to escalate privileges and move laterally within the network. The technique involves extracting the password from the user comment field using various commands and tools such as LDAP User Description Enumeration and Search for Patterns using Grep Command.
 
+ 
+
 ## Requirements
 
 1. Access to Active Directory
 
 1. Authentication credentials
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Password in AD User Comment Enumeration is a technique used to extract passwords
 
 1. Monitor for unusual activity in the network, such as unusual logins or privilege escalation
 
+ 
+
 ## Objectives
 
 1. Extract passwords from Active Directory user comment field
@@ -60,13 +66,23 @@ Password in AD User Comment Enumeration is a technique used to extract passwords
 
 1. Escalate privileges and move laterally within the network
 
+ 
+
 # Instructions
 
 1. To enumerate user descriptions in LDAP, use the crackmapexec tool with the 'user-desc' module. Provide the domain or IP address, username, and password as arguments. Alternatively, you can use the 'get-desc-users' module with the '--kdcHost' option to specify the KDC host. The output will show the list of users and their descriptions.
 
+ 
+
+
+
 **Code**: [[$ crackmapexec ldap domain.lab -u 'username' -p 'p]]
 
+
+
 > The 'user-desc' module of crackmapexec is used to enumerate user descriptions in LDAP. It requires the domain or IP address, username, and password as arguments. The 'get-desc-users' module can also be used with the '--kdcHost' option to specify the KDC host. The output shows the list of users and their descriptions. This information can be useful for reconnaissance and identifying potential targets for further exploitation.
+
+
 
 **Command** ([[Get User Descriptions]]):
 
@@ -75,12 +91,18 @@ $ crackmapexec ldap domain.lab -u 'username' -p 'password' -M user-desc
 
 ```
 
+
+
+
+
 **Command** ([[Get Description Users]]):
 
 ```bash
 $ crackmapexec ldap 10.0.2.11 -u 'username' -p 'password' --kdcHost 10.0.2.11 -M get-desc-users
 
 ```
+
+
 
 2. To retrieve the common fields in an AD schema, use the following commands:
 - Get-ADObject -SearchBase 'CN=Schema,CN=Configuration,DC=domain,DC=com' -Filter {name -eq 'objectClass'} -Properties MayContain, SystemMayContain
@@ -89,7 +111,13 @@ $ crackmapexec ldap 10.0.2.11 -u 'username' -p 'password' --kdcHost 10.0.2.11 -M
 
 Note: Replace 'domain' with your domain name.
 
+ 
+
+
+
 **Code**: [[UserPassword]]
+
+
 
 > The first command retrieves the objectClass attribute, which contains the list of classes that can be instantiated in the AD schema. The MayContain and SystemMayContain properties of each class contain the list of attributes that can be used with that class. 
 
@@ -97,15 +125,25 @@ The second command retrieves the attributeSchema, which contains the definition 
 
 The third command retrieves the classSchema, which contains the definition of each class in the AD schema. The LDAPDisplayName property contains the name of the class, the subClassOf property contains the name of the parent class, the auxiliaryClass property contains the list of auxiliary classes that can be used with the class, the mustContain and systemMustContain properties contain the list of attributes that must be present when an object of the class is created, the mayContain and systemMayContain properties contain the list of attributes that can be used with the class, and the description property contains a description of the class.
 
+
+
 **Command** ([[Create Password File]]):
 
 ```bash
 echo 'UserPassword' > password.txt
 ```
 
+
+
 3. To change the password of a Unix user, use the 'passwd' command followed by the username whose password you want to change.
 
+ 
+
+
+
 **Code**: [[UnixUserPassword]]
+
+
 
 > The 'passwd' command is used to change the password of a Unix user. When you run the command, you will be prompted to enter the current password for the user, followed by the new password. The password you enter will not be displayed on the screen for security purposes. If you do not have the necessary permissions to change the password of a user, you will receive an error message. The syntax of the command is as follows: 
 
@@ -114,11 +152,17 @@ passwd [username]
 Arguments:
 - username: The name of the Unix user whose password you want to change.
 
+
+
 **Command** ([[Check if user exists]]):
 
 ```bash
 grep -c '^username:' /etc/passwd
 ```
+
+
+
+
 
 **Command** ([[Change user password]]):
 
@@ -126,11 +170,21 @@ grep -c '^username:' /etc/passwd
 passwd username
 ```
 
+
+
 4. To set a Unicode password, the value must be in the form of a UTF-16 encoded string and enclosed in quotes.
+
+ 
+
+
 
 **Code**: [[unicodePwd]]
 
+
+
 > The 'unicodePwd' attribute is used to set a user's password in Active Directory using a UTF-16 encoded string. This attribute is write-only and cannot be read. To set the value of this attribute, the password must be enclosed in quotes and encoded in UTF-16. For example, the password 'MyPassword123' would be encoded as '0x4D 0x00 0x79 0x00 0x50 0x00 0x61 0x00 0x73 0x00 0x73 0x00 0x77 0x00 0x6F 0x00 0x72 0x00 0x64 0x00 0x31 0x00 0x32 0x00 0x33 0x00'.
+
+
 
 **Command** ([[Convert password to unicode]]):
 
@@ -138,9 +192,17 @@ passwd username
 unicodePwd
 ```
 
+
+
 5. This command is used to manage the password for the Microsoft Services for UNIX 3.0 (SFU) Active Directory user object. This command can be used to set, change, or delete the password for an SFU Active Directory user object.
 
+ 
+
+
+
 **Code**: [[msSFU30Password]]
+
+
 
 > The 'msSFU30Password' attribute is used to store the password for an SFU Active Directory user object. The password can be set using the '-s' option followed by the password value. The password can be changed using the '-c' option followed by the current password and the new password. The password can be deleted using the '-d' option. It is important to note that the password is stored in encrypted form and cannot be retrieved or viewed using this command.
 
@@ -152,9 +214,15 @@ unicodePwd
 
 Replace 'COMPANYDOMAIN' with the name of your domain.
 
+ 
+
+
+
 **Code**: [[enum4linux | grep -i desc
 
 Get-WmiObject -Class Wi]]
+
+
 
 > This command retrieves information about user accounts on the specified domain. For Linux, the 'enum4linux' command is used to enumerate information about users and groups on the target system, and the 'grep' command is used to filter the output to only show the 'Description' field. For Windows, the 'Get-WmiObject' command is used to query the Windows Management Instrumentation (WMI) for information about user accounts. The 'Select' command is used to choose which fields to display in the output.
 
@@ -170,7 +238,13 @@ $ grep example test.txt
 
 This will display all the lines in the file that contain the word 'example'.
 
+ 
+
+
+
 **Code**: [[grep]]
+
+
 
 > The arguments of the grep command are as follows:
 
@@ -187,11 +261,15 @@ This will display all the lines in the file that contain the word 'example'.
 - -n: This option displays the line numbers along with the matching lines.
 - -w: This option matches the pattern only as a whole word.
 
+
+
 **Command** ([[Search for a string within a file]]):
 
 ```bash
 grep 'example' file.txt
 ```
+
+
 
 8. Use the ldapdomaindump command to dump the Active Directory domain information.
 
@@ -200,17 +278,28 @@ The options used in the command are:
 -p: Specifies the password for the user account.
 -o: Specifies the output directory for the dump.
 
+
+ 
+
+
+
 **Code**: [[ldapdomaindump -u 'DOMAIN\john' -p MyP@ssW0rd 10.1]]
+
+
 
 > The ldapdomaindump command is used to dump the Active Directory domain information. This command requires authentication, so the user account and password must be specified using the -u and -p options, respectively. The -o option specifies the output directory for the dump.
 
 This command can be useful in situations where you need to gather information about the Active Directory domain, such as during a penetration testing engagement or when troubleshooting issues with domain controllers.
+
+
 
 **Command** ([[ldapdomaindump]]):
 
 ```bash
 ldapdomaindump -u 'DOMAIN\john' -p MyP@ssW0rd 10.10.10.10 -o ~/Documents/AD_DUMP/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -239,3 +328,5 @@ ldapdomaindump -u 'DOMAIN\john' -p MyP@ssW0rd 10.10.10.10 -o ~/Documents/AD_DUMP
 
 - [[Active Directory Attacks]]
 - [[Password in AD User comment]]
+
+

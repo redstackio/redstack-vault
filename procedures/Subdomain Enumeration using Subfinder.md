@@ -41,11 +41,15 @@ Technical Explanation: Subfinder is a command-line tool that uses various techni
 
 Business Value: Subdomain enumeration is an essential part of the reconnaissance phase of an attack. It helps an attacker to identify potential targets within an organization's infrastructure. By using subfinder, an attacker can gather a list of subdomains that can be used for further attacks. This information can be used to launch targeted attacks, such as phishing attacks, against specific systems or services within an organization.
 
+ 
+
 ## Requirements
 
 1. Access to the command-line interface
 
 1. Installation of Subfinder
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ Business Value: Subdomain enumeration is an essential part of the reconnaissance
 
 1. Implement DNSSEC to prevent DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Discover subdomains for a given domain
 
 1. Identify potential targets within an organization's infrastructure
+
+ 
 
 # Instructions
 
@@ -72,10 +80,18 @@ Business Value: Subdomain enumeration is an essential part of the reconnaissance
    ./Subfinder/subfinder --set-config SecurityTrailsKey='KEY'
 3. Run Subfinder to scan a domain using the command './Subfinder/subfinder -d example.com -o /tmp/results_subfinder.txt'
 
+ 
+
+
+
 **Code**: [[go get github.com/subfinder/subfinder
 ./Subfinder/]]
 
+
+
 > This command is used to configure and run Subfinder for scanning a domain. The 'go get' command is used to install Subfinder. The subsequent commands are used to configure the required API keys for different services. Finally, the last command is used to run Subfinder for scanning a domain and saving the results to a file. The '-d' option is used to specify the domain to scan and the '-o' option is used to specify the output file path. Users can replace 'example.com' with the domain they want to scan and '/tmp/results_subfinder.txt' with the desired output file path.
+
+
 
 **Command** ([[Install subfinder]]):
 
@@ -83,11 +99,19 @@ Business Value: Subdomain enumeration is an essential part of the reconnaissance
 go get github.com/subfinder/subfinder
 ```
 
+
+
+
+
 **Command** ([[Set Passivetotal credentials]]):
 
 ```bash
 ./Subfinder/subfinder --set-config PassivetotalUsername='USERNAME',PassivetotalKey='KEY'
 ```
+
+
+
+
 
 **Command** ([[Set Riddler credentials]]):
 
@@ -95,11 +119,19 @@ go get github.com/subfinder/subfinder
 ./Subfinder/subfinder --set-config RiddlerEmail="EMAIL",RiddlerPassword="PASSWORD"
 ```
 
+
+
+
+
 **Command** ([[Set Censys credentials]]):
 
 ```bash
 ./Subfinder/subfinder --set-config CensysUsername="USERNAME",CensysSecret="SECRET"
 ```
+
+
+
+
 
 **Command** ([[Set Security Trails credentials]]):
 
@@ -107,11 +139,17 @@ go get github.com/subfinder/subfinder
 ./Subfinder/subfinder --set-config SecurityTrailsKey='KEY'
 ```
 
+
+
+
+
 **Command** ([[Run subfinder]]):
 
 ```bash
 ./Subfinder/subfinder -d example.com -o /tmp/results_subfinder.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -141,3 +179,5 @@ go get github.com/subfinder/subfinder
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Subfinder]]
+
+

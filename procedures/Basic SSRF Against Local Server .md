@@ -25,15 +25,55 @@ Description Instructions 1.Navigate to access the product and click on check sto
 
 Description
 
+
+
 Instructions
+
+
 
 1.Navigate to access the product and click on check stock . Intercept the request and send it to the server.
 
+
+
+
+
+![6e94397d-577a-4f36-a965-b9871bb93349.png]()
+
+
+
+
+
 2.Replace the stockApi URI with [http://localhost/admin](http://localhost/admin)
+
+
+
+
+
+![2fe77aec-bd32-4224-9a05-c3b53af47ad9.png]()
+
+
+
+
 
 3. Observe the *admin interface* after sending the request from *repeater *tab to the server in step2.
 
+
+
+
+
+![7816f960-e286-49b8-8bad-335d95143e8e.png]()
+
+
+
 4.Change the stockApi URI to [*http://localhost/admin/delete?username=carlo](http://localhost/admin/delete?username=carlos)s* to delete the user carlos.
+
+
+
+
+
+![d58a9b7c-c326-467e-9d5f-2480f0630318.png]()
+
+
 
 ## Platforms
 
@@ -43,3 +83,5 @@ Instructions
 
 - [[SSRF]]
 - [[Web Applications]]
+
+

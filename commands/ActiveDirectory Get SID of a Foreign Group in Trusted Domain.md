@@ -6,6 +6,8 @@ executor: powershell
 data: Get-ADGroup "$_GROUP" -Server "$_REMOTE_DOMAIN_DC"
 output: 'PS C:\> Get-ADGroup "Enterprise Admins" -Server "dc-main.bank.local"
 
+
+
   RunspaceId        : 95bdcd5b-75ec-4763-ac5d-adcc32fa4a28
 
   DistinguishedName : CN=Enterprise Admins,CN=Users,DC=BANK,DC=LOCAL
@@ -38,6 +40,7 @@ Get-ADGroup "$_GROUP" -Server "$_REMOTE_DOMAIN_DC"
 ```
 PS C:\> Get-ADGroup "Enterprise Admins" -Server "dc-main.bank.local"
 
+
 RunspaceId        : 95bdcd5b-75ec-4763-ac5d-adcc32fa4a28
 DistinguishedName : CN=Enterprise Admins,CN=Users,DC=BANK,DC=LOCAL
 GroupCategory     : Security
@@ -48,3 +51,5 @@ ObjectGUID        : c55a6741-d278-467a-bc62-4ccdeea90fdc
 SamAccountName    : Enterprise Admins
 SID               : S-1-5-21-3428605742-3005092657-1212549955-519
 ```
+
+

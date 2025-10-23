@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:22.286747+00:00'
 ```bash
 $ hashcat64.exe -m 1000 -w 4 -O -a 0 -o pathtopotfile pathtohashes pathtodico -r myrules.rule --opencl-device-types 1,2
 ```
+
+

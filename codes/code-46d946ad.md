@@ -16,3 +16,5 @@ SELECT lo_import('/etc/passwd'); -- This command imports a file and creates a la
 SELECT lo_get(16420); -- This command retrieves the large object with the specified OID.
 SELECT * from pg_largeobject; -- This command retrieves all large objects and their data from the pg_largeobject system table.
 ```
+
+

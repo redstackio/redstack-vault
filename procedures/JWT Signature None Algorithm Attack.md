@@ -28,6 +28,8 @@ The JSON Web Token (JWT) is a widely used method for representing claims securel
 
 The JSON Web Token (JWT) is a widely used method for representing claims securely between two parties. The signature of a JWT token is used to verify the authenticity of the token. The None algorithm is a reserved value indicating that no digital signature or MAC value is applied to the JWT. An attacker can exploit this vulnerability by tampering with the header of the JWT and changing the algorithm to 'none', which will allow them to bypass the signature verification process and gain unauthorized access to the application or system. The business impact of this attack can be severe as it can result in the compromise of sensitive data and systems.
 
+ 
+
 ## Requirements
 
 1. Access to the JWT token
@@ -35,6 +37,8 @@ The JSON Web Token (JWT) is a widely used method for representing claims securel
 1. Knowledge of the vulnerability
 
 1. Tampering tools
+
+ 
 
 ## Defense
 
@@ -44,17 +48,27 @@ The JSON Web Token (JWT) is a widely used method for representing claims securel
 
 1. Monitor for any suspicious activity related to JWT tokens
 
+ 
+
 ## Objectives
 
 1. To bypass the signature verification process of a JWT token
 
 1. To gain unauthorized access to an application or system
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[None]]
+
+
 
 > 
 
@@ -73,3 +87,5 @@ The JSON Web Token (JWT) is a widely used method for representing claims securel
 - [[JWT - JSON Web Token]]
 - [[JWT Signature]]
 - [[JWT Signature - None Algorithm (CVE-2015-9235)]]
+
+

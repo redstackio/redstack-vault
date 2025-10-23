@@ -38,6 +38,8 @@ Technical Explanation: The attacker uses the Responder tool to intercept network
 
 Business Value: This attack can be used to gain access to sensitive information such as user credentials or to execute code on a target system. This can result in the attacker gaining access to sensitive data or causing damage to the target system.
 
+ 
+
 ## Requirements
 
 1. Responder tool
@@ -48,6 +50,8 @@ Business Value: This attack can be used to gain access to sensitive information 
 
 1. IPv4 enabled
 
+ 
+
 ## Defense
 
 1. Enable SMB signing to prevent relay attacks
@@ -56,11 +60,15 @@ Business Value: This attack can be used to gain access to sensitive information 
 
 1. Implement authentication mechanisms such as multi-factor authentication
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information such as user credentials
 
 1. Execute code on a target system
+
+ 
 
 # Instructions
 
@@ -70,12 +78,20 @@ Business Value: This attack can be used to gain access to sensitive information 
 3. Set the values of `SMB` and `HTTP` to `Off`.
 4. Save the changes and exit the file.
 
+ 
+
+
+
 **Code**: [[[Responder Core]
 ; Servers to start
 ...
 SMB = Off ]]
 
+
+
 > This command disables the SMB and HTTP servers in Responder. The `Responder.conf` file is a configuration file for Responder, and it contains various settings that can be customized. The `SMB` and `HTTP` options determine whether the SMB and HTTP servers are started when Responder is run. By setting these options to `Off`, you can disable these servers and prevent them from being used in any attacks.
+
+
 
 **Command** ([[Disable SMB and HTTP servers in Responder Core]]):
 
@@ -87,9 +103,17 @@ SMB = Off     # Turn this off
 HTTP = Off    # Turn this off
 ```
 
+
+
 2. To use NTLM RelayX as a SOCKS proxy, run the following command: impacket-ntlmrelayx -tf /tmp/targets.txt -socks -smb2support. Once the servers have started, wait for connections and type 'socks' to see the available targets. You can select a target with '-t' and use the following protocols: smb://, mssql://, http://, https://, imap://, imaps://, ldap://, ldaps:// and smtp://. Once you have selected a target, use the 'impacket-ntlmrelayx' command with the '-socks' and '-smb2support' options. The SOCKS proxy can then be used with Impacket tools or CrackMapExec.
 
+ 
+
+
+
 **Code**: [[$ impacket-ntlmrelayx -tf /tmp/targets.txt -socks ]]
+
+
 
 > NTLM RelayX can act as a SOCKS proxy with every compromised session. This allows for further exploitation of the compromised system by using Impacket tools or CrackMapExec through the SOCKS proxy. The '-socks' and '-smb2support' options must be used when running the 'impacket-ntlmrelayx' command to enable the SOCKS proxy functionality.
 
@@ -116,3 +140,5 @@ HTTP = Off    # Turn this off
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
 - [[SMB Signing Disabled and IPv4]]
+
+

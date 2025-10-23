@@ -34,11 +34,15 @@ To list inline policies, the AWS CLI is used to query the AWS API. The AWS CLI r
 
 The business value of this procedure is that it can help identify and remediate misconfigured policies, reducing the risk of a successful attack.
 
+ 
+
 ## Requirements
 
 1. Valid AWS access keys
 
 1. Permissions to query AWS API
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure is that it can help identify and remediate 
 
 1. Regularly review and audit policies to identify and remediate misconfigurations
 
+ 
+
 ## Objectives
 
 1. Identify all inline policies associated with a particular user in AWS
@@ -56,17 +62,25 @@ The business value of this procedure is that it can help identify and remediate 
 
 1. Identify any misconfigured policies that could be exploited by an attacker
 
+ 
+
 # Instructions
 
 1. Use the 'aws iam list-user-policies' command to list all the policies attached to a specific IAM user. Replace 'example_name' with the actual name of the user.
 
+ 
+
 This command lists all the policies that are attached to a specific IAM user. This can be useful in determining the level of access that a user has within the AWS environment. The policies listed will include both managed and inline policies.
+
+
 
 **Command** ([[List user policies for IAM user]]):
 
 ```bash
 aws iam list-user-policies --user-name example_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam list-user-policies --user-name example_name
 - [[5. Exploitation Scenario]]
 - [[Cloud - AWS]]
 - [[Listing inline policies of our user]]
+
+

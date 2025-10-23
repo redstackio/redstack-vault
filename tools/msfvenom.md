@@ -25,13 +25,29 @@ MSFVenom is a payload generation tool, and part of the Metasploit framework. It 
 
 MSFVenom is a payload generation tool, and part of the Metasploit framework. It allows users to create various payloads for deployment on targets, including command execution, reverse shells, etc, along with the ability to encode, encrypt, and output payloads in various formats such as raw bytes, PowerShell scripts, C, Perl, etc. While MSFVenom includes a number of Metasploit specific payloads, it includes countless generic payloads, including shells that can be accessed with a simple netcat session. 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_8dd58733-1c07-4ca7-88aa-994a9b3ed2a7}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
 MSFVenom is installed alongside the Metasploit Framework, which can be installed with:
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ MSFVenom is installed alongside the Metasploit Framework, which can be installed
 ## Tags
 
 - [[Payload]]
+
+

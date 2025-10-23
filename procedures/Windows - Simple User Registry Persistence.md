@@ -40,11 +40,15 @@ From a technical perspective, this technique involves adding a registry key to t
 
 From a business perspective, this technique can be used by attackers to maintain access to a compromised system and exfiltrate sensitive data. It can also be used to install additional malware or backdoors on the compromised system, which can be used for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the system as a simple user
 
 1. Ability to modify the registry
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ From a business perspective, this technique can be used by attackers to maintain
 1. Regularly monitor the system for any changes to the registry
 
 1. Use endpoint protection software to detect and block any malicious activity
+
+ 
 
 ## Objectives
 
@@ -64,6 +70,8 @@ From a business perspective, this technique can be used by attackers to maintain
 
 1. Exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. To create a backdoor registry value in Windows, follow these steps:
@@ -74,10 +82,18 @@ From a business perspective, this technique can be used by attackers to maintain
 5. Enter 'C:\Users\Rasta\AppData\Local\Temp\backdoor.exe' as the data for the value.
 6. Close the Registry Editor.
 
+ 
+
+
+
 **Code**: [[Value name: Backdoor
 Value data: C:\Users\Rasta\Ap]]
 
+
+
 > This command creates a new registry value called 'Backdoor' in the Run key within HKCU\Software\Microsoft\Windows. The value data is set to 'C:\Users\Rasta\AppData\Local\Temp\backdoor.exe', which is the location of the backdoor executable file. When the user logs in, the backdoor executable will be automatically executed.
+
+
 
 **Command** ([[Backdoor Installation]]):
 
@@ -85,11 +101,21 @@ Value data: C:\Users\Rasta\Ap]]
 C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
 ```
 
+
+
 2. To add a backdoor to the Windows startup using the registry, run the following commands:
+
+ 
+
+
 
 **Code**: [[reg add "HKEY_CURRENT_USER\Software\Microsoft\Wind]]
 
+
+
 > This command adds a registry key to the Windows startup locations, which will execute the specified file every time the computer starts. The command adds the registry key to four different startup locations to ensure that the backdoor is executed even if one of the locations is disabled or deleted. The /v flag specifies the name of the registry value, /t specifies the type of the registry value, and /d specifies the data of the registry value. In this case, the name of the registry value is 'Evil', the type is 'REG_SZ', and the data is the path to the backdoor executable file.
+
+
 
 **Command** ([[Add registry keys for backdoor persistence]]):
 
@@ -100,11 +126,21 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce" /v Evil /t REG_SZ /d "C:\Users\user\backdoor.exe"
 ```
 
+
+
 3. The SharPersist command is used to add persistence to a system via registry keys. The -t flag specifies the type of persistence to be added, in this case, registry. The -c flag specifies the command to be executed, in this case, cmd.exe. The -a flag specifies the arguments to be passed to the command, in this case, /c calc.exe. The -k flag specifies the registry key to be used for persistence, in this case, hkcurun and logonscript. The -v flag specifies the value name to be used for persistence, in this case, Test Stuff. The -m flag specifies the mode of persistence, in this case, add. The -o flag specifies the options for persistence, in this case, env.
+
+ 
+
+
 
 **Code**: [[SharPersist -t reg -c "C:\Windows\System32\cmd.exe]]
 
+
+
 > This command is used to add persistence to a system by creating registry keys. The registry keys are created under the specified hive and key path, and the specified command is executed with the specified arguments every time the system starts up or the user logs in. The -t flag specifies the type of persistence to be added, which can be either registry or scheduled task. The -c flag specifies the command to be executed, which can be any valid command or script. The -a flag specifies the arguments to be passed to the command. The -k flag specifies the registry key to be used for persistence. The -v flag specifies the value name to be used for persistence. The -m flag specifies the mode of persistence, which can be either add or remove. The -o flag specifies the options for persistence, which can be env for user environment variables or sys for system environment variables.
+
+
 
 **Command** ([[Add registry key and value for persisting cmd.exe with calc.exe on current user run]]):
 
@@ -112,17 +148,27 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices
 SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k "hkcurun" -v "Test Stuff" -m add
 ```
 
+
+
+
+
 **Command** ([[Add registry key and value for persisting cmd.exe with calc.exe on current user run and output environment variables]]):
 
 ```bash
 SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k "hkcurun" -v "Test Stuff" -m add -o env
 ```
 
+
+
+
+
 **Command** ([[Add registry key and value for persisting cmd.exe with calc.exe on logon script]]):
 
 ```bash
 SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k "logonscript" -m add
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -147,3 +193,5 @@ SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k "logonsc
 - [[Registry HKCU]]
 - [[Simple User]]
 - [[Windows - Persistence]]
+
+

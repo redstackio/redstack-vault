@@ -32,11 +32,15 @@ Command Injection is a technique used by attackers to execute arbitrary commands
 
 Command Injection is a technique used by attackers to execute arbitrary commands on a targeted system. Filter Bypasses are a way to bypass security measures put in place to prevent Command Injection attacks. One such way of bypassing filters is by using the backslash newline technique. This technique involves breaking up the command into multiple parts using the backslash followed by a newline character. This can help bypass filters that look for specific keywords or characters. A successful Command Injection attack can result in the attacker gaining unauthorized access to sensitive data, modifying or deleting data, or even taking control of the entire system. It is important to implement measures to prevent Command Injection attacks, including filter validation, input sanitization, and command whitelisting.
 
+ 
+
 ## Requirements
 
 1. Access to a system with a vulnerable application
 
 1. Knowledge of the application and its vulnerabilities
+
+ 
 
 ## Defense
 
@@ -46,22 +50,34 @@ Command Injection is a technique used by attackers to execute arbitrary commands
 
 1. Implement command whitelisting to restrict the use of certain commands
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on a targeted system
 
 1. Bypass security measures put in place to prevent Command Injection attacks
 
+ 
+
 # Instructions
 
 1. To view the /etc/passwd file using the backslash newline technique, enter the following command:
+
+ 
+
+
 
 **Code**: [[❯ cat /et\
 c/pa\
 sswd
 root:x:0:0:root:/root:/usr/b]]
 
+
+
 > The backslash followed by a newline character breaks up the command into multiple parts, which can help bypass filters that look for specific keywords or characters. In this example, the command 'cat /etc/passwd' has been broken up into 'cat /et\n' and 'c/pa\nsswd'. When executed, the command will display the contents of the /etc/passwd file.
+
+
 
 **Command** ([[Display contents of /etc/passwd file]]):
 
@@ -69,9 +85,17 @@ root:x:0:0:root:/root:/usr/b]]
 cat /etc/passwd
 ```
 
+
+
 2. To view the /etc/passwd file using the backslash newline technique in URL encoded form, enter the following command:
 
+ 
+
+
+
 **Code**: [[cat%20/et%5C%0Ac/pa%5C%0Asswd]]
+
+
 
 > URL encoding is a way to represent special characters using only ASCII characters. In this example, the command 'cat /etc/passwd' has been URL encoded as 'cat%20/et%5C%0Ac/pa%5C%0Asswd'. The '%5C%0A' represents the backslash newline character. When executed, the command will display the contents of the /etc/passwd file.
 
@@ -98,3 +122,5 @@ cat /etc/passwd
 - [[Bypass with backslash newline]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

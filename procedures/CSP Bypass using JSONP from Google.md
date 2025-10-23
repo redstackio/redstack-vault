@@ -28,11 +28,15 @@ From a technical perspective, JSONP (JSON with Padding) is a technique for loadi
 
 The business value of this technique is that it allows an attacker to bypass CSP protections and perform XSS attacks, which can lead to data theft, unauthorized access, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a website with a vulnerable CSP configuration
 
 1. Ability to send a JSONP request to a Google API
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ The business value of this technique is that it allows an attacker to bypass CSP
 
 1. Regularly review and update the CSP configuration to ensure that it is effective against new attack techniques
 
+ 
+
 ## Objectives
 
 1. Bypass Content Security Policy (CSP) protections
@@ -50,11 +56,19 @@ The business value of this technique is that it allows an attacker to bypass CSP
 
 1. Perform Cross-Site Scripting (XSS) attacks
 
+ 
+
 # Instructions
 
 1. To execute this command, simply copy and paste the provided data into the browser console and press enter.
 
+ 
+
+
+
 **Code**: [[<script/src=//google.com/complete/search?client=ch]]
+
+
 
 > This command is used to check the Content Security Policy (CSP) of a website using Google's CSP Evaluator tool. The provided data is a script that can be used to test if the website's CSP is properly configured to prevent cross-site scripting (XSS) attacks. The command also provides a link to a blog post that explains how to use the tool to bypass CSP in case the website has not properly implemented it. The language of the script is JavaScript and it should be executed in the browser console. Please note that this command should only be used for testing purposes on websites that you have permission to test.
 
@@ -63,3 +77,5 @@ The business value of this technique is that it allows an attacker to bypass CSP
 - [[Bypass CSP using JSONP from Google (Trick by [@apfeifer27](https://twitter.com/apfeifer27))]]
 - [[Cross Site Scripting]]
 - [[CSP Bypass]]
+
+

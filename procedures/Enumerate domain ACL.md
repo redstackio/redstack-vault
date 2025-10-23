@@ -23,15 +23,23 @@ Identify if a group has ACL that can be useful or taken advantage of.
 
 Identify if a group has ACL that can be useful or taken advantage of.
 
+
+
 ## Objective
 
 1. Find if a group has ACL that can be abused
 
 2. A group that has privileged access or rights
 
+
+
 # Instructions
 
 1. Enumerate ACL for specific AD Group using PowerSploit
+
+
+
+
 
 **Command** ([[Enumerate Domain Group ACLs]]):
 
@@ -39,7 +47,15 @@ Identify if a group has ACL that can be useful or taken advantage of.
 Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.IdentityReferenceName -match $GROUP_NAME}
 ```
 
+
+
+
+
 3. If 1st command returns useful results, look up ACE from PowerView. Can be a group membership of the user group with privileges that can be leveraged.
+
+
+
+
 
 **Command** ([[Look up ACL ACE from PowerView]]):
 
@@ -48,7 +64,13 @@ Get-DomainObjectACL -Identity $GROUP_NAME2 -ResolveGUIDs | ForEach-Object {$_ | 
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[Enumerate Domain Group ACLs]]
 - [[Look up ACL ACE from PowerView]]
+
+

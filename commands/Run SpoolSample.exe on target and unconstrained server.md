@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:11.213305+00:00'
 ```bash
 .\SpoolSample.exe VICTIM-DC-NAME UNCONSTRAINED-SERVER-DC-NAME
 ```
+
+

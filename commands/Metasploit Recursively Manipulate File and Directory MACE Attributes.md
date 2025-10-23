@@ -23,3 +23,5 @@ timestomp $_PATH -r
 meterpreter > timestomp "C:\Users\Victim\Desktop" -r
 [*] Blanking directory MACE attributes on C:\Users\Victim\Desktop
 ```
+
+

@@ -29,21 +29,35 @@ Cisco router passwords encrypted using Type 7 are trivial to decrypt using open 
 
 Cisco router passwords encrypted using Type 7 are trivial to decrypt using open source tools, as the key is public.
 
+
+
 # Instructions
 
 1. Download the Cisco Type 7 Password Decryptor: [Download from GitHub](https://github.com/theevilbit/ciscot7)
 
 2. Identify Type 7 password. Sample:
 
+
+
 **Code**: [[username admin privilege 15 password 7 02375012182]]
 
+
+
+
+
 2. Decrypt the password
+
+
 
 **Command** ([[ciscot7.py Decrypt a Cisco Type 7 Password]]):
 
 ```bash
 python ciscot7.py -d -p $_PASSWORD
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -63,3 +77,5 @@ python ciscot7.py -d -p $_PASSWORD
 
 - [[Cryptography]]
 - [[data encryption]]
+
+

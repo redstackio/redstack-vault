@@ -17,3 +17,5 @@ curl "https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/ma
 ./lse.sh -l1 # shows interesting information that should help you to privesc
 ./lse.sh -l2 # dump all the information it gathers about the system
 ```
+
+

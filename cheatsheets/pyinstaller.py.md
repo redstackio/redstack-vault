@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # pyinstaller.py
 
+
+
 **Command** ([[generate exe from python file in windows]]):
 
 ```bash
 python pyinstaller.py --onefile <pythonscript>
 
 ```
+
+
+
+
+
+

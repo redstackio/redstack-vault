@@ -16,3 +16,7 @@ Checks expired domains, bluecoat categorization, and Archive.org history to dete
 ## Description
 
 Checks expired domains, bluecoat categorization, and Archive.org history to determine good candidates for phishing and C2 domain names. ​
+
+
+
+

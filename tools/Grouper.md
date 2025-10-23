@@ -16,3 +16,7 @@ A PowerShell script for helping to find vulnerable settings in AD Group Policy. 
 ## Description
 
 A PowerShell script for helping to find vulnerable settings in AD Group Policy. ​
+
+
+
+

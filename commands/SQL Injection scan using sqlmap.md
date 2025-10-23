@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:18.090082+00:00'
 ```bash
 sqlmap -u "http://www.target.com" --proxy="http://127.0.0.1:8080"
 ```
+
+

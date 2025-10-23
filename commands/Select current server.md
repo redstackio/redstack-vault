@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:59.042812+00:00'
 ```bash
 select current server from sysibm.sysdummy1
 ```
+
+

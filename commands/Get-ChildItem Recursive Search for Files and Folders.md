@@ -23,9 +23,13 @@ Get-ChildItem -Recurse -Filter "$_FILENAME"
 ```
 PS C:\Users> Get-ChildItem -Recurse -Filter "secrets.txt"
 
+
     Directory: C:\Users\Bob\Desktop
+
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----       11/26/2019   8:26 AM           1328 secrets.txt
 ```
+
+

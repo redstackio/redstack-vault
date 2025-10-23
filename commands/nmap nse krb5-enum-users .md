@@ -15,3 +15,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm='$DOMAIN',userdb=$USER_LIST_FILE" $IP
 ```
+
+

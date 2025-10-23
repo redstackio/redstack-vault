@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:54.027848+00:00'
 ```bash
 curl -X GET https://jsonplaceholder.typicode.com/posts/1
 ```
+
+

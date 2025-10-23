@@ -16,3 +16,7 @@ Is a tool that generates obfuscated shellcode that is stored inside of polyglot 
 ## Description
 
 Is a tool that generates obfuscated shellcode that is stored inside of polyglot images. The image is 100% valid and also 100% valid shellcode. ​
+
+
+
+

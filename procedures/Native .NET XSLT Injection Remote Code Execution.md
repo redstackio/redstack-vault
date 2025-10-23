@@ -33,6 +33,8 @@ Technical Explanation: An attacker can use XSLT Injection to modify the XSLT sty
 
 Business Value: This attack can lead to a complete compromise of the targeted system, resulting in data theft, system downtime, and loss of business reputation. By gaining remote access to the system, the attacker can also move laterally within the network, potentially compromising other systems and data.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted web application
@@ -41,6 +43,8 @@ Business Value: This attack can lead to a complete compromise of the targeted sy
 
 1. Access to Native .NET libraries
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent XSLT Injection attacks
@@ -48,6 +52,8 @@ Business Value: This attack can lead to a complete compromise of the targeted sy
 1. Implement least privilege access controls to limit the impact of a successful attack
 
 1. Regularly monitor and audit system logs for suspicious activity
+
+ 
 
 ## Objectives
 
@@ -59,11 +65,19 @@ Business Value: This attack can lead to a complete compromise of the targeted sy
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. Transforms an XML document into an HTML table using XSLT.
 
+ 
+
+
+
 **Code**: [[<xsl:stylesheet version="1.0" xmlns:xsl="http://ww]]
+
+
 
 > This command takes an XML document and applies an XSLT stylesheet to it to transform the data into an HTML table. The stylesheet is defined in the 'data' field of the JSON object. The resulting HTML table can be used to display the data in a more user-friendly format. The 'lang' field specifies the language of the data and the 'text' field can be used to provide additional information about the data being transformed. The 'instruction' field can be used to provide additional instructions on how to use this command. The 'explain' field can be used to explain the arguments of the command in detail.
 
@@ -83,3 +97,5 @@ Business Value: This attack can lead to a complete compromise of the targeted sy
 - [[Exploit]]
 - [[Remote Code Execution with Native .NET]]
 - [[XSLT Injection]]
+
+

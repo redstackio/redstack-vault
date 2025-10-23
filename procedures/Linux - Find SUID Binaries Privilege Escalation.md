@@ -33,11 +33,15 @@ To perform this procedure, the user must first identify potential SUID binaries 
 
 The business value of this procedure is that it can help identify potential weaknesses in the system and allow for proactive security measures to be taken before an attacker can exploit them.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to run commands on the target system
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ The business value of this procedure is that it can help identify potential weak
 
 1. Implement least privilege access control to limit the potential impact of SUID binary exploitation
 
+ 
+
 ## Objectives
 
 1. Identify potential SUID binaries on the target system
 
 1. Analyze the binaries to determine if they can be leveraged to escalate privileges
 
+ 
+
 # Instructions
 
 1. To find all the SUID and SGID files on a system, run this command in the terminal.
 
+ 
+
+
+
 **Code**: [[find / -perm -4000 -type f -exec ls -la {} 2>/dev/]]
+
+
 
 > This command uses the `find` utility to search for files that have the SUID or SGID bit set. The `-perm -4000` option searches for files with the SUID bit set, and the `-perm -2000` option searches for files with the SGID bit set. The `-type f` option ensures that only files are returned, and not directories. The `-exec ls -la {}` option executes the `ls -la` command on each file found, displaying detailed information about the file. The `2>/dev/null` option redirects any error messages to the null device, suppressing any error messages that may occur. The `\;` option terminates the `find` command.
 
@@ -77,3 +91,5 @@ The business value of this procedure is that it can help identify potential weak
 - [[Find SUID binaries]]
 - [[Linux - Privilege Escalation]]
 - [[SUID]]
+
+

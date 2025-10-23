@@ -28,11 +28,15 @@ Memcached is a distributed memory object caching system that is often used to sp
 
 Memcached is a distributed memory object caching system that is often used to speed up websites and web applications. However, if an attacker gains access to a Memcached server, they can use it to launch a Server-Side Request Forgery (SSRF) attack. By sending a specially crafted request to the Memcached server, the attacker can trick the server into making a request to a target server, effectively bypassing any filters that may be in place. This can allow the attacker to access sensitive information or launch further attacks against the target.
 
+ 
+
 ## Requirements
 
 1. Access to a Memcached server
 
 1. Knowledge of how to craft a specially crafted request to the Memcached server
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ Memcached is a distributed memory object caching system that is often used to sp
 
 1. Regularly monitor the server for any suspicious activity or requests
 
+ 
+
 ## Objectives
 
 1. Gain access to a Memcached server
@@ -49,6 +55,8 @@ Memcached is a distributed memory object caching system that is often used to sp
 1. Use the Memcached server to launch a Server-Side Request Forgery (SSRF) attack
 
 1. Trick the server into making a request to a target server to bypass filters and access sensitive information
+
+ 
 
 # Instructions
 
@@ -59,8 +67,14 @@ $memcached.Connect('localhost', 11211)
 
 Replace 'localhost' with the IP address or hostname of your Memcached server. Replace '11211' with the port number on which your Memcached server is running, if it is different from the default port 11211.
 
+ 
+
+
+
 **Code**: [[localhost:+11211aaa
 localhost:00011211aaaa]]
+
+
 
 > This command creates a new MemcachedClient object and connects it to the specified Memcached server. The IP address or hostname and port number of the server are passed as arguments to the Connect() method. Once the connection is established, you can use the various methods and properties of the MemcachedClient object to interact with the Memcached server.
 
@@ -79,3 +93,5 @@ localhost:00011211aaaa]]
 - [[Bypassing filters]]
 - [[Bypass using malformed urls]]
 - [[Server-Side Request Forgery]]
+
+

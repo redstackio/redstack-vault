@@ -16,3 +16,13 @@ The goal of Xplico is extract from an internet traffic capture the applications 
 ## Description
 
 The goal of Xplico is extract from an internet traffic capture the applications data contained. For example, from a pcap file Xplico extracts each email (POP, IMAP, and SMTP protocols), all HTTP contents, each VoIP call (SIP, MGCP, H323), FTP, TFTP, and so on. Xplico is not a network protocol analyzer.
+
+
+
+
+
+
+
+
+
+

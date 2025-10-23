@@ -18,3 +18,5 @@ xhr.open("GET", "http://www.example.com/api/currentuser");
 xhr.send();
 </script>
 ```
+
+

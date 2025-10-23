@@ -44,6 +44,8 @@ From a technical perspective, the procedure works by sending DNS requests to a d
 
 The business value of this procedure is that it allows organizations to identify potential attack vectors and vulnerable assets. By identifying these assets, organizations can take steps to secure them and reduce the risk of a successful attack.
 
+ 
+
 ## Requirements
 
 1. Access to the domain being enumerated
@@ -51,6 +53,8 @@ The business value of this procedure is that it allows organizations to identify
 1. KnockPy tool installed
 
 1. EyeWitness and Nmap tools installed
+
+ 
 
 ## Defense
 
@@ -60,6 +64,8 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Implement DNSSEC to protect against DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains of a given domain
@@ -67,6 +73,8 @@ The business value of this procedure is that it allows organizations to identify
 1. Gather information about the discovered subdomains
 
 1. Identify potential attack vectors and vulnerable assets
+
+ 
 
 # Instructions
 
@@ -81,10 +89,18 @@ The business value of this procedure is that it allows organizations to identify
 
 Note: The wordlist file used in this example is subdomains-top1mil-110000.txt. You can use a different wordlist file if you prefer.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/guelfoweb/knock
 git c]]
 
+
+
 > This command is used to perform subdomain enumeration on a specified domain using the knockpy tool. The command first clones the knock and SecLists repositories to the local machine. Then, it navigates to the knock directory and runs the knockpy command with the specified domain and wordlist file as arguments. The wordlist file used in this example is subdomains-top1mil-110000.txt, which contains a list of the top 1 million subdomains. This command can be useful for reconnaissance and vulnerability assessment purposes.
+
+
 
 **Command** ([[Clone guelfoweb/knock repository]]):
 
@@ -92,17 +108,27 @@ git c]]
 git clone https://github.com/guelfoweb/knock
 ```
 
+
+
+
+
 **Command** ([[Clone danielmiessler/SecLists repository]]):
 
 ```bash
 git clone https://github.com/danielmiessler/SecLists.git
 ```
 
+
+
+
+
 **Command** ([[Run knockpy to enumerate subdomains]]):
 
 ```bash
 knockpy domain.com -w subdomains-top1mil-110000.txt
 ```
+
+
 
 2. To use EyeWitness and Nmap scans, follow the below steps:
 1. Clone the EyeWitness repository using the command: git clone https://github.com/ChrisTruncer/EyeWitness.git
@@ -113,9 +139,17 @@ knockpy domain.com -w subdomains-top1mil-110000.txt
    c. ./EyeWitness -x urls.xml -t 8 --headless
    d. ./EyeWitness -f rdp.txt --rdp
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/ChrisTruncer/EyeWitne]]
 
+
+
 > The above commands allow you to use EyeWitness and Nmap scans to gather information about your target. The 'git clone' command is used to clone the EyeWitness repository from Github. The 'setup.sh' script is used to install any required dependencies. The 'EyeWitness.py' and 'EyeWitness' commands are used to run EyeWitness with different options. The '-f' option is used to specify the input file containing target URLs or IP addresses. The '-t' option is used to specify the timeout for each request. The '--open' option is used to open the generated report in a web browser. The '--web' option is used to run EyeWitness with default options for web application scanning. The '-x' option is used to specify the input file in XML format. The '--headless' option is used to run EyeWitness in headless mode. The '--rdp' option is used to scan for RDP services.
+
+
 
 **Command** ([[Clone EyeWitness from GitHub]]):
 
@@ -123,11 +157,19 @@ knockpy domain.com -w subdomains-top1mil-110000.txt
 git clone https://github.com/ChrisTruncer/EyeWitness.git
 ```
 
+
+
+
+
 **Command** ([[Run setup script]]):
 
 ```bash
 ./setup/setup.sh
 ```
+
+
+
+
 
 **Command** ([[Run EyeWitness with filename and optional timeout]]):
 
@@ -135,11 +177,19 @@ git clone https://github.com/ChrisTruncer/EyeWitness.git
 ./EyeWitness.py -f filename -t optionaltimeout --open (Optional)
 ```
 
+
+
+
+
 **Command** ([[Run EyeWitness with urls.txt and --web option]]):
 
 ```bash
 ./EyeWitness -f urls.txt --web
 ```
+
+
+
+
 
 **Command** ([[Run EyeWitness with urls.xml, timeout of 8 seconds, and --headless option]]):
 
@@ -147,11 +197,17 @@ git clone https://github.com/ChrisTruncer/EyeWitness.git
 ./EyeWitness -x urls.xml -t 8 --headless
 ```
 
+
+
+
+
 **Command** ([[Run EyeWitness with rdp.txt and --rdp option]]):
 
 ```bash
 ./EyeWitness -f rdp.txt --rdp
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -182,3 +238,5 @@ git clone https://github.com/ChrisTruncer/EyeWitness.git
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using KnockPy with Daniel Miessler’s SecLists for subdomain "/Discover/DNS"]]
+
+

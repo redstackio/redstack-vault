@@ -32,9 +32,13 @@ Technical Explanation: This attack takes advantage of the way PHP handles type c
 
 Business Value: This attack can be used to gain unauthorized access to sensitive information or to execute unauthorized actions on a system. By bypassing authentication mechanisms, an attacker can gain access to user accounts, financial data, or other sensitive information. This can lead to data breaches, financial losses, and damage to a company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PHP application
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 1. Keep PHP up to date with the latest security patches and updates
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms
@@ -52,11 +58,19 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 1. Execute unauthorized actions on a system
 
+ 
+
 # Instructions
 
 1. The hash_hmac command is used to generate a keyed hash value using the HMAC method. The command takes two arguments: the first argument is the key to use for the HMAC hash, and the second argument is the data to be hashed. In the provided example, the key is 'admin' and the data is a timestamp. The command generates a hash value for each timestamp value provided.
 
+ 
+
+
+
 **Code**: [[hash_hmac(admin|1424869663) -> "e716865d1953e31049]]
+
+
 
 > The hash_hmac command is commonly used for message authentication and integrity checking. It is a secure way to verify that a message has not been tampered with or altered in any way. The command uses a secret key to generate a unique hash value for each message, and the receiver can verify the integrity of the message by comparing the hash value they receive to the expected hash value.
 
@@ -75,3 +89,5 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 - [[Example vulnerable code]]
 - [[PHP Juggling type and magic hashes]]
 - [[Type Juggling]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:29.239622+00:00'
 ```sql
 AND CASE WHEN [BOOLEAN_QUERY] THEN 1 ELSE load_extension(1) END
 ```
+
+

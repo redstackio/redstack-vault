@@ -35,9 +35,13 @@ Technical Explanation: The attacker crafts a URL with a question mark payload th
 
 Business Value: CSRF attacks can result in unauthorized access to user accounts, financial loss, and reputational damage to the organization. By exploiting CSRF vulnerabilities, attackers can steal sensitive information, perform unauthorized transactions, and gain access to the victim's account.
 
+ 
+
 ## Requirements
 
 1. Victim must be logged in to the trusted domain
+
+ 
 
 ## Defense
 
@@ -47,15 +51,23 @@ Business Value: CSRF attacks can result in unauthorized access to user accounts,
 
 1. Implement multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. To execute unauthorized actions on behalf of the victim
+
+ 
 
 # Instructions
 
 1. 
 
+ 
+
 The command contains a URL with a question mark payload. The victim must be logged in to the trusted domain for the attack to be successful. The attacker sends the URL to the victim, who clicks on the link. The victim's browser executes the payload, which can include parameters to perform an action on the victim's behalf. The referer header is included in the request, but the attacker can bypass this validation by using a question mark payload.
+
+
 
 **Command** ([[Open CSRF page]]):
 
@@ -63,11 +75,17 @@ The command contains a URL with a question mark payload. The victim must be logg
 Open https://attacker.com/csrf.html?trusted.domain.com
 ```
 
+
+
+
+
 **Command** ([[Set Referer header]]):
 
 ```bash
 Referer: https://attacker.com/csrf.html?trusted.domain.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ Referer: https://attacker.com/csrf.html?trusted.domain.com
 - [[Bypass referer header validation]]
 - [[Cross-Site Request Forgery]]
 - [[With question mark(`?`) payload]]
+
+

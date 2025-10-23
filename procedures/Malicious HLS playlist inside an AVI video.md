@@ -41,9 +41,13 @@ To execute this attack, the attacker needs to create a specially crafted AVI vid
 
 This procedure can be used by attackers to gain access to sensitive information, steal credentials, or deploy malware on the victim's machine.
 
+ 
+
 ## Requirements
 
 1. Victim needs to download and play the specially crafted AVI video file
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This procedure can be used by attackers to gain access to sensitive information,
 1. Use anti-virus software to detect and prevent the download and execution of malicious files
 
 1. Educate users on the dangers of downloading and playing files from untrusted sources
+
+ 
 
 ## Objectives
 
@@ -63,11 +69,17 @@ This procedure can be used by attackers to gain access to sensitive information,
 
 1. Deploy malware on the victim's machine
 
+ 
+
 # Instructions
 
 1. To execute this command, you need to follow the steps provided in the `data` field. First, run the command `./gen_xbin_avi.py file://<filename> file_read.avi` to generate a new AVI file. Next, upload the generated `file_read.avi` to a website that processes video files. The videoservice will execute the command `ffmpeg -i file_read.avi output.mp4` on the server side. Finally, click the "Play" button in the videoservice to access the contents of `<filename>` from the server.
 
+ 
+
 This command exploits a vulnerability in FFmpeg software, which allows an attacker to embed a malicious HLS playlist inside an AVI video file. When the video file is processed by a videoservice, the malicious playlist is executed on the server side, which can lead to arbitrary file read. The steps provided in the `data` field are a proof-of-concept of how this vulnerability can be exploited.
+
+
 
 **Command** ([[Convert file to AVI format]]):
 
@@ -75,11 +87,19 @@ This command exploits a vulnerability in FFmpeg software, which allows an attack
 ./gen_xbin_avi.py file://<filename> file_read.avi
 ```
 
+
+
+
+
 **Command** ([[Upload AVI file to video processing website]]):
 
 ```bash
 file_read.avi
 ```
+
+
+
+
 
 **Command** ([[Execute ffmpeg command on server side]]):
 
@@ -87,17 +107,27 @@ file_read.avi
 ffmpeg -i file_read.avi output.mp4
 ```
 
+
+
+
+
 **Command** ([[Play video]]):
 
 ```bash
 output.mp4
 ```
 
+
+
+
+
 **Command** ([[Access file contents on server]]):
 
 ```bash
 <filename>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -127,3 +157,5 @@ output.mp4
 
 - [[Exploits]]
 - [[FFmpeg HLS vulnerability]]
+
+

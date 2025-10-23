@@ -23,3 +23,5 @@ git reflog -p
 root@kali:~# git reflog -p | grep password
 -spring.datasource.password=secretpassword
 ```
+
+

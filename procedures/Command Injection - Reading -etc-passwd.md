@@ -35,9 +35,13 @@ From a technical perspective, command injection occurs when an attacker is able 
 
 The business value of this attack is that it can lead to a complete compromise of the system, which can result in the theft of sensitive data, disruption of business operations, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that does not properly validate input
+
+ 
 
 ## Defense
 
@@ -47,18 +51,30 @@ The business value of this attack is that it can lead to a complete compromise o
 
 1. Implementing a web application firewall (WAF) can help detect and prevent command injection attacks.
 
+ 
+
 ## Objectives
 
 1. Read the contents of the /etc/passwd file
+
+ 
 
 # Instructions
 
 1. Inject the command into the vulnerable application and observe the output.
 
+ 
+
+
+
 **Code**: [[original_cmd_by_server `cat /etc/passwd`
 original_]]
 
+
+
 > The injected command will execute the `cat /etc/passwd` command on the host system. The output of this command will be returned to the attacker, allowing them to read the contents of the /etc/passwd file.
+
+
 
 **Command** ([[Display /etc/passwd file content]]):
 
@@ -66,11 +82,17 @@ original_]]
 cat /etc/passwd
 ```
 
+
+
+
+
 **Command** ([[Display /etc/passwd file content]]):
 
 ```bash
 $(cat /etc/passwd)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +114,5 @@ $(cat /etc/passwd)
 - [[Command Injection]]
 - [[Exploits]]
 - [[Inside a command]]
+
+

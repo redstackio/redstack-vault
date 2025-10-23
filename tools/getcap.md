@@ -28,11 +28,25 @@ getcap displays the name and capabilities of each specified item. getcap can fin
 
 getcap displays the name and capabilities of each specified item. getcap can find files with capabilities set, which set permissions for privileged execution. Read more about Capabilities: [http://man7.org/linux/man-pages/man7/capabilities.7.html](http://man7.org/linux/man-pages/man7/capabilities.7.html) 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e077b775-3951-4831-9582-c3c7891c415f}}
+
+
 
 # Installation
 
 getcap is installed with the filesystem on capability supporting kernels since 2.2.
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ getcap is installed with the filesystem on capability supporting kernels since 2
 
 - [[Enumeration]]
 - [[Permissions]]
+
+

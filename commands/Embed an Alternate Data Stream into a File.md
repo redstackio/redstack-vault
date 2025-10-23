@@ -20,3 +20,5 @@ type $_EMBEDDED_FILE > $_COVER_FILE:secret
 ```
 C:\>type id_rsa > normal.txt:secret
 ```
+
+

@@ -6,9 +6,11 @@ executor: command_prompt
 data: whoami.exe /name
 output: 'C:\>whoami.exe /user
 
+
   USER INFORMATION
 
   ----------------
+
 
   User Name SID
 
@@ -37,3 +39,5 @@ User Name SID
 ========= =============================================
 dev\bob   S-1-5-21-1576920733-1301476157-954876328-1108
 ```
+
+

@@ -27,16 +27,64 @@ In this type of Request Smuggling attack, an attacker will try to craft a CL TE 
 
 In this type of Request Smuggling attack, an attacker will try to craft a CL TE request. If the request gets parsed by the application ,a differential response can be observed.
 
+
+
 # Instructions
+
+
+
+
 
 1. Intercept the request and send the request to the repeater tab.
 
+
+
+
+
+![f5fd2a0d-4bf3-4e10-ab00-da1bfaf8eebb.jpg](_assets/images/Mash/f5fd2a0d-4bf3-4e10-ab00-da1bfaf8eebb.jpg)
+
+
+
+
+
 2. Modify the request in the repeater tab to the following request . Observe the request was modified to 404 in the below.
+
+
+
+
+
+
 
 **Code**: [[POST / HTTP/1.1
 Host: your-lab-id.web-security-ac]]
 
+
+
+
+
+
+
+
+
 3. Send the modified request to the server  and observe the response . It confirms the differential response from the server for the modified request.
+
+
+
+
+
+
+
+
+
+![b7c8f4a7-efd1-4b71-9233-2dc0ddf44e16.jpg](_assets/images/Mash/b7c8f4a7-efd1-4b71-9233-2dc0ddf44e16.jpg)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +94,5 @@ Host: your-lab-id.web-security-ac]]
 
 - [[http request smuggling]]
 - [[Web Applications]]
+
+

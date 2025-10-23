@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:48.827620+00:00'
 ```bash
 aws apigateway get-resources --rest-api-id ID
 ```
+
+

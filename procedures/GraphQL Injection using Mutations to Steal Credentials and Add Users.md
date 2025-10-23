@@ -35,9 +35,13 @@ Technical Explanation: GraphQL is a query language used to interact with APIs. M
 
 Business Value: This procedure demonstrates the importance of securing GraphQL APIs. By implementing security measures such as input validation and query whitelisting, organizations can protect themselves from GraphQL Injection attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable GraphQL API
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ Business Value: This procedure demonstrates the importance of securing GraphQL A
 
 1. Regularly update and patch the GraphQL API to protect against known vulnerabilities.
 
+ 
+
 ## Objectives
 
 1. To steal user credentials
 
 1. To add new users to the system
 
+ 
+
 # Instructions
 
 1. To execute this attack, we will use two mutations. The first mutation will sign in as the admin user and return a token. The second mutation will add a new user to the system. We will inject malicious code into the mutations to steal user credentials and gain unauthorized access to sensitive data.
 
+ 
+
+
+
 **Code**: [[# mutation{signIn(login:"Admin", password:"secretp]]
+
+
 
 > The signIn mutation is used to sign in as the admin user and return a token. We will use this token to authenticate ourselves for the second mutation. The addUser mutation is used to add a new user to the system. We will inject malicious code into the name and email fields to steal user credentials. For example, we can use the following code to steal user credentials: 
 
@@ -65,17 +79,25 @@ id: "1", name: "Dan Abramov", email: "dan@dan.com" UNION SELECT id, password, em
 
 This code will inject a SQL injection attack into the GraphQL query, allowing us to steal user credentials. We can also use similar code to add a new user to the system and gain unauthorized access to sensitive data.
 
+
+
 **Command** ([[Sign in as Admin]]):
 
 ```bash
 # mutation{signIn(login:"Admin", password:"secretp@ssw0rd"){token}}
 ```
 
+
+
+
+
 **Command** ([[Add user with id 1]]):
 
 ```bash
 # mutation{addUser(id:"1", name:"Dan Abramov", email:"dan@dan.com") {id name email}}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +119,5 @@ This code will inject a SQL injection attack into the GraphQL query, allowing us
 - [[Exploit]]
 - [[GraphQL Injection]]
 - [[Use mutations]]
+
+

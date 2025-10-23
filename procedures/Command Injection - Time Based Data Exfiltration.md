@@ -32,7 +32,11 @@ Time-based data exfiltration is a technique used by attackers to extract data fr
 
 From a technical perspective, this technique involves injecting malicious commands into a system to execute unauthorized actions. This can be done by exploiting vulnerabilities in web applications or other software that accept user input. By injecting commands, attackers can gain access to sensitive data, execute unauthorized actions, and even take control of the system. The business value of this technique is that it can be used to steal sensitive data, such as login credentials or financial information, which can be sold on the dark web or used for other malicious purposes.
 
+ 
+
 ## Requirements
+
+ 
 
 ## Defense
 
@@ -42,11 +46,15 @@ From a technical perspective, this technique involves injecting malicious comman
 
 1. Monitor system logs and network traffic for any suspicious activity that may indicate a command injection attack
 
+ 
+
 ## Objectives
 
 1. Extract data from a target system using command injection
 
 1. Steal sensitive data from the target system
+
+ 
 
 # Instructions
 
@@ -56,9 +64,17 @@ if [ $(whoami|cut -c 1) == s ]; then sleep 5; fi
 
 This command checks the first character of the username and sleeps for 5 seconds if the first character is 's'. Repeat this command for each character in the string to extract the entire data.
 
+ 
+
+
+
 **Code**: [[swissky@crashlab:~$ time if [ $(whoami|cut -c 1) =]]
 
+
+
 > The injected command checks the first character of the username and sleeps for 5 seconds if the first character is 's'. This delay in response time allows the attacker to extract data character by character. By repeating this command for each character in the string, the attacker can extract the entire data.
+
+
 
 **Command** ([[Check First Letter of Username]]):
 
@@ -66,11 +82,17 @@ This command checks the first character of the username and sleeps for 5 seconds
 if [ $(whoami|cut -c 1) == s ]; then sleep 5; fi
 ```
 
+
+
+
+
 **Command** ([[Check First Letter of Username]]):
 
 ```bash
 if [ $(whoami|cut -c 1) == a ]; then sleep 5; fi
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +113,5 @@ if [ $(whoami|cut -c 1) == a ]; then sleep 5; fi
 
 - [[Command Injection]]
 - [[Time based data exfiltration]]
+
+

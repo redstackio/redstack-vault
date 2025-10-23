@@ -18,3 +18,5 @@ document.location.href="http://google.com"
 window.location.assign("http://google.com")
 window['location']['href']="http://google.com"
 ```
+
+

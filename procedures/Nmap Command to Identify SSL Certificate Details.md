@@ -29,11 +29,23 @@ SSL/TLS implementation enables secure communication between client and server. S
 
 # Description
 
+
+
 SSL/TLS implementation enables secure communication between client and server. SSL/TLS certificate details like issuer, subject, supported algorithms can be obtained using Nmap *ssl-cert* script.
+
+
 
 # Procedure
 
+
+
 1. Nmap *ssl-cert *script is used to obtain the SSL/TLS certificate details.
+
+
+
+
+
+
 
 **Command** ([[Nmap Command to Identify SSL Certificate Details]]):
 
@@ -41,7 +53,15 @@ SSL/TLS implementation enables secure communication between client and server. S
 nmap --script ssl-cert demo.testfire.net -p443
 ```
 
+
+
+
+
 2. Output contain the details about subject, issuer, signature algorithm, validity etc.
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +77,5 @@ nmap --script ssl-cert demo.testfire.net -p443
 - [[owasp top 10]]
 - [[SSL]]
 - [[Web Applications]]
+
+

@@ -32,13 +32,25 @@ Constrained Language Mode (CLM) restricts many PowerShell elements in order to m
 
 Constrained Language Mode (CLM) restricts many PowerShell elements in order to minimize the potential attack surface, while still supporting common day-to-day administration tasks. While it's not a foolproof solution to stop attacks (multiple bypasses exist), CLM can hinder attackers enough that they opt to find different approaches to attacking a system.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[PowerShell Show Current Language Mode]]):
 
 ```bash
 $ExecutionContext.SessionState.LanguageMode
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +73,5 @@ $ExecutionContext.SessionState.LanguageMode
 ## Tags
 
 - [[Enumeration]]
+
+

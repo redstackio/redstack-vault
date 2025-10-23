@@ -18,3 +18,5 @@ PS C:\Tools> Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Fina
 PS C:\Tools> . C:\Tools\GetApplicationProxyAssignedUsersAndGroups.ps1
 PS C:\Tools> Get-ApplicationProxyAssignedUsersAndGroups -ObjectId <OBJECT-ID>
 ```
+
+

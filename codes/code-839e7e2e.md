@@ -16,3 +16,5 @@ SQL> select is_member('db_owner');
 SQL> execute as user = 'dbo'
 SQL> SELECT is_srvrolemember('sysadmin')
 ```
+
+

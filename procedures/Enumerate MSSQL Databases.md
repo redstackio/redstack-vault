@@ -34,11 +34,15 @@ From a technical standpoint, the procedure relies on the ability to connect to t
 
 The business value of this procedure lies in the fact that it enables the attacker to identify the most valuable targets for further attacks. By knowing which databases are present on the server, the attacker can focus on those that contain sensitive information, such as customer data, financial records, or intellectual property.
 
+ 
+
 ## Requirements
 
 1. Valid credentials or exploit to gain access to the MSSQL server
 
 1. Ability to execute SQL queries
+
+ 
 
 ## Defense
 
@@ -48,25 +52,39 @@ The business value of this procedure lies in the fact that it enables the attack
 
 1. Monitor network traffic for suspicious activity and SQL injection attempts
 
+ 
+
 ## Objectives
 
 1. Discover all available MSSQL databases
 
 1. Identify valuable data for further attacks
 
+ 
+
 # Instructions
 
 1. To list all available databases, execute the following SQL query:
 
+ 
+
+
+
 **Code**: [[select name from master..sysdatabases]]
 
+
+
 > This command retrieves the names of all databases present in the SQL Server instance.
+
+
 
 **Command** ([[Retrieve database names]]):
 
 ```bash
 select name from master..sysdatabases
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ select name from master..sysdatabases
 - [[List all databases]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

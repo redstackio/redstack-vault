@@ -17,4 +17,10 @@ Perl script which scans cisco routers for common vulnerabilities. cisco-auditing
 
 Perl script which scans cisco routers for common vulnerabilities.
 
+
+
 cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo
+
+
+
+

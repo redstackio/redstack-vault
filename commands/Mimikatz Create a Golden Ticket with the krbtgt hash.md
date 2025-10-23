@@ -65,3 +65,5 @@ Golden ticket for 'Administrator @ dev.admin.offshore.com' successfully submitte
 
 mimikatz # exit
 ```
+
+

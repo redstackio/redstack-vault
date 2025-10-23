@@ -17,16 +17,40 @@ Generate and test domain typos and variations to detect and perform typo squatti
 
 Generate and test domain typos and variations to detect and perform typo squatting, URL hijacking, phishing, and corporate espionage.Features
 
+
+
 Generates 15 types of domain variants
+
+
 
 Knows over 8000 common misspellings
 
+
+
 Supports cosmic ray induced bit flipping
+
+
 
 Multiple keyboard layouts (qwerty, azerty, qwertz, dvorak)
 
+
+
 Checks if a domain variant is valid
+
+
 
 Test if domain variants are in use
 
+
+
 Estimate popularity of a domain variant
+
+
+
+
+
+
+
+
+
+

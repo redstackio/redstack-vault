@@ -20,3 +20,5 @@ nmap -sS -sV -D $ip2,$ip3,$ip4,$ip5 -f --mtu=24 --data-length=1337 -T2 $ip
 nmap -Pn -T2 -sV --randomize-hosts $ip,$ip2
 
 ```
+
+

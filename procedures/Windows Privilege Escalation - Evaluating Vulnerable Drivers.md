@@ -34,11 +34,15 @@ To perform this procedure, the attacker must first enumerate the drivers install
 
 This procedure can be valuable for attackers who have already gained access to a system with low privileges and are looking to escalate their privileges to gain access to sensitive information or perform malicious actions.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows machine with low privileges
 
 1. Ability to execute the 'Windows Driver Enumeration' command
+
+ 
 
 ## Defense
 
@@ -48,20 +52,32 @@ This procedure can be valuable for attackers who have already gained access to a
 
 1. Use intrusion detection and prevention systems to detect and prevent privilege escalation attacks
 
+ 
+
 ## Objectives
 
 1. Identify vulnerable drivers that can be exploited for privilege escalation
 
 1. Escalate privileges on a compromised Windows system
 
+ 
+
 # Instructions
 
 1. Use the driverquery.exe tool to list all installed drivers on the system. Use the --no-msft option to exclude Microsoft drivers. Check the file signatures of the drivers to identify any malicious drivers.
 
+ 
+
+
+
 **Code**: [[# Native binary
 PS C:\Users\Swissky> driverquery.e]]
 
+
+
 > The 'driverquery.exe' tool is a built-in Windows utility that allows users to view a list of all installed drivers on the system. By default, it displays the module name, display name, driver type, and link date of each driver. The '--no-msft' option can be used to exclude Microsoft drivers from the list. Checking the file signatures of the drivers can help identify any malicious drivers that may have been installed on the system. This technique can be useful for identifying rootkits and other types of malware that use kernel-level drivers to hide their presence on the system.
+
+
 
 **Command** ([[Enumerating driver services and checking file signatures]]):
 
@@ -69,11 +85,17 @@ PS C:\Users\Swissky> driverquery.e]]
 DriverQuery.exe --no-msft
 ```
 
+
+
+
+
 **Command** ([[Listing all drivers installed on the system]]):
 
 ```bash
 driverquery.exe /fo table /si
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +116,5 @@ driverquery.exe /fo table /si
 
 - [[EoP - Evaluating Vulnerable Drivers]]
 - [[Windows - Privilege Escalation]]
+
+

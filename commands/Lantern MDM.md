@@ -15,3 +15,5 @@ updated_at: '2023-05-24T07:18:16.200794+00:00'
 ```bash
 Lantern.exe mdm --joindevice --accesstoken (or some combination from the token part) --devicename <Name> --outpfxfile <Some path>
 ```
+
+

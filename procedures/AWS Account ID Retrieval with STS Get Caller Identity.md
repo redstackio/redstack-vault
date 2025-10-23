@@ -36,11 +36,15 @@ Technical Explanation: The STS Get Caller Identity API returns details about the
 
 Business Value: An attacker who successfully escalates their privileges in an AWS environment can gain access to sensitive data and resources, potentially causing significant damage to the business.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials for the current user
 
 1. Access to the AWS Security Token Service (STS) Get Caller Identity API
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: An attacker who successfully escalates their privileges in an AW
 
 1. Implement least privilege access controls to limit the impact of privilege escalation attacks
 
+ 
+
 ## Objectives
 
 1. Retrieve the AWS account ID of the current user
@@ -57,6 +63,8 @@ Business Value: An attacker who successfully escalates their privileges in an AW
 1. Determine the level of access the attacker has
 
 1. Plan next steps for escalating privileges
+
+ 
 
 # Instructions
 
@@ -66,13 +74,19 @@ Business Value: An attacker who successfully escalates their privileges in an AW
 2. Type 'aws sts get-caller-identity' and press Enter.
 3. The command will return the Account ID associated with the credentials used to make the call.
 
+ 
+
 The 'aws sts get-caller-identity' command is used to retrieve information about the AWS account that is associated with the credentials used to make the call. This command returns the AWS Account ID, the Amazon Resource Name (ARN) of the IAM role or user making the call, and the unique identifier of the AWS account that owns the resource specified in the ARN. This command is useful for verifying that you are using the correct AWS account and for troubleshooting issues related to permissions and access to AWS resources.
+
+
 
 **Command** ([[AWS STS Get Caller Identity]]):
 
 ```bash
 aws sts get-caller-identity
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws sts get-caller-identity
 - [[Exploitation]]
 - [[Privilege Escalation]]
 - [[Study Case]]
+
+

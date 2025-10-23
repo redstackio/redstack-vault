@@ -3,20 +3,20 @@ id: a3c3334e-7012-419a-8b4d-930666f3f351
 name: AWS S3 Bucket Public Access Block Enumeration
 type: procedure
 verified: false
-submitted: false
-created_at: '2023-04-06T03:56:11.044162+00:00'
-updated_at: '2023-04-10T20:20:12.197015+00:00'
+submitted: true
+created_at: 2023-04-06T03:56:11.044162+00:00
+updated_at: 2023-04-10T20:20:12.197015+00:00
 tactics:
-- '[[Discovery|TA0007 - Discovery]]'
+  - "[[Discovery|TA0007 - Discovery]]"
 techniques:
-- '[[Cloud Service Dashboard|T1538 - Cloud Service Dashboard]]'
-- '[[Cloud Service Discovery|T1526 - Cloud Service Discovery]]'
+  - "[[Cloud Service Dashboard|T1538 - Cloud Service Dashboard]]"
+  - "[[Cloud Service Discovery|T1526 - Cloud Service Discovery]]"
 tags:
-- '[[Cloud - AWS]]'
-- '[[Enumeration]]'
-- '[[Getting the Public Access Block configuration for an S3 bucket]]'
+  - "[[Cloud - AWS]]"
+  - "[[Enumeration]]"
+  - "[[Getting the Public Access Block configuration for an S3 bucket]]"
 commands:
-- '[[Check Public Access Block for S3 Bucket]]'
+  - "[[Check Public Access Block for S3 Bucket]]"
 ---
 
 # AWS S3 Bucket Public Access Block Enumeration
@@ -24,8 +24,6 @@ commands:
 ## Summary
 
 This procedure involves checking the Public Access Block configuration for an S3 bucket in AWS. S3 buckets can be accessed publicly, which can lead to data breaches and other security issues. The Public Access Block feature allows users to restrict public access to their S3 buckets. By checking the
-
-## Description
 
 # Description
 
@@ -59,11 +57,15 @@ The business value of this procedure is that it can help organizations identify 
 
 The 'get-public-access-block' command is used to retrieve the public access block configuration for the specified S3 bucket. The '--bucket' option is used to specify the name of the bucket for which the public access block configuration needs to be retrieved. If the bucket has public access blocked, the command will return a JSON object with the 'PublicAccessBlockConfiguration' field set to 'true'. If the bucket does not have public access blocked, the command will return a JSON object with the 'PublicAccessBlockConfiguration' field set to 'false'.
 
+
+
 **Command** ([[Check Public Access Block for S3 Bucket]]):
 
 ```bash
 aws s3api get-public-access-block --bucket name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +87,5 @@ aws s3api get-public-access-block --bucket name
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Getting the Public Access Block configuration for an S3 bucket]]
+
+

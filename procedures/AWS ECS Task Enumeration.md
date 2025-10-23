@@ -33,11 +33,15 @@ AWS ECS Task Enumeration is used to identify running tasks in a specific cluster
 
 AWS ECS Task Enumeration is used to identify running tasks in a specific cluster. An attacker can use this information to identify running services and to potentially identify vulnerabilities in those services. To perform this technique, the attacker must have access to the AWS CLI and valid AWS credentials. Once authenticated, the attacker can list tasks in a specific cluster using the 'aws ecs list-tasks' command. This technique can be used to identify potential targets for further exploitation.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to AWS CLI
+
+ 
 
 ## Defense
 
@@ -47,23 +51,33 @@ AWS ECS Task Enumeration is used to identify running tasks in a specific cluster
 
 1. Monitor AWS CloudTrail logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify running tasks in a specific cluster
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. Use this command to list all the tasks running in an Amazon ECS cluster.
 
+ 
+
 The 'aws ecs list-tasks' command is used to list all the tasks running in an Amazon ECS cluster. In the command, replace 'name' with the name of the cluster you want to list the tasks for. This command returns a list of Amazon Resource Names (ARNs) for the tasks. You can use these ARNs to describe the tasks using the 'aws ecs describe-tasks' command.
+
+
 
 **Command** ([[List Tasks in ECS Cluster]]):
 
 ```bash
 aws ecs list-tasks --cluster name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ecs list-tasks --cluster name
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing tasks in specific cluster]]
+
+

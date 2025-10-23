@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:40.549388+00:00'
 ```bash
 window.opener.location = "http://evil.com"
 ```
+
+

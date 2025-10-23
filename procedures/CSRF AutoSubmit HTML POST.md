@@ -28,11 +28,15 @@ This procedure involves exploiting a user's trust in a website to execute unauth
 
 This procedure involves exploiting a user's trust in a website to execute unauthorized actions on their behalf. The attacker crafts a malicious HTML POST form with a hidden input field containing the desired payload. When the user visits the attacker's website, the form is automatically submitted to the target website, without the user's knowledge or consent. This can lead to a wide range of malicious activities, such as changing the user's settings or making unauthorized purchases.
 
+ 
+
 ## Requirements
 
 1. Ability to craft and host a malicious HTML form.
 
 1. Victim user must be authenticated to the target website.
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ This procedure involves exploiting a user's trust in a website to execute unauth
 
 1. Educate users on the risks of clicking on links or submitting forms from untrusted sources.
 
+ 
+
 ## Objectives
 
 1. Execute unauthorized actions on behalf of the victim user.
@@ -50,11 +56,19 @@ This procedure involves exploiting a user's trust in a website to execute unauth
 
 1. Cause damage to the target system or organization.
 
+ 
+
 # Instructions
 
 1. Craft a malicious HTML form with the desired payload.
 
+ 
+
+
+
 **Code**: [[<form id="autosubmit" action="http://www.example.c]]
+
+
 
 > The HTML form should contain a hidden input field with the desired payload, and should be submitted automatically using JavaScript.
 
@@ -73,3 +87,5 @@ This procedure involves exploiting a user's trust in a website to execute unauth
 - [[Cross-Site Request Forgery]]
 - [[HTML POST - AutoSubmit - No User Interaction]]
 - [[Payloads]]
+
+

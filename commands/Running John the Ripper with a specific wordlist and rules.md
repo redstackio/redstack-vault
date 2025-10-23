@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:17.600409+00:00'
 ```bash
 john --wordlist=<wordlist> passwd --rules=Jumbo
 ```
+
+

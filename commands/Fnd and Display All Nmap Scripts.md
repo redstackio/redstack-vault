@@ -65,3 +65,5 @@ root@kali:~# find /usr/share/nmap/scripts/
 /usr/share/nmap/scripts/modbus-discover.nse
 /usr/share/nmap/scripts/broadcast-novell-locate.nse
 ```
+
+

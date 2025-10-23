@@ -16,3 +16,9 @@ polenum is a python script which uses the Impacket Library from CORE Security Te
 ## Description
 
 polenum is a python script which uses the Impacket Library from CORE Security Technologies to extract the password policy information from a windows machine. This allows a non-windows (Linux, Mac OSX, BSD etc..) user to query the password policy of a remote windows box without the need to have access to a windows machine.
+
+
+
+
+
+

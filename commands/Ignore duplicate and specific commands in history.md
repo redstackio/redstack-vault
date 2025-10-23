@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:12.038683+00:00'
 export HISTIGNORE="&:ls:ll:cd:exit"
 
 ```
+
+

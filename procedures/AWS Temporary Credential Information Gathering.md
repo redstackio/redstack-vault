@@ -38,11 +38,15 @@ Technical Description: Temporary credentials are dynamically created by AWS when
 
 Business Value: By gaining access to additional resources within an AWS environment, an attacker can steal sensitive data, disrupt business operations, and cause reputational damage.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to an AWS instance
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ Business Value: By gaining access to additional resources within an AWS environm
 
 1. Rotate temporary credentials frequently to limit the window of opportunity for attackers
 
+ 
+
 ## Objectives
 
 1. Gather information about temporary AWS credentials
 
 1. Escalate privileges within the AWS environment
 
+ 
+
 # Instructions
 
 1. Use the AWS CLI to retrieve the account identity of the current IAM user or role.
 
+ 
+
+
+
 **Code**: [[aws sts get-caller-identity]]
 
+
+
 > The 'aws sts get-caller-identity' command returns information about the AWS account that is associated with the credentials used to call the command. This includes the AWS account ID, the Amazon Resource Name (ARN) of the IAM entity that called the command, and the AWS region that the credentials are configured to use. This command is useful for verifying that your credentials are correctly configured and that you are calling AWS services with the intended permissions.
+
+
 
 **Command** ([[AWS STS Get Caller Identity]]):
 
 ```bash
 aws sts get-caller-identity
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ aws sts get-caller-identity
 - [[Cloud - AWS]]
 - [[Getting information about the temporary credential]]
 - [[Persistence & Backdooring]]
+
+

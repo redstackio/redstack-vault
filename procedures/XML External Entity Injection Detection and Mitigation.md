@@ -33,6 +33,8 @@ XML External Entity (XXE) Injection is a type of attack that exploits an applica
 
 XML External Entity (XXE) Injection is a type of attack that exploits an application's processing of XML data. The attacker sends malicious input to the application, which is then processed by the XML parser. The malicious input contains an external entity reference that can be used to read sensitive data or execute arbitrary code. XXE Injection can be used to steal sensitive data, perform denial of service attacks, or execute arbitrary code. This procedure detects and mitigates XXE Injection attacks by testing for the vulnerability and implementing measures to prevent exploitation.
 
+ 
+
 ## Requirements
 
 1. Access to the application's source code
@@ -40,6 +42,8 @@ XML External Entity (XXE) Injection is a type of attack that exploits an applica
 1. Knowledge of XML and XXE Injection vulnerabilities
 
 1. Tools for testing and mitigating XXE Injection attacks
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ XML External Entity (XXE) Injection is a type of attack that exploits an applica
 
 1. Monitor application logs for suspicious activity and respond promptly to any detected attacks
 
+ 
+
 ## Objectives
 
 1. Detect XXE Injection vulnerabilities in applications
@@ -57,13 +63,23 @@ XML External Entity (XXE) Injection is a type of attack that exploits an applica
 
 1. Protect sensitive data from being stolen or compromised
 
+ 
+
 # Instructions
 
 1. To perform this test, include an external entity in the XML data that points to a file containing the string "John". If the XML parser is vulnerable to XML External Entity Injection, the resulting parsed data will contain the string "John".
 
+ 
+
+
+
 **Code**: [[firstName]]
 
+
+
 > XML External Entity Injection is a type of attack that allows an attacker to include external entities in an XML document, which can be used to disclose sensitive information, execute remote code, or perform denial of service attacks. This test is used to check if a system is vulnerable to this type of attack.
+
+
 
 **Command** ([[Extract First Name]]):
 
@@ -71,11 +87,21 @@ XML External Entity (XXE) Injection is a type of attack that exploits an applica
 firstName
 ```
 
+
+
 2. Use this command to find all users with the last name Doe.
+
+ 
+
+
 
 **Code**: [[lastName]]
 
+
+
 > The 'lastName' field in the data parameter specifies the last name to search for. This command will return all users whose last name matches 'Doe'.
+
+
 
 **Command** ([[Print last name]]):
 
@@ -83,9 +109,17 @@ firstName
 console.log('lastName')
 ```
 
+
+
 3. DOCTYPE is used to define the document type and version of an HTML page.
 
+ 
+
+
+
 **Code**: [[DOCTYPE]]
+
+
 
 > The DOCTYPE declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in. The declaration should be the very first thing in an HTML document, before the <html> tag. The DOCTYPE declaration is not case sensitive. It can be written in uppercase or mixed case. The DOCTYPE declaration for HTML5 is <!DOCTYPE html>.
 
@@ -94,14 +128,26 @@ console.log('lastName')
 In the above example, the entity 'example' is declared with the value 'Doe'.
 To use the entity in the XML document, simply reference it using the '&' symbol followed by the entity name and a semicolon.
 
+ 
+
+
+
 **Code**: [[<!--?xml version="1.0" ?-->
 <!DOCTYPE replace [<!E]]
+
+
 
 > This XML document demonstrates the use of entity replacement. The value of the 'lastName' element is defined as the 'example' entity, which is declared as 'Doe' in the document type declaration. When the document is parsed, the entity is replaced with its value, resulting in the 'lastName' element displaying 'Doe' instead of '&example;'.
 
 5. Use this command to set the Content-Type header of an HTTP request to application/xml.
 
+ 
+
+
+
 **Code**: [[Content-Type: application/xml]]
+
+
 
 > The Content-Type header is used to indicate the media type of the resource being requested or sent in an HTTP request or response. Setting the Content-Type header to application/xml indicates that the data being sent or requested is in XML format. This is useful when working with APIs that require XML data, or when sending XML data to a server.
 
@@ -127,3 +173,5 @@ To use the entity in the XML document, simply reference it using the '&' symbol 
 
 - [[Detect the vulnerability]]
 - [[XML External Entity]]
+
+

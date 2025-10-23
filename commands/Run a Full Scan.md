@@ -26,3 +26,5 @@ To run a full scan with Microsoft Defender:
 3. Under Current threats, click Scan options.
 4. Select Full scan and click Scan now.
 ```
+
+

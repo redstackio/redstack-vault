@@ -40,6 +40,8 @@ Technical Explanation: The attacker injects a query into the SQL statement that 
 
 Business Value: This technique can be used by attackers to steal sensitive data from a PostgreSQL database, such as personal information or intellectual property. By gaining access to this data, attackers can use it for financial gain or to obtain a competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PostgreSQL database
@@ -47,6 +49,8 @@ Business Value: This technique can be used by attackers to steal sensitive data 
 1. Knowledge of SQL injection techniques
 
 1. Access to tools for exploiting SQL injection vulnerabilities
+
+ 
 
 ## Defense
 
@@ -56,17 +60,27 @@ Business Value: This technique can be used by attackers to steal sensitive data 
 
 1. Implement network segmentation to limit the scope of the attack
 
+ 
+
 ## Objectives
 
 1. Dump tables from the PostgreSQL database
 
 1. Exfiltrate data from the database
 
+ 
+
 # Instructions
 
 1. This command selects a single row from the 'information_schema.tables' table and sleeps for 5 seconds if the first character of the 'table_name' column is 'a', otherwise it sleeps for 0 seconds. The 'pg_sleep' function is used to pause the execution of the query for the specified number of seconds.
 
+ 
+
+
+
 **Code**: [[select case when substring(table_name,1,1)='a' the]]
+
+
 
 > The purpose of this command is to test the response time of the database when querying tables with different names. By sleeping for a longer period of time when the table name starts with 'a', we can observe if there is any difference in response time when querying tables with different names.
 
@@ -93,3 +107,5 @@ Business Value: This technique can be used by attackers to steal sensitive data 
 - [[PostgreSQL injection]]
 - [[PostgreSQL Time Based]]
 - [[Table dump time based]]
+
+

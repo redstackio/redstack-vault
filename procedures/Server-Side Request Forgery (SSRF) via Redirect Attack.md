@@ -34,6 +34,8 @@ Technical Explanation: The attacker crafts a request to a vulnerable server that
 
 Business Value: An attacker can use this technique to access sensitive data, pivot through the network, and potentially gain access to critical systems. This can lead to data theft, data manipulation, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server
@@ -42,6 +44,8 @@ Business Value: An attacker can use this technique to access sensitive data, piv
 
 1. Ability to craft requests
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent crafted requests
@@ -49,6 +53,8 @@ Business Value: An attacker can use this technique to access sensitive data, piv
 1. Implement filters to prevent redirects to external systems
 
 1. Monitor network traffic for suspicious activity
+
+ 
 
 ## Objectives
 
@@ -60,6 +66,8 @@ Business Value: An attacker can use this technique to access sensitive data, piv
 
 1. Potentially access sensitive data
 
+ 
+
 # Instructions
 
 1. To perform an SSRF redirect attack, follow the below steps:
@@ -69,15 +77,25 @@ Business Value: An attacker can use this technique to access sensitive data, piv
 3. vulnerable.com will fetch YOUR_SERVER_IP which will redirect to the target URL.
 4. Use response codes 307 and 308 to retain HTTP method and body after the redirection.
 
+ 
+
+
+
 **Code**: [[1. Create a page on a whitelisted host that redire]]
 
+
+
 > This command explains how to perform an SSRF redirect attack. It provides a step-by-step guide on how to create a page on a whitelisted host that can redirect requests to a target URL. It also explains how to launch the SSRF pointing to vulnerable.com/index.php?url=http://YOUR_SERVER_IP and use response codes 307 and 308 to retain HTTP method and body after the redirection.
+
+
 
 **Command** ([[Launch SSRF pointing to vulnerable.com]]):
 
 ```bash
 http://vulnerable.com/index.php?url=http://YOUR_SERVER_IP
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +116,5 @@ http://vulnerable.com/index.php?url=http://YOUR_SERVER_IP
 - [[Bypassing filters]]
 - [[Bypassing using a redirect]]
 - [[Server-Side Request Forgery]]
+
+

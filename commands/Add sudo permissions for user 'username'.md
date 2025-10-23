@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:29.642335+00:00'
 ```bash
 echo "username ALL=(ALL:ALL) ALL">>/etc/sudoers
 ```
+
+

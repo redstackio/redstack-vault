@@ -16,3 +16,9 @@ Lynis is an open source security auditing tool. Its main goal is to audit and ha
 ## Description
 
 Lynis is an open source security auditing tool. Its main goal is to audit and harden Unix and Linux based systems. It scans the system by performing many security control checks. Examples include searching for installed software and determine possible configuration flaws.Many tests are part of common security guidelines and standards, with on top additional security tests. After the scan a report will be displayed with all discovered findings. To provide you with initial guidance, a link is shared to the related Lynis control.
+
+
+
+
+
+

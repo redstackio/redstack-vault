@@ -34,11 +34,15 @@ To perform this technique, an attacker needs to have valid AWS credentials with 
 
 Business value: This technique can help organizations to identify and secure sensitive data stored in S3 buckets. By identifying which accounts have access to sensitive data, organizations can take steps to limit access to that data and prevent unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions to access the S3 bucket
 
 1. Access to the AWS CLI or SDK
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business value: This technique can help organizations to identify and secure sen
 
 1. Regularly monitor S3 bucket access logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. To gather Access Control List (ACL) information about a specific object in an AWS S3 bucket
@@ -56,19 +62,31 @@ Business value: This technique can help organizations to identify and secure sen
 
 1. To determine which AWS accounts have access to sensitive data
 
+ 
+
 # Instructions
 
 1. To retrieve the Access Control List (ACL) of an object in an Amazon S3 bucket, use the following command:
 
+ 
+
+
+
 **Code**: [[aws s3api get-object-acl --bucket-name name --key ]]
 
+
+
 > This command is used to retrieve the Access Control List (ACL) of an object in an Amazon S3 bucket. The `--bucket-name` parameter specifies the name of the bucket where the object is stored, and the `--key` parameter specifies the name of the object. The output of this command includes the owner of the object and a list of grants that define the permissions for the object. The grants list includes the grantee, grantee type (e.g. canonical user, Amazon S3 group, etc.), and the permissions granted to the grantee (e.g. read, write, full control, etc.).
+
+
 
 **Command** ([[Get object ACL from S3 bucket]]):
 
 ```bash
 aws s3api get-object-acl --bucket-name name --key object_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws s3api get-object-acl --bucket-name name --key object_name
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Getting ACL information about specific object]]
+
+

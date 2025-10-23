@@ -31,11 +31,15 @@ Azure Password Spraying is a technique used by attackers to gain access to Azure
 
 Azure Password Spraying is a technique used by attackers to gain access to Azure accounts. It involves guessing passwords for a large number of accounts using a small set of commonly used passwords. This technique can be used to identify accounts with weak passwords and gain access to sensitive data. Attackers can use this technique to gain access to cloud-based email accounts, which can contain sensitive information such as financial data, intellectual property, and personal information. This technique is commonly used in conjunction with other techniques to gain access to an organization's cloud-based resources.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure portal
 
 1. A list of valid email addresses
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Azure Password Spraying is a technique used by attackers to gain access to Azure
 
 1. Monitor Azure logs for suspicious activity and investigate any anomalies
 
+ 
+
 ## Objectives
 
 1. Gain access to Azure accounts
@@ -53,12 +59,20 @@ Azure Password Spraying is a technique used by attackers to gain access to Azure
 
 1. Access sensitive data stored in cloud-based email accounts
 
+ 
+
 # Instructions
 
 1. To perform an Office 365 user password spraying attack using MSOLSpray, follow the below instructions:
 
+ 
+
+
+
 **Code**: [[PS> . C:\Tools\MSOLSpray\MSOLSpray.ps1
 PS> Invoke-]]
+
+
 
 > 1. Download the MSOLSpray.ps1 script from https://github.com/dafthack/MSOLSpray.
 2. Open PowerShell and navigate to the directory where the script is saved.
@@ -67,12 +81,16 @@ PS> Invoke-]]
 5. The script will attempt to authenticate to Office 365 using the supplied credentials and perform a password spraying attack against the user list provided in the 'validemails.txt' file.
 6. If successful, the script will output the usernames and passwords that were found.
 
+
+
 **Command** ([[MSOLSpray User Authentication]]):
 
 ```bash
 . C:\Tools\MSOLSpray\MSOLSpray.ps1
 Invoke-MSOLSpray -UserList C:\Tools\validemails.txt -Password <PASSWORD> -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ Invoke-MSOLSpray -UserList C:\Tools\validemails.txt -Password <PASSWORD> -Verbos
 - [[Enumerate valid emails]]
 - [[Enumeration]]
 - [[Password spraying]]
+
+

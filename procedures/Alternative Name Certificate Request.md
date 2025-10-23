@@ -33,6 +33,8 @@ This procedure involves requesting a user certificate with an alternative name, 
 
 This procedure involves requesting a user certificate with an alternative name, which can be used to bypass certain security controls. Attackers can use this technique to gain access to sensitive information or systems. To request the certificate, the Check UserSpecifiedSAN flag state with Certify.exe command is used to check if the flag is enabled. If it is, the Request User Certificate with Alternative Name command can be used to request the certificate. This technique can be used as part of a larger attack campaign or as a standalone tactic.
 
+ 
+
 ## Requirements
 
 1. Valid user credentials
@@ -40,6 +42,8 @@ This procedure involves requesting a user certificate with an alternative name, 
 1. Access to Active Directory Certificate Services
 
 1. Certify.exe tool
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ This procedure involves requesting a user certificate with an alternative name, 
 
 1. Implement network segmentation to limit the impact of a potential attack
 
+ 
+
 ## Objectives
 
 1. Request a user certificate with an alternative name
 
 1. Bypass security controls to gain access to sensitive information or systems
+
+ 
 
 # Instructions
 
@@ -61,9 +69,17 @@ This procedure involves requesting a user certificate with an alternative name, 
 
 ```Certify.exe cas```
 
+ 
+
+
+
 **Code**: [[Certify.exe cas]]
 
+
+
 > This command uses Certify.exe, a tool developed by GhostPack, to check for the UserSpecifiedSAN flag state. This flag refers to the `EDITF_ATTRIBUTESUBJECTALTNAME2` flag, which specifies whether the certificate request includes a Subject Alternative Name (SAN) extension that is specified by the user. The output of the command will indicate whether the flag is set or not, providing valuable information for certificate management and troubleshooting.
+
+
 
 **Command** ([[Certify.exe cas]]):
 
@@ -71,17 +87,29 @@ This procedure involves requesting a user certificate with an alternative name, 
 Certify.exe cas
 ```
 
+
+
 2. To request a user certificate with an alternative name, run the following command:
+
+ 
+
+
 
 **Code**: [[.\Certify.exe request /ca:dc.domain.local\domain-D]]
 
+
+
 > This command requests a certificate using the `User` template and adds an alternative name `DomAdmin`. By default, the `User` template does not allow to specify alternative names, but this command enables you to do so.
+
+
 
 **Command** ([[Certify.exe request for User template with alternate name DomAdmin]]):
 
 ```bash
 .\Certify.exe request /ca:dc.domain.local\domain-DC-CA /template:User /altname:DomAdmin
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +133,5 @@ Certify.exe cas
 - [[Active Directory Attacks]]
 - [[Active Directory Certificate Services]]
 - [[ESC6 - EDITF_ATTRIBUTESUBJECTALTNAME2]]
+
+

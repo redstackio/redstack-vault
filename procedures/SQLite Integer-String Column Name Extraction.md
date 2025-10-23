@@ -27,6 +27,8 @@ To extract column names, the attacker can use the 'Extract All Tables with Limit
 
 The business value of this attack is that an attacker can gain access to sensitive data which can be used for financial gain, identity theft, or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to the SQLite database
@@ -34,6 +36,8 @@ The business value of this attack is that an attacker can gain access to sensiti
 1. Knowledge of SQL injection techniques
 
 1. Tools to execute SQL injection attacks
+
+ 
 
 ## Defense
 
@@ -43,23 +47,39 @@ The business value of this attack is that an attacker can gain access to sensiti
 
 1. Limit user privileges to prevent unauthorized access to sensitive data
 
+ 
+
 ## Objectives
 
 1. Extract column names from a SQLite database
 
 1. Identify sensitive data within the database
 
+ 
+
 # Instructions
 
 1. To extract all tables from a SQLite database, use the provided SQL query with the 'table_name' field replaced with the name of the table you want to extract. Use the LIMIT and OFFSET keywords to paginate the results.
 
+ 
+
+
+
 **Code**: [[SELECT sql FROM sqlite_master WHERE type!='meta' A]]
+
+
 
 > This command will return a list of all tables in a SQLite database, with X representing the starting index of the pagination and X+1 representing the number of tables to return. This allows for efficient extraction of large datasets without overwhelming system resources.
 
 2. To retrieve a clean SQL output for a table, use the following command:
 
+ 
+
+
+
 **Code**: [[SELECT replace(replace(replace(replace(replace(rep]]
+
+
 
 > This command retrieves the SQL definition of a table in a clean format by removing all unnecessary keywords and characters such as TEXT, INTEGER, AUTOINCREMENT, PRIMARY KEY, UNIQUE, NUMERIC, REAL, BLOB, and NOT NULL. Simply replace 'table_name' with the name of the table you want to retrieve the SQL definition for.
 
@@ -67,3 +87,5 @@ The business value of this attack is that an attacker can gain access to sensiti
 
 - [[Integer/String based - Extract column name]]
 - [[SQLite Injection]]
+
+

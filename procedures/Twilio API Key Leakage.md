@@ -37,6 +37,8 @@ Technical Explanation: An attacker can use the leaked Twilio Account_sid and Aut
 
 Business Value: The Twilio API is used by many businesses to communicate with their customers. An attacker who gains access to Twilio API credentials can use it to make unauthorized calls and messages, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to the internet
@@ -44,6 +46,8 @@ Business Value: The Twilio API is used by many businesses to communicate with th
 1. Knowledge of Twilio API
 
 1. Access to the target's Twilio Account_sid and Auth_token
+
+ 
 
 ## Defense
 
@@ -53,25 +57,39 @@ Business Value: The Twilio API is used by many businesses to communicate with th
 
 1. Monitor Twilio accounts for unauthorized activity
 
+ 
+
 ## Objectives
 
 1. To obtain the Twilio Account_sid and Auth_token
 
 1. To use the obtained credentials to make unauthorized calls and messages
 
+ 
+
 # Instructions
 
 1. Replace ACCOUNT_SID and AUTH_TOKEN with the target's credentials.
 
+ 
+
+
+
 **Code**: [[curl -X GET 'https://api.twilio.com/2010-04-01/Acc]]
 
+
+
 > This command sends a GET request to the Twilio API and returns the Account_sid and Auth_token associated with the provided credentials.
+
+
 
 **Command** ([[Retrieve Twilio Accounts]]):
 
 ```bash
 curl -X GET 'https://api.twilio.com/2010-04-01/Accounts.json' -u ACCOUNT_SID:AUTH_TOKEN
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ curl -X GET 'https://api.twilio.com/2010-04-01/Accounts.json' -u ACCOUNT_SID:AUT
 - [[API Key Leaks]]
 - [[Exploit]]
 - [[Twilio Account_sid and Auth token]]
+
+

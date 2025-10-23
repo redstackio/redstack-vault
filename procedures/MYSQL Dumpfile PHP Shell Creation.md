@@ -32,6 +32,8 @@ This procedure involves exploiting a MYSQL injection vulnerability to create a P
 
 This procedure involves exploiting a MYSQL injection vulnerability to create a PHP shell using the dumpfile method. An attacker can use this technique to gain remote access to a system and execute arbitrary commands. The attacker first identifies a MYSQL injection vulnerability and then crafts a SQL payload to create a PHP shell using the dumpfile method. Once the PHP shell is created, the attacker can use it to execute commands and gain full access to the system. This technique can be used to escalate privileges, exfiltrate data, or install persistent backdoors.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MYSQL database
@@ -42,6 +44,8 @@ This procedure involves exploiting a MYSQL injection vulnerability to create a P
 
 1. Ability to execute commands on the target system
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent MYSQL injection vulnerabilities
@@ -49,6 +53,8 @@ This procedure involves exploiting a MYSQL injection vulnerability to create a P
 1. Use prepared statements or parameterized queries to prevent MYSQL injection vulnerabilities
 
 1. Implement network segmentation and access controls to limit access to sensitive systems and data
+
+ 
 
 ## Objectives
 
@@ -58,11 +64,19 @@ This procedure involves exploiting a MYSQL injection vulnerability to create a P
 
 1. Escalate privileges, exfiltrate data, or install persistent backdoors
 
+ 
+
 # Instructions
 
 1. This command allows an attacker to inject SQL code to create a PHP shell on the targeted system. The payload in hexadecimal format is injected into the SELECT statement, which is then executed to create a PHP shell file on the system.
 
+ 
+
+
+
 **Code**: [[[...] UNION SELECT 0xPHP_PAYLOAD_IN_HEX, NULL, NUL]]
+
+
 
 > The payload in this command is in hexadecimal format and is injected into the SELECT statement using the UNION operator. The payload is then written to a file using the INTO DUMPFILE command. The file is created in the specified directory, which in this case is C:/Program Files/EasyPHP-12.1/www/ or /var/www/html/images/ depending on the system. Once the file is created, the attacker can use it to execute arbitrary commands on the targeted system.
 
@@ -85,3 +99,5 @@ This procedure involves exploiting a MYSQL injection vulnerability to create a P
 - [[Into dumpfile method]]
 - [[MYSQL Injection]]
 - [[MYSQL Write a shell]]
+
+

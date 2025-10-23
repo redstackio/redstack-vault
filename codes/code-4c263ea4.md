@@ -19,3 +19,5 @@ reg query HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
 dir "C:\Documents and Settings\All Users\Start Menu\Programs\Startup"
 dir "C:\Documents and Settings\%username%\Start Menu\Programs\Startup"
 ```
+
+

@@ -16,3 +16,7 @@ A useful script for advanced discovery of Domain Privileged Accounts that could 
 ## Description
 
 A useful script for advanced discovery of Domain Privileged Accounts that could be targeted - including Shadow Admins. ​
+
+
+
+

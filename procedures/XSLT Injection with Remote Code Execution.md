@@ -32,6 +32,8 @@ XSLT Injection is an attack that targets web applications that use XSLT to trans
 
 From an offensive perspective, XSLT Injection can be used to gain access to sensitive data, escalate privileges, and pivot to other systems. The technical explanation involves injecting malicious code into the XSLT stylesheet, which can then be executed on the server. The business value of this attack lies in the fact that it can lead to data theft, system compromise, and reputational damage for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable web application.
@@ -40,6 +42,8 @@ From an offensive perspective, XSLT Injection can be used to gain access to sens
 
 1. Ability to inject malicious code into the XSLT stylesheet.
 
+ 
+
 ## Defense
 
 1. Validate and sanitize all user input, especially those that are used in XSLT transformations.
@@ -47,6 +51,8 @@ From an offensive perspective, XSLT Injection can be used to gain access to sens
 1. Implement strict input validation and output encoding to prevent injection attacks.
 
 1. Use web application firewalls (WAFs) to detect and block XSLT Injection attacks.
+
+ 
 
 ## Objectives
 
@@ -58,12 +64,20 @@ From an offensive perspective, XSLT Injection can be used to gain access to sens
 
 1. Pivot to other systems.
 
+ 
+
 # Instructions
 
 1. To list the contents of a directory, execute the following command:
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="UTF-8"?>
 <xsl:styles]]
+
+
 
 > This command will execute the 'dir' command in the command prompt and return the list of files and folders in the current directory. The command prompt will be launched using the 'cmd.exe' program located in the 'C:\windows\system32' folder. The '/c' argument is used to run the specified command and then terminate the command prompt.
 
@@ -84,3 +98,5 @@ From an offensive perspective, XSLT Injection can be used to gain access to sens
 - [[Exploit]]
 - [[Remote Code Execution with Embedded Script Blocks]]
 - [[XSLT Injection]]
+
+

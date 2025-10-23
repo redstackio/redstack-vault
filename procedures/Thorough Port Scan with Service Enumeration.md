@@ -33,11 +33,19 @@ Query a computer's services by probing the ports on which it listens. Since each
 
 Query a computer's services by probing the ports on which it listens. Since each system potentially has 65,535 ports for TCP and UDP, it's often best to perform multiple scans, each focusing on a different technique or port range. 
 
+
+
 # Instructions
 
 Each of the following scans become progressively more noisy and intrusive as they enumerate more in depth. Running all of the scans is generally not necessary, but may be required if initial scans show no useful information. 
 
+
+
 1. Perform an initial SYN scan targeting popular ports, grabbing banners, and outputting the results to a file.
+
+
+
+
 
 **Command** ([[Nmap Scan with Service Enumeration]]):
 
@@ -45,7 +53,15 @@ Each of the following scans become progressively more noisy and intrusive as the
 nmap -sV $_TARGET_IP -oN $_OUTPUT
 ```
 
+
+
+
+
 2. Perform a UDP port scan and output the results to a file
+
+
+
+
 
 **Command** ([[Nmap UDP Scan with Service Enumeration]]):
 
@@ -53,13 +69,25 @@ nmap -sV $_TARGET_IP -oN $_OUTPUT
 nmap -sU -sV $_TARGET_IP -oN $_OUTPUT
 ```
 
+
+
+
+
 3.  Perform a full TCP port scan. This scan will take longer than others, as it queries all ports.
+
+
+
+
 
 **Command** ([[Nmap Full Port Scan with Service Enumeration]]):
 
 ```bash
 nmap -sV -p- $TARGET_IP -oN $OUTPUT
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -81,3 +109,5 @@ nmap -sV -p- $TARGET_IP -oN $OUTPUT
 
 - [[Enumeration]]
 - [[Network]]
+
+

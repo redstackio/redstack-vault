@@ -33,3 +33,5 @@ db.injection.insert({success:1});return 1;db.stores.mapReduce(function() { { emi
 ";return(true);var xyz='a
 0;return true
 ```
+
+

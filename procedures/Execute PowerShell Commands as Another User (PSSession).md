@@ -37,11 +37,19 @@ PowerShell can create a "runas" command using simple built-in cmdlets, allowing 
 
 PowerShell can create a "runas" command using simple built-in cmdlets, allowing a user to execute commands as another user without the need to spawn a new shell. This is useful in situations when an attacker has credentials for another account, but PSEXEC and WinRM sessions cannot be established. These same concepts can be applied to remote systems  using the WinRM protocol.
 
+
+
 # Instructions
 
 Instructions on how to complete the procedure. Typically multiple numbered lists with commands included, and may contain H2 subheadings.
 
+
+
 1. Create a PSCredential object
+
+
+
+
 
 **Command** ([[Create a Windows PSCredential Object]]):
 
@@ -50,9 +58,17 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_DOMAIN\$_USER", $Pass
 ```
 
+
+
 Note: It may be necessary to specify the computer name along with the username, in the format: "$_COMPUTER\$_USER"
 
+
+
 2. Create a session and execute a command. Use the local computer's name for the "ComputerName" value, or it's  FQDN if authenticating with a domain. (eg: desktop.megabank.local)
+
+
+
+
 
 **Command** ([[Create a PSSession and Execute a Command]]):
 
@@ -60,6 +76,12 @@ Note: It may be necessary to specify the computer name along with the username, 
 $Session = New-PSSession -ComputerName $_TARGET_IP -Credential $Cred
 Invoke-Command -Session $Session -ScriptBlock {Start-Process $_CMD}
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -87,3 +109,5 @@ Invoke-Command -Session $Session -ScriptBlock {Start-Process $_CMD}
 - [[authentication]]
 - [[powershell]]
 - [[shell]]
+
+

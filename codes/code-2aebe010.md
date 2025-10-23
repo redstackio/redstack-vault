@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:12.799109+00:00'
 ```powershell
 Get-ADUser -Filter 'userAccountControl -band 128' -Properties userAccountControl
 ```
+
+

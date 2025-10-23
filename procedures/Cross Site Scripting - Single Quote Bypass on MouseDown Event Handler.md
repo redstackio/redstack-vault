@@ -33,6 +33,9 @@ Cross Site Scripting (XSS) is a type of injection attack where an attacker injec
 
 From a technical perspective, this attack takes advantage of the fact that some web applications do not properly sanitize user input. By injecting malicious code into a web page, an attacker can exploit vulnerabilities in the web application and gain access to sensitive data. From a business perspective, this attack can result in reputational damage, loss of customer trust, and financial losses.
 
+
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -40,6 +43,8 @@ From a technical perspective, this attack takes advantage of the fact that some 
 1. Knowledge of the specific event handler being used
 
 1. Knowledge of the syntax for bypassing quotes
+
+ 
 
 ## Defense
 
@@ -49,6 +54,8 @@ From a technical perspective, this attack takes advantage of the fact that some 
 
 1. Regularly scan web applications for vulnerabilities and patch them as needed
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a web page
@@ -57,11 +64,19 @@ From a technical perspective, this attack takes advantage of the fact that some 
 
 1. Steal sensitive information such as session cookies or login credentials
 
+ 
+
 # Instructions
 
 1. To bypass a single quote in an on mousedown event handler, use the HTML entity &#39; instead of the single quote character.
 
+ 
+
+
+
 **Code**: [[<a href="" onmousedown="var name = '&#39;;alert(1)]]
+
+
 
 > In this example, the onmousedown event handler is setting a variable named 'name' to the value '&#39;;alert(1)//'. The HTML entity &#39; represents a single quote character. By using this entity instead of the actual single quote character, the code is able to bypass any input validation or filtering that may be in place to prevent the use of single quotes. This technique can be used to execute arbitrary code or inject malicious payloads into a vulnerable application.
 
@@ -83,3 +98,5 @@ From a technical perspective, this attack takes advantage of the fact that some 
 - [[Bypass quotes in mousedown event]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

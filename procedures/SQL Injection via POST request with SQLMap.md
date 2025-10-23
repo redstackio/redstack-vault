@@ -34,6 +34,8 @@ From a technical perspective, SQLMap sends a series of specially crafted SQL sta
 
 From a business perspective, SQL injection attacks can have serious consequences. Attackers can steal sensitive data such as customer information, financial records, and intellectual property. This can result in financial loss, damage to reputation, and legal and regulatory penalties.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -41,6 +43,8 @@ From a business perspective, SQL injection attacks can have serious consequences
 1. Knowledge of the target web application's backend database
 
 1. SQLMap tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a business perspective, SQL injection attacks can have serious consequences
 
 1. Regular vulnerability assessments and penetration testing should be performed to identify and mitigate SQL injection vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify and exploit SQL injection vulnerabilities in a web application
@@ -57,6 +63,8 @@ From a business perspective, SQL injection attacks can have serious consequences
 1. Extract sensitive data from the backend database
 
 1. Gain remote access to the target system
+
+ 
 
 # Instructions
 
@@ -68,17 +76,27 @@ This command will send a POST request to the specified URL with the specified da
 
 Note: The '*' in the output indicates the location of the injection.
 
+ 
+
+
+
 **Code**: [[python sqlmap.py -u "http://example.com" --data "u]]
+
+
 
 > The 'python' command is used to run the SQLMap tool. The '-u' flag specifies the URL of the target website. The '--data' flag specifies the data to be sent in the POST request. The '--headers' flag specifies any additional headers to be sent with the request.
 
 SQLMap is a tool designed to automate the detection and exploitation of SQL injection vulnerabilities. It supports various database management systems and can perform a variety of tasks, such as dumping databases, accessing the underlying file system, and executing arbitrary commands on the server.
+
+
 
 **Command** ([[SQL Injection using sqlmap]]):
 
 ```bash
 python sqlmap.py -u "http://example.com" --data "username=admin&password=pass"  --headers="x-forwarded-for:127.0.0.1*"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +117,5 @@ python sqlmap.py -u "http://example.com" --data "username=admin&password=pass"  
 - [[Custom injection in UserAgent/Header/Referer/Cookie]]
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
+
+

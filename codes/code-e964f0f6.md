@@ -21,3 +21,5 @@ $RawBytes = Get-DomainComputer dc01-ww2.factory.lan -Properties 'msds-allowedtoa
 $Descriptor = New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList $RawBytes, 0
 $Descriptor.DiscretionaryAcl
 ```
+
+

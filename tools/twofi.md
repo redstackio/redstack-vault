@@ -16,3 +16,7 @@ When attempting to crack passwords custom word lists are very useful additions t
 ## Description
 
 When attempting to crack passwords custom word lists are very useful additions to standard dictionaries. An interesting idea originally released on the “7 Habits of Highly Effective Hackers” blog was to use Twitter to help generate those lists based on searches for keywords related to the list that is being cracked. This idea has been expanded into twofi which will take multiple search terms and return a word list sorted by most common first.
+
+
+
+

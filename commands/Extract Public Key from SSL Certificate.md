@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:33.490177+00:00'
 ```bash
 openssl s_client -connect example.com:443 | openssl x509 -pubkey -noout
 ```
+
+

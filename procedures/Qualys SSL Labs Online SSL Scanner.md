@@ -28,13 +28,63 @@ SSL/TLS implementation enables secure communication between client and server. A
 
 # Description
 
+
+
 SSL/TLS implementation enables secure communication between client and server. Any misconfiguration in the SSL/TLS implementation can be identified using the online SSL Labs tool which can be accessed using the URL [*https://www.ssllabs.co](https://www.ssllabs.com/)m*.
+
+
 
 # Procedure
 
+
+
 1. Access the URL [*https://www.ssllabs.co](https://www.ssllabs.com/)m* and enter the website to scan.
 
+
+
+
+
+![c35b342f-dad5-4103-aa66-3b43b6fcc7f6.png]()
+
+
+
 2. Below output shows the rating of the SSL implementation along with supported ciphers, versions etc.
+
+
+
+
+
+![7a10125b-611a-4e06-856e-a08205e48dd2.png]()
+
+
+
+
+
+![83c34386-ac62-4b9f-8a72-eaf0a5068089.png]()
+
+
+
+
+
+
+
+![1f291d12-c7d1-45b2-964f-150c4038c94c.png]()
+
+
+
+
+
+![2c0aef79-f728-41a1-83f8-923e0158075c.png]()
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +97,5 @@ SSL/TLS implementation enables secure communication between client and server. A
 - [[SSL]]
 - [[TLS]]
 - [[Web Applications]]
+
+

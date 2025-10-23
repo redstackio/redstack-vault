@@ -29,6 +29,8 @@ Hibernate is an Object-Relational Mapping (ORM) framework for Java. It allows de
 
 The Percentage Input Warning is a defense mechanism that warns users when they input the % character in a search field. This is because the % character is used in HQL to match any character or sequence of characters in a query. By warning users about the use of the % character, the organization can prevent accidental HQL injection.
 
+ 
+
 ## Requirements
 
 1. The application must use Hibernate as its ORM framework.
@@ -36,6 +38,8 @@ The Percentage Input Warning is a defense mechanism that warns users when they i
 1. The application must have a search function that uses HQL.
 
 1. The application must be able to detect the % character in user input.
+
+ 
 
 ## Defense
 
@@ -45,15 +49,25 @@ The Percentage Input Warning is a defense mechanism that warns users when they i
 
 1. Monitor the application for suspicious HQL queries, such as those containing unusual characters or syntax.
 
+ 
+
 ## Objectives
 
 1. To prevent accidental HQL injection by warning users about the use of the % character in search fields.
+
+ 
 
 # Instructions
 
 1. Please enter the required input between the percentage symbols.
 
+ 
+
+
+
 **Code**: [[%INJECT_HERE%]]
+
+
 
 > This field requires input that should always be between the percentage symbols. Please make sure to include the percentage symbols in your input, as they are required for this field to function properly.
 
@@ -71,3 +85,5 @@ The Percentage Input Warning is a defense mechanism that warns users when they i
 
 - [[Hibernate Query Language Injection]]
 - [[Summary]]
+
+

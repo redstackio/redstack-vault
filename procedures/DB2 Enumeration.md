@@ -35,11 +35,15 @@ From a technical perspective, DB2 Enumeration involves sending specially crafted
 
 The business value of DB2 Enumeration lies in its ability to provide attackers with valuable information about the target system's data architecture. This information can be used to plan further attacks or to gain access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the DB2 instance
 
 1. Knowledge of SQL queries
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of DB2 Enumeration lies in its ability to provide attackers w
 
 1. Monitor the database for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify all available databases and schemas within a DB2 instance
@@ -57,14 +63,24 @@ The business value of DB2 Enumeration lies in its ability to provide attackers w
 
 1. Plan further attacks or gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command will list the names of all available databases and schemas in the current environment.
 
+ 
+
+
+
 **Code**: [[select distinct(table_catalog) from sysibm.tables
 ]]
 
+
+
 > The first query 'select distinct(table_catalog) from sysibm.tables' will list the names of all available databases in the current environment. The second query 'SELECT schemaname FROM syscat.schemata;' will list the names of all available schemas in the current environment.
+
+
 
 **Command** ([[Select distinct table_catalog from sysibm.tables]]):
 
@@ -72,11 +88,17 @@ The business value of DB2 Enumeration lies in its ability to provide attackers w
 select distinct(table_catalog) from sysibm.tables
 ```
 
+
+
+
+
 **Command** ([[SELECT schemaname FROM syscat.schemata]]):
 
 ```bash
 SELECT schemaname FROM syscat.schemata
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +120,5 @@ SELECT schemaname FROM syscat.schemata
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List Databases]]
+
+

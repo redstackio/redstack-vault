@@ -30,11 +30,15 @@ This procedure involves enumerating the API addresses of a Kubernetes cluster vi
 
 This procedure involves enumerating the API addresses of a Kubernetes cluster via the kubelet API. The kubelet API provides read-only access to the state of the Kubernetes node, including information about running pods, containers, and their associated metadata. By accessing this API, an attacker can gain valuable information about the cluster's configuration and the applications running on it. This information can then be used to plan further attacks on the cluster. Business value of this attack is that an attacker can gain access to sensitive information about the Kubernetes cluster which can lead to data theft, data tampering, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the kubelet API
 
 1. Curl or similar tool to send HTTP requests
+
+ 
 
 ## Defense
 
@@ -44,20 +48,32 @@ This procedure involves enumerating the API addresses of a Kubernetes cluster vi
 
 1. Monitor the kubelet API for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Enumerate the API addresses of a Kubernetes cluster via the kubelet API
 
 1. Gather information about the cluster's configuration and the applications running on it
 
+ 
+
 # Instructions
 
 1. Replace <IP Address> with the IP address of the Kubernetes node and <external-IP> with the external IP address of the node. Run the command in a terminal or command prompt.
 
+ 
+
+
+
 **Code**: [[curl -k https://<IP Address>:10255
 http://<externa]]
 
+
+
 > This command sends HTTP requests to the kubelet API endpoints to obtain information about the running pods and containers on the Kubernetes node. The -k option is used to bypass SSL certificate verification.
+
+
 
 **Command** ([[Retrieve Pod Information]]):
 
@@ -65,6 +81,8 @@ http://<externa]]
 curl -k https://<IP Address>:10255
 http://<external-IP>:10255/pods
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ http://<external-IP>:10255/pods
 - [[API addresses that you should know]]
 - [[kubelet (Read only)]]
 - [[Kubernetes]]
+
+

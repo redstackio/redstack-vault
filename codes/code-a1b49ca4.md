@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:02.293610+00:00'
 ```sql
 select os_name,os_version,os_release,host_name from sysibmadm.env_sys_info -- requires priv
 ```
+
+

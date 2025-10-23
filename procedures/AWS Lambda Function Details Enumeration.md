@@ -37,9 +37,13 @@ To execute this procedure, the attacker can use the 'Get AWS Lambda Function Det
 
 From a business perspective, this procedure highlights the importance of properly securing AWS environments and regularly monitoring for unauthorized access or activity.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permission to access the specified lambda function
+
+ 
 
 ## Defense
 
@@ -49,25 +53,39 @@ From a business perspective, this procedure highlights the importance of properl
 
 1. Implement least privilege access controls to limit the scope of potential attacks
 
+ 
+
 ## Objectives
 
 1. Gather information about a specified lambda function within an AWS environment
 
 1. Identify potential vulnerabilities or misconfigurations in the target environment
 
+ 
+
 # Instructions
 
 1. To get details of an AWS Lambda function, run the following command:
 
+ 
+
+
+
 **Code**: [[aws lambda get-function --function-name name]]
 
+
+
 > This command retrieves the configuration information for the specified Lambda function. You need to provide the name of the function as an argument to the --function-name option. The output will include details such as the function's ARN, runtime environment, memory size, and timeout value. You can use this information to troubleshoot issues with the function or to verify its configuration.
+
+
 
 **Command** ([[Retrieve AWS Lambda Function]]):
 
 ```bash
 aws lambda get-function --function-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws lambda get-function --function-name name
 - [[Cloud - AWS]]
 - [[Listing information about the specified lambda]]
 - [[Persistence]]
+
+

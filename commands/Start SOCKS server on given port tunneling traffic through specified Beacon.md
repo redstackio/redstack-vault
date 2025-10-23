@@ -29,3 +29,5 @@ beacon > socks [port] [socks5]
 beacon > socks [port] [socks5] [enableNoAuth|disableNoAuth] [user] [password]
 beacon > socks [port] [socks5] [enableNoAuth|disableNoAuth] [user] [password] [enableLogging|disableLogging]
 ```
+
+

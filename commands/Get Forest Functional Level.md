@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 dsquery * "CN=Partitions,CN=Configuration,DC=corp,DC=test,DC=com" -scope base -attr msDS-Behavior-Version ntMixedDomain
 
 ```
+
+

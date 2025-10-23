@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 root@payload$ wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.0.1dev/cme-ubuntu-latest.zip
 root@payload$ cme smb -L
 ```
+
+

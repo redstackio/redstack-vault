@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:58.237494+00:00'
 ```bash
 mitm6 -i eth0 -d $domain
 ```
+
+

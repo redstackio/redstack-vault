@@ -35,11 +35,15 @@ To perform this attack, the attacker injects SQL code into a vulnerable paramete
 
 The business value of this attack is that it allows an attacker to gain valuable information about the database, which can be used to plan further attacks against the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that interacts with the database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this attack is that it allows an attacker to gain valuable
 
 1. Implement access controls and user permissions to limit access to sensitive data
 
+ 
+
 ## Objectives
 
 1. Obtain a list of all tables in the PostgreSQL database
@@ -57,19 +63,31 @@ The business value of this attack is that it allows an attacker to gain valuable
 
 1. Plan further attacks against the database
 
+ 
+
 # Instructions
 
 1. This command is used to list all tables in the current database.
 
+ 
+
+
+
 **Code**: [[SELECT table_name FROM information_schema.tables]]
 
+
+
 > The SELECT statement is used to retrieve data from one or more tables in a database. In this case, we are selecting the 'table_name' column from the 'information_schema.tables' table. This table contains metadata about all tables in the current database. By executing this command, we can retrieve a list of all tables in the database.
+
+
 
 **Command** ([[Retrieve table names]]):
 
 ```bash
 SELECT table_name FROM information_schema.tables
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ SELECT table_name FROM information_schema.tables
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL List Tables]]
+
+

@@ -25,3 +25,5 @@ aws ec2 create-route --route-table-id $AWS_ROUTE_TABLE_ID --destination-cidr-blo
 ```
 aws ec2 create-route --route-table-id <route_table_id> --destination-cidr-block 0.0.0.0/0 --gateway-id <igw_id> --region <region>
 ```
+
+

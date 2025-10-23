@@ -1,0 +1,177 @@
+/* MITRE ATT&CK Tactic Badges */
+
+/* Color-coded badges for each tactic */
+a[href*="Initial-Access"],
+a[href*="Initial Access"] {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Execution"] {
+  background-color: #ee5a6f;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Persistence"] {
+  background-color: #c44569;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Privilege-Escalation"],
+a[href*="Privilege Escalation"] {
+  background-color: #f368e0;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Defense-Evasion"],
+a[href*="Defense Evasion"] {
+  background-color: #4834d4;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Credential-Access"],
+a[href*="Credential Access"] {
+  background-color: #30336b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Discovery"] {
+  background-color: #22a6b3;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Lateral-Movement"],
+a[href*="Lateral Movement"] {
+  background-color: #6ab04c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Collection"] {
+  background-color: #f0932b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Command-and-Control"],
+a[href*="Command and Control"] {
+  background-color: #eb4d4b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Exfiltration"] {
+  background-color: #e1b12c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Impact"] {
+  background-color: #f0392e;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Reconnaissance"] {
+  background-color: #686de0;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+a[href*="Resource-Development"],
+a[href*="Resource Development"] {
+  background-color: #4b7bec;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Hover effects */
+a[href*="Initial-Access"]:hover,
+a[href*="Initial Access"]:hover,
+a[href*="Execution"]:hover,
+a[href*="Persistence"]:hover,
+a[href*="Privilege-Escalation"]:hover,
+a[href*="Privilege Escalation"]:hover,
+a[href*="Defense-Evasion"]:hover,
+a[href*="Defense Evasion"]:hover,
+a[href*="Credential-Access"]:hover,
+a[href*="Credential Access"]:hover,
+a[href*="Discovery"]:hover,
+a[href*="Lateral-Movement"]:hover,
+a[href*="Lateral Movement"]:hover,
+a[href*="Collection"]:hover,
+a[href*="Command-and-Control"]:hover,
+a[href*="Command and Control"]:hover,
+a[href*="Exfiltration"]:hover,
+a[href*="Impact"]:hover,
+a[href*="Reconnaissance"]:hover,
+a[href*="Resource-Development"]:hover,
+a[href*="Resource Development"]:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}

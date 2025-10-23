@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:56.681624+00:00'
 ```bash
 http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&format=text
 ```
+
+

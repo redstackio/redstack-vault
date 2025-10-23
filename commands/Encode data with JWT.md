@@ -23,3 +23,5 @@ public = open('public.pem', 'r').read()
 print public
 print jwt.encode({"data":"test"}, key=public, algorithm='HS256')
 ```
+
+

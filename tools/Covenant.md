@@ -39,17 +39,29 @@ Like other C2, Covenant includes many enumeration and exploit modules including:
 
 - SharpUp
 
+
+
 # Installation
 
 ## Install on Docker
 
+
+
+
+
 ## Launch Covenant
+
+
 
 Note: Replace the $_PATH variable with the absolute path to Covenant's Data directory. eg: /root/Documents/Covenant/Covenant/Data
 
+
+
 **Open a browser to https://$_HOST_IP:7443**
 
-![ ]()
+
+
+![40c1a7f0-13bd-46cb-8b21-a187ca5d4bd4.png](_assets/images/data.redstack.io/Mark/40c1a7f0-13bd-46cb-8b21-a187ca5d4bd4.png)
 
 Note: You must create a new user on first login.
 
@@ -60,3 +72,5 @@ Note: You must create a new user on first login.
 ## Tags
 
 - [[Command & Control]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:07.517652+00:00'
 ```bash
 $ GetNPUsers.py DOMAIN/target_user -format <AS_REP_responses_format [hashcat | john]> -outputfile <output_AS_REP_responses_file>
 ```
+
+

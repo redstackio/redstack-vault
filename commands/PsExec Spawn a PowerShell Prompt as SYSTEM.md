@@ -6,6 +6,7 @@ executor: command_prompt
 data: PsExec.exe -accepteula \\$_TARGET powershell.exe
 output: 'C:\Tools\Sysinternals>PsExec.exe -accepteula \\WS01 powershell.exe
 
+
   PsExec v2.2 - Execute processes remotely
 
   Copyright (C) 2001-2016 Mark Russinovich
@@ -30,3 +31,5 @@ PsExec v2.2 - Execute processes remotely
 Copyright (C) 2001-2016 Mark Russinovich
 Sysinternals - www.sysinternals.com
 ```
+
+

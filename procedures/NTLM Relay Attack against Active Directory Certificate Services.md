@@ -37,6 +37,8 @@ To perform this attack, the attacker needs to have a foothold on a victim machin
 
 The business value of this attack lies in the ability of the attacker to obtain valid certificates that can be used to impersonate legitimate users and gain access to sensitive data and systems within the network.
 
+ 
+
 ## Requirements
 
 1. Access to a victim machine within the network
@@ -44,6 +46,8 @@ The business value of this attack lies in the ability of the attacker to obtain 
 1. Ability to intercept network traffic between the victim machine and the AD CS server
 
 1. Impacket tool
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ The business value of this attack lies in the ability of the attacker to obtain 
 
 1. Monitor network traffic for signs of NTLM Relay attacks
 
+ 
+
 ## Objectives
 
 1. Obtain a valid certificate from the AD CS server
@@ -60,6 +66,8 @@ The business value of this attack lies in the ability of the attacker to obtain 
 1. Impersonate legitimate users within the network
 
 1. Gain access to sensitive data and systems within the network
+
+ 
 
 # Instructions
 
@@ -70,15 +78,25 @@ The business value of this attack lies in the ability of the attacker to obtain 
 3. Enable SMB2 support if required.
 4. Trigger a connection to the relayed server.
 
+ 
+
+
+
 **Code**: [[ntlmrelayx.py -t rpc://10.10.10.10 -rpc-mode ICPR ]]
 
+
+
 > The ntlmrelayx.py command is used to setup a relay on a target machine and force it to authenticate to the attacker's machine. This can be used to steal credentials or execute commands on the target machine. The '-t' option is used to specify the target machine, and the '-rpc-mode' option is used to specify the relay mode. The ICPR mode is used to relay the authentication to a Certificate Authority (CA) that is trusted by the target machine. The '-icpr-ca-name' option is used to specify the name of the CA certificate used by the target machine. The '-smb2support' option is used to enable SMB2 support if required. Once the relay is setup, a connection can be triggered to the relayed server to initiate the attack.
+
+
 
 **Command** ([[ntlmrelayx.py -t rpc://10.10.10.10 -rpc-mode ICPR -icpr-ca-name lab-DC-CA -smb2support]]):
 
 ```bash
 ntlmrelayx.py -t rpc://10.10.10.10 -rpc-mode ICPR -icpr-ca-name lab-DC-CA -smb2support
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +120,5 @@ ntlmrelayx.py -t rpc://10.10.10.10 -rpc-mode ICPR -icpr-ca-name lab-DC-CA -smb2s
 - [[Active Directory Attacks]]
 - [[Active Directory Certificate Services]]
 - [[ESC11 - Relaying NTLM to ICPR]]
+
+

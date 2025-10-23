@@ -20,3 +20,5 @@ DHCP proposal IP address: 192.168.22.101
 DHCP Validation: DHCPACK
 IP address configured: 192.168.22.101
 ```
+
+

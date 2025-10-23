@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:06.983789+00:00'
 ```bash
 cmd.exe /Q /c cd 1&gt; \\127.0.0.1\ADMIN$\__RANDOM 2&gt;&amp;1
 ```
+
+

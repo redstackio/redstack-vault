@@ -29,9 +29,13 @@ Werkzeug is a popular WSGI application library, which includes a Debugger consol
 
 Werkzeug is a popular WSGI application library, which includes a Debugger console that allows remote users to execute code. This feature is turned off by default, but if enabled makes Remote Code Execution trivial. The Debugger page which contains the console appears when an error is generated. 
 
+
+
 # Instructions
 
 In order access the Debugger, an error page needs to be triggered as it contains the console. One approach is to find  pages which load by index, then change the index to a value that is out of range.
+
+
 
 Example
 
@@ -39,13 +43,27 @@ Original URL:
 
 [http://10.10.10.10/articles/1](http://10.10.10.10/articles/1)
 
+
+
 Modified URL:
 
 [http://10.10.10.10/articles/1000](http://10.10.10.10/articles/1000)
 
+
+
 1. Trigger an error page.
 
 2. On the error page, the Debugger console can be opened by clicking on the console icon near the top right of each box.
+
+
+
+![24d2da4c-94f9-4a28-acd1-656b9b841276.png](_assets/images/Mark/24d2da4c-94f9-4a28-acd1-656b9b841276.png)
+
+
+
+![d86b09a3-867c-44a1-bf41-d8dadaabe489.png](_assets/images/Mark/d86b09a3-867c-44a1-bf41-d8dadaabe489.png)
+
+
 
 ## Read System Files Using Werkzeug's Debugger
 
@@ -53,7 +71,13 @@ Modified URL:
 
 2. Execute a basic file read command in Python.
 
+
+
 **Code**: [[target = "/etc/passwd"; f = open(target, "r"); pri]]
+
+
+
+
 
 ## Write Files Using Werkzeug's Debugger
 
@@ -61,11 +85,21 @@ Modified URL:
 
 2. Create a variable in the Debugger console named pwn, and set it to the value of the attacker's SSH public key.
 
+
+
 **Code**: [[pwn = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwCUg]]
+
+
 
 3. Execute a basic file write command in Python.
 
+
+
 **Code**: [[target = "/home/bob/.ssh/authorized_keys"; f = ope]]
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +119,5 @@ Modified URL:
 ## Tags
 
 - [[Web Applications]]
+
+

@@ -48,11 +48,15 @@ To perform this technique, the attacker first needs to identify writable files t
 
 This technique can be very effective, as it allows an attacker to gain full control over a system. However, it can also be easily detected and prevented by implementing proper file permissions and monitoring.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system with writable files
 
 1. Writable Files Finder tool
+
+ 
 
 ## Defense
 
@@ -62,17 +66,27 @@ This technique can be very effective, as it allows an attacker to gain full cont
 
 1. Use intrusion detection and prevention systems to detect and block privilege escalation attempts
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on the target system
 
 1. Achieve persistence on the target system
 
+ 
+
 # Instructions
 
 1. The above commands can be used to find all writable files in the system. The first command searches for all files that are writable by anyone other than the current user and are not located in /proc/ or /sys/ directories. The second command searches for all files that have the setuid or setgid bit set and are writable by anyone. The third command searches for all files that are writable by anyone and are not located in /proc/ directory.
 
+ 
+
+
+
 **Code**: [[find / -writable ! -user `whoami` -type f ! -path ]]
+
+
 
 > Arguments:
 - `find /`: Search for files starting from the root directory.
@@ -118,3 +132,5 @@ This technique can be very effective, as it allows an attacker to gain full cont
 
 - [[Linux - Privilege Escalation]]
 - [[Writable files]]
+
+

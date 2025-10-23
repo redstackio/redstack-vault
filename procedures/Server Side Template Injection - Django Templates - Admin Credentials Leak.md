@@ -30,11 +30,15 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 
 Server Side Template Injection (SSTI) is a vulnerability that allows an attacker to inject code into a web application template, which is then executed server-side. In this specific case, the vulnerability is present in Django Templates, which is a web templating system that allows developers to define the structure of a web page. The attacker can exploit this vulnerability to leak the admin username and password hash, which can then be cracked to obtain the plaintext password. This can lead to full compromise of the web application and sensitive data exposure. To exploit this vulnerability, the attacker needs to have access to the web application and be able to inject code into the template.
 
+ 
+
 ## Requirements
 
 1. Access to the web application
 
 1. Ability to inject code into the template
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 1. Implement input validation and sanitization to prevent code injection
 
 1. Use strong and unique passwords, and consider using multi-factor authentication to protect against password cracking
+
+ 
 
 ## Objectives
 
@@ -54,9 +60,13 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 
 1. Exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. This command retrieves the recent admin logins and passwords from the system logs.
+
+ 
 
 The 'get_admin_log' command retrieves the recent admin logins and passwords from the system logs. The '10' argument specifies the number of log entries to retrieve. The retrieved data is in the format of 'username : password'. This command is useful for auditing purposes and to identify any potential security breaches.
 
@@ -77,3 +87,5 @@ The 'get_admin_log' command retrieves the recent admin logins and passwords from
 - [[Admin username and password hash leak]]
 - [[Django Templates]]
 - [[Server Side Template Injection]]
+
+

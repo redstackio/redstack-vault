@@ -32,11 +32,15 @@ Socat is a utility that allows for bidirectional data transfer between two endpo
 
 The business value of this technique is that it allows an attacker to maintain a persistent foothold in a target network and steal sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a redirector
 
 1. Access to a Cobalt Strike server
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this technique is that it allows an attacker to maintain a
 
 1. Implement strong authentication mechanisms to prevent unauthorized access to the redirector and Cobalt Strike server
 
+ 
+
 ## Objectives
 
 1. Install Socat on a redirector to forward traffic to a Cobalt Strike server
@@ -53,6 +59,8 @@ The business value of this technique is that it allows an attacker to maintain a
 1. Maintain a persistent foothold in a target network
 
 1. Steal sensitive data from the target network
+
+ 
 
 # Instructions
 
@@ -64,10 +72,18 @@ Once Socat is installed, you can use the following command to forward traffic fr
 
 socat TCP4-LISTEN:80,fork TCP4:[TEAM SERVER]:80
 
+ 
+
+
+
 **Code**: [[sudo apt install socat
 socat TCP4-LISTEN:80,fork T]]
 
+
+
 > This command installs Socat, a utility that allows for bidirectional data transfer between two endpoints, and sets up a TCP4 listener on port 80 that forwards incoming traffic to the specified TEAM SERVER. The 'fork' option allows for multiple connections to be handled simultaneously. This can be useful for scenarios where you want to redirect incoming web traffic to a different server, or for setting up a reverse proxy.
+
+
 
 **Command** ([[Install socat and forward traffic to team server]]):
 
@@ -75,6 +91,8 @@ socat TCP4-LISTEN:80,fork T]]
 sudo apt install socat
 socat TCP4-LISTEN:80,fork TCP4:[TEAM SERVER]:80
 ```
+
+
 
 ## Commands Used
 
@@ -85,3 +103,5 @@ socat TCP4-LISTEN:80,fork TCP4:[TEAM SERVER]:80
 - [[Cobalt Strike]]
 - [[Infrastructure]]
 - [[Redirectors]]
+
+

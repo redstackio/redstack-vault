@@ -33,9 +33,13 @@ RDS VPC Enumeration is a technique used to discover AWS Virtual Private Clouds (
 
 From a technical perspective, this technique relies on the fact that RDS instances are often associated with VPCs, and that the 'List VPCs' command is available to anyone with the necessary permissions. From a business value perspective, this technique can be used by attackers to identify valuable targets for further exploitation, such as databases containing sensitive information.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to execute the 'List VPCs' command
+
+ 
 
 ## Defense
 
@@ -45,21 +49,31 @@ From a technical perspective, this technique relies on the fact that RDS instanc
 
 1. Monitor for unusual activity related to the 'List VPCs' command and associated API calls
 
+ 
+
 ## Objectives
 
 1. Discover VPCs associated with RDS instances
+
+ 
 
 # Instructions
 
 1. To list all the VPCs in your AWS account, run the following command:
 
+ 
+
 This command will provide you with the details of all the VPCs present in your AWS account. It will include information such as the VPC ID, the CIDR block, the tenancy option, the state, and more. This command is useful for getting an overview of your VPCs and their current configurations.
+
+
 
 **Command** ([[EC2 Describe VPCs]]):
 
 ```bash
 aws ec2 describe-vpcs
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -81,3 +95,5 @@ aws ec2 describe-vpcs
 - [[Enumeration]]
 - [[Listing VPC's]]
 - [[RDS - Relational Database Service]]
+
+

@@ -43,11 +43,12 @@ snmp-check -c $_COMMUNITY_STRING -v $_VERSION $_TARGET_IP
 root@kali:~# snmp-check -c public -v 2c 10.10.10.10                                       
 snmp-check v1.9 - SNMP enumerator                                                                   
 Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)                                         
-
+                                                                                                    
 [+] Try to connect to 10.10.10.20:161 using SNMPv2c and community 'public'                          
-
+                                                                                                    
+                                                                                                    
 [*] System information:                                                                             
-
+                                                                                                    
   Host IP address               : 10.10.10.10                                                       
   Hostname                      : Host                                                     
   Description                   : Linux Sneaky 4.4.0-75-generic #96~14.04.1-Ubuntu SMP Thu Apr 20 11
@@ -58,3 +59,5 @@ Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)
   Uptime system                 : 00:18:48.37                                                       
   System date                   : 2019-9-17 02:15:24.0 
 ```
+
+

@@ -33,11 +33,15 @@ The AWS ECS Cluster Enumeration procedure involves listing all ECS clusters in a
 
 From a technical standpoint, this procedure involves making API calls to the AWS ECS service using valid AWS credentials. The 'List ECS Clusters' command uses the AWS CLI to make these API calls. Business value of this procedure is that it helps security teams to identify and remediate any security weaknesses in their AWS environment before attackers can exploit them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the AWS CLI
+
+ 
 
 ## Defense
 
@@ -47,23 +51,33 @@ From a technical standpoint, this procedure involves making API calls to the AWS
 
 1. Implement least privilege access controls to limit the scope of any potential attacks
 
+ 
+
 ## Objectives
 
 1. Identify all ECS clusters in the target AWS environment
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. This command lists all the ECS clusters in your AWS account.
 
+ 
+
 The `aws ecs list-clusters` command takes no arguments. It simply returns a list of all the ECS clusters in your account. This command can be useful when you want to quickly see all the clusters that you have created. You can then use the names of the clusters returned by this command in other ECS commands to perform operations on those clusters.
+
+
 
 **Command** ([[List ECS Clusters]]):
 
 ```bash
 aws ecs list-clusters
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws ecs list-clusters
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing all ECS clusters]]
+
+

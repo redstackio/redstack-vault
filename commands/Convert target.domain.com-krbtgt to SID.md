@@ -7,6 +7,7 @@ data: '$ Convert-NameToSid target.domain.com\krbtgt
 
   S-1-5-21-2941561648-383941485-1389968811-502
 
+
   '
 output: null
 created_at: '2023-04-06T03:56:07.242640+00:00'
@@ -19,4 +20,7 @@ updated_at: '2023-04-10T20:26:22.640650+00:00'
 $ Convert-NameToSid target.domain.com\krbtgt
 S-1-5-21-2941561648-383941485-1389968811-502
 
+
 ```
+
+

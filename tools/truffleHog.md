@@ -16,3 +16,7 @@ Searches through git repositories for secrets, digging deep into commit history 
 ## Description
 
 Searches through git repositories for secrets, digging deep into commit history and branches.​
+
+
+
+

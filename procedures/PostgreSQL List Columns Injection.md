@@ -29,9 +29,13 @@ To execute this technique, an attacker can inject a specially crafted query into
 
 This technique can be valuable to an attacker as it provides insight into the structure of the database, which can be used to plan further attacks or to gather sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PostgreSQL database
+
+ 
 
 ## Defense
 
@@ -41,23 +45,37 @@ This technique can be valuable to an attacker as it provides insight into the st
 
 1. Enforce principle of least privilege by limiting database user permissions
 
+ 
+
 ## Objectives
 
 1. Enumerate the names of columns in a specific table or view
+
+ 
 
 # Instructions
 
 1. To retrieve the column names of a specific table in the database, use this SQL query. Replace 'data_table' with the name of the table you want to retrieve the column names from.
 
+ 
+
+
+
 **Code**: [[SELECT column_name FROM information_schema.columns]]
 
+
+
 > This command retrieves the column names of a specified table in the database. The 'information_schema.columns' table contains information about all columns in all tables in a database. By specifying the table name in the WHERE clause, we can retrieve only the column names for that specific table.
+
+
 
 **Command** ([[Retrieve Column Names]]):
 
 ```bash
 SELECT column_name FROM information_schema.columns WHERE table_name='data_table'
 ```
+
+
 
 ## Commands Used
 
@@ -67,3 +85,5 @@ SELECT column_name FROM information_schema.columns WHERE table_name='data_table'
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL List Columns]]
+
+

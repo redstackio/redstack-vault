@@ -23,3 +23,5 @@ net time -S $_TARGET_IP
 root@kali:~# net time -S 10.10.10.5
 Wed Jun 24 20:16:26 2020
 ```
+
+

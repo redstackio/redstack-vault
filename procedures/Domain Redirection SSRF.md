@@ -30,6 +30,8 @@ From a technical standpoint, this technique takes advantage of the fact that man
 
 Business value of this technique is that it can be used to gain unauthorized access to sensitive data, such as customer information, financial data, or intellectual property. It can also be used to launch further attacks against the target organization, such as lateral movement or privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server with a SSRF vulnerability
@@ -37,6 +39,8 @@ Business value of this technique is that it can be used to gain unauthorized acc
 1. Ability to redirect requests to a domain that resolves to the attacker's IP address
 
 1. Knowledge of NIP.IO or similar services
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ Business value of this technique is that it can be used to gain unauthorized acc
 
 1. Implement access controls and authentication to prevent unauthorized access to sensitive data
 
+ 
+
 ## Objectives
 
 1. Bypass filters and exploit SSRF vulnerabilities
 
 1. Exfiltrate data, perform reconnaissance, or execute arbitrary code on the vulnerable server
 
+ 
+
 # Instructions
 
 1. To use NIP.IO for DNS mapping, simply append the desired hostname to the IP address you want to map, followed by .nip.io. For example, to map the IP address 192.168.0.1 to the hostname myserver.nip.io, you would use the DNS name 192.168.0.1.myserver.nip.io.
 
+ 
+
+
+
 **Code**: [[NIP.IO maps <anything>.<IP Address>.nip.io to the ]]
 
+
+
 > The NIP.IO service allows for easy DNS mapping of IP addresses without the need for a dedicated DNS server. This can be useful in situations where you need to access a server by hostname, but do not have a DNS server available or do not want to set up DNS for a small network. The service works by interpreting the hostname as a subdomain of the IP address, and returning the IP address as the DNS resolution for that hostname.
+
+
 
 **Command** ([[NIP.IO Mapping]]):
 
 ```bash
 127.0.0.1.nip.io
 ```
+
+
 
 ## Commands Used
 
@@ -75,3 +93,5 @@ Business value of this technique is that it can be used to gain unauthorized acc
 - [[Bypassing filters]]
 - [[Bypass localhost with a domain redirection]]
 - [[Server-Side Request Forgery]]
+
+

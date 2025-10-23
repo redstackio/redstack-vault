@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:55.682065+00:00'
 git clone https://github.com/xFreed0m/RDPassSpray
 python3 RDPassSpray.py -u [USERNAME] -p [PASSWORD] -d [DOMAIN] -t [TARGET IP]
 ```
+
+

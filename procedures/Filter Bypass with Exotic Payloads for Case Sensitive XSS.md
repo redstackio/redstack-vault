@@ -24,6 +24,8 @@ This procedure is used to bypass filters that are designed to prevent Cross Site
 
 This procedure is used to bypass filters that are designed to prevent Cross Site Scripting (XSS) attacks. The attacker uses exotic payloads to evade the filters and inject malicious scripts into a vulnerable web application. In this case, the attacker is targeting a case sensitive filter. The attacker can use various techniques to bypass the filter, such as encoding the payload or using a different character set. The business value of this attack is to gain unauthorized access to sensitive information, such as user credentials or personal data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -31,6 +33,8 @@ This procedure is used to bypass filters that are designed to prevent Cross Site
 1. Knowledge of the filter being used
 
 1. Ability to craft exotic payloads
+
+ 
 
 ## Defense
 
@@ -40,6 +44,8 @@ This procedure is used to bypass filters that are designed to prevent Cross Site
 
 1. Regularly update and patch the web application and server software to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject malicious scripts into a vulnerable web application
@@ -48,11 +54,19 @@ This procedure is used to bypass filters that are designed to prevent Cross Site
 
 1. Gain unauthorized access to sensitive information
 
+ 
+
 # Instructions
 
 1. Use encoding techniques to prevent Cross-Site Scripting (XSS) attacks.
 
+ 
+
+
+
 **Code**: [[<sCrIpt>alert(1)</ScRipt>]]
+
+
 
 > XSS attacks occur when an attacker injects malicious code into a web page, which is then executed by unsuspecting users who visit the page. To prevent XSS attacks, it is important to properly encode user input before displaying it on a web page. This can be done using encoding techniques such as HTML encoding, JavaScript encoding, and URL encoding. By encoding user input, special characters are converted to their corresponding HTML entities, preventing them from being interpreted as code by the browser. Additionally, it is important to sanitize user input by removing any potentially harmful characters or scripts before displaying it on a web page.
 
@@ -61,3 +75,5 @@ This procedure is used to bypass filters that are designed to prevent Cross Site
 - [[Bypass case sensitive]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

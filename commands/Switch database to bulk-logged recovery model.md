@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:42.032361+00:00'
 ```bash
 ALTER DATABASE database_name SET RECOVERY BULK_LOGGED
 ```
+
+

@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 Invoke-ShareFinder -ComputerADSPath "LDAP://OU=Servers,OU=IT,DC=domain,DC=com" -CheckShareAccess -ExcludeStandard | Out-File -Encoding ascii c:\windows\temp\server_shares.txt Invoke-ShareFinder -ExcludePrint -ExcludeIPC -CheckShareAccess
 
 ```
+
+

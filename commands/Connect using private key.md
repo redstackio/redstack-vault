@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:19.583732+00:00'
 ```bash
 $ sshuttle -vvr root@10.10.10.10 10.1.1.0/24 -e "ssh -i ~/.ssh/id_rsa"
 ```
+
+

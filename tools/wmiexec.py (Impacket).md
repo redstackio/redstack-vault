@@ -28,11 +28,27 @@ Impacket suite tool which uses WMI to execute commands on a remote system. While
 
 Impacket suite tool which uses WMI to execute commands on a remote system. While similar to smbexec.py, wmiexec runs as Administrator rather than SYSTEM, and leaves fewer traces in events logs, though it requires access to the machine's DCOM ports.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_93376855-581b-4d14-a531-a61064ea2f69}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ Impacket suite tool which uses WMI to execute commands on a remote system. While
 
 - [[administrator]]
 - [[Network]]
+
+

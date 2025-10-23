@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:53.708418+00:00'
 $ aws --profile swk ec2 create-volume --availability-zone us-west-2a --region us-west-2  --snapshot-id  snap-XXXX342abd1bdcb89
 
 ```
+
+

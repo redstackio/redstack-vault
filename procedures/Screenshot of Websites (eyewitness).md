@@ -31,6 +31,8 @@ Use this tool to capture screenshots from a list of URL's.
 
 1. Use eye witness to capture a screenshot of a single URL
 
+
+
 **Command** ([[eyewitness screenshot a single url]]):
 
 ```bash
@@ -38,7 +40,13 @@ eyewitness --web --single https://redstack.io
 
 ```
 
+
+
+
+
 2. (Optional) If you have a text file of URL's from a tool like httprobe try this.
+
+
 
 **Command** ([[eyewiness screenshot a list of URL's]]):
 
@@ -47,7 +55,13 @@ eyewitness --web -f http.txt
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[eyewiness screenshot a list of URL's]]
 - [[eyewitness screenshot a single url]]
+
+

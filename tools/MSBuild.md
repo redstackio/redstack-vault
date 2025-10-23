@@ -29,17 +29,32 @@ MSBuild (Microsoft Build Engine) is a platform for building applications. It use
 
 MSBuild (Microsoft Build Engine) is a platform for building applications. It uses an XML schema to control how the platform processes and builds software (similar to Linux's make). MSBuild is a standalone program, and while Visual Studio uses it to compile software, it does not require Visual Studio, and is often installed alongside .NET. Since MSBuild is a Microsoft signed binary, it can be used to execute commands and bypass AppLocker restrictions when AppLocker is configured to only run signed binaries.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_ab82b5cd-9eb5-4bb5-a803-94dd712198a4}}
+
+
 
 # Installation
 
 MSBuild can be installed with:
+
 
 - .NET:  [https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)
 
 - Visual Studio: [https://visualstudio.microsoft.com/vs/community/](https://visualstudio.microsoft.com/vs/community/)
 
 - Build Tools for Visual Studio: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +69,5 @@ MSBuild can be installed with:
 - [[applocker]]
 - [[Build]]
 - [[Defense Bypass]]
+
+

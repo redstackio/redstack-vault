@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:36:24.222219+00:00'
 sudo apt install socat
 socat TCP4-LISTEN:80,fork TCP4:[TEAM SERVER]:80
 ```
+
+

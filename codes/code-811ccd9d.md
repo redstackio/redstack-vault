@@ -19,3 +19,5 @@ go get github.com/subfinder/subfinder
 ./Subfinder/subfinder --set-config SecurityTrailsKey='KEY'
 ./Subfinder/subfinder -d example.com -o /tmp/results_subfinder.txt
 ```
+
+

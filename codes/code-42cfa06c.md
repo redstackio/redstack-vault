@@ -16,3 +16,5 @@ cmd_exec "whoami"
 DROP PROCEDURE cmd_exec
 DROP ASSEMBLY my_assembly
 ```
+
+

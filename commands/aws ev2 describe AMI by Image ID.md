@@ -25,3 +25,5 @@ aws ec2 describe-images --image-ids $AWS_IMAGE_ID --profile $AWS_PROFILE --regio
 ```
 aws ec2 describe-images --image-ids ami-a123ee1f --profile staging --region us-east-1
 ```
+
+

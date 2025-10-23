@@ -38,11 +38,15 @@ From a technical perspective, this technique involves obtaining a keytab file th
 
 The business value of this technique lies in the fact that it allows an attacker to obtain and reuse Kerberos tickets, which can be used to gain access to sensitive information or systems within an Active Directory environment.
 
+ 
+
 ## Requirements
 
 1. Access to a keytab file containing the credentials of a service account
 
 1. Ability to execute the Convert Kerberos Blob to CCache File command
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ The business value of this technique lies in the fact that it allows an attacker
 
 1. Regularly review and rotate service account credentials to limit the impact of any potential credential theft
 
+ 
+
 ## Objectives
 
 1. Obtain Kerberos tickets for authentication to other systems and resources within an Active Directory environment
 
 1. Gain access to sensitive information or systems within an Active Directory environment
+
+ 
 
 # Instructions
 
@@ -65,9 +73,17 @@ The business value of this technique lies in the fact that it allows an attacker
 2. Run the KeytabParser script with the location of the keytab file as an argument: `python KeytabParser.py /etc/krb5.keytab`
 3. Generate a CCache file from the Kerberos blob: `klist -k /etc/krb5.keytab`
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/its-a-feature/KeytabP]]
 
+
+
 > This command is used to convert a Kerberos blob, which is a binary representation of a Kerberos ticket, into a CCache file that can be used by other tools such as Mimikatz or Rubeus. The KeytabParser tool is used to extract the Kerberos blob from a keytab file, which is a file that contains one or more Kerberos keys. Once the Kerberos blob has been extracted, it can be converted into a CCache file using the klist command.
+
+
 
 **Command** ([[Clone KeytabParser repository]]):
 
@@ -75,17 +91,27 @@ The business value of this technique lies in the fact that it allows an attacker
 git clone https://github.com/its-a-feature/KeytabParser
 ```
 
+
+
+
+
 **Command** ([[Parse keytab file]]):
 
 ```bash
 python KeytabParser.py /etc/krb5.keytab
 ```
 
+
+
+
+
 **Command** ([[Display keytab contents]]):
 
 ```bash
 klist -k /etc/krb5.keytab
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -112,3 +138,5 @@ klist -k /etc/krb5.keytab
 
 - [[Active Directory Attacks]]
 - [[CCACHE ticket reuse from keytab]]
+
+

@@ -26,13 +26,27 @@ Net is a Samba tool which implements some of the same functionality as the Windo
 
 Net is a Samba tool which implements some of the same functionality as the Windows/DOS utility of the same name. It includes features such as Kerberos authentication, time sync, add/remove users, etc.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0d241a40-a23f-4a15-a205-33589cbbf414}}
+
+
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
 Net is installed with the samba-common-bin package.
+
+
+
+
 
 ## Services
 
@@ -46,3 +60,5 @@ Net is installed with the samba-common-bin package.
 
 - [[Network]]
 - [[smb]]
+
+

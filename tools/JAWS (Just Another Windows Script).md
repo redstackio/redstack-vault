@@ -23,7 +23,19 @@ JAWS (Just Another Windows [Enum] Script) is a PowerShell 2 script designed to h
 
 JAWS (Just Another Windows [Enum] Script) is a PowerShell 2 script designed to help identify privilege escalation vectors on Windows systems.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_f980fd6f-8c40-4220-8cf5-7443428e2815}}
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -32,3 +44,5 @@ JAWS (Just Another Windows [Enum] Script) is a PowerShell 2 script designed to h
 ## Tags
 
 - [[Enumeration]]
+
+

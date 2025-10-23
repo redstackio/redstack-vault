@@ -36,11 +36,15 @@ To list all sysadmins on a MSSQL Server, a manual SQL query can be run. This que
 
 This procedure can provide valuable information for an attacker looking to escalate privileges or move laterally within a network.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the MSSQL Server
 
 1. Access to run SQL queries on the server
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ This procedure can provide valuable information for an attacker looking to escal
 
 1. Monitor for and alert on unusual activity related to account discovery and privilege escalation
 
+ 
+
 ## Objectives
 
 1. Identify all sysadmins on a MSSQL Server
 
 1. Gather information on high-value targets for further exploitation
 
+ 
+
 # Instructions
 
 1. This command lists all the system administrators in the SQL Server instance.
 
+ 
+
+
+
 **Code**: [[SELECT name,type_desc,is_disabled FROM sys.server_]]
 
+
+
 > The 'sys.server_principals' table contains information about server-level principals, such as logins and roles. The 'IS_SRVROLEMEMBER' function checks if a given principal is a member of a specified server role. In this case, we are checking if the principal is a member of the 'sysadmin' role, which is the highest level of administrative privilege in SQL Server. The 'name', 'type_desc', and 'is_disabled' columns of the 'sys.server_principals' table provide information about the principal, such as its name, type, and whether it is disabled or not.
+
+
 
 **Command** ([[Retrieve server principals with sysadmin role]]):
 
 ```bash
 SELECT name,type_desc,is_disabled FROM sys.server_principals WHERE IS_SRVROLEMEMBER ('sysadmin',name) = 1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ SELECT name,type_desc,is_disabled FROM sys.server_principals WHERE IS_SRVROLEMEM
 - [[List All Sysadmins]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

@@ -35,11 +35,15 @@ From a technical standpoint, this technique involves injecting SQL code into the
 
 The business value of this technique lies in the fact that it can help attackers identify the databases present on a PostgreSQL server. This information can be used to plan further attacks and gain access to sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to the PostgreSQL server
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this technique lies in the fact that it can help attackers
 
 1. Implement network segmentation to limit access to the PostgreSQL server
 
+ 
+
 ## Objectives
 
 1. Identify the databases present on a PostgreSQL server
@@ -57,19 +63,31 @@ The business value of this technique lies in the fact that it can help attackers
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. This command lists all the databases in the current PostgreSQL server.
 
+ 
+
+
+
 **Code**: [[SELECT datname FROM pg_database]]
 
+
+
 > The 'SELECT' statement retrieves the 'datname' column from the 'pg_database' table. This table contains information about all the databases in the server. Running this command will return a list of all the database names.
+
+
 
 **Command** ([[List all databases]]):
 
 ```bash
 SELECT datname FROM pg_database
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ SELECT datname FROM pg_database
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL List Database]]
+
+

@@ -26,17 +26,35 @@ Robots.txt file contains the disallowed entries of directories that the search e
 
 # Description
 
+
+
 Robots.txt file contains the disallowed entries of directories that the search engines should not crawl. These directories would reveal sensitive information in some instances.
+
+
 
 # Procedure
 
+
+
 1. Use the below nmap command to find the sensitive directories in the application using robots.txt file.
+
+
+
+
+
+
 
 **Command** ([[Nmap Command to Find Directories From Robots.txt File]]):
 
 ```bash
 nmap -p80 --script http-robots.txt 192.168.1.3
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +69,5 @@ nmap -p80 --script http-robots.txt 192.168.1.3
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:37:28.586667+00:00'
 ```bash
 SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k "hkcurun" -v "Test Stuff" -m add -o env
 ```
+
+

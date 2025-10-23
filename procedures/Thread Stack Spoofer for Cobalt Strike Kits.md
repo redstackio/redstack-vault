@@ -37,11 +37,15 @@ From a technical perspective, the Thread Stack Spoofer works by modifying the st
 
 From a business perspective, this technique can be used to gain access to sensitive information, steal intellectual property, and disrupt critical systems. It is important for organizations to be aware of this technique and take steps to protect against it.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system with Cobalt Strike Kits installed
 
 1. Ability to inject malicious code into a legitimate process
+
+ 
 
 ## Defense
 
@@ -51,17 +55,29 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Use endpoint detection and response (EDR) solutions to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. Evade detection and escalate privileges on compromised systems
+
+ 
 
 # Instructions
 
 1. To disable the Thread Stack Spoofer in Artifact Kit, navigate to the options menu and uncheck the 'Enable Thread Stack Spoofer' checkbox.
 
+ 
+
+
+
 **Code**: [[artifactkit_stack_spoof]]
 
+
+
 > The Thread Stack Spoofer is a feature of the Artifact Kit that allows users to modify the stack trace of a thread. This can be useful for debugging purposes, as it allows developers to simulate different execution paths and test the behavior of their code under different conditions. However, in some cases, the Thread Stack Spoofer may interfere with the normal operation of the application, so it is important to be able to disable it when necessary.
+
+
 
 **Command** ([[Install artifactkit]]):
 
@@ -69,11 +85,19 @@ From a business perspective, this technique can be used to gain access to sensit
 npm install -g artifactkit
 ```
 
+
+
+
+
 **Command** ([[Create a sample artifact kit]]):
 
 ```bash
 artifactkit create -n sample
 ```
+
+
+
+
 
 **Command** ([[Spoof the stack trace]]):
 
@@ -81,15 +105,25 @@ artifactkit create -n sample
 artifactkit stack-spoof -k sample
 ```
 
+
+
 2. To configure the Arsenal kit, follow these steps:
 1. Open the arsenal_kit.config file.
 2. Locate the section for kit configuration.
 3. Modify the values for the desired kit parameters, such as color, size, and design.
 4. Save the changes to the file.
 
+ 
+
+
+
 **Code**: [[arsenal_kit.config]]
 
+
+
 > The arsenal_kit.config file contains the configuration settings for the Arsenal football team's kit. This file allows you to customize various aspects of the kit, such as the color, size, and design. By modifying the values in the file, you can create a unique kit that represents your team's style and identity. The changes made to the configuration file will be reflected in the kit worn by the team in matches and training sessions.
+
+
 
 **Command** ([[Set primary color to red]]):
 
@@ -97,11 +131,19 @@ artifactkit stack-spoof -k sample
 primary_color: red
 ```
 
+
+
+
+
 **Command** ([[Set secondary color to white]]):
 
 ```bash
 secondary_color: white
 ```
+
+
+
+
 
 **Command** ([[Set font family to Helvetica Neue, Helvetica, Arial, sans-serif]]):
 
@@ -109,17 +151,27 @@ secondary_color: white
 font_family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 ```
 
+
+
+
+
 **Command** ([[Set font size to 16px]]):
 
 ```bash
 font_size: 16px
 ```
 
+
+
+
+
 **Command** ([[Set background image to arsenal_bg.jpg]]):
 
 ```bash
 background_image: url('arsenal_bg.jpg')
 ```
+
+
 
 ## Commands Used
 
@@ -137,3 +189,5 @@ background_image: url('arsenal_bg.jpg')
 - [[Cobalt Strike]]
 - [[Kits]]
 - [[Thread Stack Spoofer]]
+
+

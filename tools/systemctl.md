@@ -28,11 +28,25 @@ Systemctl is used to control the systemd system and service manager, which is pr
 
 Systemctl is used to control the systemd system and service manager, which is present on almost all Linux distributions built after 2015. While systemctl has many uses, it is primarily used by administrators to stop, start, and create services. Root privileges are generally required to modify services using systemctl, but if configured with SUID or sudo permissions, it may be used for privilege escalation.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0271c0a0-7a8f-4b56-8e98-8528ff0175cb}}
+
+
 
 # Installation
 
 systemctl is installed with systemd, and installed with the operating system.
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ systemctl is installed with systemd, and installed with the operating system.
 
 - [[administrator]]
 - [[Operating Systems]]
+
+

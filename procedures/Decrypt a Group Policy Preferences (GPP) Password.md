@@ -34,13 +34,23 @@ Decrypt a Group Policy Preference Password using gpp-decrypt. While passwords co
 
 Decrypt a Group Policy Preference Password using gpp-decrypt. While passwords contained in these GPP files are encrypted, Microsoft published the AES key, making decryption trivial. GPP files are often found on SYSVOL shares, as administrators use them to apply the same settings across multiple machines.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[gpp-decrypt Extract Password from a GPP Encrypted String]]):
 
 ```bash
 gpp-decrypt $_ENCRYPTED_STRING
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ gpp-decrypt $_ENCRYPTED_STRING
 - [[Cryptography]]
 - [[data encryption]]
 - [[known vulnerability]]
+
+

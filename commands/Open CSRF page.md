@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:27.965747+00:00'
 ```bash
 Open https://attacker.com/csrf.html;trusted.domain.com
 ```
+
+

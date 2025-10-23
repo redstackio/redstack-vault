@@ -15,3 +15,5 @@ updated_at: '2023-05-24T22:41:39.704807+00:00'
 ```bash
 Get-AzStorageBlobContent -Container <NAME> -Context (Get-AzStorageAccount -name <NAME> -ResourceGroupName <NAME>).context -Blob
 ```
+
+

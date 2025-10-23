@@ -34,6 +34,8 @@ Technical Explanation: This technique involves using a UNION SELECT statement to
 
 Business Value: This technique can be used to compromise sensitive data such as customer information, financial data, and intellectual property. A successful MYSQL Union-Based Injection with Error-Based Detection attack can result in financial losses, reputational damage, and legal liabilities for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Vulnerable web application with a MYSQL database
@@ -41,6 +43,8 @@ Business Value: This technique can be used to compromise sensitive data such as 
 1. Knowledge of SQL injection techniques
 
 1. Access to a tool for exploiting SQL injection vulnerabilities
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ Business Value: This technique can be used to compromise sensitive data such as 
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a MySQL database
 
 1. Extract sensitive information such as usernames, passwords, and other confidential data
+
+ 
 
 # Instructions
 
@@ -67,7 +75,13 @@ Business Value: This technique can be used to compromise sensitive data such as 
 6. Use the correct number of '@' symbols in the 'UNION SELECT' statement to successfully inject SQL code without generating an error.
 7. Verify the injection by checking for the expected output or by using additional SQL statements to extract data from the database.
 
+ 
+
+
+
 **Code**: [[1' UNION SELECT @--+        #The used SELECT state]]
+
+
 
 > The 'UNION SELECT' statement is used to combine the results of two or more SELECT statements into a single result set. In SQL injection attacks, this statement can be used to inject additional SQL code into a vulnerable parameter. By using the '@' symbol, the attacker can specify the number of columns in the original query. The attacker can then add additional '@' symbols to the 'UNION SELECT' statement until an error is generated. The number of '@' symbols required to generate an error indicates the number of columns in the original query. The attacker can then use the correct number of '@' symbols in the 'UNION SELECT' statement to successfully inject SQL code without generating an error. This method can be used to extract sensitive information from the database or to modify the contents of the database.
 
@@ -88,3 +102,5 @@ Business Value: This technique can be used to compromise sensitive data such as 
 - [[MYSQL Union Based]]
 - [[Using `order by` or `group by`]]
 - [[Using `UNION SELECT` Error Based]]
+
+

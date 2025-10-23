@@ -18,3 +18,5 @@ root@<TENANT NAME>.onmicrosoft.com    - INVALID
 test@<TENANT NAME>.onmicrosoft.com    - VALID
 contact@<TENANT NAME>.onmicrosoft.com - INVALID
 ```
+
+

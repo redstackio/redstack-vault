@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:57.136277+00:00'
 ```powershell
 something%0Acat%20/etc/passwd
 ```
+
+

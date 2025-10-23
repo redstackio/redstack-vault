@@ -15,3 +15,5 @@ updated_at: '2023-05-24T07:18:16.199824+00:00'
 ```bash
 Lantern.exe cookie --derivedkey <Key from Mimikatz> --context <Context from Mimikatz> --prt <PRT from Mimikatz>
 ```
+
+

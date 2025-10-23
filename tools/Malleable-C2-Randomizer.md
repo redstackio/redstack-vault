@@ -16,3 +16,7 @@ This script randomizes Cobalt Strike Malleable C2 profiles through the use of a 
 ## Description
 
 This script randomizes Cobalt Strike Malleable C2 profiles through the use of a metalanguage, hopefully reducing the chances of flagging signature-based detection controls. ​
+
+
+
+

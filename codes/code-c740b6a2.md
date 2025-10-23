@@ -14,3 +14,5 @@ updated_at: '2023-05-24T15:58:22.584480+00:00'
 ```php
 system('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com/&api-version=2017-09-01" -H secret:$IDENTITY_HEADER');
 ```
+
+

@@ -23,4 +23,12 @@ This is useful for testing the ability to run code on a system, can be used in p
 
 ## Payload
 
+
+
 **Command**: [[msfvenom Execute Calculator]]
+
+
+
+
+
+

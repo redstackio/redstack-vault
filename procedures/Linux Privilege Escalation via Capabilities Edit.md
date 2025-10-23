@@ -39,6 +39,8 @@ To perform this procedure, the attacker must identify a process with elevated ca
 
 This procedure can be valuable for an attacker looking to gain access to sensitive data or systems. By escalating privileges, the attacker can bypass security measures and gain access to resources that would otherwise be restricted.
 
+ 
+
 ## Requirements
 
 1. Access to a low-privileged account on a Linux system
@@ -46,6 +48,8 @@ This procedure can be valuable for an attacker looking to gain access to sensiti
 1. Knowledge of Linux capabilities
 
 1. Access to the 'setcap' command
+
+ 
 
 ## Defense
 
@@ -55,20 +59,32 @@ This procedure can be valuable for an attacker looking to gain access to sensiti
 
 1. Regularly review and update access controls to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
 
 1. Gain access to sensitive data or systems
 
+ 
+
 # Instructions
 
 1. To manage the capabilities of the ping command, use the following commands:
 
+ 
+
+
+
 **Code**: [[/usr/bin/setcap -r /bin/ping            # remove
 /]]
 
+
+
 > The 'setcap' command is used to set or remove capabilities of a command. In this case, we are managing the capabilities of the 'ping' command. The first command removes the 'cap_net_raw' capability from the 'ping' command. The second command adds the 'cap_net_raw' capability to the 'ping' command. The 'cap_net_raw' capability allows the 'ping' command to send and receive raw network packets, which is necessary for its functionality.
+
+
 
 **Command** ([[Add cap_net_raw+p to ping binary]]):
 
@@ -76,11 +92,17 @@ This procedure can be valuable for an attacker looking to gain access to sensiti
 /usr/bin/setcap cap_net_raw+p /bin/ping
 ```
 
+
+
+
+
 **Command** ([[Remove cap_net_raw from ping binary]]):
 
 ```bash
 /usr/bin/setcap -r /bin/ping
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +129,5 @@ This procedure can be valuable for an attacker looking to gain access to sensiti
 - [[Capabilities]]
 - [[Edit capabilities]]
 - [[Linux - Privilege Escalation]]
+
+

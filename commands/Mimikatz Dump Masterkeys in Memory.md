@@ -58,6 +58,7 @@ SID               : S-1-5-21-1576920733-1301476157-954876328-1108
          * MasterKey :  daef77bbf4c8fae8ceac6aec0f4014ae8ec88c266073efafa74bcd86f51b30f2697556b072f91d3dbf0ab9ca118614866261d8620d4158c500fc51d15872c723
          * sha1(key) :  e49b3e446435a04d0396293e6dcae8df3274e323
 
+
 Authentication Id : 0 ; 1931844 (00000000:001d7a44)
 Session           : Interactive from 2
 User Name         : bob
@@ -67,3 +68,5 @@ Logon Time        : 7/20/2020 5:55:25 PM
 SID               : S-1-5-21-1576920733-1301476157-954876328-1108
 ...
 ```
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:19:45.231882+00:00'
 ```bash
 $ aws ec2-instance-connect send-ssh-public-key --region us-east-1 --instance-id INSTANCE --availability-zone us-east-1d --instance-os-user ubuntu --ssh-public-key file://shortkey.pub --profile uploadcreds
 ```
+
+

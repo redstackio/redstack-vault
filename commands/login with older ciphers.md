@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc username@target-ip
 
 ```
+
+

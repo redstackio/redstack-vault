@@ -28,11 +28,27 @@ httprint relies on web server characteristics to accurately identify web servers
 
 httprint relies on web server characteristics to accurately identify web servers, despite the fact that they may have been obfuscated by changing the server banner strings, or by plug-ins such as mod_security or servermask. httprint can also be used to detect web enabled devices which do not have a server banner string, such as wireless access points, routers, switches, cable modems, etc.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_af24c80f-2db9-49c0-b4b0-e0d005f8c23d}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ httprint relies on web server characteristics to accurately identify web servers
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

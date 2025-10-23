@@ -5,6 +5,7 @@ type: command
 executor: bash
 data: 'In : ~/.config/autostart/*.desktop
 
+
   [Desktop Entry]
 
   Type=Application
@@ -36,3 +37,5 @@ AutostartCondition=unless-exists ~/.cache/gnome-getting-started-docs/seen-gettin
 OnlyShowIn=GNOME;
 X-GNOME-Autostart-enabled=false
 ```
+
+

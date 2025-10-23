@@ -30,13 +30,39 @@ Login mechanism in an application can be bypassed using LDAP injection. This can
 
 Login mechanism in an application can be bypassed using LDAP injection. This can be achieved by using LDAP queries as payloads.
 
+
+
 # Instructions
 
 1. Access the login page and use the below payload in the user field. Where *slisberger* is the username.
 
 *slisberger)(&))*
 
+
+
+
+
+![8578cbd7-89f6-474f-bd72-b6c8d4ac53ea.png]()
+
+
+
 2. After clicking on Log In button, the application logins with the user *slisberger.*
+
+
+
+
+
+
+
+![0aba75a1-8793-4d76-b775-f5229b0f2a65.png]()
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +75,5 @@ Login mechanism in an application can be bypassed using LDAP injection. This can
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

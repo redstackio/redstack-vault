@@ -24,3 +24,5 @@ $creds = New-Object System.Management.Automation.PSCredential('username', $Passw
 $sess = New-PSSession -ComputerName <IP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer)
 Enter-PSSession $sess
 ```
+
+

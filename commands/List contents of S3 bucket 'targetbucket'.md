@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.600463+00:00'
 ```bash
 aws s3 ls s3://targetbucket --no-sign-request --region insert-region-here
 ```
+
+

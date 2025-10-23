@@ -34,6 +34,8 @@ Compromising a Personal Access Token (PAT) for Gitlab Source Code Management and
 
 Compromising a Personal Access Token (PAT) for Gitlab Source Code Management and CI/CD allows an attacker to perform actions on behalf of the user who generated the token. This can include cloning or modifying source code repositories, running arbitrary code in CI/CD pipelines, or accessing sensitive data such as credentials or API keys. From a technical perspective, this attack can be accomplished through phishing, social engineering, or exploiting vulnerabilities in the Gitlab application. The business value of this attack is significant, as it can result in the theft of intellectual property, disruption of software development processes, and reputational damage for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the Gitlab application
@@ -41,6 +43,8 @@ Compromising a Personal Access Token (PAT) for Gitlab Source Code Management and
 1. Access to the network or device where the Gitlab application is hosted
 
 1. Knowledge of the Gitlab Personal Access Token generation process
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Compromising a Personal Access Token (PAT) for Gitlab Source Code Management and
 
 1. Enforce least privilege access controls for Gitlab repositories and pipelines
 
+ 
+
 ## Objectives
 
 1. Obtain a valid Gitlab Personal Access Token
@@ -58,19 +64,31 @@ Compromising a Personal Access Token (PAT) for Gitlab Source Code Management and
 
 1. Execute arbitrary code or access sensitive data within the Gitlab environment
 
+ 
+
 # Instructions
 
 1. To create a Personal Access Token in Gitlab, use the following command:
 
+ 
+
+
+
 **Code**: [[curl -k --request POST --header "PRIVATE-TOKEN: ap]]
 
+
+
 > This command creates a Personal Access Token (PAT) in Gitlab, which can be used to authenticate API requests. The `curl` command is used to make a POST request to the Gitlab API endpoint for creating a PAT. The `--header` option is used to specify the `PRIVATE-TOKEN` header, which is the API token used for authentication. The `--data` options are used to specify the name of the token, the expiration date (which is left blank to create a token that never expires), and the scopes that the token should have access to. In this case, the token is given access to the `api`, `read_repository`, and `write_repository` scopes. Finally, the URL for the API endpoint is specified, which includes the user ID of the user for whom the token is being created.
+
+
 
 **Command** ([[Create Personal Access Token for GitLab API]]):
 
 ```bash
 curl -k --request POST --header "PRIVATE-TOKEN: apiToken" --data "name=user-persistence-token" --data "expires_at=" --data "scopes[]=api" --data "scopes[]=read_repository" --data "scopes[]=write_repository" "https://gitlabHost/api/v4/users/UserIDNumber/personal_access_tokens"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ curl -k --request POST --header "PRIVATE-TOKEN: apiToken" --data "name=user-pers
 
 - [[Personal Access Token]]
 - [[Source Code Management & CI/CD Compromise]]
+
+

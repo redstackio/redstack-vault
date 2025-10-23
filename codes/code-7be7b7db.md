@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:17.937373+00:00'
 can be integrated with nmap (https://github.com/glennzw/shodan-hq-nse)
 nmap --script shodan-hq.nse --script-args 'apikey=<yourShodanAPIKey>,target=<hackme>'
 ```
+
+

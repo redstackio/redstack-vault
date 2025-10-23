@@ -8,15 +8,18 @@ data: wfuzz --hc 200 -w $_USERS.txt -u 'http://$_TARGET_IP/wp-login.php?action=l
 output: 'root@kali:~# wfuzz --hc 200 -c -w names.txt -u ''http://10.10.10.10/wp-login.php?action=lostpassword''
   -d ''user_login=FUZZ&redirect_to=&wp-submit=Get+New+Password''
 
+
   ********************************************************
 
   * Wfuzz 2.4 - The Web Fuzzer                           *
 
   ********************************************************
 
+
   Target: http://10.10.10.10/wp-login.php?action=lostpassword
 
   Total requests: 10163
+
 
   ===================================================================
 
@@ -24,7 +27,9 @@ output: 'root@kali:~# wfuzz --hc 200 -c -w names.txt -u ''http://10.10.10.10/wp-
 
   ===================================================================
 
+
   000002955:   500        110 L    305 W    3068 Ch     "elliot"
+
 
   Total time: 184.0298
 
@@ -63,3 +68,5 @@ Total time: 184.0298
 Processed Requests: 10163
 Filtered Requests: 1016
 ```
+
+

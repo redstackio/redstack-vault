@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:15.126147+00:00'
 ```bash
 cme smb 10.10.10.10 -u Administrator -H 89[...]9d -M gpp_password
 ```
+
+

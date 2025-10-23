@@ -31,15 +31,37 @@ Union SQL injection will retrieve data from the database tables. First number of
 
 Union SQL injection will retrieve data from the database tables. First number of columns in the table has to be identified. Then the payload is customised based on the columns.
 
+
+
 # Procedure
 
 1. Access the application and apply filter to observe category parameter in the URL. Inject SQL injection payload through the parameter.
 
+
+
+
+
+![0de687ea-e061-4e5f-8a3e-26f3fe7348a0.png]()
+
+
+
 2. Based on the number of columns and containing text, construct the payload by trying to retrieve content from other tables. From the above screenshot, only 1 column is containing text and the payload is fetching the content from two columns.
+
+
 
 *'+UNION+SELECT+NULL,username||'~'||password+FROM+users--*
 
+
+
+
+
+![357a75c8-2ce5-4e98-a7fc-75b33691b12c.png]()
+
+
+
 3. Usernames and Passwords are retrieved from the table.
+
+
 
 ## Platforms
 
@@ -53,3 +75,5 @@ Union SQL injection will retrieve data from the database tables. First number of
 - [[sqli]]
 - [[SQL Injection]]
 - [[Web Applications]]
+
+

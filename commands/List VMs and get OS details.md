@@ -23,3 +23,5 @@ $vm = Get-AzVM -Name "VM Name"
 $vm.OSProfile
 
 ```
+
+

@@ -30,11 +30,27 @@ heartbleed-poc.py is a tool used to test for and exploit the Heartbleed vulnerab
 
 heartbleed-poc.py is a tool used to test for and exploit the Heartbleed vulnerability (CVE-2014-0160) on remote systems. Heartbleed affects OpenSSL libraries earlier than 1.0.1g, which allows remote attackers to read protected memory on the affected web server, potentially disclosing sensitive information including private keys, passwords, and other sensitive information.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_11bb70cd-3859-4593-a17e-cd1a135e7b24}}
+
+
 
 Installation
 
 Clone the repo and execute the script
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +71,5 @@ Clone the repo and execute the script
 - [[Cryptography]]
 - [[known vulnerability]]
 - [[Network]]
+
+

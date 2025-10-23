@@ -38,3 +38,5 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon
     DisableLockWorkstation    REG_DWORD    0x0
     DefaultPassword    REG_SZ    IcanhasCash!
 ```
+
+

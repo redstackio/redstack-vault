@@ -26,11 +26,27 @@ Steghide is a steganography program which allows users to covertly hide data (em
 
 Steghide is a steganography program which allows users to covertly hide data (embedded file) in various image and audio file formats (cover file). Steghide does not modify color frequencies of the image, making hidden data resilient to first-order statistical tests. By default, Steghide uses AES encryption when hiding files, although it includes many other common algorithms. Steghide supports hiding data in JPEG, BMP, WAV, and AU files.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_6b52c8a8-28b4-4008-8932-d353b94d7d11}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -40,3 +56,5 @@ Steghide is a steganography program which allows users to covertly hide data (em
 
 - [[Obfuscation]]
 - [[Steganography]]
+
+

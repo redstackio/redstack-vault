@@ -34,6 +34,8 @@ From a technical perspective, Groovy is a scripting language that is often used 
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive data or take control of a server. This can result in financial loss, reputational damage, and legal liability for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server-side web application
@@ -41,6 +43,8 @@ From a business perspective, this technique can be used by attackers to gain acc
 1. Knowledge of Groovy scripting language
 
 1. Ability to inject malicious code into templates
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Regularly update and patch server-side web applications to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
@@ -58,13 +64,21 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Take control of the server
 
+ 
+
 # Instructions
 
 1. This command opens the calculator application on the system.
 
+ 
+
+
+
 **Code**: [[${"calc.exe".exec()}
 ${"calc.exe".execute()}
 ${thi]]
+
+
 
 > The 'data' field contains multiple ways to execute the 'calc.exe' command in Groovy. The 'exec()' and 'execute()' methods are used to execute the command as a separate process. The 'evaluate()' method is used to execute a script and return the result. The 'MethodClosure' class is used to call the 'execute()' method on the 'calc.exe' object. This command can be used to open the calculator application on Windows systems.
 
@@ -85,3 +99,5 @@ ${thi]]
 - [[Groovy]]
 - [[Groovy - Command Execution]]
 - [[Server Side Template Injection]]
+
+

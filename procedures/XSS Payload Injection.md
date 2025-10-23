@@ -31,11 +31,15 @@ Cross-Site Scripting (XSS) is a web application vulnerability that allows an att
 
 Cross-Site Scripting (XSS) is a web application vulnerability that allows an attacker to inject malicious code into a web page viewed by other users. This can result in the attacker stealing sensitive information, such as login credentials, or executing arbitrary code on the victim's machine. Common payloads for XSS attacks include <script>alert('XSS')</script> and <img src='javascript:alert('XSS')'>. This technique is commonly used in initial access and execution phases of an attack. From a technical perspective, XSS occurs when an application takes user supplied data and sends it to a web browser without proper validation or escaping. From a business perspective, XSS attacks can result in loss of customer trust, data breaches, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of XSS payloads
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Cross-Site Scripting (XSS) is a web application vulnerability that allows an att
 
 1. Educate users on how to identify and avoid malicious web pages
 
+ 
+
 ## Objectives
 
 1. Injecting malicious code into a web page viewed by other users
@@ -53,13 +59,21 @@ Cross-Site Scripting (XSS) is a web application vulnerability that allows an att
 
 1. Executing arbitrary code on the victim's machine
 
+ 
+
 # Instructions
 
 1. Fill in the details for multiple commands, instruction fields, and explain the arguments of the command in detail.
 
+ 
+
+
+
 **Code**: [[// Basic payload
 <script>alert('XSS')</script>
 <sc]]
+
+
 
 > This JSON object contains a list of Cross-Site Scripting (XSS) payloads that can be used to test web applications. The payloads are categorized into basic, image, SVG, and div payloads. Each payload is designed to exploit a vulnerability in the web application by injecting malicious code into the page. The payloads include various forms of alert messages that can be customized to suit the attacker's needs. The payloads can be used to test the security of a web application and to identify vulnerabilities that could be exploited by an attacker.
 
@@ -81,3 +95,5 @@ Cross-Site Scripting (XSS) is a web application vulnerability that allows an att
 - [[Common Payloads]]
 - [[Cross Site Scripting]]
 - [[XSS in HTML/Applications]]
+
+

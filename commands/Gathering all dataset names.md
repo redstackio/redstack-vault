@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:04.820574+00:00'
 ```bash
 select schema_name from INFORMATION_SCHEMA.SCHEMATA
 ```
+
+

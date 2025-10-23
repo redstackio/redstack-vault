@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.709052+00:00'
 ```bash
 $ sudo mount /dev/xvda1 /mnt
 ```
+
+

@@ -37,6 +37,8 @@ or drink all the beer and enumerate all the things.
 
 1. List all of the IAM Users
 
+
+
 **Command** ([[aws iam list users]]):
 
 ```bash
@@ -44,7 +46,13 @@ aws iam list-users
 
 ```
 
+
+
+
+
 2. (Optional) List all of the groups
+
+
 
 **Command** ([[aws iam list groups]]):
 
@@ -53,7 +61,13 @@ aws iam list-groups
 
 ```
 
+
+
+
+
 3. (Optional) List all of the users in a group
+
+
 
 **Command** ([[aws list users in group]]):
 
@@ -61,6 +75,12 @@ aws iam list-groups
 aws iam get-group --group-name $AWS_IAM_GROUP
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -76,3 +96,5 @@ aws iam get-group --group-name $AWS_IAM_GROUP
 
 - [[AWS]]
 - [[Cloud]]
+
+

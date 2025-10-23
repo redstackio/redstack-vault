@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:28.233112+00:00'
 ```powershell
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 ```
+
+

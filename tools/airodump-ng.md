@@ -16,3 +16,9 @@ Airodump-ng is included in the aircrack-ng package and is used for packet captur
 ## Description
 
 Airodump-ng is included in the aircrack-ng package and is used for packet capturing of raw 802.11 frames. It is ideal for collecting WEP IVs for use with aircrack-ng. If you have a GPS receiver connected to the computer, airodump-ng can log the coordinates of the discovered access points.
+
+
+
+
+
+

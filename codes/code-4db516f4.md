@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:38:00.046573+00:00'
 cp user.ccache /tmp/krb5cc_1045
 ssh -o GSSAPIAuthentication=yes user@domain.local -vv
 ```
+
+

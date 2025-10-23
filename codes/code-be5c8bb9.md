@@ -20,3 +20,5 @@ MSSQL 2005
 SELECT name, password_hash FROM master.sys.sql_logins
 SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
 ```
+
+

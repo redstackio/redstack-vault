@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 find / -maxdepth 4 -name *.conf -type f -exec grep -Hn password {} \; 2>/dev/null
 
 ```
+
+

@@ -30,11 +30,25 @@ Windows Credential Editor (WCE) is a security tool used to list logon sessions a
 
 Windows Credential Editor (WCE) is a security tool used to list logon sessions and add, change, list, and delete associated credentials. It is notably useful for extracting password hashes from sessions, which can then be brute forced or used in pass-the-hash attacks. WCE supports Windows XP, 2003, Vista, 7, 2008, and Windows 8.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_75439fba-9f19-4906-a64a-1be0543bcf47}}
+
+
 
 # Installation
 
 Download the x32 or x64 version, and run it on the target: https://www.ampliasecurity.com/research/windows-credentials-editor/
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +64,5 @@ Download the x32 or x64 version, and run it on the target: https://www.ampliasec
 - [[Cryptography]]
 - [[NTLM]]
 - [[pass the hash]]
+
+

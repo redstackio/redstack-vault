@@ -100,10 +100,14 @@ sslyze --regular demo.testfire.net:443
   PluginSessionResumption
   PluginSessionRenegotiation
 
+
+
  CHECKING HOST(S) AVAILABILITY
  -----------------------------
 
    demo.testfire.net:443               => 65.61.137.117:443
+
+
 
  SCAN RESULTS FOR DEMO.TESTFIRE.NET:443 - 65.61.137.117:443
  ----------------------------------------------------------
@@ -188,3 +192,5 @@ socket.timeout - timed out
       Server rejected all cipher suites.
 
 ```
+
+

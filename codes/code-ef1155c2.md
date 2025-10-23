@@ -12,3 +12,5 @@ updated_at: '2023-06-06T03:13:11.598888+00:00'
 ```
 nim c -d=mingw --app=console --cpu=amd64 C:\Path\To\Malware
 ```
+
+

@@ -26,13 +26,31 @@ TShark is a network protocol analyzer which captures packet data from a live net
 
 TShark is a network protocol analyzer which captures packet data from a live network, or reads packets from a previously saved capture file. While it's similar to tcpdump, TShark has focuses more on summarizing traffic details for a high level view. TShark also includes the same capture filters found in tcpdump and Wireshark, allowing users to limit results to specific traffic in which they're interested. 
 
+
+
 See Wireshark's helpful guide to capture filters for more details: [https://wiki.wireshark.org/CaptureFilters](https://wiki.wireshark.org/CaptureFilters)
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_daa4a37e-09cc-46d4-96df-2a7e927fd083}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +64,5 @@ See Wireshark's helpful guide to capture filters for more details: [https://wiki
 
 - [[Enumeration]]
 - [[Network]]
+
+

@@ -35,11 +35,15 @@ From a technical perspective, this technique involves creating custom queries in
 
 The business value of this technique lies in its ability to help attackers identify high-value targets within an AD environment. By identifying these targets, attackers can focus their efforts on compromising these entities and gaining access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to an Active Directory environment
 
 1. BloodHound tool installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ The business value of this technique lies in its ability to help attackers ident
 
 1. Regularly monitor the network for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify high-value targets within an Active Directory environment
 
 1. Plan lateral movement within the network
+
+ 
 
 # Instructions
 
@@ -64,15 +72,25 @@ The business value of this technique lies in its ability to help attackers ident
 4. Navigate to the directory where the old customqueries.json file is located.
 5. Paste the new customqueries.json file and replace the old one.
 
+ 
+
+
+
 **Code**: [[/home/username/.config/bloodhound/customqueries.js]]
 
+
+
 > This command is used to replace the customqueries.json file that is used by Bloodhound. The customqueries.json file contains custom queries that can be used to search for specific information within Bloodhound. By replacing this file, you can update the custom queries that are available to you. The 'data' field in the JSON object specifies the location of the customqueries.json file that will be replaced.
+
+
 
 **Command** ([[Viewing customqueries.json file]]):
 
 ```bash
 cat /home/username/.config/bloodhound/customqueries.json
 ```
+
+
 
 2. To create a custom query with OR operator, follow the below steps:
 1. Open BloodHound and go to the 'Queries' tab.
@@ -82,7 +100,13 @@ cat /home/username/.config/bloodhound/customqueries.json
 5. Click on 'Save' to save the query.
 6. The saved query will be stored in the 'customqueries.json' file at the location 'C:\Users\USERNAME\AppData\Roaming\BloodHound\'.
 
+ 
+
+
+
 **Code**: [[C:\Users\USERNAME\AppData\Roaming\BloodHound\custo]]
+
+
 
 > The 'or' operator is used to combine two or more conditions in a query. It returns all the objects that satisfy any of the given conditions. For example, if we want to find all the users who have either 'Domain Admins' or 'Enterprise Admins' group membership, we can use the OR operator in our custom query as follows:
 
@@ -90,11 +114,15 @@ cat /home/username/.config/bloodhound/customqueries.json
 
 This will return all the users who are either a member of the 'Domain Admins' or 'Enterprise Admins' group.
 
+
+
 **Command** ([[Check BloodHound Custom Queries Path]]):
 
 ```bash
 C:\Users\USERNAME\AppData\Roaming\BloodHound\customqueries.json
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -116,3 +144,5 @@ C:\Users\USERNAME\AppData\Roaming\BloodHound\customqueries.json
 - [[Active Directory Attacks]]
 - [[Active Directory Recon]]
 - [[Using BloodHound]]
+
+

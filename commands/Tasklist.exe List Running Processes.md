@@ -6,6 +6,7 @@ executor: command_prompt
 data: tasklist.exe
 output: 'C:\>tasklist.exe
 
+
   Image Name                     PID Session Name        Session#    Mem Usage
 
   ========================= ======== ================ =========== ============
@@ -48,3 +49,5 @@ csrss.exe                      440 Services                   0      4,884 K
 wininit.exe                    512 Services                   0      6,044 K
 firefox.exe                   1724 Console                    1    111,388 K
 ```
+
+

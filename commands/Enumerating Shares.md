@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:04.208129+00:00'
 ```bash
 rpcclient -U "" -N 10.10.10.10 -c enumshares
 ```
+
+

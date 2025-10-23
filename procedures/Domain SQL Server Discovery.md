@@ -32,9 +32,13 @@ Domain SQL Server Discovery is a technique used by attackers to identify SQL Ser
 
 Domain SQL Server Discovery is a technique used by attackers to identify SQL Server instances that are part of a Windows domain. Attackers can use this technique to gain an understanding of the domain's database infrastructure and to identify potential targets for further attacks. This technique can be executed using various tools or scripts that can query the domain for SQL Server instances.
 
+ 
+
 ## Requirements
 
 1. Access to the Windows domain.
+
+ 
 
 ## Defense
 
@@ -44,18 +48,28 @@ Domain SQL Server Discovery is a technique used by attackers to identify SQL Ser
 
 1. Monitor network traffic for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Identify SQL Server instances that are part of a Windows domain.
 
 1. Gain an understanding of the domain's database infrastructure.
 
+ 
+
 # Instructions
 
 1. To retrieve information about SQL Server instances and databases, use the following commands:
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceDomain -Verbose
 # Get Server Info f]]
+
+
 
 > 1. Get-SQLInstanceDomain -Verbose: This command retrieves information about all SQL Server instances found in the current domain.
 
@@ -63,11 +77,17 @@ Domain SQL Server Discovery is a technique used by attackers to identify SQL Ser
 
 3. Get-SQLInstanceDomain | Get-SQLDatabase -NoDefaults: This command retrieves a list of all databases on each SQL Server instance found in the current domain, excluding system databases.
 
+
+
 **Command** ([[Get SQL Instance Domain]]):
 
 ```bash
 Get-SQLInstanceDomain -Verbose
 ```
+
+
+
+
 
 **Command** ([[Get Server Info for Found Instances]]):
 
@@ -75,11 +95,17 @@ Get-SQLInstanceDomain -Verbose
 Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
 ```
 
+
+
+
+
 **Command** ([[Get Database Names]]):
 
 ```bash
 Get-SQLInstanceDomain | Get-SQLDatabase -NoDefaults
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +128,5 @@ Get-SQLInstanceDomain | Get-SQLDatabase -NoDefaults
 - [[Discover Domain SQL Server Instances]]
 - [[Identify Instances and Databases]]
 - [[MSSQL Server]]
+
+

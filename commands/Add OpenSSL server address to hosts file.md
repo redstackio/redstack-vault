@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:09.843906+00:00'
 ```bash
 sudo echo "[OPENSSL SERVER ADDRESS] [domain.of.server.to.mitm]" >> /etc/hosts  # On client host
 ```
+
+

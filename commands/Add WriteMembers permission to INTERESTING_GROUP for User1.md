@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:10.633986+00:00'
 ```bash
 Add-DomainObjectAcl -TargetIdentity "INTERESTING_GROUP" -Rights WriteMembers -PrincipalIdentity User1
 ```
+
+

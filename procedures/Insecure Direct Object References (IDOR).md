@@ -29,13 +29,55 @@ Leveraging the direct access provided to objects based on user-input, any user o
 
 Leveraging the direct access provided to objects based on user-input, any user of the application can modify the referenced object or ID to obtain details of other users.
 
+
+
 # Instructions 
 
 # 
 
 1. In the below screenshot, orders are listed based on the *user* parameter in the URL.
 
+
+
+
+
+
+
+
+
+
+
+![e6329f4b-53ec-49e0-810d-b62ba6c571a2.jpg]()
+
+
+
+
+
+
+
+
+
+
+
 2. If the *user* parameter is modified and replaced with the Email  ID of other user, the application loads the details of the modified user.
+
+
+
+
+
+
+
+
+
+![530e8ca4-6166-4ed9-9d54-199aca5a5d30.jpg]()
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +89,5 @@ Leveraging the direct access provided to objects based on user-input, any user o
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

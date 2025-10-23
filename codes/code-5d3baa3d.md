@@ -24,3 +24,5 @@ Add-AppxPackage .\debian.appx
 # Run the machine as root
 wsl kali-linux --user root
 ```
+
+

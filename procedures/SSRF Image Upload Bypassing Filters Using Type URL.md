@@ -35,11 +35,15 @@ To perform this attack, the attacker needs to have access to the image upload fu
 
 The business value of this attack is that it can allow attackers to gain access to sensitive data or perform actions on behalf of the server, potentially leading to financial loss, reputational damage, or regulatory fines.
 
+ 
+
 ## Requirements
 
 1. Access to the image upload function
 
 1. Ability to craft a specially crafted URL
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ The business value of this attack is that it can allow attackers to gain access 
 
 1. Monitor network traffic for suspicious requests and behavior
 
+ 
+
 ## Objectives
 
 1. Gain access to internal systems and data
 
 1. Perform actions on behalf of the server
+
+ 
 
 # Instructions
 
@@ -62,10 +70,19 @@ The business value of this attack is that it can allow attackers to gain access 
 2. Paste the URL of the image you want to upload into the text field.
 3. Hit enter to upload the image.
 
+
+ 
+
+
+
 **Code**: [[Change "type=file" to "type=url"
 Paste URL in text]]
 
+
+
 > This command exploits a vulnerability that allows users to upload images from any image URL. By changing the "type" attribute of the file input field to "url", the user can bypass server-side checks and upload an image from any URL, including URLs that are not allowed by the server. This can lead to a Server-Side Request Forgery (SSRF) attack, where the attacker can make the server send requests to arbitrary destinations, potentially leading to data leakage or remote code execution.
+
+
 
 **Command** ([[Change input type to URL]]):
 
@@ -73,12 +90,18 @@ Paste URL in text]]
 document.querySelector('input[type=file]').type = 'url';
 ```
 
+
+
+
+
 **Command** ([[Upload image from URL]]):
 
 ```bash
 document.querySelector('input[type=url]').value = 'https://example.com/image.jpg';
 document.querySelector('input[type=url]').dispatchEvent(new Event('change'));
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +123,5 @@ document.querySelector('input[type=url]').dispatchEvent(new Event('change'));
 - [[Bypassing filters]]
 - [[Bypassing using type=url]]
 - [[Server-Side Request Forgery]]
+
+

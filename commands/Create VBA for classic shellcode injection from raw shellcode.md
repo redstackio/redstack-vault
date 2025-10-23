@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:57.674203+00:00'
 ```bash
 BadAssMacros.exe -i <path_to_raw_shellcode_file> -w <doc/excel> -p no -s classic -c <caesar_shift_value> -o <path_to_output_file>
 ```
+
+

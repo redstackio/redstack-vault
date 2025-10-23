@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:01.198376+00:00'
 ```bash
 select name, deferred_value, dbpartitionnum from sysibmadm.dbcfg -- Requires priv.
 ```
+
+

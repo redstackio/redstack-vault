@@ -16,3 +16,7 @@ Retrieves the plaintext password and other information for accounts pushed throu
 ## Description
 
 Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences. ​
+
+
+
+

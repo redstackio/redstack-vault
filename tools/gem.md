@@ -30,11 +30,27 @@ Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provi
 
 Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provides a standard package format for the distribution of Ruby programs and libraries, and uses a large public repository to manage and distribute content. Gem can query this repository much like other package managers, using it to install or remove programs, install dependencies, and update existing software.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_55e115e3-5241-41fc-a608-7f193189896a}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provi
 ## Tags
 
 - [[package manager]]
+
+

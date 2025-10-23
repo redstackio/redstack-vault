@@ -16,3 +16,7 @@ Is a PowerShell toolset for building malicious WMI Event Subsriptions. ​
 ## Description
 
 Is a PowerShell toolset for building malicious WMI Event Subsriptions. ​
+
+
+
+

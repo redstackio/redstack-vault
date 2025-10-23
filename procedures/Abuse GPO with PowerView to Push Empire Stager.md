@@ -37,6 +37,8 @@ From a technical standpoint, PowerView is used to enumerate GPOs and identify th
 
 The business value of this attack lies in the ability of the attacker to gain persistence within the target environment, potentially allowing them to maintain access and exfiltrate sensitive data over an extended period of time.
 
+ 
+
 ## Requirements
 
 1. Access to the target Active Directory environment
@@ -45,6 +47,8 @@ The business value of this attack lies in the ability of the attacker to gain pe
 
 1. Empire stager
 
+ 
+
 ## Defense
 
 1. Ensure that GPOs are properly secured with strong ACLs
@@ -52,6 +56,8 @@ The business value of this attack lies in the ability of the attacker to gain pe
 1. Monitor for any modifications to GPOs
 
 1. Implement network segmentation to limit lateral movement
+
+ 
 
 ## Objectives
 
@@ -62,6 +68,8 @@ The business value of this attack lies in the ability of the attacker to gain pe
 1. Establish a foothold within the target environment
 
 1. Potentially move laterally to other systems
+
+ 
 
 # Instructions
 
@@ -75,8 +83,14 @@ New-GPOImmediateTask -TaskName Debugging -GPODisplayName VulnGPO -CommandArgumen
 
 Replace the command arguments with the appropriate values for your environment.
 
+ 
+
+
+
 **Code**: [[# Enumerate GPO
 Get-NetGPO | %{Get-ObjectAcl -Reso]]
+
+
 
 > The first command retrieves a list of all group policy objects and their associated access control lists. This can be useful for identifying potential misconfigurations or vulnerabilities.
 
@@ -104,3 +118,5 @@ The second command uses the New-GPOImmediateTask cmdlet to push an Empire stager
 - [[Abuse GPO with PowerView]]
 - [[Active Directory Attacks]]
 - [[Exploit Group Policy Objects GPO]]
+
+

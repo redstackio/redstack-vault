@@ -33,11 +33,15 @@ From an offensive perspective, an attacker can use error-based SQL injection to 
 
 Business value: By securing BigQuery instances, organizations can prevent data breaches and protect sensitive information from being stolen or leaked.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable BigQuery instance
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ Business value: By securing BigQuery instances, organizations can prevent data b
 
 1. Monitor BigQuery logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from a BigQuery database
 
 1. Gain access to other systems or escalate privileges
 
+ 
+
 # Instructions
 
 1. To perform an error-based SQL injection, the attacker injects code that will cause an error in the SQL statement, revealing information about the database. In this example, the attacker is trying to find the length of a string by dividing by zero. If the division by zero causes an error message to be displayed, the attacker knows that the string length is 1. The attacker can also use casting to reveal information about the database, as shown in the second example.
 
+ 
+
+
+
 **Code**: [[# Error based - division by zero
 ' OR if(1/(length]]
+
+
 
 > The attacker can use this technique to extract sensitive information from the database, such as usernames and passwords. It is important to sanitize user input to prevent SQL injection attacks.
 
@@ -78,3 +92,5 @@ Business value: By securing BigQuery instances, organizations can prevent data b
 
 - [[BigQuery Error Based]]
 - [[Google BigQuery SQL Injection]]
+
+

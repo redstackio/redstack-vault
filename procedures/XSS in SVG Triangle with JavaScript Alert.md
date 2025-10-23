@@ -30,6 +30,8 @@ XSS in SVG is a technique used to inject malicious code into an SVG file. The at
 
 XSS in SVG is a technique used to inject malicious code into an SVG file. The attacker can use various techniques to inject the code, such as embedding the code in a script tag or using a data URI. When the SVG file is opened in a web browser, the malicious code is executed, allowing the attacker to steal sensitive information or perform other malicious actions. In this specific example, the attacker is using an SVG triangle with a JavaScript alert to demonstrate the XSS vulnerability.
 
+ 
+
 ## Requirements
 
 1. Access to a web server to host the SVG file
@@ -37,6 +39,8 @@ XSS in SVG is a technique used to inject malicious code into an SVG file. The at
 1. A web browser to open the SVG file
 
 1. Knowledge of XSS techniques
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ XSS in SVG is a technique used to inject malicious code into an SVG file. The at
 
 1. Regularly updating web browsers and plugins can help prevent XSS attacks
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into an SVG file
@@ -54,12 +60,20 @@ XSS in SVG is a technique used to inject malicious code into an SVG file. The at
 
 1. Demonstrate the XSS vulnerability
 
+ 
+
 # Instructions
 
 1. Create an SVG triangle with a green fill and a dark green stroke. Add a JavaScript script tag to the SVG that creates an alert with the document's domain when the SVG is loaded.
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" standalone="no"?>
 <!DOCTYPE sv]]
+
+
 
 > The SVG triangle is created using the polygon element with the id 'triangle' and the points '0,0 0,50 50,0'. The fill color is set to green (#009900) and the stroke color is set to dark green (#004400). The JavaScript script tag creates an alert with the document's domain when the SVG is loaded.
 
@@ -80,3 +94,5 @@ XSS in SVG is a technique used to inject malicious code into an SVG file. The at
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in SVG]]
+
+

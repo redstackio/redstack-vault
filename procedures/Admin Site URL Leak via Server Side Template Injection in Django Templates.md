@@ -32,11 +32,15 @@ Technical Explanation: Django Templates are used to render HTML pages dynamicall
 
 Business Value: An attacker can use this vulnerability to gain unauthorized access to the admin site and perform actions such as adding, modifying or deleting data. This can lead to loss of sensitive data, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
 
 1. Knowledge of Django Templates and SSTI vulnerabilities
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: An attacker can use this vulnerability to gain unauthorized acce
 
 1. Regularly review and update the application and its dependencies to ensure that known vulnerabilities are patched
 
+ 
+
 ## Objectives
 
 1. Obtain the Admin Site URL
@@ -54,9 +60,13 @@ Business Value: An attacker can use this vulnerability to gain unauthorized acce
 
 1. Perform actions such as adding, modifying or deleting data
 
+ 
+
 # Instructions
 
 1. Multiple Commands
+
+ 
 
 This command includes the 'admin/base.html' template in the current page. The 'admin/base.html' template provides a base structure for the admin pages and includes common elements such as the header, footer, and navigation menu. This command can be used to reduce code duplication and maintain consistency across multiple admin pages.
 
@@ -75,3 +85,5 @@ This command includes the 'admin/base.html' template in the current page. The 'a
 - [[Admin Site URL leak]]
 - [[Django Templates]]
 - [[Server Side Template Injection]]
+
+

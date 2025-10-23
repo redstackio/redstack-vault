@@ -31,9 +31,19 @@ Fuzzing is a process to identify unknown or unidentified vulnerabilities. Sfuzz 
 
 Fuzzing is a process to identify unknown or unidentified vulnerabilities. Sfuzz is a simple fuzzer that can be used to perform fuzzing on web applications.
 
+
+
 # Procedure
 
+
+
 1. The below Sfuzz tool command can be used to perform fuzzing on the application.
+
+
+
+
+
+
 
 **Command** ([[Sfuzz Command to Fuzz the Web Application]]):
 
@@ -41,7 +51,13 @@ Fuzzing is a process to identify unknown or unidentified vulnerabilities. Sfuzz 
 sfuzz -S 192.168.1.5 -p 80 -T -f /usr/share/sfuzz-db/basic.http
 ```
 
+
+
+
+
 2. The above output contains two fuzzed instances and the response from the application.
+
+
 
 ## Platforms
 
@@ -57,3 +73,5 @@ sfuzz -S 192.168.1.5 -p 80 -T -f /usr/share/sfuzz-db/basic.http
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

@@ -26,3 +26,5 @@ user@ubuntu18x64:~$ getcap -r / 2>/dev/null
 /usr/bin/openssl = cap_dac_override+ep
 /usr/bin/mtr-packet = cap_net_raw+ep
 ```
+
+

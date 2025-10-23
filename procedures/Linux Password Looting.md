@@ -36,11 +36,15 @@ To locate password files, attackers typically search for files that contain spec
 
 The business value of this technique is that it allows attackers to gain access to sensitive information that can be used to further compromise the system and steal valuable data.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Linux system
 
 1. Tools for searching and extracting information from files, such as grep and awk
+
+ 
 
 ## Defense
 
@@ -50,26 +54,40 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor system logs and network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Locate files containing passwords and other sensitive information on a compromised Linux system
 
 1. Extract passwords and other sensitive information from the located files
 
+ 
+
 # Instructions
 
 1. To locate password files, use the locate command followed by the keyword 'password'. To view the output in a more readable format, pipe it to the 'more' command.
 
+ 
+
+
+
 **Code**: [[$ locate password | more           
 /boot/grub/i38]]
 
+
+
 > The 'locate' command is used to search for files and directories that match a specified pattern. In this case, we are searching for any files that have the word 'password' in their name. The 'more' command is used to display the output in a paginated format. This command is useful for finding files that may contain sensitive information such as passwords.
+
+
 
 **Command** ([[Locate password files]]):
 
 ```bash
 locate password
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ locate password
 - [[Find sensitive files]]
 - [[Linux - Privilege Escalation]]
 - [[Looting for passwords]]
+
+

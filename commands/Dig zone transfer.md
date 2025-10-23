@@ -20,3 +20,5 @@ dig axfr $DOMAIN@$NAMESERVER
 ```
 dig axfr domain.local @nameservers.local
 ```
+
+

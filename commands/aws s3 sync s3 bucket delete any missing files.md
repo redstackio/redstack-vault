@@ -23,3 +23,5 @@ aws s3 sync . s3://$AWS_S3_BUCKET --region $AWS_REGION --delete
 ```
 aws s3 sync . s3://redstack.io-s3bucket --region us-east-1 --delete
 ```
+
+

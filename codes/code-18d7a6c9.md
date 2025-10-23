@@ -25,3 +25,5 @@ socks5 = 127.0.0.1:1080
 ## Set the mode for select a proxy (default "auto")
 select_proxy_mode = auto
 ```
+
+

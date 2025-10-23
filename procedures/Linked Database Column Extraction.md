@@ -36,11 +36,15 @@ To execute this technique, an attacker would need to have access to a SQL Server
 
 The business value of this technique lies in the ability of an attacker to obtain sensitive information that can be used to further compromise a system. By gaining access to a database, an attacker can potentially obtain access to confidential information such as customer data, financial data, and intellectual property.
 
+ 
+
 ## Requirements
 
 1. Access to a SQL Server instance with a linked server configured
 
 1. Ability to execute a query against the linked server
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique lies in the ability of an attacker to obtai
 
 1. Monitor for unauthorized access and unusual database activity
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from a linked database column
@@ -57,6 +63,8 @@ The business value of this technique lies in the ability of an attacker to obtai
 1. Gain unauthorized access to a database
 
 1. Escalate privileges to gain further access to the target system
+
+ 
 
 # Instructions
 
@@ -68,7 +76,13 @@ The business value of this technique lies in the ability of an attacker to obtai
 5. ColumnNameFromPreviousCommand: The name of the column from the previous command.
 6. ColumnValueFromPreviousCommand: The value of the column from the previous command.
 
+ 
+
+
+
 **Code**: [[Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>"]]
+
+
 
 > This command uses the Get-SQLQuery cmdlet to retrieve SQL query results from a linked server. The command includes the instance name, the name of the linked server, and the SQL query to execute. The SQL query includes a reference to the database, table, column, and value from the previous command. The results of the query are returned as a table.
 
@@ -93,3 +107,5 @@ The business value of this technique lies in the ability of an attacker to obtai
 - [[Gather Entries from a Selected Linked Column]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

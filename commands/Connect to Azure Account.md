@@ -21,3 +21,5 @@ $passwd = ConvertTo-SecureString "<PASSWORD>" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("test@<TENANT NAME>.onmicrosoft.com", $passwd)
 Connect-AzAccount -Credential $creds
 ```
+
+

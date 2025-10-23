@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:20.679788+00:00'
 ```bash
 Set-ADUser -Identity 'User1' -KerberosEncryptionType 'RC4-HMAC-NT', 'AES128-CTS-HMAC-SHA1-96'
 ```
+
+

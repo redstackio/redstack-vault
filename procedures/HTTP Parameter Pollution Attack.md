@@ -29,9 +29,13 @@ The HTTP Parameter Pollution (HPP) attack is a web attack evasion technique that
 
 The HTTP Parameter Pollution (HPP) attack is a web attack evasion technique that allows an attacker to manipulate web logics or retrieve hidden information by crafting a HTTP request. This attack is based on splitting an attack vector between multiple instances of a parameter with the same name. As there is no formal way of parsing HTTP parameters, individual web technologies have their own unique way of parsing and reading URL parameters with the same name. Some taking the first occurrence, some taking the last occurrence, and some reading it as an array. This behavior is abused by the attacker in order to bypass pattern-based security mechanisms. In this example scenario, the attacker uses HPP to inject malicious code into the second 'search' parameter, which is not properly checked by the origin service.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application.
+
+ 
 
 ## Defense
 
@@ -41,17 +45,25 @@ The HTTP Parameter Pollution (HPP) attack is a web attack evasion technique that
 
 1. Use a Web Application Firewall (WAF) to detect and block malicious HTTP requests.
 
+ 
+
 ## Objectives
 
 1. To manipulate web logics or retrieve hidden information by injecting malicious code into HTTP requests.
 
 1. To bypass pattern-based security mechanisms and evade detection.
 
+ 
+
 # Instructions
 
 1. Craft a HTTP request with multiple instances of a parameter with the same name. Manipulate the value of the parameter to inject malicious code into the request.
 
+ 
+
 The attacker can use various techniques to inject malicious code into the HTTP request, such as SQL injection, cross-site scripting (XSS), or command injection.
+
+
 
 **Command** ([[Read first parameter]]):
 
@@ -59,11 +71,19 @@ The attacker can use various techniques to inject malicious code into the HTTP r
 WAF reads first param
 ```
 
+
+
+
+
 **Command** ([[Read second parameter]]):
 
 ```bash
 Origin Service reads second param
 ```
+
+
+
+
 
 **Command** ([[Injection attack]]):
 
@@ -71,17 +91,27 @@ Origin Service reads second param
 http://example.com?search=Beth&search=' OR 1=1;
 ```
 
+
+
+
+
 **Command** ([[WAF passes on]]):
 
 ```bash
 WAF reads first 'search' param, looks innocent. passes on
 ```
 
+
+
+
+
 **Command** ([[Injection happens]]):
 
 ```bash
 Origin Service reads second 'search' param, injection happens if no checks are done here.
 ```
+
+
 
 ## Commands Used
 
@@ -95,3 +125,5 @@ Origin Service reads second 'search' param, injection happens if no checks are d
 
 - [[How to test]]
 - [[HTTP Parameter Pollution]]
+
+

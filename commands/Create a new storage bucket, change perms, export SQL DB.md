@@ -24,3 +24,5 @@ gsutil acl ch -u <service account> gs://<googlestoragename>
 gcloud sql export sql <sql instance name> gs://<googlestoragename>/sqldump.gz --database=<database name>
 
 ```
+
+

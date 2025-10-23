@@ -35,11 +35,15 @@ Technical Explanation: The 'Describe EKS Node Group' command is part of the AWS 
 
 Business Value: An attacker can use this procedure to gather information about the target's cloud infrastructure, which can be used to plan and execute further attacks. By understanding the target environment, the attacker can identify vulnerabilities and weaknesses that can be exploited to gain access to sensitive data or disrupt business operations.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the EKS service
 
 1. Access to the target's EKS cluster
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: An attacker can use this procedure to gather information about t
 
 1. Monitor AWS CloudTrail logs for suspicious activity related to the EKS service
 
+ 
+
 ## Objectives
 
 1. Identify specific information about a node group in an EKS cluster
@@ -57,17 +63,25 @@ Business Value: An attacker can use this procedure to gather information about t
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. This command is used to describe an Amazon EKS node group in detail. It returns information about the node group, such as the node group name, cluster name, status, scaling configuration, and other details.
 
+ 
+
 The 'cluster-name' argument specifies the name of the Amazon EKS cluster that the node group is associated with. The 'nodegroup-name' argument specifies the name of the node group to describe. This command can be useful for troubleshooting or getting more information about a particular node group in your cluster.
+
+
 
 **Command** ([[Describe EKS Nodegroup]]):
 
 ```bash
 aws eks describe-nodegroup --cluster-name name --nodegroup-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws eks describe-nodegroup --cluster-name name --nodegroup-name name
 - [[EKS]]
 - [[Enumeration]]
 - [[Listing specific information about a node group in a cluster]]
+
+

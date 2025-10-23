@@ -27,6 +27,8 @@ MSSQL Stacked Query Injection is a technique used to execute multiple queries in
 
 MSSQL Stacked Query Injection is a technique used to execute multiple queries in a single SQL statement. This technique can be used by attackers to modify, delete or extract data from a database. In order to prevent MSSQL Stacked Query Injection, it is important to validate and sanitize all user input, especially those that are used in SQL statements. Additionally, using parameterized queries can help to prevent this type of attack. By implementing these measures, organizations can protect their databases from unauthorized access and modification, ensuring the confidentiality, integrity, and availability of their data.
 
+ 
+
 ## Requirements
 
 1. Access to the database server
@@ -34,6 +36,8 @@ MSSQL Stacked Query Injection is a technique used to execute multiple queries in
 1. Ability to modify database configurations
 
 1. Knowledge of SQL syntax and query construction
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ MSSQL Stacked Query Injection is a technique used to execute multiple queries in
 
 1. Implement least privilege access control to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Prevent unauthorized access to sensitive data
@@ -51,11 +57,19 @@ MSSQL Stacked Query Injection is a technique used to execute multiple queries in
 
 1. Maintain the availability of the database
 
+ 
+
 # Instructions
 
 1. When constructing SQL queries, always use parameterized statements and avoid concatenating user-supplied data into the query. This will prevent SQL injection attacks.
 
+ 
+
+
+
 **Code**: [[ProductID=1; DROP members--]]
+
+
 
 > SQL injection is a type of attack where an attacker can inject malicious SQL statements into an entry field for execution by the database. This can lead to unauthorized access to sensitive data, data corruption, or even complete system compromise. One way to prevent SQL injection is to use parameterized statements, which separate the SQL code from the user input. Another way is to sanitize the user input by removing any characters that could be interpreted as SQL code.
 
@@ -73,3 +87,5 @@ MSSQL Stacked Query Injection is a technique used to execute multiple queries in
 
 - [[MSSQL Injection]]
 - [[MSSQL Stacked Query]]
+
+

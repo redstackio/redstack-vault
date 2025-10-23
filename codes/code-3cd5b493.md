@@ -22,3 +22,5 @@ updated_at: '2023-04-10T20:21:36.044131+00:00'
 // Bypass onxxx= filter with a '/'
 <img src='1' onerror/=alert(0) />
 ```
+
+

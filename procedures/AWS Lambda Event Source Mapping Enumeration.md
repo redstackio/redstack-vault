@@ -36,9 +36,13 @@ Technical Explanation: The `List Lambda Event Source Mappings` command is used t
 
 Business Value: An attacker can use this information to identify potential attack vectors and plan their attack accordingly. For example, an attacker could identify an S3 bucket that triggers a lambda function and upload a malicious file to the bucket, which would then trigger the lambda function and execute the attacker's code.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list lambda event source mappings
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ Business Value: An attacker can use this information to identify potential attac
 
 1. Regularly review CloudTrail logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify potential attack vectors
 
 1. Plan attacks accordingly
 
+ 
+
 # Instructions
 
 1. Use this command to list all the event source mappings for a specific AWS Lambda function.
 
+ 
+
 The `list-event-source-mappings` command is used to retrieve a list of all the event source mappings for a specific AWS Lambda function. The `--function-name` argument is used to specify the name of the Lambda function for which you want to list the event source mappings. This command can be helpful in scenarios where you need to troubleshoot issues related to event source mappings or if you simply want to get an overview of all the event sources that are currently mapped to your Lambda function.
+
+
 
 **Command** ([[List Event Source Mappings for AWS Lambda Function]]):
 
 ```bash
 aws lambda list-event-source-mappings --function-name function_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws lambda list-event-source-mappings --function-name function_name
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing the event source mapping information about a lambda function]]
+
+

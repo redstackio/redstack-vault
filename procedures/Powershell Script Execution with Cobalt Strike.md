@@ -39,11 +39,15 @@ From a technical perspective, this technique involves using Cobalt Strike's Beac
 
 The business value of this technique is that it allows attackers to gain a foothold on a target system and carry out malicious activities without being detected. This can result in the theft of sensitive data, disruption of business operations, and financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to a Cobalt Strike server
 
 1. Access to a target system with Powershell enabled
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ The business value of this technique is that it allows attackers to gain a footh
 1. Regularly monitor and analyze network traffic for any signs of malicious activity
 
 1. Conduct regular security awareness training for employees to help them identify and report suspicious activity
+
+ 
 
 ## Objectives
 
@@ -63,6 +69,8 @@ The business value of this technique is that it allows attackers to gain a footh
 
 1. Exfiltrate data from a target system
 
+ 
+
 # Instructions
 
 1. To import a Powershell script from the control server and save it in memory, use the command 'powershell-import' followed by the path to the script. 
@@ -73,9 +81,17 @@ To launch a function using Unmanaged Powershell, use the command 'powerpick' fol
 
 To inject Unmanaged Powershell into a specific process and execute a command, use the command 'psinject' followed by the process ID and architecture, commandlet, and any arguments. This is useful for long-running Powershell jobs.
 
+ 
+
+
+
 **Code**: [[# Import a Powershell .ps1 script from the control]]
 
+
+
 > The 'powershell-import' command is used to import a Powershell script from the control server and save it in memory. The 'powershell' command is used to execute the imported script, downloading it from the server and executing the specified function. The 'powerpick' command is used to launch a function using Unmanaged Powershell, and the 'psinject' command is used to inject Unmanaged Powershell into a specific process and execute a command.
+
+
 
 **Command** ([[Import Powershell Script into Beacon Memory]]):
 
@@ -83,11 +99,19 @@ To inject Unmanaged Powershell into a specific process and execute a command, us
 powershell-import [/path/to/script.ps1]
 ```
 
+
+
+
+
 **Command** ([[Execute Powershell Script]]):
 
 ```powershell
 powershell [commandlet][arguments]
 ```
+
+
+
+
 
 **Command** ([[Launch Function using Unmanaged Powershell]]):
 
@@ -95,11 +119,17 @@ powershell [commandlet][arguments]
 powerpick [commandlet] [argument]
 ```
 
+
+
+
+
 **Command** ([[Inject Unmanaged Powershell into a Process]]):
 
 ```bash
 psinject [pid][arch] [commandlet] [arguments]
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -125,3 +155,5 @@ psinject [pid][arch] [commandlet] [arguments]
 - [[Cobalt Strike]]
 - [[Powershell and .NET]]
 - [[Powershell commands]]
+
+

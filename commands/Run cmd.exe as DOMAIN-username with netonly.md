@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:03.484250+00:00'
 ```bash
 runas /netonly /user:DOMAIN\username "cmd.exe"
 ```
+
+

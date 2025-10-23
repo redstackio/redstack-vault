@@ -32,6 +32,8 @@ The AWS Key Policy Enumeration procedure involves listing policies attached to a
 
 To perform this procedure, the attacker will need to have valid AWS credentials and access to the AWS environment. The attacker will also need to have the appropriate permissions to list the policies attached to the key.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
@@ -39,6 +41,8 @@ To perform this procedure, the attacker will need to have valid AWS credentials 
 1. Access to the target's AWS environment
 
 1. Appropriate permissions to list policies attached to the key
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ To perform this procedure, the attacker will need to have valid AWS credentials 
 
 1. Regularly review and audit AWS policies to identify and remediate misconfigurations
 
+ 
+
 ## Objectives
 
 1. Identify misconfigured policies
@@ -56,17 +62,25 @@ To perform this procedure, the attacker will need to have valid AWS credentials 
 
 1. Gather information about the target's AWS environment
 
+ 
+
 # Instructions
 
 1. Use this command to list the key policies attached to a KMS key.
 
+ 
+
 The 'aws kms list-key-policies' command is used to list the policies that are attached to a KMS key. This command requires the 'key-id' argument to specify the key for which you want to list the policies. The output of the command will be a JSON array containing the names of the policies attached to the key. You can use the policy names to view the details of the policy using the 'aws kms get-key-policy' command. This command can be useful when you need to review the policies attached to a key or when troubleshooting issues with access to a key.
+
+
 
 **Command** ([[List Key Policies for AWS KMS Key]]):
 
 ```bash
 aws kms list-key-policies --key-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws kms list-key-policies --key-id ID
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing policies attached to a specific key]]
+
+

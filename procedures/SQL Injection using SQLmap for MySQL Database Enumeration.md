@@ -35,6 +35,8 @@ In this procedure, we will use SQLmap to enumerate a MySQL database for informat
 
 The business value of this procedure is that it allows an attacker to gain unauthorized access to sensitive data stored in a database, such as customer information or financial data. This can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -42,6 +44,8 @@ The business value of this procedure is that it allows an attacker to gain unaut
 1. Credentials with sufficient privileges to access the database
 
 1. SQLmap installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -51,11 +55,15 @@ The business value of this procedure is that it allows an attacker to gain unaut
 
 1. Regular security assessments should be conducted to identify and remediate vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify SQL Injection vulnerabilities in a MySQL database
 
 1. Enumerate the database to gather information such as table and column names
+
+ 
 
 # Instructions
 
@@ -67,9 +75,17 @@ The business value of this procedure is that it allows an attacker to gain unaut
 5. -D: Specify the database to be targeted.
 6. -dbs: Enumerate all databases on the target server.
 
+ 
+
+
+
 **Code**: [[python sqlmap.py -r /tmp/r.txt --dbms MySQL --seco]]
 
+
+
 > This command is useful in situations where you want to identify the databases running on a MySQL server. It can also be used to gather information about the structure of the databases and tables within them. The tool sqlmap automates the process of exploiting SQL injection vulnerabilities and provides a lot of flexibility in terms of the types of attacks that can be performed.
+
+
 
 **Command** ([[SQL Injection using sqlmap]]):
 
@@ -77,11 +93,17 @@ The business value of this procedure is that it allows an attacker to gain unaut
 python sqlmap.py -r /tmp/r.txt --dbms MySQL --second-order "http://targetapp/wishlist" -v 3
 ```
 
+
+
+
+
 **Command** ([[SQL Injection using sqlmap]]):
 
 ```bash
 sqlmap -r 1.txt -dbms MySQL -second-order "http://<IP/domain>/joomla/administrator/index.php" -D "joomla" -dbs
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +125,5 @@ sqlmap -r 1.txt -dbms MySQL -second-order "http://<IP/domain>/joomla/administrat
 - [[Second order injection]]
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
+
+

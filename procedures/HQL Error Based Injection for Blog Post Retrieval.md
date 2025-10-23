@@ -27,11 +27,15 @@ To execute this attack, the attacker must first identify a vulnerable applicatio
 
 The business value of this attack is that it can be used to steal sensitive data, such as user credentials, credit card information, and personal information. This can result in reputational damage, financial loss, and legal liability.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses Hibernate Query Language
 
 1. Knowledge of the structure of the database
+
+ 
 
 ## Defense
 
@@ -40,6 +44,8 @@ The business value of this attack is that it can be used to steal sensitive data
 1. Implement parameterized queries to prevent SQL injection attacks
 
 1. Regularly monitor the application and database for suspicious activity
+
+ 
 
 ## Objectives
 
@@ -50,6 +56,8 @@ The business value of this attack is that it can be used to steal sensitive data
 1. Escalate privileges
 
 1. Exfiltrate sensitive data
+
+ 
 
 # Instructions
 
@@ -63,15 +71,27 @@ Replace <title> with the specific title you want to search for and <true/false> 
 
 Note: Be careful when using the 'or' operator as it can lead to unintended results.
 
+ 
+
+
+
 **Code**: [[from BlogPosts
 where title like '%11'
   and (selec]]
+
+
 
 > This command retrieves blog posts from the 'BlogPosts' table that have a title containing the string '11' and are either published or have an empty string in the 'published' column. The 'select password from User where username='admin')=1' portion of the query is likely an attempt at SQL injection or unauthorized access, and should not be used in a real-world scenario.
 
 2. To resolve this error, check the data type of the value being converted and ensure that it is compatible with the target data type. If necessary, modify the query or the data being queried to ensure compatibility.
 
+ 
+
+
+
 **Code**: [[Data conversion error converting "d41d8cd98f00b204]]
+
+
 
 > This error occurs when there is an attempt to convert a value from one data type to another, but the conversion fails due to incompatibility between the source and target data types. The error message provides information about the value that caused the error and the SQL statement that triggered the error. The instruction provides guidance on how to resolve the error, while the explain section provides additional context about the error and its causes.
 
@@ -79,3 +99,5 @@ where title like '%11'
 
 - [[Hibernate Query Language Injection]]
 - [[HQL Error Based]]
+
+

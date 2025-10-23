@@ -29,9 +29,13 @@ Try to find a machine on domain that local user has local admin access.
 
 Try to find a machine on domain that local user has local admin access.
 
+
+
 ## Objective
 
 1. Local administrator access on domain machine.
+
+
 
 # Instructions
 
@@ -39,13 +43,23 @@ Try to find a machine on domain that local user has local admin access.
 
 Requires SMB and RPC ports open.
 
+
+
+
+
 **Command** ([[Enumerate computers in domain for local admin PowerUp]]):
 
 ```bash
 Find-LocalAdminAccess -Verbose
 ```
 
+
+
 2. (Optional) Try with PowerView. If RPC and SMB ports are blocked try with WMI.
+
+
+
+
 
 **Command** ([[Enumerate computers in domain for local admin PowerView]]):
 
@@ -53,13 +67,29 @@ Find-LocalAdminAccess -Verbose
 Find-WMILocalAdminAccess.ps1
 ```
 
+
+
 3. (Optional) Try Nishang If both don't work which uses WinRM
+
+
+
+
 
 **Command** ([[PSRemotingLocalAdminAccess.ps1]]):
 
 ```powershell
 PSRemotingLocalAdminAccess.ps1
 ```
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +105,5 @@ PSRemotingLocalAdminAccess.ps1
 
 - [[Pivot]]
 - [[privileges]]
+
+

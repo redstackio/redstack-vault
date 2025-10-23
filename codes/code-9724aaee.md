@@ -16,3 +16,5 @@ PS> Invoke-Command -ComputerName DC -Credential $cred -ScriptBlock { whoami }
 PS> Invoke-Command -computername DC01,CLIENT1 -scriptBlock { Get-Service }
 PS> Invoke-Command -computername DC01,CLIENT1 -filePath c:\Scripts\Task.ps1
 ```
+
+

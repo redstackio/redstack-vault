@@ -16,3 +16,9 @@ OSRFramework is a set of libraries to perform Open Source Intelligence tasks. Th
 ## Description
 
 OSRFramework is a set of libraries to perform Open Source Intelligence tasks. They include references to a bunch of different applications related to username checking, DNS lookups, information leaks research, deep web search, regular expressions extraction, and many others. At the same time, by means of ad-hoc Maltego transforms, OSRFramework provides a way of making these queries graphically as well as several interfaces to interact with like OSRFConsole or a Web interface.
+
+
+
+
+
+

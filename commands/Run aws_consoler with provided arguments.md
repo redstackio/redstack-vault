@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:55.849911+00:00'
 ```bash
 $> aws_consoler -v -a AKIA[REDACTED] -s [REDACTED]
 ```
+
+

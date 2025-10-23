@@ -26,3 +26,5 @@ Looking for z1Fz in pattern of 500000 bytes
  - Pattern z1Fz (0x7A46317A) found in cyclic pattern at position 4654
 ...
 ```
+
+

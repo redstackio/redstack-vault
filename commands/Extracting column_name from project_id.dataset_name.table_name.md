@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:05.529526+00:00'
 ```bash
 SELECT column_name FROM project_id.dataset_name.INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'table_name'
 ```
+
+

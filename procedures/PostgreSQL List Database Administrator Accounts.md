@@ -29,6 +29,8 @@ From a technical perspective, the attacker would need to identify a vulnerable p
 
 The business value of this procedure is that it allows an attacker to gain access to sensitive information and potentially take control of the database. This can lead to data theft, data modification, and disruptions to business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that interacts with a PostgreSQL database
@@ -36,6 +38,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 1. Knowledge of SQL injection techniques
 
 1. Access to a tool for crafting and executing SQL queries
+
+ 
 
 ## Defense
 
@@ -45,25 +49,39 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Obtain a list of all superusers in the database
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. This command lists all the superusers in the PostgreSQL database.
 
+ 
+
+
+
 **Code**: [[SELECT usename FROM pg_user WHERE usesuper IS TRUE]]
 
+
+
 > The 'SELECT' statement is used to retrieve data from the 'pg_user' table. The 'WHERE' clause filters the results to only include users that have the 'usesuper' attribute set to 'TRUE', which indicates that they are superusers. The 'usename' field is selected to display the names of the superusers. This command can be useful for identifying the users who have the ability to perform certain actions that regular users cannot.
+
+
 
 **Command** ([[List all superusers]]):
 
 ```bash
 SELECT usename FROM pg_user WHERE usesuper IS TRUE
 ```
+
+
 
 ## Commands Used
 
@@ -73,3 +91,5 @@ SELECT usename FROM pg_user WHERE usesuper IS TRUE
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL List Database Administrator Accounts]]
+
+

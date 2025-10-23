@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:55.993278+00:00'
 ```bash
 net use \\srv01.domain.local /user:DOMAIN\username password C$
 ```
+
+

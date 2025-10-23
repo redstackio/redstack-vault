@@ -40,6 +40,8 @@ or third party monitoring services.
 
 1. Create an AMI image from a EC2 instance ID and give it a description.
 
+
+
 **Command** ([[aws create AMI image]]):
 
 ```bash
@@ -47,7 +49,15 @@ aws ec2 create-image --instance-id $AWS_INSTANCE_ID --name $AWS_AMI_NAME --descr
 
 ```
 
+
+
+
+
+
+
 2. (Optional) Create an AMI image from an EC2 instance ID without rebooting the instance
+
+
 
 **Command** ([[aws create AMI image without reboot]]):
 
@@ -55,6 +65,12 @@ aws ec2 create-image --instance-id $AWS_INSTANCE_ID --name $AWS_AMI_NAME --descr
 aws ec2 create-image --instance-id $AWS_INSTANCE_ID --name $AWS_AMI_NAME --description $AWS_AMI_DESCRIPTION --no-reboot
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +85,5 @@ aws ec2 create-image --instance-id $AWS_INSTANCE_ID --name $AWS_AMI_NAME --descr
 
 - [[AWS]]
 - [[Cloud]]
+
+

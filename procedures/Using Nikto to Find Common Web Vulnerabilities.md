@@ -30,15 +30,27 @@ Nikto tool can be used to identify common web vulnerabilities.
 
 Nikto tool can be used to identify common web vulnerabilities. 
 
+
+
 # Procedure
 
 1. Use the below Nikto command to scan an application and list common web application vulnerabilities.
+
+
+
+
+
+
 
 **Command** ([[Nikto Command to Scan an Application]]):
 
 ```bash
 nikto -h http://192.168.43.68/vcart/login.php
 ```
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +65,5 @@ nikto -h http://192.168.43.68/vcart/login.php
 - [[owasp]]
 - [[Vulnerability Scanning]]
 - [[Web Applications]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:30.038895+00:00'
 ```bash
 Get-SQLInstanceDomain | Get-SQLTable -DatabaseName <DBNameFromGet-SQLDatabaseCommand> -NoDefaults
 ```
+
+

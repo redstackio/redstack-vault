@@ -30,6 +30,8 @@ The technique abuses a vulnerability in the runC binary, which is used by Docker
 
 The business value of this procedure is that it highlights the importance of securing container environments and implementing strong access controls to prevent unauthorized access to host systems.
 
+ 
+
 ## Requirements
 
 1. Access to a Docker container with runC installed
@@ -37,6 +39,8 @@ The business value of this procedure is that it highlights the importance of sec
 1. Knowledge of the CVE-2019-5736 exploit
 
 1. Root privileges on the host system
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this procedure is that it highlights the importance of sec
 
 1. Implement network segmentation to isolate container environments from the host system
 
+ 
+
 ## Objectives
 
 1. Escape the Docker container and gain access to the host system
@@ -54,13 +60,23 @@ The business value of this procedure is that it highlights the importance of sec
 
 1. Demonstrate the impact of container-level security vulnerabilities
 
+ 
+
 # Instructions
 
 1. This command builds and runs a malicious Docker image with the CVE-2019-5736 vulnerability. The vulnerability allows attackers to overwrite the host RunC binary and gain root-level access to the host system.
 
+ 
+
+
+
 **Code**: [[$ docker build -t cve-2019-5736:malicious_image_PO]]
 
+
+
 > The `docker build` command builds a Docker image with the tag `cve-2019-5736:malicious_image_POC` using the Dockerfile located at `./RunC-CVE-2019-5736/malicious_image_POC`. The `docker run` command then runs the image with the `--rm` flag to remove the container after it exits. This exploit is designed to exploit the CVE-2019-5736 vulnerability in RunC, which allows an attacker to overwrite the host RunC binary and gain root-level access to the host system. The `Exploit for CVE-2019-5736` name of this command reflects its purpose to exploit this specific vulnerability.
+
+
 
 **Command** ([[Build Docker Image for CVE-2019-5736 POC]]):
 
@@ -68,11 +84,17 @@ The business value of this procedure is that it highlights the importance of sec
 $ docker build -t cve-2019-5736:malicious_image_POC ./RunC-CVE-2019-5736/malicious_image_POC
 ```
 
+
+
+
+
 **Command** ([[Run Docker Container for CVE-2019-5736 POC]]):
 
 ```bash
 $ docker run --rm cve-2019-5736:malicious_image_POC
 ```
+
+
 
 ## Commands Used
 
@@ -83,3 +105,5 @@ $ docker run --rm cve-2019-5736:malicious_image_POC
 
 - [[Breaking out of Docker via runC]]
 - [[Container - Docker Pentest]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:36.345573+00:00'
 ```bash
 {"typ":"JWT","alg":"RS256", "jku":"https://example.com/jwks.json", "kid":"id_of_jwks"}
 ```
+
+

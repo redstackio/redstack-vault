@@ -16,3 +16,7 @@ Generates Malicious Macro and Execute Powershell or Shellcode via MSBuild Applic
 ## Description
 
 Generates Malicious Macro and Execute Powershell or Shellcode via MSBuild Application Whitelisting Bypass. ​
+
+
+
+

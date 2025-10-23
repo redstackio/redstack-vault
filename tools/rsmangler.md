@@ -16,3 +16,9 @@ RSMangler will take a wordlist and perform various manipulations on it similar t
 ## Description
 
 RSMangler will take a wordlist and perform various manipulations on it similar to those done by John the Ripper the main difference being that it will first take the input words and generate all permutations and the acronym of the words (in order they appear in the file) before it applies the rest of the mangles.
+
+
+
+
+
+

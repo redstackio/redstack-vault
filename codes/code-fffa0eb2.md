@@ -18,3 +18,5 @@ PS C:\target> $fullprinterName = '\\' + $serverName + '\' + $printerName + ' - '
 PS C:\target> Remove-Printer -Name $fullprinterName -ErrorAction SilentlyContinue
 PS C:\target> Add-Printer -ConnectionName $fullprinterName
 ```
+
+

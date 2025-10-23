@@ -34,11 +34,15 @@ Technical Explanation: Cross-Site Scripting (XSS) is a type of injection attack 
 
 Business Value: XSS attacks can lead to a compromise of sensitive data, such as user credentials and financial information. This can result in reputational damage, loss of trust, and financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Ability to inject malicious code into files or markdown content
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: XSS attacks can lead to a compromise of sensitive data, such as 
 
 1. Regularly update and patch web applications to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into files or markdown content
@@ -56,12 +62,20 @@ Business Value: XSS attacks can lead to a compromise of sensitive data, such as 
 
 1. Steal sensitive information from the victim's browser
 
+ 
+
 # Instructions
 
 1. To perform a Cross-Site Scripting (XSS) attack, use one of these payloads as the input parameter for the vulnerable field on the target website. These payloads will execute JavaScript code in the context of the victim's browser, allowing the attacker to steal sensitive information or perform actions on behalf of the victim.
 
+ 
+
+
+
 **Code**: [[[a](javascript:prompt(document.cookie))
 [a](j a v ]]
+
+
 
 > The first payload uses the `javascript:` protocol to execute the `prompt()` function, which displays a dialog box containing the value of the `document.cookie` property. The second payload uses spaces to evade filters that block the `javascript:` protocol. The third payload uses the `data:` protocol to embed a base64-encoded HTML document containing a script that executes the `alert()` function. The fourth payload uses the `throw` statement to trigger the `onerror` event, which executes the `alert()` function.
 
@@ -82,3 +96,5 @@ Business Value: XSS attacks can lead to a compromise of sensitive data, such as 
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in Markdown]]
+
+

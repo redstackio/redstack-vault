@@ -27,6 +27,8 @@ SQLite databases are commonly used in mobile applications, and extracting table 
 
 The business value of this attack lies in the ability to extract sensitive information from an application's database. This can include user credentials, financial information, and other sensitive data that can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to the application that uses SQLite as its database management system
@@ -34,6 +36,8 @@ The business value of this attack lies in the ability to extract sensitive infor
 1. Knowledge of SQL injection techniques
 
 1. Ability to manipulate input to the application
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ The business value of this attack lies in the ability to extract sensitive infor
 
 1. Limit access to the database and its tables to only authorized users
 
+ 
+
 ## Objectives
 
 1. Extract table names from the SQLite database
@@ -51,11 +57,19 @@ The business value of this attack lies in the ability to extract sensitive infor
 
 1. Use extracted table names as a stepping stone for further attacks
 
+ 
+
 # Instructions
 
 1. This command lists all the tables present in the SQLite database.
 
+ 
+
+
+
 **Code**: [[SELECT tbl_name FROM sqlite_master WHERE type='tab]]
+
+
 
 > The 'SELECT' statement is used to retrieve data from one or more tables in the database. In this case, we are selecting the 'tbl_name' column from the 'sqlite_master' table. The 'WHERE' clause is used to filter the results based on a condition. Here, we are only selecting tables whose type is 'table' and whose name does not start with 'sqlite_'.
 
@@ -63,3 +77,5 @@ The business value of this attack lies in the ability to extract sensitive infor
 
 - [[Integer/String based - Extract table name]]
 - [[SQLite Injection]]
+
+

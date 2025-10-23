@@ -26,11 +26,27 @@ host is a simple utility for performing DNS lookups. It can also make custom que
 
 host is a simple utility for performing DNS lookups. It can also make custom queries, zone transfers, mail/nx lookups, and more.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_151f2192-b29a-461a-bea9-a7dc29e5931f}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -44,3 +60,5 @@ host is a simple utility for performing DNS lookups. It can also make custom que
 
 - [[data exposure]]
 - [[Network]]
+
+

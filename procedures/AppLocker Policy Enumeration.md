@@ -23,11 +23,15 @@ AppLocker is a security feature in Windows that allows administrators to restric
 
 AppLocker is a security feature in Windows that allows administrators to restrict which applications are allowed to run on a system. This procedure involves enumerating the effective AppLocker policy, which can help an attacker understand what applications are allowed to run on a target system. By understanding this policy, an attacker can identify potential weaknesses and plan their attack accordingly. From a technical perspective, this procedure involves using the 'Enumerate AppLocker Effective Policy' command to retrieve the effective AppLocker policy from a target system. The business value of this procedure is that it can help organizations identify weaknesses in their AppLocker policies and improve their overall security posture.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
 
 1. Ability to run the 'Enumerate AppLocker Effective Policy' command
+
+ 
 
 ## Defense
 
@@ -37,6 +41,8 @@ AppLocker is a security feature in Windows that allows administrators to restric
 
 1. Regularly review and update AppLocker policies to ensure that they are effective
 
+ 
+
 ## Objectives
 
 1. Retrieve the effective AppLocker policy from a target system
@@ -45,11 +51,19 @@ AppLocker is a security feature in Windows that allows administrators to restric
 
 1. Plan an attack based on the AppLocker policy
 
+ 
+
 # Instructions
 
 1. To enumerate the local AppLocker effective policy, run the following commands:
 
+ 
+
+
+
 **Code**: [[PowerView PS C:\> Get-AppLockerPolicy -Effective |]]
+
+
 
 > The first command 'Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections' will retrieve the effective AppLocker policy and expand the RuleCollections property to display the individual rules. The second command 'Get-AppLockerPolicy -effective -xml' will retrieve the effective AppLocker policy in XML format. The third command 'Get-ChildItem -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe # (Keys: Appx, Dll, Exe, Msi and Script' will enumerate the AppLocker rules stored in the registry under the specified path for the given keys.
 
@@ -57,3 +71,5 @@ AppLocker is a security feature in Windows that allows administrators to restric
 
 - [[AppLocker]]
 - [[Windows - Defenses]]
+
+

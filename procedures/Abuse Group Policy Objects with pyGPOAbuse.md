@@ -37,6 +37,8 @@ Technical Explanation: pyGPOAbuse works by abusing the SYSVOL share in Active Di
 
 Business Value: By abusing GPOs with pyGPOAbuse, attackers can gain persistent access to an organization's network and escalate their privileges. This can allow them to steal sensitive data, install malware, or cause other damage to the organization. Organizations should be aware of this technique and take steps to secure their GPOs and Active Directory environment.
 
+ 
+
 ## Requirements
 
 1. Access to the Active Directory environment
@@ -44,6 +46,8 @@ Business Value: By abusing GPOs with pyGPOAbuse, attackers can gain persistent a
 1. Python and pyGPOAbuse installed on the attacker's machine
 
 1. Credentials with permissions to modify GPOs
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: By abusing GPOs with pyGPOAbuse, attackers can gain persistent a
 
 1. Implement least privilege access controls to limit the impact of GPO abuse
 
+ 
+
 ## Objectives
 
 1. Gain persistence within the Active Directory environment
@@ -61,12 +67,20 @@ Business Value: By abusing GPOs with pyGPOAbuse, attackers can gain persistent a
 
 1. Maintain access to the environment for future attacks
 
+ 
+
 # Instructions
 
 1. The pyGPOAbuse tool is used to abuse Group Policy Objects (GPOs) in Active Directory environments. In this example, we are cloning the pyGPOAbuse repository from GitHub and using it to add the user 'john' to the local administrators group on the domain. We are also running a reverse shell example that connects to a remote IP address and port, and creates a new TCP client. The -powershell flag is used to specify that the command to be executed is PowerShell. The -command flag is used to specify the PowerShell command to be executed. The -taskname flag is used to specify the name of the task that will be created in the Task Scheduler. The -description flag is used to specify a description for the task. The -user flag is used to specify the user account that will be used to create the scheduled task.
 
+ 
+
+
+
 **Code**: [[$ git clone https://github.com/Hackndo/pyGPOAbuse
 ]]
+
+
 
 > This command is useful for red teamers and penetration testers who want to escalate their privileges on a domain. By abusing Group Policy Objects, they can add themselves to privileged groups on the domain, such as the local administrators group, and gain access to sensitive resources. The reverse shell example can be used to establish a persistent backdoor on the target system, allowing the attacker to maintain access even if their initial access is discovered and removed.
 
@@ -92,3 +106,5 @@ Business Value: By abusing GPOs with pyGPOAbuse, attackers can gain persistent a
 - [[Abuse GPO with pyGPOAbuse]]
 - [[Active Directory Attacks]]
 - [[Exploit Group Policy Objects GPO]]
+
+

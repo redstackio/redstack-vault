@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:14.039624+00:00'
 ```bash
 curl http://rancher-metadata/<version>/<path>
 ```
+
+

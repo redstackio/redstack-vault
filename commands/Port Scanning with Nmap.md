@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:06.988229+00:00'
 ```bash
 sudo nmap -sSV -p- 192.168.0.1 -oA OUTPUTFILE -T4
 ```
+
+

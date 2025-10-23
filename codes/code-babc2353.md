@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:43.928288+00:00'
 ```bash
 hashcat -m 1731 -a 0 mssql_hashes_hashcat.txt /usr/share/wordlists/rockyou.txt --force
 ```
+
+

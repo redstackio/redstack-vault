@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:52.080999+00:00'
 ```bash
 trufflehog git https://github.com/trufflesecurity/trufflehog.git
 ```
+
+

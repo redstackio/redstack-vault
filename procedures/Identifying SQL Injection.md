@@ -31,11 +31,37 @@ An attacker will inject SQL queries through user input fields or parameters in t
 
 An attacker will inject SQL queries through user input fields or parameters in the URL to execute them on the database and extract sensitive information. To identify SQL injection in an application, special characters like single quote (') can be injected through user input fields.
 
+
+
 # Instructions
 
 1. Insert single quote into the user input field or through the parameters in the URL
 
+
+
+
+
+
+
+![cf9592b8-00fe-4490-8573-be7cdc9e0ed1.jpg](_assets/images/Mash/cf9592b8-00fe-4490-8573-be7cdc9e0ed1.jpg)
+
+
+
+
+
+
+
+
+
+
+
 2. Observe the response from the web server with SQL warning message, which confirms the existence of SQL injection.
+
+
+
+![02942d39-db05-4029-8972-7358b344df81.png](_assets/images/Mash/02942d39-db05-4029-8972-7358b344df81.png)
+
+
 
 ## Platforms
 
@@ -49,3 +75,5 @@ An attacker will inject SQL queries through user input fields or parameters in t
 - [[SQL]]
 - [[sqli]]
 - [[Web Applications]]
+
+

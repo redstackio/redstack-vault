@@ -20,3 +20,5 @@ Add-MpPreference -ExclusionPath "$_PATH"
 ```
 PS C:\> Add-MpPreference -ExclusionPath "C:\Windows\System32\spool\drivers\color"
 ```
+
+

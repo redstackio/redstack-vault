@@ -34,6 +34,8 @@ You can create subnets inside of a VPC, these can be mapped to public IP's with 
 
 1. Create a subnet in a vpc, choosing the availability zone, region and ip cidr block.
 
+
+
 **Command** ([[aws ec2 create subnet in vpc]]):
 
 ```bash
@@ -41,7 +43,13 @@ aws ec2 create-subnet --vpc-id <vpc_id> --cidr-block <cidr_block> --availability
 
 ```
 
+
+
+
+
 2. (Optional) Auto assign public IPs to ec2 instances
+
+
 
 **Command** ([[aws ec2 auto assign public IPs]]):
 
@@ -49,6 +57,10 @@ aws ec2 create-subnet --vpc-id <vpc_id> --cidr-block <cidr_block> --availability
 aws ec2 modify-subnet-attribute --subnet-id <subnet_id> --map-public-ip-on-launch --region <region>
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +75,5 @@ aws ec2 modify-subnet-attribute --subnet-id <subnet_id> --map-public-ip-on-launc
 
 - [[AWS]]
 - [[Cloud]]
+
+

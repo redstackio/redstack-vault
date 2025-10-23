@@ -34,6 +34,8 @@ Hashcat not only can be used to brute force crack hashes, it can also take an in
 
 Hashcat not only can be used to brute force crack hashes, it can also take an initial wordlist, mutate it with rules, and output the result using the `--stdout` option. 
 
+
+
 # Instructions
 
 For this example, a wordlist will be built that includes:
@@ -52,17 +54,35 @@ For this example, a wordlist will be built that includes:
 
 words.txt will contain two words
 
+
+
+
+
 **Code**: [[Davidson
 password
 ]]
 
+
+
+
+
 Use the following table to build the `rules.txt` file.
+
+
 
 **Code**: [[:    | do nothing
 l    | Lowercase all letters
 u  ]]
 
+
+
+
+
 Given the requirements, create a rules.txt file with the following contents:
+
+
+
+
 
 **Code**: [[:
 r
@@ -71,13 +91,25 @@ $1$9$8$5
 ^1^2^3
 u]]
 
+
+
+
+
 Mutate the list and output the results to a new file
+
+
+
+
 
 **Command** ([[Hashcat Mutate a Wordlist Using Rules]]):
 
 ```bash
 hashcat -a 0 words.txt --stdout -r rules.txt > $_OUTPUT.txt
 ```
+
+
+
+
 
 ## Platforms
 
@@ -102,3 +134,5 @@ hashcat -a 0 words.txt --stdout -r rules.txt > $_OUTPUT.txt
 
 - [[Cryptography]]
 - [[password cracking]]
+
+

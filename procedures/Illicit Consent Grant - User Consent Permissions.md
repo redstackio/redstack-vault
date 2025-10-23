@@ -29,6 +29,8 @@ Illicit Consent Grant - User Consent Permissions is a tactic used by attackers t
 
 Illicit Consent Grant - User Consent Permissions is a tactic used by attackers to gain access to a victim's cloud resources. Attackers can use phishing or social engineering techniques to trick the victim into granting them consent permissions. Once an attacker has been granted these permissions, they can gain access to sensitive data, resources, and services. This technique is commonly used in initial access and persistence stages of an attack. To protect against this type of attack, it is important to implement multi-factor authentication and to educate users on how to recognize and avoid phishing attacks.
 
+ 
+
 ## Requirements
 
 1. Valid user credentials
@@ -36,6 +38,8 @@ Illicit Consent Grant - User Consent Permissions is a tactic used by attackers t
 1. Access to the cloud service dashboard
 
 1. Knowledge of how to manipulate access tokens
+
+ 
 
 ## Defense
 
@@ -45,17 +49,27 @@ Illicit Consent Grant - User Consent Permissions is a tactic used by attackers t
 
 1. Monitor user activity and review access permissions regularly
 
+ 
+
 ## Objectives
 
 1. Gain access to a victim's cloud resources
 
 1. Prolong access to the victim's cloud resources
 
+ 
+
 # Instructions
 
 1. To check if users are allowed to consent to apps, run the following command in PowerShell: Get-AzureADMSAuthorizationPolicy | Select-Object -ExpandProperty PermissionGrantPolicyIdsAssignedToDefaultUserRole
 
+ 
+
+
+
 **Code**: [[PS AzureADPreview&gt; (GetAzureADMSAuthorizationPo]]
+
+
 
 > This command retrieves the permission grant policy IDs assigned to the default user role. If the policy allows users to consent to apps, it will be listed in the output. If the policy does not allow users to consent to apps, the output will be blank.
 
@@ -75,3 +89,5 @@ Illicit Consent Grant - User Consent Permissions is a tactic used by attackers t
 
 - [[Cloud - Azure]]
 - [[Illicit Consent Grant]]
+
+

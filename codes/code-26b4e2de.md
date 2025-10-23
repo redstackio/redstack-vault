@@ -33,3 +33,5 @@ remote-exec [module] [target] [command]
     wmi                             Remote execute via WMI (PowerShell)
 
 ```
+
+

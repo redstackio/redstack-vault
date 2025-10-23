@@ -37,11 +37,15 @@ To accomplish this, the attacker can use the 'DB2 User and Authorization Informa
 
 From a business perspective, this procedure can help organizations identify potential vulnerabilities in their DB2 databases and take necessary steps to secure them.
 
+ 
+
 ## Requirements
 
 1. Access to the DB2 database
 
 1. Valid authentication credentials
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ From a business perspective, this procedure can help organizations identify pote
 
 1. Regularly monitor and audit the DB2 database for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. List all users and their associated authorization information in a DB2 database
 
 1. Identify potential vulnerabilities in the target DB2 database
 
+ 
+
 # Instructions
 
 1. To retrieve information about authorized users and their privileges in a DB2 instance, execute one or more of the following SQL commands:
 
+ 
+
+
+
 **Code**: [[select distinct(authid) from sysibmadm.privileges ]]
 
+
+
 > Each of the SQL commands provided in the 'data' field retrieves a different type of user and authorization information. Please note that some of the commands may require elevated privileges to execute. The 'instruction' field provides a brief overview of how to execute these commands, while the 'explain' field provides additional information about what each command does.
+
+
 
 **Command** ([[Retrieve authorized users in DB2 instance]]):
 
@@ -71,11 +87,19 @@ From a business perspective, this procedure can help organizations identify pote
 select distinct(authid) from sysibmadm.privileges
 ```
 
+
+
+
+
 **Command** ([[Retrieve users with database-level privileges]]):
 
 ```bash
 select grantee from syscat.dbauth
 ```
+
+
+
+
 
 **Command** ([[Retrieve schema owners in DB2 instance]]):
 
@@ -83,11 +107,17 @@ select grantee from syscat.dbauth
 select distinct(definer) from syscat.schemata
 ```
 
+
+
+
+
 **Command** ([[Retrieve users with table-level privileges]]):
 
 ```bash
 select distinct(grantee) from sysibm.systabauth
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +141,5 @@ select distinct(grantee) from sysibm.systabauth
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List Users]]
+
+

@@ -36,6 +36,8 @@ Technical Explanation: The RDS protocol is used by Linux systems for remote desk
 
 Business Value: This technique is a serious threat to organizations as it allows attackers to gain complete control over a Linux system. This can lead to data theft, ransomware attacks, and other types of cybercrime. By exploiting this vulnerability, attackers can gain persistence on a compromised system, allowing them to maintain access and continue to steal data over a long period of time.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system with the RDS protocol enabled
@@ -43,6 +45,8 @@ Business Value: This technique is a serious threat to organizations as it allows
 1. Knowledge of the CVE-2010-3904 vulnerability
 
 1. Ability to execute the Linux RDS exploit
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ Business Value: This technique is a serious threat to organizations as it allows
 
 1. Implement network segmentation and access controls to limit the impact of a potential attack
 
+ 
+
 ## Objectives
 
 1. Gain root-level access on a Linux system
 
 1. Maintain persistence on a compromised system
 
+ 
+
 # Instructions
 
 1. This exploit targets a vulnerability in the Linux Kernel and can be used to gain root access to the system. To use this exploit, download the code from the provided link and execute it on the target system. Please note that this exploit should only be used for ethical hacking purposes and with the permission of the system owner.
 
+ 
+
+
+
 **Code**: [[https://www.exploit-db.com/exploits/15285/]]
 
+
+
 > The exploit targets a vulnerability in the Linux Kernel that allows an attacker to gain root access to the system. This vulnerability can be exploited by sending a specially crafted packet to the target system. The exploit code provided in the link is written in C and can be compiled on the target system using a C compiler. Once the exploit is executed, the attacker will have root access to the system and can perform any action they desire. It is important to note that this exploit should only be used for ethical hacking purposes and with the permission of the system owner.
+
+
 
 **Command** ([[Add malicious file]]):
 
 ```bash
 ../../../../windows/system32/calc.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ Business Value: This technique is a serious threat to organizations as it allows
 - [[CVE-2010-3904 (RDS)]]
 - [[Kernel Exploits]]
 - [[Linux - Privilege Escalation]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:31.988533+00:00'
 ```sql
 and (SELECT count(tbl_name) FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%' ) < number_of_table
 ```
+
+

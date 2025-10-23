@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:53.209844+00:00'
 ```bash
 Get-NetRoute -AddressFamily IPv4 | ft DestinationPrefix,NextHop,RouteMetric,ifIndex
 ```
+
+

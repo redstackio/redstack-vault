@@ -34,6 +34,8 @@ MYSQL Union Based Injection is a technique used to extract data from a database 
 
 This procedure can be used by an attacker to gain unauthorized access to a system and steal sensitive information. The technical explanation involves injecting malicious SQL code into an input field to extract data from a database. The business value of this procedure is to highlight the importance of securing input fields and databases to prevent unauthorized access and data theft.
 
+ 
+
 ## Requirements
 
 1. Access to an input field vulnerable to SQL Injection
@@ -41,6 +43,8 @@ This procedure can be used by an attacker to gain unauthorized access to a syste
 1. Knowledge of MYSQL Union Based Injection
 
 1. Knowledge of the database schema
+
+ 
 
 ## Defense
 
@@ -50,18 +54,28 @@ This procedure can be used by an attacker to gain unauthorized access to a syste
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract data from the Users table using MYSQL Union Based Injection
 
 1. Sort the extracted data using `ORDER BY` or `GROUP BY` clauses
 
+ 
+
 # Instructions
 
 1. To extract data from the users table, an attacker can use SQL injection by injecting a query that selects all columns from the users table. This can be done by appending the payload 'AND (SELECT * FROM Users) = 1' to the original query. If the application is vulnerable to SQL injection, the server will respond with an error message that includes the data from the users table. The attacker can then parse the error message to extract the data.
 Alternatively, the attacker can use the payload '-1' UNION SELECT 1,2,3--+' to retrieve data from the users table. This payload will return a result set with three columns, which can be used to extract data from the users table.
 
+ 
+
+
+
 **Code**: [[1' AND (SELECT * FROM Users) = 1--+ 	#Operand shou]]
+
+
 
 > The payload 'AND (SELECT * FROM Users) = 1' injects a query that selects all columns from the users table. The payload '-1' UNION SELECT 1,2,3--+' injects a query that returns a result set with three columns. The first column will contain the results from the original query, and the second and third columns will contain data from the users table. The double hyphen (--) at the end of the payload is used to comment out the rest of the original query and prevent any syntax errors.
 
@@ -84,3 +98,5 @@ Alternatively, the attacker can use the payload '-1' UNION SELECT 1,2,3--+' to r
 - [[MYSQL Union Based]]
 - [[Using `order by` or `group by`]]
 - [[Using `SELECT * FROM SOME_EXISTING_TABLE` Error Based]]
+
+

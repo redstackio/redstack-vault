@@ -37,11 +37,15 @@ Technical Explanation: VPC peering connections allow communication between VPCs 
 
 Business Value: An attacker who gains access to RDS instances can steal sensitive data such as customer information, financial data, and intellectual property. This can result in reputational damage, loss of revenue, and legal penalties.
 
+ 
+
 ## Requirements
 
 1. Access to AWS console or API
 
 1. Knowledge of AWS networking and RDS
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: An attacker who gains access to RDS instances can steal sensitiv
 
 1. Implement least privilege access controls to limit access to RDS instances
 
+ 
+
 ## Objectives
 
 1. Identify VPC peering connections
@@ -59,17 +65,25 @@ Business Value: An attacker who gains access to RDS instances can steal sensitiv
 
 1. Perform lateral movement within the network
 
+ 
+
 # Instructions
 
 1. Use this command to describe the VPC peering connections that exist between two VPCs.
 
+ 
+
 This command returns information about the specified VPC peering connections, including information about the requester VPC, accepter VPC, connection status, and any tags associated with the connection. You can use this command to troubleshoot connectivity issues between VPCs or to get an overview of the VPC peering connections in your account. Optional arguments include the IDs of the VPC peering connections to describe, filters to apply to the results, and flags to control the output format.
+
+
 
 **Command** ([[List VPC Peering Connections]]):
 
 ```bash
 aws ec2 describe-vpc-peering-connections
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ aws ec2 describe-vpc-peering-connections
 - [[Listing VPC peering connections]]
 - [[RDS - Relational Database Service]]
 - [[Scenario]]
+
+

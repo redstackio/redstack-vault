@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:23:56.681624+00:00'
 ```bash
 Recently, Microsoft Azure has made some changes to the VM Metadata service that may impact some users. This blog post provides an overview of the changes and how they may impact your Azure VMs.
 ```
+
+

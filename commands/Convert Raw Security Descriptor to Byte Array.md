@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:56:07.808488+00:00'
 ```bash
 $SDBytes = New-Object byte[] ($SD.BinaryLength); $SD.GetBinaryForm($SDBytes, 0)
 ```
+
+

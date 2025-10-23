@@ -30,11 +30,15 @@ CIDR notation is a way of representing IP addresses and their associated network
 Business Value:
 This technique can be used by attackers to steal sensitive information from a target system, such as customer data, financial information, and intellectual property. This can result in financial losses, loss of reputation, and legal action against the company.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of CIDR notation
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ This technique can be used by attackers to steal sensitive information from a ta
 
 1. Implement access controls to restrict access to sensitive resources
 
+ 
+
 ## Objectives
 
 1. Bypass filters that block requests to localhost
@@ -52,13 +58,21 @@ This technique can be used by attackers to steal sensitive information from a ta
 
 1. Pivot to other systems on the network and gain access to additional resources
 
+ 
+
 # Instructions
 
 1. To retrieve IP addresses from the loopback network interface, use the 'Get-NetIPAddress' command in PowerShell. The loopback interface has the IPv4 address of 127.0.0.1 and the IPv6 address of ::1.
 
+ 
+
+
+
 **Code**: [[http://127.127.127.127
 http://127.0.1.3
 http://127]]
+
+
 
 > The IP addresses listed in the 'data' field are all part of the loopback network interface, which allows a computer to communicate with itself. The IP address range 127.0.0.0/8 is reserved for this purpose and is not routable on the internet. The 'lang' field indicates that the command is written in PowerShell, a command-line shell and scripting language developed by Microsoft. The 'text' field provides a brief description of the data in the 'data' field. The 'instruction' field provides guidance on how to retrieve this information using a PowerShell command, and the 'explain' field provides additional context on the purpose of the loopback interface and the IP address range used for it.
 
@@ -67,3 +81,5 @@ http://127]]
 - [[Bypassing filters]]
 - [[Bypass localhost with CIDR]]
 - [[Server-Side Request Forgery]]
+
+

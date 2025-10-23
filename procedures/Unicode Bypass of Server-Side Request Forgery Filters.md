@@ -30,6 +30,8 @@ Technical Explanation: By using unicode encoding, the attacker can represent cha
 
 Business Value: This technique can allow an attacker to gain access to internal systems that are not intended to be accessible from the internet, potentially leading to the compromise of sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -37,6 +39,8 @@ Business Value: This technique can allow an attacker to gain access to internal 
 1. Knowledge of unicode encoding
 
 1. Ability to craft HTTP requests
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: This technique can allow an attacker to gain access to internal 
 
 1. Regularly review logs for suspicious activity related to Server-Side Request Forgery
 
+ 
+
 ## Objectives
 
 1. Bypass filters that are designed to prevent Server-Side Request Forgery attacks
@@ -54,19 +60,35 @@ Business Value: This technique can allow an attacker to gain access to internal 
 
 1. Compromise sensitive data or systems
 
+ 
+
 # Instructions
 
 1. The '\d' pattern matches any Unicode digit character.
 
+ 
+
+
+
 **Code**: [[\d]]
+
+
 
 > Unicode digits include decimal digits and digits that need special handling, such as the compatibility superscript digits. This pattern can be used to match any digit character in any language that uses digits.
 
 2. The includes() method determines whether a string contains the characters of a specified string. This method returns true if the string contains the characters, and false if not.
 
+ 
+
+
+
 **Code**: [[0123456789]]
 
+
+
 > The includes() method takes one argument which is the string to be searched. The method returns a boolean value indicating whether the search string was found or not. If the search string is found in the original string, the method returns true. Otherwise, it returns false.
+
+
 
 **Command** ([[String of Digits]]):
 
@@ -74,9 +96,17 @@ Business Value: This technique can allow an attacker to gain access to internal 
 0123456789
 ```
 
+
+
 3. CONVERT command
 
+ 
+
+
+
 **Code**: [[๐๑๒๓๔๕๖๗๘๙]]
+
+
 
 > The CONVERT command can be used to convert numeric data from one format to another. The argument for this command is the numeric data that needs to be converted. In this case, the numeric data is provided in Thai numerals. The CONVERT command can be used to convert these Thai numerals to standard Arabic numerals. The output of this command will be the numeric data in standard Arabic numerals.
 
@@ -89,3 +119,5 @@ Business Value: This technique can allow an attacker to gain access to internal 
 - [[Bypassing filters]]
 - [[Bypass using unicode]]
 - [[Server-Side Request Forgery]]
+
+

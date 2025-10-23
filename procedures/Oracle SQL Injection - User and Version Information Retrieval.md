@@ -33,11 +33,15 @@ Technical Explanation: An attacker can use this procedure to exploit vulnerabili
 
 Business Value: This procedure can help organizations identify vulnerabilities in their Oracle databases and take steps to secure them.
 
+ 
+
 ## Requirements
 
 1. Access to an Oracle database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ Business Value: This procedure can help organizations identify vulnerabilities i
 
 1. Regularly patch and update the Oracle database to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Retrieve user information from the Oracle database
 
 1. Retrieve version information from the Oracle database
 
+ 
+
 # Instructions
 
 1. This command retrieves information about the current user and database version. The 'dual' table is a special one-row, one-column table that can be used to perform calculations or retrieve system information. The 'v$version' table is a system view that provides information about the Oracle Database version.
 
+ 
+
+
+
 **Code**: [[SELECT user FROM dual UNION SELECT * FROM v$versio]]
+
+
 
 > The 'SELECT' statement is used to retrieve data from one or more tables. In this case, we are selecting the 'user' column from the 'dual' table and all columns from the 'v$version' table. The 'UNION' operator is used to combine the results of two SELECT statements into a single result set. The '*' wildcard character is used to select all columns from the 'v$version' table. This command can be useful for troubleshooting or verifying the database version and user information.
 
@@ -77,3 +91,5 @@ Business Value: This procedure can help organizations identify vulnerabilities i
 
 - [[Oracle SQL Injection]]
 - [[Oracle SQL version]]
+
+

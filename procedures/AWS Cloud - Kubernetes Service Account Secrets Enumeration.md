@@ -29,11 +29,15 @@ This procedure focuses on enumerating Kubernetes service account secrets in an A
 
 This procedure focuses on enumerating Kubernetes service account secrets in an AWS cloud environment. By listing these secrets, an attacker can obtain sensitive information such as tokens and certificates that can be used to authenticate to the Kubernetes API server and gain access to the cluster. This can be achieved by using the 'List Kubernetes Service Account Secrets' command. This procedure can be used as an initial access method in a larger attack campaign.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS cloud environment
 
 1. Authenticated access to the Kubernetes API server
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ This procedure focuses on enumerating Kubernetes service account secrets in an A
 
 1. Monitor for unusual activity such as unexpected Kubernetes API server authentication attempts
 
+ 
+
 ## Objectives
 
 1. Enumerate Kubernetes service account secrets
@@ -50,6 +56,8 @@ This procedure focuses on enumerating Kubernetes service account secrets in an A
 1. Obtain sensitive information such as tokens and certificates
 
 1. Use obtained credentials to authenticate to the Kubernetes API server and gain access to the cluster
+
+ 
 
 # Instructions
 
@@ -59,13 +67,19 @@ kubectl get secrets <service-account-name> -o json
 
 This will return a JSON object containing all the secrets associated with the specified service account.
 
+ 
+
 The 'kubectl get secrets' command is used to retrieve information about the secrets in a Kubernetes cluster. The '<service-account-name>' argument specifies the name of the service account whose secrets you want to list. The '-o json' flag is used to output the results in JSON format. This command can be useful for debugging and troubleshooting issues related to service account secrets.
+
+
 
 **Command** ([[List Files]]):
 
 ```bash
 https://website.com?rce.php?cmd=ls /var/run/secrets/kubernets.io/serviceaccount
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ https://website.com?rce.php?cmd=ls /var/run/secrets/kubernets.io/serviceaccount
 
 - [[Cloud - AWS]]
 - [[Initial Access]]
+
+

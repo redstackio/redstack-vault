@@ -42,6 +42,8 @@ To enumerate blobs, an attacker can use various tools or scripts that interact w
 
 This technique can be valuable for both red teaming and penetration testing, as it allows security professionals to identify potential weaknesses in an Azure environment.
 
+
+
 - Blobs - `*.blob.core.windows.net`
 
 - File Services - `*.file.core.windows.net`
@@ -49,6 +51,8 @@ This technique can be valuable for both red teaming and penetration testing, as 
 - Data Tables - `*.table.core.windows.net`
 
 - Queues - `*.queue.core.windows.net`
+
+ 
 
 ## Requirements
 
@@ -58,6 +62,8 @@ This technique can be valuable for both red teaming and penetration testing, as 
 
 1. Tools or scripts to interact with the Azure Storage API
 
+ 
+
 ## Defense
 
 1. Implement access controls to limit access to Azure Storage Accounts
@@ -65,6 +71,8 @@ This technique can be valuable for both red teaming and penetration testing, as 
 1. Monitor for unusual activity, such as large numbers of requests to the Azure Storage API
 
 1. Encrypt sensitive data within Azure Blob Storage
+
+ 
 
 ## Objectives
 
@@ -74,9 +82,17 @@ This technique can be valuable for both red teaming and penetration testing, as 
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
+
+
 1. Invoke the Microburst script
+
+
+
+
 
 **Command** ([[Invoke EnumerateAzureBlobs]]):
 
@@ -84,13 +100,21 @@ This technique can be valuable for both red teaming and penetration testing, as 
 . C:\Tools\MicroBurst\Misc\InvokeEnumerateAzureBlobs.ps1
 ```
 
+
+
+
+
 2.  Use the script to enumerate the azure blobs. 
+
+
 
 **Command** ([[Enumerate Azure Blobs with Microburst]]):
 
 ```bash
 Invoke-EnumerateAzureBlobs -Base <SHORT DOMAIN> -OutputFile azureblobs.txt
 ```
+
+
 
 ## Platforms
 
@@ -119,3 +143,5 @@ Invoke-EnumerateAzureBlobs -Base <SHORT DOMAIN> -OutputFile azureblobs.txt
 - [[Cloud - Azure]]
 - [[Enumerate blobs]]
 - [[Enumeration]]
+
+

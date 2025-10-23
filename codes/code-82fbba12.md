@@ -28,3 +28,5 @@ cp /bin/bash .
 # set suid permission
 chmod +s bash 	
 ```
+
+

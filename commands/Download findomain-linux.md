@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:38.812762+00:00'
 ```bash
 $ wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 ```
+
+

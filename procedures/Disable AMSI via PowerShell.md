@@ -24,11 +24,15 @@ Disabling Anti Malware Scan Interface (AMSI) via PowerShell is a technique used 
 
 Disabling Anti Malware Scan Interface (AMSI) via PowerShell is a technique used to bypass security controls and evade detection. AMSI is a Windows feature that allows applications and services to integrate with installed anti-virus software, and disabling it can allow malicious scripts to run undetected. This technique is commonly used by attackers to deliver and execute malware payloads. From a technical standpoint, disabling AMSI involves modifying the Windows Registry to disable the AMSI provider. From a business perspective, this technique can be used to bypass security controls and deliver malware payloads, which can result in data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system with PowerShell
 
 1. Sufficient privileges to modify the Windows Registry
+
+ 
 
 ## Defense
 
@@ -38,17 +42,27 @@ Disabling Anti Malware Scan Interface (AMSI) via PowerShell is a technique used 
 
 1. Regularly monitor and analyze system logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Disable AMSI to bypass security controls and evade detection
 
 1. Deliver and execute malware payloads undetected
 
+ 
+
 # Instructions
 
 1. This command disables AMSI (Antimalware Scan Interface) which is a feature in PowerShell that helps in detecting malicious scripts. The command uses reflection to access a non-public static field in the System.Management.Automation.AmsiUtils class and sets its value to true, thereby disabling AMSI.
 
+ 
+
+
+
 **Code**: [[PS C:\> [Ref].Assembly.GetType('System.Management.]]
+
+
 
 > This command takes no arguments.
 
@@ -57,3 +71,5 @@ Disabling Anti Malware Scan Interface (AMSI) via PowerShell is a technique used 
 - [[Anti Malware Scan Interface]]
 - [[Powershell]]
 - [[Windows - Defenses]]
+
+

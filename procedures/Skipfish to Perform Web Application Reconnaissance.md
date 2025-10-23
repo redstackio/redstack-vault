@@ -28,15 +28,43 @@ Web application reconnaissance will reveal a lot of information about the applic
 
 Web application reconnaissance will reveal a lot of information about the application.
 
+
+
 # Procedure
+
+
 
 1. The below Skipfish command can be used to perform reconnaissance on the web application.
 
+
+
 *skipfish -o test http://192.168.1.3/vcart*
+
+
+
+![c710abad-fedd-4e03-b866-ab421eb348e3.png]()
+
+
 
 2. The result is stored in an output file *index.html*
 
+
+
+
+
+![81e95c5a-4576-4585-beef-ed073cf9fdce.png]()
+
+
+
 3. Issues are listed as shown below.
+
+
+
+
+
+![30acda50-1810-4697-a275-7971a066c904.png]()
+
+
 
 ## Platforms
 
@@ -47,3 +75,5 @@ Web application reconnaissance will reveal a lot of information about the applic
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

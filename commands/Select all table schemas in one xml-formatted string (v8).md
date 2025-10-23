@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:22:05.851680+00:00'
 ```bash
 select xml2clob(xmelement(name t, table_schema)) from sysibm.tables -- returns all in one xml-formatted string (v8). May need CAST(xml2clob(… AS varchar(500)) to display the result.
 ```
+
+

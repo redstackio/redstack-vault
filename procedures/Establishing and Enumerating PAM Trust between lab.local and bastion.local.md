@@ -36,6 +36,8 @@ From a technical perspective, this attack involves sending specially crafted req
 
 The business value of this attack is significant, as it can allow an attacker to gain access to sensitive information and systems. This can result in data theft, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -43,6 +45,8 @@ The business value of this attack is significant, as it can allow an attacker to
 1. Credentials with sufficient privileges to establish trust
 
 1. Tools like Mimikatz for enumeration and access
+
+ 
 
 ## Defense
 
@@ -52,20 +56,32 @@ The business value of this attack is significant, as it can allow an attacker to
 
 1. Implement network segmentation to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Establish a trust relationship between lab.local and bastion.local
 
 1. Enumerate and access privileged accounts and resources in both domains
 
+ 
+
 # Instructions
 
 1. Execute the commands on the forest and bastion servers respectively to establish PAM trust between lab.local and bastion.local
 
+ 
+
+
+
 **Code**: [[# execute on our forest
 netdom trust lab.local /do]]
 
+
+
 > The above commands use the netdom tool to establish PAM trust between two domains, lab.local and bastion.local. The /ForestTransitive parameter ensures that the trust is transitive across the entire forest. The /EnableSIDHistory parameter allows users to access resources in both domains with their existing permissions. The /EnablePIMTrust parameter enables privileged identity management trust, which allows administrators to manage privileged access across the domains. The /Quarantine parameter is set to No, which means that the trust relationship will not be quarantined if any issues arise. These commands need to be executed on the forest and bastion servers respectively.
+
+
 
 **Command** ([[Create trust between lab.local and bastion.local]]):
 
@@ -76,16 +92,28 @@ netdom trust lab.local /domain:bastion.local /EnablePIMTrust:Yes
 netdom trust lab.local /domain:bastion.local /Quarantine:No
 ```
 
+
+
+
+
 **Command** ([[Create trust between bastion.local and lab.local]]):
 
 ```bash
 netdom trust bastion.local /domain:lab.local /ForestTransitive:Yes
 ```
 
+
+
 2. This command is used to detect if the current forest is a PAM trust. It also enumerates shadow security principals and checks if the current forest is managed by a bastion forest.
+
+ 
+
+
 
 **Code**: [[# Detect if current forest is PAM trust
 Import ADM]]
+
+
 
 > The first command uses the Get-ADTrust cmdlet to filter and retrieve all trusts that are forest transitive and have SID filtering quarantined set to false. The second command uses the Get-ADObject cmdlet to retrieve all shadow security principals and their associated members and msDS-ShadowPrincipalSid attribute values. The third command uses the Get-ADTrust cmdlet to filter and retrieve all trusts that are forest transitive. The Trust_Attribute_PIM_Trust and Trust_Attribute_Treat_As_External attributes are used to determine if the current forest is managed by a bastion forest.
 
@@ -110,3 +138,5 @@ Import ADM]]
 
 - [[Active Directory Attacks]]
 - [[Privileged Access Management (PAM) Trust]]
+
+

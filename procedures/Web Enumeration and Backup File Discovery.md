@@ -38,11 +38,15 @@ Technical Explanation: The technique involves sending requests to the web server
 
 Business Value: This technique can be used by organizations to identify vulnerabilities on their web servers before attackers can exploit them. By discovering hidden directories and files, organizations can take steps to secure their web servers and prevent data breaches.
 
+ 
+
 ## Requirements
 
 1. Access to the target web server
 
 1. Tools like Gobuster and BFAC Backup File Finder
+
+ 
 
 ## Defense
 
@@ -52,22 +56,34 @@ Business Value: This technique can be used by organizations to identify vulnerab
 
 1. Regularly scan web servers for hidden directories and files to identify potential vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify hidden directories and files on a web server
 
 1. Discover backup files that may contain sensitive information
 
+ 
+
 # Instructions
 
 1. Use gobuster or ffuf to enumerate subdirectories and files on a target website. The `-w` flag specifies the wordlist to be used for the enumeration, `-u` specifies the target URL, and `-t` specifies the number of threads to be used for the enumeration.
 
+ 
+
+
+
 **Code**: [[# gobuster -w wordlist -u URL -t threads
 ./gobuste]]
+
+
 
 > -w: Specifies the wordlist to be used for the enumeration.
 -u: Specifies the target URL.
 -t: Specifies the number of threads to be used for the enumeration.
+
+
 
 **Command** ([[Directory Enumeration with Gobuster]]):
 
@@ -76,14 +92,24 @@ Business Value: This technique can be used by organizations to identify vulnerab
 ./gobuster -u http://example.com/ -w words.txt -t 10
 ```
 
+
+
 2. BFAC is a tool that helps in finding backup files and directories that are inadvertently exposed. The tool can be used to find sensitive files that may be exposed on a website or a web application. The command line tool can be used to scan a website or a list of websites to find backup files. The tool can be run with the following commands:
 1. `bfac --url <url> --level <level>`: This command is used to scan a website for backup files. The `--url` option specifies the URL of the website to scan. The `--level` option specifies the depth of the scan. The higher the value of level, the deeper the scan.
 2. `bfac --list <file>`: This command is used to scan a list of websites for backup files. The `--list` option specifies the location of the file containing the list of websites to scan.
 
+ 
+
+
+
 **Code**: [[bfac --url http://example.com/test.php --level 4
 b]]
 
+
+
 > The `bfac` tool is used to find backup files that are inadvertently exposed on a website or a web application. The tool can be used to scan a website or a list of websites to find backup files. The `--url` option specifies the URL of the website to scan. The `--level` option specifies the depth of the scan. The higher the value of level, the deeper the scan. The `--list` option specifies the location of the file containing the list of websites to scan. The tool can be used to find sensitive files that may be exposed on a website or a web application.
+
+
 
 **Command** ([[bfac scan on http://example.com/test.php]]):
 
@@ -91,11 +117,17 @@ b]]
 bfac --url http://example.com/test.php --level 4
 ```
 
+
+
+
+
 **Command** ([[bfac scan on testing_list.txt]]):
 
 ```bash
 bfac --list testing_list.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +152,5 @@ bfac --list testing_list.txt
 - [[Active recon]]
 - [[Bug Hunting Methodology and Enumeration]]
 - [[Web discovery]]
+
+

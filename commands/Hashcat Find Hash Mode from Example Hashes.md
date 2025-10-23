@@ -6,6 +6,7 @@ executor: bash
 data: hashcat --example-hashes | grep -C 2 $_VALUE
 output: 'root@kali:~# hashcat --example-hashes | grep -C 2 ''\$6\$''
 
+
   MODE: 1800
 
   TYPE: sha512crypt $6$, SHA512 (Unix)
@@ -30,3 +31,5 @@ MODE: 1800
 TYPE: sha512crypt $6$, SHA512 (Unix)
 HASH: $6$72820166$U4DVzpcYxgw7MVVDGGvB2/H5lRistD5.Ah4upwENR5UtffLR4X4SxSzfREv8z6wVl0jRFX40/KnYVvK4829kD1
 ```
+
+

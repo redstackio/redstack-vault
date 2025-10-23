@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:00.645334+00:00'
 ```bash
 curl -k -v -X POST -H "Authorization: Bearer <COMPROMISED JWT TOKEN>" -H "Content-Type: application/json" https://<master_ip>:<port>/api/v1/namespaces/kube-system/secret
 ```
+
+

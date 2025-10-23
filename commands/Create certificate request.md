@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:24.887613+00:00'
 ```bash
 $ certipy req 'corp.local/john:Passw0rd!@ca.corp.local' -ca 'corp-CA' -template 'ESC3'
 ```
+
+

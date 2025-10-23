@@ -46,7 +46,9 @@ output: '#######################################################################
 
   #################################################################################
 
+
   [+] Report name: Reports/192.168.1.5_09-03-2020_22-05.txt
+
 
   [========== TARGET INFORMATION ==========]
 
@@ -55,6 +57,7 @@ output: '#######################################################################
   [+] Protocol: http
 
   [+] Port: 80
+
 
   [=========== TRAVERSAL ENGINE ===========]
 
@@ -72,11 +75,13 @@ output: '#######################################################################
 
   [+] Traversal Engine DONE ! - Total traversal tests created: 11028
 
+
   [=========== TESTING RESULTS ============]
 
   [+] Ready to launch 3.33 traversals per second
 
   [+] Press Enter to start the testing (You can stop it pressing Ctrl + C)
+
 
   [*] HTTP Status: 400 | Testing Path: http://192.168.1.5:80/../etc/passwd
 
@@ -640,3 +645,5 @@ dotdotpwn -m http -h 192.168.1.5 -M GET
 [+] Report saved: Reports/192.168.1.5_09-03-2020_22-05.txt
 
 ```
+
+

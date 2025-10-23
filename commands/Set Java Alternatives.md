@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:21.830055+00:00'
 ```bash
 $ sudo update-java-alternatives -s java-1.11.0-openjdk-amd64
 ```
+
+

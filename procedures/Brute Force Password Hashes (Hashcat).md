@@ -34,21 +34,39 @@ Use Hashcat to brute force hashes with a dictionary. See Example Hashes for help
 
 Use Hashcat to brute force hashes with a dictionary. See [Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes) for help identifying the mode.
 
+
+
+
+
 ## Objectives
 
 Brute force attacks can be used in various stages of an attack, including initial access, privilege escalation, and lateral movement. They can also be used to bypass authentication controls and defenses, and gain access to systems and networks.
 
+
+
 1. Crack the Hash and obtain the Password
+
+
+
+
 
 # Instructions
 
 Using the appropriate mode from Example Hashes and a wordlist to brute force the
+
+
+
+
 
 **Command** ([[hashcat Brute Force Password Hashes]]):
 
 ```bash
 hashcat -m $_VALUE $_HASHES $_WORDLIST
 ```
+
+
+
+
 
 ## Platforms
 
@@ -73,3 +91,5 @@ hashcat -m $_VALUE $_HASHES $_WORDLIST
 
 - [[Cryptography]]
 - [[password cracking]]
+
+

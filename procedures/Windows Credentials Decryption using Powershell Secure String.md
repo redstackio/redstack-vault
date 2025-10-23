@@ -33,6 +33,8 @@ From a technical perspective, this technique involves using the ConvertTo-Secure
 
 The business value of this technique is that it allows attackers to gain access to sensitive information such as usernames and passwords, which can be used to further compromise the system or other systems on the network.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system with stored Windows credentials
@@ -40,6 +42,8 @@ The business value of this technique is that it allows attackers to gain access 
 1. Knowledge of the Powershell Remoting Protocol
 
 1. Knowledge of Powershell cmdlets for Secure String encryption and decryption
+
+ 
 
 ## Defense
 
@@ -49,17 +53,27 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor for suspicious Powershell activity, such as the use of Secure String cmdlets
 
+ 
+
 ## Objectives
 
 1. Obtain stored Windows credentials
 
 1. Escalate privileges or move laterally across a network
 
+ 
+
 # Instructions
 
 1. This command is used to decrypt a secure string using an AES key. The command requires two inputs: the AES key and the secure string to be decrypted. The AES key should be provided as an array of bytes. The secure string should be provided as a string. The command uses the ConvertTo-SecureString cmdlet to create a secure object using the provided string and AES key. The SecureStringToBSTR method is then used to convert the secure object to an unmanaged BSTR string. Finally, the PtrToStringAuto method is used to convert the BSTR string to a managed string.
 
+ 
+
+
+
 **Code**: [[$aesKey = (49, 222, 253, 86, 26, 137, 92, 43, 29, ]]
+
+
 
 > The $aesKey variable should be an array of bytes representing the AES key used to encrypt the secure string. The $secureObject variable should be a secure string that was encrypted using the same AES key. The $decrypted variable will contain the decrypted string.
 
@@ -79,3 +93,5 @@ The business value of this technique is that it allows attackers to gain access 
 - [[Powershell Remoting Protocol]]
 - [[Powershell Secure String]]
 - [[Windows - Using credentials]]
+
+

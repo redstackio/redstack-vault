@@ -24,11 +24,15 @@ Cross-site scripting (XSS) is a type of attack that injects malicious code into 
 
 Cross-site scripting (XSS) is a type of attack that injects malicious code into a web page viewed by other users. In the HTML context, this can occur when an attacker is able to inject script tags or other HTML elements that execute arbitrary code. In the JS context, this can occur when an attacker is able to inject code that is executed by the JavaScript interpreter. This type of attack can be used to steal sensitive information, such as session cookies, or to perform actions on behalf of the victim. From a technical standpoint, XSS attacks can be launched using a variety of techniques, including reflected, stored, and DOM-based XSS. Businesses can protect themselves from XSS attacks by ensuring that input validation and output encoding are in place, and by using Content Security Policy (CSP) to restrict the types of content that can be loaded on a web page.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Ability to inject malicious code into the web application
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ Cross-site scripting (XSS) is a type of attack that injects malicious code into 
 
 1. Regularly scan web applications for vulnerabilities and patch them as necessary
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a web page viewed by other users
@@ -45,6 +51,8 @@ Cross-site scripting (XSS) is a type of attack that injects malicious code into 
 1. Steal sensitive information, such as session cookies
 
 1. Perform actions on behalf of the victim
+
+ 
 
 # Instructions
 
@@ -55,9 +63,15 @@ Cross-site scripting (XSS) is a type of attack that injects malicious code into 
 
 Note: This payload is designed to bypass certain types of input sanitization that may be in place on the target website.
 
+ 
+
+
+
 **Code**: [[-(confirm)(document.domain)//
 ; alert(1);//
 // (pa]]
+
+
 
 > The payload consists of the following components:
 
@@ -73,3 +87,5 @@ The payload can be modified to perform other types of attacks, such as stealing 
 - [[Cross Site Scripting]]
 - [[XSS in HTML/Applications]]
 - [[XSS in JS Context]]
+
+

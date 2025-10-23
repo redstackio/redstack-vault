@@ -16,3 +16,9 @@ CutyCapt is a small cross-platform command-line utility to capture WebKit’s re
 ## Description
 
 CutyCapt is a small cross-platform command-line utility to capture WebKit’s rendering of a web page into a variety of vector and bitmap formats, including SVG, PDF, PS, PNG, JPEG, TIFF, GIF, and BMP.
+
+
+
+
+
+

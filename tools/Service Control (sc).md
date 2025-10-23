@@ -29,11 +29,25 @@ Service Control (sc) is a command-line program used to communicate with the Serv
 
 Service Control (sc) is a command-line program used to communicate with the Service Control Manager and services. Among the many features, sc can be used to start, stop, query, configure, and delete services, making it an important tool for both administrators and attackers.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_fbec91e7-c5c9-4870-824d-e052fd2b9ce1}}
+
+
 
 # Installation
 
 sc is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +62,5 @@ sc is installed with all modern Windows releases
 - [[Enumeration]]
 - [[process]]
 - [[Service Attacks]]
+
+

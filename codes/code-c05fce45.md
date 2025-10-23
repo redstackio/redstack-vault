@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:54.304932+00:00'
 * is the only wildcard origin
 https://*.example.com is not valid
 ```
+
+

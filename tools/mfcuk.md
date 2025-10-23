@@ -17,8 +17,24 @@ Toolkit containing samples and various tools based on and around libnfc and crap
 
 Toolkit containing samples and various tools based on and around libnfc and crapto1, with emphasis on Mifare Classic NXP/Philips RFID cards. Special emphasis of the toolkit is on the following: 
 
+
+
 mifare classic weakness demonstration/exploitation
+
+
 
 demonstrate use of libnfc (and ACR122 readers)
 
+
+
 demonstrate use of Crapto1 implementation to confirm internal workings and to verify theoretical/practical weaknesses/attacks
+
+
+
+
+
+
+
+
+
+

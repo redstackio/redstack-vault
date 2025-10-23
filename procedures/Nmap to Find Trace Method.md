@@ -32,15 +32,31 @@ Nmap tool can be used to identify HTTP methods that are enabled on the server. h
 
 Nmap tool can be used to identify HTTP methods that are enabled on the server. *http-script *is used to find if trace method is enabled.
 
+
+
 # Procedure
 
+
+
 1. The below Nmap command and script can be used to find if trace method is enabled on the server.
+
+
+
+
+
+
 
 **Command** ([[Nmap Command to Find Trace Method]]):
 
 ```bash
 nmap --script http-trace -p80 192.168.1.3
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +73,5 @@ nmap --script http-trace -p80 192.168.1.3
 - [[owasp top 10]]
 - [[Trace Method]]
 - [[Web Applications]]
+
+

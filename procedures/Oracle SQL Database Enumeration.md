@@ -34,9 +34,13 @@ From a technical standpoint, this technique is achieved by using the 'UNION' ope
 
 The business value of this technique is that it allows an attacker to gain a better understanding of the target environment. This information can be used to identify sensitive data within the databases and to plan further attacks against the target.
 
+ 
+
 ## Requirements
 
 1. Access to an Oracle database server with a SQL injection vulnerability
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ The business value of this technique is that it allows an attacker to gain a bet
 
 1. Use least privilege access controls to limit the potential impact of a successful SQL injection attack
 
+ 
+
 ## Objectives
 
 1. Identify all databases within the Oracle database server
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. This command lists all the owners of the tables in the database.
 
+ 
+
+
+
 **Code**: [[SELECT DISTINCT owner FROM all_tables;]]
 
+
+
 > The 'SELECT DISTINCT' statement is used to return only distinct (different) values. In this case, it retrieves only the distinct owners from the 'all_tables' view. The 'owner' column in this view contains the name of the user who owns the table. This command is useful when you need to know who owns the tables in the database, for example, to grant or revoke privileges.
+
+
 
 **Command** ([[Retrieve distinct owners from all tables]]):
 
 ```bash
 SELECT DISTINCT owner FROM all_tables;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ SELECT DISTINCT owner FROM all_tables;
 
 - [[Oracle SQL Injection]]
 - [[Oracle SQL List Databases]]
+
+

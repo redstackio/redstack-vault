@@ -14,3 +14,5 @@ updated_at: '2023-05-23T19:23:39.396554+00:00'
 ```bash
 Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
 ```
+
+

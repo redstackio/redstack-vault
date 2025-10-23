@@ -33,6 +33,8 @@ A Subdomain CSRF attack is a type of attack where an attacker can execute unauth
 
 A Subdomain CSRF attack is a type of attack where an attacker can execute unauthorized actions on a website on behalf of an authenticated user. This attack is possible when a subdomain is not properly configured and has been taken over by the attacker. By crafting a malicious payload and including it in the Referer header, an attacker can bypass referer header validation and trick the server into executing the unauthorized actions. This attack can result in data theft, account takeover, and other serious consequences. From an offensive perspective, this attack can be used to gain access to sensitive data or to take over user accounts.
 
+ 
+
 ## Requirements
 
 1. Access to a subdomain that has not been properly configured.
@@ -40,6 +42,8 @@ A Subdomain CSRF attack is a type of attack where an attacker can execute unauth
 1. Ability to craft a malicious payload.
 
 1. Ability to include the payload in the Referer header.
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ A Subdomain CSRF attack is a type of attack where an attacker can execute unauth
 
 1. Use multi-factor authentication to prevent account takeover.
 
+ 
+
 ## Objectives
 
 1. To execute unauthorized actions on a website on behalf of an authenticated user.
@@ -57,12 +63,18 @@ A Subdomain CSRF attack is a type of attack where an attacker can execute unauth
 
 1. To take over user accounts.
 
+ 
+
 # Instructions
 
 1. To execute the Subdomain CSRF Attack, follow these steps:
 
+ 
+
 Step 1 - Open the target website in the browser.
 Step 2 - Modify the Referer header to include the subdomain payload.
+
+
 
 **Command** ([[Modify Referer header with subdomain payload]]):
 
@@ -72,6 +84,8 @@ The Referer header is modified to include the subdomain payload.
 
 Referer: https://trusted.domain.com.attacker.com/csrf.html
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ Referer: https://trusted.domain.com.attacker.com/csrf.html
 - [[Bypass referer header validation]]
 - [[Cross-Site Request Forgery]]
 - [[With subdomain payload]]
+
+

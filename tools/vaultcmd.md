@@ -28,11 +28,25 @@ vaultcmd is a command-line utility used to query Windows Credential Manager for 
 
 vaultcmd is a command-line utility used to query Windows Credential Manager for saved credentials. This tool can list, modify, add, and remove credentials from the Windows Credentials vault, Generic Credentials vault, and Web-Credentials vault.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_4cecc3ce-6a75-4a3d-8e6f-546aedee989e}}
+
+
 
 # Installation
 
 vaultcmd is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ vaultcmd is installed with all modern Windows releases
 
 - [[authentication]]
 - [[Cryptography]]
+
+

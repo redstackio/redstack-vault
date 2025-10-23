@@ -39,11 +39,15 @@ From a technical perspective, this technique relies on the ability to inject SQL
 
 From a business perspective, this technique can be used to obtain sensitive information that can be used to further compromise the system or steal valuable data. It is important to ensure that input validation is performed to prevent SQL injection attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable input field that can be used to inject SQL code
 
 1. Understanding of the database schema
+
+ 
 
 ## Defense
 
@@ -53,20 +57,32 @@ From a business perspective, this technique can be used to obtain sensitive info
 
 1. Monitor logs for suspicious activity related to database queries
 
+ 
+
 ## Objectives
 
 1. Extract information about the database schema
 
 1. Identify valuable data for further attacks
 
+ 
+
 # Instructions
 
 1. This command lists all tables in the database and then lists the owner and table name for each table. It then lists the owner, table name, and columns that contain the word 'PASS' in their name. This can be useful for identifying tables and columns that may contain sensitive information such as passwords.
 
+ 
+
+
+
 **Code**: [[SELECT table_name FROM all_tables;
 SELECT owner, t]]
 
+
+
 > The first SELECT statement retrieves a list of all table names in the database. The second SELECT statement retrieves the owner and table name for each table in the database. The third SELECT statement retrieves the owner, table name, and columns that contain the word 'PASS' in their name. The WHERE clause filters the results to only include columns with 'PASS' in their name.
+
+
 
 **Command** ([[List all tables]]):
 
@@ -74,17 +90,27 @@ SELECT owner, t]]
 SELECT table_name FROM all_tables;
 ```
 
+
+
+
+
 **Command** ([[List tables with owner]]):
 
 ```bash
 SELECT owner, table_name FROM all_tables;
 ```
 
+
+
+
+
 **Command** ([[List tables with owner and columns with 'PASS']]):
 
 ```bash
 SELECT owner, table_name FROM all_tab_columns WHERE column_name LIKE '%PASS%';
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -110,3 +136,5 @@ SELECT owner, table_name FROM all_tab_columns WHERE column_name LIKE '%PASS%';
 
 - [[Oracle SQL Injection]]
 - [[Oracle SQL List Tables]]
+
+

@@ -33,11 +33,15 @@ Technical Explanation: The MSSQL Server Linked Database Enumeration procedure in
 
 Business Value: By discovering linked databases, an attacker can gain access to sensitive data stored in the linked database. This data could include financial information, personally identifiable information (PII), and other sensitive data. The attacker can use this information for financial gain, identity theft, or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to the target MSSQL Server environment
 
 1. Query permissions on the MSSQL Server system tables
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: By discovering linked databases, an attacker can gain access to 
 
 1. Regularly monitor and review MSSQL Server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify linked databases within the target MSSQL Server environment
@@ -55,11 +61,19 @@ Business Value: By discovering linked databases, an attacker can gain access to 
 
 1. Pivot to other systems within the network
 
+ 
+
 # Instructions
 
 1. This command retrieves information for all servers in the master database.
 
+ 
+
+
+
 **Code**: [[select * from master..sysservers]]
+
+
 
 > The 'select' statement is used to retrieve data from a database. In this case, the 'master..sysservers' table is queried to retrieve all server information. The 'from' keyword specifies the table to query, and 'master' is the name of the database. The '..' notation is used to specify the default schema for the database. The 'sysservers' table contains information about all servers that are known to the current instance of SQL Server. This command does not take any arguments.
 
@@ -79,3 +93,5 @@ Business Value: By discovering linked databases, an attacker can gain access to 
 - [[Find Trusted Link]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

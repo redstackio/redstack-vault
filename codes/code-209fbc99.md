@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:46.982117+00:00'
 ```bash
 wmic qfe list | findstr &quot;3139914&quot;
 ```
+
+

@@ -32,3 +32,5 @@ Get-NetSession -ComputerName <ComputerName>
 #Enumerate domain machines of the current/specified domain where specific users are logged into
 Find-DomainUserLocation -Domain <DomainName> | Select-Object UserName, SessionFromName
 ```
+
+

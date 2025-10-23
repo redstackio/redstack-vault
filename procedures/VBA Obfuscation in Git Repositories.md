@@ -37,11 +37,15 @@ From a technical perspective, VBA Obfuscation in Git Repositories involves obfus
 
 The business value of this technique for attackers is that it can increase the success rate of their attacks by evading detection and analysis. This can lead to the compromise of sensitive data, financial loss, and reputational damage for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Git repository containing VBA code
 
 1. Knowledge of VBA obfuscation techniques
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this technique for attackers is that it can increase the s
 
 1. Train employees on how to identify and report suspicious activity related to Git repositories
 
+ 
+
 ## Objectives
 
 1. Conceal malicious VBA code within a Git repository
@@ -58,6 +64,8 @@ The business value of this technique for attackers is that it can increase the s
 1. Evade detection and analysis of the VBA code
 
 1. Increase the success rate of attacks
+
+ 
 
 # Instructions
 
@@ -67,10 +75,18 @@ The business value of this technique for attackers is that it can increase the s
 3. Use the cat command to read the VBA code and pipe it to the vba-obfuscator Docker image using the command: cat example_macro/download_payload.vba | docker run -i --rm bonnetn/vba-obfuscator /dev/stdin
 4. The obfuscated VBA code will be output to the console
 
+ 
+
+
+
 **Code**: [[# https://www.youtube.com/watch?v=L0DlPOLx2k0
 $ gi]]
 
+
+
 > This command is useful for obfuscating VBA code in a Git repository. Obfuscation is the process of transforming code to make it more difficult to understand, while still retaining its functionality. Obfuscation can help protect intellectual property by making it harder for others to copy or reverse engineer the code. The vba-obfuscator tool is a Docker image that can be used to obfuscate VBA code.
+
+
 
 **Command** ([[Clone vba-obfuscator repository]]):
 
@@ -78,11 +94,17 @@ $ gi]]
 $ git clone https://github.com/bonnetn/vba-obfuscator
 ```
 
+
+
+
+
 **Command** ([[Obfuscate VBA code]]):
 
 ```bash
 $ cat example_macro/download_payload.vba | docker run -i --rm bonnetn/vba-obfuscator /dev/stdin
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +130,5 @@ $ cat example_macro/download_payload.vba | docker run -i --rm bonnetn/vba-obfusc
 
 - [[Office - Attacks]]
 - [[VBA Obfuscation]]
+
+

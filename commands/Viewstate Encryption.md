@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:10.233434+00:00'
 ```bash
 AspDotNetWrapper.exe --keypath MachineKeys.txt --encrypteddata <real viewstate value> --purpose=viewstate --modifier=<modifier value> –macdecode
 ```
+
+

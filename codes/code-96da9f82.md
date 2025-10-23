@@ -20,3 +20,5 @@ updated_at: '2023-04-06T03:56:43.856529+00:00'
 2) URL Rewriting. Example of usage: Use URL rewriting to prevent attackers from manipulating URLs and accessing unauthorized resources. 
 3) Relative addressing to CSS style sheet. Example of usage: Use absolute addressing instead of relative addressing to prevent attackers from accessing sensitive files by manipulating the directory structure.
 ```
+
+

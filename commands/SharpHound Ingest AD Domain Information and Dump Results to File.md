@@ -12,12 +12,15 @@ output: 'PS C:\Windows\Tasks\> .\SharpHound.exe -c All -d megabank.local --
 
   -----------------------------------------------
 
+
   Resolved Collection Methods: Group, Sessions, LoggedOn, Trusts, ACL, ObjectProps,
   LocalGroups, SPNTargets, Container
+
 
   [+] Creating Schema map for domain MEGABANK.LOCAL using path CN=Schema,CN=Configuration,DC=MEGABANK,DC=LOCAL
 
   [+] Cache File not Found: 0 Objects in cache
+
 
   [+] Pre-populating Domain Controller SIDS
 
@@ -30,6 +33,7 @@ output: 'PS C:\Windows\Tasks\> .\SharpHound.exe -c All -d megabank.local --
   Compressing data to .\20200315161607_BloodHound.zip
 
   You can upload this file directly to the UI
+
 
   SharpHound Enumeration Completed at 4:16 PM on 3/15/2020! Happy Graphing!'
 created_at: '2020-03-15T23:15:05.164898+00:00'
@@ -64,3 +68,5 @@ You can upload this file directly to the UI
 
 SharpHound Enumeration Completed at 4:16 PM on 3/15/2020! Happy Graphing!
 ```
+
+

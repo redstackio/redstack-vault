@@ -18,3 +18,5 @@ Get-ADForest -Identity <ForestName>
 #Domains of Forest Enumeration
 (Get-ADForest).Domains
 ```
+
+

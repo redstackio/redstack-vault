@@ -35,9 +35,15 @@ Some versions of LDAP send unencrypted queries over the loopback address. If an 
 
 Some versions of LDAP send unencrypted queries over the loopback address. If an attacker is able to sniff traffic locally while LDAP requests are being generated, it may be possible to intercept plaintext credentials.
 
+
+
 # Instructions
 
 1. Set up tcpdump to sniff for LDAP requests (port 389) on the loopback interface.
+
+
+
+
 
 **Command** ([[tcpdump Intercept Packets on Loopback Interface]]):
 
@@ -45,15 +51,25 @@ Some versions of LDAP send unencrypted queries over the loopback address. If an 
 tcpdump -i lo -w $_DUMP.pcap -c 10 port $_PORT
 ```
 
+
+
 2. Trigger and/or wait for an LDAP query to be intercepted.
 
 3. Review the pcap file for plaintext passwords.
+
+
+
+
 
 **Command** ([[Tshark Extract Hex and ASCII Dump from a Pcap]]):
 
 ```bash
 tshark -r $_DUMP.pcap -x
 ```
+
+
+
+
 
 4. Analyze the results for credentials.
 
@@ -81,3 +97,5 @@ tshark -r $_DUMP.pcap -x
 
 - [[data exposure]]
 - [[Network]]
+
+

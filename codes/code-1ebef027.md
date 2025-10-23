@@ -20,3 +20,5 @@ updated_at: '2023-04-10T20:21:30.236857+00:00'
 <ſvg onload=... > become <SVG ONLOAD=...>
 <ıframe id=x onload=>.toUpperCase() become <IFRAME ID=X ONLOAD=>
 ```
+
+

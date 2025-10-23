@@ -34,6 +34,8 @@ Django Templates are a powerful tool for generating dynamic HTML pages on the se
 Business Value:
 A successful SSTI attack can result in a complete compromise of the server, allowing an attacker to steal sensitive data, modify or delete files, and use the server as a platform for further attacks. This can result in significant financial losses, damage to reputation, and legal liabilities for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application using Django Templates
@@ -41,6 +43,8 @@ A successful SSTI attack can result in a complete compromise of the server, allo
 1. Knowledge of the server-side template injection vulnerability
 
 1. Access to debug mode on the server
+
+ 
 
 ## Defense
 
@@ -50,17 +54,27 @@ A successful SSTI attack can result in a complete compromise of the server, allo
 
 1. Regularly update and patch the web application and server software
 
+ 
+
 ## Objectives
 
 1. To gain access to the server using Server Side Template Injection
 
 1. To obtain sensitive information about the server configuration
 
+ 
+
 # Instructions
 
 1. The debug command is used to display debugging information during the execution of a program.
 
+ 
+
+
+
 **Code**: [[{% debug %}]]
+
+
 
 > The debug command takes no arguments and is used to display information about the current state of a program. This can be useful for identifying errors or issues during the execution of the program. The output of the debug command will vary depending on the programming language being used, but it typically includes information about variables, function calls, and other relevant information. It is important to remove any debug statements from production code, as they can slow down the execution of the program and potentially expose sensitive information.
 
@@ -79,3 +93,5 @@ A successful SSTI attack can result in a complete compromise of the server, allo
 - [[Debug information leak]]
 - [[Django Templates]]
 - [[Server Side Template Injection]]
+
+

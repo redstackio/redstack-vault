@@ -22,3 +22,5 @@ $creds = New-Object System.Management.Automation.PSCredential('$_COMPUTER_NAME/$
 ```
 PS C:\> $creds = New-Object System.Management.Automation.PSCredential('BOB-PC/BOB', $pass)
 ```
+
+

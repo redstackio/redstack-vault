@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:34.882779+00:00'
 ```bash
 aws ecr get-repository-policy --repository-name name
 ```
+
+

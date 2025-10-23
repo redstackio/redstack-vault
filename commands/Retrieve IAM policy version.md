@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:38.953337+00:00'
 ```bash
 aws iam get-policy-version --policy-arn arn --version-id ID
 ```
+
+

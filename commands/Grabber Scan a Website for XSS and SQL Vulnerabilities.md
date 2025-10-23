@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 grabber --spider 2 --sql --xss --url http://$_TARGET_IP
 ```
+
+

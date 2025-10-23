@@ -68,3 +68,5 @@ Golden ticket for 'Administrator @ dev.tesla.local' successfully submitted for c
 mimikatz(commandline) # exit
 Bye!
 ```
+
+

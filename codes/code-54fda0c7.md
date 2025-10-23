@@ -23,3 +23,5 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     val = os.popen(cmd).read()
     return func.HttpResponse(val, status_code=200)
 ```
+
+

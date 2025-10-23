@@ -17,3 +17,5 @@ $User = Get-DomainUser username
 PowerView2 > $User | Get-DomainSPNTicket | fl
 PowerView2 > $User | Select serviceprincipalname
 ```
+
+

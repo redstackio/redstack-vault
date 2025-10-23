@@ -32,9 +32,15 @@ Older versions of Nmap (2.02 to 5.21) include an interactive mode which can allo
 
 Older versions of Nmap (2.02 to 5.21) include an interactive mode which can allow attackers to escape to a shell. This vulnerability can lead to privilege escalation, as Nmap is occasionally configured with SUID access rights in order for low privilege users access to features requiring root privileges.
 
+
+
 # Instructions
 
 1. Execute nmap in Interactive Mode
+
+
+
+
 
 **Command** ([[Nmap Interactive Mode]]):
 
@@ -42,7 +48,15 @@ Older versions of Nmap (2.02 to 5.21) include an interactive mode which can allo
 nmap --interactive
 ```
 
+
+
 2. At the Nmap prompt, type `!sh` to escape into a shell.
+
+
+
+![1e81f234-7720-4144-b7cd-bee5877c6948.png](_assets/images/Mark/1e81f234-7720-4144-b7cd-bee5877c6948.png)
+
+
 
 ## Platforms
 
@@ -67,3 +81,5 @@ nmap --interactive
 
 - [[known vulnerability]]
 - [[shell]]
+
+

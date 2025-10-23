@@ -34,13 +34,23 @@ Attackers who are able to copy a Windows system's SAM and SYSTEM files (generall
 
 Attackers who are able to copy a Windows system's SAM and SYSTEM files (generally stored in %SystemRoot%\System32\Config\), can extract LM and NTLM hashes contained within. Not only can attackers use these hashes in Pass the Hash attacks, they may also be able to use brute force techniques to identify the password.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[samdump2 Extract LM/NTLM Hashes from SAM and SYSTEM]]):
 
 ```bash
 samdump2 SYSTEM SAM
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ samdump2 SYSTEM SAM
 - [[authentication]]
 - [[Cryptography]]
 - [[data exposure]]
+
+

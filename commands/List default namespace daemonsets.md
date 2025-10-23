@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:01.659280+00:00'
 curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/apis/extensions/v1beta1/namespaces/default/daemonsets
 
 ```
+
+

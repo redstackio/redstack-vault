@@ -23,3 +23,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 root@hackers:~# openssl passwd -6 -salt 16bytesXX16bytes Thisisyourpassword
 $6$16bytesXX16bytes$FXuYP0OI7qYB3K6u6.91Blr7rtvjLZmpcuAWuWVnTj4G2nVGny6k5yzaDbV3iQCwoSDMGgXePvFxddnxYkpa5/
 ```
+
+

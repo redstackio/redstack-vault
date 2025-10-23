@@ -16,3 +16,7 @@ Allows for transfering (exfiltrate) a file over a DNS request covert channel. Th
 ## Description
 
 Allows for transfering (exfiltrate) a file over a DNS request covert channel. This is basically a data leak testing tool allowing to exfiltrate data over a covert channel. ​
+
+
+
+

@@ -19,3 +19,5 @@ SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master.
 SELECT table_catalog, table_name FROM information_schema.columns
 SELECT STRING_AGG(name, ', ') FROM master..sysobjects WHERE xtype = 'U'; -- Change delimiter value such as ', ' to anything else you want => trace_xe_action_map, trace_xe_event_map, spt_fallback_db, spt_fallback_dev, spt_fallback_usg, spt_monitor, MSreplication_options  (Only works in MSSQL 2017+)
 ```
+
+

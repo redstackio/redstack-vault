@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:17.815665+00:00'
 ```bash
 Copy-FileSeBackupPrivilege C:\Users\Administrator\flag.txt C:\Users\Public\flag.txt -Overwrite
 ```
+
+

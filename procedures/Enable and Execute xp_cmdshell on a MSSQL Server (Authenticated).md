@@ -25,9 +25,15 @@ xp_cmdshell is a Microsoft SQL Server command which executes a string using a st
 
 xp_cmdshell is a Microsoft SQL Server command which executes a string using a standard cmd.exe shell. This is often disabled on newer versions of MSSQL, but can be enabled with the "sp_configure" command. xp_cmdshell usually requires elevated database privileges, such as the "sa" account.
 
+
+
 # Instructions
 
 1. Enable xp_cmdshell from an authorized session.
+
+
+
+
 
 **Command** ([[MSSQL Enable xp_cmdshell]]):
 
@@ -42,9 +48,17 @@ RECONFIGURE
 go
 ```
 
+
+
 Note: Some mssql clients (eg: Impacket's mssqclient.py), do not require  "go" or "EXEC" for command execution. Consult the tool's documentation for any special syntax.
 
+
+
 2. Execute commands with xp_cmdshell
+
+
+
+
 
 **Command** ([[xp_cmdshell Execute a Shell Command as the MSSQL User]]):
 
@@ -52,6 +66,10 @@ Note: Some mssql clients (eg: Impacket's mssqclient.py), do not require  "go" or
 EXEC xp_cmdshell "$_CMD"
 go
 ```
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +79,5 @@ go
 
 - [[MSSQL Enable xp_cmdshell]]
 - [[xp_cmdshell Execute a Shell Command as the MSSQL User]]
+
+

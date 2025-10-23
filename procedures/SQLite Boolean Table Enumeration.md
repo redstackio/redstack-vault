@@ -27,9 +27,13 @@ SQLite Boolean Table Enumeration is an injection technique that allows an attack
 
 SQLite Boolean Table Enumeration is an injection technique that allows an attacker to enumerate table names within an SQLite database using a boolean-based SQL injection attack. This technique is useful when the attacker has limited knowledge of the database schema and wants to discover the names of tables that may contain sensitive information. By leveraging the SQLite Table Length Command, the attacker can determine the length of the table name and then use a binary search to enumerate the characters of the table name one at a time.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable SQLite database
+
+ 
 
 ## Defense
 
@@ -39,15 +43,25 @@ SQLite Boolean Table Enumeration is an injection technique that allows an attack
 
 1. Restrict access to SQLite databases to authorized personnel only
 
+ 
+
 ## Objectives
 
 1. Identify the names of tables in an SQLite database
+
+ 
 
 # Instructions
 
 1. This command is used to retrieve the length of the name of the first non-system table in a SQLite database. Replace 'table_name_length_number' with the expected length of the table name.
 
+ 
+
+
+
 **Code**: [[and (SELECT length(tbl_name) FROM sqlite_master WH]]
+
+
 
 > The 'SELECT length(tbl_name) FROM sqlite_master WHERE type='table' and tbl_name not like 'sqlite_%' limit 1 offset 0' part of the command selects the length of the table name from the sqlite_master table where the type is 'table' and the table name does not start with 'sqlite_'. The 'table_name_length_number' part of the command is a placeholder for the expected length of the table name, which should be replaced with an integer value.
 
@@ -65,3 +79,5 @@ SQLite Boolean Table Enumeration is an injection technique that allows an attack
 
 - [[Boolean - Enumerating table name]]
 - [[SQLite Injection]]
+
+

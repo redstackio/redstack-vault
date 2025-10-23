@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:08.326426+00:00'
 Get-ADTrust -Filter *
 Get-ADTrust -Identity <DomainName>
 ```
+
+

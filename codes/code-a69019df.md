@@ -16,3 +16,5 @@ python2 scanMIC.py 'DOMAIN/USERNAME:PASSWORD@TARGET'
 [*] CVE-2019-1040 scanner by @_dirkjan / Fox-IT - Based on impacket by SecureAuth
 [*] Target TARGET is not vulnerable to CVE-2019-1040 (authentication was rejected)
 ```
+
+

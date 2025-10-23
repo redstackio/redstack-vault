@@ -32,11 +32,15 @@ Backdooring a user startup file is a technique used by attackers to maintain per
 
 Backdooring a user startup file is a technique used by attackers to maintain persistence on a Linux system by adding malicious code to a user's startup file. This technique is commonly used because it is an easy way to achieve persistence and is often overlooked by defenders. Attackers can use this technique to execute code every time the user logs in, allowing them to maintain access to the system even after a reboot. From a technical perspective, this technique involves adding a command to a user's startup file that will execute the attacker's code. From a business value perspective, this technique can be used to maintain a foothold on a compromised system and to exfiltrate sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to modify a user's startup file
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Backdooring a user startup file is a technique used by attackers to maintain per
 
 1. Regularly review and remove unnecessary startup files
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on a compromised Linux system
@@ -54,11 +60,19 @@ Backdooring a user startup file is a technique used by attackers to maintain per
 
 1. Maintain access to the system even after a reboot
 
+ 
+
 # Instructions
 
 1. Create a desktop file in the ~/.config/autostart directory to automatically launch a program or script at login.
 
+ 
+
+
+
 **Code**: [[~/.config/autostart/NAME_OF_FILE.desktop]]
+
+
 
 > The desktop file should have the following format:
 
@@ -91,11 +105,19 @@ X-GNOME-Autostart-enabled=false
 
 The GNOME Welcome Tour will now start automatically when you log in to your GNOME desktop environment.
 
+ 
+
+
+
 **Code**: [[In : ~/.config/autostart/*.desktop
 
 [Desktop Entry]]
 
+
+
 > This command provides instructions on how to enable the GNOME Welcome Tour to start automatically when you log in to your GNOME desktop environment. The command includes a code snippet that creates a desktop entry file for the GNOME Welcome Tour and sets the AutostartCondition parameter to prevent the tour from starting if the user has already seen the getting started guide. The OnlyShowIn parameter restricts the tour to only run in the GNOME desktop environment. The X-GNOME-Autostart-enabled parameter is set to false to disable the autostart feature by default.
+
+
 
 **Command** ([[Autostart Welcome application]]):
 
@@ -110,6 +132,8 @@ AutostartCondition=unless-exists ~/.cache/gnome-getting-started-docs/seen-gettin
 OnlyShowIn=GNOME;
 X-GNOME-Autostart-enabled=false
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -134,3 +158,5 @@ X-GNOME-Autostart-enabled=false
 
 - [[Backdooring a user startup file]]
 - [[Linux - Persistence]]
+
+

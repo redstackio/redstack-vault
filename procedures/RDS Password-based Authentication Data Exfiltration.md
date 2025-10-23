@@ -38,6 +38,8 @@ Technical Explanation: An attacker can use the provided command to connect to th
 
 Business Value: An attacker can use this procedure to steal sensitive data and use it for financial gain or competitive advantage. This attack can also lead to reputational damage and loss of customer trust.
 
+ 
+
 ## Requirements
 
 1. Valid credentials with password-based authentication
@@ -45,6 +47,8 @@ Business Value: An attacker can use this procedure to steal sensitive data and u
 1. Network access to the RDS instance
 
 1. Knowledge of SQL queries and injection techniques
+
+ 
 
 ## Defense
 
@@ -54,11 +58,15 @@ Business Value: An attacker can use this procedure to steal sensitive data and u
 
 1. Monitor network traffic for suspicious activity and SQL injection attempts
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from an RDS instance
 
 1. Avoid detection and maintain access to the data
+
+ 
 
 # Instructions
 
@@ -73,13 +81,19 @@ The arguments are as follows:
 
 Example: mysql -h localhost -u root -P 3306 -p
 
+ 
+
 This command is used to connect to a MySQL server using the command line. The user must have the necessary permissions to access the server. Once connected, the user can execute SQL commands on the server.
+
+
 
 **Command** ([[Connect to MySQL server]]):
 
 ```bash
 mysql -h hostname -u name -P port -p password
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +118,5 @@ mysql -h hostname -u name -P port -p password
 - [[Data exfiltration]]
 - [[Password based authentication]]
 - [[RDS - Relational Database Service]]
+
+

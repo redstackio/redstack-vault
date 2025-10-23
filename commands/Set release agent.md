@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:50.379078+00:00'
 ```bash
 echo "$host_path/cmd" > /tmp/cgrp/release_agent
 ```
+
+

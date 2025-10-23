@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:59.621982+00:00'
 ```bash
 $ curl -k -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/default/secrets/
 ```
+
+

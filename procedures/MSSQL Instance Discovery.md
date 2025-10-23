@@ -36,9 +36,13 @@ MSSQL Instance Discovery is a reconnaissance technique used to identify remote S
 
 The SQL Instance Broadcast and Scan command sends a request to the SQL Server Browser service, which responds with a list of all SQL Server instances running on the network. This information can be used to identify potential targets for further attacks or to verify the presence of a specific SQL Server instance.
 
+ 
+
 ## Requirements
 
 1. Network access
+
+ 
 
 ## Defense
 
@@ -48,18 +52,30 @@ The SQL Instance Broadcast and Scan command sends a request to the SQL Server Br
 
 1. Implement network segmentation to prevent lateral movement
 
+ 
+
 ## Objectives
 
 1. Identify remote SQL Server instances on the network
+
+ 
 
 # Instructions
 
 1. This command allows you to broadcast and scan for SQL instances on a specified computer. The Get-SQLInstanceBroadcast command sends a UDP broadcast message to discover SQL Server instances on the network. The Get-SQLInstanceScanUDPThreaded command scans for SQL Server instances on the specified computer. 
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceBroadcast -Verbose
 Get-SQLInstanceS]]
 
+
+
 > The -Verbose parameter provides detailed information about the progress of the command. The -ComputerName parameter specifies the name of the computer to scan for SQL Server instances. Use this command to discover SQL Server instances on a network and gather information about them. 
+
+
 
 **Command** ([[Get-SQLInstanceBroadcast]]):
 
@@ -67,11 +83,17 @@ Get-SQLInstanceS]]
 Get-SQLInstanceBroadcast -Verbose
 ```
 
+
+
+
+
 **Command** ([[Get-SQLInstanceScanUDPThreaded]]):
 
 ```bash
 Get-SQLInstanceScanUDPThreaded -Verbose -ComputerName SQLServer1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +116,5 @@ Get-SQLInstanceScanUDPThreaded -Verbose -ComputerName SQLServer1
 - [[Discover Remote SQL Server Instances]]
 - [[Identify Instances and Databases]]
 - [[MSSQL Server]]
+
+

@@ -40,6 +40,8 @@ And the internal assets they point to, like S3 Buckets, EKS containers, and more
 
 1. (Optional) Configure cloudfront preview to true
 
+
+
 **Command** ([[aws configure cloudfront preview]]):
 
 ```bash
@@ -47,7 +49,13 @@ aws configure set preview.cloudfront true
 
 ```
 
+
+
+
+
 2. List the disributions
+
+
 
 **Command** ([[aws cloudfront list distributions]]):
 
@@ -55,6 +63,10 @@ aws configure set preview.cloudfront true
 aws cloudfront list-distributions
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +91,5 @@ aws cloudfront list-distributions
 
 - [[AWS]]
 - [[Cloud]]
+
+

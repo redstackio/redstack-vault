@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # The Harvester
 
+
+
 **Command** ([[Perform lookup against with additional DNS reverse on all ranges discovered]]):
 
 ```bash
 theharvester -d -c -n -b google -l 1000 [-f output]
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Example commands]]):
 
@@ -25,3 +33,9 @@ theharvester -d microsoft -l 200 -b linkedin
 theharvester -d apple.com -b googleCSE -l 500 -s 300
 
 ```
+
+
+
+
+
+

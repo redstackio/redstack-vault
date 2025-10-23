@@ -30,11 +30,15 @@ This attack uses a filter bypass technique to execute malicious code on a victim
 
 To execute this attack, the attacker must first find a vulnerability in the target website that allows them to inject code. Once the code is injected, it can be used to redirect the victim to a malicious website. This attack can be difficult to detect, as the victim may not realize they have been redirected to a malicious site.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website
 
 1. Ability to inject code into the website
+
+ 
 
 ## Defense
 
@@ -44,18 +48,28 @@ To execute this attack, the attacker must first find a vulnerability in the targ
 
 1. Regularly scan websites for vulnerabilities and patch any issues that are found
 
+ 
+
 ## Objectives
 
 1. Redirect the victim to a malicious website
 
 1. Bypass filters designed to prevent cross-site scripting attacks
 
+ 
+
 # Instructions
 
 1. Use any of the following commands to redirect to Google:
 
+ 
+
+
+
 **Code**: [[location="http://google.com"
 document.location = "]]
+
+
 
 > The 'location' object in JavaScript represents the current URL of the page. In this case, we are setting the value of the 'location' object to 'http://google.com' using different methods. 
 
@@ -78,3 +92,5 @@ All of these methods will redirect the user to the specified URL.
 - [[Bypass using an alternate way to redirect]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

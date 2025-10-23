@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:17.485526+00:00'
 ```bash
 certipy cert -export -pfx "PATH_TO_PFX_CERT" -password "CERT_PASSWORD" -out "unprotected.pfx"
 ```
+
+

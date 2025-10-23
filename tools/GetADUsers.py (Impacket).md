@@ -28,11 +28,27 @@ Impacket suite tool which gathers data about Active Directory domain users, incl
 
 Impacket suite tool which gathers data about Active Directory domain users, including their name, e-mail address, last logon, and password set attributes.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_fb6ad137-2f98-48ff-b799-d84df4f4e934}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +70,5 @@ Impacket suite tool which gathers data about Active Directory domain users, incl
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

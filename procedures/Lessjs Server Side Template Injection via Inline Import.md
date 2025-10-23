@@ -38,6 +38,8 @@ An attacker can exploit the SSTI vulnerability in Lessjs by injecting malicious 
 
 The business value of this attack is that it allows an attacker to gain unauthorized access to sensitive data and take control of the server, which can lead to a loss of reputation, financial loss, and legal repercussions.
 
+ 
+
 ## Requirements
 
 1. Access to a server running Lessjs
@@ -45,6 +47,8 @@ The business value of this attack is that it allows an attacker to gain unauthor
 1. Knowledge of Server Side Request Forgery (SSRF) and Local File Inclusion (LFI) attacks
 
 1. Knowledge of Lessjs inline import functionality
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Perform Server Side Template Injection (SSTI) attacks on a server running Lessjs
@@ -62,13 +68,21 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Take control of the server
 
+ 
+
 # Instructions
 
 1. Use the @import (inline) command to import a file directly into your Less file.
 
+ 
+
+
+
 **Code**: [[@import (inline) "http://localhost";
 // or
 @import]]
+
+
 
 > This command allows you to import a file directly into your Less file. The imported file will be included in the compiled CSS output. The 'inline' keyword specifies that the file should be included in the compiled CSS rather than being imported as a separate file. The argument to the command should be a valid URL or file path. This command is useful when you need to include small snippets of code from other files in your Less file.
 
@@ -95,3 +109,5 @@ The business value of this attack is that it allows an attacker to gain unauthor
 - [[Lessjs]]
 - [[Lessjs - SSRF / LFI]]
 - [[Server Side Template Injection]]
+
+

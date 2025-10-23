@@ -42,6 +42,8 @@ From a technical standpoint, LD_PRELOAD is an environment variable that specifie
 
 From a business perspective, this technique can be used to gain access to sensitive data or execute malicious code on the system. This can result in data theft, system downtime, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
@@ -49,6 +51,8 @@ From a business perspective, this technique can be used to gain access to sensit
 1. Knowledge of SUDO NOPASSWD feature
 
 1. Ability to compile a shared object with malicious code
+
+ 
 
 ## Defense
 
@@ -58,6 +62,8 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Implement least privilege access controls to limit the impact of privilege escalation
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a Linux system
@@ -66,13 +72,23 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Access sensitive data or execute malicious code on the system
 
+ 
+
 # Instructions
 
 1. you want to preload a specific shared library before executing a program, you can use the LD_PRELOAD environment variable.
 
+ 
+
+
+
 **Code**: [[LD_PRELOAD]]
 
+
+
 > The LD_PRELOAD environment variable is used to specify one or more shared libraries that should be loaded before any other shared library when a program is run. This can be useful if you want to override the behavior of a function in a shared library. For example, if you have a program that uses the malloc() function from the standard C library, but you want to use a custom implementation of malloc() instead, you can create a shared library that defines a function called malloc() and then use LD_PRELOAD to load that library before the standard C library. Any calls to malloc() in the program will then be redirected to your custom implementation.
+
+
 
 **Command** ([[Set LD_PRELOAD environment variable]]):
 
@@ -80,15 +96,25 @@ From a business perspective, this technique can be used to gain access to sensit
 export LD_PRELOAD=/path/to/library.so
 ```
 
+
+
 2. To set the environment variable LD_PRELOAD, use the following command:
 export LD_PRELOAD=/path/to/library.so
 
 To unset the environment variable LD_PRELOAD, use the following command:
 unset LD_PRELOAD
 
+ 
+
+
+
 **Code**: [[Defaults        env_keep += LD_PRELOAD]]
 
+
+
 > The environment variable LD_PRELOAD is used to preload shared libraries before the standard libraries are loaded. This can be useful for debugging or performance tuning purposes. The env_keep directive in the sudoers file allows the user to preserve certain environment variables when running a command with sudo.
+
+
 
 **Command** ([[Add LD_PRELOAD to env_keep]]):
 
@@ -96,17 +122,29 @@ unset LD_PRELOAD
 Defaults        env_keep += LD_PRELOAD
 ```
 
+
+
 3. To compile a shared object, use the gcc command followed by the -fPIC flag to generate position-independent code. Then, use the -shared flag to create a shared object. The -o flag specifies the output file name. Finally, specify the source code file name and the -nostartfiles flag to avoid linking with standard startup files.
+
+ 
+
+
 
 **Code**: [[gcc -fPIC -shared -o shell.so shell.c -nostartfile]]
 
+
+
 > The gcc command is used to compile C code into executable files or shared objects. The -fPIC flag generates position-independent code, which allows the code to be loaded at any address in memory. The -shared flag creates a shared object, which is a library that can be dynamically linked at runtime. The -o flag specifies the output file name. The source code file name should be specified after the flags. The -nostartfiles flag tells the linker to not include standard startup files, which are typically used to initialize the program's environment.
+
+
 
 **Command** ([[Compile shell.c with gcc]]):
 
 ```bash
 gcc -fPIC -shared -o shell.so shell.c -nostartfiles
 ```
+
+
 
 4. To compile the program and create a shared object library, use the following commands:
 
@@ -117,9 +155,15 @@ Then, set the LD_PRELOAD environment variable to the full path of the shared obj
 	export LD_PRELOAD=/full/path/to/libhijack.so
 	./vulnerable_binary
 
+ 
+
+
+
 **Code**: [[#include <stdio.h>
 #include <sys/types.h>
 #include]]
+
+
 
 > The program creates a shared object library that contains the _init() function. When a setuid or setgid binary is executed with the LD_PRELOAD environment variable set to the full path of the shared object library, the _init() function is executed before the main program. This function sets the GID and UID to 0 (root) and executes a shell. This allows an attacker to escalate their privileges to root.
 
@@ -129,7 +173,14 @@ sudo LD_PRELOAD=<full_path_to_so_file> <program>
 
 Replace <full_path_to_so_file> with the full path to the shared object file that you want to preload and <program> with the name of the binary that you want to execute.
 
+
+ 
+
+
+
 **Code**: [[sudo LD_PRELOAD=<full_path_to_so_file> <program>]]
+
+
 
 > - The LD_PRELOAD environment variable is used to specify a shared object file that should be loaded before all others when a program is run.
 - This can be used to override or intercept functions in other shared libraries, or to add new functionality to a program.
@@ -137,7 +188,13 @@ Replace <full_path_to_so_file> with the full path to the shared object file that
 
 6. Use this command to find files with elevated privileges.
 
+ 
+
+
+
 **Code**: [[sudo LD_PRELOAD=/tmp/shell.so find]]
+
+
 
 > This command will allow you to search for files with elevated privileges. The 'sudo' command will run the 'find' command with elevated privileges. The 'LD_PRELOAD' environment variable is used to load a shared object file that will be used to run a shell command with elevated privileges. The 'find' command is used to search for files in a directory hierarchy based on various criteria such as name, type, size, and date modified. You can specify the directory to search in as an argument after the 'find' command. 
 
@@ -170,3 +227,5 @@ Replace <full_path_to_so_file> with the full path to the shared object file that
 - [[LD_PRELOAD and NOPASSWD]]
 - [[Linux - Privilege Escalation]]
 - [[SUDO]]
+
+

@@ -29,11 +29,15 @@ This attack involves exploiting a vulnerability in a web application's SQL datab
 
 This attack involves exploiting a vulnerability in a web application's SQL database to change the admin password. By injecting SQL code into the web application's input fields, an attacker can modify the SQL query to include an 'ON DUPLICATE KEY UPDATE' statement. This statement allows the attacker to update the admin password by inserting a new value into the database. This attack can lead to complete control of the web application and potentially the underlying server.
 
+ 
+
 ## Requirements
 
 1. Access to the web application's input fields
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -43,26 +47,40 @@ This attack involves exploiting a vulnerability in a web application's SQL datab
 
 1. Limit database privileges to prevent attackers from modifying sensitive data
 
+ 
+
 ## Objectives
 
 1. Gain access to the web application's admin account
 
 1. Take control of the web application
 
+ 
+
 # Instructions
 
 1. Use the provided MySQL injection payload to change the admin password. Replace 'bcrypt_hash_of_your_password_input' with the desired password input that you want to set for the admin account.
 
+ 
+
+
+
 **Code**: [[Inject using payload:
   attacker_dummy@example.com]]
 
+
+
 > The provided MySQL injection attack allows an attacker to change the admin password by using the ON DUPLICATE KEY UPDATE keyword. This keyword tells MySQL to update the `password` column of the already existing row to the provided password hash. By injecting the provided payload, the attacker can insert a new row for their own account and update the password of the admin account in the same query. After this, the attacker can authenticate with the admin account and the new password to gain unauthorized access.
+
+
 
 **Command** ([[Inject Payload]]):
 
 ```bash
 INSERT INTO users (email, password) VALUES ("attacker_dummy@example.com", "bcrypt_hash_of_qwerty"), ("admin@example.com", "bcrypt_hash_of_qwerty") ON DUPLICATE KEY UPDATE password="bcrypt_hash_of_qwerty" -- ", "bcrypt_hash_of_your_password_input");
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -82,3 +100,5 @@ INSERT INTO users (email, password) VALUES ("attacker_dummy@example.com", "bcryp
 
 - [[Insert Statement - ON DUPLICATE KEY UPDATE]]
 - [[SQL Injection]]
+
+

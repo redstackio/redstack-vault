@@ -34,9 +34,15 @@ This procedure involves enumerating the AWS Identity and Access Management (IAM)
 
 From a technical standpoint, this procedure involves using the 'Get AWS Caller Identity' command to obtain the current user's identity. The attacker can then use this information to attempt to access other resources within the environment. The business value of this procedure is that it can help an attacker gain access to sensitive data or resources within an AWS environment.
 
+
+
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
+
+ 
 
 ## Defense
 
@@ -46,6 +52,8 @@ From a technical standpoint, this procedure involves using the 'Get AWS Caller I
 
 1. Monitor AWS CloudTrail logs for unusual activity
 
+ 
+
 ## Objectives
 
 1. Enumerate IAM users within an AWS environment
@@ -54,19 +62,31 @@ From a technical standpoint, this procedure involves using the 'Get AWS Caller I
 
 1. Gain access to sensitive data or resources within an AWS environment
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve the AWS account ID and the Amazon Resource Name (ARN) of the IAM user or role whose credentials are used to call the API.
 
+ 
+
+
+
 **Code**: [[aws sts get-caller-identity]]
 
+
+
 > The 'aws sts get-caller-identity' command is used to retrieve the AWS account ID and the Amazon Resource Name (ARN) of the IAM user or role whose credentials are used to call the API. This command does not require any arguments to be passed. It is useful in scenarios where you need to verify the identity of the user or role that is calling the API. The output of this command contains the AWS account ID and the ARN of the IAM user or role. The AWS account ID can be used in various other AWS commands to perform actions specific to that account. The ARN can be used to uniquely identify the user or role and can be used in various other AWS commands to perform actions specific to that user or role.
+
+
 
 **Command** ([[AWS STS Get Caller Identity]]):
 
 ```bash
 aws sts get-caller-identity
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +109,5 @@ aws sts get-caller-identity
 - [[1. Enumerating IAM users]]
 - [[Checking credentials for the user]]
 - [[Cloud - AWS]]
+
+

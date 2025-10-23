@@ -32,11 +32,15 @@ To determine the names of linked databases, the 'Get-DatabaseNames' command can 
 
 The business value of this procedure is that it allows for an attacker to gain a better understanding of the target's network architecture and identify potential targets for further exploitation.
 
+ 
+
 ## Requirements
 
 1. Access to the target MSSQL Server.
 
 1. Credentials with sufficient privileges to run the 'Get-DatabaseNames' command.
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this procedure is that it allows for an attacker to gain a
 
 1. Monitor MSSQL Server logs for suspicious activity, such as failed login attempts or unusual queries.
 
+ 
+
 ## Objectives
 
 1. Enumerate the names of linked databases on the target MSSQL Server.
@@ -54,11 +60,19 @@ The business value of this procedure is that it allows for an attacker to gain a
 
 1. Identify high-value databases to target for further exploitation.
 
+ 
+
 # Instructions
 
 1. This command retrieves the names of all databases on the specified SQL server instance.
 
+ 
+
+
+
 **Code**: [[Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>"]]
+
+
 
 > The 'Get-SQLQuery' command is used to execute a SQL query against a specified SQL server instance. The '-Instance' parameter is used to specify the name of the SQL server instance. The '-Query' parameter is used to specify the SQL query to execute. In this case, the query retrieves the names of all databases on the server using the 'openquery' function. The '-Verbose' parameter is used to display detailed information about the execution of the command. This command can be useful for retrieving a list of all databases on a server for administrative purposes.
 
@@ -77,3 +91,5 @@ The business value of this procedure is that it allows for an attacker to gain a
 - [[Determine Names of Linked Databases]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

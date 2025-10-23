@@ -35,9 +35,15 @@ Users often save credentials using Windows Credential Manager, allowing them to 
 
 Users often save credentials using Windows Credential Manager, allowing them to authenticate with applications and other systems without having to reenter their username and password. Attackers may be able to use these saved credentials for lateral movement across networks.
 
+
+
 # Instructions
 
 1. List the current user's credential vaults:
+
+
+
+
 
 **Command** ([[List Stored Windows Credentials (vaultcmd.exe)]]):
 
@@ -45,7 +51,15 @@ Users often save credentials using Windows Credential Manager, allowing them to 
 vaultcmd.exe /list
 ```
 
+
+
+
+
 2. List saved credentials in the "Windows Credentials" vault:
+
+
+
+
 
 **Command** ([[vaultcmd.exe List Stored Windows Credentials]]):
 
@@ -53,13 +67,25 @@ vaultcmd.exe /list
 vaultcmd.exe /listcreds:"Windows Credentials"
 ```
 
+
+
+
+
 Alternately, cmdkey.exe can be used to enumerated saved credentials:
+
+
+
+
 
 **Command** ([[List Stored Windows Credentials (cmdkey.exe)]]):
 
 ```bash
 cmdkey.exe /list
 ```
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +111,5 @@ cmdkey.exe /list
 
 - [[data exposure]]
 - [[Service Attacks]]
+
+

@@ -20,3 +20,5 @@ OR
 curl https://login.microsoftonline.com/<DOMAIN>/.well-known/openid-configuration
 curl https://login.microsoftonline.com/<TENANT NAME>.onmicrosoft.com/.well-known/openid-configuration
 ```
+
+

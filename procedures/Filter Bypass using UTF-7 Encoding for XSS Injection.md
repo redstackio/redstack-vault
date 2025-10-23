@@ -35,6 +35,8 @@ Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker
 
 Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker to inject malicious scripts into web pages viewed by other users. Filter Bypass using UTF-7 Encoding is a technique that can be used to bypass certain types of input filters. By encoding the payload using UTF-7, the attacker can bypass filters that are looking for specific characters or patterns. This can allow the attacker to inject malicious scripts into web pages that would otherwise be blocked. The business value of this attack is that it can be used to steal sensitive information, such as login credentials or personal data, from unsuspecting users.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website with an input field that is not properly sanitized
@@ -42,6 +44,8 @@ Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker
 1. Knowledge of XSS injection techniques
 
 1. Knowledge of UTF-7 encoding
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker
 
 1. Use a web application firewall (WAF) to detect and block malicious traffic
 
+ 
+
 ## Objectives
 
 1. Inject and execute malicious scripts on a target website
@@ -59,11 +65,19 @@ Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker
 
 1. Bypass input filters that are designed to block certain characters or patterns
 
+ 
+
 # Instructions
 
 1. To perform an XSS injection, use this code snippet in a vulnerable input field. The code will execute the 'alert(1)' function when the page loads.
 
+ 
+
+
+
 **Code**: [[+ADw-img src=+ACI-1+ACI- onerror=+ACI-alert(1)+ACI]]
+
+
 
 > The 'src' attribute of the 'img' tag is set to '1', which does not exist. When the browser tries to load the image, it will fail and trigger the 'onerror' event. The 'onerror' event is set to execute the 'alert(1)' function, which will display an alert box with the message '1'. This is a simple example of an XSS injection that can be used to execute arbitrary code on a vulnerable website.
 
@@ -91,3 +105,5 @@ Cross-Site Scripting (XSS) is a type of injection attack that allows an attacker
 - [[Bypass using UTF-7]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

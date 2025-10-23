@@ -37,9 +37,13 @@ A CSRF attack with bypassed referer header validation is a type of attack where 
 
 A CSRF attack with bypassed referer header validation is a type of attack where an attacker tricks a user into performing an action on a web application without their knowledge or consent. The attacker creates a malicious web page that contains a hidden form that performs the desired action on the target web application. When the user visits the malicious web page, the form is automatically submitted, and the action is performed on the target web application. By bypassing referer header validation, the attacker can make the request appear legitimate to the target web application. This attack can be used to perform actions such as changing a user's password, transferring funds, or making unauthorized purchases.
 
+ 
+
 ## Requirements
 
 1. Access to a web application vulnerable to CSRF attacks
+
+ 
 
 ## Defense
 
@@ -49,19 +53,31 @@ A CSRF attack with bypassed referer header validation is a type of attack where 
 
 1. Educate users on the dangers of clicking on links from untrusted sources.
 
+ 
+
 ## Objectives
 
 1. Perform unauthorized actions on a target web application
 
 1. Bypass referer header validation
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[1) Create a malicious web page with a hidden form ]]
 
+
+
 > The attacker creates a malicious web page that contains a hidden form that performs the desired action on the target web application. By bypassing referer header validation, the attacker can make the request appear legitimate to the target web application. The user is tricked into visiting the malicious web page, and the form is automatically submitted, performing the action on the target web application.
+
+
 
 **Command** ([[Create a malicious web page with a hidden form]]):
 
@@ -69,11 +85,19 @@ A CSRF attack with bypassed referer header validation is a type of attack where 
 1) Create a malicious web page with a hidden form that performs the desired action on the target web application.
 ```
 
+
+
+
+
 **Command** ([[Bypass referer header validation]]):
 
 ```bash
 2) Bypass referer header validation by setting the referer header to the target web application's domain.
 ```
+
+
+
+
 
 **Command** ([[Host the malicious web page]]):
 
@@ -81,17 +105,27 @@ A CSRF attack with bypassed referer header validation is a type of attack where 
 3) Host the malicious web page on a server under the attacker's control.
 ```
 
+
+
+
+
 **Command** ([[Trick the user into visiting the malicious web page]]):
 
 ```bash
 4) Trick the user into visiting the malicious web page.
 ```
 
+
+
+
+
 **Command** ([[Perform the action on the target web application]]):
 
 ```bash
 5) The form is automatically submitted, and the action is performed on the target web application.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -119,3 +153,5 @@ A CSRF attack with bypassed referer header validation is a type of attack where 
 - [[Basic payload]]
 - [[Bypass referer header validation]]
 - [[Cross-Site Request Forgery]]
+
+

@@ -16,3 +16,9 @@ CaseFile is the younger brother to Maltego. It is essentially the same graphing 
 ## Description
 
 CaseFile is the younger brother to Maltego. It is essentially the same graphing application as Maltego without the ability to run transforms. CaseFile gives you the ability to quickly add, link and analyze data. The application targets a unique market of ‘offline’ analysts whose primary sources of information are not gained from the open-source intelligence side or can be programmatically queried. We see these people as investigators and analysts who are working ‘on the ground’, getting intelligence from other people in the team and building up an information map of their investigation.CaseFile can also simply be used as a free graph viewer for graphs that are built in Maltego.
+
+
+
+
+
+

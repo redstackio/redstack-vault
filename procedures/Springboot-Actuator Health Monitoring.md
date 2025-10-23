@@ -31,9 +31,13 @@ Spring Boot Actuator provides an endpoint /health that can be used to monitor th
 
 Spring Boot Actuator provides an endpoint /health that can be used to monitor the health of the application. This endpoint can be accessed by anyone who has network access to the application. Attackers can use this endpoint to gather information about the application and its environment. They can also use it to identify vulnerabilities and potential targets for further attacks. The business value of this procedure is that it allows the attacker to gain a foothold in the target environment and potentially move on to more critical systems.
 
+ 
+
 ## Requirements
 
 1. Network access to the application
+
+ 
 
 ## Defense
 
@@ -43,25 +47,39 @@ Spring Boot Actuator provides an endpoint /health that can be used to monitor th
 
 1. Monitor access to the /health endpoint for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gather information about the application and its environment
 
 1. Identify vulnerabilities and potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. Send an HTTP GET request to the /health endpoint
 
+ 
+
+
+
 **Code**: [[/health]]
 
+
+
 > The /health endpoint can be accessed by sending an HTTP GET request to the endpoint URL. The response will contain a JSON object with information about the health of the application.
+
+
 
 **Command** ([[Health Check]]):
 
 ```bash
 /health
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ Spring Boot Actuator provides an endpoint /health that can be used to monitor th
 
 - [[Insecure Management Interface]]
 - [[Springboot-Actuator]]
+
+

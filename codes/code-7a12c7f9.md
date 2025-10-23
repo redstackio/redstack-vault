@@ -16,3 +16,5 @@ python3 weirdAAL.py -m ec2_describe_instances -t demo
 python3 weirdAAL.py -m lambda_get_account_settings -t demo
 python3 weirdAAL.py -m lambda_get_function -a 'MY_LAMBDA_FUNCTION','us-west-2' -t yolo
 ```
+
+

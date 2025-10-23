@@ -32,6 +32,8 @@ Kubernetes is a popular container orchestration system that is widely used in cl
 
 Kubernetes is a popular container orchestration system that is widely used in cloud environments. This procedure focuses on enumerating interesting endpoints in a Kubernetes cluster that can be accessed by an attacker with valid credentials. By listing pods, secrets, deployments, and daemonsets, an attacker can gain valuable information about the target environment, such as the running services, credentials, and configurations. This information can be used to launch further attacks, such as lateral movement or privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Valid JWT token for authentication
@@ -39,6 +41,8 @@ Kubernetes is a popular container orchestration system that is widely used in cl
 1. Access to the Kubernetes API server
 
 1. Curl or similar tool for sending HTTP requests
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Kubernetes is a popular container orchestration system that is widely used in cl
 
 1. Use encryption to protect the communication between the Kubernetes API server and the clients
 
+ 
+
 ## Objectives
 
 1. Enumerate interesting endpoints in a Kubernetes cluster
@@ -56,14 +62,24 @@ Kubernetes is a popular container orchestration system that is widely used in cl
 
 1. Identify potential attack vectors for further exploitation
 
+ 
+
 # Instructions
 
 1. To list pods in the default namespace, run the following command:
 
+ 
+
+
+
 **Code**: [[# List Pods
 curl -v -H "Authorization: Bearer <jwt]]
 
+
+
 > This command sends an HTTP GET request to the Kubernetes API server to list all the pods in the default namespace. The -H option is used to set the Authorization header with the JWT token. The <jwt_token>, <master_ip>, and <port> placeholders should be replaced with the actual values for the target environment.
+
+
 
 **Command** ([[List Pods]]):
 
@@ -71,12 +87,22 @@ curl -v -H "Authorization: Bearer <jwt]]
 curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/default/pods/
 ```
 
+
+
 2. To list secrets in the default namespace, run the following command:
+
+ 
+
+
 
 **Code**: [[# List secrets
 curl -v -H "Authorization: Bearer <]]
 
+
+
 > This command sends an HTTP GET request to the Kubernetes API server to list all the secrets in the default namespace. The -H option is used to set the Authorization header with the JWT token. The <jwt_token>, <master_ip>, and <port> placeholders should be replaced with the actual values for the target environment.
+
+
 
 **Command** ([[List secrets using curl command]]):
 
@@ -84,12 +110,22 @@ curl -v -H "Authorization: Bearer <]]
 curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/default/secrets/
 ```
 
+
+
 3. To list deployments in the default namespace, run the following command:
+
+ 
+
+
 
 **Code**: [[# List deployments
 curl -v -H "Authorization: Bear]]
 
+
+
 > This command sends an HTTP GET request to the Kubernetes API server to list all the deployments in the default namespace. The -H option is used to set the Authorization header with the JWT token. The <jwt_token>, <master_ip>, and <port> placeholders should be replaced with the actual values for the target environment.
+
+
 
 **Command** ([[List Deployments]]):
 
@@ -98,12 +134,22 @@ curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/apis/e
 
 ```
 
+
+
 4. To list daemonsets in the default namespace, run the following command:
+
+ 
+
+
 
 **Code**: [[# List daemonsets
 curl -v -H "Authorization: Beare]]
 
+
+
 > This command sends an HTTP GET request to the Kubernetes API server to list all the daemonsets in the default namespace. The -H option is used to set the Authorization header with the JWT token. The <jwt_token>, <master_ip>, and <port> placeholders should be replaced with the actual values for the target environment.
+
+
 
 **Command** ([[List default namespace daemonsets]]):
 
@@ -111,6 +157,8 @@ curl -v -H "Authorization: Beare]]
 curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/apis/extensions/v1beta1/namespaces/default/daemonsets
 
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +181,5 @@ curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/apis/e
 
 - [[Interesting endpoints to reach]]
 - [[Kubernetes]]
+
+

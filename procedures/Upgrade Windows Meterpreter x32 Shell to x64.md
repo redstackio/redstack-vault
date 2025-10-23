@@ -40,13 +40,21 @@ When using a x32 version of PowerShell on a x64 Windows, many PowerShell feature
 
 When using a x32 version of PowerShell on a x64 Windows, many PowerShell features will be unavailable. It is generally recommended that, when possible, attackers move to a x64 PowerShell instance.
 
+
+
 # Instructions
 
 There are two approaches for moving to a x64 PowerShell instance
 
+
+
 ## Using Metasploit Module Payload Inject
 
 1. From an active Meterpreter session, background the session.
+
+
+
+
 
 **Command** ([[Metasploit Background the Current Session]]):
 
@@ -54,7 +62,15 @@ There are two approaches for moving to a x64 PowerShell instance
 bg
 ```
 
+
+
+
+
 2. Load and execute "exploit/windows/local/payload_inject" module on the Meterpreter session
+
+
+
+
 
 **Command** ([[Meterpreter Migrate to x64 Process with Payload Inject]]):
 
@@ -64,9 +80,21 @@ set session 2
 run
 ```
 
+
+
+
+
+
+
 ## Using the Migrate Command
 
+
+
 1. From a Meterpreter session, use ps to list processes.
+
+
+
+
 
 **Command** ([[Metasploit List Running Processes]]):
 
@@ -74,15 +102,51 @@ run
 ps
 ```
 
+
+
 Identify a process which is listed as x64. Processes that are automatically started by the system at start up may be more reliable than others.
 
+
+
+
+
 2. Migrate to the selected process using the PID
+
+
+
+
 
 **Command** ([[Meterpreter Migrate to a Process]]):
 
 ```bash
 migrate $_PID
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -113,3 +177,5 @@ migrate $_PID
 - [[injection]]
 - [[known vulnerability]]
 - [[Service Attacks]]
+
+

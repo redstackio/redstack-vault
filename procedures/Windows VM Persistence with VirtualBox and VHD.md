@@ -36,6 +36,8 @@ From a technical perspective, this procedure involves creating a new virtual mac
 
 From a business perspective, this technique can be used by attackers to maintain access to a compromised network or execute malicious code on a victim's machine. By evading detection by security solutions, attackers can remain undetected for longer periods of time, potentially causing more damage to the victim's organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows virtual machine
@@ -43,6 +45,8 @@ From a business perspective, this technique can be used by attackers to maintain
 1. VirtualBox installed on the host system
 
 1. A VHD file containing a malicious executable
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ From a business perspective, this technique can be used by attackers to maintain
 
 1. Regularly update security solutions to detect and prevent new attack techniques
 
+ 
+
 ## Objectives
 
 1. Create a persistent backdoor on a compromised system
 
 1. Maintain access to a compromised network
+
+ 
 
 # Instructions
 
@@ -72,8 +80,14 @@ From a business perspective, this technique can be used by attackers to maintain
 9. Optionally, add a shared folder by running the command in VBoxManage.exe, specifying the name, host path, and automount.
 10. Mount the shared folder in the VM by running the commands sudo mkdir /mnt/c and sudo mount -t vboxsf shadow_c /mnt/c.
 
+ 
+
+
+
 **Code**: [[# download virtualbox
 Invoke-WebRequest "https://d]]
+
+
 
 > This script automates the process of creating a virtual machine with VirtualBox and mounting a VHD file. It downloads VirtualBox from the official website, disables notifications, downloads the VHD file from a network location, creates a new VM, adds a network card in NAT mode, configures memory, video RAM, audio, graphics controller, and description, mounts the VHD file, and starts the VM. Additionally, it provides instructions and explanations for each step to help the user understand the process.
 
@@ -98,3 +112,5 @@ Invoke-WebRequest "https://d]]
 - [[Elevated]]
 - [[Virtual Machines]]
 - [[Windows - Persistence]]
+
+

@@ -34,6 +34,8 @@ Credential Enumeration is the process of discovering and gathering credentials t
 
 Credential Enumeration is the process of discovering and gathering credentials that can be used to gain access to systems and resources. This procedure involves creating and configuring local and domain user accounts, as well as listing domain users. By doing so, an attacker can obtain valid credentials that can be used to move laterally across the network and escalate privileges. From a technical standpoint, this procedure involves using various tools and techniques to extract credentials from the target system. The business value of this procedure is that it enables an attacker to gain unauthorized access to sensitive data, intellectual property, and other valuable assets.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -41,6 +43,8 @@ Credential Enumeration is the process of discovering and gathering credentials t
 1. Tools for creating and configuring local and domain user accounts
 
 1. Tools for listing domain users
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ Credential Enumeration is the process of discovering and gathering credentials t
 
 1. Monitor for unusual account activity, such as failed login attempts or unusual login times
 
+ 
+
 ## Objectives
 
 1. Discover valid credentials for lateral movement and privilege escalation
 
 1. Gain unauthorized access to sensitive data and valuable assets
+
+ 
 
 # Instructions
 
@@ -69,8 +77,14 @@ To prevent the password from expiring, run 'net user <username> /Expires:Never'.
 To create a machine account, run 'net user /add <username>$ <password>'.
 To create a homoglyph administrator account, run 'net user Aԁmіnistratοr <password> /add'.
 
+ 
+
+
+
 **Code**: [[net user hacker Hcker_12345678* /add /Y
 net localg]]
+
+
 
 > This command allows you to create and configure local and domain user accounts. The 'net user' command is used to create new user accounts with the specified username and password. The '/add' switch is used to add the user to the system. The '/Y' switch is used to suppress prompts for confirmation.
 
@@ -79,6 +93,8 @@ The 'net localgroup' command is used to add the new user to the local administra
 The 'net group' command is used to add the new user to the Domain Admins group.
 
 The 'net user' command is also used to enable a domain user account, prevent users from changing their password, prevent the password from expiring, and create a machine account. Additionally, the command can be used to create a homoglyph administrator account.
+
+
 
 **Command** ([[Command Execution]]):
 
@@ -95,6 +111,8 @@ net user /add evilbob$ evilpassword
 Aԁmіnistratοr
 ```
 
+
+
 2. To list all domain users, run the following command in PowerShell:
 net user /dom
 This will display a list of all users in the domain.
@@ -102,10 +120,18 @@ To display detailed information about a specific user, run:
 net user <username> /domain
 Replace <username> with the actual username to display detailed information about that user.
 
+ 
+
+
+
 **Code**: [[net user /dom
 net user /domain]]
 
+
+
 > The 'net user' command is used to manage user accounts on a Windows system. The '/dom' or '/domain' option is used to specify that the command should be run on the domain controller to list all domain users. The command can be used with or without additional arguments to display information about specific users or groups. This command can be useful for administrators who need to manage user accounts on a Windows domain.
+
+
 
 **Command** ([[List domain users]]):
 
@@ -113,11 +139,17 @@ net user /domain]]
 net user /dom
 ```
 
+
+
+
+
 **Command** ([[List domain users for a specific domain]]):
 
 ```bash
 net user /domain
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -142,3 +174,5 @@ net user /domain
 - [[Create your credential]]
 - [[Get credentials]]
 - [[Windows - Using credentials]]
+
+

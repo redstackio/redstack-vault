@@ -40,11 +40,15 @@ Technical Details: The attacker sends a request to the server with a malicious U
 
 Business Value: This procedure can be used by attackers to gather information about the target environment, allowing them to identify potential targets for further exploitation. It is important for organizations to be aware of this technique and take steps to prevent it from being used against them.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Authenticated access to the Docker API
+
+ 
 
 ## Defense
 
@@ -54,19 +58,29 @@ Business Value: This procedure can be used by attackers to gather information ab
 
 1. Restrict access to the Docker API to only trusted hosts and users
 
+ 
+
 ## Objectives
 
 1. Enumerate all running Docker containers on the target system
 
 1. Enumerate all Docker images on the target system
 
+ 
+
 # Instructions
 
 1. To list all Docker containers and images, use the following commands:
 
+ 
+
+
+
 **Code**: [[http://127.0.0.1:2375/v1.24/containers/json
 
 Simpl]]
+
+
 
 > 1. To list all running and stopped Docker containers, use the command 'docker ps -a'.
 
@@ -74,11 +88,17 @@ Simpl]]
 
 Note: You can use additional arguments with these commands to filter the output and get more specific information about the containers and images.
 
+
+
 **Command** ([[List Docker Containers]]):
 
 ```bash
 http://127.0.0.1:2375/v1.24/containers/json
 ```
+
+
+
+
 
 **Command** ([[Run Bash in Docker Container]]):
 
@@ -86,17 +106,27 @@ http://127.0.0.1:2375/v1.24/containers/json
 docker run -ti -v /var/run/docker.sock:/var/run/docker.sock bash
 ```
 
+
+
+
+
 **Command** ([[List Containers Using curl]]):
 
 ```bash
 curl --unix-socket /var/run/docker.sock http://foo/containers/json
 ```
 
+
+
+
+
 **Command** ([[List Images Using curl]]):
 
 ```bash
 curl --unix-socket /var/run/docker.sock http://foo/images/json
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +153,5 @@ curl --unix-socket /var/run/docker.sock http://foo/images/json
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Docker]]
+
+

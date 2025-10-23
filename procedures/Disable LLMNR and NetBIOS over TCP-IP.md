@@ -36,11 +36,15 @@ This procedure disables LLMNR and NetBIOS over TCP/IP in group policy to prevent
 
 This procedure disables LLMNR and NetBIOS over TCP/IP in group policy to prevent man-in-the-middle attacks and relaying attacks. These attacks can occur when SMB signing is disabled and IPv4 is being used. By disabling LLMNR and NetBIOS over TCP/IP, attackers can't use these protocols to intercept authentication requests and relay them to gain access to sensitive information. This procedure can help prevent attackers from gaining access to user credentials and sensitive information, and can help protect the organization from data breaches and other security incidents.
 
+ 
+
 ## Requirements
 
 1. Access to group policy settings
 
 1. Knowledge of LLMNR and NetBIOS over TCP/IP protocols
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This procedure disables LLMNR and NetBIOS over TCP/IP in group policy to prevent
 
 1. Implement multi-factor authentication to prevent credential stuffing and pass the hash attacks
 
+ 
+
 ## Objectives
 
 1. Prevent man-in-the-middle attacks and relaying attacks
@@ -58,11 +64,19 @@ This procedure disables LLMNR and NetBIOS over TCP/IP in group policy to prevent
 
 1. Reduce the risk of data breaches and other security incidents
 
+ 
+
 # Instructions
 
 1. To disable LLMNR via group policy, follow these steps:
 
+ 
+
+
+
 **Code**: [[Open gpedit.msc and navigate to Computer Configura]]
+
+
 
 > 1. Open the Group Policy Editor by typing gpedit.msc in the Start menu search bar and pressing Enter.
 
@@ -74,11 +88,15 @@ This procedure disables LLMNR and NetBIOS over TCP/IP in group policy to prevent
 
 This will disable LLMNR via group policy on the computer.
 
+
+
 **Command** ([[Disable Multicast Name Resolution]]):
 
 ```bash
 Open gpedit.msc and navigate to Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution and set to Enabled
 ```
+
+
 
 2. To disable NetBIOS over TCP/IP, follow these steps:
 1. Open the Network and Sharing Center.
@@ -90,15 +108,25 @@ Open gpedit.msc and navigate to Computer Configuration > Administrative Template
 7. Under "NetBIOS setting", select Disable NetBIOS over TCP/IP.
 8. Click OK to save changes.
 
+ 
+
+
+
 **Code**: [[This can be achieved by navigating through the GUI]]
 
+
+
 > NetBIOS over TCP/IP (NBT-NS) is an outdated protocol that is no longer needed in modern networks. Disabling it can improve network performance and security. This command provides step-by-step instructions on how to disable NBT-NS on a Windows machine through the GUI.
+
+
 
 **Command** ([[Disable NetBIOS over TCP/IP]]):
 
 ```bash
 Navigate through the GUI to Network card > Properties > IPv4 > Advanced > WINS and then under "NetBIOS setting" select Disable NetBIOS over TCP/IP
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -125,3 +153,5 @@ Navigate through the GUI to Network card > Properties > IPv4 > Advanced > WINS a
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
 - [[SMB Signing Disabled and IPv4]]
+
+

@@ -37,11 +37,15 @@ To execute this attack, the attacker must first gain access to the target system
 
 This procedure can be used by attackers to gain access to sensitive information or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Execution of the DiagHub Standard Collector Service command
+
+ 
 
 ## Defense
 
@@ -51,25 +55,39 @@ This procedure can be used by attackers to gain access to sensitive information 
 
 1. Implement the principle of least privilege to limit the impact of privilege escalation attacks
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on the target system
 
 1. Gain access to sensitive files and information
 
+ 
+
 # Instructions
 
 1. To manage the DiagHub service, you can use the 'sc' command in the Command Prompt. For example, to start the service, run 'sc start DiagHub' and to stop the service, run 'sc stop DiagHub'.
 
+ 
+
+
+
 **Code**: [[C:\Windows\System32]]
 
+
+
 > The 'sc' command is used to communicate with the Service Control Manager and services. The 'start' and 'stop' arguments are used to respectively start and stop the DiagHub service. Note that administrative privileges are required to run these commands.
+
+
 
 **Command** ([[Check System32 Directory]]):
 
 ```bash
 C:\Windows\System32
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ C:\Windows\System32
 - [[DiagHub]]
 - [[EoP - Privileged File Write]]
 - [[Windows - Privilege Escalation]]
+
+

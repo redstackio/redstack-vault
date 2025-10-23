@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:23.736913+00:00'
 ```bash
 kerbrute bruteforce --dc CONTROLLER.local -d CONTROLLER.local user1 /path/to/passwordlist.txt
 ```
+
+

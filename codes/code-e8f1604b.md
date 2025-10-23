@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:09.845260+00:00'
 ```powershell
 sudo echo "[OPENSSL SERVER ADDRESS] [domain.of.server.to.mitm]" >> /etc/hosts  # On client host
 ```
+
+

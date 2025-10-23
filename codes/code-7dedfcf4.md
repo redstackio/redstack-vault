@@ -21,3 +21,5 @@ i686-w64-mingw32-gcc -c hello.c -o hello.o
 # To compile this with x64 MinGW:
 x86_64-w64-mingw32-gcc -c hello.c -o hello.o
 ```
+
+

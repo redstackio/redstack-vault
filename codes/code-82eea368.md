@@ -21,3 +21,5 @@ kubectl apply -f https://raw.githubusercontent.com/BishopFox/badPods/main/manife
 kubectl apply -f https://raw.githubusercontent.com/BishopFox/badPods/main/manifests/hostipc/pod/hostipc-exec-pod.yaml
 kubectl apply -f https://raw.githubusercontent.com/BishopFox/badPods/main/manifests/nothing-allowed/pod/nothing-allowed-exec-pod.yaml
 ```
+
+

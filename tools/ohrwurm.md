@@ -17,20 +17,48 @@ ohrwurm is a small and simple RTP fuzzer that has been successfully tested on a 
 
 ohrwurm is a small and simple RTP fuzzer that has been successfully tested on a small number of SIP phones. Features:
 
+
+
 reads SIP messages to get information of the RTP port numbers
+
+
 
 reading SIP can be omitted by providing the RTP port numbers, sothat any RTP traffic can be fuzzed
 
+
+
 RTCP traffic can be suppressed to avoid that codecs
+
+
 
 learn about the “noisy line”
 
+
+
 special care is taken to break RTP handling itself
+
+
 
 the RTP payload is fuzzed with a constant BER
 
+
+
 the BER is configurable
+
+
 
 requires arpspoof from dsniff to do the MITM attack
 
+
+
 requires both phones to be in a switched LAN (GW operation only works partially)
+
+
+
+
+
+
+
+
+
+

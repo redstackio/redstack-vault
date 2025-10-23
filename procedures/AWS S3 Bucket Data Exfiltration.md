@@ -29,9 +29,13 @@ The AWS S3 Bucket Data Exfiltration procedure enables an attacker to retrieve se
 
 The AWS S3 Bucket Data Exfiltration procedure enables an attacker to retrieve sensitive data from an Amazon S3 bucket by exploiting an SSRF vulnerability that runs on EC2. The procedure involves querying an internal service that every EC2 instance can access for instance metadata about the host. If the attacker has found an SSRF vulnerability, they can request the metadata and get access to the AccessKeyID, SecretAccessKey, and Token for the bucket. This information can be used to exfiltrate sensitive data from the bucket.
 
+ 
+
 ## Requirements
 
 1. Access to an EC2 instance with an SSRF vulnerability
+
+ 
 
 ## Defense
 
@@ -41,18 +45,30 @@ The AWS S3 Bucket Data Exfiltration procedure enables an attacker to retrieve se
 
 1. Use encryption to protect sensitive data in S3 buckets
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive data from an Amazon S3 bucket
+
+ 
 
 # Instructions
 
 1. Execute the commands in a terminal on the EC2 instance with the SSRF vulnerability.
 
+ 
+
+
+
 **Code**: [[http://169.254.169.254/latest/meta-data/
 http://16]]
 
+
+
 > The first command retrieves the instance metadata, the second command retrieves the user data, and the third command retrieves the AccessKeyID, SecretAccessKey, and Token for the IAM user role associated with the bucket. The fourth command retrieves the metadata for the PhotonInstance.
+
+
 
 **Command** ([[Fetch EC2 Instance Metadata]]):
 
@@ -62,6 +78,8 @@ http://169.254.169.254/latest/user-data/
 http://169.254.169.254/latest/meta-data/iam/security-credentials/IAM_USER_ROLE_HERE will return the AccessKeyID, SecretAccessKey, and Token
 http://169.254.169.254/latest/meta-data/iam/security-credentials/PhotonInstance
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -81,3 +99,5 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/PhotonInstance
 
 - [[Amazon Bucket S3 AWS]]
 - [[Bucket juicy data]]
+
+

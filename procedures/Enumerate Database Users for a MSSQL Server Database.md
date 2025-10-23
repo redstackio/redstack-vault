@@ -29,11 +29,15 @@ This procedure aims to enumerate all the database users for a specific database 
 
 This procedure aims to enumerate all the database users for a specific database in a MSSQL Server. This information can be used to identify potential targets for further exploitation or lateral movement. To execute this procedure, the user needs to have valid authentication credentials for the MSSQL Server and the specific database. The user can execute a manual SQL query to retrieve the database users information. The query returns a list of all database users, their type, and their authentication type. Business value of this procedure is to identify potential targets for further exploitation or lateral movement.
 
+ 
+
 ## Requirements
 
 1. Valid authentication credentials for the MSSQL Server and the specific database.
 
 1. Access to execute a manual SQL query.
+
+ 
 
 ## Defense
 
@@ -43,15 +47,25 @@ This procedure aims to enumerate all the database users for a specific database 
 
 1. Use network segmentation to limit access to MSSQL Server instances to only authorized users and systems.
 
+ 
+
 ## Objectives
 
 1. Enumerate all the database users for a specific database in a MSSQL Server.
+
+ 
 
 # Instructions
 
 1. This command retrieves the list of database principals that are not database roles.
 
+ 
+
+
+
 **Code**: [[Select * from sys.database_principals where type_d]]
+
+
 
 > The 'sys.database_principals' table contains a list of all database principals in the current database. This command filters out the principals that are database roles and returns the remaining principals. The 'type_desc' column in the table indicates whether a principal is a user, a role, or another type of principal. By excluding the principals that are database roles, this command provides a list of all users and other non-role principals in the database.
 
@@ -71,3 +85,5 @@ This procedure aims to enumerate all the database users for a specific database 
 - [[All Database Users for a Database]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

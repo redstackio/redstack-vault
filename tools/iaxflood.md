@@ -16,3 +16,9 @@ A UDP Inter-Asterisk_eXchange (i.e. IAX) packet was captured from an IAX channel
 ## Description
 
 A UDP Inter-Asterisk_eXchange (i.e. IAX) packet was captured from an IAX channel between two Asterisk IP PBX’s. The content of that packet is the source of the payload for the attack embodied by this tool. While the IAX protocol header might not match the Asterisk PBX you’ll attack with this tool, it may require more processing on the part of the PBX than a simple udpflood without any payload that even resembles an IAX payload.iaxflood Homepage | Kali iaxflood Repo
+
+
+
+
+
+

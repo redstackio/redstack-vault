@@ -26,7 +26,15 @@ WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and
 
 WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and content to identify potential security issues. WPScan is especially adept at finding valid WordPress usernames and brute forcing passwords, as well as enumerating plugins and reporting on their versions and potential vulnerabilities.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_11bef415-9d50-4ee3-8500-1221d0793739}}
+
+
 
 # Installation
 
@@ -34,7 +42,17 @@ WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and
 
 - Ruby >= 2.3
 
+
+
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +73,5 @@ WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

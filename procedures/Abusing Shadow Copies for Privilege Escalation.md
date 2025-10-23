@@ -38,11 +38,15 @@ Abusing Shadow Copies for Privilege Escalation is a technique used to escalate p
 
 This technique requires an attacker to have administrative privileges on the system. The attacker must also have access to the Shadow Copies and be able to restore a previous version of a system file.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the target system
 
 1. Access to the Shadow Copies feature
+
+ 
 
 ## Defense
 
@@ -52,17 +56,29 @@ This technique requires an attacker to have administrative privileges on the sys
 
 1. Disabling the Shadow Copies feature can prevent attackers from being able to use this technique.
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Windows system
+
+ 
 
 # Instructions
 
 1. To list shadow copies using vssadmin, run the command 'vssadmin list shadows' in a PowerShell prompt with administrator access. To list shadow copies using diskshadow, run the command 'diskshadow list shadows all' in a PowerShell prompt with administrator access. To make a symlink to the shadow copy and access it, run the command 'mklink /d c:\shadowcopy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\' in a PowerShell prompt with administrator access.
 
+ 
+
+
+
 **Code**: [[# List shadow copies using vssadmin (Needs Admnist]]
 
+
+
 > Shadow copies are snapshots of the system state and can be used to restore data in case of an issue. However, they can also be used for privilege escalation by accessing sensitive data that may have been deleted or modified. The commands provided here can be used to list the available shadow copies and create a symlink to access them.
+
+
 
 **Command** ([[List shadow copies using vssadmin]]):
 
@@ -70,17 +86,27 @@ This technique requires an attacker to have administrative privileges on the sys
 vssadmin list shadows
 ```
 
+
+
+
+
 **Command** ([[List shadow copies using diskshadow]]):
 
 ```bash
 diskshadow list shadows all
 ```
 
+
+
+
+
 **Command** ([[Make a symlink to the shadow copy and access it]]):
 
 ```bash
 mklink /d c:\shadowcopy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +135,5 @@ mklink /d c:\shadowcopy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\
 
 - [[EoP - Abusing Shadow Copies]]
 - [[Windows - Privilege Escalation]]
+
+

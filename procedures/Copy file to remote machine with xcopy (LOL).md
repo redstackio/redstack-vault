@@ -32,15 +32,23 @@ Copy a file to a remote machine using xcopy.
 
 Copy a file to a remote machine using xcopy.
 
+
+
 ## Objectives
 
 1.  "net use" will authenticate to the remote machine using its local credentials and mount the target folder as a drive.
 
 2. xcopy will copy the file from the local folder to the target folder of remote machine
 
+
+
 # Instructions
 
 1. Mount target folder from remote machine to a local drive while authenticating to its local user credentials
+
+
+
+
 
 **Command** ([[Map remote target folder as local drive (LOL)]]):
 
@@ -48,13 +56,23 @@ Copy a file to a remote machine using xcopy.
 net use t: \\$DOMAIN\C$\Users\Public /user:$DOMAIN\$USERNAME $PASSWORD
 ```
 
+
+
 2. Copy the file to the target machine
+
+
+
+
 
 **Command** ([[Copy file to folder]]):
 
 ```bash
 xcopy C:\$FILENAME t:\FILENAME
 ```
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +97,5 @@ xcopy C:\$FILENAME t:\FILENAME
 ## Tags
 
 - [[file transfer]]
+
+

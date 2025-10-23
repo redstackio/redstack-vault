@@ -36,11 +36,15 @@ Technical Explanation: SQLmap works by identifying and exploiting SQL injection 
 
 Business Value: This procedure can be used by attackers to extract sensitive information from a web application's database. This information can be used for identity theft, financial fraud, or other malicious purposes. By understanding the techniques used by attackers, organizations can better secure their web applications and protect their sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with a MySQL database
 
 1. SQLmap installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ Business Value: This procedure can be used by attackers to extract sensitive inf
 
 1. Monitor database activity for suspicious behavior, such as large data dumps
 
+ 
+
 ## Objectives
 
 1. Extract all data from a MySQL database using SQLmap
 
 1. Automate the process of SQL injection testing
+
+ 
 
 # Instructions
 
@@ -65,7 +73,13 @@ Replace 'user', 'pass', 'ip', and 'database' with the appropriate values for you
 
 This command will dump all data from the specified database.
 
+ 
+
+
+
 **Code**: [[sqlmap.py -d "mysql://user:pass@ip/database" --dum]]
+
+
 
 > The 'sqlmap.py' command is used to exploit SQL injection vulnerabilities in web applications. The '-d' option specifies the target URL or database connection string.
 
@@ -75,11 +89,15 @@ The '--dump-all' option tells SQLmap to dump all data from the database.
 
 Make sure to replace 'user', 'pass', 'ip', and 'database' with the appropriate values for your database.
 
+
+
 **Command** ([[Database Dump]]):
 
 ```bash
 sqlmap.py -d "mysql://user:pass@ip/database" --dump-all
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +120,5 @@ sqlmap.py -d "mysql://user:pass@ip/database" --dump-all
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
 - [[SQLmap without SQL injection]]
+
+

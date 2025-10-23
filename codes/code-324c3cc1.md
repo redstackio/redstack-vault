@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:13.134330+00:00'
 ```powershell
 http://example.com/index.php?page=../../../etc/passwd%00
 ```
+
+

@@ -32,9 +32,13 @@ To execute this query, the attacker needs to have valid credentials for the data
 
 The business value of this procedure is that it allows an attacker to identify weaknesses in the database's security and take corrective action to prevent further attacks.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the database
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The business value of this procedure is that it allows an attacker to identify w
 
 1. Implement access controls and limit the number of users who have access to sensitive data
 
+ 
+
 ## Objectives
 
 1. Identify the level of access a user has to a specific database
@@ -52,11 +58,19 @@ The business value of this procedure is that it allows an attacker to identify w
 
 1. Escalate privileges and gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command lists all the permissions associated with a database. The output will contain details such as the name of the user, the type of permission they have, and the object they have permission on.
 
+ 
+
+
+
 **Code**: [[SELECT * FROM fn_dp1my_permissions(NULL, 'DATABASE]]
+
+
 
 > The first argument of the function is the name of the user whose permissions you want to list. If you pass NULL, it will list permissions for all users. The second argument is the type of object you want to list permissions for. In this case, we are listing permissions for a database. You can replace 'DATABASE' with other object types such as 'TABLE' or 'VIEW'.
 
@@ -75,3 +89,5 @@ The business value of this procedure is that it allows an attacker to identify w
 - [[Effective Permissions from the Database]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

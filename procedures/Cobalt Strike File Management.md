@@ -38,11 +38,15 @@ From a technical perspective, these commands are executed through a Command and 
 
 From a business perspective, these commands can be used to steal sensitive data, disrupt business operations, or install malware on a network.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system with a Cobalt Strike implant installed
 
 1. Authenticated access to the system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, these commands can be used to steal sensitive data,
 1. Implement access controls to prevent unauthorized access to systems
 
 1. Use endpoint detection and response tools to detect and respond to Cobalt Strike activity
+
+ 
 
 ## Objectives
 
@@ -62,14 +68,24 @@ From a business perspective, these commands can be used to steal sensitive data,
 
 1. Execute payloads
 
+ 
+
 # Instructions
 
 1. These commands are used for file management on the target system. The 'ls' command is used to list the files in the specified directory. The 'cd' command is used to change the current working directory. The 'rm' command is used to delete a file or folder. The 'cp' command is used to copy a file. The 'download' command is used to download a file from the target system. The 'downloads' command is used to list the downloads in progress. The 'cancel' command is used to cancel a download in progress. The 'upload' command is used to upload a file from the attacker's system to the target system.
 
+ 
+
+
+
 **Code**: [[# List the file on the specified directory
 beacon ]]
 
+
+
 > The 'ls' command takes an optional path argument which specifies the directory to list the files in. The 'cd' command takes a directory argument which specifies the directory to change the current working directory to. The 'rm' command takes a file or folder argument which specifies the file or folder to delete. The 'cp' command takes a source file argument and a destination file argument which specifies the source and destination paths respectively. The 'download' command takes a file path argument which specifies the file to download from the target system. The 'cancel' command takes a file argument which specifies the file download to cancel. The 'upload' command takes a file path argument which specifies the file to upload to the target system.
+
+
 
 **Command** ([[List directory contents]]):
 
@@ -77,11 +93,19 @@ beacon ]]
 beacon > ls <C:\Path>
 ```
 
+
+
+
+
 **Command** ([[Change working directory]]):
 
 ```bash
 beacon > cd [directory]
 ```
+
+
+
+
 
 **Command** ([[Delete file or folder]]):
 
@@ -89,11 +113,19 @@ beacon > cd [directory]
 beacon > rm [file\folder]
 ```
 
+
+
+
+
 **Command** ([[Copy file]]):
 
 ```bash
 beacon > cp [src] [dest]
 ```
+
+
+
+
 
 **Command** ([[Download file]]):
 
@@ -101,11 +133,19 @@ beacon > cp [src] [dest]
 beacon > download [C:\filePath]
 ```
 
+
+
+
+
 **Command** ([[List downloads]]):
 
 ```bash
 beacon > downloads
 ```
+
+
+
+
 
 **Command** ([[Cancel download]]):
 
@@ -113,11 +153,17 @@ beacon > downloads
 beacon > cancel [*file*]
 ```
 
+
+
+
+
 **Command** ([[Upload file]]):
 
 ```bash
 beacon > upload [/path/to/file]
 ```
+
+
 
 ## Commands Used
 
@@ -134,3 +180,5 @@ beacon > upload [/path/to/file]
 
 - [[Cobalt Strike]]
 - [[Files]]
+
+

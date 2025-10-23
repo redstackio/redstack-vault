@@ -31,9 +31,19 @@ SSL/TLS implementation enables secure communication between client and server. A
 
 SSL/TLS implementation enables secure communication between client and server. Any misconfiguration in the SSL/TLS implementation can be identified using the SSLyze tool.
 
+
+
 # Procedure
 
+
+
 1. Use the below SSLyze command to scan the website and analyse the implementation of SSL/TLS.
+
+
+
+
+
+
 
 **Command** ([[SSLyze Command to Scan a Website]]):
 
@@ -41,7 +51,13 @@ SSL/TLS implementation enables secure communication between client and server. A
 sslyze --regular demo.testfire.net:443
 ```
 
+
+
+
+
 2. Output reveals enabled ciphers, certificate details etc. Certificate trust can also be identified using the SSLyze tool.
+
+
 
 ## Platforms
 
@@ -57,3 +73,5 @@ sslyze --regular demo.testfire.net:443
 - [[owasp top 10]]
 - [[SSL]]
 - [[Web Applications]]
+
+

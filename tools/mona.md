@@ -31,6 +31,8 @@ Immunity debugger plugin made by Corelan with a number of tools which aid in exp
 
 Popular mona tools:
 
+
+
 - egg - create an egghunter routine
 
 - find - search for strings, bytes, instructions or files in files and memory
@@ -51,7 +53,15 @@ Popular mona tools:
 
 - seh - search for pointers to routines that will lead to code execution
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_1abf33ab-e658-4148-a552-f6a34a3582d3}}
+
+
 
 # Installation
 
@@ -59,6 +69,12 @@ Popular mona tools:
 
 1. Download the latest version of mona.py here: [https://github.com/corelan/mona](https://github.com/corelan/mona)
 2. Copy mona.py to Immunity's "PyCommands" directory (usually C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +87,5 @@ Popular mona tools:
 ## Tags
 
 - [[exploit dev]]
+
+

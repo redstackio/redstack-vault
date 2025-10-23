@@ -30,11 +30,15 @@ From a technical perspective, the attack works by sending a specially crafted se
 
 The business value of this attack is that it allows an attacker to gain unauthorized access to sensitive resources or functionality in the application, such as customer data, financial information, or administrative privileges. This can result in financial loss, reputational damage, or legal liability for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable PHP application
 
 1. Ability to send a specially crafted serialized object as a cookie
+
+ 
 
 ## Defense
 
@@ -44,40 +48,66 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Implement strong authentication controls, such as multi-factor authentication, to reduce the impact of authentication bypass attacks
 
+ 
+
 ## Objectives
 
 1. Bypass authentication controls in the PHP application
 
 1. Gain unauthorized access to sensitive resources or functionality
 
+ 
+
 # Instructions
 
 1. This PHP code is vulnerable to authentication bypass via PHP deserialization and type juggling. Specifically, the code deserializes user input from a cookie named 'auth', and checks whether the 'username' and 'password' fields of the resulting object match the expected values. However, because of the way PHP handles type conversions, the 'true' value can be interpreted as a string, and compared to the expected string values of the username and password fields. By carefully crafting the serialized object, an attacker can make the comparison succeed, and bypass the authentication check.
+
+ 
+
+
 
 **Code**: [[<?php
 $data = unserialize($_COOKIE['auth']);
 
 if (]]
 
+
+
 > 
 
 2. This is an example of a serialized object that can be used to bypass authentication in the vulnerable PHP code. The object contains two fields, 'username' and 'password', both set to the boolean value 'true'. However, because of the way PHP handles type conversions, the 'true' value can be interpreted as a string, and compared to the expected string values of the username and password fields. By carefully crafting the serialized object, an attacker can make the comparison succeed, and bypass the authentication check.
 
+ 
+
+
+
 **Code**: [[a:2:{s:8:"username";b:1;s:8:"password";b:1;}]]
+
+
 
 > 
 
 3. This is an example of a type juggling attack that can be used to bypass authentication in the vulnerable PHP code. The attack works by comparing the boolean value 'true' to a string value, using the '==' operator. Because of the way PHP handles type conversions, the 'true' value can be interpreted as a string, and compared to the expected string values of the username and password fields. By carefully crafting the serialized object, an attacker can make the comparison succeed, and bypass the authentication check.
 
+ 
+
+
+
 **Code**: [[true == &quot;str&quot;]]
 
+
+
 > 
+
+
 
 **Command** ([[Comparison of boolean and string]]):
 
 ```bash
 true == &quot;str&quot;
 ```
+
+
 
 ## Commands Used
 
@@ -88,3 +118,5 @@ true == &quot;str&quot;
 - [[Authentication bypass]]
 - [[PHP Deserialization]]
 - [[Type juggling]]
+
+

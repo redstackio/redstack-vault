@@ -33,13 +33,25 @@ Firefox and Thunderbird include the ability to save passwords in the user profil
 
 Firefox and Thunderbird include the ability to save passwords in the user profiles. While a user's passwords are protected by a master password, attackers who know or can guess the user's master password can easily extract all of the user's saved passwords.
 
+
+
 # Instructions
+
+
 
 1. Download Firefox Decrypt
 
+
+
 **Code**: [[git clone https://github.com/unode/firefox_decrypt]]
 
+
+
 2. Run Firefox Decrypt, specifying the directory containing the profiles.ini file (typically /home/user/.mozilla/firefox or /home/user/.mozilla/thunderbird)
+
+
+
+
 
 **Command** ([[Firefox Decrypt Extract Passwords from a Profile]]):
 
@@ -47,9 +59,21 @@ Firefox and Thunderbird include the ability to save passwords in the user profil
 python firefox_decrypt.py $DEST_DIRECTORY
 ```
 
+
+
+
+
 Though Firefox Decrypt does not include a brute forcing utility, it can be scripted in Bash using a wordlist.
 
+
+
+
+
 **Code**: [[for guess in $(cat $_WORDLIST); do echo $guess | p]]
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +103,5 @@ Though Firefox Decrypt does not include a brute forcing utility, it can be scrip
 - [[Brute Force]]
 - [[Cryptography]]
 - [[data exposure]]
+
+

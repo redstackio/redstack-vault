@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:50.920582+00:00'
 ```sql
 SELECT cust_code FROM customer WHERE cust_name LIKE 'k__l';
 ```
+
+

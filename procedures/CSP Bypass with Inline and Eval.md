@@ -28,11 +28,15 @@ Technical Explanation: CSP is a security feature that is implemented on web appl
 
 Business Value: By bypassing CSP, attackers can execute their own malicious code on the victim's browser, leading to various attacks such as stealing sensitive information, session hijacking, and more. This can result in financial loss, loss of reputation, and legal actions against the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with CSP protections enabled
 
 1. Knowledge of inline scripts and eval functions
+
+ 
 
 ## Defense
 
@@ -42,18 +46,28 @@ Business Value: By bypassing CSP, attackers can execute their own malicious code
 
 1. Implement web application firewalls (WAFs) that can detect and block malicious requests
 
+ 
+
 ## Objectives
 
 1. Bypass CSP protections using inline scripts and eval functions
 
 1. Execute malicious code on the victim's browser
 
+ 
+
 # Instructions
 
 1. This command is used to bypass CSP (Content Security Policy) using inline and eval. The command creates an iframe element and sets its source to the first CSS file it finds on the page. It then appends the iframe to the document body. Next, it creates a script element and sets its source to a malicious script hosted on xss.ht. Finally, it waits for one second and appends the script to the iframe's head element. This allows the malicious script to bypass CSP and execute.
 
+ 
+
+
+
 **Code**: [[// CSP Bypass with Inline and Eval
 d=document;f=d.]]
+
+
 
 > The command takes advantage of the fact that if an inline script is executed within an iframe, it is subject to the iframe's CSP instead of the parent document's CSP. By creating an iframe and appending it to the document body, the command can execute inline scripts within the iframe that would otherwise be blocked by the parent document's CSP. The command also uses eval to execute the malicious script within the iframe, which is allowed by the iframe's CSP.
 
@@ -62,3 +76,5 @@ d=document;f=d.]]
 - [[Bypass CSP by [Rhynorater](https://gist.github.com/Rhynorater/311cf3981fda8303d65c27316e69209f)]]
 - [[Cross Site Scripting]]
 - [[CSP Bypass]]
+
+

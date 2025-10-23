@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:26:39.227036+00:00'
 root@kali:impacket-examples$ hashcat -m 18200 --force -a 0 hashes.asreproast passwords_kerb.txt
 root@windows:hashcat$ hashcat64.exe -m 18200 '<AS_REP-hash>' -a 0 c:\wordlists\rockyou.txt
 ```
+
+

@@ -27,3 +27,5 @@ spec:
   automountServiceAccountToken: true
   hostNetwork: true
 ```
+
+

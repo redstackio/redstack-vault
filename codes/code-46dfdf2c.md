@@ -22,3 +22,5 @@ Get-ADGroup -LDAPFilter "(objectcategory=group) (admincount=1)"
 # or
 ([adsisearcher]"(AdminCount=1)").findall()
 ```
+
+

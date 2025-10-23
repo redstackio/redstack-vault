@@ -36,6 +36,8 @@ DB2 Privilege Escalation is a technique used to elevate the privileges of a user
 
 DB2 Privilege Escalation is a technique used to elevate the privileges of a user in a DB2 database. This technique is used by attackers to gain access to sensitive data or perform unauthorized actions. By exploiting the trust relationship between users and the database, attackers can gain access to higher privileges than they are authorized for. This technique involves injecting malicious code into the database and executing it to gain access to higher privileges. This technique can be used to gain access to sensitive data or perform unauthorized actions.
 
+ 
+
 ## Requirements
 
 1. Access to the DB2 database
@@ -43,6 +45,8 @@ DB2 Privilege Escalation is a technique used to elevate the privileges of a user
 1. Knowledge of SQL injection
 
 1. Knowledge of DB2 database structure
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ DB2 Privilege Escalation is a technique used to elevate the privileges of a user
 
 1. Monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data
 
 1. Perform unauthorized actions
+
+ 
 
 # Instructions
 
@@ -76,9 +84,17 @@ To view the system privileges for a user, use the following command:
 
 select * from SYSIBM.SYSUSERAUTH where grantee = 'username';
 
+ 
+
+
+
 **Code**: [[select * from syscat.tabauth -- shows priv on tabl]]
 
+
+
 > This command is used to view the user and table privileges in a DB2 database. It can be used to check which users have access to which tables and what kind of access they have. The 'select * from syscat.tabauth' command shows the privileges on tables, while 'select * from syscat.dbauth' shows the privileges on the database. The 'select * from SYSIBM.SYSUSERAUTH' command shows the system privileges for a user.
+
+
 
 **Command** ([[Show privileges on tables]]):
 
@@ -86,11 +102,19 @@ select * from SYSIBM.SYSUSERAUTH where grantee = 'username';
 select * from syscat.tabauth
 ```
 
+
+
+
+
 **Command** ([[Show privileges for current user]]):
 
 ```bash
 select * from syscat.tabauth where grantee = current user
 ```
+
+
+
+
 
 **Command** ([[Show privileges for current user on database]]):
 
@@ -98,11 +122,17 @@ select * from syscat.tabauth where grantee = current user
 select * from syscat.dbauth where grantee = current user
 ```
 
+
+
+
+
 **Command** ([[List DB2 system privileges]]):
 
 ```bash
 select * from SYSIBM.SYSUSERAUTH
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -129,3 +159,5 @@ select * from SYSIBM.SYSUSERAUTH
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List Privileges]]
+
+

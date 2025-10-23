@@ -36,9 +36,13 @@ Technical Explanation: The attacker sends a request to the vulnerable web applic
 
 Business Value: This technique can be used by attackers to steal sensitive data from a target network. By using HTTPS, the attacker can bypass filters that would normally prevent unauthorized requests to internal network resources.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This technique can be used by attackers to steal sensitive data 
 
 1. Monitor network traffic for unusual activity
 
+ 
+
 ## Objectives
 
 1. Bypass filters that are in place to prevent unauthorized requests
@@ -56,14 +62,24 @@ Business Value: This technique can be used by attackers to steal sensitive data 
 
 1. Evade detection by hiding the attacker's IP address
 
+ 
+
 # Instructions
 
 1. To access the local server, use the following URLs:
 
+ 
+
+
+
 **Code**: [[https://127.0.0.1/
 https://localhost/]]
 
+
+
 > The 'data' field contains the URLs for accessing the local server. These URLs can be used to access the server from a web browser or through other applications. The 'lang' field specifies the language used for executing the commands, which in this case is PowerShell. The 'instruction' field provides guidance on how to use the URLs, and the 'explain' field provides additional details about the command and its purpose.
+
+
 
 **Command** ([[Accessing Localhost]]):
 
@@ -71,6 +87,8 @@ https://localhost/]]
 https://127.0.0.1/
 https://localhost/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ https://localhost/
 - [[Bypassing filters]]
 - [[Bypass using HTTPS]]
 - [[Server-Side Request Forgery]]
+
+

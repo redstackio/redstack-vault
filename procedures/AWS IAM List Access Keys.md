@@ -39,6 +39,8 @@ List all of the IAM access keys
 
 1. List all of the access keys
 
+
+
 **Command** ([[aws iam list access keys]]):
 
 ```bash
@@ -46,7 +48,13 @@ aws iam list-access-keys
 
 ```
 
+
+
+
+
 2. (Optional) List the Access Key IDs for an IAM User
+
+
 
 **Command** ([[aws list access key ID's for IAM user]]):
 
@@ -55,7 +63,15 @@ aws iam list-access-keys --user-name $AWS_IAM_USER
 
 ```
 
+
+
+
+
+
+
 3. (Optional) List all of the public SSH keys for a user
+
+
 
 **Command** ([[aws list ssh public keys for user]]):
 
@@ -63,6 +79,10 @@ aws iam list-access-keys --user-name $AWS_IAM_USER
 aws iam list-ssh-public-keys --user-name $AWS_IAM_USER
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -88,3 +108,5 @@ aws iam list-ssh-public-keys --user-name $AWS_IAM_USER
 
 - [[AWS]]
 - [[Cloud]]
+
+

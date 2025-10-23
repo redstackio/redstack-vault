@@ -27,11 +27,25 @@ type is a Windows command shell tool used to display the contents of a file. Whi
 
 type is a Windows command shell tool used to display the contents of a file. While type does not exist in PowerShell, PowerShell recognizes type as an alias for Get-Content, serving the same purpose.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_ab7d6336-9462-43fe-b6ad-d1756d133b2b}}
+
+
 
 # Installation
 
 type is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +58,5 @@ type is installed with all modern Windows releases
 ## Tags
 
 - [[Enumeration]]
+
+

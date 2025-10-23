@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:27.507780+00:00'
 ```bash
 aws apigateway get-api-key --api-key KEY
 ```
+
+

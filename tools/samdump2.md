@@ -27,11 +27,27 @@ samdump2 is used to dump passwords hashes from Windows 2K/NT/XP/Vista SAM hives.
 
 samdump2 is used to dump passwords hashes from Windows 2K/NT/XP/Vista SAM hives. It requires both the SAM and SYSTEM hives, as the SYSTEM hive contains the bootkey needed to decrypt the SAM hive.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_2c444605-0b52-4ddd-a201-6794dc4c931f}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ samdump2 is used to dump passwords hashes from Windows 2K/NT/XP/Vista SAM hives.
 - [[Cryptography]]
 - [[NTLM]]
 - [[pass the hash]]
+
+

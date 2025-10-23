@@ -26,6 +26,10 @@ Generate a combination of domain names from the provided input.
 
 [dnsgen](https://github.com/ProjectAnte/dnsgen)
 
+
+
+
+
 **Command** ([[dnsgen combine domain names from the provided input]]):
 
 ```bash
@@ -33,6 +37,12 @@ cat domains.txt | dnsgen - | massdns -r /path/to/resolvers.txt -t A -o J --flush
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[dnsgen combine domain names from the provided input]]
+
+

@@ -37,9 +37,13 @@ To execute this procedure, the attacker needs to have valid credentials for an A
 
 The business value of this procedure lies in the fact that it can be used to gain initial access to an Azure AD environment, which can then be used to access sensitive data or systems. This can lead to data theft, espionage, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for an Azure AD user
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this procedure lies in the fact that it can be used to gai
 
 1. Educate users on the dangers of phishing attacks and how to identify them
 
+ 
+
 ## Objectives
 
 1. Gain initial access to an Azure AD environment
@@ -57,21 +63,33 @@ The business value of this procedure lies in the fact that it can be used to gai
 
 1. Use the secondary email for password resets or as a phishing target
 
+ 
+
 # Instructions
 
 1. Use this command to set the secondary email for an Azure AD user. Replace <OBJECT-ID> with the ID of the user you want to modify and <Username> and <TENANT NAME> with the desired email address and your tenant name respectively.
 
+ 
+
+
+
 **Code**: [[PS> Set-AzureADUser -ObjectId <OBJECT-ID> -OtherMa]]
+
+
 
 > -ObjectId: The ID of the user you want to modify.
 -OtherMails: The secondary email address you want to set for the user.
 -Verbose: Optional parameter to provide verbose output for the command.
+
+
 
 **Command** ([[Add other email to Azure AD user]]):
 
 ```bash
 Set-AzureADUser -ObjectId <OBJECT-ID> -OtherMails <Username>@<TENANT NAME>.onmicrosoft.com -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ Set-AzureADUser -ObjectId <OBJECT-ID> -OtherMails <Username>@<TENANT NAME>.onmic
 
 - [[Cloud - Azure]]
 - [[Dynamic Group Membership]]
+
+

@@ -32,6 +32,8 @@ This technique is possible because many URL blacklists only check for the presen
 
 The business value of this technique is that it allows an attacker to bypass security measures and access resources that they should not be able to access. This can lead to the theft of sensitive information or the compromise of the server.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -39,6 +41,8 @@ The business value of this technique is that it allows an attacker to bypass sec
 1. Knowledge of URL encoding
 
 1. Ability to send HTTP requests
+
+ 
 
 ## Defense
 
@@ -48,18 +52,28 @@ The business value of this technique is that it allows an attacker to bypass sec
 
 1. Monitor network traffic for suspicious activity, such as requests to internal resources
 
+ 
+
 ## Objectives
 
 1. Bypass URL blacklists to access blocked resources
 
 1. Conduct SSRF attacks to access sensitive information or compromise the server
 
+ 
+
 # Instructions
 
 1. To use this command, specify the URL that you want to bypass the blacklist for. You can encode the URL either once or twice using the % symbol followed by the hexadecimal representation of the character. For example, %61 represents the letter 'a'.
 
+ 
+
+
+
 **Code**: [[http://127.0.0.1/%61dmin
 http://127.0.0.1/%2561dmi]]
+
+
 
 > This command allows you to bypass a blacklist that is in place to prevent certain URLs from being accessed. By encoding the URL using the % symbol followed by the hexadecimal representation of the character, you can trick the system into thinking that the URL is different from the one that is blacklisted. This can be useful in situations where you need to access a blocked URL for legitimate purposes.
 
@@ -78,3 +92,5 @@ http://127.0.0.1/%2561dmi]]
 - [[Bypassing filters]]
 - [[Bypass using URL encoding]]
 - [[Server-Side Request Forgery]]
+
+

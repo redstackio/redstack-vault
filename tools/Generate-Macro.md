@@ -16,3 +16,7 @@ Is a standalone PowerShell script that will generate a malicious Microsoft Offic
 ## Description
 
 Is a standalone PowerShell script that will generate a malicious Microsoft Office document with a specified payload and persistence method. ​
+
+
+
+

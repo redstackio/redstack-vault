@@ -21,3 +21,5 @@ resizePane left - alt+shift+left
 resizePane right - alt+shift+right
 resizePane up - alt+shift+up
 ```
+
+

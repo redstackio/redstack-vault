@@ -26,3 +26,5 @@ root@kali:~# showmount -e 10.10.10.10
 Export list for 10.10.10.10:
 / *
 ```
+
+

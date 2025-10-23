@@ -35,6 +35,8 @@ From a technical perspective, enabling external scripts allows the SQL Server to
 
 The business value of this technique is that an attacker can use it to gain access to sensitive data or to execute commands on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server
@@ -42,6 +44,8 @@ The business value of this technique is that an attacker can use it to gain acce
 1. Permission to execute external scripts
 
 1. Ability to upload and execute external scripts
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this technique is that an attacker can use it to gain acce
 
 1. Monitor for any suspicious activity, such as the execution of unknown scripts
 
+ 
+
 ## Objectives
 
 1. Execute external scripts on a MSSQL Server
@@ -59,14 +65,24 @@ The business value of this technique is that an attacker can use it to gain acce
 
 1. Execute commands on the target system
 
+ 
+
 # Instructions
 
 1. To enable external scripts in SQL Server, use the sp_configure system stored procedure with the 'external scripts enabled' option. Set the value to 1 and then run the RECONFIGURE statement to apply the changes.
 
+ 
+
+
+
 **Code**: [[sp_configure 'external scripts enabled', 1;
 RECONF]]
 
+
+
 > This command enables the execution of external scripts in SQL Server. External scripts are scripts that are not written in T-SQL, such as R or Python scripts. Enabling external scripts allows you to run these scripts within SQL Server and integrate them with your T-SQL code. This can be useful for performing complex data analysis or machine learning tasks within SQL Server.
+
+
 
 **Command** ([[Enable External Scripts]]):
 
@@ -74,6 +90,8 @@ RECONF]]
 sp_configure 'external scripts enabled', 1;
 RECONFIGURE;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ RECONFIGURE;
 
 - [[External Scripts]]
 - [[MSSQL Server]]
+
+

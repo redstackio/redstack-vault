@@ -15,6 +15,9 @@ updated_at: '2023-05-25T04:24:43.307218+00:00'
 # adduser.ps1
 $passwd = ConvertTo-SecureString "P@ssw0rd123!" -AsPlainText -Force
 
+
 New-LocalUser -Name studentX -Password $passwd 
 Add-LocalGroupMember -Group Administrators -Member studentX
 ```
+
+

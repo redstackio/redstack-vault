@@ -32,11 +32,15 @@ From a technical standpoint, this procedure involves generating an authenticatio
 
 From a business perspective, authenticating the Docker daemon to ECR allows for secure and efficient management of Docker images. This can lead to faster deployment times and more streamlined development workflows.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to authenticate to the specified ECR registry
 
 1. Docker installed on the local machine
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ From a business perspective, authenticating the Docker daemon to ECR allows for 
 
 1. Monitor ECR registry activity for suspicious behavior and unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. Authenticate the Docker daemon to an ECR registry
 
 1. Enable pushing and pulling of Docker images to and from an ECR registry
 
+ 
+
 # Instructions
 
 1. Run the following command to get the ECR login password and then login to Docker using the AWS CLI.
 
+ 
+
 This command retrieves the login password for the specified AWS region and uses it to authenticate with the specified ECR address. The AWS CLI command 'aws ecr get-login-password' retrieves the password and pipes it to the 'docker login' command which then logs you in to the ECR repository. This is necessary for pushing and pulling Docker images to and from the ECR repository.
+
+
 
 **Command** ([[Docker Login to AWS ECR]]):
 
 ```bash
 aws ecr get-login-password --region region | docker login --username AWS --password-stdin ecr_address
 ```
+
+
 
 ## Commands Used
 
@@ -73,3 +87,5 @@ aws ecr get-login-password --region region | docker login --username AWS --passw
 - [[Authenticate the docker daemon to ECR]]
 - [[Cloud - AWS]]
 - [[Persistence]]
+
+

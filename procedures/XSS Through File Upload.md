@@ -32,13 +32,57 @@ XSS can be performed on file upload functionality by renaming the file with XSS 
 
 # Instructions
 
+
+
 1. Identify the file upload functionality
+
+
+
+
+
+![e7989524-656f-4cc7-9583-57609acd500c.jpg](_assets/images/Mash/e7989524-656f-4cc7-9583-57609acd500c.jpg)
+
+
 
 2. Rename the file with XSS payload
 
+
+
+
+
+![6646ec13-0ff9-493b-a32c-41f786d5d099.png](_assets/images/Mash/6646ec13-0ff9-493b-a32c-41f786d5d099.png)
+
+
+
+
+
 3. Select the file and click on submit
 
+
+
+
+
+
+
+![5c46ccb8-8eb0-41f9-9551-6bc055df3c65.jpg](_assets/images/Mash/5c46ccb8-8eb0-41f9-9551-6bc055df3c65.jpg)
+
+
+
+
+
 4. The payload is executed as the response contains the file name
+
+
+
+
+
+![77205cc2-3eeb-4f84-8de1-e2aba2914a67.jpg](_assets/images/Mash/77205cc2-3eeb-4f84-8de1-e2aba2914a67.jpg)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +95,5 @@ XSS can be performed on file upload functionality by renaming the file with XSS 
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xss]]
+
+

@@ -27,11 +27,27 @@ cURL is a command line tool used to transfer data to and from a server using one
 
 cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extremely useful in both single use cases and scripts.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_3efa41e4-90cf-4cd4-afc5-6dbd9c1dbe5a}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ cURL is a command line tool used to transfer data to and from a server using one
 ## Tags
 
 - [[Web Applications]]
+
+

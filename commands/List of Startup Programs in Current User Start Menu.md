@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:39.789164+00:00'
 ```bash
 dir "C:\\Documents and Settings\\%username%\\Start Menu\\Programs\\Startup"
 ```
+
+

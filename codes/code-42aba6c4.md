@@ -20,3 +20,5 @@ class AnyClass {
 // output: rips
 include('phar://test.phar');
 ```
+
+

@@ -28,6 +28,8 @@ JWT (JSON Web Token) is a widely used standard for token-based authentication an
 
 An attacker can exploit this vulnerability to bypass authentication and gain unauthorized access to protected resources. The attacker can modify the claims in the JWT, such as the user ID, and impersonate another user. This can lead to a variety of attacks, such as privilege escalation, data theft, and lateral movement. Business value of this attack is that it can be used to bypass authentication and gain unauthorized access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the JWT token
@@ -35,6 +37,8 @@ An attacker can exploit this vulnerability to bypass authentication and gain una
 1. Ability to modify the contents of the token
 
 1. Knowledge of the vulnerability
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ An attacker can exploit this vulnerability to bypass authentication and gain una
 
 1. Regularly update and patch any software that uses JWT tokens to prevent known vulnerabilities, such as CVE-2015-9235.
 
+ 
+
 ## Objectives
 
 1. Bypass authentication and gain unauthorized access to protected resources
@@ -52,13 +58,23 @@ An attacker can exploit this vulnerability to bypass authentication and gain una
 
 1. Impersonate another user
 
+ 
+
 # Instructions
 
 1. Use the jwt_tool to decode the JWT token.
 
+ 
+
+
+
 **Code**: [[python3 jwt_tool.py [JWT_HERE] -X a]]
 
+
+
 > This command will decode the JWT token and display its contents in a human-readable format.
+
+
 
 **Command** ([[Decode JWT with JWT Tool]]):
 
@@ -66,11 +82,19 @@ An attacker can exploit this vulnerability to bypass authentication and gain una
 python3 jwt_tool.py [JWT_HERE] -X a
 ```
 
+
+
 2. Use this code to manually modify the JWT token.
+
+ 
+
+
 
 **Code**: [[import jwt
 
 jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cC]]
+
+
 
 > This command will decode the JWT token, modify its contents, and then re-encode it with the 'None' algorithm. This will create a new JWT token that is not signed and can be used by an attacker to bypass authentication.
 
@@ -83,3 +107,5 @@ jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cC]]
 - [[JWT - JSON Web Token]]
 - [[JWT Signature]]
 - [[JWT Signature - None Algorithm (CVE-2015-9235)]]
+
+

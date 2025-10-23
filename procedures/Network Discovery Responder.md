@@ -33,11 +33,15 @@ The Network Discovery Responder procedure involves using the Responder tool to c
 
 This procedure is typically used as a first step in a larger attack campaign, as it allows an attacker to gather valuable information about the target network and potentially gain a foothold on one or more systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Ability to run Responder on a system on the target network
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ This procedure is typically used as a first step in a larger attack campaign, as
 
 1. Monitor network traffic for signs of LLMNR/NBT-NS poisoning and SMB relay attacks
 
+ 
+
 ## Objectives
 
 1. Identify vulnerable systems on the target network
@@ -54,6 +60,8 @@ This procedure is typically used as a first step in a larger attack campaign, as
 1. Capture usernames and passwords transmitted over the network
 
 1. Gain access to network resources and escalate privileges
+
+ 
 
 # Instructions
 
@@ -64,9 +72,17 @@ This procedure is typically used as a first step in a larger attack campaign, as
 -r: Enable the NBT-NS, BROWSER, and LLMNR poisoner.
 -f: Force Responder to use SMBv1 instead of SMBv2/v3.
 
+ 
+
+
+
 **Code**: [[responder -I eth0 -A # see NBT-NS, BROWSER, LLMNR ]]
 
+
+
 > This command allows you to discover devices on a network by analyzing incoming network requests without responding to them. The -w parameter enables the WPAD rogue proxy server which can be used to intercept and manipulate web traffic. The -r parameter enables the NBT-NS, BROWSER, and LLMNR poisoner which can be used to intercept and manipulate network traffic. The -f parameter forces Responder to use SMBv1 instead of SMBv2/v3 which can be useful for compatibility with older systems.
+
+
 
 **Command** ([[Run responder without responding to NBT-NS, BROWSER, LLMNR requests]]):
 
@@ -74,11 +90,17 @@ This procedure is typically used as a first step in a larger attack campaign, as
 responder -I eth0 -A
 ```
 
+
+
+
+
 **Command** ([[Run responder and save output to file]]):
 
 ```bash
 responder.py -I eth0 -wrf
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ responder.py -I eth0 -wrf
 
 - [[Network Discovery]]
 - [[Responder]]
+
+

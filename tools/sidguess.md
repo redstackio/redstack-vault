@@ -16,3 +16,9 @@ Guesses sids/instances against an Oracle database according to a predefined dict
 ## Description
 
 Guesses sids/instances against an Oracle database according to a predefined dictionary file. The speed is slow (80-100 guesses per second) but it does the job.
+
+
+
+
+
+

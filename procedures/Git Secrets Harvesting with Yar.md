@@ -33,11 +33,15 @@ Git is a widely used source code management tool that contains sensitive informa
 
 Git is a widely used source code management tool that contains sensitive information such as passwords, API keys, and other secrets. Attackers can harvest these secrets by using tools such as Yar. Yar is a command-line tool that scans Git repositories for secrets and other sensitive information. It can be used to search for secrets in an organization's Git repositories and can help identify potential vulnerabilities that can be exploited by attackers. The tool is simple to use and can be integrated into an organization's security testing process to identify potential security risks.
 
+ 
+
 ## Requirements
 
 1. Access to the Git repository
 
 1. Installation of Yar tool
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Git is a widely used source code management tool that contains sensitive informa
 
 1. Regularly scan Git repositories for sensitive information using tools such as Yar
 
+ 
+
 ## Objectives
 
 1. Identify secrets and sensitive information in Git repositories
@@ -55,16 +61,26 @@ Git is a widely used source code management tool that contains sensitive informa
 
 1. Improve the security of an organization's Git repositories
 
+ 
+
 # Instructions
 
 1. To use Yar to harvest secrets from a Git repository, follow these steps:
 
+ 
+
+
+
 **Code**: [[go get github.com/nielsing/yar # https://github.co]]
+
+
 
 > 1. Install Yar by running the command 'go get github.com/nielsing/yar'
 2. Navigate to the Git repository you want to scan
 3. Run the command 'yar -o orgname --both'
 4. Yar will scan the repository and output any secrets or sensitive information it finds.
+
+
 
 **Command** ([[Install yar]]):
 
@@ -72,11 +88,17 @@ Git is a widely used source code management tool that contains sensitive informa
 go get github.com/nielsing/yar
 ```
 
+
+
+
+
 **Command** ([[Run yar]]):
 
 ```bash
 yar -o orgname --both
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ yar -o orgname --both
 - [[Insecure Source Code Management]]
 - [[Tools]]
 - [[Yar]]
+
+

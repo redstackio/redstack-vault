@@ -35,11 +35,15 @@ This procedure outlines the steps to spawn an SSH connection for an Azure Web Ap
 
 This procedure outlines the steps to spawn an SSH connection for an Azure Web App. This can be useful for persistent remote access to the web app, allowing an attacker to gain access to sensitive data or execute further attacks. To spawn an SSH connection, an attacker will first need to gain access to the Azure Web App. Once access is gained, the attacker can use this procedure to spawn an SSH connection and maintain access to the web app.
 
+ 
+
 ## Requirements
 
 - The Azure CLI installed on a local or remote machine
 
 - The subscription ID, resource group name, and app service name of the target Azure Web App
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This procedure outlines the steps to spawn an SSH connection for an Azure Web Ap
 
 1. Regularly review logs for any suspicious activity related to the Azure Web App
 
+ 
+
 ## Objectives
 
 1. Leverage any obtained Azure credentials to target the Azure Web Apps
@@ -57,15 +63,23 @@ This procedure outlines the steps to spawn an SSH connection for an Azure Web Ap
 
 1. Maintain persistent access to the Azure Web App
 
+ 
+
 # Instructions
 
+
+
 1.This command will create a remote connection to the Azure Web App, which can then be used to perform various operations on the app, such as deploying code or managing configurations.
+
+
 
 **Command** ([[Create Remote Connection for Web App]]):
 
 ```bash
 az webapp create-remote-connection --subscription <SUBSCRIPTION-ID> --resource-group <RG-NAME> -n <APP-SERVICE-NAME>
 ```
+
+
 
 ## Platforms
 
@@ -91,3 +105,5 @@ az webapp create-remote-connection --subscription <SUBSCRIPTION-ID> --resource-g
 - [[Cloud - Azure]]
 - [[Spawn SSH for Azure Web App]]
 - [[SSH]]
+
+

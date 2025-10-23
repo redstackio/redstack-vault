@@ -37,9 +37,13 @@ To execute this technique, an attacker needs to identify a server-side request f
 
 The business value of this technique is that it allows an attacker to gain access to sensitive data or services that are not intended to be exposed to external users. This can lead to data theft, data manipulation, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a server-side request forgery vulnerability in a Java application
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this technique is that it allows an attacker to gain acces
 
 1. Implement access controls to limit access to sensitive data or services
 
+ 
+
 ## Objectives
 
 1. Exploit server-side request forgery vulnerabilities in Java applications
@@ -57,14 +63,24 @@ The business value of this technique is that it allows an attacker to gain acces
 
 1. Pivot through a network and gain access to additional systems
 
+ 
+
 # Instructions
 
 1. The Blind SSRF command is used to test for Server Side Request Forgery vulnerabilities. It works by sending requests to a specified URL and checking the responses for any signs of SSRF. To use this command, specify the target URL in the data field.
 
+ 
+
+
+
 **Code**: [[jar:scheme://domain/path!/ 
 jar:http://127.0.0.1!/]]
 
+
+
 > The data field should contain the target URL that you want to test for SSRF vulnerabilities. The URL should be in the format of a jar file URL that includes a scheme, domain, and path. Multiple URLs can be specified by separating them with a new line character. This command can be used in a Powershell environment.
+
+
 
 **Command** ([[Jar URLs]]):
 
@@ -72,11 +88,19 @@ jar:http://127.0.0.1!/]]
 jar:scheme://domain/path!/
 ```
 
+
+
+
+
 **Command** ([[Jar URLs]]):
 
 ```bash
 jar:http://127.0.0.1!/
 ```
+
+
+
+
 
 **Command** ([[Jar URLs]]):
 
@@ -84,11 +108,17 @@ jar:http://127.0.0.1!/
 jar:https://127.0.0.1!/
 ```
 
+
+
+
+
 **Command** ([[Jar URLs]]):
 
 ```bash
 jar:ftp://127.0.0.1!/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -112,3 +142,5 @@ jar:ftp://127.0.0.1!/
 - [[Bypassing filters]]
 - [[Bypassing using jar protocol (java only)]]
 - [[Server-Side Request Forgery]]
+
+

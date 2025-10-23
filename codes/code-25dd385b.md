@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:13.492623+00:00'
 ```ps1
 Certify.exe find /vulnerable
 ```
+
+

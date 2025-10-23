@@ -26,11 +26,29 @@ lookupsid.py is a Windows SID brute forcer through [MS-LSAT] MSRPC, aimed at fin
 
 lookupsid.py is a Windows SID brute forcer through [MS-LSAT] MSRPC, aimed at finding remote users and groups. It is part of the Impacket tools and libraries.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_fc0ae50f-6c12-4e92-a256-304b6af90dc1}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +68,5 @@ lookupsid.py is a Windows SID brute forcer through [MS-LSAT] MSRPC, aimed at fin
 
 - [[Brute Force]]
 - [[Enumeration]]
+
+

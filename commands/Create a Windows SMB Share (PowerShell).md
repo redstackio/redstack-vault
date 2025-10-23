@@ -7,6 +7,7 @@ data: New-SmbShare -Name "$_NAME" -Path "$_FULL/PATH/TO/SHARE" -FullAccess "$_US
 output: 'PS C:\ > New-SmbShare -Name "Shared Files" -Path "C:\Users\Bob\Desktop\shared"
   -FullAccess Bob"
 
+
   Name         ScopeName Path                         Description
 
   ----         --------- ----                         -----------
@@ -31,3 +32,5 @@ Name         ScopeName Path                         Description
 ----         --------- ----                         -----------
 Shared Files *         C:\Users\Bob\Desktop\test
 ```
+
+

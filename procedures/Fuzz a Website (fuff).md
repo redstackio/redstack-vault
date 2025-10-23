@@ -27,6 +27,8 @@ Use this tool to find directories on a website.
 
 [fuff](https://github.com/ffuf/ffuf)
 
+
+
 ##  Instructions
 
 1. Fuzz the directories of a domain
@@ -35,6 +37,8 @@ Existing command
 
 2. Fuzz the GET method
 
+
+
 **Command** ([[fuff GET Parameter Fuzzing]]):
 
 ```bash
@@ -42,7 +46,13 @@ ffuf -w /path/to/paramnames.txt -u https://target/script.php?FUZZ=test_value -fs
 
 ```
 
+
+
+
+
 3. Fuzz the POST method
+
+
 
 **Command** ([[POST Data Fuzzing]]):
 
@@ -51,7 +61,13 @@ ffuf -w /path/to/postdata.txt -X POST -d "username=admin\&password=FUZZ" -u http
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[fuff GET Parameter Fuzzing]]
 - [[POST Data Fuzzing]]
+
+

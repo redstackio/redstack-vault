@@ -29,6 +29,8 @@ Spawn a PowerShell instance on a remote Windows system using the WinRM protocol 
 
 Spawn a PowerShell instance on a remote Windows system using the WinRM protocol (usually port 5985). Evil-WinRM is written in Ruby and can be run on Linux or Windows systems.
 
+
+
 Notable features:
 
 - Load in memory PowerShell scripts
@@ -47,7 +49,15 @@ Notable features:
 
 - Upload/download files
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_4a0275b1-f59a-49b6-baf8-ad85ca69e52e}}
+
+
 
 # Installation
 
@@ -55,15 +65,33 @@ Notable features:
 
 1. Install Ruby and build tools
 
+
+
 Note: When prompted by the installer to choose a toolchain, select either 1 or 3.
 
+
+
 2. Install Evil-WinRM via gem
+
+
+
+
 
 ## Install on Windows
 
 1. Install the latest version of Ruby + Devkit: [Download from rubyinstaller.org](https://rubyinstaller.org/downloads/)
 
 2. Install Evil-WinRM using Ruby's package manager
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -83,3 +111,5 @@ Note: When prompted by the installer to choose a toolchain, select either 1 or 3
 
 - [[Defense Bypass]]
 - [[shell]]
+
+

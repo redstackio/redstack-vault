@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:46.498600+00:00'
 ```bash
 certipy req -username jane@corp.local -hashes ... -ca corp-DC-CA -template ESC9
 ```
+
+

@@ -16,3 +16,5 @@ user  = *)(uid=*))(|(uid=*
 pass  = password
 query = (&(uid=*)(uid=*))(|(uid=*)(userPassword={MD5}X03MO1qnZdYdgyfeuILPmQ==))
 ```
+
+

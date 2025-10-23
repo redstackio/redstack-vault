@@ -16,3 +16,7 @@ updated_at: '2023-05-29T16:48:53.029709+00:00'
 ## Description
 
 & the Cloakify Toolset - Data Exfiltration & Infiltration In Plain Sight; Evade DLP/MLS Devices; Social Engineering of Analysts; Defeat Data Whitelisting Controls; Evade AV Detection. ​
+
+
+
+

@@ -18,3 +18,5 @@ echo $0
 -> /usr/bin/zsh
 echo whoami|$0
 ```
+
+

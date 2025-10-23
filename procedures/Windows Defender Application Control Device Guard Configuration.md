@@ -33,11 +33,15 @@ From a technical standpoint, Device Guard Configuration works by creating a poli
 
 From a business perspective, Device Guard Configuration can help organizations protect their systems and data from cyber attacks. By limiting the applications that are allowed to run, organizations can reduce the risk of malware infections, data breaches, and other types of attacks that rely on the execution of untrusted code. This can help organizations avoid costly downtime, reputational damage, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Windows 10 Enterprise or Windows Server 2016 or later
 
 1. Administrator privileges
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ From a business perspective, Device Guard Configuration can help organizations p
 
 1. Monitor and analyze system logs to detect any attempts to run untrusted applications.
 
+ 
+
 ## Objectives
 
 1. To limit the applications that are allowed to run on a system.
@@ -55,11 +61,19 @@ From a business perspective, Device Guard Configuration can help organizations p
 
 1. To protect against malware and other types of attacks that rely on the execution of untrusted code.
 
+ 
+
 # Instructions
 
 1. Use this command to configure Device Guard on Windows 10 devices.
 
+ 
+
+
+
 **Code**: [[WDAC/UMCI/Device Guard]]
+
+
 
 > Device Guard is a set of hardware and software security features that are available on Windows 10 Enterprise and Windows Server 2016. It is designed to prevent malware and untrusted code from running on a device by ensuring that only trusted applications are allowed to run. To configure Device Guard, you can use the WDAC (Windows Defender Application Control) or UMCI (User Mode Code Integrity) features. The WDAC feature allows you to create code integrity policies that define which applications are allowed to run on a device, while the UMCI feature enforces the code integrity policies by blocking any applications that are not on the allowed list. This command provides a convenient way to configure Device Guard on a Windows 10 device by providing multiple commands that can be used to create and manage code integrity policies, enable or disable UMCI, and view the status of Device Guard.
 
@@ -79,3 +93,5 @@ From a business perspective, Device Guard Configuration can help organizations p
 
 - [[Windows Defender Application Control]]
 - [[Windows - Defenses]]
+
+

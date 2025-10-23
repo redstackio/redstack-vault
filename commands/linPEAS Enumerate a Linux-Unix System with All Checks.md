@@ -26,6 +26,7 @@ linpeas.sh -a
 ```
 bob@3f01c92204f2:/tmp$ ./linpeas.sh -a                                                                                    
 
+
 Linux Privesc Checklist: https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist
  LEYEND:
   RED/YELLOW: 99% a PE vector
@@ -36,3 +37,5 @@ Linux Privesc Checklist: https://book.hacktricks.xyz/linux-unix/linux-privilege-
   LightMangenta: Your username
 ...
 ```
+
+

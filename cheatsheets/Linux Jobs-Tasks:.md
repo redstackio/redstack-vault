@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Linux Jobs/Tasks:
 
+
+
 **Command** ([[Display scheduled jobs for the specified user – Privileged command]]):
 
 ```bash
 crontab -l -u %username%
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Scheduled jobs overview (hourly, daily, monthly etc)]]):
 
@@ -23,6 +31,12 @@ ls -la /etc/cron*
 
 ```
 
+
+
+
+
+
+
 **Command** ([[What can ‘others’ write in /etc/cron* directories]]):
 
 ```bash
@@ -30,9 +44,21 @@ ls -aRl /etc/cron* | awk '$1 ~ /w.$/' 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List of current tasks]]):
 
 ```bash
 top
 
 ```
+
+
+
+
+
+

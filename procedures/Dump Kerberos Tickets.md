@@ -35,11 +35,15 @@ Technical Explanation: Kerberos is the default authentication protocol used in W
 
 Business Value: By dumping Kerberos tickets, an attacker can move laterally through the network and gain access to sensitive data and systems. This technique can be used to escalate privileges and gain access to critical systems and data.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system
 
 1. Privileged access to run Mimikatz or similar tool
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: By dumping Kerberos tickets, an attacker can move laterally thro
 1. Monitor for suspicious activity, such as the use of Mimikatz or other credential dumping tools
 
 1. Implement network segmentation to limit lateral movement within the network
+
+ 
 
 ## Objectives
 
@@ -59,6 +65,8 @@ Business Value: By dumping Kerberos tickets, an attacker can move laterally thro
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. The 'Rubeus.exe' command is used to interact with Kerberos tickets. 
@@ -68,10 +76,16 @@ Business Value: By dumping Kerberos tickets, an attacker can move laterally thro
 
 Note: The output of the 'dump' command is in Kirbi format, which is a binary format used to represent Kerberos tickets.
 
+ 
+
+
+
 **Code**: [[# List available tickets
 Rubeus.exe triage
 
 # Dump]]
+
+
 
 > - 'Rubeus.exe': The command used to interact with Kerberos tickets. 
 - 'triage': A flag used to list available tickets. 
@@ -79,17 +93,25 @@ Rubeus.exe triage
 - '/luid': An argument used with the 'dump' flag to specify the LUID of the ticket to dump. 
 - '0x12d1f7': An example value of the LUID argument, which should be replaced with the actual LUID of the ticket to dump.
 
+
+
 **Command** ([[List available tickets using Rubeus.exe]]):
 
 ```bash
 Rubeus.exe triage
 ```
 
+
+
+
+
 **Command** ([[Dump one ticket using Rubeus.exe]]):
 
 ```bash
 Rubeus.exe dump /luid:0x12d1f7
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +133,5 @@ Rubeus.exe dump /luid:0x12d1f7
 - [[Active Directory Attacks]]
 - [[Dump Kerberos Tickets]]
 - [[Kerberos Tickets]]
+
+

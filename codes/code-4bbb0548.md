@@ -19,3 +19,5 @@ echo manager >> community.txt
 for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 ```
+
+

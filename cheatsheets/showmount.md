@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # showmount
 
+
+
 **Command** ([[list Shares]]):
 
 ```bash
 showmount -e target-ip
 
 ```
+
+
+
+
+
+

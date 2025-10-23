@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:53.449842+00:00'
 ```bash
 $ AspDotNetWrapper.exe --keypath C:\MachineKey.txt --cookie XXXXXXX_XXXXX-XXXXX --decrypt --purpose=owin.cookie --valalgo=hmacsha512 --decalgo=aes
 ```
+
+

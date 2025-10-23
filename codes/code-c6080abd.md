@@ -19,3 +19,5 @@ az account get-access-token --resource-type aad-graph
 (Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 # or from a managed identity using IDENTITY_HEADER and IDENTITY_ENDPOINT
 ```
+
+

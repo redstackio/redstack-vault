@@ -6,6 +6,7 @@ executor: powershell
 data: Invoke-EnumerateAzureBlobs -Base <SHORT DOMAIN> -OutputFile azureblobs.txt
 output: 'PS > Invoke-EnumerateAzureBlobs -Base <SHORT DOMAIN> -OutputFile azureblobs.txt
 
+
   Found Storage Account -  testsecure.blob.core.windows.net
 
   Found Storage Account -  securetest.blob.core.windows.net
@@ -33,3 +34,5 @@ Found Storage Account -  securetest.blob.core.windows.net
 Found Storage Account -  securedata.blob.core.windows.net
 Found Storage Account -  securefiles.blob.core.windows.net
 ```
+
+

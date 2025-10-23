@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 dsquery * -filter "(&(objectclass=computer) (objectcategory=computer) (operatingSystem=Windows*))" -limit 0 |dsget computer -dn -samid -desc -loc >c:\windows\temp\computers.log
 
 ```
+
+

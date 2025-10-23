@@ -30,6 +30,8 @@ Jinja2 is a popular templating engine used for web applications. Debugging is an
 
 This procedure focuses on using the debug statement in Jinja2 for server-side template injection attacks. By injecting malicious code into the debug statement, an attacker can execute arbitrary code on the server and potentially gain access to sensitive data or perform other malicious actions.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -37,6 +39,8 @@ This procedure focuses on using the debug statement in Jinja2 for server-side te
 1. Knowledge of Jinja2 templating engine and server-side template injection techniques
 
 1. Ability to inject code into the debug statement
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ This procedure focuses on using the debug statement in Jinja2 for server-side te
 
 1. Regularly monitor and audit the application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into the debug statement to execute arbitrary code on the server
 
 1. Gain access to sensitive data or perform other malicious actions
+
+ 
 
 # Instructions
 
@@ -59,13 +67,25 @@ This procedure focuses on using the debug statement in Jinja2 for server-side te
 2. Click on the Extensions tab.
 3. Find the Debug Extension and click on the toggle switch to enable it.
 
+ 
+
+
+
 **Code**: [[{% debug %}]]
+
+
 
 > The {% debug %} command is used to display debug information, such as the values of variables, in the output of your code. This command is only useful if the Debug Extension is enabled. If you do not have the Debug Extension enabled, this command will not produce any output.
 
 2. To use this command, simply add {% debug %} to your code where you want to inspect variables and their values.
 
+ 
+
+
+
 **Code**: [[<pre>{% debug %}</pre>]]
+
+
 
 > This command is used for debugging purposes. When {% debug %} is added to your code, it will pause the execution at that point and display a panel showing all the variables and their values at that point in the code. This can be useful for troubleshooting and identifying errors in your code.
 
@@ -84,3 +104,5 @@ This procedure focuses on using the debug statement in Jinja2 for server-side te
 - [[Jinja2]]
 - [[Jinja2 - Debug Statement]]
 - [[Server Side Template Injection]]
+
+

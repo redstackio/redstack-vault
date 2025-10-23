@@ -31,6 +31,8 @@ The Hashcat installation procedure is a process to install and configure Hashcat
 
 The Hashcat installation procedure is a process to install and configure Hashcat on a system for password cracking. This procedure is commonly used by penetration testers and security researchers to test the strength of passwords in their environment. Hashcat is a powerful password cracking tool that supports a wide range of hashing algorithms and attack modes. It utilizes the power of GPUs to perform password cracking at a faster rate. The business value of this procedure is to identify weak passwords in an organization and improve the overall security posture.
 
+ 
+
 ## Requirements
 
 1. Access to a system where Hashcat needs to be installed
@@ -38,6 +40,8 @@ The Hashcat installation procedure is a process to install and configure Hashcat
 1. Sufficient privileges to install software on the system
 
 1. GPU with CUDA support for faster password cracking
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The Hashcat installation procedure is a process to install and configure Hashcat
 
 1. Monitor the network for any suspicious activity related to password cracking
 
+ 
+
 ## Objectives
 
 1. To install and configure Hashcat on a system
@@ -54,6 +60,8 @@ The Hashcat installation procedure is a process to install and configure Hashcat
 1. To perform password cracking using Hashcat
 
 1. To identify weak passwords in an organization
+
+ 
 
 # Instructions
 
@@ -63,10 +71,18 @@ apt install cmake build-essential -y
 apt install checkinstall git -y
 git clone https://github.com/hashcat/hashcat.git && cd hashcat && make -j 8 && make install
 
+ 
+
+
+
 **Code**: [[apt install cmake build-essential -y
 apt install c]]
 
+
+
 > This command installs Hashcat, a password recovery tool. The first line installs the necessary dependencies for building Hashcat, including cmake and build-essential. The second line installs checkinstall and git. The third line clones the Hashcat repository from GitHub and navigates to the directory. The fourth line builds Hashcat with 8 threads and installs it on the system. Note that this command requires administrative privileges to run.
+
+
 
 **Command** ([[Install CMake, Build-Essential, and Git]]):
 
@@ -75,11 +91,17 @@ apt install cmake build-essential -y
 apt install checkinstall git -y
 ```
 
+
+
+
+
 **Command** ([[Clone and Build Hashcat]]):
 
 ```bash
 git clone https://github.com/hashcat/hashcat.git && cd hashcat && make -j 8 && make install
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +123,5 @@ git clone https://github.com/hashcat/hashcat.git && cd hashcat && make -j 8 && m
 - [[Hashcat]]
 - [[Hashcat Install]]
 - [[Hash Cracking]]
+
+

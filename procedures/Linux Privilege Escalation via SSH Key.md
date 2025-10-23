@@ -35,6 +35,8 @@ This procedure involves searching for SSH keys on a Linux system, which can be u
 
 This procedure involves searching for SSH keys on a Linux system, which can be used to escalate privileges and gain persistent access. SSH keys are often stored in sensitive files, such as authorized_keys or id_rsa, and can be easily located using a simple search command. Once found, an attacker can use these keys to gain access to the system as a privileged user, and potentially move laterally throughout the network. This technique is commonly used by attackers to maintain access to compromised systems.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
@@ -42,6 +44,8 @@ This procedure involves searching for SSH keys on a Linux system, which can be u
 1. Command-line access
 
 1. Knowledge of Linux file system
+
+ 
 
 ## Defense
 
@@ -51,17 +55,24 @@ This procedure involves searching for SSH keys on a Linux system, which can be u
 
 1. Monitor for unauthorized SSH logins and unusual activity
 
+ 
+
 ## Objectives
 
 1. Locate SSH keys on a Linux system
 
 1. Escalate privileges and gain persistent access
 
+ 
+
 # Instructions
 
 1. To search for SSH keys on a system, run the following commands:
 1. find / -name authorized_keys 2> /dev/null
 2. find / -name id_rsa 2> /dev/null
+
+
+ 
 
 The first command searches for authorized_keys files which are used for SSH public key authentication. The second command searches for id_rsa files which are private keys used for SSH authentication. The 'find' command searches the entire file system starting from the root directory ('/') and the '-name' option specifies the name of the file to search for. The '2> /dev/null' redirects error messages to the null device, which means they will not be displayed on the screen. This is useful to avoid seeing error messages for directories that the user does not have permission to access.
 
@@ -87,3 +98,5 @@ The first command searches for authorized_keys files which are used for SSH publ
 - [[Linux - Privilege Escalation]]
 - [[Sensitive files]]
 - [[SSH Key]]
+
+

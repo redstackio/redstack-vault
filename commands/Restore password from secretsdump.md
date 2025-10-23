@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:01.289773+00:00'
 ```bash
 python restorepassword.py CORP/DC01@DC01.CORP.LOCAL -target-ip 172.16.1.5 -hexpass e6ad4c4f64e71cf8c8020aa44bbd70ee711b8dce2adecd7e0d7fd1d76d70a848c987450c5be97b230bd144f3c3
 ```
+
+

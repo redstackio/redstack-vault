@@ -34,6 +34,8 @@ To exploit this vulnerability, the attacker sends a specially crafted GraphQL qu
 
 The business value of this attack is that it allows attackers to gain unauthorized access to sensitive data, which they can use for various malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to the GraphQL endpoint
@@ -41,6 +43,8 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 1. Knowledge of the GraphQL query language
 
 1. Ability to craft malicious GraphQL queries
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 
 1. Limit access to sensitive data through proper access controls
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from the victim's system
@@ -58,11 +64,19 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 
 1. Use the extracted data for malicious purposes
 
+ 
+
 # Instructions
 
 1. Craft a malicious GraphQL query containing the fields to extract
 
+ 
+
+
+
 **Code**: [[example.com/graphql?query={TYPE_1{FIELD_1,FIELD_2}]]
+
+
 
 > The 'query' parameter in the URL specifies the GraphQL query to execute. The query contains the fields that the attacker wants to extract from the victim's system. The attacker can modify the query to extract different fields or data types.
 
@@ -83,3 +97,5 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 - [[Exploit]]
 - [[Extract data]]
 - [[GraphQL Injection]]
+
+

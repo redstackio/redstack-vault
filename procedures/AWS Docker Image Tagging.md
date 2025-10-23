@@ -28,11 +28,15 @@ The AWS Docker Image Tagging procedure involves adding tags to Docker images in 
 
 From a technical perspective, this procedure involves using the Docker CLI to add tags to Docker images. The 'docker tag' command is used to add tags to the image. This can be done either locally or remotely, depending on the user's requirements. The business value of this procedure lies in the ability to easily manage and organize Docker images, making it easier to deploy and manage applications in the cloud.
 
+ 
+
 ## Requirements
 
 1. Access to Docker CLI
 
 1. Authenticated access to AWS
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ From a technical perspective, this procedure involves using the Docker CLI to ad
 
 1. Implement security tools to detect and prevent Docker image tampering
 
+ 
+
 ## Objectives
 
 1. To add tags to Docker images in AWS
@@ -49,6 +55,8 @@ From a technical perspective, this procedure involves using the Docker CLI to ad
 1. To easily identify and manage Docker images
 
 1. To automate version control and organization of Docker images
+
+ 
 
 # Instructions
 
@@ -58,7 +66,13 @@ From a technical perspective, this procedure involves using the Docker CLI to ad
 
 Once the command is executed, the Docker image will be tagged with the new name and the repository address.
 
+ 
+
+
+
 **Code**: [[docker tag image_name ecr_addr:Image_Name]]
+
+
 
 > For example, if you want to tag a Docker image named 'my_image' with a new name 'new_image' and a repository address '123456789012.dkr.ecr.us-west-2.amazonaws.com', you can execute the following command:
 
@@ -66,11 +80,15 @@ docker tag my_image 123456789012.dkr.ecr.us-west-2.amazonaws.com/new_image
 
 This command will tag the Docker image 'my_image' with the new name 'new_image' and the repository address '123456789012.dkr.ecr.us-west-2.amazonaws.com'.
 
+
+
 **Command** ([[Tag Docker Image]]):
 
 ```bash
 docker tag image_name ecr_addr:Image_Name
 ```
+
+
 
 ## Commands Used
 
@@ -81,3 +99,5 @@ docker tag image_name ecr_addr:Image_Name
 - [[Cloud - AWS]]
 - [[Persistence]]
 - [[Tagging the docker image]]
+
+

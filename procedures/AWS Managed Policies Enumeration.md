@@ -39,9 +39,13 @@ To enumerate the managed policies attached to a user, the List Attached User Pol
 
 By identifying and exploiting overly permissive managed policies, an attacker can escalate their privileges and maintain persistence in the event that their initial access is detected and removed.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions to list attached user policies
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ By identifying and exploiting overly permissive managed policies, an attacker ca
 
 1. Implement MFA and strong password policies to prevent unauthorized access to AWS accounts
 
+ 
+
 ## Objectives
 
 1. Identify all managed policies attached to a user
@@ -59,17 +65,25 @@ By identifying and exploiting overly permissive managed policies, an attacker ca
 
 1. Maintain persistence in the event of a compromise
 
+ 
+
 # Instructions
 
 1. Use the 'aws iam list-attached-user-policies' command to list all the policies that are attached to a specific IAM user.
 
+ 
+
 This command will return a list of policies that are attached to the specified user. The policies can be either AWS managed policies or customer managed policies. The command takes one argument which is the name of the user whose attached policies you want to list. The output of the command will include the policy name, policy ARN, and the policy type (AWS managed or customer managed).
+
+
 
 **Command** ([[List Attached User Policies]]):
 
 ```bash
 aws iam list-attached-user-policies --user-name user_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws iam list-attached-user-policies --user-name user_name
 - [[Checking all managed policies attached to the user]]
 - [[Cloud - AWS]]
 - [[Persistence]]
+
+

@@ -33,9 +33,15 @@ Alternate Data Strems are a feature of NTFS (3.1+) which allows more than one da
 
 Alternate Data Strems are a feature of NTFS (3.1+) which allows more than one data stream to be associated with a file. Since this additional data stream is not listed by default in explorer.exe, command line file listing, or reflected in file size itself, it can be a simple method to obfuscating files, though is not hard to detect. 
 
+
+
 # Instructions
 
 ## Verify the ADS Stream Name
+
+
+
+
 
 **Command** ([[List Directory Contents Including ADS]]):
 
@@ -43,9 +49,17 @@ Alternate Data Strems are a feature of NTFS (3.1+) which allows more than one da
 dir /R
 ```
 
+
+
 In this example, the stream is named 'secret'
 
+
+
 ## Extract ADS using cmd.exe
+
+
+
+
 
 **Command** ([[more Extract ADS Embedded Data from a File]]):
 
@@ -53,13 +67,25 @@ In this example, the stream is named 'secret'
 more < $_FILE:$_ADS
 ```
 
+
+
+
+
 ## Extract ADS using PowerShell.exe
+
+
+
+
 
 **Command** ([[Extract ADS Embedded Data from a File (PowerShell)]]):
 
 ```bash
 Get-Content -Path $_FILE -stream $_ADS
 ```
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +111,5 @@ Get-Content -Path $_FILE -stream $_ADS
 
 - [[File System]]
 - [[Obfuscation]]
+
+

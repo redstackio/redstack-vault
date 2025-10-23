@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:07.107069+00:00'
 ```bash
 trufflehog github --endpoint https://api.github.com --org trufflesecurity --token GITHUB_TOKEN --debug --concurrency 2
 ```
+
+

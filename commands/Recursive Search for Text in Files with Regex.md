@@ -23,3 +23,5 @@ grep -RE $_REGEX $_PATH
 root@a7ffb5e7e757:/# grep -RE '^root' /etc/shadow
 root:*:18291:0:99999:7:::
 ```
+
+

@@ -36,11 +36,15 @@ Technical Description: An attacker can use this procedure to add a Domain Admin 
 
 Business Value: This procedure can be used by attackers to gain access to sensitive information, such as intellectual property, financial data, and personal information. This can result in financial loss, reputational damage, and legal liability.
 
+ 
+
 ## Requirements
 
 1. Access to the RODC
 
 1. Authenticated access to the domain
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Implement multi-factor authentication to prevent unauthorized access to domain accounts
 
+ 
+
 ## Objectives
 
 1. Escalate privileges
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. To add a domain admin account to the RODC's **msDS-RevealOnDemandGroup** attribute, use the following command:
 
+ 
+
+
+
 **Code**: [[PowerSploit> Set-DomainObject -Identity RODC$ -Set]]
 
+
+
 > This command sets the **msDS-RevealOnDemandGroup** attribute of the RODC object to include the **Allowed RODC Password Replication Group** and **Administrator** accounts. By adding the domain admin account to this group, the account will be able to replicate its password to the RODC, allowing it to authenticate users even when the writable domain controllers are offline. This is useful for remote sites with low bandwidth connections to the main data center.
+
+
 
 **Command** ([[Set Domain Object]]):
 
 ```bash
 PowerSploit> Set-DomainObject -Identity RODC$ -Set @{'msDS-RevealOnDemandGroup'=@('CN=Allowed RODC Password Replication Group,CN=Users,DC=domain,DC=local', 'CN=Administrator,CN=Users,DC=domain,DC=local')}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ PowerSploit> Set-DomainObject -Identity RODC$ -Set @{'msDS-RevealOnDemandGroup'=
 - [[Active Directory Attacks]]
 - [[RODC Computer Object]]
 - [[RODC - Read Only Domain Controller]]
+
+

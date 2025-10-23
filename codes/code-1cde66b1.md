@@ -19,3 +19,5 @@ $ findomain_virustotal_token="YourAccessToken"
 $ findomain_fb_token="YourAccessToken" 
 $ ./findomain-linux -t example.com -o
 ```
+
+

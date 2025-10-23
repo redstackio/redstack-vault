@@ -34,11 +34,15 @@ Technical: The AWS API Gateway Method Enumeration procedure involves using the '
 
 Business Value: This procedure can be used by security professionals to identify potential vulnerabilities in their AWS environment and take steps to remediate them. By identifying weaknesses in the API Gateway configuration, organizations can ensure that their APIs are secure and not exposing sensitive information.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the API Gateway service
 
 1. Access to the API Gateway endpoint to be enumerated
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This procedure can be used by security professionals to identify
 
 1. Regularly monitor and audit the API Gateway configuration for potential vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify the available endpoints in the API Gateway configuration
@@ -56,19 +62,31 @@ Business Value: This procedure can be used by security professionals to identify
 
 1. Remediate identified vulnerabilities to ensure the security of the AWS environment
 
+ 
+
 # Instructions
 
 1. To get a specific method in the API Gateway, use the following AWS CLI command:
 
+ 
+
+
+
 **Code**: [[aws apigateway get-method --rest-api-id ApiID --re]]
 
+
+
 > This command retrieves the details of a specific method in the API Gateway. Replace 'ApiID' with the ID of the API Gateway and 'ID' with the ID of the resource containing the method. Replace 'method' with the HTTP method (e.g. GET, POST, PUT) of the method you want to retrieve. This command can be useful for troubleshooting and debugging API Gateway issues.
+
+
 
 **Command** ([[Get API Gateway Method]]):
 
 ```bash
 aws apigateway get-method --rest-api-id ApiID --resource-id ID --http-method method
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws apigateway get-method --rest-api-id ApiID --resource-id ID --http-method met
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing method information for the endpoint]]
+
+

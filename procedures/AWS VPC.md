@@ -24,15 +24,17 @@ commands:
 
 You can create a VPC in an alternate region to hide EC2 instances, subnets, gateways from prying eyes. 
 
-## Description
-
 # Description
 
 You can create a VPC in an alternate region to hide EC2 instances, subnets, gateways from prying eyes.
 
+
+
 ## Instructions
 
 1. Create a VPC
+
+
 
 **Command** ([[Creating A VPC]]):
 
@@ -41,7 +43,13 @@ aws ec2 create-vpc --cidr-block <cidr_block> --regiosn <region>
 
 ```
 
+
+
+
+
 2. (Optional) allow dns hostnames
+
+
 
 **Command** ([[Allowing DNS hostnames]]):
 
@@ -49,6 +57,10 @@ aws ec2 create-vpc --cidr-block <cidr_block> --regiosn <region>
 aws ec2 modify-vpc-attribute --vpc-id <vpc_id> --enable-dns-hostnames "{\"Value\":true}" --region <region>
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +75,5 @@ aws ec2 modify-vpc-attribute --vpc-id <vpc_id> --enable-dns-hostnames "{\"Value\
 
 - [[AWS]]
 - [[Cloud]]
+
+

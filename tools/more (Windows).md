@@ -27,15 +27,35 @@ more is a filter for paging through text one screen at a time. It is primarily a
 
 more is a filter for paging through text one screen at a time. It is primarily a Linux tool, but has been implemented in Microsoft's Command Prompt (cmd.exe), and can be useful for reading Alternate Data Streams.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_c5fb2969-7828-4132-8429-3d771a4662b3}}
+
+
 
 # Installation
 
 more comes with most distributions of Linux and Windows
 
+
+
 ## Windows Usage
 
+
+
+
+
+
+
 ## Linux Usage
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +68,5 @@ more comes with most distributions of Linux and Windows
 ## Tags
 
 - [[Enumeration]]
+
+

@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 sqlcmd -E -S localhost -Q "SELECT * FROM DatabaseName.information_schema.tables;" -W -w 999 -s"," -o "c:\windows\temp\RecruiterProd_MSCRM_tables.csv"
 
 ```
+
+

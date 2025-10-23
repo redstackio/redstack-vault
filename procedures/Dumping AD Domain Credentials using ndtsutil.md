@@ -36,6 +36,8 @@ Technical Explanation: ndtsutil is a command-line tool that is installed as part
 
 Business Value: Dumping AD domain credentials using ndtsutil can allow an attacker to gain access to sensitive information and potentially compromise an entire network. This can lead to data theft, unauthorized access, and financial loss for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a domain controller
@@ -43,6 +45,8 @@ Business Value: Dumping AD domain credentials using ndtsutil can allow an attack
 1. Authentication credentials with administrative privileges
 
 1. Access to ndtsutil
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ Business Value: Dumping AD domain credentials using ndtsutil can allow an attack
 
 1. Regularly monitor and audit Active Directory for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Obtain hashed passwords for all domain users
 
 1. Attempt to crack hashed passwords to obtain cleartext passwords
+
+ 
 
 # Instructions
 
@@ -69,11 +77,19 @@ Business Value: Dumping AD domain credentials using ndtsutil can allow an attack
 6. Type 'quit' and press Enter.
 7. Type 'quit' again and press Enter to exit ntdsutil.
 
+ 
+
+
+
 **Code**: [[C:\>ntdsutil
 ntdsutil: activate instance ntds
 ntds]]
 
+
+
 > The 'ntdsutil' command is used to manage Active Directory databases. The 'activate instance ntds' command selects the domain controller whose database you want to manage. The 'ifm' command opens the Install from Media (IFM) tool, which is used to create a backup of Active Directory that can be used to install Active Directory on another server. The 'create full' command creates a full backup of Active Directory. Replace 'c:\pentest' with the path where you want to save the backup. Finally, the 'quit' command exits the IFM tool and ntdsutil.
+
+
 
 **Command** ([[Create full IFM backup of ntds instance]]):
 
@@ -86,9 +102,17 @@ quit
 quit
 ```
 
+
+
 2. To create a backup of the Active Directory database, use the ntdsutil command with the ifm parameter and specify the location where you want to store the backup. The create full option will create a full backup of the database.
 
+ 
+
+
+
 **Code**: [[ntdsutil "ac i ntds" "ifm" "create full c:\temp" q]]
+
+
 
 > The ntdsutil command is used to manage Active Directory databases. The ac i ntds parameter specifies that we want to work with the active instance of the NTDS database. The ifm parameter specifies that we want to create an Install From Media (IFM) backup. The create full option specifies that we want to create a full backup of the database. Finally, we specify the location where we want to store the backup, in this case, c:\temp. The q q option is used to exit the ntdsutil command after the backup is created.
 
@@ -115,3 +139,5 @@ quit
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[Using ndtsutil]]
+
+

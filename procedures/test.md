@@ -26,8 +26,32 @@ caczc yhdfhf fdgfsg dfgdh fhfhfh
 
 - fhfhfh
 
+
+
+
+
+
+
+
+
+
+
 CDVssdvsd
+
+
+
+![9582cebb-c11e-4864-96a5-72e5a206d0f9.png](_assets/images/thecondor/9582cebb-c11e-4864-96a5-72e5a206d0f9.png)
+
+
+
+
 
 **Code**: [[dxcbdbdfg
 fghdfghdfh
 vgnxfgjh]]
+
+
+
+
+
+

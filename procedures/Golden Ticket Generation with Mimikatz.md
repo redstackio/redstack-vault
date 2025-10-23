@@ -29,11 +29,15 @@ Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized 
 
 Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized access to a Windows environment by forging Kerberos tickets. This technique allows an attacker to remain persistent in a network even if the domain password is changed. Mimikatz is a powerful post-exploitation tool that can extract plaintext passwords, hash, and Kerberos tickets from memory. With this information, an attacker can create a Golden Ticket that grants access to any resource in the domain. The business value of this attack is that it can allow an attacker to gain access to sensitive data or systems without being detected.
 
+ 
+
 ## Requirements
 
 1. Local Administrator access to a Windows system
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized 
 
 1. Implement network segmentation to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a Windows environment
 
 1. Remain persistent in a network
 
+ 
+
 # Instructions
 
 1. Use mimikatz to generate a Kerberos Golden Ticket. This command requires administrative privileges on the domain controller.
 
+ 
+
+
+
 **Code**: [[.\mimikatz kerberos::golden /admin:ADMINACCOUNTNAM]]
+
+
 
 > The 'kerberos::golden' command in mimikatz generates a Kerberos Golden Ticket, which can be used to authenticate as any user in the domain. The command requires several arguments:
 - /admin:ADMINACCOUNTNAME: the name of an administrative account on the domain controller
@@ -63,11 +77,15 @@ Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized 
 - /krbtgt:KRBTGTPASSWORDHASH: the password hash of the KRBTGT account, which is used to encrypt the ticket
 - /ptt: this flag tells mimikatz to inject the ticket into the current process, which allows you to use it immediately for authentication.
 
+
+
 **Command** ([[Create Golden Ticket]]):
 
 ```bash
 .\mimikatz kerberos::golden /admin:ADMINACCOUNTNAME /domain:DOMAINFQDN /id:ACCOUNTRID /sid:DOMAINSID /krbtgt:KRBTGTPASSWORDHASH /ptt
 ```
+
+
 
 2. This command uses Mimikatz to create a golden ticket. The golden ticket is a forged Kerberos ticket that can be used to authenticate as any user in the domain. The command requires the following arguments:
 - /admin: the username of a domain admin
@@ -80,7 +98,13 @@ Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized 
 - /renewmax: the maximum duration (in minutes) that the ticket can be renewed
 - /ptt: injects the ticket into the current process
 
+ 
+
+
+
 **Code**: [[.\mimikatz "kerberos::golden /admin:DarthVader /do]]
+
+
 
 > This command is typically used by attackers to gain access to a domain by creating a forged Kerberos ticket that can be used to authenticate as any user in the domain. It requires knowledge of the domain admin username, the domain name, the ID and SID of the user to impersonate, and the NTLM hash of the domain krbtgt account. The ticket is injected into the current process, allowing the attacker to use it to access resources on the domain as the impersonated user.
 
@@ -102,3 +126,5 @@ Golden Ticket Generation with Mimikatz is a technique used to gain unauthorized 
 
 - [[Golden ticket]]
 - [[Windows - Mimikatz]]
+
+

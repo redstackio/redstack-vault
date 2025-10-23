@@ -39,11 +39,15 @@ From a technical perspective, this cheat sheet provides a basic implementation o
 
 From a business perspective, understanding how a reverse shell works can help organizations better defend against attacks that use this technique.
 
+ 
+
 ## Requirements
 
 1. An attacker-controlled machine to receive the reverse shell connection
 
 1. Golang installed on the attacker machine and target machine
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ From a business perspective, understanding how a reverse shell works can help or
 
 1. Use strong authentication mechanisms to prevent unauthorized access to systems
 
+ 
+
 ## Objectives
 
 1. Establish a reverse shell connection to an attacker-controlled machine
@@ -61,11 +67,19 @@ From a business perspective, understanding how a reverse shell works can help or
 
 1. Maintain persistent access to the target machine
 
+ 
+
 # Instructions
 
 1. This command creates a reverse shell to connect to a remote host. It creates a temporary Go file, which establishes a TCP connection to the remote host and executes a shell command. Once the connection is established, the attacker can execute any command on the remote host as if they were physically present on the machine.
 
+ 
+
+
+
 **Code**: [[echo 'package main;import"os/exec";import"net";fun]]
+
+
 
 > The command consists of three parts: 
 1. Creating a temporary Go file with the reverse shell code. 
@@ -92,3 +106,5 @@ From a business perspective, understanding how a reverse shell works can help or
 - [[Golang]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

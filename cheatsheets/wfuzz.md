@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # wfuzz
 
+
+
 **Command** ([[bruteforce web parameter]]):
 
 ```bash
@@ -16,9 +18,21 @@ wfuzz -u http://target-ip/path/index.php?param=FUZZ -w /usr/share/wordlists/rock
 
 ```
 
+
+
+
+
+
+
 **Command** ([[bruteforce post data (login)]]):
 
 ```bash
 wfuzz -u http://target-ip/path/index.php?action=authenticate -d 'username=admin&password=FUZZ' -w /usr/share/wordlists/rockyou.txt
 
 ```
+
+
+
+
+
+

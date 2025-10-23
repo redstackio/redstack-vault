@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:24.287688+00:00'
 ```bash
 Password hash is located in C:\ProgramData\Cyvera\LocalSystem\Persistence\agent_settings.db. Look for PasswordHash, PasswordSalt or password, salt strings.
 ```
+
+

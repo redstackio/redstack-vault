@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:01.284563+00:00'
 ```powershell
 curl http://169.254.170.2/v2/credentials/<UUID>
 ```
+
+

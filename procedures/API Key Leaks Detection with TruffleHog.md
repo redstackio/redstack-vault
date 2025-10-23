@@ -34,11 +34,15 @@ TruffleHog is an open-source tool designed to search for secrets like API keys, 
 
 TruffleHog is an open-source tool designed to search for secrets like API keys, passwords, and other sensitive information in code repositories. It searches the entire commit history of a repository and flags any matches it finds. The tool is highly customizable and can be used to scan a variety of code repositories, including Git, GitHub, and Bitbucket. The tool is useful for both offensive and defensive purposes. For attackers, it can help identify sensitive information that can be used to gain unauthorized access to systems or data. For defenders, it can help identify vulnerabilities and prevent attacks before they occur.
 
+ 
+
 ## Requirements
 
 1. Access to the code repository
 
 1. TruffleHog tool installed
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ TruffleHog is an open-source tool designed to search for secrets like API keys, 
 
 1. Regularly scan code repositories for sensitive information using tools like TruffleHog
 
+ 
+
 ## Objectives
 
 1. Identify sensitive information like API keys and passwords in code repositories
 
 1. Prevent unauthorized access to systems and data
+
+ 
 
 # Instructions
 
@@ -68,9 +76,17 @@ docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --org=ORG
 
 Replace `ORG_NAME` with the name of the organization you want to scan.
 
+ 
+
+
+
 **Code**: [[docker run -it -v "$PWD:/pwd" trufflesecurity/truf]]
 
+
+
 > The `--repo` option specifies the repository to scan. The `--org` option specifies the organization to scan. The `--endpoint` option specifies the GitHub API endpoint to use. The `--token` option specifies a GitHub personal access token to use for authentication. The `--concurrency` option specifies the number of concurrent requests to make to the GitHub API.
+
+
 
 **Command** ([[Scan GitHub repository for secrets using TruffleHog]]):
 
@@ -78,11 +94,19 @@ Replace `ORG_NAME` with the name of the organization you want to scan.
 docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/trufflesecurity/test_keys
 ```
 
+
+
+
+
 **Command** ([[Scan GitHub organization for secrets using TruffleHog]]):
 
 ```bash
 docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --org=trufflesecurity
 ```
+
+
+
+
 
 **Command** ([[Scan local Git repository for secrets using TruffleHog]]):
 
@@ -90,11 +114,17 @@ docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --org=tru
 trufflehog git https://github.com/trufflesecurity/trufflehog.git
 ```
 
+
+
+
+
 **Command** ([[Scan GitHub API endpoint for secrets using TruffleHog]]):
 
 ```bash
 trufflehog github --endpoint https://api.github.com --org trufflesecurity --token GITHUB_TOKEN --debug --concurrency 2
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -121,3 +151,5 @@ trufflehog github --endpoint https://api.github.com --org trufflesecurity --toke
 
 - [[API Key Leaks]]
 - [[Tools]]
+
+

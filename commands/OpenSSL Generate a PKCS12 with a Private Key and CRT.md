@@ -23,3 +23,5 @@ root@kali:~# openssl pkcs12  -export -out test1.pfx -inkey private.key -in signe
 Enter Export Password:
 Verifying - Enter Export Password:
 ```
+
+

@@ -22,3 +22,5 @@ usage: log4j-scan.py [-h] [-u URL] [-l USEDLIST] [--request-type REQUEST_TYPE] [
 python3 log4j-scan.py -u http://127.0.0.1:8081 --run-all-test
 python3 log4j-scan.py -u http://127.0.0.1:808 --waf-bypass
 ```
+
+

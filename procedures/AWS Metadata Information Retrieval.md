@@ -33,11 +33,15 @@ AWS Metadata Information Retrieval is a technique that allows an attacker to ret
 
 AWS Metadata Information Retrieval is a technique that allows an attacker to retrieve sensitive information about the AWS instance, such as access keys, security groups, and IAM roles. This technique can be used to escalate privileges and gain access to other AWS services. The attacker can use the 'Metadata Information Retrieval' command to retrieve the metadata from the instance.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS instance
 
 1. The 'Metadata Information Retrieval' command
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ AWS Metadata Information Retrieval is a technique that allows an attacker to ret
 
 1. Implement network segmentation to limit lateral movement within the AWS environment
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information about the AWS instance
@@ -55,17 +61,25 @@ AWS Metadata Information Retrieval is a technique that allows an attacker to ret
 
 1. Gain access to other AWS services
 
+ 
+
 # Instructions
 
 1. Execute the above command to retrieve metadata information from the target system.
 
+ 
+
 The above command is used to retrieve metadata information from the target system. This information can be useful for further exploitation of the system. The command uses the 'curl' utility to make an HTTP request to the URL 'http://169.254.169.254/latest/meta-data'. This URL is a well-known endpoint for retrieving metadata information in EC2 instances. If the command is successful, it will return the metadata information in plain text format.
+
+
 
 **Command** ([[curl http://169.254.169.254/latest/meta-data]]):
 
 ```bash
 curl http://169.254.169.254/latest/meta-data
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ curl http://169.254.169.254/latest/meta-data
 - [[Cloud - AWS]]
 - [[Exploitation]]
 - [[Remote code execution]]
+
+

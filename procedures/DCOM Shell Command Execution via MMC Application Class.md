@@ -36,11 +36,15 @@ DCOM Shell Command Execution via MMC Application Class is a technique used to ex
 
 This technique requires the attacker to have administrative access to the target system, as well as knowledge of the MMC20.Application COM object and how to use it to execute commands. Successful execution of this technique can result in the attacker gaining full control over the target system, including the ability to install malware or steal sensitive data.
 
+ 
+
 ## Requirements
 
 1. Administrative access to the target system
 
 1. Knowledge of the MMC20.Application COM object and how to use it to execute commands
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This technique requires the attacker to have administrative access to the target
 
 1. Implement least privilege access control measures to limit the impact of successful attacks
 
+ 
+
 ## Objectives
 
 1. Execute commands on remote systems with system privileges
@@ -57,6 +63,8 @@ This technique requires the attacker to have administrative access to the target
 1. Bypass traditional security measures such as firewalls and antivirus software
 
 1. Gain full control over the target system
+
+ 
 
 # Instructions
 
@@ -74,7 +82,13 @@ This technique requires the attacker to have administrative access to the target
    - `Directory`: The working directory for the command.
    - `WindowStyle`: The window style for the command (e.g. hidden, maximized, minimized).
 
+ 
+
+
+
 **Code**: [[PS C:\> $com = [activator]::CreateInstance([type]:]]
+
+
 
 > This JSON object provides details on how to execute shell commands with the MMC20.Application COM object. The `ExecuteShellCommand` method of the `Document.ActiveView` object is used to execute shell commands. The `instruction` field provides step-by-step instructions on how to use the `ExecuteShellCommand` method, including the arguments it takes. The `text` field provides an overview of the MMC20.Application COM object and the `ExecuteShellCommand` method. The `data` field provides example usage of the `ExecuteShellCommand` method, including a weaponized example with MSBuild. The `lang` field specifies that the code examples are in PowerShell.
 
@@ -101,3 +115,5 @@ This technique requires the attacker to have administrative access to the target
 - [[Active Directory Attacks]]
 - [[DCOM Exploitation]]
 - [[DCOM via MMC Application Class]]
+
+

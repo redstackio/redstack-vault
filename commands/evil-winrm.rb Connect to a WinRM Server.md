@@ -7,9 +7,12 @@ data: evil-winrm.rb -i $_TARGET_IP -u $_USER -p $_PASS
 output: 'root@kali:~/Documents/evil-winrm# ./evil-winrm.rb -i 10.10.10.10 -u bob -p
   secretpass
 
+
   Evil-WinRM shell v2.3
 
+
   Info: Establishing connection to remote endpoint
+
 
   *Evil-WinRM* PS C:\Users\bob\Documents>'
 created_at: '2020-03-03T01:24:01.684830+00:00'
@@ -33,3 +36,5 @@ Info: Establishing connection to remote endpoint
 
 *Evil-WinRM* PS C:\Users\bob\Documents>
 ```
+
+

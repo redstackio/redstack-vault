@@ -35,6 +35,8 @@ Technical Description: DPAPI uses a user's logon credentials to encrypt and decr
 
 Business Value: By obtaining credentials stored on a system, an attacker can gain access to other resources on the network, such as email accounts, sensitive data or other systems that the compromised user has access to. This can lead to data theft, unauthorized access and privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
@@ -42,6 +44,8 @@ Business Value: By obtaining credentials stored on a system, an attacker can gai
 1. Administrator or SYSTEM level privileges
 
 1. Command-line tools such as Powershell or Mimikatz
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ Business Value: By obtaining credentials stored on a system, an attacker can gai
 
 1. Monitor and analyze system logs for suspicious activity, such as failed logon attempts or unusual network traffic
 
+ 
+
 ## Objectives
 
 1. List credential files on the target system
 
 1. Obtain sensitive information such as usernames and passwords
 
+ 
+
 # Instructions
 
 1. This command will list all the Microsoft credentials stored locally and in roaming directory. It will also get the child items in the hidden directory of Microsoft credentials.
 
+ 
+
+
+
 **Code**: [[dir /a:h C:\Users\username\AppData\Local\Microsoft]]
 
+
+
 > The 'dir' command is used to list the directories and files in the specified path. The '/a:h' argument is used to show only hidden files and directories. The 'Get-ChildItem' command is used to retrieve the child items in the specified path. The '-Hidden' argument is used to show only hidden items.
+
+
 
 **Command** ([[List Hidden Files and Directories in Microsoft Credentials Folder]]):
 
@@ -73,12 +89,18 @@ dir /a:h C:\Users\username\AppData\Roaming\Microsoft\Credentials\
 
 ```
 
+
+
+
+
 **Command** ([[List All Hidden Files and Directories in Microsoft Credentials Folder]]):
 
 ```bash
 Get-ChildItem -Hidden C:\Users\username\AppData\Local\Microsoft\Credentials\
 Get-ChildItem -Hidden C:\Users\username\AppData\Roaming\Microsoft\Credentials\
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ Get-ChildItem -Hidden C:\Users\username\AppData\Roaming\Microsoft\Credentials\
 - [[Data Protection API]]
 - [[List Credential Files]]
 - [[Windows - DPAPI]]
+
+

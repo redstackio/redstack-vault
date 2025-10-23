@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:09.843906+00:00'
 ```bash
 openssl req -subj '/CN=[domain.of.server.to.mitm]' -batch -new -x509 -days 365 -nodes -out server.pem -keyout server.pem
 ```
+
+

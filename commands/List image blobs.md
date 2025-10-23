@@ -20,3 +20,5 @@ curl -s -k --user "admin:admin" https://docker.registry.local/v2/_catalog
 curl -s -k --user "admin:admin" https://docker.registry.local/v2/wordpress-image/tags/list
 curl -s -k --user "admin:admin" https://docker.registry.local/v2/wordpress-image/manifests/latest
 ```
+
+

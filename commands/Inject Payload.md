@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:24:24.081873+00:00'
 ```bash
 INSERT INTO users (email, password) VALUES ("attacker_dummy@example.com", "bcrypt_hash_of_qwerty"), ("admin@example.com", "bcrypt_hash_of_qwerty") ON DUPLICATE KEY UPDATE password="bcrypt_hash_of_qwerty" -- ", "bcrypt_hash_of_your_password_input");
 ```
+
+

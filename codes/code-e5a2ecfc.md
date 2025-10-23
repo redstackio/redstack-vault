@@ -16,3 +16,5 @@ $ chmod 400 YOUR_KEY.pem
 $ ssh -i YOUR_KEY.pem  ubuntu@ec2-XXX-XXX-XXX-XXX.us-east-2.compute.amazonaws.com
 
 ```
+
+

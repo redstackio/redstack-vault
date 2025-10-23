@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # fuff
 
+
+
 **Command** ([[bruteforce web directories]]):
 
 ```bash
 ffuf -w /path/to/wordlist -u https://target/FUZZ
 
 ```
+
+
+
+
+
+

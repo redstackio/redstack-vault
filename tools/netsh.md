@@ -28,11 +28,25 @@ Netsh is a command-line script utility which displays and modifies the network c
 
 Netsh is a command-line script utility which displays and modifies the network configuration of a computer. In addition to network configuration, netsh can be used to modify the firewall settings, adding exceptions or completely disabling it.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_61fa83d1-4a14-4449-98de-afe1d1b20e45}}
+
+
 
 # Installation
 
 Netsh is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ Netsh is installed with all modern Windows releases
 
 - [[firewall]]
 - [[Network]]
+
+

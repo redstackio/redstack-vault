@@ -32,11 +32,15 @@ JSON Web Tokens (JWTs) are a compact, URL-safe means of representing claims to b
 
 JSON Web Tokens (JWTs) are a compact, URL-safe means of representing claims to be transferred between two parties. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA. This procedure involves creating and verifying JWT tokens. The creation of tokens requires a secret key while verification requires the public key. Attackers can use brute force or credential stuffing to obtain the secret key and create their own tokens. The business value of using JWT tokens is that it allows for secure and efficient transfer of claims between parties.
 
+ 
+
 ## Requirements
 
 1. Access to a JWT token generation and verification tool
 
 1. Knowledge of the secret key
+
+ 
 
 ## Defense
 
@@ -46,19 +50,31 @@ JSON Web Tokens (JWTs) are a compact, URL-safe means of representing claims to b
 
 1. Use a JWT library that has been audited and is actively maintained to prevent vulnerabilities in the token generation and verification process.
 
+ 
+
 ## Objectives
 
 1. Create JWT tokens
 
 1. Verify JWT tokens
 
+ 
+
 # Instructions
 
 1. To create a JWT token, first create a header specifying the algorithm used to sign the token. Then create a payload containing the claims to be transferred. Finally, sign the header and payload using the secret key to create the signature. Concatenate the header, payload, and signature with periods to create the JWT token.
 
+ 
+
+
+
 **Code**: [[Base64(Header).Base64(Data).Base64(Signature)]]
 
+
+
 > The header typically consists of two parts: the type of token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA. The payload contains claims, which are statements about an entity (typically, the user) and additional data. For example, a token could contain a claim stating that the user is an admin ("admin": true). The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way.
+
+
 
 **Command** ([[Encode Header, Data, and Signature in Base64]]):
 
@@ -66,9 +82,17 @@ JSON Web Tokens (JWTs) are a compact, URL-safe means of representing claims to b
 Base64(Header).Base64(Data).Base64(Signature)
 ```
 
+
+
 2. To verify a JWT token, first split the token into its three components (header, payload, and signature) using periods. Then, decode the header and payload from base64. Finally, verify the signature using the public key. If the signature is valid, the token is considered verified.
 
+ 
+
+
+
 **Code**: [[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxM]]
+
+
 
 > The verified token can then be used to transfer claims between parties. It is important to ensure that the secret key used to sign the token is kept secure to prevent attackers from creating their own tokens.
 
@@ -95,3 +119,5 @@ Base64(Header).Base64(Data).Base64(Signature)
 
 - [[JWT Format]]
 - [[JWT - JSON Web Token]]
+
+

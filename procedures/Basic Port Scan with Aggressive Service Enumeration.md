@@ -31,13 +31,25 @@ Launch a port scan, enumerating services, performing OS detection, and banner gr
 
 Launch a port scan, enumerating services, performing OS detection, and banner grabbing.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap Aggressive Scan with Version and OS Detection]]):
 
 ```bash
 nmap -A $_TARGET_IP
 ```
+
+
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -57,3 +69,5 @@ nmap -A $_TARGET_IP
 
 - [[Enumeration]]
 - [[Network]]
+
+

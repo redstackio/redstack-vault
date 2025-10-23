@@ -17,4 +17,12 @@ pwnat, pronounced “poe-nat”, is a tool that allows any number of clients beh
 
 pwnat, pronounced “poe-nat”, is a tool that allows any number of clients behind NATs to communicate with a server behind a separate NAT with *no* port forwarding and *no* DMZ setup on any routers in order to directly communicate with each other. The server does not need to know anything about the clients trying to connect.
 
+
+
 Simply put, this is a proxy server that works behind a NAT, even when the client is behind a NAT, without any 3rd party.
+
+
+
+
+
+

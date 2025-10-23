@@ -34,11 +34,15 @@ AWS metadata is a service that provides information about an instance running on
 
 AWS metadata is a service that provides information about an instance running on AWS. This includes sensitive information such as access keys, secret keys, and security group IDs. An attacker can exploit a vulnerability in metadata version 2 to retrieve these keys and use them to access other AWS resources. This can lead to data theft, data modification, and other malicious activities. To exploit this vulnerability, an attacker can use the 'Retrieve EC2 Instance Metadata with Token Authentication' command. This command allows an attacker to retrieve the access and secret keys from the metadata service.
 
+ 
+
 ## Requirements
 
 1. Valid AWS authentication credentials
 
 1. Access to a vulnerable instance running metadata version 2
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ AWS metadata is a service that provides information about an instance running on
 
 1. Use IAM roles instead of access and secret keys
 
+ 
+
 ## Objectives
 
 1. Retrieve AWS access and secret keys
 
 1. Gain access to other resources within the AWS environment
+
+ 
 
 # Instructions
 
@@ -62,10 +70,18 @@ curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-tok
 2. Use the token to retrieve the metadata: 
 curl -H "X-aws-ec2-metadata-token: <TOKEN>" http://169.254.169.254/latest/meta-data/
 
+ 
+
+
+
 **Code**: [[TOKEN=`curl
 X PUT "http://169.254.169.254/latest/ ]]
 
+
+
 > This command retrieves metadata about the EC2 instance that the command is executed on. The first command retrieves a token that is valid for 6 hours (-H "X-aws-ec2-metadata-token-ttl-seconds: 21600"). The second command uses this token to retrieve the metadata. The metadata is returned in plain text format and includes information such as the instance ID, instance type, and public IP address. This command can be useful for troubleshooting and debugging issues on EC2 instances.
+
+
 
 **Command** ([[Get EC2 Metadata with Token]]):
 
@@ -74,6 +90,8 @@ TOKEN=`curl
 X PUT "http://169.254.169.254/latest/ api /token" H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
 && curl H "X-aws-ec2-metadata-token: $TOKEN" v http://169.254.169.254/latest/meta-data/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +116,5 @@ X PUT "http://169.254.169.254/latest/ api /token" H "X-aws-ec2-metadata-token-tt
 - [[Exploitation]]
 - [[Grabbing the keys in metadata version 2]]
 - [[Remote code execution]]
+
+

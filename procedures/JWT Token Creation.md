@@ -32,9 +32,13 @@ JWT tokens are used to securely transmit information between parties. They are c
 
 JWT tokens are used to securely transmit information between parties. They are commonly used in web applications to authenticate users and transmit sensitive information. A JWT token consists of three parts - header, payload, and signature. The payload contains the actual data that is transmitted. This procedure involves creating a JWT token with a specified payload. The token can then be used to authenticate a user or transmit sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a system or application that can generate JWT tokens
+
+ 
 
 ## Defense
 
@@ -44,19 +48,29 @@ JWT tokens are used to securely transmit information between parties. They are c
 
 1. Implement proper token validation and expiration to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Create a JWT token with a specified payload
 
 1. Authenticate a user or transmit sensitive information using the JWT token
 
+ 
+
 # Instructions
 
 1. To create a JWT token, use a JWT library or tool to generate a token with the desired payload. The payload should include the necessary information for authentication or transmission of sensitive information. In this example, we are creating a token with a subject (sub) of 1234567890, a name of Amazing Haxx0r, an expiration time (exp) of 1466270722, and an admin flag set to true.
 
+ 
+
+
+
 **Code**: [[{
     "sub":"1234567890",
     "name":"Amazing Haxx]]
+
+
 
 > The payload of a JWT token contains the data that is transmitted. In this example, we are creating a token with a subject (sub) of 1234567890, a name of Amazing Haxx0r, an expiration time (exp) of 1466270722, and an admin flag set to true. This payload can be customized to include any data that needs to be transmitted.
 
@@ -79,3 +93,5 @@ JWT tokens are used to securely transmit information between parties. They are c
 - [[JWT Format]]
 - [[JWT - JSON Web Token]]
 - [[Payload]]
+
+

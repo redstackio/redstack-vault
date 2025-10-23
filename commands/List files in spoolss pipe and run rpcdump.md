@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:01.852654+00:00'
 ls \\dc01\pipe\spoolss
 python rpcdump.py DOMAIN/user:password@10.10.10.10
 ```
+
+

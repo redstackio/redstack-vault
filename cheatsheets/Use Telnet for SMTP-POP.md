@@ -15,13 +15,31 @@ To test a SMTP or POP server you can connect to it with Telnet and using plainte
 
 These same commands can also be scripted to automate the process for a larger scale.
 
+
+
+
+
+
+
 **Code**: [[
 # connect
 telnet target-ip 25
 # provide valid or ]]
+
+
+
+
+
+
 
 **Code**: [[
 # connect
 telnet target-ip 110
 # login
 USER usern]]
+
+
+
+
+
+

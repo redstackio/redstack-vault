@@ -27,11 +27,27 @@ Wget is a non-interactive network file transfer tool with support for HTTP, HTTP
 
 Wget is a non-interactive network file transfer tool with support for HTTP, HTTPS, and FTP protocols. Wget is  mainly used to download files from websites, and including options such as spidering, specifying cookies and header information, request encoding, proxies, and more.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0fee6e18-062c-4e13-983b-fdbb1a4a6f54}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +70,5 @@ Wget is a non-interactive network file transfer tool with support for HTTP, HTTP
 
 - [[Network]]
 - [[Web Applications]]
+
+

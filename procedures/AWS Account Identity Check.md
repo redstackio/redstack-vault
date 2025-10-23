@@ -30,9 +30,13 @@ The AWS Account Identity Check procedure is used to determine which user is curr
 
 The AWS Account Identity Check procedure is used to determine which user is currently executing commands within an AWS environment. By using the 'Get AWS Account Identity' command, the user can retrieve information about the AWS account that is currently being used. This information can be used to identify potential security risks, such as unauthorized access, and to monitor user activity within the environment. Additionally, this procedure can be used to ensure that the correct user is executing commands and to troubleshoot any issues related to user access.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ The AWS Account Identity Check procedure is used to determine which user is curr
 
 1. Regularly monitor AWS account activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Identify the user currently executing commands within an AWS environment
@@ -50,19 +56,31 @@ The AWS Account Identity Check procedure is used to determine which user is curr
 
 1. Ensure correct user access and troubleshoot access issues
 
+ 
+
 # Instructions
 
 1. This command returns details about the AWS account that is associated with the credentials used to call the command. The details include the account ID, ARN, and user ID.
 
+ 
+
+
+
 **Code**: [[aws sts get-caller-identity]]
 
+
+
 > The 'aws sts get-caller-identity' command is used to retrieve the AWS account identity. This command is useful when you need to verify which AWS account you are currently using. The command returns the account ID, ARN (Amazon Resource Name), and user ID associated with the credentials used to call the command. This information can be used to ensure that you are using the correct AWS account and to troubleshoot any issues related to AWS permissions or access.
+
+
 
 **Command** ([[Get AWS Caller Identity]]):
 
 ```bash
 aws sts get-caller-identity
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ aws sts get-caller-identity
 - [[Checking which user is executing]]
 - [[Cloud - AWS]]
 - [[Persistence]]
+
+

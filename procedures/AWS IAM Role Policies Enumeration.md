@@ -36,9 +36,13 @@ To perform this technique, an attacker would use the 'List Attached Role Policie
 
 This technique provides attackers with valuable information that can be used to further their attack and gain access to sensitive data or resources. Organizations should be aware of this technique and take steps to prevent and detect AWS IAM Privilege Escalation attacks.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ This technique provides attackers with valuable information that can be used to 
 
 1. Regularly review and audit IAM roles and policies for unnecessary permissions
 
+ 
+
 ## Objectives
 
 1. Discover all managed policies attached to a specific IAM role
 
 1. Identify potential privilege escalation opportunities
 
+ 
+
 # Instructions
 
 1. To list the policies attached to a specific IAM role, use the following command:
 
+ 
+
 This command lists all of the policies that are attached to the specified IAM role. The --role-name flag is used to specify the name of the role that you want to list the attached policies for. This command can be useful for auditing and troubleshooting purposes, as well as for managing access control within your AWS environment.
+
+
 
 **Command** ([[List Attached Role Policies]]):
 
 ```bash
 aws iam liast-attached-role-policies --role-name role_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam liast-attached-role-policies --role-name role_name
 - [[Cloud - AWS]]
 - [[Listing all managed policies attached to the specific IAM role]]
 - [[Persistence & Backdooring]]
+
+

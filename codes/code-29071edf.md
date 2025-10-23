@@ -16,3 +16,5 @@ nltest /DCLIST:DomainName
 nltest /DCNAME:DomainName
 nltest /DSGETDC:DomainName
 ```
+
+

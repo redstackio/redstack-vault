@@ -30,9 +30,13 @@ This procedure involves exploiting leaked Slack API tokens to gain unauthorized 
 
 This procedure involves exploiting leaked Slack API tokens to gain unauthorized access to the target organization's Slack workspace. Slack API tokens are used to authenticate and authorize API requests to Slack, and can be used to perform various actions depending on the scope of the token. Attackers can obtain Slack API tokens from various sources such as publicly accessible GitHub repositories, misconfigured servers, or other sources of leaked sensitive information. Once an attacker has obtained a Slack API token, they can use it to read messages, post messages, and perform other actions within the target Slack workspace. This can lead to the theft of sensitive information or the compromise of the target organization's infrastructure.
 
+ 
+
 ## Requirements
 
 1. Valid Slack API token
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ This procedure involves exploiting leaked Slack API tokens to gain unauthorized 
 
 1. Regularly review and revoke unused or unnecessary Slack API tokens
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to the target organization's Slack workspace
@@ -50,19 +56,31 @@ This procedure involves exploiting leaked Slack API tokens to gain unauthorized 
 
 1. Steal sensitive information or compromise the target organization's infrastructure
 
+ 
+
 # Instructions
 
 1. To test if a Slack API token is valid, run the following command:
 
+ 
+
+
+
 **Code**: [[curl -sX POST "https://slack.com/api/auth.test?tok]]
 
+
+
 > This command sends a request to Slack's auth.test API endpoint with the provided API token. If the token is valid, the response will include information about the authenticated user and the Slack workspace.
+
+
 
 **Command** ([[Verify Slack API Authentication]]):
 
 ```bash
 curl -sX POST "https://slack.com/api/auth.test?token=xoxp-TOKEN_HERE&pretty=1"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ curl -sX POST "https://slack.com/api/auth.test?token=xoxp-TOKEN_HERE&pretty=1"
 - [[API Key Leaks]]
 - [[Exploit]]
 - [[Slack API Token]]
+
+

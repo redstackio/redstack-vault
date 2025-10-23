@@ -33,6 +33,8 @@ LDAP injection is a type of injection attack that targets LDAP-enabled applicati
 
 From a technical standpoint, LDAP injection occurs when user input is not properly sanitized and is included in an LDAP query without proper encoding or filtering. This allows attackers to modify the query to their liking and execute arbitrary code. The business value of this attack lies in its ability to extract sensitive information and potentially gain access to critical systems.
 
+ 
+
 ## Requirements
 
 1. Access to an LDAP-enabled application
@@ -40,6 +42,8 @@ From a technical standpoint, LDAP injection occurs when user input is not proper
 1. Knowledge of default attributes used in the application
 
 1. Ability to execute LDAP queries
+
+ 
 
 ## Defense
 
@@ -49,21 +53,35 @@ From a technical standpoint, LDAP injection occurs when user input is not proper
 
 1. Monitor LDAP queries for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information from an LDAP-enabled application
 
 1. Modify data in an LDAP directory
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[*)(ATTRIBUTE_HERE=*]]
+
+
 
 > This payload can be used to retrieve all entries in the LDAP directory that contain the default attribute specified.
 
 2. 
+
+ 
+
+
 
 **Code**: [[userPassword
 surname
@@ -74,7 +92,11 @@ objectClass
 mail
 g]]
 
+
+
 > These are some of the default attributes that can be used in an LDAP injection attack. By injecting the payload with one of these attributes, attackers can retrieve all entries in the LDAP directory that contain that attribute.
+
+
 
 **Command** ([[Fields for User Creation]]):
 
@@ -89,6 +111,8 @@ mail
 givenName
 commonName
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -110,3 +134,5 @@ commonName
 
 - [[Defaults attributes]]
 - [[LDAP Injection]]
+
+

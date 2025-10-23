@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:30.878980+00:00'
 ```bash
 ForgeCert.exe --CaCertPath ca.pfx --CaCertPassword Password123 --Subject CN=User --SubjectAltName DC$@lab.local --NewCertPath dc.pfx --NewCertPassword Password123
 ```
+
+

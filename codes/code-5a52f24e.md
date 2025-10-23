@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:32.287905+00:00'
 ```bash
 C:\Users\&lt;user&gt;\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite
 ```
+
+

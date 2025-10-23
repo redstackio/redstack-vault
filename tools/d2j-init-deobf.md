@@ -17,14 +17,36 @@ dex2jar contains following components: dex-reader is designed to read the Dalvik
 
 dex2jar contains following components:
 
+
+
 dex-reader is designed to read the Dalvik Executable (.dex/.odex) format. It has a light weight API similar with ASM.
+
+
 
 dex-translator is designed to do the convert job. It reads the dex instruction to dex-ir format, after some optimize, convert to ASM format.
 
+
+
 dex-ir used by dex-translator, is designed to represent the dex instruction
+
+
 
 dex-tools tools to work with .class files. here are examples: Modify a apk, DeObfuscate a jar
 
+
+
 d2j-smali [To be published] disassemble dex to smali files and assemble dex from smali files. different implementation to smali/baksmali, same syntax, but we support escape in type desc “Lcom/dex2jar\t\u1234;”
 
+
+
 dex-writer [To be published] write dex same way as dex-reader.
+
+
+
+
+
+
+
+
+
+

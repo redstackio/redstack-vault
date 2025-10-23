@@ -28,11 +28,27 @@ Smbclient is used to connect to SMB/CIFS shares, providing an interface with whi
 
 Smbclient is used to connect to SMB/CIFS shares, providing an interface with which users can query and interact with SMB/CIFS services. Common uses include share enumeration, file/directory enumeration, file upload and download, and more. Not only can smbclient authenticate with a username and password, it also supports authentication using a Windows NT hash, allowing users to authenticate with uncracked password hashes assuming the target system supports it.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_99e435c6-a634-4987-8df9-b7a5eb242c8e}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ Smbclient is used to connect to SMB/CIFS shares, providing an interface with whi
 
 - [[File System]]
 - [[Network]]
+
+

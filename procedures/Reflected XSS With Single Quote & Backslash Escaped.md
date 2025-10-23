@@ -28,17 +28,57 @@ Descritpion Instructions 1. Navigate to the search functionality of the applicat
 
 Descritpion
 
+
+
 Instructions
+
+
+
+
 
 1. Navigate to the search functionality of the application and enter some random alpha numeric string.
 
+
+
+
+
+
+
+![227623a7-cd98-4178-8459-928f77d4fcd4.png]()
+
+
+
+
+
 2.Right click on the page and select* view page source* after clickin on search in the aboce step.Observe that the random string has been reflected inside a JavaScript string.
+
+
+
+
+
+![8e567dcd-b69b-45b3-a9ff-daa58d0de257.png]()
 
 3.Use the following payload in the search box. Observe the extra closed script tag at the begining of the payload . It is required to first close the existing tag in the application.
 
 *`</script><script>alert(document.cookie)</script*>`
 
+
+
+
+
+![cba258e5-fc37-423f-8b5d-df8e03a4d254.png]()
+
+
+
 4. Observe the alert popup triggered by the payload.
+
+
+
+
+
+![280c9811-744e-4dab-980d-923a2925d834.png]()
+
+
 
 ## Platforms
 
@@ -51,3 +91,5 @@ Instructions
 - [[owasp top 10]]
 - [[Reflected XSS]]
 - [[Web Applications]]
+
+

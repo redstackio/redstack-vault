@@ -37,6 +37,8 @@ To execute this technique, an attacker needs to identify recently modified files
 
 This technique can be valuable to an attacker as it provides a way to gain access to user accounts and escalate privileges, which can help them to achieve their objectives.
 
+ 
+
 ## Requirements
 
 1. Access to the target system.
@@ -44,6 +46,8 @@ This technique can be valuable to an attacker as it provides a way to gain acces
 1. Permission to execute commands on the system.
 
 1. Knowledge of recently modified files on the target system.
+
+ 
 
 ## Defense
 
@@ -53,17 +57,27 @@ This technique can be valuable to an attacker as it provides a way to gain acces
 
 1. Monitor the system for suspicious activity, such as unauthorized access to sensitive files or unusual network traffic.
 
+ 
+
 ## Objectives
 
 1. To loot password hashes from recently modified files on the target system.
 
 1. To use the stolen credentials to escalate privileges and gain access to other systems on the network.
 
+ 
+
 # Instructions
 
 1. To find recently modified files, use the 'find' command with the '-mmin' option followed by the number of minutes. In this example, we're searching for files modified within the last 10 minutes. The '2>/dev/null' part of the command redirects any errors to /dev/null so they aren't displayed on the screen. Finally, we use 'grep' to exclude any results from the /proc directory.
 
+ 
+
+
+
 **Code**: [[find / -mmin -10 2>/dev/null | grep -Ev "^/proc"]]
+
+
 
 > - 'find': command used to search for files and directories
 - '/': starting directory for the search
@@ -96,3 +110,5 @@ This technique can be valuable to an attacker as it provides a way to gain acces
 - [[Last edited files]]
 - [[Linux - Privilege Escalation]]
 - [[Looting for passwords]]
+
+

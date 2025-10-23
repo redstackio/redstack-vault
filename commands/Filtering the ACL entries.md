@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:53.418574+00:00'
 ```bash
 Get-DomainObjectAcl -Identity "SuperSecureGPO" -ResolveGUIDs |  Where-Object {($_.ActiveDirectoryRights.ToString() -match "GenericWrite|AllExtendedWrite|WriteDacl|WriteProperty|WriteMember|GenericAll|WriteOwner")}
 ```
+
+

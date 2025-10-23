@@ -6,6 +6,7 @@ executor: powershell
 data: Get-HotFix | Sort-Object HotFixID
 output: 'PS C:\ > Get-HotFix | Sort-Object HotFixID
 
+
   Source        Description      HotFixID      InstalledBy          InstalledOn
 
   ------        -----------      --------      -----------          -----------
@@ -63,3 +64,5 @@ BOB-PC        Update           KB4517389     NT AUTHORITY\SYSTEM  10/21/2019 12:
 BOB-PC        Security Update  KB4520390     NT AUTHORITY\SYSTEM  10/5/2019 12:00:00 AM
 BOB-PC        Security Update  KB4521863     NT AUTHORITY\SYSTEM  10/14/2019 12:00:00 AM
 ```
+
+

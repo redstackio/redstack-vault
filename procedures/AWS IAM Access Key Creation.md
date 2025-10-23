@@ -39,9 +39,13 @@ From a technical perspective, this procedure involves using the 'Create IAM Acce
 
 The business value of this procedure is that it allows an attacker to maintain access to an AWS environment even if their own credentials are revoked. This can lead to data theft, data destruction, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Valid AWS IAM credentials with permissions to create IAM access keys
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an attacker to maintain a
 
 1. Limit the permissions of IAM users to only what is necessary for their job functions
 
+ 
+
 ## Objectives
 
 1. Maintain persistence in an AWS environment
@@ -59,17 +65,25 @@ The business value of this procedure is that it allows an attacker to maintain a
 
 1. Perform actions on behalf of a compromised user
 
+ 
+
 # Instructions
 
 1. To create an access key for an IAM user, use the following command:
 
+ 
+
 This command creates an access key for the specified IAM user. The access key consists of an access key ID and a secret access key. These keys are used to authenticate programmatic access to AWS services. The access key ID is used to identify the access key, while the secret access key is used to sign requests made with the access key. The `--username` option specifies the name of the IAM user for whom the access key is being created.
+
+
 
 **Command** ([[Create Access Key for IAM User]]):
 
 ```bash
 aws iam create-access-key --username example_username
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws iam create-access-key --username example_username
 - [[Cloud - AWS]]
 - [[Creating a new access key for another user]]
 - [[Persistence & Backdooring]]
+
+

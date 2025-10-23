@@ -36,6 +36,8 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 
 From a technical perspective, the attacker is injecting malicious code into the Groovy template engine, which is then executed on the server-side. This allows the attacker to bypass any client-side security controls and execute arbitrary code on the server. From a business perspective, this attack can result in data theft, data destruction, or ransomware attacks, which can have a significant impact on the victim organization's reputation, financial stability, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -44,6 +46,8 @@ From a technical perspective, the attacker is injecting malicious code into the 
 
 1. Ability to inject malicious code into Groovy templates
 
+ 
+
 ## Defense
 
 1. Implement input validation and output encoding to prevent SSTI vulnerabilities
@@ -51,6 +55,8 @@ From a technical perspective, the attacker is injecting malicious code into the 
 1. Restrict access to sensitive files and directories on the server
 
 1. Monitor for suspicious file creation or modification activities on the server
+
+ 
 
 ## Objectives
 
@@ -62,13 +68,23 @@ From a technical perspective, the attacker is injecting malicious code into the 
 
 1. Maintain persistence on the target network
 
+ 
+
 # Instructions
 
 1. This command is used for file manipulation. It can be used to read, write, or create files. The first line of code reads the contents of the notepad.exe file located in the C:/Windows directory and stores it in a variable named x. The second line of code reads the contents of a file located at the specified path and stores it in a variable named x. The third line of code creates a new file with the specified name and location.
 
+ 
+
+
+
 **Code**: [[${String x = new File('c:/windows/notepad.exe').te]]
 
+
+
 > The first argument of the File constructor specifies the path of the file to be manipulated. The getText method is used to read the contents of the file in the specified encoding. The createNewFile method is used to create a new file with the specified name and location.
+
+
 
 **Command** ([[Read text from file]]):
 
@@ -76,11 +92,17 @@ From a technical perspective, the attacker is injecting malicious code into the 
 ${String x = new File('/path/to/file').getText('UTF-8')}
 ```
 
+
+
+
+
 **Command** ([[Create new file]]):
 
 ```bash
 ${new File("C:\Temp\FileName.txt").createNewFile();}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +127,5 @@ ${new File("C:\Temp\FileName.txt").createNewFile();}
 - [[Groovy]]
 - [[Groovy - Read and create File]]
 - [[Server Side Template Injection]]
+
+

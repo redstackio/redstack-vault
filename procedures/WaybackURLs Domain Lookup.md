@@ -22,6 +22,8 @@ Fetch known URL's from the wayback machine for *.domain and output to stdout.
 
 Fetch known URL's from the wayback machine for *.domain and output to stdout.
 
+
+
 **Command** ([[waybackurls scan domains for urls]]):
 
 ```bash
@@ -29,8 +31,16 @@ cat subdomain.txt | waybackurls > output.txt
 
 ```
 
+
+
+
+
 [ref](https://github.com/tomnomnom/waybackurls)
+
+
 
 ## Commands Used
 
 - [[waybackurls scan domains for urls]]
+
+

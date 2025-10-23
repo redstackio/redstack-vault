@@ -31,6 +31,8 @@ From a technical perspective, this technique involves sending packets to a range
 
 The business value of this technique is that it can help organizations identify potential vulnerabilities and weaknesses in their network infrastructure before attackers can exploit them. By identifying open ports and services, organizations can take proactive measures to secure those services and prevent attackers from gaining unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Access to the network being scanned
@@ -38,6 +40,8 @@ The business value of this technique is that it can help organizations identify 
 1. Permission from the network owner
 
 1. Nmap tool installed on the scanning machine
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The business value of this technique is that it can help organizations identify 
 
 1. Regularly scan the network for open ports and services to identify potential vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify active hosts on a network
@@ -55,11 +61,19 @@ The business value of this technique is that it can help organizations identify 
 
 1. Identify the exact version of the service running on a port
 
+ 
+
 # Instructions
 
 1. This command uses Nmap to perform a scan on the specified IP address, with service version detection enabled. The '-oX' flag saves the output in XML format to a file called 'scan.xml'. The '&&' operator is used to chain the next command, which uses 'xsltproc' to convert the XML output to an HTML report file with the current date appended to the file name.
 
+ 
+
+
+
 **Code**: [[nmap -sV IP_ADDRESS -oX scan.xml && xsltproc scan.]]
+
+
 
 > The 'nmap' command is a network exploration and security auditing tool. The '-sV' flag enables service version detection, which attempts to determine the version of the service running on the specified IP address. The '-oX' flag specifies the output format as XML and saves the output to a file called 'scan.xml'. The '&&' operator is used to chain the next command, which executes 'xsltproc' to convert the XML output to an HTML report file. The '-o' flag specifies the output file name, which includes the current date in the format 'mmddyy'.
 
@@ -77,3 +91,5 @@ The business value of this technique is that it can help organizations identify 
 
 - [[Network Discovery]]
 - [[Nmap]]
+
+

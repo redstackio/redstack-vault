@@ -16,3 +16,5 @@ git clone https://github.com/internetwache/GitTools
 ./gitdumper.sh http://target.tld/.git/ /tmp/destdir
 git checkout -- .
 ```
+
+

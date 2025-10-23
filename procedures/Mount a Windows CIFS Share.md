@@ -32,11 +32,25 @@ CIFS shares (Microsoft's implementation of SMB) can be mounted on Linux systems 
 
 CIFS shares (Microsoft's implementation of SMB) can be mounted on Linux systems using the mount tool. Once mounted, shares can be navigated like any other mounted drive.
 
+
+
 # Instructions
 
 Install the ntfs-3g package. It is available in most package managers. Eg:
 
+
+
+
+
 **Code**: [[apt update && apt install ntfs-3g -y]]
+
+
+
+
+
+
+
+
 
 **Command** ([[Mount a CIFS Share with Username and Password]]):
 
@@ -44,13 +58,25 @@ Install the ntfs-3g package. It is available in most package managers. Eg:
 mount -t cifs //$_TARGET_IP/$_SHARE -o 'username="$_USERNAME",password="$_PASSWORD"' /$_MOUNT_POINT
 ```
 
+
+
+
+
 If connecting to a CIFS share without a username and password (NULL session), leave the username and password fields empty.
+
+
+
+
 
 **Command** ([[Mount a CIFS Share with a NULL Session]]):
 
 ```bash
 mount -t cifs //$_TARGET_IP/$_SHARE -o 'username="",password=""' /$_MOUNT_POINT
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +101,5 @@ mount -t cifs //$_TARGET_IP/$_SHARE -o 'username="",password=""' /$_MOUNT_POINT
 
 - [[data exposure]]
 - [[Network]]
+
+

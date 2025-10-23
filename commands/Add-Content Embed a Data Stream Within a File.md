@@ -21,3 +21,5 @@ Add-Content -Path $_COVER_FILE -Value "Hidden Data" -Stream $_EMBEDDED_FILE
 ```
 PS C:\Users\Bob\Desktop> Add-Content -Path normal.txt -Value "Hidden Data" -Stream "hidden.txt"
 ```
+
+

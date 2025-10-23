@@ -39,11 +39,15 @@ The AWS API Gateway is a fully managed service that makes it easy for developers
 
 To use this technique, an attacker would need to have valid AWS credentials and access to the API Gateway service. This technique can be used as part of a larger attack chain to gain access to sensitive data or systems within the target environment.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the API Gateway service
+
+ 
 
 ## Defense
 
@@ -53,23 +57,33 @@ To use this technique, an attacker would need to have valid AWS credentials and 
 
 1. Implement access controls to limit who has access to the API Gateway service
 
+ 
+
 ## Objectives
 
 1. Identify outdated or vulnerable versions of an API
 
 1. Perform reconnaissance on the target environment
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve a list of stages for a specific API Gateway REST API.
 
+ 
+
 The 'aws apigateway get-stages' command is used to retrieve a list of stages for a specific API Gateway REST API. The '--rest-api-id' argument is used to specify the ID of the REST API for which you want to retrieve the stages. This command can be useful for viewing the stages that are available for an API and for verifying that a new stage has been created successfully. The output of this command will include information about each stage, such as its name, deployment ID, and description.
+
+
 
 **Command** ([[Get API Gateway Stages]]):
 
 ```bash
 aws apigateway get-stages --rest-api-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +113,5 @@ aws apigateway get-stages --rest-api-id ID
 - [[Cloud - AWS]]
 - [[Listing all versions of a rest api]]
 - [[Persistence]]
+
+

@@ -26,6 +26,8 @@ Find sub-domains belonging to the target using Subfinder
 
 Setting up API keys with Subfinder is recommended for better results.
 
+
+
 **Command** ([[Subfinder scan domain for sub-domains w/output file]]):
 
 ```bash
@@ -33,6 +35,12 @@ Subfinder -d owasp.com -o Outfile.txt
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[Subfinder scan domain for sub-domains w/output file]]
+
+

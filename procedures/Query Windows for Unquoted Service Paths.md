@@ -33,21 +33,33 @@ Unquoted service paths are a category of vulnerability where a service calls an 
 
 Unquoted service paths are a category of vulnerability where a service calls an application, but executes a completely different program unintentionally. This occurs because the path to the application contains spaces in it, and is not enclosed with quotation marks. If quotation marks were included, the full path to the application would be evaluated, but without them, Windows will come across the space attempt to execute it if a file exists at that location with the ".exe" extension. 
 
+
+
 For example, if a service tries to launch:
+
+
 
 C:\Program Files\RealVNC\VNC Viewer\vncviewer.exe
 
+
+
 Because the path contains a space and is not enclosed with quotation marks, if an attacker  creates  C:\Program Files\RealVNC\VNC.exe,  then any service trying to execute C:\Program Files\RealVNC\VNC Viewer\vncviewer.exe with unquoted paths will actually execute the payload. These vulnerabilities can only be exploited if the attacker can write a file to the vulnerable path.
+
+
 
 # Instructions
 
 Query the system for vulnerable paths
+
+
 
 **Command** ([[wmic Query System for Unquoted Service Paths]]):
 
 ```bash
 wmic.exe service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:\windows\\" |findstr /i /v """
 ```
+
+
 
 Note: this command should be run from cmd.exe, as PowerShell will misinterpret the quotation marks. To run it from PowerShell, prefix the command with "cmd.exe /C" and enclose the rest of the command with single quotes.
 
@@ -73,3 +85,5 @@ Note: this command should be run from cmd.exe, as PowerShell will misinterpret t
 ## Tags
 
 - [[Misconfiguration]]
+
+

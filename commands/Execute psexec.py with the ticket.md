@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:04.568133+00:00'
 ```bash
 ./psexec.py -k -no-pass -dc-ip 192.168.1.1 AD/administrator@192.168.1.100
 ```
+
+

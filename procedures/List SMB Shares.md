@@ -36,9 +36,15 @@ Query an SMB server and attempt to list available shares using a null session (n
 
 Query an SMB server and attempt to list available shares using a null session (no login).
 
+
+
 # Instructions
 
 If attempting to connect without a username and password (a NULL session), omit the username and password values, leaving "-U" and the empty quotes.
+
+
+
+
 
 **Command** ([[smbclient List SMB Shares]]):
 
@@ -46,13 +52,25 @@ If attempting to connect without a username and password (a NULL session), omit 
 smbclient -U '$_USERNAME%$_PASSWORD' -L $_TARGET_IP
 ```
 
+
+
+
+
 smbmap can list shares in a similar fashion as smbclient, but it will also enumerate folder permissions. Omit the username and password values to authenticate with a null session. leaving the empty quotes.
+
+
+
+
 
 **Command** ([[SMBMap List SMB Shares]]):
 
 ```bash
 smbmap -u '$_USERNAME' -p '$_PASSWORD' -H $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +97,5 @@ smbmap -u '$_USERNAME' -p '$_PASSWORD' -H $_TARGET_IP
 - [[data exposure]]
 - [[Network]]
 - [[Service Attacks]]
+
+

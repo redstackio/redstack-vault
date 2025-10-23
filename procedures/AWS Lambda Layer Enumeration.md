@@ -28,11 +28,15 @@ AWS Lambda Layer Enumeration is a technique used to identify and list all the La
 
 AWS Lambda Layer Enumeration is a technique used to identify and list all the Lambda Layers present in a target AWS account. Lambda Layers are a type of serverless deployment package that can be used to manage common dependencies across multiple functions. Attackers can use this technique to identify the presence of specific dependencies or libraries that can potentially be exploited.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access Lambda Layers
 
 1. Access to the AWS Management Console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ AWS Lambda Layer Enumeration is a technique used to identify and list all the La
 
 1. Regularly update and patch dependencies and libraries used by Lambda Layers
 
+ 
+
 ## Objectives
 
 1. Identify all Lambda Layers in the target AWS account
@@ -50,9 +56,13 @@ AWS Lambda Layer Enumeration is a technique used to identify and list all the La
 
 1. Identify potential vulnerabilities in the dependencies and libraries
 
+ 
+
 # Instructions
 
 1. This command lists all the AWS Lambda layers in your account.
+
+ 
 
 Arguments: None. 
 
@@ -73,3 +83,5 @@ This command does not require any arguments. It will simply return a list of all
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing Lambda Layers (Dependencies)]]
+
+

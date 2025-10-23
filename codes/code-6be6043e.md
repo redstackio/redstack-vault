@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:22.186651+00:00'
 ```bash
 aws cloudtrail update-trail --name example_trail --no-include-global-service-event --no-is-multi-region --region=eu-west
 ```
+
+

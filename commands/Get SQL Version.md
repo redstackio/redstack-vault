@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:38.606275+00:00'
 ```bash
 Get-Query "select @@version"
 ```
+
+

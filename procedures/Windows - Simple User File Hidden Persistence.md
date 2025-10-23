@@ -35,11 +35,15 @@ To execute this procedure, the attacker must first gain access to the system and
 
 This technique can be valuable for an attacker looking to maintain a foothold on a compromised system, even after the initial point of entry has been secured. By establishing persistence, the attacker can continue to gather data, escalate privileges, and execute further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target Windows system
 
 1. Ability to identify a file for persistence
+
+ 
 
 ## Defense
 
@@ -49,9 +53,13 @@ This technique can be valuable for an attacker looking to maintain a foothold on
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to suspicious activity on Windows systems
 
+ 
+
 ## Objectives
 
 1. Establish persistence on a compromised Windows system
+
+ 
 
 # Instructions
 
@@ -62,15 +70,25 @@ This technique can be valuable for an attacker looking to maintain a foothold on
 
 For example, to set the file 'autoexec.bat' as hidden in the 'C:' drive, you would type 'attrib +h c:\autoexec.bat' and press Enter.
 
+ 
+
+
+
 **Code**: [[attrib +h c:\autoexec.bat]]
 
+
+
 > The 'attrib' command is used to change the attributes of a file or folder. The '+h' argument sets the 'hidden' attribute of the file, making it invisible in file explorer unless the 'show hidden files' option is enabled. The file path and name should be specified after the '+h' argument.
+
+
 
 **Command** ([[Hide autoexec.bat file]]):
 
 ```bash
 attrib +h c:\autoexec.bat
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ attrib +h c:\autoexec.bat
 
 - [[Simple User]]
 - [[Windows - Persistence]]
+
+

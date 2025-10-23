@@ -33,9 +33,13 @@ From a technical standpoint, Ruby Server Side Template Injection is a vulnerabil
 
 The business value of this technique is that it can be used to gain access to sensitive data and execute arbitrary code on the server. This can lead to a complete compromise of the server and can result in significant damages to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server
+
+ 
 
 ## Defense
 
@@ -45,25 +49,41 @@ The business value of this technique is that it can be used to gain access to se
 
 1. Use a web application firewall to detect and block attempts at exploiting server-side template injection vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command executes code on the server using Server-Side Template Injection (SSTI) for ERB engine. The command retrieves the contents of the /etc/passwd file and lists the contents of the root directory. The command also retrieves the current user using the Open3 and Open4 libraries.
+
+ 
+
+
 
 **Code**: [[<%= system('cat /etc/passwd') %>
 <%= `ls /` %>
 <%=]]
 
+
+
 > The 'system' command executes a shell command and returns the output. The 'popen' method opens a pipe to or from a command and returns an IO object. The 'readlines' method reads all lines from the IO object and returns an array of strings. The 'require' method loads a library. The 'popen3' method opens a pipe to a command and returns four IO objects: stdin, stdout, stderr, and a thread object. The 'readline' method reads a line from the IO object. The 'popen4' method opens a pipe to a command and returns four IO objects: stdin, stdout, stderr, and a process ID.
 
 2. To retrieve environment variables using Slim engine and SSTI, use the following command:
 
+ 
+
+
+
 **Code**: [[#{ %x|env| }]]
+
+
 
 > The `env` command is used to display all environment variables currently set on the system. The `%x|` syntax is used to execute a system command and return the output as a string. This command can be used to retrieve sensitive information such as API keys or database credentials stored in environment variables.
 
@@ -83,3 +103,5 @@ The business value of this technique is that it can be used to gain access to se
 - [[Ruby]]
 - [[Ruby - Code execution]]
 - [[Server Side Template Injection]]
+
+

@@ -35,11 +35,15 @@ Subdomain enumeration is a reconnaissance technique used to discover additional 
 
 Subdomain enumeration is a reconnaissance technique used to discover additional targets within a target organization's domain. Aquatone is a subdomain and URL scanner that can be used to discover subdomains and URLs of a target domain. Aquatone can be used to generate reports of identified subdomains and URLs, which can be used to identify potential attack surfaces. The tool is written in Ruby and is available as a Docker image. The tool can be used to identify subdomains that may be used in phishing attacks or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain
 
 1. Aquatone Subdomain and URL Scanner or Aquatone Docker Image
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Subdomain enumeration is a reconnaissance technique used to discover additional 
 
 1. Monitor network traffic for suspicious activity and indicators of compromise
 
+ 
+
 ## Objectives
 
 1. Discover subdomains of a target domain
@@ -56,6 +62,8 @@ Subdomain enumeration is a reconnaissance technique used to discover additional 
 1. Identify potential attack surfaces
 
 1. Gather information for reconnaissance
+
+ 
 
 # Instructions
 
@@ -67,17 +75,29 @@ To perform active scans on the discovered subdomains, use the command 'aquatone-
 
 Finally, to gather all the results, use the command 'aquatone-gather --domain example.com'.
 
+ 
+
+
+
 **Code**: [[gem install aquatone
 
 Discover subdomains : result]]
 
+
+
 > The Aquatone tool is used for subdomain discovery and URL scanning. The 'aquatone-discover' command is used to discover subdomains for a given domain. The 'aquatone-scan' command is used to actively scan the discovered subdomains for open ports. The 'aquatone-gather' command is used to gather all the results. The user can provide additional arguments to these commands to customize the behavior of the tool.
+
+
 
 **Command** ([[Install Aquatone]]):
 
 ```bash
 gem install aquatone
 ```
+
+
+
+
 
 **Command** ([[Discover subdomains with Aquatone]]):
 
@@ -88,6 +108,10 @@ aquatone-discover --domain example.com --sleep 5 --jitter 30
 aquatone-discover --set-key shodan o1hyw8pv59vSVjrZU3Qaz6ZQqgM91ihQ
 ```
 
+
+
+
+
 **Command** ([[Active scans with Aquatone]]):
 
 ```bash
@@ -97,18 +121,32 @@ aquatone-scan --domain example.com --ports large
 aquatone-scan --domain example.com --threads 25
 ```
 
+
+
+
+
 **Command** ([[Gather final results with Aquatone]]):
 
 ```bash
 aquatone-gather --domain example.com
 ```
 
+
+
 2. Follow the steps below to use the Aquatone Docker image:
+
+ 
+
+
 
 **Code**: [[https://hub.docker.com/r/txt3rob/aquatone-docker/
 ]]
 
+
+
 > The Aquatone Docker image allows you to run Aquatone in a Docker container. This provides an isolated environment for running Aquatone and ensures that all dependencies are met. The Docker image is provided by txt3rob and can be pulled from the Docker Hub registry. Once you have pulled the Docker image, you can run Aquatone with the target domain as an argument.
+
+
 
 **Command** ([[Pull Aquatone Docker image]]):
 
@@ -116,11 +154,17 @@ aquatone-gather --domain example.com
 docker pull txt3rob/aquatone-docker
 ```
 
+
+
+
+
 **Command** ([[Run Aquatone Docker image with target domain]]):
 
 ```bash
 docker run -it txt3rob/aquatone-docker aq example.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -146,3 +190,5 @@ docker run -it txt3rob/aquatone-docker aq example.com
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Aquatone - old version (Ruby)]]
+
+

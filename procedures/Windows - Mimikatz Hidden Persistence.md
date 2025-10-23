@@ -36,11 +36,15 @@ To achieve this technique, the attacker must first obtain administrative privile
 
 This technique can be used by attackers to maintain persistence on a compromised system, and to continue to extract credentials and move laterally within a network.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the target system
 
 1. Mimikatz binary
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This technique can be used by attackers to maintain persistence on a compromised
 
 1. Regularly review system logs to detect suspicious activity
 
+ 
+
 ## Objectives
 
 1. Maintain access to a compromised Windows system
@@ -58,19 +64,31 @@ This technique can be used by attackers to maintain persistence on a compromised
 
 1. Evade detection by hiding the Mimikatz binary
 
+ 
+
 # Instructions
 
 1. Use the 'attrib' command to set the hidden attribute on the 'mimikatz.exe' file.
 
+ 
+
+
+
 **Code**: [[PS> attrib +h mimikatz.exe]]
 
+
+
 > This command will hide the 'mimikatz.exe' file from being visible in the file explorer or command prompt, making it harder for an attacker to detect or remove the file.
+
+
 
 **Command** ([[Set Hidden Attribute on Mimikatz]]):
 
 ```bash
 attrib +h mimikatz.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ attrib +h mimikatz.exe
 
 - [[Hide Your Binary]]
 - [[Windows - Persistence]]
+
+

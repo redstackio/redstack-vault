@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:38.041975+00:00'
 ```bash
 REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors /v DisableLocation /t REG_DWORD /d 1 /f
 ```
+
+

@@ -28,11 +28,27 @@ Impacket suite's smbserver.py implements a simple SMB server for hosting files. 
 
 Impacket suite's smbserver.py implements a simple SMB server for hosting files. Newer Windows systems may not connect to the server unless the "-smb2support" argument is included.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_362264f8-f7b9-4e37-8f2c-ca640b45ccac}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Impacket suite's smbserver.py implements a simple SMB server for hosting files. 
 ## Tags
 
 - [[server]]
+
+

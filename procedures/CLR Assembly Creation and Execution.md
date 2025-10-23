@@ -33,11 +33,15 @@ CLR Assemblies are used to execute managed code within SQL Server. This techniqu
 
 From an offensive standpoint, this technique can be used to bypass security measures and gain access to sensitive data stored within the MSSQL Server. From a technical perspective, this technique involves creating a DLL using C# code and then importing it into SQL Server using the Execute Command function. From a business standpoint, this technique can be used to gain access to sensitive data, resulting in financial loss and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to SQL Server
 
 1. C# compiler
+
+ 
 
 ## Defense
 
@@ -47,25 +51,41 @@ From an offensive standpoint, this technique can be used to bypass security meas
 
 1. Disable CLR integration if it is not required for the functioning of the SQL Server
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data stored within MSSQL Server
 
 1. Bypass security measures
 
+ 
+
 # Instructions
 
 1. To create a C# DLL file using the above command, you need to have the .NET framework installed on your system. You also need to have a C# code file named cmd_exec.cs saved in the C:\temp directory.
 
+ 
+
+
+
 **Code**: [[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\cs]]
+
+
 
 > The above command uses the C# compiler (csc.exe) to create a DLL file with a target of 'library'. The path of the csc.exe file is specified as C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe. The path of the cmd_exec.cs file is specified as c:\temp\cmd_exec.cs. The resulting DLL file will be created in the same directory as the cmd_exec.cs file.
 
 2. Execute a command on the command prompt and return the output
 
+ 
+
+
+
 **Code**: [[using System;
 using System.Data;
 using System.Data]]
+
+
 
 > This command executes a command on the command prompt and returns the output. The command to be executed should be passed as an argument to the stored procedure. The output of the command is returned as a result set with a single column named 'output'.
 
@@ -87,3 +107,5 @@ using System.Data]]
 - [[CLR Assemblies]]
 - [[Manually creating a CLR DLL and importing it]]
 - [[MSSQL Server]]
+
+

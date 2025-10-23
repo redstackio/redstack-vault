@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:35.902057+00:00'
 mount -t nfs 10.10.10.10:/shared /tmp/nfsdir
 cd /tmp/nfsdir
 ```
+
+

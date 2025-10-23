@@ -34,9 +34,15 @@ Create a PSCredential object from a username and password. Many PowerShell comma
 
 Create a PSCredential object from a username and password. Many PowerShell commands support a "Credential" argument, allowing the execution of commands as other users, or  to authenticate in instances where credentials aren't passed on in the existing session.
 
+
+
 # Instructions
 
 1. Create a secure string using a password
+
+
+
+
 
 **Command** ([[Create a Windows Secure String]]):
 
@@ -44,13 +50,23 @@ Create a PSCredential object from a username and password. Many PowerShell comma
 $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 ```
 
+
+
+
+
 2. Create a PSCredential object, using the secure string created in step 1 ($Pass variable).
+
+
+
+
 
 **Command** ([[Create a Windows PSCredential Object]]):
 
 ```bash
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_USER", $Pass
 ```
+
+
 
 Note: when specifying a domain, the username format is: "$_DOMAIN\$_USER", eg "megabank\dave".
 
@@ -79,3 +95,5 @@ Note: when specifying a domain, the username format is: "$_DOMAIN\$_USER", eg "m
 ## Tags
 
 - [[authentication]]
+
+

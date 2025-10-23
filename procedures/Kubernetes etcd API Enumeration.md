@@ -37,11 +37,15 @@ Technical Explanation: etcd is a distributed key-value store that stores the con
 
 Business Value: An attacker can use this technique to gather information about the target Kubernetes cluster, such as the configuration data, architecture, and sensitive information. This information can be used to plan further attacks and to gain unauthorized access to the cluster.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes cluster
 
 1. Authentication credentials
+
+ 
 
 ## Defense
 
@@ -51,20 +55,32 @@ Business Value: An attacker can use this technique to gather information about t
 
 1. Encrypt sensitive data stored in the etcd database
 
+ 
+
 ## Objectives
 
 1. Discover the etcd API endpoints of a Kubernetes cluster
 
 1. Enumerate the keys and values stored in the etcd database
 
+ 
+
 # Instructions
 
 1. Run the following commands in a terminal:
 
+ 
+
+
+
 **Code**: [[curl -k https://<IP address>:2379
 curl -k https://]]
 
+
+
 > The first command retrieves the version of the etcd API. The second command retrieves the keys and values stored in the etcd database. The --prefix and --keys-only flags are used to retrieve only the keys and not the values.
+
+
 
 **Command** ([[Get etcd version]]):
 
@@ -72,11 +88,17 @@ curl -k https://]]
 curl -k https://<IP address>:2379/version
 ```
 
+
+
+
+
 **Command** ([[Get etcd keys]]):
 
 ```bash
 etcdctl --endpoints=http://<MASTER-IP>:2379 get / --prefix --keys-only
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ etcdctl --endpoints=http://<MASTER-IP>:2379 get / --prefix --keys-only
 - [[API addresses that you should know]]
 - [[etcd API]]
 - [[Kubernetes]]
+
+

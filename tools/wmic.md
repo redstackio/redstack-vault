@@ -28,11 +28,25 @@ wmic provides a command-line interface for Windows Management Instrumentation (W
 
 wmic provides a command-line interface for Windows Management Instrumentation (WMI), which manages the data and operation of Windows-based operating systems. This tool enables comprehensive control and scripting of WMI, which is further simplified by a number of aliases for common actions.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_1c1d443d-30d4-4718-a3be-c11067f74f7e}}
+
+
 
 # Installation
 
 wmic is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ wmic is installed with all modern Windows releases
 
 - [[Enumeration]]
 - [[Operating Systems]]
+
+

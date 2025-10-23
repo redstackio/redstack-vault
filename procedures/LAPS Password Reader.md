@@ -32,6 +32,8 @@ The LAPS Password Reader procedure is used to determine if the Local Administrat
 
 The LAPS Password Reader procedure is used to determine if the Local Administrator Password Solution (LAPS) is installed on the targeted Active Directory environment and, if so, to retrieve the password for the local administrator account on each machine. LAPS is a Microsoft tool that provides a solution for managing local administrator account passwords. It stores the password for each computer's local administrator account in Active Directory, which can be retrieved by users with proper permissions. Attackers can use this procedure to retrieve the password and gain access to the targeted machines. The procedure involves checking the integrity of the Admpwd.dll file to determine if LAPS is installed, and then using the appropriate commands to retrieve the password.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted Active Directory environment.
@@ -39,6 +41,8 @@ The LAPS Password Reader procedure is used to determine if the Local Administrat
 1. Proper permissions to retrieve the LAPS password.
 
 1. Tools to check the integrity of the Admpwd.dll file and retrieve the password.
+
+ 
 
 ## Defense
 
@@ -48,19 +52,31 @@ The LAPS Password Reader procedure is used to determine if the Local Administrat
 
 1. Consider using alternative solutions for managing local administrator account passwords to reduce the risk of LAPS-related attacks.
 
+ 
+
 ## Objectives
 
 1. Retrieve the local administrator password for each machine in the targeted Active Directory environment.
 
 1. Gain access to the targeted machines using the retrieved password.
 
+ 
+
 # Instructions
 
 1. Run the following commands in PowerShell to check the integrity of the LAPS Admpwd.dll file:
 
+ 
+
+
+
 **Code**: [[Get-ChildItem 'c:\program files\LAPS\CSE\Admpwd.dl]]
 
+
+
 > This set of PowerShell commands will retrieve the Admpwd.dll file from the specified location, calculate its hash value and check its digital signature. This is useful for verifying that the file has not been tampered with and is safe to use.
+
+
 
 **Command** ([[Check Admpwd.dll file]]):
 
@@ -68,17 +84,27 @@ The LAPS Password Reader procedure is used to determine if the Local Administrat
 Get-ChildItem 'c:\program files\LAPS\CSE\Admpwd.dll'
 ```
 
+
+
+
+
 **Command** ([[Get Admpwd.dll file hash]]):
 
 ```bash
 Get-FileHash 'c:\program files\LAPS\CSE\Admpwd.dll'
 ```
 
+
+
+
+
 **Command** ([[Get Admpwd.dll file signature]]):
 
 ```bash
 Get-AuthenticodeSignature 'c:\program files\LAPS\CSE\Admpwd.dll'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +127,5 @@ Get-AuthenticodeSignature 'c:\program files\LAPS\CSE\Admpwd.dll'
 - [[Active Directory Attacks]]
 - [[Determine if LAPS is installed]]
 - [[Reading LAPS Password]]
+
+

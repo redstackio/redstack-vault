@@ -24,7 +24,13 @@ The heavyweight port scanner of the internet will scan a list of ip addresses ve
 
 The heavyweight port scanner of the internet will scan a list of ip addresses very quickly.
 
+
+
 The ip input file has one ip address per line. the -p1-65535 are the ports that it will scan
+
+
+
+
 
 **Command** ([[masscan portscan list of ips]]):
 
@@ -32,6 +38,12 @@ The ip input file has one ip address per line. the -p1-65535 are the ports that 
 masscan -iL $_IPS_FILE --rate $_RATE -p$_LOW_PORT-$_HIGH_PORT -oL $_OUTPUT_FILE
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[masscan portscan list of ips]]
+
+

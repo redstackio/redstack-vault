@@ -16,3 +16,9 @@ SniffJoke is an application for Linux that handle transparently your TCP connect
 ## Description
 
 SniffJoke is an application for Linux that handle transparently your TCP connection, delaying, modifyng and inject fake packets inside your transmission, make them almost impossible to be correctly read by a passive wiretapping technology (IDS or sniffer).
+
+
+
+
+
+

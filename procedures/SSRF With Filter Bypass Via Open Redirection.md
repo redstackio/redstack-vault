@@ -26,15 +26,51 @@ Description Instructions 1.Navigate to product page and click on check stock . I
 
 Description
 
+
+
 Instructions
 
+
+
 1.Navigate to product page and click on *check stock* . Intercept the request and send it to the repeater tab.
+
+
+
+
+
+![a8e8d834-8414-4bea-a752-9ecb3bc1c88c.png]()
+
+
+
+
 
 2.Create a URL to exploit open redirection vulnerability and redirects to the admin interface.Modify the *`stockAp*i` parameter to 
 
  `/product/nextProduct?path=http://192.168.0.12:8080/admin`
 
+
+
+
+
+![5bc10105-e113-4e93-b353-f5f85bdd8cd7.png]()
+
+
+
+
+
+
+
 3.The stock checker should follow the redirection and show the admin page. An attacker can then amend the path to delete the target user: `/product/nextProduct?path=http://192.168.0.12:8080/admin/delete?username=carlos`
+
+
+
+
+
+
+
+![95d33fda-e80b-4b9b-8163-8a4441ef87e1.png]()
+
+
 
 ## Platforms
 
@@ -45,3 +81,5 @@ Instructions
 - [[Open Redirection]]
 - [[SSRF]]
 - [[Web Applications]]
+
+

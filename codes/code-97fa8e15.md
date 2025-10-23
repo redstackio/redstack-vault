@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:25.044829+00:00'
 ```javascript
 fetch('https://www.example.com/', {method: 'POST', body: "GET / HTTP/1.1\r\nHost: www.example.com", mode: 'no-cors', credentials: 'include'} )
 ```
+
+

@@ -8,6 +8,7 @@ output: 'C:\>vaultcmd.exe /listcreds:"Windows Credentials"
 
   Credentials in vault: Windows Credentials
 
+
   Credential schema: Windows Domain Password Credential
 
   Resource: Domain:target=dc.domain.example
@@ -42,3 +43,5 @@ Hidden: No
 Roaming: No
 Property (schema element id,value): (100,3)
 ```
+
+

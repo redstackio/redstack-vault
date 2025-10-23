@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:36.373522+00:00'
 WORDLIST_PERMUTATION="./Altdns/words.txt"
 python2.7 ./Altdns/altdns.py -i /tmp/inputdomains.txt -o /tmp/out.txt -w $WORDLIST_PERMUTATION
 ```
+
+

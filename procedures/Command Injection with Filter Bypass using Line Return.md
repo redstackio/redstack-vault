@@ -30,11 +30,15 @@ Command Injection with Filter Bypass using Line Return is a technique used to by
 
 Command Injection with Filter Bypass using Line Return is a technique used to bypass input validation filters and execute arbitrary commands on a target system. This technique involves inserting a line return character (%0A) into the injected command, which can bypass certain input validation filters. The attacker can then execute any command on the target system, including reading or writing files, stealing data, or creating new user accounts. This technique can be used to gain unauthorized access to a target system and carry out malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application or other input validation filter
 
 1. Knowledge of the target system's operating system and commands
+
+ 
 
 ## Defense
 
@@ -44,19 +48,31 @@ Command Injection with Filter Bypass using Line Return is a technique used to by
 
 1. Limit user privileges to prevent attackers from executing arbitrary commands
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on a target system
 
 1. Bypass input validation filters
 
+ 
+
 # Instructions
 
 1. Inject the following command into the vulnerable input field:
 
+ 
+
+
+
 **Code**: [[something%0Acat%20/etc/passwd]]
 
+
+
 > This command injects a line return character (%0A) into the 'something' command, which can bypass input validation filters and execute the 'cat /etc/passwd' command on the target system. This command reads the contents of the password file and returns them to the attacker.
+
+
 
 **Command** ([[View Password File]]):
 
@@ -65,11 +81,19 @@ something
 cat /etc/passwd
 ```
 
+
+
 2. Inject the following command into the vulnerable input field:
+
+ 
+
+
 
 **Code**: [[;cat>/tmp/hi<<EOF%0ahello%0aEOF
 ;cat</tmp/hi
 hello]]
+
+
 
 > This command injects a command that creates a file on the target system. The command creates a file called 'hi' in the '/tmp' directory and writes the text 'hello' to the file. The attacker can then use the 'cat' command to read the contents of the file and confirm that it was successfully created.
 
@@ -92,3 +116,5 @@ hello]]
 - [[Bypass with a line return]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

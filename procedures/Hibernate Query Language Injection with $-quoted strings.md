@@ -33,6 +33,8 @@ Technical Explanation: HQL is a powerful tool for querying databases, but it can
 
 Business Value: HQL Injection attacks can have serious consequences for businesses, including data breaches, regulatory fines, and damage to reputation. By understanding the risks and taking steps to mitigate them, businesses can protect themselves from these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Hibernate ORM
@@ -41,6 +43,8 @@ Business Value: HQL Injection attacks can have serious consequences for business
 
 1. Ability to inject malicious code into user input fields
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent HQL Injection attacks
@@ -48,6 +52,8 @@ Business Value: HQL Injection attacks can have serious consequences for business
 1. Use parameterized queries instead of string concatenation to build HQL statements
 
 1. Limit the privileges of database users to prevent unauthorized access to sensitive data
+
+ 
 
 ## Objectives
 
@@ -59,11 +65,19 @@ Business Value: HQL Injection attacks can have serious consequences for business
 
 1. Execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. To use this feature, you can define an identifier starting with a letter, underscore, or a dollar sign. The identifier can contain letters, digits, underscores, or dollar signs.
 
+ 
+
+
+
 **Code**: [[$$]]
+
+
 
 > The identifier is used to uniquely identify a database object such as a table or a column. Hibernate ORM allows you to define custom identifiers to suit your needs. However, it is important to follow the rules for defining identifiers to avoid errors.
 
@@ -83,3 +97,5 @@ Business Value: HQL Injection attacks can have serious consequences for business
 
 - [[$-quoted strings]]
 - [[Hibernate Query Language Injection]]
+
+

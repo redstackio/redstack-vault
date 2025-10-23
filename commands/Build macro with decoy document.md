@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:50.027825+00:00'
 ```bash
 Macrome build --decoy-document decoy_document.xls --payload-type Macro --payload macro_example.txt --output-file-name xor_obfuscated_macro_doc.xls --password VelvetSweatshop
 ```
+
+

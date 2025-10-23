@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:38.835543+00:00'
 # https://github.com/rvazarkar/GMSAPasswordReader
 GMSAPasswordReader.exe --accountname SVC_SERVICE_ACCOUNT
 ```
+
+

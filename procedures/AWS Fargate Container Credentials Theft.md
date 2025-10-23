@@ -34,11 +34,15 @@ To carry out this attack, the attacker sends a crafted request to the AWS metada
 
 This procedure provides an attacker with a way to obtain AWS credentials from a Fargate container, which can be used to further compromise the target environment.
 
+ 
+
 ## Requirements
 
 1. Access to the target environment
 
 1. Ability to send requests to the metadata service from the container
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This procedure provides an attacker with a way to obtain AWS credentials from a 
 
 1. Monitor network traffic for requests to the metadata service
 
+ 
+
 ## Objectives
 
 1. Obtain AWS credentials from a Fargate container
@@ -56,16 +62,26 @@ This procedure provides an attacker with a way to obtain AWS credentials from a 
 
 1. Escalate privileges and move laterally within the target environment
 
+ 
+
 # Instructions
 
 1. To fetch the AWS_CONTAINER_CREDENTIALS_RELATIVE_URI variable, navigate to https://awesomeapp.com/download?file=/proc/self/environ and search for the variable in the output.
 
+ 
+
+
+
 **Code**: [[JAVA_ALPINE_VERSION=8.212.04-r0
 HOSTNAME=bbb3c57a0]]
+
+
 
 > The AWS_CONTAINER_CREDENTIALS_RELATIVE_URI variable is used to obtain credentials for an AWS Fargate task. It contains a URI that can be used to retrieve the task's IAM role credentials. The IAM role credentials can be used to access AWS resources from within the task.
 
 2. Run the command to retrieve the AWS credentials and use the URL provided to dump the AccessKey and SecretKey.
+
+ 
 
 > The AWS credentials are provided in the JSON object. The AccessKey and SecretKey can be dumped using the credential URL provided in the 'text' field of the JSON object. The 'lang' field specifies the language in which the command is to be run.
 
@@ -86,3 +102,5 @@ HOSTNAME=bbb3c57a0]]
 - [[AWS - Metadata SSRF]]
 - [[Cloud - AWS]]
 - [[Method for Container Service (Fargate)]]
+
+

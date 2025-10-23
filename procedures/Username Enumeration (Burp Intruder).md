@@ -27,25 +27,129 @@ Description
 
 An attacker brute forces the username field to identify the correct username of the application
 
+
+
 Instructions
+
+
+
+
 
 1. Login to the account using random(invalid) username and password.Intercept the login request using burp proxy tab
 
+
+
+
+
+
+
+![9cc0319b-bfbe-415e-b512-428114c52d67.png]()
+
+
+
+
+
 2. Observe that the response says invalid username.
+
+
+
+
+
+![6060ee5d-14ba-43c7-9c81-c166f6b0d396.png]()
+
+
+
+
 
 3. Send the login request from the sitemap to the burp intruder
 
+
+
+
+
+![5fab0619-10e0-4d0c-87cc-bc20448cabbf.png]()
+
+
+
+
+
 4.From the positions tab under intruder tab , slect attack type to sniper . Make sure to add only username for the payload position and clear the rest of the paramters.
+
+
+
+
+
+![29c88f40-a9b9-44fb-b5bc-7bbd5162bd9d.png]()
+
+
+
+
 
 5.Under payloads tab, select payload type *simple list and paste the list of usernames . The list can be obtained from[ https://github.com/danielmiessler/SecLists/tree/master/Usernames/Name](https://github.com/danielmiessler/SecLists/tree/master/Usernames/Names)s. Click on start attack to start the attack*
 
+
+
+
+
+![1cd89bd5-e0d9-4e44-a2df-96bba7eba13b.png]()
+
+
+
+
+
+
+
 6.When the attack finishes , observe the responses in the attack window. 
+
+
+
+
+
+![712a9933-c8f4-4f2a-ba89-c69bed0d0f62.png]()
+
+
 
 7.Observe that all the length columns are same except for one of the entries which has 3266 lenght compared to 3264 for others. Make a note of the username.
 
+
+
+
+
+
+
+![c2497490-305a-43ef-b2c2-fa6050e8a02f.png]()
+
+
+
+
+
+
+
+
+
 8. Use the username from above step and a random password to login. 
 
+
+
+
+
+
+
+![524262b7-0c71-472a-9b68-13f2add7ea39.png]()
+
+
+
+
+
 9.Observe that the server throws an invalid password error. Username has been successfully enumerated. Similar steps from tehabove can be followed to identify the correct password for the username *austin*
+
+
+
+
+
+![e4450e12-7b39-44b7-8f8b-af1b767987d6.png]()
+
+
 
 ## Platforms
 
@@ -55,3 +159,5 @@ Instructions
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

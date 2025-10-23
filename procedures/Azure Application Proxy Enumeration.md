@@ -36,11 +36,15 @@ The Azure Application Proxy is a service provided by Microsoft that allows users
 
 The business value of this procedure is that it allows administrators to assess the security of their Azure Application Proxy configuration and ensure that only authorized users have access to the on-premises applications that are being proxied.
 
+ 
+
 ## Requirements
 
 1. Valid Azure credentials with permissions to access the Azure Application Proxy
 
 1. Access to the Azure portal
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ The business value of this procedure is that it allows administrators to assess 
 
 1. Regularly review and update the users and groups assigned to the Azure Application Proxy
 
+ 
+
 ## Objectives
 
 1. Discover details about the Azure Application Proxy
 
 1. Identify users and groups assigned to the Azure Application Proxy
+
+ 
 
 # Instructions
 
@@ -66,12 +74,20 @@ To get the users and groups assigned to the application proxy, run the following
 1. . C:\Tools\GetApplicationProxyAssignedUsersAndGroups.ps1
 2. Get-ApplicationProxyAssignedUsersAndGroups -ObjectId <OBJECT-ID>
 
+ 
+
+
+
 **Code**: [[# Enumerate application that have Proxy
 PS C:\Tool]]
+
+
 
 > This command is used to enumerate the applications that have a proxy and their details. The first command retrieves all Azure AD applications with the -All parameter set to $true. It then pipes the output to a ForEach-Object loop where it tries to retrieve the application proxy details using the GetAzureADApplicationProxyApplication command. The second command retrieves the Azure AD service principal for the Finance Management System application. 
 
 The second set of commands is used to get the users and groups assigned to the application proxy. The first command loads the GetApplicationProxyAssignedUsersAndGroups PowerShell script. The second command retrieves the users and groups assigned to the application proxy using the -ObjectId parameter.
+
+
 
 **Command** ([[Enumerate applications with Proxy]]):
 
@@ -79,11 +95,19 @@ The second set of commands is used to get the users and groups assigned to the a
 Get-AzureADApplication -All $true | %{try{GetAzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
 ```
 
+
+
+
+
 **Command** ([[Find Service Principal for Finance Management System]]):
 
 ```bash
 Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Management System"}
 ```
+
+
+
+
 
 **Command** ([[Run GetApplicationProxyAssignedUsersAndGroups script]]):
 
@@ -91,11 +115,17 @@ Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Managemen
 . C:\Tools\GetApplicationProxyAssignedUsersAndGroups.ps1
 ```
 
+
+
+
+
 **Command** ([[Get assigned users and groups for the specified application]]):
 
 ```bash
 Get-ApplicationProxyAssignedUsersAndGroups -ObjectId <OBJECT-ID>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -118,3 +148,5 @@ Get-ApplicationProxyAssignedUsersAndGroups -ObjectId <OBJECT-ID>
 
 - [[Application Proxy]]
 - [[Cloud - Azure]]
+
+

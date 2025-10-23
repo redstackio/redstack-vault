@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:33.554323+00:00'
 ```bash
 select * from fn_my_permissions(null, 'server');
 ```
+
+

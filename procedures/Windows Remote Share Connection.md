@@ -36,11 +36,15 @@ This procedure works by mounting a remote share on the local system, allowing th
 
 The business value of this procedure is that it allows attackers to move laterally within a network, potentially accessing sensitive data and systems.
 
+ 
+
 ## Requirements
 
 1. Valid credentials to access remote share
 
 1. Network access to remote share
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this procedure is that it allows attackers to move lateral
 
 1. Use strong passwords and multi-factor authentication to protect credentials
 
+ 
+
 ## Objectives
 
 1. Access remote server share
@@ -58,19 +64,31 @@ The business value of this procedure is that it allows attackers to move lateral
 
 1. Potentially access sensitive data and systems
 
+ 
+
 # Instructions
 
 1. To connect to a remote server share, use the 'net use' command followed by the UNC path of the share and the appropriate username and password. In this example, we are connecting to the C$ share on server 'srv01.domain.local' using the username 'username' and password 'password'.
 
+ 
+
+
+
 **Code**: [[PS C:\> net use \\srv01.domain.local /user:DOMAIN\]]
 
+
+
 > The 'net use' command is used to connect to or disconnect from a shared resource on a network. The command can be used to map a network drive or connect to a printer. The '/user' parameter is used to specify the username and password to use for the connection. The 'C$' share is a hidden administrative share on Windows systems that provides access to the root of the system drive.
+
+
 
 **Command** ([[Connect to network share]]):
 
 ```bash
 net use \\srv01.domain.local /user:DOMAIN\username password C$
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ net use \\srv01.domain.local /user:DOMAIN\username password C$
 - [[Mount a remote share]]
 - [[Other methods]]
 - [[Windows - Using credentials]]
+
+

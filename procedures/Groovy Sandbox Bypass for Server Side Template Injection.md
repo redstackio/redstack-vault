@@ -34,11 +34,15 @@ From a technical standpoint, this procedure involves identifying a vulnerable we
 
 From a business perspective, this procedure highlights the importance of secure coding practices and regular vulnerability assessments. By identifying and patching vulnerabilities in web applications, organizations can prevent attackers from gaining access to sensitive data or compromising their systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Groovy as its template engine
 
 1. Knowledge of Groovy syntax and the Groovy sandbox
+
+ 
 
 ## Defense
 
@@ -48,23 +52,39 @@ From a business perspective, this procedure highlights the importance of secure 
 
 1. Use a web application firewall (WAF) to detect and block malicious requests
 
+ 
+
 ## Objectives
 
 1. Bypass the Groovy sandbox to execute arbitrary code
 
 1. Gain remote code execution on a target system
 
+ 
+
 # Instructions
 
 1. This command is used to get the name of the user who is currently logged in to the system.
 
+ 
+
+
+
 **Code**: [[${ @ASTTest(value={assert java.lang.Runtime.getRun]]
+
+
 
 > The 'whoami' command is a Unix command that is used to print the username of the current user. This command is useful in shell scripts and other automation tasks where the username of the current user is required. When this command is executed, it returns the name of the current user as a string. This command does not take any arguments.
 
 2. Execute Calculator
 
+ 
+
+
+
 **Code**: [[${ new groovy.lang.GroovyClassLoader().parseClass(]]
+
+
 
 > This command will execute the calculator application on the system where the script is being run. It uses a GroovyClassLoader to parse and execute the specified command.
 
@@ -83,3 +103,5 @@ From a business perspective, this procedure highlights the importance of secure 
 - [[Groovy]]
 - [[Groovy - Sandbox Bypass]]
 - [[Server Side Template Injection]]
+
+

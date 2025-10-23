@@ -26,4 +26,7 @@ ServicePrincipalName  Name           MemberOf                                   
 --------------------  -------------  --------------------------------------------------------  -------------------  -------------------
 active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 21:06:40  2018-12-03 17:11:11 
 
+
 ```
+
+

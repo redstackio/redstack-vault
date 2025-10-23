@@ -26,7 +26,9 @@ Get-Process -Name $_NAME | Out-Minidump -DumpFilePath $_PATH
 ```
 PS C:\Users\Bob> Get-Process -Name firefox | Out-Minidump -DumpFilePath dump
 
+
     Directory: C:\Users\Bob\dump
+
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -36,3 +38,5 @@ Mode                LastWriteTime         Length Name
 -a----         1/2/2020  11:39 AM      300889171 firefox_5016.dmp
 -a----         1/2/2020  11:39 AM      551828008 firefox_8776.dmp
 ```
+
+

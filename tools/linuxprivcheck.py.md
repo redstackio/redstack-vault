@@ -30,11 +30,23 @@ linuxprivchecker.py is a Linux privilege escalation check script which is run lo
 
 linuxprivchecker.py is a Linux privilege escalation check script which is run locally on a target to search for common privilege escalation vectors such as world writable files, misconfigurations, clear-text passwords, and applicable exploits. The exploit suggester is useful for older systems, but is unreliable at identifying newer exploits as the signatures were last updated in 2016.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_74027deb-aee5-4eed-9d25-879abbe42b19}}
+
+
 
 Installation
 
 Clone the repo and copy linuxprivchecker.py to the target
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +62,5 @@ Clone the repo and copy linuxprivchecker.py to the target
 - [[File System]]
 - [[known vulnerability]]
 - [[misconfiguration]]
+
+

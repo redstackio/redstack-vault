@@ -29,6 +29,8 @@ SQLite is a widely used database engine that is embedded in many applications. A
 
 SQLite is a widely used database engine that is embedded in many applications. Attackers can exploit SQLite injection vulnerabilities to gain access to sensitive data, escalate privileges, or execute arbitrary code. One of the first steps in a SQLite injection attack is to determine the version of SQLite that is being used. This information can be used to identify known vulnerabilities or to select the appropriate exploit. The SQLite Version command can be used to obtain this information.
 
+ 
+
 ## Requirements
 
 1. Access to an application that uses SQLite.
@@ -36,6 +38,8 @@ SQLite is a widely used database engine that is embedded in many applications. A
 1. Knowledge of SQLite injection techniques.
 
 1. The ability to execute the SQLite Version command.
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ SQLite is a widely used database engine that is embedded in many applications. A
 
 1. Monitor for suspicious activity, such as unusual queries or attempts to access sensitive data.
 
+ 
+
 ## Objectives
 
 1. Determine the version of SQLite that is being used.
@@ -53,19 +59,31 @@ SQLite is a widely used database engine that is embedded in many applications. A
 
 1. Select the appropriate exploit for the version of SQLite.
 
+ 
+
 # Instructions
 
 1. This command retrieves the version of SQLite that is currently running.
 
+ 
+
+
+
 **Code**: [[select sqlite_version();]]
 
+
+
 > The 'select sqlite_version();' statement is a SQL query that retrieves the version of SQLite that is currently running. This is useful for verifying the version of SQLite that is being used in a particular application or system. The result of the query will be a single row with a single column containing the version string in the format 'X.Y.Z', where X, Y, and Z are integers representing the major, minor, and patch versions of SQLite, respectively.
+
+
 
 **Command** ([[Check SQLite Version]]):
 
 ```bash
 select sqlite_version();
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ select sqlite_version();
 
 - [[SQLite Injection]]
 - [[SQLite version]]
+
+

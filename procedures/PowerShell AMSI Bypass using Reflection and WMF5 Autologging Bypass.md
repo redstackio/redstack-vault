@@ -27,11 +27,15 @@ Technical Explanation: The script uses the Reflection method to load the Microso
 
 Business Value: This procedure allows attackers to evade detection and execute malicious code on a target system. This can result in the loss of sensitive data, intellectual property, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
 
 1. PowerShell version 5 or later
+
+ 
 
 ## Defense
 
@@ -41,15 +45,25 @@ Business Value: This procedure allows attackers to evade detection and execute m
 
 1. Monitor for suspicious PowerShell activity on the network and endpoint devices
 
+ 
+
 ## Objectives
 
 1. Bypass AMSI protection and execute malicious code on a target system
+
+ 
 
 # Instructions
 
 1. To bypass AMSI using PowerShell, copy and paste the code from the data field into a PowerShell script. Then, run the script as administrator. This will disable AMSI in PowerShell.
 
+ 
+
+
+
 **Code**: [[$A="5492868772801748688168747280728187173688878280]]
+
+
 
 > The code in the data field obtains the reference to the `System.Management.Automation.AmsiUtils` class in the PowerShell runtime. It then retrieves the `amsiInitFailed` field of the class and sets its value to `$true`, which disables AMSI in PowerShell. This technique can be used to bypass AMSI in PowerShell and execute malicious code.
 
@@ -57,3 +71,5 @@ Business Value: This procedure allows attackers to evade detection and execute m
 
 - [[Other interesting AMSI bypass]]
 - [[Using Matt Graebers Reflection method with WMF5 autologging bypass]]
+
+

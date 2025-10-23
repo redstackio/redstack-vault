@@ -21,3 +21,5 @@ C:\> wmic useraccount where (domain='%USERDOMAIN%') get Name > userlist.txt PS C
 {$_.properties.samaccountname} | Sort | Out-File -Encoding ASCII users.txt
 
 ```
+
+

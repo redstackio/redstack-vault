@@ -34,9 +34,15 @@ Use PowerShell to mount a remote share with credentials on a local Windows machi
 
 Use PowerShell to mount a remote share with credentials on a local Windows machine.
 
+
+
 # Instructions
 
 1. Create a credentials object using the username and password assigned to the share
+
+
+
+
 
 **Command** ([[$Pass = ConvertTo-SecureString -String "$_PASSWORD]]):
 
@@ -45,13 +51,25 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_USER", $Pass
 ```
 
+
+
+
+
 2. Mount the shared folder
+
+
+
+
 
 **Command** ([[Mount a Windows SMB Share (PowerShell)]]):
 
 ```bash
 New-PSDrive -Name "$_NAME" -PSProvider FileSystem -Credential $Cred -Root \\$_TARGET_IP\$_SHARE
 ```
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +95,5 @@ New-PSDrive -Name "$_NAME" -PSProvider FileSystem -Credential $Cred -Root \\$_TA
 
 - [[file transfer]]
 - [[Network]]
+
+

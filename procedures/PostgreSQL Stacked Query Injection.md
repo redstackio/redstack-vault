@@ -27,6 +27,8 @@ From a technical perspective, PostgreSQL Stacked Query Injection is achieved by 
 
 From a business standpoint, PostgreSQL Stacked Query Injection can lead to significant financial and reputational damage. Attackers can steal sensitive customer data, such as credit card numbers and personal information, and use it for fraudulent activities. This can result in legal penalties, loss of customers, and damage to the company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses a PostgreSQL database
@@ -34,6 +36,8 @@ From a business standpoint, PostgreSQL Stacked Query Injection can lead to signi
 1. Knowledge of SQL and the structure of the database
 
 1. Ability to craft malicious SQL queries
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ From a business standpoint, PostgreSQL Stacked Query Injection can lead to signi
 
 1. Regularly update and patch the PostgreSQL database to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary SQL commands on the database server
@@ -51,11 +57,19 @@ From a business standpoint, PostgreSQL Stacked Query Injection can lead to signi
 
 1. Modify data stored in the database
 
+ 
+
 # Instructions
 
 1. To create a new table with injected data, use the following command:
 
+ 
+
+
+
 **Code**: [[http://host/vuln.php?id=injection';create table No]]
+
+
 
 > The command injects SQL code into the 'id' parameter of the URL which creates a new table called 'NotSoSecure' with a single column called 'data' that can hold up to 200 characters. The injected data is then stored in this newly created table. The semi-colon ";" is used to add another query after the injection to create the new table.
 
@@ -63,3 +77,5 @@ From a business standpoint, PostgreSQL Stacked Query Injection can lead to signi
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL Stacked Query]]
+
+

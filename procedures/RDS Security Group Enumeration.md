@@ -32,9 +32,13 @@ Technical Detail: The procedure involves using the 'RDS DB Security Group Descri
 
 Business Value: By identifying potential vulnerabilities in RDS security groups, this procedure can help organizations improve their overall security posture and reduce the risk of a data breach.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the target RDS instance
+
+ 
 
 ## Defense
 
@@ -44,15 +48,21 @@ Business Value: By identifying potential vulnerabilities in RDS security groups,
 
 1. Monitor RDS security groups for changes or suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify potential misconfigurations or vulnerabilities in RDS security groups
 
 1. Gather information about security groups within an RDS instance
 
+ 
+
 # Instructions
 
 1. This command retrieves information about the security groups associated with a specified RDS DB instance.
+
+ 
 
 The 'describe-db-security-groups' command is used to get information about the security groups that are associated with an RDS DB instance. The command requires the name of the DB instance as an argument. The output of this command includes the name of the security group, its description, and the VPC ID where the security group is located. Additionally, it includes a list of EC2 security groups that are associated with the DB instance's security group. This command can be useful for troubleshooting connectivity issues with an RDS DB instance.
 
@@ -71,3 +81,5 @@ The 'describe-db-security-groups' command is used to get information about the s
 - [[Enumeration]]
 - [[Listing information about database security groups in RDS]]
 - [[RDS - Relational Database Service]]
+
+

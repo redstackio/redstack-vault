@@ -31,6 +31,7 @@ data: 'HTTP/1.1 200 OK
 
   X-XSS-Protection:0
 
+
   23
 
   <svg onload=alert(document.domain)>
@@ -63,3 +64,5 @@ X-XSS-Protection:0
 <svg onload=alert(document.domain)>
 0
 ```
+
+

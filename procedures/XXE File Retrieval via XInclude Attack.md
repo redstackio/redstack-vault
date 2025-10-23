@@ -38,11 +38,16 @@ In technical terms, an attacker can craft an XML payload that includes a referen
 
 The business value of this attack is that it allows an attacker to gain access to sensitive data that can be used for further attacks or sold on the black market. It can also be used to gain a foothold in a system, which can be used to launch additional attacks.
 
+
+ 
+
 ## Requirements
 
 1. Knowledge of the target system's XML parser and configuration.
 
 1. Access to a vulnerable application that parses XML input.
+
+ 
 
 ## Defense
 
@@ -52,6 +57,8 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Implement network segmentation to prevent attackers from accessing sensitive data.
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive files from the target system.
@@ -60,12 +67,20 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Gain a foothold in a system, which can be used to launch additional attacks.
 
+ 
+
 # Instructions
 
 1. To mitigate XXE injection, ensure that untrusted XML input is not parsed by the application. If parsing is necessary, then disable external entities and use a secure parser that is not vulnerable to XXE injection. If external entities are necessary, then use a whitelist of allowed entities and validate all user input against this whitelist.
 
+ 
+
+
+
 **Code**: [[<foo xmlns:xi="http://www.w3.org/2001/XInclude">
 <]]
+
+
 
 > XXE injection is a type of attack where an attacker can inject malicious XML content into an XML document that is then processed by a vulnerable parser. This can lead to sensitive information disclosure, denial of service, and even remote code execution. In this specific example, the attacker is attempting to include the contents of the /etc/passwd file using the XInclude element. By properly configuring the parser to disable external entities, this attack can be prevented.
 
@@ -92,3 +107,5 @@ The business value of this attack is that it allows an attacker to gain access t
 - [[Exploiting XXE to retrieve files]]
 - [[XInclude attacks]]
 - [[XML External Entity]]
+
+

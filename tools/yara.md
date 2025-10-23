@@ -15,4 +15,10 @@ With YARA you can create descriptions of malware families based on textual or bi
 
 ## Description
 
-With YARA you can create descriptions of malware families based on textual or binary patterns contained on samples of those families. Each description consists of a set of strings and a boolean expression which determines its logic. This package contains the command-line interface.
+With YARA you can create descriptions of malware families based on textual or binary patterns contained on samples of those families. Each description consists of a set of strings and a boolean expression which determines its logic. This package contains the command-line interface. 
+
+
+
+
+
+

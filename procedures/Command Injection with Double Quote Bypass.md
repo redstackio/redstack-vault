@@ -35,7 +35,11 @@ Technical Explanation: The attacker is using a double quote to bypass the filter
 
 Business Value: This attack can allow an attacker to gain unauthorized access to sensitive data, compromise the integrity of the system, and cause significant financial and reputational damage to the targeted organization.
 
+ 
+
 ## Requirements
+
+ 
 
 ## Defense
 
@@ -45,17 +49,27 @@ Business Value: This attack can allow an attacker to gain unauthorized access to
 
 1. Implement a WAF to block malicious requests
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the targeted system
 
 1. Bypass blacklisted words filter
 
+ 
+
 # Instructions
 
 1. To execute the command, copy and paste the following code into a PowerShell console:
 
+ 
+
+
+
 **Code**: [[w"h"o"am"i]]
+
+
 
 > The 'Invoke-Expression' cmdlet is used to execute the command. The command is encapsulated in single quotes, and the double quotes are escaped with a backslash to allow them to pass through the filter.
 
@@ -79,3 +93,5 @@ Business Value: This attack can allow an attacker to gain unauthorized access to
 - [[Bypass with double quote]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

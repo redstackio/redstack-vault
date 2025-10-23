@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:10.720350+00:00'
 ```bash
 curl --header 'Host: <arbitrary-hostname>' http://<vulnerable-service>:8080
 ```
+
+

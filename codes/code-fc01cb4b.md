@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:38:03.457290+00:00'
 PS C:\> runas /netonly /user:DOMAIN\username "cmd.exe"
 PS C:\> runas /noprofil /netonly /user:DOMAIN\username cmd.exe
 ```
+
+

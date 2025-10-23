@@ -16,3 +16,5 @@ net start
 wmic service list brief
 tasklist /SVC
 ```
+
+

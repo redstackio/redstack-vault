@@ -31,11 +31,15 @@ MySQL is a popular open-source relational database management system. One of the
 
 MySQL is a popular open-source relational database management system. One of the most common vulnerabilities in web applications is SQL injection. Attackers can exploit SQL injection vulnerabilities to extract sensitive information from a database. In this procedure, we will demonstrate how to extract database information using MySQL union-based injection. The attack works by injecting malicious SQL statements into a vulnerable web application, which then executes the statements on the underlying database. The attacker can then extract information from the database using the union operator. The information_schema database is a system database that contains metadata about all other databases in the MySQL instance. By querying the information_schema database, an attacker can extract information about the database schema and contents.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -45,11 +49,15 @@ MySQL is a popular open-source relational database management system. One of the
 
 1. Use database permissions to restrict access to sensitive information
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from the database
 
 1. Identify the database schema and contents
+
+ 
 
 # Instructions
 
@@ -59,7 +67,13 @@ MySQL is a popular open-source relational database management system. One of the
 3. To extract the column names: UniOn Select 1,2,3,4,...,gRoUp_cOncaT(0x7c,column_name,0x7C)+fRoM+information_schema.columns+wHeRe+table_name=...
 4. To extract the data: UniOn Select 1,2,3,4,...,gRoUp_cOncaT(0x7c,data,0x7C)+fRoM+...
 
+ 
+
+
+
 **Code**: [[UniOn Select 1,2,3,4,...,gRoUp_cOncaT(0x7c,schema_]]
+
+
 
 > The above SQL injection commands are used to extract sensitive information such as database names, table names, and column names from the target system. The 'UniOn Select' command is used to combine the results of multiple SELECT statements into a single result set. The 'gRoUp_cOncaT' function is used to concatenate strings together. The 'information_schema' table contains metadata about the database system, including information about databases, tables, and columns. By injecting these commands into vulnerable input fields, an attacker can extract sensitive information from the target system.
 
@@ -81,3 +95,5 @@ MySQL is a popular open-source relational database management system. One of the
 - [[Extract database with information_schema]]
 - [[MYSQL Injection]]
 - [[MYSQL Union Based]]
+
+

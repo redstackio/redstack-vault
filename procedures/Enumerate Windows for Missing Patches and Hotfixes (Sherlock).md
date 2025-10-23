@@ -38,11 +38,17 @@ Use Sherlock to enumerate a Windows system for potential privilege escalation pa
 
 Use Sherlock to enumerate a Windows system for potential privilege escalation paths, including common vulnerabilities , unquoted service paths, missing patches, permission issues, and more.
 
+
+
 # Instructions
 
 1. Download Sherlock.ps1 and import it into a PowerShell session: [Download Sherlock from GitHub](https://github.com/rasta-mouse/Sherlock/)
 
 2. Execute the script..
+
+
+
+
 
 **Command** ([[Sherlock Import Module and Enumerate Vulnerabilities]]):
 
@@ -50,7 +56,11 @@ Use Sherlock to enumerate a Windows system for potential privilege escalation pa
 Find-AllVulns
 ```
 
+
+
 Note: if executing Sherlock from a non-interactive session, append "Find-AllVulns" to the end of the script to automatically execute it.
+
+
 
 ## Platforms
 
@@ -79,3 +89,5 @@ Note: if executing Sherlock from a non-interactive session, append "Find-AllVuln
 - [[data exposure]]
 - [[Misconfiguration]]
 - [[Service Attacks]]
+
+

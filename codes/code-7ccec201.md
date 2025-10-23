@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:31.429174+00:00'
 Get-SQLServerLinkCrawl -Instance "<DBSERVERNAME\DBInstance>" -Verbose
 select * from openquery("<instance>",'select * from openquery("<instance2>",''select * from master..sysservers'')')
 ```
+
+

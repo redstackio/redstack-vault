@@ -34,6 +34,8 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
 
 This procedure outlines the steps to push an SSH key to an Amazon EC2 instance using AWS Instance Connect. This allows for secure SSH access to the instance without the need for a bastion host or exposing SSH ports to the internet. This procedure is useful for system administrators and developers who need secure and convenient SSH access to EC2 instances.
 
+ 
+
 ## Requirements
 
 1. AWS account with EC2 instances
@@ -41,6 +43,8 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
 1. AWS CLI or AWS Management Console
 
 1. SSH key pair for authentication
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
 
 1. Use AWS Security Groups to restrict access to EC2 instances
 
+ 
+
 ## Objectives
 
 1. Push an SSH key to an EC2 instance for secure SSH access
@@ -57,6 +63,8 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
 1. Reduce the need for a bastion host or exposing SSH ports to the internet
 
 1. Enable system administrators and developers to have secure and convenient SSH access to EC2 instances
+
+ 
 
 # Instructions
 
@@ -69,9 +77,17 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
    Replace INSTANCE with the InstanceId of the instance you want to connect to.
 4. Connect to the instance using SSH.
 
+ 
+
+
+
 **Code**: [[# https://aws.amazon.com/fr/blogs/compute/new-usin]]
 
+
+
 > The first command is used to describe the instances in your account, and returns the InstanceId, KeyName, and State of each instance. The second command is used to send your SSH public key to the instance you want to connect to. Replace INSTANCE with the InstanceId of the instance you want to connect to. Once you have sent your SSH public key to the instance, you can connect to it using SSH.
+
+
 
 **Command** ([[Describe EC2 instances]]):
 
@@ -79,11 +95,17 @@ This procedure outlines the steps to push an SSH key to an Amazon EC2 instance u
 $ aws ec2 describe-instances --profile uploadcreds --region eu-west-1 | jq ".[][].Instances | .[] | {InstanceId, KeyName, State}"
 ```
 
+
+
+
+
 **Command** ([[Send SSH public key]]):
 
 ```bash
 $ aws ec2-instance-connect send-ssh-public-key --region us-east-1 --instance-id INSTANCE --availability-zone us-east-1d --instance-os-user ubuntu --ssh-public-key file://shortkey.pub --profile uploadcreds
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +130,5 @@ $ aws ec2-instance-connect send-ssh-public-key --region us-east-1 --instance-id 
 
 - [[AWS - Instance Connect - Push an SSH key to EC2 instance]]
 - [[Cloud - AWS]]
+
+

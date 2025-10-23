@@ -33,11 +33,15 @@ AWS User Policy Enumeration is a technique used by attackers to gather informati
 
 To perform this technique, an attacker needs to have valid AWS credentials and access to the AWS Management Console or AWS CLI. By listing the policies attached to an IAM user, the attacker can gain insight into the level of access granted to the user and identify potential targets for further exploitation. This technique can be used to identify high-value targets or to gather information for lateral movement.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the AWS Management Console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ To perform this technique, an attacker needs to have valid AWS credentials and a
 
 1. Enable multi-factor authentication (MFA) for AWS IAM users
 
+ 
+
 ## Objectives
 
 1. Identify the permissions assigned to a specific AWS user
@@ -55,17 +61,25 @@ To perform this technique, an attacker needs to have valid AWS credentials and a
 
 1. Gather information for lateral movement
 
+ 
+
 # Instructions
 
 1. Use this command to list all the policies attached to a specific IAM user.
 
+ 
+
 The 'aws iam list-attached-user-policies' command is used to list all the policies that are attached to a specific IAM user. The command takes one argument, which is the name of the user whose attached policies you want to list. Once you run the command, it will return a JSON object that contains information about the policies attached to the specified user, including the policy name, policy ARN, and the name of the user to which the policy is attached.
+
+
 
 **Command** ([[List Attached User Policies]]):
 
 ```bash
 aws iam list-attached-user-policies --user-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam list-attached-user-policies --user-name name
 - [[Cloud - AWS]]
 - [[Credential Exfiltration]]
 - [[Listing policies attached to an user]]
+
+

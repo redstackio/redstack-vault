@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:43.691133+00:00'
 ```bash
 cme smb 10.10.0.202 -u username -p password --ntds vss
 ```
+
+

@@ -32,11 +32,43 @@ OS command injection allows an attacker to execute arbitrary OS commands on the 
 
 # Instructions
 
+
+
 1. In the below image there is an option to look for dns information of a website .
+
+
+
+
+
+![a468a741-3697-43cc-9c59-dfd865eeee0c.PNG](_assets/images/Mash/a468a741-3697-43cc-9c59-dfd865eeee0c.PNG)
+
+
 
 2. Manipulate the *DNS lookup *text box by placing an *or *operator which will ignore the *dnslookup *execution and will execute the command after *or *operator.
 
+
+
+
+
+
+
+![fe73b9ac-9313-4f89-a177-00ace1c1707b.PNG](_assets/images/Mash/fe73b9ac-9313-4f89-a177-00ace1c1707b.PNG)
+
+
+
+
+
 3.We can observe that  the response for *ping *command will be executed with significant delay as mentioned in the command which confirms the OS command injection.
+
+
+
+
+
+
+
+![99a3675d-2c94-48df-addf-8f23a2401e54.PNG](_assets/images/Mash/99a3675d-2c94-48df-addf-8f23a2401e54.PNG)
+
+
 
 ## Platforms
 
@@ -49,3 +81,5 @@ OS command injection allows an attacker to execute arbitrary OS commands on the 
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

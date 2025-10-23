@@ -35,9 +35,13 @@ Technical Explanation: An attacker can create a batch script that executes their
 
 Business Value: This technique can be used by attackers to maintain access to a compromised system, allowing them to steal sensitive data, install additional malware, or use the compromised system as a foothold for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the User Startup folder
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: This technique can be used by attackers to maintain access to a 
 
 1. Enforce the principle of least privilege to limit the privileges of users and reduce the impact of any successful attack
 
+ 
+
 ## Objectives
 
 1. Achieve persistence on a compromised system
@@ -54,6 +60,8 @@ Business Value: This technique can be used by attackers to maintain access to a 
 1. Execute additional commands or malware with elevated privileges
 
 1. Bypass UAC and other security measures
+
+ 
 
 # Instructions
 
@@ -63,7 +71,13 @@ Business Value: This technique can be used by attackers to maintain access to a 
 3. Save the file with a .bat extension.
 4. Copy the file to the following directory: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
+ 
+
+
+
 **Code**: [[C:\ProgramData\Microsoft\Windows\Start Menu\Progra]]
+
+
 
 > This command allows you to create a batch script that will run automatically when a user logs into their account. By copying the batch script to the user startup folder, it will be executed every time the user logs in. This can be useful for automating certain tasks or launching specific programs on startup.
 
@@ -85,3 +99,5 @@ Business Value: This technique can be used by attackers to maintain access to a 
 - [[Elevated]]
 - [[Startup Elevated]]
 - [[Windows - Persistence]]
+
+

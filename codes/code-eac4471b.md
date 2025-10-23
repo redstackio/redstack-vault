@@ -16,3 +16,5 @@ $ aws iam attach-user-policy –user-name my_username –policy-arn arn:aws:iam:
 $ aws iam attach-user-policy –user-name my_username –policy-arn arn:aws:iam::aws:policy/AdministratorAccess
 $ aws iam attach-role-policy –role-name role_i_can_assume –policy-arn arn:aws:iam::aws:policy/AdministratorAccess
 ```
+
+

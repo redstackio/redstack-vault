@@ -28,11 +28,15 @@ Jinja2 is a popular templating engine used by many web applications. It allows d
 
 Jinja2 is a popular templating engine used by many web applications. It allows developers to dynamically generate HTML pages by inserting data into templates. However, if not properly secured, it can be vulnerable to server-side template injection attacks. An attacker can exploit this vulnerability to execute arbitrary code on the server, leading to web shell creation, credential dumping, and system information discovery. Businesses need to be aware of this vulnerability and take steps to secure their web applications that use Jinja2 templates.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Jinja2 templates
 
 1. Knowledge of Jinja2 syntax and injection techniques
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ Jinja2 is a popular templating engine used by many web applications. It allows d
 1. Use a web application firewall to detect and block malicious requests
 
 1. Regularly update and patch the web application and its dependencies
+
+ 
 
 ## Objectives
 
@@ -51,6 +57,8 @@ Jinja2 is a popular templating engine used by many web applications. It allows d
 1. Dump credentials from the server
 
 1. Discover system information
+
+ 
 
 # Instructions
 
@@ -66,9 +74,15 @@ output = template.render(name='John')
 print(output) # Output: 'Hello John!'
 ```
 
+ 
+
+
+
 **Code**: [[16[[5*5]]
 7777777
 [('name', 'Jinja'), ('version', ]]
+
+
 
 > The `data` field provides several examples of using Jinja templating. The first example evaluates the expression `4*4` and renders the result `16`. The second example uses double square brackets to evaluate the expression `5*5` and render the result `25`. The third example evaluates the expression `7*'7'` and renders the string `7777777`. The last example uses the `config` object to get information about the Jinja environment, such as the version and installed packages.
 
@@ -95,3 +109,5 @@ The `explain` field provides a more detailed explanation of the examples in the 
 - [[Jinja2]]
 - [[Jinja2 - Basic injection]]
 - [[Server Side Template Injection]]
+
+

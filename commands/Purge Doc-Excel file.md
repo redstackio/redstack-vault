@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:57.674203+00:00'
 ```bash
 BadAssMacros.exe -i <path_to_doc/excel_file> -w <doc/excel> -p yes -o <path_to_output_file> -m <module_name>
 ```
+
+

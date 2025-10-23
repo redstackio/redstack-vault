@@ -34,3 +34,5 @@ root@kali:~# smbmap -u bob -p secretpass --upload shelly.sh stuff/shelly.sh -H 1
 [+] Starting upload: shelly.sh (8 bytes)
 [+] Upload complete
 ```
+
+

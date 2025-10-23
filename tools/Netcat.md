@@ -32,13 +32,27 @@ Netcat is most commonly used in penetration testing to connect to and receive co
 
 There are multiple versions of Netcat with slightly different features. The main difference between them is the OpenBSD version does not support the "-e" argument, which executes a program and connects the stdin/stdout/stderr to a network socket.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e9aff3c0-e1ef-4e0e-9494-1ee946a32778}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
+
+
 Note: Depending on the package manager and sources, Netcat may need to be installed using the name "nc" , "ncat" , or "netcat". 
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +68,5 @@ Note: Depending on the package manager and sources, Netcat may need to be instal
 - [[Exfiltration]]
 - [[Network]]
 - [[Service Attacks]]
+
+

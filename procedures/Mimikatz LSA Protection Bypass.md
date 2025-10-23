@@ -27,11 +27,15 @@ The Mimikatz LSA Protection Bypass procedure is designed to circumvent the LSA P
 
 The Mimikatz LSA Protection Bypass procedure is designed to circumvent the LSA Protection feature in Windows and extract sensitive credential information from the Local Security Authority (LSA) process. This procedure involves injecting Mimikatz into a protected process, which allows it to access the LSA secrets. This technique is commonly used by attackers to obtain domain credentials and escalate privileges. From a technical perspective, this procedure involves injecting Mimikatz into a protected process using the 'Process Check and Mimikatz Injection' command and then using the 'Dump LSA Passwords as a Protected Process' command to extract the credential information. The business value of this procedure lies in the ability to obtain sensitive information that can be used to further compromise the target network.
 
+ 
+
 ## Requirements
 
 1. Local administrator or SYSTEM-level access
 
 1. Access to the target system
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ The Mimikatz LSA Protection Bypass procedure is designed to circumvent the LSA P
 
 1. Restrict administrative access to critical systems
 
+ 
+
 ## Objectives
 
 1. Extract sensitive credential information from the LSA process
@@ -48,6 +54,8 @@ The Mimikatz LSA Protection Bypass procedure is designed to circumvent the LSA P
 1. Obtain domain credentials
 
 1. Escalate privileges
+
+ 
 
 # Instructions
 
@@ -64,13 +72,25 @@ The Mimikatz LSA Protection Bypass procedure is designed to circumvent the LSA P
 
 Note: PPLdump.exe is available at https://github.com/itm4n/PPLdump.
 
+ 
+
+
+
 **Code**: [[# Check if LSA runs as a protected process by look]]
+
+
 
 > This command is used to dump the passwords stored in the LSA process as a protected process. The command first checks if LSA is running as a protected process. If not, it imports the mimidriver.sys to the system and sets the protection flags for lsass.exe. After dumping the LSA passwords, the protection flags are re-added to the lsass.exe process. Finally, PPLdump.exe is used to dump the LSA process.
 
 2. To check if a process called lsaiso.exe exists on the running processes, run the command 'tasklist | findstr lsaiso'. To inject a malicious Security Support Provider into memory, run the command 'mimikatz # misc::memssp' (requires mimilib.dll in the same folder). This will log every user session and authentication into the machine and capture plaintext credentials, which will be dumped into c:\windows\system32\mimilsa.log.
 
+ 
+
+
+
 **Code**: [[# Check if a process called lsaiso.exe exists on t]]
+
+
 
 > The first command checks if a process called lsaiso.exe exists on the running processes. The second command injects a malicious Security Support Provider into memory, which will log every user session and authentication into the machine and capture plaintext credentials. This is done by using mimikatz with the misc::memssp command, which requires mimilib.dll in the same folder. The captured plaintext credentials will be dumped into c:\windows\system32\mimilsa.log.
 
@@ -88,3 +108,5 @@ Note: PPLdump.exe is available at https://github.com/itm4n/PPLdump.
 
 - [[LSA Protection Workaround]]
 - [[Windows - Mimikatz]]
+
+

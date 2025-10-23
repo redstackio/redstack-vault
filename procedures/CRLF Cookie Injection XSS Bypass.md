@@ -25,9 +25,13 @@ The CRLF Cookie Injection XSS Bypass technique is used to bypass security contro
 
 The CRLF Cookie Injection XSS Bypass technique is used to bypass security controls in web applications. The attacker injects a cookie with a payload that includes a CRLF sequence, which is interpreted by the web application as a new header. The payload includes an XSS attack, which is executed by the web application, bypassing the XSS filter. This technique can be used to steal sensitive information, such as session cookies or credentials, or to perform other malicious actions on the victim's machine.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -37,26 +41,44 @@ The CRLF Cookie Injection XSS Bypass technique is used to bypass security contro
 
 1. Implement secure cookie handling practices to prevent cookie theft and misuse.
 
+ 
+
 ## Objectives
 
 1. Bypass XSS filters in web applications
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. Replace 'http://example.com' with the target URL and modify the payload as needed.
 
+ 
+
+
+
 **Code**: [[http://example.com/%0d%0aContent-Length:35%0d%0aX-]]
+
+
 
 > This command injects a cookie with a payload that includes a CRLF sequence and an XSS attack. The payload is sent in the HTTP request header, and is interpreted by the web application as a new header. The XSS attack is executed by the web application, bypassing the XSS filter.
 
 2. 
 
+ 
+
+
+
 **Code**: [[HTTP/1.1 200 OK
 Date: Tue, 20 Dec 2016 14:34:03 GM]]
 
+
+
 > This command shows the HTTP response of the web application after the cookie with the payload has been injected. The response includes the payload, which has been executed by the web application, bypassing the XSS filter.
+
+
 
 **Command** ([[HTTP Response]]):
 
@@ -81,6 +103,8 @@ X-XSS-Protection:0
 0
 ```
 
+
+
 ## Commands Used
 
 - [[HTTP Response]]
@@ -89,3 +113,5 @@ X-XSS-Protection:0
 
 - [[Carriage Return Line Feed]]
 - [[CRLF - Add a cookie - XSS Bypass]]
+
+

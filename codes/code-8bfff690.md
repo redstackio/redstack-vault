@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:16.899281+00:00'
 $ chmod u+x ~/.hidden/fakesudo
 $ echo "alias sudo=~/.hidden/fakesudo" >> ~/.bashrc
 ```
+
+

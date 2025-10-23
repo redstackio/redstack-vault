@@ -30,3 +30,5 @@ PowerView2 > $User | Select serviceprincipalname
 # Remove the SPN
 PowerView2 > Set-DomainObject -Identity username -Clear serviceprincipalname
 ```
+
+

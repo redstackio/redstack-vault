@@ -18,3 +18,5 @@ $2y$ – Eksblowfish
 $5$ – SHA-256
 $6$ – SHA-512
 ```
+
+

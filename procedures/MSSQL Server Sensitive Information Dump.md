@@ -30,6 +30,8 @@ The MSSQL Server Sensitive Information Dump procedure is used to identify and ex
 
 From a technical standpoint, this procedure utilizes SQL queries to extract information from the target MSSQL server. This information is then written to files on the attacker's machine. The business value of this procedure is that it can provide valuable information for further attacks, such as password spraying or credential stuffing.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the target MSSQL server
@@ -37,6 +39,8 @@ From a technical standpoint, this procedure utilizes SQL queries to extract info
 1. Network access to the target MSSQL server
 
 1. SQL Dump Info command
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ From a technical standpoint, this procedure utilizes SQL queries to extract info
 
 1. Monitor MSSQL server logs for any suspicious activity, such as failed login attempts
 
+ 
+
 ## Objectives
 
 1. Identify sensitive information on the target MSSQL server
 
 1. Extract usernames and passwords for further attacks
 
+ 
+
 # Instructions
 
 1. This command is used to retrieve information about SQL Server dump files. It can be used to analyze the contents of a dump file and provide insights into the cause of a SQL Server crash. The -Verbose switch is used to provide detailed information about the dump file analysis. The -Instance parameter specifies the SQL Server instance to analyze, and the -csv switch is used to output the results in CSV format.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLDumpInfo -Verbose -Instance SQLSERVER1\I]]
+
+
 
 > -Verbose: Provides detailed information about the dump file analysis.
 -Instance: Specifies the SQL Server instance to analyze.
@@ -77,3 +91,5 @@ From a technical standpoint, this procedure utilizes SQL queries to extract info
 - [[Dump common information from server to files]]
 - [[Identify Sensitive Information]]
 - [[MSSQL Server]]
+
+

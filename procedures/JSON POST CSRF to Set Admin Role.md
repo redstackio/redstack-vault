@@ -36,11 +36,15 @@ Technically, the attack uses an XMLHttpRequest object to send a POST request to 
 
 The business value of this attack is that it allows the attacker to gain unauthorized access to the target website as an admin, which could lead to data theft, data manipulation, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. The victim must be authenticated to the target website.
 
 1. The victim must visit a malicious website that contains the attack payload.
+
+ 
 
 ## Defense
 
@@ -50,17 +54,27 @@ The business value of this attack is that it allows the attacker to gain unautho
 
 1. Monitor network traffic for suspicious activity, such as unexpected POST requests or requests to unfamiliar endpoints.
 
+ 
+
 ## Objectives
 
 1. Set the admin role on the target website without the victim's knowledge or consent.
+
+ 
 
 # Instructions
 
 1. To execute this attack, the attacker must first create a malicious website that includes the payload code. The payload code should be hidden or disguised so that the victim is not aware of the attack. When the victim visits the malicious website, the payload code is executed in the victim's browser, sending the POST request to the target website's API endpoint. If the victim is authenticated to the target website, the request will be sent with the victim's credentials, allowing the attacker to set the admin role without the victim's knowledge.
 
+ 
+
+
+
 **Code**: [[<script>
 var xhr = new XMLHttpRequest();
 xhr.open(]]
+
+
 
 > The payload code creates an XMLHttpRequest object and sets its open() method to send a POST request to the target website's API endpoint. The withCredentials property is set to true to ensure that the victim's credentials are sent with the request. The setRequestHeader() method is used to set the Content-Type header to application/json;charset=UTF-8 to specify the format of the payload. The send() method is used to send the JSON payload that sets the role to admin.
 
@@ -83,3 +97,5 @@ xhr.open(]]
 - [[Cross-Site Request Forgery]]
 - [[JSON POST - Complex Request]]
 - [[Payloads]]
+
+

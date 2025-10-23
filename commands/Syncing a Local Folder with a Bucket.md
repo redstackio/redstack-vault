@@ -23,3 +23,5 @@ aws s3 sync $FOLDER s3://$AWS_S3_BUCKET
 ```
 aws s3 sync target-folder s3://redstack.io-s3bucket
 ```
+
+

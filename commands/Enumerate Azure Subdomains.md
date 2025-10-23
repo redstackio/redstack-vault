@@ -12,6 +12,7 @@ output: 'PS> . C:\Tools\MicroBurst\Misc\InvokeEnumerateAzureSubDomains.ps1
 
   PS> Invoke-EnumerateAzureSubDomains -Base <TENANT NAME> -Verbose
 
+
   Subdomain Service
 
   --------- -------
@@ -42,3 +43,5 @@ Subdomain Service
 <TENANT NAME>.mail.protection.outlook.com Email
 <TENANT NAME>.onmicrosoft.com Microsoft Hosted Domain
 ```
+
+

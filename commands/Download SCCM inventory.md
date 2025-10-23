@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:07.127790+00:00'
 ```bash
 Invoke-CMLootInventory -SCCMHost sccm01.domain.local -Outfile sccmfiles.txt
 ```
+
+

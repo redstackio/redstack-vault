@@ -23,3 +23,5 @@ mkpasswd -m sha512crypt -S $_SALT $_PASSWORD
 root@kali:~# mkpasswd -m sha512crypt -S 12345678 secretpass
 $6$12345678$DgaVYkZjVTY58m0juyhsvwGEjwMI9RB5U0U63JEP2as7KF/gNTboh3MC6aE8CjcVHmb1Er9RWwbRQmaHhBUfs/
 ```
+
+

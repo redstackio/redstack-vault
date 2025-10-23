@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:50.539408+00:00'
 ```bash
 SELECT json_arrayagg(name) FROM users;
 ```
+
+

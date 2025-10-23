@@ -35,11 +35,15 @@ To exploit this vulnerability, the attacker needs to craft a request that includ
 
 Business Value: An attacker could use this vulnerability to steal sensitive information or perform unauthorized actions on a third-party server, potentially causing reputational damage and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable Netdoc web application
 
 1. Ability to craft a specially crafted request with a URL Scheme
+
+ 
 
 ## Defense
 
@@ -49,17 +53,27 @@ Business Value: An attacker could use this vulnerability to steal sensitive info
 
 1. Monitor network traffic for unusual activity and investigate any suspicious requests
 
+ 
+
 ## Objectives
 
 1. Access sensitive information on a third-party server
 
 1. Perform unauthorized actions on a third-party server
 
+ 
+
 # Instructions
 
 1. This command is used to wrap Java payloads when they are struggling with "\n" and "\r" characters. It is specifically designed for Server-Side Request Forgery (SSRF) attacks. The command takes in a URL as an argument and returns the contents of the specified URL.
 
+ 
+
+
+
 **Code**: [[ssrf.php?url=netdoc:///etc/passwd]]
+
+
 
 > The command works by wrapping the Java payload in a way that it can bypass filters that block certain characters such as "\n" and "\r". This allows the payload to be executed successfully and retrieve the contents of the specified URL. The "ssrf.php" file is used as a proxy to bypass any filters that may be in place. It is important to note that this command should only be used for ethical hacking and penetration testing purposes with proper authorization and consent.
 
@@ -81,3 +95,5 @@ Business Value: An attacker could use this vulnerability to steal sensitive info
 - [[Netdoc]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

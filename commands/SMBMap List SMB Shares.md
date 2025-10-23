@@ -37,3 +37,5 @@ root@kali:~# smbmap -u 'bob' -p 's3cr3t' -H 10.10.10.10
         IPC$                                                    NO ACCESS
         ADMIN$                                                  NO ACCESS
 ```
+
+

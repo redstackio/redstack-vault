@@ -27,9 +27,25 @@ Onesixytime is an SNMP scanner that sends SNMP requests to multiple IP  addresse
 
 Onesixytime is an SNMP scanner that sends SNMP requests to multiple IP  addresses, trying different community strings and waiting for a reply.  If an SNMP server is active and the community string is correct, onesixytime will receive a reply. Onesixyone supports brute forcing community strings via a wordlist, and can be run against a single host or subnet.
 
+
+
+
+
+
+
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+{{EMBEDDED_CODE_af9fd77d-8a72-45ce-8918-0afaf82cf555}}
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Onesixytime is an SNMP scanner that sends SNMP requests to multiple IP  addresse
 
 - [[Brute Force]]
 - [[Network]]
+
+

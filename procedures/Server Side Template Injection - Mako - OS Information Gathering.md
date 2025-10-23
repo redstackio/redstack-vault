@@ -36,11 +36,15 @@ Technical Explanation: The 'TemplateNamespace' object in Mako allows direct acce
 
 Business Value: This procedure can be used by an attacker to gather information about the target server, which can be used to plan further attacks or to sell the information on the black market.
 
+ 
+
 ## Requirements
 
 1. Direct access to the server-side template.
 
 1. Knowledge of Mako's TemplateNamespace syntax.
+
+ 
 
 ## Defense
 
@@ -50,9 +54,13 @@ Business Value: This procedure can be used by an attacker to gather information 
 
 1. Regularly monitor and analyze server logs for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Gather information about the operating system running on the target server.
+
+ 
 
 # Instructions
 
@@ -61,21 +69,37 @@ Business Value: This procedure can be used by an attacker to gather information 
 - 'os.version' - Returns the version of the operating system.
 - 'os.architecture' - Returns the architecture of the operating system.
 
+ 
+
+
+
 **Code**: [[os]]
+
+
 
 > The 'os' payload provides information about the operating system. The 'os.name' command returns the name of the operating system. The 'os.version' command returns the version of the operating system. The 'os.architecture' command returns the architecture of the operating system. These commands can be used to retrieve information about the operating system that can be used for troubleshooting or system administration purposes.
 
 2. This command prints the path of the 'os' module in Python.
 
+ 
+
+
+
 **Code**: [[>>> print(Template("${self.module.cache.util.os}")]]
 
+
+
 > The 'os' module in Python provides a way of using operating system dependent functionality like reading or writing to the file system. This command uses the 'Template' class from the 'string' module to substitute the module path in the string and then prints it using the 'print' function. The output shows the path of the 'os' module in the system where the code is executed.
+
+
 
 **Command** ([[Print OS module path]]):
 
 ```bash
 print(Template(\"${self.module.cache.util.os}\").render())
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +122,5 @@ print(Template(\"${self.module.cache.util.os}\").render())
 - [[Direct access to os from TemplateNamespace:]]
 - [[Mako]]
 - [[Server Side Template Injection]]
+
+

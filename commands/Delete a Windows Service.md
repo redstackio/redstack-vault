@@ -23,3 +23,5 @@ sc.exe delete $_SERVICE_NAME
 C:\Windows\system32>sc.exe delete pwnSVC
 [SC] DeleteService SUCCESS
 ```
+
+

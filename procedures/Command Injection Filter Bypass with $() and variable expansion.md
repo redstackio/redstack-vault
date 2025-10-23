@@ -31,9 +31,13 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 
 Command injection is a technique that allows an attacker to execute arbitrary commands on a targeted system. In this specific case, the attacker is bypassing a filter that is in place to prevent command injection by using $() and variable expansion. The attacker is able to execute a command that is stored in a variable by expanding the variable and then executing the command. This technique can be used to bypass security measures and gain access to sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a system with a command injection vulnerability
+
+ 
 
 ## Defense
 
@@ -43,11 +47,15 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 
 1. Use security tools such as intrusion detection systems to detect and prevent command injection attacks
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on a targeted system
 
 1. Bypass security measures
+
+ 
 
 # Instructions
 
@@ -55,9 +63,15 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 2. Use variable expansion to bypass the filter and execute the command
 3. The 'cat' command is used to display the contents of the executed command
 
+ 
+
+
+
 **Code**: [[/???/??t /???/p??s??
 
 test=/ehhh/hmtc/pahhh/hmsswd]]
+
+
 
 > The attacker sets the variable 'test' to the desired command and then uses variable expansion to bypass the filter. The '${test//hhh\/hm/}' expression replaces all occurrences of 'hhh/hm' with '/' in the 'test' variable. The '${test//hh??hm/}' expression replaces all occurrences of 'hh' followed by any two characters and then 'hm' with '/' in the 'test' variable. The resulting command is then executed using the 'cat' command.
 
@@ -81,3 +95,5 @@ test=/ehhh/hmtc/pahhh/hmsswd]]
 - [[Bypass with variable expansion]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

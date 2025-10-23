@@ -5,6 +5,7 @@ type: command
 executor: bash
 data: 'OPTIONS:
 
+
   -A        Automatically start a matching exploit/multi/handler to connect to the
   agent
 
@@ -27,6 +28,7 @@ data: 'OPTIONS:
   -p <opt>  The port on which the system running Metasploit is listening
 
   -r <opt>  The IP of the system running Metasploit listening for the connect back
+
 
   '
 output: null
@@ -51,4 +53,7 @@ OPTIONS:
 -p <opt>  The port on which the system running Metasploit is listening
 -r <opt>  The IP of the system running Metasploit listening for the connect back
 
+
 ```
+
+

@@ -16,3 +16,5 @@ net localgroup administrators
 Get-LocalGroupMember Administrators | ft Name, PrincipalSource
 Get-LocalGroupMember Administrateurs | ft Name, PrincipalSource
 ```
+
+

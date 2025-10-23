@@ -17,3 +17,5 @@ $ aws lambda list-functions --profile uploadcreds
 $ aws lambda get-function --function-name "LAMBDA-NAME-HERE-FROM-PREVIOUS-QUERY" --query 'Code.Location' --profile uploadcreds
 $ wget -O lambda-function.zip url-from-previous-query --profile uploadcreds
 ```
+
+

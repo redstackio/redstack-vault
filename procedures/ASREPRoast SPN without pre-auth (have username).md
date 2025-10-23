@@ -30,19 +30,31 @@ Active Directory try to get hash from username. Looking user without pre-auth at
 
 Can achieve without domain account, just a username.
 
+
+
 ## Objective
 
 1. Obtain a hash that can then be cracked for a password for valid credentials
 
+
+
 # Instructions
 
 Use Rubeus to get result with hashcat format to crack.
+
+
+
+
 
 **Command** ([[Rubeus asreproast hashcat output]]):
 
 ```bash
 rubeus.exe asreproast /format:hashcat
 ```
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +69,5 @@ rubeus.exe asreproast /format:hashcat
 - [[ASEPRoast]]
 - [[kerberoast]]
 - [[kerberos]]
+
+

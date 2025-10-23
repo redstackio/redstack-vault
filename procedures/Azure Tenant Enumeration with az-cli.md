@@ -41,11 +41,15 @@ Azure Tenant Enumeration with az cli is a technique used to gather information a
 
 Azure Tenant Enumeration with az cli is a technique used to gather information about an Azure tenant using the Azure CLI. This technique can be used by an attacker to identify resources within the tenant, such as virtual machines, storage accounts, and network resources. The Azure CLI is a command-line tool that provides a command-line interface to interact with Azure resources. The Azure CLI can be used to query Azure Resource Manager (ARM) for information about the resources in the tenant. This technique can be used by both red teamers and attackers to gain valuable intelligence about an Azure tenant.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure CLI
 
 1. Valid Azure credentials
+
+ 
 
 ## Defense
 
@@ -55,22 +59,34 @@ Azure Tenant Enumeration with az cli is a technique used to gather information a
 
 1. Monitor for suspicious activity in Azure logs
 
+ 
+
 ## Objectives
 
 1. Gather information about the Azure tenant
 
 1. Identify resources within the tenant
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+ 
+
+
+
 **Code**: [[# Login to Azure
 PS> az login -u test@<TENANT NAME]]
+
+
 
 ## Steps
 
 1. To get a list of Azure resources in your subscription, run the following commands in PowerShell:
+
+
 
 **Command** ([[Azure Login]]):
 
@@ -78,11 +94,19 @@ PS> az login -u test@<TENANT NAME]]
 PS> az login -u test@<TENANT NAME>.onmicrosoft.com -p <PASSWORD>
 ```
 
+
+
+
+
 **Command** ([[List all virtual machines]]):
 
 ```bash
 az vm list
 ```
+
+
+
+
 
 **Command** ([[List all virtual machine names]]):
 
@@ -90,11 +114,19 @@ az vm list
 az vm list --query "[].[name]" -o table
 ```
 
+
+
+
+
 **Command** ([[List all web apps]]):
 
 ```bash
 az webapp list
 ```
+
+
+
+
 
 **Command** ([[List all function app names]]):
 
@@ -102,17 +134,27 @@ az webapp list
 az functionapp list --query "[].[name]" -o table
 ```
 
+
+
+
+
 **Command** ([[List all storage accounts]]):
 
 ```bash
 az storage account list
 ```
 
+
+
+
+
 **Command** ([[List all key vaults]]):
 
 ```bash
 az keyvault list
 ```
+
+
 
 ## Platforms
 
@@ -144,3 +186,5 @@ az keyvault list
 - [[Cloud - Azure]]
 - [[Enumerate tenant with az cli]]
 - [[Enumeration]]
+
+

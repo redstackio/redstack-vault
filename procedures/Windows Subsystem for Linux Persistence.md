@@ -38,6 +38,8 @@ Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux bin
 
 Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10. Attackers can use WSL to execute Linux binaries and scripts, which can help them evade defenses and maintain persistence on a compromised system. By installing and running Kali Linux on Windows using WSL, attackers can leverage a wide range of offensive tools to perform reconnaissance, lateral movement, and data exfiltration. Technical details on how to install and use Kali Linux on Windows using WSL can be found in the commands section below. From a business perspective, this technique allows attackers to maintain long-term access to a compromised system, potentially leading to data theft, ransomware, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows 10 system with WSL enabled
@@ -45,6 +47,8 @@ Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux bin
 1. Installation of Kali Linux on Windows using WSL
 
 1. Knowledge of Linux command line and Kali Linux tools
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux bin
 
 1. Implement least privilege access controls to limit the ability of attackers to install and use Kali Linux on Windows using WSL
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on a compromised Windows system
@@ -61,6 +67,8 @@ Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux bin
 1. Execute Linux binaries and scripts natively on a Windows system
 
 1. Leverage Kali Linux tools for reconnaissance, lateral movement, and data exfiltration
+
+ 
 
 # Instructions
 
@@ -81,10 +89,18 @@ Add-AppxPackage .\debian.appx
 
 wsl kali-linux --user root
 
+ 
+
+
+
 **Code**: [[# List and install online packages
 wsl --list --on]]
 
+
+
 > The `wsl` command is used to manage the Windows Subsystem for Linux. The `--list --online` options list all the available distributions that can be installed. The `--install -d kali-linux` option installs the Kali Linux distribution. The `--set-default-version 2` option sets the default version of WSL to version 2. The `curl.exe` command is used to download the Debian package file. The `Add-AppxPackage` command installs the Debian package. The `kali-linux` command is used to run the Kali Linux distribution. The `--user root` option runs the distribution as the root user.
+
+
 
 **Command** ([[List and install online packages]]):
 
@@ -92,6 +108,10 @@ wsl --list --on]]
 wsl --list --online
 wsl --install -d kali-linux
 ```
+
+
+
+
 
 **Command** ([[Use a local package]]):
 
@@ -101,11 +121,17 @@ curl.exe --insecure -L -o debian.appx https://aka.ms/wsl-debian-gnulinux
 Add-AppxPackage .\debian.appx
 ```
 
+
+
+
+
 **Command** ([[Run the machine as root]]):
 
 ```bash
 wsl kali-linux --user root
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -136,3 +162,5 @@ wsl kali-linux --user root
 - [[Elevated]]
 - [[Windows - Persistence]]
 - [[Windows Subsystem for Linux]]
+
+

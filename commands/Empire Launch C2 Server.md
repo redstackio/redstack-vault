@@ -160,16 +160,16 @@ powershell-empire
 
 ```
 root@kali:~# powershell-empire                                                                                                                      [1028/1277]
-
+                                                                                                                                                                         
  [>] Enter server negotiation password, enter for random generation:                                                                                                     
-
+                                                                                                                                                                         
  [*] Database setup completed!                                                                                                                                           
-
+                                                                                                                                                                         
 [*] Loading stagers from: /usr/share/powershell-empire//lib/stagers/                                                                                                     
 [*] Loading modules from: /usr/share/powershell-empire//lib/modules/                                                                                                     
 [*] Loading listeners from: /usr/share/powershell-empire//lib/listeners/                                                                                                 
 [*] Empire starting up...                                                                                                                                                
-
+                                                                                                                                                                         
                               `````````                                                                                                                                  
                          ``````.--::///+                                                                                                                                 
                      ````-+sydmmmNNNNNNN                                                                                                                                 
@@ -207,25 +207,28 @@ root@kali:~# powershell-empire                                                  
                 `/ohhdmmmmmmdddddmh/                                                                                                                                     
                    `-/osyhdddddhyo:                                                                                                                                      
                         ``.----.`                                                                                                                                        
-
+                                                                                                                                                                         
                 Welcome to the Empire                                                                                                                                    
 ================================================================================                                                                                         
  [Empire]  Post-Exploitation Framework                                                                                                                                   
 ================================================================================                                                                                         
  [Version] 3.0.7 BC-Security Fork | [Web] https://github.com/BC-SECURITY/Empire                                                                                          
 ================================================================================                                                                                         
-
+                                                                                                                                                                         
    _______ .___  ___. .______    __  .______       _______                                                                                                               
   |   ____||   \/   | |   _  \  |  | |   _  \     |   ____|                                                                                                              
   |  |__   |  \  /  | |  |_)  | |  | |  |_)  |    |  |__                                                                                                                 
   |   __|  |  |\/|  | |   ___/  |  | |      /     |   __|                                                                                                                
   |  |____ |  |  |  | |  |      |  | |  |\  \----.|  |____                                                                                                               
   |_______||__|  |__| | _|      |__| | _| `._____||_______|                                                                                                              
-
+                                                                                                                                                                         
+                                                                                                                                                                         
        298 modules currently loaded                                                                                                                                      
-
+                                                                                                                                                                         
        0 listeners currently active                                                                                                                                      
-
+                                                                                                                                                                         
        0 agents currently active 
 ...
 ```
+
+

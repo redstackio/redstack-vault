@@ -28,13 +28,43 @@ URLs can be modified by adding special characters or browsing non-existent resou
 
 URLs can be modified by adding special characters or browsing non-existent resources to generate error messages. The generated errors would reveal sensitive information.
 
+
+
 # Instructions
 
 # 
 
 1. Access the URL to load the application
 
+
+
+
+
+![d0be832a-7513-49ec-a931-ffeed125e07d.png](_assets/images/Mash/d0be832a-7513-49ec-a931-ffeed125e07d.png)
+
+
+
+
+
+
+
 2. The URL is modified by adding a special character at the end. This generates an error message which contain sensitive information.
+
+
+
+
+
+
+
+![04e02616-6b76-4345-841b-4eaf10a2fe18.png](_assets/images/Mash/04e02616-6b76-4345-841b-4eaf10a2fe18.png)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +75,5 @@ URLs can be modified by adding special characters or browsing non-existent resou
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

@@ -39,6 +39,8 @@ The ADIDNS Search Commands use LDAP queries to search the Active Directory for D
 
 By performing DNS reconnaissance with ADIDNS Search Commands, an attacker can gain a better understanding of the target network and plan a more effective attack.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -46,6 +48,8 @@ By performing DNS reconnaissance with ADIDNS Search Commands, an attacker can ga
 1. Authenticated access to the Active Directory
 
 1. ADIDNS Search Commands
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ By performing DNS reconnaissance with ADIDNS Search Commands, an attacker can ga
 
 1. Restrict access to the ADIDNS Search Commands to authorized personnel only
 
+ 
+
 ## Objectives
 
 1. Gather information about the target network
@@ -63,14 +69,24 @@ By performing DNS reconnaissance with ADIDNS Search Commands, an attacker can ga
 
 1. Plan a targeted attack
 
+ 
+
 # Instructions
 
 1. To use these commands, open PowerShell and navigate to the directory containing StandIn.exe. Then, type in the desired command based on your search criteria and hit enter. The results will be displayed in the PowerShell window.
 
+ 
+
+
+
 **Code**: [[StandIn.exe --dns --limit 20
 StandIn.exe --dns --f]]
 
+
+
 > These commands are used to perform ADIDNS searches. The '--dns' flag specifies that we want to search for DNS records. The '--limit' flag specifies the maximum number of results we want to display. The '--filter' flag filters the results based on a keyword or phrase. The '--forest' flag specifies that we want to search the entire forest. The '--domain' flag specifies the domain we want to search. The '--user' and '--pass' flags specify the username and password for authentication. The '--legacy' flag specifies that we want to use legacy authentication.
+
+
 
 **Command** ([[StandIn DNS Lookup with Limit of 20]]):
 
@@ -78,11 +94,19 @@ StandIn.exe --dns --f]]
 StandIn.exe --dns --limit 20
 ```
 
+
+
+
+
 **Command** ([[StandIn DNS Lookup with SQL Filter and Limit of 10]]):
 
 ```bash
 StandIn.exe --dns --filter SQL --limit 10
 ```
+
+
+
+
 
 **Command** ([[StandIn DNS Lookup with Forest and Credentials]]):
 
@@ -90,11 +114,17 @@ StandIn.exe --dns --filter SQL --limit 10
 StandIn.exe --dns --forest --domain redhook --user RFludd --pass Cl4vi$Alchemi4e
 ```
 
+
+
+
+
 **Command** ([[StandIn DNS Lookup with Legacy and Credentials]]):
 
 ```bash
 StandIn.exe --dns --legacy --domain redhook --user RFludd --pass Cl4vi$Alchemi4e
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +150,5 @@ StandIn.exe --dns --legacy --domain redhook --user RFludd --pass Cl4vi$Alchemi4e
 
 - [[Active Directory Attacks]]
 - [[DNS Reconnaissance]]
+
+

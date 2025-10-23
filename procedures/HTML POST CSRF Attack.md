@@ -34,11 +34,15 @@ The HTML POST CSRF attack is a social engineering attack that involves tricking 
 
 The HTML POST CSRF attack requires the user to interact with the malicious form, which can be disguised as a legitimate form on a trusted website. By submitting the form, the user unknowingly triggers the attack and allows the attacker to perform actions on their behalf.
 
+ 
+
 ## Requirements
 
 1. The attacker must be able to create a malicious HTML form
 
 1. The victim user must have an active session with the target website
+
+ 
 
 ## Defense
 
@@ -48,25 +52,39 @@ The HTML POST CSRF attack requires the user to interact with the malicious form,
 
 1. Implement multi-factor authentication to prevent unauthorized access to user accounts
 
+ 
+
 ## Objectives
 
 1. To perform unauthorized actions on a target website using a victim user's existing session
 
 1. To gain access to sensitive information or perform unauthorized transactions
 
+ 
+
 # Instructions
 
 1. The attacker creates a malicious HTML form and hosts it on a website or sends it to the victim user. The form is designed to look like a legitimate form on a trusted website. When the victim user submits the form, the attack is triggered and the request is sent to the target website's API endpoint.
 
+ 
+
+
+
 **Code**: [[<form action="http://www.example.com/api/setuserna]]
 
+
+
 > The 'username' field in the form contains the value that the attacker wants to set as the victim user's username on the target website. By submitting the form, the victim user unknowingly performs this action on their behalf.
+
+
 
 **Command** ([[Form Submission]]):
 
 ```bash
 Submit a form with a hidden input named 'username' and a value of 'CSRFd'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ Submit a form with a hidden input named 'username' and a value of 'CSRFd'
 - [[Cross-Site Request Forgery]]
 - [[HTML POST - Requiring User Interaction]]
 - [[Payloads]]
+
+

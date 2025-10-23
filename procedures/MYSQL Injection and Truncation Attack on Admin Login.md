@@ -31,11 +31,15 @@ Technical Explanation: The MYSQL Injection and Truncation Attack on Admin Login 
 
 Business Value: This attack can have severe consequences for businesses, including financial losses, reputational damage, and legal repercussions. It is essential for organizations to take steps to protect their systems from these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the login form
 
 1. Knowledge of MYSQL Injection and Truncation techniques
+
+ 
 
 ## Defense
 
@@ -45,19 +49,31 @@ Business Value: This attack can have severe consequences for businesses, includi
 
 1. Limit access to sensitive information to authorized personnel only
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to the admin account
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. mysql -u [username] -p
 
+ 
+
+
+
 **Code**: [[admin]]
 
+
+
 > This command is used to log in to the MYSQL server as an administrator. Replace [username] with the actual username of the administrator. Once executed, the command will prompt for the administrator's password. After entering the correct password, the administrator will be logged in to the MYSQL server and can perform administrative tasks.
+
+
 
 **Command** ([[Check Admin Status]]):
 
@@ -68,11 +84,21 @@ exit
 
 ```
 
+
+
 2. To log in as an admin, use the following credentials: username - admin, password - [password]
+
+ 
+
+
 
 **Code**: [[admin]]
 
+
+
 > The 'data' field contains the username attempted to log in. The 'text' field contains the password attempted to log in. The 'instruction' field provides the correct credentials to log in as an admin. The 'explain' field is not applicable for this command.
+
+
 
 **Command** ([[Check Admin Status]]):
 
@@ -80,23 +106,41 @@ exit
 admin status
 ```
 
+
+
 3. To create a new table with a username field, use the following SQL command:
 
+ 
+
+
+
 **Code**: [[`username` varchar(20) not null]]
+
+
 
 > This command creates a new table in a SQL database with a field called 'username'. The field is set to a maximum length of 20 characters and is required (not null). This field can be used to store unique usernames for users in a web application or other software system.
 
 4. Use this command to set the username for the application.
 
+ 
+
+
+
 **Code**: [[username = &quot;admin               a&quot;]]
 
+
+
 > The `username` variable is being set to `admin               a`. This command is useful when you want to change the username for the application. The `=` sign is used to assign a value to the `username` variable. The value assigned to the `username` variable should be enclosed in double quotes (`&quot;`) to ensure that the value is properly interpreted by the application. You can replace `admin               a` with any desired username.
+
+
 
 **Command** ([[Set Username]]):
 
 ```bash
 username = &quot;admin               a&quot;
 ```
+
+
 
 ## Commands Used
 
@@ -108,3 +152,5 @@ username = &quot;admin               a&quot;
 
 - [[MYSQL Injection]]
 - [[MYSQL Truncation]]
+
+

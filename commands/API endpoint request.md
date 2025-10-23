@@ -9,6 +9,7 @@ data: 'GET /endpoint HTTP/1.1
 
   Origin: https://evil.com
 
+
   '
 output: null
 created_at: '2023-04-06T03:55:54.678340+00:00'
@@ -22,4 +23,7 @@ GET /endpoint HTTP/1.1
 Host: api.internal.example.com
 Origin: https://evil.com
 
+
 ```
+
+

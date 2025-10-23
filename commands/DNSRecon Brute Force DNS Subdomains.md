@@ -62,3 +62,5 @@ root@kali:~# dnsrecon -d testsite.com -D `pwd`/words.txt -t brt
 [*]      A www.testsite.com 3.23.54.21
 [+] 12 Records Found
 ```
+
+

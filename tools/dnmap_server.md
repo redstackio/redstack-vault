@@ -16,3 +16,9 @@ dnmap is a framework to distribute nmap scans among several clients. It reads an
 ## Description
 
 dnmap is a framework to distribute nmap scans among several clients. It reads an already created file with nmap commands and send those commands to each client connected to it.The framework use a client/server architecture. The server knows what to do and the clients do it. All the logic and statistics are managed in the server. Nmap output is stored on both server and client. Usually you would want this if you have to scan a large group of hosts and you have several different internet connections (or friends that want to help you).
+
+
+
+
+
+

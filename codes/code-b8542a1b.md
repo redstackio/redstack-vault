@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:27.194834+00:00'
 PS C:\> gc C:\Users\Rasta\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\backdoor.bat
 start /b C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
 ```
+
+

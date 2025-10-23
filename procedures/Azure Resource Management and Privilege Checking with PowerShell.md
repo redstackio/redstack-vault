@@ -34,6 +34,8 @@ This procedure focuses on utilizing PowerShell to interact with Azure  resources
 
 This procedure focuses on utilizing PowerShell to interact with Azure  resources and check for specific privileges using the Invoke-RestMethod  cmdlet. It provides instructions on how to authenticate using a token,  retrieve a list of subscriptions, and access resource information.  Additionally, it demonstrates how to check for runCommand privileges  within a resource group. By following these steps, you can effectively  manage Azure resources and verify necessary privileges.
 
+ 
+
 ## Requirements
 
 To successfully execute these commands, ensure the following prerequisites:
@@ -46,6 +48,8 @@ To successfully execute these commands, ensure the following prerequisites:
 
 - Proper permissions are granted to access Azure resources.
 
+ 
+
 ## Defense
 
 To enhance security and protect your Azure resources, consider implementing the following defense measures:
@@ -55,6 +59,8 @@ To enhance security and protect your Azure resources, consider implementing the 
 - Regularly monitor logs and audit trails for any suspicious activities.
 
 - Implement role-based access control (RBAC) to control access to Azure resources.
+
+ 
 
 ## Objectives
 
@@ -68,24 +74,50 @@ The primary objectives of these commands are as follows:
 
 1. Check for runCommand privileges within a specific resource group.
 
+ 
+
 # Instructions
+
+
 
 1. To query the Azure REST API for the subscription ID, run the following PowerShell script. Replace <RG-NAME> with the name of your resource group and <RESOURCE> with the name of your virtual machine resource.
 
+ 
+
+
+
 **Code**: [[# Retrieve a list of subscriptions
 $Token = 'eyJ0e]]
+
+
 
 > This command uses PowerShell to query the Azure REST API to get the subscription ID and other details. The script uses a token to authenticate the request and sends a GET request to the specified URI. The result is then returned as a value. The URI is then updated to query for runCommand privileges on resources. The user is instructed to replace certain values in the script with their own values before executing the command.
 
 2. (Optional) Access and retrieve information about Azure Resources
 
+
+
+
+
 **Code**: [[# Retrieve a list of subscriptions
 $Token = 'eyJ0e]]
 
+
+
+
+
 3. (Optional) Check for runCommand privileges within a specific Resource Group
+
+
+
+
 
 **Code**: [[# Check for runCommand privileges
 $Token = 'eyJ0eX]]
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -106,3 +138,5 @@ $Token = 'eyJ0eX]]
 - [[Azure API via Powershell]]
 - [[Cloud - Azure]]
 - [[Token from Managed Identity]]
+
+

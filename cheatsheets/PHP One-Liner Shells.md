@@ -15,6 +15,8 @@ updated_at: '2023-05-30T20:12:21.997267+00:00'
 
 PHP One-Liner shells which can be used for remote code execution and reverse shells.
 
+
+
 ## Notes
 
 - exec() is for calls a system command, but output is not displayed. It can be sent to a second argument when calling exec, then printed separately.
@@ -23,14 +25,58 @@ PHP One-Liner shells which can be used for remote code execution and reverse she
 
 - passthru() executes a system command and outputs the result..
 
+
+
 ## One-Liners
+
+
+
+
 
 **Command**: [[PHP Command Shell with Request]]
 
+
+
+
+
+
+
+
+
 **Command**: [[PHP Command Shell with Get]]
+
+
+
+
+
+
 
 **Command**: [[PHP Reverse Shell with Passthrough]]
 
+
+
+
+
+
+
 **Command**: [[PHP Reverse Shell with FSockOpen]]
 
+
+
+
+
+
+
+
+
 **Command**: [[PHP Command Execution with Base64 Encoded Payload]]
+
+
+
+
+
+
+
+
+
+

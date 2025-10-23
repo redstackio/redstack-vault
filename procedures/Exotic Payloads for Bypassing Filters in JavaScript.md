@@ -34,11 +34,15 @@ An attacker can use this technique to execute arbitrary JavaScript code on a vic
 
 The business value of understanding and mitigating against this technique is to ensure that web applications are secure and that sensitive data is not compromised.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of JavaScript and exotic payloads
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of understanding and mitigating against this technique is to 
 
 1. Implement a Web Application Firewall (WAF) to detect and block malicious requests
 
+ 
+
 ## Objectives
 
 1. Bypass filters that are used to block certain characters or strings from being entered into a web application
@@ -56,12 +62,20 @@ The business value of understanding and mitigating against this technique is to 
 
 1. Exploit vulnerabilities in web applications
 
+ 
+
 # Instructions
 
 1. This command demonstrates the various operators in JavaScript and their usage.
 
+ 
+
+
+
 **Code**: [['te' * alert('*') * 'xt';
 'te' / alert('/') / 'xt']]
+
+
 
 > The above code demonstrates the usage of different operators in JavaScript. The '*' operator is used for multiplication, '/' for division, '%' for modulus, '-' for subtraction, '+' for addition, '^' for exponentiation, '>' for greater than, '<' for less than, '==' for equality, '&' for bitwise AND, ',' for sequence, '|' for bitwise OR, '?' for conditional (ternary) operator, 'in' for checking if a property exists in an object, and 'instanceof' for checking if an object is an instance of a particular class. Each operator is used between the string 'te' and 'xt' and an alert is displayed with the respective operator used. This helps in understanding the working of each operator in JavaScript.
 
@@ -82,3 +96,5 @@ The business value of understanding and mitigating against this technique is to 
 - [[Bypass ";" using another character]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

@@ -21,5 +21,8 @@ fcrackzip -b -c '$_CHAR1$_CHAR2' -l $_MIN_SIZE-$_MAX_SIZE -u  $_WORDLIST
 ```
 root@kali:~# fcrackzip -b -c 'a1' -l 3-4 -u secret.zip 
 
+
 PASSWORD FOUND!!!!: pw == 5555
 ```
+
+

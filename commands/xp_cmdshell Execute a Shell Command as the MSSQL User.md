@@ -10,6 +10,7 @@ output: '1> EXEC xp_cmdshell "whoami"
 
   2> go
 
+
   output
 
   ------------------------------------------------------------------
@@ -17,6 +18,7 @@ output: '1> EXEC xp_cmdshell "whoami"
   ------------------------------------------------------------------
 
   ------------------------------------------------------------------
+
 
   nt service\mssql$sqlexpress
 
@@ -49,3 +51,5 @@ nt service\mssql$sqlexpress
 NULL
 (2 rows affected, return status = 0)
 ```
+
+

@@ -17,6 +17,20 @@ Airgraph-ng is tool to generate graphs to visualize data captured by airodump-ng
 
 Airgraph-ng is tool to generate graphs to visualize data captured by airodump-ng. It can create two types of graphs:
 
+
+
 CAPR: Client – Access Point Relationship, showing all the clients connected to the different access points
 
+
+
 CPG: Common Probe Graph, shows a graph centered on probed ESSID and devices MAC who probed them
+
+
+
+
+
+
+
+
+
+

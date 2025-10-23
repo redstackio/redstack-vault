@@ -29,19 +29,37 @@ Extract a file hidden in an image (or audio file) using Steghide's steganography
 
 Extract a file hidden in an image (or audio file) using Steghide's steganography tools.
 
+
+
 # Requirements
 
 - cover file which has another file embedded in it
 
+
+
 # Instructions
 
 In order to extract a file that has been embedded in another using Steghide, the correct password must be issued. For this example, a generic wallpaper has an SSH public key embedded, with the password '**secret**'.
+
+
+
+
+
+![e61b88d0-4b87-4da1-950f-010aba3a5f3f.jpg](_assets/images/Mark/e61b88d0-4b87-4da1-950f-010aba3a5f3f.jpg)
+
+
+
+
+
+
 
 **Command** ([[Steghide Extract a Hidden File in an Image]]):
 
 ```bash
 steghide extract -sf $_COVER
 ```
+
+
 
 After running the extract command with the password '**secret**', a SSH key is extracted to the current working directory.
 
@@ -63,3 +81,5 @@ After running the extract command with the password '**secret**', a SSH key is e
 
 - [[Cryptography]]
 - [[data encryption]]
+
+

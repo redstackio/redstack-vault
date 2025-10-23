@@ -37,9 +37,13 @@ To execute this attack, the attacker needs to have access to the victim's TMUX s
 
 This procedure can be valuable to an attacker as it allows them to gain privileged access to a system without needing to escalate privileges through traditional means, such as exploiting a vulnerability or brute-forcing credentials.
 
+ 
+
 ## Requirements
 
 1. Access to the victim's TMUX socket
+
+ 
 
 ## Defense
 
@@ -49,9 +53,13 @@ This procedure can be valuable to an attacker as it allows them to gain privileg
 
 1. Use strong authentication measures to prevent unauthorized access to the system
 
+ 
+
 ## Objectives
 
 1. Gain privileged access to a system
+
+ 
 
 # Instructions
 
@@ -59,9 +67,17 @@ This procedure can be valuable to an attacker as it allows them to gain privileg
 
 chmod +r /tmp/tmux-1000/default
 
+ 
+
+
+
 **Code**: [[/tmp/tmux-1000/default]]
 
+
+
 > This command changes the permissions of the tmux socket file to allow read access to all users. The tmux socket is a file used by the tmux terminal multiplexer to communicate with its sessions and windows. By granting read access to this file, you can use tmux commands to view the state of tmux sessions and windows without actually attaching to them.
+
+
 
 **Command** ([[Create tmux socket]]):
 
@@ -69,13 +85,23 @@ chmod +r /tmp/tmux-1000/default
 tmux -S /tmp/tmux-1000/default new-session -d -s mysession
 ```
 
+
+
 2. To list all the TMUX sessions running on the machine, run the following command:
+
+ 
+
+
 
 **Code**: [[export TMUX=/tmp/tmux-1000/default,1234,0 
 tmux ls]]
 
+
+
 > - The 'export' command sets the environment variable TMUX to the specified value.
 - The 'tmux ls' command lists all the currently running TMUX sessions.
+
+
 
 **Command** ([[List TMUX sessions]]):
 
@@ -83,6 +109,8 @@ tmux ls]]
 export TMUX=/tmp/tmux-1000/default,1234,0
 tmux ls
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +136,5 @@ tmux ls
 
 - [[Hijack TMUX session]]
 - [[Linux - Privilege Escalation]]
+
+

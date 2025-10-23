@@ -39,15 +39,105 @@ Session entropy is the randomness of a session identifier. Randomness can be tes
 
 1. Enter the login credentials in the browser
 
+
+
+
+
+
+
+![5dcf8767-ac1f-4de8-ac29-5441694bcf23.png](_assets/images/Mash/5dcf8767-ac1f-4de8-ac29-5441694bcf23.png)
+
+
+
+
+
+
+
+
+
 2. Intercept the login request
+
+
+
+
+
+
+
+![57c19602-e8b5-4664-860b-fbdad621afc0.png](_assets/images/Mash/57c19602-e8b5-4664-860b-fbdad621afc0.png)
+
+
+
+
+
+
 
 3. Right-click and send the request to sequencer
 
+
+
+
+
+![02d52c85-1631-4fc8-ae94-75ca66f3fdf7.png](_assets/images/Mash/02d52c85-1631-4fc8-ae94-75ca66f3fdf7.png)
+
+
+
+
+
+
+
+
+
 4. In the token location, select cookie option and the Session ID
+
+
+
+
+
+
+
+![a0b0642d-fb9c-4d6f-8c96-49608d5d89e4.png](_assets/images/Mash/a0b0642d-fb9c-4d6f-8c96-49608d5d89e4.png)
+
+
+
+
+
+
+
+
 
 5. Click on Start Live Capture to start capturing the tokens. Once enough requests are made, click on Analyze now.
 
+
+
+
+
+![36ceebc9-14e5-442f-abfc-b468893bfb81.png](_assets/images/Mash/36ceebc9-14e5-442f-abfc-b468893bfb81.png)
+
+
+
+
+
+
+
 6. The tokens are then analyzed and overall result can be observed. In the below screenshot, randomness of the session identifier is good.
+
+
+
+
+
+![712f1a1c-1186-4b42-823b-ac251234681b.png](_assets/images/Mash/712f1a1c-1186-4b42-823b-ac251234681b.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +151,5 @@ Session entropy is the randomness of a session identifier. Randomness can be tes
 - [[Session Management]]
 - [[Session Randomness]]
 - [[Web Applications]]
+
+

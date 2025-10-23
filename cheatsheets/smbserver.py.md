@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # smbserver.py
 
+
+
 **Command** ([[fake smb server for uploading and downloading files]]):
 
 ```bash
 python3 /opt/impacket/examples/smbserver.py -smb2support files $(pwd)
 
 ```
+
+
+
+
+
+

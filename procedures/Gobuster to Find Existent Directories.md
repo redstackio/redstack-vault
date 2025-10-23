@@ -28,17 +28,33 @@ Gobuster tool is used to find directories in the web application. The tool brute
 
 # Description
 
+
+
 Gobuster tool is used to find directories in the web application. The tool brute-forces the directories with the provided list.
+
+
 
 # Procedure
 
+
+
 Use the below *gobuster*  command to provide the list of directories to brute-force. Directories listing status code 301 exist in the application.
+
+
+
+
+
+
 
 **Command** ([[Gobuster Command to Find Existent Directories]]):
 
 ```bash
 gobuster -w list.txt -u http://192.168.1.11/vcart/
 ```
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ gobuster -w list.txt -u http://192.168.1.11/vcart/
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

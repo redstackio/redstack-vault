@@ -23,3 +23,5 @@ amass intel -ip -cidr 13.224.8.0/21
 root@kali ~# amass intel -ip -cidr 13.224.8.0/21
 r.cloudfront.net 13.224.13.184
 ```
+
+

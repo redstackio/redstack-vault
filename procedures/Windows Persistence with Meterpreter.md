@@ -33,11 +33,15 @@ This procedure demonstrates how to create a persistent backdoor on a Windows mac
 
 This procedure demonstrates how to create a persistent backdoor on a Windows machine using Meterpreter. The backdoor will be set up to run automatically every time the machine starts up, allowing the attacker to maintain access even after a reboot. From a technical perspective, this is achieved by adding a new entry to the Windows Registry or creating a new scheduled task. From a business perspective, this type of attack can result in ongoing unauthorized access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Valid credentials with administrative privileges on the target system
 
 1. Meterpreter session established on the target system
+
+ 
 
 ## Defense
 
@@ -47,21 +51,33 @@ This procedure demonstrates how to create a persistent backdoor on a Windows mac
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to suspicious activity
 
+ 
+
 ## Objectives
 
 1. Establish a persistent backdoor on a Windows machine
 
 1. Maintain access to the compromised system
 
+ 
+
 # Instructions
 
 1. To create a persistent backdoor on a Windows machine, use the 'run persistence' command followed by the necessary options. For example, to automatically start the agent when the user logs on use the '-U' option. To specify the port on which the system running Metasploit is listening, use the '-p' option followed by the port number. 
+
+ 
+
+
 
 **Code**: [[OPTIONS:
 
 -A        Automatically start a matching]]
 
+
+
 > The 'run persistence' command is used to create a persistent backdoor on a Windows machine. This allows the attacker to maintain access to the compromised system even after a reboot. The various options available with the command allow the attacker to customize the backdoor according to their requirements. For example, the '-U' option can be used to automatically start the agent when the user logs on, while the '-p' option can be used to specify the port on which the system running Metasploit is listening. It is important to note that the creation of a persistent backdoor is illegal and should only be done in a controlled environment with proper authorization.
+
+
 
 **Command** ([[Metasploit Payload Options]]):
 
@@ -80,7 +96,10 @@ OPTIONS:
 -p <opt>  The port on which the system running Metasploit is listening
 -r <opt>  The IP of the system running Metasploit listening for the connect back
 
+
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +123,5 @@ OPTIONS:
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
 - [[Persistence Startup]]
+
+

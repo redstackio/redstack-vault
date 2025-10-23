@@ -24,6 +24,8 @@ Find sub-domains belonging to the target using assetfinder
 
 Find sub-domains belonging to the target using assetfinder
 
+
+
 **Command** ([[assetfinder scan domain for sub-domains]]):
 
 ```bash
@@ -31,8 +33,16 @@ assetfinder owasp.com
 
 ```
 
+
+
+
+
 [assetfinder](https://github.com/tomnomnom/assetfinder)
+
+
 
 ## Commands Used
 
 - [[assetfinder scan domain for sub-domains]]
+
+

@@ -29,11 +29,15 @@ Can use prips tool to pipe a list of IP addresses to hakrevdns
 
 [hakrevdns](https://github.com/hakluke/hakrevdns)
 
+
+
 ##  Instructions
 
 1. Pass in a list of IP addresses, here we use prips, but you can cat a text file in as well.
 
 This will print a list of ip's and subdomains to stdout.
+
+
 
 **Command** ([[hakrevdns lookup subdomains from list of IP's]]):
 
@@ -42,7 +46,13 @@ prips 173.0.84.0/24 | hakrevdns
 
 ```
 
+
+
+
+
 2. (Optional) You can specify your own resolver, works to avoid the one the OS specifies
+
+
 
 **Command** ([[hakrevdns lookup subdomains with specific resolver]]):
 
@@ -51,7 +61,13 @@ echo "173.0.84.110" | hakrevdns -r 1.1.1.1
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[hakrevdns lookup subdomains from list of IP's]]
 - [[hakrevdns lookup subdomains with specific resolver]]
+
+

@@ -23,3 +23,5 @@ cryptsetup luksOpen $_FILE.img $_CRYPT
 root@kali:~# cryptsetup luksOpen backup.img crypt-backup
 Enter passphrase for backup.img:
 ```
+
+

@@ -27,11 +27,15 @@ To perform this attack, the attacker will need to identify a vulnerable web appl
 
 This procedure can be used by attackers to gain unauthorized access to sensitive information stored in an SQLite database.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses an SQLite database
 
 1. A tool such as sqlmap to automate the injection process
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ This procedure can be used by attackers to gain unauthorized access to sensitive
 
 1. Regularly monitor and review database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Discover the number of tables in an SQLite database
@@ -49,11 +55,19 @@ This procedure can be used by attackers to gain unauthorized access to sensitive
 
 1. Extract sensitive information from the database
 
+ 
+
 # Instructions
 
 1. To use this command, replace 'number_of_table' with the maximum number of tables you expect to have in your database. This command will check the number of tables in your database and return true if the number of tables is less than the specified number.
 
+ 
+
+
+
 **Code**: [[and (SELECT count(tbl_name) FROM sqlite_master WHE]]
+
+
 
 > This command is useful for ensuring that your database has the expected number of tables. If the number of tables in your database is greater than the specified number, it could indicate that there is an issue with your database schema or that there are tables that were not properly deleted. By using this command, you can ensure that your database is in the expected state.
 
@@ -61,3 +75,5 @@ This procedure can be used by attackers to gain unauthorized access to sensitive
 
 - [[Boolean - Count number of tables]]
 - [[SQLite Injection]]
+
+

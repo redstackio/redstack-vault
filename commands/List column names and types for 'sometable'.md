@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:22:44.531078+00:00'
 ```bash
 SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master..syscolumns, master..sysobjects WHERE master..syscolumns.id=master..sysobjects.id AND master..sysobjects.name='sometable'; -- list column names and types for master..sometable
 ```
+
+

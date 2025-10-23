@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:22.551857+00:00'
 ```bash
 {doctors(options: "{\"patients.ssn\" :1}"){firstName lastName id patients{ssn}}}
 ```
+
+

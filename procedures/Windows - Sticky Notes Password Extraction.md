@@ -32,11 +32,15 @@ Technical Explanation: Sticky Notes stores its data in an SQLite database file l
 
 Business Value: This procedure can be used by attackers to gain access to sensitive information such as login credentials, which can be used to further compromise the organization's network.
 
+ 
+
 ## Requirements
 
 1. Access to target Windows system
 
 1. Knowledge of Sticky Notes SQLite database location
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Monitor for suspicious activity related to Sticky Notes usage
 
+ 
+
 ## Objectives
 
 1. Extract passwords from Sticky Notes application
 
 1. Escalate privileges using extracted passwords
 
+ 
+
 # Instructions
 
 1. To access the SQLite database of Sticky Notes, you can use any SQLite client application such as DB Browser for SQLite. Open the application and navigate to the location of the database file mentioned in the 'data' field. Once you have opened the database file, you can view and modify the data stored in the Sticky Notes app.
 
+ 
+
+
+
 **Code**: [[C:\Users\&lt;user&gt;\AppData\Local\Packages\Micro]]
+
+
 
 > The 'data' field provides the file path to the SQLite database file used by Sticky Notes app. This database file contains all the notes and their associated metadata. By accessing this database file, you can view and modify the notes stored in the Sticky Notes app. However, it is recommended to make a backup of the database file before making any changes to it.
 
@@ -75,3 +89,5 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 - [[EoP - Looting for passwords]]
 - [[Sticky Notes passwords]]
 - [[Windows - Privilege Escalation]]
+
+

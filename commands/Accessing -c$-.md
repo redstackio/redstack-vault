@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:20.679788+00:00'
 ```bash
 ls \\service2.test.local\c$
 ```
+
+

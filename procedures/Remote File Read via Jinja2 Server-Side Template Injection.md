@@ -36,11 +36,15 @@ From a technical perspective, this attack works by injecting a Jinja2 template t
 
 The business value of this attack lies in the ability of the attacker to gain access to sensitive information that can be used to further compromise the organization. For example, the attacker may be able to use stolen credentials to gain access to other systems or applications within the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses the Jinja2 templating engine
 
 1. Ability to inject malicious code into the application
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this attack lies in the ability of the attacker to gain ac
 
 1. Implement access controls to limit the ability of attackers to access sensitive files
 
+ 
+
 ## Objectives
 
 1. Read sensitive information from remote files
@@ -58,11 +64,19 @@ The business value of this attack lies in the ability of the attacker to gain ac
 
 1. Further compromise the organization
 
+ 
+
 # Instructions
 
 1. To read sensitive information from files, execute the following commands:
 
+ 
+
+
+
 **Code**: [[# ''.__class__.__mro__[2].__subclasses__()[40] = F]]
+
+
 
 > The above commands demonstrate how to read sensitive information from files. The first two commands use the `File` class to read the contents of the `/etc/passwd` and `/tmp/flag` files. The third command uses the `open` function to read the contents of the `/etc/passwd` file. Note that these commands can be used to read any file on the system that the current user has read access to.
 
@@ -85,3 +99,5 @@ The business value of this attack lies in the ability of the attacker to gain ac
 - [[Jinja2]]
 - [[Jinja2 - Read remote file]]
 - [[Server Side Template Injection]]
+
+

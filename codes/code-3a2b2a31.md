@@ -22,3 +22,5 @@ echo bye >> ftp.txt
 ftp -s:ftp.txt
 
 ```
+
+

@@ -36,9 +36,15 @@ Create a PSSession on a remote system using WinRM, and execute a command.
 
 Create a PSSession on a remote system using WinRM, and execute a command.
 
+
+
 # Instructions
 
 1. Create a PSCredential object
+
+
+
+
 
 **Command** ([[$Pass = ConvertTo-SecureString -String "$_PASSWORD]]):
 
@@ -47,7 +53,15 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_USER", $Pass
 ```
 
+
+
+
+
 2. Create a session and execute a command
+
+
+
+
 
 **Command** ([[Create a PSSession and Execute a Command]]):
 
@@ -56,15 +70,27 @@ $Session = New-PSSession -ComputerName $_TARGET_IP -Credential $Cred
 Invoke-Command -Session $Session -ScriptBlock {Start-Process $_CMD}
 ```
 
+
+
 Note: Since "Start-Process" runs the command in the background, it won't show the result of the command. Omit "Start-Process" to see the output.
 
+
+
 3. (Optional) Clean up after the session
+
+
+
+
 
 **Command** ([[Clean up After a PSSession]]):
 
 ```bash
 Remove-PSSession $Session
 ```
+
+
+
+
 
 ## Platforms
 
@@ -93,3 +119,5 @@ Remove-PSSession $Session
 - [[Network]]
 - [[powershell]]
 - [[shell]]
+
+

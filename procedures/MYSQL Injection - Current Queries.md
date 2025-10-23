@@ -30,6 +30,8 @@ MYSQL Injection is a technique used to exploit a vulnerability in a web applicat
 
 MYSQL Injection is a technique used to exploit a vulnerability in a web application that allows an attacker to execute malicious SQL statements. This procedure focuses on listing the current queries being executed on the MYSQL database. By injecting specific SQL statements, an attacker can gain access to sensitive information stored in the database. This can include user credentials, personal information, and other sensitive data. The business value of this procedure is to identify vulnerabilities in the web application and database and to prevent data breaches.
 
+ 
+
 ## Requirements
 
 1. Access to the web application
@@ -37,6 +39,8 @@ MYSQL Injection is a technique used to exploit a vulnerability in a web applicat
 1. Access to the MYSQL database
 
 1. Knowledge of MYSQL Injection techniques
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ MYSQL Injection is a technique used to exploit a vulnerability in a web applicat
 
 1. Implement database security measures such as access control and encryption
 
+ 
+
 ## Objectives
 
 1. Identify current queries being executed on the MYSQL database
@@ -54,11 +60,19 @@ MYSQL Injection is a technique used to exploit a vulnerability in a web applicat
 
 1. Prevent data breaches
 
+ 
+
 # Instructions
 
 1. To use this command, simply execute the SQL query provided. The results will show all current operations being performed by the database.
 
+ 
+
+
+
 **Code**: [[union SELECT 1,state,info,4 FROM INFORMATION_SCHEM]]
+
+
 
 > The 'INFORMATION_SCHEMA.PROCESSLIST' table contains information about all current client connections and server threads. The 'state' and 'info' fields in the SELECT statement provide additional details about the current operation being performed by the database. The second part of the command is a one-shot example to dump the table content in a single query.
 
@@ -79,3 +93,5 @@ MYSQL Injection is a technique used to exploit a vulnerability in a web applicat
 
 - [[MYSQL Current queries]]
 - [[MYSQL Injection]]
+
+

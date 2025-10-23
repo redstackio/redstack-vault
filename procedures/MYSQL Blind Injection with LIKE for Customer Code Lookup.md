@@ -24,6 +24,8 @@ This procedure involves exploiting an SQL injection vulnerability to perform a c
 
 This procedure involves exploiting an SQL injection vulnerability to perform a customer code lookup by name pattern. The attacker uses a MYSQL blind injection technique with LIKE to extract information from the database. MYSQL blind injection is a type of SQL injection where the attacker is unable to see the results of the injection in the application's response. The attacker uses the LIKE operator in the injection to extract information one character at a time. The attacker can then use this information to perform further attacks, such as privilege escalation or credential access. This attack can result in a complete compromise of the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -31,6 +33,8 @@ This procedure involves exploiting an SQL injection vulnerability to perform a c
 1. Knowledge of MYSQL injection and blind injection techniques
 
 1. Access to a tool for performing the injection
+
+ 
 
 ## Defense
 
@@ -40,17 +44,27 @@ This procedure involves exploiting an SQL injection vulnerability to perform a c
 
 1. Use network segmentation and access controls to limit access to the target system
 
+ 
+
 ## Objectives
 
 1. Extract customer codes from the database by name pattern
 
 1. Perform privilege escalation or credential access
 
+ 
+
 # Instructions
 
 1. Use this command to look up customer codes based on a pattern in their name.
 
+ 
+
+
+
 **Code**: [[SELECT cust_code FROM customer WHERE cust_name LIK]]
+
+
 
 > The 'SELECT' keyword is used to retrieve data from the database. In this case, we are retrieving the 'cust_code' column from the 'customer' table. The 'WHERE' keyword is used to filter the results based on a condition. The 'cust_name' column is being checked for a pattern using the 'LIKE' operator. The pattern 'k__l' indicates that the customer name should start with 'k', followed by any two characters, and end with 'l'. This command can be modified to search for different patterns by changing the value of the pattern string. 
 
@@ -59,3 +73,5 @@ This procedure involves exploiting an SQL injection vulnerability to perform a c
 - [[MYSQL Blind]]
 - [[MYSQL Blind with LIKE]]
 - [[MYSQL Injection]]
+
+

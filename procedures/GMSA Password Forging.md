@@ -34,6 +34,8 @@ Technical Explanation: The attack involves using the 'Managed Password Interval 
 
 Business Value: An attacker who successfully forges a Golden GMSA account can gain access to sensitive information, execute code on any computer in the domain, and escalate privileges. This can lead to data theft, system compromise, and significant financial loss for the organization.
 
+ 
+
 ## Requirements
 
 1. Domain access
@@ -41,6 +43,8 @@ Business Value: An attacker who successfully forges a Golden GMSA account can ga
 1. Valid credentials to reset GMSA password
 
 1. Knowledge of 'Managed Password Interval in Days' command
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: An attacker who successfully forges a Golden GMSA account can ga
 
 1. Implement multi-factor authentication for domain administrators
 
+ 
+
 ## Objectives
 
 1. Forge a Golden GMSA account
@@ -58,13 +64,22 @@ Business Value: An attacker who successfully forges a Golden GMSA account can ga
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. To manage the password interval for a gMSA, use the following command:
 Set-ADServiceAccount -Identity <gMSA_Name> -ManagedPasswordIntervalInDays <Interval_In_Days>
 This command sets the password interval for the specified gMSA to the specified number of days.
 
+
+ 
+
+
+
 **Code**: [[ManagedPasswordIntervalInDays]]
+
+
 
 > The ManagedPasswordIntervalInDays attribute specifies the number of days that a gMSA's password is valid before it must be automatically changed. This attribute can be set to any value between 1 and 999 days. When the password interval expires, the password is automatically changed by the Key Distribution Service (KDS). This ensures that the password is always strong and secure, without requiring manual intervention from an administrator. Note that you cannot manually reset a gMSA password, since the password is managed by the KDS.
 
@@ -85,3 +100,5 @@ This command sets the password interval for the specified gMSA to the specified 
 
 - [[Active Directory Attacks]]
 - [[Forging Golden GMSA]]
+
+

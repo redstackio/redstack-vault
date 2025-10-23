@@ -20,3 +20,5 @@ Set-MpPreference -DisableRealtimeMonitoring $true; Get-MpComputerStatus
 Set-MpPreference -DisableIOAVProtection $true
 Set-MpPreference -DisableScriptScanning 1
 ```
+
+

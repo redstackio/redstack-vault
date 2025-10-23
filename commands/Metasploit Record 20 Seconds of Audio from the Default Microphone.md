@@ -29,3 +29,5 @@ meterpreter > record_mic -d 20
 [*] Stopped
 Audio saved to: /root/DrsYKtnh.wav
 ```
+
+

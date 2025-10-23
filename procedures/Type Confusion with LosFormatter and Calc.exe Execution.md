@@ -28,11 +28,15 @@ This technique abuses the .NET LosFormatter class to deserialize a malicious pay
 
 This technique abuses the .NET LosFormatter class to deserialize a malicious payload, which in this case is a TypeConfuseDelegate object that tricks the .NET framework into executing arbitrary code. In this example, the payload is set to execute calc.exe, but it could be any other executable or script. This technique is useful for an attacker to gain access to a system and execute code remotely, potentially leading to further compromise of the system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to run the ysoserial.exe tool
+
+ 
 
 ## Defense
 
@@ -42,15 +46,25 @@ This technique abuses the .NET LosFormatter class to deserialize a malicious pay
 
 1. Restrict access to the ysoserial.exe tool and other utilities that can generate malicious payloads
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
+
+ 
 
 # Instructions
 
 1. Run the following command to generate the payload:
 
+ 
+
+
+
 **Code**: [[.\ysoserial.exe -f LosFormatter -g TypeConfuseDele]]
+
+
 
 > This command uses the ysoserial.exe tool to generate a payload that will execute calc.exe when deserialized using the LosFormatter class. The payload is encoded in base64 format and can be used in an exploit.
 
@@ -69,3 +83,5 @@ This technique abuses the .NET LosFormatter class to deserialize a malicious pay
 - [[Formatters]]
 - [[LosFormatter]]
 - [[.NET Serialization]]
+
+

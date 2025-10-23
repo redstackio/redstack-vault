@@ -30,11 +30,15 @@ Basic LFI with Path Truncation is a technique that allows an attacker to read fi
 
 Basic LFI with Path Truncation is a technique that allows an attacker to read files on a web server by exploiting a vulnerability in a web application. This technique is used to bypass input validation and access files that are not intended to be accessed by the attacker. By truncating the path and using dot and slash characters, the attacker can bypass certain security checks and access sensitive files. The technical explanation of this technique involves manipulating the file inclusion parameter to point to a file outside of the intended directory. The business value of this technique is that an attacker can access sensitive information such as passwords, configuration files, and other sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of the file inclusion parameter
+
+ 
 
 ## Defense
 
@@ -44,17 +48,27 @@ Basic LFI with Path Truncation is a technique that allows an attacker to read fi
 
 1. Restrict access to sensitive files and directories
 
+ 
+
 ## Objectives
 
 1. To read files on a web server that are not intended to be accessed by the attacker
 
 1. To bypass input validation and security checks
 
+ 
+
 # Instructions
 
 1. To perform Basic LFI with Path Truncation, the attacker needs to manipulate the file inclusion parameter to point to a file outside of the intended directory. The attacker can use dot and slash characters to bypass certain security checks and access sensitive files.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=../../../etc/pas]]
+
+
 
 > The attacker can use the following commands:
 - http://example.com/index.php?page=../../../etc/passwd
@@ -82,3 +96,5 @@ The attacker can use dot and slash characters to bypass certain security checks 
 - [[Basic LFI]]
 - [[File Inclusion]]
 - [[Path and dot truncation]]
+
+

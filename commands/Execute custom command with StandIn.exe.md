@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:53.888835+00:00'
 ```bash
 StandIn.exe --gpo --filter Shards --tasktype computer --taskname Liber --author "REDHOOK\Administrator" --command "C:\I\do\the\thing.exe" --args "with args"
 ```
+
+

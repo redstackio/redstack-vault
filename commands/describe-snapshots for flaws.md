@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:52.902206+00:00'
 ```bash
 $ aws --profile flaws ec2 describe-snapshots --owner-id XXXX26262029 --region us-west-2
 ```
+
+

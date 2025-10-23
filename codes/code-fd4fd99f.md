@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:46.075934+00:00'
 ```javascript
 a=()=>{c=0;for(i in self){if(/^a[rel]+t$/.test(i)){return c}c++}};self[Object.keys(self)[a()]]("1")
 ```
+
+

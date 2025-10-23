@@ -49,3 +49,5 @@ root@kali:~# smbmap -u bob -p secretpass -R temp -H 10.10.10.10
         dr--r--r--                0 Sat Apr 17 14:10:59 2010    ..
         -w--w--w--                0 Sat Apr 17 14:10:59 2010    cpu_localhost_0
 ```
+
+

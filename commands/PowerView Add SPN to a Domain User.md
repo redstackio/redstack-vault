@@ -20,3 +20,5 @@ Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -SET @{serviceprincip
 ```
 PS C:\> Set-DomainObject -Credential $Cred -Identity steve -SET @{serviceprincipalname='nonexistent/bank.local'}
 ```
+
+

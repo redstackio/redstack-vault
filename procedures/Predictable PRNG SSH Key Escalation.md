@@ -34,6 +34,8 @@ To carry out this technique, an attacker must first gain access to a user's acco
 
 This technique can be used to escalate privileges on a compromised system, allowing an attacker to move laterally through the network and access sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a user's account on the target system
@@ -41,6 +43,8 @@ This technique can be used to escalate privileges on a compromised system, allow
 1. Ability to generate a new SSH key pair using a predictable PRNG
 
 1. Ability to modify the authorized_keys file
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This technique can be used to escalate privileges on a compromised system, allow
 
 1. Implement two-factor authentication for SSH access
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a Linux system
@@ -57,6 +63,8 @@ This technique can be used to escalate privileges on a compromised system, allow
 1. Access sensitive data on a compromised system
 
 1. Move laterally through a network
+
+ 
 
 # Instructions
 
@@ -74,7 +82,13 @@ Host <hostname>
 
 ssh <username>@<hostname>
 
+ 
+
+
+
 **Code**: [[ssh-dss AAAA487rt384ufrgh432087fhy02nv84u7fg839247]]
+
+
 
 > The authorized_keys file contains public keys that are authorized for SSH access. By copying this file to your local machine and adding it to your SSH configuration file, you can use the private key associated with the public key to authenticate with the remote host. This method of authentication is more secure than using a password, as it requires possession of the private key.
 
@@ -95,3 +109,5 @@ ssh <username>@<hostname>
 - [[Linux - Privilege Escalation]]
 - [[SSH Key]]
 - [[SSH Key Predictable PRNG (Authorized_Keys) Process]]
+
+

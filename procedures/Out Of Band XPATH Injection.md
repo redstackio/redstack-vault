@@ -35,6 +35,8 @@ Technical Explanation: XPATH Injection is a type of injection attack that allows
 
 Business Value: This technique can be used to steal sensitive data such as customer information, financial data, or intellectual property. It can also be used to gain access to the target system and perform further attacks such as privilege escalation or lateral movement.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -42,6 +44,8 @@ Business Value: This technique can be used to steal sensitive data such as custo
 1. Knowledge of XPATH syntax and the target system's XML data structure
 
 1. Tools such as Burp Suite or OWASP ZAP
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: This technique can be used to steal sensitive data such as custo
 
 1. Monitor network traffic for unusual activity and out-of-band data exfiltration
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from the target system
@@ -59,11 +65,19 @@ Business Value: This technique can be used to steal sensitive data such as custo
 
 1. Perform further attacks such as privilege escalation or lateral movement
 
+ 
+
 # Instructions
 
 1. This command is used to retrieve a filtered list of Foundation items from the specified URL. The filters include title, type, and rent days. The command also retrieves data from a shared folder using the doc() function.
 
+ 
+
+
+
 **Code**: [[http://example.com/?title=Foundation&type=*&rent_d]]
+
+
 
 > The 'title' filter is used to search for items with a specific title. The 'type' filter is used to search for items of a specific type, where the '*' character is used as a wildcard to match any type. The 'rent_days' filter is used to search for items that have been rented for a specific number of days. The 'doc()' function is used to retrieve data from a shared folder, where the specified path is passed as an argument to the function.
 
@@ -85,3 +99,5 @@ Business Value: This technique can be used to steal sensitive data such as custo
 
 - [[Out Of Band Exploitation]]
 - [[XPATH Injection]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:27.894315+00:00'
 ```bash
 Set-AzureADUser -ObjectId <OBJECT-ID> -OtherMails <Username>@<TENANT NAME>.onmicrosoft.com -Verbose
 ```
+
+

@@ -23,13 +23,29 @@ You can brute force subdomains with the built in brute force flag, or you can su
 
 You can brute force subdomains with the built in brute force flag, or you can supply a wordlist.
 
+
+
+
+
+
+
 **Command** ([[amass dns brute force subdomains]]):
 
 ```bash
 amass enum -ip -brute -d $_TARGET_DOMAIN
 ```
 
+
+
+
+
 This command attempts to resolve and verify the results because of the active flag. It specifies a wordlist included with Kali, and specifies both an output directory for the graph db and logs and an output results file containing just the results.
+
+
+
+
+
+
 
 **Command** ([[amass active dns brute force enumeration w/ DB]]):
 
@@ -37,7 +53,13 @@ This command attempts to resolve and verify the results because of the active fl
 amass enum -active -d $_TARGET_DOMAIN -brute -w $_WORDLIST -src -ip -dir $_OUTPUT_DIR -o $_OUTPUT_RESULTS_FILE
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[amass active dns brute force enumeration w/ DB]]
 - [[amass dns brute force subdomains]]
+
+

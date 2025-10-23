@@ -49,3 +49,5 @@ USERNAME                   >>  Victim
 USERPROFILE                >>  C:\Users\Victim
 windir                     >>  C:\Windows
 ```
+
+

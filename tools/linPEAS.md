@@ -28,6 +28,8 @@ linPEAS is a Linux enumeration script which focuses on finding privilege escalat
 
 linPEAS is a Linux enumeration script which focuses on finding privilege escalation paths. It performs many of the same checks as other enumeration scripts (LinEnum, lse, etc), including permission, SUIDs, misconfigurations, network/process enumeration, etc. It also color codes the results in order to draw attention to findings which warrant further investigation:
 
+
+
 - RED/YELLOW: 99% a PE vector
 
 - RED: You must take a look at it
@@ -40,11 +42,27 @@ linPEAS is a Linux enumeration script which focuses on finding privilege escalat
 
 - LightMangenta: Your username
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e8900666-a057-4077-a482-bf664b8caabd}}
+
+
 
 # Installation
 
 Clone the repository then copy linpeas.sh to the target
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -58,3 +76,5 @@ Clone the repository then copy linpeas.sh to the target
 
 - [[Enumeration]]
 - [[privileges]]
+
+

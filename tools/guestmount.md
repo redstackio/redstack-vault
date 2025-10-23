@@ -26,11 +26,27 @@ Guestmount is a program used to mount virtual machine filesystems and other disk
 
 Guestmount is a program used to mount virtual machine filesystems and other disk images on the host. It uses libguestfs for access to the guest filesystem, and FUSE ("filesystem in userspace") to make it appear as a mountable device.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_40c17768-34cb-40ad-8f18-a0bd1018a52e}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Guestmount is a program used to mount virtual machine filesystems and other disk
 
 - [[data exposure]]
 - [[File System]]
+
+

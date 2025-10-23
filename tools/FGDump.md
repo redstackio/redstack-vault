@@ -29,13 +29,27 @@ FGDump is a utility for dumping passwords on Windows NT/2000/XP/2003.
 
 FGDump is a utility for dumping passwords on Windows NT/2000/XP/2003.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_718639f6-356e-432f-8148-bba721101747}}
+
+
 
 # Installation
 
 FGDump is available from the author as a pre-compiled binary.
 
 Download here: [http://www.foofus.net/fizzgig/fgdump/fgdump-2.1.0-exeonly.zip](http://www.foofus.net/fizzgig/fgdump/fgdump-2.1.0-exeonly.zip)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +64,5 @@ Download here: [http://www.foofus.net/fizzgig/fgdump/fgdump-2.1.0-exeonly.zip](h
 - [[administrator]]
 - [[Cryptography]]
 - [[NTLM]]
+
+

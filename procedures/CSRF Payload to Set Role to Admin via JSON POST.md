@@ -31,11 +31,15 @@ This payload demonstrates how an attacker can use a Cross-Site Request Forgery (
 
 To execute this attack, the attacker needs to craft a malicious webpage that includes the above script. They then need to trick the victim into visiting the page while they are logged into the target website.
 
+ 
+
 ## Requirements
 
 1. The victim needs to be logged into the target website
 
 1. The attacker needs to be able to craft a malicious webpage and trick the victim into visiting it
+
+ 
 
 ## Defense
 
@@ -45,19 +49,29 @@ To execute this attack, the attacker needs to craft a malicious webpage that inc
 
 1. Implement strict access controls and role-based permissions to limit the damage that can be done if an attacker is able to change a user's role
 
+ 
+
 ## Objectives
 
 1. Change the victim's role to 'admin'
 
 1. Gain full control over the victim's account and potentially the entire system
 
+ 
+
 # Instructions
 
 1. Craft a malicious webpage that includes the above script
 
+ 
+
+
+
 **Code**: [[<script>
 var xhr = new XMLHttpRequest();
 xhr.open(]]
+
+
 
 > This script sends a JSON POST request to the server with the payload '{"role":admin}'. This will set the victim's role to 'admin' if the victim is logged into the target website and visits the attacker's malicious webpage.
 
@@ -77,3 +91,5 @@ xhr.open(]]
 - [[Cross-Site Request Forgery]]
 - [[JSON POST - Simple Request]]
 - [[Payloads]]
+
+

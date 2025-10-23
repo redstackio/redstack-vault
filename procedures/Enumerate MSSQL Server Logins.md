@@ -30,11 +30,15 @@ This procedure involves executing a manual SQL query to enumerate all the logins
 
 This procedure involves executing a manual SQL query to enumerate all the logins on an MSSQL server. This information can be useful for identifying potential targets for further exploitation or for auditing purposes. To execute this query, the user needs to have appropriate permissions on the server. The technical details of the query involve selecting information from the 'sys.server_principals' table. The business value of this procedure is that it can help organizations identify potential security risks and take appropriate measures to mitigate them.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the MSSQL server
 
 1. Appropriate permissions to execute the query
+
+ 
 
 ## Defense
 
@@ -44,25 +48,39 @@ This procedure involves executing a manual SQL query to enumerate all the logins
 
 1. Implement strong password policies for all logins
 
+ 
+
 ## Objectives
 
 1. Identify all logins on an MSSQL server
 
 1. Assess the security risks associated with each login
 
+ 
+
 # Instructions
 
 1. To retrieve information about server principals, use the following SQL query:
 
+ 
+
+
+
 **Code**: [[Select * from sys.server_principals where type_des]]
 
+
+
 > This query retrieves information about all server principals, except for those that are server roles. The result set includes details such as the principal's name, type, authentication type, and permission information.
+
+
 
 **Command** ([[Query sys.server_principals table]]):
 
 ```bash
 Select * from sys.server_principals where type_desc != 'SERVER_ROLE'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ Select * from sys.server_principals where type_desc != 'SERVER_ROLE'
 - [[All Logins on Server]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

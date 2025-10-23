@@ -34,11 +34,15 @@ The AWS S3 bucket is a popular cloud storage service that provides users with th
 
 The AWS S3 bucket is a popular cloud storage service that provides users with the ability to store and retrieve data from anywhere in the world. However, misconfigured S3 buckets can result in data breaches and other security incidents. This procedure provides instructions on how to properly configure the AWS S3 bucket to ensure security and prevent unauthorized access. By properly configuring the S3 bucket, organizations can ensure that their sensitive data is secure and protected from unauthorized access.
 
+ 
+
 ## Requirements
 
 1. An AWS account
 
 1. awscli installed
+
+ 
 
 ## Defense
 
@@ -48,19 +52,31 @@ The AWS S3 bucket is a popular cloud storage service that provides users with th
 
 1. Regularly review S3 bucket permissions and access logs to identify and remediate security issues
 
+ 
+
 ## Objectives
 
 1. To properly configure the AWS S3 bucket
 
 1. To ensure that sensitive data is secure and protected from unauthorized access
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[sudo apt install awscli]]
 
+
+
 > This command installs the AWS command-line interface (CLI) which is used to interact with AWS services from the command line.
+
+
 
 **Command** ([[Install AWS CLI]]):
 
@@ -68,12 +84,22 @@ The AWS S3 bucket is a popular cloud storage service that provides users with th
 sudo apt install awscli
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[aws configure
 AWSAccessKeyId=[ENTER HERE YOUR KEY]]]
 
+
+
 > This command configures the AWS CLI with the user's access key and secret access key, which are used to authenticate the user's requests to AWS services.
+
+
 
 **Command** ([[Configure AWS credentials]]):
 
@@ -83,11 +109,21 @@ AWSAccessKeyId=[ENTER HERE YOUR KEY]
 AWSSecretKey=[ENTER HERE YOUR KEY]
 ```
 
+
+
 3. 
+
+ 
+
+
 
 **Code**: [[aws configure --profile nameofprofile]]
 
+
+
 > This command creates an AWS profile, which is a named set of configuration options that can be used when running AWS CLI commands.
+
+
 
 **Command** ([[Configure AWS Profile]]):
 
@@ -95,12 +131,22 @@ AWSSecretKey=[ENTER HERE YOUR KEY]
 aws configure --profile nameofprofile
 ```
 
+
+
 4. 
+
+ 
+
+
 
 **Code**: [[export AWS_ACCESS_KEY_ID=ASIAZ[...]PODP56
 export A]]
 
+
+
 > This command exports the AWS access key, secret access key, and session token as environment variables, which can be used to authenticate the user's requests to AWS services.
+
+
 
 **Command** ([[Set AWS Credentials]]):
 
@@ -109,6 +155,8 @@ export AWS_ACCESS_KEY_ID=ASIAZ[...]PODP56
 export AWS_SECRET_ACCESS_KEY=fPk/Gya[...]4/j5bSuhDQ
 export AWS_SESSION_TOKEN=FQoGZXIvYXdzE[...]8aOK4QU=
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +181,5 @@ export AWS_SESSION_TOKEN=FQoGZXIvYXdzE[...]8aOK4QU=
 
 - [[Amazon Bucket S3 AWS]]
 - [[AWS Configuration]]
+
+

@@ -20,3 +20,5 @@ netdom trust lab.local /domain:bastion.local /EnableSIDHistory:Yes
 netdom trust lab.local /domain:bastion.local /EnablePIMTrust:Yes 
 netdom trust lab.local /domain:bastion.local /Quarantine:No
 ```
+
+

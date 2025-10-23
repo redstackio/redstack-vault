@@ -36,9 +36,13 @@ Exotic payloads can be used to bypass space filters in Cross Site Scripting atta
 
 Exotic payloads can be used to bypass space filters in Cross Site Scripting attacks. This technique uses the slash and carat L character to bypass the filter. By doing so, an attacker can inject malicious code into a web page and execute it on a victim's browser. This technique can be used to steal sensitive information, such as session cookies, and perform actions on behalf of the victim.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Exotic payloads can be used to bypass space filters in Cross Site Scripting atta
 
 1. Regularly update web application components and libraries to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject and execute malicious code on a victim's browser
@@ -55,6 +61,8 @@ Exotic payloads can be used to bypass space filters in Cross Site Scripting atta
 1. Steal sensitive information
 
 1. Perform actions on behalf of the victim
+
+ 
 
 # Instructions
 
@@ -64,12 +72,20 @@ Exotic payloads can be used to bypass space filters in Cross Site Scripting atta
 To bypass space filter with 0x0c/^L, use the following command:
 <svgonload=alert(1)>
 
+ 
+
+
+
 **Code**: [[// Bypass space filter with "/"
 <img/src='1'/onerr]]
+
+
 
 > The first command uses the onerror attribute to execute the alert function when the image fails to load. The forward slash is used to bypass any space filters that may be in place.
 
 The second command uses the onload attribute to execute the alert function when the SVG loads. The carat L (^L) is used to represent the 0x0c character and bypass any space filters that may be in place.
+
+
 
 **Command** ([[Bypass space filter with /]]):
 
@@ -77,17 +93,27 @@ The second command uses the onload attribute to execute the alert function when 
 <img/src='1'/onerror=alert(0)>
 ```
 
+
+
+
+
 **Command** ([[Bypass space filter with 0x0c/^L]]):
 
 ```bash
 <svgonload=alert(1)>
 ```
 
+
+
+
+
 **Command** ([[Convert string to hex]]):
 
 ```bash
 <svg^Lonload^L=^Lalert(1)^L>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -114,3 +140,5 @@ The second command uses the onload attribute to execute the alert function when 
 - [[Bypass space filter]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

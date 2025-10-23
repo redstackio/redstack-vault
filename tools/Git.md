@@ -30,11 +30,27 @@ Git is a fast, scalable, distributed revision control system with a rich command
 
 Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. Through Git's version control, users can track modifications, test changes, roll back updates, etc., all of which is tracked and logged. Directories under Git control (aka a Git repo) will have a ".git" subdirectory, which contains all relevant version control information for tracking some or all of the files and folders in the current directory. Git repos will often disclose unintended data in the logs and past commits, which may include old versions and source code, passwords, encryption keys, etc.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e8bad82f-9c87-414b-b192-8d7148f4ec39}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Git is a fast, scalable, distributed revision control system with a rich command
 
 - [[backup]]
 - [[File System]]
+
+

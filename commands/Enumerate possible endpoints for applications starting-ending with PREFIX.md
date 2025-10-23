@@ -19,3 +19,5 @@ updated_at: '2023-04-10T20:19:36.288548+00:00'
 Get-AzureADServicePrincipal -All $true -Filter "startswith(displayName,'PREFIX')" | % {$_.ReplyUrls}
 Get-AzureADApplication -All $true -Filter "endswith(displayName,'PREFIX')" | Select-Object ReplyUrls,WwwHomePage,HomePage
 ```
+
+

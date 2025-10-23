@@ -18,3 +18,5 @@ For integer inputs : cast((SELECT @@version) as int)
 For string inputs   : ' + convert(int,@@version) + '
 For string inputs   : ' + cast((SELECT @@version) as int) + '
 ```
+
+

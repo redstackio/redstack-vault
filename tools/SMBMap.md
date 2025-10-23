@@ -28,11 +28,27 @@ SMBMap is a tool used for SMB/CIFS enumeration. SMBMap can list shares, permissi
 
 SMBMap is a tool used for SMB/CIFS enumeration. SMBMap can list shares, permissions, shared folder contents, upload/download files, search and download files by name, search file contents, and execute remote commands. It also supports NULL session authentication and authentication via password hash.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_7aa6ce98-6766-4107-a0fb-f3212164b8d0}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu (Python 3)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ SMBMap is a tool used for SMB/CIFS enumeration. SMBMap can list shares, permissi
 - [[Enumeration]]
 - [[NTLM]]
 - [[smb]]
+
+

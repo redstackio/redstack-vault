@@ -18,3 +18,5 @@ incognito.exe execute -c "NT AUTHORITY\SYSTEM" cmd.exe
 psexec -s -i cmd.exe 
 python getsystem.py # from https://github.com/sailay1996/tokenx_privEsc
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:59.021893+00:00'
 ```ps1
 python3 modifyCertTemplate.py domain.local/user -k -no-pass -template user -dc-ip 10.10.10.10 -value 0 -property mspki-Certificate-Name-Flag
 ```
+
+

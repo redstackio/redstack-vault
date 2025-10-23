@@ -15,9 +15,17 @@ updated_at: '2023-05-30T20:06:41.053468+00:00'
 
 Very basic overview of Linux filesystem permissions
 
+
+
 ## File Permissions
 
+
+
+
+
 **Code**: [[-rwxr-xr-x 1 root root 1.2M Nov 10 05:45 /bin/bash]]
+
+
 
 - three sets of three permissions (rwx) (listed from left to right): user, group, other
 
@@ -25,9 +33,17 @@ Very basic overview of Linux filesystem permissions
 
 - these dictate who can access files and what they can do
 
+
+
 ## Folder Permissions
 
+
+
+
+
 **Code**: [[drwxr-xr-x   3 root root   4.0K Mar 10 03:57 home]]
+
+
 
 - first field is a "d" indicating directory
 
@@ -39,11 +55,25 @@ System users are found in /etc/passwd
 
 System groups are found in /etc/group
 
+
+
+
+
+
+
 **Command** ([[Add a User on a Linux System]]):
 
 ```bash
 adduser $_NAME
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[Change Ownership of a Folder Recursively]]):
 
@@ -51,11 +81,21 @@ adduser $_NAME
 chown  -R $_USER:$_GROUP $_PATH
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Change File Permissions to rwxrw-rw-]]):
 
 ```bash
 chmod 755 $_FILENAME
 ```
+
+
 
 ## Numerical File Permissions
 
@@ -71,17 +111,31 @@ Add together for the effective permissions.
 
 eg: read + write = 6
 
+
+
 Command like chmod accept numerical permissions
 
 eg. Set full control for user/group, and read only for others:
 
+
+
+
+
 **Code**: [[chmod 774 /path/to/somefile]]
+
+
+
+
+
+
 
 ## Special Bit Permissoins
 
 **SUID**
 
 -rwsr-xr-x 1 root root 119K Mar 10 08:31 priv
+
+
 
 - users who execute the file execute it as the owner
 
@@ -95,17 +149,23 @@ drwxr-srwx 2 root root    6 Mar 10 08:36 test
 
 - useful for sharing files across users and groups
 
+
+
 ## passwd File Structure
 
 user:password:userid:groupid:usercomment:homedir:shell
 
 bob:x:1000:1000:Mark,,,:/home/alice:/bin/bash
 
+
+
 ## shadow File Structure
 
 user:password:lastpasschanged:minpasschange:maxpasschange:warnpass:expireafterinactive:dayssinceexpired
 
 bob:$1$NtYp9mSe$Lc6zOjqaSLxBaJ7QXlGuj1:18331:0:99999:7:::
+
+
 
 ## Common Shadow Password Formats
 
@@ -119,8 +179,26 @@ bob:$1$NtYp9mSe$Lc6zOjqaSLxBaJ7QXlGuj1:18331:0:99999:7:::
 
 - $6$ - SHA-512
 
+
+
+
+
 **Command** ([[mkpasswd Generate a MD5 Hash]]):
 
 ```bash
 mkpasswd -5 -S $_SALT $_PASSWORD
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

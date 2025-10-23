@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:21.145437+00:00'
 ```bash
 aws s3api get-object-acl --bucket-name name --key object_name
 ```
+
+

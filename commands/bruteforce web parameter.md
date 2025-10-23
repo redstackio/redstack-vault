@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 wfuzz -u http://target-ip/path/index.php?param=FUZZ -w /usr/share/wordlists/rockyou.txt
 
 ```
+
+

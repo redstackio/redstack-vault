@@ -17,3 +17,5 @@ SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master.
 
 SELECT table_catalog, column_name FROM information_schema.columns
 ```
+
+

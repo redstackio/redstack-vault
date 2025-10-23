@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:58.014223+00:00'
 ```bash
 -> Insert -> More Controls -> Microsoft InkPicture Control
 ```
+
+

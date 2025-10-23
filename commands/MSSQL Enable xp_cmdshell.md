@@ -76,3 +76,5 @@ Configuration option 'xp_cmdshell' changed from 1 to 1. Run the RECONFIGURE stat
 1> RECONFIGURE
 2> go
 ```
+
+

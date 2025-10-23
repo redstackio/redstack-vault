@@ -29,11 +29,15 @@ Azure AD Endpoint Enumeration is a technique used to identify Azure AD endpoints
 
 Azure AD Endpoint Enumeration is a technique used to identify Azure AD endpoints associated with a specific PREFIX. This technique can be used to discover additional targets that may be of interest to an attacker. By using the List Azure AD endpoints with PREFIX command, an attacker can quickly identify all endpoints that match a specific prefix. This technique can be used for reconnaissance purposes to gather information about a target's infrastructure.
 
+ 
+
 ## Requirements
 
 1. Valid Azure AD credentials
 
 1. Network access to Azure AD
+
+ 
 
 ## Defense
 
@@ -43,19 +47,31 @@ Azure AD Endpoint Enumeration is a technique used to identify Azure AD endpoints
 
 1. Implement network segmentation to limit lateral movement within the network
 
+ 
+
 ## Objectives
 
 1. Identify Azure AD endpoints associated with a specific PREFIX
+
+ 
 
 # Instructions
 
 1. To list Azure AD endpoints with PREFIX, run the following commands in PowerShell:
 
+ 
+
+
+
 **Code**: [[# Enumerate possible endpoints for applications st]]
+
+
 
 > This command will retrieve a list of possible endpoints for applications starting with PREFIX by using the Get-AzureADServicePrincipal command with the -Filter parameter set to "startswith(displayName,'PREFIX')". The command will then pipe the output to the ForEach-Object cmdlet and retrieve the ReplyUrls property of each service principal.
 
 The second command will retrieve a list of possible endpoints for applications ending with PREFIX by using the Get-AzureADApplication command with the -Filter parameter set to "endswith(displayName,'PREFIX')". The command will then select the ReplyUrls, WwwHomePage, and HomePage properties of each application.
+
+
 
 **Command** ([[Enumerate possible endpoints for applications starting/ending with PREFIX]]):
 
@@ -63,6 +79,8 @@ The second command will retrieve a list of possible endpoints for applications e
 Get-AzureADServicePrincipal -All $true -Filter "startswith(displayName,'PREFIX')" | % {$_.ReplyUrls}
 Get-AzureADApplication -All $true -Filter "endswith(displayName,'PREFIX')" | Select-Object ReplyUrls,WwwHomePage,HomePage
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -82,3 +100,5 @@ Get-AzureADApplication -All $true -Filter "endswith(displayName,'PREFIX')" | Sel
 
 - [[Application Endpoint]]
 - [[Cloud - Azure]]
+
+

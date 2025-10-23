@@ -65,3 +65,5 @@ root@hackers:~/Content/Enumeration# find /etc -ctime -1
 /etc/resolv.conf
 /etc/ld.so.cache
 ```
+
+

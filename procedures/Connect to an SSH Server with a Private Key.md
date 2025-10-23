@@ -33,13 +33,23 @@ Use SSH to connect to a remote SSH server using a private key.
 
 Use SSH to connect to a remote SSH server using a private key.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[ssh Connect with a Private Key]]):
 
 ```bash
 ssh -i $_PRIVATE_KEY -l $_USER $_TARGET_IP
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -61,3 +71,5 @@ ssh -i $_PRIVATE_KEY -l $_USER $_TARGET_IP
 ## Tags
 
 - [[Network]]
+
+

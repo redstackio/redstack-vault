@@ -17,3 +17,5 @@ sp_addextendedproc 'xp_calc', 'C:\mydll\xp_calc.dll'
 EXEC xp_calc
 sp_dropextendedproc 'xp_calc'
 ```
+
+

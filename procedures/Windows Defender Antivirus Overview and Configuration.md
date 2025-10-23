@@ -35,11 +35,15 @@ Windows Defender Antivirus is a built-in anti-malware solution that provides rea
 
 Windows Defender Antivirus is a built-in anti-malware solution that provides real-time protection against various types of threats. It uses machine learning and cloud-based protection to quickly detect and respond to new and emerging threats. Windows Defender Antivirus can be configured to meet the specific needs of an organization, such as scanning schedules and exclusions. The use of Windows Defender Antivirus can help prevent the compromise of endpoints and protect sensitive data from theft or destruction.
 
+ 
+
 ## Requirements
 
 1. Windows operating system
 
 1. Administrator privileges
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Windows Defender Antivirus is a built-in anti-malware solution that provides rea
 
 1. Regularly review and update the Windows Defender Antivirus configuration to ensure it is aligned with the organization's security policies
 
+ 
+
 ## Objectives
 
 1. To provide real-time protection against various types of threats
@@ -57,13 +63,23 @@ Windows Defender Antivirus is a built-in anti-malware solution that provides rea
 
 1. To prevent the compromise of endpoints and protect sensitive data from theft or destruction
 
+ 
+
 # Instructions
 
 1. To use Microsoft Defender, simply open the Windows Security app and navigate to the Virus & threat protection section. From here, you can run quick or full scans, view scan history, and manage threat settings.
 
+ 
+
+
+
 **Code**: [[Microsoft Defender]]
 
+
+
 > Microsoft Defender provides real-time protection against viruses, malware, and other types of malicious software. It also includes features such as firewall and network protection, as well as browser and email protection. Microsoft Defender is designed to run in the background and keep your computer safe without requiring much user intervention.
+
+
 
 **Command** ([[Enable Microsoft Defender]]):
 
@@ -75,6 +91,10 @@ To enable Microsoft Defender on Windows 10:
 4. Toggle the switch for Real-time protection to On.
 ```
 
+
+
+
+
 **Command** ([[Run a Quick Scan]]):
 
 ```bash
@@ -84,6 +104,10 @@ To run a quick scan with Microsoft Defender:
 3. Under Current threats, click Scan options.
 4. Select Quick scan and click Scan now.
 ```
+
+
+
+
 
 **Command** ([[Run a Full Scan]]):
 
@@ -95,18 +119,32 @@ To run a full scan with Microsoft Defender:
 4. Select Full scan and click Scan now.
 ```
 
+
+
 2. This command provides instructions on how to configure Windows Defender on a Windows machine. The command includes disabling real-time monitoring, disabling AMSI, excluding a folder and process from scanning, and removing signatures.
+
+ 
+
+
 
 **Code**: [[# Check the status of Windows Defender
 PS C:\> Get]]
 
+
+
 > The command 'Get-MpComputerStatus' is used to check the status of Windows Defender on a Windows machine. The command 'Set-MpPreference' is used to disable real-time monitoring and AMSI. The command 'Set-MpPreference -DisableScriptScanning 1' is used to disable AMSI. The command 'Add-MpPreference' is used to exclude a folder and process from scanning. The command '& "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe" -RemoveDefinitions -All' is used to remove all signatures from Windows Defender.
+
+
 
 **Command** ([[Check Windows Defender status]]):
 
 ```bash
 Get-MpComputerStatus
 ```
+
+
+
+
 
 **Command** ([[Disable Windows Defender scanning]]):
 
@@ -116,6 +154,10 @@ Set-MpPreference -DisableIOAVProtection $true
 Set-MpPreference -DisableScriptScanning 1
 ```
 
+
+
+
+
 **Command** ([[Exclude folders from Windows Defender scanning]]):
 
 ```bash
@@ -124,12 +166,18 @@ Add-MpPreference -ExclusionPath "C:\Windows\Tasks"
 Set-MpPreference -ExclusionProcess "word.exe", "vmwp.exe"
 ```
 
+
+
+
+
 **Command** ([[Remove Windows Defender signatures]]):
 
 ```bash
 & "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe" -RemoveDefinitions -All
 & "C:\Program Files\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -155,3 +203,5 @@ Set-MpPreference -ExclusionProcess "word.exe", "vmwp.exe"
 
 - [[Windows Defender Antivirus]]
 - [[Windows - Defenses]]
+
+

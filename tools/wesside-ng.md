@@ -16,3 +16,9 @@ Wesside-ng is an auto-magic tool which incorporates a number of techniques to se
 ## Description
 
 Wesside-ng is an auto-magic tool which incorporates a number of techniques to seamlessly obtain a WEP key in minutes. It first identifies a network, then proceeds to associate with it, obtain PRGA (pseudo random generation algorithm) xor data, determine the network IP scheme, reinject ARP requests and finally determine the WEP key. All this is done without your intervention.
+
+
+
+
+
+

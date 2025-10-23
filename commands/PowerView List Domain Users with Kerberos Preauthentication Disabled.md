@@ -6,6 +6,8 @@ executor: powershell
 data: Get-DomainUser -PreauthNotRequired
 output: 'PS C:\Users\steve> Get-DomainUser -PreauthNotRequired
 
+
+
   logoncount                    : 0
 
   badpasswordtime               : 12/31/1600 4:00:00 PM
@@ -74,6 +76,7 @@ Get-DomainUser -PreauthNotRequired
 ```
 PS C:\Users\steve> Get-DomainUser -PreauthNotRequired
 
+
 logoncount                    : 0
 badpasswordtime               : 12/31/1600 4:00:00 PM
 distinguishedname             : CN=svc-appsrv,CN=Users,DC=DEV,DC=TESLA,DC=LOCAL
@@ -102,3 +105,5 @@ pwdlastset                    : 7/1/2020 3:51:59 PM
 msds-supportedencryptiontypes : 0
 usnchanged                    : 13137
 ```
+
+

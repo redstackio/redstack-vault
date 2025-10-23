@@ -33,11 +33,15 @@ Technical Explanation: WMI is a Windows management protocol that provides a stan
 
 Business Value: This technique can be used by attackers to gain unauthorized access to sensitive data or systems. By using WMI to remotely execute commands, an attacker can move laterally within a network, escalate privileges, and exfiltrate data. Organizations should be aware of this technique and take appropriate measures to protect against it.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the target machine
 
 1. Access to the WMI protocol on the target machine
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 1. Monitor for suspicious WMI activity
 
 1. Implement network segmentation to limit lateral movement
+
+ 
 
 ## Objectives
 
@@ -57,19 +63,31 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 
 1. Data exfiltration
 
+ 
+
 # Instructions
 
 1. To open Calculator remotely using WMIC, use the following command:
 
+ 
+
+
+
 **Code**: [[PS C:\> wmic /node:target.domain /user:domain\user]]
 
+
+
 > This command uses the Windows Management Instrumentation Command-line (WMIC) tool to remotely execute the Calculator application on a target computer. The /node parameter specifies the target computer, and the /user and /password parameters specify the credentials to use for authentication. The process call create command is used to create a new process on the remote computer, and the path to the Calculator executable is provided as an argument.
+
+
 
 **Command** ([[Create process on remote machine]]):
 
 ```bash
 wmic /node:target.domain /user:domain\user /password:password process call create "C:\Windows\System32\calc.exe”
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ wmic /node:target.domain /user:domain\user /password:password process call creat
 
 - [[Windows - Using credentials]]
 - [[WMI Protocol]]
+
+

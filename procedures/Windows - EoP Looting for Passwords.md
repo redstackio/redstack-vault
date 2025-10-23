@@ -37,11 +37,15 @@ Technical Explanation: The attacker uses the 'Find Password and Credential Files
 
 Business Value: Attackers who successfully escalate their privileges can gain access to sensitive data, intellectual property, and other valuable resources. This can result in significant financial and reputational damage for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Windows system
 
 1. Ability to run commands on the target system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: Attackers who successfully escalate their privileges can gain ac
 
 1. Implement least privilege access controls to limit the impact of privilege escalation attacks
 
+ 
+
 ## Objectives
 
 1. Obtain passwords or credentials from the target system
@@ -59,11 +65,19 @@ Business Value: Attackers who successfully escalate their privileges can gain ac
 
 1. Gain access to additional resources on the network
 
+ 
+
 # Instructions
 
 1. This command will search for password and credential files in the system. It will search for files with the following extensions: txt, xml, ini, config, and files with the keywords 'pass', 'cred', and 'vnc' in their names. It will also search for a file named 'user.txt' and all files with the extension '.ini' recursively in the C:\ directory.
 
+ 
+
+
+
 **Code**: [[dir /S /B *pass*.txt == *pass*.xml == *pass*.ini =]]
+
+
 
 > The 'dir' command will search for files with the specified extensions and keywords in the current directory and all subdirectories. The 'where' command will search for files with the specified name or extension recursively in the specified directory. This command can be useful for finding sensitive information stored in plain text files or configuration files on a system.
 
@@ -87,3 +101,5 @@ Business Value: Attackers who successfully escalate their privileges can gain ac
 - [[EoP - Looting for passwords]]
 - [[Search for a file with a certain filename]]
 - [[Windows - Privilege Escalation]]
+
+

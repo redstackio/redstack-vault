@@ -34,9 +34,13 @@ Technical Explanation: The AWS IAM ListRoles API can be used to list all IAM rol
 
 Business Value: By discovering the IAM roles in an AWS account, an attacker can gain insight into the permissions granted to resources and potentially identify roles that can be abused to escalate privileges. This information can be used to plan further attacks and gain unauthorized access to sensitive data or resources.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list IAM roles
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: By discovering the IAM roles in an AWS account, an attacker can 
 
 1. Use AWS CloudTrail to log and audit IAM role activity
 
+ 
+
 ## Objectives
 
 1. Discover IAM roles in an AWS account
@@ -54,19 +60,31 @@ Business Value: By discovering the IAM roles in an AWS account, an attacker can 
 
 1. Identify roles that can be abused to escalate privileges
 
+ 
+
 # Instructions
 
 1. To list all the IAM roles in your AWS account, run the following command:
 
+ 
+
+
+
 **Code**: [[aws iam list-roles]]
 
+
+
 > This command will return a list of all the IAM roles that have been created in your AWS account. IAM roles are used to delegate permissions to AWS services and resources, and are an important part of AWS security and access management. The output of this command will include the role name, the role ARN (Amazon Resource Name), and the role creation date.
+
+
 
 **Command** ([[List IAM Roles]]):
 
 ```bash
 aws iam list-roles
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ aws iam list-roles
 - [[3. Enumeratig Roles]]
 - [[Cloud - AWS]]
 - [[Listing IAM Roles]]
+
+

@@ -20,3 +20,5 @@ const json = {name: 'John', age: 30};
 const options = {compact: true, ignoreComment: true, spaces: 4};
 const xml = xmljs.js2xml(json, options);
 ```
+
+

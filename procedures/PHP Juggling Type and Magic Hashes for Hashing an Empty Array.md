@@ -36,11 +36,15 @@ This technique requires knowledge of the target system and the authentication me
 
 Business value: By understanding and mitigating this technique, organizations can better protect their authentication mechanisms and prevent unauthorized access to sensitive information or systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the authentication mechanism used
+
+ 
 
 ## Defense
 
@@ -50,20 +54,32 @@ Business value: By understanding and mitigating this technique, organizations ca
 
 1. Regularly monitor and analyze authentication logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms that rely on comparing two values
 
 1. Gain unauthorized access to sensitive information or systems
 
+ 
+
 # Instructions
 
 1. The 'sha1' and 'md5' functions are used to generate a hash value of the input data. In this case, we are trying to hash an empty array. However, since the input is empty, both functions return NULL.
 
+ 
+
+
+
 **Code**: [[var_dump(sha1([])); # NULL
 var_dump(md5([]));  # N]]
 
+
+
 > The 'sha1' function generates a 40-character hexadecimal hash while the 'md5' function generates a 32-character hexadecimal hash. Both functions can accept a string or a binary data as input. It is important to note that hashing is a one-way process and the original data cannot be retrieved from the hash value.
+
+
 
 **Command** ([[Hashing an empty array with sha1 and md5]]):
 
@@ -71,6 +87,8 @@ var_dump(md5([]));  # N]]
 var_dump(sha1([])); # NULL
 var_dump(md5([]));  # NULL
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ var_dump(md5([]));  # NULL
 - [[NULL statements]]
 - [[PHP Juggling type and magic hashes]]
 - [[Type Juggling]]
+
+

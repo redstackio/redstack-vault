@@ -34,11 +34,15 @@ From a technical perspective, Nmap sends packets to hosts on the network and ana
 
 From a business perspective, network discovery can help organizations understand their network topology and identify potential security risks. By identifying all hosts and services on the network, organizations can ensure that they have proper security controls in place to protect their assets.
 
+ 
+
 ## Requirements
 
 1. Access to the network
 
 1. Permission to scan hosts
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, network discovery can help organizations understand
 
 1. Regularly monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify all hosts and services on the network
@@ -56,20 +62,32 @@ From a business perspective, network discovery can help organizations understand
 
 1. Understand the network topology
 
+ 
+
 # Instructions
 
 1. To perform a full scan with OS detection and version detection, run the following command:
 
+ 
+
+
+
 **Code**: [[nmap -A -T4 scanme.nmap.org
 • -A: Enable OS detect]]
 
+
+
 > This command uses the nmap tool to perform a full scan of the target host 'scanme.nmap.org'. The '-A' option enables OS detection, version detection, script scanning, and traceroute. The '-T4' option defines the timing for the task, with higher values being faster. This command is useful for gathering detailed information about the target host, including its operating system, open ports, and running services.
+
+
 
 **Command** ([[Nmap scan with OS detection, version detection, script scanning, and traceroute]]):
 
 ```bash
 nmap -A -T4 scanme.nmap.org
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +108,5 @@ nmap -A -T4 scanme.nmap.org
 
 - [[Network Discovery]]
 - [[Nmap]]
+
+

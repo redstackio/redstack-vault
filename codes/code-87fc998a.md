@@ -30,3 +30,5 @@ dotnet Macrome.dll build --decoy-document decoy_document.xls --payload shellcode
 # For VBA Macro
 Macrome build --decoy-document decoy_document.xls --payload-type Macro --payload macro_example.txt --output-file-name xor_obfuscated_macro_doc.xls --password VelvetSweatshop
 ```
+
+

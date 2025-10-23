@@ -27,3 +27,5 @@ export SHELL=bash
 export TERM=xterm-256color
 stty rows <num> columns <cols>
 ```
+
+

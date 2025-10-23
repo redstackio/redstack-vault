@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:00.037291+00:00'
 # From https://github.com/samratashok/ADModule
 PS> Get-ADComputer -Filter {TrustedForDelegation -eq $True}
 ```
+
+

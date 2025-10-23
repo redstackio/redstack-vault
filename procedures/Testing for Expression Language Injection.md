@@ -28,13 +28,45 @@ An attacker can leverage the user controlled fields such as search fields, sessi
 
 An attacker can leverage the user controlled fields such as search fields, session variables, request parameters etc... to parse the data by EL(expression Language ) interpreter and executes the mailicious JSP (Java Server Pages) tags .
 
+
+
 # Instructions 
+
+
 
 1. Place the payload in the search field as shown below.
 
 *Payload: $(99999+1)*
 
+
+
+
+
+![e0ccf736-4be2-4526-83f0-fb337da8151c.png](_assets/images/Mash/e0ccf736-4be2-4526-83f0-fb337da8151c.png)
+
+
+
+
+
 2. Payload is being parsed by the EL interpreter and gets executed . The result can be observed in the search results .
+
+
+
+
+
+
+
+
+
+![a03dc7a2-5abd-448b-837c-ae61b4d71ba9.png](_assets/images/Mash/a03dc7a2-5abd-448b-837c-ae61b4d71ba9.png)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +77,5 @@ An attacker can leverage the user controlled fields such as search fields, sessi
 - [[Expression Langugae Injection]]
 - [[injection]]
 - [[Web Applications]]
+
+

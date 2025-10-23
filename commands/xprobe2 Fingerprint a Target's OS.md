@@ -6,7 +6,9 @@ executor: bash
 data: xprobe2 $_TARGET_IP
 output: 'root@kali:~# xprobe2 10.10.10.10
 
+
   Xprobe2 v.0.3 Copyright (c) 2002-2005 fyodor@o0o.nu, ofir@sys-security.com, meder@o0o.nu
+
 
   [+] Target is 10.10.10.10
 
@@ -126,3 +128,5 @@ Xprobe2 v.0.3 Copyright (c) 2002-2005 fyodor@o0o.nu, ofir@sys-security.com, mede
 [+] Modules deinitialized
 [+] Execution completed.
 ```
+
+

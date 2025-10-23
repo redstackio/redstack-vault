@@ -20,3 +20,5 @@ USE master
 GO
 SELECT [name], [recovery_model_desc] FROM sys.databases WHERE [name] = 'database_name'
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:59.980820+00:00'
 ```bash
 Static:http://nicob.net/redir6a
 ```
+
+

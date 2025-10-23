@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # gettgt.py
 
+
+
 **Command** ([[Request the TGT with hash]]):
 
 ```bash
 python getTGT.py <domain_name>/<user_name> -hashes [lm_hash]:<ntlm_hash>
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Request the TGT with aesKey (more secure encryption, probably more stealth due is the used by default by Microsoft)]]):
 
@@ -23,12 +31,24 @@ python getTGT.py <domain_name>/<user_name> -aesKey <aes_key>
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Request the TGT with password]]):
 
 ```bash
 python getTGT.py <domain_name>/<user_name>:[password]
 
 ```
+
+
+
+
+
+
 
 **Command** ([[set the TGT for impacket use]]):
 
@@ -37,6 +57,12 @@ export KRB5CCNAME=<TGT_ccache_file>
 
 ```
 
+
+
+
+
 # Execute remote commands with any of the following tools by using the TGT
 
 search for psexec.py, smbexec.py or wmiexec.py
+
+

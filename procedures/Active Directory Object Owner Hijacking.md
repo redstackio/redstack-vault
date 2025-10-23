@@ -40,11 +40,15 @@ To execute this attack, the attacker needs to have the necessary permissions to 
 
 From a business perspective, this attack can lead to significant data breaches, loss of sensitive information, and reputational damage. It is important for organizations to implement proper security measures to prevent and detect such attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target Active Directory environment
 
 1. Sufficient permissions to modify object ownership
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, this attack can lead to significant data breaches, 
 
 1. Regularly review and update ACLs/ACEs to ensure they are properly configured and do not contain any vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain persistence in an Active Directory environment
@@ -62,13 +68,23 @@ From a business perspective, this attack can lead to significant data breaches, 
 
 1. Evade detection by security tools
 
+ 
+
 # Instructions
 
 1. Use the Set-DomainObjectOwner command to change the owner of the target object to a principal controlled by the attacker.
 
+ 
+
+
+
 **Code**: [[Set-DomainObjectOwner -Identity 'target_object' -O]]
 
+
+
 > The Set-DomainObjectOwner command is used to update the owner of a given object in the domain. In this scenario, the attacker uses this command to change the owner of the target object to a principal that they control. By doing so, the attacker gains complete control over the object and can manipulate it in any way they see fit. This can be particularly dangerous if the object in question contains sensitive data or is used for critical functions within the domain.
+
+
 
 **Command** ([[Set Domain Object Owner]]):
 
@@ -76,9 +92,17 @@ From a business perspective, this attack can lead to significant data breaches, 
 Set-DomainObjectOwner -Identity 'target_object' -OwnerIdentity 'controlled_principal'
 ```
 
+
+
 2. This command sets the owner of the target object to the specified user.
 
+ 
+
+
+
 **Code**: [[bloodyAD.py --host my.dc.corp -d corp -u devil_use]]
+
+
 
 > Arguments:
 --host: The hostname of the domain controller.
@@ -89,11 +113,15 @@ setOwner: The command to set the owner of the target object.
 devil_user1: The username of the user to set as the owner.
 target_object: The name of the target object to set the owner for.
 
+
+
 **Command** ([[Set Owner of target_object to devil_user1]]):
 
 ```bash
 bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setOwner devil_user1 target_object
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +148,5 @@ bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setOwner dev
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[WriteOwner]]
+
+

@@ -6,6 +6,7 @@ executor: powershell
 data: Find-AllVulns
 output: 'PS C:\> Find-AllVulns
 
+
   Title      : User Mode to Ring (KiTrap0D)
 
   MSBulletin : MS10-015
@@ -15,6 +16,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://www.exploit-db.com/exploits/11199/
 
   VulnStatus : Not supported on 64-bit systems
+
 
   Title      : Task Scheduler .XML
 
@@ -26,6 +28,7 @@ output: 'PS C:\> Find-AllVulns
 
   VulnStatus : Not Vulnerable
 
+
   Title      : NTUserMessageCall Win32k Kernel Pool Overflow
 
   MSBulletin : MS13-053
@@ -35,6 +38,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://www.exploit-db.com/exploits/33213/
 
   VulnStatus : Not supported on 64-bit systems
+
 
   Title      : TrackPopupMenuEx Win32k NULL Page
 
@@ -46,6 +50,7 @@ output: 'PS C:\> Find-AllVulns
 
   VulnStatus : Not supported on 64-bit systems
 
+
   Title      : TrackPopupMenu Win32k Null Pointer Dereference
 
   MSBulletin : MS14-058
@@ -55,6 +60,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://www.exploit-db.com/exploits/35101/
 
   VulnStatus : Not Vulnerable
+
 
   Title      : ClientCopyImage Win32k
 
@@ -66,6 +72,7 @@ output: 'PS C:\> Find-AllVulns
 
   VulnStatus : Not Vulnerable
 
+
   Title      : Font Driver Buffer Overflow
 
   MSBulletin : MS15-078
@@ -75,6 +82,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://www.exploit-db.com/exploits/38222/
 
   VulnStatus : Not Vulnerable
+
 
   Title      : ''mrxdav.sys'' WebDAV
 
@@ -86,6 +94,7 @@ output: 'PS C:\> Find-AllVulns
 
   VulnStatus : Not supported on 64-bit systems
 
+
   Title      : Secondary Logon Handle
 
   MSBulletin : MS16-032
@@ -95,6 +104,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://www.exploit-db.com/exploits/39719/
 
   VulnStatus : Not Vulnerable
+
 
   Title      : Windows Kernel-Mode Drivers EoP
 
@@ -106,6 +116,7 @@ output: 'PS C:\> Find-AllVulns
 
   VulnStatus : Not Vulnerable
 
+
   Title      : Win32k Elevation of Privilege
 
   MSBulletin : MS16-135
@@ -115,6 +126,7 @@ output: 'PS C:\> Find-AllVulns
   Link       : https://github.com/FuzzySecurity/PSKernel-Primitives/tree/master/Sample-Exploits/MS16-135
 
   VulnStatus : Not Vulnerable
+
 
   Title      : Nessus Agent 6.6.2 - 6.10.3
 
@@ -212,3 +224,5 @@ CVEID      : 2017-7199
 Link       : https://aspe1337.blogspot.co.uk/2017/04/writeup-of-cve-2017-7199.html
 VulnStatus : Not Vulnerable
 ```
+
+

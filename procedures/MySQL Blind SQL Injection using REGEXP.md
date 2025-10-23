@@ -28,11 +28,15 @@ Technical Explanation: The attacker uses the 'REGEXP' function in MySQL to extra
 
 Business Value: This technique is used by attackers to extract sensitive data from a database. The stolen data can be used for various purposes, such as identity theft, financial fraud, and corporate espionage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -42,19 +46,27 @@ Business Value: This technique is used by attackers to extract sensitive data fr
 
 1. Regular security audits should be conducted to identify and fix vulnerabilities in the system
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from a database
 
 1. Bypass security measures put in place to prevent SQL injection attacks
 
+ 
+
 # Instructions
 
 1. This payload can be used to test SQL injection vulnerabilities in web applications. The payload uses a SQL injection technique called 'time-based blind SQL injection'. This technique relies on the database server taking a longer time to respond to certain queries, allowing an attacker to infer information about the database.
 
+ 
+
 In this specific payload, the attacker is trying to determine if there is a record in the 'items' table whose name starts with the letter 'a'. The 'REGEXP "^a.*"' part of the query checks if the name starts with 'a', and the 'EXISTS' function returns true if there is at least one record that matches the condition. If the condition is true, the 'SLEEP(3)' function causes the database server to delay the response by 3 seconds. Otherwise, the query executes normally and the response is returned immediately. The final part of the payload is a comment that comments out the rest of the original query, preventing any errors caused by the injected code.
 
 2. This command is used to exploit a SQL injection vulnerability by causing a delay in the response of the database. The injection point is in the "where" clause of the query. The injection point can be used to execute arbitrary SQL commands.
+
+ 
 
 The command works by injecting SQL code into the query, causing the database to execute the injected code. The injected code checks if there is a name in the items table that starts with the letter "a". If there is, the command causes the database to sleep for 3 seconds before returning a response. This delay can be used to determine if the injection was successful and to gather information about the database. The injection point can be used to execute arbitrary SQL commands, such as reading or modifying data in the database.
 
@@ -63,3 +75,5 @@ The command works by injecting SQL code into the query, causing the database to 
 - [[MYSQL Blind]]
 - [[MySQL Blind SQL Injection binary query using REGEXP.]]
 - [[MYSQL Injection]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:50.960310+00:00'
 ./windows-exploit-suggester.py --update
 ./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
 ```
+
+

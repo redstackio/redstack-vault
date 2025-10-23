@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:27.355781+00:00'
 ```bash
 dummy' and hqli.persistent.Constants.C_QUOTE_1*X('<>CHAR(41) and (select count(1) from sysibm.sysdummy1)>0 --')=1 and '1'='1
 ```
+
+

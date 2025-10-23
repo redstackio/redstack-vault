@@ -37,6 +37,8 @@ Technical Explanation: IIS web configuration files are XML files that contain se
 
 Business Value: This technique is valuable for attackers as it allows them to gain higher levels of access and control over a compromised system. By escalating privileges, an attacker can gain access to sensitive data, install malware, or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system running IIS
@@ -44,6 +46,8 @@ Business Value: This technique is valuable for attackers as it allows them to ga
 1. Ability to read and modify web configuration files
 
 1. Knowledge of the location of web configuration files on the system
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: This technique is valuable for attackers as it allows them to ga
 
 1. Monitor system logs for any suspicious activity related to web configuration files or privilege escalation
 
+ 
+
 ## Objectives
 
 1. Find and loot IIS web configuration files
@@ -61,13 +67,23 @@ Business Value: This technique is valuable for attackers as it allows them to ga
 
 1. Use looted passwords to escalate privileges on a Windows system
 
+ 
+
 # Instructions
 
 1. To retrieve all web configuration files in the C:\inetpub\ directory and its subdirectories, run the following command:
 
+ 
+
+
+
 **Code**: [[Get-Childitem –Path C:\inetpub\ -Include web.confi]]
 
+
+
 > This command uses the Get-Childitem cmdlet to search for all files named web.config in the C:\inetpub\ directory and its subdirectories. The -File parameter ensures that only files are returned, and the -Recurse parameter ensures that the search is performed recursively. The -ErrorAction parameter with the value SilentlyContinue suppresses any errors that may occur during the search.
+
+
 
 **Command** ([[Find Web.Config files in the C:\inetpub\ directory]]):
 
@@ -75,11 +91,19 @@ Business Value: This technique is valuable for attackers as it allows them to ga
 Get-Childitem –Path C:\inetpub\ -Include web.config -File -Recurse -ErrorAction SilentlyContinue
 ```
 
+
+
 2. To view or edit web.config files, use the following commands:
 - View: Get-Content <file_path>
 - Edit: Set-Content <file_path> <new_content>
 
+ 
+
+
+
 **Code**: [[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Co]]
+
+
 
 > The web.config file is an XML file used by ASP.NET applications to store configuration settings. It contains settings such as database connection strings, authentication settings, and application-specific settings. To view the contents of a web.config file, use the Get-Content command followed by the file path. To edit the contents of a web.config file, use the Set-Content command followed by the file path and the new content to be added.
 
@@ -105,3 +129,5 @@ Get-Childitem –Path C:\inetpub\ -Include web.config -File -Recurse -ErrorActio
 - [[EoP - Looting for passwords]]
 - [[IIS Web config]]
 - [[Windows - Privilege Escalation]]
+
+

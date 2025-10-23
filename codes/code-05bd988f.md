@@ -18,3 +18,5 @@ unset HISTFILE
 # Don't save this session's command history in memory
 export HISTSIZE=0
 ```
+
+

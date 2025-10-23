@@ -32,9 +32,31 @@ One method of performing privilege escalation is to directly access the URL of t
 
 # Instructions
 
+
+
 1. Login into the application
 
+
+
+
+
+![ba900c28-2d73-4e4f-a80b-187fcbc9ef92.png](_assets/images/Mash/ba900c28-2d73-4e4f-a80b-187fcbc9ef92.png)
+
+
+
+
+
 2. Access the URL that belongs to other user. In the below example, *Users List* functionality that belongs to an admin user is loaded by accessing the URL by normal user. It can be observed that the session identifier remains the same.
+
+
+
+![72050011-79e2-42c6-9c33-d26894c13623.png](_assets/images/Mash/72050011-79e2-42c6-9c33-d26894c13623.png)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +69,5 @@ One method of performing privilege escalation is to directly access the URL of t
 - [[Privilege Escalation]]
 - [[privileges]]
 - [[Web Applications]]
+
+

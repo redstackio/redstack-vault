@@ -37,6 +37,8 @@ This technique involves using the 'sc' command to create a new Windows service, 
 Business Value:
 This technique can be used by attackers to maintain persistent access to a compromised system, allowing them to exfiltrate sensitive data, install additional malware, or carry out other malicious activities. By using a Windows service to maintain access, the attacker can ensure that their access to the system remains undetected for an extended period of time.
 
+ 
+
 ## Requirements
 
 1. Administrator-level access to the compromised system
@@ -45,6 +47,8 @@ This technique can be used by attackers to maintain persistent access to a compr
 
 1. The malicious executable must be present on the system
 
+ 
+
 ## Defense
 
 1. Implement and enforce the principle of least privilege to restrict access to critical systems and services
@@ -52,6 +56,8 @@ This technique can be used by attackers to maintain persistent access to a compr
 1. Regularly monitor system logs and network traffic for signs of suspicious activity
 
 1. Use endpoint protection software to detect and prevent the installation of malicious services
+
+ 
 
 ## Objectives
 
@@ -63,11 +69,19 @@ This technique can be used by attackers to maintain persistent access to a compr
 
 1. To carry out other malicious activities
 
+ 
+
 # Instructions
 
 1. This command adds persistence to a service by executing the Windows calculator every time the service is started. The command uses SharPersist, a tool that helps in persistence techniques.
 
+ 
+
+
+
 **Code**: [[SharPersist -t service -c "C:\Windows\System32\cmd]]
+
+
 
 > -t: Specifies the type of persistence technique to use. In this case, it's 'service'.
 -c: Specifies the command to execute. In this case, it's 'C:\Windows\System32\cmd.exe' which opens the command prompt.
@@ -93,3 +107,5 @@ This technique can be used by attackers to maintain persistent access to a compr
 - [[Serviceland]]
 - [[Windows - Persistence]]
 - [[Windows Service]]
+
+

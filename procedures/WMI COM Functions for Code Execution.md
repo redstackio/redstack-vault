@@ -31,6 +31,8 @@ Technical Explanation: The WMI COM functions provide a way for attackers to exec
 
 Business Value: This technique can be used by attackers to gain access to sensitive information on a victim's machine. By gaining a foothold on a victim's machine, attackers can move laterally through the victim's network and access additional systems and data.
 
+ 
+
 ## Requirements
 
 1. Access to a victim's machine
@@ -38,6 +40,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 1. Knowledge of the WMI COM functions
 
 1. Knowledge of the Windows Script Host
+
+ 
 
 ## Defense
 
@@ -47,25 +51,41 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Restrict access to the Windows Script Host
 
+ 
+
 ## Objectives
 
 1. Execute code on a victim's machine
 
 1. Bypass security controls
 
+ 
+
 # Instructions
 
 1. This command executes the Windows Calculator using Windows Management Instrumentation (WMI).
 
+ 
+
+
+
 **Code**: [[r = GetObject(&quot;winmgmts:\\.\root\cimv2:Win32_]]
+
+
 
 > The command uses the `GetObject` method to retrieve the `Win32_Process` class from the `root\cimv2` namespace. The `Create` method is then called on the retrieved object to create a new process for the `calc.exe` executable. The `null` parameters indicate that no command line arguments or working directory are specified for the process. The `intProcessID` parameter is also set to `null`, which means that the process ID of the new process is not returned.
 
 2. Execute a PowerShell command with a visible window
 
+ 
+
+
+
 **Code**: [[Sub wmi_exec()
     strComputer = "."
     Set objWM]]
+
+
 
 > This script can be used to execute a PowerShell command with a visible window. The script uses the Windows Management Instrumentation (WMI) to create a new process for the PowerShell command. The 'ShowWindow' property of the 'Win32_ProcessStartup' class is set to 1 to make the window visible. The 'Create' method of the 'Win32_Process' class is then used to start the PowerShell process with the specified command. The command can be modified by replacing 'powershell.exe' with the path to the desired executable and adding any necessary arguments.
 
@@ -83,3 +103,5 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 - [[DOCM - WMI COM functions]]
 - [[Office - Attacks]]
+
+

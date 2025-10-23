@@ -29,3 +29,5 @@ $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument
 PS C:\Users\Bob > $Pass = ConvertTo-SecureString -String "secretpass" -AsPlainText -Force
 PS C:\Users\Bob > $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "bank.local\Administrator", $Pass
 ```
+
+

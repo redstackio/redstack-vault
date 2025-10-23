@@ -40,11 +40,15 @@ Evilginx2 is a man-in-the-middle attack framework used to intercept and steal cr
 
 The business value of this attack lies in its ability to gain access to sensitive information stored in Azure. Attackers can use this information to conduct further attacks, steal intellectual property, or sell the information on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to Evilginx2 framework
 
 1. Victim must fall for the phishing website and enter their Azure credentials
+
+ 
 
 ## Defense
 
@@ -54,17 +58,27 @@ The business value of this attack lies in its ability to gain access to sensitiv
 
 1. Monitor Azure logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. To gain access to an organization's Azure environment
 
 1. To steal sensitive information stored in a victim's Azure account
 
+ 
+
 # Instructions
 
 1. To set up a phishing attack with Evilginx2, follow these steps:
 
+ 
+
+
+
 **Code**: [[PS C:\Tools> evilginx2 -p C:\Tools\evilginx2\phish]]
+
+
 
 > 1. Run the command `evilginx2 -p C:\Tools\evilginx2\phishlets` in PowerShell.
 2. Configure the domain and IP address using the `config domain` and `config ip` commands respectively.
@@ -74,11 +88,17 @@ The business value of this attack lies in its ability to gain access to sensitiv
 6. Copy the certificate using the `Copy-Item` command and enable the phishing using the `phishlets enable` command.
 7. Use the `lures create` and `lures get-url` commands to get the phishing URL.
 
+
+
 **Command** ([[Configure evilginx2]]):
 
 ```bash
 evilginx2 -p C:\Tools\evilginx2\phishlets
 ```
+
+
+
+
 
 ## Platforms
 
@@ -105,3 +125,5 @@ evilginx2 -p C:\Tools\evilginx2\phishlets
 - [[Office 365]]
 - [[Phishing]]
 - [[Phishing with Evilginx2]]
+
+

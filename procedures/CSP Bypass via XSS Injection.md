@@ -35,11 +35,15 @@ To bypass CSP using XSS Injection, an attacker can inject a malicious script int
 
 The business value of this technique is that it allows an attacker to bypass a security feature implemented on a website, potentially compromising sensitive user data and damaging the reputation of the website.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website
 
 1. Knowledge of XSS Injection techniques
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this technique is that it allows an attacker to bypass a s
 1. Implement a strong CSP policy to restrict the sources from which a website can load scripts
 
 1. Regularly scan for and patch vulnerabilities on your website
+
+ 
 
 ## Objectives
 
@@ -61,17 +67,31 @@ The business value of this technique is that it allows an attacker to bypass a s
 
 1. Deliver malware to unsuspecting users
 
+ 
+
 # Instructions
 
 1. Use this command to specify the sources for script content that can be executed on the page. The sources can be whitelisted or blacklisted based on the CSP policy.
 
+ 
+
+
+
 **Code**: [[script-src &#39;self&#39; data:]]
+
+
 
 > The 'script-src' directive specifies the valid sources for JavaScript. In this example, the sources allowed are the same origin ('self') and data: URIs. This command can be used to prevent cross-site scripting (XSS) attacks by controlling the sources of script content that can be executed on the page.
 
 2. To execute a cross-site scripting (XSS) attack, an attacker can inject malicious code into a vulnerable web page by using the script tag. The script tag can be used to load external scripts or execute inline scripts. In this example, the attacker has injected a script tag with a source that executes an alert(1) function. When the page is loaded, the script is executed and the alert message is displayed.
 
+ 
+
+
+
 **Code**: [[<script src="data:,alert(1)">/</script>]]
+
+
 
 > The 'data' field contains the payload that is being injected. The 'lang' field specifies the programming language used in the payload. The 'text' field can be used to include any additional text or comments. The 'instruction' field provides step-by-step instructions on how to execute the attack. The 'explain' field provides a detailed explanation of the attack, including the impact and potential mitigations.
 
@@ -93,3 +113,5 @@ The business value of this technique is that it allows an attacker to bypass a s
 - [[Bypass CSP by [@404death](https://twitter.com/404death/status/1191222237782659072)]]
 - [[Cross Site Scripting]]
 - [[CSP Bypass]]
+
+

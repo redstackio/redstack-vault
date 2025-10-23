@@ -35,6 +35,8 @@ Technically, this attack works by injecting malicious code into the value attrib
 
 From a business perspective, this attack can result in stolen customer data, loss of reputation, and potential legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application with hidden input fields
@@ -42,6 +44,8 @@ From a business perspective, this attack can result in stolen customer data, los
 1. Knowledge of HTML and JavaScript
 
 1. Possibly a web proxy or other tool to intercept and modify HTTP requests
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, this attack can result in stolen customer data, los
 
 1. Regularly scan web applications for vulnerabilities and patch them promptly
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into the hidden input field of a vulnerable application
@@ -59,11 +65,19 @@ From a business perspective, this attack can result in stolen customer data, los
 
 1. Gain access to sensitive information or perform actions on behalf of the user
 
+ 
+
 # Instructions
 
 1. To use this command, insert the provided code snippet into an HTML document where you want to create a hidden input field that triggers an alert when clicked. Press CTRL+SHIFT+X to trigger the onclick event and see the alert message.
 
+ 
+
+
+
 **Code**: [[<input type="hidden" accesskey="X" onclick="alert(]]
+
+
 
 > This command creates a hidden input field that executes a JavaScript alert function when clicked. The accesskey attribute sets a keyboard shortcut for the input field, and the onclick attribute specifies the JavaScript code to execute when the input field is clicked. The text field is not used in this command.
 
@@ -87,3 +101,5 @@ From a business perspective, this attack can result in stolen customer data, los
 - [[Cross Site Scripting]]
 - [[XSS in hidden input]]
 - [[XSS in HTML/Applications]]
+
+

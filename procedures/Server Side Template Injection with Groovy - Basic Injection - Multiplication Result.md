@@ -31,9 +31,13 @@ Server Side Template Injection is a vulnerability that allows an attacker to inj
 
 This technique can be used by an attacker to gain access to sensitive data, execute malicious code, or take control of the server. From a business perspective, this can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses Groovy as its template engine
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ This technique can be used by an attacker to gain access to sensitive data, exec
 
 1. Regularly monitor logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the server
@@ -51,11 +57,19 @@ This technique can be used by an attacker to gain access to sensitive data, exec
 
 1. Take control of the server
 
+ 
+
 # Instructions
 
 1. Multiply two numbers together
 
+ 
+
+
+
 **Code**: [[81]]
+
+
 
 > This command takes two numerical arguments and multiplies them together to return their product.
 
@@ -74,3 +88,5 @@ This technique can be used by an attacker to gain access to sensitive data, exec
 - [[Groovy]]
 - [[Groovy - Basic injection]]
 - [[Server Side Template Injection]]
+
+

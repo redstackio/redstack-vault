@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:20:24.339379+00:00'
 ```bash
 aws eks describe-fargate-profiles --cluster-name name --fargate-profile-name name
 ```
+
+

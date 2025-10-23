@@ -33,19 +33,39 @@ Spawn a PowerShell session  on a remote system using the WinRM service (usually 
 
 Spawn a PowerShell session  on a remote system using the WinRM service (usually port 5985).  See the Evil-WinRM tools page for installation instructions.
 
+
+
+
+
 ## Objectives
 
 This technique is commonly used in post-exploitation activities to move laterally within a network by gaining access to additional systems. It is particularly effective when combined with other techniques such as pass-the-hash, where the attacker can use stolen credentials to authenticate to the target system via WinRM.
 
+
+
 1. Connect to a remote WinRM service using credentials
 
+
+
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[evil-winrm.rb Connect to a WinRM Server]]):
 
 ```bash
 evil-winrm.rb -i $_TARGET_IP -u $_USER -p $_PASS
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +89,5 @@ evil-winrm.rb -i $_TARGET_IP -u $_USER -p $_PASS
 ## Tags
 
 - [[Network]]
+
+

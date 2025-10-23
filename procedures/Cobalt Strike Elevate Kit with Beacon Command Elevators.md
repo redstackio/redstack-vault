@@ -37,6 +37,8 @@ The Cobalt Strike Elevate Kit with Beacon Command Elevators is a tool used by at
 
 From a technical perspective, the Cobalt Strike Elevate Kit uses a combination of process injection and WMI event subscriptions to gain SYSTEM level access on a target system. This allows the attacker to execute code with elevated privileges, providing access to sensitive data and the ability to move laterally within the network. The business value of this attack lies in the ability to gain access to valuable information, such as intellectual property, financial data or customer information, which can be used for financial gain or competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system with a legitimate process to inject malicious code into
@@ -45,6 +47,8 @@ From a technical perspective, the Cobalt Strike Elevate Kit uses a combination o
 
 1. Beacon Command Elevators
 
+ 
+
 ## Defense
 
 1. Regularly update and patch software to prevent vulnerabilities that attackers can exploit
@@ -52,6 +56,8 @@ From a technical perspective, the Cobalt Strike Elevate Kit uses a combination o
 1. Use anti-virus software and firewalls to detect and block malicious activity
 
 1. Implement the principle of least privilege to limit the impact of any successful privilege escalation attacks
+
+ 
 
 ## Objectives
 
@@ -62,6 +68,8 @@ From a technical perspective, the Cobalt Strike Elevate Kit uses a combination o
 1. Access sensitive data
 
 1. Move laterally within the network
+
+ 
 
 # Instructions
 
@@ -74,10 +82,16 @@ beacon> execute uac-token-duplication
 
 This will bypass User Account Control (UAC) and escalate privileges to SYSTEM level.
 
+ 
+
+
+
 **Code**: [[beacon> runasadmin
 
 Beacon Command Elevators
 =====]]
+
+
 
 > The Beacon Command Elevators is a collection of exploits that can be used to escalate privileges on a target system. These exploits take advantage of vulnerabilities in Windows operating systems to bypass User Account Control (UAC) and gain elevated privileges.
 
@@ -93,6 +107,8 @@ The list of exploits includes:
 To use these exploits, first run the 'runasadmin' command in the Beacon console. This will run the Beacon payload with elevated privileges. Then, choose the appropriate exploit based on the target system and run it using the 'execute' command.
 
 Note that the 'uac-token-duplication' exploit is fixed in Windows 10 Red Stone 5 (October 2018) and may not work on newer systems.
+
+
 
 **Command** ([[Beacon Command Elevators Exploit List]]):
 
@@ -111,6 +127,8 @@ Beacon Command Elevators
     uac-schtasks                    Bypass UAC with schtasks.exe (via SilentCleanup)
     uac-token-duplication           Bypass UAC with Token Duplication
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -138,3 +156,5 @@ Beacon Command Elevators
 - [[Cobalt Strike]]
 - [[Elevate Kit]]
 - [[Kits]]
+
+

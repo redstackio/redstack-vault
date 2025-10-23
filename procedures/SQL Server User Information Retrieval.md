@@ -32,11 +32,15 @@ The SQL Server User Information Retrieval procedure involves querying the curren
 
 From a technical perspective, this procedure involves executing a query to retrieve the current user information and then checking if the user is a sysadmin. The business value of this procedure is that it allows attackers to gain access to sensitive data, which can be used for financial gain or to gain a competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Access to the SQL Server
 
 1. Necessary permissions to run manual queries
+
+ 
 
 ## Defense
 
@@ -46,21 +50,33 @@ From a technical perspective, this procedure involves executing a query to retri
 
 1. Regularly monitor SQL Server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve SQL Server User Information
 
 1. Determine if the user is a sysadmin
 
+ 
+
 # Instructions
 
 1. To retrieve information about the current SQL Server user, execute the following commands:
+
+ 
+
+
 
 **Code**: [[select suser_sname()
 Select system_user
 select is_]]
 
+
+
 > The first command 'select suser_sname()' returns the name of the current SQL Server user. The second command 'Select system_user' returns the login name of the current user. The third command 'select is_srvrolemember('sysadmin')' returns whether the current user is a member of the sysadmin fixed server role, which is the highest level of server-level permissions.
+
+
 
 **Command** ([[Get Current User and Role]]):
 
@@ -69,6 +85,8 @@ select suser_sname()
 Select system_user
 select is_srvrolemember('sysadmin')
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ select is_srvrolemember('sysadmin')
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
 - [[Query Current User & determine if the user is a sysadmin]]
+
+

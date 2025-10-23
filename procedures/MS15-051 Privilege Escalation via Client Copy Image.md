@@ -32,11 +32,15 @@ To exploit this vulnerability, an attacker would need to have already compromise
 
 The business value of this attack is that it allows an attacker to gain full control of a system, potentially allowing them to steal sensitive data or use the system as a foothold to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Windows system
 
 1. Ability to execute code on the target system
+
+ 
 
 ## Defense
 
@@ -46,16 +50,26 @@ The business value of this attack is that it allows an attacker to gain full con
 
 1. Use endpoint detection and response (EDR) solutions to detect and respond to suspicious activity on endpoints.
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a compromised system from a low-integrity process to that of SYSTEM.
+
+ 
 
 # Instructions
 
 1. Fill in the command details and explain the arguments of the command in detail.
 
+ 
+
+
+
 **Code**: [[printf("[#] usage: ms15-051 command \n");
 printf("]]
+
+
 
 > This command is used to exploit the MS15-051 vulnerability in Windows operating systems. The command takes an argument specifying the action to be performed. For example, 'whoami /all' can be used to display all user and group information for the current user. The command is available in both 32-bit and 64-bit versions, which can be downloaded from the provided links. More information about the exploit can be found at the provided link.
 
@@ -74,3 +88,5 @@ printf("]]
 - [[EoP - Common Vulnerabilities and Exposure]]
 - [[MS15-051 (Client Copy Image) - Microsoft Windows 2003/2008/7/8/2012]]
 - [[Windows - Privilege Escalation]]
+
+

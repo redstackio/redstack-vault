@@ -27,13 +27,29 @@ TLSSLed is a Linux shell script which evaluates the security of a target's SSL/T
 
 TLSSLed is a Linux shell script which evaluates the security of a target's SSL/TLS (HTTPS) web server implementation. The current tests include checking if the target supports the SSLv2 protocol, the NULL cipher, weak ciphers based on their key length (40 or 56 bits), the availability of strong ciphers (like AES), if the digital certificate is MD5 signed, and the current SSL/TLS renegotiation capabilities.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_4ba14af9-d268-4757-89d7-659536fb720c}}
+
+
 
 # Installation
 
 ## Install on Kali
 
+
+
 TLSSLed can also be downloaded here: [http://www.taddong.com/tools/TLSSLed_v1.3.sh](http://www.taddong.com/tools/TLSSLed_v1.3.sh)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ TLSSLed can also be downloaded here: [http://www.taddong.com/tools/TLSSLed_v1.3.
 - [[data encryption]]
 - [[Enumeration]]
 - [[Network]]
+
+

@@ -35,13 +35,23 @@ Analyze network traffic passively in order to fingerprint devices and services c
 
 Analyze network traffic passively in order to fingerprint devices and services communicating.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[p0f Passive Traffic Fingerprinting]]):
 
 ```bash
 p0f -i $_INTERFACE -p -o $_OUTPUT.log
 ```
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +77,5 @@ p0f -i $_INTERFACE -p -o $_OUTPUT.log
 
 - [[data exposure]]
 - [[Network]]
+
+

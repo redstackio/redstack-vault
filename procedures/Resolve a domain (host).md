@@ -26,6 +26,8 @@ Test if a domain name resolves from the CLI
 
 1. Using the host command to resolve a domain name
 
+
+
 **Command** ([[host resolve a domain name]]):
 
 ```bash
@@ -33,6 +35,12 @@ host owasp.com
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[host resolve a domain name]]
+
+

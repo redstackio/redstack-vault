@@ -34,6 +34,8 @@ From a technical perspective, NoSQL injection attacks occur when an attacker is 
 
 From a business perspective, blind NoSQL injection attacks can be highly damaging to organizations. If successful, attackers can gain access to sensitive data such as customer information, financial records, and intellectual property. This can result in reputational damage, financial losses, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -41,6 +43,8 @@ From a business perspective, blind NoSQL injection attacks can be highly damagin
 1. Knowledge of the target's NoSQL database system
 
 1. Brute force tool capable of guessing login credentials
+
+ 
 
 ## Defense
 
@@ -50,30 +54,46 @@ From a business perspective, blind NoSQL injection attacks can be highly damagin
 
 1. Regularly update and patch NoSQL database systems to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a NoSQL database
 
 1. Extract sensitive information from the database
 
+ 
+
 # Instructions
 
 1. This script is used to brute force MongoDB password. It uses string.printable to generate all possible characters and sends requests to the MongoDB login page with a payload containing the username and password[$regex] parameter. The password[$regex] parameter is used to match the password against a regular expression. If the response contains the word 'Yeah', it means that the password is correct and the script prints the password.
+
+ 
+
+
 
 **Code**: [[import requests
 import urllib3
 import string
 impor]]
 
+
+
 > The script requires the user to modify the 'username' and 'u' variables with their own values. The 'username' variable should contain the username for the MongoDB server and the 'u' variable should contain the URL of the MongoDB login page. The script will use string.printable to generate all possible characters for the password and send requests to the login page with a payload containing the username and password[$regex] parameter. The password[$regex] parameter is used to match the password against a regular expression. If the response contains the word 'Yeah', it means that the password is correct and the script prints the password. The script can be modified to use a different character set for the password or to use a different payload for the requests.
 
 2. This script uses a brute force method to login to a website by guessing the password using regex.
+
+ 
+
+
 
 **Code**: [[require 'httpx'
 
 username = 'admin'
 password = ''
 ]]
+
+
 
 > The script takes the username and an empty password as input. It then uses a list of characters and symbols to generate all possible combinations of passwords. It sends a GET request to the website with each combination and the username. The password is sent using a regex pattern. If the response body contains the word 'Yeah', it means that the password is correct and the script moves on to the next character. The script continues this process until it finds the correct password.
 
@@ -96,3 +116,5 @@ password = ''
 - [[Blind NoSQL]]
 - [[GET]]
 - [[NoSQL Injection]]
+
+

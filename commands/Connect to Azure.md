@@ -5,7 +5,9 @@ type: command
 executor: bash
 data: 'PS> $token = ''eyJ0..''
 
+
   PS> $keyvaulttoken = ''eyJ0..''
+
 
   PS Az> Connect-AzAccount -AccessToken $token -AccountId 2e91a4fea0f2-46ee-8214-fa2ff6aa9abc
   -KeyVaultAccessToken $keyvaulttoken'
@@ -23,3 +25,5 @@ PS> $keyvaulttoken = 'eyJ0..'
 
 PS Az> Connect-AzAccount -AccessToken $token -AccountId 2e91a4fea0f2-46ee-8214-fa2ff6aa9abc -KeyVaultAccessToken $keyvaulttoken
 ```
+
+

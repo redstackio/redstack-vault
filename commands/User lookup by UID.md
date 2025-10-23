@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ldapsearch -x -h ldap.domain.com -b o=domain.com -s sub uid=jdoe| egrep "uid:|uidnumber:|gidnumber:|cn:|gecos:|description:|loginshell:|homedirectory:"
 
 ```
+
+

@@ -32,16 +32,66 @@ DOM based XSS vulnerabilty can be triggered through web messages and csn be expl
 
 # Instructions
 
+
+
+
+
 1. Access the application and right click on the below page . Select *view page source *
+
+
+
+
+
+
+
+![3b4c956f-eedd-41d7-b636-4624130a7ef4.png]()
+
+
+
+
 
 2.Observe that the source code contains a event listener which listens web messages. Observe that it also contains* location.href.*
 
+
+
+
+
+![48ad8886-8655-48f2-b3e6-cb0f2dca08cb.png]()
+
+
+
+
+
 3.Craft a malicious payload in the similar way as below
+
+
+
+
+
+
+
+
 
 **Code**: [[
 <iframe src="https://acb11f271e33403880064a21005]]
 
+
+
+
+
+
+
 4.Observe that the response contains a alert popup triggered by the above payload.
+
+
+
+
+
+
+
+![3e27e4b2-4946-4c58-a314-064d403aaa59.png]()
+
+
 
 ## Platforms
 
@@ -54,3 +104,5 @@ DOM based XSS vulnerabilty can be triggered through web messages and csn be expl
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

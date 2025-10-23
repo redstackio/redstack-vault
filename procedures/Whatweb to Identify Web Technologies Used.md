@@ -29,15 +29,29 @@ Whatweb tool helps in identifying the technologies involved in developing the ap
 
 Whatweb tool helps in identifying the technologies involved in developing the application. The details include web server details, versions, programming languages used etc.
 
+
+
 # Procedure
 
 1. Use the below command to run the whatweb tool and the output gives the details about the application.
+
+
+
+
+
+
+
+
 
 **Command** ([[whatweb http://192.168.1.11/vcart/login.php]]):
 
 ```bash
 whatweb http://192.168.1.11/vcart/login.php
 ```
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +65,5 @@ whatweb http://192.168.1.11/vcart/login.php
 
 - [[owasp]]
 - [[Web Applications]]
+
+

@@ -34,6 +34,8 @@ Bitwise AND Operation is a binary operation that takes two equal-length binary r
 
 This technique can be used by attackers to extract sensitive information from databases, such as usernames, passwords, and other confidential data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable DB2 database
@@ -41,6 +43,8 @@ This technique can be used by attackers to extract sensitive information from da
 1. Knowledge of SQL Injection techniques
 
 1. Tools such as SQLmap or manually crafted SQL queries
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ This technique can be used by attackers to extract sensitive information from da
 
 1. Implementing proper authentication and authorization checks can limit the impact of successful SQL injection attacks
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from DB2 databases
 
 1. Bypass authentication and authorization checks
 
+ 
+
 # Instructions
 
 1. The Bitwise AND operation is used to compare two binary numbers bit by bit. It returns a value where each bit is set to 1 only if both corresponding bits in the input numbers are 1, otherwise the bit is set to 0. The bitand function in SQL is used to perform the Bitwise AND operation. The syntax for the function is: bitand(num1, num2), where num1 and num2 are the two binary numbers to be compared.
 
+ 
+
+
+
 **Code**: [[select bitand(1,0) from sysibm.sysdummy1 -- return]]
 
+
+
 > In the given example, the bitand function is used to compare the binary numbers 1 and 0. Since the corresponding bits in the two numbers are not both 1, the function returns 0. The same function can also be used with other operators like bitandnot, bitor, bitxor and bitnot to perform other Bitwise operations.
+
+
 
 **Command** ([[Perform bit operation]]):
 
 ```bash
 select bitand(1,0) from sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ select bitand(1,0) from sysibm.sysdummy1
 - [[Bitwise AND/OR/NOT/XOR]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

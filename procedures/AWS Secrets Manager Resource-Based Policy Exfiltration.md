@@ -30,11 +30,15 @@ AWS Secrets Manager is a service that helps you protect access to your applicati
 
 AWS Secrets Manager is a service that helps you protect access to your applications, services, and IT resources. A resource-based policy is an AWS Identity and Access Management (IAM) policy that you can attach to a secret to define who can access the secret and what actions they can perform. An attacker with access to the AWS console or API can use the 'Get Secrets Manager Resource Policy' command to retrieve the resource-based policy attached to a specific secret. This can allow the attacker to exfiltrate sensitive credentials and gain access to additional resources within the AWS environment.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS console or API
 
 1. Permissions to retrieve the resource-based policy for a specific secret
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ AWS Secrets Manager is a service that helps you protect access to your applicati
 
 1. Regularly review and audit resource-based policies attached to secrets for unauthorized changes or access
 
+ 
+
 ## Objectives
 
 1. Retrieve the resource-based policy attached to a specific secret
@@ -52,17 +58,25 @@ AWS Secrets Manager is a service that helps you protect access to your applicati
 
 1. Gain access to additional resources within the AWS environment
 
+ 
+
 # Instructions
 
 1. To get the resource-based policy for a secret in AWS Secrets Manager, use the get-resource-policy command. Replace 'ID' with the ID of the secret you want to retrieve the policy for.
 
+ 
+
 The get-resource-policy command retrieves the resource-based policy for a secret in AWS Secrets Manager. This policy determines who has access to the secret and what actions they can perform on it. The '--secret-id' flag is used to specify the ID of the secret you want to retrieve the policy for. This command can be useful for auditing and troubleshooting purposes, as well as for ensuring that the correct permissions are set for your secrets.
+
+
 
 **Command** ([[Retrieve Resource Policy for AWS Secrets Manager Secret]]):
 
 ```bash
 aws secretsmanager get-resource-policy --secret-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws secretsmanager get-resource-policy --secret-id ID
 - [[Cloud - AWS]]
 - [[Credential Exfiltration]]
 - [[Getting resource-based policy attached to an specific secret]]
+
+

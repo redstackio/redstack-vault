@@ -31,13 +31,23 @@ Launch a SYN scan against a target and run basic enumeration scripts to identify
 
 Launch a SYN scan against a target and run basic enumeration scripts to identify services.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap Service Scan with Default Scripts]]):
 
 ```bash
 nmap -sV -sC $_TARGET_IP
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -57,3 +67,5 @@ nmap -sV -sC $_TARGET_IP
 
 - [[Enumeration]]
 - [[Network]]
+
+

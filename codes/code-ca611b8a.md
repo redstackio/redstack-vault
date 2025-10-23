@@ -17,3 +17,5 @@ $blob = $gmsa.'msDS-ManagedPassword'
 $mp = ConvertFrom-ADManagedPasswordBlob $blob
 $hash1 =  ConvertTo-NTHash -Password $mp.SecureCurrentPassword
 ```
+
+

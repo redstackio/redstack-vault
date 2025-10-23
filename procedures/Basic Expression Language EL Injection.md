@@ -34,11 +34,15 @@ Technical Explanation: The attacker identifies a vulnerable web application that
 
 Business Value: Basic EL injection can be used by attackers to gain access to sensitive data, escalate privileges, or take control of the server. This can result in loss of business, damage to reputation, and regulatory fines.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Java EL expressions
 
 1. Knowledge of EL syntax and injection techniques
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: Basic EL injection can be used by attackers to gain access to se
 
 1. Keep software up to date with the latest security patches
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
@@ -56,9 +62,15 @@ Business Value: Basic EL injection can be used by attackers to gain access to se
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. The Java Expression Language (EL) is used to access data in JavaServer Pages (JSP) and JavaServer Faces (JSF). The EL can be used to access data in JavaBeans components, session, request, and application scopes, and implicit objects such as pageContext, request, response, and session. The EL also includes operators and functions that can be used to manipulate data. The Template Text commands are used to generate dynamic content in JSP pages. The commands include ${<property>} to access data using the EL, #{<expression string>} for deferred evaluation of expressions, and T(<javaclass>) to access static methods and fields of a Java class.
+
+ 
+
+
 
 **Code**: [[${<property>}
 ${1+1}
@@ -66,17 +78,23 @@ ${1+1}
 #{<expression string>}
 #{1+1]]
 
+
+
 > The ${<property>} command is used to access data using the EL. The <property> can be a variable, a bean property, a map key, or an array index. For example, ${person.name} accesses the name property of the person object. The ${1+1} command evaluates the expression and returns the result. In this case, it returns 2.
 
 The #{<expression string>} command is used for deferred evaluation of expressions. The <expression string> can be any valid EL expression. For example, #{person.name} is evaluated when the value is needed, not when the page is rendered. This can improve performance by reducing the number of evaluations.
 
 The T(<javaclass>) command is used to access static methods and fields of a Java class. The <javaclass> is the fully qualified name of the class. For example, T(java.lang.Math).max(2,3) returns the maximum of 2 and 3.
 
+
+
 **Command** ([[Print property value and evaluate expression]]):
 
 ```bash
 "${<property>}\n${1+1}\n\n#{<expression string>}\n#{1+1}\n\nT(<javaclass>)"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ The T(<javaclass>) command is used to access static methods and fields of a Java
 - [[Expression Language EL]]
 - [[Expression Language EL - Basic injection]]
 - [[Server Side Template Injection]]
+
+

@@ -24,6 +24,8 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 
 Wrapper data:// is a protocol that allows inclusion of data directly in the URL. This can be abused to perform Local File Inclusion (LFI) and Remote File Inclusion (RFI) attacks. In LFI attacks, the attacker can include files from the local system, while in RFI attacks, the attacker can include files from a remote system. This technique can be used by an attacker to execute arbitrary code on the target system or to bypass security controls. This can be achieved by encoding the payload in base64 and passing it as a parameter in the URL.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -31,6 +33,8 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 1. Knowledge of the target system's file structure
 
 1. Ability to encode payloads in base64
+
+ 
 
 ## Defense
 
@@ -40,11 +44,15 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 
 1. Disable or restrict the use of data:// wrapper
 
+ 
+
 ## Objectives
 
 1. To include and execute arbitrary code on the target system
 
 1. To bypass security controls and gain unauthorized access to sensitive data
+
+ 
 
 # Instructions
 
@@ -52,7 +60,13 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 2. Pass the encoded payload as a parameter in the URL using the data:// wrapper
 3. Execute the command to include and execute the PHP shell
 
+ 
+
+
+
 **Code**: [[http://example.net/?page=data://text/plain;base64,]]
+
+
 
 > The payload is encoded in base64 and passed as a parameter in the URL using the data:// wrapper. The PHP shell will be included and executed on the target system, allowing the attacker to execute arbitrary code.
 
@@ -60,7 +74,13 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 2. Pass the encoded payload as a parameter in the URL using the data:// wrapper
 3. Execute the command to include and execute the PHP script
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=data:application]]
+
+
 
 > The payload is encoded in base64 and passed as a parameter in the URL using the data:// wrapper. The PHP script will be included and executed on the target system, allowing the attacker to trigger an XSS and bypass the Chrome Auditor.
 
@@ -69,3 +89,5 @@ Wrapper data:// is a protocol that allows inclusion of data directly in the URL.
 - [[File Inclusion]]
 - [[LFI / RFI using wrappers]]
 - [[Wrapper data://]]
+
+

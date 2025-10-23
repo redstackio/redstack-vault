@@ -46,11 +46,15 @@ From a technical perspective, this technique involves using Powershell to connec
 
 From a business value perspective, this technique can help an attacker identify high-value targets within an organization and plan further attacks, such as spear-phishing or password spraying.
 
+ 
+
 ## Requirements
 
 1. Access to a Powershell environment
 
 1. Credentials for connecting to the target Azure tenant
+
+ 
 
 ## Defense
 
@@ -60,20 +64,32 @@ From a business value perspective, this technique can help an attacker identify 
 
 1. Enforce the principle of least privilege by limiting access to sensitive information in the Azure tenant
 
+ 
+
 ## Objectives
 
 1. Enumerate users, groups, devices, and roles in an Azure AD tenant
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. To retrieve information about Azure AD users, groups, devices and roles, run the following commands in PowerShell:
 
+ 
+
+
+
 **Code**: [[Import-Module C:\Tools\AzureAD\AzureAD.psd1
 Import]]
 
+
+
 > The AzureAD PowerShell module provides cmdlets (commands) that allow  users/administrators to automate tasks related to user and group management,  application registration, role-based access control, authentication  settings, and more within Azure AD.
+
+
 
 **Command** ([[Connect to AzureAD]]):
 
@@ -91,11 +107,19 @@ $creds = New-Object System.Management.Automation.PSCredential("test@<TENANT NAME
 Connect-AzureAD -Credential $creds
 ```
 
+
+
+
+
 **Command** ([[Get all Azure AD users]]):
 
 ```bash
 Get-AzureADUser -All $true
 ```
+
+
+
+
 
 **Command** ([[Get all Azure AD users and select only their User Principal Name]]):
 
@@ -103,11 +127,19 @@ Get-AzureADUser -All $true
 Get-AzureADUser -All $true | select UserPrincipalName
 ```
 
+
+
+
+
 **Command** ([[Get all Azure AD groups]]):
 
 ```bash
 Get-AzureADGroup -All $true
 ```
+
+
+
+
 
 **Command** ([[Get all Azure AD devices]]):
 
@@ -115,17 +147,27 @@ Get-AzureADGroup -All $true
 Get-AzureADDevice
 ```
 
+
+
+
+
 **Command** ([[Get all members of the Global Administrator role]]):
 
 ```bash
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
 
+
+
+
+
 **Command** ([[Get all custom role definitions]]):
 
 ```bash
 Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False} | select DisplayName
 ```
+
+
 
 ## Platforms
 
@@ -158,3 +200,5 @@ Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False} | select DisplayName
 - [[Cloud - Azure]]
 - [[Enumerate tenant with Azure AD Powershell]]
 - [[Enumeration]]
+
+

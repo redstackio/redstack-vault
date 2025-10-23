@@ -32,6 +32,8 @@ LAPS has artifacts on a local machine, this can avoid querying the DC for OUs or
 
 LAPS has artifacts on a local machine, this can avoid querying the DC for OUs or GPOs to identify if LAPS is used.
 
+
+
 ## Objective
 
 1. Find local artifacts in registry
@@ -42,9 +44,15 @@ looking for AdmPwd
 
 looking for Admpwd.dll
 
+
+
 # Instructions
 
 1. Look at the registry for a key/value for AdmPwd
+
+
+
+
 
 **Command** ([[registry query for LAPS artifacts]]):
 
@@ -52,7 +60,13 @@ looking for Admpwd.dll
 reg query "HKLM\Software\Policies\Microsoft Services\AdmPwd" /v AdmPwdEnabled
 ```
 
+
+
 2. Look at the filesystem for AdmPwd.dll, the file will exist if LAPS is used
+
+
+
+
 
 **Command** ([[Enumerate LAPS artifact on local disk]]):
 
@@ -60,7 +74,13 @@ reg query "HKLM\Software\Policies\Microsoft Services\AdmPwd" /v AdmPwdEnabled
 Get-ChildItem 'c:\program files\LAPS\CSE\Admpwd.dll'
 ```
 
+
+
 (Alternative) Looking for LAPS file on local disk. 
+
+
+
+
 
 **Command** ([[Enumerate LAPS file on local disk]]):
 
@@ -68,6 +88,10 @@ Get-ChildItem 'c:\program files\LAPS\CSE\Admpwd.dll'
 dir "C:\Program Files\LAPS\CSE\Admpwd.dll"
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -92,3 +116,5 @@ dir "C:\Program Files\LAPS\CSE\Admpwd.dll"
 ## Tags
 
 - [[Enumeration]]
+
+

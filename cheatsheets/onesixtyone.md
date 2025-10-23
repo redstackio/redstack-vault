@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # onesixtyone
 
+
+
 **Code**: [[
 echo public > community.txt
 echo private >> commu]]
+
+
+
+
+
+
 
 **Command** ([[bruteforce community strings]]):
 
@@ -19,3 +27,9 @@ echo private >> commu]]
 onesixtyone -c community.txt -i target-ip.txt
 
 ```
+
+
+
+
+
+

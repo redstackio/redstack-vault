@@ -42,9 +42,13 @@ Technical Description: The ECR Get Repository Policy command is part of the AWS 
 
 Business Value: An attacker with access to an AWS account can use this technique to gain a better understanding of the account's infrastructure and permissions. This information can be used to plan and execute further attacks, such as lateral movement or privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permission to execute the ECR Get Repository Policy command
+
+ 
 
 ## Defense
 
@@ -54,23 +58,33 @@ Business Value: An attacker with access to an AWS account can use this technique
 
 1. Implement network segmentation to limit lateral movement within the AWS environment
 
+ 
+
 ## Objectives
 
 1. Discover AWS permissions associated with a specified ECR repository
 
 1. Identify potential paths for lateral movement or privilege escalation
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve the resource policy for a specified repository in Amazon Elastic Container Registry (ECR).
 
+ 
+
 This command takes the repository name as an argument and returns the JSON-formatted resource policy for the specified repository. The resource policy controls who can access the repository and what actions they can perform. The policy can be used to grant permissions to specific users or roles, or to restrict access to a specific IP address range. The policy can also be used to enforce encryption requirements or to specify which Amazon S3 bucket should be used for storing images.
+
+
 
 **Command** ([[Get ECR Repository Policy]]):
 
 ```bash
 aws ecr get-repository-policy --repository-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +115,5 @@ aws ecr get-repository-policy --repository-name name
 - [[ECR]]
 - [[Enumeration]]
 - [[Listing information about repository policy]]
+
+

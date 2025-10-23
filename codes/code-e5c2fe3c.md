@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.086649+00:00'
 ```powershell
 curl -sX POST "https://slack.com/api/auth.test?token=xoxp-TOKEN_HERE&pretty=1"
 ```
+
+

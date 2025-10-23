@@ -20,3 +20,5 @@ hashcat -a 3 --stdout ?d?s?b?a > $OUTPUT.txt
 ```
 hashcat -a 3 --stdout ?d?s?b?a > output.txt
 ```
+
+

@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:26:11.555942+00:00'
 powershell@windows> . .\Powerview.ps1
 powershell@windows> Set-DomainObject "CN=ControlledComputer,CN=Computers,DC=domain,DC=local" -Clear 'serviceprincipalname' -Verbose
 ```
+
+

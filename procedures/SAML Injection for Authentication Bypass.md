@@ -37,6 +37,8 @@ From a technical standpoint, SAML Injection involves modifying the SAML response
 
 The business value of this technique is that it allows an attacker to bypass authentication mechanisms and gain access to sensitive data or systems. This can lead to significant financial and reputational damage to the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to the SAML response
@@ -44,6 +46,8 @@ The business value of this technique is that it allows an attacker to bypass aut
 1. Knowledge of the SAML protocol
 
 1. Ability to craft a malicious XML payload
+
+ 
 
 ## Defense
 
@@ -53,16 +57,26 @@ The business value of this technique is that it allows an attacker to bypass aut
 
 1. Regularly review and update SAML configurations and protocols to ensure they are up-to-date and secure
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms and gain access to sensitive data or systems
+
+ 
 
 # Instructions
 
 1. This is an example of a SAML2p Response message. The message is in XML format and contains various attributes and values. The purpose of the message is to provide information about a user. The message is sent from an identity provider to a service provider.
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE R]]
+
+
 
 > The 'data' field contains the actual SAML2p Response message in XML format. The 'lang' field specifies the language used in the 'data' field. The 'text' field provides a brief description of the example. The 'instruction' field provides instructions on how to interpret the example. The 'explain' field provides additional information about the SAML2p Response message and its purpose.
 
@@ -88,3 +102,5 @@ The business value of this technique is that it allows an attacker to bypass aut
 - [[Authentication Bypass]]
 - [[SAML Injection]]
 - [[XML External Entity]]
+
+

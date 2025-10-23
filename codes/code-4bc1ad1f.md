@@ -17,3 +17,5 @@ $UserObject.TerminalServicesInitialProgram = "\\1.2.3.4\share\file.exe"
 $UserObject.TerminalServicesWorkDirectory = "C:\"
 $UserObject.SetInfo()
 ```
+
+

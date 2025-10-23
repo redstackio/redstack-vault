@@ -35,11 +35,15 @@ To perform this attack, the attacker would use a tool to scan the ACLs for a spe
 
 The business value of this attack is that it can allow an attacker to gain access to sensitive information or systems within the network, potentially leading to data theft or system compromise.
 
+ 
+
 ## Requirements
 
 1. Access to the Active Directory domain
 
 1. A tool to scan the ACLs, such as BloodHound or PowerView
+
+ 
 
 ## Defense
 
@@ -49,17 +53,27 @@ The business value of this attack is that it can allow an attacker to gain acces
 
 1. Monitor the network for suspicious activity, such as frequent scans of the Active Directory ACLs
 
+ 
+
 ## Objectives
 
 1. Identify which objects within the domain a specific user has access to
 
 1. Identify potential targets for further exploitation or lateral movement
 
+ 
+
 # Instructions
 
 1. To scan the Active Directory ACL for a specific user, use the ADACLScanner tool. Use the following command:
 
+ 
+
+
+
 **Code**: [[ADACLScan.ps1 -Base "DC=contoso;DC=com" -Filter "(]]
+
+
 
 > -Base: The base distinguished name (DN) of the search.
 -Filter: The LDAP query filter to use.
@@ -68,11 +82,15 @@ The business value of this attack is that it can allow an attacker to gain acces
 -Output: The format to output the results in.
 -Show: Whether to display the results in a console window or not.
 
+
+
 **Command** ([[ADACLScan]]):
 
 ```bash
 ADACLScan.ps1 -Base "DC=contoso;DC=com" -Filter "(&(AdminCount=1))" -Scope subtree -EffectiveRightsPrincipal User1 -Output HTML -Show
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -96,3 +114,5 @@ ADACLScan.ps1 -Base "DC=contoso;DC=com" -Filter "(&(AdminCount=1))" -Scope subtr
 
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
+
+

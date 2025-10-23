@@ -29,13 +29,21 @@ The a user could be included in privileged groups. Use this command to check.
 
 The a user could be included in privileged groups. Use this command to check.
 
+
+
 ## Objective
 
 1. Identify if a user is member of privileged group
 
+
+
 # Instructions
 
 1.  User the powerview script to check against a specific user
+
+
+
+
 
 **Command** ([[Enumerate group membership PowerView]]):
 
@@ -43,7 +51,15 @@ The a user could be included in privileged groups. Use this command to check.
 Get-NetGroup -UserName $USER
 ```
 
+
+
+
+
 2. (Optional)  ActiveDirectory powershell command version.
+
+
+
+
 
 **Command** ([[Enumerate group membership AD Module]]):
 
@@ -51,7 +67,13 @@ Get-NetGroup -UserName $USER
 Get-ADPrincipalGroupMembership -Identity $USER
 ```
 
+
+
+
+
 3. (Optional) Get users inside of a specific group name.
+
+
 
 **Command** ([[Get group members]]):
 
@@ -59,6 +81,10 @@ Get-ADPrincipalGroupMembership -Identity $USER
 Get-NetGroupMember [-GroupName “Domain Admins”]
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -74,3 +100,5 @@ Get-NetGroupMember [-GroupName “Domain Admins”]
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

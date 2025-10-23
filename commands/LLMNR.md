@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:36:07.585270+00:00'
 ```bash
 LLMNR is a protocol that allows both IPv4 and IPv6 hosts to perform name resolution for hosts on the same local link. It is included in Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2, Windows 8, and Windows Server 2012.
 ```
+
+

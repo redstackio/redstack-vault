@@ -20,3 +20,5 @@ $ locate password | more
 /lib/live/config/0031-root-password
 ...
 ```
+
+

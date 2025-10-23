@@ -17,3 +17,5 @@ $ACE = Get-DomainObjectACL dc01-ww2.factory.lan | ?{$_.SecurityIdentifier -match
 $ACE
 ConvertFrom-SID $ACE.SecurityIdentifier
 ```
+
+

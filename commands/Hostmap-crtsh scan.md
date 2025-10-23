@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:38.119658+00:00'
 ```bash
 nmap -sn --script hostmap-crtsh host_to_scan.tld
 ```
+
+

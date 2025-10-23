@@ -36,3 +36,5 @@ beacon > cancel [*file*]
 # Upload a file from the attacker to the current Beacon host
 beacon > upload [/path/to/file]
 ```
+
+

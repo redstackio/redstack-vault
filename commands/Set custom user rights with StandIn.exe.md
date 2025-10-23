@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:53.888835+00:00'
 ```bash
 StandIn.exe --gpo --filter Shards --setuserrights user002 --grant "SeDebugPrivilege,SeLoadDriverPrivilege"
 ```
+
+

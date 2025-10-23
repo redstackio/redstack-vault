@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:13.842619+00:00'
 ```bash
 adidnsdump -u DOMAIN\\user --print-zones dc.domain.corp --dns-tcp
 ```
+
+

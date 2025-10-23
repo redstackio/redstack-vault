@@ -24,3 +24,5 @@ wget https://digi.ninja/files/bucket_finder_1.1.tar.bz2 -O bucket_finder_1.1.tar
 ./bucket_finder.rb --download --region ie my_words
 ./bucket_finder.rb --log-file bucket.out my_words
 ```
+
+

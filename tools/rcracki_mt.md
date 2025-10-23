@@ -16,3 +16,9 @@ rcracki_mt is a modified version of rcrack which supports hybrid and indexed tab
 ## Description
 
 rcracki_mt is a modified version of rcrack which supports hybrid and indexed tables. In addition to that, it also adds multi-core support.
+
+
+
+
+
+

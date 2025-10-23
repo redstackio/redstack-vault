@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:21.423453+00:00'
 ```bash
 SELECT usename FROM pg_user WHERE usesuper IS TRUE
 ```
+
+

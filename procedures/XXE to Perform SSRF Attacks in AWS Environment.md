@@ -29,15 +29,47 @@ XXE can be performed by adding an external entity in the XML request. In AWS env
 
 XXE can be performed by adding an external entity in the XML request. In AWS environment, it is possible to retrieve data from the EC2 instance on which the web server is running.
 
+
+
 # Procedure
+
+
 
 1. Visit the product page and click on Check stock. Intercept the request and send it to repeater.
 
+
+
+
+
+![03b569b5-1309-4ad4-937f-0c504e7fc841.png]()
+
+
+
 2. Insert the following external entity definition between the XML declaration and the `stockCheck` element and then replace the `productId` number with a reference to the external entity: `&xxe;`
+
+
 
 *`<!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://169.254.169.254/"> ]>* `
 
+
+
+
+
+![f7005a12-6a53-4f64-9641-4c0b1cb6ca9d.png]()
+
+
+
 3. The response should contain "Invalid product ID:" followed by the response from the metadata endpoint, which will initially be a folder name. Iteratively update the URL in the DTD to explore the API until you reach `/latest/meta-data/iam/security-credentials/admin`. This should return JSON containing the `SecretAccessKey`.
+
+
+
+
+
+![686cd9cd-bb66-4714-8016-a67fac35da6d.png]()
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +81,5 @@ XXE can be performed by adding an external entity in the XML request. In AWS env
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xxe]]
+
+

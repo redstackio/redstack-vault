@@ -18,3 +18,5 @@ $ AspDotNetWrapper.exe --keypath C:\MachineKey.txt --cookie XXXXXXX_XXXXX-XXXXX 
 # encrypt cookie (edit Decrypted.txt)
 $ AspDotNetWrapper.exe --decryptDataFilePath C:\DecryptedText.txt
 ```
+
+

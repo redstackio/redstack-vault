@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 https://enigma0x3.net/2017/01/05/lateral-movement-using-the-mmc20-application-com-object/
 
 ```
+
+

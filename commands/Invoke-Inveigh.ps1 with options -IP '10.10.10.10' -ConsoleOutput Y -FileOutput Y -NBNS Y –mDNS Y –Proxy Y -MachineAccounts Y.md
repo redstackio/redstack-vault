@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:36:07.585270+00:00'
 ```bash
 PS > Invoke-Inveigh [-IP '10.10.10.10'] -ConsoleOutput Y -FileOutput Y -NBNS Y –mDNS Y –Proxy Y -MachineAccounts Y
 ```
+
+

@@ -16,3 +16,9 @@ Automater is a URL/Domain, IP Address, and Md5 Hash OSINT tool aimed at making t
 ## Description
 
 Automater is a URL/Domain, IP Address, and Md5 Hash OSINT tool aimed at making the analysis process easier for intrusion Analysts. Given a target (URL, IP, or HASH) or a file full of targets Automater will return relevant results from sources like the following: IPvoid.com, Robtex.com, Fortiguard.com, unshorten.me, Urlvoid.com, Labs.alienvault.com, ThreatExpert, VxVault, and VirusTotal.Automater Homepage | Kali Automater Repo
+
+
+
+
+
+

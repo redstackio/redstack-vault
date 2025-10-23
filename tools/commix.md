@@ -16,3 +16,7 @@ Commix (short for [comm]and [i]njection e[x]ploiter) has a simple environment an
 ## Description
 
 Commix (short for [comm]and [i]njection e[x]ploiter) has a simple environment and it can be used, from web developers, penetration testers or even security researchers to test web applications with the view to find bugs, errors or vulnerabilities related to command injection attacks. By using this tool, it is very easy to find and exploit a command injection vulnerability in a certain vulnerable parameter or string. Commix is written in Python programming language.
+
+
+
+

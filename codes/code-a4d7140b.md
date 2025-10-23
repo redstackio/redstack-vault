@@ -46,3 +46,5 @@ PS > Set-AADIntUserPassword -SourceAnchor "<IMMUTABLE-ID>" -Password "Password" 
 
 This command is used to set the password for the on-prem admin user using the ImmutableId.
 ```
+
+

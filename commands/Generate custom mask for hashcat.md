@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:22.286747+00:00'
 $ python2 statsgen.py ../hashcat.potfile -o hashcat.mask
 $ python2 maskgen.py hashcat.mask --targettime 3600 --optindex -q -o hashcat_1H.hcmask
 ```
+
+

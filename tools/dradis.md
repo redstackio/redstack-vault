@@ -17,12 +17,30 @@ Dradis is an open source framework to enable effective information sharing, spec
 
 Dradis is an open source framework to enable effective information sharing, specially during security assessments.
 
+
+
 Dradis is a self-contained web application that provides a centralized repository of information to keep track of what has been done so far, and what is still ahead.Features include:
+
+
 
 Easy report generation.
 
+
+
 Support for attachments.
+
+
 
 Integration with existing systems and tools through server plugins.
 
+
+
 Platform independent.
+
+
+
+
+
+
+
+

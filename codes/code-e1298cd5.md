@@ -16,3 +16,5 @@ sc queryex termservice
 tasklist /M:rdpcorets.dll
 netstat -nob | Select-String TermService -Context 1
 ```
+
+

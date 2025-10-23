@@ -34,11 +34,15 @@ SSRF Wrapper Credential Access is a technique that involves exploiting a Server-
 
 This technique requires a vulnerable application that accepts user input and makes requests to external resources. A successful attack requires the attacker to have network access to the targeted application and knowledge of the instance metadata endpoint.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that accepts user input and makes requests to external resources
 
 1. Knowledge of the instance metadata endpoint
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ This technique requires a vulnerable application that accepts user input and mak
 
 1. Rotate AWS credentials regularly to limit the impact of credential theft
 
+ 
+
 ## Objectives
 
 1. Obtain AWS credentials stored within instance metadata
 
 1. Gain access to other cloud resources using obtained credentials
+
+ 
 
 # Instructions
 
@@ -62,13 +70,19 @@ curl https://apigateway/prod/system?cmd=file:///proc/self/environ
 
 This will return a list of all the environment variables currently set on the system.
 
+ 
+
 The 'cmd' parameter in the URL specifies the command to be executed on the system. In this case, we are executing the 'file' command with the argument '/proc/self/environ', which returns a list of environment variables. The 'curl' command is used to make the HTTP request to the specified URL and retrieve the output of the command.
+
+
 
 **Command** ([[Execute System Command]]):
 
 ```bash
 https://apigateway/prod/system?cmd=file:///proc/self/environ
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ https://apigateway/prod/system?cmd=file:///proc/self/environ
 - [[Cloud - AWS]]
 - [[Credential Access]]
 - [[Getting credentials using SSRF and wrappers]]
+
+

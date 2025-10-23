@@ -31,19 +31,35 @@ In some situations (for example web servers using vhost to direct traffic), it m
 
 In some situations (for example web servers using vhost to direct traffic), it may be necessary to update the attacker's `/etc/hosts file`, allowing them  to associate hostnames and their IP without sending requests to external DNS servers.
 
+
+
 # Instructions
 
 1. Using an editor, open the hosts file (/etc/hosts)
 2. Add additional domain names using the format:
 
+
+
 **Code**: [[<IP> <SUBDOMAIN.DOMAINNAME1>  <SUBDOMAIN.DOMAINNAM]]
 
+
+
+
+
+
+
 Example hosts file with `testsite1.domain.com` and `testsite2.domain.com` added:
+
+
 
 **Code**: [[127.0.0.1       localhost
 127.0.1.1       kali
 
 10]]
+
+
+
+
 
 ## Platforms
 
@@ -62,3 +78,5 @@ Example hosts file with `testsite1.domain.com` and `testsite2.domain.com` added:
 ## Tags
 
 - [[Network]]
+
+

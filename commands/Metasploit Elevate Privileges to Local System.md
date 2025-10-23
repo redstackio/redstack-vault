@@ -23,3 +23,5 @@ getsystem
 meterpreter > getsystem
 ...got system via technique 1 (Named Pipe Impersonation (In Memory/Admin)).
 ```
+
+

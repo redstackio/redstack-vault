@@ -34,11 +34,15 @@ From a technical perspective, this procedure involves using the 'Create AWS EBS 
 
 The business value of this technique lies in the fact that AWS EBS volumes are commonly used to store sensitive data in the cloud. By gaining access to these volumes, attackers can steal sensitive data and use it for malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to create EBS volumes and attach them to EC2 instances
 
 1. Access to a previously taken EBS snapshot
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this technique lies in the fact that AWS EBS volumes are c
 
 1. Encrypt sensitive data stored in EBS volumes to protect it from unauthorized access
 
+ 
+
 ## Objectives
 
 1. Create a new EBS volume from a previously taken snapshot
@@ -56,21 +62,33 @@ The business value of this technique lies in the fact that AWS EBS volumes are c
 
 1. Access and exfiltrate sensitive data from the volume
 
+ 
+
 # Instructions
 
 1. To create a new EBS volume from a snapshot, use the following command:
 
+ 
+
+
+
 **Code**: [[aws ec2 create-volume --snapshot-id ID --availabil]]
+
+
 
 > The `aws ec2 create-volume` command is used to create a new Amazon Elastic Block Store (EBS) volume from a snapshot. The `--snapshot-id` option specifies the ID of the snapshot that you want to use as the basis for the new volume. The `--availability-zone` option specifies the availability zone in which to create the new volume. The `--profile` option specifies the AWS CLI profile to use for this command.
 
 Note that the `create-volume` command only creates the volume. You will still need to attach it to an instance using the `aws ec2 attach-volume` command.
+
+
 
 **Command** ([[Create EC2 Volume from Snapshot]]):
 
 ```bash
 aws ec2 create-volume --snapshot-id ID --availability-zone ZONE --profile profile_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ aws ec2 create-volume --snapshot-id ID --availability-zone ZONE --profile profil
 - [[Creating a volume from a snapshot]]
 - [[Elastic Block Store]]
 - [[Exploitation & Data Exfiltration]]
+
+

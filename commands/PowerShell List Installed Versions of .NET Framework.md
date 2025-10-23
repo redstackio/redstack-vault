@@ -10,6 +10,7 @@ output: 'PS C:\> Get-ChildItem ''HKLM:\SOFTWARE\Microsoft\NET Framework Setup\ND
   -recurse | Get-ItemProperty -name Version,Release -EA 0 |  Where { $_.PSChildName
   -match ''^(?!S)\p{L}''} | Select PSChildName, Version, Release
 
+
   PSChildName                      Version        Release
 
   -----------                      -------        -------
@@ -55,3 +56,5 @@ Client                           4.8.03752      528040
 Full                             4.8.03752      528040
 Client                           4.0.0.0
 ```
+
+

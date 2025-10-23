@@ -30,13 +30,61 @@ When a malicious script is inserted through form fields and stored in the applic
 
 When a malicious script is inserted through form fields and stored in the application database, it gets executed whenever the user tries to visit the page that loads the stored script.
 
+
+
 # Instructions
+
+
 
 1. Insert script tag through the *First Name* field and click on submit to store the script in the application database.
 
+
+
+![a89439ae-a320-4959-98f8-621173147763.jpg](_assets/images/Mash/a89439ae-a320-4959-98f8-621173147763.jpg)
+
+
+
+
+
+
+
 2. Admin tries to load the list of users by clicking on *Users List* option in the admin panel.
 
+
+
+
+
+
+
+![12d5ab3a-483d-4213-b767-ea24157fe17f.png](_assets/images/Mash/12d5ab3a-483d-4213-b767-ea24157fe17f.png)
+
+
+
+
+
+
+
+
+
+
+
 3. As the First Name parameter is stored with script tag in the Step 1, the script is executed when an admin tries to list the user's details.
+
+
+
+
+
+
+
+![736dfbc1-9fca-4be6-9b0a-53ac6632b70d.jpg](_assets/images/Mash/736dfbc1-9fca-4be6-9b0a-53ac6632b70d.jpg)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +97,5 @@ When a malicious script is inserted through form fields and stored in the applic
 - [[Stored XSS]]
 - [[Web Applications]]
 - [[xss]]
+
+

@@ -16,3 +16,7 @@ Is a free, Windows-based utility to audit the risk level of your AD infrastructu
 ## Description
 
 Is a free, Windows-based utility to audit the risk level of your AD infrastructure and check for vulnerable practices. ​
+
+
+
+

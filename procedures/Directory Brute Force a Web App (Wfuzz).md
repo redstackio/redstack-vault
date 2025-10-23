@@ -31,13 +31,23 @@ Enumerate a webs app's files and folders by performing a dictionary brute force 
 
 Enumerate a webs app's files and folders by performing a dictionary brute force attack.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Wfuzz Directory Brute Force]]):
 
 ```bash
 wfuzz --hc 404 -c -w $_WORDLIST -u http://$_TARGET_IP/FUZZ
 ```
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +71,5 @@ wfuzz --hc 404 -c -w $_WORDLIST -u http://$_TARGET_IP/FUZZ
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

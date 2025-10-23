@@ -36,11 +36,15 @@ From a technical perspective, this procedure relies on injecting malicious code 
 
 The business value of this procedure is that it can help organizations identify vulnerabilities in their database and take steps to mitigate the risk of a data breach.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable DB2 database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ The business value of this procedure is that it can help organizations identify 
 
 1. Implement access controls to restrict access to sensitive data within the database
 
+ 
+
 ## Objectives
 
 1. Identify tables in a DB2 database that contain a specific column name
 
 1. Extract sensitive information from the identified tables
 
+ 
+
 # Instructions
 
 1. This command retrieves the name of the table that contains the 'username' column. To execute this command, connect to the database and run the SQL query provided in the 'data' field.
 
+ 
+
+
+
 **Code**: [[select tbname from sysibm.syscolumns where name='u]]
 
+
+
 > The 'select' statement is used to retrieve data from a database. In this case, we are retrieving the 'tbname' column from the 'sysibm.syscolumns' table where the 'name' column is equal to 'username'. This will return the name of the table that contains the 'username' column.
+
+
 
 **Command** ([[Retrieve Table Name]]):
 
 ```bash
 select tbname from sysibm.syscolumns where name='username'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ select tbname from sysibm.syscolumns where name='username'
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Find Tables From Column Name]]
+
+

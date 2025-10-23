@@ -35,9 +35,13 @@ From a technical perspective, this attack takes advantage of the ability of the 
 
 The business value of this attack is that it allows an attacker to gain control of a target system, which can be used for further attacks or to steal sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable ASP.NET Razor application
+
+ 
 
 ## Defense
 
@@ -47,19 +51,29 @@ The business value of this attack is that it allows an attacker to gain control 
 
 1. Limit the privileges of the user account running the web server to minimize the impact of any successful attacks
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the target system
 
 1. Take control of the target system
 
+ 
+
 # Instructions
 
 1. Please fill in the details for multiple commands, instruction fields, and explain the arguments of the command in detail.
 
+ 
+
+
+
 **Code**: [[@{
   // C# code
 }]]
+
+
 
 > To use this command, you will need to fill in the details for multiple commands. The 'data' field should contain the C# code that you want to execute. The 'lang' field should be set to 'csharp' to indicate that the code is written in C#. The 'text' field can be left blank. The 'instruction' field should contain instructions for how to use the command, including any required arguments. Finally, the 'explain' field should provide a detailed explanation of the arguments and how to use them.
 
@@ -83,3 +97,5 @@ The business value of this attack is that it allows an attacker to gain control 
 - [[ASP.NET Razor]]
 - [[ASP.NET Razor - Command execution]]
 - [[Server Side Template Injection]]
+
+

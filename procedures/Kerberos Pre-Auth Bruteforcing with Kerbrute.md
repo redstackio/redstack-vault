@@ -35,6 +35,8 @@ Kerberos is a network authentication protocol used by Active Directory to authen
 
 Using Kerbrute, an attacker can automate the process of guessing passwords for user accounts. This tool can also be used to perform password spraying attacks, where a list of common passwords is tried against a large number of user accounts.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -42,6 +44,8 @@ Using Kerbrute, an attacker can automate the process of guessing passwords for u
 1. Valid domain user or computer account credentials
 
 1. Kerbrute tool installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ Using Kerbrute, an attacker can automate the process of guessing passwords for u
 
 1. Disable Kerberos pre-authentication for service accounts and other non-user accounts where possible
 
+ 
+
 ## Objectives
 
 1. Obtain valid user credentials through Kerberos pre-auth bruteforcing
 
 1. Gain access to sensitive information and systems within an organization
 
+ 
+
 # Instructions
 
 1. Kerbrute is a network service brute-forcing tool that can help you identify valid user accounts on a domain. The tool supports Kerberos-based authentication and can be used to test the strength of user passwords. Kerbrute can be used to perform password spraying attacks or brute-force attacks against a domain. The tool can also be used to enumerate valid usernames on a domain. 
 
+ 
+
+
+
 **Code**: [[kerbrute]]
 
+
+
 > To use Kerbrute, you will need to provide the tool with a list of usernames and a list of passwords. The tool will then attempt to authenticate each username using each password until it finds a valid combination. Kerbrute supports various authentication methods, including Kerberos, NTLM, and LDAP. You can also use the tool to perform other tasks, such as DNS enumeration and service scanning. Kerbrute is a powerful tool that should be used with caution, as it can potentially cause account lockouts or other security issues if used improperly.
+
+
 
 **Command** ([[Enumerate usernames]]):
 
@@ -71,11 +87,17 @@ Using Kerbrute, an attacker can automate the process of guessing passwords for u
 kerbrute userenum --dc CONTROLLER.local -d CONTROLLER.local /path/to/userlist.txt
 ```
 
+
+
+
+
 **Command** ([[Enumerate passwords]]):
 
 ```bash
 kerbrute bruteforce --dc CONTROLLER.local -d CONTROLLER.local user1 /path/to/passwordlist.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +119,5 @@ kerbrute bruteforce --dc CONTROLLER.local -d CONTROLLER.local user1 /path/to/pas
 - [[Active Directory Attacks]]
 - [[Kerberos pre-auth bruteforcing]]
 - [[Password spraying]]
+
+

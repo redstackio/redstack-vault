@@ -12,6 +12,7 @@ output: 'C:\Users\BOB\Desktop>PwDump7.exe
 
   url: http://www.514.es
 
+
   Administrator:500:NO PASSWORD*********************:31D6CFE0D16AE931B73C59D7E0C08
 
   9C0:::
@@ -19,6 +20,7 @@ output: 'C:\Users\BOB\Desktop>PwDump7.exe
   Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
 
   BOB:1000:NO PASSWORD*********************:81ABA903C80B8F4DAAD5225F7D996FBC:::
+
 
   HomeGroupUser$:1002:NO PASSWORD*********************:E47E1AB30238D34A8A7BA62278E
 
@@ -49,3 +51,5 @@ BOB:1000:NO PASSWORD*********************:81ABA903C80B8F4DAAD5225F7D996FBC:::
 HomeGroupUser$:1002:NO PASSWORD*********************:E47E1AB30238D34A8A7BA62278E
 CA4C7:::
 ```
+
+

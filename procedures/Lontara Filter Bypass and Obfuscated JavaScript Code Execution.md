@@ -24,6 +24,8 @@ Lontara is a technique used to bypass filters and execute obfuscated JavaScript 
 
 Lontara is a technique used to bypass filters and execute obfuscated JavaScript code. It involves encoding the payload in a way that the filter does not recognize it as malicious. Once the payload is delivered to the target, the obfuscated code is executed, allowing the attacker to perform various actions such as stealing sensitive information or performing unauthorized actions on behalf of the user. This technique is commonly used in Cross Site Scripting attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -31,6 +33,8 @@ Lontara is a technique used to bypass filters and execute obfuscated JavaScript 
 1. Knowledge of the Lontara technique
 
 1. Ability to obfuscate JavaScript code
+
+ 
 
 ## Defense
 
@@ -40,6 +44,8 @@ Lontara is a technique used to bypass filters and execute obfuscated JavaScript 
 
 1. Regularly update and patch web application software to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute obfuscated JavaScript code on the target system
@@ -48,11 +54,19 @@ Lontara is a technique used to bypass filters and execute obfuscated JavaScript 
 
 1. Steal sensitive information or perform unauthorized actions on behalf of the user
 
+ 
+
 # Instructions
 
 1. This command executes obfuscated JavaScript code. The code is stored in the 'data' field of the JSON object. To use this command, copy and paste the code into a JavaScript environment.
 
+ 
+
+
+
 **Code**: [[ᨆ='',ᨊ=!ᨆ+ᨆ,ᨎ=!ᨊ+ᨆ,ᨂ=ᨆ+{},ᨇ=ᨊ[ᨆ++],ᨋ=ᨊ[ᨏ=ᨆ],ᨃ=++ᨏ+]]
+
+
 
 > The code is written in an obfuscated manner to hide its true purpose. It first initializes several variables, including an empty string and an empty object. It then uses these variables to construct a function call, which is executed at the end of the code. The function call takes a string as an argument, which is constructed using various string concatenation operations. The resulting string is then executed as JavaScript code.
 
@@ -61,3 +75,5 @@ Lontara is a technique used to bypass filters and execute obfuscated JavaScript 
 - [[Bypass using Lontara]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

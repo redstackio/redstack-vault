@@ -21,3 +21,5 @@ $ SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name =
 [*] UserId
 [*] UserName
 ```
+
+

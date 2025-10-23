@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:00.037291+00:00'
 ```powershell
 cme ldap 10.10.10.10 -u username -p password --trusted-for-delegation
 ```
+
+

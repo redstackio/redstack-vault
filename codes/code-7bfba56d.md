@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:19.571747+00:00'
 ```powershell
 findstr /S /I cpassword \\\\FQDN\\sysvol\\FQDN\\policies\\*.xml
 ```
+
+

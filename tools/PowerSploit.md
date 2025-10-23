@@ -24,7 +24,11 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 
 # Description
 
+
+
 A collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. ​PowerSploit is made up  of the following modules and scripts:
+
+
 
 ## Execution
 
@@ -36,6 +40,8 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 
 - Invoke-WmiCommand - Executes a PowerShell ScriptBlock on a target computer and returns its formatted output using WMI as a C2 channel.
 
+
+
 ## ScriptModification
 
 - Out-EncodedCommand - Compresses, Base-64 encodes, and generates command-line output for a PowerShell payload script.
@@ -45,6 +51,8 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 - Out-EncryptedScript - Encrypts text files/scripts.
 
 - Remove-Comments - Strips comments and extra whitespace from a script.
+
+
 
 ## Persistence
 
@@ -58,9 +66,13 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 
 - Get-SecurityPackages - Enumerates all loaded security packages (SSPs).
 
+
+
 ## AntivirusBypass
 
 - Find-AVSignature - Locates single Byte AV signatures utilizing the same method as DSplit from "class101".
+
+
 
 ## Exfiltration
 
@@ -94,15 +106,21 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 
 - Get-MicrophoneAudio - Records audio from system microphone and saves to disk
 
+
+
 ## Mayhem
 
 - Set-MasterBootRecord - Proof of concept code that overwrites the master boot record with the message of your choice.
 
 - Set-CriticalProcess - Causes your machine to blue screen upon exiting PowerShell.
 
+
+
 ## Privesc
 
 - PowerUp - Clearing house of common privilege escalation checks, along with some weaponization vectors.
+
+
 
 ## Recon
 
@@ -114,17 +132,23 @@ A collection of Microsoft PowerShell modules that can be used to aid penetration
 
 - PowerView - PowerView is series of functions that performs network and Windows domain enumeration and exploitation.
 
+
+
 # Installation
 
 ## Clone from GitHub (Windows)
 
 PowerSploit with all modules can be loaded on a Windows system by cloning the git repository and copying it to the PowerShell modules directory
 
+
+
 1. Clone the dev branch from GitHub
 
 2. Copy the entire PowerSploit folder to the system's PowerShell modules directory (often C:\windows\system32\WindowsPowerShell\v1.0\Modules)
 
 3. PowerSploit can now be imported as any other module with "Invoke-Module Powersploit"
+
+
 
 ## Platforms
 
@@ -136,3 +160,5 @@ PowerSploit with all modules can be loaded on a Windows system by cloning the gi
 - [[hacking]]
 - [[persistence]]
 - [[powershell]]
+
+

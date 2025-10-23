@@ -34,13 +34,23 @@ Download files and folders recursively from an FTP site. It should be noted that
 
 Download files and folders recursively from an FTP site. It should be noted that this may result in significant traffic, and and should be avoided when stealth is required.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Wget Download Recursively from FTP]]):
 
 ```bash
 wget -r --no-passive --no-parent -m ftp://$_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +81,5 @@ wget -r --no-passive --no-parent -m ftp://$_TARGET_IP
 - [[data exposure]]
 - [[file transfer]]
 - [[Network]]
+
+

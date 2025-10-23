@@ -16,3 +16,9 @@ Dns2tcp is a network tool designed to relay TCP connections through DNS traffic.
 ## Description
 
 Dns2tcp is a network tool designed to relay TCP connections through DNS traffic. Encapsulation is done on the TCP level, thus no specific driver is needed (i.e: TUN/TAP). Dns2tcp client doesn’t need to be run with specific privileges.Dns2tcp is composed of two parts : a server-side tool and a client-side tool. The server has a list of resources specified in a configuration file. Each resource is a local or remote service listening for TCP connections. The client listen on a predefined TCP port and relays each incoming connection through DNS to the final service.
+
+
+
+
+
+

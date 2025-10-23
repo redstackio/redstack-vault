@@ -19,3 +19,5 @@ $mp = $gmsa.'msDS-ManagedPassword'
 # Decode the data structure using the DSInternals module
 ConvertFrom-ADManagedPasswordBlob $mp
 ```
+
+

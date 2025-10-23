@@ -37,6 +37,8 @@ SSH tunneling and SOCKS proxy are network pivoting techniques that allow an atta
 
 From an offensive perspective, these techniques can be used to gain access to sensitive systems, exfiltrate data, and maintain persistence. From a technical standpoint, SSH tunneling and SOCKS proxy rely on the ability to establish a connection between the attacker's machine and the target system. The attacker must have valid credentials and network access to the target system. From a business value standpoint, these techniques can be used to steal sensitive data, disrupt operations, and cause reputational damage.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the target system
@@ -44,6 +46,8 @@ From an offensive perspective, these techniques can be used to gain access to se
 1. Network access to the target system
 
 1. SSH client software
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ From an offensive perspective, these techniques can be used to gain access to se
 
 1. Enforce strong authentication policies to prevent credential theft
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive systems
@@ -60,6 +66,8 @@ From an offensive perspective, these techniques can be used to gain access to se
 1. Exfiltrate data
 
 1. Maintain persistence
+
+ 
 
 # Instructions
 
@@ -71,11 +79,19 @@ This command creates a dynamic application-level port forwarding tunnel. It list
 2. ssh -N -f -D 9000 [user]@[host]
 This command creates a dynamic SOCKS proxy tunnel. It listens on port 9000 on your local machine and forwards all traffic to the specified [host] via SSH. The -N option tells SSH not to execute a remote command and the -f option tells SSH to run in the background.
 
+ 
+
+
+
 **Code**: [[ssh -D8080 [user]@[host]
 
 ssh -N -f -D 9000 [user]]]
 
+
+
 > The -D option specifies the local port number to use for the SOCKS proxy. The -N option tells SSH not to execute a remote command and the -f option tells SSH to run in the background. The [user]@[host] argument specifies the username and hostname of the remote server to connect to. Once the tunnel is created, you can configure your applications to use the local SOCKS proxy on the specified port (8080 or 9000) to route their traffic through the remote server.
+
+
 
 **Command** ([[SSH Port Forwarding]]):
 
@@ -83,18 +99,32 @@ ssh -N -f -D 9000 [user]]]
 ssh -D8080 [user]@[host]
 ```
 
+
+
+
+
 **Command** ([[SSH in Background]]):
 
 ```bash
 ssh -N -f -D 9000 [user]@[host]
 ```
 
+
+
 2. To use Konami SSH Port Forwarding, press the Enter key followed by the ~C key combination. Then type -D 1090 and hit Enter again.
+
+ 
+
+
 
 **Code**: [[[ENTER] + [~C]
 -D 1090]]
 
+
+
 > Konami SSH Port Forwarding is a technique used to forward traffic from a local machine to a remote machine through an SSH connection. The -D flag specifies the local port to use for the forwarding and 1090 is the port number. This command is useful for accessing web services or applications running on a remote machine that are not accessible from the local network.
+
+
 
 **Command** ([[Enter Command]]):
 
@@ -102,6 +132,8 @@ ssh -N -f -D 9000 [user]@[host]
 [ENTER] + [~C]
 -D 1090
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -129,3 +161,5 @@ ssh -N -f -D 9000 [user]@[host]
 - [[Network Pivoting Techniques]]
 - [[SOCKS Proxy]]
 - [[SSH]]
+
+

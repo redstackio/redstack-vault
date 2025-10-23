@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # windapsearch.py
 
+
+
 **Command** ([[windapsearch.py]]):
 
 ```bash
 ./windapsearch.py -d host.domain.tld -u domain\\ldapbind -p password -U
 
 ```
+
+
+
+
+
+

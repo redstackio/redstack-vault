@@ -38,11 +38,15 @@ From a technical perspective, this technique involves creating a new Lambda func
 
 Businesses can protect themselves from this attack by implementing the principle of least privilege and monitoring their AWS environment for suspicious activity.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS environment
 
 1. Permissions to create a new Lambda function and attach an IAM role to it
+
+ 
 
 ## Defense
 
@@ -52,20 +56,30 @@ Businesses can protect themselves from this attack by implementing the principle
 
 1. Regularly review and audit IAM policies and roles for unnecessary permissions
 
+ 
+
 ## Objectives
 
 1. Escalate privileges within an AWS environment
 
 1. Gain access to sensitive data or resources
 
+ 
+
 # Instructions
 
 1. Use this command to attach an IAM policy to an IAM role or user.
+
+ 
+
+
 
 **Code**: [[import boto3
 import json
 
 def handler(event,contex]]
+
+
 
 > This command takes two arguments: RoleName and PolicyArn. The RoleName argument specifies the name of the IAM role to which the policy will be attached. The PolicyArn argument specifies the Amazon Resource Name (ARN) of the policy to attach. The command can be used to attach policies to both IAM roles and users. The command returns a success message upon successful attachment of the policy.
 
@@ -88,3 +102,5 @@ def handler(event,contex]]
 - [[Create a lambda function and attach a role to it]]
 - [[Example code to add the permissions]]
 - [[Privilege Escalation]]
+
+

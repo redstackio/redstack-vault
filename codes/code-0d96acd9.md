@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:08.321433+00:00'
 ```powershell
 crackmapexec smb 10.10.10.10 -u '' -p '' -d domain -M nopac
 ```
+
+

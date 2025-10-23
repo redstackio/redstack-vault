@@ -16,3 +16,7 @@ Run PowerShell with rundll32. Bypass software restrictions. ​
 ## Description
 
 Run PowerShell with rundll32. Bypass software restrictions. ​
+
+
+
+

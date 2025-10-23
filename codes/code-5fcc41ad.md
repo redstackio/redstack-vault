@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:23:10.724433+00:00'
 SELECT column_name FROM all_tab_columns WHERE table_name = 'blah';
 SELECT column_name FROM all_tab_columns WHERE table_name = 'blah' and owner = 'foo';
 ```
+
+

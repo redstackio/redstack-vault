@@ -29,9 +29,13 @@ Kubernetes provides a default service account for each namespace that is automat
 
 Kubernetes provides a default service account for each namespace that is automatically mounted into pods running in the namespace. The service account is used to authenticate and authorize API requests made from within the pod. The service account token is mounted into the pod at /var/run/secrets/kubernetes.io/serviceaccount/token. An attacker who gains access to the token can use it to authenticate as the service account and make requests to the Kubernetes API server, potentially allowing for further lateral movement within the cluster.
 
+ 
+
 ## Requirements
 
 1. Access to a container running within a Kubernetes cluster
+
+ 
 
 ## Defense
 
@@ -41,19 +45,33 @@ Kubernetes provides a default service account for each namespace that is automat
 
 1. Rotate service account tokens regularly
 
+ 
+
 ## Objectives
 
 1. Gain access to the Kubernetes service account token
 
 1. Authenticate as the service account and make requests to the Kubernetes API server
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 2. service account token can be used to authenticate and make requests to the Kubernetes API server using the Kubernetes API directly.
 
+ 
+
+
+
 **Code**: [[kubectl]]
+
+
 
 > 
 
@@ -73,3 +91,5 @@ Kubernetes provides a default service account for each namespace that is automat
 - [[Container Environment]]
 - [[Kubernetes]]
 - [[Service Account]]
+
+

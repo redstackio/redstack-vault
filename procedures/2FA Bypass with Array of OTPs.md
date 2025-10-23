@@ -30,7 +30,11 @@ This procedure involves bypassing 2FA protection by using an array of OTPs (One-
 
 This procedure involves bypassing 2FA protection by using an array of OTPs (One-Time Passwords). Attackers can obtain these OTPs through various means such as phishing, social engineering, or brute-forcing. Once they have a list of valid OTPs, they can use them to bypass 2FA protection and gain unauthorized access to the target account. This technique can be used to steal sensitive information, perform fraudulent transactions, or launch further attacks.
 
+ 
+
 ## Requirements
+
+ 
 
 ## Defense
 
@@ -40,15 +44,23 @@ This procedure involves bypassing 2FA protection by using an array of OTPs (One-
 
 1. Educate users on the risks of phishing and social engineering attacks, and provide training on how to identify and avoid them.
 
+ 
+
 ## Objectives
 
 1. Bypass 2FA protection and gain unauthorized access to the target account
 
 1. Steal sensitive information, perform fraudulent transactions, or launch further attacks
 
+ 
+
 # Instructions
 
 1. 
+
+ 
+
+
 
 **Code**: [[{
     "otp":[
@@ -56,7 +68,11 @@ This procedure involves bypassing 2FA protection by using an array of OTPs (One-
         "1111",
     ]]
 
+
+
 > This command provides an array of OTPs, which can be obtained through various means such as phishing, social engineering, or brute-forcing. The user is instructed to enter one of the valid OTPs to bypass 2FA protection and gain unauthorized access to the target account.
+
+
 
 **Command** ([[OTP Verification]]):
 
@@ -73,6 +89,8 @@ This procedure involves bypassing 2FA protection by using an array of OTPs (One-
     ]
 }
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ This procedure involves bypassing 2FA protection by using an array of OTPs (One-
 - [[2FA Bypasses]]
 - [[Account Takeover]]
 - [[Bypass 2FA with array]]
+
+

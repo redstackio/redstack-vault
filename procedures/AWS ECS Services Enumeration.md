@@ -35,11 +35,15 @@ Technical: The procedure utilizes the AWS ECS ListServices API call to enumerate
 
 Business Value: By identifying all services in an ECS cluster, an attacker can gain a better understanding of the target environment and potentially identify critical services that could be targeted for disruption or exfiltration. From a defensive perspective, this procedure can be used to monitor for unauthorized access or activity in the ECS environment.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the ECS ListServices API call
 
 1. Access to the AWS ECS environment
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: By identifying all services in an ECS cluster, an attacker can g
 
 1. Monitor for unauthorized access or activity in the ECS environment
 
+ 
+
 ## Objectives
 
 1. Enumerate all services in a specified AWS ECS cluster
@@ -57,17 +63,25 @@ Business Value: By identifying all services in an ECS cluster, an attacker can g
 
 1. Monitor for unauthorized access or activity in the ECS environment
 
+ 
+
 # Instructions
 
 1. Use this command to list all the services in an ECS cluster.
 
+ 
+
 The 'aws ecs list-services' command is used to list all the services in an ECS cluster. The '--cluster' option is used to specify the name of the cluster for which you want to list the services. The output of this command is a list of ARNs that represent the services in the specified cluster.
+
+
 
 **Command** ([[List ECS Services]]):
 
 ```bash
 aws ecs list-services --cluster name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws ecs list-services --cluster name
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing all services in specified cluster]]
+
+

@@ -30,11 +30,15 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 
 Command injection is a technique that allows an attacker to execute arbitrary commands on a targeted system. By injecting malicious commands into an existing command, an attacker can bypass filters and execute unauthorized actions. The $() filter bypass is a common technique used to bypass filters that block traditional command injection techniques. This technique allows an attacker to execute arbitrary commands by wrapping them in $() characters. This can be used to bypass filters that block traditional command injection techniques.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
 
 1. Knowledge of the target system's command syntax
+
+ 
 
 ## Defense
 
@@ -44,11 +48,15 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 
 1. Monitoring system logs for suspicious activity can help detect and respond to command injection attacks.
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the target system
 
 1. Bypass filters that block traditional command injection techniques
+
+ 
 
 # Instructions
 
@@ -57,9 +65,15 @@ Command injection is a technique that allows an attacker to execute arbitrary co
 2. Inject malicious commands into the existing command using the $() syntax.
 3. Execute the modified command to execute the injected commands.
 
+ 
+
+
+
 **Code**: [[who$()ami
 who$(echo am)i
 who`echo am`i]]
+
+
 
 > The $() filter bypass allows an attacker to execute arbitrary commands by wrapping them in $() characters. This technique can be used to bypass filters that block traditional command injection techniques. In this example, the 'whoami' command is executed using the $() filter bypass. The 'echo' command is also used to inject the string 'am' into the command. The output of the command is the current user on the target system.
 
@@ -82,3 +96,5 @@ who`echo am`i]]
 - [[Bypass with $()]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

@@ -39,6 +39,7 @@ Get-ForestGlobalCatalog
 ```
 PS C:\> Get-ForestGlobalCatalog
 
+
 Forest                     : TESLA.LOCAL
 CurrentTime                : 7/1/2020 10:31:36 PM
 HighestCommittedUsn        : 12888
@@ -69,3 +70,5 @@ Name                       : DC-DEV.DEV.TESLA.LOCAL
 Partitions                 : {CN=Configuration,DC=TESLA,DC=LOCAL, CN=Schema,CN=Configuration,DC=TESLA,DC=LOCAL,
                              DC=ForestDnsZones,DC=TESLA,DC=LOCAL, DC=DEV,DC=TESLA,DC=LOCAL...}
 ```
+
+

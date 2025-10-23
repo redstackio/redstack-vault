@@ -27,11 +27,15 @@ Technical Explanation: The attacker sends a specially crafted SQL query to the a
 
 Business Value: This procedure can be used by attackers to gain unauthorized access to sensitive data stored in a MYSQL database. It can also be used by security professionals to test the security of their applications and web pages, and to identify vulnerabilities before they can be exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application or web page
 
 1. Knowledge of MYSQL injection techniques
+
+ 
 
 ## Defense
 
@@ -41,17 +45,27 @@ Business Value: This procedure can be used by attackers to gain unauthorized acc
 
 1. Regularly update and patch MYSQL databases to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Obtain the table schema and name list of a MYSQL database
 
 1. Use the obtained information to further exploit the database
 
+ 
+
 # Instructions
 
 1. This command retrieves a list of all table schemas and their corresponding table names from the INFORMATION_SCHEMA.TABLES system table. The result is returned as a JSON array.
 
+ 
+
+
+
 **Code**: [[SELECT json_arrayagg(concat_ws(0x3a,table_schema,t]]
+
+
 
 > The 'json_arrayagg' function is used to concatenate the table schema and name values into a single string separated by a colon. This string is then aggregated into a JSON array using the 'json_arrayagg' function. The resulting JSON array is returned as the output of the command.
 
@@ -59,3 +73,5 @@ Business Value: This procedure can be used by attackers to gain unauthorized acc
 
 - [[MYSQL Fast Exploitation]]
 - [[MYSQL Injection]]
+
+

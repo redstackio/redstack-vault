@@ -35,7 +35,13 @@ Authenticate and spawn an interactive FTP session.
 
 Authenticate and spawn an interactive FTP session.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Launch an Interactive FTP Session]]):
 
@@ -43,12 +49,26 @@ Authenticate and spawn an interactive FTP session.
 ftp $_TARGET_IP
 ```
 
+
+
 Note:  To attempt to authenticate anonymously, enter "anonymous" as the username and  anything for the password.
+
+
 
 After connecting to FTP,  a number of common filesystem commands are available. 
 
+
+
+
+
 **Code**: [[cd $_DIR - Change directory
 dir - List folder cont]]
+
+
+
+
+
+
 
 ## Platforms
 
@@ -74,3 +94,5 @@ dir - List folder cont]]
 
 - [[file transfer]]
 - [[Network]]
+
+

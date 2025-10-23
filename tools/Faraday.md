@@ -16,3 +16,7 @@ Faraday introduces a new concept – IPE (Integrated Penetration-Test Environmen
 ## Description
 
 Faraday introduces a new concept – IPE (Integrated Penetration-Test Environment) a multiuser Penetration test IDE. Designed for distribution, indexation and analysis of the data generated during a security audit.The main purpose of Faraday is to re-use the available tools in the community to take advantage of them in a multiuser way.Designed for simplicity, users should notice no difference between their own terminal application and the one included in Faraday. Developed with a specialized set of functionalities that help users improve their own work. Do you remember yourself programming without an IDE? Well, Faraday does the same as an IDE does for you when programming, but from the perspective of a penetration test.
+
+
+
+

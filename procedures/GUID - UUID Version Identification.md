@@ -32,9 +32,13 @@ GUID / UUID is a way of generating unique identifiers, which can be useful in ma
 
 GUID / UUID is a way of generating unique identifiers, which can be useful in many applications. However, if the version of the GUID is not properly identified, it can lead to security issues. Attackers can use this information to identify the version of the GUID and potentially exploit vulnerabilities in the specific version. This attack can be used for obfuscation and indicator removal from tools. It can also be used to identify systems that are using outdated versions of the GUID algorithm. 
 
+ 
+
 ## Requirements
 
 1. Access to a system generating GUID / UUID
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ GUID / UUID is a way of generating unique identifiers, which can be useful in ma
 
 1. Monitor for any unusual activity related to the generation or use of GUID / UUIDs, such as an increase in the use of outdated versions.
 
+ 
+
 ## Objectives
 
 1. Identify the version of the GUID / UUID
@@ -52,19 +58,31 @@ GUID / UUID is a way of generating unique identifiers, which can be useful in ma
 
 1. Use the identified version for obfuscation and indicator removal from tools
 
+ 
+
 # Instructions
 
 1. Use the M and N values to identify the version of the GUID. 
 
+ 
+
+
+
 **Code**: [[xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx]]
 
+
+
 > The version of the GUID / UUID can be identified by the values of M and N. For example, version 4 of the GUID algorithm has a value of 4 for the M field, and the N field starts with a value between 8 and B. Other versions have different values for the M and N fields. By identifying the version of the GUID, an attacker can determine if the system is using an outdated version and potentially exploit vulnerabilities in that version.
+
+
 
 **Command** ([[UUID Generation]]):
 
 ```bash
 xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx
 - [[GUID / UUID]]
 - [[GUID Versions]]
 - [[Insecure Randomness]]
+
+

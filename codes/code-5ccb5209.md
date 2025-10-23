@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:56.699513+00:00'
 ```bash
 https://docs.microsoft.com/en-us/azure/virtual-machines/windows/instance-metadata-service
 ```
+
+

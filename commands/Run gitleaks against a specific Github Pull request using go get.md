@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:56.272566+00:00'
 ```bash
 go get -u github.com/zricethezav/gitleaks
 ```
+
+

@@ -22,12 +22,24 @@ When amass is used with the directory output for the DB file, you can diff the r
 
 When amass is used with the directory output for the DB file, you can diff the results from previous scans. This is handy when doing a re-pentest for a client, and you have a scan from 3 -6 months ago, this is a quick and easy technique to identify and new domains without having to look up your excel spreadsheet or old reports.
 
+
+
+
+
+
+
 **Command** ([[amass diff previous scans]]):
 
 ```bash
 amass track -dir $_OUTPUT_DIRECTORY -d $_TARGET_DOMAIN -last 2
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[amass diff previous scans]]
+
+

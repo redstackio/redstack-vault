@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Linux Networking, Routing & Communications:
 
+
+
 **Command** ([[List all network interfaces]]):
 
 ```bash
@@ -17,12 +19,24 @@ cat /etc/network/interfaces
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Display ARP communications]]):
 
 ```bash
 arp -a
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Display route information]]):
 
@@ -31,12 +45,24 @@ route
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Show configured DNS sever addresses]]):
 
 ```bash
 cat /etc/resolv.conf
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List all TCP sockets and related PIDs (-p Privileged command)]]):
 
@@ -45,12 +71,24 @@ netstat -antp
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List all UDP sockets and related PIDs (-p Privileged command)]]):
 
 ```bash
 netstat -anup
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List rules – Privileged command]]):
 
@@ -59,9 +97,21 @@ iptables -L
 
 ```
 
+
+
+
+
+
+
 **Command** ([[View port numbers/services mappings]]):
 
 ```bash
 cat /etc/services
 
 ```
+
+
+
+
+
+

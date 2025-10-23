@@ -13,12 +13,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Red Team Cheatsheet to preform quick enumeration with powershell
 
+
+
 **Command** ([[Perform portscan on hosts]]):
 
 ```bash
 Invoke-Portscan -Hosts "192.168.1.10" -TopPorts 50
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Basic User info]]):
 
@@ -27,12 +35,24 @@ Get-NetUser -UACFilter NOT_ACCOUNTDISABLE | select samaccountname, description, 
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find users with sidHistory set]]):
 
 ```bash
 Get-NetUser -LDAPFilter '(sidHistory=*)' 
 
 ```
+
+
+
+
+
+
 
 **Command** ([[ASREPRoastable users]]):
 
@@ -41,12 +61,24 @@ Get-NetUser -PreauthNotRequired
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Kerberoastable users]]):
 
 ```bash
 Get-NetUser -SPN 
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Basic Computer info]]):
 
@@ -55,12 +87,24 @@ Get-NetComputer | select samaccountname, operatingsystem, description
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find computers with Unconstrained Delegation]]):
 
 ```bash
 Get-NetComputer -Unconstrained | select samaccountname 
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Find computers with Constrined Delegation]]):
 
@@ -69,12 +113,24 @@ Get-NetComputer -TrustedToAuth | select samaccountname
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get forest trusts]]):
 
 ```bash
 Get-NetForestTrust 
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get users with privileges in other domains inside the forest]]):
 
@@ -83,9 +139,21 @@ Get-DomainForeignUser
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get groups with privileges in other domains inside the forest]]):
 
 ```bash
 Get-DomainForeignGroupMember 
 
 ```
+
+
+
+
+
+

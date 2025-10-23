@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:57.272196+00:00'
 ```bash
 select prod_release,installed_prod_fullname from table(sysproc.env_get_prod_info()) as productinfo
 ```
+
+

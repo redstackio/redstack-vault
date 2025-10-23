@@ -13,12 +13,24 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Search and Authenticate with LDAP using these tools.
 
+
+
+
+
+
+
 **Command** ([[ldapsearch]]):
 
 ```bash
 ldapsearch -x -h target-ip -b "dc=domain,dc=tld"
 
 ```
+
+
+
+
+
+
 
 **Command** ([[User lookup by UID]]):
 
@@ -27,12 +39,24 @@ ldapsearch -x -h ldap.domain.com -b o=domain.com -s sub uid=jdoe| egrep "uid:|ui
 
 ```
 
+
+
+
+
+
+
 **Command** ([[User lookup by name]]):
 
 ```bash
 ldapsearch -x -h ldap.domain.com -b o=domain.com -s sub '(&(sn=Tubberville)(givenname=James))'
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Set pass as self]]):
 
@@ -41,9 +65,21 @@ ldappasswd -H ldaps://ldap.domain.com:6361 -D 'cn=John Doe (jdoe),ou=hr,ou=users
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Set pass as admin]]):
 
 ```bash
 ldappasswd -H ldaps://ldap.domain.com:6361 -x -D 'cn=admin,ou=hr,ou=users,o=domain.com' -S -W 'uid=jdoe,ou=hr users,o=domain.com '   
 
 ```
+
+
+
+
+
+

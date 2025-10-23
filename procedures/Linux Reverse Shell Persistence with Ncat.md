@@ -41,6 +41,8 @@ To achieve this, the attacker first establishes a reverse shell connection using
 
 This procedure can be used by attackers to maintain access to a compromised Linux machine for as long as possible. It can also be used to pivot to other machines on the network and to exfiltrate data from the target machine.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux target
@@ -49,6 +51,8 @@ This procedure can be used by attackers to maintain access to a compromised Linu
 
 1. Root or sudo access on the target machine
 
+ 
+
 ## Defense
 
 1. Disable unnecessary services and applications on the target machine to reduce the attack surface
@@ -56,6 +60,8 @@ This procedure can be used by attackers to maintain access to a compromised Linu
 1. Monitor network traffic for suspicious connections to known malicious IP addresses
 
 1. Implement network segmentation to limit the attacker's ability to pivot to other machines on the network
+
+ 
 
 ## Objectives
 
@@ -67,15 +73,25 @@ This procedure can be used by attackers to maintain access to a compromised Linu
 
 1. Exfiltrate data from the target machine
 
+ 
+
 # Instructions
 
 1. To listen for incoming connections on a specific port, use the following commands with Ncat:
+
+ 
+
+
 
 **Code**: [[ncat --udp -lvp 4242
 ncat --sctp -lvp 4242
 ncat --]]
 
+
+
 > The above commands will start listening on port 4242 for incoming connections using the UDP, SCTP, and TCP protocols respectively. The '-l' option specifies that Ncat should listen for incoming connections. The '-v' option enables verbose output, which can be useful for debugging. The '-p' option specifies the port number to listen on. The '--udp', '--sctp', and '--tcp' options specify the protocol to use for the connection. Note that if you are using a firewall, you may need to open the specified port to allow incoming connections.
+
+
 
 **Command** ([[UDP Listening on Port 4242]]):
 
@@ -83,17 +99,27 @@ ncat --]]
 ncat --udp -lvp 4242
 ```
 
+
+
+
+
 **Command** ([[SCTP Listening on Port 4242]]):
 
 ```bash
 ncat --sctp -lvp 4242
 ```
 
+
+
+
+
 **Command** ([[TCP Listening on Port 4242]]):
 
 ```bash
 ncat --tcp -lvp 4242
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +149,5 @@ ncat --tcp -lvp 4242
 
 - [[Basic reverse shell]]
 - [[Linux - Persistence]]
+
+

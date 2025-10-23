@@ -13,12 +13,22 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Windows Group Policy Object Functions based on scripts from PowerView & PowerSploit.
 
+
+
+
+
 **Command** ([[Get GptTmpl.inf and pasre to a custom object]]):
 
 ```bash
 Get-GptTmpl
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get all current GPOs for a given domain]]):
 
@@ -27,12 +37,24 @@ Get-NetGPO
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get all GPOs in a domain that set "Restricted Groups" on on target machines]]):
 
 ```bash
 Get-NetGPOGroup
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Find a user/group and makes machines they have effective rights over through GPO enumeration and correlation]]):
 
@@ -41,6 +63,12 @@ Find-GPOLocation
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find a computer and determines who has admin rights over it through GPO enumeration]]):
 
 ```bash
@@ -48,9 +76,21 @@ Find-GPOComputerAdmin
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get the default domain or DC policy]]):
 
 ```bash
 Get-DomainPolicy
 
 ```
+
+
+
+
+
+

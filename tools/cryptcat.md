@@ -16,3 +16,9 @@ CryptCat is a simple Unix utility which reads and writes data across network con
 ## Description
 
 CryptCat is a simple Unix utility which reads and writes data across network connections, using TCP or UDP protocol while encrypting the data being transmitted. It is designed to be a reliable “back-end” tool that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and exploration tool, since it can create almost any kind of connection you would need and has several interesting built-in capabilities.
+
+
+
+
+
+

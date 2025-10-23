@@ -37,6 +37,8 @@ To exploit this vulnerability, an attacker can craft a malicious SAML request th
 
 The business value of exploiting SAML Injection vulnerabilities is that it allows an attacker to bypass authentication mechanisms and gain unauthorized access to sensitive information or systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable SAML service provider
@@ -44,6 +46,8 @@ The business value of exploiting SAML Injection vulnerabilities is that it allow
 1. Knowledge of SAML Injection techniques
 
 1. Ability to craft a malicious SAML request
+
+ 
 
 ## Defense
 
@@ -53,25 +57,39 @@ The business value of exploiting SAML Injection vulnerabilities is that it allow
 
 1. Perform regular security assessments and penetration testing to identify and remediate vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms
 
 1. Gain unauthorized access to sensitive information or systems
 
+ 
+
 # Instructions
 
 1. Craft a payload that includes malicious XML entities that can be parsed by the application. These entities can be used to inject arbitrary code or modify data within the application.
 
+ 
+
+
+
 **Code**: [[XML entities]]
 
+
+
 > XML Entity Injection is a type of attack where an attacker exploits vulnerabilities in an application's processing of XML data. By injecting malicious XML entities, an attacker can execute arbitrary code or modify data within the application. This attack can be used to bypass authentication controls, escalate privileges, or exfiltrate sensitive data. To prevent this type of attack, applications should properly validate and sanitize all user input that is used to generate XML documents.
+
+
 
 **Command** ([[List of XML entities]]):
 
 ```bash
 man xml | grep entities
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ man xml | grep entities
 - [[Authentication Bypass]]
 - [[SAML Injection]]
 - [[XML External Entity]]
+
+

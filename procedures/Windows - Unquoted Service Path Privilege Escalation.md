@@ -32,11 +32,15 @@ Windows services can be installed with unquoted paths that contain spaces. This 
 
 Windows services can be installed with unquoted paths that contain spaces. This can allow an attacker to escalate privileges by replacing the executable that the service runs with a malicious executable that will run with elevated privileges. This technique is often used by attackers to gain persistence on a compromised system. To perform this attack, the attacker needs to find a service with an unquoted path and have write access to the location where the service executable is stored. Once the attacker replaces the executable, the service will run the attacker's code with elevated privileges, giving the attacker full control of the system.
 
+ 
+
 ## Requirements
 
 1. Access to a system with a service installed with an unquoted path
 
 1. Write access to the location where the service executable is stored
+
+ 
 
 ## Defense
 
@@ -46,23 +50,37 @@ Windows services can be installed with unquoted paths that contain spaces. This 
 
 1. Monitor for changes to service executables and paths
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a compromised system
+
+ 
 
 # Instructions
 
 1. running an executable file
 
+ 
+
+
+
 **Code**: [[C:\Program Files\something\legit.exe]]
 
+
+
 > The path to the executable file that needs to be run. This command is used to execute a program or application on a Windows machine. The path should be the absolute path to the executable file, including the file name and extension. For example, C:\Program Files\something\legit.exe
+
+
 
 **Command** ([[Execute legit.exe]]):
 
 ```bash
 C:\Program Files\something\legit.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ C:\Program Files\something\legit.exe
 - [[EoP - Unquoted Service Paths]]
 - [[Example]]
 - [[Windows - Privilege Escalation]]
+
+

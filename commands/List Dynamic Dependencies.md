@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:33.738831+00:00'
 ```bash
 ldd <executable>
 ```
+
+

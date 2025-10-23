@@ -41,11 +41,15 @@ To exploit this vulnerability, an attacker can use Burp Payload Calculation to g
 
 This procedure can be used by red teamers to test the security of web applications and by attackers to compromise vulnerable systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Burp Suite Professional
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ This procedure can be used by red teamers to test the security of web applicatio
 
 1. Regularly update and patch the web application and its dependencies to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To exploit the SSTI vulnerability in Django Templates
@@ -63,14 +69,24 @@ This procedure can be used by red teamers to test the security of web applicatio
 
 1. To gain control over the server and perform malicious activities
 
+ 
+
 # Instructions
 
 1. Use the Burp Payload Calculation command to calculate the value of a payload using the specified formula.
 
+ 
+
+
+
 **Code**: [[{% csrf_token %} # Causes error with Jinja2
 {{ 7*7]]
 
+
+
 > The 'data' field contains a formula that is used to calculate the final payload value. The formula is made up of different components, including the Burp Payload, which is represented by 'ih0vr{{364|add:733}}d121r'. The formula can be modified to suit your specific needs. The 'lang' field specifies the programming language used in the formula. The 'text' field provides additional information about the Django Templates rendering engine and how it works. Use the 'instruction' field to provide specific instructions on how to use this command.
+
+
 
 **Command** ([[Calculate]]):
 
@@ -78,11 +94,19 @@ This procedure can be used by red teamers to test the security of web applicatio
 {{ 7*7 }}
 ```
 
+
+
+
+
 **Command** ([[Burp Payload]]):
 
 ```bash
 ih0vr{{364|add:733}}d121r
 ```
+
+
+
+
 
 **Command** ([[Caution]]):
 
@@ -90,11 +114,17 @@ ih0vr{{364|add:733}}d121r
 {% csrf_token %}
 ```
 
+
+
+
+
 **Command** ([[Caution]]):
 
 ```bash
 {{ 7*7 }}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +154,5 @@ ih0vr{{364|add:733}}d121r
 - [[Detection]]
 - [[Django Templates]]
 - [[Server Side Template Injection]]
+
+

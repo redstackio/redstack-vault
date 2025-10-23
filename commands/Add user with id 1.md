@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:22.888601+00:00'
 ```bash
 # mutation{addUser(id:"1", name:"Dan Abramov", email:"dan@dan.com") {id name email}}
 ```
+
+

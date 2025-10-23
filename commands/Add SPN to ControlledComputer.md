@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:11.555942+00:00'
 ```bash
 impacket@linux> addspn.py -u 'domain\user' -p 'password' -t 'ControlledComputer$' -c DomainController
 ```
+
+

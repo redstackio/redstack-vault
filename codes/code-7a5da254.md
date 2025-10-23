@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:24:12.491158+00:00'
 vulnerable.com will fetch YOUR_SERVER_IP which will redirect to 192.168.0.1
 3. You can use response codes 307 and 308 in order to retain HTTP method and body after the redirection.
 ```
+
+

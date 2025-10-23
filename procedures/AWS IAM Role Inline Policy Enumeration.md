@@ -37,9 +37,13 @@ Technical Explanation: The ListRolePolicies API call is used to enumerate the na
 
 Business Value: This procedure can be used by security teams to identify potential security weaknesses in their AWS environment, and to ensure that permissions are correctly configured to prevent privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to call the ListRolePolicies API
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: This procedure can be used by security teams to identify potenti
 
 1. Implement multi-factor authentication (MFA) for AWS IAM users to prevent unauthorized access to AWS resources
 
+ 
+
 ## Objectives
 
 1. Enumerate the names of the inline policies embedded in a specified IAM role
@@ -57,17 +63,25 @@ Business Value: This procedure can be used by security teams to identify potenti
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. To list all the policies attached to a specific role, use the following command:
 
+ 
+
 The 'aws iam list-role-policies' command is used to list all the policies that are attached to a specific IAM role. The command requires the 'role-name' argument to be specified, which is the name of the role you want to list the policies for. This command can be helpful in identifying the policies attached to a role, which can be useful for auditing and troubleshooting purposes. The output of this command will be a JSON array containing the names of the policies attached to the specified role.
+
+
 
 **Command** ([[List Role Policies]]):
 
 ```bash
 aws iam list-role-policies --role-name role-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws iam list-role-policies --role-name role-name
 - [[3. Enumeratig Roles]]
 - [[Cloud - AWS]]
 - [[Listing the names of the inline policies embedded in the specified IAM role]]
+
+

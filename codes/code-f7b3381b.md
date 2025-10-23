@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:27.813181+00:00'
 ```powershell
 sqlmap -u "http://www.target.com" --tor --tor-type=SOCKS5 --time-sec 11 --check-tor --level=5 --risk=3 --threads=5
 ```
+
+

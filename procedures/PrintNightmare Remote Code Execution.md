@@ -39,11 +39,15 @@ Technical Explanation: The PrintNightmare vulnerability allows an attacker to ex
 
 Business Value: This technique can be used to gain access to sensitive data, move laterally through a network, or establish persistent access to a compromised system. By gaining SYSTEM privileges, an attacker can take complete control of a compromised system and perform any action they desire.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Vulnerable Print Spooler service
+
+ 
 
 ## Defense
 
@@ -53,19 +57,31 @@ Business Value: This technique can be used to gain access to sensitive data, mov
 
 1. Monitor network traffic for suspicious activity related to print jobs
 
+ 
+
 ## Objectives
 
 1. Gain remote code execution on a target system
 
 1. Execute arbitrary code with SYSTEM privileges
 
+ 
+
 # Instructions
 
 1. To use the Remote Print System Protocol, run the 'rpcdump.py' script with the IP address of the remote system as an argument. Use the 'egrep' command to filter the output for the 'MS-RPRN' and 'MS-PAR' protocols.
 
+ 
+
+
+
 **Code**: [[python3 ./rpcdump.py @10.0.2.10 | egrep 'MS-RPRN|M]]
 
+
+
 > The 'rpcdump.py' script is part of the Impacket toolkit and is used to dump the remote procedure call (RPC) interface information for a specified host. The 'MS-RPRN' protocol is used for managing printer resources, while the 'MS-PAR' protocol is used for managing parallel ports. By using the 'egrep' command, we can filter the output to show only the information related to these protocols.
+
+
 
 **Command** ([[RPCDump with egrep filter on MS-RPRN and MS-PAR]]):
 
@@ -73,9 +89,17 @@ Business Value: This technique can be used to gain access to sensitive data, mov
 python3 ./rpcdump.py @10.0.2.10 | egrep 'MS-RPRN|MS-PAR'
 ```
 
+
+
 2. This command is used to run the `It Was All A Dream` tool, which is a network enumeration and attack tool. The `git clone` command is used to download the tool from the GitHub repository. The `cd` command is used to navigate to the tool's directory, followed by `poetry install` and `poetry shell` commands to install and activate the tool's dependencies. The `itwasalladream` command is used to run the tool with the specified arguments. Finally, the `docker run` command is used to run the tool in a Docker container.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/byt3bl33d3r/ItWasAllA]]
+
+
 
 > The `itwasalladream` command has the following arguments:
 - `-u user`: Specifies the username to use for authentication
@@ -85,11 +109,17 @@ python3 ./rpcdump.py @10.0.2.10 | egrep 'MS-RPRN|MS-PAR'
 
 The tool is used for network enumeration and attack, and can be used to perform tasks such as port scanning, DNS enumeration, and password spraying.
 
+
+
 **Command** ([[Clone ItWasAllADream Repository]]):
 
 ```bash
 git clone https://github.com/byt3bl33d3r/ItWasAllADream
 ```
+
+
+
+
 
 **Command** ([[Install Dependencies and Activate Virtual Environment]]):
 
@@ -97,17 +127,27 @@ git clone https://github.com/byt3bl33d3r/ItWasAllADream
 cd ItWasAllADream && poetry install && poetry shell
 ```
 
+
+
+
+
 **Command** ([[Run ItWasAllADream Tool Locally]]):
 
 ```bash
 itwasalladream -u user -p Password123 -d domain 10.10.10.10/24
 ```
 
+
+
+
+
 **Command** ([[Run ItWasAllADream Tool in Docker Container]]):
 
 ```bash
 docker run -it itwasalladream -u username -p Password123 -d domain 10.10.10.10
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +173,5 @@ docker run -it itwasalladream -u username -p Password123 -d domain 10.10.10.10
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[PrintNightmare]]
+
+

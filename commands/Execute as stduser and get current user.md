@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:36:46.097015+00:00'
 EXECUTE AS LOGIN = 'stduser'
 SELECT SYSTEM_USER
 ```
+
+

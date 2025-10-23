@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # scp
 
+
+
 **Command** ([[copy file to target]]):
 
 ```bash
 scp -r username@target-ip:/path/to/foo /home/username/desktop/
 
 ```
+
+
+
+
+
+

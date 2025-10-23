@@ -21,3 +21,5 @@ guestmount --add $_IMAGE.vhd --inspector --ro $_DEST_DIRECTORY
 ```
 guestmount --add 5c2dcac3-335e-14a3-a34c-604e6b6e6969.vhd  --inspector --ro /mnt
 ```
+
+

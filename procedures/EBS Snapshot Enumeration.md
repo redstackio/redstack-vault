@@ -34,11 +34,15 @@ Technical Explanation: AWS provides a service called Elastic Block Store (EBS) t
 
 Business Value: This technique can be used by attackers to quickly identify sensitive data stored in EBS volumes. By identifying these volumes, attackers can then focus their efforts on exfiltrating this data for financial gain or other nefarious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS account
 
 1. Knowledge of the EBS volume ID
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This technique can be used by attackers to quickly identify sens
 
 1. Implement network security measures, such as firewalls and intrusion detection systems, to detect and prevent unauthorized access to the AWS environment
 
+ 
+
 ## Objectives
 
 1. Identify EBS snapshots associated with a particular volume
@@ -56,19 +62,31 @@ Business Value: This technique can be used by attackers to quickly identify sens
 
 1. Identify sensitive data stored in EBS snapshots
 
+ 
+
 # Instructions
 
 1. To list all available snapshots in your AWS EC2 account, run the following command:
 
+ 
+
+
+
 **Code**: [[aws ec2 describe-snapshots]]
 
+
+
 > This command will provide a detailed list of all snapshots associated with your AWS EC2 account. This includes information such as the snapshot ID, volume ID, creation date, and description. You can use this information to manage your snapshots, such as deleting or copying them. Additionally, you can use filters to narrow down the results based on specific criteria, such as snapshot age or volume ID. For more information on available filters and their usage, refer to the AWS EC2 documentation.
+
+
 
 **Command** ([[List all available snapshots]]):
 
 ```bash
 aws ec2 describe-snapshots
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws ec2 describe-snapshots
 - [[Elastic Block Store]]
 - [[Exploitation & Data Exfiltration]]
 - [[Listing snapshots]]
+
+

@@ -35,6 +35,8 @@ This procedure involves exploiting a vulnerability in the Print Spooler Service 
 
 This procedure involves exploiting a vulnerability in the Print Spooler Service to gain escalated privileges on a Windows system. By removing a printer and adding it back with a malicious driver, an attacker can inject code into the spooler service that runs with SYSTEM level privileges. This can allow the attacker to execute arbitrary code or perform other malicious actions on the compromised system. The business value of this attack is that it can provide an attacker with access to sensitive data or systems that require elevated privileges to access.
 
+ 
+
 ## Requirements
 
 1. Access to the target Windows system
@@ -42,6 +44,8 @@ This procedure involves exploiting a vulnerability in the Print Spooler Service 
 1. Authenticated access to the system with sufficient privileges to add and remove printers
 
 1. Ability to install a malicious printer driver on the system
+
+ 
 
 ## Defense
 
@@ -51,24 +55,36 @@ This procedure involves exploiting a vulnerability in the Print Spooler Service 
 
 1. Monitor the system for changes to the printer configuration, especially the addition or removal of printers
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a Windows system
 
 1. Execute arbitrary code or perform other malicious actions on the compromised system
 
+ 
+
 # Instructions
 
 1. This command removes and adds a printer with a specific driver.
 
+ 
+
+
+
 **Code**: [[$serverName  = 'dc.purple.lab'
 $printerName = 'Uni]]
+
+
 
 > - $serverName: The name of the server where the printer is located.
 - $printerName: The name of the printer to be added.
 - $fullprinterName: The full name of the printer with the driver architecture.
 - Remove-Printer: Removes the specified printer.
 - Add-Printer: Adds the specified printer.
+
+
 
 **Command** ([[Remove Printer]]):
 
@@ -79,11 +95,17 @@ $fullprinterName = '\\' + $serverName + '\' + $printerName + ' - ' + $(If ([Syst
 Remove-Printer -Name $fullprinterName -ErrorAction SilentlyContinue
 ```
 
+
+
+
+
 **Command** ([[Add Printer]]):
 
 ```bash
 Add-Printer -ConnectionName $fullprinterName
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -110,3 +132,5 @@ Add-Printer -ConnectionName $fullprinterName
 - [[EoP - Printers]]
 - [[Universal Printer]]
 - [[Windows - Privilege Escalation]]
+
+

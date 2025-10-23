@@ -36,6 +36,8 @@ From a technical perspective, SQL injection attacks work by injecting malicious 
 
 From a business perspective, SQL injection attacks can be devastating. They can result in the theft of sensitive information such as customer data, financial information, and intellectual property. They can also lead to unauthorized access to critical systems and the execution of unauthorized commands.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -43,6 +45,8 @@ From a business perspective, SQL injection attacks can be devastating. They can 
 1. SQLmap installed on the attacker's system
 
 1. A proxy server to hide the attacker's IP address
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ From a business perspective, SQL injection attacks can be devastating. They can 
 
 1. Monitor network traffic for suspicious activity and investigate any anomalies
 
+ 
+
 ## Objectives
 
 1. Identify SQL injection vulnerabilities in web applications
@@ -60,19 +66,31 @@ From a business perspective, SQL injection attacks can be devastating. They can 
 
 1. Evade detection by using a proxy to hide the attacker's IP address
 
+ 
+
 # Instructions
 
 1. Use this command to scan a target website for SQL injection vulnerabilities. This command uses sqlmap which is a popular open-source tool for detecting and exploiting SQL injection flaws. The -u flag is used to specify the target URL and the --proxy flag is used to specify the proxy server to be used for the scan.
 
+ 
+
+
+
 **Code**: [[sqlmap -u "http://www.target.com" --proxy="http://]]
 
+
+
 > SQL injection is a type of web application security vulnerability that allows attackers to inject malicious SQL statements into web application inputs in order to access sensitive data or perform unauthorized actions. Sqlmap automates the process of detecting and exploiting SQL injection flaws and is a powerful tool for penetration testers and security researchers.
+
+
 
 **Command** ([[SQL Injection scan using sqlmap]]):
 
 ```bash
 sqlmap -u "http://www.target.com" --proxy="http://127.0.0.1:8080"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ sqlmap -u "http://www.target.com" --proxy="http://127.0.0.1:8080"
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
 - [[Using a proxy with SQLmap]]
+
+

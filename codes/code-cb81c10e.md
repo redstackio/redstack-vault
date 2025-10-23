@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:31.019647+00:00'
 ```bash
 gcc -fPIC -shared -static-libgcc -Wl,--version-script=version,-Bstatic exploit.c -o libc.so.6
 ```
+
+

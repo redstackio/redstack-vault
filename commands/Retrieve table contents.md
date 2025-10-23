@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 sqlcmd -E -S localhost -d DatabaseName -Q "SELECT * FROM SystemUserBase;" -W -w 999 -s"," -o "c:\windows\temp\RecruiterProd_MSCRM_userbase.csv"
 
 ```
+
+

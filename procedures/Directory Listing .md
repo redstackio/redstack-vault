@@ -38,7 +38,43 @@ Directory listing can be performed by accessing the URL with known directory nam
 
 1. Access the application and observe the existence of directories in the URL. In the below screenshot, *vcart* is found to be a directory in the application.
 
+
+
+
+
+
+
+![5b7eb151-637f-4cb9-8ba3-cebc84efb621.jpg](_assets/images/Mash/5b7eb151-637f-4cb9-8ba3-cebc84efb621.jpg)
+
+
+
+
+
+
+
 2. Modify the URL to access the directory *vcart* as shown below. As directory listing is enabled, contents in *vcart* can be observed.
+
+
+
+
+
+
+
+
+
+![3a200010-6e04-4231-b287-2920a65f9d0a.jpg](_assets/images/Mash/3a200010-6e04-4231-b287-2920a65f9d0a.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +87,5 @@ Directory listing can be performed by accessing the URL with known directory nam
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

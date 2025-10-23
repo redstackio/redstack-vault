@@ -36,11 +36,15 @@ From a technical perspective, capabilities are stored in the file system's exten
 
 The business value of this technique is that it allows an attacker to gain higher privileges on a system, potentially leading to access to sensitive data or control over critical systems.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
 
 1. Permission to execute the 'getcap' command
+
+ 
 
 ## Defense
 
@@ -50,28 +54,42 @@ The business value of this technique is that it allows an attacker to gain highe
 
 1. Regularly review and update file system permissions and extended attributes
 
+ 
+
 ## Objectives
 
 1. Identify which capabilities are available for a binary
 
 1. Use the identified capabilities to escalate privileges
 
+ 
+
 # Instructions
 
 1. To list capabilities of executables, run the following command:
 
+ 
+
+
+
 **Code**: [[╭─swissky@lab ~  
 ╰─$ /usr/bin/getcap -r  /usr/bin]]
+
+
 
 > getcap -r /path/to/executables
 
 This will list the capabilities of all executables in the specified path recursively. The output will show the executable file name followed by the capabilities associated with it. The capabilities are represented in the format of <capability_name>+<capability_flag>. For example, cap_net_raw+ep means that the executable has the capability to perform raw network I/O operations and can be executed with elevated privileges.
+
+
 
 **Command** ([[Check Capabilities]]):
 
 ```bash
 /usr/bin/getcap -r  /usr/bin
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ This will list the capabilities of all executables in the specified path recursi
 - [[Capabilities]]
 - [[Linux - Privilege Escalation]]
 - [[List capabilities of binaries]]
+
+

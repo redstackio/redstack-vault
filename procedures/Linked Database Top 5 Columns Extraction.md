@@ -34,6 +34,8 @@ From a technical perspective, this procedure leverages the linked database funct
 
 The business value of this procedure is that it allows an attacker to gain a better understanding of the data stored within a linked database, which can be used to inform further attacks or data exfiltration.
 
+ 
+
 ## Requirements
 
 1. Access to a linked database in MSSQL Server
@@ -41,6 +43,8 @@ The business value of this procedure is that it allows an attacker to gain a bet
 1. Ability to execute PowerShell commands on the target system
 
 1. Permission to query the selected table
+
+ 
 
 ## Defense
 
@@ -50,17 +54,27 @@ The business value of this procedure is that it allows an attacker to gain a bet
 
 1. Implement network segmentation to limit the impact of a potential compromise of the linked database
 
+ 
+
 ## Objectives
 
 1. Extract the top 5 columns from a selected table in a linked database
 
 1. Gain insight into the structure and contents of the linked database
 
+ 
+
 # Instructions
 
 1. This command retrieves the top 5 rows from a specified table in a database.
 
+ 
+
+
+
 **Code**: [[Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>"]]
+
+
 
 > The 'Get-SQLQuery' command is used to execute a SQL query against a specified database instance. The '-Instance' parameter is used to specify the name of the database server and instance to connect to. The '-Query' parameter is used to specify the SQL query to execute. In this case, the query is retrieving the top 5 rows from a table using the 'TOP' keyword. The 'openquery' function is used to execute the query against a linked server. The name of the linked server is specified using the '<DatabaseLinkName>' placeholder. The name of the database and table to retrieve data from are specified using the '<DatabaseNameFromPreviousCommand>' and '<TableNameFromPreviousCommand>' placeholders respectively. The '-Verbose' parameter is used to display detailed output during the execution of the command.
 
@@ -81,3 +95,5 @@ The business value of this procedure is that it allows an attacker to gain a bet
 - [[Gather the Top 5 Columns from a Selected Linked Table]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

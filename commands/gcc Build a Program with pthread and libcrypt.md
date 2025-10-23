@@ -20,3 +20,5 @@ gcc $_INPUT.c -pthread -lcrypt -o $_OUTPUT
 ```
 root@kali:~# gcc dirty.c -pthread -lcrypt -o dirty
 ```
+
+

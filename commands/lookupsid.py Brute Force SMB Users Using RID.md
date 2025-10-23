@@ -8,6 +8,7 @@ output: 'root@kali:~# lookupsid.py ''bob'':''secretpass''@10.10.10.10
 
   Impacket v0.9.21-dev - Copyright 2019 SecureAuth Corporation
 
+
   [*] Brute forcing SIDs at 10.10.10.10
 
   [*] StringBinding ncacn_np:10.10.10.10[\pipe\lsarpc]
@@ -51,3 +52,5 @@ Impacket v0.9.21-dev - Copyright 2019 SecureAuth Corporation
 513: Bob-PC\None (SidTypeGroup)
 1008: Bob-PC\Bob (SidTypeUser)
 ```
+
+

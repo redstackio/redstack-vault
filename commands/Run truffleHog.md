@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:53.528553+00:00'
 ```bash
 truffleHog --regex --entropy=False https://github.com/dxa4481/truffleHog.git
 ```
+
+

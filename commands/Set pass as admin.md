@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ldappasswd -H ldaps://ldap.domain.com:6361 -x -D 'cn=admin,ou=hr,ou=users,o=domain.com' -S -W 'uid=jdoe,ou=hr users,o=domain.com '   
 
 ```
+
+

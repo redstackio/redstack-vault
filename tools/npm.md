@@ -30,7 +30,19 @@ npm is the package manager for the NOde JavaScript platform. It putsmodules in p
 
 npm is the package manager for the NOde JavaScript platform. It putsmodules in place so that node can find them, and manages dependency conflicts intelligently.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_117268c7-a771-473c-8253-ec2e6a64997e}}
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +58,5 @@ npm is the package manager for the NOde JavaScript platform. It putsmodules in p
 ## Tags
 
 - [[package manager]]
+
+

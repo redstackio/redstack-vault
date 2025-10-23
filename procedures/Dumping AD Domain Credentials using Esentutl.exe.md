@@ -32,6 +32,8 @@ Dumping AD Domain Credentials using Esentutl.exe is a technique used to extract 
 
 Esentutl.exe is a built-in Windows utility that allows for the management of Extensible Storage Engine (ESE) databases, including the AD DS database. By using Esentutl.exe to dump the NTDS.dit file, an attacker can extract the hashed credentials and then use a tool like Mimikatz to perform pass-the-hash attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a domain-joined Windows machine.
@@ -39,6 +41,8 @@ Esentutl.exe is a built-in Windows utility that allows for the management of Ext
 1. Administrative privileges on the machine.
 
 1. Access to the NTDS.dit file.
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Esentutl.exe is a built-in Windows utility that allows for the management of Ext
 
 1. Monitor for suspicious activity, such as unusual access to the NTDS.dit file, and use tools like Mimikatz to detect and prevent pass-the-hash attacks.
 
+ 
+
 ## Objectives
 
 1. Extract the NTDS.dit file from the AD DS database.
@@ -55,6 +61,8 @@ Esentutl.exe is a built-in Windows utility that allows for the management of Ext
 1. Extract hashed credentials of all domain users and computers, including the KRBTGT account.
 
 1. Use the extracted credentials to escalate privileges, move laterally, and ultimately gain domain administrator access.
+
+ 
 
 # Instructions
 
@@ -64,15 +72,25 @@ Esentutl.exe is a built-in Windows utility that allows for the management of Ext
 c:\windows\ntds\ntds.dit - Specifies the source file to be copied
 /d c:\folder\ntds.dit - Specifies the destination file path and name.
 
+ 
+
+
+
 **Code**: [[esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c]]
 
+
+
 > The NTDS.dit file is a critical file in Active Directory that contains the Active Directory database. This file is locked by the system and cannot be copied or moved while the domain controller is running. The esentutl.exe command can be used to extract the file using the Volume Shadow Copy Service (VSS) to create a snapshot of the file, which can then be copied to another location for analysis or backup purposes.
+
+
 
 **Command** ([[Backup ntds.dit file using esentutl.exe]]):
 
 ```bash
 esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c:\folder\ntds.dit
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c:\folder\ntds.dit
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[Using esentutl.exe]]
+
+

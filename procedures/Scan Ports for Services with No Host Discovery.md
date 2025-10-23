@@ -29,11 +29,21 @@ Skip host discovery in cases where a host does not respond to ping, and enumerat
 
 Skip host discovery in cases where a host does not respond to ping, and enumerate banners.
 
+
+
+
+
+
+
 **Command** ([[Nmap Service Scan with No Host Discovery]]):
 
 ```bash
 nmap -sV -Pn $_TARGET_IP
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -53,3 +63,5 @@ nmap -sV -Pn $_TARGET_IP
 
 - [[Enumeration]]
 - [[Network]]
+
+

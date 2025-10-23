@@ -1,0 +1,116 @@
+/* Platform Icons and Styling */
+
+/* Platform badges in frontmatter */
+.metadata-property[data-property-key="platforms"] .multi-select-pill {
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* Windows */
+.multi-select-pill:contains("Windows")::before,
+.tag:contains("Windows")::before {
+  content: "🪟 ";
+}
+
+.multi-select-pill:contains("Windows"),
+.tag:contains("Windows") {
+  background-color: #0078d4 !important;
+  color: white !important;
+}
+
+/* Linux */
+.multi-select-pill:contains("Linux")::before,
+.tag:contains("Linux")::before {
+  content: "🐧 ";
+}
+
+.multi-select-pill:contains("Linux"),
+.tag:contains("Linux") {
+  background-color: #fcc624 !important;
+  color: black !important;
+}
+
+/* macOS */
+.multi-select-pill:contains("macOS")::before,
+.multi-select-pill:contains("Mac")::before,
+.tag:contains("macOS")::before,
+.tag:contains("Mac")::before {
+  content: " ";
+}
+
+.multi-select-pill:contains("macOS"),
+.multi-select-pill:contains("Mac"),
+.tag:contains("macOS"),
+.tag:contains("Mac") {
+  background-color: #555 !important;
+  color: white !important;
+}
+
+/* Cloud */
+.multi-select-pill:contains("Cloud")::before,
+.multi-select-pill:contains("AWS")::before,
+.multi-select-pill:contains("Azure")::before,
+.multi-select-pill:contains("GCP")::before,
+.tag:contains("Cloud")::before,
+.tag:contains("AWS")::before,
+.tag:contains("Azure")::before,
+.tag:contains("GCP")::before {
+  content: "☁️ ";
+}
+
+.multi-select-pill:contains("Cloud"),
+.multi-select-pill:contains("AWS"),
+.multi-select-pill:contains("Azure"),
+.multi-select-pill:contains("GCP"),
+.tag:contains("Cloud"),
+.tag:contains("AWS"),
+.tag:contains("Azure"),
+.tag:contains("GCP") {
+  background-color: #4285f4 !important;
+  color: white !important;
+}
+
+/* Network */
+.multi-select-pill:contains("Network")::before,
+.tag:contains("Network")::before {
+  content: "🌐 ";
+}
+
+.multi-select-pill:contains("Network"),
+.tag:contains("Network") {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+/* Web Applications */
+.multi-select-pill:contains("Web")::before,
+.tag:contains("Web")::before {
+  content: "🌍 ";
+}
+
+.multi-select-pill:contains("Web"),
+.tag:contains("Web") {
+  background-color: #8e44ad !important;
+  color: white !important;
+}
+
+/* Containers */
+.multi-select-pill:contains("Container")::before,
+.multi-select-pill:contains("Docker")::before,
+.multi-select-pill:contains("Kubernetes")::before,
+.tag:contains("Container")::before,
+.tag:contains("Docker")::before,
+.tag:contains("Kubernetes")::before {
+  content: "📦 ";
+}
+
+.multi-select-pill:contains("Container"),
+.multi-select-pill:contains("Docker"),
+.multi-select-pill:contains("Kubernetes"),
+.tag:contains("Container"),
+.tag:contains("Docker"),
+.tag:contains("Kubernetes") {
+  background-color: #2496ed !important;
+  color: white !important;
+}

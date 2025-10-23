@@ -34,11 +34,15 @@ To extract all config variables, the 'Config Information' command is used. This 
 
 This procedure can be used by attackers to gain a better understanding of the target environment and potentially identify additional attack vectors. It can also be used as a reconnaissance tool for red team engagements.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses Jinja2 templating engine
 
 1. Ability to inject payloads into the application
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This procedure can be used by attackers to gain a better understanding of the ta
 
 1. Monitor web application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract all configuration variables from a Jinja2 template
@@ -56,12 +62,20 @@ This procedure can be used by attackers to gain a better understanding of the ta
 
 1. Reconnaissance for red team engagements
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve configuration information.
 
+ 
+
+
+
 **Code**: [[{% for key, value in config.iteritems() %}
     <dt]]
+
+
 
 > The config information is returned as a dictionary where the keys represent the configuration options and the values represent the corresponding values of those options. The 'config' variable should be defined in the code before using this command.
 
@@ -82,3 +96,5 @@ This procedure can be used by attackers to gain a better understanding of the ta
 - [[Jinja2]]
 - [[Jinja2 - Dump all config variables]]
 - [[Server Side Template Injection]]
+
+

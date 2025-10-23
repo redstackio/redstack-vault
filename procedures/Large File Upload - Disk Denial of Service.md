@@ -27,13 +27,33 @@ tags:
 
 Uploading large files through file upload functionality in an application could lead to Denial of Service on the Disk space.
 
+
+
 # Procedure
 
 # 
 
 1. Access the file upload functionality in the application and select a large file of allowed type. In the below screenshot, 200 MB pdf file is created and selected to upload in the application.
 
+
+
+
+
+![e9e66a80-ee62-4d54-8e63-bcf3946f912d.JPG]()
+
+
+
 2. The selected file has been uploaded and uploading such large files in more number would result in complete utilization of disk space.
+
+
+
+
+
+![c4d3b0a9-1da8-48fb-ae54-b6b936bec301.JPG]()
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +65,5 @@ Uploading large files through file upload functionality in an application could 
 - [[DOS]]
 - [[File Uploads]]
 - [[Web Applications]]
+
+

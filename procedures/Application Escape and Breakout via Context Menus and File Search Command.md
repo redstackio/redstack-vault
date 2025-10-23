@@ -35,6 +35,8 @@ From an offensive perspective, this technique can be used to gain access to sens
 
 The objectives of this procedure are to bypass file restrictions, escape from a sandboxed environment, and gain access to sensitive files and data. The goals of the user who is using this procedure are to execute malicious code, steal data, and compromise the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -45,6 +47,8 @@ The objectives of this procedure are to bypass file restrictions, escape from a 
 
 1. Knowledge of the application's context menus and file search command
 
+ 
+
 ## Defense
 
 1. Implement proper access controls and permissions to restrict unauthorized access to sensitive files and data
@@ -52,6 +56,8 @@ The objectives of this procedure are to bypass file restrictions, escape from a 
 1. Monitor for suspicious activity and behavior, such as unusual file access or attempts to modify file permissions
 
 1. Implement security measures such as sandboxing and application whitelisting to prevent unauthorized access and execution of malicious code
+
+ 
 
 ## Objectives
 
@@ -61,11 +67,19 @@ The objectives of this procedure are to bypass file restrictions, escape from a 
 
 1. Gain access to sensitive files and data
 
+ 
+
 # Instructions
 
 1. search <file name or pattern>
 
+ 
+
+
+
 **Code**: [[File name]]
+
+
 
 > This command is used to search for a file or multiple files in the current directory. The argument should be either the full name of the file or a pattern that matches the file name. For example, 'search myfile.txt' will search for a file named 'myfile.txt' in the current directory, while 'search *.txt' will search for all files with a '.txt' extension in the current directory.
 
@@ -87,3 +101,5 @@ The objectives of this procedure are to bypass file restrictions, escape from a 
 - [[Application Escape and Breakout]]
 - [[Bypass file restrictions]]
 - [[Exploring Context Menus]]
+
+

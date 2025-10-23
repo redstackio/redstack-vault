@@ -16,3 +16,9 @@ BruteSpray takes nmap GNMAP/XML output and automatically brute-forces services w
 ## Description
 
 BruteSpray takes nmap GNMAP/XML output and automatically brute-forces services with default credentials using Medusa. BruteSpray can even find non-standard ports by using the -sV inside Nmap.
+
+
+
+
+
+

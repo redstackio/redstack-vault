@@ -20,3 +20,5 @@ echo "#\!/bin/bash\ncat /etc/passwd > /tmp/flag\nchmod 777 /tmp/flag" > shell.sh
 # vulnerable script
 tar cf archive.tar *
 ```
+
+

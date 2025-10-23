@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:22.640650+00:00'
 ```bash
 lookupsid.py domain/user:password@10.10.10.10
 ```
+
+

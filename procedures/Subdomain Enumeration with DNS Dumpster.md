@@ -36,11 +36,15 @@ From an offensive perspective, subdomain enumeration can help an attacker to ide
 
 In order to use DNS Dumpster, the user needs to provide the domain name and the tool will query various sources to find subdomains. The tool can be used by security researchers, penetration testers, and red teamers.
 
+ 
+
 ## Requirements
 
 1. Access to the internet
 
 1. DNS Dumpster tool
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ In order to use DNS Dumpster, the user needs to provide the domain name and the 
 
 1. Implement DNSSEC to prevent DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Identify subdomains for a given domain
@@ -57,6 +63,8 @@ In order to use DNS Dumpster, the user needs to provide the domain name and the 
 1. Identify potential targets for further attacks
 
 1. Improve security posture by taking appropriate measures to secure the identified subdomains
+
+ 
 
 # Instructions
 
@@ -71,10 +79,18 @@ Example:
 ```git clone https://github.com/nmmapper/dnsdumpster
 python dnsdumpster.py -d example.com```
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/nmmapper/dnsdumpster
 ]]
 
+
+
 > The DNS Dumpster tool is used to perform reconnaissance on a target domain. The tool can be used to gather information such as subdomains, IP addresses, and email addresses associated with the target domain. The git clone command is used to download the DNS Dumpster tool from the GitHub repository. The python script dnsdumpster.py is then run with the -d flag followed by the target domain name to perform the reconnaissance.
+
+
 
 **Command** ([[Clone DNSDumpster repository from GitHub]]):
 
@@ -82,11 +98,17 @@ python dnsdumpster.py -d example.com```
 git clone https://github.com/nmmapper/dnsdumpster
 ```
 
+
+
+
+
 **Command** ([[Run DNSDumpster tool for domainname.com]]):
 
 ```bash
 python dnsdumpster.py -d domainname.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +131,5 @@ python dnsdumpster.py -d domainname.com
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using dnsdumpster]]
+
+

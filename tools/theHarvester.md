@@ -26,7 +26,15 @@ Theharvester is mainly an OSINT enumeration tool, used to gather information on 
 
 Theharvester is mainly an OSINT enumeration tool, used to gather information on an organization, including e-mails, subdomains, hosts, employee names, open ports, and banners. TheHarvester can gather data from many OSINT sources, including Google, Bing, Baidu, LinkedIn, Twitter, Netcraft, and more, making it an excellent tool for initial recon of an organization.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_6d0c3d49-cc9d-4cc0-b55c-043ea5ceef80}}
+
+
 
 # Installation
 
@@ -34,7 +42,17 @@ Theharvester is mainly an OSINT enumeration tool, used to gather information on 
 
 - Python3.7+ with pip
 
+
+
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +66,5 @@ Theharvester is mainly an OSINT enumeration tool, used to gather information on 
 
 - [[data exposure]]
 - [[OSINT]]
+
+

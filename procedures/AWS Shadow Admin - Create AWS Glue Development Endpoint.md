@@ -32,9 +32,13 @@ Technical Description: An attacker with admin equivalent permissions can create 
 
 Business Value: An attacker can gain access to sensitive data stored in AWS using this procedure. This can lead to data theft, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Admin equivalent permissions
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Business Value: An attacker can gain access to sensitive data stored in AWS usin
 
 1. Implement least privilege access controls
 
+ 
+
 ## Objectives
 
 1. Create an AWS Glue Development Endpoint
@@ -52,11 +58,19 @@ Business Value: An attacker can gain access to sensitive data stored in AWS usin
 
 1. Gain access to sensitive data stored in AWS
 
+ 
+
 # Instructions
 
 1. To create a new AWS Glue Development Endpoint, run the following command in your terminal:
 
+ 
+
+
+
 **Code**: [[$ aws glue create-dev-endpoint –endpoint-name my_d]]
+
+
 
 > This command creates a new development endpoint in AWS Glue. The endpoint name should be unique within your account. The role ARN should be the ARN of an existing IAM role that has the necessary permissions for Glue. The public key file should be a valid public SSH key that can be used to connect to the development endpoint. This command requires the user to have the `iam:PassRole` and `glue:CreateDevEndpoint` permissions.
 
@@ -75,3 +89,5 @@ Business Value: An attacker can gain access to sensitive data stored in AWS usin
 - [[Admin equivalent permission]]
 - [[AWS - Shadow Admin]]
 - [[Cloud - AWS]]
+
+

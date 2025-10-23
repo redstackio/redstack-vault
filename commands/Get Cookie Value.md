@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:40.922757+00:00'
 ```bash
 window.cookieStore.get('COOKIE NAME').then((cookieValue)=>{alert(cookieValue.value);});
 ```
+
+

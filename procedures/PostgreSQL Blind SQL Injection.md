@@ -31,9 +31,13 @@ To perform a blind SQL injection, the attacker must first identify a vulnerable 
 
 The business value of this attack is that it allows an attacker to gain unauthorized access to sensitive data, which can be used for financial gain or to damage the reputation of the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the web application that uses a PostgreSQL database
+
+ 
 
 ## Defense
 
@@ -43,15 +47,25 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Implement web application firewalls to detect and block SQL injection attacks
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive data stored in a PostgreSQL database
+
+ 
 
 # Instructions
 
 1. To use this command, simply copy and paste the provided query into a PostgreSQL command prompt or SQL injection tool.
 
+ 
+
+
+
 **Code**: [[' and substr(version(),1,10) = 'PostgreSQL' and '1]]
+
+
 
 > The command uses the 'version()' function to retrieve the version of the target PostgreSQL installation. It then compares the first 10 characters of the version string to 'PostgreSQL'. If the comparison is true, the command returns '1  -> OK
 ', indicating that the target system is running PostgreSQL. If the comparison is false, the command returns '1  -> KO', indicating that the target system is not running PostgreSQL.
@@ -70,3 +84,5 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 - [[PostgreSQL Blind]]
 - [[PostgreSQL injection]]
+
+

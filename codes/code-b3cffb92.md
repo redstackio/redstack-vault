@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:14.038231+00:00'
 ```powershell
 curl http://rancher-metadata/<version>/<path>
 ```
+
+

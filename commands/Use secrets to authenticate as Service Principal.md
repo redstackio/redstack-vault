@@ -22,3 +22,5 @@ PS > $password = ConvertTo-SecureString '<SECRET/PASSWORD>' -AsPlainText -Force
 PS > $creds = New-Object System.Management.Automation.PSCredential('<AppID>', $password)
 PS > Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant '<TenantID>'
 ```
+
+

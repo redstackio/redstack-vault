@@ -30,13 +30,23 @@ Use John the Ripper to brute force a password hash. When not specifying the type
 
 Use John the Ripper to brute force a password hash. When not specifying the type of hash, John will attempt to guess the correct type.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[John the Ripper Brute Force a Hash File]]):
 
 ```bash
 john --wordlist=$_WORDLIST $_HASH_FILE
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -55,3 +65,5 @@ john --wordlist=$_WORDLIST $_HASH_FILE
 ## Tags
 
 - [[Cryptography]]
+
+

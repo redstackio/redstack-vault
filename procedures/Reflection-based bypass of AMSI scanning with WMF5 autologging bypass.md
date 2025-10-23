@@ -27,11 +27,15 @@ This procedure describes how to use Matt Graebers Reflection method with WMF5 au
 
 This technique requires a good understanding of .NET assemblies, reflection, and PowerShell. It is a powerful technique that can be used to evade detection and execute malicious code on a victim's machine. However, it requires a high level of technical expertise and is not recommended for novice attackers. From a business perspective, this technique can be used to gain access to sensitive data and systems, which can result in financial loss and damage to reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a PowerShell session
 
 1. Understanding of .NET assemblies, reflection, and PowerShell
+
+ 
 
 ## Defense
 
@@ -41,21 +45,33 @@ This technique requires a good understanding of .NET assemblies, reflection, and
 
 1. Use endpoint protection solutions that can detect and block malicious code
 
+ 
+
 ## Objectives
 
 1. Bypass AMSI scanning
 
 1. Execute malicious code on a victim's machine
 
+ 
+
 # Instructions
 
 1. This command patches the AMSI Scan Buffer by bypassing the Update.
+
+ 
+
+
 
 **Code**: [[$Winpatch = @"
 using System;
 using System.Runtime.]]
 
+
+
 > The `PatchAmsi` function is used to patch the AMSI Scan Buffer. This function loads the `amsi.dll` library, retrieves the address of the `AmsiScanBuffer` function, and then replaces the first few bytes of the function with a `jmp` instruction that skips over the AMSI check. The `it` function determines if the system is 64-bit or 32-bit and then calls the appropriate patch function. The `is64Bit` function checks if the system is 64-bit or not. The `Add-Type` command compiles the C# code and adds it to the PowerShell session.
+
+
 
 **Command** ([[Patch AMSI]]):
 
@@ -126,6 +142,8 @@ Add-Type -TypeDefinition $Winpatch -Language CSharp
 [patch]::it()
 ```
 
+
+
 ## Commands Used
 
 - [[Patch AMSI]]
@@ -134,3 +152,5 @@ Add-Type -TypeDefinition $Winpatch -Language CSharp
 
 - [[Adam Chester Patch]]
 - [[Using Matt Graebers Reflection method with WMF5 autologging bypass]]
+
+

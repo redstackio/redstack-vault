@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # curl
 
+
+
 **Command** ([[download emails via curl]]):
 
 ```bash
@@ -16,9 +18,21 @@ curl --insecure --url "imaps://target-domain/Drafts;UID=4" --user "username:pass
 
 ```
 
+
+
+
+
+
+
 **Command** ([[bypass useragent blacklisting]]):
 
 ```bash
 curl -A "Googlebot" http://target-ip/robots.txt
 
 ```
+
+
+
+
+
+

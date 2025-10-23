@@ -18,3 +18,5 @@ Get-DomainPolicy
 (Get-DomainPolicy)."system access"
 (Get-DomainPolicy)."kerberos policy"
 ```
+
+

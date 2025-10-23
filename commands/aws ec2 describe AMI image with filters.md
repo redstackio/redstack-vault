@@ -23,3 +23,5 @@ aws ec2 describe-images --filters "Name=$TYPE,Values=$OS_TYPE" "Name=$TYPE,Value
 ```
 aws ec2 describe-images --filters "Name=platform,Values=windows" "Name=root-device-type,Values=ebs"
 ```
+
+

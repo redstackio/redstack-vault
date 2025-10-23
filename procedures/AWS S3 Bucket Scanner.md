@@ -29,11 +29,15 @@ The AWS S3 Bucket Scanner is a tool for discovering open S3 buckets within an AW
 
 The AWS S3 Bucket Scanner is a tool for discovering open S3 buckets within an AWS environment. Attackers can use this tool to identify misconfigured buckets that can be accessed without authentication. This can lead to unauthorized access to sensitive data, such as customer information, credentials, and intellectual property. The tool works by enumerating all S3 buckets in an AWS account and checking their permissions to see if they are publicly accessible. The scanner can be run from an external system or from within an AWS environment.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS account or an external system with network access to the AWS environment
 
 1. The GrayHatWarfare S3 Bucket Scanner tool
+
+ 
 
 ## Defense
 
@@ -43,11 +47,15 @@ The AWS S3 Bucket Scanner is a tool for discovering open S3 buckets within an AW
 
 1. Monitor S3 bucket access logs for unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. Identify open S3 buckets within an AWS environment
 
 1. Gain unauthorized access to sensitive data stored in misconfigured buckets
+
+ 
 
 # Instructions
 
@@ -58,15 +66,25 @@ The AWS S3 Bucket Scanner is a tool for discovering open S3 buckets within an AW
 4. Provide the necessary credentials
 5. The scanner will start scanning the S3 buckets and return the results
 
+ 
+
+
+
 **Code**: [[https://buckets.grayhatwarfare.com/]]
 
+
+
 > The GrayHatWarfare S3 Bucket Scanner is a tool that allows users to scan S3 buckets for security vulnerabilities. It uses the Zeus tool, which is an AWS Auditing & Hardening Tool. The scanner checks for various security issues such as public access, ACL misconfigurations, and more. Users can provide their AWS credentials to the scanner, and it will scan all the S3 buckets associated with the credentials. The results of the scan are displayed in a report format, which includes details about the vulnerabilities found and recommendations for remediation.
+
+
 
 **Command** ([[Bucket Search]]):
 
 ```bash
 https://buckets.grayhatwarfare.com/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -86,3 +104,5 @@ https://buckets.grayhatwarfare.com/
 
 - [[Cloud - AWS]]
 - [[Searching for open buckets]]
+
+

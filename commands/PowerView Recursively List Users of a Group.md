@@ -6,6 +6,8 @@ executor: powershell
 data: Get-DomainGroupMember -Identity "$_GROUP" -Recurse
 output: 'PS C:\> Get-DomainGroupMember -Identity "Domain Admins" -Recurse
 
+
+
   GroupDomain             : DEV.TESLA.LOCAL
 
   GroupName               : Domain Admins
@@ -21,6 +23,7 @@ output: 'PS C:\> Get-DomainGroupMember -Identity "Domain Admins" -Recurse
   MemberObjectClass       : user
 
   MemberSID               : S-1-5-21-1576920733-1301476157-954876328-1107
+
 
   GroupDomain             : DEV.TESLA.LOCAL
 
@@ -52,6 +55,7 @@ Get-DomainGroupMember -Identity "$_GROUP" -Recurse
 ```
 PS C:\> Get-DomainGroupMember -Identity "Domain Admins" -Recurse
 
+
 GroupDomain             : DEV.TESLA.LOCAL
 GroupName               : Domain Admins
 GroupDistinguishedName  : CN=Domain Admins,CN=Users,DC=DEV,DC=TESLA,DC=LOCAL
@@ -70,3 +74,5 @@ MemberDistinguishedName : CN=Administrator,CN=Users,DC=DEV,DC=TESLA,DC=LOCAL
 MemberObjectClass       : user
 MemberSID               : S-1-5-21-1576920733-1301476157-954876328-500
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:30.433027+00:00'
 # Launch an executable by calling the ShellExec_RunDLL function.
 SCHTASKS /Change /tn "\Microsoft\Windows\PLA\Server Manager Performance Monitor" /TR "C:\windows\system32\rundll32.exe SHELL32.DLL,ShellExec_RunDLLA C:\windows\system32\msiexec.exe /Z c:\programdata\S-1-5-18.dat" /RL HIGHEST /RU "" /ENABLE
 ```
+
+

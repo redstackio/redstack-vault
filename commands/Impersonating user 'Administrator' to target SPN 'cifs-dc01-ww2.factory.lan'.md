@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:07.815385+00:00'
 ```bash
 [*] Impersonating user 'Administrator' to target SPN 'cifs/dc01-ww2.factory.lan']
 ```
+
+

@@ -30,11 +30,27 @@ Fcrackzip is a simple and easy to use zip password cracker using libzip to speed
 
 Fcrackzip is a simple and easy to use zip password cracker using libzip to speed up the process. Since fcrackzip is relatively slow, when cracking zip files with large lists it is recommended to instead use John the Ripper's zip2john to generate a hash, then crack it with John the Ripper.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_3ce20c20-0472-4455-9d20-6ad15b039219}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Fcrackzip is a simple and easy to use zip password cracker using libzip to speed
 - [[Brute Force]]
 - [[Cryptography]]
 - [[password cracking]]
+
+

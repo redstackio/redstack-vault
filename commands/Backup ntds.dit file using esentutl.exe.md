@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:54.587753+00:00'
 ```bash
 esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c:\folder\ntds.dit
 ```
+
+

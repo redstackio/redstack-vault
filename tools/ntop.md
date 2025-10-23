@@ -21,7 +21,15 @@ ntop is a tool that shows the network usage, similar to what the popular top Uni
 
 # Description
 
+
+
 ntop is a tool that shows the network usage, similar to what the popular top Unix command does. ntop is based on pcapture (ftp://ftp.ee.lbl.gov/pcapture.tar.Z) and it has been written in a portable way in order to virtually run on every Unix platform.ntop can be used in both interactive or web mode. In the first case, ntop displays the network status on the user’s terminal whereas in web mode a web browser (e.g. netscape) can attach to ntop (that acts as a web server) and get a dump of the network status. In the latter case, ntop can be seen as a simple RMON-like agent with an embedded web interface.ntop uses libpcap, a system-independent interface for user-level packet capture.
+
+
+
+
+
+
 
 ## Platforms
 
@@ -30,3 +38,5 @@ ntop is a tool that shows the network usage, similar to what the popular top Uni
 ## Tags
 
 - [[Network]]
+
+

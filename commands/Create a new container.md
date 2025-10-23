@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:33:49.704451+00:00'
 ```bash
 curl -XPOST –unix-socket /var/run/docker.sock -d '{"Image":"nginx"}' -H 'Content-Type: application/json' http://localhost/containers/create
 ```
+
+

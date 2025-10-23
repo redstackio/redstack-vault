@@ -16,3 +16,7 @@ Spoof SSDP replies to phish for NTLM hashes on a network. Creates a fake UPNP de
 ## Description
 
 Spoof SSDP replies to phish for NTLM hashes on a network. Creates a fake UPNP device, tricking users into visiting a malicious phishing page. ​
+
+
+
+

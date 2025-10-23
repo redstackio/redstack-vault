@@ -18,6 +18,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Serv
 # Allowing remote connections to this computer
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 
+
 # Disable UAC remote restriction
 reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
 
@@ -27,3 +28,5 @@ mstsc /v:{ADDRESS} /shadow:{SESSION_ID} /noconsentprompt /prompt
 # /noconsentprompt parameter allows to bypass a shadowee’s permission and shadow their session without their consent;
 # /prompt parameter is used to specify a user’s credentials to connect to a remote host.
 ```
+
+

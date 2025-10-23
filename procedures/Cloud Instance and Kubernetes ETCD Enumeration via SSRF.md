@@ -31,9 +31,13 @@ This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerab
 
 This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerability to enumerate cloud instances and Kubernetes ETCD information. An attacker can use this technique to discover information about the target environment, such as the number of cloud instances and version information, which can be used for further attacks. SSRF is a vulnerability that allows an attacker to send crafted requests from a vulnerable web application, bypassing access controls and potentially accessing internal resources. In this case, the attacker sends requests to cloud instance metadata endpoints and Kubernetes ETCD endpoints to retrieve information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with SSRF vulnerability.
+
+ 
 
 ## Defense
 
@@ -43,20 +47,32 @@ This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerab
 
 1. Monitor network traffic for suspicious requests to cloud instance metadata endpoints and Kubernetes ETCD endpoints.
 
+ 
+
 ## Objectives
 
 1. Enumerate cloud instances and Kubernetes ETCD information.
 
 1. Gather version information for cloud instances and Kubernetes ETCD.
 
+ 
+
 # Instructions
 
 1. To retrieve the version and list of keys in ETCD, execute the following commands:
 
+ 
+
+
+
 **Code**: [[curl -L http://127.0.0.1:2379/version
 curl http://]]
 
+
+
 > The first command retrieves the version of ETCD running on the specified IP address and port. The second command retrieves the list of keys stored in ETCD, including all sub-keys and their values. The 'recursive=true' argument ensures that all sub-keys are included in the response. Note that this command can potentially expose sensitive information such as API keys and internal IP addresses and ports, so it should be used with caution and only in secure environments.
+
+
 
 **Command** ([[Get etcd Version]]):
 
@@ -64,11 +80,17 @@ curl http://]]
 curl -L http://127.0.0.1:2379/version
 ```
 
+
+
+
+
 **Command** ([[Get etcd Keys recursively]]):
 
 ```bash
 curl http://127.0.0.1:2379/v2/keys/?recursive=true
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +112,5 @@ curl http://127.0.0.1:2379/v2/keys/?recursive=true
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Kubernetes ETCD]]
+
+

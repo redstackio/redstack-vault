@@ -36,6 +36,8 @@ To execute this procedure, an attacker would first identify a vulnerable paramet
 
 This procedure can be used by attackers to gain access to sensitive information stored in DB2 databases, such as personally identifiable information or financial data. It can also be used to escalate privileges or execute further attacks against the target system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that interacts with a DB2 database
@@ -43,6 +45,8 @@ This procedure can be used by attackers to gain access to sensitive information 
 1. Knowledge of SQL Injection techniques
 
 1. Access to a tool that can automate the injection process
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This procedure can be used by attackers to gain access to sensitive information 
 
 1. Monitor database activity for suspicious queries or behavior
 
+ 
+
 ## Objectives
 
 1. Extract a specific character from a string in a DB2 database
@@ -60,19 +66,31 @@ This procedure can be used by attackers to gain access to sensitive information 
 
 1. Escalate privileges or execute further attacks against the target system
 
+ 
+
 # Instructions
 
 1. The SUBSTR function is used to extract a substring from a given string. The function takes three arguments: the input string, the starting position of the substring, and the length of the substring. In this example, the input string is 'abc', the starting position is 2, and the length is 1. Therefore, the function returns the substring 'b'.
 
+ 
+
+
+
 **Code**: [[select substr('abc',2,1) FROM sysibm.sysdummy1 -- ]]
 
+
+
 > The SUBSTR function is commonly used in SQL queries to extract specific parts of a string. It is particularly useful when working with large strings or when you only need a small portion of a string. The function can be customized to extract substrings of varying lengths and starting positions, making it a versatile tool for data analysis and manipulation.
+
+
 
 **Command** ([[Select Substring]]):
 
 ```bash
 select substr('abc',2,1) FROM sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ select substr('abc',2,1) FROM sysibm.sysdummy1
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Select Nth Char]]
+
+

@@ -29,11 +29,15 @@ Elevating privileges via RottenPotato and Token Impersonation is a technique use
 
 Elevating privileges via RottenPotato and Token Impersonation is a technique used to gain higher level access to a system by manipulating tokens. This technique is commonly used by attackers to escalate privileges and gain access to sensitive data. The technique works by exploiting the authentication mechanism used by Windows to grant access to resources. Attackers can use RottenPotato to impersonate a higher privileged user and then manipulate the token to elevate their privileges. This technique is effective because it allows attackers to bypass traditional security measures and gain access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Windows system
 
 1. Knowledge of RottenPotato and Token Impersonation techniques
+
+ 
 
 ## Defense
 
@@ -43,15 +47,23 @@ Elevating privileges via RottenPotato and Token Impersonation is a technique use
 
 1. Regularly update and patch vulnerable systems to mitigate known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a Windows system
 
 1. Bypass traditional security measures to gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. To use this exploit, first run `getuid` to check the current user's privileges. Then, run `getprivs` to see the available privileges. Next, load `incognito mode` by running `use incognito`. Use `list_tokens -u` to list available tokens, and `impersonate_token` to impersonate the desired token. Finally, navigate to the directory containing the executable file using `cd`, and execute the file using `execute -Hc -f`.
+
+ 
+
+
 
 **Code**: [[getuid
 getprivs
@@ -59,11 +71,19 @@ use incognito
 list\_tokens -u
 cd c]]
 
+
+
 > This command exploits a vulnerability in a system using Metasploit with `incognito mode` loaded. The `getuid` command checks the current user's privileges, and `getprivs` lists available privileges. `use incognito` loads `incognito mode`, which allows the user to impersonate other users and tokens. `list_tokens -u` lists available tokens, and `impersonate_token` impersonates the desired token. `cd` navigates to the directory containing the executable file, and `execute -Hc -f` executes the file.
 
 2. This command is used for privilege escalation by manipulating the access token of the current process. It impersonates a specific user or system account and creates a new process with elevated privileges. The command also downloads and executes a PowerShell script from a remote server.
 
+ 
+
+
+
 **Code**: [[Invoke-TokenManipulation -ImpersonateUser -Usernam]]
+
+
 
 > The command consists of three parts: 
 1. Invoke-TokenManipulation -ImpersonateUser -Username "lab\domainadminuser": This part impersonates a domain admin user, which grants the current process the privileges of the impersonated user.
@@ -86,3 +106,5 @@ cd c]]
 - [[EoP - Impersonation Privileges]]
 - [[RottenPotato (Token Impersonation)]]
 - [[Windows - Privilege Escalation]]
+
+

@@ -23,3 +23,5 @@ Because this row already exists, the ON DUPLICATE KEY UPDATE keyword tells MySQL
 
 After this, we can simply authenticate with “admin@example.com” and the password “qwerty”!
 ```
+
+

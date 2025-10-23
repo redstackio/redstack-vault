@@ -32,3 +32,5 @@ def handler(event,context):
         'body':json.dumps("IAM Policy Attached Successfully")
     }
 ```
+
+

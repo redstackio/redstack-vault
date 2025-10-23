@@ -30,9 +30,13 @@ ASP.NET Razor is a popular templating engine for creating dynamic web pages. How
 
 In this basic injection scenario, the attacker uses the Addition Command to demonstrate how arbitrary code can be executed on the server. The attacker injects the following code into a template: @{int a = 1; int b = 2; int c = a + b;}. This code declares three integer variables, assigns them values, and then adds them together. The result of the addition is then printed to the screen. This demonstrates that arbitrary code can be executed on the server using server side template injection.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable ASP.NET Razor application
+
+ 
 
 ## Defense
 
@@ -42,17 +46,27 @@ In this basic injection scenario, the attacker uses the Addition Command to demo
 
 1. Implement strict access controls and least privilege principles
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
 
 1. Demonstrate the impact of server side template injection
 
+ 
+
 # Instructions
 
 1. To use this command, simply replace the values '1' and '2' with your desired numbers and execute the command.
 
+ 
+
+
+
 **Code**: [[3]]
+
+
 
 > This command performs a simple addition operation on two values and returns the result.
 
@@ -71,3 +85,5 @@ In this basic injection scenario, the attacker uses the Addition Command to demo
 - [[ASP.NET Razor]]
 - [[ASP.NET Razor - Basic injection]]
 - [[Server Side Template Injection]]
+
+

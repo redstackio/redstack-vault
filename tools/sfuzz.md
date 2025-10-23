@@ -17,16 +17,40 @@ simple fuzz is exactly what it sounds like – a simple fuzzer. don’t mistake 
 
 simple fuzz is exactly what it sounds like – a simple fuzzer. don’t mistake simple with a lack of fuzz capability. this fuzzer has two network modes of operation, an output mode for developing command line fuzzing scripts, as well as taking fuzzing strings from literals and building strings from sequences.simple fuzz is built to fill a need – the need for a quickly configurable black box testing utility that doesn’t require intimate knowledge of the inner workings of C or require specialized software rigs. the aim is to just provide a simple interface, clear inputs/outputs, and reusability.Features:
 
+
+
 simple script language for creating test cases
+
+
 
 support for repeating strings as well as fixed strings (‘sequences’ vs. ‘literals’)
 
+
+
 variables within test cases (ex: strings to be replaced with different strings)
+
+
 
 tcp and udp payload transport (icmp support tbd)
 
+
+
 binary substitution support (see basic.a11 for more information)
+
+
 
 plugin support (NEW!) see plugin.txt for more information.
 
+
+
 previous packet contents inclusion
+
+
+
+
+
+
+
+
+
+

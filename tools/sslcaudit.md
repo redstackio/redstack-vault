@@ -16,3 +16,9 @@ The goal of sslcaudit project is to develop a utility to automate testing SSL/TL
 ## Description
 
 The goal of sslcaudit project is to develop a utility to automate testing SSL/TLS clients for resistance against MITM attacks. It might be useful for testing a thick client, a mobile application, an appliance, pretty much anything communicating over SSL/TLS over TCP.
+
+
+
+
+
+

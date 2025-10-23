@@ -22,3 +22,5 @@ STRING %USERPROFILE%\desktop\eicar.com
 ENTER
 ALT F4
 ```
+
+

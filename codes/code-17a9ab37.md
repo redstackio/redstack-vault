@@ -16,3 +16,5 @@ webclientservicescanner 'domain.local'/'user':'password'@'machine'
 crackmapexec smb 'TARGETS' -d 'domain' -u 'user' -p 'password' -M webdav
 GetWebDAVStatus.exe 'machine'
 ```
+
+

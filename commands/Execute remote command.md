@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:06.599941+00:00'
 ```bash
 python3 ./psexec.py domain/user:password@remote-hostname 'cmd.exe /c whoami'
 ```
+
+

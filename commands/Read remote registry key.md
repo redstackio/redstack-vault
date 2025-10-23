@@ -20,3 +20,5 @@ $reg = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', 'dc.htb.
 $winlogon = $reg.OpenSubKey('SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon')
 $winlogon.GetValueNames() | foreach {"$_ : $(($winlogon).GetValue($_))"}
 ```
+
+

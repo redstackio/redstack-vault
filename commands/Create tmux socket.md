@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:30.330998+00:00'
 ```bash
 tmux -S /tmp/tmux-1000/default new-session -d -s mysession
 ```
+
+

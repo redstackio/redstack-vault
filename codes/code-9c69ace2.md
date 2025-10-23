@@ -19,3 +19,5 @@ PS C:\> $S = New-ScheduledTaskSettingsSet
 PS C:\> $D = New-ScheduledTask -Action $A -Trigger $T -Principal $P -Settings $S
 PS C:\> Register-ScheduledTask Backdoor -InputObject $D
 ```
+
+

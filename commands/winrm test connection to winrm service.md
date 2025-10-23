@@ -15,3 +15,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 winrm identify -r:http://$TARGET_IP:5985 -auth:basic -u:$USERNAME -p:$PASSWORD -encoding:utf-8
 ```
+
+

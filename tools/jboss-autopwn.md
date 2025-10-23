@@ -17,8 +17,22 @@ This JBoss script deploys a JSP shell on the target JBoss AS server. Once deploy
 
 This JBoss script deploys a JSP shell on the target JBoss AS server. Once deployed, the script uses its upload and command execution capability to provide an interactive session.Features include:
 
+
+
 Multiplatform support – tested on Windows, Linux and Mac targets
+
+
 
 Support for bind and reverse bind shells
 
+
+
 Meterpreter shells and VNC support for Windows targets
+
+
+
+
+
+
+
+

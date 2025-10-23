@@ -30,11 +30,15 @@ AWS Region Information Gathering is a procedure used to gather information about
 
 AWS Region Information Gathering is a procedure used to gather information about a particular AWS region. The procedure involves using the EC2 Instance Description command to obtain information about instances running in the region. This information can include instance IDs, instance types, security groups, and more. This procedure can be used by attackers to map out a target's infrastructure and identify potential targets for further attacks. From a business perspective, this procedure can be used by security teams to identify potential vulnerabilities in their AWS environment.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions
 
 1. Access to the AWS console or command line interface
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ AWS Region Information Gathering is a procedure used to gather information about
 
 1. Monitor AWS CloudTrail logs for any unauthorized access or changes to the environment
 
+ 
+
 ## Objectives
 
 1. Gather information about a specific AWS region
@@ -52,17 +58,25 @@ AWS Region Information Gathering is a procedure used to gather information about
 
 1. Identify potential vulnerabilities in the AWS environment
 
+ 
+
 # Instructions
 
 1. The 'aws ec2 describe-instances' command is used to retrieve information about one or more Amazon Elastic Compute Cloud (Amazon EC2) instances. This command requires the --region parameter to specify the region where the instances are located.
 
+ 
+
 The 'aws ec2 describe-instances' command can be used to retrieve detailed information about one or more Amazon EC2 instances, including their instance IDs, instance types, security groups, and more. This command can be useful for troubleshooting issues with your instances, or for gathering information about your instances for reporting or analysis purposes. The --region parameter is required to specify the region where the instances are located. You can also use filters to narrow down the results of the command, such as by instance ID, tag, or state.
+
+
 
 **Command** ([[Describe EC2 Instances]]):
 
 ```bash
 aws ec2 describe-instances --region region
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws ec2 describe-instances --region region
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing information about a specific region]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:48.224632+00:00'
 ```bash
 crackmapexec smb 10.10.10.10 -u '' -p '' -d domain -M ms17-010
 ```
+
+

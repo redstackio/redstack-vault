@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:08.018963+00:00'
 ```bash
 spyse -target hotmail.com --ssl-certificates
 ```
+
+

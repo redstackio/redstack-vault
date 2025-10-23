@@ -35,9 +35,13 @@ LFI (Local File Inclusion) is a vulnerability that allows an attacker to read fi
 
 This technique can be used to bypass server-side input validation mechanisms and execute arbitrary code on the target system. This attack can be used to gain access to sensitive information or to gain a foothold on the target system. This technique is commonly used by attackers to escalate their privileges and gain access to sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ This technique can be used to bypass server-side input validation mechanisms and
 
 1. Implement access controls to limit the ability of attackers to execute arbitrary code on the target system
 
+ 
+
 ## Objectives
 
 1. Read log files on the target system
 
 1. Execute arbitrary code on the target system
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=/var/log/apache/]]
+
+
 
 > The attacker can use the LFI vulnerability to read log files on the target system. Once the attacker has access to the log files, they can inject PHP code into the log files. When the log files are read by the web server, the injected PHP code is executed, allowing the attacker to execute arbitrary code on the target system. The attacker can then use this access to escalate their privileges and gain further access to the system.
 
@@ -81,3 +95,5 @@ This technique can be used to bypass server-side input validation mechanisms and
 
 - [[File Inclusion]]
 - [[LFI to RCE via controlled log file]]
+
+

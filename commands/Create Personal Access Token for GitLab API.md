@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:34:09.415829+00:00'
 ```bash
 curl -k --request POST --header "PRIVATE-TOKEN: apiToken" --data "name=user-persistence-token" --data "expires_at=" --data "scopes[]=api" --data "scopes[]=read_repository" --data "scopes[]=write_repository" "https://gitlabHost/api/v4/users/UserIDNumber/personal_access_tokens"
 ```
+
+

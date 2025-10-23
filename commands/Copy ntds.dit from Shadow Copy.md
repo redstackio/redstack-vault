@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:27.031869+00:00'
 ```bash
 Copy Shadow_Copy_Volume_Name\windows\ntds\ntds.dit c:\ntds.dit
 ```
+
+

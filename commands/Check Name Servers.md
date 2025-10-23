@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:18.291933+00:00'
 ```bash
 host -t ns domain.local
 ```
+
+

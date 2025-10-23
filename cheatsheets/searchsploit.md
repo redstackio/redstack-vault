@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # searchsploit
 
+
+
 **Command** ([[filter search for specific kernel versions]]):
 
 ```bash
 searchsploit privilege | grep -i linux | grep -i kernel | grep 2.6
 
 ```
+
+
+
+
+
+

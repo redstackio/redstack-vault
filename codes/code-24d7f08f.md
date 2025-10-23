@@ -22,3 +22,5 @@ crop.exe <output folder> <output filename> <WebDAV server> <LNK value> [options]
 Crop.exe \\\\fileserver\\common mdsec.url \\\\workstation@8888\\mdsec.ico
 Crop.exe \\\\fileserver\\common mdsec.library-ms \\\\workstation@8888\\mdsec
 ```
+
+

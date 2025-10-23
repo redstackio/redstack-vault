@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:00.485862+00:00'
 ```bash
 ./Invoke-ACL.ps1 -SharpHoundLocation .\sharphound.exe -mimiKatzLocation .\mimikatz.exe -Username &#39;user1&#39; -Domain &#39;domain.local&#39; -Password &#39;Welcome01!&#39;
 ```
+
+

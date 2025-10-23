@@ -20,3 +20,5 @@ Always here : /latest/meta-data/{hostname,public-ipv4,...}
 User data (startup script for auto-scaling) : /latest/user-data
 Temporary AWS credentials : /latest/meta-data/iam/security-credentials/
 ```
+
+

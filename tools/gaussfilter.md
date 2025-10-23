@@ -16,3 +16,9 @@ The goal of the program is to crack the verification hash of the encrypted paylo
 ## Description
 
 The goal of the program is to crack the verification hash of the encrypted payload of the Gauss Virus. Uses OpenCL to accelerate the 10k MD5 loop Uses optimizations also used in oclHashcat-plus for maximum performance Able to handle multi-GPU setups (of the same type) VCL (Virtual CL) v1.18 compatible Open Source Supports integration into distributed computing environments Supports resume.
+
+
+
+
+
+

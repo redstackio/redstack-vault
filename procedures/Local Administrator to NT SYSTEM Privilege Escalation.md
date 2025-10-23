@@ -31,11 +31,15 @@ This procedure is used to escalate privileges from a local administrator account
 
 This procedure is used to escalate privileges from a local administrator account to the NT SYSTEM account, which has the highest level of privileges on a Windows machine. This technique can be used by attackers to gain full control of the target system and perform any action they wish. To accomplish this, the attacker first needs to gain access to a local administrator account on the target system. Then, they can use the 'Run Command as System User' command to execute commands as the NT SYSTEM account, effectively bypassing any restrictions and gaining full control of the system. This technique is particularly useful for attackers who want to maintain persistence on a compromised system, as the NT SYSTEM account is not subject to password expiration policies and is not easily detectable by security tools.
 
+ 
+
 ## Requirements
 
 1. Access to a local administrator account on the target system
 
 1. Ability to execute commands on the target system
+
+ 
 
 ## Defense
 
@@ -45,26 +49,40 @@ This procedure is used to escalate privileges from a local administrator account
 
 1. Monitor for suspicious activity, such as unusual command execution or privilege escalation
 
+ 
+
 ## Objectives
 
 1. Escalate privileges from a local administrator account to the NT SYSTEM account
 
 1. Maintain persistence on a compromised system
 
+ 
+
 # Instructions
 
 1. To run a command as a system user, use PsExec.exe with the -i and -s flags followed by the command you want to run.
 
+ 
+
+
+
 **Code**: [[PsExec.exe -i -s cmd.exe]]
+
+
 
 > -i: Runs the program so that it interacts with the desktop of the session specified by session ID.
 -s: Runs the remote process in the System account.
+
+
 
 **Command** ([[Open interactive command prompt as SYSTEM]]):
 
 ```bash
 PsExec.exe -i -s cmd.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -86,3 +104,5 @@ PsExec.exe -i -s cmd.exe
 
 - [[EoP - From local administrator to NT SYSTEM]]
 - [[Windows - Privilege Escalation]]
+
+

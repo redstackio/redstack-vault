@@ -34,11 +34,15 @@ Technically, this procedure involves making an authenticated request to the AWS 
 
 From a business perspective, this procedure can help organizations better understand the APIs they have deployed in AWS and identify potential security risks. By regularly performing this procedure, organizations can ensure that their APIs are properly configured and secured.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the API Gateway
 
 1. Access to the AWS API Gateway endpoint being queried
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this procedure can help organizations better unders
 
 1. Regularly review API Gateway configurations and logs for signs of malicious activity
 
+ 
+
 ## Objectives
 
 1. List information about the methods associated with a specific endpoint in an AWS API Gateway
@@ -56,19 +62,31 @@ From a business perspective, this procedure can help organizations better unders
 
 1. Better understand the APIs deployed in AWS
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve the details of a specific method in an API Gateway REST API.
 
+ 
+
+
+
 **Code**: [[aws apigateway get-method --rest-api-id ApiID --re]]
 
+
+
 > The `--rest-api-id` parameter specifies the ID of the API Gateway REST API to which the method belongs. The `--resource-id` parameter specifies the ID of the resource that contains the method. The `--http-method` parameter specifies the HTTP method of the method to retrieve. This command returns the details of the specified method, including the method's integration, request, and response configuration.
+
+
 
 **Command** ([[Get API Gateway Method]]):
 
 ```bash
 aws apigateway get-method --rest-api-id ApiID --resource-id ID --http-method method
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws apigateway get-method --rest-api-id ApiID --resource-id ID --http-method met
 - [[Cloud - AWS]]
 - [[Listing method information for the endpoint]]
 - [[Persistence]]
+
+

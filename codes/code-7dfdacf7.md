@@ -20,3 +20,5 @@ cat /tmp/subresult$1 | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ./Amass/amass -active -brute -o /tmp/hosts.txt -d $1
 cat /tmp/hosts.txt | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ```
+
+

@@ -30,11 +30,15 @@ The Query Linked Database Version procedure involves querying the version of a l
 
 From a technical perspective, this procedure involves executing a SQL query against the linked database to retrieve its version information. The business value of this procedure is that it allows organizations to proactively identify and remediate vulnerabilities in their MSSQL Server environments.
 
+ 
+
 ## Requirements
 
 1. Valid credentials with the necessary permissions to execute the 'Get SQL Server Version' command
 
 1. Access to the linked database
+
+ 
 
 ## Defense
 
@@ -44,11 +48,15 @@ From a technical perspective, this procedure involves executing a SQL query agai
 
 1. Regularly monitor the MSSQL Server environment for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve version information for a linked database
 
 1. Identify potential vulnerabilities in the MSSQL Server environment
+
+ 
 
 # Instructions
 
@@ -57,7 +65,13 @@ From a technical perspective, this procedure involves executing a SQL query agai
 
 Example usage: Get-SQLQuery -Instance "MyDBServer\SQLEXPRESS" -Query "select * from openquery(`"MyDBServer\SQLEXPRESS`",'select @@version')" -Verbose
 
+ 
+
+
+
 **Code**: [[Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>"]]
+
+
 
 > The Get-SQLQuery command is used to execute a SQL query against a specified SQL Server instance. In this case, the query being executed is "select @@version", which returns the version of the SQL Server instance. The -Instance parameter is used to specify the name of the SQL Server instance to connect to. The -Query parameter is used to specify the SQL query to execute. The -Verbose parameter is optional and will display detailed information about the execution of the command.
 
@@ -76,3 +90,5 @@ Example usage: Get-SQLQuery -Instance "MyDBServer\SQLEXPRESS" -Query "select * f
 - [[Linked Database]]
 - [[MSSQL Server]]
 - [[Query Version of Linked Database]]
+
+

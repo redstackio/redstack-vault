@@ -33,11 +33,15 @@ DB2 Injection is a technique used to exploit vulnerabilities in IBM DB2 database
 
 DB2 Injection is a technique used to exploit vulnerabilities in IBM DB2 databases. In this specific procedure, we will be using the 'Retrieve Table Names' command to list all tables in the database. By injecting malicious SQL code into the application, an attacker can execute unauthorized commands and gain access to sensitive data. This technique can be used to exfiltrate data, escalate privileges, or perform other malicious activities. To perform this procedure, the attacker needs to have access to the application and be able to inject SQL code into it.
 
+ 
+
 ## Requirements
 
 1. Access to the application
 
 1. Ability to inject SQL code
+
+ 
 
 ## Defense
 
@@ -47,9 +51,13 @@ DB2 Injection is a technique used to exploit vulnerabilities in IBM DB2 database
 
 1. Monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. List all tables in the DB2 database
+
+ 
 
 # Instructions
 
@@ -57,10 +65,18 @@ DB2 Injection is a technique used to exploit vulnerabilities in IBM DB2 database
 1. select table_name from sysibm.tables
 2. select name from sysibm.systables
 
+ 
+
+
+
 **Code**: [[select table_name from sysibm.tables
 select name f]]
 
+
+
 > The 'select table_name from sysibm.tables' command retrieves the names of all tables in the current schema. The 'select name from sysibm.systables' command retrieves the names of all tables in the database. Both commands can be used to retrieve table names, but the first command is faster and more efficient as it only retrieves table names from the current schema.
+
+
 
 **Command** ([[Select table names from sysibm.tables]]):
 
@@ -68,11 +84,17 @@ select name f]]
 select table_name from sysibm.tables
 ```
 
+
+
+
+
 **Command** ([[Select names from sysibm.systables]]):
 
 ```bash
 select name from sysibm.systables
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -96,3 +118,5 @@ select name from sysibm.systables
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List Tables]]
+
+

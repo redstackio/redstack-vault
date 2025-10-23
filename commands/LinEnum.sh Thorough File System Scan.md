@@ -32,20 +32,23 @@ LinEnum.sh -t 1
 
 ```
 root@host:~$ ./LinEnum.sh -t 1                                    
-
+                                                                           
 #########################################################                  
 # Local Linux Enumeration & Privilege Escalation Script #
 #########################################################     
 # www.rebootuser.com                                                       
 # version 0.97                                                             
-
+                                                                           
 [-] Debug Info                                                             
 [+] Thorough tests = Enabled                                               
-
+                                     
+                                                                           
 Scan started at:                                                           
 Fri Oct 25 23:07:55 UTC 2019                                               
-
+                                                                           
 ...
 ...
 ### SCAN COMPLETE ####################################
 ```
+
+

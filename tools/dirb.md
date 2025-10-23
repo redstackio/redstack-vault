@@ -24,9 +24,25 @@ DIRB is a web content scanner, looking for existing or hidden files on a web ser
 
 DIRB is a web content scanner, looking for existing or hidden files on a web server. It can be empowered with word lists to launch dictionary based attacks and to analyze the responses coming back from the web server. For advanced dictionary attacks we suggest using [SecList word lists](https://github.com/danielmiessler/SecLists). Dirb does not search for vulnerabilities it only looks for content available on a web server.
 
+
+
 # Example
 
+
+
+{{EMBEDDED_COMMAND_8b6b574f-330e-440e-ba1b-eaf446808c95}}
+
+
+
 # Installation
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -43,3 +59,5 @@ DIRB is a web content scanner, looking for existing or hidden files on a web ser
 
 - [[Brute Force]]
 - [[Web Applications]]
+
+

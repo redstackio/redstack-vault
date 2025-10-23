@@ -16,3 +16,9 @@ Aireplay-ng is included in the aircrack-ng package and is used to inject wireles
 ## Description
 
 Aireplay-ng is included in the aircrack-ng package and is used to inject wireless frames. Its main role is to generate traffic for later use in aircrack-ng for cracking WEP and WPA-PSK keys. Aireplay-ng has many attacks that can deauthenticate wireless clients for the purpose of capturing WPA handshake data, fake authentications, interactive packet replay, hand-crafted ARP request injection, and ARP-request reinjection.
+
+
+
+
+
+

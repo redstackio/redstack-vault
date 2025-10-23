@@ -46,3 +46,5 @@ root@kali:~# cd nps_payload && pip install -r requirements.txt
 Requirement already satisfied: netifaces in /usr/local/lib/python2.7/dist-packages (from -r requirements.txt (line 1)) (0.10.9)
 Requirement already satisfied: pexpect in /usr/lib/python2.7/dist-packages (from -r requirements.txt (line 2)) (4.6.0)
 ```
+
+

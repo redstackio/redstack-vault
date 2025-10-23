@@ -20,3 +20,5 @@ wsl --set-default-version 2
 curl.exe --insecure -L -o debian.appx https://aka.ms/wsl-debian-gnulinux
 Add-AppxPackage .\debian.appx
 ```
+
+

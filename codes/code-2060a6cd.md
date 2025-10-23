@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:20.509239+00:00'
 cmd.exe /c wevtutil.exe cl System
 cmd.exe /c wevtutil.exe cl Security
 ```
+
+

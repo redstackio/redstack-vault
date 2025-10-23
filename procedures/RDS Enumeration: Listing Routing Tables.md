@@ -34,11 +34,16 @@ Technical Explanation: The procedure involves using the EC2 Route Tables Descrip
 
 Business Value: The RDS Enumeration: Listing Routing Tables procedure can be used by attackers to gain a better understanding of the network topology and plan further attacks. By identifying subnets and EC2 instances, an attacker can target specific systems or services and potentially gain access to sensitive data or systems.
 
+
+ 
+
 ## Requirements
 
 1. Access to the AWS Management Console or API
 
 1. Necessary permissions to describe routing tables
+
+ 
 
 ## Defense
 
@@ -48,15 +53,21 @@ Business Value: The RDS Enumeration: Listing Routing Tables procedure can be use
 
 1. Monitor network traffic for unusual activity, such as unexpected access attempts or data exfiltration
 
+ 
+
 ## Objectives
 
 1. Identify routing tables associated with EC2 instances
 
 1. Gain information about the network topology
 
+ 
+
 # Instructions
 
 1. This command describes one or more of your VPC route tables. The output includes the route table ID, VPC ID, and routes.
+
+ 
 
 Arguments:
 
@@ -66,11 +77,15 @@ Arguments:
 
 --dry-run (boolean) - Checks whether you have the required permissions for the action, without actually making the request. If you have the required permissions, the command returns DryRunOperation; otherwise, it returns UnauthorizedOperation.
 
+
+
 **Command** ([[List Route Tables]]):
 
 ```bash
 aws ec2 describe-route-tables
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +106,5 @@ aws ec2 describe-route-tables
 - [[Enumeration]]
 - [[Listing routing tables]]
 - [[RDS - Relational Database Service]]
+
+

@@ -25,3 +25,5 @@ aws ec2 create-image --instance-id $AWS_INSTANCE_ID --name $AWS_AMI_NAME --descr
 ```
 aws ec2 create-image --instance-id <instance_id> --name "image-$(date +'%Y-%m-%d_%H-%M-%S')" --description "image-$(date +'%Y-%m-%d_%H-%M-%S')"
 ```
+
+

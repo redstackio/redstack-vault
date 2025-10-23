@@ -31,9 +31,13 @@ The CloudTrail Logs Listing procedure enables an attacker to discover CloudTrail
 
 The CloudTrail Logs Listing procedure enables an attacker to discover CloudTrail logs for the targeted AWS account. CloudTrail logs provide a record of all AWS API calls made in an account. By retrieving these logs, an attacker can gain insight into the actions taken by the account owner and identify potential targets for further attacks. To list the CloudTrail logs, the attacker can use the 'ListTrails' command, which returns a list of all the trails in the account.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access CloudTrail logs
+
+ 
 
 ## Defense
 
@@ -43,25 +47,39 @@ The CloudTrail Logs Listing procedure enables an attacker to discover CloudTrail
 
 1. Implement least privilege access control to limit the amount of access granted to AWS accounts
 
+ 
+
 ## Objectives
 
 1. Discover the CloudTrail logs for the targeted AWS account
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. Use this command to list all the CloudTrail logs available in your AWS account.
 
+ 
+
+
+
 **Code**: [[aws cloudtrail list-trails]]
 
+
+
 > The `list-trails` command is used to retrieve a list of all the trails available in your AWS account. This command does not require any arguments. Once you run this command, it will return a JSON object containing the name, ARN, and home region of each trail. This information can be useful for auditing and compliance purposes. If you have a large number of trails, you may need to paginate through the results using the `--starting-token` and `--max-items` options.
+
+
 
 **Command** ([[List trails]]):
 
 ```bash
 aws cloudtrail list-trails
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ aws cloudtrail list-trails
 - [[List trails]]
 - [[RDS - Relational Database Service]]
 - [[Useful Commands]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:37.633229+00:00'
 ```bash
 Add-ObjectACL -TargetSamAccountName toto -PrincipalSamAccountName titi -Rights ResetPassword
 ```
+
+

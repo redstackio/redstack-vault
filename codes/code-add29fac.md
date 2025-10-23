@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:45.107057+00:00'
 ```powershell
 This can be achieved by navigating through the GUI to Network card > Properties > IPv4 > Advanced > WINS and then under "NetBIOS setting" select Disable NetBIOS over TCP/IP
 ```
+
+

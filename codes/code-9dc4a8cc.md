@@ -17,3 +17,5 @@ Converting ccache => kirbi
 root@kali:ticket_converter$ python ticket_converter.py velociraptor.kirbi velociraptor.ccache
 Converting kirbi => ccache
 ```
+
+

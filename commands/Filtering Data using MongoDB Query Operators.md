@@ -23,3 +23,5 @@ login[$regex]=a.*&pass[$ne]=lol
 login[$gt]=admin&login[$lt]=test&pass[$ne]=1
 login[$nin][]=admin&login[$nin][]=test&pass[$ne]=toto
 ```
+
+

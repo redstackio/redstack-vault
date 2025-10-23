@@ -28,9 +28,13 @@ Subversion is a version control system that is commonly used to manage source co
 
 Subversion is a version control system that is commonly used to manage source code. Unfortunately, if not properly secured, it can be exploited by attackers to extract sensitive information such as usernames, passwords, and source code. The svn-extractor tool is a Python script that automates the process of extracting information from insecure Subversion repositories. This tool can be used by both attackers and defenders to identify potential vulnerabilities in Subversion repositories. By using this tool, an attacker can easily extract sensitive information from a target's Subversion repository without being detected.
 
+ 
+
 ## Requirements
 
 1. Access to an insecure Subversion repository
+
+ 
 
 ## Defense
 
@@ -40,19 +44,31 @@ Subversion is a version control system that is commonly used to manage source co
 
 1. Implement access controls and authentication mechanisms to prevent unauthorized access to Subversion repositories
 
+ 
+
 ## Objectives
 
 1. Identify insecure Subversion repositories
 
 1. Extract sensitive information from Subversion repositories
 
+ 
+
 # Instructions
 
 1. Clone the svn-extractor tool from GitHub
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/anantshri/svn-extract]]
 
+
+
 > This command clones the svn-extractor tool from GitHub. The tool is required to extract information from insecure Subversion repositories.
+
+
 
 **Command** ([[Clone SVN Extractor repository]]):
 
@@ -60,17 +76,29 @@ Subversion is a version control system that is commonly used to manage source co
 git clone https://github.com/anantshri/svn-extractor.git
 ```
 
+
+
 2. Run the svn-extractor tool to extract information from the Subversion repository
+
+ 
+
+
 
 **Code**: [[python svn-extractor.py –url "url with .svn availa]]
 
+
+
 > This command runs the svn-extractor tool and specifies the URL of the insecure Subversion repository. The tool will extract sensitive information such as usernames, passwords, and source code from the repository.
+
+
 
 **Command** ([[Extract SVN from URL]]):
 
 ```bash
 python svn-extractor.py --url "url with .svn available"
 ```
+
+
 
 ## Commands Used
 
@@ -83,3 +111,5 @@ python svn-extractor.py --url "url with .svn available"
 - [[Subversion]]
 - [[svn-extractor]]
 - [[Tools]]
+
+

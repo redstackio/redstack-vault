@@ -20,3 +20,5 @@ export KRB5CCNAME="$(pwd)/Administrator.ccache"
 ```
 root@kali:~# export KRB5CCNAME="$(pwd)/Administrator.ccache"
 ```
+
+

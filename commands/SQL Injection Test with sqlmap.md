@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:17.691223+00:00'
 ```bash
 sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3
 ```
+
+

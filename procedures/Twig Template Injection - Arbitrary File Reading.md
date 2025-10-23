@@ -34,11 +34,15 @@ In this specific case, the attacker is able to read the first 30 lines of the /e
 
 Business value: An attacker can use this vulnerability to gain unauthorized access to sensitive information, such as user credentials, and potentially take over a website. This can result in reputational damage, loss of revenue, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PHP application that uses Twig templates
 
 1. Knowledge of the file system structure of the target server
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business value: An attacker can use this vulnerability to gain unauthorized acce
 
 1. Restrict access to sensitive files on the server
 
+ 
+
 ## Objectives
 
 1. Read sensitive files on the server
@@ -56,12 +62,20 @@ Business value: An attacker can use this vulnerability to gain unauthorized acce
 
 1. Potentially gain access to the target's WordPress site
 
+ 
+
 # Instructions
 
 1. The 'file_excerpt' command is used to extract a specified number of lines from a file. In this case, the first 30 lines of the '/etc/passwd' file are extracted. The 'include' command is used to include the 'wp-config.php' file.
 
+ 
+
+
+
 **Code**: [["{{'/etc/passwd'|file_excerpt(1,30)}}"@
 {{include(]]
+
+
 
 > The first argument of the 'file_excerpt' command is the file path and the second argument is the number of lines to extract. The 'include' command takes a file path as its argument and includes the file content in the current document. This command can be used to include configuration files, libraries, or any other files required for the execution of the program.
 
@@ -82,3 +96,5 @@ Business value: An attacker can use this vulnerability to gain unauthorized acce
 - [[Server Side Template Injection]]
 - [[Twig]]
 - [[Twig - Arbitrary File Reading]]
+
+

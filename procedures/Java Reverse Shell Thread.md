@@ -29,11 +29,15 @@ The Java Reverse Shell Thread is a technique used to establish a remote shell on
 
 The Java Reverse Shell Thread is a technique used to establish a remote shell on a target system by using Java programming language. This technique is useful for attackers who want to gain access to a target system and execute commands without being detected. The Java Reverse Shell Thread works by opening a socket connection to a remote host and sending commands through the socket. Once the connection is established, the attacker can execute commands on the target system and receive the output through the socket. This technique can be used to bypass firewalls and other security measures that may be in place.
 
+ 
+
 ## Requirements
 
 1. Java programming language installed on the attacker's system
 
 1. Network access to the target system
+
+ 
 
 ## Defense
 
@@ -43,18 +47,28 @@ The Java Reverse Shell Thread is a technique used to establish a remote shell on
 
 1. Use endpoint protection software to detect and prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target system
 
 1. Execute commands on the target system without being detected
 
+ 
+
 # Instructions
 
 1. This command creates a new thread that runs a reverse shell. The thread is started immediately and runs concurrently with the main thread of the program.
 
+ 
+
+
+
 **Code**: [[Thread thread = new Thread(){
     public void run(]]
+
+
 
 > The `Thread` class in Java provides a way to create and manage threads in a program. In this command, a new `Thread` object is created with an anonymous inner class that overrides the `run()` method. The `run()` method contains the code for the reverse shell. When the `start()` method is called on the `Thread` object, a new thread is created and the `run()` method is executed concurrently with the main thread of the program. This makes the reverse shell more stealthy as it runs in the background without interrupting the normal execution of the program.
 
@@ -74,3 +88,5 @@ The Java Reverse Shell Thread is a technique used to establish a remote shell on
 - [[Java Alternative 2]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

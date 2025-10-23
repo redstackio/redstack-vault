@@ -34,11 +34,15 @@ Technical Description: The procedure involves using the 'Get API Gateway Resourc
 
 Business Value: By identifying potential vulnerabilities in the API Gateway resources, organizations can proactively secure their APIs and prevent unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the target's API Gateway
 
 1. Network access to the target's API Gateway
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ Business Value: By identifying potential vulnerabilities in the API Gateway reso
 
 1. Regularly monitor API Gateway logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify potential attack vectors and vulnerabilities in the target's API Gateway resources
 
 1. Proactively secure APIs and prevent unauthorized access
 
+ 
+
 # Instructions
 
 1. To get a list of resources in an Amazon API Gateway REST API, use the 'aws apigateway get-resources' command with the --rest-api-id parameter followed by the ID of the REST API.
 
+ 
+
 The 'aws apigateway get-resources' command returns a list of resources in an Amazon API Gateway REST API. The --rest-api-id parameter is required and should be followed by the ID of the REST API for which you want to retrieve the resources. This command can be useful for discovering the resources available in an API and for understanding the structure of the API. The output of the command includes information about each resource, such as its ID, parent ID, path, and resource methods. 
+
+
 
 **Command** ([[Get API Gateway Resources]]):
 
 ```bash
 aws apigateway get-resources --rest-api-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws apigateway get-resources --rest-api-id ID
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing information about endpoints]]
+
+

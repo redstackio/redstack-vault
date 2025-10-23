@@ -40,9 +40,13 @@ Technical Description: The attacker can use the 'Retrieve IAM Policy Details' co
 
 Business Value: By identifying potential paths for privilege escalation, the attacker can gain access to sensitive data and resources within the organization. This can lead to data theft, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ Business Value: By identifying potential paths for privilege escalation, the att
 
 1. Implement multi-factor authentication (MFA) for all IAM users to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Retrieve the inline policy document embedded on an IAM user, group or role
 
 1. Identify potential paths for privilege escalation
+
+ 
 
 # Instructions
 
@@ -71,7 +79,13 @@ This command retrieves the specified policy attached to the specified group.
 3. `aws iam get-role-policy --role-name role-name --policy-name policy-name`
 This command retrieves the specified policy attached to the specified role.
 
+ 
+
+
+
 **Code**: [[aws iam get-user-policy --user-name user-name --po]]
+
+
 
 > The `--user-name`, `--group-name`, and `--role-name` parameters are used to specify the name of the user, group, or role that the policy is attached to. The `--policy-name` parameter is used to specify the name of the policy you want to retrieve.
 
@@ -79,11 +93,17 @@ For example, to retrieve the policy named 'S3-ReadOnly' attached to the user nam
 
 `aws iam get-user-policy --user-name JohnDoe --policy-name S3-ReadOnly`
 
+
+
 **Command** ([[Get user policy]]):
 
 ```bash
 aws iam get-user-policy --user-name user-name --policy-name policy-name
 ```
+
+
+
+
 
 **Command** ([[Get group policy]]):
 
@@ -91,11 +111,17 @@ aws iam get-user-policy --user-name user-name --policy-name policy-name
 aws iam get-group-policy --group-name group-name --policy-name policy-name
 ```
 
+
+
+
+
 **Command** ([[Get role policy]]):
 
 ```bash
 aws iam get-role-policy --role-name role-name --policy-name policy-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -121,3 +147,5 @@ aws iam get-role-policy --role-name role-name --policy-name policy-name
 - [[4. Enumerating Policies]]
 - [[Cloud - AWS]]
 - [[Retrieving the specified inline policy document that is embedded on the specified IAM user / group / role]]
+
+

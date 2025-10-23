@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 Get-NetUser [-UserName john] Get-NetUser -Domain | Select-Object objectsid,lockouttime,samaccounttype,accountexpires,objectclass,useraccountcontrol,@{Name='memberof';Expression={[string]::join(";",($_.memberof))}},info,distinguishedname,adspath,cn,pwdlastset,objectguid,whencreated,description,samaccountname,usnchanged,name| export-csv userprops_members.csv
 
 ```
+
+

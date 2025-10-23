@@ -31,11 +31,15 @@ The AWS ECR Image Listing procedure involves enumerating information about an im
 
 The AWS ECR Image Listing procedure involves enumerating information about an image within an Amazon Elastic Container Registry (ECR). This can be useful for an attacker who is trying to gain a better understanding of the target environment, particularly in the case of containerized applications. By listing the information about an image, an attacker can gain insight into the operating system, application dependencies, and other details that can be used to further the attack. Technical details of this procedure include using the 'ECR Image Description' command to retrieve metadata about an image stored in an ECR repository. The business value of this procedure is that it can help organizations identify potential vulnerabilities in their containerized applications before they are exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access ECR repositories
 
 1. Access to the target ECR repository
+
+ 
 
 ## Defense
 
@@ -45,23 +49,33 @@ The AWS ECR Image Listing procedure involves enumerating information about an im
 
 1. Regularly monitor ECR repositories for unauthorized access or changes
 
+ 
+
 ## Objectives
 
 1. To gather information about an image stored in an ECR repository
 
 1. To identify potential vulnerabilities in containerized applications
 
+ 
+
 # Instructions
 
 1. This command provides a detailed description of the specified ECR image.
 
+ 
+
 The 'aws ecr describe-images' command is used to retrieve metadata about the specified images in an Amazon Elastic Container Registry (ECR) repository. The '--repository-name' option specifies the ECR repository name and the '--image-ids' option specifies the image tag (name) for which the description is required. The output of this command includes image details such as image size, image tags, creation time, and more. This command can be used to retrieve information about a single image or multiple images by specifying multiple image IDs.
+
+
 
 **Command** ([[Describe ECR image]]):
 
 ```bash
 aws ecr describe-images --repository-name name --images-ids imageTag=name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws ecr describe-images --repository-name name --images-ids imageTag=name
 - [[ECR]]
 - [[Enumeration]]
 - [[Listing information about an image]]
+
+

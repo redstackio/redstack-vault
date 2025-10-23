@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:22.202072+00:00'
 ```js
 example.com/graphql?query={TYPE_1{FIELD_1,FIELD_2}}
 ```
+
+

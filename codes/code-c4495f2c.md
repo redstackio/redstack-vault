@@ -16,3 +16,5 @@ Change "type=file" to "type=url"
 Paste URL in text field and hit enter
 Using this vulnerability users can upload images from any image URL = trigger an SSRF
 ```
+
+

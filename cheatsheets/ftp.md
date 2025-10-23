@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # ftp
 
+
+
 **Command** ([[login via ftp]]):
 
 ```bash
 ftp target-ip
 
 ```
+
+
+
+
+
+
 
 **Command** ([[anonymous login]]):
 
@@ -23,3 +31,9 @@ username: anonymous
 password: anonymous
 
 ```
+
+
+
+
+
+

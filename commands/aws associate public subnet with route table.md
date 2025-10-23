@@ -25,3 +25,5 @@ aws ec2 associate-route-table --route-table-id $AWS_ROUTE_TABLE_ID --subnet-id $
 ```
 aws ec2 associate-route-table --route-table-id <route_table_id> --subnet-id <subnet_id> --region <region>
 ```
+
+

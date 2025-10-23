@@ -22,3 +22,5 @@ curl --request PUT \
   --header 'x-algolia-application-id: <example-application-id>' \
   --data '{"highlightPreTag": "<script>alert(1);</script>"}'
 ```
+
+

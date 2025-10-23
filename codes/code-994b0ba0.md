@@ -21,3 +21,5 @@ echo bye>> C:\script.txt
 ftp -s:script.txt
 
 ```
+
+

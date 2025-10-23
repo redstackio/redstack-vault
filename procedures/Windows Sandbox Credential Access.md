@@ -34,11 +34,15 @@ To execute this procedure, the attacker must have access to the target system an
 
 The business value of this procedure is that it can help identify weaknesses in the target network's security posture and allow for remediation of those weaknesses before an attacker can exploit them.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the WDAGUtilityAccount credentials
+
+ 
 
 ## Defense
 
@@ -48,19 +52,29 @@ The business value of this procedure is that it can help identify weaknesses in 
 
 1. Monitor for suspicious activity such as unauthorized access to the Windows Sandbox or unusual data extraction
 
+ 
+
 ## Objectives
 
 1. Gain access to the Windows Sandbox using WDAGUtilityAccount credentials
 
 1. Extract sensitive information such as credentials and other data stored within the Windows Sandbox
 
+ 
+
 # Instructions
 
 1. To access Windows Sandbox, use the WDAGUtilityAccount credentials provided above.
 
+ 
+
+
+
 **Code**: [[\\windowssandbox
 Username: wdagutilityaccount
 Pass]]
+
+
 
 > The WDAGUtilityAccount is a built-in account in Windows 10 that is used to launch Windows Sandbox. It has limited permissions and is isolated from the host system, making it a secure way to test potentially harmful software. To use Windows Sandbox, simply enter the provided credentials when prompted.
 
@@ -83,3 +97,5 @@ Pass]]
 - [[Get credentials]]
 - [[Sandbox Credential]]
 - [[Windows - Using credentials]]
+
+

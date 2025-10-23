@@ -25,3 +25,5 @@ bob@ubuntu18x64:~$ ./chisel server -p 9001 --socks5
 2019/10/02 01:08:13 server: Fingerprint 79:03:39:25:50:c4:72:48:b3:80:35:1f:5f:9d:50:09
 2019/10/02 01:08:13 server: Listening on 0.0.0.0:9001...
 ```
+
+

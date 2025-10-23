@@ -35,11 +35,15 @@ To use this technique, the attacker must have access to the AWS instance and the
 
 This technique can be valuable for an attacker who wants to maintain long-term access to an AWS instance and continue to exfiltrate data or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS instance
 
 1. Ability to modify the authorized_keys file
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This technique can be valuable for an attacker who wants to maintain long-term a
 
 1. Implement multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Maintain access to an AWS instance
@@ -57,17 +63,25 @@ This technique can be valuable for an attacker who wants to maintain long-term a
 
 1. Exfiltrate data or perform other malicious activities
 
+ 
+
 # Instructions
 
 1. To SSH into an instance using a public key, use the following command:
 
+ 
+
 The SSH command is used to securely connect to a remote server. In this case, we are using a public key to authenticate the connection instead of a password. The -i flag specifies the location of the public key file. The user@instance argument specifies the username and IP address or hostname of the instance you want to connect to.
+
+
 
 **Command** ([[SSH into instance]]):
 
 ```bash
 ssh -i public_key user@instance
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ ssh -i public_key user@instance
 - [[Exploitation]]
 - [[Persistence]]
 - [[SSH Persistence example]]
+
+

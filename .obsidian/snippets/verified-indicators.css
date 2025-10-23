@@ -1,0 +1,55 @@
+/* Verified/Unverified Content Indicators */
+
+/* Verified procedures get a green checkmark */
+.markdown-preview-view:has([data-property="verified"][data-property-value="true"]) h1::before {
+  content: "✓ ";
+  color: #5bdb00;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Unverified procedures get a warning icon */
+.markdown-preview-view:has([data-property="verified"][data-property-value="false"]) h1::after {
+  content: " ⚠";
+  color: #ff9800;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Verified badge in file explorer */
+.nav-file-title:has([data-path*="verified:true"])::after {
+  content: " ✓";
+  color: #5bdb00;
+  font-size: 0.9em;
+}
+
+/* Highlight verified status in frontmatter */
+.metadata-property[data-property-key="verified"] {
+  font-weight: 600;
+}
+
+.metadata-property-value:has([data-property-value="true"]) {
+  color: #5bdb00;
+  font-weight: 600;
+}
+
+.metadata-property-value:has([data-property-value="false"]) {
+  color: #ff9800;
+  font-weight: 600;
+}
+
+/* Status callouts */
+.callout[data-callout="verified"] {
+  --callout-color: 91, 219, 0;
+  --callout-icon: lucide-check-circle;
+}
+
+.callout[data-callout="unverified"] {
+  --callout-color: 255, 152, 0;
+  --callout-icon: lucide-alert-triangle;
+}
+
+.callout[data-callout="tested"] {
+  --callout-color: 59, 130, 246;
+  --callout-icon: lucide-flask-conical;
+}

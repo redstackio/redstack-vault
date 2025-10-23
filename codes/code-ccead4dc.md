@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:31.777516+00:00'
 ```ps1
 Invoke-SQLOSCmdOle -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "whoami" Verbose
 ```
+
+

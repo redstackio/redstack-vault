@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 Get-DomainObjectACL -Identity $GROUP_NAME2 -ResolveGUIDs | ForEach-Object {$_ | Add-Member NoteProperty 'IdentityName' $(ConvertSidToName $_.SecurityIdentifier);$_} | ?{$_.IdentityName -match $GROUP_NAME1}
 
 ```
+
+

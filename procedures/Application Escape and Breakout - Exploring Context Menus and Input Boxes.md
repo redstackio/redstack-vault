@@ -28,6 +28,8 @@ From a technical perspective, this procedure involves identifying and exploiting
 
 The objectives of this procedure are to identify vulnerabilities in the application's code that can be exploited, gain unauthorized access to sensitive information, and execute arbitrary code on the system.
 
+ 
+
 ## Requirements
 
 1. Access to the application
@@ -35,6 +37,8 @@ The objectives of this procedure are to identify vulnerabilities in the applicat
 1. Knowledge of context menus and input boxes
 
 1. Ability to execute commands
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The objectives of this procedure are to identify vulnerabilities in the applicat
 
 1. Monitor system logs and network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify vulnerabilities in the application's code that can be exploited
@@ -52,23 +58,43 @@ The objectives of this procedure are to identify vulnerabilities in the applicat
 
 1. Execute arbitrary code on the system
 
+ 
+
 # Instructions
 
 1. Craft a UNC path that points to a file on the attacker's machine and inject it into an input box that accepts file paths. If successful, the application will access and potentially execute the file on the attacker's machine.
 
+ 
+
+
+
 **Code**: [[//attacker–pc/]]
+
+
 
 > UNC Path Injection is a type of attack where an attacker crafts a file path that points to a file on their own machine and injects it into an input box that accepts file paths. If successful, the application will access and potentially execute the file on the attacker's machine. This can lead to unauthorized access or execution of malicious code on the victim's machine.
 
 2. net use x: //127.0.0.1/c$
 
+ 
+
+
+
 **Code**: [[//127.0.0.1/c$]]
+
+
 
 > This command is used to access the local drive C on a Windows machine. The 'net use' command is used to connect to a network resource and map it to a drive letter. In this case, we are mapping the C drive to the letter X. Once the mapping is complete, the user can access the C drive by navigating to the X drive.
 
 3. dir /b
 
+ 
+
+
+
 **Code**: [[C:\]]
+
+
 
 > This command will list all files and directories in the specified directory. The '/b' flag is used to display only the file and directory names, without additional information.
 
@@ -77,3 +103,5 @@ The objectives of this procedure are to identify vulnerabilities in the applicat
 - [[Application Escape and Breakout]]
 - [[Exploring Context Menus]]
 - [[Input Boxes]]
+
+

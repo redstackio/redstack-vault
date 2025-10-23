@@ -34,11 +34,15 @@ From a technical perspective, this technique works by replacing the Sticky Keys 
 
 The business value of this technique is that it allows an attacker to maintain persistent access to a compromised system, even if the user changes their password or the system is rebooted.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to replace system binaries
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ The business value of this technique is that it allows an attacker to maintain p
 
 1. Implement strong password policies to make it more difficult for attackers to gain access to systems
 
+ 
+
 ## Objectives
 
 1. Maintain persistent access to a compromised system
 
 1. Execute commands with elevated privileges
 
+ 
+
 # Instructions
 
 1. This module exploits a feature in Windows Sticky Keys that allows you to reset the user password without knowing their current password.
 
+ 
+
+
+
 **Code**: [[use post/windows/manage/sticky_keys]]
+
+
 
 > The Sticky Keys feature can be activated by pressing the shift key five times in a row. This module replaces the Sticky Keys executable (sethc.exe) with a command prompt (cmd.exe) executable, which is executed when Sticky Keys is activated on the login screen. This allows an attacker to gain access to a Windows machine without knowing the user's password.
 
@@ -79,3 +93,5 @@ The business value of this technique is that it allows an attacker to maintain p
 - [[Binary Replacement on Windows XP+]]
 - [[Elevated]]
 - [[Windows - Persistence]]
+
+

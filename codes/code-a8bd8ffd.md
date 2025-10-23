@@ -17,4 +17,7 @@ Host: victim.example.com
 Origin: null
 Cookie: sessionid=...
 
+
 ```
+
+

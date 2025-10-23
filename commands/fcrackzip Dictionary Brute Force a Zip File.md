@@ -23,5 +23,8 @@ fcrackzip -v -u $FILENAME -D -p $WORDLIST
 root@kali:~# fcrackzip -v -u secret.zip -D -p /usr/share/wordlists/rockyou.txt 
 found file 'id_rsa', (size cp/uc   1379/  1811, flags 9, chk 930e)
 
+
 PASSWORD FOUND!!!!: pw == princess1
 ```
+
+

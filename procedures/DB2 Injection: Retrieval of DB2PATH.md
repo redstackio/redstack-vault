@@ -38,11 +38,15 @@ DB2PATH is an environment variable that specifies the location of the DB2 databa
 Business Value: 
 By gaining access to sensitive data stored in the database, attackers can steal confidential information, such as customer data, financial information, and intellectual property. This can lead to reputational damage, financial losses, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable DB2 database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -52,17 +56,27 @@ By gaining access to sensitive data stored in the database, attackers can steal 
 
 1. Monitor database activity for suspicious behavior and unauthorized access
 
+ 
+
 ## Objectives
 
 1. Retrieve the DB2PATH environment variable
 
 1. Gain unauthorized access to the DB2 database
 
+ 
+
 # Instructions
 
 1. This command retrieves the value of the DB2PATH variable from the system registry.
 
+ 
+
+
+
 **Code**: [[select * from sysibmadm.reg_variables where reg_va]]
+
+
 
 > The 'select' statement is used to retrieve data from the 'sysibmadm.reg_variables' table. The 'where' clause filters the results to only include the row where the 'reg_var_name' column is equal to 'DB2PATH'. This command requires privileges to access the system registry.
 
@@ -85,3 +99,5 @@ By gaining access to sensitive data stored in the database, attackers can steal 
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Location of DB Files]]
+
+

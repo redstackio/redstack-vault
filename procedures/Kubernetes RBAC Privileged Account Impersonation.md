@@ -26,6 +26,8 @@ This procedure involves using Kubernetes Role-Based Access Control (RBAC) config
 
 This procedure involves using Kubernetes Role-Based Access Control (RBAC) configuration to impersonate a privileged account in order to gain access to sensitive resources. By using a JSON Web Token (JWT) of an impersonator and the Impersonate-Group header, an attacker can bypass RBAC restrictions and gain access to resources that are restricted to the privileged account. This technique can be used to elevate privileges and move laterally within a Kubernetes cluster. From a technical perspective, this procedure involves crafting a specific HTTP request with the necessary headers to impersonate a privileged account. The business value of this procedure lies in its ability to bypass RBAC restrictions and gain access to sensitive resources, which can lead to data theft, tampering, or destruction.
 
+ 
+
 ## Requirements
 
 1. Valid JWT token of an impersonator
@@ -33,6 +35,8 @@ This procedure involves using Kubernetes Role-Based Access Control (RBAC) config
 1. Access to Kubernetes API server
 
 1. Knowledge of the target Kubernetes cluster's RBAC configuration
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ This procedure involves using Kubernetes Role-Based Access Control (RBAC) config
 
 1. Implement network segmentation and access controls to limit access to Kubernetes API server
 
+ 
+
 ## Objectives
 
 1. Impersonate a privileged account to gain access to sensitive resources
@@ -50,19 +56,31 @@ This procedure involves using Kubernetes Role-Based Access Control (RBAC) config
 
 1. Move laterally within a Kubernetes cluster
 
+ 
+
 # Instructions
 
 1. Replace <JWT TOKEN (of the impersonator)> with the valid JWT token of the impersonator and <master_ip> and <port> with the IP address and port of the Kubernetes API server.
 
+ 
+
+
+
 **Code**: [[curl -k -v -XGET -H "Authorization: Bearer <JWT TO]]
 
+
+
 > This command uses the curl utility to make an HTTP GET request to the Kubernetes API server. The -k option is used to allow insecure connections, while the -v option enables verbose output. The -H option is used to set the necessary headers for impersonating a privileged account. The Impersonate-Group header is set to system:masters, which is a privileged group in Kubernetes. The Impersonate-User header is set to null, which means that the impersonator's username is used. The Accept header is set to application/json to receive the response in JSON format. The last argument is the URL of the resource to be accessed.
+
+
 
 **Command** ([[Get secrets from kube-system namespace]]):
 
 ```bash
 curl -k -v -XGET -H "Authorization: Bearer <JWT TOKEN (of the impersonator)>" -H "Impersonate-Group: system:masters" -H "Impersonate-User: null" -H "Accept: application/json" https://<master_ip>:<port>/api/v1/namespaces/kube-system/secrets/
 ```
+
+
 
 ## Commands Used
 
@@ -73,3 +91,5 @@ curl -k -v -XGET -H "Authorization: Bearer <JWT TOKEN (of the impersonator)>" -H
 - [[Impersonating a Privileged Account]]
 - [[Kubernetes]]
 - [[RBAC Configuration]]
+
+

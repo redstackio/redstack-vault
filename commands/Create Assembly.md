@@ -20,3 +20,5 @@ CREATE ASSEMBLY my_assembly
 FROM 'c:\temp\cmd_exec.dll'
 WITH PERMISSION_SET = UNSAFE;
 ```
+
+

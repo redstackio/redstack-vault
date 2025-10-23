@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:14.196507+00:00'
 ```bash
 rusthound.exe -d domain.local -u user@domain.local -p Password123 -o output -z
 ```
+
+

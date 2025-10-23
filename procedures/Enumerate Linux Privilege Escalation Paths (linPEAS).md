@@ -43,17 +43,27 @@ Automatically enumerate a Linux/BSD/Unix environment, scanning for vulnerabiliti
 
 Automatically enumerate a Linux/BSD/Unix environment, scanning for vulnerabilities, misconfigurations, vulnerable software versions, etc. Pay close attention to any results appearing in red or red/yellow, as these indicate especially promising results.
 
+
+
 # Instructions
 
 1. Download linPEAS.sh and copy it to the target: [Download from GitHub](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
 
 2. Execute linPEAS from a terminal.
 
+
+
+
+
 **Command** ([[linPEAS Enumerate a Linux/Unix System with All Checks]]):
 
 ```bash
 linpeas.sh -a
 ```
+
+
+
+
 
 ## Platforms
 
@@ -87,3 +97,5 @@ linpeas.sh -a
 
 - [[Enumeration]]
 - [[misconfiguration]]
+
+

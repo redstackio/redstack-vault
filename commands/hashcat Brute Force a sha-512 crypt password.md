@@ -68,7 +68,7 @@ Dictionary cache built:
 Approaching final keyspace - workload adjusted.  
 
 $6$fN8i1AxB$0Z9xZy3X/NzJVWjyS1YhPpz7uy5vHsXA1Yxh57dZfYPhac6mPQAFdjow1NMY0OLOYkJFLJC5rIja7FsIneWJz0:toor
-
+                                                 
 Session..........: hashcat
 Status...........: Cracked
 Hash.Type........: sha512crypt $6$, SHA512 (Unix)
@@ -88,3 +88,5 @@ Candidates.#1....: configuration -> packages
 Started: Tue Sep 24 18:14:43 2019
 Stopped: Tue Sep 24 18:15:51 2019
 ```
+
+

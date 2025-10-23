@@ -25,3 +25,5 @@ whatweb http://$_TARGET_IP
 root@kali:~# whatweb http://10.10.10.10
 http://10.10.10.10 [200 OK] Apache[2.2.8], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.2.8 (Ubuntu) DAV/2], IP[10.10.10.10], PHP[5.2.4-2ubuntu5.10], Title[Host - Linux], WebDAV[2], X-Powered-By[PHP/5.2.4-2ubuntu5.10]
 ```
+
+

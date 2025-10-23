@@ -30,13 +30,43 @@ For this kind og attack to happen, the application's front end server doesn't su
 
 # Instructions
 
+
+
 1. Login to the application using credentials.
+
+
+
+
+
+![c044e05d-b11c-4861-a6b6-e3112ab1eade.png]()
+
+
+
+
+
+
 
 2. Click "Account Details" on the top right, and observe that the response doesn't have any anti-caching headers
 
+
+
+
+
+
+
+![ca4ffb70-44b3-427b-b9b9-2ce9c3a7c638.png]()
+
+
+
+
+
 3.Smuggle a request to fetch the API key:
 
+
+
 Add following to the request from step 2:
+
+
 
 0
 
@@ -44,11 +74,37 @@ GET /apikey HTTP/1.1
 
 x-ignore: X
 
+
+
+![c53ccfeb-089f-44df-a698-2c7b3d494d55.png]()
+
+
+
 4. Repeat this request a few times, then load the home page in an incognito browser window.
 
 Use the Search function on the Burp menu to see if the phrase "Your API Key" has appeared in any static resources. If it hasn't, repeat the POST requests, force-reload the browser window, and re-run the search.
 
+
+
+
+
+![be869ca7-321f-4bb8-85ef-fd0b1069477d.png]()
+
+
+
+
+
 5. Observe the apikey in the following which is fetced by smuggling request.
+
+
+
+
+
+
+
+![718c6297-bfae-4fe5-ac19-eabf68b12f72.png]()
+
+
 
 ## Platforms
 
@@ -59,3 +115,5 @@ Use the Search function on the Burp menu to see if the phrase "Your API Key" has
 - [[http request smuggling]]
 - [[Web Applications]]
 - [[web cache deception]]
+
+

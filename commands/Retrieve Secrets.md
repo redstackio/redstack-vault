@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:00.315523+00:00'
 ```bash
 curl -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/kube-system/secrets/
 ```
+
+

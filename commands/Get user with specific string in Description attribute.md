@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:08.324465+00:00'
 ```bash
 Get-ADUser -Filter 'Description -like "*wtver*"' -Properties Description | select Name, Description
 ```
+
+

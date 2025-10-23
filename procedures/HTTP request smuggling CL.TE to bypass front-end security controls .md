@@ -32,11 +32,43 @@ In this kind of attack, front end server doesnt support Transfer-Encoding . In t
 
 1.Intercept the request using Burp Suite and send the request to the repeater tab. Observe the response to the request .
 
+
+
+
+
+![651ed472-85b8-4484-a8fd-2c436181b84a.jpg](_assets/images/Mash/651ed472-85b8-4484-a8fd-2c436181b84a.jpg)
+
+
+
+
+
+
+
 2.Change the url from step1 in the repeater tab to admin to access admin panel. A 403 response can be seen denying the access to the admin panel.
+
+
+
+
+
+
+
+![890cfa00-6aac-40b7-9a61-8ca38864a851.jpg](_assets/images/Mash/890cfa00-6aac-40b7-9a61-8ca38864a851.jpg)
+
+
+
+
+
+
 
 3.Modify the request from step2 to the following and send the request to the server. A 401 resposne can be observed which is different to the resposne from step 2. And also in the response, observe the message *Admin interface only available if logged in as Administrator  or if requested as localhost.*
 
+
+
+
+
 *Modified Request:*
+
+
 
 *0*
 
@@ -44,11 +76,29 @@ In this kind of attack, front end server doesnt support Transfer-Encoding . In t
 
 *x-Ignore: X*
 
+
+
+
+
+![08790a11-a011-41de-b7a1-a37573c709e5.jpg](_assets/images/Mash/08790a11-a011-41de-b7a1-a37573c709e5.jpg)
+
+
+
+
+
+
+
 4. Modify the request from step 3 to the following to access the admin panel.
+
+
 
 *Modified Request:*
 
+
+
 *0*
+
+
 
 *GET /admin HTTP/1.1*
 
@@ -56,7 +106,37 @@ In this kind of attack, front end server doesnt support Transfer-Encoding . In t
 
 *x-ignore : x*
 
+
+
+
+
+![8619ec3e-a52e-4e07-9128-7b85c418420c.jpg](_assets/images/Mash/8619ec3e-a52e-4e07-9128-7b85c418420c.jpg)
+
+
+
+
+
+
+
 5.Send the modified request from step 4 to the server and 201 resposne can be seen . We were able to access the admin panel.
+
+
+
+
+
+![c791a103-4dad-4e30-aa2c-c9ffd3765157.jpg](_assets/images/Mash/c791a103-4dad-4e30-aa2c-c9ffd3765157.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +145,5 @@ In this kind of attack, front end server doesnt support Transfer-Encoding . In t
 ## Tags
 
 - [[Web Applications]]
+
+

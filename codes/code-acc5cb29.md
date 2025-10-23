@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:33:59.622876+00:00'
 $ cat /run/secrets/kubernetes.io/serviceaccount/token
 $ curl -k -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/default/secrets/
 ```
+
+

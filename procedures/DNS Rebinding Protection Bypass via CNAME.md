@@ -38,6 +38,8 @@ To execute this attack, the attacker first needs to identify a vulnerable web ap
 
 The business value of this attack is that an attacker can gain unauthorized access to sensitive information, such as financial data, trade secrets, and personal information. This can result in significant financial losses, legal liabilities, and reputational damage for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that is protected by DNS rebinding
@@ -45,6 +47,8 @@ The business value of this attack is that an attacker can gain unauthorized acce
 1. A malicious website to launch the attack
 
 1. A phishing email to lure the victim to the malicious website
+
+ 
 
 ## Defense
 
@@ -54,20 +58,32 @@ The business value of this attack is that an attacker can gain unauthorized acce
 
 1. Train employees to recognize and avoid phishing emails
 
+ 
+
 ## Objectives
 
 1. Bypass DNS rebinding protection on a vulnerable web application
 
 1. Gain unauthorized access to sensitive information
 
+ 
+
 # Instructions
 
 1. Execute the command in a terminal to check if the server is vulnerable to DNS rebinding via CNAME.
 
+ 
+
+
+
 **Code**: [[$ dig cname.example.com +noall +answer
 ; <<>> DiG ]]
 
+
+
 > The command uses the dig utility to query the DNS server for the CNAME record of the target domain. If the server returns the expected result, the service is vulnerable to DNS rebinding via CNAME. If the server returns an error message, the server has most likely implemented protections to prevent DNS rebinding attacks.
+
+
 
 **Command** ([[DNS CNAME Lookup]]):
 
@@ -77,6 +93,8 @@ $ dig cname.example.com +noall +answer
 ;; global options: +cmd
 cname.example.com.            381     IN      CNAME   target.local.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +121,5 @@ cname.example.com.            381     IN      CNAME   target.local.
 - [[CNAME]]
 - [[DNS Rebinding]]
 - [[Protection Bypasses]]
+
+

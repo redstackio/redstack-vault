@@ -23,3 +23,5 @@ $ dig cname.example.com +noall +answer
 ;; global options: +cmd
 cname.example.com.            381     IN      CNAME   target.local.
 ```
+
+

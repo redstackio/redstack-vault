@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:14.550915+00:00'
 ```powershell
 PrintNightmare [target ip or hostname] [UNC path to payload Dll] [optional domain] [optional username] [optional password]
 ```
+
+

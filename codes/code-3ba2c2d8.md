@@ -17,3 +17,5 @@ PS C:\> PsExec.exe  \\srv01.domain.local -u DOMAIN\username -p password cmd.exe
 # switch admin user to NT Authority/System
 PS C:\> PsExec.exe  \\srv01.domain.local -u DOMAIN\username -p password cmd.exe -s 
 ```
+
+

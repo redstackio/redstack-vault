@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # TCP Redirection (socat)
 
+
+
 **Command** ([[Simple TCP Port Redirection]]):
 
 ```bash
@@ -16,9 +18,21 @@ socat TCP-LISTEN:80,fork TCP::80
 
 ```
 
+
+
+
+
+
+
 **Command** ([[UDP Port Redirection]]):
 
 ```bash
 socat udp4-recvfrom:53,reuseaddr,fork udp4-sendto:; echo -ne
 
 ```
+
+
+
+
+
+

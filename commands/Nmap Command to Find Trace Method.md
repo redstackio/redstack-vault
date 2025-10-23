@@ -10,6 +10,7 @@ output: 'Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-01 15:14 IST
 
   Host is up (0.00048s latency).
 
+
   PORT   STATE SERVICE
 
   80/tcp open  http
@@ -36,3 +37,5 @@ PORT   STATE SERVICE
 80/tcp open  http
 |_http-trace: TRACE is enabled
 ```
+
+

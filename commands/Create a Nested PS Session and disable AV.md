@@ -21,3 +21,5 @@ $sess = New-PSSession -ComputerName MS01 -Credential evil\elliot
 Invoke-Command -Session $sess -ScriptBlock { Set-MpPreference -DisableRealtimeMonitoring $true -DisableIOAVProtection $true }
 
 ```
+
+

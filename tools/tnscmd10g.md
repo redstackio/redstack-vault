@@ -16,3 +16,9 @@ A tool to talk to the Oracle TNS listener on port 1521/tcp on a simple level, su
 ## Description
 
 A tool to talk to the Oracle TNS listener on port 1521/tcp on a simple level, such as sending ping commands or requesting version.tnscmd10g Homepage | Kali tnscmd10g Repo
+
+
+
+
+
+

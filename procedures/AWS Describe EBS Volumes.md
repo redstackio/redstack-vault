@@ -32,11 +32,17 @@ This allows the attacker the advantage to mount the volume on an existing ec2 in
 
 IF you find an EBS Volume with Multi-Attach enabled, you can mount it to a second machine simultanously.
 
+
+
 [AWS EBS Multi-Attach Doc](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html)
+
+
 
 ##  Instructions
 
 1. List all of the EBS volumes
+
+
 
 **Command** ([[aws describe volume]]):
 
@@ -45,12 +51,22 @@ aws ec2 describe-volumes
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Describing filtered volumes]]):
 
 ```bash
 aws ec2 describe-volumes --filters  Name=status,Values=creating | available | in-use | deleting | deleted | error
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +81,5 @@ aws ec2 describe-volumes --filters  Name=status,Values=creating | available | in
 
 - [[AWS]]
 - [[Cloud]]
+
+

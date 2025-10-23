@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:12.431159+00:00'
 vssadmin create shadow /for=C:\ncopy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\ShadowCopy
 copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\ShadowCopy
 ```
+
+

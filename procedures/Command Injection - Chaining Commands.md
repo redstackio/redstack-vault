@@ -38,11 +38,15 @@ In technical terms, command injection occurs when an attacker is able to inject 
 
 From a business perspective, command injection attacks can result in data theft, system downtime, and reputational damage. It is important for organizations to ensure that their systems are properly patched and configured to prevent these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
 
 1. Knowledge of the system and its vulnerabilities
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, command injection attacks can result in data theft,
 1. Ensure that systems are properly patched and configured
 
 1. Implement security measures such as firewalls and intrusion detection systems
+
+ 
 
 ## Objectives
 
@@ -62,12 +68,20 @@ From a business perspective, command injection attacks can result in data theft,
 
 1. Exfiltrate data
 
+ 
+
 # Instructions
 
 1. To chain commands in PowerShell, use the semicolon, ampersand, pipe, or double pipe operators. The semicolon executes both commands, regardless of the success or failure of the first command. The ampersand executes both commands, but only if the first command succeeds. The pipe sends the output of the first command to the input of the second command. The double pipe executes the second command only if the first command fails.
 
+ 
+
+
+
 **Code**: [[original_cmd_by_server; ls
 original_cmd_by_server ]]
+
+
 
 > For example, to list the contents of a directory and then execute a command, you could use the following command:
 
@@ -79,11 +93,17 @@ ls && whoami
 
 This would only execute the second command if the first command succeeded.
 
+
+
 **Command** ([[List Directory Contents]]):
 
 ```bash
 ls
 ```
+
+
+
+
 
 **Command** ([[Run Two Commands Together]]):
 
@@ -91,11 +111,19 @@ ls
 original_cmd_by_server && ls
 ```
 
+
+
+
+
 **Command** ([[Pipe Commands Together]]):
 
 ```bash
 original_cmd_by_server | ls
 ```
+
+
+
+
 
 **Command** ([[Run Second Command Only If First Fails]]):
 
@@ -103,10 +131,18 @@ original_cmd_by_server | ls
 original_cmd_by_server || ls
 ```
 
+
+
 2. To chain commands in Bash, you can simply separate them with a newline character. This will execute each command in sequence.
+
+ 
+
+
 
 **Code**: [[original_cmd_by_server
 ls]]
+
+
 
 > For example, to list the contents of a directory and then execute a command, you could use the following command:
 
@@ -115,11 +151,15 @@ ls
 
 This would list the contents of the current directory and then display the output of the original command.
 
+
+
 **Command** ([[List files in current directory]]):
 
 ```bash
 ls
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -144,3 +184,5 @@ ls
 - [[Chaining commands]]
 - [[Command Injection]]
 - [[Exploits]]
+
+

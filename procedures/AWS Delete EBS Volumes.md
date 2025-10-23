@@ -37,6 +37,8 @@ We also included scripts for SecDevOps to automate the deletion of unused volume
 
 1. Delete an EBS volume using the volume ID and Region
 
+
+
 **Command** ([[Deleting a Volume]]):
 
 ```bash
@@ -44,15 +46,33 @@ aws ec2 delete-volume --region $AWS_REGION --volume-id $AWS_VOLUME_ID
 
 ```
 
+
+
+
+
+
+
 2. (Optional) Deleting Unused Volumes.
+
+
 
 **Code**: [[
 for x in $(aws ec2 describe-volumes --filters  Na]]
+
+
+
+
 
 3. (Optional) Deleteing unused volumes with a specific AWS Profile
 
+
+
 **Code**: [[
 for x in $(aws ec2 describe-volumes --filters  Na]]
+
+
+
+
 
 ## Platforms
 
@@ -76,3 +96,5 @@ for x in $(aws ec2 describe-volumes --filters  Na]]
 
 - [[AWS]]
 - [[Cloud]]
+
+

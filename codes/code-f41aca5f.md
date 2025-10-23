@@ -26,3 +26,5 @@ PS C:\Tools> Connect-AzAccount -AccessToken $token -GraphAccessToken $graphacces
 # Access Azure Resources using the authenticated account
 PS C:\Tools> Get-AzResource
 ```
+
+

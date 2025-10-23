@@ -30,9 +30,13 @@ The AWS IAM Role Policy Enumeration procedure involves listing all managed polic
 
 The AWS IAM Role Policy Enumeration procedure involves listing all managed policies that are attached to a specific IAM role. This technique can be used by an attacker to gather information about the permissions granted to a specific role, which can help them to identify potential attack paths and targets within the AWS environment. To perform this procedure, the attacker needs to have valid AWS credentials with the necessary permissions to access IAM services.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with the necessary permissions to access IAM services
+
+ 
 
 ## Defense
 
@@ -42,23 +46,33 @@ The AWS IAM Role Policy Enumeration procedure involves listing all managed polic
 
 1. Implement multi-factor authentication and strong password policies to protect AWS credentials
 
+ 
+
 ## Objectives
 
 1. To gather information about the permissions granted to a specific IAM role
 
 1. To identify potential attack paths and targets within the AWS environment
 
+ 
+
 # Instructions
 
 1. To list the attached policies for a specific IAM role, use the following command:
 
+ 
+
 The 'aws iam list-attached-role-policies' command is used to list all the policies that are attached to a specific IAM role. This command requires the name of the IAM role as an argument. The output of this command will include the policy name, policy ARN, and the policy attachment date. This command can be useful when you need to review the policies that are attached to a role or when you need to remove a policy from a role.
+
+
 
 **Command** ([[List Attached Role Policies]]):
 
 ```bash
 aws iam list-attached-role-policies --role-name role-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -79,3 +93,5 @@ aws iam list-attached-role-policies --role-name role-name
 - [[3. Enumerating Roles]]
 - [[Cloud - AWS]]
 - [[Listing all managed policies that are attached to the specified IAM role]]
+
+

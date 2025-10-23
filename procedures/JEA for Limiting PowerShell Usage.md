@@ -36,6 +36,8 @@ Just Enough Administration (JEA) is a security technology available in PowerShel
 
 Just Enough Administration (JEA) is a security technology available in PowerShell that enables administrators to delegate limited administrative access to end-users. This procedure focuses on using JEA to limit PowerShell usage to only non-default cmdlets. By doing so, it reduces the attack surface for attackers who may attempt to use PowerShell to execute malicious commands. By limiting the number of cmdlets that users can execute, it also helps to prevent accidental misuse of PowerShell. The technical implementation of this procedure involves creating a JEA endpoint that only allows non-default cmdlets to be executed.
 
+ 
+
 ## Requirements
 
 1. Windows Server 2012 or later
@@ -43,6 +45,8 @@ Just Enough Administration (JEA) is a security technology available in PowerShel
 1. PowerShell version 5.0 or later
 
 1. Permissions to create JEA endpoints
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Just Enough Administration (JEA) is a security technology available in PowerShel
 
 1. Monitor PowerShell usage for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Limit PowerShell usage to only non-default cmdlets
@@ -60,18 +66,28 @@ Just Enough Administration (JEA) is a security technology available in PowerShel
 
 1. Prevent accidental misuse of PowerShell
 
+ 
+
 # Instructions
 
 1. Use the following commands to perform advanced actions in PowerShell:
+
+ 
+
+
 
 **Code**: [[Set-PSSessionConfiguration
 Start-Process
 New-Servi]]
 
+
+
 > 1. Set-PSSessionConfiguration: This cmdlet allows you to configure session configurations for remote PowerShell sessions.
 2. Start-Process: This cmdlet starts one or more processes on the local computer.
 3. New-Service: This cmdlet creates a new Windows service.
 4. Add-Computer: This cmdlet adds the local computer to a domain or workgroup.
+
+
 
 **Command** ([[Create new PowerShell Session Configuration]]):
 
@@ -79,11 +95,19 @@ New-Servi]]
 Set-PSSessionConfiguration
 ```
 
+
+
+
+
 **Command** ([[Start a new process]]):
 
 ```bash
 Start-Process
 ```
+
+
+
+
 
 **Command** ([[Create a new Windows Service]]):
 
@@ -91,11 +115,17 @@ Start-Process
 New-Service
 ```
 
+
+
+
+
 **Command** ([[Add computer to domain]]):
 
 ```bash
 Add-Computer
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +154,5 @@ Add-Computer
 - [[Just Enough Administration]]
 - [[Powershell]]
 - [[Windows - Defenses]]
+
+

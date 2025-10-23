@@ -29,15 +29,63 @@ Authentication and authorisation on the file access can be tested by accessing t
 
 Authentication and authorisation on the file access can be tested by accessing the uploaded files without authentication.
 
+
+
+
+
 # Instructions
 
 # 
 
 1. Upload file in the application
 
+
+
+
+
+
+
+![5a0782ba-5701-4f7c-92b0-47617a0b2081.png](_assets/images/Mash/5a0782ba-5701-4f7c-92b0-47617a0b2081.png)
+
+
+
+
+
+
+
+
+
 2. Logout and try to access the uploaded file
 
+
+
+
+
+
+
+![4de4949c-1d5f-4bb8-9a81-7db74d14d178.png](_assets/images/Mash/4de4949c-1d5f-4bb8-9a81-7db74d14d178.png)
+
+
+
+
+
+
+
 3. Uploaded file is accessible even without authentication
+
+
+
+
+
+
+
+![a3208b50-02b3-4b11-940d-970ca87261eb.png](_assets/images/Mash/a3208b50-02b3-4b11-940d-970ca87261eb.png)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +97,5 @@ Authentication and authorisation on the file access can be tested by accessing t
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

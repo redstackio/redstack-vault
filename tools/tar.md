@@ -27,11 +27,27 @@ Tar is an archiving program designed to store multiple files in a single file, a
 
 Tar is an archiving program designed to store multiple files in a single file, and to manipulate such archives. Tar also supports a number of compression schemes, including gzip, bzip2, xz, lzma, lzip, and lzop.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_b74fd06b-08d3-4c47-8214-32e1f5163ee2}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Tar is an archiving program designed to store multiple files in a single file, a
 ## Tags
 
 - [[archive]]
+
+

@@ -6,7 +6,9 @@ executor: ''
 data: java -jar duckencoder.jar -i $PAYLOAD_FILE -o $OUTPUT_FILE
 output: 'root@kali:~# java -jar duckencoder.jar -i ../Payloads/AV/EICAR-Test.txt ../Payloads/bin/inject.bin
 
+
   Hak5 Duck Encoder 2.6.3
+
 
   Loading File ..... [ OK ]
 
@@ -40,3 +42,5 @@ Loading Language File .... [ OK ]
 Loading DuckyScript .... [ OK ]
 DuckyScript Complete..... [ OK ]
 ```
+
+

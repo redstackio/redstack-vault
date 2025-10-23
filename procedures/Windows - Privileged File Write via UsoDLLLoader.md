@@ -34,11 +34,15 @@ This technique abuses the UsoDllLoader COM interface to load a malicious DLL int
 
 This technique abuses the UsoDllLoader COM interface to load a malicious DLL into a Windows process with SYSTEM privileges, allowing for privileged file write operations. The UsoDllLoader interface is used by Windows to manage updates and is present on all Windows versions. By hijacking the DLL search order, an attacker can force the UsoDllLoader to load a malicious DLL when it is executed with SYSTEM privileges. This can be used to write malicious DLLs to protected directories, such as the SYSTEM32 directory, which can then be used to escalate privileges further or persist on the system.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system
 
 1. Ability to execute code with low privileges
+
+ 
 
 ## Defense
 
@@ -48,19 +52,31 @@ This technique abuses the UsoDllLoader COM interface to load a malicious DLL int
 
 1. Regularly update and patch Windows systems to prevent known vulnerabilities from being exploited
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Windows system
 
 1. Write malicious DLLs to protected directories
 
+ 
+
 # Instructions
 
 1. This command allows an attacker to escalate privileges on a Windows system by exploiting a privileged file write vulnerability in the Windows Core Device Info DLL. The attacker can then copy their own version of the DLL to the system, which will be loaded by the operating system and execute the attacker's code with elevated privileges.
 
+ 
+
+
+
 **Code**: [[windowscoredeviceinfo.dll]]
 
+
+
 > The 'data' field specifies the name of the DLL that contains the vulnerable code. The 'text' field provides context for how this vulnerability could be exploited. The 'instruction' field provides step-by-step instructions for how to perform the privilege escalation attack. The 'explain' field provides additional information about the attack and its potential impact.
+
+
 
 **Command** ([[File Information]]):
 
@@ -68,17 +84,29 @@ This technique abuses the UsoDllLoader COM interface to load a malicious DLL int
 windowscoredeviceinfo.dll
 ```
 
+
+
 2. To access the System32 directory path, open the Windows File Explorer and navigate to the C drive. From there, navigate to the Windows folder and then the System32 folder.
+
+ 
+
+
 
 **Code**: [[C:\Windows\System32\]]
 
+
+
 > The System32 directory contains important system files that are necessary for the proper functioning of the Windows operating system. It is important to not delete or modify any files within this directory unless you are an advanced user and know what you are doing.
+
+
 
 **Command** ([[View System32 directory]]):
 
 ```bash
 dir
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +131,5 @@ dir
 - [[EoP - Privileged File Write]]
 - [[UsoDLLLoader]]
 - [[Windows - Privilege Escalation]]
+
+

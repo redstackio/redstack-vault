@@ -37,11 +37,15 @@ Technical Explanation: The 'Get Tables from a Specific Database' command is used
 
 Business Value: By identifying sensitive information stored in a MSSQL database, organizations can take steps to better secure their data and prevent potential data breaches. This can help to protect sensitive information such as customer data, financial information, and intellectual property.
 
+ 
+
 ## Requirements
 
 1. Access to a MSSQL database
 
 1. Valid credentials with appropriate permissions
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: By identifying sensitive information stored in a MSSQL database,
 
 1. Regularly audit MSSQL databases for vulnerabilities and misconfigurations
 
+ 
+
 ## Objectives
 
 1. Identify tables and columns that contain sensitive information
@@ -59,15 +65,26 @@ Business Value: By identifying sensitive information stored in a MSSQL database,
 
 1. Identify potential attack vectors
 
+ 
+
 # Instructions
 
 1. To get column details from a table, use the following commands:
 1. Get-SQLInstanceDomain | Get-SQLTable -DatabaseName <DBNameFromGet-SQLDatabaseCommand> -NoDefaults
 2. Get-SQLInstanceDomain | Get-SQLColumn -DatabaseName <DBName> -TableName <TableName>
 
+
+ 
+
+
+
 **Code**: [[Get-SQLInstanceDomain | Get-SQLTable -DatabaseName]]
 
+
+
 > This command will retrieve the column details of a specified table in a specified database. The first command will retrieve the database name from the Get-SQLDatabase command and the second command will retrieve the column details from the specified table. Replace <DBNameFromGet-SQLDatabaseCommand> with the database name retrieved from the first command and replace <DBName> and <TableName> with the name of the database and table you want to retrieve the column details from.
+
+
 
 **Command** ([[Get SQL Tables from a Database]]):
 
@@ -75,11 +92,17 @@ Business Value: By identifying sensitive information stored in a MSSQL database,
 Get-SQLInstanceDomain | Get-SQLTable -DatabaseName <DBNameFromGet-SQLDatabaseCommand> -NoDefaults
 ```
 
+
+
+
+
 **Command** ([[Get Column Details from a Table]]):
 
 ```bash
 Get-SQLInstanceDomain | Get-SQLColumn -DatabaseName <DBName> -TableName <TableName>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +126,5 @@ Get-SQLInstanceDomain | Get-SQLColumn -DatabaseName <DBName> -TableName <TableNa
 - [[Get Tables from a Specific Database]]
 - [[Identify Sensitive Information]]
 - [[MSSQL Server]]
+
+

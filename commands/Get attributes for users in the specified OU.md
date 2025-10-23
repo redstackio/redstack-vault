@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 dsquery user <OU=PUT OU HERE> -limit 0 |dsget user -dn -samid -display -desc -office -tel -email -title -hmdir -profile -loscr -mustchpwd -canchpwd -pwdneverexpires -disabled
 
 ```
+
+

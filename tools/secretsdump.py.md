@@ -29,11 +29,27 @@ Impacket's suite's secrestdump.py performs various techniques to dump hashes fro
 
 Impacket's suite's secrestdump.py performs various techniques to dump hashes from the remote machine without executing any agent on the remote machine without executing any agent there. For SAM and LSA Secrets (including cached creds) it tries to read as much as it can from the registry and then save the hives in the target system (%SYSTEMROOT%\\Temp dir) and read the rest of the data from there.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a87ed429-8db3-4bd4-8424-2ac200c81d5a}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ Impacket's suite's secrestdump.py performs various techniques to dump hashes fro
 - [[dump]]
 - [[Network]]
 - [[NTLM]]
+
+

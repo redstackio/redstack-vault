@@ -31,3 +31,5 @@ C:\Windows\SysWOW64\com\dmp
 C:\Windows\System32\fxstmp
 C:\Windows\SysWOW64\fxstmp
 ```
+
+

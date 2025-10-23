@@ -25,9 +25,15 @@ Set the local system's time using a domain controller's SMB service
 
 Set the local system's time using a domain controller's SMB service
 
+
+
 # Instructions
 
 1. Check the time on a remote server's current time
+
+
+
+
 
 **Command** ([[net Display a Remote Server's Time]]):
 
@@ -35,13 +41,27 @@ Set the local system's time using a domain controller's SMB service
 net time -S $_TARGET_IP
 ```
 
+
+
+
+
 2. Sync the local system's time with a remote server
+
+
+
+
 
 **Command** ([[net Sync a Computer's Time with a Remote Server]]):
 
 ```bash
 net time set -S $_TARGET_IP
 ```
+
+
+
+
+
+
 
 ## Commands Used
 
@@ -51,3 +71,5 @@ net time set -S $_TARGET_IP
 ## Tags
 
 - [[Setup]]
+
+

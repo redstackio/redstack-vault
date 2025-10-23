@@ -23,3 +23,5 @@ rpcclient -U "" -N $_TARGET_IP
 root@kali:~# rpcclient -U '' -N 10.10.10.10
 rpcclient $> 
 ```
+
+

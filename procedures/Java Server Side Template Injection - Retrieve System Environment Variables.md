@@ -32,6 +32,8 @@ The attacker can use the 'System Environment Variables' command to execute the p
 
 Business Value: This technique can be used to gather sensitive information about the target system, which can be used for further attacks. It is important to secure against this attack to prevent unauthorized access and data breach.
 
+ 
+
 ## Requirements
 
 1. Access to the server-side template
@@ -39,6 +41,8 @@ Business Value: This technique can be used to gather sensitive information about
 1. Java environment installed on the attacker's system
 
 1. Knowledge of Java programming language and server-side template syntax
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ Business Value: This technique can be used to gather sensitive information about
 
 1. Monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve the system's environment variables
 
 1. Escalate privileges and gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. To retrieve the system environment variables in Java, you can use the `getenv()` method of the `System` class.
 
+ 
+
+
+
 **Code**: [[${T(java.lang.System).getenv()}]]
+
+
 
 > This method returns a `java.util.Map` object that contains the environment variables as key-value pairs. The keys are the names of the environment variables, and the values are their values. You can use this method to retrieve any environment variable that is set on the system where your Java program is running.
 
@@ -77,3 +91,5 @@ Business Value: This technique can be used to gather sensitive information about
 - [[Java]]
 - [[Java - Retrieve the system’s environment variables]]
 - [[Server Side Template Injection]]
+
+

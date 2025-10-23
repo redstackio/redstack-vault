@@ -27,6 +27,8 @@ HQL injection is an attack technique that exploits input validation vulnerabilit
 
 HQL injection is an attack technique that exploits input validation vulnerabilities in an application that uses Hibernate Query Language (HQL). This technique involves injecting malicious code into an HQL statement via unsupported comments to manipulate the query's logic and extract sensitive information. Attackers can use this technique to bypass authentication mechanisms, extract sensitive data, and execute arbitrary code. HQL injection is a serious threat to applications that use Hibernate, and developers should take steps to prevent it.
 
+ 
+
 ## Requirements
 
 1. Access to the application's input validation mechanism
@@ -34,6 +36,8 @@ HQL injection is an attack technique that exploits input validation vulnerabilit
 1. Knowledge of the application's HQL syntax
 
 1. Ability to inject unsupported comments into the HQL statement
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ HQL injection is an attack technique that exploits input validation vulnerabilit
 
 1. Implement strict input validation and output encoding to prevent attacks
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from the application's database
@@ -51,11 +57,19 @@ HQL injection is an attack technique that exploits input validation vulnerabilit
 
 1. Execute arbitrary code on the target system
 
+ 
+
 # Instructions
 
 1. To avoid this error, please remove any comments from your HQL code.
 
+ 
+
+
+
 **Code**: [[HQL does not support comments]]
+
+
 
 > HQL is a SQL-like language used in Hive. While SQL supports comments, HQL does not. Therefore, any comments within your HQL code will result in an error. To avoid this error, please remove any comments from your HQL code before running it in Hive.
 
@@ -73,3 +87,5 @@ HQL injection is an attack technique that exploits input validation vulnerabilit
 
 - [[Hibernate Query Language Injection]]
 - [[HQL Comments]]
+
+

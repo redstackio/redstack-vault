@@ -17,4 +17,12 @@ Cisco Global Exploiter (CGE), is an advanced, simple and fast security testing t
 
 Cisco Global Exploiter (CGE), is an advanced, simple and fast security testing tool.
 
+
+
 cisco-global-exploiter Homepage | Kali cisco-global-exploiter Repo
+
+
+
+
+
+

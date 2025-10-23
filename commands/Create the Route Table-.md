@@ -23,3 +23,5 @@ aws ec2 create-route-table --vpc-id $AWS_VPC_ID --region $AWS_REGION
 ```
 aws ec2 create-route-table --vpc-id <vpc_id> --region <region>
 ```
+
+

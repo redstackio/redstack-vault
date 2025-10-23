@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```passwd
 root:$6$12345678$DgaVYkZjVTY58m0juyhsvwGEjwMI9RB5U0U63JEP2as7KF/gNTboh3MC6aE8CjcVHmb1Er9RWwbRQmaHhBUfs/:0:0:root:/root:/bin/bash
 ```
+
+

@@ -39,11 +39,15 @@ Apache Karaf is vulnerable to XML External Entity (XXE) injection attacks that c
 
 To exploit this vulnerability, an attacker can use the 'XML External Entity Injection' and 'XML Deployment' commands. The former allows the attacker to inject malicious XML into the server, and the latter can be used to deploy a malicious bundle to the server. By combining these two commands, the attacker can cause the server to send sensitive data to a remote server under their control.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Apache Karaf server
 
 1. Ability to send malicious XML documents to the server
+
+ 
 
 ## Defense
 
@@ -53,18 +57,28 @@ To exploit this vulnerability, an attacker can use the 'XML External Entity Inje
 
 1. Monitor network traffic for suspicious activity, such as large amounts of data being sent to unexpected destinations
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from a vulnerable Apache Karaf server
 
 1. Maintain stealth while carrying out the attack
 
+ 
+
 # Instructions
 
 1. Craft a malicious XML input that references an external entity which is then processed by the XML parser.
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE d]]
+
+
 
 > An attacker can exploit a vulnerability in the XML parser to include malicious code in the XML input. This can lead to sensitive data disclosure or denial of service attacks. To prevent this, input validation and sanitization should be implemented to ensure that only expected data is processed by the XML parser.
 
@@ -74,9 +88,17 @@ deploy <filename>
 
 Replace <filename> with the name of the XML file you want to deploy.
 
+ 
+
+
+
 **Code**: [[deploy]]
 
+
+
 > This command is used to deploy an XML file to a specified location. The <filename> argument specifies the name of the XML file you want to deploy. Once the file is deployed, it will be available for use in the specified location.
+
+
 
 **Command** ([[Pull latest code from Git]]):
 
@@ -84,17 +106,27 @@ Replace <filename> with the name of the XML file you want to deploy.
 sudo git pull origin master
 ```
 
+
+
+
+
 **Command** ([[Install dependencies]]):
 
 ```bash
 sudo npm install
 ```
 
+
+
+
+
 **Command** ([[Restart the application]]):
 
 ```bash
 sudo pm2 restart myapp
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +156,5 @@ sudo pm2 restart myapp
 - [[Exploiting blind XXE to exfiltrate data out-of-band]]
 - [[XML External Entity]]
 - [[XXE OOB with Apache Karaf]]
+
+

@@ -9,6 +9,7 @@ output: 'python RequestCert.py --tenantId 2c240ecc-...truncated --prt QVFBQkFBQU
   --userName Gadmin@ResearchAadLabEnv.onmicrosoft.com --hexCtx e096b37dc0d8e5cde438...truncated
   --hexDerivedKey b8a39c7b3b7e7c859b...truncated
 
+
   # PFX saved with the name user@tenant.onmicrosoft.com.pfx and password is: "AzureADCert"'
 created_at: '2023-05-25T18:50:44.624549+00:00'
 updated_at: '2023-05-25T18:50:44.779119+00:00'
@@ -27,3 +28,5 @@ python RequestCert.py --tenantId 2c240ecc-...truncated --prt QVFBQkFBQUFBQUFHVl9
 
 # PFX saved with the name user@tenant.onmicrosoft.com.pfx and password is: "AzureADCert"
 ```
+
+

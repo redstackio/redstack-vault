@@ -29,7 +29,10 @@ def queueRequests(target, wordlists):
     engine.openGate('race1')
     engine.complete(timeout=60)
 
+
 def handleResponse(req, interesting):
     # Add request to table
     table.add(req)
 ```
+
+

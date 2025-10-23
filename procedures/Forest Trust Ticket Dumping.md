@@ -36,11 +36,15 @@ From a technical perspective, this technique involves accessing the LSASS proces
 
 From a business perspective, this technique can be used to gain access to sensitive resources in a trusted forest, such as financial data or intellectual property. It is important for organizations to be aware of this technique and take steps to mitigate the risk of forest trust ticket dumping.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised domain controller
 
 1. Tools such as Mimikatz to extract trust account hashes
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Implement network segmentation to limit the impact of a forest trust ticket dumping attack
 
+ 
+
 ## Objectives
 
 1. Gain access to resources in a trusted forest
 
 1. Establish a trust relationship with a target forest
+
+ 
 
 # Instructions
 
@@ -64,9 +72,15 @@ lsadump::trust /patch
 
 This will display a list of all the trust accounts and their corresponding hashes.
 
+ 
+
+
+
 **Code**: [[lsadump::trust /patch
 
 or find the TRUST_NAME$ mac]]
+
+
 
 > The lsadump::trust command is used to extract trust account hashes from a Windows system. Trust accounts are used to establish a trust relationship between two domains or between a domain and a non-Windows Kerberos realm. These accounts are created automatically when a trust relationship is established and are used to authenticate users between the two domains. By extracting the trust account hashes, an attacker can use them to perform pass-the-hash attacks and gain access to other systems in the network.
 
@@ -76,11 +90,15 @@ reg query HKLM\SAM\SAM\Domains\Account\Aliases /s | findstr /i trust
 
 This command will search for the TRUST_NAME$ machine account hash in the system's registry.
 
+
+
 **Command** ([[Find TRUST_NAME$ machine account hash]]):
 
 ```bash
 lsadump::trust /patch
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +121,5 @@ lsadump::trust /patch
 - [[Active Directory Attacks]]
 - [[Dumping trust passwords (trust keys)]]
 - [[Forest to Forest Compromise - Trust Ticket]]
+
+

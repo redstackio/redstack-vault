@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:41.379800+00:00'
 ```bash
 select is_member('db_owner');
 ```
+
+

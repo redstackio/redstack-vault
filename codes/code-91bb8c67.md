@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:14.082549+00:00'
 ```sql
 http://host/vuln.php?id=injection';create table NotSoSecure (data varchar(200));--
 ```
+
+

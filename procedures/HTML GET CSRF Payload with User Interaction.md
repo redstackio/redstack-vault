@@ -31,6 +31,8 @@ HTML GET CSRF Payload with User Interaction is a type of attack that tricks a us
 
 HTML GET CSRF Payload with User Interaction is a type of attack that tricks a user into performing an action on a website that they did not intend to do. The attacker crafts a malicious link that, when clicked, sends a request to the target website with the user's credentials. This can result in the attacker gaining access to sensitive information or performing unauthorized actions on behalf of the user. This attack can be executed by embedding a link in an email or on a website. The business value of this attack is that it can be used to gain unauthorized access to a system or steal sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to the target website
@@ -38,6 +40,8 @@ HTML GET CSRF Payload with User Interaction is a type of attack that tricks a us
 1. Ability to craft a malicious link
 
 1. Trick the user into clicking on the link
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ HTML GET CSRF Payload with User Interaction is a type of attack that tricks a us
 
 1. Implement multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. To trick the user into clicking on a malicious link
@@ -55,11 +61,19 @@ HTML GET CSRF Payload with User Interaction is a type of attack that tricks a us
 
 1. To steal sensitive information
 
+ 
+
 # Instructions
 
 1. Craft a malicious link with the desired action and embed it in an email or on a website. When the user clicks on the link, the action will be executed on the target website.
 
+ 
+
+
+
 **Code**: [[<a href="http://www.example.com/api/setusername?us]]
+
+
 
 > The 'data' field contains the HTML code for the malicious link. The 'text' field contains a visual aid for crafting the link. The 'instruction' field provides high-level steps for executing the attack.
 
@@ -83,3 +97,5 @@ HTML GET CSRF Payload with User Interaction is a type of attack that tricks a us
 - [[Cross-Site Request Forgery]]
 - [[HTML GET - Requiring User Interaction]]
 - [[Payloads]]
+
+

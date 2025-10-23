@@ -19,3 +19,5 @@ net use p: \\WIN-PTELU2U07KG\admin$ /user:john mimikatz
 # login as someone
 rdesktop 10.0.0.2:3389 -u test -p mimikatz -d pentestlab
 ```
+
+

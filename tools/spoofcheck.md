@@ -16,3 +16,7 @@ A program that checks if a domain can be spoofed from. The program checks SPF an
 ## Description
 
 A program that checks if a domain can be spoofed from. The program checks SPF and DMARC records for weak configurations that allow spoofing. ​
+
+
+
+

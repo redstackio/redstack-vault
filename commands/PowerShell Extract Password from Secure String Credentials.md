@@ -6,6 +6,8 @@ executor: ''
 data: $creds.getnetworkcredential() | fl *
 output: 'PS C:\> $creds.getnetworkcredential() | fl *
 
+
+
   UserName       : BOB-PC/BOB
 
   Password       : secretpass
@@ -28,8 +30,11 @@ $creds.getnetworkcredential() | fl *
 ```
 PS C:\> $creds.getnetworkcredential() | fl *
 
+
 UserName       : BOB-PC/BOB
 Password       : secretpass
 SecurePassword : System.Security.SecureString
 Domain         :
 ```
+
+

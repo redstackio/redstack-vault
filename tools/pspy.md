@@ -27,11 +27,25 @@ pspy is a Linux command line tool designed to snoop on processes without need fo
 
 pspy is a Linux command line tool designed to snoop on processes without need for root permissions. It displays commands run by other users, cron jobs, etc. as they execute.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_21962dd1-f2b8-45b5-b2e1-7bc6f4432aad}}
+
+
 
 # Installation
 
 Download the "static version" from the author's GitHub: [https://github.com/DominicBreuker/pspy](https://github.com/DominicBreuker/pspy)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +58,5 @@ Download the "static version" from the author's GitHub: [https://github.com/Domi
 ## Tags
 
 - [[account monitoring]]
+
+

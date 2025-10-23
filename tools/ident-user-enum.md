@@ -17,4 +17,12 @@ ident-user-enum is a simple PERL script to query the ident service (113/TCP) in 
 
 ident-user-enum is a simple PERL script to query the ident service (113/TCP) in order to determine the owner of the process listening on each TCP port of a target system.
 
+
+
 This can help to prioritise target service during a pentest (you might want to attack services running as root first).  Alternatively, the list of usernames gathered can be used for password guessing attacks on other network services.
+
+
+
+
+
+

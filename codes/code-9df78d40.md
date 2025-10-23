@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:19.128753+00:00'
 ssh -R [bindaddr]:[port]:[localhost]:[localport] [user]@[host]
 ssh -R 3389:10.1.1.224:3389 root@10.11.0.32
 ```
+
+

@@ -32,21 +32,33 @@ Build a custom wordlist of potential passwords using contextual information to m
 
 Build a custom wordlist of potential passwords using contextual information to minimize network traffic. Brute forcing passwords over the network is slow and noisy, making lists like rockyou unfit.
 
+
+
 # Instructions
 
 This procedure will step through a number of strategies for building password lists, which when combined should make a tailored list suitable for online brute force attacks.
+
+
 
 ## Popular  Passwords
 
 Large password lists are useful for offline brute forcing, but aren't viable when brute forcing over the network due to traffic. It's best to find a curated list of the top passwords rather than something on the scale of rockyou. A good option would be either the 10-million-password-list-top-100.txt or 10-million-password-list-top-500.txt, both available from [SecLists via GitHub](https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials).
 
+
+
 ## Usernames
 
 Lazy administrators may set a user's password to be the username, leaving it up to users to change it themselves. It's always worth including usernames in password lists for this reason.
 
+
+
 ## cEWL Lists
 
 Use cEWL to crawl any websites related to the target for potential passwords.
+
+
+
+
 
 **Command** ([[CEWL Generate a Password List Using a Website's Content]]):
 
@@ -54,15 +66,27 @@ Use cEWL to crawl any websites related to the target for potential passwords.
 cewl $_TARGET_IP -d $_DEPTH -m $_MAX_SIZE -w $_WORDLIST
 ```
 
+
+
+
+
 ## Mutating Wordlists (Optional)
 
 Mutating a wordlist is useful when the password policy is known. For example, if each password must have a digit, many users will simply append one. This tactic should be used sparingly, as  it grows lists exponentially.
+
+
+
+
 
 **Command** ([[Mutate a Wordlist by Appending a Digits]]):
 
 ```bash
 hashcat -a 6 --stdout $_WORDLIST ?d > $_WORDLIST.mutated
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +107,5 @@ hashcat -a 6 --stdout $_WORDLIST ?d > $_WORDLIST.mutated
 
 - [[Enumeration]]
 - [[password cracking]]
+
+

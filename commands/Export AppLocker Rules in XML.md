@@ -27,3 +27,5 @@ powershell -nop -c "Import-Module AppLocker; Get-AppLockerPolicy -Effective -Xml
 PS C:\users> powershell -nop -c "Import-Module AppLocker; Get-AppLockerPolicy -Effective -Xml"
 <AppLockerPolicy Version="1"><RuleCollection Type="Appx" EnforcementMode="NotConfigured" /><RuleCollection Type="Dll" EnforcementMode="NotConfigured" /><RuleCollection Type="Exe" EnforcementMode="Enabled"><FilePathRule Id="921cc481-6e17-4653-8f75-050b80acca20" 
 ```
+
+

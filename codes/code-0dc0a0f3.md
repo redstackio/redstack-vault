@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:35.279033+00:00'
 ```ps1
 Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>" -Query "select * from openquery(`"<DatabaseLinkName>`",'select name from <DatabaseNameFromPreviousCommand>.sys.tables')" -Verbose
 ```
+
+

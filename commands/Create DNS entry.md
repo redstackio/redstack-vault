@@ -15,3 +15,5 @@ updated_at: '2023-05-24T03:35:02.221728+00:00'
 ```bash
 Create a DNS entry for login.login.username.corp and www.login.username.corp, type A, pointing to your machine
 ```
+
+

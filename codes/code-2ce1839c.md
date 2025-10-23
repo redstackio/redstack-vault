@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:46.088423+00:00'
 sqsh -S 192.168.1.X -U sa -P superPassword
 python mssqlclient.py WORKGROUP/Administrator:password@192.168.1X -port 46758
 ```
+
+

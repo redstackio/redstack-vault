@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:22.510346+00:00'
 ```sql
 SELECT column_name FROM information_schema.columns WHERE table_name='data_table'
 ```
+
+

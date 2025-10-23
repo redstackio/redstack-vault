@@ -17,3 +17,5 @@ true) GROUP BY column_name LIMIT 1 UNION ALL SELECT (SELECT 'asd'),1,1,1,1,1,1))
 true) GROUP BY column_name LIMIT 1 UNION ALL SELECT (SELECT @@project_id),1,1,1,1,1,1)) AS T1 GROUP BY column_name#
 ' GROUP BY column_name UNION ALL SELECT column_name,1,1 FROM (select column_name AS new_name from `project_id.dataset_name.table_name`) AS A GROUP BY column_name#
 ```
+
+

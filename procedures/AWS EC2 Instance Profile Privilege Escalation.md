@@ -35,11 +35,15 @@ To execute this technique, the attacker must first identify an EC2 instance with
 
 This technique can be valuable for attackers looking to gain access to sensitive data or execute unauthorized actions within a cloud environment.
 
+ 
+
 ## Requirements
 
 1. Access to an EC2 instance with a low privileged instance profile attached
 
 1. Ability to attach an instance profile with elevated permissions to the EC2 instance
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This technique can be valuable for attackers looking to gain access to sensitive
 
 1. Implement network segmentation to limit lateral movement within the cloud environment
 
+ 
+
 ## Objectives
 
 1. Escalate privileges of an EC2 instance
@@ -57,9 +63,13 @@ This technique can be valuable for attackers looking to gain access to sensitive
 
 1. Execute unauthorized actions within a cloud environment
 
+ 
+
 # Instructions
 
 1. To associate an IAM instance profile with an EC2 instance, use the following command:
+
+ 
 
 The 'aws ec2 associate-iam-instance-profile' command is used to associate an IAM instance profile with an EC2 instance. This allows the instance to access the resources that are defined in the instance profile. 
 
@@ -73,11 +83,15 @@ Example usage:
 
 aws ec2 associate-iam-instance-profile --instance-id i-1234567890abcdef0 --iam-instance-profile Name=MyInstanceProfile
 
+
+
 **Command** ([[Associate IAM Instance Profile]]):
 
 ```bash
 aws ec2 associate-iam-instance-profile --instance-id ID --iam-instance-profile Name=ProfileName
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +113,5 @@ aws ec2 associate-iam-instance-profile --instance-id ID --iam-instance-profile N
 - [[Cloud - AWS]]
 - [[Exploitation]]
 - [[Privilege Escalation]]
+
+

@@ -18,3 +18,5 @@ SCMKit.exe -s gitlab -m removepat -c userName:password -u https://gitlab.somethi
 SCMKit.exe -s gitlab -m listpat -c userName:password -u https://gitlab.something.local -o targetUser
 SCMKit.exe -s gitlab -m listpat -c apikey -u https://gitlab.something.local -o targetUser
 ```
+
+

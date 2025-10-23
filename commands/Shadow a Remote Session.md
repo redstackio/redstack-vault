@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:27.902007+00:00'
 ```bash
 mstsc /v:{ADDRESS} /shadow:{SESSION_ID} /noconsentprompt /prompt
 ```
+
+

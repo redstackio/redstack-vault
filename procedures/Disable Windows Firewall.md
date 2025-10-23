@@ -37,9 +37,17 @@ Windows Firewall is enabled on almost all modern systems and will block access t
 
 Windows Firewall is enabled on almost all modern systems and will block access to most ports unless specifically whitelisted. Attackers will often want to disable the firewall, or add exceptions so they can access resources which are normally unavailable remotely.
 
+
+
 # Instructions
 
+
+
 ## Windows 7 and Later
+
+
+
+
 
 **Command** ([[Disable Windows Firewall (Windows 7+)]]):
 
@@ -47,11 +55,27 @@ Windows Firewall is enabled on almost all modern systems and will block access t
 netsh advfirewall set allprofiles state off
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Allow a Port Through Windows Firewall (Windows 7+)]]):
 
 ```bash
 netsh advfirewall firewall add rule name="Open Port $_PORT" dir=in action=allow protocol=TCP localport=$_PORT
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[Allow an Application Through Windows Firewall (Windows 7+)]]):
 
@@ -59,7 +83,15 @@ netsh advfirewall firewall add rule name="Open Port $_PORT" dir=in action=allow 
 netsh advfirewall firewall add rule name="Allow $_Program to bypass firewall rules" dir=in action=allow program="C:\$_PATH\$_PROGRAM.exe" enable=yes
 ```
 
+
+
+
+
 ## Windows 2008 and Earlier
+
+
+
+
 
 **Command** ([[Windows Firewall Disable Firewall (Windows 2008 and Earlier)]]):
 
@@ -67,11 +99,23 @@ netsh advfirewall firewall add rule name="Allow $_Program to bypass firewall rul
 netsh firewall set opmode DISABLE
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Allow a Port Through Windows Firewall (Windows 2008 and Earlier)]]):
 
 ```bash
 netsh firewall add portopening TCP $_PORT "Open Port $_PORT"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -99,3 +143,5 @@ netsh firewall add portopening TCP $_PORT "Open Port $_PORT"
 
 - [[Antivirus Bypass]]
 - [[Service Attacks]]
+
+

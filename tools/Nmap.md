@@ -27,15 +27,31 @@ Nmap is a network discovery and security auditing tool, used to enumerate networ
 
 Nmap is a network discovery and security auditing tool, used to enumerate networks for services and their capabilities by sending crafted packets and analyzing the results. Nmap also includes a powerful scripting engine, which can be used to query services for information, scan for vulnerabilities, and in some cases exploit them.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_fc2e0c0c-7263-4709-90ce-ee6fc08cbede}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
+
+
+
+
 ## Install on Windows
 
 Download and install Nmap: [Nmap Official Site](https://nmap.org/download.html)
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Download and install Nmap: [Nmap Official Site](https://nmap.org/download.html)
 
 - [[Enumeration]]
 - [[Network]]
+
+

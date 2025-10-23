@@ -34,6 +34,8 @@ From a technical perspective, the Katakana library works by converting input dat
 
 The business value of using the Katakana library is that it allows an attacker to bypass input filters that are designed to prevent attacks. This can be used to steal sensitive information, such as user credentials or financial data, or to perform other malicious actions on the application.
 
+ 
+
 ## Requirements
 
 1. Access to the application's input fields
@@ -41,6 +43,8 @@ The business value of using the Katakana library is that it allows an attacker t
 1. Knowledge of the input filters being used by the application
 
 1. Ability to encode and decode data using the Katakana library
+
+ 
 
 ## Defense
 
@@ -50,17 +54,27 @@ The business value of using the Katakana library is that it allows an attacker t
 
 1. Regularly update and patch the application to address any known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass input filters to inject malicious code into the application
 
 1. Perform cross-site scripting attacks to steal sensitive data or perform other malicious actions
 
+ 
+
 # Instructions
 
 1. To use the Katakana library in your JavaScript code, follow these steps:
 
+ 
+
+
+
 **Code**: [[javascript:([,ウ,,,,ア]=[]+{},[ネ,ホ,ヌ,セ,,ミ,ハ,ヘ,,,ナ]=[]]
+
+
 
 > 1. Download the Katakana library from https://github.com/aemkei/katakana.js 
 2. Include the library in your HTML file using the script tag.
@@ -95,3 +109,5 @@ console.log(katakanaText); // Outputs 'ヘッロー、ヲールド！'
 - [[Bypass using Katana]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

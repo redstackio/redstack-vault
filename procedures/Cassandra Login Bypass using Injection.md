@@ -35,6 +35,8 @@ From a technical perspective, this attack involves injecting malicious code into
 
 The business value of this attack is that it allows attackers to gain access to sensitive information stored in the Cassandra database, including admin credentials. This information can then be used to carry out further attacks against the organization, such as data exfiltration, ransomware attacks, and more.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -42,6 +44,8 @@ The business value of this attack is that it allows attackers to gain access to 
 1. Knowledge of the login mechanism of the target Cassandra database
 
 1. Knowledge of SQL injection and cross-site scripting (XSS) attacks
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this attack is that it allows attackers to gain access to 
 
 1. Implement strong authentication mechanisms, such as multi-factor authentication, to prevent unauthorized access to sensitive information
 
+ 
+
 ## Objectives
 
 1. Bypass the login mechanism of a Cassandra database
@@ -59,12 +65,20 @@ The business value of this attack is that it allows attackers to gain access to 
 
 1. Retrieve admin credentials
 
+ 
+
 # Instructions
 
 1. To retrieve the admin credentials, execute the following SQL command:
 
+ 
+
+
+
 **Code**: [[username: admin' ALLOW FILTERING; %00
 password: AN]]
+
+
 
 > This command exploits a vulnerability in the authentication system by injecting a malicious query. The 'ALLOW FILTERING' keyword allows the query to bypass certain security restrictions and return all results. The injected username 'admin' combined with the wildcard character '%' and the null byte '%00' forces the query to return the password associated with the admin account. Note that this command should only be used for ethical hacking and penetration testing purposes with proper authorization and consent.
 
@@ -86,3 +100,5 @@ password: AN]]
 - [[Cassandra Injection]]
 - [[Cassandra - Login Bypass]]
 - [[Login Bypass 0]]
+
+

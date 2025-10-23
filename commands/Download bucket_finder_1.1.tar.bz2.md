@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:58.747935+00:00'
 ```bash
 wget https://digi.ninja/files/bucket_finder_1.1.tar.bz2 -O bucket_finder_1.1.tar.bz2
 ```
+
+

@@ -11,6 +11,7 @@ data: '# https://github.com/hmgle/graftcp/blob/master/local/example-graftcp-loca
 
   loglevel = 1
 
+
   ## SOCKS5 address (default "127.0.0.1:1080")
 
   socks5 = 127.0.0.1:1080
@@ -18,6 +19,7 @@ data: '# https://github.com/hmgle/graftcp/blob/master/local/example-graftcp-loca
   # socks5_username = SOCKS5USERNAME
 
   # socks5_password = SOCKS5PASSWORD
+
 
   ## Set the mode for select a proxy (default "auto")
 
@@ -43,3 +45,5 @@ socks5 = 127.0.0.1:1080
 ## Set the mode for select a proxy (default "auto")
 select_proxy_mode = auto
 ```
+
+

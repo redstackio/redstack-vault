@@ -34,11 +34,15 @@ From a business standpoint, bypassing AMSI scanning can allow attackers to execu
 
 The objectives of this procedure are to modify the amsi.dll file to bypass AMSI scanning and execute malicious code on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Privileges to modify system files
+
+ 
 
 ## Defense
 
@@ -48,20 +52,30 @@ The objectives of this procedure are to modify the amsi.dll file to bypass AMSI 
 
 1. Monitor system logs for any suspicious modifications to system files.
 
+ 
+
 ## Objectives
 
 1. Bypass AMSI scanning on the target system
 
 1. Execute malicious code on the target system
 
+ 
+
 # Instructions
 
 1. This script patches the AMSI Scan Buffer to bypass AMSI scanning. It uses the Win32 API to load the amsi.dll library and retrieve the address of the AmsiScanBuffer function. Then, it overwrites the first 6 bytes of the function with a jump instruction that skips over the AMSI scan.
+
+ 
+
+
 
 **Code**: [[$Win32 = @"
 
 using System;
 using System.Runtime.In]]
+
+
 
 > The script first loads the 'am' + 'si.dll' library using the Win32 API's LoadLibrary function. Then, it retrieves the address of the AmsiScanBuffer function using the GetProcAddress function. The function's memory protection is then changed to allow writing using the VirtualProtect function. The first 6 bytes of the function are then overwritten with a jump instruction that skips over the AMSI scan. This allows malicious code to bypass AMSI scanning and execute without detection.
 
@@ -82,3 +96,5 @@ using System.Runtime.In]]
 ## Tags
 
 - [[Patching amsi.dll AmsiScanBuffer by rasta-mouse]]
+
+

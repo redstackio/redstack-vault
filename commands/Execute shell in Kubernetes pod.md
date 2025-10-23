@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:05.504277+00:00'
 ```bash
 kubectl exec -it <POD NAME> -n <PODS NAMESPACE> -- sh
 ```
+
+

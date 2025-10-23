@@ -35,13 +35,19 @@ Open a CMD prompt or powershell session on a remote target machine
 
 Open a CMD prompt or powershell session on a remote target machine
 
+
+
 ## Objective
 
 1. Connect to a remote machine and obtain a CMD or PS prompt
 
+
+
 ## Instructions
 
 1. Connect to a remote machine using WInRS and open CMD prompt on the target machine
+
+
 
 **Command** ([[winrs remote CMD on target machine]]):
 
@@ -49,7 +55,13 @@ Open a CMD prompt or powershell session on a remote target machine
 winrs -r:$COMPUTER_NAME cmd
 ```
 
+
+
 (Alternative) Connect to the remote machine using winrs with a specific user credentials
+
+
+
+
 
 **Command** ([[winrs remote to machine using credentials]]):
 
@@ -57,7 +69,15 @@ winrs -r:$COMPUTER_NAME cmd
 winrs -r:$SYSTEM -u:.\$USERNAME -p:$PASSWORD cmd
 ```
 
+
+
+
+
+
+
 2. (Alternative) use Powershell remote to connect to a machine
+
+
 
 **Command** ([[Powershell remoting to machine]]):
 
@@ -66,7 +86,13 @@ $SESSION = New-PSSession $COMPUTER_NAME
 Enter-PSSession $SESSION
 ```
 
+
+
 (Optional) Specify user credentials for PS Remote
+
+
+
+
 
 **Command** ([[Powershell remoting to machine with user credentials]]):
 
@@ -75,6 +101,10 @@ $pass = ConvertTo-SecureString $PASSWORD -AsPlainText -Force;
 $cred= New-Object System.Management.Automation.PSCredential ($USERNAME, $password );
 New-PSSession -computername $SYSTEM -credential $cred
 ```
+
+
+
+
 
 ## Platforms
 
@@ -102,3 +132,5 @@ New-PSSession -computername $SYSTEM -credential $cred
 
 - [[Powershell Remote]]
 - [[WinRS]]
+
+

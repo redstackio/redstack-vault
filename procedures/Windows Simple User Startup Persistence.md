@@ -39,6 +39,8 @@ From a technical perspective, this technique involves creating a batch script th
 
 From a business perspective, this technique can be used by attackers to maintain access to a compromised system, allowing them to steal data, install additional malware, or use the compromised system as a jumping-off point for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -46,6 +48,8 @@ From a business perspective, this technique can be used by attackers to maintain
 1. Ability to create a backdoor batch script
 
 1. Ability to add the script to the Startup folder
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ From a business perspective, this technique can be used by attackers to maintain
 
 1. Implement a least privilege model to limit the impact of a compromised simple user account
 
+ 
+
 ## Objectives
 
 1. Maintain persistent access to a compromised system
 
 1. Execute commands on the compromised system every time the user logs in
+
+ 
 
 # Instructions
 
@@ -72,15 +80,25 @@ From a business perspective, this technique can be used by attackers to maintain
 6. Run the following command: start /b C:\Users\<username>\AppData\Local\Temp\backdoor.exe
 7. Replace <username> with the username of the target user.
 
+ 
+
+
+
 **Code**: [[PS C:\> gc C:\Users\Rasta\AppData\Roaming\Microsof]]
 
+
+
 > This command creates a batch script in the user startup folder. The batch script will run every time the user logs in, allowing an attacker to maintain persistent access to the system. The code for the batch script can be customized to execute any desired actions, such as downloading and executing malware or creating a reverse shell. The 'gc' command is used to get the content of the file, and 'start' is used to run the backdoor executable in the background.
+
+
 
 **Command** ([[Run backdoor.bat on Startup]]):
 
 ```bash
 start /b C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
 ```
+
+
 
 2. To add a command to the Windows Startup Folder using SharPersist, follow these steps:
 1. Open the command prompt as an administrator.
@@ -90,7 +108,13 @@ start /b C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
    - Replace "Some File" with a name for the file that will be created in the Startup Folder.
 4. Press Enter to execute the command.
 
+ 
+
+
+
 **Code**: [[SharPersist -t startupfolder -c "C:\Windows\System]]
+
+
 
 > -t: Specifies the type of persistence to use. In this case, we are using the startup folder.
 -c: Specifies the command to be executed.
@@ -124,3 +148,5 @@ start /b C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
 - [[Simple User]]
 - [[Startup]]
 - [[Windows - Persistence]]
+
+

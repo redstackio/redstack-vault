@@ -34,6 +34,8 @@ Abusing Active Directory ACLs/ACEs to retrieve LAPS passwords is a technique use
 
 The technical details of this attack involve identifying the LAPS password attribute in Active Directory, modifying the ACLs/ACEs to grant access, and retrieving the password. The business value of this technique is that it allows attackers to gain access to sensitive data and systems, which can lead to data theft, system compromise, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Domain credentials with permissions to modify Active Directory ACLs/ACEs
@@ -41,6 +43,8 @@ The technical details of this attack involve identifying the LAPS password attri
 1. Access to Active Directory
 
 1. Knowledge of LAPS password attribute
+
+ 
 
 ## Defense
 
@@ -50,33 +54,53 @@ The technical details of this attack involve identifying the LAPS password attri
 
 1. Monitor for and investigate suspicious changes to Active Directory ACLs/ACEs
 
+ 
+
 ## Objectives
 
 1. Retrieve LAPS passwords for domain-joined computers
 
 1. Gain access to local administrator accounts on target computers
 
+ 
+
 # Instructions
 
 1. To find computers with expired admin passwords, run the following command in PowerShell:
 
+ 
+
+
+
 **Code**: [[Get-ADComputer -filter {ms-mcs-admpwdexpirationtim]]
+
+
 
 > This command uses the Get-ADComputer cmdlet to search for computers where the ms-mcs-admpwdexpirationtime attribute is not empty, indicating that the admin password has expired. The cmdlet returns the ms-mcs-admpwd and ms-mcs-admpwdexpirationtime properties for each computer that matches the filter. This information can be used to identify computers that need to have their admin passwords reset.
 
 2. To retrieve the Local Administrator Password Solution (LAPS) password and expiration time for a specific computer, use the getObjectAttributes command with the following syntax:
 
+ 
+
+
+
 **Code**: [[bloodyAD.py -u john.doe -d bloody -p Password512 -]]
+
+
 
 > - Replace 'LAPS_PC$' with the name of the computer you want to retrieve the password and expiration time for.
 - The 'ms-mcs-admpwd' argument retrieves the LAPS password.
 - The 'ms-mcs-admpwdexpirationtime' argument retrieves the expiration time of the LAPS password.
+
+
 
 **Command** ([[Get LAPS Password Attribute for LAPS_PC$ Object]]):
 
 ```bash
 bloodyAD.py -u john.doe -d bloody -p Password512 --host 192.168.10.2 getObjectAttributes LAPS_PC$ ms-mcs-admpwd,ms-mcs-admpwdexpirationtime
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +123,5 @@ bloodyAD.py -u john.doe -d bloody -p Password512 --host 192.168.10.2 getObjectAt
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[ReadLAPSPassword]]
+
+

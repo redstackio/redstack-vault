@@ -15,3 +15,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 apt update && apt install snmp-mibs-downloader -y \
 && sed -i '/mibs/s/^/#/g' /etc/snmp/snmp.conf
 ```
+
+

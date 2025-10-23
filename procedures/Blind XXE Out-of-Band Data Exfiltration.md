@@ -39,6 +39,8 @@ To execute this attack, the attacker first injects a malicious XML payload into 
 
 The business value of this attack is that it allows an attacker to steal sensitive data from a target system without being detected. This can lead to data breaches, financial loss, and damage to the target's reputation. The technical explanation of this attack involves sending malicious XML payloads to exploit vulnerable XML parsers, which can allow attackers to retrieve sensitive data from the target system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that parses XML input
@@ -46,6 +48,8 @@ The business value of this attack is that it allows an attacker to steal sensiti
 1. Ability to inject malicious XML payloads
 
 1. Ability to intercept network traffic
+
+ 
 
 ## Defense
 
@@ -55,27 +59,45 @@ The business value of this attack is that it allows an attacker to steal sensiti
 
 1. Monitor network traffic for unusual activity, such as large amounts of data being sent to external locations
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from a target system
 
 1. Avoid detection by security controls that monitor network traffic
 
+ 
+
 # Instructions
 
 1. To extract data using out-of-band techniques, you can send requests to a controlled server or service that will receive the data. In this example, we are using a Burp Collaborator server to receive data via an XML external entity (XXE) attack.
+
+ 
+
+
 
 **Code**: [[<?xml version="1.0" ?>
 <!DOCTYPE root [
 <!ENTITY %]]
 
+
+
 > The 'data' field contains an XML payload that includes an external entity reference to a Burp Collaborator server. When the XML parser processes the payload, it will make a request to the specified server, which will receive the request and log the interaction. By monitoring the requests made to the Burp Collaborator server, we can extract data that was not directly outputted in the page. This technique can be used to bypass input validation and filtering, and to extract sensitive information such as credentials or configuration files.
 
 2. To view the content of the password file, use the 'cat' command followed by the file path. For example: cat /etc/passwd
 
+ 
+
+
+
 **Code**: [[/etc/passwd]]
 
+
+
 > The '/etc/passwd' file stores user account information, such as usernames, user IDs, home directories, and default shells. This file is commonly used by system administrators to manage user accounts and permissions.
+
+
 
 **Command** ([[View Password File]]):
 
@@ -83,10 +105,18 @@ The business value of this attack is that it allows an attacker to steal sensiti
 /etc/passwd
 ```
 
+
+
 3. The XML External Entity (XXE) attack is a type of attack against an application that parses XML input. An attacker can use it to send specially crafted XML input to the application, which will be then parsed and executed by the XML parser. This can lead to the disclosure of confidential data, denial of service, server-side request forgery, and other types of attacks.
+
+ 
+
+
 
 **Code**: [[<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCT]]
+
+
 
 > In the given data, the attacker has defined two entities, %xxe and callhome, in the DTD section. The %xxe entity is defined to point to the /etc/passwd file on the server. The callhome entity is defined to make a request to a malicious website with the %xxe entity as a parameter. When the XML parser processes the XML input, it will substitute the entities and execute the contents of the %xxe entity, resulting in the disclosure of the contents of the /etc/passwd file and the execution of the callhome entity, which can be used to exfiltrate the data to a remote server.
 
@@ -113,3 +143,5 @@ The business value of this attack is that it allows an attacker to steal sensiti
 - [[Basic Blind XXE]]
 - [[Exploiting blind XXE to exfiltrate data out-of-band]]
 - [[XML External Entity]]
+
+

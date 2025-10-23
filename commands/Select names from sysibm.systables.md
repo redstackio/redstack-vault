@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:58.689535+00:00'
 ```bash
 select name from sysibm.systables
 ```
+
+

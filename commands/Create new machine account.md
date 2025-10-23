@@ -23,3 +23,5 @@ powermad@windows> . .\Powermad.ps1
 powermad@windows> $password = ConvertTo-SecureString 'ComputerPassword' -AsPlainText -Force
 powermad@windows> New-MachineAccount -MachineAccount "ControlledComputer" -Password $($password) -Domain "domain.local" -DomainController "DomainController.domain.local" -Verbose
 ```
+
+

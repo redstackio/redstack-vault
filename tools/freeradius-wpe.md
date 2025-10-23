@@ -17,12 +17,32 @@ A patch for the popular open-source FreeRADIUS implementation to demonstrate RAD
 
 A patch for the popular open-source FreeRADIUS implementation to demonstrate RADIUS impersonation vulnerabilities by Joshua Wright and Brad Antoniewicz. This patch adds the following functionality:
 
+
+
 Simplifies the setup of FreeRADIUS by adding all RFC1918 addresses as acceptable NAS devices;
+
+
 
 Simplifies the setup of EAP authentication by including support for all FreeRADIUS supported EAP types;
 
+
+
 Adds WPE logging in $prefix/var/log/radius/freeradius-server-wpe.log, can be controlled in radius.conf by changing the “wpelogfile” directive;
+
+
 
 Simplified the setup of user authentication with a default “users” file that accepts authentication for any username;
 
+
+
 Adds credential logging for multiple EAP types including PEAP, TTLS, LEAP, EAP-MD5, EAP-MSCHAPv2, PAP, CHAP and others
+
+
+
+
+
+
+
+
+
+

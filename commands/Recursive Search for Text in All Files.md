@@ -42,3 +42,5 @@ bob@a7ffb5e7e757:/$ grep -R passw /etc/* 2>/dev/null
 /etc/debconf.conf:# Not world readable (the default), and accepts only passwords.
 /etc/debconf.conf:Name: passwords
 ```
+
+

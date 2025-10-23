@@ -18,3 +18,5 @@ Find-DomainShare
 #Enumerate Domain Shares the current user has access
 Find-DomainShare -CheckShareAccess
 ```
+
+

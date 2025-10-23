@@ -33,9 +33,13 @@ AWS Elastic Kubernetes Service (EKS) Fargate is a serverless compute engine for 
 
 To list Fargate profiles in an EKS cluster, the attacker can use the 'List Fargate Profiles in EKS Cluster' command.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list Fargate profiles in the specified EKS cluster
+
+ 
 
 ## Defense
 
@@ -45,23 +49,33 @@ To list Fargate profiles in an EKS cluster, the attacker can use the 'List Farga
 
 1. Monitor AWS CloudTrail logs for any unauthorized attempts to list Fargate profiles
 
+ 
+
 ## Objectives
 
 1. Enumerate all Fargate profiles in a specified EKS cluster
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. To list all Fargate profiles in a specific EKS cluster, use the following AWS CLI command:
 
+ 
+
 This command will list all the Fargate profiles associated with the specified EKS cluster. The `--cluster-name` option is used to specify the name of the EKS cluster. This command does not require any arguments.
+
+
 
 **Command** ([[List Fargate Profiles]]):
 
 ```bash
 aws eks list-fargate-profiles --cluster-name cluster-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws eks list-fargate-profiles --cluster-name cluster-name
 - [[EKS]]
 - [[Enumeration]]
 - [[Listing Fargate in specified cluster]]
+
+

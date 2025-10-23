@@ -18,3 +18,5 @@ c:\Users\<username>\.Azure\TokenCache.dat
 # Service PrincipalSecret
 c:\Users\<username>\.Azure\AzureRmContext.json
 ```
+
+

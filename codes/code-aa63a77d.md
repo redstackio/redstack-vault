@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```bash
 for FILE in $(find /var/log -name "auth.log" 2>/dev/null); do shred -z $FILE; cat /dev/null > $FILE; done
 ```
+
+

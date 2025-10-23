@@ -27,9 +27,15 @@ We suggest making RSA key's with a AES-256 encrypted passphrase to better secure
 
 We suggest making RSA key's with a AES-256 encrypted passphrase to better secure your clients systems during a penetration test.
 
+
+
 # Instructions
 
 1. Generate the private key
+
+
+
+
 
 **Command** ([[Generate AES256 RSA keypair]]):
 
@@ -37,13 +43,25 @@ We suggest making RSA key's with a AES-256 encrypted passphrase to better secure
 openssl genrsa -aes256 -out $RSA_KEY 4096
 ```
 
+
+
+
+
 2. Generate a public key from the private
+
+
+
+
 
 **Command** ([[Generate Public Key from Private]]):
 
 ```bash
 openssl rsa -in $_KEY.priv -pubout > $_KEY.pub
 ```
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +75,5 @@ openssl rsa -in $_KEY.priv -pubout > $_KEY.pub
 ## Tags
 
 - [[Setup]]
+
+

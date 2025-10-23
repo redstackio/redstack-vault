@@ -27,11 +27,27 @@ Proxychains is a Unix/Linux program that hooks network-related libc functions in
 
 Proxychains is a Unix/Linux program that hooks network-related libc functions in dynamically linked programs via a preloaded DLL, and redirects the connections through SOCKS4a/5 or HTTP proxies. Once a compatible proxy is set up, executing a program with "proxychains" prepended will force all network traffic through the proxy.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_80812520-8c17-4b35-b117-b9929d78d47f}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -46,3 +62,5 @@ Proxychains is a Unix/Linux program that hooks network-related libc functions in
 - [[data encryption]]
 - [[Network]]
 - [[proxy]]
+
+

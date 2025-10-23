@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:50.966188+00:00'
 ```bash
 Seatbelt.exe -group=system -outputfile="C:\Temp\system.txt"
 ```
+
+

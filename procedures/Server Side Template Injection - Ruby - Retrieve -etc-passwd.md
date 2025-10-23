@@ -32,11 +32,15 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 
 From an offensive standpoint, an attacker could use this technique to gain access to sensitive information such as usernames and passwords. From a technical perspective, this technique takes advantage of the trust between the web application and the server, allowing the attacker to execute arbitrary code on the server. From a business perspective, this vulnerability could lead to a loss of sensitive data and damage to the company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of Ruby and Server Side Template Injection
+
+ 
 
 ## Defense
 
@@ -46,15 +50,25 @@ From an offensive standpoint, an attacker could use this technique to gain acces
 
 1. Implement strict file permissions to limit access to sensitive files
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information such as usernames and passwords
+
+ 
 
 # Instructions
 
 1. To read a file in Ruby, use the File.open method. The method takes one argument - the path to the file you want to read. The read method can then be called on the file object to retrieve its contents.
 
+ 
+
+
+
 **Code**: [[<%= File.open('/etc/passwd').read %>]]
+
+
 
 > This command reads the contents of the /etc/passwd file in the Linux operating system. This file contains information about the system's users and their login credentials. By reading this file, a user with sufficient privileges can gain access to sensitive information about the system's users.
 
@@ -77,3 +91,5 @@ From an offensive standpoint, an attacker could use this technique to gain acces
 - [[Ruby]]
 - [[Ruby - Retrieve /etc/passwd]]
 - [[Server Side Template Injection]]
+
+

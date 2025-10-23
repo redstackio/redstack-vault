@@ -41,6 +41,8 @@ Use the PowerUp PowerShell script to enumerate a Windows system for common vulne
 
 Use the PowerUp PowerShell script to enumerate a Windows system for common vulnerabilities, including misconfigurations, vulnerable services, DLL hijacking opportunities, and vulnerable registry settings.
 
+
+
 # Instructions
 
 1. Download PowerUp from PowerSploit's dev branch: [Download from GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Privesc/PowerUp.ps1)
@@ -49,6 +51,10 @@ Use the PowerUp PowerShell script to enumerate a Windows system for common vulne
 
 3. Import PowerUp.ps1 and run "Invoke-AllChecks"
 
+
+
+
+
 **Command** ([[PowerUp Enumerate for Privilege Escalation]]):
 
 ```bash
@@ -56,7 +62,11 @@ Import-Module .\PowerUp.ps1;
 Invoke-AllChecks
 ```
 
+
+
 Parse results for instructions on exploiting the vulnerabilities.
+
+
 
 ## Platforms
 
@@ -90,3 +100,5 @@ Parse results for instructions on exploiting the vulnerabilities.
 
 - [[Misconfiguration]]
 - [[Service Attacks]]
+
+

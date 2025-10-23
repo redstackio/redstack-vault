@@ -20,3 +20,5 @@ netdom trust lab.local /domain:bastion.local /Quarantine:No
 # execute on our bastion
 netdom trust bastion.local /domain:lab.local /ForestTransitive:Yes
 ```
+
+

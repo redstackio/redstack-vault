@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:07.385265+00:00'
 ```bash
 To retrieve metadata about a Droplet, send an HTTP request to the metadata service with the path /metadata/v1.json.
 ```
+
+

@@ -34,9 +34,13 @@ From a technical perspective, this technique involves making API calls to the AW
 
 The business value of this technique is that it allows an attacker to identify high-value targets in an AWS account. By knowing which IAM groups have elevated permissions, the attacker can focus their efforts on compromising those groups and gaining access to sensitive data or resources.
 
+ 
+
 ## Requirements
 
 1. Valid AWS API credentials
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this technique is that it allows an attacker to identify h
 
 1. Monitor for suspicious API activity, such as repeated calls to the 'List AWS IAM Groups' command
 
+ 
+
 ## Objectives
 
 1. Identify IAM groups in an AWS account
@@ -54,19 +60,31 @@ The business value of this technique is that it allows an attacker to identify h
 
 1. Identify high-value targets in the account
 
+ 
+
 # Instructions
 
 1. This command lists all the IAM groups present in your AWS account.
 
+ 
+
+
+
 **Code**: [[aws iam list-groups]]
 
+
+
 > The 'aws iam list-groups' command is used to list all the IAM groups present in your AWS account. This command does not require any arguments. It will return a JSON object that contains the details of all the groups in your account, including their names, ARNs, and creation dates. You can use this command to quickly get an overview of the IAM groups in your account and their properties.
+
+
 
 **Command** ([[List IAM Groups]]):
 
 ```bash
 aws iam list-groups
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ aws iam list-groups
 - [[2. Enumerating Groups IAM]]
 - [[Cloud - AWS]]
 - [[Listing IAM Groups]]
+
+

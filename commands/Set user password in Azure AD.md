@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:31.152057+00:00'
 ```bash
 (Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq "<Username>@<TENANT NAME>.onmicrosoft.com"}).ObjectId | SetAzureADUserPassword -Password $Password -Verbose
 ```
+
+

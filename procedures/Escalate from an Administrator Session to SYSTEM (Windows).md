@@ -31,17 +31,25 @@ Use PsExec.exe with Administrator privileges to spawn a SYSTEM shell. This appro
 
 Use PsExec.exe with Administrator privileges to spawn a SYSTEM shell. This approach spawns a new window and will not bypass UAC, making it suited for cases when the attacker has RDP or local access.
 
+
+
 # Instructions
 
 1. Copy PsExec to the target machine. [Download  PsExec from Microsoft](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec)
 
 2. Execute PsExec, specifying the local computer as the target.
 
+
+
+
+
 **Command** ([[PsExec Spawn a PowerShell Prompt as SYSTEM]]):
 
 ```powershell
 PsExec.exe -accepteula \\$_TARGET powershell.exe
 ```
+
+
 
 Note: Replace "powershell.exe" with "cmd.exe" for a standard cmd prompt.
 
@@ -67,3 +75,5 @@ Note: Replace "powershell.exe" with "cmd.exe" for a standard cmd prompt.
 
 - [[administrator]]
 - [[privileges]]
+
+

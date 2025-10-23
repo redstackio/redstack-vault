@@ -19,3 +19,5 @@ updated_at: '2023-05-25T18:35:34.917738+00:00'
 Copy-Item -ToSession $jumpvm -Path C:\Tools\PrtToCertmaster.zip -Destination C:\Users\Username\Documents\username –Verbose
 Expand-Archive -Path C:\Users\Username\Documents\username\PrtToCert-master.zip -DestinationPath C:\Users\Username\Documents\username\PrtToCert
 ```
+
+

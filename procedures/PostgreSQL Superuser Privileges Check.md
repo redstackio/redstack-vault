@@ -35,11 +35,15 @@ To perform this procedure, the attacker must have access to the target's network
 
 This procedure is valuable to attackers because it allows them to determine if the current user has superuser privileges within the PostgreSQL database. If the current user has superuser privileges, the attacker can use these privileges to execute arbitrary code within the database, steal sensitive data, or gain access to the target's network.
 
+ 
+
 ## Requirements
 
 1. Access to the target's network
 
 1. Ability to send SQL queries to the PostgreSQL database
+
+ 
 
 ## Defense
 
@@ -49,9 +53,13 @@ This procedure is valuable to attackers because it allows them to determine if t
 
 1. Regularly update and patch the PostgreSQL database to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Determine if the current user has superuser privileges within the PostgreSQL database
+
+ 
 
 # Instructions
 
@@ -66,10 +74,18 @@ This command will return the value of the is_superuser setting, which is 'on' fo
 3. SELECT usesuper FROM pg_user WHERE usename = CURRENT_USER;
 This command will return whether the current user has the usesuper attribute set to 'true' or 'false'. If it's 'true', then the user has superuser privileges.
 
+ 
+
+
+
 **Code**: [[SHOW is_superuser; 
 SELECT current_setting('is_sup]]
 
+
+
 > The above commands can be used to determine whether a user has superuser privileges in a PostgreSQL database. Superuser privileges allow a user to perform any operation on the database, including creating and deleting databases and users, and modifying system settings. It's important to ensure that only trusted users have superuser privileges, as they can potentially cause damage to the database if they make a mistake.
+
+
 
 **Command** ([[Check Superuser Privileges]]):
 
@@ -77,17 +93,27 @@ SELECT current_setting('is_sup]]
 SHOW is_superuser;
 ```
 
+
+
+
+
 **Command** ([[Check Current User Superuser Privileges]]):
 
 ```bash
 SELECT current_setting('is_superuser');
 ```
 
+
+
+
+
 **Command** ([[Check Superuser Status of Current User]]):
 
 ```bash
 SELECT usesuper FROM pg_user WHERE usename = CURRENT_USER;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +135,5 @@ SELECT usesuper FROM pg_user WHERE usename = CURRENT_USER;
 
 - [[PostgreSQL Check if Current User is Superuser]]
 - [[PostgreSQL injection]]
+
+

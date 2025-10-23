@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:57.272196+00:00'
 ```bash
 select service_level from table(sysproc.env_get_inst_info()) as instanceinfo
 ```
+
+

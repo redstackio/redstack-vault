@@ -46,6 +46,8 @@ to help those servers reach the internet egress, for example data exfiltration.
 
 1. (Optional) Create the Route Table
 
+
+
 **Command** ([[Create the Route Table:]]):
 
 ```bash
@@ -53,7 +55,15 @@ aws ec2 create-route-table --vpc-id $AWS_VPC_ID --region $AWS_REGION
 
 ```
 
+
+
+
+
+
+
 2. then create a route that points to a NAT Gateway
+
+
 
 **Command** ([[aws create route table for nat gateway]]):
 
@@ -62,7 +72,15 @@ aws ec2 create-route --route-table-id $AWS_ROUTE_TABLE_ID --destination-cidr-blo
 
 ```
 
+
+
+
+
+
+
 3. Associate the subnet with the route table
+
+
 
 **Command** ([[aws associate public subnet with route table]]):
 
@@ -70,6 +88,12 @@ aws ec2 create-route --route-table-id $AWS_ROUTE_TABLE_ID --destination-cidr-blo
 aws ec2 associate-route-table --route-table-id $AWS_ROUTE_TABLE_ID --subnet-id $AWS_SUBNET_ID --region $AWS_REGION
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -97,3 +121,5 @@ aws ec2 associate-route-table --route-table-id $AWS_ROUTE_TABLE_ID --subnet-id $
 
 - [[AWS]]
 - [[Cloud]]
+
+

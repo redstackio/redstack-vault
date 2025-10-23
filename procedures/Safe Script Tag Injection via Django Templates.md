@@ -34,11 +34,15 @@ From a technical perspective, Safe Script Tag Injection works by using the 'safe
 
 The business value of Safe Script Tag Injection is that it provides a simple and effective way to protect web applications against cross-site scripting attacks. By using this technique, organizations can reduce the risk of data breaches, protect their customers' sensitive information, and avoid costly legal and regulatory penalties.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses the Django Templates engine
 
 1. Knowledge of the 'safe' template tag in Django Templates
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of Safe Script Tag Injection is that it provides a simple and
 
 1. Regularly scan web applications for vulnerabilities using a web application scanner
 
+ 
+
 ## Objectives
 
 1. To protect web applications against cross-site scripting attacks
@@ -56,12 +62,20 @@ The business value of Safe Script Tag Injection is that it provides a simple and
 
 1. To reduce the risk of data breaches and protect sensitive information
 
+ 
+
 # Instructions
 
 1. The 'safe' filter is used in this example to prevent the script tag from executing. It is a filter that can be applied to a variable in a Django template to mark the variable's contents as safe HTML. When applied, the contents will not be escaped and will be rendered as raw HTML.
 
+ 
+
+
+
 **Code**: [[{{ '<script>alert(3)</script>' }}
 {{ '<script>aler]]
+
+
 
 > The script tag is a common HTML tag used to embed or execute JavaScript code on a webpage. However, this can also be a security vulnerability if the code executed is malicious. In this example, the 'safe' filter is used to prevent the script tag from executing by marking its contents as safe HTML. This ensures that the script tag is rendered as plain text and not executed as code on the webpage.
 
@@ -82,3 +96,5 @@ The business value of Safe Script Tag Injection is that it provides a simple and
 - [[Cross-site scripting]]
 - [[Django Templates]]
 - [[Server Side Template Injection]]
+
+

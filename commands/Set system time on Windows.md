@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:13.241457+00:00'
 ```bash
 net time /domain /set
 ```
+
+

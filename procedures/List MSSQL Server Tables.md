@@ -28,11 +28,15 @@ This procedure enables the user to manually query a MSSQL server to retrieve a l
 
 This procedure enables the user to manually query a MSSQL server to retrieve a list of all tables within the database. This can be useful for discovering sensitive data or identifying potential targets for further exploitation. To execute this procedure, the user must have valid credentials and access to the MSSQL server.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the MSSQL server
 
 1. Access to the MSSQL server
+
+ 
 
 ## Defense
 
@@ -42,15 +46,25 @@ This procedure enables the user to manually query a MSSQL server to retrieve a l
 
 1. Monitor MSSQL server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Enumerate all tables within a MSSQL database
+
+ 
 
 # Instructions
 
 1. To get the names of all the tables in the current database, execute the following SQL command:
 
+ 
+
+
+
 **Code**: [[select table_name from information_schema.tables]]
+
+
 
 > This command retrieves the names of all the tables in the current database from the 'information_schema.tables' table. The 'table_name' column contains the names of the tables.
 
@@ -69,3 +83,5 @@ This procedure enables the user to manually query a MSSQL server to retrieve a l
 - [[List all tables]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

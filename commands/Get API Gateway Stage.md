@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:02.720259+00:00'
 ```bash
 aws apigateway get-stage --res-api-id ID --stage-name NAME
 ```
+
+

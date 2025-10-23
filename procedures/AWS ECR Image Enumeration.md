@@ -34,11 +34,15 @@ Technical Description: The attacker uses the 'List ECR Images' command to list a
 
 Business Value: This procedure can be used by an attacker to gain a better understanding of the target environment and identify potential vulnerabilities. By identifying vulnerabilities, the attacker can plan further attacks that can result in data theft, system compromise, or other types of damage.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list ECR images
 
 1. Access to the AWS console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This procedure can be used by an attacker to gain a better under
 
 1. Monitor AWS CloudTrail logs for suspicious activity related to ECR image enumeration
 
+ 
+
 ## Objectives
 
 1. Enumerate all images in the ECR repository
@@ -56,17 +62,25 @@ Business Value: This procedure can be used by an attacker to gain a better under
 
 1. Plan further attacks based on the information obtained
 
+ 
+
 # Instructions
 
 1. To list all the images in a specified Amazon Elastic Container Registry (ECR) repository, use the following command:
 
+ 
+
 The 'aws ecr list-images' command is used to list all the images in a specified ECR repository. The '--repository-name' argument specifies the name of the repository for which you want to list the images. This command returns a JSON object containing information about the images in the specified repository, including the image tags, creation dates, and sizes. You can use this command to get an overview of the images in your ECR repository and to determine which images are available for use in your container deployments.
+
+
 
 **Command** ([[List ECR Images]]):
 
 ```bash
 aws ecr list-images --repository-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ecr list-images --repository-name name
 - [[Cloud - AWS]]
 - [[Listing all images in the repository]]
 - [[Persistence]]
+
+

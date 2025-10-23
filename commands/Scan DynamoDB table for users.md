@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:20:03.775438+00:00'
 ```bash
 $ aws --endpoint-url http://s3.bucket.htb dynamodb scan --table-name users | jq -r '.Items[]'
 ```
+
+

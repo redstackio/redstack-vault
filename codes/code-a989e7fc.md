@@ -17,3 +17,5 @@ $MyRefreshTokenRequest = Get-AZRefreshTokenWithUsernamePassword -username "user@
 $MyMSGraphToken = Get-MSGraphTokenWithRefreshToken -RefreshToken $MyRefreshTokenRequest.refresh_token -TenantID "contoso.onmicrosoft.com"
 $MyAADUsers = Get-AllAzureADUsers -Token $MyMSGraphToken.access_token -ShowProgress
 ```
+
+

@@ -31,6 +31,8 @@ MSSQL Server's xp_cmdshell is a stored procedure that allows execution of comman
 
 MSSQL Server's xp_cmdshell is a stored procedure that allows execution of command-line commands from within SQL Server. This can be abused by attackers to execute arbitrary commands on the underlying operating system. The Invoke-SQLOSCmd PowerShell script can be used to execute commands via xp_cmdshell. This script takes advantage of the fact that the xp_cmdshell procedure is enabled by default on some versions of SQL Server, and can be used to execute commands on the target system. This technique can be used to gain access to sensitive information or to perform other malicious activities on the target system.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the MSSQL Server
@@ -38,6 +40,8 @@ MSSQL Server's xp_cmdshell is a stored procedure that allows execution of comman
 1. xp_cmdshell procedure enabled on the target system
 
 1. PowerShell
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ MSSQL Server's xp_cmdshell is a stored procedure that allows execution of comman
 
 1. Implement network segmentation to limit access to the MSSQL Server
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the underlying operating system
@@ -54,6 +60,8 @@ MSSQL Server's xp_cmdshell is a stored procedure that allows execution of comman
 1. Gain access to sensitive information
 
 1. Perform other malicious activities on the target system
+
+ 
 
 # Instructions
 
@@ -65,9 +73,17 @@ MSSQL Server's xp_cmdshell is a stored procedure that allows execution of comman
 
 In the given example, the command is used to execute the 'whoami' command on the remote SQL Server. It is also used to create a local user named 'backup' with the password 'Password1234' and add it to the local administrators group. The command also includes the '-Verbose' parameter to provide detailed output.
 
+ 
+
+
+
 **Code**: [[PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password]]
 
+
+
 > The 'Invoke-SQLOSCmd' command is a PowerShell cmdlet that is used to execute operating system commands on a remote SQL Server. The '-Username' parameter specifies the username used to connect to the SQL Server. The '-Password' parameter specifies the password used to connect to the SQL Server. The '-Instance' parameter specifies the name of the SQL Server instance to connect to. The '-Command' parameter specifies the operating system command to execute on the remote SQL Server. In the given example, the command is used to execute the 'whoami' command on the remote SQL Server. It is also used to create a local user named 'backup' with the password 'Password1234' and add it to the local administrators group. The '-Verbose' parameter is optional and provides detailed output.
+
+
 
 **Command** ([[Get current user]]):
 
@@ -75,17 +91,27 @@ In the given example, the command is used to execute the 'whoami' command on the
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command whoami
 ```
 
+
+
+
+
 **Command** ([[Create and add local user backup to local administrators group]]):
 
 ```bash
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "net user backup Password1234 /add'" -Verbose
 ```
 
+
+
+
+
 **Command** ([[Add local user backup to local administrators group]]):
 
 ```bash
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "net localgroup administrators backup /add" -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +133,5 @@ PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSE
 
 - [[Command Execution via xp_cmdshell]]
 - [[MSSQL Server]]
+
+

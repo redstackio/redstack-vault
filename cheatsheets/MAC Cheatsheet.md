@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # MAC Cheatsheet
 
+
+
 **Command** ([[Create NTLM Hash from Mac CLI]]):
 
 ```bash
 echo -n password | iconv -t UTF-16LE | openssl md4
 
 ```
+
+
+
+
+
+

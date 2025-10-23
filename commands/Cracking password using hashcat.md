@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:20.841783+00:00'
 ```bash
 $ hashcat -m 1400 hash.txt rockyou.txt
 ```
+
+

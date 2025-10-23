@@ -56,3 +56,5 @@ root@kali:~# proxychains firefox
 [proxychains] Strict chain  ...  127.0.0.1:9050  ...  getpocket.cdn.mozilla.net:443  ...  OK
 [proxychains] Strict chain  ...  127.0.0.1:9050  ...  ocsp.digicert.com:80  ...  OK
 ```
+
+

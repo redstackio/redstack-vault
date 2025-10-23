@@ -34,11 +34,15 @@ To retrieve the version of a managed policy, the attacker would use the 'Retriev
 
 This procedure can be used by attackers to gather information about the target's AWS environment, which could be used to plan future attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS IAM console or API
 
 1. Valid AWS IAM credentials
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This procedure can be used by attackers to gather information about the target's
 
 1. Implement strong authentication and access controls for AWS IAM accounts to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Retrieve the version of a managed policy in AWS IAM
@@ -56,17 +62,25 @@ This procedure can be used by attackers to gather information about the target's
 
 1. Plan future attacks based on the retrieved information
 
+ 
+
 # Instructions
 
 1. To retrieve a specific version of an IAM policy, use the 'aws iam get-policy-version' command.
 
+ 
+
 This command requires the policy ARN and version ID as arguments. The ARN uniquely identifies the policy, while the version ID specifies the particular version to retrieve. The command returns the policy version details in JSON format.
+
+
 
 **Command** ([[Get IAM policy version]]):
 
 ```bash
 aws iam get-policy-version --policy-arn arn --version-id id
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam get-policy-version --policy-arn arn --version-id id
 - [[Cloud - AWS]]
 - [[Getting information about the version of the managed policy]]
 - [[Persistence]]
+
+

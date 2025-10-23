@@ -28,11 +28,15 @@ NGINX and Amazon Load Balancer (ALB) can block directory traversal attacks in th
 
 NGINX and Amazon Load Balancer (ALB) can block directory traversal attacks in the route. However, it is possible to bypass these security measures by adding forward slashes in front of the URL. This allows an attacker to access files and directories outside of the web root directory. A successful directory traversal attack can result in unauthorized access to sensitive files, data exfiltration, and even full system compromise.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the target web application's file structure
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ NGINX and Amazon Load Balancer (ALB) can block directory traversal attacks in th
 
 1. Regularly update and patch NGINX and ALB to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive files and directories
@@ -49,6 +55,8 @@ NGINX and Amazon Load Balancer (ALB) can block directory traversal attacks in th
 1. Exfiltrate sensitive data
 
 1. Compromise the target system
+
+ 
 
 # Instructions
 
@@ -58,7 +66,13 @@ NGINX and Amazon Load Balancer (ALB) can block directory traversal attacks in th
 curl http://nginx-server/../../
 ```
 
+ 
+
+
+
 **Code**: [[http://nginx-server/../../]]
+
+
 
 > This command sends a GET request to the target server with the "../" characters added to the URL. If the server is vulnerable to directory traversal attacks, it will return the contents of the requested file or directory.
 
@@ -68,7 +82,13 @@ curl http://nginx-server/../../
 curl http://nginx-server////////../../
 ```
 
+ 
+
+
+
 **Code**: [[http://nginx-server////////../../]]
+
+
 
 > This command sends a GET request to the target server with multiple forward slashes added to the URL before the "../" characters. This bypasses the security measures put in place by NGINX and ALB and allows an attacker to access files and directories outside of the web root directory.
 
@@ -87,3 +107,5 @@ curl http://nginx-server////////../../
 - [[Basic exploitation]]
 - [[Directory Traversal]]
 - [[NGINX/ALB Bypass]]
+
+

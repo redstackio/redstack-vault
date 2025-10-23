@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:43.467446+00:00'
 ```bash
 SELECT name, master.dbo.fn_varbintohexstr(password) FROM master..sysxlogins
 ```
+
+

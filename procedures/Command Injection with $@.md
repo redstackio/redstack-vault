@@ -35,7 +35,11 @@ From a technical perspective, this attack works by taking advantage of the way t
 
 The business value of this attack is significant, as it can allow an attacker to gain full control of a target system and potentially access sensitive data or disrupt critical operations.
 
+ 
+
 ## Requirements
+
+ 
 
 ## Defense
 
@@ -45,21 +49,31 @@ The business value of this attack is significant, as it can allow an attacker to
 
 1. Limit the privileges of user accounts to prevent attackers from gaining full control of the system
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on a target system
 
 1. Bypass blacklisted words in command input
 
+ 
+
 # Instructions
 
 1. To execute this command, simply copy and paste it into the command prompt or shell on the target system.
+
+ 
+
+
 
 **Code**: [[who$@ami
 
 echo $0
 -> /usr/bin/zsh
 echo whoami|$0]]
+
+
 
 > The command works by injecting the 'whoami' command into the system using the $@ syntax. The $@ syntax allows the attacker to pass arguments to the command, even if those arguments contain spaces or other special characters that would normally be interpreted by the shell. The 'echo $0' command is used to determine which shell is being used, and the 'echo whoami|$0' command is used to execute the 'whoami' command within that shell.
 
@@ -83,3 +97,5 @@ echo whoami|$0]]
 - [[Bypass with $@]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

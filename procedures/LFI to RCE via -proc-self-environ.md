@@ -35,9 +35,13 @@ From a technical perspective, this technique works by exploiting a vulnerability
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive data, escalate privileges, and perform other malicious activities that can compromise the integrity, confidentiality, and availability of the organization's systems and data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Use web application firewalls (WAFs) and intrusion detection/prevention systems (IDS/IPS) to monitor and block malicious traffic.
 
+ 
+
 ## Objectives
 
 1. To gain access to sensitive data
@@ -55,6 +61,8 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. To execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. 1. Identify a vulnerable web application.
@@ -62,7 +70,13 @@ From a business perspective, this technique can be used by attackers to gain acc
 3. In the User-Agent field of the request, include the payload that you want to execute.
 4. Read the /proc/self/environ file to execute the code.
 
+ 
+
+
+
 **Code**: [[GET vulnerable.php?filename=../../../proc/self/env]]
+
+
 
 > The command sends a GET request to the vulnerable.php file with the filename parameter set to ../../../proc/self/environ. In the User-Agent field of the request, the payload is included. The payload will be reflected in the /proc/self/environ file, which can then be read to execute the code.
 
@@ -86,3 +100,5 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 - [[File Inclusion]]
 - [[LFI to RCE via /proc/self/environ]]
+
+

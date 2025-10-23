@@ -35,9 +35,13 @@ Technical Explanation: An attacker can inject code into a Jinja2 template by usi
 
 Business Value: An attacker can use this attack to gain access to sensitive data stored on the server, such as user credentials, financial data, and customer information. This can lead to reputational damage, loss of customer trust, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to a Jinja2 template on the target server
+
+ 
 
 ## Defense
 
@@ -47,35 +51,63 @@ Business Value: An attacker can use this attack to gain access to sensitive data
 
 1. Regularly update and patch the server and its dependencies to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the server
 
 1. Gain access to sensitive data stored on the server
 
+ 
+
 # Instructions
 
 1. To get the user ID, run the following command:
 
+ 
+
+
+
 **Code**: [[{{ self.__init__.__globals__.__builtins__.__import]]
+
+
 
 > This command imports the 'os' module in Python and uses the 'popen' method to execute the 'id' command in the underlying operating system. The output of the command is then read and returned as a string, which contains the user ID information.
 
 2. Python has numerous built-in functions that can be used to perform various operations. Some of the commonly used built-in functions are print(), len(), range(), input(), etc.
 
+ 
+
+
+
 **Code**: [[__builtins__]]
+
+
 
 > The '__builtins__' module provides a namespace containing all the built-in names defined by Python. These built-in functions are always available to use without the need for importing any module. The 'print()' function is used to print the specified message to the console. The 'len()' function is used to get the length of an object. The 'range()' function is used to generate a sequence of numbers. The 'input()' function is used to get user input from the console. There are many more built-in functions available in Python that can be used to perform various operations.
 
 3. Execute multiple system commands
 
+ 
+
+
+
 **Code**: [[{{ self._TemplateReference__context.cycler.__init_]]
+
+
 
 > This command executes multiple system commands. The command output will depend on the specific commands executed, which can be defined in the 'data' field of the JSON object. The 'lang' field specifies the programming language used for the commands. Please use with caution as executing system commands can have unintended consequences.
 
 4. The 'id' command is used to display the user and group IDs of the current user. Here, the command is being executed using the 'os.popen' method in Python. This allows us to execute arbitrary commands on the target system.
 
+ 
+
+
+
 **Code**: [[{{ cycler.__init__.__globals__.os.popen('id').read]]
+
+
 
 > The 'cycler', 'joiner', and 'namespace' objects are being used to execute the 'id' command. The output of each command is being concatenated and returned. This payload can be used to test for command injection vulnerabilities in web applications that use Python as their server-side language.
 
@@ -97,3 +129,5 @@ Business Value: An attacker can use this attack to gain access to sensitive data
 - [[Jinja2]]
 - [[Jinja2 - Remote Code Execution]]
 - [[Server Side Template Injection]]
+
+

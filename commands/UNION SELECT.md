@@ -30,3 +30,5 @@ SELECT	LightOS	.	``1.e.table_name	LightOS
 SELECT	information_schema 1337.e.tables	13.37e.table_name	
 SELECT	1	from	information_schema 9.e.table_name
 ```
+
+

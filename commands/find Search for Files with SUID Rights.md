@@ -95,3 +95,5 @@ root@hackers:~# find /usr -perm -4000 -ls 2>/dev/null
 -rwsr-xr-x 1 root root 1181320 Feb 20  2019 /usr/sbin/exim4
 
 ```
+
+

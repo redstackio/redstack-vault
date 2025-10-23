@@ -31,11 +31,15 @@ The AWS Account Identity Enumeration procedure is used to obtain information abo
 
 The AWS Account Identity Enumeration procedure is used to obtain information about the AWS account identity, such as the AWS account ID, which is a crucial piece of information for an attacker. An attacker can use this information to launch further attacks such as privilege escalation, lateral movement, or data exfiltration. This procedure is performed by using the 'Get AWS Account Identity' command to obtain the AWS account ID.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to call the 'Get AWS Account Identity' API
 
 1. Access to the AWS Management Console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ The AWS Account Identity Enumeration procedure is used to obtain information abo
 
 1. Monitor AWS CloudTrail logs for suspicious activity and unauthorized API calls
 
+ 
+
 ## Objectives
 
 1. Obtain the AWS account ID
@@ -53,19 +59,31 @@ The AWS Account Identity Enumeration procedure is used to obtain information abo
 
 1. Use the obtained information for further attacks
 
+ 
+
 # Instructions
 
 1. The 'aws sts get-caller-identity' command is used to retrieve the details of the AWS account that is associated with the current IAM user or role. It returns the AWS account ID, the Amazon Resource Name (ARN) of the IAM entity making the request, and the AWS partition that the account is in.
 
+ 
+
+
+
 **Code**: [[aws sts get-caller-identity]]
 
+
+
 > The command does not require any arguments or options. Simply run the command and it will return the details of the AWS account associated with the current IAM user or role. This command is useful for verifying the identity of the user or role that is currently making requests to AWS services.
+
+
 
 **Command** ([[AWS STS Get Caller Identity]]):
 
 ```bash
 aws sts get-caller-identity
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ aws sts get-caller-identity
 - [[Exploitation]]
 - [[Getting information about the key]]
 - [[Privilege Escalation]]
+
+

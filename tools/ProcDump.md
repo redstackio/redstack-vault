@@ -27,7 +27,15 @@ ProcDump is a command-line utility used for system monitoring and generating cra
 
 ProcDump is a command-line utility used for system monitoring and generating crash dumps. ProcDump can dump the memory of a process to disk, potentially disclosing sensitive data including the program itself, usernames, passwords, encryption keys, etc. 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a9087a04-b1d0-4765-beeb-d8ffbc3fef5e}}
+
+
 
 # Installation
 
@@ -36,6 +44,12 @@ Download  and run ProcDump on the target. ProcDump comes with a x86 version (pro
 - [Download ProcDump](https://download.sysinternals.com/files/Procdump.zip)
 
 - [Download the full Sysinternals Suite](https://download.sysinternals.com/files/SysinternalsSuite.zip)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +62,5 @@ Download  and run ProcDump on the target. ProcDump comes with a x86 version (pro
 ## Tags
 
 - [[memory]]
+
+

@@ -34,11 +34,15 @@ From a technical standpoint, this procedure involves querying the AWS API to ret
 
 The business value of this procedure is that it provides visibility into the Lambda functions running in an AWS environment, which can help organizations identify potential security risks and ensure compliance with regulatory requirements.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list Lambda functions
 
 1. Access to the AWS CLI or the Lambda API
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure is that it provides visibility into the Lam
 
 1. Monitor for suspicious activity, such as unexpected Lambda function creations or modifications
 
+ 
+
 ## Objectives
 
 1. Identify all Lambda functions in an AWS account
@@ -56,17 +62,25 @@ The business value of this procedure is that it provides visibility into the Lam
 
 1. Ensure compliance with regulatory requirements
 
+ 
+
 # Instructions
 
 1. To list all AWS Lambda functions in a given region, use the following command:
 
+ 
+
 The 'aws lambda list-functions' command is used to list all Lambda functions in a specific region. The '--region' flag is used to specify the region in which you want to list the functions. This command does not require any additional arguments.
+
+
 
 **Command** ([[List all Lambda functions in a region]]):
 
 ```bash
 aws lambda list-functions --region region
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws lambda list-functions --region region
 - [[Cloud - AWS]]
 - [[Listing all lambda functions]]
 - [[Persistence]]
+
+

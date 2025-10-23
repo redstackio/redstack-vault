@@ -37,11 +37,15 @@ From a technical perspective, the attacker creates a fake website that looks ide
 
 The business value of this procedure is that it can be used to gain access to sensitive information that can be used for financial gain or to gain a foothold in a target network.
 
+ 
+
 ## Requirements
 
 1. Access to the target's email or a way to send a phishing email.
 
 1. Ability to create a fake website that looks identical to the original one.
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ The business value of this procedure is that it can be used to gain access to se
 
 1. Monitor network traffic for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. To gain access to sensitive information such as login credentials or credit card information.
 
 1. To gain initial access to a system or network.
 
+ 
+
 # Instructions
 
 1. To perform this attack, the attacker needs to post a link to a website under his control that contains the JS code 'window.opener.location = "http://evil.com"'. The attacker then tricks the victim into visiting the link, which opens in a new tab. The JS code is executed, and the background tab is redirected to the website 'evil.com', which is most likely a phishing website. If the victim opens the background tab again without looking at the address bar, they may think they are logged out because a login page appears. The victim tries to log in again, and the attacker receives the credentials.
 
+ 
+
+
+
 **Code**: [[1. Attacker posts a link to a website under his co]]
 
+
+
 > This attack is a type of phishing attack where the attacker tricks the victim into visiting a website that looks legitimate but is actually under the attacker's control. The attacker then redirects the victim to a phishing website where they can steal the victim's credentials. This attack can be prevented by being cautious when clicking on links and always checking the address bar to ensure that the website is legitimate.
+
+
 
 **Command** ([[Create malicious website]]):
 
@@ -71,11 +87,19 @@ The business value of this procedure is that it can be used to gain access to se
 window.opener.location = "http://evil.com"
 ```
 
+
+
+
+
 **Command** ([[Trick victim into visiting the site]]):
 
 ```bash
 Victim clicks on the link and the site opens in a new tab
 ```
+
+
+
+
 
 **Command** ([[Execute JS code]]):
 
@@ -83,17 +107,27 @@ Victim clicks on the link and the site opens in a new tab
 JS code is executed and the background tab is redirected to the website evil.com
 ```
 
+
+
+
+
 **Command** ([[Phishing page appears]]):
 
 ```bash
 Victim may think they are logged out and try to log in again
 ```
 
+
+
+
+
 **Command** ([[Capture victim's credentials]]):
 
 ```bash
 Attacker receives the credentials
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -117,3 +151,5 @@ Attacker receives the credentials
 
 - [[How to exploit]]
 - [[Tabnabbing]]
+
+

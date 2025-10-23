@@ -39,6 +39,8 @@ To execute this attack, the attacker will first identify a vulnerable SQL Server
 
 The business value of this attack is that the attacker can gain access to sensitive data, modify or delete data, and disrupt business operations. This can lead to financial loss, reputational damage, and regulatory fines.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MSSQL Server
@@ -46,6 +48,8 @@ The business value of this attack is that the attacker can gain access to sensit
 1. Knowledge of MSSQL Injection techniques
 
 1. Access to tools to perform the attack
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ The business value of this attack is that the attacker can gain access to sensit
 
 1. Regularly perform security audits and penetration testing to identify and mitigate vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain DBA access to the MSSQL Server
@@ -63,19 +69,31 @@ The business value of this attack is that the attacker can gain access to sensit
 
 1. Access sensitive data
 
+ 
+
 # Instructions
 
 1. To add a user as a sysadmin, execute the following SQL command:
 
+ 
+
+
+
 **Code**: [[EXEC master.dbo.sp_addsrvrolemember 'user', 'sysad]]
 
+
+
 > The 'sp_addsrvrolemember' system stored procedure adds a login as a member of a fixed server role. In this case, we are adding the 'user' login as a member of the 'sysadmin' server role. The semicolon at the end of the command signifies the end of the statement.
+
+
 
 **Command** ([[Add user to sysadmin role]]):
 
 ```bash
 EXEC master.dbo.sp_addsrvrolemember 'user', 'sysadmin';
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +119,5 @@ EXEC master.dbo.sp_addsrvrolemember 'user', 'sysadmin';
 
 - [[MSSQL Injection]]
 - [[MSSQL Make user DBA (DB admin)]]
+
+

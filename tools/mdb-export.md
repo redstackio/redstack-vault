@@ -26,11 +26,23 @@ mdb-export produces a CSV (comma separated value) output for the given table. Su
 
 mdb-export produces a CSV (comma separated value) output for the given table. Such output is suitable for importation into databases or spreadsheets.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_08c2c037-0306-43c5-b39f-471532df252e}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +56,5 @@ mdb-export produces a CSV (comma separated value) output for the given table. Su
 
 - [[data exposure]]
 - [[extract]]
+
+

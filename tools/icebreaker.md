@@ -16,3 +16,7 @@ Gets plaintext Active Directory credentials if you're on the internal network bu
 ## Description
 
 Gets plaintext Active Directory credentials if you're on the internal network but outside the AD environment. ​
+
+
+
+

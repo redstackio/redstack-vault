@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:22:54.560050+00:00'
 # This error means query uses 3 column
 #-1' UNION SELECT 1,2,3--+	True
 ```
+
+

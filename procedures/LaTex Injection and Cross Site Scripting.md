@@ -25,11 +25,15 @@ LaTex Injection and Cross Site Scripting (XSS) are both web-based attacks that c
 
 Both attacks can be used to gain access to sensitive information, such as login credentials or personal data. They can also be used to gain access to the target's machine or execute additional attacks. LaTex Injection can be particularly dangerous as it can execute commands on the target's machine with high privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable LaTex document or web page
 
 1. Knowledge of LaTex Injection and/or XSS techniques
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ Both attacks can be used to gain access to sensitive information, such as login 
 1. Using a Content Security Policy (CSP) can help prevent XSS attacks by blocking the execution of scripts from untrusted sources.
 
 1. Regularly updating software and applying security patches can help prevent vulnerabilities that can be exploited by LaTex Injection and XSS attacks.
+
+ 
 
 ## Objectives
 
@@ -49,12 +55,20 @@ Both attacks can be used to gain access to sensitive information, such as login 
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. To perform LaTex Injection, follow these steps:
 
+ 
+
+
+
 **Code**: [[\url{javascript:alert(1)}
 \href{javascript:alert(1]]
+
+
 
 > 1. Identify a vulnerable LaTex document.
 2. Inject the malicious code into the document using the \url or \href command.
@@ -63,7 +77,13 @@ Both attacks can be used to gain access to sensitive information, such as login 
 
 2. To perform Cross Site Scripting, follow these steps:
 
+ 
+
+
+
 **Code**: [[http://payontriage.com/xss.php?xss=$\href{javascri]]
+
+
 
 > 1. Identify a vulnerable web page.
 2. Inject the malicious code into the page using a form or input field.
@@ -74,3 +94,5 @@ Both attacks can be used to gain access to sensitive information, such as login 
 
 - [[Cross Site Scripting]]
 - [[LaTex Injection]]
+
+

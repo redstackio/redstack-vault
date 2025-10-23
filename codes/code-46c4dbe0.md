@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:41.729212+00:00'
 ```sql
 Select * from sys.database_principals where type_desc != 'database_role';
 ```
+
+

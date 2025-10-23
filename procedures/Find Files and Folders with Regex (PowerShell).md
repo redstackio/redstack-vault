@@ -32,13 +32,25 @@ Use native PowerShell cmdlets to search for files and folders by name, with supp
 
 Use native PowerShell cmdlets to search for files and folders by name, with support for regular expressions. This functions in a similar way to Linux/Unix's "find" command.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Find Files and Folder with Regex (PowerShell)]]):
 
 ```bash
 Get-ChildItem -Recurse | Where Name -Match "$_REGEX"
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +73,5 @@ Get-ChildItem -Recurse | Where Name -Match "$_REGEX"
 ## Tags
 
 - [[Enumeration]]
+
+

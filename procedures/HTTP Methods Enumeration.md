@@ -31,11 +31,17 @@ Enumeration of HTTP methods will help in identifying allowed methods on the web 
 
 Enumeration of HTTP methods will help in identifying allowed methods on the web server. The list can be used to find insecure methods like PUT, DELETE, TRACE/TRACK, OPTIONS. These insecure methods can be leveraged by an attacker to perform attacks like Cross-Site Tracing (XST), Create/Delete resources on the web server etc.
 
+
+
 # Instructions
 
 ## Method 1
 
 Nmap HTTP methods script can be used to enumerate the allowed methods
+
+
+
+
 
 **Command** ([[Nmap HTTP Methods Script]]):
 
@@ -43,9 +49,17 @@ Nmap HTTP methods script can be used to enumerate the allowed methods
 nmap --script http-methods demo.testfire.net
 ```
 
+
+
+
+
 ## Method 2
 
 Using Netcat command to connect to the web server and requesting the OPTIONS method will list the allowed methods
+
+
+
+
 
 **Command** ([[Netcat Command]]):
 
@@ -54,6 +68,10 @@ nc demo.testfire.net 80
 OPTIONS / HTTP/1.1
 Host: demo.testfire.net
 ```
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +87,5 @@ Host: demo.testfire.net
 - [[Enumeration]]
 - [[misconfiguration]]
 - [[Web Applications]]
+
+

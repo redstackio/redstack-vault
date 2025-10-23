@@ -36,11 +36,15 @@ From a technical standpoint, this attack involves manipulating the HTTP request 
 
 From a business perspective, this attack can result in the compromise of sensitive information, such as financial data or personal information. It can also damage the reputation of the company if the attack is made public.
 
+ 
+
 ## Requirements
 
 1. Ability to intercept and modify HTTP requests
 
 1. Phishing email to victim
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a business perspective, this attack can result in the compromise of sensiti
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to a victim's account
@@ -58,12 +64,20 @@ From a business perspective, this attack can result in the compromise of sensiti
 
 1. Spread malware
 
+ 
+
 # Instructions
 
 1. Intercept the password reset request using a tool like Burp Suite or by manually modifying the request using a proxy like Charles Proxy. Modify the header to redirect the request to a page controlled by the attacker. Forward the modified request to the server.
 
+ 
+
+
+
 **Code**: [[POST https://example.com/reset.php HTTP/1.1
 Accept]]
+
+
 
 > The attacker intercepts the password reset request and modifies the header to redirect the request to a page controlled by the attacker. This can be done using a tool like Burp Suite or by manually modifying the request using a proxy like Charles Proxy. The modified request is then forwarded to the server, which responds with a new password for the victim's account.
 
@@ -88,3 +102,5 @@ Accept]]
 - [[Account Takeover]]
 - [[Account Takeover Through Password Reset Poisoning]]
 - [[Password Reset Feature]]
+
+

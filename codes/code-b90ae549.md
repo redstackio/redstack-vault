@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:28.558706+00:00'
 ```en
 aws apigateway get-method --rest-api-id ApiID --resource-id ID --http-method method
 ```
+
+

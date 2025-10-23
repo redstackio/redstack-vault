@@ -32,11 +32,15 @@ This procedure involves exploiting a vulnerability in XML parsers that allows an
 
 To execute this attack, the attacker must have access to the victim's system and be able to inject malicious code into an XML file. The attacker must also have knowledge of the location of the file they wish to disclose. This attack can be used by threat actors to gain access to sensitive information, such as user credentials or confidential documents.
 
+ 
+
 ## Requirements
 
 1. Access to the victim's system
 
 1. Ability to inject malicious code into an XML file
+
+ 
 
 ## Defense
 
@@ -46,18 +50,28 @@ To execute this attack, the attacker must have access to the victim's system and
 
 1. Monitor network traffic for suspicious activity, such as large data transfers or unusual XML file requests
 
+ 
+
 ## Objectives
 
 1. Disclose the contents of a local file
 
 1. Exfiltrate sensitive information from a victim's system
 
+ 
+
 # Instructions
 
 1. This command is used to exploit XML External Entity (XXE) vulnerabilities. The attacker sends a malicious XML file to the server that contains an external entity reference to a file on the server. When the server processes the XML file, it reads the contents of the referenced file and includes it in the response. This can lead to sensitive information disclosure, denial of service, or even remote code execution. 
 
+ 
+
+
+
 **Code**: [[<!DOCTYPE doc [
     <!ENTITY % local_dtd SYSTEM "f]]
+
+
 
 > The 'data' field contains the payload for the XXE attack. The payload includes a reference to a local DTD file that defines an external entity 'file' that points to a file on the server. The payload also includes an entity 'eval' that defines another entity 'error' that reads the contents of the 'file' entity and sends it to an external server. Finally, the payload defines an entity 'test' that is not used, but it is necessary to close the DTD definition. The 'lang' field specifies that the payload is in XML format. The 'text' field provides the source of the payload. The 'instruction' field explains how to use the payload to exploit the XXE vulnerability. 
 
@@ -78,3 +92,5 @@ To execute this attack, the attacker must have access to the victim's system and
 - [[Disclose local file]]
 - [[Windows Local DTD and Side Channel Leak to disclose HTTP response/file contents]]
 - [[XML External Entity]]
+
+

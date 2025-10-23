@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:51.119612+00:00'
 ```bash
 cat /home/username/.config/bloodhound/customqueries.json
 ```
+
+

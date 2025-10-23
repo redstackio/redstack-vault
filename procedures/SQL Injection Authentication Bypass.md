@@ -27,11 +27,15 @@ SQL Injection is a technique that allows attackers to inject malicious SQL code 
 
 SQL Injection is a technique that allows attackers to inject malicious SQL code into a database, which can then be executed by the database. This can be used to bypass authentication mechanisms and gain unauthorized access to sensitive data. An attacker can use SQL Injection to modify or delete data, or to execute arbitrary commands on the underlying system. This procedure focuses on using SQL Injection to bypass authentication mechanisms. By injecting SQL code into an authentication form, an attacker can bypass the authentication process and gain access to the system. This technique is commonly used by attackers to gain access to sensitive data or to gain a foothold in a target network.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable authentication form
 
 1. Knowledge of SQL Injection techniques
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ SQL Injection is a technique that allows attackers to inject malicious SQL code 
 
 1. Limit privileges for database users to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms
@@ -49,11 +55,19 @@ SQL Injection is a technique that allows attackers to inject malicious SQL code 
 
 1. Execute arbitrary commands on the underlying system
 
+ 
+
 # Instructions
 
 1. This command is used for SQL injection attacks. It contains multiple commands, instructions, and arguments to exploit vulnerabilities in the targeted system's SQL database. The attacker can use this command to execute arbitrary SQL commands and gain unauthorized access to confidential data. It is important to note that this command should only be used for ethical purposes, such as testing the security of a system with the owner's permission.
 
+ 
+
+
+
 **Code**: [['-' ' ' '&' '^' '*' or 1=1 limit 1 -- -+ '="or' ' ]]
+
+
 
 > The command consists of various SQL injection payloads that are used to exploit different types of SQL injection vulnerabilities. The payloads include techniques such as comment injection, boolean-based injection, time-based injection, and error-based injection. The command also includes UNION-based injection payloads that are used to extract data from the database. The attacker can modify the payload to suit the specific requirements of their attack. It is important to note that using this command without proper authorization is illegal and can result in severe consequences.
 
@@ -71,3 +85,5 @@ SQL Injection is a technique that allows attackers to inject malicious SQL code 
 
 - [[Authentication bypass]]
 - [[SQL Injection]]
+
+

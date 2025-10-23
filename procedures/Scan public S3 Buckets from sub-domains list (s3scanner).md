@@ -29,9 +29,13 @@ We have found configuration xml / json scripts. API keys. Credentials and more.
 
 [s3scanner](https://github.com/sa7mon/S3Scanner)
 
+
+
 ##  Instructions
 
 1. Scan a list of public subdomains from a list of domains in a text file.
+
+
 
 **Command** ([[s3scanner scan for public s3 buckets from list of sub-domains]]):
 
@@ -40,7 +44,13 @@ python3 ./s3scanner.py -l domains.txt -o buckets.txt
 
 ```
 
+
+
+
+
 2. Enumerate all of the data inside the buckets
+
+
 
 **Command** ([[aws-cli list data inside the s3 buckets]]):
 
@@ -49,7 +59,13 @@ for i in $(cat buckets.txt); do aws s3 ls s3://$i; done;
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[aws-cli list data inside the s3 buckets]]
 - [[s3scanner scan for public s3 buckets from list of sub-domains]]
+
+

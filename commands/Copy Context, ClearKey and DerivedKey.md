@@ -14,3 +14,5 @@ updated_at: '2023-05-25T05:46:38.502274+00:00'
 ```bash
 Mimikatz> dpapi::cloudapkd /context:<Context> /derivedkey:<DerivedKey> /Prt:<PRT>
 ```
+
+

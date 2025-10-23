@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:39.400527+00:00'
 ```bash
 Get-AzureADApplication -All $true | %{try{GetAzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
 ```
+
+

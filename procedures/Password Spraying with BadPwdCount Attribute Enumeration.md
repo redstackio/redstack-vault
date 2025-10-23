@@ -36,6 +36,8 @@ Technical Explanation: Password spraying is a technique where attackers try a sm
 
 Business Value: Password spraying with BadPwdCount attribute enumeration can allow attackers to gain access to sensitive information and systems, which can result in data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to Active Directory environment
@@ -43,6 +45,8 @@ Business Value: Password spraying with BadPwdCount attribute enumeration can all
 1. Credentials with permission to enumerate BadPwdCount attribute
 
 1. Password spraying tool or script
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: Password spraying with BadPwdCount attribute enumeration can all
 
 1. Implement multi-factor authentication for user accounts
 
+ 
+
 ## Objectives
 
 1. Gain access to user accounts with weak passwords
@@ -60,19 +66,31 @@ Business Value: Password spraying with BadPwdCount attribute enumeration can all
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. The 'crackmapexec' command is used to enumerate LDAP users and Kerberos tickets on a remote host. The '-u' option specifies the username to be used for authentication, and the '-p' option specifies the password for the provided username. The '--kdcHost' option specifies the host to use as the Kerberos KDC. The '--users' option specifies to enumerate LDAP users. The output shows the LDAP server, port, domain controller, user, and some additional information like bad password count and password last set time.
 
+ 
+
+
+
 **Code**: [[$ crackmapexec ldap 10.0.2.11 -u 'username' -p 'pa]]
 
+
+
 > This command is useful for enumerating users and Kerberos tickets on a remote host. It can be used for reconnaissance purposes to gather information about a target network. The output of this command can be used to perform further attacks like password spraying, brute-forcing, or privilege escalation.
+
+
 
 **Command** ([[crackmapexec ldap users enumeration]]):
 
 ```bash
 $ crackmapexec ldap 10.0.2.11 -u 'username' -p 'password' --kdcHost 10.0.2.11 --users
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ $ crackmapexec ldap 10.0.2.11 -u 'username' -p 'password' --kdcHost 10.0.2.11 --
 - [[Active Directory Attacks]]
 - [[BadPwdCount attribute]]
 - [[Password spraying]]
+
+

@@ -29,11 +29,15 @@ MSSQL List Tables is a technique used in MSSQL injection attacks to retrieve a l
 
 MSSQL List Tables is a technique used in MSSQL injection attacks to retrieve a list of tables from a targeted database. This technique involves exploiting vulnerabilities in the database software or web application to execute arbitrary SQL commands. By injecting specially crafted SQL queries, an attacker can bypass authentication and gain access to sensitive data stored in the database. The business value of this technique lies in the ability to obtain valuable data such as customer information, intellectual property, and financial data.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application or database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ MSSQL List Tables is a technique used in MSSQL injection attacks to retrieve a l
 
 1. Implement least privilege access controls to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Retrieve a list of tables from a targeted MSSQL database
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. Use the above SQL commands to list database objects. The first command will list all user tables in the current database. The second command will list all user tables in another database. The third command will list column names and types for a specific table. The fourth command will list all tables in all databases. The fifth command will list all user tables in the current database with their names separated by a delimiter of your choice.
 
+ 
+
+
+
 **Code**: [[SELECT name FROM master..sysobjects WHERE xtype = ]]
+
+
 
 > The commands in this JSON object are SQL commands that can be used to list various database objects. The first command will list all user tables in the current database. The second command will list all user tables in another database. The third command will list column names and types for a specific table. The fourth command will list all tables in all databases. The fifth command will list all user tables in the current database with their names separated by a delimiter of your choice.
 
@@ -73,3 +87,5 @@ MSSQL List Tables is a technique used in MSSQL injection attacks to retrieve a l
 
 - [[MSSQL Injection]]
 - [[MSSQL List tables]]
+
+

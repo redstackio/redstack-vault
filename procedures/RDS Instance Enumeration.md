@@ -34,6 +34,8 @@ From a technical perspective, this technique involves leveraging the AWS API to 
 
 The business value of this technique is that it allows an attacker to gain a better understanding of the target environment and identify potentially valuable targets for further attacks.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the RDS service
@@ -41,6 +43,8 @@ The business value of this technique is that it allows an attacker to gain a bet
 1. Network access to the RDS service endpoint
 
 1. AWS CLI or SDK installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -50,23 +54,33 @@ The business value of this technique is that it allows an attacker to gain a bet
 
 1. Enable AWS CloudTrail to log API activity and analyze the logs for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Discover and list information about RDS instances in an AWS environment
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. This command provides information about all of your Amazon RDS DB instances and their current status. It returns a list of DB instances and their details such as instance identifier, engine, status, endpoint, and more.
 
+ 
+
 The 'aws rds describe-db-instances' command takes no arguments and will display information about all DB instances in the current region. If you want to retrieve information about a specific DB instance, you can use the --db-instance-identifier parameter followed by the instance identifier. You can also use filters to narrow down the search results. For example, you can use the --filters parameter followed by a list of filters to retrieve only the DB instances that match the specified criteria. The output of this command is in JSON format.
+
+
 
 **Command** ([[List all DB instances in region]]):
 
 ```bash
 aws rds describe-db-instances
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws rds describe-db-instances
 - [[Enumeration]]
 - [[Listing information about RDS instances]]
 - [[RDS - Relational Database Service]]
+
+

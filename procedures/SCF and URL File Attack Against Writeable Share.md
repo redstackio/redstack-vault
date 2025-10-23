@@ -39,6 +39,8 @@ Technical Explanation: The attacker creates a specially crafted SCF or URL file 
 
 Business Value: This attack can be used to gain unauthorized access to sensitive information or to move laterally within a network. It can be used to steal sensitive information, such as credit card numbers or intellectual property. It can also be used to disrupt business operations or to deploy ransomware.
 
+ 
+
 ## Requirements
 
 1. Access to a writeable network share
@@ -47,6 +49,8 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 1. Victim user opening the Internet Shortcut
 
+ 
+
 ## Defense
 
 1. Disable the WebClient service to prevent UNC path access
@@ -54,6 +58,8 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 1. Monitor network traffic for suspicious activity
 
 1. Educate users on the dangers of opening unsolicited shortcuts or links
+
+ 
 
 ## Objectives
 
@@ -67,13 +73,23 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 
 1. Deploy ransomware
 
+ 
+
 # Instructions
 
 1. To execute a URL injection attack, an attacker manipulates a vulnerable website's input fields to inject a malicious URL that will be executed by the victim's browser. This can lead to the execution of malicious scripts, the theft of user data, and other forms of cyber attacks.
 
+ 
+
+
+
 **Code**: [[.url]]
 
+
+
 > The '.url' data field refers to a type of input field that is commonly used to accept URLs. Attackers can manipulate these fields by injecting malicious URLs that will be executed by the victim's browser. To prevent URL injection attacks, websites should validate user input and sanitize any input that could potentially contain malicious code.
+
+
 
 **Command** ([[.url Command]]):
 
@@ -81,21 +97,33 @@ Business Value: This attack can be used to gain unauthorized access to sensitive
 .url https://www.example.com
 ```
 
+
+
 2. To capture network traffic with Responder, use the following command:
 
 responder -I [interface] [options]
 
 The -I flag specifies the interface to use for capturing traffic, in this case eth0. The -v flag enables verbose output.
 
+ 
+
+
+
 **Code**: [[responder -I eth0 -v]]
 
+
+
 > Resonder is a tool used for network analysis and penetration testing. The -I flag specifies the interface to use for capturing traffic, and the -v flag enables verbose output. Other options are available for customizing the capture process.
+
+
 
 **Command** ([[Run Responder in verbose mode on eth0]]):
 
 ```bash
 responder -I eth0 -v
 ```
+
+
 
 3. To create an Internet shortcut with an icon, follow these steps:
 1. Open Notepad
@@ -106,9 +134,15 @@ responder -I eth0 -v
 6. Save the file with a .url extension
 7. Double-click the file to open the URL in your default web browser
 
+ 
+
+
+
 **Code**: [[[InternetShortcut]
 URL=whatever
 WorkingDirectory=w]]
+
+
 
 > This command creates an Internet shortcut with a custom icon. The 'URL' field specifies the URL that the shortcut will point to. The 'WorkingDirectory' field specifies the working directory for the shortcut. The 'IconFile' field specifies the path to the icon file, which is hosted on a remote server. The '%USERNAME%' variable in the file path will be replaced with the current user's username. The 'IconIndex' field specifies the index of the icon in the icon file to use for the shortcut.
 
@@ -136,3 +170,5 @@ WorkingDirectory=w]]
 - [[Active Directory Attacks]]
 - [[SCF and URL file attack against writeable share]]
 - [[URL Files]]
+
+

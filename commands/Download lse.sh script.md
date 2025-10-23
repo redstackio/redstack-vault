@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:36.506262+00:00'
 ```bash
 wget "https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh" -O lse.sh
 ```
+
+

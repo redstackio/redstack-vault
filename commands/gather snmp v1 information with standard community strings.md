@@ -23,3 +23,5 @@ snmpwalk -v1 -c private target-ip
 snmpwalk -v1 -c manager target-ip
 
 ```
+
+

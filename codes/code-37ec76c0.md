@@ -23,3 +23,5 @@ PS C:\Tools> Get-AzResource
 # ERROR: 'this.Client.SubscriptionId' cannot be null.
 # ---> The managed identity has no rights on any of the Azure resources. Switch to to GraphAPI
 ```
+
+

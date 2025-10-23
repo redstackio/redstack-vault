@@ -33,13 +33,25 @@ Display the contents of all local users' PowerShell history.
 
 Display the contents of all local users' PowerShell history.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Enumerate Local Users' PowerShell History]]):
 
 ```powershell
 Get-ChildItem -Path "C:\Users\*\APPDATA\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt" | Get-Content
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +75,5 @@ Get-ChildItem -Path "C:\Users\*\APPDATA\Roaming\Microsoft\Windows\PowerShell\PSR
 
 - [[data exposure]]
 - [[Enumeration]]
+
+

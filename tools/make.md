@@ -27,11 +27,33 @@ The GNU make utility is used to automatically determine which pieces of a large 
 
 The GNU make utility is used to automatically determine which pieces of a large program need to be recompiled, and issue the appropriate commands to recompile them. To prepare to use make, you must write a Makefile that describes the relationship among files in the program, and the states of commands for updating each file.
 
+
+
 Basic Makefile which compiles a single .c file:
+
+
+
+{{EMBEDDED_CODE_7aac1771-0261-4151-9df6-c1f5c7a61fb1}}
+
+
+
+
+
+{{EMBEDDED_COMMAND_6a811acc-e73f-46f3-a77b-4d0ab2584a83}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +66,5 @@ Basic Makefile which compiles a single .c file:
 ## Tags
 
 - [[Build]]
+
+

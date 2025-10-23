@@ -17,6 +17,8 @@ Generate MD5 Hashes to inject into a database or hashed password file.
 
 Cracking MD5 Hashes to obtain the passwords.
 
+
+
 ## MD5 Hash Format
 
 > $1$8BytesXX$dXGg2H2MnwNoiq6UuVkws/
@@ -25,11 +27,21 @@ Cracking MD5 Hashes to obtain the passwords.
 
 ## Generate Hashes
 
+
+
 **Command** ([[mkpasswd Generate a MD5 Hash]]):
 
 ```bash
 mkpasswd -5 -S $_SALT $_PASSWORD
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[openssl Generate a MD5 Hash]]):
 
@@ -37,7 +49,15 @@ mkpasswd -5 -S $_SALT $_PASSWORD
 openssl passwd -1 -salt $_SALT $_PASSWORD
 ```
 
+
+
+
+
 ## Cracking Hashes
+
+
+
+
 
 **Command** ([[John the Ripper Dictionary Attack Against MD5 Hashes]]):
 
@@ -45,8 +65,28 @@ openssl passwd -1 -salt $_SALT $_PASSWORD
 john --format=md5crypt --wordlist=$_PASSWORD_FILE $_HASH_FILE
 ```
 
+
+
+
+
+
+
+
+
+
+
 **Command** ([[hashcat Dictionary Attack Against MD5 Hashes]]):
 
 ```bash
 hashcat -m 500 -a 0 -o $_OUTPUT.txt $_HASH_FILE $_PASSWORD_FILE
 ```
+
+
+
+
+
+
+
+
+
+

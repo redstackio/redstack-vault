@@ -43,6 +43,8 @@ This technique can be used by attackers to steal sensitive data such as customer
 
 Businesses that use AWS RDS should be aware of this technique and take steps to secure their RDS instances and prevent data exfiltration.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS RDS instance
@@ -50,6 +52,8 @@ Businesses that use AWS RDS should be aware of this technique and take steps to 
 1. AWS CLI access
 
 1. IAM-based authentication
+
+ 
 
 ## Defense
 
@@ -59,6 +63,8 @@ Businesses that use AWS RDS should be aware of this technique and take steps to 
 
 1. Implement encryption at rest and in transit to protect sensitive data
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from an AWS RDS instance
@@ -67,11 +73,17 @@ Businesses that use AWS RDS should be aware of this technique and take steps to 
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command retrieves the account ID and the ARN of the IAM user or role whose credentials are used to call the command.
 
+ 
+
 The `aws sts get-caller-identity` command is used to identify the user or role whose credentials are being used to make the AWS API call. This command is useful in scenarios where you have multiple users or roles with different levels of access to AWS services and you want to ensure that the right user or role is being used to execute the command. The output of this command includes the account ID and the ARN of the user or role. This information can be used to troubleshoot issues related to permissions and access control in AWS.
+
+
 
 **Command** ([[AWS Get Caller Identity]]):
 
@@ -79,9 +91,15 @@ The `aws sts get-caller-identity` command is used to identify the user or role w
 aws sts get-caller-identity
 ```
 
+
+
 2. To list all policies attached to a specific IAM role, use the `aws iam list-attached-role-policies` command followed by the `--role-name` parameter and the name of the role you want to check.
 
+ 
+
 This command will return a list of all policies that are attached to the specified IAM role. This is useful when you need to see which policies are currently in effect for a particular role, or when you need to troubleshoot issues related to role permissions. The `--role-name` parameter specifies the name of the role you want to check. If the role has no policies attached, the command will return an empty list. Note that this command only lists policies that are attached directly to the role, not policies that are attached to any of the role's groups or users.
+
+
 
 **Command** ([[List attached role policies]]):
 
@@ -89,12 +107,22 @@ This command will return a list of all policies that are attached to the specifi
 aws iam list-attached-role-policies --role-name name
 ```
 
+
+
 3. Use this command to retrieve information about a specific version of an AWS IAM policy.
+
+ 
+
+
 
 **Code**: [[aws iam get-policy-version --policy-arn arn --vers]]
 
+
+
 > - `--policy-arn` : The Amazon Resource Name (ARN) of the policy you want information about.
 - `--version-id` : The identifier for the version of the policy you want information about.
+
+
 
 **Command** ([[Get IAM policy version]]):
 
@@ -102,15 +130,23 @@ aws iam list-attached-role-policies --role-name name
 aws iam get-policy-version --policy-arn arn --version-id ID
 ```
 
+
+
 4. Use this command to generate a temporary token for accessing the RDS instance. The token is valid for 15 minutes and can be used to authenticate against the database.
 
+ 
+
 This command generates a temporary token that can be used to authenticate against an RDS instance. The token is generated using the AWS SDK or CLI and is valid for 15 minutes. The token can be used to authenticate against the database, and it can be revoked at any time. The `--hostname` parameter specifies the hostname of the RDS instance, the `--port` parameter specifies the port number, the `--username` parameter specifies the username, and the `--region` parameter specifies the AWS region where the RDS instance is located.
+
+
 
 **Command** ([[Generate RDS DB Auth Token]]):
 
 ```bash
 aws rds generate-db-auth-token --hostname hostname --port port --username username --region region
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -139,3 +175,5 @@ aws rds generate-db-auth-token --hostname hostname --port port --username userna
 - [[Data exfiltration]]
 - [[IAM Based authentication]]
 - [[RDS - Relational Database Service]]
+
+

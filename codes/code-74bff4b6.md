@@ -47,3 +47,5 @@ reg delete "HKLM\Software\Policies\Microsoft\Windows Defender" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t REG_DWORD /d "1" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows Defender" /v "DisableAntiVirus" /t REG_DWORD /d "1" /f
 ```
+
+

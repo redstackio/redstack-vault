@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:20.327039+00:00'
 ```bash
 bloodyAD.py -u john.doe -d bloody -p Password512 --host 192.168.10.2 getObjectAttributes LAPS_PC$ ms-mcs-admpwd,ms-mcs-admpwdexpirationtime
 ```
+
+

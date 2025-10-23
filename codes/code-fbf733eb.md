@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:23.356429+00:00'
 crackmapexec ldap 10.10.10.10 -u username -p 'Password123' -d 'domain.local' --kdcHost 10.10.10.10 -M MAQ
 StandIn.exe --object ms-DS-MachineAccountQuota=*
 ```
+
+

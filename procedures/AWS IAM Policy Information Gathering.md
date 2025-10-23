@@ -34,6 +34,8 @@ The AWS IAM Policy Information Gathering procedure is used to retrieve informati
 
 From a technical perspective, this procedure involves making a call to the AWS API to retrieve the specified policy document. The policy document is then analyzed to identify the permissions granted by the policy. From a business perspective, this procedure can help identify potential areas of risk in an AWS environment and inform security teams of areas that may require additional attention.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions
@@ -41,6 +43,8 @@ From a technical perspective, this procedure involves making a call to the AWS A
 1. Access to the AWS API
 
 1. AWS CLI or SDK installed
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a technical perspective, this procedure involves making a call to the AWS A
 
 1. Implement the principle of least privilege by only granting the necessary permissions to IAM policies
 
+ 
+
 ## Objectives
 
 1. Retrieve information about a specific policy in an AWS account
@@ -58,17 +64,25 @@ From a technical perspective, this procedure involves making a call to the AWS A
 
 1. Gather intelligence on an AWS environment
 
+ 
+
 # Instructions
 
 1. To retrieve a specific version of an IAM policy, use the 'aws iam get-policy-version' command.
 
+ 
+
 This command requires two arguments: 'policy-arn' (the Amazon Resource Name (ARN) of the policy) and 'version-id' (the policy version to retrieve). The command will return the policy version specified by the 'version-id' argument. If the version is not found, an error message will be returned. This command can be useful for auditing and tracking changes to IAM policies over time.
+
+
 
 **Command** ([[Retrieve IAM policy version]]):
 
 ```bash
 aws iam get-policy-version --policy-arn arn --version-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws iam get-policy-version --policy-arn arn --version-id ID
 - [[Checking informations about a specific policy]]
 - [[Cloud - AWS]]
 - [[Persistence]]
+
+

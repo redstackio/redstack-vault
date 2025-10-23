@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:42.877343+00:00'
 ```bash
 Select * from sys.server_principals where type_desc != 'SERVER_ROLE'
 ```
+
+

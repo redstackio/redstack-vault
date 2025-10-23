@@ -28,7 +28,17 @@ Windoes Privilege Escalation Awesome Script (winPEAS) enumerates a Windows host 
 
 Windoes Privilege Escalation Awesome Script (winPEAS) enumerates a Windows host for potential privilege escalation paths. This program comes in two versions, a simple .bat file, and a more robust .exe which requires .NET 4+ to run.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_fa48b57a-9708-4e9f-91f9-30784dcec9e9}}
+
+
+
+
 
 # Installation
 
@@ -36,26 +46,46 @@ Windoes Privilege Escalation Awesome Script (winPEAS) enumerates a Windows host 
 
 Download a copy of the .BAT script: [Download here](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/blob/master/winPEAS/winPEASbat/winPEAS.bat)
 
+
+
 ## Download the .EXE
 
 Download a pre-built and obfuscated copy of winPEAS.exe: [Download here](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe/winPEAS/bin/Obfuscated%20Releases)
+
+
 
 ## Build the .EXE from Source (Windows)
 
 winPEAS can be compiled with Microsoft Visual Studio Community 2019 with ".NET desktop development" installed.
 
+
+
 1. Clone the repository
+
+
+
+
 
 2. Open winPEAS.sln" with Visual Studio
 3. Set the "Solutions Configuration" to "Release"
 4. Set the "Solution Platform" to the target's architecture
 5. Select "Build" > "Rebuild Solution"
 
+
+
 The compiled .exe can be find ount <PEASDirectory>\winPEAS\winPEASexe\winPEAS\bin\x64\Release\winPEAS.exe
 
 winPEAS may be identified as malware due to its capabilities. The makers of winPEAS suggest installing Visual Studio's dotfuscator module. [Click here for instructions](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe) 
 
+
+
+
+
 The .EXE variant of winPEAS supports a number of arguments:
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +99,5 @@ The .EXE variant of winPEAS supports a number of arguments:
 
 - [[Enumeration]]
 - [[privileges]]
+
+

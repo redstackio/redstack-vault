@@ -29,9 +29,13 @@ Mako is a server-side template engine that allows developers to build dynamic we
 
 Mako is a server-side template engine that allows developers to build dynamic web applications. However, if not properly secured, Mako can be vulnerable to Server Side Template Injection (SSTI) attacks. An attacker can use SSTI to execute arbitrary code on the server and potentially gain access to sensitive information. In this case, the attacker is using SSTI to retrieve the user ID of the target. By injecting code into a Mako template, the attacker can retrieve the user ID and potentially use it to further their attack. This attack can be particularly dangerous in cases where the user ID is used as a primary key or is otherwise used to authenticate the user.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Mako template on the target server
+
+ 
 
 ## Defense
 
@@ -41,21 +45,31 @@ Mako is a server-side template engine that allows developers to build dynamic we
 
 1. Regularly update and patch Mako and other web application components to ensure that known vulnerabilities are addressed
 
+ 
+
 ## Objectives
 
 1. Retrieve the user ID of the target
 
 1. Potentially use the user ID to further the attack
 
+ 
+
 # Instructions
 
 1. This command retrieves the user ID of the current user.
+
+ 
+
+
 
 **Code**: [[<%
 import os
 x=os.popen('id').read()
 %>
 ${x}]]
+
+
 
 > The `os.popen('id').read()` function is used to execute the `id` command in the terminal and capture its output. The captured output is then returned as the value of the `x` variable. The `${x}` syntax is used to insert the value of `x` into the response. This command can be useful for identifying the current user and determining their permissions.
 
@@ -77,3 +91,5 @@ ${x}]]
 
 - [[Mako]]
 - [[Server Side Template Injection]]
+
+

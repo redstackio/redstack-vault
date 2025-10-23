@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:27.194834+00:00'
 ```powershell
 SharPersist -t startupfolder -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -f "Some File" -m add
 ```
+
+

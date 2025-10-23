@@ -56,3 +56,5 @@ dir
 cd \
 Get-ChildItem -Path "C:\Users\*\APPDATA\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt" | Get-Content
 ```
+
+

@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 grep -l -i pass /var/log/*.log 2>/dev/null
 
 ```
+
+

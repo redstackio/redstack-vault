@@ -37,6 +37,8 @@ Public routes should be setup with an Interet Gateway.
 
 1. Creating A Public Route Table
 
+
+
 **Command** ([[aws create route table for vpc and region]]):
 
 ```bash
@@ -44,7 +46,15 @@ aws ec2 create-route-table --vpc-id $AWS_VPC_ID --region $AWS_REGION
 
 ```
 
+
+
+
+
+
+
 2. Create a route for an Internet Gateway using the route table ID
+
+
 
 **Command** ([[aws create route using route table ID and gateway ID]]):
 
@@ -53,7 +63,15 @@ aws ec2 create-route --route-table-id $AWS_ROUTE_TABLE_ID --destination-cidr-blo
 
 ```
 
+
+
+
+
+
+
 3. Finally, associate the public subnet with the Route Table
+
+
 
 **Command** ([[aws associate route table id with subnet id]]):
 
@@ -61,6 +79,12 @@ aws ec2 create-route --route-table-id $AWS_ROUTE_TABLE_ID --destination-cidr-blo
 aws ec2 associate-route-table --route-table-id $AWS_ROUTE_TABLE_ID --subnet-id $AWS_SUBNET_ID --region $AWS_REGION
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -78,3 +102,5 @@ aws ec2 associate-route-table --route-table-id $AWS_ROUTE_TABLE_ID --subnet-id $
 
 - [[AWS]]
 - [[Cloud]]
+
+

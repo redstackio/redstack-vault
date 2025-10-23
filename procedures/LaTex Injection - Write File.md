@@ -28,11 +28,15 @@ LaTeX Injection is a technique used to inject LaTeX code into a document. This t
 
 LaTeX Injection is a technique used to inject LaTeX code into a document. This technique can be used to execute arbitrary code on the target system. This procedure focuses on writing a file using LaTeX Injection. The attacker can use this technique to write arbitrary files on the target system. The business value of this technique is that it can be used to exfiltrate data or to gain persistence on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of LaTeX syntax
+
+ 
 
 ## Defense
 
@@ -42,17 +46,27 @@ LaTeX Injection is a technique used to inject LaTeX code into a document. This t
 
 1. Implement least privilege access controls to limit the damage that can be done by a successful LaTeX Injection attack.
 
+ 
+
 ## Objectives
 
 1. Write a file on the target system using LaTeX Injection
+
+ 
 
 # Instructions
 
 1. The command writes a single lined file using LaTeX Injection.
 
+ 
+
+
+
 **Code**: [[\newwrite\outfile
 \openout\outfile=cmd.tex
 \write\]]
+
+
 
 > The command creates a new file using the \newwrite command, opens the file for writing using the \openout command, writes the contents of the file using the \write command, and then closes the file using the \closeout command. The file contents are specified within the curly braces of the \write command.
 
@@ -71,3 +85,5 @@ LaTeX Injection is a technique used to inject LaTeX code into a document. This t
 
 - [[LaTex Injection]]
 - [[Write file]]
+
+

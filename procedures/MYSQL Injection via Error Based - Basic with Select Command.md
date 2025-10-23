@@ -34,6 +34,8 @@ Technical Explanation: The attacker sends a malicious SQL statement that include
 
 Business Value: This procedure can be used by attackers to gain unauthorized access to sensitive information stored in MYSQL databases. This information can then be used for various purposes, such as identity theft, financial fraud, and corporate espionage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MYSQL database
@@ -41,6 +43,8 @@ Business Value: This procedure can be used by attackers to gain unauthorized acc
 1. Knowledge of SQL injection techniques
 
 1. Tools to craft and send malicious SQL statements
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This procedure can be used by attackers to gain unauthorized acc
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from MYSQL databases
@@ -58,15 +64,25 @@ Business Value: This procedure can be used by attackers to gain unauthorized acc
 
 1. Execute arbitrary code on the database
 
+ 
+
 # Instructions
 
 1. To check the compatibility of MySQL with version 4.1 or higher, use the following command:
 
+ 
+
+
+
 **Code**: [[MySQL &gt;= 4.1]]
+
+
 
 > mysql --version
 
 This command will display the version of MySQL installed on your system. If the version is 4.1 or higher, then your system is compatible with MySQL &gt;= 4.1.
+
+
 
 **Command** ([[Check MySQL version]]):
 
@@ -74,9 +90,17 @@ This command will display the version of MySQL installed on your system. If the 
 mysql --version
 ```
 
+
+
 2. The 'select' command is used to retrieve data from a database. In this case, the command is being used to inject malicious code into the database. The injected code will execute when the query is run, allowing an attacker to take control of the database.
 
+ 
+
+
+
 **Code**: [[(select 1 and row(1,1)>(select count(*),concat(CON]]
+
+
 
 > The injected code in this example uses the 'concat' function to concatenate the database version with a random number. The 'floor' function is used to round down the random number. This is then used in a 'count' function to determine the number of rows in the result set. The 'row' function is used to check if there is at least one row in the result set. If there is, the injected code will execute.
 
@@ -99,3 +123,5 @@ mysql --version
 - [[MYSQL Error Based]]
 - [[MYSQL Error Based - Basic]]
 - [[MYSQL Injection]]
+
+

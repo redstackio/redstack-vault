@@ -22,6 +22,8 @@ Find sub-domains belonging to the target using finddomain
 
 Find sub-domains belonging to the target using finddomain
 
+
+
 **Command** ([[findomain scan domain for sub-domains]]):
 
 ```bash
@@ -29,6 +31,12 @@ findomain -t owasp.com
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[findomain scan domain for sub-domains]]
+
+

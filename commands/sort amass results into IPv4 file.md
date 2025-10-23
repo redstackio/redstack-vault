@@ -90,3 +90,5 @@ cat owasp_results.txt | cut -d']' -f2 | awk '{print $2}' | sort -u | grep -oE "\
 104.22.27.77
 104.22.26.77
 ```
+
+

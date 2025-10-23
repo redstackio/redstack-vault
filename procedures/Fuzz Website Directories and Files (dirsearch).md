@@ -28,9 +28,13 @@ It can locate configuration files, hidden directories, and api endpoints like gr
 
 [dirsearch](https://github.com/maurosoria/dirsearch)
 
+
+
 ##  Instructions
 
 1. Using the dirsearch tool pass in a domain name and an extensions list
+
+
 
 **Command** ([[dirsearch enumerate directories and files against a domain name]]):
 
@@ -39,6 +43,12 @@ python3 dirsearch.py -u redstack.io -e .*
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[dirsearch enumerate directories and files against a domain name]]
+
+

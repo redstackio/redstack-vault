@@ -34,6 +34,8 @@ Technical Explanation: The attacker uses JavaScript Alert payload to bypass the 
 
 Business Value: This technique can be used by attackers to bypass web application firewalls and gain access to sensitive information, perform unauthorized actions, or gain access to the target system. This can result in financial loss, reputation damage, and loss of customer trust.
 
+ 
+
 ## Requirements
 
 1. Access to a web application protected by a WAF
@@ -41,6 +43,8 @@ Business Value: This technique can be used by attackers to bypass web applicatio
 1. Knowledge of the WAF configuration and rules
 
 1. Ability to encode the payload in a way that the WAF does not recognize
+
+ 
 
 ## Defense
 
@@ -50,17 +54,27 @@ Business Value: This technique can be used by attackers to bypass web applicatio
 
 1. Monitor web traffic for suspicious activity and investigate any detected anomalies
 
+ 
+
 ## Objectives
 
 1. Bypass the web application firewall
 
 1. Execute the JavaScript Alert payload on the target system
 
+ 
+
 # Instructions
 
 1. To create a JavaScript alert, use the following code:
 
+ 
+
+
+
 **Code**: [[\u003e\u003c\u0068\u0031 onclick=alert('1')\u003e]]
+
+
 
 > The code consists of an HTML tag with an onclick attribute that triggers the JavaScript alert function. The '1' argument passed to the function will be displayed as the message in the alert box. You can replace this with any message you want to display.
 
@@ -81,3 +95,5 @@ Business Value: This technique can be used by attackers to bypass web applicatio
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
 - [[Fortiweb WAF Bypass by @rezaduty - 9th July 2019]]
+
+

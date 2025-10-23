@@ -17,12 +17,32 @@ phrasen|drescher (p|d) is a modular and multi processing pass phrase cracking to
 
 phrasen|drescher (p|d) is a modular and multi processing pass phrase cracking tool. It comes with a number of plugins but a simple plugin API allows an easy development of new plugins. The main features of p|d are:
 
+
+
 Modular with the use of plugins
+
+
 
 Multi processing
 
+
+
 Dictionary attack with or without permutations (uppercase, lowercase, l33t, etc.)
+
+
 
 Incremental brute force attack with custom character maps
 
+
+
 Runs on FreeBSD, NetBSD, OpenBSD, MacOS and Linux
+
+
+
+
+
+
+
+
+
+

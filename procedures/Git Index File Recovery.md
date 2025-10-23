@@ -37,6 +37,8 @@ Git Index File Recovery is a technique used to recover files from a compromised 
 
 Git Index File Recovery is a technique used to recover files from a compromised Git repository. Attackers can use this technique to gain access to sensitive information such as credentials, keys, and other proprietary information. This technique involves parsing the .git/index file to recover the name and sha1 hash of every file listed in the index. Once the name and hash are recovered, the attacker can use the same process to recover the file contents. This technique can be used to evade detection and maintain persistence within a compromised system.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Git repository
@@ -44,6 +46,8 @@ Git Index File Recovery is a technique used to recover files from a compromised 
 1. Python 3 installed
 
 1. gin library installed
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Git Index File Recovery is a technique used to recover files from a compromised 
 
 1. Regularly review and audit Git repository contents for sensitive information and remove any unnecessary files or credentials
 
+ 
+
 ## Objectives
 
 1. Recover sensitive information such as credentials and keys
@@ -61,14 +67,24 @@ Git Index File Recovery is a technique used to recover files from a compromised 
 
 1. Evade detection
 
+ 
+
 # Instructions
 
 1. To install the gin library, run the following command:
 
+ 
+
+
+
 **Code**: [[pip3 install gin
 gin ~/git-repo/.git/index]]
 
+
+
 > This command installs the gin library, which is used to parse the .git/index file.
+
+
 
 **Command** ([[Install gin package and index git repository]]):
 
@@ -77,12 +93,22 @@ pip3 install gin
 gin ~/git-repo/.git/index
 ```
 
+
+
 2. To recover the name and sha1 hash of every file listed in the index, run the following command:
+
+ 
+
+
 
 **Code**: [[$ gin .git/index | egrep -e "name|sha1" 
 name = AW]]
 
+
+
 > This command recovers the name and sha1 hash of every file listed in the index file. The attacker can then use the same process to recover the contents of the file.
+
+
 
 **Command** ([[Extract name and sha1 from .git/index using gin and egrep]]):
 
@@ -94,6 +120,8 @@ sha1 = 862a3e58d138d6809405aa062249487bee074b98
 name = CRLF injection/README.md
 sha1 = d7ef4d77741c38b6d3806e0c6a57bf1090eec141
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +151,5 @@ sha1 = d7ef4d77741c38b6d3806e0c6a57bf1090eec141
 - [[Git]]
 - [[Insecure Source Code Management]]
 - [[Recovering file contents from .git/index]]
+
+

@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # snmpwalk
 
+
+
 **Command** ([[gather snmp v1 information with standard community strings]]):
 
 ```bash
@@ -18,12 +20,24 @@ snmpwalk -v1 -c manager target-ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[enumerate windows users]]):
 
 ```bash
 snmpwalk -c public -v1 target-ip 1.3.6.1.4.1.77.1.2.25
 
 ```
+
+
+
+
+
+
 
 **Command** ([[enumerate current windows processes]]):
 
@@ -32,6 +46,12 @@ snmpwalk -c public -v1 target-ip 1.3.6.1.2.1.25.4.2.1.2
 
 ```
 
+
+
+
+
+
+
 **Command** ([[enumerate windows open tcp ports]]):
 
 ```bash
@@ -39,9 +59,21 @@ snmpwalk -c public -v1 target-ip 1.3.6.1.2.1.6.13.1.3
 
 ```
 
+
+
+
+
+
+
 **Command** ([[enumerate installed software]]):
 
 ```bash
 snmpwalk -c public -v1 target-ip 1.3.6.1.2.1.25.6.3.1.2
 
 ```
+
+
+
+
+
+

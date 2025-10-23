@@ -38,13 +38,23 @@ Windows allows users to execute command from the terminal as other users using "
 
 Using the "/savedcreds" argument will bypass the password prompt, but credentials must have been previously saved with Credential Manager
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[runas.exe Execute a Command using Saved Credentials]]):
 
 ```bash
 runas.exe /profile /user:$_DOMAIN\$_USERNAME /savedcred "$_COMMAND"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +81,5 @@ runas.exe /profile /user:$_DOMAIN\$_USERNAME /savedcred "$_COMMAND"
 
 - [[access control]]
 - [[authentication]]
+
+

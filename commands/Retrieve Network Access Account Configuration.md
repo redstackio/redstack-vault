@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:02.204187+00:00'
 ```bash
 Get-Wmiobject -namespace \"root\ccm\policy\Machine\ActualConfig\" -class \"CCM_NetworkAccessAccount\"\nNetworkAccessPassword : <![CDATA[E600000001...8C6B5]]>\nNetworkAccessUsername : <![CDATA[E600000001...00F92]]>
 ```
+
+

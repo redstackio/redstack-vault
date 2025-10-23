@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:05.094903+00:00'
 ```bash
 nmap --script 'http-enum' -v web.xxxx.com -p80 -oN http-enum.nmap
 ```
+
+

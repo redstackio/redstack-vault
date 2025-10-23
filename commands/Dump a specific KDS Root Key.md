@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:56.697280+00:00'
 ```bash
 GoldenGMSA.exe kdsinfo --guid 46e5b8b9-ca57-01e6-e8b9-fbb267e4adeb
 ```
+
+

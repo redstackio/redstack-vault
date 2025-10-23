@@ -26,13 +26,23 @@ Windows Hyper-V Virtual Hard Disk (VHD) files can be mounted on many Linux distr
 
 Windows Hyper-V Virtual Hard Disk (VHD) files can be mounted on many Linux distributions using tools like guestmount.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[guestmount Mount a VHD file]]):
 
 ```bash
 guestmount --add $_IMAGE.vhd --inspector --ro $_DEST_DIRECTORY
 ```
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +55,5 @@ guestmount --add $_IMAGE.vhd --inspector --ro $_DEST_DIRECTORY
 ## Tags
 
 - [[Hypervisors]]
+
+

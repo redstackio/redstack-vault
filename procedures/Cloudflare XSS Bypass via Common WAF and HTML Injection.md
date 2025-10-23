@@ -35,6 +35,8 @@ From a technical perspective, this procedure involves crafting a payload that by
 
 From a business perspective, this attack can result in reputational damage, loss of customer trust, and legal consequences. It can also lead to theft of sensitive information, such as customer data or intellectual property.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website protected by Cloudflare
@@ -45,6 +47,8 @@ From a business perspective, this attack can result in reputational damage, loss
 
 1. A web browser and a text editor
 
+ 
+
 ## Defense
 
 1. Implement a WAF that can detect and block common WAF bypass techniques
@@ -52,6 +56,8 @@ From a business perspective, this attack can result in reputational damage, loss
 1. Sanitize user input to prevent HTML Injection attacks
 
 1. Use Content Security Policy (CSP) to restrict the execution of untrusted scripts
+
+ 
 
 ## Objectives
 
@@ -61,11 +67,19 @@ From a business perspective, this attack can result in reputational damage, loss
 
 1. Perform actions on behalf of the victim user, such as posting a malicious comment or sending a phishing email
 
+ 
+
 # Instructions
 
 1. The HTML Injection vulnerability allows an attacker to inject malicious code into a webpage viewed by other users. The attacker can use this vulnerability to execute arbitrary code, steal sensitive information, or perform other malicious actions.
 
+ 
+
+
+
 **Code**: [[1'"><img/src/onerror=.1|alert``>]]
+
+
 
 > The 'data' field contains the malicious code that will be injected into the webpage. The code is executed when the webpage is loaded by a victim's browser. The attacker can use various techniques to inject this code, such as input fields, cookies, or HTTP headers. To prevent HTML Injection vulnerabilities, input validation and output encoding should be used to ensure that user input is properly sanitized and encoded before being displayed.
 
@@ -89,3 +103,5 @@ From a business perspective, this attack can result in reputational damage, loss
 - [[Cloudflare XSS Bypasses by [@Bohdan Korzhynskyi](https://twitter.com/bohdansec)]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

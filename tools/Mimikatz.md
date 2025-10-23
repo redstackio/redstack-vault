@@ -28,7 +28,15 @@ Mimikatz is a post exploitation tool which aids in the extraction of hashed and 
 
 Mimikatz is a post exploitation tool which aids in the extraction of hashed and cleartext passwords, PIN codes, and Kerberos tickets from memory. It can also be used for pass-the-hash attacks, pass-the-ticket, or build Golden tickets.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_92396b13-6d83-4737-ae7b-c5b8260ba77a}}
+
+
 
 # Installation
 
@@ -40,10 +48,18 @@ Mimikatz is a post exploitation tool which aids in the extraction of hashed and 
 
 3. Clone the mimikatz repository
 
+
+
 4. Open "mimikatz.sln" with Visual Studio.
 5. Set the "Solution Platform" to match the target (generally x64 or Win32)
 6. Select "Build" > "Rebuilt Solution"
 7. The compiled files are in .\mimikatz\x64
+
+
+
+
+
+
 
 ## Platforms
 
@@ -59,3 +75,5 @@ Mimikatz is a post exploitation tool which aids in the extraction of hashed and 
 - [[extract]]
 - [[NTLM]]
 - [[pass the hash]]
+
+

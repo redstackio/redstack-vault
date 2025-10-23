@@ -38,11 +38,15 @@ Technical Description: The EKS Fargate Profile Enumeration procedure involves us
 
 Business Value: This procedure can be used by an attacker to gather information about the target environment, which can be used to plan and execute further attacks against the target environment. By understanding the target environment, an attacker can identify weaknesses and vulnerabilities that can be exploited to gain access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to execute the "Describe Fargate Profile" command
 
 1. Access to an EKS cluster
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This procedure can be used by an attacker to gather information 
 
 1. Monitor for suspicious activity and unauthorized access to the EKS cluster and AWS resources
 
+ 
+
 ## Objectives
 
 1. Gather information about a fargate profile in an EKS cluster
@@ -60,21 +66,33 @@ Business Value: This procedure can be used by an attacker to gather information 
 
 1. Plan and execute further attacks against the target environment
 
+ 
+
 # Instructions
 
 1. Use this command to describe the Fargate profile of an Amazon EKS cluster.
 
+ 
+
+
+
 **Code**: [[aws eks describe-fargate-profiles --cluster-name n]]
+
+
 
 > The `describe-fargate-profiles` command is used to retrieve information about the Fargate profile of an Amazon EKS cluster. This includes details such as the ARN of the Fargate profile, the name of the profile, and the selectors used to determine which pods should be scheduled on Fargate. 
 
 This command requires the `--cluster-name` flag to specify the name of the cluster, and the `--fargate-profile-name` flag to specify the name of the Fargate profile. If successful, the command will output a JSON object containing the details of the Fargate profile.
+
+
 
 **Command** ([[Describe Fargate Profiles]]):
 
 ```bash
 aws eks describe-fargate-profiles --cluster-name name --fargate-profile-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +117,5 @@ aws eks describe-fargate-profiles --cluster-name name --fargate-profile-name nam
 - [[EKS]]
 - [[Enumeration]]
 - [[Listing information about a fargate profile in a cluster]]
+
+

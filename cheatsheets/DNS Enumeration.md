@@ -15,7 +15,13 @@ updated_at: '2023-05-30T20:09:23.425289+00:00'
 
 Active DNS enumeration, subdomain brute forcing, and zone transfers.
 
+
+
 ## host
+
+
+
+
 
 **Command** ([[host Query a DNS Server for A, AAAA, and MX Records]]):
 
@@ -23,11 +29,23 @@ Active DNS enumeration, subdomain brute forcing, and zone transfers.
 host $_TARGET_HOST
 ```
 
+
+
+
+
+
+
 **Command** ([[host Query a DNS Server for Name Servers]]):
 
 ```bash
 host -t ns $_TARGET_HOST
 ```
+
+
+
+
+
+
 
 **Command** ([[host Query a DNS Server for Mail Servers]]):
 
@@ -35,11 +53,23 @@ host -t ns $_TARGET_HOST
 host -t mx $_TARGET_HOST
 ```
 
+
+
+
+
+
+
 **Command** ([[host Attempt a DNS Zone Transfer]]):
 
 ```bash
 host -l $_DOMAIN_NAME $_TARGET_HOST
 ```
+
+
+
+
+
+
 
 **Command** ([[host Attempt a DNS Zone Transfer and List All Records]]):
 
@@ -47,7 +77,15 @@ host -l $_DOMAIN_NAME $_TARGET_HOST
 host -a -l $_DOMAIN_NAME $_TARGET_HOST
 ```
 
+
+
+
+
 ## DNSRecon
+
+
+
+
 
 **Command** ([[DNSRecon DNS Zone Transfer]]):
 
@@ -55,13 +93,27 @@ host -a -l $_DOMAIN_NAME $_TARGET_HOST
 dnsrecon -d $_TARGET_DOMAIN -t axfr
 ```
 
+
+
+
+
+
+
 **Command** ([[DNSRecon Brute Force DNS Subdomains]]):
 
 ```bash
 dnsrecon -d $_TARGET_DOMAIN -t brt -D $_FULL_PATH_TO_DICTIONARY
 ```
 
+
+
+
+
 ## dnsenum
+
+
+
+
 
 **Command** ([[dnsenum Query a DNS Server and Attempt a Zone Transfer]]):
 
@@ -69,8 +121,20 @@ dnsrecon -d $_TARGET_DOMAIN -t brt -D $_FULL_PATH_TO_DICTIONARY
 dnsenum $_TARGET_DOMAIN
 ```
 
+
+
+
+
+
+
 **Command** ([[dnsenum Brute Force DNS Subdomains]]):
 
 ```bash
 dnsenum -r $_TARGET_DOMAIN -f $_DICTIONARY
 ```
+
+
+
+
+
+

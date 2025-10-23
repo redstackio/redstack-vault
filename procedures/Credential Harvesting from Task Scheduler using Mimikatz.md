@@ -39,11 +39,15 @@ Technical Explanation: Mimikatz is a powerful tool that can be used to extract p
 
 Business Value: This procedure can be used by attackers to gain access to sensitive information and escalate privileges, leading to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Local administrator access
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Implementing multi-factor authentication can add an extra layer of security to protect against credential theft.
 
+ 
+
 ## Objectives
 
 1. Extract credentials from Task Scheduler using Mimikatz
@@ -61,12 +67,20 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. Use the 'mimikatz' command-line tool to extract credentials from the Task Scheduler on a Windows machine. The command used is 'vault::cred /patch'.
 
+ 
+
+
+
 **Code**: [[mimikatz(commandline) # vault::cred /patch
 TargetN]]
+
+
 
 > The command 'vault::cred /patch' is used to extract credentials from the Task Scheduler on a Windows machine. The output contains the following details:
 - TargetName: The name of the target machine.
@@ -77,6 +91,8 @@ TargetN]]
 - Flags: The flags associated with the credential.
 - Credential: The encrypted credential.
 - Attributes: Any additional attributes associated with the credential.
+
+
 
 **Command** ([[Extract Domain Credentials using Mimikatz]]):
 
@@ -91,6 +107,8 @@ Flags      : 00004004
 Credential : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Attributes : 0
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -116,3 +134,5 @@ Attributes : 0
 - [[Credential Manager & DPAPI]]
 - [[Task Scheduled credentials]]
 - [[Windows - Mimikatz]]
+
+

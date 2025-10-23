@@ -44,11 +44,17 @@ Automatically enumerate a Linux or Unix file environment, scanning for vulnerabi
 
 Automatically enumerate a Linux or Unix file environment, scanning for vulnerabilities such as permission issues, security misconfigurations, vulnerable software versions, etc. 
 
+
+
 # Instructions
 
 1. Download LinEnum and copy it to the target: [Download here](https://github.com/rebootuser/LinEnum)
 
 2. Execute a basic LinEnum scan
+
+
+
+
 
 **Command** ([[Scan a Linux Filesystem for Vulnerabilities (LinEnum)]]):
 
@@ -56,13 +62,25 @@ Automatically enumerate a Linux or Unix file environment, scanning for vulnerabi
 LinEnum.sh
 ```
 
+
+
+
+
 3. Perform a thorough scan.
+
+
+
+
 
 **Command** ([[LinEnum.sh Thorough File System Scan]]):
 
 ```bash
 LinEnum.sh -t 1
 ```
+
+
+
+
 
 ## Platforms
 
@@ -97,3 +115,5 @@ LinEnum.sh -t 1
 
 - [[misconfiguration]]
 - [[Service Attacks]]
+
+

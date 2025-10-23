@@ -29,3 +29,5 @@ root@kali:~# dd if=backup.img of=hash bs=512 count=4097
 4097+0 records out
 2097664 bytes (2.1 MB, 2.0 MiB) copied, 0.0162948 s, 129 MB/s
 ```
+
+

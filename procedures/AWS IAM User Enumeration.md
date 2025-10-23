@@ -34,11 +34,15 @@ Technical Explanation: AWS IAM users are a type of AWS identity that represents 
 
 Business Value: This procedure can help an attacker identify potential targets for further attacks such as password spraying, phishing or social engineering. By compromising an IAM user, an attacker can gain access to sensitive data or resources, which can result in financial loss, reputational damage, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
 
 1. Access to the AWS CLI or Cloud Service Dashboard
+
+ 
 
 ## Defense
 
@@ -48,25 +52,39 @@ Business Value: This procedure can help an attacker identify potential targets f
 
 1. Regularly review and remove unnecessary or unused IAM users
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further attacks
 
 1. Gain access to sensitive data or resources
 
+ 
+
 # Instructions
 
 1. To list all the users in AWS IAM, run the following command:
 
+ 
+
+
+
 **Code**: [[aws iam list-users]]
 
+
+
 > This command retrieves a list of all the users in the AWS Identity and Access Management (IAM) service. It returns a JSON object that contains information about each user, including their username, user ID, and ARN. This command can be useful for auditing and managing user access to AWS resources.
+
+
 
 **Command** ([[List IAM Users]]):
 
 ```bash
 aws iam list-users
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ aws iam list-users
 - [[1. Enumerating IAM users]]
 - [[Cloud - AWS]]
 - [[Listing IAM Users]]
+
+

@@ -31,11 +31,15 @@ Technical Explanation: Ligolo works by opening a reverse SSH tunnel from the vic
 
 Business Value: Ligolo can be used to gain access to sensitive data and systems within a network. This can lead to financial losses, reputation damage, and legal consequences for the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable machine within the network
 
 1. SSH access to the vulnerable machine
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: Ligolo can be used to gain access to sensitive data and systems 
 
 1. Use multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data and systems within the network
@@ -52,6 +58,8 @@ Business Value: Ligolo can be used to gain access to sensitive data and systems 
 1. Maintain persistence within the network
 
 1. Move laterally within the network
+
+ 
 
 # Instructions
 
@@ -62,10 +70,18 @@ Business Value: Ligolo can be used to gain access to sensitive data and systems 
 4. Generate self-signed TLS certificates by running the command: `make certs TLS_HOST=example.com`
 5. Build the binaries by running the command: `make build-all`
 
+ 
+
+
+
 **Code**: [[# Get Ligolo and dependencies
 cd `go env GOPATH`/s]]
 
+
+
 > The Ligolo command is used for reverse tunneling and is specifically designed for use by pentesters. The command clones the Ligolo repository and installs its dependencies. It then generates self-signed TLS certificates and places them in the certs folder. Finally, it builds the binaries required for reverse tunneling. The `TLS_HOST` argument specifies the hostname for the self-signed TLS certificate.
+
+
 
 **Command** ([[Clone Ligolo and Install Dependencies]]):
 
@@ -77,6 +93,10 @@ make dep
 
 ```
 
+
+
+
+
 **Command** ([[Generate Self-Signed TLS Certificates]]):
 
 ```bash
@@ -84,11 +104,17 @@ make certs TLS_HOST=example.com
 
 ```
 
+
+
+
+
 **Command** ([[Build Ligolo]]):
 
 ```bash
 make build-all
 ```
+
+
 
 ## Commands Used
 
@@ -100,3 +126,5 @@ make build-all
 
 - [[Ligolo]]
 - [[Network Pivoting Techniques]]
+
+

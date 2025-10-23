@@ -28,13 +28,23 @@ Use PowerShell to list open named pipes on a local Windows system. Named pipes a
 
 Use PowerShell to list open named pipes on a local Windows system. Named pipes are one-way or duplex FIFO (first in first out) pipes used to communicate between the pipe server and client.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[List Open Named Pipes on Windows (PowerShell)]]):
 
 ```bash
 [System.IO.Directory]::GetFiles("\\.\pipe\")
 ```
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +57,5 @@ Use PowerShell to list open named pipes on a local Windows system. Named pipes a
 ## Tags
 
 - [[Enumeration]]
+
+

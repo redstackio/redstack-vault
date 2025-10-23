@@ -31,9 +31,15 @@ You can take a snapshot of a volume and mount it to a new EC2 Instances with a n
 
 All of these AWS functions can set off cloudtrail alarms, but in a highly automated environment,  alerts for ec2 instance deployments could be ignored or turned off.
 
+
+
+
+
 ##  Instructions
 
 1. Create a snapshot using the Volume ID
+
+
 
 **Command** ([[aws create a snapshot with volume ID]]):
 
@@ -42,7 +48,15 @@ aws ec2 create-snapshot --volume-id $AWS_VOLUME_ID
 
 ```
 
+
+
+
+
+
+
 2. (Optional) Create a snapshot and backdate it to fool the admins :)
+
+
 
 **Command** ([[aws create a snapshot with volume ID and date description]]):
 
@@ -50,6 +64,12 @@ aws ec2 create-snapshot --volume-id $AWS_VOLUME_ID
 aws ec2 create-snapshot --volume-id $AWS_VOLUME_ID --description $AWS_DESCRIPTION
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +85,5 @@ aws ec2 create-snapshot --volume-id $AWS_VOLUME_ID --description $AWS_DESCRIPTIO
 - [[AWS]]
 - [[Bypass]]
 - [[Cloud]]
+
+

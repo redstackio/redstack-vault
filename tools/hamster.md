@@ -16,3 +16,9 @@ Hamster is a tool or “sidejacking”. It acts as a proxy server that replaces 
 ## Description
 
 Hamster is a tool or “sidejacking”. It acts as a proxy server that replaces your cookies with session cookies stolen from somebody else, allowing you to hijack their sessions. Cookies are sniffed using the Ferret program. You need a copy of that as well.hamster-sidejack Homepage | Kali hamster-sidejack Repo
+
+
+
+
+
+

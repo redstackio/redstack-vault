@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:31.218599+00:00'
 ```bash
 alert(window.origin)
 ```
+
+

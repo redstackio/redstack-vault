@@ -16,3 +16,9 @@ Cross Site “Scripter” (aka XSSer) is an automatic -framework- to detect, exp
 ## Description
 
 Cross Site “Scripter” (aka XSSer) is an automatic -framework- to detect, exploit and report XSS vulnerabilities in web-based applications. It contains several options to try to bypass certain filters, and various special techniques of code injection.
+
+
+
+
+
+

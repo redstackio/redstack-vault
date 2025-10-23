@@ -16,3 +16,7 @@ Is a domain specific language to redefine indicators in Beacon's communication. 
 ## Description
 
 Is a domain specific language to redefine indicators in Beacon's communication. ​
+
+
+
+

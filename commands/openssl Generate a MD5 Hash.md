@@ -23,3 +23,5 @@ openssl passwd -1 -salt $_SALT $_PASSWORD
 root@hackers:~# openssl passwd -1 -salt 8BytesXX Thisisyourpassword
 $1$8BytesXX$dXGg2H2MnwNoiq6UuVkws/
 ```
+
+

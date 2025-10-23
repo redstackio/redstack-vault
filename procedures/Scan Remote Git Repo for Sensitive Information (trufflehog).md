@@ -31,9 +31,13 @@ Trufflehog supports include and exclude regex patterns.
 
 [trufflehog](https://github.com/dxa4481/truffleHog)
 
+
+
 ##  Instructions
 
 1. Using trufflehog to scan a github repo by URL
+
+
 
 **Command** ([[trufflehog scan a github repo for sensitive info]]):
 
@@ -42,7 +46,13 @@ trufflehog https://github.com/dxa4481/truffleHog
 
 ```
 
+
+
+
+
 2. (Option) Use trufflehog with entropy disable
+
+
 
 **Command** ([[trufflehog scan a github repo with entropy disabled]]):
 
@@ -51,7 +61,13 @@ trufflehog --entropy=FALSE https://github.com/dxa4481/truffleHog
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[trufflehog scan a github repo for sensitive info]]
 - [[trufflehog scan a github repo with entropy disabled]]
+
+

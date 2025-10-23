@@ -28,11 +28,27 @@ puttygen is a public-key generator from the Putty tools. It is typically used fo
 
 puttygen is a public-key generator from the Putty tools. It is typically used for three things: loading/generating SSH keys, modifying SSH keys, and exporting SSH keys. One of the most common uses for Linux users is to load a Putty format SSH key (PPK), convert it to an OpenSSH compatible format (PEM), then output it to a new key.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_666616da-b594-46b2-964d-717c731df471}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ puttygen is a public-key generator from the Putty tools. It is typically used fo
 
 - [[convert]]
 - [[Cryptography]]
+
+

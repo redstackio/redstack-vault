@@ -36,11 +36,15 @@ From a technical perspective, DNS zone transfers are performed by requesting the
 
 The business value of DNS Zone Transfer Enumeration lies in its ability to identify potential attack surfaces before they are exploited by attackers. By identifying all subdomains associated with a target domain, defenders can prioritize their efforts and implement appropriate security measures to protect their assets.
 
+ 
+
 ## Requirements
 
 1. Access to a DNS server for the target domain
 
 1. Tools such as dig or nslookup
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of DNS Zone Transfer Enumeration lies in its ability to ident
 
 1. Regularly monitor DNS logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains associated with a target domain
@@ -58,6 +64,8 @@ The business value of DNS Zone Transfer Enumeration lies in its ability to ident
 
 1. Prioritize security efforts and implement appropriate security measures
 
+ 
+
 # Instructions
 
 1. To view the DNS Zone Transfer results, run the following commands:
@@ -65,10 +73,18 @@ The business value of DNS Zone Transfer Enumeration lies in its ability to ident
 2. host master.domain.local
 3. dig axfr domain.local @192.168.1.1
 
+ 
+
+
+
 **Code**: [[host -t ns domain.local
 domain.local name server m]]
 
+
+
 > The 'host' command is used to perform DNS lookups and query the DNS servers for information about various DNS records. The '-t ns' option specifies that we are looking for the name servers for the specified domain. The 'dig' command is used to perform DNS queries and retrieve DNS records. The 'axfr' option is used to perform a DNS zone transfer and retrieve all the DNS records for the specified domain. Running these commands will provide you with information about the DNS servers and records for the specified domain.
+
+
 
 **Command** ([[Check Name Servers]]):
 
@@ -76,17 +92,27 @@ domain.local name server m]]
 host -t ns domain.local
 ```
 
+
+
+
+
 **Command** ([[Check Master Server IP]]):
 
 ```bash
 host master.domain.local
 ```
 
+
+
+
+
 **Command** ([[Zone Transfer]]):
 
 ```bash
 dig axfr domain.local @192.168.1.1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +135,5 @@ dig axfr domain.local @192.168.1.1
 - [[Active recon]]
 - [[Bug Hunting Methodology and Enumeration]]
 - [[Network discovery]]
+
+

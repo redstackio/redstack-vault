@@ -32,15 +32,25 @@ After owning a system, it may be necessary to clear log files to hide the presen
 
 After owning a system, it may be necessary to clear log files to hide the presence and actions of the attack. While clearing common log files can help conceal the attack, it should be noted that many systems are monitored specifically for instances where log files are cleared, and may stand out in SIEM/IPS logs.
 
+
+
 # Instructions
 
 From a Meterpreter session, execute the clearev command
+
+
+
+
 
 **Command** ([[Metasploit Clear Event Logs]]):
 
 ```bash
 clearev
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +73,5 @@ clearev
 ## Tags
 
 - [[audit]]
+
+

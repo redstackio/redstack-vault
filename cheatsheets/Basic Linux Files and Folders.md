@@ -15,6 +15,8 @@ updated_at: '2023-05-30T20:07:49.231257+00:00'
 
 A simple high-level view of files and folders found on popular Linux distributions, and why they matter to red teams. 
 
+
+
 ## Root Filesystem
 
 - **/**bin - essential commands **for** all users (cp, mv, ls, ...)
@@ -53,6 +55,8 @@ A simple high-level view of files and folders found on popular Linux distributio
 
 More details: [https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.pdf](https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.pdf)
 
+
+
 ## Important Files and Folders
 
 - **/**home - enumerate files and folders **for** sensitive information
@@ -90,3 +94,7 @@ More details: [https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.pdf](https:/
 - /var/www/ - generally contains web server data
 
 - /var/spool or /var/mail - contains mail data including unread messages
+
+
+
+

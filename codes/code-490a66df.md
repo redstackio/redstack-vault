@@ -17,3 +17,5 @@ vaultcmd /list
 VaultCmd /listcreds:<namevault>|<guidvault> /all
 vaultcmd /listcreds:"Windows Credentials" /all
 ```
+
+

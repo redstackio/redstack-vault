@@ -28,11 +28,15 @@ AWS Lambda functions are vulnerable to Server Side Request Forgery (SSRF) attack
 
 AWS Lambda functions are vulnerable to Server Side Request Forgery (SSRF) attacks. By invoking a next Lambda function, an attacker can leverage SSRF to retrieve AWS credentials. Once obtained, these credentials can be used to escalate privileges and gain access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to a vulnerable Lambda function
+
+ 
 
 ## Defense
 
@@ -42,17 +46,27 @@ AWS Lambda functions are vulnerable to Server Side Request Forgery (SSRF) attack
 
 1. Monitor AWS activity logs for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Retrieve AWS credentials
 
 1. Escalate privileges
 
+ 
+
 # Instructions
 
 1. To invoke the next Lambda function in the sequence, use this command with the following arguments:
 
+ 
+
+
+
 **Code**: [[https://apigateway/prod/example?url=http://localho]]
+
+
 
 > Arguments:
 - url: The URL of the API Gateway endpoint that triggers the Lambda function.
@@ -74,3 +88,5 @@ This command is useful when you have a sequence of Lambda functions that need to
 - [[Cloud - AWS]]
 - [[Credential Access]]
 - [[Getting credentials using SSRF]]
+
+

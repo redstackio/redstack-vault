@@ -26,3 +26,5 @@ use Sharename # select a Sharename
 cd Folder     # move inside a folder
 ls            # list files
 ```
+
+

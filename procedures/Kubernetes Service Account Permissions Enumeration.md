@@ -33,9 +33,13 @@ The Kubernetes Service Account Permissions Enumeration procedure is used to dete
 
 To enumerate service account permissions, this procedure uses kubectl and curl commands to query the Kubernetes API server for self-subject rules reviews. These reviews provide a detailed list of the permissions granted to the default service account, including both namespace-level and cluster-level permissions.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the Kubernetes API server
+
+ 
 
 ## Defense
 
@@ -45,17 +49,29 @@ To enumerate service account permissions, this procedure uses kubectl and curl c
 
 1. Monitor for suspicious activity, such as unusual service account activity or changes to service account permissions.
 
+ 
+
 ## Objectives
 
 1. Identify potential paths for cluster compromise or lateral movement
+
+ 
 
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[kubectl auth can-i --list]]
 
+
+
 > This command uses kubectl to query the Kubernetes API server for a list of all actions that the default service account can perform in the specified namespace.
+
+
 
 **Command** ([[Check Kubernetes Authorization]]):
 
@@ -63,11 +79,21 @@ To enumerate service account permissions, this procedure uses kubectl and curl c
 kubectl auth can-i --list
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[kubectl auth can-i --list --namespace=kube-system]]
 
+
+
 > This command uses kubectl to query the Kubernetes API server for a list of all actions that the default service account can perform across all namespaces.
+
+
 
 **Command** ([[Check kubectl access to kube-system namespace]]):
 
@@ -75,9 +101,17 @@ kubectl auth can-i --list
 kubectl auth can-i --list --namespace=kube-system
 ```
 
+
+
 3. 
 
+ 
+
+
+
 **Code**: [[NAMESPACE=$(cat "/var/run/secrets/kubernetes.io/se]]
+
+
 
 > This command uses curl to query the Kubernetes API server for a detailed list of the permissions granted to the default service account, including both namespace-level and cluster-level permissions.
 
@@ -101,3 +135,5 @@ kubectl auth can-i --list --namespace=kube-system
 - [[Information Gathering]]
 - [[Kubernetes]]
 - [[Service Account Permissions]]
+
+

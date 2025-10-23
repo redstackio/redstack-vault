@@ -32,11 +32,29 @@ SQL injection attack is performed by injecting SQL statements through user input
 
 SQL injection attack is performed by injecting SQL statements through user input fields and executing them. SQL injection can also be performed on the XML requests by intercepting and manipulating the content in the request.
 
+
+
 # Procedure
 
 1. Intercept the XML login request from login page in the application. Observe that username and password are sent in XML request.
 
+
+
+
+
+![abcfc156-958f-4686-b2ea-82e7e37400f7.png]()
+
+
+
+
+
 2. Modify the password and replace with ' or '1'='1 payload to authenticate with the application without valid password.
+
+
+
+![59f22791-4d50-4bda-a3be-8d4660baae71.png]()
+
+
 
 ## Platforms
 
@@ -51,3 +69,5 @@ SQL injection attack is performed by injecting SQL statements through user input
 - [[SQL Injection]]
 - [[Web Applications]]
 - [[xml]]
+
+

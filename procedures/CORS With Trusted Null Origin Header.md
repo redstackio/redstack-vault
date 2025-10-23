@@ -27,13 +27,45 @@ Origin Header supports the Null specification. An attcker can exploit the miscon
 
 Origin Header supports the Null specification. An attcker can exploit the misconfiguration of origin header to deliver the malicious payload to victim and steal the sensitive information.
 
+
+
 # Instructions
+
+
+
+
 
 1.Login to the application with the credentials provided
 
+
+
+
+
+![118d2309-80d1-42be-9f46-b04c3ee6ec18.png]()
+
+
+
+
+
 2. Access myaccount deatails and intercept the request using burp Suite.
 
+
+
+
+
+![2938fabd-9759-4fe3-b74d-7140810995be.png]()
+
+
+
 3. Add ther origin header to the request from step 2 and assign null value to origin header. Null origin header can be seen reflected in the response .
+
+
+
+
+
+![2b508b0e-da47-4d8f-bb9e-57c88cd3b80e.png]()
+
+
 
 ## Platforms
 
@@ -43,3 +75,5 @@ Origin Header supports the Null specification. An attcker can exploit the miscon
 
 - [[CORS]]
 - [[Web Applications]]
+
+

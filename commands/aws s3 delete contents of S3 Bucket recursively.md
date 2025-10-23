@@ -23,3 +23,5 @@ aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT --recursive
 ```
 aws s3 rm s3://fakeRedstackBucket/keyName --recursive
 ```
+
+

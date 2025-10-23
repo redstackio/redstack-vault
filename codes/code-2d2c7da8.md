@@ -27,3 +27,5 @@ cat $KRB5CCNAME
 # NOTE: You may need to comment the proxy_dns setting in the proxychains configuration file
 ./psexec.py -k -no-pass -dc-ip 192.168.1.1 AD/administrator@192.168.1.100 
 ```
+
+

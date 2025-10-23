@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:09.932299+00:00'
 ```powershell
 root@kali:~$ ./kerbrute_linux_amd64 bruteuser -d domain.local --dc 10.10.10.10 rockyou.txt username
 ```
+
+

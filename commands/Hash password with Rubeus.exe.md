@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:07.808773+00:00'
 ```bash
 Rubeus.exe hash /password:'Weakest123*' /user:swktest$  /domain:factory.lan
 ```
+
+

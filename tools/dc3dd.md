@@ -17,14 +17,36 @@ dc3dd is a patched version of GNU dd with added features for computer forensics:
 
 dc3dd is a patched version of GNU dd with added features for computer forensics:
 
+
+
 on the fly hashing (md5, sha-1, sha-256, and sha-512)
+
+
 
 possibility to write errors to a file
 
+
+
 group errors in the error log
+
+
 
 pattern wiping
 
+
+
 progress report
 
+
+
 possibility to split output
+
+
+
+
+
+
+
+
+
+

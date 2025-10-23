@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:31.219036+00:00'
 ```html
 <script>console.log("Test XSS from the search bar of page XYZ\n".concat(document.domain).concat("\n").concat(window.origin))</script>
 ```
+
+

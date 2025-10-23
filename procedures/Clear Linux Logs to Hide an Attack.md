@@ -32,15 +32,29 @@ After exploiting a system, it may be necessary to clear log files to hide the pr
 
 After exploiting a system, it may be necessary to clear log files to hide the presence and actions of an attacker. While clearing common log files can help conceal the  attack, it should be noted that many systems are monitored specifically for instances where log files are cleared, and may stand out in SIEM/IPS logs.
 
+
+
 # Instructions
 
 Erase the contents of .bash_history for all users using these one liner commands:
 
+
+
 **Code**: [[for FILE in $(find /home /root -name '.bash_histor]]
+
+
+
+
 
 Erase the contents of auth.log
 
+
+
 **Code**: [[for FILE in $(find /var/log -name "auth.log" 2>/de]]
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +75,5 @@ Erase the contents of auth.log
 - [[audit]]
 - [[Incident Response]]
 - [[Operating Systems]]
+
+

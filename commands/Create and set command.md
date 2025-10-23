@@ -20,3 +20,5 @@ echo '#!/bin/sh' > /cmd
 echo "ps aux > $host_path/output" >> /cmd
 chmod a+x /cmd
 ```
+
+

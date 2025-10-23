@@ -8,11 +8,13 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
 
   hashcat (v5.1.0) starting...
 
+
   Hashes: 2 digests; 2 unique digests, 2 unique salts
 
   Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
 
   Rules: 1
+
 
   Applicable optimizers:
 
@@ -20,13 +22,16 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
 
   * Uses-64-Bit
 
+
   Minimum password length supported by kernel: 0
 
   Maximum password length supported by kernel: 256
 
+
   Watchdog: Hardware monitoring interface not found on your system.
 
   Watchdog: Temperature abort trigger disabled.
+
 
   * Device #1: build_opts ''-cl-std=CL1.2 -I OpenCL -I /usr/share/hashcat/OpenCL -D
   LOCAL_MEM_TYPE=2 -D VENDOR_ID=64 -D CUDA_ARCH=0 -D AMD_ROCM=0 -D VECT_SIZE=4 -D
@@ -51,6 +56,7 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
 
   * Runtime...: 1 sec
 
+
   [s]tatus [p]ause [b]ypass [c]heckpoint [q]uit =>
 
   $6$GTaHocc2uYy11co$IiOFf4PryLxrWbPE2qmE0sEVUaBFkzTc5qtrDLoHAcyBfBDtWKjQz4AiTGZvSdKKNqYLAsrFwS87QKfJprBPJ0:sunnydays
@@ -58,6 +64,7 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
   [s]tatus [p]ause [b]ypass [c]heckpoint [q]uit => s
 
   $6$ngUYdXkcMLK$AI23a7brd9zZOgf336W.9a7/M2QstTHC/9Es0t17P/sAkBgxxrPituenv35hG.z/J28T1vfEx2I8nR6ac44AX0:secretpass
+
 
   Session..........: hashcat
 
@@ -88,6 +95,7 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
   Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
 
   Candidates.#1....: smithfield -> rolltide2
+
 
   Started: Mon Jan 20 15:26:33 2020
 
@@ -156,3 +164,5 @@ Candidates.#1....: smithfield -> rolltide2
 Started: Mon Jan 20 15:26:33 2020
 Stopped: Mon Jan 20 15:32:09 2020
 ```
+
+

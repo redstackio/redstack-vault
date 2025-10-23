@@ -40,6 +40,8 @@ A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unautho
 
 A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unauthorized access to a network by forging Kerberos tickets. This attack can be performed using Meterpreter, a popular post-exploitation tool. By creating a Golden Ticket using kiwi, an attacker can impersonate any user in the domain and gain access to any resource. This technique is particularly dangerous because it allows the attacker to persist in the network without being detected.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
@@ -47,6 +49,8 @@ A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unautho
 1. Access to a machine with Meterpreter installed
 
 1. kiwi tool
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unautho
 
 1. Regularly review and remove unnecessary privileges to limit the potential impact of a Golden Ticket attack
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a network
@@ -63,6 +69,8 @@ A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unautho
 1. Impersonate any user in the domain
 
 1. Persist in the network without being detected
+
+ 
 
 # Instructions
 
@@ -78,11 +86,19 @@ A Pass-the-Golden-Ticket attack is a technique used by attackers to gain unautho
 9. Use 'kerberos_ticket_use' command to use the created ticket for authentication.
 10. To list all the available Kerberos tickets, use 'kerberos_ticket_list' command.
 
+ 
+
+
+
 **Code**: [[# Get info - Meterpreter(kiwi)
 dcsync_ntlm krbtgt
 ]]
 
+
+
 > This command is used to forge a Golden ticket using kiwi in Meterpreter. The 'golden_ticket_create' command is used to create the ticket by specifying the domain name, NT hash of krbtgt, SID without the RID, user for the ticket and location to store the ticket. Once the ticket is created, it can be used for authentication using 'kerberos_ticket_use' command. The 'kerberos_ticket_purge' command is used to purge the Kerberos ticket and 'kerberos_ticket_list' command is used to list all the available Kerberos tickets.
+
+
 
 **Command** ([[Get info - Meterpreter(kiwi)]]):
 
@@ -90,6 +106,10 @@ dcsync_ntlm krbtgt
 dcsync_ntlm krbtgt
 dcsync krbtgt
 ```
+
+
+
+
 
 **Command** ([[Forge a Golden ticket - Meterpreter]]):
 
@@ -101,6 +121,8 @@ kerberos_ticket_purge
 kerberos_ticket_use /root/Downloads/pentestlabuser.tck
 kerberos_ticket_list
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +155,5 @@ kerberos_ticket_list
 - [[Kerberos Tickets]]
 - [[Pass-the-Ticket Golden Tickets]]
 - [[Using Meterpreter]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:52.410936+00:00'
 ```bash
 sudo apt-get install mysql-server-5.7
 ```
+
+

@@ -39,9 +39,13 @@ To upload a backdoor code to an AWS Lambda function, the attacker needs to have 
 
 This technique can be used by attackers to maintain access to a victim's environment even if the victim detects and removes the initial compromise.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
+
+ 
 
 ## Defense
 
@@ -51,23 +55,33 @@ This technique can be used by attackers to maintain access to a victim's environ
 
 1. Regularly review and audit AWS Lambda function code for malicious activity
 
+ 
+
 ## Objectives
 
 1. Maintain persistence in the victim's environment
 
 1. Evade detection and maintain access to the victim's environment
 
+ 
+
 # Instructions
 
 1. Use the 'aws lambda update-function-code' command to update the code for an existing Lambda function.
 
+ 
+
 This command requires the name of the function to be updated and the location of the updated code in the form of a .zip file. The 'function-name' argument should be replaced with the name of the function you want to update. The 'zip-file' argument should be replaced with the path to the .zip file containing the updated code. Once executed, this command will replace the existing code for the specified function with the code contained in the .zip file.
+
+
 
 **Command** ([[Update AWS Lambda function code]]):
 
 ```bash
 aws lambda update-function-code --function-name function --zip-file fileb://my-function.zip
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ aws lambda update-function-code --function-name function --zip-file fileb://my-f
 - [[Cloud - AWS]]
 - [[Persistence]]
 - [[Uploading the backdoor code to AWS Lambda function]]
+
+

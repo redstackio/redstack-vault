@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:57.981196+00:00'
 ```bash
 select substr('abc',2,1) FROM sysibm.sysdummy1
 ```
+
+

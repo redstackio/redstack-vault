@@ -34,11 +34,15 @@ Pass the Hash (PtH) is a technique used by attackers to authenticate to a remote
 
 Pass the Hash (PtH) is a technique used by attackers to authenticate to a remote system using a hashed password instead of the plaintext password. With Meterpreter, this can be achieved using the PSExec module. The module will use the provided credentials to authenticate to a remote system and execute a command or service. This technique can be used to gain access to systems that have weak or easily guessable passwords. By using PtH, attackers can bypass authentication mechanisms and gain access to sensitive data stored on the target system.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the remote system
 
 1. Meterpreter installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ Pass the Hash (PtH) is a technique used by attackers to authenticate to a remote
 
 1. Monitor and log all authentication attempts to detect any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to a remote system using PtH and Meterpreter
 
 1. Execute commands or services on the remote system using Meterpreter
+
+ 
 
 # Instructions
 
@@ -63,12 +71,20 @@ To authenticate, provide the following details:
 - SMBPass: The password for the specified username.
 - SMBUser: The username to authenticate as.
 
+ 
+
+
+
 **Code**: [[msf > use exploit/windows/smb/psexec
 msf exploit(p]]
+
+
 
 > This command is used to remotely access a Windows machine using Metasploit. The 'exploit/windows/smb/psexec' module is used to execute the exploit. The 'windows/meterpreter/reverse_tcp' payload is used to establish a reverse TCP connection with the target machine.
 
 To authenticate, the user needs to provide the credentials for a valid user account on the target machine. The 'SMBDomain' field specifies the Windows domain to use for authentication. The 'SMBPass' field specifies the password for the specified username, and the 'SMBUser' field specifies the username to authenticate as.
+
+
 
 **Command** ([[Exploit Windows SMB with Psexec]]):
 
@@ -80,6 +96,8 @@ SMBDomain             WORKGROUP                                                 
 SMBPass               598ddce2660d3193aad3b435b51404ee:2d20d252a479f485cdf5e171d93985bf  yes       The password for the specified username
 SMBUser               Lambda                                                             yes       The username to authenticate as
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +122,5 @@ SMBUser               Lambda                                                    
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
 - [[Pass the Hash - PSExec]]
+
+

@@ -31,6 +31,10 @@ Users with "Do not require Kerberos preauthentication" will disclose their TGT w
 
 Users with "Do not require Kerberos preauthentication" will disclose their TGT without authenticating with a valid password, as long as the username is correct. This allows attackers to build a wordlist and brute force valid users with GetNPUsers.py, also retreiving their TGT.
 
+
+
+
+
 ## Objectives
 
 1. Configure a textfile with a list of user names
@@ -39,15 +43,27 @@ Users with "Do not require Kerberos preauthentication" will disclose their TGT w
 
 2. Obtain the valid users TGTs 
 
+
+
+
+
 # Instructions
 
 Use a wordlist of usernames, ideally one built specifically for the target, or a generic list of popular names.
+
+
+
+
 
 **Command** ([[GetNPUsers.py Brute force Users with "Do Not Require Preauth."]]):
 
 ```bash
 GetNPUsers.py $_DOMAIN/ -no-pass -usersfile $_USERS.txt -dc-ip $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +87,5 @@ GetNPUsers.py $_DOMAIN/ -no-pass -usersfile $_USERS.txt -dc-ip $_TARGET_IP
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

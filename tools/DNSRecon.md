@@ -23,11 +23,25 @@ DNSRecon is a Python script used for DNS enumeration. It can check for zone tran
 
 DNSRecon is a Python script used for DNS enumeration. It can check for zone transfers, enumerate domain records, perform SRV record enumeration, TLD expansion, brute force subdomains, check cache, enumerate common mDNS records on the local network, and enumerate subdomains using Google.
 
+
+
 # Example
+
+{{EMBEDDED_COMMAND_86aa5503-6bb7-4536-84c2-edb089b20150}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -40,3 +54,5 @@ DNSRecon is a Python script used for DNS enumeration. It can check for zone tran
 ## Tags
 
 - [[Enumeration]]
+
+

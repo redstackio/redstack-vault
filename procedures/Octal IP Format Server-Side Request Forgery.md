@@ -37,6 +37,8 @@ To use this technique, an attacker would need to identify a vulnerable server th
 
 The business value of this technique is that it can be used to gain access to sensitive data or systems that are protected by firewalls or other security measures. By bypassing these measures, an attacker can gain a foothold in a target network and potentially launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server that is susceptible to Server-Side Request Forgery attacks
@@ -44,6 +46,8 @@ The business value of this technique is that it can be used to gain access to se
 1. Knowledge of the octal IP format
 
 1. Ability to send requests to the target server
+
+ 
 
 ## Defense
 
@@ -53,11 +57,15 @@ The business value of this technique is that it can be used to gain access to se
 
 1. Monitor network traffic for suspicious activity and investigate any anomalies
 
+ 
+
 ## Objectives
 
 1. Bypass filters and restrictions to perform a Server-Side Request Forgery attack
 
 1. Gain access to sensitive data or systems that are protected by firewalls or other security measures
+
+ 
 
 # Instructions
 
@@ -68,8 +76,14 @@ $ echo '0177.0.0.1' | awk -F. '{printf "%d.%d.%d.%d
 
 This will output: 127.0.0.1
 
+ 
+
+
+
 **Code**: [[http://0177.0.0.1/ = http://127.0.0.1
 http://o177.]]
+
+
 
 > In the octal format of ipv4, each octet (segment of the IP address separated by dots) is represented by a number between 0 and 377 (or 0o377 in octal). However, not all implementations of networking software support this format, and some may interpret it as a decimal number instead. To avoid issues, it is recommended to use the standard decimal format for ipv4 addresses (four decimal numbers separated by dots).
 
@@ -93,3 +107,5 @@ http://o177.]]
 - [[Bypassing filters]]
 - [[Bypass using octal IP]]
 - [[Server-Side Request Forgery]]
+
+

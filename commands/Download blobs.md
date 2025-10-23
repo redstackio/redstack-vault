@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:33:50.751327+00:00'
 ```bash
 curl -s -k --user 'admin:admin' 'http://docker.registry.local/v2/wordpress-image/blobs/sha256:c314c5effb61c9e9c534c81a6970590ef4697b8439ec6bb4ab277833f7315058' > out.tar.gz
 ```
+
+

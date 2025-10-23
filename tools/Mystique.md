@@ -16,3 +16,7 @@ Is a PowerShell tool to play with Kerberos S4U extensions, this module can assis
 ## Description
 
 Is a PowerShell tool to play with Kerberos S4U extensions, this module can assist blue teams to identify risky Kerberos delegation configurations as well as red teams to impersonate arbitrary users by leveraging KCD with Protocol Transition. ​
+
+
+
+

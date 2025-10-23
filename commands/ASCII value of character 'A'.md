@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:04.471021+00:00'
 ```bash
 select ascii('A') from sysibm.sysdummy1 -- returns 65
 ```
+
+

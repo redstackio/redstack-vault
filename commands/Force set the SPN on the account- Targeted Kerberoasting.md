@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:07.517652+00:00'
 PowerView2 > Set-DomainObject <UserName> -Set @{serviceprincipalname='ops/whatever1'}
 PowerView3 > Set-DomainObject -Identity <UserName> -Set @{serviceprincipalname='any/thing'}
 ```
+
+

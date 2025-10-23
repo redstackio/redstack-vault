@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:22:42.442119+00:00'
 select * from openquery("dcorp-sql1", 'select * from master..sysservers')
 select version from openquery("linkedserver", 'select @@version as version');
 ```
+
+

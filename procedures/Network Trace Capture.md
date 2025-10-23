@@ -43,11 +43,15 @@ From a technical perspective, Network Trace Capture involves capturing packets o
 
 The business value of Network Trace Capture is that it allows organizations to proactively identify and mitigate security threats before they can cause damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows or Linux operating system
 
 1. Built-in tools such as Wireshark or tcpdump
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ The business value of Network Trace Capture is that it allows organizations to p
 
 1. Regularly monitor network traffic for anomalies or suspicious activity
 
+ 
+
 ## Objectives
 
 1. Capture network traffic to analyze for potential vulnerabilities or security threats
@@ -64,6 +70,8 @@ The business value of Network Trace Capture is that it allows organizations to p
 1. Identify potential insider threats or malicious activity
 
 1. Proactively identify and mitigate security threats before they can cause damage to the organization
+
+ 
 
 # Instructions
 
@@ -89,10 +97,18 @@ netsh trace start capture=yes report=disabled Ethernet.Type=IPv4 IPv4.Address=10
 
 Replace the filter arguments with the desired values.
 
+ 
+
+
+
 **Code**: [[# start a capture use the netsh command.
 netsh tra]]
 
+
+
 > This command helps in capturing network traffic on Windows. The command uses the netsh command to start and stop the capture. The captured traffic is saved in the ETL format, which can be converted to the more widely used PCAPNG format using the etl2pcapng.exe converter. The captured traffic can also be filtered using the Ethernet.Type and IPv4.Address arguments. The command can be used by network administrators and security professionals to monitor network traffic and detect any suspicious activity.
+
+
 
 **Command** ([[Start Netsh Capture]]):
 
@@ -100,11 +116,19 @@ netsh tra]]
 netsh trace start capture=yes report=disabled tracefile=c:\trace.etl maxsize=16384
 ```
 
+
+
+
+
 **Command** ([[Stop Netsh Trace]]):
 
 ```bash
 netsh trace stop
 ```
+
+
+
+
 
 **Command** ([[Start Netsh Capture with Persistence]]):
 
@@ -112,17 +136,27 @@ netsh trace stop
 netsh trace start capture=yes report=disabled persistent=yes tracefile=c:\trace.etl maxsize=16384
 ```
 
+
+
+
+
 **Command** ([[Convert ETL to PCAPNG]]):
 
 ```bash
 etl2pcapng.exe c:\trace.etl c:\trace.pcapng
 ```
 
+
+
+
+
 **Command** ([[Start Netsh Capture with Filters]]):
 
 ```bash
 netsh trace start capture=yes report=disabled Ethernet.Type=IPv4 IPv4.Address=10.200.200.3 tracefile=c:\trace.etl maxsize=16384
 ```
+
+
 
 2. To capture network traffic on a Linux machine using tcpdump, follow these steps:
 1. Install tcpdump using the command 'sudo apt-get install tcpdump'.
@@ -131,10 +165,18 @@ netsh trace start capture=yes report=disabled Ethernet.Type=IPv4 IPv4.Address=10
 4. To capture only TCP packets on interface 'eth0', run the command 'tcpdump -i eth0 tcp'.
 5. To capture all traffic on port 22 (SSH), run the command 'tcpdump -i eth0 port 22'.
 
+ 
+
+
+
 **Code**: [[sudo apt-get install tcpdump
 tcpdump -w 0001.pcap ]]
 
+
+
 > The 'tcpdump' command is used to capture network traffic on a Linux machine. The '-w' option is used to write the captured packets to a file. The '-A' option is used to print out the captured packets in ASCII. The '-i' option is used to specify the interface to capture on. The 'tcp' option is used to capture only TCP packets, and the 'port' option is used to capture traffic on a specific port.
+
+
 
 **Command** ([[Install tcpdump]]):
 
@@ -142,11 +184,19 @@ tcpdump -w 0001.pcap ]]
 sudo apt-get install tcpdump
 ```
 
+
+
+
+
 **Command** ([[Capture packets and write to file]]):
 
 ```bash
 tcpdump -w 0001.pcap -i eth0
 ```
+
+
+
+
 
 **Command** ([[Capture packets and print ASCII]]):
 
@@ -154,17 +204,27 @@ tcpdump -w 0001.pcap -i eth0
 tcpdump -A -i eth0
 ```
 
+
+
+
+
 **Command** ([[Capture every TCP packet]]):
 
 ```bash
 tcpdump -i eth0 tcp
 ```
 
+
+
+
+
 **Command** ([[Capture everything on port 22]]):
 
 ```bash
 tcpdump -i eth0 port 22
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -194,3 +254,5 @@ tcpdump -i eth0 port 22
 
 - [[Capture a network trace with builtin tools]]
 - [[Network Pivoting Techniques]]
+
+

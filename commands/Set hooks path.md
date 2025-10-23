@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:17.912573+00:00'
 $ git config --global core.hooksPath /path/to/hooks/folder
 
 ```
+
+

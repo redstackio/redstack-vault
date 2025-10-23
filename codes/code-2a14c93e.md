@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:55.589352+00:00'
 ```powershell
 curl http://blog.domain.com/.svn/text-base/wp-config.php.svn-base
 ```
+
+

@@ -25,7 +25,13 @@ A simple HTTP server for Windows designed for hosting files. The UI consists of 
 
 A simple HTTP server for Windows designed for hosting files. The UI consists of a log window and basic file manager, to which files can be added via copy/paste, drag and drop, etc. Since HFS is designed for hosting files, it does not include many unrelated web server features, keeping its footprint light.
 
-![ ]()
+
+
+
+
+![5a7345df-7e93-47c1-a734-56dc1ae0593f.png](_assets/images/data.redstack.io/Mark/5a7345df-7e93-47c1-a734-56dc1ae0593f.png)
+
+
 
 # Installation
 
@@ -36,6 +42,8 @@ HFS can be run from a single executable and does not require installation.
 1. Dowload HFS: [Download from Rejetto.com](https://www.rejetto.com/hfs/?f=dl)
 
 2. Run through the setup and allow a firewall exception for HFS
+
+
 
 ## Platforms
 
@@ -51,3 +59,5 @@ HFS can be run from a single executable and does not require installation.
 ## Tags
 
 - [[file transfer]]
+
+

@@ -33,11 +33,15 @@ The GUID/UUID Enumeration procedure involves using the `guidtool` tool to inspec
 
 Business Value: By enumerating GUIDs, an attacker can gain valuable information about a target system, which can be used to plan further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. The `guidtool` tool installed on the system
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: By enumerating GUIDs, an attacker can gain valuable information 
 
 1. Monitor for unusual activity, such as an excessive amount of GUID/UUID requests
 
+ 
+
 ## Objectives
 
 1. To extract information from version 1 GUIDs
@@ -55,13 +61,23 @@ Business Value: By enumerating GUIDs, an attacker can gain valuable information 
 
 1. To determine the MAC address of a system that generated a version 1 GUID
 
+ 
+
 # Instructions
 
 1. Use the `guidtool` tool to extract information from a version 1 GUID by running the command `guidtool -i <GUID>`. To attack a version 1 GUID, use the `-t` flag to specify the timestamp and the `-p` flag to specify the clock sequence.
 
+ 
+
+
+
 **Code**: [[$ guidtool -i 95f6e264-bb00-11ec-8833-00155d01ef00]]
 
+
+
 > The `guidtool` tool is used to inspect and attack version 1 GUIDs. The `-i` flag is used to specify the GUID to inspect. The output includes the version, timestamp, node, MAC address, and clock sequence. The `-t` flag is used to specify the timestamp to use when attacking a GUID. The `-p` flag is used to specify the clock sequence to use when attacking a GUID.
+
+
 
 **Command** ([[GUID Version 1 Information]]):
 
@@ -74,13 +90,20 @@ UUID node: 91754721024
 UUID MAC address: 00:15:5d:01:ef:00
 UUID clock sequence: 2099
 
+
 ```
+
+
+
+
 
 **Command** ([[GUID Tool with Timestamp and Process ID]]):
 
 ```bash
 $ guidtool 1b2d78d0-47cf-11ec-8d62-0ff591f2a37c -t '2021-11-17 18:03:17' -p 10000
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +125,5 @@ $ guidtool 1b2d78d0-47cf-11ec-8d62-0ff591f2a37c -t '2021-11-17 18:03:17' -p 1000
 - [[GUID / UUID]]
 - [[Insecure Randomness]]
 - [[Tools]]
+
+

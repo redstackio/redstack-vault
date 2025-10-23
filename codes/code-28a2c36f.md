@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:25.892578+00:00'
 ```sql
 HQL does not support comments
 ```
+
+

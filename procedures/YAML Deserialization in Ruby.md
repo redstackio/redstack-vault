@@ -29,9 +29,13 @@ YAML is a data serialization language that is commonly used in Ruby applications
 
 When Ruby parses the YAML file, it creates Ruby objects based on the data in the file. If the YAML file contains a malicious Ruby object, the code within that object will be executed when the YAML file is parsed. This can lead to remote code execution or other types of attacks depending on the code executed.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Ruby application
+
+ 
 
 ## Defense
 
@@ -41,20 +45,30 @@ When Ruby parses the YAML file, it creates Ruby objects based on the data in the
 
 1. Use a secure YAML parser that is not vulnerable to deserialization attacks
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on a target system
 
 1. Gain initial access to a system
 
+ 
+
 # Instructions
 
 1. Craft a YAML file that contains a malicious Ruby object
+
+ 
+
+
 
 **Code**: [[ ---
  - !ruby/object:Gem::Installer
      i: x
  - !]]
+
+
 
 > The data field contains an example of a malicious YAML file that could be used to execute arbitrary code on a target system. The file contains a Ruby object that will be executed when the YAML file is parsed. The attacker can modify this file to include their own Ruby code to execute on the target system.
 
@@ -72,3 +86,5 @@ When Ruby parses the YAML file, it creates Ruby objects based on the data in the
 
 - [[Ruby]]
 - [[YAML Deserialization]]
+
+

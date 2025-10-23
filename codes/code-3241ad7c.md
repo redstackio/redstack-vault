@@ -12,3 +12,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```
 reg delete "\\hostname\HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /f
 ```
+
+

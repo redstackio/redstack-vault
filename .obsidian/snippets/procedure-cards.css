@@ -1,0 +1,72 @@
+/* Procedure Cards Styling */
+
+/* Style procedure files in preview mode */
+.markdown-preview-view div[data-heading="Summary"],
+.markdown-preview-view div[data-heading="Description"] {
+  background-color: var(--background-secondary);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border-left: 4px solid var(--interactive-accent);
+}
+
+/* Procedures list styling */
+.markdown-preview-view ul li {
+  padding: 4px 0;
+}
+
+/* Frontmatter property styling */
+.metadata-container {
+  background-color: var(--background-secondary);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Verified indicator in heading */
+h1:has(+ p:contains("✓ Verified")) {
+  border-left: 5px solid #5bdb00;
+  padding-left: 15px;
+}
+
+/* Platform tags */
+.tag[href*="Windows"],
+.tag[href*="Linux"],
+.tag[href*="macOS"],
+.tag[href*="Cloud"],
+.tag[href*="Network"],
+.tag[href*="Web"] {
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.tag[href*="Windows"] {
+  background-color: #0078d4;
+  color: white;
+}
+
+.tag[href*="Linux"] {
+  background-color: #fcc624;
+  color: black;
+}
+
+.tag[href*="macOS"] {
+  background-color: #555;
+  color: white;
+}
+
+.tag[href*="Cloud"] {
+  background-color: #4285f4;
+  color: white;
+}
+
+.tag[href*="Network"] {
+  background-color: #ff9800;
+  color: white;
+}
+
+.tag[href*="Web"] {
+  background-color: #8e44ad;
+  color: white;
+}

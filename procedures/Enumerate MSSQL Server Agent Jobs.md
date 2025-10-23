@@ -36,9 +36,13 @@ To accomplish this, the attacker would utilize the 'SQL Agent Jobs Details' comm
 
 From a business perspective, identifying automated tasks can aid in identifying potential areas for optimization or streamlining of processes. However, from a security perspective, it is important to ensure that only authorized users have access to this information.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the MSSQL server
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, identifying automated tasks can aid in identifying 
 
 1. Monitor for and promptly respond to any suspicious activity on the MSSQL server
 
+ 
+
 ## Objectives
 
 1. Enumerate all agent jobs on the MSSQL server
@@ -56,14 +62,24 @@ From a business perspective, identifying automated tasks can aid in identifying 
 
 1. Identify system owners and users
 
+ 
+
 # Instructions
 
 1. This command retrieves the list of SQL Agent Jobs and their details. The first SELECT statement retrieves the list of SQL Agent Jobs with their job_id and name. The second SELECT statement retrieves the details of each SQL Agent Job, such as notify_level_email, enabled, description, and the command to be executed. The Get-SQLAgentJob cmdlet is used to retrieve the details of SQL Agent Jobs on a specified SQL Server instance. Replace <DBSERVERNAME\DBInstance> with the name of the SQL Server instance you want to retrieve the details from. Replace sa and Password1234 with the appropriate credentials to connect to the SQL Server instance.
 
+ 
+
+
+
 **Code**: [[SELECT job_id, [name] FROM msdb.dbo.sysjobs;
 SELEC]]
 
+
+
 > The first SELECT statement retrieves the job_id and name of all SQL Agent Jobs present on the server. The second SELECT statement retrieves the details of each SQL Agent Job, such as notify_level_email, enabled, description, and the command to be executed. The Get-SQLAgentJob cmdlet is used to retrieve the details of SQL Agent Jobs on a specified SQL Server instance. The -Instance parameter specifies the name of the SQL Server instance you want to retrieve the details from. The -username and -Password parameters are used to specify the credentials to connect to the SQL Server instance. The -Verbose parameter is used to display detailed information about the command execution.
+
+
 
 **Command** ([[Retrieve job_id and name from sysjobs table]]):
 
@@ -71,17 +87,27 @@ SELEC]]
 SELECT job_id, [name] FROM msdb.dbo.sysjobs;
 ```
 
+
+
+
+
 **Command** ([[Retrieve job details from sysjobs and sysjobsteps tables]]):
 
 ```bash
 SELECT job.job_id, notify_level_email, name, enabled, description, step_name, command, server, database_name FROM msdb.dbo.sysjobs job INNER JOIN msdb.dbo.sysjobsteps steps ON job.job_id = steps.job_id
 ```
 
+
+
+
+
 **Command** ([[Retrieve job details using PowerShell]]):
 
 ```bash
 Get-SQLAgentJob -Instance "<DBSERVERNAME\DBInstance>" -username sa -Password Password1234 -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +130,5 @@ Get-SQLAgentJob -Instance "<DBSERVERNAME\DBInstance>" -username sa -Password Pas
 - [[Agent Jobs]]
 - [[List All Jobs]]
 - [[MSSQL Server]]
+
+

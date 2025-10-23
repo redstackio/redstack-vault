@@ -34,6 +34,8 @@ You can use your own IAM API key and test for public access to s3 buckets you do
 
 1. List all of the S3 buckets you have access to. This one depends directly on the access provided to your IAM user/role's API Key
 
+
+
 **Command** ([[aws s3 list buckets]]):
 
 ```bash
@@ -41,9 +43,15 @@ aws s3 ls
 
 ```
 
+
+
+
+
 2. You can request to list the contents of a bucket, if the bucket allows public access, your IAM API key will work with S3 buckets
 
 Owned by another organization. You can script this or use third party tools to brute-force / fuzz s3 bucket names.
+
+
 
 **Command** ([[Listing the Content of a Bucket]]):
 
@@ -51,6 +59,10 @@ Owned by another organization. You can script this or use third party tools to b
 aws s3 ls s3://$AWS_S3_BUCKET --region $AWS_REGION
 
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +77,5 @@ aws s3 ls s3://$AWS_S3_BUCKET --region $AWS_REGION
 
 - [[AWS]]
 - [[Cloud]]
+
+

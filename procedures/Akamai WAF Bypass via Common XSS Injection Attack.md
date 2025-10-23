@@ -33,11 +33,15 @@ Technical Explanation: An attacker injects malicious code into a vulnerable web 
 
 Business Value: By bypassing Akamai WAF, an attacker can gain access to sensitive data or exploit the system for financial gain. This can result in reputational damage and financial loss for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of XSS injection attacks
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: By bypassing Akamai WAF, an attacker can gain access to sensitiv
 
 1. Regularly update and patch web applications to prevent vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass Akamai WAF protections
@@ -55,11 +61,19 @@ Business Value: By bypassing Akamai WAF, an attacker can gain access to sensitiv
 
 1. Gain access to sensitive data or exploit the system for financial gain
 
+ 
+
 # Instructions
 
 1. The data field contains a malicious script that can be injected into a vulnerable web application to execute unauthorized actions on behalf of the user.
 
+ 
+
+
+
 **Code**: [[?"></script><base%20c%3D=href%3Dhttps:\mysite>]]
+
+
 
 > This type of attack is known as Cross-Site Scripting (XSS) and can be prevented by properly validating and sanitizing user input before displaying it on a web page.
 
@@ -79,3 +93,5 @@ Business Value: By bypassing Akamai WAF, an attacker can gain access to sensitiv
 - [[Akamai WAF Bypass by [@zseano](https://twitter.com/zseano) - 18th June 2018]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

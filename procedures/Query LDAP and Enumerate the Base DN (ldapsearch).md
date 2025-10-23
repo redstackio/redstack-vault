@@ -33,9 +33,15 @@ Connect to LDAP with anonymous bind and enumerate the root DSA-specific Entry (D
 
 Connect to LDAP with anonymous bind and enumerate the root DSA-specific Entry (DSE), then use the result to enumerate the base DN.
 
+
+
 # Instructions
 
 1. Enumerate the root DSE object
+
+
+
+
 
 **Command** ([[Query LDAP Root DSE with Anonymous Bind]]):
 
@@ -43,9 +49,17 @@ Connect to LDAP with anonymous bind and enumerate the root DSA-specific Entry (D
 ldapsearch -x -h $_TARGET_IP -s base
 ```
 
+
+
 A successful query will return the "rootDomainNamingContext", which lists the domain's domain components (DC). eg: "dc=corporatehq,dc=com"  = "corporatehq.com"
 
+
+
 2. Enumerate the base object using the "rootDomainNamingContext" from step 1.
+
+
+
+
 
 **Command** ([[Query the Base DN with Anonymous Bind]]):
 
@@ -53,7 +67,11 @@ A successful query will return the "rootDomainNamingContext", which lists the do
 ldapsearch -x -h $_TARGET_IP -b 'dc=$_ENTRY1,dc=$_ENTRY2'
 ```
 
+
+
 Tip: Append " | grep sAMAccountName" to the previous command to only show account names.
+
+
 
 ## Platforms
 
@@ -79,3 +97,5 @@ Tip: Append " | grep sAMAccountName" to the previous command to only show accoun
 
 - [[data exposure]]
 - [[Network]]
+
+

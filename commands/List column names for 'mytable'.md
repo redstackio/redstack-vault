@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:44.531078+00:00'
 ```bash
 SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = 'mytable'); -- for the current DB only
 ```
+
+

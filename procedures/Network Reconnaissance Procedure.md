@@ -31,11 +31,15 @@ From a technical perspective, this procedure involves the use of various tools a
 
 The business value of this procedure lies in its ability to identify potential vulnerabilities in the target network. By identifying these vulnerabilities, organizations can take steps to patch and secure their systems, thereby reducing the risk of a successful attack.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Tools such as Nmap, Netcat, and Wireshark
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ The business value of this procedure lies in its ability to identify potential v
 
 1. Regularly patch and update systems to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Discover and map out the target network
@@ -53,11 +59,19 @@ The business value of this procedure lies in its ability to identify potential v
 
 1. Gather information for further attacks
 
+ 
+
 # Instructions
 
 1. This command performs network reconnaissance by scanning a range of IP addresses and gathering information about the hosts including hostnames and services running on them. To use this command, you must have Nmap, Python 2.7, and Git installed on your system.
 
+ 
+
+
+
 **Code**: [[python2.7 ./reconnoitre.py -t 192.168.1.2-252 -o .]]
+
+
 
 > -t: specifies the target IP address range to scan
 -o: specifies the output directory for the scan results
@@ -80,3 +94,5 @@ The business value of this procedure lies in its ability to identify potential v
 
 - [[Network Discovery]]
 - [[Reconnoitre]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:00.035342+00:00'
 ```bash
 $> ldapdomaindump -u "DOMAIN\\Account" -p "Password123*" 10.10.10.10
 ```
+
+

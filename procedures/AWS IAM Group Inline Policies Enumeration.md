@@ -32,9 +32,13 @@ The AWS Identity and Access Management (IAM) service is used to manage access to
 
 To list the names of the inline policies embedded in the specified IAM group, the attacker would use the 'List Group Policies' command. This will return the names of the inline policies associated with the IAM group.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
+
+ 
 
 ## Defense
 
@@ -44,23 +48,33 @@ To list the names of the inline policies embedded in the specified IAM group, th
 
 1. Implement multi-factor authentication (MFA) for IAM users to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Enumerate the inline policies attached to a specified IAM group
 
 1. Identify potential privilege escalation opportunities
 
+ 
+
 # Instructions
 
 1. Use the following AWS CLI command to list all policies attached to a specific IAM group:
 
+ 
+
 This command will list the names of all policies attached to the specified IAM group. The policies can then be further examined to determine their permissions and access levels. The --group-name flag should be replaced with the name of the IAM group that you want to list the policies for.
+
+
 
 **Command** ([[List IAM Group Policies]]):
 
 ```bash
 aws iam list-group-policies --group-name group name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -81,3 +95,5 @@ aws iam list-group-policies --group-name group name
 - [[2. Enumerating Groups IAM]]
 - [[Cloud - AWS]]
 - [[Listing the names of the inline policies embedded in the specified IAM Group]]
+
+

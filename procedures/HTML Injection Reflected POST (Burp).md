@@ -33,13 +33,85 @@ A malicious user can use any of the unvalidated user input fields in a post requ
 
 1.Enter any text in the *First name *and *Last name* fields as shown/
 
+
+
+
+
+![cb4c4cb5-88cc-4efe-b0fe-7940a38d1486.PNG]()
+
+
+
+
+
 2.Intercept the request using burp . Observe the Post request in the image below.
+
+
+
+
+
+
+
+
+
+![fba47c6f-05cd-4726-89d0-85f98bcf952f.PNG]()
+
+
+
+
+
+
 
 3. Replace the *First name* and *Last nam*e field with HTML tags and forward the request . In this case, *<h1>, <a>* tag  and  *<h2>* tags are used .
 
+
+
+
+
+
+
+![1b3862b3-c1f8-4b6c-ba19-f053bcca2c22.PNG]()
+
+
+
+
+
 4.Observe the* Follow me* and* redstack.io* in the response page .
 
+
+
+
+
+
+
+
+
+![26561cae-f787-48bf-ad0d-f0d4f6a0a4cd.PNG]()
+
+
+
+
+
+
+
 5. Clicking  on *Follow me* will take you to the referenced website as mentioned in step 3.
+
+
+
+
+
+
+
+![92bef596-046b-46ce-aae8-ca6a18562de9.PNG]()
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +123,5 @@ A malicious user can use any of the unvalidated user input fields in a post requ
 - [[injection]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

@@ -24,6 +24,8 @@ XSS in CSS with Malicious Background Image Injection is a technique used by atta
 
 XSS in CSS with Malicious Background Image Injection is a technique used by attackers to inject malicious code into a website's CSS files. This technique is executed by injecting malicious code into the background-image property of a CSS file. The malicious code can then be used to steal sensitive information, such as user credentials or session tokens, or to execute arbitrary code on the victim's machine. This technique can be used to bypass security controls and evade detection.
 
+ 
+
 ## Requirements
 
 1. Access to the website's CSS files
@@ -31,6 +33,8 @@ XSS in CSS with Malicious Background Image Injection is a technique used by atta
 1. Knowledge of the website's CSS file structure
 
 1. Malicious Background Image Injection tool
+
+ 
 
 ## Defense
 
@@ -40,6 +44,8 @@ XSS in CSS with Malicious Background Image Injection is a technique used by atta
 
 1. Regularly scan and monitor the website's CSS files for malicious code
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a website's CSS files
@@ -48,9 +54,15 @@ XSS in CSS with Malicious Background Image Injection is a technique used by atta
 
 1. Execute arbitrary code on the victim's machine
 
+ 
+
 # Instructions
 
 1. This command injects a malicious background image into a webpage.
+
+ 
+
+
 
 **Code**: [[<!DOCTYPE html>
 <html>
@@ -59,6 +71,8 @@ XSS in CSS with Malicious Background Image Injection is a technique used by atta
 div  {
     b]]
 
+
+
 > It works by using a data URL to encode an SVG image that contains JavaScript code. When the image is loaded as a background image, the JavaScript code is executed, which in this case displays an alert message containing the domain of the current page. This technique can be used to perform various types of attacks, such as stealing cookies, redirecting users to malicious websites, or executing arbitrary code on the victim's machine.
 
 ## Tags
@@ -66,3 +80,5 @@ div  {
 - [[Cross Site Scripting]]
 - [[XSS in CSS]]
 - [[XSS in files]]
+
+

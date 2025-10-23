@@ -22,3 +22,5 @@ SELECT\UNION	SELECT	2
 SELECT	1FROM[table]WHERE\1=\1AND\1=\1	
 SELECT"table_name"FROM[information_schema].[tables]	
 ```
+
+

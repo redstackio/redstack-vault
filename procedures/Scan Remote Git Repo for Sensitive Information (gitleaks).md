@@ -26,9 +26,13 @@ Locate API keys, hardcoded passwords, tokens, sensitive information through a gi
 
 [gitleaks](https://github.com/zricethezav/gitleaks)
 
+
+
 ##  Instructions
 
 1. Using gitleaks to scan a github repo by URL
+
+
 
 **Command** ([[gitleaks scan remote github repo]]):
 
@@ -37,6 +41,12 @@ gitleaks --repo=https://github.com/zricethezav/gitleaks
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[gitleaks scan remote github repo]]
+
+

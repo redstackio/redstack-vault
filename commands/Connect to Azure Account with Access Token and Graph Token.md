@@ -24,3 +24,5 @@ PS C:\Tools> $graphaccesstoken = <GRAPHTOKEN>
 PS C:\Tools> Connect-AzAccount -AccessToken $token -GraphAccessToken $graphaccesstoken -AccountId <ACCOUNT-ID>
 
 ```
+
+

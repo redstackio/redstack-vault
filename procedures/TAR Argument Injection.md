@@ -32,11 +32,15 @@ TAR is a command-line utility for archiving files. Attackers can inject maliciou
 
 When an attacker is successful in injecting malicious code into the TAR command, it can be executed with the same privileges as the user running the TAR command. This can be particularly dangerous if the user is a privileged user. The attacker may use this technique to execute code that allows them to take control of the system or steal sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to the command line interface on the target system
 
 1. Knowledge of the TAR command
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ When an attacker is successful in injecting malicious code into the TAR command,
 
 1. Use a host-based intrusion detection system (HIDS) to detect and alert on suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
@@ -54,13 +60,23 @@ When an attacker is successful in injecting malicious code into the TAR command,
 
 1. Achieve privilege escalation
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[tar]]
 
+
+
 > 
+
+
 
 **Command** ([[Extract tar file]]):
 
@@ -68,12 +84,22 @@ When an attacker is successful in injecting malicious code into the TAR command,
 tar -xf file.tar
 ```
 
+
+
 2. To inject a command into the extract command, use the following options:
+
+ 
+
+
 
 **Code**: [[--to-command <command>
 --checkpoint=1 --checkpoint]]
 
+
+
 > The --to-command option allows the attacker to specify a command to be executed for each extracted file. The --checkpoint and --checkpoint-action options allow the attacker to execute a command after a specified number of files have been processed. The -T or --files-from option allows the attacker to specify a file containing a list of files to be extracted.
+
+
 
 **Command** ([[Execute command on checkpoint]]):
 
@@ -81,18 +107,32 @@ tar -xf file.tar
 --checkpoint=1 --checkpoint-action=exec=<command>
 ```
 
+
+
+
+
 **Command** ([[Transfer files]]):
 
 ```bash
 -T <file> or --files-from <file>
 ```
 
+
+
 3. 
+
+ 
+
+
 
 **Code**: [[-I=<program> or -I <program>
 --use-compres-program]]
 
+
+
 > The -I or --use-compress-program option allows the attacker to specify a program to be used for compression instead of the default gzip program. The attacker can specify a program that executes arbitrary code.
+
+
 
 **Command** ([[Specify input program]]):
 
@@ -100,16 +140,28 @@ tar -xf file.tar
 -I=<program> or -I <program>
 ```
 
+
+
+
+
 **Command** ([[Specify compression program]]):
 
 ```bash
 --use-compres-program=<program>
 ```
 
+
+
 4. 
+
+ 
+
+
 
 **Code**: [[-T<file>
 -I"/path/to/exec"]]
+
+
 
 > The -T option can be used without a space between the option and the file name. The -I option can be used with a space or an equals sign between the option and the program name. The attacker can use these options to evade detection.
 
@@ -126,3 +178,5 @@ tar -xf file.tar
 - [[Argument Injection]]
 - [[List of exposed commands]]
 - [[TAR]]
+
+

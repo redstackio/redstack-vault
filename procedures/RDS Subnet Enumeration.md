@@ -37,11 +37,15 @@ The attacker can use this technique to gain a better understanding of the target
 
 From a business perspective, this technique can help identify potential security weaknesses in the target environment and allow for proactive mitigation before an actual attack occurs.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS CLI
 
 1. Permissions to run the 'EC2 Describe Subnets' command
+
+ 
 
 ## Defense
 
@@ -51,23 +55,33 @@ From a business perspective, this technique can help identify potential security
 
 1. Monitor network traffic for unusual activity related to RDS instances
 
+ 
+
 ## Objectives
 
 1. Identify subnets used by RDS instances in the target environment
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. The `aws ec2 describe-subnets` command is used to retrieve information about all subnets in a VPC. This command requires the `ec2:DescribeSubnets` permission.
 
+ 
+
 The `aws ec2 describe-subnets` command returns a JSON object containing information about all subnets in a VPC. This includes the subnet ID, VPC ID, availability zone, CIDR block, and any associated tags. You can filter the results by specifying one or more subnet IDs, VPC IDs, or CIDR blocks. For example, to retrieve information about a specific subnet, you can use the `--subnet-ids` parameter followed by the subnet ID. You can also use the `--filters` parameter to specify multiple filters.
+
+
 
 **Command** ([[List Subnets]]):
 
 ```bash
 aws ec2 describe-subnets
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws ec2 describe-subnets
 - [[Enumeration]]
 - [[Listing subnet's]]
 - [[RDS - Relational Database Service]]
+
+

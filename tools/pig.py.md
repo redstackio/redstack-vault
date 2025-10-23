@@ -16,3 +16,9 @@ DHCPig initiates an advanced DHCP exhaustion attack. It will consume all IPs on 
 ## Description
 
 DHCPig initiates an advanced DHCP exhaustion attack. It will consume all IPs on the LAN, stop new users from obtaining IPs, release any IPs in use, then for good measure send gratuitous ARP and knock all windows hosts offline. It requires scapy >=2.1 library and admin privileges to execute. No configuration necessary, just pass the interface as a parameter. It has been tested on multiple Linux distributions and multiple DHCP servers (ISC, Windows 2k3/2k8).
+
+
+
+
+
+

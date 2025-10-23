@@ -21,3 +21,5 @@ $ klist.exe -t -K -e -k FILE:C:\Users\User\downloads\krb5.keytab
      Time stamp: Oct 07,  2019 09:12:02
 [...]
 ```
+
+

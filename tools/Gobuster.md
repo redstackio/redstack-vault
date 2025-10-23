@@ -26,6 +26,8 @@ Gobuster is a web application directory, vhost, and DNS server brute forcing too
 
 Gobuster is a web application directory, vhost, and DNS server brute forcing tool, which uses wordlists to enumerate services. Gobuster contains three modules:
 
+
+
 - dir: this module performs traditional web application brute force attacks to enumerate files and folders.
 
 - vhost: this module uses the "Host" value in the HTTP header to enumerate websites in cases where a web application uses virtual hosts to serve different sites.
@@ -34,9 +36,23 @@ Gobuster is a web application directory, vhost, and DNS server brute forcing too
 
 # Example
 
+
+
+{{EMBEDDED_COMMAND_21cc125b-0be7-4d96-9228-eb144900a21f}}
+
+
+
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +73,5 @@ Gobuster is a web application directory, vhost, and DNS server brute forcing too
 
 - [[Brute Force]]
 - [[Web Applications]]
+
+

@@ -37,11 +37,15 @@ To retrieve the LAPS password, the attacker needs to add their user account to t
 
 The business value of this procedure is that it allows an attacker to gain administrative access to a compromised computer, which can lead to further compromise of the network. It highlights the importance of proper access control and privilege management within an organization.
 
+ 
+
 ## Requirements
 
 1. Domain access and privileges to add user account to LAPS group
 
 1. Access to LAPS UI or PowerShell commands
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ The business value of this procedure is that it allows an attacker to gain admin
 
 1. Implement multi-factor authentication to prevent unauthorized access to the domain
 
+ 
+
 ## Objectives
 
 1. Retrieve the LAPS password for a specific computer
 
 1. Gain access to the local administrator account on the compromised computer
 
+ 
+
 # Instructions
 
 1. To add a user to the LAPS ADM and LAPS READ groups, run the following commands:
 
+ 
+
+
+
 **Code**: [[Add-DomainGroupMember -Identity 'LAPS ADM' -Member]]
 
+
+
 > This command adds a user to two non-admin groups named LAPS ADM and LAPS READ. These groups are used for managing Local Administrator Password Solution (LAPS) in a Windows domain. The command requires the user's credentials and the domain name to be provided. Once a user is added to these groups, they can read the LAPS admin password for the computers in the domain.
+
+
 
 **Command** ([[Add user1 to LAPS ADM group and LAPS READ group]]):
 
@@ -71,6 +87,8 @@ The business value of this procedure is that it allows an attacker to gain admin
 Add-DomainGroupMember -Identity 'LAPS ADM' -Members 'user1' -Credential $cred -Domain "domain.local"
 Add-DomainGroupMember -Identity 'LAPS READ' -Members 'user1' -Credential $cred -Domain "domain.local"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ Add-DomainGroupMember -Identity 'LAPS READ' -Members 'user1' -Credential $cred -
 - [[Active Directory Attacks]]
 - [[Grant LAPS Access]]
 - [[Reading LAPS Password]]
+
+

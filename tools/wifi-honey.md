@@ -16,3 +16,9 @@ This script creates five monitor mode interfaces, four are used as APs and the f
 ## Description
 
 This script creates five monitor mode interfaces, four are used as APs and the fifth is used for airodump-ng. To make things easier, rather than having five windows all this is done in a screen session which allows you to switch between screens to see what is going on. All sessions are labelled so you know which is which.
+
+
+
+
+
+

@@ -34,6 +34,8 @@ From a technical perspective, XSLT Injection works by exploiting the trust relat
 
 The business value of this attack lies in the potential for attackers to gain access to sensitive data or systems, which can lead to financial loss, reputational damage, and legal consequences for the affected organization. It is therefore important for organizations to be aware of this attack vector and take appropriate measures to protect their web applications and servers.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with XSLT Injection vulnerability
@@ -42,6 +44,8 @@ The business value of this attack lies in the potential for attackers to gain ac
 
 1. Access to the target network
 
+ 
+
 ## Defense
 
 1. Implement input validation and output encoding to prevent XSLT Injection
@@ -49,6 +53,8 @@ The business value of this attack lies in the potential for attackers to gain ac
 1. Use a web application firewall (WAF) to detect and block XSLT Injection attacks
 
 1. Regularly update and patch web applications and servers to address known vulnerabilities
+
+ 
 
 ## Objectives
 
@@ -62,18 +68,32 @@ The business value of this attack lies in the potential for attackers to gain ac
 
 1. Launch further attacks
 
+ 
+
 # Instructions
 
 1. This command is used to list all the files in a directory.
 
+ 
+
+
+
 **Code**: [[  <xsl:stylesheet version="1.0" xmlns:xsl="http://]]
+
+
 
 > The 'ls' command is executed using the 'Runtime' class of Java. The output of the command is then converted to a string using the 'Object' class of Java. The list of files is then returned as a string.
 
 2. This command is used to check the connectivity between two devices over a network using the ping utility.
 
+ 
+
+
+
 **Code**: [[<xml version="1.0"?>
 <xsl:stylesheet version="2.0"]]
+
+
 
 > The ping command sends an ICMP (Internet Control Message Protocol) echo request to the destination IP address and waits for a response. If the destination device is reachable, it responds with an ICMP echo reply. The arguments of the command are:
 1. IP: The IP address or hostname of the device to which the ping request is to be sent. It can be IPv4 or IPv6 address.
@@ -97,3 +117,5 @@ Example: ping 192.168.1.1
 - [[Exploit]]
 - [[Remote Code Execution with Java]]
 - [[XSLT Injection]]
+
+

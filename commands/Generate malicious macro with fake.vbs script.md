@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:56.680981+00:00'
 ```bash
 EvilClippy.exe -s fake.vbs -g -r cobaltstrike.doc
 ```
+
+

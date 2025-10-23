@@ -34,19 +34,33 @@ Query the Windows registry for credentials configured with the automatic logon f
 
 Query the Windows registry for credentials configured with the automatic logon feature. Windows allows users to specify credentials to skip logon prompts, but since these credentials are stored openly in the registry, other users can view them. 
 
+
+
 ## Objectives
 
 This technique is commonly used in post-exploitation activities to obtain valid credentials for lateral movement or privilege escalation. It is also a key method used by attackers to evade detection and bypass security controls, as the use of stolen credentials can make it difficult to detect unauthorized access to systems or data.
 
+
+
 1. Obtain credentials, they can be local or domain credentials
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Query Windows Registry for Auto Logon Credentials]]):
 
 ```bash
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +85,5 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
 - [[data exposure]]
 - [[Enumeration]]
 - [[known vulnerability]]
+
+

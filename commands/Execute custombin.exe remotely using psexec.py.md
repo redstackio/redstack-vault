@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:58.731576+00:00'
 ```bash
 psexec.py Administrator:Password123@IP -service-name customservicename -remote-binary-name custombin.exe
 ```
+
+

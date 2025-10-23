@@ -24,6 +24,10 @@ This wordlist can be found from jhaddix gist
 
 [master wordlist](https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056)
 
+
+
 ##  Instructions
 
 1. Using dnsrecon to brute force a list of sub-domains from a wordlist
+
+

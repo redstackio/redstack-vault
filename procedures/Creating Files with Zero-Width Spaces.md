@@ -32,6 +32,12 @@ Zero-width spaces are non-printing characters, used to indicate word boundaries 
 
 For example in this screenshot, two seemingly identical files exist, with the first one having been created with a zero-width space in between "i" and "n" :
 
+
+
+![61b616e2-6976-4f25-bd10-d3edfa253b24.png](_assets/images/Mark/61b616e2-6976-4f25-bd10-d3edfa253b24.png)
+
+
+
 # Instructions
 
 In order to create files with zero-width spaces, the Unicode character must be entered. Much like Window's Alt key codes, Linux supports entering Unicode characters directly by first pressing:
@@ -44,7 +50,15 @@ As a zero-width space is Unicode 200b, the combination would be:
 
 For example, create a filename with a zero-width space:
 
+
+
+
+
+
+
 **Code**: [[touch i[CTRL + SHIFT + U]200b[ENTER]ndex.html]]
+
+
 
 This technique works for files, folders, and many other Linux object, giving attackers many opportunities to abuse the confusing names, and while they cannot be used in web domains, they can be used in the path value for web addresses.
 
@@ -65,3 +79,5 @@ This technique works for files, folders, and many other Linux object, giving att
 ## Tags
 
 - [[Obfuscation]]
+
+

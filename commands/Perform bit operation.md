@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:59.436488+00:00'
 ```bash
 select bitand(1,0) from sysibm.sysdummy1
 ```
+
+

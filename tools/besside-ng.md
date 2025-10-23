@@ -16,3 +16,9 @@ Besside-ng is a tool like Besside-ng but it support also WPA encryption. It will
 ## Description
 
 Besside-ng is a tool like Besside-ng but it support also WPA encryption. It will crack automatically all the WEP networks in range and log the WPA handshakes.
+
+
+
+
+
+

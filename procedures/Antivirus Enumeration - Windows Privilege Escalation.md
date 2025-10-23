@@ -32,11 +32,15 @@ Antivirus Enumeration is a technique used to discover information about the anti
 
 Antivirus Enumeration is a technique used to discover information about the antivirus software installed on a target system. This information can be used to identify potential vulnerabilities and weaknesses that can be exploited to escalate privileges on the system. This technique involves querying the system for information about installed antivirus software and its configuration. This information can then be used to identify potential vulnerabilities and weaknesses that can be exploited to escalate privileges on the system. By identifying the antivirus software installed on the system, an attacker can determine if any known vulnerabilities exist that can be exploited to gain escalated privileges. Additionally, the attacker can use the information gathered to determine if any antivirus software is incorrectly configured or can be bypassed.
 
+ 
+
 ## Requirements
 
 1. Access to the target system.
 
 1. Command-line access to the target system.
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Antivirus Enumeration is a technique used to discover information about the anti
 
 1. Implement network segmentation to limit lateral movement in case of a breach.
 
+ 
+
 ## Objectives
 
 1. Identify potential vulnerabilities and weaknesses that can be exploited to escalate privileges on the system.
@@ -53,6 +59,8 @@ Antivirus Enumeration is a technique used to discover information about the anti
 1. Determine if any known vulnerabilities exist that can be exploited to gain escalated privileges.
 
 1. Determine if any antivirus software is incorrectly configured or can be bypassed.
+
+ 
 
 # Instructions
 
@@ -62,15 +70,25 @@ WMIC /Node:<ComputerName> /Namespace:\\root\SecurityCenter2 Path AntivirusProduc
 
 Replace <ComputerName> with the name of the remote computer you want to query.
 
+ 
+
+
+
 **Code**: [[WMIC /Node:localhost /Namespace:\\root\SecurityCen]]
 
+
+
 > This command uses Windows Management Instrumentation (WMI) to query the Security Center namespace and retrieve the display names of all installed antivirus products on a computer. The command can be run locally or remotely by specifying the name of the remote computer with the /Node parameter. The command is useful for troubleshooting antivirus-related issues or verifying that antivirus software is installed and up-to-date on a computer.
+
+
 
 **Command** ([[Get AntivirusProduct Display Name]]):
 
 ```bash
 WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get displayName
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get
 
 - [[Antivirus Enumeration]]
 - [[Windows - Privilege Escalation]]
+
+

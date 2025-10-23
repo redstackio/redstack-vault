@@ -25,3 +25,5 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft Antimalware\Exclusions\Paths" /v "$_P
 C:\>REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft Antimalware\Exclusions\Paths" /v "C:\Windows\Temp" /t REG_DWORD /d 0 /f
 The operation completed successfully.
 ```
+
+

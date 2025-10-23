@@ -33,11 +33,15 @@ Technical Explanation: Vssadmin can be used to create a volume shadow copy of th
 
 Business Value: By obtaining AD credentials, an attacker can gain access to sensitive information and potentially move laterally within the network, causing significant damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a system with vssadmin installed
 
 1. Access to the NTDS.dit file
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ Business Value: By obtaining AD credentials, an attacker can gain access to sens
 
 1. Implement strong password policies to make cracking the hashed passwords more difficult
 
+ 
+
 ## Objectives
 
 1. Dump AD credentials for lateral movement within the network
 
 1. Gain access to sensitive information
+
+ 
 
 # Instructions
 
@@ -61,7 +69,13 @@ The 'vssadmin create shadow' command creates a shadow copy of the specified volu
 
 The 'copy' command is used to copy files from the specified source to the specified destination. The '\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1' path is used to access the shadow copy. The 'C:\ShadowCopy' path is used to specify the destination folder. The files being copied are 'NTDS.dit' and 'SYSTEM'.
 
+ 
+
+
+
 **Code**: [[vssadmin create shadow /for=C:\ncopy \\?\GLOBALROO]]
+
+
 
 > This command can be used to create a backup of the 'NTDS.dit' and 'SYSTEM' files on a Windows system. By creating a shadow copy of the volume and then copying the files to a specified location, a backup copy of these critical files can be made without interrupting the normal operation of the system. This can be useful for disaster recovery scenarios or for forensic analysis of a system.
 
@@ -81,3 +95,5 @@ The 'copy' command is used to copy files from the specified source to the specif
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[Using vssadmin]]
+
+

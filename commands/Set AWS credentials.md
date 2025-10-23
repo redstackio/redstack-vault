@@ -20,3 +20,5 @@ export AWS_ACCESS_KEY_ID=ASIAZ[...]PODP56
 export AWS_SECRET_ACCESS_KEY=fPk/Gya[...]4/j5bSuhDQ
 export AWS_SESSION_TOKEN=FQoGZXIvYXdzE[...]8aOK4QU=
 ```
+
+

@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 medusa -h target-ip -U ../creds/usernames.txt -P ../creds/passwords.txt -M http -m DIR:/printers -T 10
 
 ```
+
+

@@ -36,6 +36,9 @@ From a technical perspective, this technique involves querying the MSSQL Server 
 
 From a business value perspective, this technique can help attackers gain access to sensitive data and systems. By identifying the current role of the user, the attacker can plan their next move and perform various malicious activities.
 
+
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server
@@ -43,6 +46,8 @@ From a business value perspective, this technique can help attackers gain access
 1. Authentication credentials with appropriate privileges
 
 1. Knowledge of manual SQL Server queries
+
+ 
 
 ## Defense
 
@@ -52,6 +57,8 @@ From a business value perspective, this technique can help attackers gain access
 
 1. Regularly update and patch the MSSQL Server to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Identify the current role of the user in the MSSQL Server
@@ -60,13 +67,23 @@ From a business value perspective, this technique can help attackers gain access
 
 1. Perform malicious activities such as data exfiltration or privilege escalation
 
+ 
+
 # Instructions
 
 1. To select a user from a database table, use the SELECT statement followed by the name of the table and the column(s) you want to retrieve. For example: SELECT * FROM users;
 
+ 
+
+
+
 **Code**: [[Select user]]
 
+
+
 > The SELECT statement is used to retrieve data from one or more tables in a database. In this case, we are retrieving data from the 'users' table. The '*' symbol means to retrieve all columns from the table. You can also specify specific columns by listing them after the SELECT statement, separated by commas. For example: SELECT name, email, phone FROM users; This will retrieve only the 'name', 'email', and 'phone' columns from the 'users' table.
+
+
 
 **Command** ([[List all users]]):
 
@@ -74,11 +91,17 @@ From a business value perspective, this technique can help attackers gain access
 db.users.find()
 ```
 
+
+
+
+
 **Command** ([[Select John]]):
 
 ```bash
 db.users.find({'name': 'John'})
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +124,5 @@ db.users.find({'name': 'John'})
 - [[Current Role]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

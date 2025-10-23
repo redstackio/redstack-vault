@@ -20,7 +20,11 @@ Wireshark is the world’s foremost network protocol analyzer. It lets you see w
 
 # Description
 
+
+
 Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of networking experts across the globe. It is the continuation of a project that started in 1998. Wireshark has a rich feature set which includes the following:
+
+
 
 - Deep inspection of hundreds of protocols, with more being added all the time
 
@@ -50,15 +54,33 @@ Wireshark is the world’s foremost network protocol analyzer. It lets you see w
 
 Wireshark includes capture filters which limits the data being recorded. See [Wireshark's Capture Filters documentation](https://wiki.wireshark.org/CaptureFilters) for more info.
 
+
+
+
+
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
 
 ## Install on Windows
 
 Download the appropriate build of Wireshark: [Download from Wireshark.org](https://www.wireshark.org/download.html)
 
+
+
+
+
+
+
+
+
 ## Tags
 
 - [[Enumeration]]
 - [[Network]]
+
+

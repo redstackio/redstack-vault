@@ -35,15 +35,24 @@ Linux and *nix systems include features which allow certain programs to run with
 
 Linux and *nix systems include features which allow certain programs to run with elevated privileges. This is a requirement for many system services, but occasionally these programs may allow attackers to execute arbitrary commands.
 
+
+
 - Setuid - Programs with this permission set can run commands as the program's owner, often set as root.  
 
 - File Capabilities - Programs with these permissions can run certain types of commands that bypass standard permission restrictions. File capabilities can be more specific than setuid permissions, allowing better control of some commands 
 
+
+
 Both of these permissions can allow attackers to elevate privileges, and are vital to the Discovery phase.
+
 
 # Instructions
 
 ## Search for Files with Setuid Permissions
+
+
+
+
 
 **Command** ([[Find List All Files with Setuid Permissions Set]]):
 
@@ -51,7 +60,15 @@ Both of these permissions can allow attackers to elevate privileges, and are vit
 find / -perm -4000 -ls 2>/dev/null
 ```
 
+
+
+
+
 ## Search for Files with Capabilities Set
+
+
+
+
 
 **Command** ([[Getcap List All Files with Capabilities Set]]):
 
@@ -59,7 +76,11 @@ find / -perm -4000 -ls 2>/dev/null
 getcap -r / 2>/dev/null
 ```
 
+
+
 A full list of file capabilities and their use can be found [here](http://man7.org/linux/man-pages/man7/capabilities.7.html)
+
+
 
 ## Platforms
 
@@ -85,3 +106,5 @@ A full list of file capabilities and their use can be found [here](http://man7.o
 
 - [[Linux]]
 - [[vulnerability]]
+
+

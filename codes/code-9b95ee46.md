@@ -20,3 +20,5 @@ PS> .\Azucar.ps1 -ExportTo CSV,JSON,XML,EXCEL -AuthMode Certificate_Credentials 
 # resolve the TenantID for an specific username
 PS> .\Azucar.ps1 -ResolveTenantUserName user@company.com
 ```
+
+

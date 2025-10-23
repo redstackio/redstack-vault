@@ -27,9 +27,15 @@ When creating a session, tmux allows users to specify an alternate path for the 
 
 When creating a session, tmux allows users to specify an alternate path for the socket. This opens up a vulnerability if other users are able to read/write to the socket, allowing them to attach to the session with full permissions of the user who opened it.
 
+
+
 # Instructions
 
 1. Identify tmux sessions.
+
+
+
+
 
 **Command** ([[ps List All Running Processes]]):
 
@@ -37,13 +43,25 @@ When creating a session, tmux allows users to specify an alternate path for the 
 ps aux
 ```
 
+
+
+
+
 If a tmux session is found with path (eg. /tmp/tmux/sess) and the current user has sufficient permissions, connect to it with the -S flag and specify the path.
+
+
+
+
 
 **Command** ([[tmux Attach to a Socket]]):
 
 ```bash
 tmux -S $_PATH/TO/SOCKET/FILE
 ```
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +75,5 @@ tmux -S $_PATH/TO/SOCKET/FILE
 ## Tags
 
 - [[Misconfiguration]]
+
+

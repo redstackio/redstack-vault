@@ -17,22 +17,50 @@ Ghost Phisher is a Wireless and Ethernet security auditing and attack software p
 
 Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy.Ghost Phisher currently supports the following features:
 
+
+
 HTTP Server
+
+
 
 Inbuilt RFC 1035 DNS Server
 
+
+
 Inbuilt RFC 2131 DHCP Server
+
+
 
 Webpage Hosting and Credential Logger (Phishing)
 
+
+
 Wifi Access point Emulator
+
+
 
 Session Hijacking (Passive and Ethernet Modes)
 
+
+
 ARP Cache Poisoning (MITM and DOS Attacks)
+
+
 
 Penetration using Metasploit Bindings
 
+
+
 Automatic credential logging using SQlite Database
 
+
+
 Update Support
+
+
+
+
+
+
+
+

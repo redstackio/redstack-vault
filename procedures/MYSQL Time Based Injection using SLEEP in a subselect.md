@@ -39,11 +39,15 @@ Technical Explanation: The attacker sends a specially crafted SQL query to the v
 
 Business Value: This type of attack can cause significant damage to a victim's business by stealing sensitive data, modifying data, or disrupting business operations. It is important for organizations to implement security measures to protect their databases from SQL injection attacks.
 
+ 
+
 ## Requirements
 
 1. Knowledge of MYSQL database management system
 
 1. Access to a vulnerable MYSQL database
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: This type of attack can cause significant damage to a victim's b
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to the victim's database
@@ -61,13 +67,23 @@ Business Value: This type of attack can cause significant damage to a victim's b
 
 1. Disrupt business operations
 
+ 
+
 # Instructions
 
 1. This command is used to perform SQL injection attacks on a database. The data field contains a payload that is injected into a vulnerable database to extract sensitive information. The payload is designed to cause the database to sleep for 10 seconds, which can be used to identify a successful injection.
 
+ 
+
+
+
 **Code**: [[1 and (select sleep(10) from dual where database()]]
 
+
+
 > The payload in the data field is designed to exploit a vulnerability in a database that allows an attacker to execute arbitrary SQL code. The payload is injected into the database through a vulnerable input field, such as a login form. The payload is designed to extract sensitive information from the database, such as usernames and passwords. The payload is constructed using the 'like' operator, which allows the attacker to search for data that matches a specific pattern. The payload is designed to cause the database to sleep for 10 seconds, which can be used to identify a successful injection. The instruction field should contain information on how to prevent SQL injection attacks, such as using prepared statements and input validation.
+
+
 
 **Command** ([[SQL Injection Attack]]):
 
@@ -88,6 +104,8 @@ Business Value: This type of attack can cause significant damage to a victim's b
 ...
 1 and (select sleep(10) from dual where (select table_name from information_schema.columns where table_schema=database() and column_name like '%pass%' limit 0,1) like '%')#
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -113,3 +131,5 @@ Business Value: This type of attack can cause significant damage to a victim's b
 - [[MYSQL Injection]]
 - [[MYSQL Time Based]]
 - [[Using SLEEP in a subselect]]
+
+

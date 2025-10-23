@@ -42,9 +42,13 @@ To perform Azure Tenant Enumeration, an attacker would use the 'Get Tenant ID' c
 
 From a business perspective, Azure Tenant Enumeration can be used to identify potential security weaknesses in an Azure AD/O365 environment, allowing organizations to take proactive measures to secure their environment before an attacker is able to exploit any vulnerabilities.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure AD/O365 environment
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, Azure Tenant Enumeration can be used to identify po
 
 1. Regularly review and update the Federation settings to ensure that they are configured securely
 
+ 
+
 ## Objectives
 
 1. Identify the Tenant ID and Federation settings for an Azure AD/O365 environment
@@ -62,13 +68,23 @@ From a business perspective, Azure Tenant Enumeration can be used to identify po
 
 1. Plan a more targeted attack against the environment
 
+ 
+
 # Instructions
 
 1. Validate the Tenant exists using an email address of the domain and is the Tenant Federated?
 
+ 
+
+
+
 **Code**: [[https://login.microsoftonline.com/getuserrealm.srf]]
 
+
+
 > This command provides the URLs to retrieve the user realm information for Azure AD or O365 federation. The 'instruction' field provides a step-by-step guide on how to federate your on-premises Active Directory with Azure AD or O365. The federation process involves verifying domain ownership, installing and configuring Azure AD Connect, configuring federation settings, verifying the federation configuration, and testing the federation by signing in to Azure AD or O365 using your on-premises credentials.
+
+
 
 **Command** ([[Get User Realm Information]]):
 
@@ -76,13 +92,24 @@ From a business perspective, Azure Tenant Enumeration can be used to identify po
 https://login.microsoftonline.com/getuserrealm.srf?login=<USER>@<DOMAIN>&xml=1
 ```
 
+
+
+
+
 **Command** ([[Get Tenant Realm Information]]):
 
 ```bash
 https://login.microsoftonline.com/getuserrealm.srf?login=root@<TENANT NAME>.onmicrosoft.com&xml=1
 ```
 
+
+
 2. To get the Tenant ID, run the following command or curl the urls.
+
+
+ 
+
+
 
 **Code**: [[PS> Get-AzureADTenantDetail
 
@@ -90,13 +117,23 @@ OR
 
 # Replace <Domain]]
 
+
+
 > This command retrieves details about the Azure Active Directory tenant, including the Tenant ID. The Tenant ID is a unique identifier for your organization's tenant in Azure AD. It is required for various administrative tasks, such as configuring applications and assigning permissions. The command retrieves the Tenant ID by querying the Azure AD service endpoint for the tenant's OpenID Connect configuration information.
+
+
+
+
 
 **Command** ([[Get the Tenant ID from AzureAD]]):
 
 ```bash
 Get-AzureADTenantDetail
 ```
+
+
+
+
 
 ## Platforms
 
@@ -125,3 +162,5 @@ Get-AzureADTenantDetail
 - [[Enumerate manually]]
 - [[Enumeration]]
 - [[Tenant ID]]
+
+

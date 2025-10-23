@@ -16,3 +16,5 @@ docker login -u admin -p admin docker.registry.local
 docker pull docker.registry.local/wordpress-image
 docker run -it docker.registry.local/wordpress-image /bin/bash
 ```
+
+

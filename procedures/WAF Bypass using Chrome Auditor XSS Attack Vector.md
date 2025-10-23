@@ -36,6 +36,8 @@ Technical Description: The attacker injects a specially crafted XSS payload, suc
 
 Business Value: This technique can be used to bypass WAF protection and gain unauthorized access to sensitive information, such as customer data or intellectual property. This can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to target web application
@@ -43,6 +45,8 @@ Business Value: This technique can be used to bypass WAF protection and gain una
 1. Ability to inject XSS payload
 
 1. Knowledge of Chrome Auditor XSS Attack Vector
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This technique can be used to bypass WAF protection and gain una
 
 1. Perform regular vulnerability assessments and penetration testing on the web application
 
+ 
+
 ## Objectives
 
 1. Bypass WAF protection
@@ -60,11 +66,19 @@ Business Value: This technique can be used to bypass WAF protection and gain una
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. The XSS Attack Vector command is used to test and demonstrate the vulnerability of a web application to cross-site scripting (XSS) attacks. The command injects a malicious script into the webpage, which is executed by the victim's browser when they visit the page. This script can be used to steal sensitive information or perform unauthorized actions on behalf of the victim. The injected script in this command is an example of an XSS payload that can be used to execute an alert() function.
 
+ 
+
+
+
 **Code**: [[</script><svg><script>alert(1)-%26apos%3B]]
+
+
 
 > The 'data' field contains the XSS payload that is injected into the webpage. The 'lang' field specifies the language of the payload, which is JavaScript in this case. The 'text' field is not used in this command. The 'instruction' field provides details on how to use this command to test for XSS vulnerabilities, and the 'explain' field provides a detailed explanation of what XSS attacks are and how they work.
 
@@ -89,3 +103,5 @@ Business Value: This technique can be used to bypass WAF protection and gain una
 - [[Chrome Auditor - 9th August 2018]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

@@ -21,6 +21,8 @@ Is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agen
 
 Empire is a PowerShell 2 command and control framework, specializing in post-exploitation capabilities. Empire uses cryptologically-secure communications through agents deployed on targets, which connect back to the C2 server to receive instructions. Like other C2, Empire can easily execute PowerShell scripts, .NET programs, and includes many modules including:
 
+
+
 - PowerUp
 
 - BypassUAC
@@ -37,10 +39,22 @@ Empire is a PowerShell 2 command and control framework, specializing in post-exp
 
 # Example
 
+
+
+{{EMBEDDED_COMMAND_c7076387-2b2c-49df-8513-18c33b6c64b3}}
+
+
+
 # Installation
 
 ## Install on Kali
 
+
+
+
+
 ## Commands (1)
 
 - [[Empire Launch C2 Server]]
+
+

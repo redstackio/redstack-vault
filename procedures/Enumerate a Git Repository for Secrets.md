@@ -30,9 +30,13 @@ Git repositories often contain sensitive information that the authors unintentio
 
 Git repositories often contain sensitive information that the authors unintentionally committed or thought was removed. By enumerating the commit history, it may be possible to identify secrets in commit messages, file content, deleted files, etc. Using the `reflog` argument  may show lost commits from instances where a repository was reset to a point prior to than the commits made after it.
 
+
+
 # Instructions
 
 Enumerate commit messages for useful information.
+
+
 
 **Command** ([[Git List a Git Repository's Commit Messages]]):
 
@@ -40,7 +44,13 @@ Enumerate commit messages for useful information.
 git log --all
 ```
 
+
+
 Enumerate the content of all commits.
+
+
+
+
 
 **Command** ([[Git List a Git Repository's Commit History]]):
 
@@ -48,13 +58,23 @@ Enumerate the content of all commits.
 git log -p
 ```
 
+
+
 Enumerate the content of all commits, including head resets.
+
+
+
+
 
 **Command** ([[Git List a Git Repository's Commit History for Lost Commits]]):
 
 ```bash
 git reflog -p
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -75,3 +95,5 @@ git reflog -p
 ## Tags
 
 - [[data exposure]]
+
+

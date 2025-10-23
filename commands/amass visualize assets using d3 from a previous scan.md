@@ -23,3 +23,5 @@ amass viz -d3 -dir $_OUTPUT_DIRECTORY
 root@kali in ~# ls owasp.org/
 amass_d3.html  amass.json  amass.log  amass.txt  indexes.bolt
 ```
+
+

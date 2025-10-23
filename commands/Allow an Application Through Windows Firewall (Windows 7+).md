@@ -26,3 +26,5 @@ netsh advfirewall firewall add rule name="Allow $_Program to bypass firewall rul
 C:\Windows\System32>netsh advfirewall firewall add rule name="Allow calc.exe to bypass firewall rules" dir=in action=allow program="C:\Windows\System32\calc.exe" enable=yes
 Ok.
 ```
+
+

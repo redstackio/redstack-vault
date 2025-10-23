@@ -21,3 +21,5 @@ Get-AzVM -Name <RESOURCE> -ResourceGroupName <RG-NAME> | select -ExpandProperty 
 Get-AzNetworkInterface -Name <RESOURCE368>
 Get-AzPublicIpAddress -Name <RESOURCEIP>
 ```
+
+

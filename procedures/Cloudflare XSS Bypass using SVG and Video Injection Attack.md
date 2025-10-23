@@ -29,11 +29,15 @@ From a technical standpoint, this attack technique involves crafting a malicious
 
 The business value of this attack lies in its ability to compromise the confidentiality, integrity, and availability of the target system. By stealing sensitive information or taking control of the victim's session, the attacker can cause significant damage to the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Cloudflare's WAF
 
 1. Ability to craft malicious SVG or video files
+
+ 
 
 ## Defense
 
@@ -43,18 +47,28 @@ The business value of this attack lies in its ability to compromise the confiden
 
 1. Regularly update and patch the web application and its dependencies to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To bypass Cloudflare's XSS protection and execute arbitrary code on the victim's browser
 
 1. To steal sensitive information or perform other malicious actions on the victim's browser
 
+ 
+
 # Instructions
 
 1. This command demonstrates an attack where an SVG and a video element are injected with malicious code. The code executes when the SVG is loaded and when the mouse hovers over the video element.
 
+ 
+
+
+
 **Code**: [[<svg/onrandom=random onload=confirm(1)>
 <video onn]]
+
+
 
 > The code injected in the SVG and video elements can execute any arbitrary code on the user's machine, potentially leading to data theft or other malicious activities. It is important to sanitize user input and validate any data that is being rendered on a page to prevent such attacks.
 
@@ -64,3 +78,5 @@ The business value of this attack lies in its ability to compromise the confiden
 - [[Cloudflare XSS Bypasses by [@Bohdan Korzhynskyi](https://twitter.com/bohdansec)]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

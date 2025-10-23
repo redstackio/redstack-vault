@@ -26,11 +26,15 @@ Directory Traversal is a method used by attackers to access files and directorie
 
 Directory Traversal is a method used by attackers to access files and directories that are stored outside of the web root folder. Dotdotpwn is a tool that can be used to automate the process of directory traversal. It allows an attacker to traverse directories and read files that they should not have access to. This tool can be used for both reconnaissance and privilege escalation. This procedure will use the Dotdotpwn tool to perform directory traversal and read sensitive files.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application.
 
 1. Dotdotpwn tool installed on the attacker's machine.
+
+ 
 
 ## Defense
 
@@ -40,18 +44,28 @@ Directory Traversal is a method used by attackers to access files and directorie
 
 1. Use web application firewalls to detect and block directory traversal attacks.
 
+ 
+
 ## Objectives
 
 1. Discover files and directories that are outside the web root folder.
 
 1. Read sensitive files that the attacker should not have access to.
 
+ 
+
 # Instructions
 
 1. To perform directory traversal using Dotdotpwn, follow these steps:
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/wireghoul/dotdotpwn
 p]]
+
+
 
 > 1. Clone the Dotdotpwn tool from the Github repository.
 2. Run the Dotdotpwn tool using the appropriate command-line arguments.
@@ -61,17 +75,25 @@ p]]
 6. Use the -q argument to enable quiet mode.
 7. Use the -b argument to enable batch mode.
 
+
+
 **Command** ([[Clone dotdotpwn repository]]):
 
 ```bash
 git clone https://github.com/wireghoul/dotdotpwn
 ```
 
+
+
+
+
 **Command** ([[Exploit /etc/shadow file using dotdotpwn]]):
 
 ```bash
 perl dotdotpwn.pl -h 10.10.10.10 -m ftp -t 300 -f /etc/shadow -s -q -b
 ```
+
+
 
 ## Commands Used
 
@@ -82,3 +104,5 @@ perl dotdotpwn.pl -h 10.10.10.10 -m ftp -t 300 -f /etc/shadow -s -q -b
 
 - [[Directory Traversal]]
 - [[Tools]]
+
+

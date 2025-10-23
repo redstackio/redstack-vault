@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # mysqldump
 
+
+
 **Command** ([[backup all mysql databases]]):
 
 ```bash
 mysqldump -u username -ppassword --all-databases --single-transaction
 
 ```
+
+
+
+
+
+

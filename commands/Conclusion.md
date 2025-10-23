@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:23:56.681624+00:00'
 ```bash
 The changes to the VM Metadata service may impact some users who rely on the service for certain scenarios. However, the changes are intended to improve security and prevent attackers from using the service to obtain sensitive information about Azure VMs.
 ```
+
+

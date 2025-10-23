@@ -29,11 +29,23 @@ SSL/TLS implementation enables secure communication between client and server. A
 
 # Description
 
+
+
 SSL/TLS implementation enables secure communication between client and server. Any misconfiguration in the SSL/TLS implementation can be identified using the Nmap command and SSL Enum Ciphers script.
+
+
 
 # Procedure
 
+
+
 1. Use the below Nmap command with SSL Enum Ciphers script to scan the website and analyse the implementation of SSL/TLS.
+
+
+
+
+
+
 
 **Command** ([[Nmap Command to Identify SSL/TLS Ciphers Using ssl-enum-ciphers Script]]):
 
@@ -41,7 +53,13 @@ SSL/TLS implementation enables secure communication between client and server. A
 nmap --script ssl-enum-ciphers demo.testfire.net:443
 ```
 
+
+
+
+
 2. Output contains the supported TLS versions and ciphers.
+
+
 
 ## Platforms
 
@@ -57,3 +75,5 @@ nmap --script ssl-enum-ciphers demo.testfire.net:443
 - [[owasp top 10]]
 - [[SSL]]
 - [[Web Applications]]
+
+

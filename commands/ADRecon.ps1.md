@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 ```bash
 .\ADRecon.ps1 -DomainController MYAD.net -Credential MYAD\myuser
 ```
+
+

@@ -27,6 +27,8 @@ Technical Explanation: MSSQL Injection with Comments is achieved by adding comme
 
 Business Value: MSSQL Injection with Comments can be used by attackers to gain unauthorized access to sensitive data stored in MSSQL databases. This can result in financial loss, reputational damage, and legal liabilities for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -34,6 +36,8 @@ Business Value: MSSQL Injection with Comments can be used by attackers to gain u
 1. Access to a MSSQL database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -43,18 +47,28 @@ Business Value: MSSQL Injection with Comments can be used by attackers to gain u
 
 1. Monitor MSSQL database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a MSSQL database
 
 1. Execute arbitrary SQL commands
 
+ 
+
 # Instructions
 
 1. Use this command to add comments to your SQL code.
 
+ 
+
+
+
 **Code**: [[-- comment goes here
 /* comment goes here */]]
+
+
 
 > The 'data' field should contain the comment that you want to add to your SQL code. You can add single-line comments using '--' and multi-line comments using '/* */'. Comments are useful for explaining what your code does or for leaving notes for other developers who may be working on the same project.
 
@@ -62,3 +76,5 @@ Business Value: MSSQL Injection with Comments can be used by attackers to gain u
 
 - [[MSSQL Comments]]
 - [[MSSQL Injection]]
+
+

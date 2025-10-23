@@ -29,3 +29,5 @@ root@kali:~# wc -w mutated.wordlist.txt wordlist.txt
   10 wordlist.txt
  510 total
 ```
+
+

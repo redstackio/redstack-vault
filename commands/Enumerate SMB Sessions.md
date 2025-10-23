@@ -20,3 +20,5 @@ cme smb 10.10.10.0/24 -u Administrator -p 'P@ssw0rd' --sessions
 SMB         10.10.10.10    445    WIN-8OJFTLMU1IG  [+] Enumerated sessions
 SMB         10.10.10.10    445    WIN-8OJFTLMU1IG  \\10.10.10.10            User:Administrator
 ```
+
+

@@ -15,11 +15,23 @@ updated_at: '2023-05-30T20:11:20.438818+00:00'
 
 Linux admins commonly make mistakes and security exceptions. These scripts can help identify vulnerabilities.
 
+
+
+
+
+
+
 **Command** ([[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]):
 
 ```bash
 python linuxprivchecker.py
 ```
+
+
+
+
+
+
 
 **Command** ([[Scan a Linux Filesystem for Vulnerabilities (LinEnum)]]):
 
@@ -27,16 +39,36 @@ python linuxprivchecker.py
 LinEnum.sh
 ```
 
+
+
+
+
+
+
 **Command** ([[lse.sh Scan a Linux Filesystem for Vulnerabilities]]):
 
 ```bash
 lse.sh 
 ```
 
+
+
+
+
 Enumerate processes discarding processes which remain unchanged. This can be useful for identifying cronjobs.
+
+
+
+
 
 **Code**: [[#!/bin/bash
 
 IFS=$'\n'
 
 old_process=$(ps -eo comma]]
+
+
+
+
+
+

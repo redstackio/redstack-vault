@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:35.046009+00:00'
 ```bash
 Request-SPNTicket -SPN "MSSQLSvc/dcorp-mgmt.dollarcorp.moneycorp.local"
 ```
+
+

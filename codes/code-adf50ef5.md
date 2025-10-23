@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 $users = Get-MsolUser; foreach($user in $users){$props = @();$user | Get-Member | foreach-object{$props+=$_.Name}; foreach($prop in $props){if($user.$prop -like "*password*"){Write-Output ("[*]" + $user.UserPrincipalName + "[" + $prop + "]" + " : " + $user.$prop)}}}
 
 ```
+
+

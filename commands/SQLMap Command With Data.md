@@ -259,4 +259,7 @@ web application technology: Apache 2.4.41, PHP 7.1.32
 back-end DBMS: MySQL >= 5.0
 [21:31:13] [INFO] fetched data logged to text files under '/root/.sqlmap/output/192.168.1.10'
 
+
 ```
+
+

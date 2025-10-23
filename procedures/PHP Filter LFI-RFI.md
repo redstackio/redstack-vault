@@ -32,11 +32,15 @@ PHP Filter LFI/RFI is a technique that allows an attacker to include a remote fi
 
 PHP Filter LFI/RFI is a technique that allows an attacker to include a remote file by abusing the php://filter wrapper. This technique is commonly used to bypass input validation filters and execute arbitrary code on the target system. By encoding the payload in base64, the attacker can bypass any input validation filters that may be in place. This technique can be used to obtain sensitive information, such as credentials, or to execute arbitrary code on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application.
 
 1. Knowledge of the target system.
+
+ 
 
 ## Defense
 
@@ -46,23 +50,39 @@ PHP Filter LFI/RFI is a technique that allows an attacker to include a remote fi
 
 1. Monitor web application logs for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. To obtain sensitive information, such as credentials.
 
 1. To execute arbitrary code on the target system.
 
+ 
+
 # Instructions
 
 1. Replace the URL with the vulnerable web application URL and the parameter with the vulnerable parameter.
 
+ 
+
+
+
 **Code**: [[./kadimus -u "http://example.com/index.php?page=vu]]
+
+
 
 > The command uses Kadimus to exploit the vulnerability and download the remote file to the local system. The -S option enables SSL, -f specifies the file name, -O specifies the output file, and --parameter specifies the parameter to inject the payload. The curl command is used to encode the payload in base64 and decode it on the local system.
 
 2. 
 
+ 
+
+
+
 **Code**: [[php://filter]]
+
+
 
 > The PHP Filter wrapper is a built-in PHP wrapper that allows data to be filtered through a chain of filters. This can be used to encode and decode data, among other things.
 
@@ -85,3 +105,5 @@ PHP Filter LFI/RFI is a technique that allows an attacker to include a remote fi
 - [[File Inclusion]]
 - [[LFI / RFI using wrappers]]
 - [[Wrapper php://filter]]
+
+

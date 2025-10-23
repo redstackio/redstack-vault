@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:10.737812+00:00'
 responder -I eth0 -A # see NBT-NS, BROWSER, LLMNR requests without responding.
 responder.py -I eth0 -wrf
 ```
+
+

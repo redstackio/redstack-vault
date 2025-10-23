@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:39.172926+00:00'
 go get github.com/Ice3man543/SubOver
 ./SubOver -l subdomains.txt
 ```
+
+

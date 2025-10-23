@@ -39,6 +39,8 @@ To execute this procedure, the attacker will create a macro that will download a
 
 The business value of this procedure is that it can be used to gain a foothold in a target environment and can be used to steal sensitive information or to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a remote server to host the payload
@@ -46,6 +48,8 @@ The business value of this procedure is that it can be used to gain a foothold i
 1. Ability to create a malicious macro generator
 
 1. Ability to social engineer the victim into enabling macros
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ The business value of this procedure is that it can be used to gain a foothold i
 
 1. Implement application whitelisting to prevent the execution of unknown macros
 
+ 
+
 ## Objectives
 
 1. Gain initial access to the target environment
 
 1. Download and execute a custom payload
+
+ 
 
 # Instructions
 
@@ -68,9 +76,17 @@ The business value of this procedure is that it can be used to gain a foothold i
 2. Navigate to the cloned directory and run the command 'python MMG.py configs/generic-cmd.json malicious.vba'
 3. A malicious macro will be generated and saved as malicious.vba in the current directory.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/Mr-Un1k0d3r/Malicious]]
 
+
+
 > The generated macro is designed to execute a generic command payload with no evasion technique. The payload will execute the command 'cmd.exe /c C:\\Users\\Public\\beacon.exe' on the target system.
+
+
 
 **Command** ([[Clone repository from GitHub]]):
 
@@ -78,11 +94,19 @@ The business value of this procedure is that it can be used to gain a foothold i
 git clone https://github.com/Mr-Un1k0d3r/MaliciousMacroGenerator
 ```
 
+
+
+
+
 **Command** ([[Generate malicious VBA macro]]):
 
 ```bash
 python MMG.py configs/generic-cmd.json malicious.vba
 ```
+
+
+
+
 
 **Command** ([[Configure payload settings]]):
 
@@ -100,9 +124,17 @@ python MMG.py configs/generic-cmd.json malicious.vba
 }
 ```
 
+
+
 2. The code above contains a function named 'DownloadFileA' which takes two arguments: URL and DownloadPath. The function downloads a file from the given URL and saves it to the specified download path. If the download is successful, the function returns True, otherwise it returns False. The code also contains two subroutines named 'AutoOpen' and 'Auto_Open' which are executed automatically when the Excel file is opened. These subroutines call the 'DownloadFileA' function to download a file from the specified URL and save it to the specified path.
 
+ 
+
+
+
 **Code**: [[Private Declare PtrSafe Function URLDownloadToFile]]
+
+
 
 > This code can be used to download a file from a remote server and save it to a local path. The 'DownloadFileA' function can be called with the URL of the file to be downloaded and the local path where the file should be saved. The function checks if the parent folder of the download path exists, and if it does not, the function exits without downloading the file. If the download is successful, the function returns True, otherwise it returns False. The 'AutoOpen' and 'Auto_Open' subroutines are executed automatically when the Excel file is opened, and they call the 'DownloadFileA' function with the URL and download path specified in the code.
 
@@ -130,3 +162,5 @@ python MMG.py configs/generic-cmd.json malicious.vba
 
 - [[DOCM - MMG with Custom DL + Exec]]
 - [[Office - Attacks]]
+
+

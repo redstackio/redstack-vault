@@ -26,11 +26,25 @@ DD is a standard Linux file system utility, used to convert and copy various typ
 
 DD is a standard Linux file system utility, used to convert and copy various types of files. DD can read from and write to special device files that Unix type systems view as normal files to backup boot sectors of hard drives, obtain certain amounts of random data, convert data with different text encodings while being copied, and can even write ISO files to a usb stick.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_f789edc9-afd1-4a21-8fc4-8e70e587b65d}}
+
+
 
 # Installation
 
 DD is installed by default on Linux systems.
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -40,3 +54,5 @@ DD is installed by default on Linux systems.
 
 - [[File System]]
 - [[Linux]]
+
+

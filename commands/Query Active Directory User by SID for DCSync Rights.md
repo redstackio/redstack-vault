@@ -8,6 +8,7 @@ data: Get-ObjectAcl -Identity "dc=$_DC1,dc=$_DC2" -ResolveGUIDs | ? {$_.Security
 output: 'PS C:\> Get-ObjectAcl -Identity "dc=megabank,dc=local" -ResolveGUIDs | ?
   {$_.SecurityIdentifier -match "S-1-5-21-3072663084-364016917-1341370565-7601"}
 
+
   AceQualifier           : AccessAllowed
 
   ObjectDN               : DC=megabank,DC=local
@@ -50,3 +51,5 @@ BinaryLength           : 56
 AceType                : AccessAllowedObject
 ObjectAceFlags         : ObjectAceTypePresent
 ```
+
+

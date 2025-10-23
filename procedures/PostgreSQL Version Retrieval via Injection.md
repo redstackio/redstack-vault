@@ -35,9 +35,13 @@ To retrieve the PostgreSQL version, the attacker can use the 'SELECT version()' 
 
 Business Value: By identifying vulnerabilities in the database, organizations can take steps to secure their systems and prevent data breaches. This procedure can be used to test the security of PostgreSQL databases and ensure that they are properly secured against SQL injection attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable public-facing application with a SQL injection vulnerability
+
+ 
 
 ## Defense
 
@@ -47,23 +51,37 @@ Business Value: By identifying vulnerabilities in the database, organizations ca
 
 1. Monitor database activity for suspicious behavior and unauthorized access
 
+ 
+
 ## Objectives
 
 1. Retrieve the version number of the PostgreSQL database
+
+ 
 
 # Instructions
 
 1. This command retrieves the version of the MySQL database currently in use.
 
+ 
+
+
+
 **Code**: [[SELECT version()]]
 
+
+
 > The SELECT statement is used to retrieve the version of the MySQL database currently in use. The version() function is a built-in function in MySQL that returns the version of the MySQL database currently in use. No arguments are required for this function.
+
+
 
 **Command** ([[MySQL Version]]):
 
 ```bash
 SELECT version()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ SELECT version()
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL Version]]
+
+

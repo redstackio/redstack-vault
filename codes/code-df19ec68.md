@@ -18,3 +18,5 @@ $cred = New-Object System.management.Automation.PSCredential($user, $pass)
 $cred.GetNetworkCredential() | fl
 
 ```
+
+

@@ -31,11 +31,15 @@ The RDS Routing Tables Destination and Target Rules procedure is used to redirec
 
 The RDS Routing Tables Destination and Target Rules procedure is used to redirect traffic to a specific target. This can be used to bypass network security controls and gain access to sensitive data stored in RDS instances. By modifying the destination and target rules in the routing table, an attacker can redirect traffic to their own malicious server, allowing them to capture data in transit. This technique can be used to gain access to credentials, sensitive data, and other resources.
 
+ 
+
 ## Requirements
 
 1. Access to the RDS instance
 
 1. Knowledge of the routing table
+
+ 
 
 ## Defense
 
@@ -45,17 +49,25 @@ The RDS Routing Tables Destination and Target Rules procedure is used to redirec
 
 1. Enforce strong authentication mechanisms to prevent unauthorized access to RDS instances
 
+ 
+
 ## Objectives
 
 1. Redirect traffic to a malicious server
 
 1. Capture sensitive data in transit
 
+ 
+
 # Instructions
 
 1. To use these rules, specify the destination and target for each traffic flow. The available destinations are: local, igw, nat, pcx, vpce, vgw, and eni. The available targets depend on the destination selected.
 
+ 
+
 When traffic enters a VPC, it needs to be directed to its destination. This is done using destination and target rules. The destination specifies where the traffic is going, while the target specifies how the traffic will get there. For example, if the destination is 'local', the target will be the VPC's internal IP addresses. If the destination is 'igw', the target will be the Internet Gateway. These rules are used to determine how traffic flows within a VPC network.
+
+
 
 **Command** ([[Destination Target]]):
 
@@ -68,6 +80,8 @@ IP          vpce  -> VPC Endpoint
 IP          vgw   -> VPN Gateway
 IP          eni   -> Network Interface
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ IP          eni   -> Network Interface
 
 - [[RDS - Relational Database Service]]
 - [[Routing Tables]]
+
+

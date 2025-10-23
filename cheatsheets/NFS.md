@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # NFS
 
+
+
 **Command** ([[List NFS Mounts on remote host]]):
 
 ```bash
@@ -16,5 +18,17 @@ showmount -e
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 #cat nfs.results.msf |grep -|cut -d'-' -f2|cut -d]]
+
+
+
+
+
+

@@ -22,3 +22,5 @@ or in the Cloud Console
 PS C> IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/cyberark/SkyArk/master/AWStealth/AWStealth.ps1')  
 PS C> Scan-AWShadowAdmins
 ```
+
+

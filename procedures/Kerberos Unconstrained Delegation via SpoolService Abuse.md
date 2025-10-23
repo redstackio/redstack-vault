@@ -38,11 +38,15 @@ To abuse the SpoolService, we will first check if it is running on the target sy
 
 This attack can be devastating to an organization as it can lead to the compromise of sensitive data and the creation of persistent backdoors.
 
+ 
+
 ## Requirements
 
 1. Access to a system with SpoolService running
 
 1. Credentials with unconstrained delegation privilege
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This attack can be devastating to an organization as it can lead to the compromi
 
 1. Implement network segmentation to limit the impact of lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive resources on the target network
@@ -60,14 +66,24 @@ This attack can be devastating to an organization as it can lead to the compromi
 
 1. Create persistent backdoors for future access
 
+ 
+
 # Instructions
 
 1. To check if the spool service is running on a remote host, run the following command:
 
+ 
+
+
+
 **Code**: [[ls \\dc01\pipe\spoolss
 python rpcdump.py DOMAIN/us]]
 
+
+
 > This command will list the contents of the spoolss pipe on the remote host and then use rpcdump to query the spooler service for information. If the service is running, you will receive a response. If the service is not running, you will receive an error message.
+
+
 
 **Command** ([[List files in spoolss pipe and run rpcdump]]):
 
@@ -75,6 +91,8 @@ python rpcdump.py DOMAIN/us]]
 ls \\dc01\pipe\spoolss
 python rpcdump.py DOMAIN/user:password@10.10.10.10
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +117,5 @@ python rpcdump.py DOMAIN/user:password@10.10.10.10
 - [[Kerberos Unconstrained Delegation]]
 - [[SpoolService Abuse with Unconstrained Delegation]]
 - [[SpoolService status]]
+
+

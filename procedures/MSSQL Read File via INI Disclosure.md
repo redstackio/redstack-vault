@@ -37,6 +37,8 @@ Technical Explanation: This attack takes advantage of a SQL injection vulnerabil
 
 Business Value: An attacker can use this attack to gain access to sensitive information that can be used to further compromise the network. This information can be used to gain access to additional systems and data within the network, which can result in data theft, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MSSQL server
@@ -44,6 +46,8 @@ Business Value: An attacker can use this attack to gain access to sensitive info
 1. Knowledge of SQL injection techniques
 
 1. Access to the Bulk Data Processing, Bulk Operations Administration, and Windows INI File Disclosure commands
+
+ 
 
 ## Defense
 
@@ -53,31 +57,55 @@ Business Value: An attacker can use this attack to gain access to sensitive info
 
 1. Restrict access to MSSQL servers to trusted users and systems
 
+ 
+
 ## Objectives
 
 1. Locate and read the contents of an INI file
 
 1. Gather sensitive information such as database credentials and server names
 
+ 
+
 # Instructions
 
 1. bulk process command allows for the processing of large amounts of data at once.
 
+ 
+
+
+
 **Code**: [[BULK]]
+
+
 
 > This command is particularly useful when dealing with large datasets that need to be processed in batches. It allows for the efficient handling of large volumes of data, reducing processing time and increasing overall efficiency. The command takes in multiple arguments, including the size of the batches, the location of the data, and the type of processing to be performed. It is important to note that proper planning and testing should be done before implementing this command to ensure that it is being used effectively and efficiently.
 
 2. Use this command to perform bulk operations on multiple items at once.
 
+ 
+
+
+
 **Code**: [[ADMINISTER BULK OPERATIONS]]
+
+
 
 > This command allows you to perform actions on multiple items at once, which can save time and effort when dealing with large amounts of data. To use this command, you will need to provide a list of the items you want to perform the action on, as well as the action you want to perform. The specific syntax for this command will depend on the action you want to perform, so refer to the documentation for more information.
 
 3. Use this command to perform bulk operations on your database.
 
+ 
+
+
+
 **Code**: [[ADMINISTER DATABASE BULK OPERATIONS]]
 
+
+
 > This command is used to execute bulk operations on your database. It can be used to perform tasks such as importing large amounts of data, exporting data, and deleting large amounts of data. The command requires specific arguments to be provided, such as the name of the table or file to be operated on, and the type of operation to be performed. Please refer to the documentation for the specific arguments required for each operation.
+
+
 
 **Command** ([[Check if database is in bulk-logged recovery model]]):
 
@@ -87,11 +115,19 @@ GO
 SELECT [name], [recovery_model_desc] FROM sys.databases WHERE [name] = 'database_name'
 ```
 
+
+
+
+
 **Command** ([[Switch database to bulk-logged recovery model]]):
 
 ```bash
 ALTER DATABASE database_name SET RECOVERY BULK_LOGGED
 ```
+
+
+
+
 
 **Command** ([[Switch database back to full recovery model]]):
 
@@ -99,9 +135,17 @@ ALTER DATABASE database_name SET RECOVERY BULK_LOGGED
 ALTER DATABASE database_name SET RECOVERY FULL
 ```
 
+
+
 4. This command is used to disclose the contents of the Windows INI file. It uses the SQL injection technique to execute the OpenRowset function to read the contents of the file. The 'BULK' keyword specifies the file path and the 'SINGLE_CLOB' keyword specifies that the file contents should be returned as a single character large object (CLOB).
 
+ 
+
+
+
 **Code**: [[-1 union select null,(select x from OpenRowset(BUL]]
+
+
 
 > The 'union select' statement is used to combine the results of two SELECT statements into a single result set. In this case, the first SELECT statement selects null values for the first and third columns, and the second SELECT statement reads the contents of the win.ini file and returns them as a CLOB object. The null values in the first and third columns are used to fill the remaining columns in the result set.
 
@@ -127,3 +171,5 @@ ALTER DATABASE database_name SET RECOVERY FULL
 
 - [[MSSQL Injection]]
 - [[MSSQL Read file]]
+
+

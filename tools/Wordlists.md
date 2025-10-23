@@ -16,3 +16,7 @@ This package contains the rockyou wordlist and contains symlinks to a number of 
 ## Description
 
 This package contains the rockyou wordlist and contains symlinks to a number of other password files present in the Kali Linux distribution. This package has an installation size of 134 MB.Wordlists Homepage | Kali Wordlists Repo
+
+
+
+

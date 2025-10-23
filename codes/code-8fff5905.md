@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:31.730156+00:00'
 ```bash
 Get-AzureADMSGroup | ?{$_.GroupTypes -eq 'DynamicMembership'}
 ```
+
+

@@ -28,11 +28,15 @@ From a technical perspective, this technique works by exploiting a vulnerability
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive information that can be used to further compromise the system. This can lead to data theft, financial loss, and reputational damage for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Java application
 
 1. Knowledge of the file path to the target file
+
+ 
 
 ## Defense
 
@@ -42,11 +46,15 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive files on the target system
 
 1. Bypass security measures implemented in Java applications
+
+ 
 
 # Instructions
 
@@ -55,8 +63,14 @@ From a business perspective, this technique can be used by attackers to gain acc
 url:file:///etc/passwd
 url:http://127.0.0.1:8080
 
+ 
+
+
+
 **Code**: [[url:file:///etc/passwd
 url:http://127.0.0.1:8080]]
+
+
 
 > This command uses the file:/// protocol to access the /etc/passwd file on the target system. By encoding the file path in this way, an attacker can bypass the security measures implemented in the Java application. The second URL is used to redirect the output of the file to the attacker's system.
 
@@ -65,3 +79,5 @@ url:http://127.0.0.1:8080]]
 - [[Basic Exploitation]]
 - [[Directory Traversal]]
 - [[Java Bypass]]
+
+

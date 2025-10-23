@@ -23,9 +23,13 @@ Get-ChildItem -Recurse | Where Name -Match "$_REGEX"
 ```
 PS C:\Users > Get-ChildItem -Recurse | Where Name -Match "^secret.*"
 
+
     Directory: C:\Users\Bob\Desktop
+
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        4/24/2020  11:23 AM              0 secretdocument.txt
 ```
+
+

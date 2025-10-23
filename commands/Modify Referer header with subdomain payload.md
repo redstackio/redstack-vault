@@ -7,6 +7,7 @@ data: 'Open https://trusted.domain.com.attacker.com/csrf.html
 
   The Referer header is modified to include the subdomain payload.
 
+
   Referer: https://trusted.domain.com.attacker.com/csrf.html'
 output: null
 created_at: '2023-04-06T03:55:55.678440+00:00'
@@ -21,3 +22,5 @@ The Referer header is modified to include the subdomain payload.
 
 Referer: https://trusted.domain.com.attacker.com/csrf.html
 ```
+
+

@@ -15,11 +15,23 @@ updated_at: '2023-06-08T15:06:52.608185+00:00'
 
 Using Linux's find tool to search for interesting and important files in a Linux environment.
 
+
+
+
+
+
+
 **Command** ([[find Search for Files with SUID Rights]]):
 
 ```bash
 find $_DIRECTORY -perm -4000 -ls 2>/dev/null
 ```
+
+
+
+
+
+
 
 **Command** ([[find Search for Files with Wildcards]]):
 
@@ -27,11 +39,25 @@ find $_DIRECTORY -perm -4000 -ls 2>/dev/null
 find $_DIRECTORY -iname "*$_WORD*" -ls 2>/dev/null
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[find Search for Files and Execute a Command on Each Result]]):
 
 ```bash
 find $_DIRECTORY -exec $_CMD $_ARG1 $_ARG2 {} \; 2>/dev/null
 ```
+
+
+
+
+
+
 
 **Command** ([[find Search for Writable Files by User]]):
 
@@ -39,14 +65,34 @@ find $_DIRECTORY -exec $_CMD $_ARG1 $_ARG2 {} \; 2>/dev/null
 find $_DIRECTORY -user $_USER -writable ! -type l 2>/dev/null
 ```
 
+
+
+
+
+
+
 **Command** ([[find Search for Multiple Files by Name]]):
 
 ```bash
 find $_DIRECTORY -name $_FILE1 -o name $_FILE2 -o -name $_FILE3 2>/dev/null
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Search for Files Modified Within 60 Minutes]]):
 
 ```bash
 find / -ctime -60
 ```
+
+
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:04.119655+00:00'
 ```bash
 aws iam list-groups-for-user --user-name user-name
 ```
+
+

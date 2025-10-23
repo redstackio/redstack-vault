@@ -39,9 +39,13 @@ An attacker can abuse Active Directory ACLs/ACEs to force a password reset for a
 
 This technique can be used to escalate privileges and gain access to sensitive information within an organization. It requires a good understanding of Active Directory and the permissions required to modify ACLs/ACEs.
 
+ 
+
 ## Requirements
 
 1. Access to an account with permissions to modify ACLs/ACEs in Active Directory
+
+ 
 
 ## Defense
 
@@ -51,20 +55,32 @@ This technique can be used to escalate privileges and gain access to sensitive i
 
 1. Implement multi-factor authentication to prevent unauthorized password resets
 
+ 
+
 ## Objectives
 
 1. Escalate privileges within an organization
 
 1. Gain access to sensitive information within an organization
 
+ 
+
 # Instructions
 
 1. Use either rpcclient or bloodyAD to change the password of a target user. In rpcclient, use the setuserinfo2 command with the target user and new password. In bloodyAD, use the changePassword command with the target user and new password. Make sure to provide the correct domain, attacker user credentials, and DC IP address if using bloodyAD with pass-the-hash.
 
+ 
+
+
+
 **Code**: [[# Using rpcclient from the  Samba software suite
 r]]
 
+
+
 > The commands in this JSON object are used to change the password of a target user in a Windows domain. This is useful for lateral movement and privilege escalation. The rpcclient command is part of the Samba software suite and can be used to interact with Windows systems that have SMB enabled. The bloodyAD tool is a Python script that can be used to interact with Active Directory environments. Both commands require the attacker to have valid credentials for an account with permission to change the password of the target user. The target user's password will be changed to the value provided in the target_newpwd argument.
+
+
 
 **Command** ([[Using rpcclient from the Samba software suite]]):
 
@@ -72,11 +88,17 @@ r]]
 rpcclient -U 'attacker_user%my_password' -W DOMAIN -c "setuserinfo2 target_user 23 target_newpwd"
 ```
 
+
+
+
+
 **Command** ([[Using bloodyAD with pass-the-hash]]):
 
 ```bash
 bloodyAD.py --host [DC IP] -d DOMAIN -u attacker_user -p :B4B9B02E6F09A9BD760F388B67351E2B changePassword target_user target_newpwd
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +126,5 @@ bloodyAD.py --host [DC IP] -d DOMAIN -u attacker_user -p :B4B9B02E6F09A9BD760F38
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[ForceChangePassword]]
+
+

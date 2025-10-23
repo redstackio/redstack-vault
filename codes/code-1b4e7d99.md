@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:28.480455+00:00'
 ```sql
 CASE WHEN (SELECT hex(substr(sql,1,1)) FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%' limit 1 offset 0) = hex('some_char') THEN <order_element_1> ELSE <order_element_2> END
 ```
+
+

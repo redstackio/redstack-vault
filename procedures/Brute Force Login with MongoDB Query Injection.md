@@ -32,6 +32,8 @@ From a technical perspective, this attack works by injecting malicious code into
 
 From a business perspective, this attack can result in the theft of sensitive data, financial loss, and damage to the reputation of the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
@@ -39,6 +41,8 @@ From a business perspective, this attack can result in the theft of sensitive da
 1. Knowledge of the login process and MongoDB query syntax
 
 1. Tools for crafting and sending POST requests with JSON bodies
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this attack can result in the theft of sensitive da
 
 1. Monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a system
@@ -56,14 +62,22 @@ From a business perspective, this attack can result in the theft of sensitive da
 
 1. Perform unauthorized actions
 
+ 
+
 # Instructions
 
 1. This script performs a brute force login attack using MongoDB query injection. It uses a loop to iterate through the printable ASCII characters except for '*', '+', '.', '?', and '|'. It then constructs a payload that queries the MongoDB database for a matching username and password. The password is constructed one character at a time and tested against the server until a successful login is found.
+
+ 
+
+
 
 **Code**: [[import requests
 import urllib3
 import string
 impor]]
+
+
 
 > The script requires the requests, urllib3, string, and urllib modules. The username and initial password are set in the script. The script sends a POST request to the login page with a payload that queries the MongoDB database for a matching username and password. The password is constructed one character at a time and tested against the server until a successful login is found. The script prints each character as it is found and adds it to the password variable until the full password is discovered.
 
@@ -82,3 +96,5 @@ impor]]
 - [[Blind NoSQL]]
 - [[NoSQL Injection]]
 - [[POST with JSON body]]
+
+

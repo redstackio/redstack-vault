@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:52.647009+00:00'
 ```bash
 sketchtool export artboards file.sketch --output=/path/to/output/folder/ --formats=png
 ```
+
+

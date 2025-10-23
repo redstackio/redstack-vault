@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # lookupsid.py
 
+
+
 **Command** ([[get sid via rpc]]):
 
 ```bash
 /opt/impacket/examples/lookupsid.py username:password@target-ip
 
 ```
+
+
+
+
+
+

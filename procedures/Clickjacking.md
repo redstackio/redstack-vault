@@ -27,13 +27,43 @@ Clickjacking can be tested by loading an application within an iframe in any oth
 
 Clickjacking can be tested by loading an application within an *iframe* in any other website.
 
+
+
 # Instructions
 
 # 
 
 1. Following similar code in the screenshot can be used to load the application in an *iframe*. The highlighted code contains the *iframe* tag with *src* parameter accepting the application URL. Save the code as HTML file.
 
+
+
+
+
+
+
+![3361a57a-5629-48d4-9a88-2c6850d1f278.png](_assets/images/Mash/3361a57a-5629-48d4-9a88-2c6850d1f278.png)
+
+
+
+
+
 2. Open the HTML file in the browser and observe that the application is loading in an *iframe*.
+
+
+
+
+
+
+
+![e8554df6-6ef9-42e9-8db8-4bad244f80d1.png](_assets/images/Mash/e8554df6-6ef9-42e9-8db8-4bad244f80d1.png)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -43,3 +73,5 @@ Clickjacking can be tested by loading an application within an *iframe* in any o
 
 - [[Clickjacking]]
 - [[Web Applications]]
+
+

@@ -30,9 +30,13 @@ This procedure involves manually querying the SQL Server to retrieve the name of
 
 This procedure involves manually querying the SQL Server to retrieve the name of the current database. This information can be used to identify the target's environment and plan further attacks. To retrieve the current database name, the attacker can use the 'Retrieve Current Database Name' command. This technique can be used as part of the initial reconnaissance phase of an attack.
 
+ 
+
 ## Requirements
 
 1. Access to the SQL Server.
+
+ 
 
 ## Defense
 
@@ -42,23 +46,37 @@ This procedure involves manually querying the SQL Server to retrieve the name of
 
 1. Regularly review and update the security policies and configurations of the SQL Server.
 
+ 
+
 ## Objectives
 
 1. Retrieve the name of the current database on the target SQL Server.
+
+ 
 
 # Instructions
 
 1. This command retrieves the name of the current database being used.
 
+ 
+
+
+
 **Code**: [[select db_name()]]
 
+
+
 > The 'select db_name()' command is used to retrieve the name of the current database being used. This can be useful when working with multiple databases and needing to ensure that the correct database is being used for a given task.
+
+
 
 **Command** ([[Select current database name]]):
 
 ```bash
 select db_name()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -79,3 +97,5 @@ select db_name()
 - [[Current DB]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

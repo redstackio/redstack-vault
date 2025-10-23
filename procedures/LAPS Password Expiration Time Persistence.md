@@ -34,9 +34,13 @@ LAPS (Local Administrator Password Solution) is a Microsoft tool that periodical
 
 LAPS (Local Administrator Password Solution) is a Microsoft tool that periodically randomizes the local administrator password on domain-joined computers. By default, the LAPS password expiration time is set to 30 days. An attacker who gains access to a domain-joined computer can change the LAPS password expiration time to maintain persistence on the system. This technique is useful for maintaining access to a network even if the attacker's original method of access is discovered and remediated. To accomplish this technique, the attacker can use the 'Set LAPS Password Expiration Time' command.
 
+ 
+
 ## Requirements
 
 1. Access to a domain-joined computer
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ LAPS (Local Administrator Password Solution) is a Microsoft tool that periodical
 
 1. Limit access to domain-joined computers to authorized personnel only
 
+ 
+
 ## Objectives
 
 1. Maintain persistence on a compromised domain-joined computer
 
 1. Maintain access to a network even if the attacker's original method of access is discovered and remediated
 
+ 
+
 # Instructions
 
 1. Use the Set-DomainObject command to set the ms-mcs-admpwdexpirationtime attribute to a future date on the target machine.
 
+ 
+
+
+
 **Code**: [[Set-DomainObject -Identity <target_machine> -Set @]]
 
+
+
 > This command sets the expiration time for the LAPS password of the target machine to a future date. This will prevent the machine from updating its password until the expiration time is reached. The -Identity parameter specifies the target machine and the -Set parameter sets the value of the ms-mcs-admpwdexpirationtime attribute to the specified date. The date should be in the format of a 64-bit integer representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).
+
+
 
 **Command** ([[Set Domain Object ms-mcs-admpwdexpirationtime]]):
 
 ```bash
 Set-DomainObject -Identity <target_machine> -Set @{\"ms-mcs-admpwdexpirationtime\"=\"232609935231523081\"}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +108,5 @@ Set-DomainObject -Identity <target_machine> -Set @{\"ms-mcs-admpwdexpirationtime
 - [[Domain]]
 - [[LAPS Persistence]]
 - [[Windows - Persistence]]
+
+

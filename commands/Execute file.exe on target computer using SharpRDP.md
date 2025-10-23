@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:38:03.093770+00:00'
 ```bash
 SharpRDP.exe computername=target.domain command="C:\Temp\file.exe" username=domain\user password=password
 ```
+
+

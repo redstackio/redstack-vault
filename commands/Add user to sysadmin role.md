@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:39.400786+00:00'
 ```bash
 EXEC master.dbo.sp_addsrvrolemember 'user', 'sysadmin';
 ```
+
+

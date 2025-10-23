@@ -32,6 +32,8 @@ PostgreSQL Time Based Injection for Database Dump is a method of injecting malic
 
 PostgreSQL Time Based Injection for Database Dump is a method of injecting malicious SQL queries into a PostgreSQL database in order to extract sensitive data. This technique is used to bypass security measures and gain access to a target's database. By using the 'Database Sleep' command, an attacker can delay the response of the database, allowing them to extract data in a time-based manner. This technique can be used to dump the entire contents of a database or extract specific data, such as usernames and passwords. The business value of this technique is that it can be used to steal sensitive information from a target, which can be sold or used for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target's PostgreSQL database
@@ -39,6 +41,8 @@ PostgreSQL Time Based Injection for Database Dump is a method of injecting malic
 1. Knowledge of SQL injection techniques
 
 1. Ability to execute the 'Database Sleep' command
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ PostgreSQL Time Based Injection for Database Dump is a method of injecting malic
 
 1. Monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from a target's database
@@ -56,11 +62,19 @@ PostgreSQL Time Based Injection for Database Dump is a method of injecting malic
 
 1. Extract specific data, such as usernames and passwords
 
+ 
+
 # Instructions
 
 1. This command is used to cause a delay in the database server. The argument passed to the substring function determines the condition for the delay. If the first character of the database name is '1', then the delay will be for 5 seconds, else there will be no delay. The limit clause is used to limit the result to one row.
 
+ 
+
+
+
 **Code**: [[select case when substring(datname,1,1)='1' then p]]
+
+
 
 > The command selects the first database from the pg_database table and checks if the first character of its name is '1'. If it is, then the command sleeps for 5 seconds, else it sleeps for 0 seconds. This command can be used for testing the performance of the database server under heavy load or to simulate a slow query.
 
@@ -82,3 +96,5 @@ PostgreSQL Time Based Injection for Database Dump is a method of injecting malic
 - [[Identify time based]]
 - [[PostgreSQL injection]]
 - [[PostgreSQL Time Based]]
+
+

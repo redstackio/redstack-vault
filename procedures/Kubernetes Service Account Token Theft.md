@@ -38,6 +38,8 @@ Technical Explanation: Kubernetes service account tokens are stored in the file 
 
 Business Value: An attacker who gains access to a Kubernetes service account token can compromise the entire cluster and steal sensitive data. This can lead to significant financial and reputational damage for the organization.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes cluster
@@ -45,6 +47,8 @@ Business Value: An attacker who gains access to a Kubernetes service account tok
 1. Knowledge of Kubernetes components and pods
 
 1. Ability to execute commands within a pod
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ Business Value: An attacker who gains access to a Kubernetes service account tok
 
 1. Monitor the Kubernetes API server for unauthorized access and actions
 
+ 
+
 ## Objectives
 
 1. Steal Kubernetes service account tokens
@@ -62,19 +68,31 @@ Business Value: An attacker who gains access to a Kubernetes service account tok
 
 1. Perform unauthorized actions within the cluster
 
+ 
+
 # Instructions
 
 1. Use this token to authenticate with the Kubernetes API server
 
+ 
+
+
+
 **Code**: [[/var/run/secrets/kubernetes.io/serviceaccount/toke]]
 
+
+
 > This token is used to authenticate requests to the Kubernetes API server. It is automatically mounted into pods that are created with a service account. The token can be used to authenticate requests to the API server from within the pod or from outside the cluster (if the API server is exposed externally).
+
+
 
 **Command** ([[Retrieve Kubernetes Service Account Token]]):
 
 ```bash
 /var/run/secrets/kubernetes.io/serviceaccount/token
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +119,5 @@ Business Value: An attacker who gains access to a Kubernetes service account tok
 
 - [[Container - Kubernetes Pentest]]
 - [[Obtaining Service Account Token]]
+
+

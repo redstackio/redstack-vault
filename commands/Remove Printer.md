@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:34.442831+00:00'
 ```bash
 Remove-Printer -Name '\\printer-installed-host\EasySystemShell - x64' -ErrorAction SilentlyContinue
 ```
+
+

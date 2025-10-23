@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:21.842401+00:00'
 ```javascript
 {__type (name: "User") {name fields{name type{name kind ofType{name kind}}}}}
 ```
+
+

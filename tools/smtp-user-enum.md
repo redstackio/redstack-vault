@@ -24,11 +24,27 @@ smtp-user-enum is a tool for OS-level user enumeration through the SMTP service 
 
 smtp-user-enum is a tool for OS-level user enumeration through the SMTP service (sendmail). Enumeration is performed by inspecting the responses to VRRF, EXPN, and RCPT TO commands.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_920b73aa-c17e-4592-9230-231795f7aaa4}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -42,3 +58,5 @@ smtp-user-enum is a tool for OS-level user enumeration through the SMTP service 
 
 - [[Enumeration]]
 - [[Network]]
+
+

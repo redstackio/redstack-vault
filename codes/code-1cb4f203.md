@@ -17,3 +17,5 @@ https://website.mil/plugins/servlet/oauth/users/icon-uri?consumerUri= -> simple 
 
 https://website.mil/plugins/servlet/oauth/users/icon-uri?consumerUri=http://brutelogic.com.br/poc.svg
 ```
+
+

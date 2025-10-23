@@ -29,9 +29,15 @@ Embed a file within an image (or audio file) using steganography, effectively hi
 
 Embed a file within an image (or audio file) using steganography, effectively hiding the original file within an image/audio which appears innocent. In most cases, the only noticeable differences are file size and occasionally the quality.
 
+
+
 # Instructions
 
 Select a cover file and embedded file. For this example, an image will be used to hide  an SSH public key.
+
+
+
+
 
 **Command** ([[Steghide Embed a File in an Image]]):
 
@@ -39,7 +45,17 @@ Select a cover file and embedded file. For this example, an image will be used t
 steghide embed -ef $_EMBEDDED -cf $_COVER
 ```
 
+
+
+
+
 Final image using a password of 'secret'.
+
+
+
+![50bc6f59-b52a-472a-88bc-58dcccc906ac.jpg](_assets/images/Mark/50bc6f59-b52a-472a-88bc-58dcccc906ac.jpg)
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -59,3 +75,5 @@ Final image using a password of 'secret'.
 
 - [[Cryptography]]
 - [[data encryption]]
+
+

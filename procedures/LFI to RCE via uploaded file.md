@@ -30,11 +30,15 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to achieve Remote Code Execution (RCE) by uploading a file with a malicious payload. LFI vulnerabilities occur when an application allows user input to be included in a file path without proper validation. Attackers can exploit these vulnerabilities to include and execute arbitrary files, such as a malicious PHP file, which can then be used to execute code on the target system. By uploading a file with a malicious payload, attackers can bypass any input validation and execute arbitrary code on the target system. This procedure can be used to gain unauthorized access to sensitive data, escalate privileges or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to an application with a LFI vulnerability
 
 1. Ability to upload files to the target system
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 1. Monitor system logs for any suspicious activity, such as unusual file uploads or system commands.
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive data
@@ -52,17 +58,31 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 1. Execute arbitrary code on the target system
 
+ 
+
 # Instructions
 
 1. Upload a file with a malicious payload, such as a PHP file with a system command to execute arbitrary code.
 
+ 
+
+
+
 **Code**: [[<?php system($_GET['c']); ?>]]
+
+
 
 > The payload can be injected into a file that is uploaded to the target system. The payload should contain a system command that can be executed by the server. The command can be executed by accessing the uploaded file with the appropriate parameter, such as file.png?c=command.
 
 2. Execute the uploaded file by accessing it through the application.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=path/to/uploaded]]
+
+
 
 > The uploaded file can be executed by accessing it through the application. The URL should include the path to the uploaded file.
 
@@ -85,3 +105,5 @@ This procedure involves exploiting a Local File Inclusion (LFI) vulnerability to
 
 - [[File Inclusion]]
 - [[LFI to RCE via upload]]
+
+

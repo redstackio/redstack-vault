@@ -37,11 +37,15 @@ Git repositories often contain sensitive information such as passwords, API keys
 
 Git repositories often contain sensitive information such as passwords, API keys, and other secrets. Trufflehog is a tool that can be used to search Git repositories for secrets by performing a regex search on the contents of each file in a repository's commit history. This tool can be used by attackers to harvest credentials and other sensitive information that may be stored in a repository. By using trufflehog, an attacker can quickly and easily identify secrets that have been accidentally committed to a repository, or that have been added to a repository by a developer who is not following best practices for secure coding. This tool can also be used by defenders to identify sensitive information that may have been accidentally committed to a repository and to remediate the issue before an attacker can exploit it.
 
+ 
+
 ## Requirements
 
 1. Access to a Git repository
 
 1. Installation of trufflehog tool
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Git repositories often contain sensitive information such as passwords, API keys
 
 1. Implement access controls to prevent unauthorized access to Git repositories.
 
+ 
+
 ## Objectives
 
 1. Identify sensitive information that has been accidentally committed to a Git repository.
@@ -59,15 +65,25 @@ Git repositories often contain sensitive information such as passwords, API keys
 
 1. Remediate any issues identified by trufflehog to prevent attackers from exploiting sensitive information.
 
+ 
+
 # Instructions
 
 1. 1. Install trufflehog by running the command 'pip install truffleHog' in a terminal window.
 2. Run the trufflehog command, specifying the repository URL as an argument. For example, 'truffleHog --regex --entropy=False https://github.com/dxa4481/truffleHog.git'.
 3. Review the output of the trufflehog command to identify any sensitive information that has been committed to the repository.
 
+ 
+
+
+
 **Code**: [[pip install truffleHog # https://github.com/dxa448]]
 
+
+
 > The trufflehog tool searches the contents of each file in a Git repository's commit history for strings that match a regular expression. The --regex option specifies that a regex search should be performed, and the --entropy=False option specifies that entropy analysis should not be performed. The repository URL is provided as an argument to the trufflehog command.
+
+
 
 **Command** ([[Install truffleHog]]):
 
@@ -75,11 +91,17 @@ Git repositories often contain sensitive information such as passwords, API keys
 pip install truffleHog # https://github.com/dxa4481/truffleHog
 ```
 
+
+
+
+
 **Command** ([[Run truffleHog]]):
 
 ```bash
 truffleHog --regex --entropy=False https://github.com/dxa4481/truffleHog.git
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +129,5 @@ truffleHog --regex --entropy=False https://github.com/dxa4481/truffleHog.git
 - [[Insecure Source Code Management]]
 - [[Tools]]
 - [[trufflehog]]
+
+

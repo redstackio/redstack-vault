@@ -32,6 +32,7 @@ Seatbelt.exe all
 ```
 PS C:\Users\public\Downloads> .\SeatBelt.exe all
 
+
                         %&&@@@&&
                         &&&&&&&%%%,                       #&&@@@@@@%%%%%%###############%
                         &%&   %&%%                        &////(((&%%%%%#%################//((((###%%%%%%%%%%%%%%%
@@ -46,5 +47,9 @@ PS C:\Users\public\Downloads> .\SeatBelt.exe all
                         &%%&&&%%%%%        v0.2.0         ,(((&%%%%%%%%%%%%%%%%%,
                          #%%%%##,
 
+
+
 === Running System Triage Checks ===
 ```
+
+

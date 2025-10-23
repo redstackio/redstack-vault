@@ -29,11 +29,19 @@ Dirb tool is used in enumerating the directories within an application. Dirb com
 
 Dirb tool is used in enumerating the directories within an application. Dirb comes pre-installed in Kali Linux OS. 
 
+
+
 # Instructions
 
 # 
 
 1. Following *dirb* command can be used to enumerate the directories. The highlighted list are the enumerated directories (admin, css, images, invoices, js, uploads).
+
+
+
+
+
+
 
 **Command** ([[Dirb directory brute force]]):
 
@@ -41,7 +49,29 @@ Dirb tool is used in enumerating the directories within an application. Dirb com
 dirb http:/$_TARGET_IP $_WORDLIST -r
 ```
 
+
+
+
+
+
+
+
+
 2. One of the enumerated directories is accessed in the browser to check the existence.
+
+
+
+
+
+![48a760ae-ea76-4c8a-b0b4-9384b1241d8d.png](_assets/images/Mash/48a760ae-ea76-4c8a-b0b4-9384b1241d8d.png)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +85,5 @@ dirb http:/$_TARGET_IP $_WORDLIST -r
 
 - [[Directory Listing]]
 - [[Web Applications]]
+
+

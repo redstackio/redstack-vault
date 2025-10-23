@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:09.591812+00:00'
 ```bash
 pywhisker.py -d "FQDN_DOMAIN" -u "user1" -p "CERTIFICATE_PASSWORD" --target "TARGET_SAMNAME" --action "add"
 ```
+
+

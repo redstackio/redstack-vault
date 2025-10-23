@@ -31,11 +31,15 @@ This procedure aims to restore a service account's privileges via impersonation.
 
 This procedure aims to restore a service account's privileges via impersonation. Service accounts often have elevated privileges to perform specific tasks, and attackers may attempt to compromise these accounts to gain elevated access. By impersonating the service account, the attacker can restore any lost privileges and gain further access to the system. This technique can be used to escalate privileges on a compromised system, and can also be used to move laterally within a network.
 
+ 
+
 ## Requirements
 
 1. User must have administrative access to the compromised system
 
 1. FullPowers Command must be available on the system
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This procedure aims to restore a service account's privileges via impersonation.
 
 1. Implement multi-factor authentication for service accounts to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Restore privileges to a compromised service account
@@ -53,13 +59,21 @@ This procedure aims to restore a service account's privileges via impersonation.
 
 1. Move laterally within a network
 
+ 
+
 # Instructions
 
 1. FullPowers is a tool that allows you to execute commands with system privileges on Windows. Use the -c flag to specify the command to execute with system privileges. Use the -z flag to execute the command in a new process with a new token. 
 
+ 
+
+
+
 **Code**: [[# https://github.com/itm4n/FullPowers
 
 c:\TOOLS>Fu]]
+
+
 
 > The FullPowers tool is used to execute commands with system privileges on Windows. The -c flag is used to specify the command to execute with system privileges. The -z flag is used to execute the command in a new process with a new token. This tool can be used to obtain admin privileges or read sensitive files. For more information on how to leverage FullPowers to obtain admin privileges, please refer to the Full Privileges Cheat Sheet available at https://github.com/gtworek/Priv2Admin.
 
@@ -81,3 +95,5 @@ c:\TOOLS>Fu]]
 - [[EoP - Impersonation Privileges]]
 - [[Restore A Service Account's Privileges]]
 - [[Windows - Privilege Escalation]]
+
+

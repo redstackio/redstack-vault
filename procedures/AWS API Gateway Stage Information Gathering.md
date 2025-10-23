@@ -34,6 +34,8 @@ Technical Description: The procedure involves using the 'Get API Gateway Stage' 
 
 Business Value: By obtaining information about a specific version of an API Gateway, an attacker can gain valuable insights into the API's functionality and configuration. This information can be used to plan further attacks against the API or other components of the AWS environment, potentially leading to data theft, system compromise, or financial loss.
 
+ 
+
 ## Requirements
 
 1. Valid authentication credentials for the AWS environment
@@ -41,6 +43,8 @@ Business Value: By obtaining information about a specific version of an API Gate
 1. Access to the AWS environment
 
 1. Use of the 'Get API Gateway Stage' command
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: By obtaining information about a specific version of an API Gate
 
 1. Implement monitoring and logging solutions to detect and respond to any unauthorized access or activity in the AWS environment
 
+ 
+
 ## Objectives
 
 1. Obtain information about a specific version of an API Gateway in AWS
@@ -58,17 +64,25 @@ Business Value: By obtaining information about a specific version of an API Gate
 
 1. Plan further attacks against the API or other components of the AWS environment
 
+ 
+
 # Instructions
 
 1. To get information about a specific stage in an API Gateway, use the following command:
 
+ 
+
 The 'aws apigateway get-stage' command is used to retrieve information about a specific stage in an API Gateway. The 'res-api-id' parameter specifies the ID of the REST API that the stage belongs to, and the 'stage-name' parameter specifies the name of the stage to retrieve information about. This command can be useful for retrieving information such as the deployment ID, description, and created date of a stage. 
+
+
 
 **Command** ([[Get API Gateway Stage]]):
 
 ```bash
 aws apigateway get-stage --res-api-id ID --stage-name NAME
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws apigateway get-stage --res-api-id ID --stage-name NAME
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Getting information about a specific version]]
+
+

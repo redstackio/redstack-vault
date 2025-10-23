@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:09.532567+00:00'
 ```bash
 SELECT DISTINCT owner FROM all_tables;
 ```
+
+

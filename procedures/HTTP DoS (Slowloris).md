@@ -30,9 +30,23 @@ Description
 
 Slowloris DoS techniques involves a techniques where it opens multiple socket connections to the target and keep them open as long as possible. It will send partial HTTP requests which are never completed.The server opens multiple connections waiting for each connection to be completed, thus exhausting the resources of the server.
 
+
+
+
+
 Instructions
 
+
+
+
+
 1. Slowloris can be installed with the follwoing command on linux machine uaing git clone.
+
+
+
+
+
+
 
 **Command** ([[Clone slowloris]]):
 
@@ -40,7 +54,23 @@ Instructions
 git clone https://github.com/gkbrk/slowloris.git
 ```
 
+
+
+
+
+
+
+
+
 2. Once installed run the following command 
+
+
+
+
+
+
+
+
 
 **Command** ([[Slowloris]]):
 
@@ -48,7 +78,11 @@ git clone https://github.com/gkbrk/slowloris.git
 python3 slowloris.py [website url] -s [number of sockets]
 ```
 
+
+
  3. Notice that the application's load time increases and significantly leads to DoS
+
+
 
 ## Platforms
 
@@ -63,3 +97,5 @@ python3 slowloris.py [website url] -s [number of sockets]
 
 - [[DOS]]
 - [[Web Applications]]
+
+

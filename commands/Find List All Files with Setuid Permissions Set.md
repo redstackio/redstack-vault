@@ -38,3 +38,5 @@ user@ubuntu18x64:~$ find / -perm -4000 -ls 2>/dev/null
   1180536    148 -rwsr-xr-x   1 root     root       149080 Jan 18  2018 /usr/bin/sudo
   1181285   2612 -rwsr-xr-x   1 root     root      2671240 Jun  6 17:31 /usr/bin/vim.basic
 ```
+
+

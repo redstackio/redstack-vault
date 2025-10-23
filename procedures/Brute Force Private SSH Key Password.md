@@ -32,9 +32,15 @@ SSH keys are often protected by a password as a security measure. Even with this
 
 SSH keys are often protected by a password as a security measure. Even with this precaution, without a strong password attackers who are able to copy the key can perform an offline brute force attack against the password hash.
 
+
+
 # Instructions
 
 1. Extract the password hash from the SSH key.
+
+
+
+
 
 **Command** ([[ssh2john Extract the Hash from an Encrypted SSH Private Key]]):
 
@@ -42,7 +48,15 @@ SSH keys are often protected by a password as a security measure. Even with this
 python ssh2john.py $_PRIVATE_KEY.enc > $_OUTPUT.txt
 ```
 
+
+
+
+
 2. Perform a dictionary brute force attack against the password hash
+
+
+
+
 
 **Command** ([[John the Ripper Brute Force a Hash File]]):
 
@@ -50,13 +64,27 @@ python ssh2john.py $_PRIVATE_KEY.enc > $_OUTPUT.txt
 john --wordlist=$_WORDLIST $_HASH_FILE
 ```
 
+
+
+
+
 3. (Optional) Remove the password from the original SSH key.
+
+
+
+
 
 **Command** ([[openssl Remove Passphrase from RSA Key]]):
 
 ```bash
 openssl rsa -in $_PRIVATE_KEY.enc -out $_PRIVATE_KEY
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +113,5 @@ openssl rsa -in $_PRIVATE_KEY.enc -out $_PRIVATE_KEY
 ## Tags
 
 - [[Cryptography]]
+
+

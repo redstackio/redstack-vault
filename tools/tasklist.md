@@ -29,11 +29,25 @@ Displays a list of currently running processes on the local or remote system.
 
 Displays a list of currently running processes on the local or remote system.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a73cdd95-4848-40ec-97d1-4ec5e3ea5292}}
+
+
 
 # Installation
 
 tasklist is installed with all modern versions of Windows
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +62,5 @@ tasklist is installed with all modern versions of Windows
 - [[Enumeration]]
 - [[Operating Systems]]
 - [[process]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:28.896426+00:00'
 ```bash
 python2.7 ./tplmap.py -u 'http://www.target.com/page?name=John*' --os-shell
 ```
+
+

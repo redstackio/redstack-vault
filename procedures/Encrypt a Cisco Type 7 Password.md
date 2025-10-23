@@ -32,13 +32,23 @@ Cisco Type 7 encrypted passwords use a publicly-known algorithm, making it trivi
 
 Cisco Type 7 encrypted passwords use a publicly-known algorithm, making it trivial to encrypt and decrypt passwords with third party tools.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Encrypt a Password with Cisco Type 7]]):
 
 ```bash
 python ciscot7.py -e -p '$_PASSWORD'
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -59,3 +69,5 @@ python ciscot7.py -e -p '$_PASSWORD'
 - [[cisco]]
 - [[Cryptography]]
 - [[password cracking]]
+
+

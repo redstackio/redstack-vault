@@ -31,6 +31,8 @@ Both sets of instructions below can be done in reverse to copy files or folders 
 
 1. Copy a specific file to a s3 bucket
 
+
+
 **Command** ([[aws s3 copy files to bucket]]):
 
 ```bash
@@ -38,9 +40,15 @@ aws s3 cp $FILE s3://$AWS_S3_BUCKET
 
 ```
 
+
+
+
+
 aws s3 cp <file_name> s3://<bucket_name>
 
 2. Copy a specific file to a s3 bucket folder
+
+
 
 **Command** ([[aws s3 copy files to bucket folder]]):
 
@@ -49,9 +57,15 @@ aws s3 cp $FILE s3://$AWS_S3_BUCKET/$FOLDER/
 
 ```
 
+
+
+
+
 aws s3 cp <file_name> s3://<bucket_name>/<folder_name>/
 
 3. (Optional) Copy a folder to a bucket recursively
+
+
 
 **Command** ([[aws s3 copy folder to bucket recursively]]):
 
@@ -60,9 +74,15 @@ aws s3 cp $FOLDER s3://$AWS_S3_BUCKET/ --recursive
 
 ```
 
+
+
+
+
 aws s3 cp . s3://redstack.io-bucket/ --recursive
 
 4. (Optional) Copy the current folder concents to a S3 bucket
+
+
 
 **Command** ([[aws s3 copy current folder contents to bucket recursively]]):
 
@@ -70,6 +90,10 @@ aws s3 cp . s3://redstack.io-bucket/ --recursive
 aws s3 cp . s3://$AWS_S3_BUCKET/$FOLDER --recursive --region $AWS_REGION
 
 ```
+
+
+
+
 
 aws s3 cp . s3://redstack.io-bucket/images --recursive --region us-east-1
 
@@ -79,3 +103,5 @@ aws s3 cp . s3://redstack.io-bucket/images --recursive --region us-east-1
 - [[aws s3 copy files to bucket]]
 - [[aws s3 copy files to bucket folder]]
 - [[aws s3 copy folder to bucket recursively]]
+
+

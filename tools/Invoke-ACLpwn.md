@@ -16,3 +16,7 @@ Is a tool that automates the discovery and pwnage of ACLs in Active Directory th
 ## Description
 
 Is a tool that automates the discovery and pwnage of ACLs in Active Directory that are unsafe configured. ​
+
+
+
+

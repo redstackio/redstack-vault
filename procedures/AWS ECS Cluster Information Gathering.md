@@ -31,6 +31,8 @@ The AWS ECS Cluster Information Gathering procedure aims to obtain information a
 
 The AWS ECS Cluster Information Gathering procedure aims to obtain information about a specific ECS cluster in order to identify potential attack vectors. This procedure can be used by an attacker to identify the number of instances running in a cluster, the CPU and memory usage, and the status of each service running within the cluster. This information can be used to identify vulnerabilities in the cluster and plan further attacks. From a technical perspective, this procedure involves using the 'ECS Cluster Description' command to retrieve information about the cluster. From a business perspective, this procedure can help organizations identify potential security weaknesses in their AWS infrastructure and take appropriate measures to mitigate them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the target ECS cluster
@@ -38,6 +40,8 @@ The AWS ECS Cluster Information Gathering procedure aims to obtain information a
 1. Network access to the target ECS cluster
 
 1. AWS CLI or SDK installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -47,23 +51,33 @@ The AWS ECS Cluster Information Gathering procedure aims to obtain information a
 
 1. Regularly monitor the ECS cluster for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve information about a specific AWS ECS cluster
 
 1. Identify potential attack vectors and vulnerabilities in the cluster
 
+ 
+
 # Instructions
 
 1. Use the 'aws ecs describe-clusters' command to get information about an ECS cluster.
 
+ 
+
 This command requires the name of the cluster as an argument. It will return details about the cluster, including its ARN, status, and the number and status of its container instances. This command can be useful for troubleshooting and monitoring the health of your ECS clusters.
+
+
 
 **Command** ([[Describe ECS Cluster]]):
 
 ```bash
 aws ecs describe-clusters --cluster name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws ecs describe-clusters --cluster name
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing information about an specific cluster]]
+
+

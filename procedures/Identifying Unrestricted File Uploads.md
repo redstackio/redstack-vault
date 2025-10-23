@@ -33,7 +33,33 @@ File upload functionality can be validated by uploading dangerous file extension
 
 1. Identify file upload functionality in the application. In the below screenshot *Return Product* functionality has *Upload Invoice* option. Click on the Browse button to select and upload the malicious file (shell.php). 
 
+
+
+
+
+![19f3736f-2d9c-41e5-b16e-3b17290024f3.jpg](_assets/images/Mash/19f3736f-2d9c-41e5-b16e-3b17290024f3.jpg)
+
+
+
+
+
+
+
 2. Click on Submit to upload the file to server. It can be observed that the file has been successfully uploaded.
+
+
+
+
+
+![c6285217-43ec-43c2-ab09-2aa8ac8db05c.jpg](_assets/images/Mash/c6285217-43ec-43c2-ab09-2aa8ac8db05c.jpg)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -43,3 +69,5 @@ File upload functionality can be validated by uploading dangerous file extension
 
 - [[File Uploads]]
 - [[Web Applications]]
+
+

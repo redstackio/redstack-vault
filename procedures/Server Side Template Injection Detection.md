@@ -31,6 +31,8 @@ To detect SSTI, it is recommended to use a combination of manual and automated t
 
 The business value of detecting SSTI lies in preventing potential data breaches and maintaining the integrity of the application and server. By detecting and mitigating SSTI, organizations can protect sensitive data and maintain the trust of their users.
 
+ 
+
 ## Requirements
 
 1. Access to the application
@@ -38,6 +40,8 @@ The business value of detecting SSTI lies in preventing potential data breaches 
 1. Knowledge of SSTI vulnerabilities
 
 1. Automated tools for vulnerability scanning (optional)
+
+ 
 
 ## Defense
 
@@ -47,15 +51,21 @@ The business value of detecting SSTI lies in preventing potential data breaches 
 
 1. Monitor and analyze application logs for unusual behavior or unexpected output
 
+ 
+
 ## Objectives
 
 1. Detect and mitigate SSTI vulnerabilities
 
 1. Prevent data breaches and maintain the integrity of the application and server
 
+ 
+
 # Instructions
 
 1. To use this cheatsheet, follow the instructions below:
+
+ 
 
 1. Identify the target and find out if it uses a templating engine.
 2. Choose the appropriate payload from the cheatsheet based on the engine used.
@@ -76,3 +86,5 @@ The business value of detecting SSTI lies in preventing potential data breaches 
 
 - [[Detection]]
 - [[Server Side Template Injection]]
+
+

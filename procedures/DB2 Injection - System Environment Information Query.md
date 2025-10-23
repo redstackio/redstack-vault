@@ -34,11 +34,15 @@ To execute this attack, an attacker would need to identify a vulnerability in th
 
 This attack can result in a data breach and compromise the confidentiality of sensitive information stored in the DB2 database. It can also lead to system downtime and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable DB2 database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -48,23 +52,37 @@ This attack can result in a data breach and compromise the confidentiality of se
 
 1. Monitor database activity for suspicious behavior and limit access to sensitive information.
 
+ 
+
 ## Objectives
 
 1. Obtain detailed information about the host system, including the hostname, IP address, and operating system version.
+
+ 
 
 # Instructions
 
 1. This command retrieves information about the system environment, including the operating system name, version, release, and host name. It requires privileges to execute, and can only be run from procedures or UDFs.
 
+ 
+
+
+
 **Code**: [[select os_name,os_version,os_release,host_name fro]]
 
+
+
 > The 'select' statement is used to retrieve data from the 'sysibmadm.env_sys_info' table, which contains information about the system environment. The 'os_name' column returns the name of the operating system, while 'os_version' returns the version and 'os_release' returns the release. The 'host_name' column returns the name of the host machine. Note that this command can only be executed from procedures or UDFs, and requires privileges to run.
+
+
 
 **Command** ([[Query System Information]]):
 
 ```bash
 select os_name,os_version,os_release,host_name from sysibmadm.env_sys_info -- requires priv
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ select os_name,os_version,os_release,host_name from sysibmadm.env_sys_info -- re
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Hostname/IP and OS INFO]]
+
+

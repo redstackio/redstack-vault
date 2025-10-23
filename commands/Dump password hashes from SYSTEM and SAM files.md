@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:44.223516+00:00'
 ```bash
 pwdump SYSTEM SAM > /root/sam.txt
 ```
+
+

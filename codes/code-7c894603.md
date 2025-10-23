@@ -25,3 +25,5 @@ Allow from all
 # the apache directoves from the .htaccess file
 AddType application/x-httpd-php .htaccess
 ```
+
+

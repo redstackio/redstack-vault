@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:36.294286+00:00'
 ```powershell
 wmic qfe
 ```
+
+

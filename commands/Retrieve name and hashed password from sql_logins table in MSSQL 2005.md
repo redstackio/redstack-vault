@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:43.926869+00:00'
 ```bash
 SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
 ```
+
+

@@ -20,3 +20,5 @@ updated_at: '2023-04-10T20:37:36.999118+00:00'
 - For x64 compile with: "x86_64-w64-mingw32-gcc windows_dll.c -shared -o output.dll"
 - For x86 compile with: "i686-w64-mingw32-gcc windows_dll.c -shared -o output.dll"
 ```
+
+

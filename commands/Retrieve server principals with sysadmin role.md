@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:42.521315+00:00'
 ```bash
 SELECT name,type_desc,is_disabled FROM sys.server_principals WHERE IS_SRVROLEMEMBER ('sysadmin',name) = 1
 ```
+
+

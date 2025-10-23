@@ -31,13 +31,21 @@ Using hashcat to crack asrep hash obtained from impacket or rubeus tools on DC.
 
 Using hashcat to crack asrep hash obtained from impacket or rubeus tools on DC.
 
+
+
 ## Objective
 
 1. Crack a AS-REP hash using a dictionary to obtain a password for valid credentials
 
+
+
 # Instructions
 
 ## Use hashcat to crack asrep
+
+
+
+
 
 **Command** ([[hashcat crack asrep]]):
 
@@ -45,15 +53,27 @@ Using hashcat to crack asrep hash obtained from impacket or rubeus tools on DC.
 hashcat -m 18200 --force -a 0 hashes.text password.txt
 ```
 
+
+
+
+
 ## Use john to crack asrep
 
 ## 
+
+
 
 **Command** ([[john crack asrep]]):
 
 ```bash
 john --wordlist=passwords.text hashes.text
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +91,5 @@ john --wordlist=passwords.text hashes.text
 - [[hashcat]]
 - [[john]]
 - [[password cracking]]
+
+

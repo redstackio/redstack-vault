@@ -37,11 +37,15 @@ The Azure AD Administrative Unit Management procedure is used to manage administ
 
 The Azure AD Administrative Unit Management procedure is used to manage administrative units in Azure Active Directory. Administrative units allow for granular control over the scope of administrative permissions, and can be used to delegate administrative tasks to specific users or groups. By leveraging administrative units, an attacker with compromised credentials can escalate their privileges and gain access to sensitive data or systems. This procedure involves using Azure AD Management Commands to create, modify, or delete administrative units.
 
+ 
+
 ## Requirements
 
 1. Valid Azure Active Directory credentials
 
 1. Access to Azure AD Management Commands
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ The Azure AD Administrative Unit Management procedure is used to manage administ
 
 1. Restrict access to administrative units to only those who require it
 
+ 
+
 ## Objectives
 
 1. Create, modify, or delete administrative units in Azure Active Directory
 
 1. Escalate privileges to gain access to sensitive data or systems
 
+ 
+
 # Instructions
 
 1. Fill in the details for multiple commands, instruction fields, and explain the arguments of the command in detail.
 
+ 
+
+
+
 **Code**: [[PS AzureAD> Get-AzureADMSAdministrativeUnit -Id <I]]
 
+
+
 > 
+
+
 
 **Command** ([[Retrieve administrative units in Azure AD]]):
 
@@ -71,11 +87,19 @@ The Azure AD Administrative Unit Management procedure is used to manage administ
 Get-AzureADMSAdministrativeUnit -Id <ID>
 ```
 
+
+
+
+
 **Command** ([[Retrieve administrative unit members in Azure AD]]):
 
 ```bash
 Get-AzureADMSAdministrativeUnitMember -Id <ID>
 ```
+
+
+
+
 
 **Command** ([[Retrieve scoped role membership in Azure AD]]):
 
@@ -83,11 +107,19 @@ Get-AzureADMSAdministrativeUnitMember -Id <ID>
 Get-AzureADMSScopedRoleMembership -Id <ID> | fl
 ```
 
+
+
+
+
 **Command** ([[Retrieve directory role in Azure AD]]):
 
 ```bash
 Get-AzureADDirectoryRole -ObjectId <RoleId>
 ```
+
+
+
+
 
 **Command** ([[Retrieve user in Azure AD]]):
 
@@ -95,17 +127,27 @@ Get-AzureADDirectoryRole -ObjectId <RoleId>
 Get-AzureADUser -ObjectId <RoleMemberInfo.Id> | fl
 ```
 
+
+
+
+
 **Command** ([[Create a new secure string object]]):
 
 ```bash
 $password = "Password" | ConvertToSecureString -AsPlainText -Force
 ```
 
+
+
+
+
 **Command** ([[Set user password in Azure AD]]):
 
 ```bash
 (Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq "<Username>@<TENANT NAME>.onmicrosoft.com"}).ObjectId | SetAzureADUserPassword -Password $Password -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +175,5 @@ $password = "Password" | ConvertToSecureString -AsPlainText -Force
 
 - [[Administrative Unit]]
 - [[Cloud - Azure]]
+
+

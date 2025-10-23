@@ -5,6 +5,7 @@ type: command
 executor: bash
 data: 'touch ''index.php''
 
+
   touch $''index\u200D.php'''
 output: null
 created_at: '2023-04-06T03:56:17.631558+00:00'
@@ -18,3 +19,5 @@ touch 'index.php'
 
 touch $'index\u200D.php'
 ```
+
+

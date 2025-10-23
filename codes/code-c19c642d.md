@@ -26,3 +26,5 @@ Beacon Command Elevators
     uac-schtasks                    Bypass UAC with schtasks.exe (via SilentCleanup)
     uac-token-duplication           Bypass UAC with Token Duplication
 ```
+
+

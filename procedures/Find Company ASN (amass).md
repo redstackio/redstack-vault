@@ -26,12 +26,24 @@ Using amass to enumerate company information, this can return ASN id's assigned 
 
 ASN id's can be used to enumerate IP Range information, Organization's,  even sub domains.
 
+
+
+
+
+
+
 **Command** ([[amass enumerate company properties]]):
 
 ```bash
 amass intel -org $_COMPANY_NAME
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[amass enumerate company properties]]
+
+

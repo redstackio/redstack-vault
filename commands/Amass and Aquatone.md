@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:37.405281+00:00'
 ./Amass/amass -active -brute -o /tmp/hosts.txt -d $1
 cat /tmp/hosts.txt | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ```
+
+

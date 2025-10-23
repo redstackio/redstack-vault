@@ -25,3 +25,5 @@ Analyzing '$6$fN8i1AxB$0Z9xZy3X/NzJVWjyS1YhPpz7uy5vHsXA1Yxh57dZfYPhac6mPQAFdjow1
 [+] SHA-512 Crypt 
 --End of file 'hash.txt'--
 ```
+
+

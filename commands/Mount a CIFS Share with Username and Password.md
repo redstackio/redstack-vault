@@ -15,3 +15,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 mount -t cifs //$_TARGET_IP/$_SHARE -o 'username="$_USERNAME",password="$_PASSWORD"' /$_MOUNT_POINT
 ```
+
+

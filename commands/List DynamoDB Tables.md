@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:03.428570+00:00'
 ```bash
 $ aws --endpoint-url http://s3.bucket.htb dynamodb list-tables
 ```
+
+

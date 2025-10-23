@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:33.555001+00:00'
 ```sql
 select * from fn_my_permissions(null, 'server');
 ```
+
+

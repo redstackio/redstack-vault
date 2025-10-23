@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 Get-Childitem u:\ -Recurse | where-object {!($_.psiscontainer)} | where { $_.LastWriteTime -gt $(Get-Date).AddDays(-1) } | foreach {"$($_.LastWriteTime) :: $($_.Fullname) " }
 
 ```
+
+

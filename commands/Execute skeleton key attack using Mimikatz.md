@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:25.397457+00:00'
 ```bash
 mimikatz "privilege::debug" "misc::skeleton"
 ```
+
+

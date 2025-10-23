@@ -33,11 +33,15 @@ From a technical perspective, this technique works by injecting a specially craf
 
 The business value of this procedure is that it allows an attacker to gain remote access to a system and execute arbitrary commands. This can be used to steal sensitive information or cause damage to the system. It is important for organizations to be aware of this technique and take steps to protect their systems from this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses SQLite as its backend database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ The business value of this procedure is that it allows an attacker to gain remot
 
 1. Use parameterized queries to prevent SQL injection attacks
 
+ 
+
 ## Objectives
 
 1. Gain remote access to the target system
 
 1. Execute arbitrary commands on the target system
 
+ 
+
 # Instructions
 
 1. This command is used to inject PHP code into the SQLite database by attaching a new database file and creating a table within it. The code that is injected allows for command execution via the 'cmd' parameter passed in the GET request. 
 
+ 
+
+
+
 **Code**: [[ATTACH DATABASE '/var/www/lol.php' AS lol;
 CREATE ]]
+
+
 
 > The 'ATTACH DATABASE' command is used to attach a new SQLite database file to the current database connection. In this case, the file '/var/www/lol.php' is attached and given the alias 'lol'. The 'CREATE TABLE' command is then used to create a new table named 'pwn' within the 'lol' database. The 'INSERT INTO' command is used to insert PHP code into the 'dataz' column of the 'pwn' table. This PHP code allows for command execution via the 'cmd' parameter passed in the GET request. The double hyphen '--' at the end of the SQL query is used to comment out any remaining SQL code that may follow.
 
@@ -78,3 +92,5 @@ CREATE ]]
 
 - [[Remote Command Execution using SQLite command - Attach Database]]
 - [[SQLite Injection]]
+
+

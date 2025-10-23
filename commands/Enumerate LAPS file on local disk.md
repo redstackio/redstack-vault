@@ -8,6 +8,8 @@ data: 'dir "C:\Program Files\LAPS\CSE\Admpwd.dll"
   '
 output: '    Directory: C:\Program Files\LAPS\CSE
 
+
+
   Mode                 LastWriteTime         Length Name
 
   ----                 -------------         ------ ----
@@ -29,7 +31,10 @@ dir "C:\Program Files\LAPS\CSE\Admpwd.dll"
 ```
     Directory: C:\Program Files\LAPS\CSE
 
+
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
 -a----        2022-05-06  10:20 PM         244898 Admpwd.dll
 ```
+
+

@@ -27,3 +27,5 @@ root@kali:~/Documents# onesixtyone -c wordlist.txt 10.10.10.10
 Scanning 1 hosts, 4603 communities
 10.10.10.20 [public] Linux Host 4.4.0-75-generic #96~14.04.1-Ubuntu SMP Thu Apr 20 11:06:56 UTC 2017 i686
 ```
+
+

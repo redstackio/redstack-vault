@@ -45,3 +45,5 @@ CME          10.10.10.10:445 BOB-PC [*] Windows 10.0 Build 18362 (name:BOB-PC) (
 CME          10.10.10.10:445 BOB-PC [+] BOB-PC\Victim 6608e4bc7b2b7a5f77ce3573570775af (Pwn3d!)
 [*] KTHXBYE!
 ```
+
+

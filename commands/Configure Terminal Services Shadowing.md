@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:27.902007+00:00'
 ```bash
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v Shadow /t REG_DWORD /d 4
 ```
+
+

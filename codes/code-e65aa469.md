@@ -16,3 +16,5 @@ Seatbelt.exe -group=all -full
 Seatbelt.exe -group=system -outputfile="C:\Temp\system.txt"
 Seatbelt.exe -group=remote -computername=dc.theshire.local -computername=192.168.230.209 -username=THESHIRE\sam -password="yum \"po-ta-toes\""
 ```
+
+

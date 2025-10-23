@@ -30,11 +30,15 @@ This procedure is a script that performs a password brute force attack using LDA
 
 This procedure is a script that performs a password brute force attack using LDAP injection. The script tries to find the password of the admin user by injecting LDAP queries with a password that is being built character by character. The attack is performed blindly, meaning that there is no feedback from the server on whether the password is correct or not. The script tries all possible characters for each position until the password is found. This procedure can be used by an attacker to gain access to sensitive information or systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Python3 or Ruby installed
+
+ 
 
 ## Defense
 
@@ -44,29 +48,45 @@ This procedure is a script that performs a password brute force attack using LDA
 
 1. Implement multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Find the password of the admin user using LDAP injection
 
 1. Gain unauthorized access to sensitive information or systems
 
+ 
+
 # Instructions
 
 1. The script should be run with Python3. The alphabet variable contains all the possible characters that can be used in the password. The flag variable is the password that is being built character by character. The script tries all possible characters for each position until the password is found.
+
+ 
+
+
 
 **Code**: [[#!/usr/bin/python3
 
 import requests, string
 alphab]]
 
+
+
 > The script performs a password brute force attack using LDAP injection. It sends requests to the target server with an LDAP query that injects the password being built character by character. If the query returns a "TRUE CONDITION" response, it means that the password is correct and the script moves on to the next character. If the query returns a "FALSE CONDITION" response, it means that the password is incorrect and the script tries the next character.
 
 2. The script should be run with Ruby. The alphabet variable contains all the possible characters that can be used in the password. The flag variable is the password that is being built character by character. The script tries all possible characters for each position until the password is found.
+
+ 
+
+
 
 **Code**: [[#!/usr/bin/env ruby
 
 require 'net/http'
 alphabet =]]
+
+
 
 > The script performs a password brute force attack using LDAP injection. It sends requests to the target server with an LDAP query that injects the password being built character by character. If the query returns a "TRUE CONDITION" response, it means that the password is correct and the script moves on to the next character. If the query returns a "FALSE CONDITION" response, it means that the password is incorrect and the script tries the next character.
 
@@ -87,3 +107,5 @@ alphabet =]]
 - [[LDAP Injection]]
 - [[Scripts]]
 - [[Special blind LDAP injection (without "*")]]
+
+

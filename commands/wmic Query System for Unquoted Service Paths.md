@@ -25,3 +25,5 @@ wmic.exe service get name,displayname,pathname,startmode |findstr /i "auto" |fin
 C:\>wmic.exe service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:\windows\\" |findstr /i /v """
 Skype Service    Skype C:\Program Files (x86)\Microsoft\Skype.exe --service    Auto
 ```
+
+

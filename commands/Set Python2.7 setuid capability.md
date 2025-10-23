@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:20.931371+00:00'
 ```bash
 $ sudo /usr/bin/setcap cap_setuid+ep /usr/bin/python2.7
 ```
+
+

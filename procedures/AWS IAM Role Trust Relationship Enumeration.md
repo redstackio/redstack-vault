@@ -36,9 +36,13 @@ Technical Explanation: The AWS IAM Access Advisor, ListRoles, and GetRole APIs a
 
 Business Value: This procedure can help an attacker gain access to sensitive resources in an AWS account, allowing them to steal data, disrupt operations, or launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Valid AWS access keys with permissions to use the IAM APIs
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ Business Value: This procedure can help an attacker gain access to sensitive res
 
 1. Enable AWS CloudTrail to monitor and log all API activity in the AWS account
 
+ 
+
 ## Objectives
 
 1. Identify high-value roles that can be assumed by the attacker
 
 1. Gain access to sensitive resources in an AWS account
 
+ 
+
 # Instructions
 
 1. To retrieve details of an IAM Role, use the following command:
 
+ 
+
 This command retrieves the details of an IAM Role specified by the role_name argument. The command returns a JSON object that contains information about the role, such as its name, ARN, and policies attached to the role.
+
+
 
 **Command** ([[Get IAM Role]]):
 
 ```bash
 aws iam get-role --role-name role_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam get-role --role-name role_name
 - [[Cloud - AWS]]
 - [[Listing trust relationship between role and user (Which roles we can assume)]]
 - [[Persistence & Backdooring]]
+
+

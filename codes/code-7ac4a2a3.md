@@ -23,3 +23,5 @@ Get-ADObject -SearchBase ("CN=Shadow Principal Configuration,CN=Services," + (Ge
 # Trust_Attribute_PIM_Trust + Trust_Attribute_Treat_As_External
 Get-ADTrust -Filter {(ForestTransitive -eq $True)} 
 ```
+
+

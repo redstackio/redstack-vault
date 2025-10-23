@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:09.591812+00:00'
 ```bash
 Whisker.exe add /target:computername$ [/domain:constoso.local /dc:dc1.contoso.local /path:C:\path\to\file.pfx /password:P@ssword1]
 ```
+
+

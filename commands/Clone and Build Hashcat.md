@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:56:17.546420+00:00'
 ```bash
 git clone https://github.com/hashcat/hashcat.git && cd hashcat && make -j 8 && make install
 ```
+
+

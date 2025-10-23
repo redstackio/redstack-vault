@@ -30,11 +30,25 @@ This cmdlet is used to modify Windows Defender settings. It can exclude files, f
 
 This cmdlet is used to modify Windows Defender settings. It can exclude files, folders, extensions, paths, processes, and define the default actions when it finds a new threat.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_ca88e6da-ea7d-463e-a842-6d0dc1934904}}
+
+
 
 # Installation
 
 Add-MpPreferences is included with PowerShell 3 and later
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +64,5 @@ Add-MpPreferences is included with PowerShell 3 and later
 - [[administrator]]
 - [[defender]]
 - [[Defense Bypass]]
+
+

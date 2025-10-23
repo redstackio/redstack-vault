@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:20:55.168825+00:00'
 ```bash
 TOKEN=$(aws rds generate-db-auth-token --hostname hostname --port port --username username --region region)
 ```
+
+

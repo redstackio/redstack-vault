@@ -37,11 +37,15 @@ From a technical perspective, this procedure involves making a request to the AW
 
 The business value of this procedure is that it allows an organization to identify potential weaknesses in their IAM policies and take steps to remediate them before an attacker can exploit them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permission to access the 'List User Policies' command
 
 1. Access to the AWS API
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an organization to identi
 
 1. Monitor AWS API activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Identify the inline policies embedded in a specified IAM user in AWS
@@ -59,17 +65,25 @@ The business value of this procedure is that it allows an organization to identi
 
 1. Identify potential areas of weakness in the IAM policies
 
+ 
+
 # Instructions
 
 1. Use this command to list all the managed policies that are attached to the specified IAM user.
 
+ 
+
 The 'aws iam list-user-policies' command is used to retrieve a list of all the managed policies that are attached to the specified IAM user. The command requires the 'user-name' argument to be specified, which is the name of the IAM user for which you want to list the policies. The output of the command will be a JSON-formatted list of policy names, which can be used as input to other IAM commands that require policy names as arguments. If the specified user does not exist, the command will return an error. 
+
+
 
 **Command** ([[List user policies for IAM user]]):
 
 ```bash
 aws iam list-user-policies --user-name user-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws iam list-user-policies --user-name user-name
 - [[1. Enumerating IAM users]]
 - [[Cloud - AWS]]
 - [[Listing the names of the inline policies embedded in the specified IAM user]]
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:34:26.788619+00:00'
 ╰─$ ls /usr/bin/sudo -alh                  
 -rwsr-xr-x 1 root root 138K 23 nov.  16:04 /usr/bin/sudo
 ```
+
+

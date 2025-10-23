@@ -29,3 +29,5 @@ lxc config device add mycontainer mydevice disk source=/ path=/mnt/root recursiv
 lxc start mycontainer
 lxc exec mycontainer /bin/sh
 ```
+
+

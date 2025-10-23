@@ -34,6 +34,8 @@ From a technical standpoint, the attacker uses the SQL Injection Command for Use
 
 From a business perspective, MYSQL Injection with Blind MAKE_SET can result in unauthorized access to sensitive data, which can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
@@ -41,6 +43,8 @@ From a business perspective, MYSQL Injection with Blind MAKE_SET can result in u
 1. Knowledge of SQL Injection techniques
 
 1. Knowledge of the MAKE_SET function
+
+ 
 
 ## Defense
 
@@ -50,18 +54,28 @@ From a business perspective, MYSQL Injection with Blind MAKE_SET can result in u
 
 1. Regularly monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Bypass user authentication in MYSQL databases
 
 1. Gain unauthorized access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command is used for bypassing user authentication in SQL injection attacks. It takes advantage of the fact that an SQL query can be manipulated to execute arbitrary commands. The command uses the MAKE_SET() function to compare the result of a subquery with a hardcoded value of 1. If the result of the subquery is less than 1, the comparison returns true and the injected code is executed. The injected code consists of two subqueries, one to determine the length of the version string and another to determine the length of the concatenated login and password strings. The code then uses the ASCII() function to extract individual characters from the version and login/password strings, one at a time, until it has extracted all of the characters.
 
+ 
+
+
+
 **Code**: [[AND MAKE_SET(YOLO<(SELECT(length(version()))),1)
 A]]
+
+
 
 > This command is used to bypass user authentication in SQL injection attacks. It works by injecting code into an SQL query that executes arbitrary commands. The injected code uses the MAKE_SET() function to compare the result of a subquery with a hardcoded value of 1. If the result of the subquery is less than 1, the comparison returns true and the injected code is executed. The injected code consists of two subqueries, one to determine the length of the version string and another to determine the length of the concatenated login and password strings. The code then uses the ASCII() function to extract individual characters from the version and login/password strings, one at a time, until it has extracted all of the characters.
 
@@ -82,3 +96,5 @@ A]]
 - [[MYSQL Blind]]
 - [[MYSQL Blind with MAKE_SET]]
 - [[MYSQL Injection]]
+
+

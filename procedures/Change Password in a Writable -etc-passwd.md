@@ -32,11 +32,17 @@ When /etc/passwd is writable, it is possible to change a user's password by ente
 
 When `/etc/passwd` is writable, it is possible to change a user's password by entering the password hash. Passwords in `/etc/passwd` take priority over those found in `/etc/shadow`  for legacy reasons, though the same technique can be applied when `/etc/shadow` is writable.
 
+
+
 # `Instructions`
 
 1. Identify a user whose password will be changed. In this example, root will be targeted.
 
 2. Generate a sha512-crypt password
+
+
+
+
 
 **Command** ([[OpenSSL Generate a SHA512-crypt hash]]):
 
@@ -44,17 +50,37 @@ When `/etc/passwd` is writable, it is possible to change a user's password by en
 openssl passwd -6 -salt $_SALT $_PASSWORD
 ```
 
+
+
+
+
 3. Update `/etc/passwd` or `/etc/shadow`, adding the password hash to the desired user after the first colon, replacing the placeholder `x`.
+
+
 
 For example:
 
 Original entry:
 
+
+
+
+
 **Code**: [[root:x:0:0:root:/root:/bin/bash]]
+
+
+
+
 
 Modified entry:
 
+
+
 **Code**: [[root:$6$12345678$DgaVYkZjVTY58m0juyhsvwGEjwMI9RB5U]]
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +105,5 @@ Modified entry:
 
 - [[misconfiguration]]
 - [[Setup]]
+
+

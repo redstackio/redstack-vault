@@ -20,3 +20,5 @@ portfwd add –l 3389 –p 3389 –r target-host
 portfwd add -l 88 -p 88 -r 127.0.0.1
 portfwd add -L 0.0.0.0 -l 445 -r 192.168.57.102 -p 445
 ```
+
+

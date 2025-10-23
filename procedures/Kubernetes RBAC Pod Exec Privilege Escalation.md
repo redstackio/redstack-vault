@@ -32,11 +32,15 @@ This procedure details how an attacker with access to a Kubernetes pod can escal
 
 This procedure details how an attacker with access to a Kubernetes pod can escalate their privileges to execute commands on other pods in the same namespace. By default, Kubernetes Role-Based Access Control (RBAC) configurations do not grant pods the ability to execute commands on other pods. However, if the attacker can gain access to a pod with the necessary privileges, they can use the 'kubectl exec' command to execute arbitrary commands on other pods in the same namespace. This can be used to move laterally within the cluster, exfiltrate data, or execute other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a Kubernetes pod with the necessary RBAC privileges
 
 1. Access to the 'kubectl' command-line tool
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ This procedure details how an attacker with access to a Kubernetes pod can escal
 
 1. Monitor Kubernetes API server logs for suspicious activity, such as unauthorized use of the 'kubectl exec' command
 
+ 
+
 ## Objectives
 
 1. Escalate privileges within the Kubernetes cluster
 
 1. Execute arbitrary commands on other pods in the same namespace
+
+ 
 
 # Instructions
 
@@ -59,15 +67,26 @@ This procedure details how an attacker with access to a Kubernetes pod can escal
 
 kubectl exec -it <POD NAME> -n <PODS NAMESPACE> -- sh
 
+
+ 
+
+
+
 **Code**: [[kubectl exec -it <POD NAME> -n <PODS NAMESPACE> --]]
 
+
+
 > This command will open an interactive shell session with the target pod, allowing the attacker to execute arbitrary commands within the pod's environment.
+
+
 
 **Command** ([[Execute shell in Kubernetes pod]]):
 
 ```bash
 kubectl exec -it <POD NAME> -n <PODS NAMESPACE> -- sh
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +111,5 @@ kubectl exec -it <POD NAME> -n <PODS NAMESPACE> -- sh
 - [[Kubernetes]]
 - [[Privilege to Use Pods/Exec]]
 - [[RBAC Configuration]]
+
+

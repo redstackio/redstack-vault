@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # wifi cheatsheet
 
+
+
 **Command** ([[wget a an entire file]]):
 
 ```bash
 wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla [url]
 
 ```
+
+
+
+
+
+
 
 **Command** ([[status your devices]]):
 
@@ -23,12 +31,24 @@ airmon-ng
 
 ```
 
+
+
+
+
+
+
 **Command** ([[kill wpa stuff which i guess conflicts, kills all wlan*]]):
 
 ```bash
 airmon-ng check kill
 
 ```
+
+
+
+
+
+
 
 **Command** ([[put your device in monitor mode]]):
 
@@ -37,12 +57,24 @@ airmon-ng start wlan1
 
 ```
 
+
+
+
+
+
+
 **Command** ([[verify you have a monitor mode device]]):
 
 ```bash
 ifconfig
 
 ```
+
+
+
+
+
+
 
 **Command** ([[dump some probs]]):
 
@@ -51,6 +83,12 @@ airodump-ng wlan1mon -w logfile --beacons
 
 ```
 
+
+
+
+
+
+
 **Command** ([[see just the client beacons]]):
 
 ```bash
@@ -58,9 +96,21 @@ cat sb2-01.csv| cut -d',' -f7 | sort
 
 ```
 
+
+
+
+
+
+
 **Command** ([[stop monitor mode]]):
 
 ```bash
 airmon-ng stop wlan1mon
 
 ```
+
+
+
+
+
+

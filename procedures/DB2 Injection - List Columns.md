@@ -35,11 +35,15 @@ To retrieve column details from a table, the attacker can use the 'LISTAGG' func
 
 The business value of this procedure is that it allows attackers to gain access to sensitive data stored in DB2 databases, which can include personal information, financial data, and intellectual property.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable DB2 database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve details of columns from a table in a DB2 database
@@ -57,19 +63,31 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Plan further attacks or exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. This command retrieves the details of columns present in a table. The 'sysibm.syscolumns' table contains the details of all columns present in all tables in the database. The 'select' statement is used to retrieve the 'name' of the column, the 'tbname' of the table to which it belongs, and the 'coltype' of the column.
 
+ 
+
+
+
 **Code**: [[select name, tbname, coltype from sysibm.syscolumn]]
 
+
+
 > To use this command, simply replace 'sysibm.syscolumns' with 'syscat.columns' or 'sysstat.columns' to retrieve the details of columns present in all tables or system tables respectively. The 'name' column contains the name of the column, 'tbname' column contains the name of the table to which the column belongs, and the 'coltype' column contains the data type of the column.
+
+
 
 **Command** ([[Retrieve information about columns in a table]]):
 
 ```bash
 select name, tbname, coltype from sysibm.syscolumns -- also valid syscat and sysstat
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ select name, tbname, coltype from sysibm.syscolumns -- also valid syscat and sys
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List Columns]]
+
+

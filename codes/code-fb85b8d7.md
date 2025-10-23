@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:36.510716+00:00'
 ```powershell
 ./LinEnum.sh -s -k keyword -r report -e /tmp/ -t
 ```
+
+

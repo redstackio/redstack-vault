@@ -16,3 +16,9 @@ Demonstrates a serious deficiency in proprietary Cisco LEAP networks. Since LEAP
 ## Description
 
 Demonstrates a serious deficiency in proprietary Cisco LEAP networks. Since LEAP uses a variant of MS-CHAPv2 for the authentication exchange, it is susceptible to accelerated offline dictionary attacks. Asleap can also attack the Point-to-Point Tunneling Protocol (PPTP), and any MS-CHAPv2 exchange where you can specify the challenge and response values on the command line.
+
+
+
+
+
+

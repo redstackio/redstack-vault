@@ -16,3 +16,9 @@ FakeIKEd, or fiked for short, is a fake IKE daemon supporting just enough of the
 ## Description
 
 FakeIKEd, or fiked for short, is a fake IKE daemon supporting just enough of the standards and Cisco extensions to attack commonly found insecure Cisco VPN PSK+XAUTH based IPsec authentication setups in what could be described as a semi MitM attack. Fiked can impersonate a VPN gateway’s IKE responder in order to capture XAUTH login credentials; it doesn’t currently do the client part of full MitM.
+
+
+
+
+
+

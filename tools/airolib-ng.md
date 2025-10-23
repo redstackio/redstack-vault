@@ -16,3 +16,9 @@ Airolib-ng is an aircrack-ng suite tool designed to store and manage essid and p
 ## Description
 
 Airolib-ng is an aircrack-ng suite tool designed to store and manage essid and password lists, compute their Pairwise Master Keys (PMKs) and use them in WPA/WPA2 cracking. The program uses the lightweight SQLite3 database as the storage mechanism which is available on most platforms.
+
+
+
+
+
+

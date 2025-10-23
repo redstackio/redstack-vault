@@ -38,6 +38,8 @@ From an offensive perspective, exploiting SSTI vulnerabilities can provide attac
 
 Business value: By identifying and remediating SSTI vulnerabilities in web applications, organizations can reduce the risk of data theft, system compromise, and reputation damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -45,6 +47,8 @@ Business value: By identifying and remediating SSTI vulnerabilities in web appli
 1. Authentication credentials if required
 
 1. tplmap and SSTImap tools
+
+ 
 
 ## Defense
 
@@ -54,22 +58,34 @@ Business value: By identifying and remediating SSTI vulnerabilities in web appli
 
 1. Implementing web application firewalls can help detect and block SSTI attacks
 
+ 
+
 ## Objectives
 
 1. Identify and exploit SSTI vulnerabilities in web applications
 
 1. Gain access to sensitive information or execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. Use the tplmap tool to exploit web application vulnerabilities by injecting payloads into template engines. The '-u' option specifies the target URL with a payload injection point. The '--os-shell' option is used to execute a shell command on the target operating system. The '--level' option specifies the level of injection to use (default is 3). The '-e' option specifies the template engine to use (default is jinja2).
 
+ 
+
+
+
 **Code**: [[python2.7 ./tplmap.py -u 'http://www.target.com/pa]]
+
+
 
 > -u: target URL with payload injection point
 --os-shell: execute a shell command on target operating system
 --level: level of injection to use (default is 3)
 -e: template engine to use (default is jinja2)
+
+
 
 **Command** ([[tplmap - os-shell]]):
 
@@ -77,11 +93,19 @@ Business value: By identifying and remediating SSTI vulnerabilities in web appli
 python2.7 ./tplmap.py -u 'http://www.target.com/page?name=John*' --os-shell
 ```
 
+
+
+
+
 **Command** ([[tplmap - inject parameter]]):
 
 ```bash
 python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=*&comment=supercomment&link"
 ```
+
+
+
+
 
 **Command** ([[tplmap - inject parameter with level and extension]]):
 
@@ -89,11 +113,21 @@ python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=*&comment=supercomm
 python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=InjectHere*&comment=A&link" --level 5 -e jade
 ```
 
+
+
 2. The SSTImap command is used to automatically detect SSTI vulnerabilities in web applications. This command takes multiple arguments that are used to configure the tool and perform the scan. The -u argument is used to specify the target URL. The -s argument is used to perform a simple scan. The -l argument is used to specify the level of the scan. The -e argument is used to specify the extension of the file to be scanned. The -i argument is used to enable the interactive mode. The -A argument is used to enable all plugins. The -m argument is used to specify the HTTP method. The -H argument is used to specify the headers to be sent with the request.
+
+ 
+
+
 
 **Code**: [[python3 ./sstimap.py -u 'https://example.com/page?]]
 
+
+
 > The SSTImap command is used to scan web applications for SSTI vulnerabilities. The -u argument is used to specify the target URL. The -s argument is used to perform a simple scan. The -l argument is used to specify the level of the scan. The -e argument is used to specify the extension of the file to be scanned. The -i argument is used to enable the interactive mode, which allows the user to manually select the payloads to be sent. The -A argument is used to enable all plugins, which allows the tool to use all available payloads. The -m argument is used to specify the HTTP method to be used. The -H argument is used to specify the headers to be sent with the request.
+
+
 
 **Command** ([[Directory Traversal Vulnerability Check]]):
 
@@ -101,17 +135,27 @@ python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=InjectHere*&comment
 python3 ./sstimap.py -u 'https://example.com/page?name=John' -s
 ```
 
+
+
+
+
 **Command** ([[Jade Template Injection Vulnerability Check]]):
 
 ```bash
 python3 ./sstimap.py -u 'https://example.com/page?name=Vulnerable*&message=My_message' -l 5 -e jade
 ```
 
+
+
+
+
 **Command** ([[HTTP Authorization Header Injection Vulnerability Check]]):
 
 ```bash
 python3 ./sstimap.py -i -A -m POST -l 5 -H 'Authorization: Basic bG9naW46c2VjcmV0X3Bhc3N3b3Jk'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -136,3 +180,5 @@ python3 ./sstimap.py -i -A -m POST -l 5 -H 'Authorization: Basic bG9naW46c2VjcmV
 
 - [[Server Side Template Injection]]
 - [[Tools]]
+
+

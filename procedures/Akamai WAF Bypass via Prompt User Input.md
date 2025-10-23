@@ -37,6 +37,8 @@ From a technical perspective, the attacker injects malicious code into a vulnera
 
 The business value of this procedure is that it can be used to gain unauthorized access to sensitive information or to compromise the target system. This can lead to reputational damage, financial losses, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable webpage
@@ -44,6 +46,8 @@ The business value of this procedure is that it can be used to gain unauthorized
 1. Ability to inject malicious code into the webpage
 
 1. Ability to prompt the user to enter malicious input
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ The business value of this procedure is that it can be used to gain unauthorized
 
 1. Implement security controls to monitor and detect malicious activity on the network
 
+ 
+
 ## Objectives
 
 1. Bypass the Akamai Web Application Firewall
@@ -61,13 +67,21 @@ The business value of this procedure is that it can be used to gain unauthorized
 
 1. Gain unauthorized access to sensitive information
 
+ 
+
 # Instructions
 
 1. To prompt the user for input, use the 'prompt' function in JavaScript. The 'prompt' function takes one argument, which is the message to display to the user in the prompt dialog box. For example, to prompt the user for their name, you could use the following code:
 
 prompt('What is your name?');
 
+ 
+
+
+
 **Code**: [[<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>]]
+
+
 
 > The 'prompt' function displays a dialog box to the user with a message and an input field. The user can enter a value in the input field and click 'OK' to submit the value or 'Cancel' to cancel the prompt. The value entered by the user is returned as the result of the 'prompt' function, so you can store it in a variable for later use.
 
@@ -90,3 +104,5 @@ prompt('What is your name?');
 - [[Akamai WAF Bypass by [@s0md3v](https://twitter.com/s0md3v/status/1056447131362324480) - 28th October 2018]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

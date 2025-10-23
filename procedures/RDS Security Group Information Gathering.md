@@ -30,11 +30,15 @@ The RDS Security Group Information Gathering procedure involves listing informat
 
 The RDS Security Group Information Gathering procedure involves listing information about a specified security group in order to gain insight into the security posture of the RDS instance. This information can be used to plan a future attack or to identify vulnerabilities that can be exploited. Technical details of this procedure include querying the RDS API for security group details and analyzing the returned data. The business value of this procedure is that it can help to identify and mitigate security risks before they are exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Access to the RDS API
 
 1. Valid AWS credentials with appropriate permissions
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The RDS Security Group Information Gathering procedure involves listing informat
 
 1. Regularly review and update RDS security group configurations
 
+ 
+
 ## Objectives
 
 1. List information about the specified security group
@@ -52,17 +58,25 @@ The RDS Security Group Information Gathering procedure involves listing informat
 
 1. Plan future attacks based on the gathered information
 
+ 
+
 # Instructions
 
 1. To get the details of a specific security group, use the 'describe-security-groups' command followed by the ID of the security group you want to inspect.
 
+ 
+
 This command will return a JSON object with detailed information about the specified security group, including its name, description, inbound and outbound rules, and more. The 'group-ids' parameter specifies which security group to describe, and can be a single ID or a comma-separated list of IDs. If the command is successful, the output will include the requested details of the security group.
+
+
 
 **Command** ([[Describe EC2 Security Group]]):
 
 ```bash
 aws ec2 describe-security-groups --group-ids id
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws ec2 describe-security-groups --group-ids id
 - [[Data exfiltration]]
 - [[List information about the specified security group]]
 - [[RDS - Relational Database Service]]
+
+

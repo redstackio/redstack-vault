@@ -35,6 +35,8 @@ This attack involves DNS poisoning and a mitm6 relay attack to steal user creden
 
 This attack involves DNS poisoning and a mitm6 relay attack to steal user credentials and gain access to an Active Directory environment. The attacker first poisons the DNS cache of a target system, causing it to send DNS requests to a server controlled by the attacker. The attacker then performs a mitm6 relay attack, intercepting authentication requests and relaying them to the target server while capturing the user's credentials. Once the attacker has obtained valid credentials, they can use them to access the target's network and escalate privileges. This attack can be used to gain access to sensitive data and compromise the security of an organization.
 
+ 
+
 ## Requirements
 
 1. Access to a target system
@@ -42,6 +44,8 @@ This attack involves DNS poisoning and a mitm6 relay attack to steal user creden
 1. Ability to poison DNS cache
 
 1. Ability to perform mitm6 relay attack
+
+ 
 
 ## Defense
 
@@ -51,11 +55,15 @@ This attack involves DNS poisoning and a mitm6 relay attack to steal user creden
 
 1. Monitor network traffic for signs of DNS poisoning or mitm6 relay attacks
 
+ 
+
 ## Objectives
 
 1. Steal user credentials
 
 1. Gain unauthorized access to an Active Directory environment
+
+ 
 
 # Instructions
 
@@ -67,8 +75,14 @@ This attack involves DNS poisoning and a mitm6 relay attack to steal user creden
 6. Set the KRB5CCNAME environment variable to the administrator's credentials cache.
 7. Use secretsdump.py to dump the target domain's credentials.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/fox-it/mitm6.git 
 cd ]]
+
+
 
 > - The 'git clone' command clones the MITM6 repository and the 'pip install' command installs the necessary dependencies.
 - The 'mitm6' command is used to intercept traffic and filter requests based on the domain name.
@@ -101,3 +115,5 @@ cd ]]
 - [[Active Directory Attacks]]
 - [[DNS Poisonning - Relay delegation with mitm6]]
 - [[Man-in-the-Middle attacks & relaying]]
+
+

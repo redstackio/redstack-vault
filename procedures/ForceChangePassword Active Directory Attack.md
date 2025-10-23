@@ -36,11 +36,15 @@ From a technical perspective, the attacker needs to have sufficient permissions 
 
 The business value of this attack is that it allows the attacker to gain access to sensitive information or resources that are only accessible to the compromised user account. This can lead to data theft, data destruction, or unauthorized access to critical systems.
 
+ 
+
 ## Requirements
 
 1. Sufficient permissions in Active Directory to modify the ACLs/ACEs of the user account.
 
 1. Access to a tool like 'Change User Password'.
+
+ 
 
 ## Defense
 
@@ -50,19 +54,31 @@ The business value of this attack is that it allows the attacker to gain access 
 
 1. Enforce strong password policies and require regular password changes.
 
+ 
+
 ## Objectives
 
 1. Change the password of a user account in Active Directory.
 
 1. Gain access to resources that the compromised user account has access to.
 
+ 
+
 # Instructions
 
 1. Use this command to change the password of the target user. Replace 'Password123!' with the desired password and 'TargetUser' with the username of the target user.
 
+ 
+
+
+
 **Code**: [[$NewPassword = ConvertTo-SecureString 'Password123]]
 
+
+
 > This command uses the ConvertTo-SecureString cmdlet to create a secure string object from the password provided. The Set-DomainUserPassword cmdlet is then used to set the password for the target user. The -Identity parameter is used to specify the username of the target user and the -AccountPassword parameter is used to specify the new password.
+
+
 
 **Command** ([[Change Domain User Password]]):
 
@@ -70,6 +86,8 @@ The business value of this attack is that it allows the attacker to gain access 
 $NewPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
 Set-DomainUserPassword -Identity 'TargetUser' -AccountPassword $NewPassword
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +110,5 @@ Set-DomainUserPassword -Identity 'TargetUser' -AccountPassword $NewPassword
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[ForceChangePassword]]
+
+

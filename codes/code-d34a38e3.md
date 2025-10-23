@@ -25,3 +25,5 @@ EvilClippy.exe -s fakecode.vba -t 2013x64 macrofile.doc
 # Evil Clippy can confuse pcodedmp and many other analysis tools with the -r flag.
 EvilClippy.exe -r macrofile.doc
 ```
+
+

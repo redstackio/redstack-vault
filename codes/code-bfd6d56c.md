@@ -23,3 +23,5 @@ Invoke-SQLOSCmdCLR -Username sa -Password Password1234 -Instance "<DBSERVERNAME\
 # List all the stored procedures added using CLR
 Get-SQLStoredProcedureCLR -Instance <instance> -Verbose
 ```
+
+

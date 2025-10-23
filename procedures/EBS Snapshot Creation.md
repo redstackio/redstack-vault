@@ -34,6 +34,8 @@ From a technical perspective, the EBS Snapshot Creation procedure involves creat
 
 The business value of this procedure is that it can be used by an attacker to steal sensitive data from an AWS environment. This data can be used for financial gain or to gain a competitive advantage over a business.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS environment
@@ -41,6 +43,8 @@ The business value of this procedure is that it can be used by an attacker to st
 1. Authentication credentials for the AWS environment
 
 1. The 'Create EC2 Snapshot' command
+
+ 
 
 ## Defense
 
@@ -50,23 +54,33 @@ The business value of this procedure is that it can be used by an attacker to st
 
 1. Encrypt sensitive data to make it harder for attackers to exfiltrate
 
+ 
+
 ## Objectives
 
 1. Create a snapshot of a specified EBS volume
 
 1. Exfiltrate data from the local system
 
+ 
+
 # Instructions
 
 1. This command is used to create a snapshot of an EC2 volume. The 'volumeID' argument specifies the ID of the volume for which you want to create a snapshot. The 'description' argument is an optional field that allows you to provide a description for the snapshot. The 'profile_name' argument is also optional and is used to specify the name of the AWS CLI profile to use for this command.
 
+ 
+
 The 'create-snapshot' command is used to create a snapshot of an EBS volume. Snapshots can be used to create new volumes or to restore data from a previous point in time. The 'volumeID' argument specifies the ID of the volume for which you want to create a snapshot. The 'description' argument allows you to provide a description for the snapshot, which can be useful for identifying the snapshot later. The 'profile_name' argument is used to specify the name of the AWS CLI profile to use for this command. If you don't specify a profile, the default profile will be used. Note that you must have the necessary permissions to create snapshots in order to use this command.
+
+
 
 **Command** ([[Create Snapshot of EC2 Volume]]):
 
 ```bash
 aws ec2 create-snapshot --volume volumeID --description "Example" --profile profile_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ec2 create-snapshot --volume volumeID --description "Example" --profile prof
 - [[Creating a snapshot of a specified volume]]
 - [[Elastic Block Store]]
 - [[Exploitation & Data Exfiltration]]
+
+

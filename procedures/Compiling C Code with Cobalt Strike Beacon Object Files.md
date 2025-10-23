@@ -37,11 +37,15 @@ From a technical standpoint, this technique involves using the 'Compile C Code' 
 
 The business value of this technique is that it allows attackers to evade detection by antivirus software and execute arbitrary code on the target system. This can be used to maintain persistence, escalate privileges, and exfiltrate data.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Cobalt Strike installed
 
 1. C code to compile
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this technique is that it allows attackers to evade detect
 
 1. Monitor for suspicious behavior and network activity
 
+ 
+
 ## Objectives
 
 1. Compile C code into an object file
@@ -59,12 +65,20 @@ The business value of this technique is that it allows attackers to evade detect
 
 1. Execute the object file within the Beacon payload
 
+ 
+
 # Instructions
 
 1. To compile C code using this command, follow the steps below:
 
+ 
+
+
+
 **Code**: [[# To compile this with Visual Studio:
 cl.exe /c /G]]
+
+
 
 > 1. Copy the code you want to compile into a file named hello.c
 2. Open a command prompt or terminal window
@@ -72,11 +86,17 @@ cl.exe /c /G]]
 4. Run the appropriate command for your system, as listed in the 'data' field of this JSON object
 5. If the compilation is successful, an object file named hello.o will be created in the same directory as hello.c
 
+
+
 **Command** ([[Compiling hello.c with Visual Studio]]):
 
 ```bash
 cl.exe /c /GS- hello.c /Fohello.o
 ```
+
+
+
+
 
 **Command** ([[Compiling hello.c with x86 MinGW]]):
 
@@ -84,11 +104,17 @@ cl.exe /c /GS- hello.c /Fohello.o
 i686-w64-mingw32-gcc -c hello.c -o hello.o
 ```
 
+
+
+
+
 **Command** ([[Compiling hello.c with x64 MinGW]]):
 
 ```bash
 x86_64-w64-mingw32-gcc -c hello.c -o hello.o
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -114,3 +140,5 @@ x86_64-w64-mingw32-gcc -c hello.c -o hello.o
 
 - [[Beacon Object Files]]
 - [[Cobalt Strike]]
+
+

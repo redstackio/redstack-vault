@@ -36,9 +36,13 @@ To perform this technique, an attacker must first identify a vulnerable web appl
 
 The business value of this technique is that it allows attackers to gain access to sensitive information that can be used to compromise the security of the organization. By understanding how this technique works, organizations can take steps to secure their web applications and database servers to prevent these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses a DB2 database backend
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve database configuration parameters
@@ -56,15 +62,25 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Perform malicious activities
 
+ 
+
 # Instructions
 
 1. To retrieve the database configuration parameters, execute the following commands:
 - Execute the first command to retrieve the automatic maintenance settings in the database configuration that are stored in memory for all database partitions.
 - Execute the second command to retrieve all the database configuration parameters values stored on disk for all database partitions.
 
+ 
+
+
+
 **Code**: [[select dbpartitionnum, name, value from sysibmadm.]]
 
+
+
 > The 'select dbpartitionnum, name, value from sysibmadm.dbcfg where name like 'auto_%'' command retrieves the automatic maintenance settings in the database configuration that are stored in memory for all database partitions. The 'select name, deferred_value, dbpartitionnum from sysibmadm.dbcfg' command retrieves all the database configuration parameters values stored on disk for all database partitions. Both commands require privilege to execute.
+
+
 
 **Command** ([[Retrieve the automatic maintenance settings in the database configuration stored in memory]]):
 
@@ -72,11 +88,17 @@ The business value of this technique is that it allows attackers to gain access 
 select dbpartitionnum, name, value from sysibmadm.dbcfg where name like 'auto_%' -- Requires priv.
 ```
 
+
+
+
+
 **Command** ([[Retrieve all the database configuration parameters values stored on disk]]):
 
 ```bash
 select name, deferred_value, dbpartitionnum from sysibmadm.dbcfg -- Requires priv.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +120,5 @@ select name, deferred_value, dbpartitionnum from sysibmadm.dbcfg -- Requires pri
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[System Config]]
+
+

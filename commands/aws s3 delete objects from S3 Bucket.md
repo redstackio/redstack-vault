@@ -23,3 +23,5 @@ aws s3 rm s3://$AWS_S3_BUCKET/$OBJECT
 ```
 aws s3 rm s3://redstack.io-s3bucket/folder-object
 ```
+
+

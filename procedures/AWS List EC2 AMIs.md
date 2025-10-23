@@ -35,6 +35,8 @@ Gathering data about AMI Images on an account can be useful.
 
 1. List all of the AMI's
 
+
+
 **Command** ([[aws ec2 list AMI images]]):
 
 ```bash
@@ -42,7 +44,13 @@ aws ec2 describe-images
 
 ```
 
+
+
+
+
 2. Describing an AMI by Image ID
+
+
 
 **Command** ([[aws ev2 describe AMI by Image ID]]):
 
@@ -51,7 +59,15 @@ aws ec2 describe-images --image-ids $AWS_IMAGE_ID --profile $AWS_PROFILE --regio
 
 ```
 
+
+
+
+
+
+
 3. (Optional) Describing an OS specific AMI with EBS. Using these filters can provide contextual search results
+
+
 
 **Command** ([[aws ec2 describe AMI image with filters]]):
 
@@ -59,6 +75,12 @@ aws ec2 describe-images --image-ids $AWS_IMAGE_ID --profile $AWS_PROFILE --regio
 aws ec2 describe-images --filters "Name=$TYPE,Values=$OS_TYPE" "Name=$TYPE,Values=$VOLUME_TYPE"
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -74,3 +96,5 @@ aws ec2 describe-images --filters "Name=$TYPE,Values=$OS_TYPE" "Name=$TYPE,Value
 
 - [[AWS]]
 - [[Cloud]]
+
+

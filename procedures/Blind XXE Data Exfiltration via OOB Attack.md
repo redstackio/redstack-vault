@@ -31,6 +31,8 @@ Blind XXE data exfiltration via OOB attack is a technique that exploits a vulner
 
 Blind XXE data exfiltration via OOB attack is a technique that exploits a vulnerability in applications that parse XML input. An attacker can inject malicious code into the XML input that will trigger a request to an external server controlled by the attacker. This technique is called 'blind' because the attacker does not receive a direct response from the server. Instead, the server sends an out-of-band (OOB) request to the attacker's controlled server, allowing the attacker to exfiltrate data. This technique can be used to steal sensitive data or to execute arbitrary code on the target system.
 
+ 
+
 ## Requirements
 
 1. The target application must parse XML input
@@ -38,6 +40,8 @@ Blind XXE data exfiltration via OOB attack is a technique that exploits a vulner
 1. The attacker must be able to inject malicious code into the XML input
 
 1. The attacker must have access to an external server to receive the OOB request
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ Blind XXE data exfiltration via OOB attack is a technique that exploits a vulner
 
 1. Monitor network traffic for suspicious activity, including OOB requests
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive data from the target system
 
 1. Execute arbitrary code on the target system
 
+ 
+
 # Instructions
 
 1. Craft an XML payload that exploits the XML Parameter Entity Out-of-Band (OOB) Attack
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE d]]
+
+
 
 > This attack exploits the use of external entities in XML. An attacker can craft an XML payload that includes a reference to an external entity, which can then be used to perform OOB attacks. In this example, the payload includes a reference to an external entity called 'file', which points to a file on the local system. The payload then includes another entity called 'send', which sends the contents of the 'file' entity to a remote server controlled by the attacker. This can allow an attacker to exfiltrate sensitive data from the target system.
 
@@ -79,3 +93,5 @@ Blind XXE data exfiltration via OOB attack is a technique that exploits a vulner
 - [[Exploiting blind XXE to exfiltrate data out-of-band]]
 - [[XML External Entity]]
 - [[XXE OOB Attack (Yunusov, 2013)]]
+
+

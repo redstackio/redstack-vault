@@ -32,6 +32,8 @@ NTDS Reversible Encryption is a feature in Active Directory that allows users to
 
 This procedure can be used by attackers to gain access to sensitive information or systems within an organization. It requires a good understanding of Active Directory and the ability to execute commands on a domain controller.
 
+ 
+
 ## Requirements
 
 1. Access to a domain controller
@@ -44,6 +46,8 @@ This procedure can be used by attackers to gain access to sensitive information 
 
 1. A cracking tool, such as Hashcat or John the Ripper
 
+ 
+
 ## Defense
 
 1. Disable NTDS Reversible Encryption in group policies or at the domain level
@@ -51,6 +55,8 @@ This procedure can be used by attackers to gain access to sensitive information 
 1. Monitor for changes to group policies related to NTDS Reversible Encryption
 
 1. Implement multi-factor authentication to reduce the risk of privileged credential theft
+
+ 
 
 ## Objectives
 
@@ -60,11 +66,19 @@ This procedure can be used by attackers to gain access to sensitive information 
 
 1. Gain access to sensitive information or systems within the organization
 
+ 
+
 # Instructions
 
 1. This command retrieves all Active Directory users who have the "Store passwords using reversible encryption" option enabled.
 
+ 
+
+
+
 **Code**: [[Get-ADUser -Filter 'userAccountControl -band 128' ]]
+
+
 
 > The "-Filter" parameter specifies the filter to apply when retrieving the users. In this case, the filter is set to "userAccountControl -band 128", which retrieves all users whose userAccountControl attribute has the 128 bit set. This bit corresponds to the "Store passwords using reversible encryption" option. The "-Properties" parameter specifies the user attributes to retrieve. In this case, we retrieve the userAccountControl attribute to check if the reversible encryption option is enabled. The output of the command will be a list of all users with reversible encryption enabled.
 
@@ -87,3 +101,5 @@ This procedure can be used by attackers to gain access to sensitive information 
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[NTDS Reversible Encryption]]
+
+

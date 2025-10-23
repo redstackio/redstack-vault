@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ?lfi_file=/var/log/apache2/access.log&cmd=<command>
 
 ```
+
+

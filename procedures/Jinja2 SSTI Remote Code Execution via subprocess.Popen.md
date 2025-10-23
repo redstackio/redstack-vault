@@ -33,11 +33,15 @@ Jinja2 is a popular templating engine used for web applications. It allows devel
 
 This attack can be used to gain access to sensitive information, modify or delete data, or launch further attacks against the network. The technical explanation of this attack is that the attacker can inject malicious code into the Jinja2 template, which is then executed by the server. The business value of this attack is that it can lead to reputational damage, financial losses, and legal liabilities for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Jinja2 templating engine
 
 1. Knowledge of the vulnerable parameter and how to inject malicious code
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ This attack can be used to gain access to sensitive information, modify or delet
 
 1. Monitor web application logs for suspicious activity and anomalous behavior
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary shell commands on the server
 
 1. List files in the current directory
 
+ 
+
 # Instructions
 
 1. This command allows the user to execute shell commands and list files in the current directory. To execute a command, replace 'cat flag.txt' with the desired command in the first set of curly braces. To list files in the current directory, simply leave the second set of curly braces as is.
 
+ 
+
+
+
 **Code**: [[{{''.__class__.mro()[1].__subclasses__()[396]('cat]]
+
+
 
 > The first set of curly braces executes the specified shell command using Python's subprocess module. The second set of curly braces lists the files in the current directory using Python's os module. This command can be used for various purposes such as retrieving sensitive information, modifying files, or executing other commands on the system.
 
@@ -79,3 +93,5 @@ This attack can be used to gain access to sensitive information, modify or delet
 - [[Jinja2]]
 - [[Jinja2 - Remote Code Execution]]
 - [[Server Side Template Injection]]
+
+

@@ -31,11 +31,15 @@ Github API Key Leakage is an attack that exploits Github's client id and client 
 
 Github API Key Leakage is an attack that exploits Github's client id and client secret. Client ID and secret are used for authenticating a user or application. Attackers can obtain these keys by exploiting code vulnerabilities or through social engineering attacks. Once an attacker has these keys, they can access sensitive data, manipulate repositories, and perform other malicious activities. This attack can be used to gain access to confidential information and intellectual property, and can also be used for ransomware attacks and data breaches.
 
+ 
+
 ## Requirements
 
 1. Access to the target's Github account
 
 1. Knowledge of the target's Github client id and client secret
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Github API Key Leakage is an attack that exploits Github's client id and client 
 
 1. Rotate Github client id and client secret regularly
 
+ 
+
 ## Objectives
 
 1. To obtain Github client id and client secret
@@ -53,19 +59,31 @@ Github API Key Leakage is an attack that exploits Github's client id and client 
 
 1. To manipulate repositories and perform other malicious activities
 
+ 
+
 # Instructions
 
 1. Run the following command in the terminal:
 
+ 
+
+
+
 **Code**: [[curl 'https://api.github.com/users/whatever?client]]
 
+
+
 > This command makes a request to the Github API using the target's client id and client secret. If the request is successful, it will return information about the target's Github account, including the client id and client secret. The attacker can then use these keys to gain access to sensitive data and perform malicious activities.
+
+
 
 **Command** ([[Send Request to GitHub API]]):
 
 ```bash
 curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 - [[API Key Leaks]]
 - [[Exploit]]
 - [[Github client id and client secret]]
+
+

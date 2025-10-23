@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:41.643219+00:00'
 ```bash
 "${<property>}\n${1+1}\n\n#{<expression string>}\n#{1+1}\n\nT(<javaclass>)"
 ```
+
+

@@ -34,11 +34,15 @@ From a technical perspective, the attacker creates a Python script that sets up 
 
 The business value of this attack is that it allows an attacker to gain remote access to a system, which can be used to steal sensitive data, install malware, or use the compromised system to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Network access to the victim's machine
 
 1. Python installed on the victim's machine
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this attack is that it allows an attacker to gain remote a
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a victim's system
@@ -56,19 +62,33 @@ The business value of this attack is that it allows an attacker to gain remote a
 
 1. Maintain persistence on the victim's system
 
+ 
+
 # Instructions
 
 1. This command is used to create a reverse shell on the target machine. It listens on port 51337 and waits for incoming connections. Once a connection is established, it executes the commands sent by the attacker and sends back the output.
 
+ 
+
+
+
 **Code**: [[python -c 'exec("""import socket as s,subprocess a]]
+
+
 
 > The command uses the Python programming language and creates a socket object. The socket object is then bound to the IP address '0.0.0.0' and port number 51337. The socket object listens for incoming connections and waits for a client to connect. Once a client connects, it enters a loop where it receives commands from the client and executes them using the subprocess module. The output of the command is then sent back to the client using the same socket connection.
 
 2. To use this command, you need to run the script on the target machine and connect to it using a netcat listener. Once the connection is established, you can execute shell commands on the target machine through the netcat listener.
 
+ 
+
+
+
 **Code**: [[import socket as s,subprocess as sp;
 
 s1 = s.socke]]
+
+
 
 > This command is a Python script that creates a reverse shell. It listens on port 51337 for incoming connections. Once a connection is established, it waits for commands to be received. When a command is received, it executes it on the target machine and returns the output to the client. This command can be used for remote administration or exploitation purposes.
 
@@ -91,3 +111,5 @@ s1 = s.socke]]
 
 - [[Bind Shell]]
 - [[Python]]
+
+

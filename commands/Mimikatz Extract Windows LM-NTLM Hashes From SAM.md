@@ -73,3 +73,5 @@ User : BOB
 mimikatz(commandline) # exit
 Bye!
 ```
+
+

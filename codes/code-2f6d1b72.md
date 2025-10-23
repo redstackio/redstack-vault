@@ -35,3 +35,5 @@ Using the newline and a comment //
 javascript://%0Aalert(1)
 javascript://anything%0D%0A%0D%0Awindow.alert(1)
 ```
+
+

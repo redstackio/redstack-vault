@@ -28,9 +28,13 @@ These old links, url queries and pages can give us clues to things we can exploi
 
 [waybackmachine](https://github.com/ghostlulzhacks/waybackMachine)
 
+
+
 ##  Instructions
 
 1. run the waybackmachine python script against a domain. If it has crawled the site it will return results.
+
+
 
 **Command** ([[waybackmachine search for a domain's archived links]]):
 
@@ -39,6 +43,12 @@ python3 waybackMachine.py owasp.com
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[waybackmachine search for a domain's archived links]]
+
+

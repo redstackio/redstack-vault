@@ -28,13 +28,53 @@ An attacker may intercept the web socket messages and modify the messages with t
 
 An attacker may intercept the web socket messages and modify the messages with the malicious payload.
 
+
+
 # Instructions
+
+
+
+
 
 1. Type a message in the chat window of the application.
 
+
+
+
+
+
+
+![952d7f83-9fc1-4202-a2ec-ccdecf5e31cd.png]()
+
+
+
+
+
+
+
 2. Under burp proxy tab --> web sockets history tab , identify the message from step 1. change the message to xss payload :  *`<img src=1 onerror='alert(1)'*>`
 
+
+
+
+
+![74316d5d-0f14-4b9e-b415-b5b3da156db9.png]()
+
+
+
+
+
 3. Send the modified request to the server. Observe that the payload gets parsed by the application and a popup can be observed in the browser.
+
+
+
+
+
+
+
+![8dd20599-c879-4472-ac2c-10cd17303d67.png]()
+
+
 
 ## Platforms
 
@@ -45,3 +85,5 @@ An attacker may intercept the web socket messages and modify the messages with t
 - [[Web Applications]]
 - [[web sockets]]
 - [[xss]]
+
+

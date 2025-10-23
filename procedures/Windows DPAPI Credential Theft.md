@@ -34,6 +34,8 @@ Windows Data Protection API (DPAPI) is a powerful tool that allows applications 
 
 Windows Data Protection API (DPAPI) is a powerful tool that allows applications to store and retrieve sensitive information, such as passwords and keys, in a secure manner. However, if an attacker gains access to a user's DPAPI data, they can use it to steal valuable credentials and gain access to critical systems. This procedure involves using the 'List Credentials from Windows Credentials Manager' command to extract DPAPI data and decrypt it using a variety of techniques. By doing so, an attacker can quickly and easily gain access to sensitive information and use it to further their objectives.
 
+ 
+
 ## Requirements
 
 1. Local access to a Windows system
@@ -41,6 +43,8 @@ Windows Data Protection API (DPAPI) is a powerful tool that allows applications 
 1. Administrative or SYSTEM-level privileges
 
 1. Access to the 'List Credentials from Windows Credentials Manager' command
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ Windows Data Protection API (DPAPI) is a powerful tool that allows applications 
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to potential attacks in real-time
 
+ 
+
 ## Objectives
 
 1. Extract and decrypt DPAPI data from a target system
 
 1. Steal valuable credentials and gain access to critical systems
+
+ 
 
 # Instructions
 
@@ -66,13 +74,21 @@ To list credentials from a specific vault, run the following command:
 
 VaultCmd /listcreds:<namevault>|<guidvault> /all
 
+ 
+
+
+
 **Code**: [[vaultcmd /list
 
 VaultCmd /listcreds:<namevault>|<g]]
 
+
+
 > The command 'vaultcmd /listcreds' is used to list all credentials from a specific vault or from the Windows Credentials Manager. The '/all' flag is used to display all the credentials stored in the vault. The '<namevault>|<guidvault>' option is used to specify the name or GUID of the vault from which the credentials are to be listed. If no option is specified, the command will list all the vaults available on the system.
 
 The command 'vaultcmd /list' is used to list all the vaults available on the system. It does not display any credentials.
+
+
 
 **Command** ([[List all vault items]]):
 
@@ -80,17 +96,27 @@ The command 'vaultcmd /list' is used to list all the vaults available on the sys
 vaultcmd /list
 ```
 
+
+
+
+
 **Command** ([[List all credentials in a specific vault]]):
 
 ```bash
 VaultCmd /listcreds:<namevault>|<guidvault> /all
 ```
 
+
+
+
+
 **Command** ([[List all credentials in Windows Credentials vault]]):
 
 ```bash
 vaultcmd /listcreds:"Windows Credentials" /all
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -117,3 +143,5 @@ vaultcmd /listcreds:"Windows Credentials" /all
 
 - [[Data Protection API]]
 - [[Windows - DPAPI]]
+
+

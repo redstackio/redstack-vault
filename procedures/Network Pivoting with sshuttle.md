@@ -39,6 +39,8 @@ Network pivoting is a technique used by attackers to move laterally through a ne
 
 From a technical perspective, sshuttle works by creating a transparent proxy server on the compromised system, which forwards traffic to the remote network. This traffic is encrypted, ensuring that it cannot be intercepted by network security controls. Business value of this technique is that it allows remote workers to access company resources without the need for a traditional VPN, which can be expensive and difficult to manage.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system on the target network
@@ -46,6 +48,8 @@ From a technical perspective, sshuttle works by creating a transparent proxy ser
 1. SSH access to the compromised system
 
 1. Python installed on both the compromised system and the system connecting to the VPN
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ From a technical perspective, sshuttle works by creating a transparent proxy ser
 
 1. Implement network segmentation to limit the impact of a compromised system
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data on a remote network
 
 1. Bypass network security controls
+
+ 
 
 # Instructions
 
@@ -73,11 +81,19 @@ From a technical perspective, sshuttle works by creating a transparent proxy ser
 4. To exclude some networks from being transmitted over the tunnel, use the -x option as follows:
    sshuttle -vvr user@10.10.10.10 10.1.1.0/24 -x x.x.x.x/24
 
+ 
+
+
+
 **Code**: [[pacman -Sy sshuttle
 apt-get install sshuttle
 sshut]]
 
+
+
 > sshuttle is a transparent proxy server that works as a poor man's VPN. It forwards over ssh and is useful for creating a VPN-like connection to a remote server. The -v option enables verbose output, -r specifies the remote server, and the IP address and subnet mask specify the network to forward traffic for. The -e option specifies the command to use to connect to the remote server. The -x option can be used to exclude some networks from being transmitted over the tunnel.
+
+
 
 **Command** ([[Install sshuttle]]):
 
@@ -86,11 +102,19 @@ pacman -Sy sshuttle
 apt-get install sshuttle
 ```
 
+
+
+
+
 **Command** ([[Connect to remote server]]):
 
 ```bash
 sshuttle -vvr user@10.10.10.10 10.1.1.0/24
 ```
+
+
+
+
 
 **Command** ([[Connect to pivot host]]):
 
@@ -98,17 +122,27 @@ sshuttle -vvr user@10.10.10.10 10.1.1.0/24
 sshuttle -vvr username@pivot_host 10.2.2.0/24
 ```
 
+
+
+
+
 **Command** ([[Connect using private key]]):
 
 ```bash
 $ sshuttle -vvr root@10.10.10.10 10.1.1.0/24 -e "ssh -i ~/.ssh/id_rsa"
 ```
 
+
+
+
+
 **Command** ([[Exclude network from tunnel]]):
 
 ```bash
 # -x x.x.x.x.x/24
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -138,3 +172,5 @@ $ sshuttle -vvr root@10.10.10.10 10.1.1.0/24 -e "ssh -i ~/.ssh/id_rsa"
 
 - [[Network Pivoting Techniques]]
 - [[sshuttle]]
+
+

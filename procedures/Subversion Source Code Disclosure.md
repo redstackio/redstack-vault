@@ -34,11 +34,15 @@ An attacker can use this technique to obtain sensitive information from a target
 
 To exploit this vulnerability, an attacker only needs to send a GET request to the .svn directory on the web server. The attacker can then use the information obtained from the configuration file to escalate privileges or perform other malicious actions on the target system. This technique can be used by attackers to gain access to sensitive information and escalate privileges in both corporate and personal environments.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the location of the .svn directory on the web server
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ To exploit this vulnerability, an attacker only needs to send a GET request to t
 
 1. Remove all .svn directories from web servers
 
+ 
+
 ## Objectives
 
 1. Obtain sensitive information from a target system
 
 1. Escalate privileges or perform other malicious actions on the target system
 
+ 
+
 # Instructions
 
 1. curl http://blog.domain.com/.svn/text-base/wp-config.php.svn-base
 
+ 
+
+
+
 **Code**: [[curl http://blog.domain.com/.svn/text-base/wp-conf]]
+
+
 
 > This command sends a GET request to the .svn directory on the web server to obtain the WordPress configuration file (wp-config.php).
 
@@ -83,3 +97,5 @@ To exploit this vulnerability, an attacker only needs to send a GET request to t
 - [[Example (Wordpress)]]
 - [[Insecure Source Code Management]]
 - [[Subversion]]
+
+

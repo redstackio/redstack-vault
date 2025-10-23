@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:16.886765+00:00'
 ```bash
 SELECT usename, usecreatedb, usesuper, usecatupd FROM pg_user
 ```
+
+

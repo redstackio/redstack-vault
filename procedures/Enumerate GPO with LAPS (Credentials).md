@@ -30,19 +30,33 @@ Laps can be enumerated through GPOs on the Domain
 
 Laps can be enumerated through GPOs on the Domain
 
+
+
 ## Objective
 
 1. Enumerate GPOs with LAPS wildcard in name
 
+
+
 # Instructions
 
 1. Look for GPO with LAPS in Identity name
+
+
+
+
 
 **Command** ([[Enumerate GPO for *laps in name]]):
 
 ```bash
 Get-DomainGPO | ? { $_.DisplayName -like "*laps*" } | select DisplayName, Name, GPCFileSysPath | fl
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +79,5 @@ Get-DomainGPO | ? { $_.DisplayName -like "*laps*" } | select DisplayName, Name, 
 ## Tags
 
 - [[Enumeration]]
+
+

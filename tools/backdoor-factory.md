@@ -16,3 +16,9 @@ The goal of BDF is to patch executable binaries with user desired shellcode and 
 ## Description
 
 The goal of BDF is to patch executable binaries with user desired shellcode and continue normal execution of the prepatched state.Supporting: Windows PE x32/x64 and Linux ELF x32/x64 (System V)Some executables have built in protections, as such this will not work on all binaries. It is advisable that you test target binaries before deploying them to clients or using them in exercises.
+
+
+
+
+
+

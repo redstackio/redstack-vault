@@ -30,11 +30,15 @@ This procedure involves disabling real-time monitoring in Azure AD Connect and r
 
 This procedure involves disabling real-time monitoring in Azure AD Connect and resetting the on-premises admin password. This can be used by an attacker to gain access to sensitive information in the cloud. Real-time monitoring allows for the detection of security events such as failed logins and password changes. By disabling this feature, an attacker can perform actions without being detected. Resetting the on-premises admin password allows the attacker to gain access to the on-premises environment and potentially move laterally.
 
+ 
+
 ## Requirements
 
 1. Access to Azure AD Connect
 
 1. Access to on-premises environment
+
+ 
 
 ## Defense
 
@@ -44,17 +48,27 @@ This procedure involves disabling real-time monitoring in Azure AD Connect and r
 
 1. Regularly rotate on-premises admin passwords
 
+ 
+
 ## Objectives
 
 1. Disable real-time monitoring in Azure AD Connect
 
 1. Reset the on-premises admin password
 
+ 
+
 # Instructions
 
 1. undefined
 
+ 
+
+
+
 **Code**: [[PS > Set-MpPreference -DisableRealtimeMonitoring $]]
+
+
 
 > 
 
@@ -75,3 +89,5 @@ This procedure involves disabling real-time monitoring in Azure AD Connect and r
 
 - [[Azure AD Connect]]
 - [[Cloud - Azure]]
+
+

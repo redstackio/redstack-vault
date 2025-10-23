@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # wmiexec.py
 
+
+
 **Command** ([[Execute remote commands with any of the following by using the TGT]]):
 
 ```bash
 python wmiexec.py <domain_name>/<user_name>@<remote_hostname> -k -no-pass
 
 ```
+
+
+
+
+
+

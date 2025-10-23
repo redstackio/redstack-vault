@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:52.902565+00:00'
 ```bash
 $ ssh -i YOUR_KEY.pem  ubuntu@ec2-XXX-XXX-XXX-XXX.us-east-2.compute.amazonaws.com
 ```
+
+

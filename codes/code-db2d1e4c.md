@@ -30,3 +30,5 @@ XSSObject.proxy = function (obj, name, report_function_name, exec_original) {
   };
 XSSObject.proxy(window, 'alert', 'window.alert', false);
 ```
+
+

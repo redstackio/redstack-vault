@@ -28,9 +28,21 @@ Scheduled Tasks is a series of cmdlets used for creating, deleting, and modifyin
 
 Scheduled Tasks is a series of cmdlets used for creating, deleting, and modifying Windows scheduled tasks. 
 
+
+
 ## Example
 
 ## 
+
+
+
+{{EMBEDDED_COMMAND_cf7f541a-78ef-4bba-9e89-505717c4479f}}
+
+
+
+
+
+
 
 cmdlets:
 
@@ -84,3 +96,5 @@ cmdlets:
 
 - [[administrator]]
 - [[persistence]]
+
+

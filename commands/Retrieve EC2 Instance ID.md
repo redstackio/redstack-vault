@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:07.689510+00:00'
 ```bash
 curl http://169.254.169.254/latest/meta-data/instance-id
 ```
+
+

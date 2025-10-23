@@ -31,11 +31,15 @@ Technical Description: SLK-EXEC is a Microsoft Office add-in that allows users t
 
 Business Value: An attacker can use SLK-EXEC Shell Command Execution to gain access to sensitive information, establish persistence or execute further stages of an attack on a target system.
 
+ 
+
 ## Requirements
 
 1. Access to a system with SLK-EXEC installed
 
 1. Authentication on the target system
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Business Value: An attacker can use SLK-EXEC Shell Command Execution to gain acc
 1. Monitor for the use of SLK-EXEC and other Office add-ins
 
 1. Implement least privilege access control to limit the ability of users to execute arbitrary shell commands
+
+ 
 
 ## Objectives
 
@@ -55,6 +61,8 @@ Business Value: An attacker can use SLK-EXEC Shell Command Execution to gain acc
 
 1. Execute further stages of an attack
 
+ 
+
 # Instructions
 
 1. To execute a shell command using this script, follow these steps:
@@ -63,10 +71,16 @@ Business Value: An attacker can use SLK-EXEC Shell Command Execution to gain acc
 3. Type the name of the script file followed by the command you want to execute.
 For example, if the script file is named 'shell.ps1' and you want to execute the 'dir' command, type the following command: 'shell.ps1 dir'.
 
+ 
+
+
+
 **Code**: [[ID;P
 O;E
 NN;NAuto_open;ER101C1;KOut Flank;F
 C;X1;Y]]
+
+
 
 > This script allows you to execute shell commands from within PowerShell. The 'EEXEC' command is used to execute the shell command specified in the argument. The 'EHALT' command is used to stop the script from executing further. You can modify the 'c:\shell.cmd' argument to specify the path of the shell command you want to execute.
 
@@ -84,3 +98,5 @@ C;X1;Y]]
 
 - [[Office - Attacks]]
 - [[SLK - EXEC]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:51.267705+00:00'
 ```bash
 GRANT FILE ON *.* TO 'root'@'localhost'; FLUSH PRIVILEGES;
 ```
+
+

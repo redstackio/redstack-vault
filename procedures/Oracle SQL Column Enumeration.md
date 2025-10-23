@@ -34,11 +34,15 @@ From a technical perspective, this technique exploits the vulnerability in the a
 
 From a business perspective, this technique can be used to identify potential targets for further exploitation. It can also be used to identify sensitive data that may be at risk of compromise.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this technique can be used to identify potential ta
 
 1. Implement database access control mechanisms to prevent unauthorized access to sensitive information
 
+ 
+
 ## Objectives
 
 1. Identify column names from a table using SQL injection
@@ -56,6 +62,8 @@ From a business perspective, this technique can be used to identify potential ta
 
 1. Identify sensitive information stored in a database
 
+ 
+
 # Instructions
 
 1. To retrieve the column names of a table, use the following SQL query:
@@ -63,11 +71,19 @@ SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name';
 To retrieve the column names of a table owned by a specific user, use the following SQL query:
 SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name' and owner = 'owner_name';
 
+ 
+
+
+
 **Code**: [[SELECT column_name FROM all_tab_columns WHERE tabl]]
+
+
 
 > The 'all_tab_columns' view contains information about all tables, views and synonyms that are accessible to the current user.
 The 'table_name' argument specifies the name of the table whose columns you want to retrieve.
 The 'owner' argument specifies the name of the user who owns the table. If not specified, it will retrieve the columns of all tables with the specified name regardless of the owner.
+
+
 
 **Command** ([[Retrieve column names for table 'blah']]):
 
@@ -75,11 +91,17 @@ The 'owner' argument specifies the name of the user who owns the table. If not s
 SELECT column_name FROM all_tab_columns WHERE table_name = 'blah';
 ```
 
+
+
+
+
 **Command** ([[Retrieve column names for table 'blah' owned by 'foo']]):
 
 ```bash
 SELECT column_name FROM all_tab_columns WHERE table_name = 'blah' and owner = 'foo';
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ SELECT column_name FROM all_tab_columns WHERE table_name = 'blah' and owner = 'f
 
 - [[Oracle SQL Injection]]
 - [[Oracle SQL List Columns]]
+
+

@@ -35,11 +35,15 @@ To list the policies attached to a key, the attacker can use the 'List Key Polic
 
 The business value of this attack is that it can help an attacker to gain access to sensitive data that is encrypted with the key. 
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list KMS key policies
 
 1. Access to the AWS console or CLI
+
+ 
 
 ## Defense
 
@@ -49,23 +53,33 @@ The business value of this attack is that it can help an attacker to gain access
 
 1. Regularly monitor AWS KMS activity logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. List the policies attached to a specified AWS KMS key
 
 1. Identify who has access to the specified key and what they can do with it
 
+ 
+
 # Instructions
 
 1. Use the AWS KMS CLI command 'list-key-policies' to list the key policies for a specified customer master key (CMK).
 
+ 
+
 The 'list-key-policies' command is used to display the key policies associated with a specific CMK. The command takes one argument, '--key-id', which specifies the ID of the CMK for which you want to list the policies. The output of the command is a list of the policies associated with the specified CMK. Each policy is identified by its name, which is a string value. The policies themselves are JSON documents that define the permissions and restrictions for the specified key. These policies can be modified using the 'put-key-policy' command.
+
+
 
 **Command** ([[List Key Policies]]):
 
 ```bash
 aws kms list-key-policies --key-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws kms list-key-policies --key-id ID
 - [[Credential Exfiltration]]
 - [[KMS]]
 - [[Listing policies attached to an specified key]]
+
+

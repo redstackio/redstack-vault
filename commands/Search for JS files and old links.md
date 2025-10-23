@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:17.936731+00:00'
 ```bash
 curl -sX GET "http://web.archive.org/cdx/search/cdx?url=<targetDomain.com>&output=text&fl=original&collapse=urlkey&matchType=prefix"
 ```
+
+

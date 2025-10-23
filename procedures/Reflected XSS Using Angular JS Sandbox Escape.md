@@ -30,17 +30,43 @@ Reflected XSS can be performed through the user input fields in the application.
 
 Reflected XSS can be performed through the user input fields in the application. It is also possible to escape Angular JS Sandbox by customising the payload.
 
+
+
 # Procedure
+
+
 
 1. Search for any string through the input field
 
+
+
+
+
+![841b203b-a29e-4002-b16c-1a0b0ca2c9ec.png]()
+
+
+
 2. In the response page, check the view source and see that the searched string is not reflected in any JavaScript template string.
+
+
+
+
+
+![76b5a606-d1fd-4a32-b5d5-d061bad2cc87.png]()
+
+
 
 3. XSS payload can now be created using ng-focus event in Angular JS to bypass CSP. The constructed payload would look like:
 
+
+
 *<input id=x ng-focus=$event.path|orderBy:'(z=alert)(document.cookie)'>#x*
 
+
+
 4. Now use the above payload to execute the script.
+
+
 
 ## Platforms
 
@@ -53,3 +79,5 @@ Reflected XSS can be performed through the user input fields in the application.
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xss]]
+
+

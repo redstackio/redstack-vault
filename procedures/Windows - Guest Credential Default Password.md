@@ -31,11 +31,15 @@ This procedure involves obtaining the default guest account password for a Windo
 
 This procedure involves obtaining the default guest account password for a Windows system. The default guest account password is often left unchanged by system administrators, making it an easy target for attackers. Once the password is obtained, an attacker can use it to gain access to the system and potentially escalate privileges. The technical process involves finding the guest account and then using a tool or script to guess the password. The business value of this procedure is that it allows an attacker to gain unauthorized access to sensitive information and systems.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted Windows system
 
 1. Ability to run scripts or tools on the system
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This procedure involves obtaining the default guest account password for a Windo
 
 1. Implement multi-factor authentication to prevent password guessing attacks
 
+ 
+
 ## Objectives
 
 1. Obtain the default guest account password
@@ -53,15 +59,25 @@ This procedure involves obtaining the default guest account password for a Windo
 
 1. Potentially escalate privileges
 
+ 
+
 # Instructions
 
 1. To change the password for the Guest account, use the following command: net user guest *
+
+ 
+
+
 
 **Code**: [[Username: Guest
 Password: [EMPTY]
 NT Hash: 31d6cfe]]
 
+
+
 > The 'net user' command is used to manage user accounts in Windows. The 'guest' argument specifies the username for which the password is to be changed. The '*' character prompts the user to enter a new password. Once the new password is entered, it will replace the empty default password for the Guest account.
+
+
 
 **Command** ([[Extracted Credentials]]):
 
@@ -70,6 +86,8 @@ Username: Guest
 Password: [EMPTY]
 NT Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ NT Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
 - [[Get credentials]]
 - [[Guest Credential]]
 - [[Windows - Using credentials]]
+
+

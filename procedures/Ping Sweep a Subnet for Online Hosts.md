@@ -31,13 +31,23 @@ Perform host discovery on an entire subnet, identifying online hosts using ping 
 
 Perform host discovery on an entire subnet, identifying online hosts using ping and queries to popular ports.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap Ping Sweep]]):
 
 ```bash
 nmap -sn $_TARGET_IP/$_CIDR
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -57,3 +67,5 @@ nmap -sn $_TARGET_IP/$_CIDR
 
 - [[Enumeration]]
 - [[Network]]
+
+

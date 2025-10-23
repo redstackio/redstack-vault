@@ -35,6 +35,8 @@ From a technical perspective, the Execution Policy is a setting in PowerShell th
 
 From a business perspective, this procedure ensures that PowerShell scripts are executed in a secure manner, preventing unauthorized access to sensitive data or systems. By requiring signed scripts, organizations can ensure that only trusted scripts are executed, reducing the risk of a security breach.
 
+ 
+
 ## Requirements
 
 1. Admin access to the system
@@ -42,6 +44,8 @@ From a business perspective, this procedure ensures that PowerShell scripts are 
 1. PowerShell installed on the system
 
 1. PowerView commands installed on the system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, this procedure ensures that PowerShell scripts are 
 
 1. Monitor PowerShell logs for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. To ensure that the Execution Policy is set to allow signed scripts for PowerView commands
@@ -59,17 +65,27 @@ From a business perspective, this procedure ensures that PowerShell scripts are 
 
 1. To reduce the risk of a security breach through the execution of malicious code
 
+ 
+
 # Instructions
 
 1. To use PowerView, run the following commands:
 
+ 
+
+
+
 **Code**: [[powershell -EncodedCommand $encodedCommand
 powersh]]
+
+
 
 > 1. powershell -EncodedCommand $encodedCommand - Encoded command to load the PowerView module
 2. powershell -ep bypass ./PowerView.ps1 - Loads the PowerView module
 3. Set-Executionpolicy -Scope CurrentUser -ExecutionPolicy UnRestricted - Changes the execution policy to allow running the PowerView module
 4. Set-ExecutionPolicy Bypass -Scope Process - Changes the execution policy to allow running the PowerView module
+
+
 
 **Command** ([[Run PowerView PowerShell script]]):
 
@@ -78,12 +94,18 @@ powershell -EncodedCommand $encodedCommand
 powershell -ep bypass ./PowerView.ps1
 ```
 
+
+
+
+
 **Command** ([[Change execution policy]]):
 
 ```bash
 Set-Executionpolicy -Scope CurrentUser -ExecutionPolicy UnRestricted
 Set-ExecutionPolicy Bypass -Scope Process
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +127,5 @@ Set-ExecutionPolicy Bypass -Scope Process
 
 - [[Execution Policy]]
 - [[Powershell]]
+
+

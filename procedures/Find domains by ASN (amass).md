@@ -23,7 +23,13 @@ The Autonomous System Number is uniquely allocated to organizations and directly
 
 The Autonomous System Number is uniquely allocated to organizations and directly tied to public IP Ranges provided to these organizations.
 
+
+
 Using the 'amass' tool we can lookup domains / subdomains by using the ASN number
+
+
+
+
 
 **Command** ([[amass enumerate domains by ASN]]):
 
@@ -31,7 +37,21 @@ Using the 'amass' tool we can lookup domains / subdomains by using the ASN numbe
 amass intel -asn $_ASN
 ```
 
+
+
+
+
+
+
+
+
+
+
 Secondary command to retrieve the IP also
+
+
+
+
 
 **Command** ([[amass enumerate domains and ip by ASN]]):
 
@@ -39,7 +59,13 @@ Secondary command to retrieve the IP also
 amass intel -active -asn $_ASN -ip
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[amass enumerate domains and ip by ASN]]
 - [[amass enumerate domains by ASN]]
+
+

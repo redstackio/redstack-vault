@@ -25,6 +25,8 @@ SharpUp is a C# port of various PowerUp functions.  SharpUp has only implemented
 
 SharpUp is a C# port of various PowerUp functions.  SharpUp has only implemented the more popular checks and no weaponization features have been added.
 
+
+
 Scans Include:
 
 - Common privilege escalation paths
@@ -35,7 +37,15 @@ Scans Include:
 
 - Vulnerable registry settings
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_89fb504d-bae1-442f-a5c4-407e91a60b09}}
+
+
 
 # Installation
 
@@ -43,7 +53,11 @@ Scans Include:
 
 SharpUp can be compiled with Microsoft Visual Studio Community versions 2015 to 2019 with ".NET desktop development" installed.
 
+
+
 1. Clone the repo
+
+
 
 2. Open SharpUp.sln with Visual Studio
 
@@ -51,7 +65,11 @@ SharpUp can be compiled with Microsoft Visual Studio Community versions 2015 to 
 
 4. Select "Build" > ""Rebuild Solution"
 
+
+
 The compiled .exe can be found in <SharpUp Directory>/SharpUp/bin/Release/SharpUp.exe
+
+
 
 ## Platforms
 
@@ -64,3 +82,5 @@ The compiled .exe can be found in <SharpUp Directory>/SharpUp/bin/Release/SharpU
 ## Tags
 
 - [[Enumeration]]
+
+

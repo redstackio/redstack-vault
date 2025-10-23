@@ -32,6 +32,9 @@ Freemarker is a Java-based template engine that is widely used in web applicatio
 
 By exploiting this vulnerability, an attacker can execute arbitrary code on the target system. This can lead to data theft, system compromise, and other malicious activities. The technical explanation involves injecting malicious code into the Freemarker template, which will be executed on the server. The business value of this attack is that it allows attackers to gain unauthorized access to sensitive information and systems, which can lead to financial losses, reputational damage, and legal consequences.
 
+
+ 
+
 ## Requirements
 
 1. Access to the target application
@@ -39,6 +42,8 @@ By exploiting this vulnerability, an attacker can execute arbitrary code on the 
 1. Knowledge of Freemarker syntax
 
 1. Ability to inject code into the target application
+
+ 
 
 ## Defense
 
@@ -48,17 +53,27 @@ By exploiting this vulnerability, an attacker can execute arbitrary code on the 
 
 1. Regularly update the application and its dependencies to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass the Freemarker sandbox mechanism
 
 1. Inject and execute malicious code on the target system
 
+ 
+
 # Instructions
 
 1. This command allows remote code execution on a target system running an outdated version of Freemarker. The command uses the ObjectWrapper and Execute classes to execute arbitrary code on the target system. In order to use this command, the attacker must have access to a vulnerable version of Freemarker and be able to inject the payload into the target system.
 
+ 
+
+
+
 **Code**: [[<#assign classloader=article.class.protectionDomai]]
+
+
 
 > The payload for this command is a Freemarker template that executes the 'id' command on the target system. The command works by loading the ObjectWrapper and Execute classes through the classloader, and then using them to execute arbitrary code. The payload can be modified to execute any desired command on the target system.
 
@@ -79,3 +94,5 @@ By exploiting this vulnerability, an attacker can execute arbitrary code on the 
 - [[Freemarker]]
 - [[Freemarker - Sandbox bypass]]
 - [[Server Side Template Injection]]
+
+

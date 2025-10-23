@@ -36,11 +36,15 @@ To exploit this vulnerability, the attacker sends a specially crafted request to
 
 This procedure can be used by attackers to gain unauthorized access to cloud infrastructure and data, leading to data breaches and financial loss for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application with SSRF vulnerability
 
 1. Knowledge of AWS Instance Metadata and User Data service
+
+ 
 
 ## Defense
 
@@ -50,22 +54,34 @@ This procedure can be used by attackers to gain unauthorized access to cloud inf
 
 1. Implement network segmentation to limit access to cloud infrastructure
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from Oracle cloud instances
 
 1. Gain unauthorized access to cloud infrastructure and data
 
+ 
+
 # Instructions
 
 1. To access AWS Instance Metadata and User Data, use the given URLs:
 
+ 
+
+
+
 **Code**: [[http://192.0.0.192/latest/
 http://192.0.0.192/late]]
+
+
 
 > AWS Instance Metadata and User Data are used to provide information about an instance running on Amazon Web Services (AWS). The given URLs provide access to the metadata and user data of the instance. The metadata includes information about the instance, such as the instance ID, availability zone, and security groups. The user data is information that can be passed to the instance during launch and is often used to configure the instance.
 
 To access the metadata and user data, simply make an HTTP request to the appropriate URL. For example, to get the instance ID, you would make an HTTP request to http://192.0.0.192/latest/meta-data/instance-id. Similarly, to get the user data, you would make an HTTP request to http://192.0.0.192/latest/user-data/.
+
+
 
 **Command** ([[Retrieve EC2 metadata]]):
 
@@ -75,6 +91,8 @@ http://192.0.0.192/latest/user-data/
 http://192.0.0.192/latest/meta-data/
 http://192.0.0.192/latest/attributes/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ http://192.0.0.192/latest/attributes/
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Oracle Cloud]]
+
+

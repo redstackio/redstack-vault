@@ -35,9 +35,13 @@ This procedure uses PowerShell to bypass filters that block certain characters o
 Business Value:
 This procedure can be used by attackers to gain access to sensitive information, escalate privileges, or execute further attacks on the system. By bypassing filters that attempt to block certain characters or commands, an attacker can execute commands that would normally be blocked.
 
+ 
+
 ## Requirements
 
 1. Access to a system with PowerShell installed
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ This procedure can be used by attackers to gain access to sensitive information,
 
 1. Monitor system logs and network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the targeted system
 
 1. Bypass filters that attempt to block certain characters or commands
 
+ 
+
 # Instructions
 
 1. The first command will open notepad by using wildcards to bypass filters that block specific file names and extensions. The second command will open the calculator by using wildcards to bypass filters that block specific file names and extensions.
 
+ 
+
+
+
 **Code**: [[powershell C:\*\*2\n??e*d.*? # notepad
 @^p^o^w^e^r]]
+
+
 
 > The attacker uses the $() syntax to execute arbitrary commands within a string. Wildcards are used to bypass filters that attempt to block specific file extensions or file names. The first command uses the wildcard *2 to bypass filters that block specific file names. The second command uses the wildcard *32 to bypass filters that block specific file names. The ? characters are used to match any single character. The e*d.*? matches any file name that starts with e, has a d in the middle, and ends with any extension that is three characters long.
 
@@ -78,3 +92,5 @@ This procedure can be used by attackers to gain access to sensitive information,
 - [[Bypass with wildcards]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

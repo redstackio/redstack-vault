@@ -16,3 +16,7 @@ WordPress finger printer tool, plecost search and retrieve information about the
 ## Description
 
 WordPress finger printer tool, plecost search and retrieve information about the plugins versions installed in WordPress systems. It can analyze a single URL or perform an analysis based on the results indexed by Google. Additionally displays CVE code associated with each plugin, if there. Plecost retrieves the information contained on Web sites supported by WordPress, and also allows a search on the results indexed by Google.
+
+
+
+

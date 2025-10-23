@@ -26,7 +26,15 @@ SeatBelt is a C# tool that enumerates a local system  to discover security vulne
 
 SeatBelt is a C# tool that enumerates a local system  to discover security vulnerabilities and potential privilege escalation routes.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_5e888ac1-f94d-4fa6-8d55-b4ec7837aab2}}
+
+
 
 # Installation
 
@@ -34,7 +42,11 @@ SeatBelt is a C# tool that enumerates a local system  to discover security vulne
 
 Seatbelt can be compiled with Microsoft Visual Studio Community 2019 with ".NET desktop development" installed.
 
+
+
 1. Clone the repository
+
+
 
 2. Open  "Seatbelt.sln" with Visual Studio
 
@@ -42,7 +54,15 @@ Seatbelt can be compiled with Microsoft Visual Studio Community 2019 with ".NET 
 
 4. Select "Build" > "Rebuild Solution"
 
+
+
 **The compiled .exe can be found in <SeatbeltDirectory>/Seatbelt/bin/Release/Seatbelt.exe**
+
+
+
+
+
+
 
 ## Platforms
 
@@ -56,3 +76,5 @@ Seatbelt can be compiled with Microsoft Visual Studio Community 2019 with ".NET 
 
 - [[C#]]
 - [[Enumeration]]
+
+

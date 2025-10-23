@@ -23,3 +23,5 @@ root@kali:~# steghide extract -sf wallpaper.jpg
 Enter passphrase: 
 wrote extracted data to "id_rsa.pub".
 ```
+
+

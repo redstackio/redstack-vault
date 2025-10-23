@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # RPC Cheatsheet
 
+
+
 **Command** ([[Connect to Null Session]]):
 
 ```bash
@@ -16,8 +18,20 @@ rpcclient -U "" $ip
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 [os version]
 smb> srvinfo
 [usernames]
 smb> enumdo]]
+
+
+
+
+
+

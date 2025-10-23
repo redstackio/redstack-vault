@@ -18,3 +18,5 @@ mimikatz # log
 mimikatz # sekurlsa::logonpasswords
 mimikatz # sekurlsa::wdigest
 ```
+
+

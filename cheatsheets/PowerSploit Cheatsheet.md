@@ -13,7 +13,11 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 PowerSploit is a collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. PowerSploit is comprised of multiple modules and scripts.
 
+
+
 ## PowerUp
+
+
 
 **Command** ([[Performs multiple local host privilege escalation checks for common Windows misconfigurations.]]):
 
@@ -22,11 +26,19 @@ Invoke-AllChecks
 
 ```
 
+
+
+
+
 [See cheat sheet for more commands](https://github.com/HarmJ0y/CheatSheets/blob/master/PowerUp.pdf)
+
+
 
 ## PowerView
 
 Requires domain user privileges
+
+
 
 **Command** ([[Find Administrative users logged in across the domain – default group = Domain Admins]]):
 
@@ -36,12 +48,24 @@ Invoke-UserHunter -Threads 20 -GroupName "Domain Admins" -SearchForest -CheckAcc
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find User (Stealthy via Fileshares)]]):
 
 ```bash
 Invoke-UserHunter -Stealth -Threads 5 -NoPing [-GroupName “Enterprise Admins”] [-UserName "svcAccount"]
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get domain user info]]):
 
@@ -50,12 +74,24 @@ Get-NetUser [-UserName john] Get-NetUser -Domain | Select-Object objectsid,locko
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find group names]]):
 
 ```bash
 Get-NetGroup [-GroupName *admin*]
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get group members]]):
 
@@ -64,12 +100,24 @@ Get-NetGroupMember [-GroupName “Domain Admins”]
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find open shares – Noisy]]):
 
 ```bash
 Invoke-ShareFinder -CheckShareAccess
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Find open (non-default i.e. C$) shares by LDAP source]]):
 
@@ -78,12 +126,24 @@ Invoke-ShareFinder -ComputerADSPath "LDAP://OU=Servers,OU=IT,DC=domain,DC=com" -
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Find interesting files]]):
 
 ```powershell
 powershell Invoke-FileFinder -ComputerName -share share_list.txt -terms ssn,pass,sensitive,secret,admin,login,unattend*.xml,web.config,account -Threads 20 | export-csv filefinder_shares.csv
 
 ```
+
+
+
+
+
+
 
 **Command** ([[ Find machines on the domain the current user has local admin access to]]):
 
@@ -92,12 +152,24 @@ Find-LocalAdminAccess
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get details of all domain computers and export to a CSV file for easy viewing]]):
 
 ```bash
 Get-computerproperty -Domain -properties displayname,adspath,lastlogontimestamp,operatingsystem,operatingsystemversion,@{Name='memberof';Expression={[string]::join(";",($_.memberof))}}|export-csv computerprops.csv
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get Computers with Unconstrained Delegation]]):
 
@@ -106,9 +178,21 @@ Get-NetComputer -Unconstrained |ft -a
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Get Users & Computers Trusted for Delegation]]):
 
 ```bash
 Get-DomainUser -TrustedtoAuth -Properties distinguisedname,useraccountcontrol,msds-allowedtodelegateto|fl Get-DomainComputer -TrustedtoAuth -Properties distinguisedname,useraccountcontrol,msds-allowedtodelegateto|fl
 
 ```
+
+
+
+
+
+

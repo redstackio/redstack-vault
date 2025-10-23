@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:10.655700+00:00'
 ```bash
 certutil -decode payload.b64 payload.dll
 ```
+
+

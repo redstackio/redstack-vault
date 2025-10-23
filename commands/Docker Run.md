@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:50.751327+00:00'
 ```bash
 docker run -it docker.registry.local/wordpress-image /bin/bash
 ```
+
+

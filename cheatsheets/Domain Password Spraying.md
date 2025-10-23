@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Domain Password Spraying
 
+
+
 **Command** ([[Open a PowerShell terminal from the Windows command line with ‘powershell.exe -exec bypass’.]]):
 
 ```bash
@@ -16,9 +18,15 @@ Type 'Import-Module Invoke-DomainPasswordSpray.ps1'.
 
 ```
 
+
+
+
+
 The only option necessary to perform a password spray is either -Password for a single password or -PasswordList to attempt multiple sprays. When using the -PasswordList option Invoke-DomainPasswordSpray will attempt to gather the account lockout observation window from the domain and limit sprays to one per observation window to avoid locking out accounts.
 
 The following command will automatically generate a list of users from the current user’s domain and attempt to authenticate using each username and a password of Winter2016.
+
+
 
 **Command** ([[Generate a list of users from the current domain and attempt to authenticate to each user with specified password]]):
 
@@ -26,3 +34,9 @@ The following command will automatically generate a list of users from the curre
 PowerShell Invoke-DomainPasswordSpray -Password Winter2016
 
 ```
+
+
+
+
+
+

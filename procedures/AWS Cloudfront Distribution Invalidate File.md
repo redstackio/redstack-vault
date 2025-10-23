@@ -34,6 +34,8 @@ Invalidating a file from a cloudfront distribution to refresh the CDN and serve 
 
 1. To invalidate index and error HTML files from the distribution: use the distribution ID and file path locations
 
+
+
 **Command** ([[aws cloudfront invalidate file from distribution]]):
 
 ```bash
@@ -41,7 +43,15 @@ aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID  --paths $
 
 ```
 
+
+
+
+
+
+
 2. To invalidate everything in the distribution:
+
+
 
 **Command** ([[aws cloudfront invalidate files with wildcard from distribution]]):
 
@@ -49,6 +59,12 @@ aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID  --paths $
 aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID  --paths $FILE_PATH
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +79,5 @@ aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID  --paths $
 
 - [[AWS]]
 - [[Cloud]]
+
+

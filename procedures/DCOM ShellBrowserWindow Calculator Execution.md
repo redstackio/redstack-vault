@@ -36,11 +36,15 @@ This technique is commonly used in Active Directory environments where the attac
 
 The business value of this technique is that it allows the attacker to gain access to sensitive data, disrupt business operations, or cause financial losses.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to a domain user account
 
 1. Ability to send a specially crafted message to the ShellWindows object
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows the attacker to gain acce
 
 1. Monitor network traffic for signs of DCOM exploitation
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on a remote Windows system
@@ -58,11 +64,19 @@ The business value of this technique is that it allows the attacker to gain acce
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. This command executes the calculator on a Windows 10 machine. It uses a COM object to create an instance of the calculator and then executes it using the ShellExecute method.
 
+ 
+
+
+
 **Code**: [[$com = [Type]::GetTypeFromCLSID('C08AFD90-F2A1-11D]]
+
+
 
 > The command consists of the following steps:
 1. Get the type of the COM object using the GetTypeFromCLSID method.
@@ -71,6 +85,8 @@ The business value of this technique is that it allows the attacker to gain acce
 
 Note that this command only works on Windows 10 machines, and the COM object used doesn't exist in Windows 7.
 
+
+
 **Command** ([[Open Calculator]]):
 
 ```bash
@@ -78,6 +94,8 @@ $com = [Type]::GetTypeFromCLSID('C08AFD90-F2A1-11D1-8455-00A0C91F3880',"10.10.10
 $obj = [System.Activator]::CreateInstance($com)
 $obj.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\system32",$null,0)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +120,5 @@ $obj.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\system32",$nul
 - [[Active Directory Attacks]]
 - [[DCOM Exploitation]]
 - [[DCOM via ShellBrowserWindow]]
+
+

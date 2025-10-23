@@ -40,6 +40,8 @@ Technical Explanation: Kerberos is the authentication protocol used in Active Di
 
 Business Value: Attackers can use Kerberos pre-auth bruteforcing to gain access to sensitive information and systems within an organization. This can result in data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to the Active Directory environment
@@ -47,6 +49,8 @@ Business Value: Attackers can use Kerberos pre-auth bruteforcing to gain access 
 1. Valid credentials or anonymous access
 
 1. Kerbrute tool
+
+ 
 
 ## Defense
 
@@ -56,11 +60,15 @@ Business Value: Attackers can use Kerberos pre-auth bruteforcing to gain access 
 
 1. Implement multi-factor authentication to prevent password-based attacks
 
+ 
+
 ## Objectives
 
 1. Identify user accounts with weak passwords
 
 1. Gain access to sensitive information and systems within the network
+
+ 
 
 # Instructions
 
@@ -69,7 +77,13 @@ Business Value: Attackers can use Kerberos pre-auth bruteforcing to gain access 
 2. --dc: The IP address of the domain controller to use for the enumeration.
 3. usernames.txt: The wordlist of usernames to use for the brute force.
 
+ 
+
+
+
 **Code**: [[root@kali:~$ ./kerbrute_linux_amd64 userenum -d do]]
+
+
 
 > This command is useful for penetration testing and can help identify valid usernames on a target domain. It can also be used for security assessments to identify weak usernames that can be easily guessed by an attacker. It is important to note that this command should only be used with permission from the target organization and should not be used for malicious purposes.
 
@@ -80,15 +94,25 @@ Business Value: Attackers can use Kerberos pre-auth bruteforcing to gain access 
 4. Replace [domain] with the target domain name, [domain controller IP] with the IP address of the domain controller, [wordlist file path] with the path to your password wordlist file, and [username] with the target username.
 5. Wait for Kerbrute to finish the password bruteforcing process and check the output for any successful attempts.
 
+ 
+
+
+
 **Code**: [[root@kali:~$ ./kerbrute_linux_amd64 bruteuser -d d]]
 
+
+
 > The 'bruteuser' command in Kerbrute is used for user password bruteforcing. The '-d' option is used to specify the target domain name, while the '--dc' option is used to specify the IP address of the domain controller. The 'rockyou.txt' file is a password wordlist file that contains a list of commonly used passwords. The 'username' argument is the target username that you want to bruteforce the password for. Kerbrute will iterate through the wordlist file and try each password combination until it finds the correct one. It is important to note that password bruteforcing is a time-consuming process and may take a long time to complete depending on the complexity of the password and the size of the wordlist file.
+
+
 
 **Command** ([[Brute Force Usernames]]):
 
 ```bash
 rockyou.txt
 ```
+
+
 
 3. The Kerbrute Password Spray command is used to perform a brute force attack on Active Directory user accounts to guess their passwords. The command takes the following arguments:
 
@@ -100,9 +124,17 @@ rockyou.txt
 
 The command also requires a file containing a list of user accounts to target and a file containing a list of passwords to try.
 
+ 
+
+
+
 **Code**: [[root@kali:~$ ./kerbrute_linux_amd64 passwordspray ]]
 
+
+
 > The Kerbrute Password Spray command is a commonly used technique by attackers to gain access to an Active Directory environment. It involves guessing a large number of passwords against a list of user accounts until a valid combination is found. The command can be customized to use different password lists, delay times, and output file names. It is important to note that this command should only be used for legitimate security testing purposes and with appropriate authorization.
+
+
 
 **Command** ([[Kerbrute Password Spray with domain_users.txt and Password123]]):
 
@@ -110,17 +142,27 @@ The command also requires a file containing a list of user accounts to target an
 ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.10 domain_users.txt Password123
 ```
 
+
+
+
+
 **Command** ([[Kerbrute Password Spray with domain_users.txt and rockyou.txt]]):
 
 ```bash
 ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.10 domain_users.txt rockyou.txt
 ```
 
+
+
+
+
 **Command** ([[Kerbrute Password Spray with domain_users.txt and 123456]]):
 
 ```bash
 ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.10 domain_users.txt '123456' -v --delay 100 -o kerbrute-passwordspray-123456.log
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -149,3 +191,5 @@ The command also requires a file containing a list of user accounts to target an
 - [[Active Directory Attacks]]
 - [[Kerberos pre-auth bruteforcing]]
 - [[Password spraying]]
+
+

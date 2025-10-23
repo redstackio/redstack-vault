@@ -38,11 +38,15 @@ Azure Subdomain Enumeration is a technique used to discover subdomains within an
 
 Azure Subdomain Enumeration is a technique used to discover subdomains within an Azure environment. This technique can be used by an attacker to identify potential targets for further attacks, such as phishing or domain hijacking. To perform this technique, an attacker would use various tools and methods to enumerate subdomains within the Azure environment. This can include using DNS queries, web scraping, and other reconnaissance methods. From there, the attacker can use the discovered subdomains to target specific services or applications within the Azure environment.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure environment
 
 1. Tools for subdomain enumeration
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Azure Subdomain Enumeration is a technique used to discover subdomains within an
 
 1. Regularly review and update DNS records to ensure only authorized subdomains are in use
 
+ 
+
 ## Objectives
 
 1. Discover subdomains within an Azure environment
@@ -59,6 +65,8 @@ Azure Subdomain Enumeration is a technique used to discover subdomains within an
 1. Identify potential targets for further attacks
 
 1. Target specific services or applications within the Azure environment
+
+ 
 
 # Instructions
 
@@ -68,9 +76,17 @@ Replace <TENANT NAME> with the name of your Azure tenant.
 
 This command will return a list of subdomains and their corresponding services.
 
+ 
+
+
+
 **Code**: [[PS> . C:\Tools\MicroBurst\Misc\InvokeEnumerateAzur]]
 
+
+
 > This command is used to enumerate the subdomains associated with an Azure tenant. The -Base parameter specifies the name of the tenant. The -Verbose parameter causes the command to display detailed information about the subdomains and their associated services. The output of this command includes a table that lists each subdomain and the service it corresponds to.
+
+
 
 **Command** ([[Enumerate Azure Subdomains]]):
 
@@ -79,6 +95,8 @@ PS> . C:\Tools\MicroBurst\Misc\InvokeEnumerateAzureSubDomains.ps1
 PS> Invoke-EnumerateAzureSubDomains -Base <TENANT NAME> -Verbose
 
 ```
+
+
 
 ## Platforms
 
@@ -107,3 +125,5 @@ PS> Invoke-EnumerateAzureSubDomains -Base <TENANT NAME> -Verbose
 - [[Enumeration]]
 - [[Searching for subdomains]]
 - [[Subdomains Enumeration]]
+
+

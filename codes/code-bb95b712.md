@@ -25,3 +25,5 @@ function Enable-PSScriptBlockLogging
     Set-ItemProperty $basePath -Name EnableScriptBlockLogging -Value "1"
 }
 ```
+
+

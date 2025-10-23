@@ -30,9 +30,13 @@ Snapshot Enumeration is an offensive technique used to discover the snapshots of
 
 Snapshot Enumeration is an offensive technique used to discover the snapshots of Elastic Block Store volumes. By listing the snapshots, an attacker can identify and target specific snapshots for further attacks. This technique can be used for persistence, defense evasion, or data exfiltration. To execute this technique, the attacker needs to have access to the AWS console or API.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS console or API
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ Snapshot Enumeration is an offensive technique used to discover the snapshots of
 
 1. Monitor for unusual activity, such as listing of snapshots by unauthorized users
 
+ 
+
 ## Objectives
 
 1. Identify snapshots of Elastic Block Store volumes
@@ -50,17 +56,25 @@ Snapshot Enumeration is an offensive technique used to discover the snapshots of
 
 1. Maintain persistence on the target system
 
+ 
+
 # Instructions
 
 1. This command lists all the snapshots owned by the account running the command
 
+ 
+
 The `aws ec2 describe-snapshots` command is used to describe one or more snapshots available in Amazon Elastic Block Store (Amazon EBS). In this case, `--owner-ids self` specifies that the command should only return snapshots that are owned by the account running the command. This command can be useful for monitoring the snapshots that are available to an account and for identifying snapshots that are no longer needed and can be deleted.
+
+
 
 **Command** ([[Describe Snapshots]]):
 
 ```bash
 aws ec2 describe-snapshots --owner-ids self
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -81,3 +95,5 @@ aws ec2 describe-snapshots --owner-ids self
 - [[Elastic Block Store]]
 - [[Enumerating Snapshots]]
 - [[Enumeration]]
+
+

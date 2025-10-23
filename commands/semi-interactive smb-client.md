@@ -23,3 +23,5 @@ python3 /opt/impacket/examples/smbclient.py 'username'@target-ip
 python3 /opt/impacket/examples/smbclient.py ''@target-ip
 
 ```
+
+

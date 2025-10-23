@@ -30,11 +30,23 @@ Chisel is a fast TCP tunnel, transported over HTTP, secured via SSH. It can be b
 
 # Example
 
+
+
+{{EMBEDDED_COMMAND_6d7635ae-c7d1-4125-b1e7-1d3e7539821a}}
+
+
+
 # Installation
+
+
+
+
 
 ## Building Chisel for Other Platforms
 
 Set the  "GOOS" and "GOARCH" environment variables to compile Chisel to run on other platforms. To build Chisel to run on a Windows x64 machine:
+
+
 
 Common GOOS values:
 
@@ -58,6 +70,12 @@ Common GOARCH values:
 
 For a full list, see: [https://golang.org/doc/install/source](https://golang.org/doc/install/source)
 
+
+
+
+
+
+
 ## Services
 
 - http
@@ -73,3 +91,5 @@ For a full list, see: [https://golang.org/doc/install/source](https://golang.org
 - [[Pivot]]
 - [[proxy]]
 - [[tunnel]]
+
+

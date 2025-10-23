@@ -27,6 +27,8 @@ This procedure involves exploiting a misconfigured OAuth Authorization Endpoint 
 
 This procedure involves exploiting a misconfigured OAuth Authorization Endpoint that allows for an attacker to inject a malicious redirect_uri parameter. By doing so, the attacker can execute a cross-site scripting (XSS) attack on unsuspecting victims. This attack can be used to steal sensitive information such as session cookies or credentials, or to perform other malicious actions on the victim's behalf. From a technical perspective, the attacker would need to identify a vulnerable OAuth Authorization Endpoint and craft a malicious redirect_uri that would trigger the XSS payload. From a business value perspective, this attack can lead to unauthorized access to sensitive information or systems, reputational damage, or financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable OAuth Authorization Endpoint
@@ -35,6 +37,8 @@ This procedure involves exploiting a misconfigured OAuth Authorization Endpoint 
 
 1. Knowledge of XSS payloads and injection techniques
 
+ 
+
 ## Defense
 
 1. Ensure that OAuth Authorization Endpoints are properly configured and validated
@@ -42,6 +46,8 @@ This procedure involves exploiting a misconfigured OAuth Authorization Endpoint 
 1. Implement input validation and sanitization mechanisms to prevent XSS attacks
 
 1. Monitor network traffic and user activity for suspicious behavior or unauthorized access
+
+ 
 
 ## Objectives
 
@@ -53,11 +59,19 @@ This procedure involves exploiting a misconfigured OAuth Authorization Endpoint 
 
 1. Perform other malicious actions on the victim's behalf
 
+ 
+
 # Instructions
 
 1. Use this endpoint to initiate the OAuth authorization process. The 'redirect_uri' parameter is set to a data URI that contains an XSS payload in the 'state' parameter. This vulnerability can be exploited by an attacker to execute arbitrary JavaScript code in the victim's browser.
 
+ 
+
+
+
 **Code**: [[https://example.com/oauth/v1/authorize?[...]&redir]]
+
+
 
 > The OAuth authorization endpoint is used to initiate the authorization process for a user. The endpoint takes several parameters, including 'client_id', 'redirect_uri', and 'state'. The 'redirect_uri' parameter specifies the URI that the user will be redirected to after they have granted or denied access. In this case, the 'redirect_uri' parameter is set to a data URI that contains an XSS payload in the 'state' parameter. This vulnerability can be exploited by an attacker to execute arbitrary JavaScript code in the victim's browser. To mitigate this vulnerability, the 'state' parameter should be properly encoded to prevent XSS attacks.
 
@@ -75,3 +89,5 @@ This procedure involves exploiting a misconfigured OAuth Authorization Endpoint 
 
 - [[Executing XSS via redirect_uri]]
 - [[OAuth Misconfiguration]]
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:23:45.181092+00:00'
 {{ 7*7 }}  # Error with Django Templates
 ih0vr{{364|add:733}}d121r # Burp Payload -> ih0vr1097d121r
 ```
+
+

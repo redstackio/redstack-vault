@@ -27,13 +27,29 @@ Small tool to decrypt or encrypt Cisco IOS type 7 passwords,.
 
 Small tool to decrypt or encrypt Cisco IOS type 7 passwords,.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_35418129-6db0-4200-babf-9da2688d3366}}
+
+
 
 # Installation
 
 ## Clone the repository
 
 Requires Python 2/3
+
+
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -44,3 +60,5 @@ Requires Python 2/3
 - [[Cryptography]]
 - [[known vulnerability]]
 - [[Network]]
+
+

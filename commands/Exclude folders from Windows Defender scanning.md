@@ -20,3 +20,5 @@ Add-MpPreference -ExclusionPath "C:\Temp"
 Add-MpPreference -ExclusionPath "C:\Windows\Tasks"
 Set-MpPreference -ExclusionProcess "word.exe", "vmwp.exe"
 ```
+
+

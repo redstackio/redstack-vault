@@ -35,9 +35,13 @@ From an offensive perspective, an attacker may attempt to bypass WDAC by finding
 
 Technical Explanation: The enforcement mode determines how strictly the application control policies are enforced. There are three possible enforcement modes: Audit Mode, Enforce Mode, and Disabled. In Audit Mode, events are logged but no enforcement takes place. In Enforce Mode, only applications that are explicitly allowed by the policy are allowed to run. In Disabled mode, no application control policies are enforced.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows machine with WDAC enabled
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ Technical Explanation: The enforcement mode determines how strictly the applicat
 
 1. Regularly review and update WDAC policies to ensure they are up-to-date and effective
 
+ 
+
 ## Objectives
 
 1. Determine the current WDAC enforcement mode
 
 1. Assess the level of protection provided by WDAC
+
+ 
 
 # Instructions
 
@@ -59,10 +67,18 @@ Technical Explanation: The enforcement mode determines how strictly the applicat
 
 Get-ComputerInfo
 
+ 
+
+
+
 **Code**: [[$ Get-ComputerInfo
 DeviceGuardCodeIntegrityPolicyE]]
 
+
+
 > This command retrieves the current enforcement mode of WDAC. The DeviceGuardCodeIntegrityPolicyEnforcementStatus and DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus values indicate whether WDAC is currently enforcing code integrity policies in kernel mode and user mode, respectively. The value 'EnforcementMode' indicates that WDAC is currently enforcing code integrity policies, while 'AuditMode' indicates that it is only logging violations. This information can be useful for troubleshooting issues related to WDAC enforcement.
+
+
 
 **Command** ([[Get-ComputerInfo]]):
 
@@ -71,6 +87,8 @@ $ Get-ComputerInfo
 DeviceGuardCodeIntegrityPolicyEnforcementStatus         : EnforcementMode
 DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus : EnforcementMode
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus : EnforcementMode
 
 - [[Windows Defender Application Control]]
 - [[Windows - Defenses]]
+
+

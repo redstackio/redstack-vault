@@ -27,6 +27,8 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 
 A PHP Deserialization POP Chain Attack is a type of attack that involves taking advantage of the PHP deserialization process to execute arbitrary code. This attack involves finding and using gadgets, which are pieces of code that can be chained together to create a payload that can be executed on the target system. The attack can be used to gain access to sensitive data or to take control of the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -34,6 +36,8 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 1. Knowledge of PHP deserialization process
 
 1. Knowledge of gadgets
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 
 1. Implement code signing to ensure that only trusted code is executed
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
@@ -50,6 +56,8 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 1. Gain access to sensitive data
 
 1. Take control of the target system
+
+ 
 
 # Instructions
 
@@ -59,7 +67,13 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 4. Inject the payload into the vulnerable application.
 5. Trigger the deserialization process to execute the payload.
 
+ 
+
+
+
 **Code**: [[&quot;PHP POP Chains&quot;]]
+
+
 
 > The 'PHP POP Chains' command can be used to identify and use gadgets to create a payload that can be executed on the target system. The command requires knowledge of the PHP deserialization process and the ability to identify vulnerable applications. Once a vulnerable application is identified, the command can be used to craft a payload and inject it into the application. The payload can then be triggered to execute the arbitrary code.
 
@@ -77,3 +91,5 @@ A PHP Deserialization POP Chain Attack is a type of attack that involves taking 
 
 - [[Finding and using gadgets]]
 - [[PHP Deserialization]]
+
+

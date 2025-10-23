@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:19:44.887186+00:00'
 ```bash
 $ aws ec2 run-instances --image-id ami-0b77e2d906b00202d --security-group-ids "sg-6d0d7f01" --subnet-id subnet-9eb001ea --count 1 --instance-type t2.micro --key-name "AWS Audit" --query "Instances[0].InstanceId" --region eu-west-1
 ```
+
+

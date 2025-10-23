@@ -34,11 +34,15 @@ Technical Explanation: The EC2 Describe Instance User Data command is used to re
 
 Business Value: This technique can be used by attackers to gain access to sensitive information such as passwords, API keys, and other secrets. This information can then be used to carry out further attacks such as lateral movement and privilege escalation. By using this technique, attackers can gain access to critical assets and data, causing significant financial and reputational damage to the target organization.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to describe EC2 instances
 
 1. Access to the instance for which User Data is being extracted
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Monitor AWS CloudTrail logs for suspicious activity related to EC2 Describe Instance User Data command
 
+ 
+
 ## Objectives
 
 1. Extract User Data attribute of a specified AWS EC2 instance
 
 1. Gather sensitive information such as passwords, API keys, and other secrets
 
+ 
+
 # Instructions
 
 1. This command is used to describe the user data associated with an EC2 instance.
 
+ 
+
 The --attribute flag is used to specify the attribute to describe, which in this case is the user data. The --instance-id flag is used to specify the ID of the instance to describe. This command returns a JSON object containing the user data associated with the specified instance.
+
+
 
 **Command** ([[Describe EC2 Instance Attribute]]):
 
 ```bash
 aws ec2 describe-instance-attribute --attribute userData --instance-id instanceID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws ec2 describe-instance-attribute --attribute userData --instance-id instanceI
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Extracting UserData attribute of specified instance]]
+
+

@@ -26,3 +26,5 @@ Invoke-Command -Session $Session -ScriptBlock {Start-Process $_CMD}
 PS C:\ > $Session = New-PSSession -ComputerName 10.10.10.10 -Credential $Cred
 PS C:\ > Invoke-Command -Session $Session -ScriptBlock {Start-Process ping 10.10.10.100}
 ```
+
+

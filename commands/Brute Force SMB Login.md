@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:55.315382+00:00'
 ```bash
  -UserList "C:\ProgramData\admins.txt" -PasswordList "Password1, Welcome1, 1qazXDR%+" -LockoutThreshold 5 -ShowVerbose
 ```
+
+

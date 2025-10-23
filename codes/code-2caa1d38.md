@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:09.197756+00:00'
 ```powershell
 curl -u 'API key:API secret key' --data 'grant_type=client_credentials' 'https://api.twitter.com/oauth2/token'
 ```
+
+

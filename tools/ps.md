@@ -28,11 +28,27 @@ ps displays information about a selection of the active processes.
 
 ps** **displays information about a selection of the active processes.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_6aaac1ca-041c-41ee-b21a-b5fc134b6989}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ ps** **displays information about a selection of the active processes.
 
 - [[Enumeration]]
 - [[process]]
+
+

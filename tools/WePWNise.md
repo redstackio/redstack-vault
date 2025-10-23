@@ -16,3 +16,7 @@ Generates architecture independent VBA code to be used in Office documents or te
 ## Description
 
 Generates architecture independent VBA code to be used in Office documents or templates and automates bypassing application control and exploit mitigation software. ​
+
+
+
+

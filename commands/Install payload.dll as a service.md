@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:10.655700+00:00'
 ```bash
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil /logfile= /LogToConsole=false /u payload.dll
 ```
+
+

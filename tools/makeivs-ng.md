@@ -16,3 +16,9 @@ makeivs-ng is part of the aircrack-ng package and is used to generate an IVS dum
 ## Description
 
 makeivs-ng is part of the aircrack-ng package and is used to generate an IVS dump file with a given WEP key.  The aim of the tool is to provide a way to create dumps with a  known encryption key for testing.
+
+
+
+
+
+

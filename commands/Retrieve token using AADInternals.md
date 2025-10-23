@@ -21,3 +21,5 @@ Install-Module AADInternals -Scope CurrentUser
 Import-Module AADInternals
 $token = (Get-AADIntAccessToken -ClientId "9bc3ab49-b65d-410a-85ad-de819febfddc" -Tenant "your.onmicrosoft.com" -Resource "https://your.sharepoint.com")
 ```
+
+

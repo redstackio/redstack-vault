@@ -25,3 +25,5 @@ Join-AADIntDeviceToIntune -DeviceName "SixByFour"
 # Start the call back
 Start-AADIntDeviceIntuneCallback -PfxFileName .\d03994c9-24f8-41ba-a156-1805998d6dc7-MDM.pfx -DeviceName "SixByFour"
 ```
+
+

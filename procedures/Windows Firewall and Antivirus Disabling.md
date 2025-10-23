@@ -24,11 +24,15 @@ This procedure is used to disable the Windows Firewall and Antivirus software on
 
 This procedure is used to disable the Windows Firewall and Antivirus software on a target machine. By disabling these security measures, the attacker can gain persistent access to the target machine and avoid detection by security software. This is achieved by modifying the registry keys and settings related to the Windows Firewall and Antivirus software. The business value of this procedure is that it allows the attacker to maintain access to the target machine and potentially move laterally within the target network.
 
+ 
+
 ## Requirements
 
 1. Administrator-level access to the target machine
 
 1. Knowledge of the registry keys and settings related to the Windows Firewall and Antivirus software
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ This procedure is used to disable the Windows Firewall and Antivirus software on
 
 1. Monitor network traffic for suspicious activity and behavior
 
+ 
+
 ## Objectives
 
 1. Disable Windows Firewall and Antivirus software on the target machine
@@ -46,6 +52,8 @@ This procedure is used to disable the Windows Firewall and Antivirus software on
 
 1. Avoid detection by security software
 
+ 
+
 # Instructions
 
 1. To protect your system from unauthorized access, follow these steps:
@@ -53,8 +61,14 @@ This procedure is used to disable the Windows Firewall and Antivirus software on
 2. Run 'NetSh Advfirewall set allprofiles state off' to turn off the firewall for all profiles.
 3. Whitelist specific IP addresses by running 'New-NetFirewallRule' command with the appropriate arguments. Replace 'ATTACKER_IP' with the IP address you want to whitelist.
 
+ 
+
+
+
 **Code**: [[Netsh Advfirewall show allprofiles
 NetSh Advfirewa]]
+
+
 
 > The 'Netsh Advfirewall show allprofiles' command displays the current firewall settings for all profiles. The 'NetSh Advfirewall set allprofiles state off' command turns off the firewall for all profiles. The 'New-NetFirewallRule' command creates a new firewall rule to whitelist specific IP addresses. The '-Name' argument specifies the name of the rule, the '-Enabled' argument specifies whether the rule is enabled, the '-Direction' argument specifies the direction of the traffic to be allowed, the '-Protocol' argument specifies the protocol to be allowed, the '-Action' argument specifies the action to be taken for the traffic, the '-Profile' argument specifies the profile to which the rule applies, and the '-RemoteAddress' argument specifies the IP address to be whitelisted.
 
@@ -63,3 +77,5 @@ NetSh Advfirewa]]
 - [[Disable Antivirus and Security]]
 - [[Disable Windows Firewall]]
 - [[Windows - Persistence]]
+
+

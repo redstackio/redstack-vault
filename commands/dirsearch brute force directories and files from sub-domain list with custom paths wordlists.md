@@ -19,3 +19,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 python3 dirsearch.py -L sub-domaints.txt -e .* -w RobotsDisallowed-Top1000.txt --simple-report=output.txt -t 50
 
 ```
+
+

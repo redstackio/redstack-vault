@@ -34,9 +34,13 @@ From a technical perspective, this technique involves using the 'Get IAM Policy'
 
 From a business perspective, this technique can be used by attackers to gain unauthorized access to sensitive data or resources within an AWS environment. By identifying vulnerabilities and weaknesses in the environment, attackers can potentially steal data, disrupt business operations, or cause other types of harm.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with the necessary permissions to access the policy.
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ From a business perspective, this technique can be used by attackers to gain una
 
 1. Regularly review and audit AWS policies to identify and remediate vulnerabilities and misconfigurations.
 
+ 
+
 ## Objectives
 
 1. Identify and retrieve information about the specified managed policy in an AWS environment.
@@ -54,17 +60,25 @@ From a business perspective, this technique can be used by attackers to gain una
 
 1. Gain unauthorized access to AWS resources.
 
+ 
+
 # Instructions
 
 1. To retrieve an IAM policy, use the `aws iam get-policy` command followed by the ARN of the policy you want to fetch.
 
+ 
+
 This command allows you to retrieve the details of a specific IAM policy. The `--policy-arn` option specifies the ARN of the policy you want to retrieve. The ARN uniquely identifies the policy and can be found in the AWS Management Console or by using the `aws iam list-policies` command. Once you have the ARN, simply replace `policy-arn` in the command with the actual ARN of the policy you want to retrieve. The output of this command will include the policy document, which contains the permissions defined in the policy.
+
+
 
 **Command** ([[Get IAM Policy]]):
 
 ```bash
 aws iam get-policy --policy-arn policy-arn
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws iam get-policy --policy-arn policy-arn
 - [[4. Enumerating Policies]]
 - [[Cloud - AWS]]
 - [[Retrieving information about the specified managed policy]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-05-23T17:01:28.997291+00:00'
 https://login.microsoftonline.com/<DOMAIN>/.well-known/openid-configuration
 https://login.microsoftonline.com/<TENANT NAME>.onmicrosoft.com/.well-known/openid-configuration
 ```
+
+

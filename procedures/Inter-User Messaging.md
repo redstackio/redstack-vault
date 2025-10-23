@@ -41,6 +41,8 @@ To send a message on Windows, the 'net send' command can be used. On Linux, the 
 
 The business value of Inter-User Messaging is that it can be used to quickly and easily communicate with other users on the same system, which can be useful for collaboration or for sending alerts or notifications. However, it is important to note that this technique can also be used by attackers for malicious purposes, such as communicating with other attackers on a compromised system or for social engineering attacks.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
@@ -48,6 +50,8 @@ The business value of Inter-User Messaging is that it can be used to quickly and
 1. Permission to send messages to other users
 
 1. Knowledge of the target user's username
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ The business value of Inter-User Messaging is that it can be used to quickly and
 
 1. Use endpoint protection software to detect and block malicious use of Inter-User Messaging
 
+ 
+
 ## Objectives
 
 1. To send messages to other users on a Windows or Linux system
@@ -65,14 +71,24 @@ The business value of Inter-User Messaging is that it can be used to quickly and
 
 1. To send messages to users on a targeted system as part of a social engineering campaign
 
+ 
+
 # Instructions
 
 1. To send a message to a user on Windows, use the 'msg' command followed by the username and the message. To send a message to all users on a Windows server, use the '*' wildcard instead of a username. On Linux, use the 'wall' command followed by the message to send a message to all users. Use the '-n' option with 'wall' command only for root. To send a direct message to a user on Linux, use the 'write' command followed by the username and press Ctrl+D after typing the message.
 
+ 
+
+
+
 **Code**: [[# Windows
 PS C:\> msg Swissky /SERVER:CRASHLAB "St]]
 
+
+
 > The 'msg' command on Windows is used to send messages to users on the same network. The '/SERVER' option is used to specify the name of the server to which the message is to be sent. The '/V' option is used to display the message in the title bar of the recipient's screen. The '/W' option is used to wait for the recipient to acknowledge the message before continuing. On Linux, the 'wall' command is used to send messages to all users on the system. The '-n' option is used to prevent the message from being broadcasted to all terminals. The 'who' command is used to display the list of all logged-in users. The 'write' command is used to send a direct message to a specific user on the system.
+
+
 
 **Command** ([[Send message to specific user on Windows]]):
 
@@ -80,11 +96,19 @@ PS C:\> msg Swissky /SERVER:CRASHLAB "St]]
 msg Swissky /SERVER:CRASHLAB "Stop rebooting the XXXX service !"
 ```
 
+
+
+
+
 **Command** ([[Send message to all users on Windows]]):
 
 ```bash
 msg * /V /W /SERVER:CRASHLAB "Hello all !"
 ```
+
+
+
+
 
 **Command** ([[Send message to all users on Linux]]):
 
@@ -92,11 +116,19 @@ msg * /V /W /SERVER:CRASHLAB "Hello all !"
 $ wall "Stop messing with the XXX service !"
 ```
 
+
+
+
+
 **Command** ([[Send message to all users on Linux with specific time]]):
 
 ```bash
 $ wall -n "System will go down for 2 hours maintenance at 13:00 PM"
 ```
+
+
+
+
 
 **Command** ([[Show currently logged in users on Linux]]):
 
@@ -104,11 +136,17 @@ $ wall -n "System will go down for 2 hours maintenance at 13:00 PM"
 $ who
 ```
 
+
+
+
+
 **Command** ([[Send message to specific user on Linux]]):
 
 ```bash
 $ write root pts/2	# press Ctrl+D  after typing the message.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -138,3 +176,5 @@ $ write root pts/2	# press Ctrl+D  after typing the message.
 
 - [[Miscellaneous & Tricks]]
 - [[Send a message to another user]]
+
+

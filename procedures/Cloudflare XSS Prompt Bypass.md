@@ -31,6 +31,8 @@ This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS 
 
 This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS protection. This technique is used to evade detection and execute malicious code on a target system. The XSS Prompt Command allows an attacker to bypass the Cloudflare WAF by prompting the user to enter a payload that will bypass the protection. This technique is highly effective and can be used to gain access to sensitive information or to execute unauthorized code.
 
+ 
+
 ## Requirements
 
 1. Access to a target system
@@ -38,6 +40,8 @@ This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS 
 1. Knowledge of the target system's vulnerabilities
 
 1. Ability to execute the XSS Prompt Command
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS 
 
 1. Implement a WAF that can detect and block XSS attacks
 
+ 
+
 ## Objectives
 
 1. Bypass Cloudflare's XSS protection
@@ -55,11 +61,19 @@ This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS 
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. This command is used for Cross-Site Scripting (XSS) attacks. It prompts the user for input and executes the code with the user's input as a parameter.
 
+ 
+
+
+
 **Code**: [[<svg onload=prompt%26%230000000040document.domain)]]
+
+
 
 > The 'onload' attribute of the 'svg' tag is used to execute the 'prompt' function. The function is called with the 'document.domain' parameter, which will prompt the user to enter a value. The entered value will be executed as JavaScript code. The 'iframe' tag is used to load the entered value as 'srcdoc' attribute, which will execute the code within the tag.
 
@@ -81,3 +95,5 @@ This procedure involves using the XSS Prompt Command to bypass Cloudflare's XSS 
 - [[Cloudflare XSS Bypasses by [@Bohdan Korzhynskyi](https://twitter.com/bohdansec)]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

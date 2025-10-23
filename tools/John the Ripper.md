@@ -26,11 +26,23 @@ John the Ripper is an offline password brute force cracking tool with support fo
 
 John the Ripper is an offline password brute force cracking tool with support for a large number of password hash types. By supplying John with hashed passwords and a wordlist of potential password guesses, John will hash each password using the same algorithm as the original hash, and report back on matching hashes, indicating a valid password has been found.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_d28cacec-c73a-4e34-a835-a8e0a5c98715}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
 
 ## Install on Windows
 
@@ -39,6 +51,10 @@ John the Ripper is an offline password brute force cracking tool with support fo
 1. Unzip the archive
 
 1. Run john.exe from the /run directory
+
+
+
+
 
 ## Platforms
 
@@ -52,3 +68,5 @@ John the Ripper is an offline password brute force cracking tool with support fo
 ## Tags
 
 - [[Brute Force]]
+
+

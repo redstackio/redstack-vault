@@ -34,11 +34,15 @@ Technical Explanation: ECMAScript6, also known as ES6 or ECMAScript 2015, is a v
 
 Business Value: This technique allows attackers to bypass filters that are in place to prevent cross-site scripting attacks, and take control of the victim's browser. This can lead to the theft of sensitive information, the spread of malware, or the execution of actions on behalf of the victim. This can have serious consequences for businesses, including loss of reputation, legal liability, and financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to a trusted third-party site
 
 1. Knowledge of ECMAScript6 syntax
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This technique allows attackers to bypass filters that are in pl
 
 1. Implement Subresource Integrity (SRI) to verify that resources loaded on a page have not been tampered with
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a trusted third-party site
@@ -56,11 +62,19 @@ Business Value: This technique allows attackers to bypass filters that are in pl
 
 1. Take control of the victim's browser
 
+ 
+
 # Instructions
 
 1. This command injects a script that displays an alert message with the text '1'.
 
+ 
+
+
+
 **Code**: [[<script>alert('1');</script>]]
+
+
 
 > The 'data' field should be modified to display a different message in the alert. Be careful when using script injection as it can be used maliciously to steal user data or perform other harmful actions.
 
@@ -81,3 +95,5 @@ Business Value: This technique allows attackers to bypass filters that are in pl
 - [[Bypass using ECMAScript6]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

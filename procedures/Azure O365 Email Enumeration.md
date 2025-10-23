@@ -42,11 +42,15 @@ From a technical standpoint, this technique involves querying Azure Active Direc
 
 The business value of this technique lies in the potential for attackers to gain access to sensitive information or compromise a target organization's systems. By identifying valid email addresses associated with an Azure tenant, an attacker can launch targeted spear-phishing campaigns to gain access to sensitive information or compromise systems.
 
+ 
+
 ## Requirements
 
 1. List of email addresses (emails.txt)
 
 1. o365creeper tool
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ The business value of this technique lies in the potential for attackers to gain
 
 1. Regularly monitoring Azure Active Directory logs can help detect and respond to unauthorized access attempts.
 
+ 
+
 ## Objectives
 
 1. Identify valid email addresses associated with an Azure tenant
@@ -64,22 +70,34 @@ The business value of this technique lies in the potential for attackers to gain
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. To validate a list of email addresses, use the o365creeper.py script with the -f flag to specify the file containing the email addresses and the -o flag to specify the output file for the valid email addresses. The script will output the status of each email address (VALID or INVALID) next to the email address.
 
+ 
+
+
+
 **Code**: [[PS> C:\Python27\python.exe C:\Tools\o365creeper\o3]]
+
+
 
 > -f: Specifies the input file containing the email addresses to validate.
 -o: Specifies the output file for the valid email addresses.
 
 By default, O365 has a lockout policy of 10 tries, and it will lock out an account for one (1) minute.
 
+
+
 **Command** ([[Run o365creeper.py on emails.txt]]):
 
 ```bash
 C:\Python27\python.exe C:\Tools\o365creeper\o365creeper.py -f C:\Tools\emails.txt -o C:\Tools\validemails.txt
 ```
+
+
 
 ## Platforms
 
@@ -108,3 +126,5 @@ C:\Python27\python.exe C:\Tools\o365creeper\o365creeper.py -f C:\Tools\emails.tx
 - [[Enumeration]]
 - [[o365]]
 - [[Office 365]]
+
+

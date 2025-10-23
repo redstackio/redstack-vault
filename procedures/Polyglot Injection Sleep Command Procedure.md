@@ -29,6 +29,8 @@ The Polyglot Injection Sleep Command Procedure is a method used to exploit SQL i
 
 From a technical perspective, this procedure involves injecting a sleep command into the SQL query, which causes the database to pause for a set amount of time. The injection can be crafted to work across multiple database platforms, hence the term polyglot injection. The business value of this procedure is that it can be used to gain unauthorized access to sensitive data, which can be used for financial gain or to gain a competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -36,6 +38,8 @@ From a technical perspective, this procedure involves injecting a sleep command 
 1. Knowledge of SQL injection techniques
 
 1. Tools to craft and execute SQL injection payloads
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ From a technical perspective, this procedure involves injecting a sleep command 
 
 1. Monitor web application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Exploit SQL injection vulnerabilities in web applications
@@ -53,12 +59,20 @@ From a technical perspective, this procedure involves injecting a sleep command 
 
 1. Execute arbitrary commands on the underlying system
 
+ 
+
 # Instructions
 
 1. This command is used in SQL injection attacks to cause a delay in the response from the database server. The SLEEP function is used to pause the execution of the query for a specified amount of time. In this case, the value is set to 1 second. This can be used to detect vulnerabilities in the database and to gather information about the structure of the database. 
 
+ 
+
+
+
 **Code**: [[SLEEP(1) /*' or SLEEP(1) or '" or SLEEP(1) or "*/
 ]]
+
+
 
 > The SLEEP function is used to pause the execution of the query for a specified amount of time. In this case, the value is set to 1 second. The IF function is used to check the version of the database and execute a benchmark function if the version is less than 5. This can be used to detect vulnerabilities in the database and to gather information about the structure of the database. The XOR function is used to bypass certain security measures that may be in place.
 
@@ -76,3 +90,5 @@ From a technical perspective, this procedure involves injecting a sleep command 
 
 - [[Polyglot injection (multicontext)]]
 - [[SQL Injection]]
+
+

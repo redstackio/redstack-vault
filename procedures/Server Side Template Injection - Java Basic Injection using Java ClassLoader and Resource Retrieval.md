@@ -38,11 +38,15 @@ To perform this attack, the attacker needs to identify a vulnerable application 
 
 This attack can be used to steal sensitive data, modify or delete files, and even take over the entire server. It can have severe consequences for the business, leading to data loss, downtime, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses server-side templates
 
 1. Knowledge of Java ClassLoader and Resource Retrieval
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This attack can be used to steal sensitive data, modify or delete files, and eve
 
 1. Monitor the server for suspicious activity, such as loading and executing unknown Java classes
 
+ 
+
 ## Objectives
 
 1. Load and execute arbitrary Java classes on the server
@@ -60,6 +66,8 @@ This attack can be used to steal sensitive data, modify or delete files, and eve
 
 1. Steal sensitive data, modify or delete files, and take over the server
 
+ 
+
 # Instructions
 
 1. To use the Java ClassLoader and retrieve resources, follow these steps:
@@ -67,11 +75,19 @@ This attack can be used to steal sensitive data, modify or delete files, and eve
 2. Use the getResource() method to retrieve the resource
 3. Use the getContent() method to access the content of the resource
 
+ 
+
+
+
 **Code**: [[49
 49
 jdk.internal.loader.ClassLoaders$AppClassLoa]]
 
+
+
 > The 'data' field in this JSON object contains sample code that demonstrates the usage of the Java ClassLoader and resource retrieval. The first two lines of the 'data' field perform a simple calculation and output the result. The next two lines demonstrate how to get the ClassLoader object and retrieve the path of the resource. The last line retrieves the content of a resource file named 'index.htm' located in a directory that is five levels up from the current directory. The 'instruction' field provides a high-level overview of the steps required to use the ClassLoader and retrieve resources, while the 'explain' field provides additional details for each step.
+
+
 
 **Command** ([[Print Two Numbers]]):
 
@@ -80,17 +96,29 @@ jdk.internal.loader.ClassLoaders$AppClassLoa]]
 49
 ```
 
+
+
+
+
 **Command** ([[Print Class Loader Information]]):
 
 ```bash
 jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
 ```
 
+
+
+
+
 **Command** ([[Print Resource Path]]):
 
 ```bash
 /Users/username/project/src/main/resources/
 ```
+
+
+
+
 
 **Command** ([[Print HTML Content]]):
 
@@ -106,6 +134,8 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
 </html>
 
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -129,3 +159,5 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
 - [[Java]]
 - [[Java - Basic injection]]
 - [[Server Side Template Injection]]
+
+

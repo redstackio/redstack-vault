@@ -105,3 +105,5 @@ select * from admindetails; [1]:
 [*] admin, wtdf9c7g5ks0l4v, admin
 
 ```
+
+

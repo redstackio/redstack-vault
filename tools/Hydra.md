@@ -29,13 +29,35 @@ Hydra is an online login brute forcing tool which attempts to identify valid cre
 
 Hydra is an online login brute forcing tool which attempts to identify valid credentials to services exposed over the network using username and password lists. Hydra has extensive support for a large number of services, as well the ability to easily add modules into the engine. Hydra also includes support for parallel connections, and is one of the faster online brute forcing tools available to the public.
 
+
+
 Supported Services:
 
+
+
+{{EMBEDDED_CODE_56f146be-a252-470b-b6b9-c8b8daa07646}}
+
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_6b223b97-82e4-4174-81c0-834f2d727f96}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -99,3 +121,5 @@ Supported Services:
 
 - [[Brute Force]]
 - [[Network]]
+
+

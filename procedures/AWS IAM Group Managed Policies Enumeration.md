@@ -35,9 +35,13 @@ The AWS Identity and Access Management (IAM) service enables you to manage acces
 
 To execute this procedure, the user needs to have valid AWS credentials with permissions to call the ListAttachedGroupPolicies API. The procedure returns a list of managed policies that are attached to the specified IAM group.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to call the ListAttachedGroupPolicies API
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ To execute this procedure, the user needs to have valid AWS credentials with per
 
 1. Monitor IAM activity logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify all managed policies that are attached to a specific IAM group
@@ -55,17 +61,25 @@ To execute this procedure, the user needs to have valid AWS credentials with per
 
 1. Identify potential privilege escalation paths within the target environment
 
+ 
+
 # Instructions
 
 1. To list the attached policies of a specific group in AWS Identity and Access Management (IAM), use the following command:
 
+ 
+
 This command will list all the policies that are attached to the specified IAM group. The --group-name parameter is used to specify the name of the group for which you want to list the attached policies. If successful, the command will return a JSON object containing the details of each attached policy, including the policy name, policy ARN, and the name of the attached entity (in this case, the group name).
+
+
 
 **Command** ([[List Attached Group Policies]]):
 
 ```bash
 aws iam list-attached-group-policies --group-name group-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws iam list-attached-group-policies --group-name group-name
 - [[2. Enumerating Groups IAM]]
 - [[Cloud - AWS]]
 - [[Listing all managed policies that are attached to the specified IAM Group]]
+
+

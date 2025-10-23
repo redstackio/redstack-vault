@@ -24,9 +24,11 @@ output: 'root@kali:~# john --wordlist=wordlist.txt hash.txt
 
   Session completed
 
+
   root@kali:~# john hash.txt --show
 
   ?:toor
+
 
   1 password hash cracked, 0 left'
 created_at: '2019-09-24T22:44:39.860867+00:00'
@@ -58,3 +60,5 @@ root@kali:~# john hash.txt --show
 
 1 password hash cracked, 0 left
 ```
+
+

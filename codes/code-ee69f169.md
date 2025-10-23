@@ -20,3 +20,5 @@ updated_at: '2023-04-10T20:22:56.996712+00:00'
 ?id=1 AND SELECT SUBSTR(table_name,1,1) FROM information_schema.tables > 'A'
 ?id=1 AND SELECT SUBSTR(column_name,1,1) FROM information_schema.columns > 'A'
 ```
+
+

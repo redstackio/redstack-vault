@@ -31,17 +31,41 @@ An attacker will inject SQL queries through user input fields or parameters in t
 
 An attacker will inject SQL queries through user input fields or parameters in the URL to execute them on the database and extract sensitive information. In Time-Based SQL injection, attacker will use a conditional query along with a time statement to predict the information in the database. Following similar payload can be used to perform Time-Based SQL injection.
 
+
+
 ' or sleep(5) #
 
 `' waitfor delay '00:00:10'--`
 
 `BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))`
 
+
+
 # `Instructions`
+
+
 
 `1. Inject the payload *' or` sleep(5) #* through user input field
 
+
+
+![2f994018-0c8e-4805-a0e5-1d7913008ca6.png](_assets/images/Mash/2f994018-0c8e-4805-a0e5-1d7913008ca6.png)
+
+
+
 2. After the search button is clicked, the application loads with a delay of 5 seconds as specified in the payload
+
+
+
+
+
+![b94650ca-a09f-4aa1-819c-e80f41ef242f.png](_assets/images/Mash/b94650ca-a09f-4aa1-819c-e80f41ef242f.png)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +79,5 @@ An attacker will inject SQL queries through user input fields or parameters in t
 - [[SQL]]
 - [[sqli]]
 - [[Web Applications]]
+
+

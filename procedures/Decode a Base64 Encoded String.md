@@ -29,13 +29,23 @@ Decode a Base64 string using Linux's base64 tool.
 
 Decode a Base64 string using Linux's base64 tool.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Decode a Base64 Encoded String]]):
 
 ```bash
 base64 -d <<< $_STRING
 ```
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +59,5 @@ base64 -d <<< $_STRING
 ## Tags
 
 - [[encode]]
+
+

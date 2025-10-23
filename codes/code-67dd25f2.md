@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:52.329129+00:00'
 ```aws cli
 aws secretsmanager list-secrets
 ```
+
+

@@ -35,6 +35,8 @@ To execute this procedure, the attacker would use the 'List EC2 Instances in a S
 
 The business value of this procedure is that it allows an attacker to gain access to sensitive data stored in RDS instances. This can lead to data theft, data manipulation, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS console or API
@@ -42,6 +44,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 1. Knowledge of the subnet to be targeted
 
 1. Authentication credentials or other means of accessing the instances
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Monitor network traffic for signs of suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify instances on a specified subnet
@@ -59,17 +65,25 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Gain access to sensitive data stored in RDS instances
 
+ 
+
 # Instructions
 
 1. To list all the EC2 instances in a specific subnet, use the following command:
 
+ 
+
 This command uses the AWS CLI to describe all EC2 instances that are running in a specific subnet. Replace 'ID' with the ID of the subnet you want to list the instances for. The output will contain detailed information about each EC2 instance, including its ID, instance type, launch time, and more.
+
+
 
 **Command** ([[Describe EC2 instances in a specific subnet]]):
 
 ```bash
 aws ec2 describe-instances --filters "Name=subnet-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws ec2 describe-instances --filters "Name=subnet-id,Values=ID"
 - [[Listing instances on the specified subnet]]
 - [[RDS - Relational Database Service]]
 - [[Scenario]]
+
+

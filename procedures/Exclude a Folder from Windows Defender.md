@@ -34,13 +34,23 @@ Exclude a folder from Windows Defender's scans using PowerShell 4+. This command
 
 Exclude a folder from Windows Defender's scans using PowerShell 4+. This command requires Administrator privileges and will only exclude the path from Defender's static analysis.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Exclude a Folder from Windows Defender (PowerShell 4+)]]):
 
 ```bash
 Add-MpPreference -ExclusionPath "$_PATH"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ Add-MpPreference -ExclusionPath "$_PATH"
 - [[administrator]]
 - [[defender]]
 - [[Defense Bypass]]
+
+

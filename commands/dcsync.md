@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 /usr/share/doc/python3-impacket/examples/secretsdump.py username@target-ip -dc-ip target-ip
 
 ```
+
+

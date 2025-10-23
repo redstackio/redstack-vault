@@ -34,6 +34,8 @@ Technical Explanation: The Key Manager is a secure storage area in Windows that 
 
 Business Value: Attackers can use this method to gain access to sensitive data and systems, causing significant damage to the business. This attack can lead to data theft, system compromise, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Windows system
@@ -41,6 +43,8 @@ Business Value: Attackers can use this method to gain access to sensitive data a
 1. Administrative privileges on the compromised system
 
 1. Use of 'Display Stored Passwords' tool
+
+ 
 
 ## Defense
 
@@ -50,25 +54,39 @@ Business Value: Attackers can use this method to gain access to sensitive data a
 
 1. Regularly update and patch Windows systems to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To escalate privileges on a compromised system
 
 1. To gain access to sensitive data and systems
 
+ 
+
 # Instructions
 
 1. To display stored passwords, run the following command in Command Prompt or PowerShell:
 
+ 
+
+
+
 **Code**: [[rundll32 keymgr,KRShowKeyMgr]]
 
+
+
 > This command will launch the Windows Credential Manager GUI, which displays all passwords and login information that are stored on the local machine. This can be useful for retrieving forgotten passwords or managing saved login information.
+
+
 
 **Command** ([[Open Windows Credential Manager]]):
 
 ```bash
 rundll32 keymgr,KRShowKeyMgr
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ rundll32 keymgr,KRShowKeyMgr
 - [[EoP - Looting for passwords]]
 - [[Passwords stored in Key Manager]]
 - [[Windows - Privilege Escalation]]
+
+

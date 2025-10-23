@@ -24,3 +24,5 @@ gcloud functions describe <function name>
 gcloud functions logs read <function name> --limit <number of lines>
 
 ```
+
+

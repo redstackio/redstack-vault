@@ -36,11 +36,15 @@ To perform this procedure, the EC2 Route Table Description command is used to ob
 
 The business value of this procedure is that it allows an attacker to gain a better understanding of the target organization's network topology and identify potential targets for further exploitation.
 
+ 
+
 ## Requirements
 
 1. Access to the EC2 Route Table Description command
 
 1. Knowledge of the target VPC-id
+
+ 
 
 ## Defense
 
@@ -50,23 +54,33 @@ The business value of this procedure is that it allows an attacker to gain a bet
 
 1. Implement network segmentation to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further enumeration
 
 1. Discover the network topology of the target organization
 
+ 
+
 # Instructions
 
 1. To describe the route tables for a specific VPC, use the following AWS CLI command:
 
+ 
+
 This command will return a list of all the route tables associated with the specified VPC ID. The output will include information such as the route table ID, the VPC ID, the main route table association, and the routes associated with the route table. You can use this command to get detailed information about the routing configuration of your VPC and troubleshoot any routing issues.
+
+
 
 **Command** ([[Describe Route Tables for VPC ID]]):
 
 ```bash
 aws ec2 describe-route-tables --filters "Name=vpc-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ec2 describe-route-tables --filters "Name=vpc-id,Values=ID"
 - [[Enumeration]]
 - [[Listing routing tables by VPC-id]]
 - [[RDS - Relational Database Service]]
+
+

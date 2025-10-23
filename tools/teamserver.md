@@ -17,12 +17,28 @@ Armitage is a scriptable red team collaboration tool for Metasploit that visuali
 
 Armitage is a scriptable red team collaboration tool for Metasploit that visualizes targets, recommends exploits, and exposes the advanced post-exploitation features in the framework.Through one Metasploit instance, your team will:
 
+
+
 Use the same sessions
+
+
 
 Share hosts, captured data, and downloaded files
 
+
+
 Communicate through a shared event log.
+
+
 
 Run bots to automate red team tasks.
 
+
+
 Armitage is a force multiplier for red team operations.
+
+
+
+
+
+

@@ -26,34 +26,140 @@ Description Customs gadget is a piece of code which can be used to create a seri
 
 Description
 
+
+
 Customs gadget is a piece of code which can be used to create a serialised object . To create gadget one needs to have access to source code to identify the java class that deserialises the object. 
+
+
 
 Instructions
 
+
+
+
+
 1. Login to the applciation and intercept the request using burp suite. Observe that the session cookie contains serialised java object.
+
+
+
+
+
+![179379e2-0843-42ce-8c43-8afb83600e31.png]()
+
+
+
+
 
 2. With burp running and proxying the requests through burp , navigate to sitemap in the burp window. Identify the request with ProductTemplate.java file. send the request to the repeater tab.
 
+
+
+
+
+![8db1b1cc-995b-4e24-a4aa-fef44a6bf710.png]()
+
+
+
+
+
 3. Observe that the ProductTemplate.java response reveals SQL statement .
+
+
+
+
+
+![5ec11da9-493f-434b-97b3-e5b8d8117025.png]()
+
+
+
+
 
 4. The following Java code will  instantiates the ProductTemplate with id and then serialises the object and then Base64 encodes the object.
 
+
+
 *Reference:[ https://github.com/PortSwigger/serialization-examples/blob/master/java/solution/Main.jav](https://github.com/PortSwigger/serialization-examples/blob/master/java/solution/Main.java)a*
+
+
+
+
+
+
 
 **Code**: [[import data.productcatalog.ProductTemplate;
 impor]]
 
+
+
+
+
+
+
 5.Compile the java program from above step and create ProductTemplate with id attribute set to single apostrophe('). Copy the Base64 encoded string in the session cookie parameter identified in step1. 
+
+
+
+
+
+![0dece295-4dea-44bd-8540-a03d0537b98e.png]()
+
+
+
+
 
 6. The error message in the response confirms the SQL injection vulenrability and the database to be Postgres. 
 
+
+
+
+
+![58b51f27-ba26-4447-8650-2d49cf01a7f0.png]()
+
+
+
+
+
 7. Now modify the *id* attribute in the java code to *union sql statement* to enumerate the numebr of columns in the database.
+
+
+
+
+
+
+
+![cdaa3eb2-1d2e-49c5-affb-1e5a194c820c.png]()
+
+
+
+
 
 8.  By enumeration technique we can confirm the number of cloumns to be 8 and columns 4,5 and 6 donot expect a string . 4,5 and 6 columns value can be Null. Now, modify the union statement to extract the password leaving 4,5 and 6 columns to null
 
+
+
 *' UNION SELECT NULL, NULL, NULL, cast(password as numeric), NULL, NULL, NULL, NULL FROM users--*
 
+
+
+
+
+![b7fc9226-3cac-440b-92d3-07deeb57802c.png]()
+
+
+
+
+
+
+
 9. Generate a  new java serialised object with the modified id attribute and submit the request to the server to extract the password.
+
+
+
+
+
+![a072b02c-ee65-4e46-9c2b-92bda1158864.png]()
+
+
 
 ## Platforms
 
@@ -64,3 +170,5 @@ impor]]
 - [[Insecure Deserialisation]]
 - [[java]]
 - [[Web Applications]]
+
+

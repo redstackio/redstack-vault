@@ -37,11 +37,15 @@ Technical Explanation: An attacker can use Curl with Verbose Output to send a re
 
 Business Value: By using this technique, an attacker can gain access to sensitive data or systems, which can lead to financial loss, reputational damage, and legal consequences. This technique can also be used to gather information about a target system, which can be used to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Curl installed
 
 1. Knowledge of bash variables and how to manipulate them
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: By using this technique, an attacker can gain access to sensitiv
 
 1. Implement access controls to restrict access to sensitive data or systems
 
+ 
+
 ## Objectives
 
 1. Bypass filters to access sensitive data or systems
@@ -59,14 +65,24 @@ Business Value: By using this technique, an attacker can gain access to sensitiv
 
 1. Gather information about a target system for further attacks
 
+ 
+
 # Instructions
 
 1. To execute a curl command with verbose output, use the -v option followed by the URL. This will display additional information about the request and response, such as the headers and status codes.
 
+ 
+
+
+
 **Code**: [[curl -v "http://evil$google.com"
 $google = ""]]
 
+
+
 > The -v option can be useful for debugging and troubleshooting HTTP requests. It provides more detailed information about the request and response, which can help identify issues such as incorrect headers or unexpected responses. In this example, the command is using the URL http://evil$google.com, which is not a valid URL and will likely result in an error. The variable $google is also being assigned an empty string, but it is not clear what this variable is being used for.
+
+
 
 **Command** ([[Verify URL with cURL]]):
 
@@ -74,11 +90,17 @@ $google = ""]]
 curl -v "http://evil$google.com"
 ```
 
+
+
+
+
 **Command** ([[Assign empty string to variable]]):
 
 ```bash
 $google = ""
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +124,5 @@ $google = ""
 - [[Bypassing filters]]
 - [[Bypass using bash variables]]
 - [[Server-Side Request Forgery]]
+
+

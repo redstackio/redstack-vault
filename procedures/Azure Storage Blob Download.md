@@ -43,9 +43,13 @@ Technical Explanation: The procedure uses the Retrieve Azure Storage Blob Conten
 
 Business Value: An attacker can use this technique to steal sensitive data from an organization's cloud storage. This can include intellectual property, financial information, and personally identifiable information (PII). The theft of this data can cause significant financial and reputational damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the Azure Storage account
+
+ 
 
 ## Defense
 
@@ -55,22 +59,36 @@ Business Value: An attacker can use this technique to steal sensitive data from 
 
 1. Encrypt sensitive data stored in Azure Storage accounts to protect it from unauthorized access
 
+ 
+
 ## Objectives
 
 1. Retrieve the contents of a blob stored in an Azure Storage account
 
 1. Exfiltrate sensitive data from an organization's cloud storage
 
+ 
+
 # Instructions
 
 <u>*Overvie</u>w*
 
+ 
+
+
+
 **Code**: [[PS Az> Get-AzResource
 PS Az> Get-AzStorageAccount ]]
+
+
+
+
 
 ## Steps
 
 1. Use the 'Get-AzResource' command to retrieve information about the Azure resources.
+
+
 
 **Command** ([[Retrieve Azure Resource]]):
 
@@ -78,11 +96,19 @@ PS Az> Get-AzStorageAccount ]]
 Get-AzResource
 ```
 
+
+
+
+
 **Command** ([[Retrieve Azure Storage Account]]):
 
 ```bash
 Get-AzStorageAccount -name <NAME> -ResourceGroupName <NAME>
 ```
+
+
+
+
 
 **Command** ([[Retrieve Storage Container]]):
 
@@ -90,11 +116,21 @@ Get-AzStorageAccount -name <NAME> -ResourceGroupName <NAME>
 Get-AzStorageContainer -Context (Get-AzStorageAccount -name <NAME> -ResourceGroupName <NAME>).context
 ```
 
+
+
+
+
 **Command** ([[Retrieve Blob Content]]):
 
 ```bash
 Get-AzStorageBlobContent -Container <NAME> -Context (Get-AzStorageAccount -name <NAME> -ResourceGroupName <NAME>).context -Blob
 ```
+
+
+
+ 
+
+
 
 ## Platforms
 
@@ -123,3 +159,5 @@ Get-AzStorageBlobContent -Container <NAME> -Context (Get-AzStorageAccount -name 
 - [[Azure Storage Blob]]
 - [[Cloud - Azure]]
 - [[List and download blobs]]
+
+

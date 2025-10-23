@@ -23,3 +23,5 @@ portfwd delete -l $_LOCAL_PORT -p $_REMOTE_PORT -r $_TARGET_IP
 meterpreter > portfwd delete -l 5985 -p 5985 -r 10.10.1.5
 [*] Successfully stopped TCP relay on 0.0.0.0:5985
 ```
+
+

@@ -37,6 +37,8 @@ To execute this procedure, the attacker needs to have access to the network and 
 
 This procedure can be used by attackers to gain access to sensitive data stored in the RDS instance. It is important to secure the network and limit access to the RDS instance to prevent lateral movement.
 
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -44,6 +46,8 @@ This procedure can be used by attackers to gain access to sensitive data stored 
 1. Knowledge of the VPC ID
 
 1. AWS CLI or other tools to list EC2 instances
+
+ 
 
 ## Defense
 
@@ -53,23 +57,33 @@ This procedure can be used by attackers to gain access to sensitive data stored 
 
 1. Monitor network traffic for any signs of unauthorized access
 
+ 
+
 ## Objectives
 
 1. List all EC2 instances within a specified VPC
 
 1. Pivot into the RDS instance using an EC2 instance
 
+ 
+
 # Instructions
 
 1. To get a list of EC2 instances in a specific VPC, use the following command:
 
+ 
+
 This command uses the AWS CLI to describe EC2 instances in a specific VPC. Replace 'ID' with the actual VPC ID. The command returns a list of instances with their details such as instance ID, instance type, and launch time.
+
+
 
 **Command** ([[Describe EC2 instances in VPC]]):
 
 ```bash
 aws ec2 describe-instances --filters "Name=vpc-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ aws ec2 describe-instances --filters "Name=vpc-id,Values=ID"
 - [[Listing instances on the specified VPC ID]]
 - [[RDS - Relational Database Service]]
 - [[Scenario]]
+
+

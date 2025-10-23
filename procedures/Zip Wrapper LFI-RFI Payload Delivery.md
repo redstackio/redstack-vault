@@ -26,9 +26,13 @@ This procedure aims to deliver a payload to a vulnerable server through a zip wr
 
 This procedure aims to deliver a payload to a vulnerable server through a zip wrapper LFI/RFI attack. The attack takes advantage of the zip wrapper to deliver a malicious payload disguised as a harmless image. Once the server processes the image, the payload is executed, allowing the attacker to gain access to the server and execute arbitrary commands. This technique can be used to bypass security measures such as firewalls or intrusion detection systems, making it a useful tool for attackers. From a technical standpoint, the attack involves crafting a zip file with a payload.php file and changing its extension to .jpg. The server then processes the file as an image, but executes the payload instead, giving the attacker control over the server. This procedure can be used to gain access to sensitive data, escalate privileges, or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server with a zip wrapper LFI/RFI vulnerability
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ This procedure aims to deliver a payload to a vulnerable server through a zip wr
 
 1. Monitor server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Deliver a payload to a vulnerable server
@@ -46,6 +52,8 @@ This procedure aims to deliver a payload to a vulnerable server through a zip wr
 
 1. Gain access to the server and execute arbitrary commands
 
+ 
+
 # Instructions
 
 1. The following commands can be used to create the zip file and rename it to shell.jpg:
@@ -53,10 +61,18 @@ This procedure aims to deliver a payload to a vulnerable server through a zip wr
 2. mv payload.zip shell.jpg
 3. rm payload.php
 
+ 
+
+
+
 **Code**: [[zip payload.zip payload.php;
 mv payload.zip shell.]]
 
+
+
 > The first command creates a zip file containing the payload.php file. The second command renames the zip file to shell.jpg, disguising it as an image file. The third command removes the original payload.php file to avoid detection.
+
+
 
 **Command** ([[Zip and rename payload.php to shell.jpg]]):
 
@@ -65,6 +81,8 @@ zip payload.zip payload.php;
 mv payload.zip shell.jpg;
 rm payload.php
 ```
+
+
 
 ## Commands Used
 
@@ -75,3 +93,5 @@ rm payload.php
 - [[File Inclusion]]
 - [[LFI / RFI using wrappers]]
 - [[Wrapper zip://]]
+
+

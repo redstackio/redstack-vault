@@ -18,3 +18,5 @@ a=()=>{c=0;for(i in self){if(/^a[rel]+t$/.test(i)){return c}c++}} //bind functio
 
 self[Object.keys(self)[a()]]("1") // alert("1")
 ```
+
+

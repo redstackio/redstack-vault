@@ -34,9 +34,13 @@ Technical Explanation: In this procedure, we will use the 'IP Address Translatio
 
 Business Value: This technique can be used to gain unauthorized access to sensitive information and systems, which can result in data breaches and financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to a server-side application that filters requests based on IP addresses
+
+ 
 
 ## Defense
 
@@ -46,18 +50,30 @@ Business Value: This technique can be used to gain unauthorized access to sensit
 
 1. Monitor network traffic for unusual activity and investigate any suspicious requests
 
+ 
+
 ## Objectives
 
 1. Bypass server-side filters to access sensitive information
+
+ 
 
 # Instructions
 
 1. To translate IP addresses, use the following commands:
 
+ 
+
+
+
 **Code**: [[http://2130706433/ = http://127.0.0.1
 http://32322]]
 
+
+
 > The 'http://2130706433/' is equivalent to 'http://127.0.0.1' IP address, while 'http://3232235521/' is equivalent to 'http://192.168.0.1' IP address, 'http://3232235777/' is equivalent to 'http://192.168.1.1' IP address, and 'http://2852039166/' is equivalent to 'http://169.254.169.254' IP address. Use these translations as needed in your scripts or applications.
+
+
 
 **Command** ([[IP Address Conversion]]):
 
@@ -67,6 +83,8 @@ http://3232235521/ = http://192.168.0.1
 http://3232235777/ = http://192.168.1.1
 http://2852039166/  = http://169.254.169.254
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ http://2852039166/  = http://169.254.169.254
 - [[Bypassing filters]]
 - [[Bypass using a decimal IP location]]
 - [[Server-Side Request Forgery]]
+
+

@@ -27,11 +27,27 @@ Nikto is an Open Source (GPL) web server scanner which performs comprehensive te
 
 Nikto is an Open Source (GPL) web server scanner which performs comprehensive tests against web servers, comparing the results against a large database of vulnerabilities to identify outdated software, server configurations,  dangerous HTTP verbs, and installed software. Nikto is not designed as a stealthy tool and will be obvious to an IDS/IPS. 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0f953868-c26d-4178-b698-fe8e3d22f6e8}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +69,5 @@ Nikto is an Open Source (GPL) web server scanner which performs comprehensive te
 - [[Enumeration]]
 - [[Network]]
 - [[Web Applications]]
+
+

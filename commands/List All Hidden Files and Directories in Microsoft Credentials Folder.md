@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:37:12.179475+00:00'
 Get-ChildItem -Hidden C:\Users\username\AppData\Local\Microsoft\Credentials\
 Get-ChildItem -Hidden C:\Users\username\AppData\Roaming\Microsoft\Credentials\
 ```
+
+

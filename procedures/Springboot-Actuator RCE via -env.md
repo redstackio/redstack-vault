@@ -33,11 +33,15 @@ Technical Explanation: The vulnerability exists due to the fact that Spring Boot
 
 Business Value: An attacker exploiting this vulnerability can gain complete control over the application and underlying infrastructure, leading to data theft, data loss, and system downtime.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of the target application's vulnerabilities
+
+ 
 
 ## Defense
 
@@ -47,19 +51,29 @@ Business Value: An attacker exploiting this vulnerability can gain complete cont
 
 1. Monitor network traffic and system logs for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
 
 1. Compromise the target application and underlying infrastructure
 
+ 
+
 # Instructions
 
 1. Replace the `COMMAND HERE` placeholder with the actual command to be executed.
 
+ 
+
+
+
 **Code**: [[public AwesomeScriptEngineFactory() {
     try {
   ]]
+
+
 
 > The payload is crafted in the form of a Java script that uses the `Runtime.getRuntime().exec()` method to execute the specified command. The payload is then sent as a value for an environment variable. When the `/env` endpoint is accessed, the payload is executed and the specified command is executed on the target system.
 
@@ -79,3 +93,5 @@ Business Value: An attacker exploiting this vulnerability can gain complete cont
 - [[Remote Code Execution via `/env`]]
 - [[Springboot-Actuator]]
 - [[Steps]]
+
+

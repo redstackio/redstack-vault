@@ -36,9 +36,13 @@ To retrieve the policy information, an attacker can use the 'Retrieve AWS Lambda
 
 The business value of this technique lies in identifying and mitigating potential security risks in AWS Lambda functions, ensuring that only authorized users have access to the function and its data.
 
+ 
+
 ## Requirements
 
 1. Valid AWS authentication credentials with permissions to access the specific Lambda function
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ The business value of this technique lies in identifying and mitigating potentia
 
 1. Monitor and review AWS CloudTrail logs for any suspicious activity related to Lambda functions
 
+ 
+
 ## Objectives
 
 1. Retrieve the policy information of a specific AWS Lambda function
 
 1. Gain knowledge about the permissions granted to the function
 
+ 
+
 # Instructions
 
 1. To retrieve the policy for an AWS Lambda function, use the following command:
 
+ 
+
 The 'aws lambda get-policy' command is used to retrieve the resource-based policy for an AWS Lambda function. The function name must be provided using the --function-name parameter. The --profile parameter can be used to specify the AWS CLI profile to use and the --region parameter is used to specify the region in which the function is located. This command returns the policy document in JSON format.
+
+
 
 **Command** ([[Get policy for AWS Lambda function]]):
 
 ```bash
 aws lambda get-policy --function-name name --profile profile --region region
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws lambda get-policy --function-name name --profile profile --region region
 - [[Cloud - AWS]]
 - [[Listing policy information about the specific lambda function]]
 - [[Persistence]]
+
+

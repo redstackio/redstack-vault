@@ -33,11 +33,15 @@ To execute this procedure, the attacker must have already gained initial access 
 
 This procedure can be valuable for an attacker as it allows them to quickly gain access to additional systems or data without having to go through the effort of cracking passwords or performing other time-consuming attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
 
 1. Ability to execute commands as a low-privileged user
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ This procedure can be valuable for an attacker as it allows them to quickly gain
 
 1. Monitor file system activity for suspicious behavior, such as large numbers of files being accessed or modified
 
+ 
+
 ## Objectives
 
 1. Locate files containing plain text passwords
@@ -54,6 +60,8 @@ This procedure can be valuable for an attacker as it allows them to quickly gain
 1. Escalate privileges on the system
 
 1. Gain access to additional systems or sensitive data
+
+ 
 
 # Instructions
 
@@ -67,7 +75,13 @@ The '2> /dev/null' part of the command is used to suppress error messages.
 
 The second part of the command is used to search for the word 'PASSWORD' in all files in the current directory and its subdirectories. It will return the file name and the line number where the word is found. The '{}' and '/null' are used to ensure that the command works with file names that contain spaces.
 
+ 
+
+
+
 **Code**: [[grep --color=auto -rnw '/' -ie "PASSWORD" --color=]]
+
+
 
 > The command 'grep' is used to search for a specific pattern in a file or multiple files. The options used in this command are:
 
@@ -102,3 +116,5 @@ The command 'find' is used to search for files in a directory hierarchy. The opt
 - [[Files containing passwords]]
 - [[Linux - Privilege Escalation]]
 - [[Looting for passwords]]
+
+

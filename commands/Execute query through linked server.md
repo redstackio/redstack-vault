@@ -7,6 +7,7 @@ data: 'SELECT * FROM OPENQUERY("dcorp-sql1", ''SELECT * FROM master..sysservers'
 
   SELECT version FROM OPENQUERY("linkedserver", ''SELECT @@version AS version'');
 
+
   -- Chain multiple openquery
 
   SELECT version FROM OPENQUERY("link1",''SELECT version FROM OPENQUERY("link2","SELECT
@@ -25,3 +26,5 @@ SELECT version FROM OPENQUERY("linkedserver", 'SELECT @@version AS version');
 -- Chain multiple openquery
 SELECT version FROM OPENQUERY("link1",'SELECT version FROM OPENQUERY("link2","SELECT @@version AS version")')
 ```
+
+

@@ -16,3 +16,7 @@ Demonstrates how to use third-party privilege escalation attacks with Cobalt Str
 ## Description
 
 Demonstrates how to use third-party privilege escalation attacks with Cobalt Strike's Beacon payload. ​
+
+
+
+

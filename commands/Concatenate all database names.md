@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:22:46.899409+00:00'
 ```bash
 SELECT STRING_AGG(name, ', ') FROM master..sysdatabases; -- Change delimiter value such as ', ' to anything else you want => master, tempdb, model, msdb   (Only works in MSSQL 2017+)
 ```
+
+

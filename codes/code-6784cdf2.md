@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:15.544506+00:00'
 ```sql
 select query_to_xml('select * from pg_user',true,true,''); -- returns all the results as a single xml row
 ```
+
+

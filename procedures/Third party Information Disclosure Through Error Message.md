@@ -35,9 +35,55 @@ Sensitive Information of an application that is disclosed will let an attacker t
 
 1. Observe different items present in the page . Try to access any of the items in the page . 
 
+
+
+
+
+
+
+
+
+![46f5487a-1498-4ace-bada-4b4fff0bddd7.PNG]()
+
+
+
 2.A *productid  *parameter can be observed with* numeric *value. Change the numeric value to string.
 
+
+
+
+
+
+
+
+
+![2bce3e43-ac8e-43af-912c-db1f541ef9c7.PNG]()
+
+
+
+
+
+
+
 3..Change the *id *parameter value to string . An error can observed in the response which shows* apache struts* being used along with its version displayed.
+
+
+
+
+
+
+
+![d355e28b-384f-4255-b0a7-9221e0c909b6.PNG]()
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +95,5 @@ Sensitive Information of an application that is disclosed will let an attacker t
 - [[injection]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

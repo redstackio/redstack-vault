@@ -19,3 +19,5 @@ PS> Get-ADObject -LDAPFilter '(&(objectclass=pkicertificatetemplate)(!(mspki-enr
 # or
 certipy 'domain.local'/'user':'password'@'domaincontroller' find -bloodhound
 ```
+
+

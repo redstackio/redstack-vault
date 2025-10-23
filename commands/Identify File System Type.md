@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.708888+00:00'
 ```bash
 $ sudo file -s /dev/xvda1
 ```
+
+

@@ -32,6 +32,8 @@ In some cases, brute forcing must be done on entire keyspaces rather than using 
 
 In some cases, brute forcing must be done on entire keyspaces rather than using dictionaries. Hashcat can generate wordlists for this using mask attacks, using the `--stdout` option.
 
+
+
 # Instructions
 
 For this example, a wordlist will be built with the following format:
@@ -44,22 +46,37 @@ For this example, a wordlist will be built with the following format:
 
 - fourth character is any character
 
+
 Use the following table to build the rules.txt file.
+
+
 
 **Code**: [[l | abcdefghijklmnopqrstuvwxyz
 u | ABCDEFGHIJKLMNO]]
 
+
+
 The mask is specified when executing the command. Each character is prepended with a ?.
+
+
 
 In this example, the mask will be: <digit><special char><hex><lower/upper/digit/special char>
 
 Mask: **?d?s?b?a**
+
+
+
+
 
 **Command** ([[Hashcat Generate a Wordlist Using a Mask]]):
 
 ```bash
 hashcat -a 3 --stdout ?d?s?b?a > $OUTPUT.txt
 ```
+
+
+
+
 
 ## Platforms
 
@@ -84,3 +101,5 @@ hashcat -a 3 --stdout ?d?s?b?a > $OUTPUT.txt
 
 - [[Cryptography]]
 - [[password cracking]]
+
+

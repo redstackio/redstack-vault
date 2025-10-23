@@ -27,3 +27,5 @@ john --show passwd
 # Restore interrupted sessions
 john --restore
 ```
+
+

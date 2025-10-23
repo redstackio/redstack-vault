@@ -16,3 +16,9 @@ Fragrouter is a network intrusion detection evasion toolkit. It implements most 
 ## Description
 
 Fragrouter is a network intrusion detection evasion toolkit. It implements most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.This program was written in the hopes that a more precise testing methodology might be applied to the area of network intrusion detection, which is still a black art at best.Conceptually, fragrouter is just a one-way fragmenting router – IP packets get sent from the attacker to the fragrouter, which transforms them into a fragmented data stream to forward to the victim.fragrouter Homepage | Kali fragrouter Repo
+
+
+
+
+
+

@@ -27,15 +27,41 @@ XML Bomb is an attack where, when an XML request is sent with the payload, the p
 
 ## Description
 
+
+
 # Description
 
 XML Bomb is an attack where, when an XML request is sent with the payload, the parser will try to process the payload and the data feeds on itself. This will eventually lead to Denial of Service condition.
 
+
+
+
+
 # Procedure
+
+
 
 1. The below screenshot shows the intercepted request of a login page with XML request.
 
+
+
+![dc758d1e-7a6f-4559-b38e-8ba733e1e8b0.png]()
+
+
+
+
+
 2. The request is modified and XML Bomb payload is added as shown in the below screenshot. When the Go button is clicked, no response was observed from the server as it has become non responsive.
+
+
+
+
+
+![bc90e4c1-0a7a-425b-8760-01cd59ec1c94.png]()
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +75,5 @@ XML Bomb is an attack where, when an XML request is sent with the payload, the p
 - [[xml]]
 - [[XML Billion Laugh]]
 - [[XML Bomb]]
+
+

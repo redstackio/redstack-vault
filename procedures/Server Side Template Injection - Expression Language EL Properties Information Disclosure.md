@@ -33,6 +33,8 @@ Technical Explanation: The attacker can use the 'Java Class Information' command
 
 Business Value: By gaining access to information about the server's Java classes, an attacker can gain valuable information about the system's configuration, which can be used to further exploit the system. This can lead to data theft, system compromise, and other negative consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server-side template
@@ -40,6 +42,8 @@ Business Value: By gaining access to information about the server's Java classes
 1. Ability to inject EL code
 
 1. Knowledge of Java classes and properties
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ Business Value: By gaining access to information about the server's Java classes
 
 1. Regularly update and patch software and systems to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Discover information about the server's Java classes and configuration
 
 1. Aid in further exploitation of the system
+
+ 
 
 # Instructions
 
@@ -62,9 +70,15 @@ Business Value: By gaining access to information about the server's Java classes
 2. ${2.class.forName("java.lang.String")} - displays the name of the class with the specified name
 3. ${''.getClass().forName('java.lang.Runtime').getMethods()[6].toString()} - displays the details of the getRuntime() method in the Runtime class
 
+ 
+
+
+
 **Code**: [[${2.class}
 ${2.class.forName("java.lang.String")}
 ]]
+
+
 
 > The first command returns the name of the class of the object. The second command returns the name of the class with the specified name. The third command returns the details of the getRuntime() method in the Runtime class. This method returns the runtime object associated with the current Java application.
 
@@ -83,3 +97,5 @@ ${2.class.forName("java.lang.String")}
 - [[Expression Language EL]]
 - [[Expression Language EL - Properties]]
 - [[Server Side Template Injection]]
+
+

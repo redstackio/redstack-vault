@@ -32,13 +32,23 @@ List processes to identify potentially vulnerable software and settings.
 
 List processes to identify potentially vulnerable software and settings.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[ps List All Running Processes]]):
 
 ```bash
 ps aux
 ```
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +71,5 @@ ps aux
 ## Tags
 
 - [[Enumeration]]
+
+

@@ -29,6 +29,8 @@ The Password of Pre-Created Computer Account Attack is a technique used to gain 
 
 The Password of Pre-Created Computer Account Attack is a technique used to gain access to a domain controller by compromising a pre-created computer account's password. This technique can be used to elevate privileges and move laterally across the network. Attackers can use this technique to dump credentials from the domain controller and gain access to sensitive data. This attack can be executed by assigning a pre-Windows 2000 computer account or provisioning a machine with a default password.
 
+ 
+
 ## Requirements
 
 1. Access to the network
@@ -37,6 +39,8 @@ The Password of Pre-Created Computer Account Attack is a technique used to gain 
 
 1. Tools for password cracking
 
+ 
+
 ## Defense
 
 1. Monitor and detect unauthorized access attempts
@@ -44,6 +48,8 @@ The Password of Pre-Created Computer Account Attack is a technique used to gain 
 1. Ensure strong password policies are in place
 
 1. Enable multi-factor authentication for user accounts
+
+ 
 
 ## Objectives
 
@@ -57,13 +63,23 @@ The Password of Pre-Created Computer Account Attack is a technique used to gain 
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. Set-ADComputer -Identity <ComputerName> -SamAccountName <SamAccountName>
 
+ 
+
+
+
 **Code**: [[Assign this computer account as a pre-Windows 2000]]
 
+
+
 > The -SamAccountName parameter specifies the pre-Windows 2000 computer account name. This should be in the format of NetBIOSDomainName\ComputerName$. The -Identity parameter specifies the distinguished name (DN), GUID, security identifier (SID), or SAM account name of the computer account to modify.
+
+
 
 **Command** ([[Join computer to domain and assign pre-Windows 2000 name]]):
 
@@ -72,14 +88,22 @@ netdom.exe join /domain:contoso.com /ou:OU=Desktops,OU=Computers,DC=contoso,DC=c
 
 ```
 
+
+
 2. To provision a machine with a default password, run the following command from a domain-joined device connected to the domain:
 
 djoin /PROVISION /DOMAIN <fqdn> /MACHINE <machine_name> /SAVEFILE C:\temp\<machine_name>.txt /DEFPWD /PRINTBLOB /NETBIOS <machine_name>
 
 Replace <fqdn> with the fully qualified domain name of the domain, and <machine_name> with the name of the machine you want to provision.
 
+ 
+
+
+
 **Code**: [[# Create a machine with default password
 # must be]]
+
+
 
 > This command provisions a new machine and joins it to the specified domain. The /DEFPWD switch sets the machine's password to a default value, which should be changed immediately after provisioning. The /PRINTBLOB switch outputs the machine account password blob to the console, which can be used to automate the provisioning of additional machines. The /NETBIOS switch sets the NetBIOS name of the machine to the specified value.
 
@@ -101,3 +125,5 @@ Replace <fqdn> with the fully qualified domain name of the domain, and <machine_
 
 - [[Active Directory Attacks]]
 - [[Password of Pre-Created Computer Account]]
+
+

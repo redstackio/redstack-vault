@@ -33,11 +33,15 @@ From a technical perspective, Script Block Logging works by intercepting PowerSh
 
 From a business perspective, Script Block Logging is an important tool for defending against cyber attacks. By enabling this feature, organizations can better protect their systems and data from malicious PowerShell activity. This can help prevent data breaches, intellectual property theft, and other cyber security incidents.
 
+ 
+
 ## Requirements
 
 1. Administrator access to enable Script Block Logging
 
 1. PowerShell version 5 or later
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ From a business perspective, Script Block Logging is an important tool for defen
 
 1. Use endpoint protection solutions to detect and block malicious PowerShell activity
 
+ 
+
 ## Objectives
 
 1. Detect malicious PowerShell activity
@@ -55,13 +61,21 @@ From a business perspective, Script Block Logging is an important tool for defen
 
 1. Quickly respond to security incidents
 
+ 
+
 # Instructions
 
 1. To enable script block logging, run the following command:
 
+ 
+
+
+
 **Code**: [[function Enable-PSScriptBlockLogging
 {
     $basePa]]
+
+
 
 > This command creates a registry key to enable script block logging in PowerShell. Script block logging records the input and output of each command that is executed in PowerShell, including any scripts that are run. This can be useful for troubleshooting and auditing purposes.
 
@@ -81,3 +95,5 @@ From a business perspective, Script Block Logging is an important tool for defen
 - [[Powershell]]
 - [[Script Block Logging]]
 - [[Windows - Defenses]]
+
+

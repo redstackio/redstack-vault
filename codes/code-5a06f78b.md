@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:41.728241+00:00'
 ```aws cli
 aws lambda get-function --function-name name
 ```
+
+

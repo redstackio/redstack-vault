@@ -33,6 +33,8 @@ Technically, this procedure involves querying the MSSQL Server database and retr
 
 From a business perspective, this procedure highlights the importance of properly securing sensitive data and limiting access to those who need it. A successful attack on this type of data could result in reputational damage, legal ramifications, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server database
@@ -40,6 +42,8 @@ From a business perspective, this procedure highlights the importance of properl
 1. Proper authentication and authorization
 
 1. SQL querying tool or language knowledge
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ From a business perspective, this procedure highlights the importance of properl
 
 1. Regularly review and update MSSQL Server security settings and configurations
 
+ 
+
 ## Objectives
 
 1. Identify sensitive information stored in MSSQL Server columns
@@ -57,11 +63,19 @@ From a business perspective, this procedure highlights the importance of properl
 
 1. Potentially identify passwords, credit card numbers, or personal identifiable information (PII)
 
+ 
+
 # Instructions
 
 1. This command retrieves sample data for specified columns in a SQL database. The 'Get-SQLInstanceDomain' cmdlet retrieves information about the SQL instance, and 'Get-SQLColumnSampleData' cmdlet retrieves sample data for specified columns. The '-Keywords' parameter specifies the column names to retrieve data for. The '-Verbose' parameter provides detailed output, and the '-SampleSize' parameter specifies the number of rows to retrieve for each column.
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceDomain | Get-SQLColumnSampleData -K]]
+
+
 
 > To use this command, run it in a PowerShell console with the appropriate SQL Server module installed. Replace '<columnname1,columnname2,columnname3,columnname4,columnname5>' with a comma-separated list of the column names you want to retrieve sample data for. The output will include the specified column names and a sample of the data contained in each column.
 
@@ -81,3 +95,5 @@ From a business perspective, this procedure highlights the importance of properl
 - [[Gather 5 Entries from Each Column]]
 - [[Identify Sensitive Information]]
 - [[MSSQL Server]]
+
+

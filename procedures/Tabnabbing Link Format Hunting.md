@@ -34,6 +34,8 @@ Technically, Tabnabbing works by using JavaScript to detect when a user has swit
 
 The business value of this procedure is that it helps organizations protect their users from phishing attacks and other types of social engineering. By detecting and preventing Tabnabbing attacks, organizations can reduce the risk of data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to web traffic logs or network traffic analysis tools
@@ -41,6 +43,8 @@ The business value of this procedure is that it helps organizations protect thei
 1. Knowledge of common link formats used in your organization
 
 1. Understanding of JavaScript and other web programming languages
+
+ 
 
 ## Defense
 
@@ -50,21 +54,33 @@ The business value of this procedure is that it helps organizations protect thei
 
 1. Implement multi-factor authentication and other security measures to reduce the impact of successful Tabnabbing attacks
 
+ 
+
 ## Objectives
 
 1. Identify links that have suspicious or unexpected formats
 
 1. Detect potential Tabnabbing attacks before they occur
 
+ 
+
 # Instructions
 
 1. To add a link to your HTML page, you can use the anchor tag <a>. The href attribute specifies the URL of the page the link goes to. The target attribute specifies where to open the linked document. The rel attribute specifies the relationship between the current document and the linked document.
+
+ 
+
+
 
 **Code**: [[<a href="..." target="_blank" rel="" />  
 or
 <a hr]]
 
+
+
 > The first link format includes the rel attribute, which can be used to specify the relationship between the current document and the linked document. The second link format does not include the rel attribute. When the target attribute is set to "_blank", the linked document will open in a new browser window or tab.
+
+
 
 **Command** ([[Link with target blank]]):
 
@@ -72,11 +88,17 @@ or
 <a href="..." target="_blank" rel="" />
 ```
 
+
+
+
+
 **Command** ([[Link with target blank]]):
 
 ```bash
 <a href="..." target="_blank" />
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +119,5 @@ or
 
 - [[How to hunt for it]]
 - [[Tabnabbing]]
+
+

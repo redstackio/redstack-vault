@@ -24,3 +24,5 @@ http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address
 All in one request:
 curl http://169.254.169.254/metadata/v1.json | jq
 ```
+
+

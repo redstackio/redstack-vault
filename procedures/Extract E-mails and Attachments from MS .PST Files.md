@@ -31,17 +31,35 @@ Microsoft uses .PST files to backup data created with Outlook 2010, Office Outlo
 
 Microsoft uses .PST files to backup data created with Outlook 2010, Office Outlook 2007, Office Outlook 2003, and Office Outlook 2002. These files may contain sensitive e-mails from a user, and can be enumerated with tools, or simply imported and viewed in Outlook itself.
 
+
+
 # Instructions
 
 Install pst-tools, available in most package managers. Eg:
 
+
+
+
+
 **Code**: [[apt update && apt install pst-tools -y]]
+
+
+
+
+
+
+
+
 
 **Command** ([[Extract E-mails and Attachments from a .PST File]]):
 
 ```bash
 readpst -tea -m $_FILENAME.pst
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +83,5 @@ readpst -tea -m $_FILENAME.pst
 
 - [[data exposure]]
 - [[extract]]
+
+

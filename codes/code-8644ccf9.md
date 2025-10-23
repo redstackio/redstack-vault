@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:55.997987+00:00'
 ```powershell
 PS C:\> net use \\srv01.domain.local /user:DOMAIN\username password C$
 ```
+
+

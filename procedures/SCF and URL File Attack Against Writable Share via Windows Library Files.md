@@ -28,6 +28,8 @@ From a technical perspective, this attack relies on the fact that Windows Librar
 
 From a business perspective, this attack can be used to gain access to sensitive data or systems, and can be particularly effective when combined with social engineering techniques. By convincing a user to open a malicious library file, an attacker can execute arbitrary code on the target system, potentially leading to the compromise of sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to a writable share on the target system
@@ -35,6 +37,8 @@ From a business perspective, this attack can be used to gain access to sensitive
 1. A malicious .scf or .url file hosted on a remote server
 
 1. Ability to create a specially crafted Windows Library File
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ From a business perspective, this attack can be used to gain access to sensitive
 
 1. Disable the WebClient service to prevent the automatic execution of remote .scf and .url files
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a compromised system
@@ -52,12 +58,20 @@ From a business perspective, this attack can be used to gain access to sensitive
 
 1. Access sensitive data or systems
 
+ 
+
 # Instructions
 
 1. This command provides the details of a library description including the name, version, icon reference, template info, and search connector description list.
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="UTF-8"?>
 <libraryDes]]
+
+
 
 > The 'name' field provides the name of the library. The 'version' field provides the version number of the library. The 'isLibraryPinned' field indicates whether the library is pinned or not. The 'iconReference' field provides the icon reference of the library. The 'folderType' field provides the folder type of the library. The 'searchConnectorDescriptionList' field provides a list of search connectors. The 'isDefaultSaveLocation' field indicates whether the search connector is the default save location or not. The 'isSupported' field indicates whether the search connector is supported or not. The 'simpleLocation' field provides the URL of the search connector.
 
@@ -66,3 +80,5 @@ From a business perspective, this attack can be used to gain access to sensitive
 - [[Active Directory Attacks]]
 - [[SCF and URL file attack against writeable share]]
 - [[Windows Library Files]]
+
+

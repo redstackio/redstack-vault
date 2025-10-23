@@ -18,4 +18,7 @@ Host: victim.example.com
 Origin: https://evil.com
 Cookie: sessionid=... 
 
+
 ```
+
+

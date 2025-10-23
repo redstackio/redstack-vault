@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:45.035412+00:00'
 ```ps1
 Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>" -Query "select * from openquery(`"<DBSERVERNAME\DBInstance>`",'select @@version')" -Verbose
 ```
+
+

@@ -27,15 +27,49 @@ HTTP Request Smuggling can be used to perform Reflected XSS. This can be done by
 
 # Description
 
+
+
 HTTP Request Smuggling can be used to perform Reflected XSS. This can be done by adding an XSS payload in the smuggled request in User-Agent header.
+
+
 
 # Procedure
 
+
+
 1. Intercept the request and find the User-Agent header. Check the view-source of the page and observe the User-Agent being part of a form.
+
+
+
+
+
+![1fc79e32-ad66-4e31-8580-1d351ee193bc.jpg]()
+
+
 
 2. Add an additional HTTP GET request as shown in the below screenshot. Modify the User-Agent header and replace with XSS payload.
 
+
+
+
+
+![06e24616-b095-4d81-8456-f2d65ab35310.jpg]()
+
+
+
 3. Observe the response with an alert box as the script is reflected in the response and gets executed.
+
+
+
+
+
+![399f2fe2-8b79-4a35-9ae0-af816f9e301f.jpg]()
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +81,5 @@ HTTP Request Smuggling can be used to perform Reflected XSS. This can be done by
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xss]]
+
+

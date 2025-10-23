@@ -21,3 +21,5 @@ kerberos::golden /domain:evilcorp.local /sid:S-1-5-21-258778211-3859232159-55145
 misc::cmd
 
 ```
+
+

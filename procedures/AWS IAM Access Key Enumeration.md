@@ -38,11 +38,15 @@ Technical Description: AWS IAM is a web service that helps you securely control 
 
 Business Value: This procedure can be used by attackers to gain access to sensitive data or resources stored in AWS. It is important for organizations to regularly audit their IAM users and access keys to ensure that only authorized users have access to resources.
 
+ 
+
 ## Requirements
 
 1. Valid AWS IAM user credentials
 
 1. Access to the AWS Management Console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Monitor AWS CloudTrail logs for any unauthorized access key usage
 
+ 
+
 ## Objectives
 
 1. Enumerate all the access keys associated with an AWS IAM user account
 
 1. Identify any unauthorized access keys
 
+ 
+
 # Instructions
 
 1. Use this command to list all the access keys for an IAM user.
 
+ 
+
+
+
 **Code**: [[aws iam list-access-keys]]
 
+
+
 > The 'aws iam list-access-keys' command is used to retrieve a list of all access keys associated with an IAM user. Access keys are used to make programmatic calls to AWS services. This command can be useful for auditing purposes or when troubleshooting issues related to access keys. The command takes no arguments and simply returns a JSON object containing the access key details such as the access key ID, status, and creation date.
+
+
 
 **Command** ([[List IAM Access Keys]]):
 
 ```bash
 aws iam list-access-keys
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ aws iam list-access-keys
 
 - [[Cloud - AWS]]
 - [[Listing IAM access Keys]]
+
+

@@ -35,11 +35,15 @@ Technical Description: The AWS CLI command 'List ECR Repository Images' is used 
 
 Business Value: This procedure can help organizations identify potential security risks in their AWS environment and take appropriate steps to mitigate them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the target ECR repository
+
+ 
 
 ## Defense
 
@@ -49,23 +53,33 @@ Business Value: This procedure can help organizations identify potential securit
 
 1. Regularly monitor ECR repositories for unauthorized access or changes
 
+ 
+
 ## Objectives
 
 1. Identify potential vulnerabilities in ECR repository images
 
 1. Discover additional ECR repositories that may contain sensitive information
 
+ 
+
 # Instructions
 
 1. To list the images in an Amazon Elastic Container Registry (ECR) repository, use the following command:
 
+ 
+
 The 'aws ecr list-images' command is used to list all the images in a specified ECR repository. The '--repository-name' option is used to specify the name of the repository. This command returns a list of image details, including the image digest, size, and push time. You can use this information to manage your ECR repository and its images.
+
+
 
 **Command** ([[List ECR images]]):
 
 ```bash
 aws ecr list-images --repository-name name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ecr list-images --repository-name name
 - [[ECR]]
 - [[Enumeration]]
 - [[Listing all images in a specific repository]]
+
+

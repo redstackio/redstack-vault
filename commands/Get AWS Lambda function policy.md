@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:05.665075+00:00'
 ```bash
 aws lambda get-policy --function-name function_name
 ```
+
+

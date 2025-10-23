@@ -16,3 +16,9 @@ BlueRanger is a simple Bash script which uses Link Quality to locate Bluetooth d
 ## Description
 
 BlueRanger is a simple Bash script which uses Link Quality to locate Bluetooth device radios. It sends l2cap (Bluetooth) pings to create a connection between Bluetooth interfaces, since most devices allow pings without any authentication or authorization. The higher the link quality, the closer the device (in theory).Use a Bluetooth Class 1 adapter for long range location detection. Switch to a Class 3 adapter for more precise short range locating. The recision and accuracy depend on the build quality of the Bluetooth adapter, interference, and response from the remote device. Fluctuations may occur even when neither device is in motion.BlueRanger Homepage | Kali BlueRanger Repo
+
+
+
+
+
+

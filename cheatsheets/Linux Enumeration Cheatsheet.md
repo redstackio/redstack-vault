@@ -11,12 +11,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Print all available system information (Kernel Version)
 
+
+
 **Command** ([[description]]):
 
 ```bash
 uname -a
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -25,12 +33,24 @@ uname -r
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 uname -n
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -39,12 +59,24 @@ hostname
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 uname -m
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -53,12 +85,24 @@ cat /proc/version
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 cat /etc/*-release	
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -67,12 +111,24 @@ cat /etc/issue
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 cat /proc/cpuinfo	
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -81,12 +137,24 @@ df -a	File system
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 dmesg | grep Linux
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -96,7 +164,13 @@ ls /boot | grep vmlinuz-
 
 ```
 
+
+
+
+
 # Users & Groups:
+
+
 
 **Command** ([[description]]):
 
@@ -105,12 +179,24 @@ cat /etc/passwd
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 cat /etc/shadow
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -119,12 +205,24 @@ cat /etc/group
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 finger
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -133,12 +231,24 @@ pinky
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 users
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -147,12 +257,24 @@ who -a
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 w
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -161,12 +283,24 @@ last
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 lastlog
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -175,12 +309,24 @@ lastlog –u %username%
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 lastlog |grep -v "Never"
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -189,6 +335,12 @@ for i in $(cat /etc/passwd 2>/dev/null| cut -d":" -f1 2>/dev/null);do id $i;done
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
@@ -196,7 +348,13 @@ grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'	List all super user 
 
 ```
 
+
+
+
+
 # User & Privilege Information:
+
+
 
 **Command** ([[View your current user:]]):
 
@@ -205,12 +363,24 @@ whoami
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 id
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -219,12 +389,24 @@ cat /etc/sudoers
 
 ```
 
+
+
+
+
+
+
 **Command** ([[description]]):
 
 ```bash
 sudo -l
 
 ```
+
+
+
+
+
+
 
 **Command** ([[description]]):
 
@@ -233,7 +415,13 @@ sudo -l 2>/dev/null | grep -w 'nmap\|perl\|'awk'\|'find'\|'bash'\|'sh'\|'man'\|'
 
 ```
 
+
+
+
+
 # Environmental Information:
+
+
 
 **Command** ([[command]]):
 
@@ -242,12 +430,24 @@ env
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 set
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -256,12 +456,24 @@ echo $PATH
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 history
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -270,12 +482,24 @@ pwd
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 cat /etc/profile
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -284,7 +508,13 @@ cat /etc/shells
 
 ```
 
+
+
+
+
 # Interesting Files:
+
+
 
 **Command** ([[command]]):
 
@@ -293,12 +523,24 @@ find / -perm -4000 -type f 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 find / -uid 0 -perm -4000 -type f 2>/dev/null
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -307,12 +549,24 @@ find / -perm -2000 -type f 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 find / -perm -2 -type f 2>/dev/null
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -321,12 +575,24 @@ find / ! -path "*/proc/*" -perm -2 -type f -print 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 find / -perm -2 -type d 2>/dev/null
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -335,12 +601,24 @@ find /home –name *.rhosts -print 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 find /home -iname *.plan -exec ls -la {} \; -exec cat {} 2>/dev/null \;
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -349,12 +627,24 @@ find /etc -iname hosts.equiv -exec ls -la {} 2>/dev/null \; -exec cat {} 2>/dev/
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 ls -ahlR /root/
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -363,12 +653,24 @@ cat ~/.bash_history
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 ls -la ~/.*_history
 
 ```
+
+
+
+
+
+
 
 **Command** ([[command]]):
 
@@ -377,12 +679,24 @@ ls -la /root/.*_history
 
 ```
 
+
+
+
+
+
+
 **Command** ([[command]]):
 
 ```bash
 ls -la ~/.ssh/
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Find SSH keys/host]]):
 
@@ -391,12 +705,24 @@ find / -name "id_dsa*" -o -name "id_rsa*" -o -name "known_hosts" -o -name "autho
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Check Configuration of inetd services]]):
 
 ```bash
 ls -la /usr/sbin/in.*
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Check log files for keywords (‘pass’ in this example) and show positive matches]]):
 
@@ -405,6 +731,12 @@ grep -l -i pass /var/log/*.log 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[	List files in specified directory (/var/log)]]):
 
 ```bash
@@ -412,12 +744,24 @@ find /var/log -type f -exec ls -la {} \; 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[	List .log files in specified directory (/var/log)]]):
 
 ```bash
 find /var/log -name *.log -type f -exec ls -la {} \; 2>/dev/null
 
 ```
+
+
+
+
+
+
 
 **Command** ([[	List .conf files in /etc (recursive 1 level)]]):
 
@@ -427,12 +771,24 @@ ls -la /etc/*.conf
 
 ```
 
+
+
+
+
+
+
 **Command** ([[	Find .conf files (recursive 4 levels) and output line number where the word ‘password’ is located]]):
 
 ```bash
 find / -maxdepth 4 -name *.conf -type f -exec grep -Hn password {} \; 2>/dev/null
 
 ```
+
+
+
+
+
+
 
 **Command** ([[no name conversion]]):
 
@@ -441,9 +797,21 @@ lsof -i -n
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Try to read root mail]]):
 
 ```bash
 head /var/mail/root
 
 ```
+
+
+
+
+
+

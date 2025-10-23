@@ -31,13 +31,33 @@ Responder is an LLMNR, NBT-NS, and MDNS poisoning tool, which answers specific N
 
 Responder is also useful for capturing NTLM hashes, by running it on the attacker and either triggering or waiting for a system on the local network to attempt to authenticate with it. The resulting NTLM hash may be brute forced with other tools in an attempt to uncover the password.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_2fd822da-a5cd-4f12-99cc-4fd065d58150}}
+
+
 
 # Installation
 
 ## Install on Kali
 
+
+
+
+
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -76,3 +96,5 @@ Responder is also useful for capturing NTLM hashes, by running it on the attacke
 - [[Man in the Middle]]
 - [[Network]]
 - [[NTLM]]
+
+

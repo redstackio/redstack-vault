@@ -26,14 +26,30 @@ Find is a standard Linux/Unix utility used for recursively searching a file syst
 # Description
 
 Find is a standard Linux/Unix utility used for recursively searching a file system for files and folders, based on user-specified criteria. Find includes many options for restricting search results, including by name, type, permissions, owner, group, timestamps (MAC), and more. It is extremely useful when enumerating a file system for vulnerabilities, as it can quickly identify files with SUID permissions, weak or incorrect permissions, and other attributes which make files and folders stand out. 
-
+ 
  Note: Using find to search files and folders which the user lacks permissions to list will generate permission errors, and cause clutter in search results. For this reason, stderr is often piped into /dev/null.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_90e9e6c8-c80e-480d-a9f4-1ad2d14e7772}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +64,5 @@ Find is a standard Linux/Unix utility used for recursively searching a file syst
 
 - [[Enumeration]]
 - [[File System]]
+
+

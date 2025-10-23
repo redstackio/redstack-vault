@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:04.220556+00:00'
 ```bash
 https://www.example.com/admin/oauth/authorize?[...]&scope=a&redirect_uri=https://evil.com
 ```
+
+

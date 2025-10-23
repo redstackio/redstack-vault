@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:44.766232+00:00'
 ```bash
 sudo apt-get install hashcat
 ```
+
+

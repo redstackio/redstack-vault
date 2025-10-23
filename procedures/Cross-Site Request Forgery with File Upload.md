@@ -28,11 +28,15 @@ Cross-Site Request Forgery with File Upload is a type of attack where an attacke
 
 Cross-Site Request Forgery with File Upload is a type of attack where an attacker tricks a victim into submitting a form that contains malicious code to a targeted web application. The malicious code is usually embedded in a file upload field, which the attacker convinces the victim to upload. Once the victim uploads the file, the malicious code is executed, and the attacker can perform actions on behalf of the victim. This attack requires the victim to be authenticated to the targeted web application, and the attacker to have knowledge of the victim's session cookie.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application.
 
 1. Knowledge of the victim's session cookie.
+
+ 
 
 ## Defense
 
@@ -42,19 +46,29 @@ Cross-Site Request Forgery with File Upload is a type of attack where an attacke
 
 1. Monitor web application logs and network traffic for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. To perform unauthorized actions on behalf of the victim on the targeted web application.
 
 1. To steal sensitive information from the targeted web application.
 
+ 
+
 # Instructions
 
 1. Fill in the <target> field with the URL of the targeted web application.
 
+ 
+
+
+
 **Code**: [[<script>
 function launch(){
     const dT = new Dat]]
+
+
 
 > This command generates an HTML form with a file upload field that contains malicious code. The victim is tricked into uploading the file, which executes the malicious code and performs unauthorized actions on behalf of the victim.
 
@@ -73,3 +87,5 @@ function launch(){
 - [[Cross-Site Request Forgery]]
 - [[HTML POST - multipart/form-data with file upload - Requiring User Interaction]]
 - [[Payloads]]
+
+

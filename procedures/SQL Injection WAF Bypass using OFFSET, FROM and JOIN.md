@@ -36,6 +36,8 @@ The technical explanation for this technique involves manipulating the SQL query
 
 The business value of this procedure is that it allows an attacker to gain unauthorized access to sensitive data, which can be used for financial gain or corporate espionage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
@@ -43,6 +45,8 @@ The business value of this procedure is that it allows an attacker to gain unaut
 1. Knowledge of SQL Injection techniques
 
 1. Knowledge of the vulnerable application's database schema
+
+ 
 
 ## Defense
 
@@ -52,11 +56,15 @@ The business value of this procedure is that it allows an attacker to gain unaut
 
 1. Regularly monitor and analyze application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Bypass a Web Application Firewall using SQL Injection
 
 1. Extract sensitive data from a database
+
+ 
 
 # Instructions
 
@@ -65,10 +73,19 @@ The business value of this procedure is that it allows an attacker to gain unaut
 2. SUBSTR('SQL' FROM 1 FOR 1) instead of SUBSTR('SQL',1,1)
 3. UNION SELECT * FROM (SELECT 1)a JOIN (SELECT 2)b JOIN (SELECT 3)c JOIN (SELECT 4)d instead of SELECT 1,2,3,4
 
+
+ 
+
+
+
 **Code**: [[LIMIT 0,1         -> LIMIT 1 OFFSET 0
 SUBSTR('SQL']]
 
+
+
 > The LIMIT command is used to limit the number of results returned in a SQL query. By using LIMIT 1 OFFSET 0, we can bypass using OFFSET and achieve the same result. The SUBSTR command is used to extract a substring from a string. By using SUBSTR('SQL' FROM 1 FOR 1), we can bypass using the comma and achieve the same result. The UNION command is used to combine the results of two or more SELECT statements. By using UNION SELECT * FROM (SELECT 1)a JOIN (SELECT 2)b JOIN (SELECT 3)c JOIN (SELECT 4)d, we can bypass using FROM and JOIN and achieve the same result.
+
+
 
 **Command** ([[Modify LIMIT clause]]):
 
@@ -76,17 +93,27 @@ SUBSTR('SQL']]
 LIMIT 0,1
 ```
 
+
+
+
+
 **Command** ([[Modify SUBSTR function]]):
 
 ```bash
 SUBSTR('SQL',1,1)
 ```
 
+
+
+
+
 **Command** ([[Combine SELECT statements with UNION]]):
 
 ```bash
 SELECT 1,2,3,4
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +136,5 @@ SELECT 1,2,3,4
 - [[No Comma]]
 - [[SQL Injection]]
 - [[WAF Bypass]]
+
+

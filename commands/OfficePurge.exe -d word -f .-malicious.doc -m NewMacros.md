@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:50.831415+00:00'
 ```bash
 OfficePurge.exe -d word -f .\malicious.doc -m NewMacros
 ```
+
+

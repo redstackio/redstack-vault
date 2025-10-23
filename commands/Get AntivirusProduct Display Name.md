@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:53.522638+00:00'
 ```bash
 WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get displayName
 ```
+
+

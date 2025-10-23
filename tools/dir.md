@@ -26,11 +26,25 @@ Dir is a Windows command prompt function that  lists files and subdirectories wi
 
 Dir is a Windows command prompt function that  lists files and subdirectories within a specified directory. Dir displays the disk volume label and serial number,  as well as directories, files and extensions, size in bytes, and the date and time of their last modified value.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_1905bafa-2be4-4c39-a837-1e5809b1f180}}
+
+
 
 # Installation
 
 Dir is installed by default on Windows systems.
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -40,3 +54,5 @@ Dir is installed by default on Windows systems.
 
 - [[File System]]
 - [[Windows]]
+
+

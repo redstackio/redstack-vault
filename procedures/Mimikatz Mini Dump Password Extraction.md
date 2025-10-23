@@ -29,6 +29,8 @@ Mimikatz is a powerful post-exploitation tool that can be used to extract plaint
 
 From a technical perspective, this procedure involves creating a memory dump file using a tool like ProcDump or Task Manager, and then running Mimikatz on the dump file to extract passwords. The business value of this procedure is that it allows an attacker to obtain sensitive information that can be used to further compromise a network.
 
+ 
+
 ## Requirements
 
 1. Local or remote access to a Windows system
@@ -36,6 +38,8 @@ From a technical perspective, this procedure involves creating a memory dump fil
 1. Ability to create a memory dump file using a tool like ProcDump or Task Manager
 
 1. Mimikatz binary
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ From a technical perspective, this procedure involves creating a memory dump fil
 
 1. Restrict access to sensitive systems and accounts to only authorized personnel
 
+ 
+
 ## Objectives
 
 1. Extract plaintext passwords from a memory dump file
@@ -52,6 +58,8 @@ From a technical perspective, this procedure involves creating a memory dump fil
 1. Obtain credentials for privileged accounts
 
 1. Escalate privileges and move laterally within a network
+
+ 
 
 # Instructions
 
@@ -62,8 +70,14 @@ From a technical perspective, this procedure involves creating a memory dump fil
 4. Execute the command `sekurlsa::logonPasswords`.
 5. The logon passwords will be displayed.
 
+ 
+
+
+
 **Code**: [[mimikatz # sekurlsa::minidump lsass.dmp
 mimikatz #]]
+
+
 
 > This command is used to extract logon passwords from a Windows memory dump using Mimikatz. The `sekurlsa::minidump` command is used to load the memory dump file `lsass.dmp`. The `sekurlsa::logonPasswords` command is then used to extract the logon passwords from the memory dump.
 
@@ -81,3 +95,5 @@ mimikatz #]]
 
 - [[Mini Dump]]
 - [[Windows - Mimikatz]]
+
+

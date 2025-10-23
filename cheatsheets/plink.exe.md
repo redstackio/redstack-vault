@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # plink.exe
 
+
+
 **Command** ([[Port forward using plink]]):
 
 ```bash
 plink.exe -l username -pw password target-ip -R 8080:127.0.0.1:8080
 
 ```
+
+
+
+
+
+

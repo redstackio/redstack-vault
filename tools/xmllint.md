@@ -27,11 +27,27 @@ Parses one or more XML files, or reads input from stdin, and prints the results 
 
 Parses one or more XML files, or reads input from stdin, and prints the results with various output options.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_0155d266-ec39-48c1-a6ab-3b3f6c3db8bf}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Parses one or more XML files, or reads input from stdin, and prints the results 
 ## Tags
 
 - [[formatting]]
+
+

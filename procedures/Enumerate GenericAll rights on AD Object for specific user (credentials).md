@@ -30,6 +30,8 @@ Active Directory object permission GenericAll grants full rights to the object. 
 
 Active Directory object permission GenericAll grants full rights to the object. Can add user to a group, or reset the password.
 
+
+
 ## Objective
 
 1. Find GenericAll rights on AD Object for the attacking user.
@@ -38,15 +40,25 @@ Active Directory object permission GenericAll grants full rights to the object. 
 
     ActiveDirectoryRights: GenericAll
 
+
+
 # Instructions
 
 1. Enumerate account name
+
+
+
+
 
 **Command** ([[Enumerate GenericAll rights on AD Object]]):
 
 ```bash
 Get-ObjectAcl -SamAccountName $USERNAME -ResolveGUIDs | ? {$_.ActiveDirectoryRights -eq "GenericAll"}
 ```
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +81,5 @@ Get-ObjectAcl -SamAccountName $USERNAME -ResolveGUIDs | ? {$_.ActiveDirectoryRig
 ## Tags
 
 - [[Enumeration]]
+
+

@@ -39,3 +39,5 @@ bin             etc             initrd.img.old  lib64           media           
 boot            home            lib             libx32          mnt             retdec          sbin            tmp             vmlinuz
 dev             initrd.img      lib32           lost+found      opt             root            srv             usr             vmlinuz.old
 ```
+
+

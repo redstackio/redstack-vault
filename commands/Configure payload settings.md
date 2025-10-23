@@ -28,3 +28,5 @@ updated_at: '2023-04-10T20:36:49.692107+00:00'
     "payload": "cmd.exe /c C:\\Users\\Public\\beacon.exe"
 }
 ```
+
+

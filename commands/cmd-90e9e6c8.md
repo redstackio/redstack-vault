@@ -14,3 +14,5 @@ updated_at: '2023-03-13T19:52:35.078857+00:00'
 ```bash
 find $DIRECTORY -perm -4000 -ls 2>/dev/null
 ```
+
+

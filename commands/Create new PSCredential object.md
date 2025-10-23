@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:38:05.447927+00:00'
 $pass = ConvertTo-SecureString 'supersecurepassword' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ('DOMAIN\Username', $pass)
 ```
+
+

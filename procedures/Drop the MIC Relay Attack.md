@@ -36,6 +36,8 @@ Technical Explanation: The attack is possible due to a flaw in the Microsoft Win
 
 Business Value: This attack can be used to gain access to sensitive data and elevate privileges, which can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a network with vulnerable systems
@@ -43,6 +45,8 @@ Business Value: This attack can be used to gain access to sensitive data and ele
 1. A system to act as a relay
 
 1. Tools to intercept and manipulate authentication requests
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ Business Value: This attack can be used to gain access to sensitive data and ele
 
 1. Monitoring network traffic for signs of authentication relaying
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data
 
 1. Elevate privileges
 
+ 
+
 # Instructions
 
 1. To check if a target is vulnerable to CVE-2019-1040, run the following command: `python2 scanMIC.py 'DOMAIN/USERNAME:PASSWORD@TARGET'`
 
+ 
+
+
+
 **Code**: [[python2 scanMIC.py 'DOMAIN/USERNAME:PASSWORD@TARGE]]
 
+
+
 > This command checks if a target is vulnerable to CVE-2019-1040, a security vulnerability that allows an attacker to bypass NTLM authentication. The `DOMAIN/USERNAME:PASSWORD` parameter specifies the credentials to use for authentication, and `TARGET` specifies the IP address or hostname of the target machine. If the target is vulnerable, the command will return a message indicating so. If the target is not vulnerable, the command will return a message indicating that authentication was rejected.
+
+
 
 **Command** ([[CVE-2019-1040 Scanner]]):
 
 ```bash
 python2 scanMIC.py 'DOMAIN/USERNAME:PASSWORD@TARGET'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ python2 scanMIC.py 'DOMAIN/USERNAME:PASSWORD@TARGET'
 - [[Active Directory Attacks]]
 - [[Drop the MIC]]
 - [[Man-in-the-Middle attacks & relaying]]
+
+

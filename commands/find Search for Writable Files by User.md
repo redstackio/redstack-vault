@@ -77,3 +77,5 @@ root@hackers:~# find /etc/cron.daily -user root -writable ! -type l 2>/dev/null
 /etc/cron.daily/apt-compat
 /etc/cron.daily/passwd
 ```
+
+

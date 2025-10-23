@@ -19,3 +19,5 @@ $SD = New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList "O:B
 # alternative
 StandIn_Net35.exe --computer dc01 --sid SID_FROM_PREVIOUS_COMMAND
 ```
+
+

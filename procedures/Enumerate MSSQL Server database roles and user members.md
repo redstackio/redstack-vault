@@ -31,6 +31,8 @@ This procedure allows an attacker to enumerate all database roles and user membe
 
 This procedure allows an attacker to enumerate all database roles and user members on a MSSQL Server. By listing all the database roles and user members, the attacker can identify potential targets for privilege escalation or lateral movement. To execute this procedure, the attacker needs to have valid credentials and access to the MSSQL Server. The attacker can use various tools to execute SQL queries on the server, such as SQL Server Management Studio, sqlcmd, or PowerShell.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the MSSQL Server
@@ -38,6 +40,8 @@ This procedure allows an attacker to enumerate all database roles and user membe
 1. Access to the MSSQL Server
 
 1. Ability to execute SQL queries on the MSSQL Server
+
+ 
 
 ## Defense
 
@@ -47,20 +51,32 @@ This procedure allows an attacker to enumerate all database roles and user membe
 
 1. Implement network segmentation to limit the exposure of the MSSQL Server to the internet or untrusted networks
 
+ 
+
 ## Objectives
 
 1. Enumerate all database roles on the MSSQL Server
 
 1. Enumerate all user members of each database role
 
+ 
+
 # Instructions
 
 1. This command returns a list of all database roles and their members in a SQL Server instance. It uses the sys.database_role_members and sys.database_principals system views to retrieve the necessary information. The result set includes the name of the database role and the name of the database user who is a member of that role. If a role has no members, the result set will show 'No members' instead of a user name.
 
+ 
+
+
+
 **Code**: [[SELECT DB1.name AS DatabaseRoleName,
 isnull (DB2.n]]
 
+
+
 > To use this command, simply copy and paste it into a SQL Server Management Studio query window and execute it. The result set will be displayed in the Results pane. The command can be modified to filter the results based on specific criteria, such as the name of a role or user. For more information on the sys.database_role_members and sys.database_principals system views, refer to the SQL Server documentation.
+
+
 
 **Command** ([[Query Database Role Members]]):
 
@@ -75,6 +91,8 @@ ON DRM.member_principal_id = DB2.principal_id
 WHERE DB1.type = 'R'
 ORDER BY DB1.name;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -96,3 +114,5 @@ ORDER BY DB1.name;
 - [[List All Database Roles]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

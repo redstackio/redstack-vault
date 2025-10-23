@@ -18,3 +18,5 @@ IconFile=\\10.10.10.10\Share\test.ico
 [Taskbar]
 Command=ToggleDesktop
 ```
+
+

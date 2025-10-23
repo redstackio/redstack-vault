@@ -28,6 +28,8 @@ Finding Sub-Domains using the wfuzz tool. This can come in handy if your choices
 
 1. Using wfuzz to fuzz a single URL
 
+
+
 **Command** ([[wfuzz fuzz a single url]]):
 
 ```bash
@@ -35,6 +37,12 @@ wfuzz -c -f re -w /SecLists/Discovery/DNS/subdomains-top1mil-5000.txt -u "http:/
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[wfuzz fuzz a single url]]
+
+

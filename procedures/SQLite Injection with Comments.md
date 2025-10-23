@@ -27,11 +27,15 @@ From a technical perspective, SQLite Injection with Comments is a type of SQL In
 
 From a business perspective, SQLite Injection with Comments can have serious consequences for organizations. Attackers can use this technique to steal sensitive data, such as customer information or intellectual property, which can lead to financial losses and reputational damage. Additionally, organizations may face legal and regulatory consequences if they fail to protect their data from such attacks.
 
+ 
+
 ## Requirements
 
 1. Access to an application's input fields
 
 1. Knowledge of SQL syntax and database structures
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ From a business perspective, SQLite Injection with Comments can have serious con
 
 1. Regularly update the SQLite database management system to the latest version to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute malicious SQL statements in an application that uses SQLite as its database management system
@@ -49,12 +55,20 @@ From a business perspective, SQLite Injection with Comments can have serious con
 
 1. Steal sensitive data, modify or delete data, or take control of the underlying operating system
 
+ 
+
 # Instructions
 
 1. N/A
 
+ 
+
+
+
 **Code**: [[--
 /**/]]
+
+
 
 > This JSON object represents an empty SQL command. The 'data' field contains the actual SQL command, which in this case is just a comment. The 'lang' field specifies the language of the command, which is SQL. The 'text' field is null, indicating that there is no text associated with this command. The 'instruction' and 'explain' fields are also empty, as there is no command to explain or provide instructions for.
 
@@ -62,3 +76,5 @@ From a business perspective, SQLite Injection with Comments can have serious con
 
 - [[SQLite comments]]
 - [[SQLite Injection]]
+
+

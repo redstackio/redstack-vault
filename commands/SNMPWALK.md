@@ -20,3 +20,5 @@ snmpwalk -v 1 -c public $ip
 snmpbulkwalk -v 2 -c public $ip
 
 ```
+
+

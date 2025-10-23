@@ -17,18 +17,40 @@ TrueCrack is a brute-force password cracker for TrueCrypt volumes. It works on L
 
 TrueCrack is a brute-force password cracker for TrueCrypt volumes. It works on Linux and it is optimized for Nvidia Cuda technology. It supports:
 
+
+
 PBKDF2 (defined in PKCS5 v2.0) based on key derivation functions: Ripemd160, Sha512 and Whirlpool.
+
+
 
 XTS block cipher mode for hard disk encryption based on encryption algorithms: AES, SERPENT, TWOFISH.
 
+
+
 File-hosted (container) and Partition/device-hosted.
+
+
 
 Hidden volumes and Backup headers.
 
+
+
 TrueCrack is able to perform a brute-force attack based on:
+
+
 
 Dictionary: read the passwords from a file of words.
 
+
+
 Alphabet: generate all passwords of given length from given alphabet.
 
+
+
 TrueCrack works on gpu and cpu
+
+
+
+
+
+

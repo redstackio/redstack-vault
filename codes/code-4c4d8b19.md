@@ -17,3 +17,5 @@ PS C:\Program Files\Elastic\Agent> .\elastic-agent.exe uninstall
 Elastic Agent will be uninstalled from your system at C:\Program Files\Elastic\Agent. Do you want to continue? [Y/n]:Y
 Elastic Agent has been uninstalled.
 ```
+
+

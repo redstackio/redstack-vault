@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # gobuster
 
+
+
 **Command** ([[bruteforce webdirectories and files by extention]]):
 
 ```bash
 gobuster dir -u http://target-ip -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt -t 30
 
 ```
+
+
+
+
+
+

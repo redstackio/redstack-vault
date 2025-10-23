@@ -16,3 +16,5 @@ ${String x = new File('c:/windows/notepad.exe').text}
 ${String x = new File('/path/to/file').getText('UTF-8')}
 ${new File("C:\Temp\FileName.txt").createNewFile();}
 ```
+
+

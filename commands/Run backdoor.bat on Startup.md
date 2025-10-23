@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:27.189837+00:00'
 ```bash
 start /b C:\Users\Rasta\AppData\Local\Temp\backdoor.exe
 ```
+
+

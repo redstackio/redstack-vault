@@ -29,13 +29,39 @@ An attacker will be able to execute malicious javascripts in the victim's browse
 
 An attacker will be able to execute malicious *javascripts* in the victim's browser if the application is vulnerable to XSS. Scripts are passed as inputs through the form fields or URL parameters.
 
+
+
+
+
 # Instructions
+
+
 
 1. Script tag is passed as input to the search field.
 
+
+
 Payload: <script>alert(1)</script>
 
+
+
+![49ed87d1-76d4-4259-a539-ebeb6f091273.jpg](_assets/images/Mash/49ed87d1-76d4-4259-a539-ebeb6f091273.jpg)
+
+
+
+
+
 2. The inserted script is executed and a popup is observed in the page.
+
+
+
+![85ce9b85-cac4-4f3d-a142-20ab29371e05.jpg](_assets/images/Mash/85ce9b85-cac4-4f3d-a142-20ab29371e05.jpg)
+
+
+
+
+
+
 
 ## Platforms
 
@@ -47,3 +73,5 @@ Payload: <script>alert(1)</script>
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xss]]
+
+

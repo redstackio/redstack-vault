@@ -37,6 +37,8 @@ Technical Explanation: The attacker can use the NAME_CONST function to inject ma
 
 Business Value: This attack can result in significant data loss or damage to the target system, which can have a negative impact on the business. It can also lead to a loss of customer trust and damage to the company's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the MYSQL database
@@ -44,6 +46,8 @@ Business Value: This attack can result in significant data loss or damage to the
 1. Knowledge of SQL injection techniques
 
 1. SQL injection tool such as SQLmap
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: This attack can result in significant data loss or damage to the
 
 1. Regularly update and patch the MYSQL database to prevent vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information such as usernames, passwords, and other data stored in the database
@@ -61,13 +67,23 @@ Business Value: This attack can result in significant data loss or damage to the
 
 1. Execute arbitrary SQL commands on the target system
 
+ 
+
 # Instructions
 
 1. To check the compatibility of MySQL with version &gt;= 5.0, run the following command: 'mysql --version'
 
+ 
+
+
+
 **Code**: [[MySQL &gt;= 5.0]]
 
+
+
 > This command will display the version of MySQL installed on the system. If the version is greater than or equal to 5.0, then it is compatible with the data provided. If the version is lower than 5.0, then it may not work properly.
+
+
 
 **Command** ([[MySQL version check]]):
 
@@ -75,9 +91,17 @@ Business Value: This attack can result in significant data loss or damage to the
 mysql --version
 ```
 
+
+
 2. This command can be used to retrieve the MySQL version, user and database name. The command uses SQL injection to execute the query. The query is executed by appending it to the URL after the '?' symbol. The 'id=1' parameter is used to bypass any authentication checks and the query is executed using the 'AND' operator. The 'NAME_CONST' function is used to retrieve the MySQL version, user and database name. The 'x' table name is used to alias the subquery. 
 
+ 
+
+
+
 **Code**: [[?id=1 AND (SELECT * FROM (SELECT NAME_CONST(versio]]
+
+
 
 > The 'version()' function is used to retrieve the MySQL version. The 'user()' function is used to retrieve the current user. The 'database()' function is used to retrieve the current database name. The '--' symbol is used to comment out the rest of the query and prevent any errors. This command can be used by attackers to gather information about the target system and plan further attacks.
 
@@ -103,3 +127,5 @@ mysql --version
 - [[MYSQL Error Based]]
 - [[MYSQL Error Based - NAME_CONST function (only for constants)]]
 - [[MYSQL Injection]]
+
+

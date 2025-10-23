@@ -34,9 +34,13 @@ AppLocker rules permit or deny the execution of scripts (.ps1, .bat, .cmd, .vbs,
 
 AppLocker rules permit or deny the execution of scripts (.ps1, .bat, .cmd, .vbs, .js), executables (.exe, .com), Windows Installer files (..msi, .msp, .mst), Packaged apps, and DLL files (.dll, .ocx). If configured, the rules can be viewed by unprivileged users.
 
+
+
 # Instructions
 
 1. List AppLocker rules in XML format. Omit the "-Xml" argument if more concise non-XML output is preferred
+
+
 
 **Command** ([[Export AppLocker Rules in XML]]):
 
@@ -44,13 +48,23 @@ AppLocker rules permit or deny the execution of scripts (.ps1, .bat, .cmd, .vbs,
 powershell -nop -c "Import-Module AppLocker; Get-AppLockerPolicy -Effective -Xml"
 ```
 
+
+
 2. (Optional) Copy/paste the XML onto a Linux host and use a beautifier on the XML output
+
+
+
+
 
 **Command** ([[xmllint Beautify XML]]):
 
 ```bash
 xmllint --format - < $_FILE.xml
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +89,5 @@ xmllint --format - < $_FILE.xml
 
 - [[applocker]]
 - [[Enumeration]]
+
+

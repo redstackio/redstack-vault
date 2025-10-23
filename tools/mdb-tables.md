@@ -26,11 +26,29 @@ Get a listing of tables in an MDB database.
 
 Get a listing of tables in an MDB database.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a8c2add8-7acf-4462-9e6e-400ac6abe291}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +62,5 @@ Get a listing of tables in an MDB database.
 
 - [[data exposure]]
 - [[extract]]
+
+

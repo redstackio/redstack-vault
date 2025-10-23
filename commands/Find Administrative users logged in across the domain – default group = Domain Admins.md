@@ -21,3 +21,5 @@ Invoke-UserHunter -Threads 15 -NoPing [-GroupName “Enterprise Admins”]
 Invoke-UserHunter -Threads 20 -GroupName "Domain Admins" -SearchForest -CheckAccess
 
 ```
+
+

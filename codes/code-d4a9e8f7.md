@@ -18,3 +18,5 @@ curl "https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.s
 ./linpeas.sh -s #superfast & stealth - This will bypass some time consuming checks. In stealth mode Nothing will be written to the disk.
 ./linpeas.sh -P #Password - Pass a password that will be used with sudo -l and bruteforcing other users
 ```
+
+

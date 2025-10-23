@@ -16,3 +16,7 @@ Is a collection of PowerShell scripts focused on detecting and abusing accounts 
 ## Description
 
 Is a collection of PowerShell scripts focused on detecting and abusing accounts associated with SPNs (Service Principal Name). ​
+
+
+
+

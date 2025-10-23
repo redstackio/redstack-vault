@@ -30,11 +30,15 @@ SSH Key Persistence is a technique used by attackers to maintain access to a com
 
 SSH Key Persistence is a technique used by attackers to maintain access to a compromised Linux machine. By adding a malicious SSH key to the authorized_keys file, attackers can ensure that they can access the system even if the original credentials are changed. This technique is often used in conjunction with other persistence techniques to ensure that the attacker can maintain access to the system even after a reboot. From a technical perspective, this technique involves adding a public key to the authorized_keys file in the ~/.ssh directory of the target user. The private key is then used by the attacker to gain access to the system. The business value of this technique is that it allows attackers to maintain access to a system and continue to exfiltrate data or use the system for other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to the target Linux machine
 
 1. Knowledge of the target user's credentials
+
+ 
 
 ## Defense
 
@@ -44,11 +48,15 @@ SSH Key Persistence is a technique used by attackers to maintain access to a com
 
 1. Restrict access to the authorized_keys file to prevent unauthorized modifications
 
+ 
+
 ## Objectives
 
 1. Maintain access to a compromised Linux machine
 
 1. Ensure continued access to the system even after a reboot
+
+ 
 
 # Instructions
 
@@ -67,15 +75,25 @@ Alternatively, you can manually add the public key to the authorized_keys file o
 6. Save and exit the file.
 7. The ssh key has now been added to the authorized keys list on the remote server.
 
+ 
+
+
+
 **Code**: [[~/.ssh]]
 
+
+
 > This command is used to add an ssh key to the specified directory. The ssh key can be used to authenticate the user when logging into a remote server. The command provides detailed instructions on how to generate a new ssh key and add it to the authorized keys list on the remote server. The user can choose to either use the ssh-copy-id command or manually add the public key to the authorized_keys file on the remote server.
+
+
 
 **Command** ([[Create SSH Directory]]):
 
 ```bash
 ~/.ssh
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -96,3 +114,5 @@ Alternatively, you can manually add the public key to the authorized_keys file o
 
 - [[Backdooring the SSH]]
 - [[Linux - Persistence]]
+
+

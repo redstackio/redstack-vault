@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:41.016963+00:00'
 ```bash
 Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
 ```
+
+

@@ -39,11 +39,15 @@ From a technical perspective, Findomain uses a combination of DNS queries and br
 
 Business value of subdomain enumeration is to help organizations understand their attack surface and identify potential vulnerabilities before attackers can exploit them.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain
 
 1. Findomain tool installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -53,17 +57,27 @@ Business value of subdomain enumeration is to help organizations understand thei
 
 1. Implement network segmentation to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Discover subdomains of a target domain
 
 1. Identify potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. To install and use Findomain, follow the below instructions:
 
+ 
+
+
+
 **Code**: [[$ wget https://github.com/Edu4rdSHL/findomain/rele]]
+
+
 
 > 1. Download the latest version of Findomain with the command: $ wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 2. Make the downloaded file executable with the command: $ chmod +x findomain-linux
@@ -74,17 +88,27 @@ $ findomain_fb_token="YourAccessToken"
 
 The -t flag specifies the target domain and -o specifies the output file. You can also use other flags such as -u for subdomain enumeration, -r for recursive subdomain enumeration, and -q for quiet mode.
 
+
+
 **Command** ([[Download findomain-linux]]):
 
 ```bash
 $ wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 ```
 
+
+
+
+
 **Command** ([[Make findomain-linux executable]]):
 
 ```bash
 $ chmod +x findomain-linux
 ```
+
+
+
+
 
 **Command** ([[Set up findomain API tokens]]):
 
@@ -94,11 +118,17 @@ $ findomain_virustotal_token="YourAccessToken"
 $ findomain_fb_token="YourAccessToken"
 ```
 
+
+
+
+
 **Command** ([[Run findomain-linux to find subdomains of example.com]]):
 
 ```bash
 $ ./findomain-linux -t example.com -o
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +154,5 @@ $ ./findomain-linux -t example.com -o
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Findomain]]
+
+

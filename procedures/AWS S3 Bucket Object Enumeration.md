@@ -34,9 +34,13 @@ From a technical standpoint, this technique exploits the fact that the AWS S3 se
 
 From a business perspective, this technique highlights the importance of securing sensitive data within AWS S3 buckets. Organizations that fail to properly secure their S3 buckets are at risk of exposing sensitive information to attackers, which can result in reputational damage, legal liabilities, and financial losses.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the targeted S3 bucket
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ From a business perspective, this technique highlights the importance of securin
 
 1. Regularly review S3 bucket configurations to ensure they align with security best practices
 
+ 
+
 ## Objectives
 
 1. Discover information about objects within a specific S3 bucket
 
 1. Identify sensitive information stored within the bucket
 
+ 
+
 # Instructions
 
 1. To list all objects in an S3 bucket, use the following command:
 
+ 
+
 This command will list all objects in the specified S3 bucket. The output will include the object keys, sizes, and last modified dates. You can also use various options to filter the results, such as specifying a prefix or delimiter. For more information on these options, see the AWS CLI documentation.
+
+
 
 **Command** ([[List objects in S3 bucket]]):
 
 ```bash
 aws s3api list-objects --bucket name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws s3api list-objects --bucket name
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing all objects in a specific bucket]]
+
+

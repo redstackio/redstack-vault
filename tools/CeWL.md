@@ -26,11 +26,27 @@ CeWL is a tool which spiders a given URL to a specified depth, optionally follow
 
 CeWL is a tool which spiders a given URL to a specified depth, optionally following external links, and returns a list of words which can then be used for password crackers such as John the Ripper or Hashcat. CeWL also includes options to help enumerate usernames, e-mail addresses, and useful information contained in metadata.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a50e5264-3dfb-4fcb-8ad2-96f8bb4ea3ef}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ CeWL is a tool which spiders a given URL to a specified depth, optionally follow
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

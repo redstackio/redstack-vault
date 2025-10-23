@@ -28,3 +28,5 @@ make CONF=Release
 [+] Successful injection at process 25820 of trex[1120601113],look for tickets in /tmp/__krb_1120601113.ccache
 [X] [uid:0] Error retrieving tickets
 ```
+
+

@@ -20,3 +20,5 @@ net group /domain
 powershell (new-object system.directoryservices.directorysearcher("(&(objectcategory=user)(samaccountname=$($env:username)))")).FindOne().GetDirectoryEntry().memberof
 
 ```
+
+

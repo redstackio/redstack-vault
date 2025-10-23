@@ -36,11 +36,15 @@ To execute this technique, an attacker would need to identify a SQL injection vu
 
 The business value of this technique is that it allows an attacker to obtain sensitive information that can be used for further attacks, such as password spraying or phishing.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -50,21 +54,33 @@ The business value of this technique is that it allows an attacker to obtain sen
 
 1. Monitor for suspicious activity, such as unusual database queries
 
+ 
+
 ## Objectives
 
 1. Retrieve user information from a MSSQL database
 
 1. Escalate privileges and gain access to additional systems
 
+ 
+
 # Instructions
 
 1. This command will retrieve information about the current user, including their username and system user.
+
+ 
+
+
 
 **Code**: [[SELECT CURRENT_USER
 SELECT user_name();
 SELECT sys]]
 
+
+
 > The 'CURRENT_USER' command will return the name of the user who is currently logged in. 'user_name()' will return the current user's username. 'system_user' will return the name of the user who is executing the command. 'user' will return the current user's username as well.
+
+
 
 **Command** ([[Get Current User]]):
 
@@ -72,11 +88,19 @@ SELECT sys]]
 SELECT CURRENT_USER
 ```
 
+
+
+
+
 **Command** ([[Get User Name]]):
 
 ```bash
 SELECT user_name()
 ```
+
+
+
+
 
 **Command** ([[Get System User]]):
 
@@ -84,11 +108,17 @@ SELECT user_name()
 SELECT system_user
 ```
 
+
+
+
+
 **Command** ([[Get User]]):
 
 ```bash
 SELECT user
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +141,5 @@ SELECT user
 
 - [[MSSQL Injection]]
 - [[MSSQL User]]
+
+

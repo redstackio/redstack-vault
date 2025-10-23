@@ -29,6 +29,7 @@ output: 'root@hackers:~# john --format=sha512crypt --wordlist=/opt/SecLists/Pass
 
   ?:RedStack
 
+
   1 password hash cracked, 0 left'
 created_at: '2019-09-16T22:24:57.350683+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
@@ -58,3 +59,5 @@ root@hackers:~/Content/crypto# john sha512.hash --show
 
 1 password hash cracked, 0 left
 ```
+
+

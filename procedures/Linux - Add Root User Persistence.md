@@ -35,9 +35,13 @@ From a technical perspective, the attacker can use the 'Create and Set Password 
 
 The business value of this procedure is that it allows an attacker to maintain access to a compromised Linux system, enabling them to continue to steal data or use the system for malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the target Linux system
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The business value of this procedure is that it allows an attacker to maintain a
 
 1. Implement multi-factor authentication for all user accounts on the target system
 
+ 
+
 ## Objectives
 
 1. Create a new root user account on the target Linux system
@@ -54,6 +60,8 @@ The business value of this procedure is that it allows an attacker to maintain a
 1. Set the password for the new root user account
 
 1. Maintain access to the compromised system even if the original credentials are changed or removed
+
+ 
 
 # Instructions
 
@@ -68,15 +76,23 @@ To set the password to 'linuxpassword', run the following command:
 
 echo "linuxpassword" | passwd --stdin john
 
+ 
+
+
+
 **Code**: [[sudo useradd -ou 0 -g 0 john
 sudo passwd john
 echo]]
+
+
 
 > The 'useradd' command is used to create a new user in Linux. The '-ou' option specifies the ID of the user's primary group, and the '-g' option specifies the ID of the user's initial login group.
 
 The 'passwd' command is used to set or change a user's password. In this case, the password for the user 'john' is being set.
 
 The 'echo' command is used to print the string 'linuxpassword', which is then piped to the 'passwd' command using the '|' symbol. The '--stdin' option tells the 'passwd' command to read the new password from standard input, which is the output of the 'echo' command.
+
+
 
 **Command** ([[Create new user and set password]]):
 
@@ -85,6 +101,8 @@ sudo useradd -ou 0 -g 0 john
 sudo passwd john
 echo "linuxpassword" | passwd --stdin john
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -106,3 +124,5 @@ echo "linuxpassword" | passwd --stdin john
 
 - [[Add a root user]]
 - [[Linux - Persistence]]
+
+

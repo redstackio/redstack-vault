@@ -37,6 +37,8 @@ The SQL Server Agent Job service is used to schedule and automate administrative
 
 This technique has a high business value, as it allows an adversary to execute any command on the target system, which can lead to data theft, system compromise, or disruption of business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a SQL Server instance
@@ -44,6 +46,8 @@ This technique has a high business value, as it allows an adversary to execute a
 1. Permissions to create and execute SQL Server Agent Jobs
 
 1. PowerShell installed on the target system
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ This technique has a high business value, as it allows an adversary to execute a
 
 1. Implement endpoint security solutions to detect and prevent PowerShell execution
 
+ 
+
 ## Objectives
 
 1. Execute commands on the target system
@@ -61,20 +67,36 @@ This technique has a high business value, as it allows an adversary to execute a
 
 1. Move laterally within the target network
 
+ 
+
 # Instructions
 
 1. To run a SQL Server Agent Job with a PowerShell script, use the Invoke-SQLOSCmdAgentJob cmdlet. Specify the subsystem as PowerShell, provide the SQL Server instance name, and the base64 encoded PowerShell script. You can also provide a username and password with sufficient permissions to execute the job.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLOSCmdAgentJob -Subsystem PowerShell -Use]]
+
+
 
 > The Invoke-SQLOSCmdAgentJob cmdlet is used to execute SQL Server Agent Jobs with a specified subsystem. In this case, the subsystem is PowerShell. The -Instance parameter specifies the name of the SQL Server instance where the job will be executed. The -Command parameter specifies the base64 encoded PowerShell script that will be executed. The -Verbose parameter provides detailed output about the execution of the job. Additionally, you can provide a username and password with sufficient permissions to execute the job. This cmdlet also supports other subsystem options such as CmdExec, VBScript, and Jscript.
 
 2. This command creates a SQL Server Agent job that executes a PowerShell command to perform an nslookup on the computer name. The command is executed with a retry attempt of 1 and a retry interval of 5 seconds. The job is then started and can be monitored in the SQL Server Agent job history. Finally, the job is deleted using the sp_delete_job stored procedure.
 
+ 
+
+
+
 **Code**: [[USE msdb; 
 EXEC dbo.sp_add_job @job_name = N'test_]]
 
+
+
 > The @job_name parameter specifies the name of the job to be created. The @step_name parameter specifies the name of the job step. The @subsystem parameter specifies the type of command being executed, in this case, PowerShell. The @command parameter specifies the PowerShell command to be executed, which performs an nslookup on the computer name. The $env:COMPUTERNAME[10] variable is used to extract the first 10 characters of the computer name. The @retry_attempts parameter specifies the number of times the job should be retried if it fails. The @retry_interval parameter specifies the number of seconds to wait before retrying the job. The sp_add_jobserver stored procedure is used to add the job to the SQL Server Agent. The sp_start_job stored procedure is used to start the job. The sp_delete_job stored procedure is used to delete the job.
+
+
 
 **Command** ([[Create PowerShell job and execute nslookup command]]):
 
@@ -88,6 +110,8 @@ EXEC dbo.sp_start_job N'test_powershell_job1';
 -- delete
 EXEC dbo.sp_delete_job @job_name = N'test_powershell_job1';
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +135,5 @@ EXEC dbo.sp_delete_job @job_name = N'test_powershell_job1';
 - [[Agent Jobs]]
 - [[Execute commands through SQL Agent Job service]]
 - [[MSSQL Server]]
+
+

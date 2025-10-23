@@ -33,6 +33,8 @@ To perform this technique, the attacker sends a specially crafted SQL query to t
 
 The business value of this technique is that it allows organizations to identify vulnerabilities and weaknesses in their SQL Server deployments, and take steps to remediate them before they can be exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted system
@@ -40,6 +42,8 @@ The business value of this technique is that it allows organizations to identify
 1. Knowledge of SQL injection techniques
 
 1. Access to a tool capable of sending SQL queries to the targeted system
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this technique is that it allows organizations to identify
 
 1. Regularly perform vulnerability assessments and penetration testing to identify and remediate vulnerabilities in SQL Server deployments
 
+ 
+
 ## Objectives
 
 1. Identify the version of Microsoft SQL Server running on a targeted system
@@ -57,19 +63,31 @@ The business value of this technique is that it allows organizations to identify
 
 1. Use the identified vulnerabilities to gain access to sensitive information or take control of the system
 
+ 
+
 # Instructions
 
 1. This command retrieves the version of SQL currently running.
 
+ 
+
+
+
 **Code**: [[SELECT @@version]]
 
+
+
 > The SELECT @@version command returns the version of SQL Server that is currently running. This is useful when troubleshooting issues or verifying that the correct version is installed. The output will include the version number, build number, and other information about the SQL Server instance.
+
+
 
 **Command** ([[MySQL Version]]):
 
 ```bash
 SELECT @@version
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ SELECT @@version
 
 - [[MSSQL Injection]]
 - [[MSSQL version]]
+
+

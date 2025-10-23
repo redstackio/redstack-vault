@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:59.274108+00:00'
 ```bash
 aws iam list-attached-role-policies --role-name name
 ```
+
+

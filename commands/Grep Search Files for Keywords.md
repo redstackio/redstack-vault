@@ -26,3 +26,5 @@ root@kali:~# grep -C 5 -iR 'password\|secret' *
 images/.hidden.txt-The password is hunter2. Don't tell anyone!
 
 ```
+
+

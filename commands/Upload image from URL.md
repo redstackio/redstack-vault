@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:24:06.140012+00:00'
 document.querySelector('input[type=url]').value = 'https://example.com/image.jpg';
 document.querySelector('input[type=url]').dispatchEvent(new Event('change'));
 ```
+
+

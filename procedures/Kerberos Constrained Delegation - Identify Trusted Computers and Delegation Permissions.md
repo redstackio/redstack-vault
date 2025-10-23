@@ -35,11 +35,15 @@ To identify a constrained delegation, an attacker can use tools like Powerview o
 
 The business value of this procedure is that it can help organizations identify potential weaknesses in their Active Directory environment and take steps to mitigate them before an attacker can exploit them.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target Active Directory environment
 
 1. Tools like Powerview or Bloodhound to query Active Directory
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this procedure is that it can help organizations identify 
 
 1. Implement strong password policies and multi-factor authentication to prevent credential theft
 
+ 
+
 ## Objectives
 
 1. Identify trusted computers and delegation permissions in Active Directory
@@ -57,11 +63,19 @@ The business value of this procedure is that it can help organizations identify 
 
 1. Use the information gathered to perform further attacks, such as lateral movement or privilege escalation
 
+ 
+
 # Instructions
 
 1. This command will list all the trusted computers and delegation permissions for the current user.
 
+ 
+
+
+
 **Code**: [[Get-DomainComputer -TrustedToAuth | select -exp dn]]
+
+
 
 > The first part of the command 'Get-DomainComputer -TrustedToAuth' will list all the computers that the current user has trusted to authenticate against. The second part of the command 'Get-DomainComputer previous_result | select -exp msds-AllowedToDelegateTo' will list all the delegation permissions for the previous result. This can be useful for identifying potential attack vectors if any of the trusted computers have excessive delegation permissions.
 
@@ -82,3 +96,5 @@ The business value of this procedure is that it can help organizations identify 
 - [[Active Directory Attacks]]
 - [[Identify a Constrained Delegation]]
 - [[Kerberos Constrained Delegation]]
+
+

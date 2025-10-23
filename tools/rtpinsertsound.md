@@ -16,3 +16,9 @@ A tool to insert audio into a specified audio (i.e. RTP) stream was created in t
 ## Description
 
 A tool to insert audio into a specified audio (i.e. RTP) stream was created in the August – September 2006 timeframe. The tool is named rtpinsertsound. It was tested on a Linux Red Hat Fedora Core 4 platform (Pentium IV, 2.5 GHz), but it is expected this tool will successfully build and execute on a variety of Linux distributions.
+
+
+
+
+
+

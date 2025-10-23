@@ -34,6 +34,8 @@ To list all versions of a REST API, the attacker can use the 'Get API Gateway St
 
 The business value of this procedure is that it allows an attacker to identify vulnerable API versions and exploit them to gain unauthorized access to sensitive data or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted AWS account
@@ -41,6 +43,8 @@ The business value of this procedure is that it allows an attacker to identify v
 1. Authenticated access to the AWS API Gateway service
 
 1. Permission to execute the 'Get API Gateway Stages' command
+
+ 
 
 ## Defense
 
@@ -50,23 +54,33 @@ The business value of this procedure is that it allows an attacker to identify v
 
 1. Implement proper input validation and sanitization to prevent injection attacks on API versions
 
+ 
+
 ## Objectives
 
 1. Identify all versions of a REST API hosted on AWS API Gateway
 
 1. Identify vulnerable API versions
 
+ 
+
 # Instructions
 
 1. Use this command to get a list of all the stages in an API Gateway REST API.
 
+ 
+
 The 'aws apigateway get-stages' command is used to retrieve a list of all the stages in an API Gateway REST API. The '--rest-api-id' option is used to specify the ID of the REST API for which you want to retrieve the stages. This command returns a JSON object that contains information about each stage, including its name, deployment ID, and description. This information can be useful for managing and monitoring your API Gateway deployment.
+
+
 
 **Command** ([[Get API Gateway stages]]):
 
 ```bash
 aws apigateway get-stages --rest-api-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws apigateway get-stages --rest-api-id ID
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing all versions of a rest api]]
+
+

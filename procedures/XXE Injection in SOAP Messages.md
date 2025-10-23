@@ -33,11 +33,15 @@ XXE Injection in SOAP Messages is a technique used by attackers to exploit vulne
 
 XXE Injection in SOAP Messages is a technique used by attackers to exploit vulnerabilities in XML parsers that can be used to read and manipulate sensitive data. This technique can be used to exfiltrate data, execute arbitrary code on the server or gain unauthorized access to sensitive information. By injecting malicious XML entities into a SOAP message, attackers can bypass security controls and execute malicious commands on the server. This technique is commonly used in web applications that use SOAP-based web services.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that uses SOAP-based web services
 
 1. Knowledge of XXE Injection
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ XXE Injection in SOAP Messages is a technique used by attackers to exploit vulne
 
 1. Disable external entity processing in XML parsers
 
+ 
+
 ## Objectives
 
 1. Inject malicious XML entities into a SOAP message
@@ -55,13 +61,21 @@ XXE Injection in SOAP Messages is a technique used by attackers to exploit vulne
 
 1. Exfiltrate sensitive data from the server
 
+ 
+
 # Instructions
 
 1. The above XML data contains an external entity injection vulnerability. It is achieved by defining an external entity with a URL that points to an attacker controlled server. When the XML is parsed, the server will be requested and the response will be included in the XML document. This can lead to sensitive data disclosure or even remote code execution.
 
+ 
+
+
+
 **Code**: [[<soap:Body>
   <foo>
     <![CDATA[<!DOCTYPE doc [<!]]
+
+
 
 > To prevent this vulnerability, it is recommended to disable external entity parsing or to use a whitelist approach where only known safe external entities are allowed to be parsed.
 
@@ -84,3 +98,5 @@ XXE Injection in SOAP Messages is a technique used by attackers to exploit vulne
 - [[XML External Entity]]
 - [[XXE in exotic files]]
 - [[XXE inside SOAP]]
+
+

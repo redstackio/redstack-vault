@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:09.795219+00:00'
 ```bash
 https://example.com/?q=http://evil.com/redirect.php
 ```
+
+

@@ -33,13 +33,23 @@ Use PSExec to connect to a remote Windows system and spawn a Command shell  (cmd
 
 Use PSExec to connect to a remote Windows system and spawn a Command shell  (cmd.exe). In order to use PSExec, the user must have full permissions to the "$ADMIN" share, which generally requires administrator credentials.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[psexec.py Connect and Spawn a Command Shell]]):
 
 ```bash
 psexec.py $_DOMAIN/$_USERNAME:$_PASSWORD@$_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +73,5 @@ psexec.py $_DOMAIN/$_USERNAME:$_PASSWORD@$_TARGET_IP
 
 - [[Network]]
 - [[Service Attacks]]
+
+

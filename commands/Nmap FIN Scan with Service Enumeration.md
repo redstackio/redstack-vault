@@ -22,6 +22,7 @@ output: 'root@kali:~# nmap -sV -sF 10.10.10.10
 
   MAC Address: 00:0C:29:66:97:CB (VMware)
 
+
   Service detection performed. Please report any incorrect results at https://nmap.org/submit/
   .
 
@@ -55,3 +56,5 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 13.03 seconds
 
 ```
+
+

@@ -27,13 +27,25 @@ Encoded AMSI attempts to encode the strings to evade the signature detections. T
 
 Encoded AMSI attempts to encode the strings to evade the signature detections. 
 
+
+
 The command example below is generated from https://amsi.fail , if this one does not work, try generating a new one.
+
+
 
 ## Instructions
 
 1. Run the following powershell script
 
+
+
+
+
 **Code**: [[[sYSTem.teXT.ENcodiNG]::UNiCODe.GeTStRInG([sYsteM.]]
+
+
+
+
 
 ## Platforms
 
@@ -43,3 +55,5 @@ The command example below is generated from https://amsi.fail , if this one does
 
 - [[anti-malware]]
 - [[Defense Bypass]]
+
+

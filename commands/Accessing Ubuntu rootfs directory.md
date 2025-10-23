@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:54.958414+00:00'
 ```bash
 cd C:\Users\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\
 ```
+
+

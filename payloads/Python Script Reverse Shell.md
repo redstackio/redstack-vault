@@ -21,9 +21,15 @@ Generate a Python script reverse shell payload with MSFVenom.
 
 Creating a Meterpreter listener with a one liner.
 
+
+
 ## Payload
 
+
+
 **Command**: [[msfvenom python script reverse shell]]
+
+
 
 ## 
 
@@ -31,9 +37,13 @@ Creating a Meterpreter listener with a one liner.
 
 ## Listener
 
+
+
 **Command**: [[msfvenom Meterpreter python script listener]]
 
-## 
+
+
+
 
 ## 
 
@@ -43,4 +53,8 @@ Creating a Meterpreter listener with a one liner.
 
 ## 
 
-##
+## 
+
+## 
+
+

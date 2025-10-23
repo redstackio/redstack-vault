@@ -32,11 +32,39 @@ XML querying is done through Xpath, that allows the XML query to locate the info
 
 # Instructions
 
+
+
 1.Insert a *single quote * to test the login form for error message
+
+
+
+
+
+
+
+![a4dfc1a9-d58e-4ff7-a647-a81960838c66.PNG](_assets/images/Mash/a4dfc1a9-d58e-4ff7-a647-a81960838c66.PNG)
+
+
+
+
 
 2. Upon submitting the request with *single quote, a*n error message can be observed  which will validate the usage of XPath .
 
+
+
+
+
+
+
+![bc95b3cb-8f71-4a00-95cf-5c9e089c790a.PNG](_assets/images/Mash/bc95b3cb-8f71-4a00-95cf-5c9e089c790a.PNG)
+
+
+
+
+
 3. After confirming that XPath being used for authentication on server side , try the following *payloads* in the login form.
+
+
 
 *payloads*
 
@@ -46,7 +74,25 @@ XML querying is done through Xpath, that allows the XML query to locate the info
 
 *x' or 1=1 or 'x'='y*
 
+
+
+
+
+![3cbe4daf-8535-4561-b133-b95f304e91ef.PNG](_assets/images/Mash/3cbe4daf-8535-4561-b133-b95f304e91ef.PNG)
+
+
+
 4. As it can be observed , an attacker was able to bypass the authentication mechanism implemented through XML.
+
+
+
+
+
+![de27748a-a0e3-4006-80fc-224f706a2e49.PNG](_assets/images/Mash/de27748a-a0e3-4006-80fc-224f706a2e49.PNG)
+
+
+
+
 
 ## Platforms
 
@@ -59,3 +105,5 @@ XML querying is done through Xpath, that allows the XML query to locate the info
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[XPath Injection]]
+
+

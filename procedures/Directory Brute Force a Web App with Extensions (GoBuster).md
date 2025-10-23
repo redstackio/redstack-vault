@@ -33,17 +33,27 @@ Perform a directory brute force while specifying extensions. Choose file extensi
 
 Perform a directory brute force while specifying extensions. Choose file extensions to brute force based on initial recon of  files on the webserver (.php, .asp, .js, etc), directories (cgi-bin suggests .sh scripts), underlying technology disclosed in headers (Python, PHP, Ruby), etc. For example, if a webserver is running IIS,  target extensions might be php, asp, aspx, and js.
 
+
+
 # Instructions
 
 1. Manually enumerate the web application with a browser and Burp proxy, noting file types, directories, technology, etc. 
 
 2. Brute force files with extensions by specifying the "-x" argument followed by each extension.
 
+
+
+
+
 **Command** ([[Gobuster Directory Brute Force with Extensions]]):
 
 ```bash
 gobuster dir -w $_WORDLIST -u http://$_TARGET_IP -f -e -x '$_EXT1,$_EXT2,$_EXT3'
 ```
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +77,5 @@ gobuster dir -w $_WORDLIST -u http://$_TARGET_IP -f -e -x '$_EXT1,$_EXT2,$_EXT3'
 
 - [[data exposure]]
 - [[Network]]
+
+

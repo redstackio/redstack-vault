@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # NTDSUTIL
 
+
+
 **Command** ([[Built-in utility to create backup copy of the AD database]]):
 
 ```bash
 ntdsutil "ac i ntds" "ifm" create full c:\temp" q q
 
 ```
+
+
+
+
+
+

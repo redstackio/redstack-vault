@@ -24,3 +24,5 @@ aws ec2 modify-image-attribute --image-id $AWS_AMI_ID --launch-permission "Remov
 ```
 aws ec2 modify-image-attribute --image-id ami-0abcdef1234567890 --launch-permission "Remove=[{UserId=123456789012}]"
 ```
+
+

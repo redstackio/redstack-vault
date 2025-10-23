@@ -27,19 +27,61 @@ Sometimes applications allow to access internal files using absolute paths due t
 
 Sometimes applications allow to access internal files using absolute paths due to security misconfigurations. Traversal sequences may be blocked WAF or application's code 
 
+
+
 # Instructions
+
+
 
 1. Click on view details and use the burp intercept to capture the request
 
+
+
+
+
+![c859b4e4-1e0d-4bd2-b173-f7b4fd8be8d5.png]()
+
+
+
+
+
 2.Send the below request to repeater tab
 
+
+
+
+
+![7b49bb22-91fa-43a1-a14e-02135f7abb5c.png]()
+
+
+
+
+
 3. Send the request to server and observe the response
+
+
+
+
+
+![4062c35e-4bf4-48e3-a548-9a296e1f8959.png]()
+
+
+
+
 
 4. Modify the* filename* parameter to absolute path of the file you want to access 
 
  `/etc/passwd` file
 
+
+
 Observe that the response contains contents of passwd file.
+
+
+
+![11c917f7-5bd7-4773-a97e-72fd906ec1e0.png]()
+
+
 
 ## Platforms
 
@@ -49,3 +91,5 @@ Observe that the response contains contents of passwd file.
 
 - [[Path Traversal]]
 - [[Web Applications]]
+
+

@@ -1,1 +1,15 @@
-{}
+{
+  "accentColor": "",
+  "theme": "obsidian",
+  "baseFontSize": 16,
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "mitre-badges",
+    "procedure-cards",
+    "command-blocks",
+    "verified-indicators",
+    "platform-icons"
+  ]
+}

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:57.272196+00:00'
 ```bash
 select getvariable('sysibm.version') from sysibm.sysdummy1 -- (v8+)
 ```
+
+

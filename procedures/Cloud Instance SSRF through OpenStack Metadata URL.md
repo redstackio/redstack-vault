@@ -37,11 +37,15 @@ Technical Explanation: This technique involves sending a specially crafted reque
 
 Business Value: This technique can be used by attackers to gain access to sensitive data, such as authentication credentials or other metadata, and use it to gain access to other resources on the cloud instance or in the cloud environment. This can lead to a complete compromise of the cloud environment, resulting in loss of data, resources, and reputation.
 
+ 
+
 ## Requirements
 
 1. Access to an OpenStack metadata URL
 
 1. Knowledge of the cloud environment
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This technique can be used by attackers to gain access to sensit
 1. Implement access controls and authentication mechanisms to restrict access to the OpenStack metadata URL
 
 1. Monitor network traffic for suspicious activity, such as requests to the OpenStack metadata URL
+
+ 
 
 ## Objectives
 
@@ -61,19 +67,31 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. To access OpenStack metadata, use the provided URL: http://169.254.169.254/openstack
 
+ 
+
+
+
 **Code**: [[http://169.254.169.254/openstack]]
 
+
+
 > This URL is used to access metadata information about the OpenStack instance. It can be used to retrieve information such as the instance ID, IP address, and security groups. It is important to note that this URL can only be accessed from within the OpenStack instance and requires authentication headers to be included in the request.
+
+
 
 **Command** ([[Access metadata API]]):
 
 ```bash
 http://169.254.169.254/openstack
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ http://169.254.169.254/openstack
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for OpenStack/RackSpace]]
+
+

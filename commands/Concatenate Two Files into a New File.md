@@ -20,3 +20,5 @@ cat $_FILE1 $_FILE2 > $_OUTPUT
 ```
 root@00b5b1279bcc:~# cat /etc/hosts /etc/resolv.conf  > newfile.txt
 ```
+
+

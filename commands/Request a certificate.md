@@ -16,3 +16,5 @@ updated_at: '2023-05-25T18:35:34.918843+00:00'
 ```bash
 & 'C:\Program Files\Python39\python.exe' C:\Users\Username\Documents\username\PrtToCert\RequestCert.py --tenantId <TENANT-ID> --prt <PRT> --userName <Username>@<TENANT NAME>.onmicrosoft.com --hexCtx <HEX-CONTEXT> --hexDerivedKey <HEX-DERIVED-KEY>
 ```
+
+

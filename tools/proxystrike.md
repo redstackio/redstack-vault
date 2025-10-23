@@ -17,32 +17,70 @@ ProxyStrike is an active Web Application Proxy. It’s a tool designed to find v
 
 ProxyStrike is an active Web Application Proxy. It’s a tool designed to find vulnerabilities while browsing an application. It was created because the problems we faced in the pentests of web applications that depends heavily on Javascript, not many web scanners did it good in this stage, so we came with this proxy.Right now it has available Sql injection and XSS plugins. Both plugins are designed to catch as many vulnerabilities as we can, it’s that why the SQL Injection plugin is a Python port of the great DarkRaver “Sqlibf”.The process is very simple, ProxyStrike runs like a proxy listening in port 8008 by default, so you have to browse the desired web site setting your browser to use ProxyStrike as a proxy, and ProxyStrike will analyze all the paremeters in background mode. For the user is a passive proxy because you won’t see any different in the behaviour of the application, but in the background is very active. :)Some features:
 
+
+
 Plugin engine (Create your own plugins!)
+
+
 
 Request interceptor
 
+
+
 Request diffing
+
+
 
 Request repeater
 
+
+
 Automatic crawl process
+
+
 
 Http request/response history
 
+
+
 Request parameter stats
+
+
 
 Request parameter values stats
 
+
+
 Request url parameter signing and header field signing
+
+
 
 Use of an alternate proxy (tor for example ;D )
 
+
+
 Sql attacks (plugin)
+
+
 
 Server Side Includes (plugin)
 
+
+
 Xss attacks (plugin)
+
+
 
 Attack logs
 
+
+
 Export results to HTML or XML
+
+
+
+
+
+
+
+

@@ -25,3 +25,5 @@ $object->data = 'rips';
 $phar->setMetadata($object);
 $phar->stopBuffering();
 ```
+
+

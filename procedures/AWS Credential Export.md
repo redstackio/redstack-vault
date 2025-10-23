@@ -34,11 +34,15 @@ The AWS Credential Export procedure is used to gain access to more AWS credentia
 
 The AWS Credential Export procedure is used to gain access to more AWS credentials by configuring the AWS CLI with newer credentials. This procedure is useful for attackers who already have some AWS credentials but want to escalate their privileges and gain access to more sensitive data. To execute this procedure, the attacker needs to export the newly obtained credentials and configure them in the AWS CLI. Once configured, the attacker can use these credentials to access different AWS services and data.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to a Linux machine
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The AWS Credential Export procedure is used to gain access to more AWS credentia
 
 1. Regularly monitor and review AWS account activity for any suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Gain access to more AWS credentials
@@ -56,11 +62,17 @@ The AWS Credential Export procedure is used to gain access to more AWS credentia
 
 1. Access sensitive data
 
+ 
+
 # Instructions
 
 1. To export your AWS credentials, execute the following commands:
 
+ 
+
 This command exports the AWS access key, secret key, and session token into the environment variables of your current shell. These credentials are required to authenticate AWS CLI commands and SDK calls to AWS services.
+
+
 
 **Command** ([[Export AWS credentials]]):
 
@@ -69,6 +81,8 @@ export AWS_ACCESS_KEY_ID
 export AWS_SECRET_KEY
 export AWS_SESSION_TOKEN
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ export AWS_SESSION_TOKEN
 - [[Cloud - AWS]]
 - [[Configuring AWS cli with newer credentials (On Linux)]]
 - [[Persistence & Backdooring]]
+
+

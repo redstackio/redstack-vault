@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:00.495838+00:00'
 ```sql
 select CASE WHEN (1=1) THEN 'AAAAAAAAAA' ELSE 'BBBBBBBBBB' END from sysibm.sysdummy1
 ```
+
+

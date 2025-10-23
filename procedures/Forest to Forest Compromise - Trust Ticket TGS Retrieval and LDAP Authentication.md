@@ -34,11 +34,15 @@ Technical Explanation: The Trust Ticket file contains the encrypted hash of the 
 
 Business Value: This procedure can be used by attackers to gain access to sensitive information and move laterally within a network. By compromising the trust relationship between two Active Directory forests, attackers can gain access to resources that they would not normally have access to, such as sensitive data or critical systems.
 
+ 
+
 ## Requirements
 
 1. Access to a Trust Ticket file
 
 1. Knowledge of the targeted service
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Implement network segmentation to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information
 
 1. Move laterally within a network
+
+ 
 
 # Instructions
 
@@ -60,14 +68,26 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 1. Run the command '.\asktgs.exe c:\temp\trust.kirbi CIFS/machine.domain.local' to retrieve a TGS ticket for the CIFS service on the machine.domain.local host.
 2. Run the command '.\Rubeus.exe asktgs /ticket:c:\ad\tools\mcorp-ticket.kirbi /service:LDAP/mcorp-dc.moneycorp.local /dc:mcorp-dc.moneycorp.local /ptt' to use the TGS ticket for LDAP authentication against the mcorp-dc.moneycorp.local domain controller.
 
+ 
+
+
+
 **Code**: [[.\asktgs.exe c:\temp\trust.kirbi CIFS/machine.doma]]
+
+
 
 > The first command retrieves a TGS ticket for the CIFS service on the machine.domain.local host and saves it to the trust.kirbi file in the c:\temp directory. The second command uses the TGS ticket stored in the c:\ad\tools\mcorp-ticket.kirbi file to authenticate against the LDAP service on the mcorp-dc.moneycorp.local domain controller. The /service argument specifies the LDAP service and the /dc argument specifies the domain controller to use for authentication. The /ptt argument tells Rubeus to import the ticket into the current user's session so it can be used for subsequent operations.
 
 2. To use this command, first obtain a valid .kirbi ticket. Then, use the KirbiKator tool to inject the ticket into the current session. Finally, use the 'ls' command to access the targeted service with the spoofed rights.
 
+ 
+
+
+
 **Code**: [[kirbikator lsa .\ticket.kirbi
 ls \\machine.domain.]]
+
+
 
 > The 'kirbikator' command is used to inject a Kerberos ticket into the current session. The 'lsa' option specifies that the ticket should be injected into the Local Security Authority Subsystem Service (LSASS) process. The '.\ticket.kirbi' argument specifies the location of the .kirbi ticket on the local system. The 'ls' command is used to list the contents of a directory. The '\\machine.domain.local\c$' argument specifies the location of the directory to be listed, using the UNC path format. By injecting the Kerberos ticket into the LSASS process, the 'ls' command will be executed with the spoofed rights of the user associated with the ticket, allowing access to resources that would otherwise be inaccessible.
 
@@ -88,3 +108,5 @@ ls \\machine.domain.]]
 - [[Active Directory Attacks]]
 - [[Forest to Forest Compromise - Trust Ticket]]
 - [[Use the Trust Ticket file to get a ST for the targeted service]]
+
+

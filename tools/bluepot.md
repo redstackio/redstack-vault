@@ -16,3 +16,9 @@ Bluepot is a Bluetooth Honeypot written in Java, it runs on Linux.Bluepot was a 
 ## Description
 
 Bluepot is a Bluetooth Honeypot written in Java, it runs on Linux.Bluepot was a third year university project attempting to implement a fully functional Bluetooth Honeypot. A piece of software designed to accept and store any malware sent to it and interact with common Bluetooth attacks such as “BlueBugging?” and “BlueSnarfing?”. Bluetooth connectivity is provided via hardware Bluetooth dongles.The system also allows monitoring of attacks via a graphical user interface that provides graphs, lists, a dashboard and further detailed analysis from log files.
+
+
+
+
+
+

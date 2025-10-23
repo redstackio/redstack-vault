@@ -31,5 +31,8 @@ Name  Type   Size (Total)  Size (Free)  Mapped to
 C:\   fixed  31.90 GiB     8.61 GiB     
 D:\   cdrom  0.00 B        0.00 B       
 
+
 Total mounts/drives: 2
 ```
+
+

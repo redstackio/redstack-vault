@@ -33,11 +33,15 @@ From a technical perspective, Mimikatz works by exploiting weaknesses in the Win
 
 The business value of this technique is that it allows attackers to move laterally within a network and access sensitive resources. By using stolen credentials, attackers can bypass authentication mechanisms and gain access to systems and data that would otherwise be protected.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Windows system
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The business value of this technique is that it allows attackers to move lateral
 
 1. Monitor network traffic for signs of lateral movement and anomalous authentication activity
 
+ 
+
 ## Objectives
 
 1. Authenticate to a remote system using stolen credentials
@@ -55,19 +61,31 @@ The business value of this technique is that it allows attackers to move lateral
 
 1. Access sensitive resources
 
+ 
+
 # Instructions
 
 1. Execute a Pass-the-Hash attack using mimikatz and obtain a shell as the SCCM$ user in the IDENTITY domain.
 
+ 
+
+
+
 **Code**: [[mimikatz # sekurlsa::pth /user:SCCM$ /domain:IDENT]]
 
+
+
 > This command uses the mimikatz tool to perform a Pass-the-Hash attack. The /user argument specifies the target user account to impersonate, in this case the SCCM$ account. The /domain argument specifies the target domain, in this case the IDENTITY domain. The /ntlm argument specifies the NTLM hash of the target user's password. The /run argument specifies the command to run after obtaining the impersonated user's token, in this case powershell. This command can be used to gain access to a system without knowing the user's password, but requires an existing NTLM hash of the user's password.
+
+
 
 **Command** ([[mimikatz pth]]):
 
 ```powershell
 mimikatz # sekurlsa::pth /user:SCCM$ /domain:IDENTITY /ntlm:e722dfcd077a2b0bbe154a1b42872f4e /run:powershell
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ mimikatz # sekurlsa::pth /user:SCCM$ /domain:IDENTITY /ntlm:e722dfcd077a2b0bbe15
 
 - [[Pass The Hash]]
 - [[Windows - Mimikatz]]
+
+

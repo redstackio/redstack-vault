@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:59.636848+00:00'
 ```bash
 evil-winrm -i IP -u USER [-s SCRIPTS_PATH] [-e EXES_PATH] [-P PORT] [-p PASS] [-H HASH] [-U URL] [-S] [-c PUBLIC_KEY_PATH ] [-k PRIVATE_KEY_PATH ] [-r REALM]
 ```
+
+

@@ -16,3 +16,7 @@ OSINT Social Media Mapping Tool, takes a list of names & images (or LinkedIn com
 ## Description
 
 OSINT Social Media Mapping Tool, takes a list of names & images (or LinkedIn company name) and performs automated target searching on a huge scale across multiple social media sites. Not restricted by APIs as it instruments a browser using Selenium. Outputs reports to aid in correlating targets across sites. ​
+
+
+
+

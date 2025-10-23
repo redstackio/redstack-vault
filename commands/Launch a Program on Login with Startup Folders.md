@@ -23,3 +23,5 @@ copy .\$_SCRIPT.bat "C:\Users\$_USERNAME\AppData\Roaming\Microsoft\Windows\Start
 C:\Windows\Tasks>copy shell.bat "C:\Users\Victim\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
         1 file(s) copied.
 ```
+
+

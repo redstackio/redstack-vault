@@ -21,3 +21,5 @@ echo "PubkeyAcceptedKeyTypes=+ssh-dss" >> /etc/ssh/ssh_config
 echo "PubkeyAcceptedKeyTypes=+ssh-dss" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 ```
+
+

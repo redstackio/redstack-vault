@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:50.960310+00:00'
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File Sherlock.ps1
 ```
+
+

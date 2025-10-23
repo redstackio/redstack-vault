@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:05.082755+00:00'
 ```bash
 %COMSPEC% /Q /c echo dir &gt; \\127.0.0.1\C$\__output 2&gt;&amp;1 &gt; %TEMP%\execute.bat &amp; %COMSPEC% /Q /c %TEMP%\execute.bat &amp; del %TEMP%\execute.bat
 ```
+
+

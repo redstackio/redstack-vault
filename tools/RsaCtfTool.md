@@ -27,6 +27,8 @@ RsaCtfTool  is used to decipher ciphertext encrypted with weak public keys, and 
 
 RsaCtfTool  is used to decipher ciphertext encrypted with weak public keys, and can recover private keys using a number of vulnerabilities in key generation.
 
+
+
 Attacks:
 
 - Prime N detection
@@ -65,11 +67,29 @@ Attacks:
 
 - Qi Cheng's unsafe primes factorization
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_04548046-4cd8-47ff-abc2-32ff1dd32fb1}}
+
+
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -85,3 +105,5 @@ Attacks:
 - [[Brute Force]]
 - [[Cryptography]]
 - [[known vulnerability]]
+
+

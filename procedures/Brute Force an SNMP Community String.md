@@ -34,13 +34,23 @@ Simple Network Management Protocol (SNMP) is used for the exchange of management
 
 Simple Network Management Protocol (SNMP) is used for the exchange of management information between network devices. While protected with a community string for authorization, the string can be brute forced, allowing attackers to enumerate system services, patches, and other internal information.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Brute Force SNMP Community String]]):
 
 ```bash
 onesixtyone -c $_WORDLIST $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ onesixtyone -c $_WORDLIST $_TARGET_IP
 
 - [[Brute Force]]
 - [[Network]]
+
+

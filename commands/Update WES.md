@@ -20,3 +20,5 @@ python3 wes.py --update-wes
 python3 wes.py --update
 python3 wes.py systeminfo.txt
 ```
+
+

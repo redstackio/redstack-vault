@@ -35,3 +35,5 @@ IP address       NetBIOS Name     Server    User             MAC address
 10.10.10.235     WIN95-PC            ADMINISTRATOR    00:0c:29:5d:0c:2f
 10.10.10.255     Sendto failed: Permission denied
 ```
+
+

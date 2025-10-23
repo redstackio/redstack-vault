@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:42.637746+00:00'
 ```bash
 Import-Module .\Invoke-BuildAnonymousSMBServer.ps1; Invoke-BuildAnonymousSMBServer -Path C:\Share -Mode Enable
 ```
+
+

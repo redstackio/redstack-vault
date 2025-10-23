@@ -32,19 +32,31 @@ Read the LAPS password from the domain using a user credentials, with permission
 
 Read the LAPS password from the domain using a user credentials, with permission to access the ObjectAceType: "ms-Mcs-AdmPwd" .
 
+
+
 ## Objective
 
 Read a plain text local administrator password from the domain using LAPS
 
+
+
 # Instructions
 
 1. Retrieve the plain text password using PowerView
+
+
+
+
 
 **Command** ([[Get-DomainObject -Identity $SYSTEM | select -Expan]]):
 
 ```bash
 Get-DomainObject -Identity $SYSTEM | select -ExpandProperty ms-mcs-admpwd
 ```
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +81,5 @@ Get-DomainObject -Identity $SYSTEM | select -ExpandProperty ms-mcs-admpwd
 - [[administrator]]
 - [[Permissions]]
 - [[Privilege Escalation]]
+
+

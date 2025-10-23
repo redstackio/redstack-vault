@@ -26,3 +26,5 @@ root@kali:~# host -t ns testsite.com
 testsite.com name server nsztm1.testsite.com.
 testsite.com name server nsztm2.testsite.com
 ```
+
+

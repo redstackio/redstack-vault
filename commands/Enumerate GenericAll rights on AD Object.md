@@ -30,3 +30,5 @@ IdentityReference: DOMAIN\User
 ActiveDirectoryRights: GenericAll
 (...)
 ```
+
+

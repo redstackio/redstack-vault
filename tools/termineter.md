@@ -16,3 +16,9 @@ Termineter is a framework written in python to provide a platform for the securi
 ## Description
 
 Termineter is a framework written in python to provide a platform for the security testing of smart meters. It implements the C12.18 and C12.19 protocols for communication. Currently supported are Meters using C12.19 with 7-bit character sets. Termineter communicates with Smart Meters via a connection using an ANSI type-2 optical probe with a serial interface.
+
+
+
+
+
+

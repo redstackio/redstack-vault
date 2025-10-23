@@ -23,3 +23,5 @@ python ciscot7.py -e -p '$_PASSWORD'
 root@kali:~/Documents/ciscot7# python ciscot7.py -e -p 'secrets!'
 Encrypted password: 03175e08140a355f0f
 ```
+
+

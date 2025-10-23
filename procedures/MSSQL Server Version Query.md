@@ -36,11 +36,15 @@ From a technical perspective, this procedure executes a query against the target
 
 The business value of this procedure is that it allows organizations to identify potential vulnerabilities in their MSSQL Server instances before they can be exploited by attackers. By identifying vulnerable systems, organizations can take steps to patch or update their systems to prevent exploitation.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target MSSQL Server instance
 
 1. PowerShell with the SQLServer module installed
+
+ 
 
 ## Defense
 
@@ -50,17 +54,29 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Monitor MSSQL Server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify the version of a Microsoft SQL Server instance
+
+ 
 
 # Instructions
 
 1. Get-SQLInstanceDomain
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceDomain | Get-Query "select @@versio]]
 
+
+
 > This command retrieves the SQL Server instances running on the current domain. The output of this command is piped to Get-Query which is used to execute the SQL query 'select @@version' against each instance. The result is the version of SQL Server running on each instance.
+
+
 
 **Command** ([[Get SQL Instance Domain]]):
 
@@ -68,11 +84,17 @@ The business value of this procedure is that it allows organizations to identify
 Get-SQLInstanceDomain
 ```
 
+
+
+
+
 **Command** ([[Get SQL Version]]):
 
 ```bash
 Get-Query "select @@version"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +117,5 @@ Get-Query "select @@version"
 - [[Identify Instances and Databases]]
 - [[MSSQL Server]]
 - [[Version Query]]
+
+

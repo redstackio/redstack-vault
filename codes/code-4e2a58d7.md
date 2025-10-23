@@ -22,3 +22,5 @@ ON DRM.member_principal_id = DB2.principal_id
 WHERE DB1.type = 'R'
 ORDER BY DB1.name;
 ```
+
+

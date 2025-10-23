@@ -33,9 +33,13 @@ Kubernetes allows for the configuration of environment variables within containe
 
 Kubernetes allows for the configuration of environment variables within containers. These environment variables can be used to store sensitive information such as passwords, keys, and tokens. An attacker can use this procedure to enumerate all environment variables within a container, potentially revealing sensitive information. By using this technique, an attacker can gain a better understanding of the target environment and move laterally within the cluster.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes cluster
+
+ 
 
 ## Defense
 
@@ -45,23 +49,37 @@ Kubernetes allows for the configuration of environment variables within containe
 
 1. Monitor the Kubernetes environment for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Enumerate all environment variables within a container
 
 1. Identify sensitive information within the environment variables
 
+ 
+
 # Instructions
 
 1. kubectl exec <pod-name> env
 
+ 
+
+
+
 **Code**: [[redis-master]]
+
+
 
 > This command will list all environment variables within the specified container.
 
 2. 
 
+ 
+
 This is an example output of the environment variables within a container.
+
+
 
 **Command** ([[Extract Redis Master Service Host]]):
 
@@ -75,6 +93,10 @@ REDIS_MASTER_PORT_6379_TCP_PORT=6379
 REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.11
 ```
 
+
+
+
+
 **Command** ([[Extract Redis Master Service Port]]):
 
 ```bash
@@ -86,6 +108,10 @@ REDIS_MASTER_PORT_6379_TCP_PROTO=tcp
 REDIS_MASTER_PORT_6379_TCP_PORT=6379
 REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.11
 ```
+
+
+
+
 
 **Command** ([[Extract Redis Master Port]]):
 
@@ -99,6 +125,10 @@ REDIS_MASTER_PORT_6379_TCP_PORT=6379
 REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.11
 ```
 
+
+
+
+
 **Command** ([[Extract Redis Master TCP]]):
 
 ```bash
@@ -110,6 +140,8 @@ REDIS_MASTER_PORT_6379_TCP_PROTO=tcp
 REDIS_MASTER_PORT_6379_TCP_PORT=6379
 REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.11
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +165,5 @@ REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.11
 - [[Container Environment]]
 - [[Environment Variables]]
 - [[Kubernetes]]
+
+

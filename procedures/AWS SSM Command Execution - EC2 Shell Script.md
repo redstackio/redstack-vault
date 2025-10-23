@@ -33,6 +33,8 @@ This procedure involves using AWS Systems Manager (SSM) to execute a shell scrip
 
 This procedure involves using AWS Systems Manager (SSM) to execute a shell script on an EC2 instance. This can be useful for automating tasks or performing actions on multiple instances at once. From an offensive perspective, an attacker could use this technique to execute malicious code on compromised instances or pivot to other systems within the AWS environment. From a technical standpoint, SSM uses a combination of AWS Identity and Access Management (IAM) roles, SSM agents, and the SSM service to securely execute commands on instances without the need for SSH access. The business value of this procedure is increased efficiency and automation of tasks, as well as improved security by limiting direct access to instances.
 
+ 
+
 ## Requirements
 
 1. AWS account with SSM service enabled
@@ -40,6 +42,8 @@ This procedure involves using AWS Systems Manager (SSM) to execute a shell scrip
 1. SSM agent installed on EC2 instance
 
 1. IAM role with SSM permissions assigned to EC2 instance
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This procedure involves using AWS Systems Manager (SSM) to execute a shell scrip
 
 1. Regularly update and patch EC2 instances to prevent vulnerabilities that could be exploited by attackers
 
+ 
+
 ## Objectives
 
 1. Execute a shell script on one or multiple EC2 instances
@@ -56,6 +62,8 @@ This procedure involves using AWS Systems Manager (SSM) to execute a shell scrip
 1. Automate tasks and increase efficiency
 
 1. Limit direct access to instances for improved security
+
+ 
 
 # Instructions
 
@@ -65,11 +73,19 @@ This procedure involves using AWS Systems Manager (SSM) to execute a shell scrip
 3. Use the `aws ssm list-command-invocations` command to check the status and output of the command execution.
 Note: Make sure that the ssm-user account is not removed from the system when SSM Agent is uninstalled.
 
+ 
+
+
+
 **Code**: [[$ aws ssm describe-instance-information --profile ]]
+
+
 
 > The `aws ssm describe-instance-information` command is used to get information about the EC2 instances that are registered with AWS Systems Manager.
 The `aws ssm send-command` command is used to execute a command (in this case, a shell script) on the specified EC2 instance. The `instance-ids` parameter specifies the ID of the instance, the `document-name` parameter specifies the name of the AWS Systems Manager document (in this case, `AWS-RunShellScript`), the `comment` parameter is optional and can be used to provide additional information about the command, the `commands` parameter specifies the shell script to execute, the `output` parameter specifies the output format (in this case, `text`), and the `query` parameter specifies the ID of the command that was executed.
 The `aws ssm list-command-invocations` command is used to get the details (status and output) of a command that was executed using AWS Systems Manager.
+
+
 
 **Command** ([[Describe Instance Information]]):
 
@@ -77,17 +93,27 @@ The `aws ssm list-command-invocations` command is used to get the details (statu
 $ aws ssm describe-instance-information --profile stolencreds --region eu-west-1
 ```
 
+
+
+
+
 **Command** ([[Send Shell Script Command]]):
 
 ```bash
 $ aws ssm send-command --instance-ids "INSTANCE-ID-HERE" --document-name "AWS-RunShellScript" --comment "IP Config" --parameters commands=ifconfig --output text --query "Command.CommandId" --profile stolencreds
 ```
 
+
+
+
+
 **Command** ([[List Command Invocations]]):
 
 ```bash
 $ aws ssm list-command-invocations --command-id "COMMAND-ID-HERE" --details --query "CommandInvocations[].CommandPlugins[].{Status:Status,Output:Output}" --profile stolencreds
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -113,3 +139,5 @@ $ aws ssm list-command-invocations --command-id "COMMAND-ID-HERE" --details --qu
 
 - [[AWS - SSM - Command execution]]
 - [[Cloud - AWS]]
+
+

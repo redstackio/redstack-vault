@@ -31,13 +31,23 @@ Retrieve the TGT of Active Directory users with the "Do not require Kerberos pre
 
 Retrieve the TGT of Active Directory users with the "Do not require Kerberos preauthentication" (UF_DONT_REQUIRE_PREAUTH) flag set. 
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Get TGT of User with "Do Not Require Preauthentication"]]):
 
 ```bash
 GetNPUsers.py $_DOMAIN/$_USER -dc-ip $_TARGET_IP -no-pass
 ```
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +71,5 @@ GetNPUsers.py $_DOMAIN/$_USER -dc-ip $_TARGET_IP -no-pass
 
 - [[Active Directory]]
 - [[kerberoast]]
+
+

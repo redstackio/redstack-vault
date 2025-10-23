@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:31.294791+00:00'
 ```sql
 SELECT sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ='table_name' LIMIT X+1 OFFSET X
 ```
+
+

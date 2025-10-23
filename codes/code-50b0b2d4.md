@@ -21,3 +21,5 @@ select schema_name from INFORMATION_SCHEMA.SCHEMATA
 # Gathering data from specific project id & dataset
 select * from `project_id.dataset_name.table_name`
 ```
+
+

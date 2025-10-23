@@ -34,6 +34,8 @@ Notable lists:
 
 - [DLL Execution](https://github.com/api0cradle/UltimateAppLockerByPassList/blob/master/DLL-Execution.md) - a list of common DLL execution methods
 
+
+
 ## Platforms
 
 - Windows
@@ -42,3 +44,5 @@ Notable lists:
 
 - [[applocker]]
 - [[Defense Bypass]]
+
+

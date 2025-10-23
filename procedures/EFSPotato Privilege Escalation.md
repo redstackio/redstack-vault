@@ -38,6 +38,8 @@ From a technical perspective, EFSPotato works by exploiting a race condition in 
 
 The business value of this technique is that it allows an attacker to gain elevated privileges on a target system, which can then be used to perform further malicious activities such as data exfiltration or installing backdoors.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -45,6 +47,8 @@ The business value of this technique is that it allows an attacker to gain eleva
 1. Ability to compile and execute the EFSPotato code
 
 1. Administrator or SYSTEM privileges on the target system
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this technique is that it allows an attacker to gain eleva
 
 1. Monitor the system for any suspicious activity, such as the creation of hard links or the execution of unknown binaries
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on the target system
@@ -62,15 +68,25 @@ The business value of this technique is that it allows an attacker to gain eleva
 
 1. Achieve persistence on the target system
 
+ 
+
 # Instructions
 
 1. Compile EfsPotato.cs using .NET 4.x or .NET 2.0/3.5
+
+ 
+
+
 
 **Code**: [[# .NET 4.x
 csc EfsPotato.cs
 csc /platform:x86 EfsP]]
 
+
+
 > The EfsPotato Compilation Command provides instructions to compile EfsPotato.cs using .NET 4.x or .NET 2.0/3.5. The command can be executed in PowerShell. The command includes multiple commands for compiling EfsPotato.cs with different platforms. Users can choose the appropriate command based on their requirements. The instructions are provided in the 'instruction' field and the arguments of the command are explained in detail in the 'explain' field.
+
+
 
 **Command** ([[Compile EfsPotato.cs with .NET 4.x]]):
 
@@ -79,12 +95,18 @@ csc EfsPotato.cs
 csc /platform:x86 EfsPotato.cs
 ```
 
+
+
+
+
 **Command** ([[Compile EfsPotato.cs with .NET 2.0/3.5]]):
 
 ```bash
 C:\Windows\Microsoft.Net\Framework\V3.5\csc.exe EfsPotato.cs
 C:\Windows\Microsoft.Net\Framework\V3.5\csc.exe /platform:x86 EfsPotato.cs
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +133,5 @@ C:\Windows\Microsoft.Net\Framework\V3.5\csc.exe /platform:x86 EfsPotato.cs
 - [[EFSPotato (MS-EFSR EfsRpcOpenFileRaw)]]
 - [[EoP - Impersonation Privileges]]
 - [[Windows - Privilege Escalation]]
+
+

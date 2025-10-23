@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:01.170115+00:00'
 kirbikator lsa .\ticket.kirbi
 ls \\machine.domain.local\c$
 ```
+
+

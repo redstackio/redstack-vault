@@ -33,6 +33,8 @@ This procedure involves an ActiveX-based autorun macro that utilizes the InkPict
 
 This technique can be used by attackers to bypass security controls and gain a foothold in the target's network. The use of ActiveX controls and PowerShell scripts can make detection and mitigation difficult for defenders.
 
+ 
+
 ## Requirements
 
 1. The victim must open the malicious Office document with the embedded macro
@@ -40,6 +42,8 @@ This technique can be used by attackers to bypass security controls and gain a f
 1. The victim's system must have ActiveX controls enabled
 
 1. The attacker must have a remote location to host the malicious PowerShell script
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ This technique can be used by attackers to bypass security controls and gain a f
 
 1. Train users to be cautious when opening Office documents from unknown or suspicious sources
 
+ 
+
 ## Objectives
 
 1. Download and execute a malicious PowerShell script on the victim's system
 
 1. Bypass security controls and gain a foothold in the target's network
+
+ 
 
 # Instructions
 
@@ -63,9 +71,17 @@ This technique can be used by attackers to bypass security controls and gain a f
 3. Click on the 'More Controls' option and select 'Microsoft InkPicture Control' from the list of controls.
 4. The control will now be added to the Ribbon.
 
+ 
+
+
+
 **Code**: [[-> Insert -> More Controls -> Microsoft InkPicture]]
 
+
+
 > The Microsoft InkPicture Control is a control that allows users to draw or write on the document using a pen or stylus. This control is useful for applications that require user input or annotations on the document.
+
+
 
 **Command** ([[Add Microsoft InkPicture Control]]):
 
@@ -73,12 +89,20 @@ This technique can be used by attackers to bypass security controls and gain a f
 -> Insert -> More Controls -> Microsoft InkPicture Control
 ```
 
+
+
 2. To download and execute a file using PowerShell, follow these steps:
 1. Replace '<host>' with the URL of the file you want to download.
 2. Save the code to a file with a '.vbs' extension.
 3. Run the file to download and execute the file.
 
+ 
+
+
+
 **Code**: [[Private Sub InkPicture1_Painted(ByVal hDC As Long,]]
+
+
 
 > This command uses a Visual Basic script to download and execute a file from a specified URL using PowerShell. The script creates a new instance of the .NET WebClient class and uses it to download the file to the local system. It then uses the Start-Process cmdlet to execute the downloaded file. This command can be used to automate the download and execution of files from a remote server.
 
@@ -102,3 +126,5 @@ This technique can be used by attackers to bypass security controls and gain a f
 
 - [[DOCM - ActiveX-based (InkPicture control, Painted event) Autorun macro]]
 - [[Office - Attacks]]
+
+

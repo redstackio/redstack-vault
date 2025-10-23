@@ -7,6 +7,7 @@ data: 'Enable-PSRemoting -Force
 
   net start winrm
 
+
   Set-Item wsman:\localhost\client\trustedhosts *
 
   Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.10.10.10"'
@@ -24,3 +25,5 @@ net start winrm
 Set-Item wsman:\localhost\client\trustedhosts *
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.10.10.10"
 ```
+
+

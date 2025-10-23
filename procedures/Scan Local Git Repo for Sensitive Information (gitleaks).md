@@ -25,9 +25,13 @@ Locate API keys, hardcoded passwords, tokens, sensitive information through a gi
 
 [gitleaks](https://github.com/zricethezav/gitleaks)
 
+
+
 ##  Instructions
 
 1. Using gitleaks to scan a local github repo, Clone the repo locally before running
+
+
 
 **Command** ([[gitleaks scan local github repo's]]):
 
@@ -36,7 +40,13 @@ gitleaks --repo-path=~/git/gitleaks
 
 ```
 
+
+
+
+
 2. (Option) Using gitleaks to scan multiple git repo's within a directory
+
+
 
 **Command** ([[gitleaks scan multiple local github repo's]]):
 
@@ -45,7 +55,13 @@ gitleaks --owner-path=~/git
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[gitleaks scan local github repo's]]
 - [[gitleaks scan multiple local github repo's]]
+
+

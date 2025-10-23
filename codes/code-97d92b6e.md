@@ -22,3 +22,5 @@ smb: \> prompt OFF
 smb: \> lcd '/path/to/go/'
 smb: \> mget *
 ```
+
+

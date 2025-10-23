@@ -15,3 +15,5 @@ updated_at: '2023-05-23T17:02:42.707038+00:00'
 https://login.microsoftonline.com/getuserrealm.srf?login=<USER>@<DOMAIN>&xml=1
 https://login.microsoftonline.com/getuserrealm.srf?login=root@<TENANT NAME>.onmicrosoft.com&xml=1
 ```
+
+

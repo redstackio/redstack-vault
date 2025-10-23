@@ -30,11 +30,27 @@ Firefox Decrypt is a Python 3 tool used to extract passwords from profiles in Mo
 
 Firefox Decrypt is a Python 3 tool used to extract passwords from profiles in Mozilla Firefox, Thunderbird, SeaMonkey, and derivatives. It can be used to recover passwords from a profile protected by a master password, as long as the latter is known, or if no master password is set, a blank password can be entered. When running  Firefox Decrypt, supply it with the path to the user's profile directory (ex: ~/.mozilla/firefox).
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_a3f9e79f-9da9-46d1-bb28-a4058903d083}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Firefox Decrypt is a Python 3 tool used to extract passwords from profiles in Mo
 - [[Cryptography]]
 - [[data encryption]]
 - [[data exposure]]
+
+

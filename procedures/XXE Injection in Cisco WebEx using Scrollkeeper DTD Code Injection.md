@@ -26,6 +26,8 @@ The Scrollkeeper DTD Code Injection vulnerability in Cisco WebEx allows an attac
 
 This attack can be carried out remotely, allowing an attacker to gain initial access to the target system. By exploiting this vulnerability, an attacker can bypass security controls and execute arbitrary code on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable Cisco WebEx application
@@ -33,6 +35,8 @@ This attack can be carried out remotely, allowing an attacker to gain initial ac
 1. Knowledge of the target system's file system structure and configuration
 
 1. Ability to craft a specially crafted XML file
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ This attack can be carried out remotely, allowing an attacker to gain initial ac
 
 1. Use a web application firewall to detect and block XXE attacks
 
+ 
+
 ## Objectives
 
 1. Gain remote access to the target system
@@ -50,9 +56,13 @@ This attack can be carried out remotely, allowing an attacker to gain initial ac
 
 1. Bypass security controls
 
+ 
+
 # Instructions
 
 1. This command allows the injection of DTD code into the Scrollkeeper XML file. The DTD code can be used to specify the structure and format of the XML file.
+
+ 
 
 The first line of the data field imports the Scrollkeeper DTD file. The second line defines a new entity called "url.attribute.set" that can be used to inject the DTD code. The injected DTD code should replace the "Your DTD code" placeholder. The injected code can be used to define new elements, attributes, and entities in the Scrollkeeper XML file.
 
@@ -61,3 +71,5 @@ The first line of the data field imports the Scrollkeeper DTD file. The second l
 - [[Cisco WebEx]]
 - [[XML External Entity]]
 - [[XXE with local DTD]]
+
+

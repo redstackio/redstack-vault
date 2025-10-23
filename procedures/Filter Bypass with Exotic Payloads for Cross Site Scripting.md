@@ -29,11 +29,15 @@ Cross Site Scripting (XSS) is a type of web vulnerability that allows an attacke
 
 Cross Site Scripting (XSS) is a type of web vulnerability that allows an attacker to inject malicious code into a web page viewed by other users. This procedure focuses on bypassing filters that are in place to prevent XSS attacks by using exotic payloads that can evade detection. The attacker can use this technique to execute arbitrary code on the victim's browser, steal user credentials, or perform other malicious actions. The technical explanation involves crafting payloads that can bypass filters and execute JavaScript code. The business value of this procedure is that it allows an attacker to gain access to sensitive user information, which can be used for financial gain or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Ability to inject payloads into a web page
 
 1. Knowledge of exotic payloads that can bypass filters
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ Cross Site Scripting (XSS) is a type of web vulnerability that allows an attacke
 1. Use Content Security Policy (CSP) to restrict the types of content that can be loaded on a web page
 
 1. Regularly update web application firewalls to detect and block new types of attacks
+
+ 
 
 ## Objectives
 
@@ -53,12 +59,20 @@ Cross Site Scripting (XSS) is a type of web vulnerability that allows an attacke
 
 1. Steal user credentials or perform other malicious actions
 
+ 
+
 # Instructions
 
 1. To bypass onxxx= filter in JavaScript, use a null byte/vertical tab or a '/' in the onerror attribute of an image tag.
 
+ 
+
+
+
 **Code**: [[<object onafterscriptexecute=confirm(0)>
 <object o]]
+
+
 
 > The onxxx= filter in JavaScript is used to prevent certain events from being triggered, such as onerror. However, this filter can be bypassed by using a null byte/vertical tab or a '/' in the onerror attribute of an image tag. This allows the onerror event to be triggered, even with the filter in place.
 
@@ -78,3 +92,5 @@ Cross Site Scripting (XSS) is a type of web vulnerability that allows an attacke
 - [[Bypass onxxxx= blacklist]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

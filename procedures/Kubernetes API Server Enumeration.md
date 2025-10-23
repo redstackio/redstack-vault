@@ -28,11 +28,15 @@ The Kubernetes API server is a key component of Kubernetes and provides a RESTfu
 
 The Kubernetes API server is a key component of Kubernetes and provides a RESTful API for interacting with the cluster. This procedure involves enumerating the API server's endpoints to gain a better understanding of the Kubernetes cluster. By discovering these endpoints, an attacker can identify potential attack vectors and misconfigurations in the cluster. This procedure can also be used by system administrators to audit their Kubernetes cluster and ensure that only authorized endpoints are exposed.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes cluster API server.
 
 1. Curl or similar tool to send HTTP requests.
+
+ 
 
 ## Defense
 
@@ -42,20 +46,32 @@ The Kubernetes API server is a key component of Kubernetes and provides a RESTfu
 
 1. Monitor the Kubernetes API server logs for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Identify potential attack vectors and misconfigurations in the Kubernetes cluster.
 
 1. Audit the Kubernetes cluster to ensure that only authorized endpoints are exposed.
 
+ 
+
 # Instructions
 
 1. Replace <IP Address> with the IP address of the Kubernetes API server.
 
+ 
+
+
+
 **Code**: [[curl -k https://<IP Address>:6443/swaggerapi
 curl ]]
 
+
+
 > The first command sends a GET request to the /swaggerapi endpoint to retrieve the OpenAPI specification for the Kubernetes API server. The second command sends a GET request to the /healthz endpoint to check the health of the Kubernetes API server. The third command sends a GET request to the /api/v1 endpoint to retrieve information about the Kubernetes API server's version, nodes, and namespaces.
+
+
 
 **Command** ([[Get Kubernetes API Swagger]]):
 
@@ -63,17 +79,27 @@ curl ]]
 curl -k https://<IP Address>:6443/swaggerapi
 ```
 
+
+
+
+
 **Command** ([[Check Kubernetes API Health]]):
 
 ```bash
 curl -k https://<IP Address>:6443/healthz
 ```
 
+
+
+
+
 **Command** ([[Get Kubernetes API Version]]):
 
 ```bash
 curl -k https://<IP Address>:6443/api/v1
 ```
+
+
 
 ## Commands Used
 
@@ -86,3 +112,5 @@ curl -k https://<IP Address>:6443/api/v1
 - [[API addresses that you should know]]
 - [[Kubernetes]]
 - [[Secure API Server]]
+
+

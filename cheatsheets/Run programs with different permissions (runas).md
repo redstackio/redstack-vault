@@ -13,7 +13,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Allows a user to run specific tools and programs with different permissions than the user's current logon provides.
 
+
+
 Applies To: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+
+
+
+
+
+
+
+
 
 **Command** ([[privileged file copy]]):
 
@@ -22,6 +32,12 @@ runas /user:hostname\Administrator /savecred "cmd.exe /c type c:\users\administr
 
 ```
 
+
+
+
+
+
+
 **Command** ([[privileged powershell execution]]):
 
 ```powershell
@@ -29,9 +45,21 @@ runas /user:hostname\Administrator /savecred "powershell -ExecutionPolicy Bypass
 
 ```
 
+
+
+
+
+
+
 **Command** ([[privileged cmd execution]]):
 
 ```bash
 runas /user:administrator /savecreds cmd.exe
 
 ```
+
+
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:20.489991+00:00'
 ```powershell
 http://example.com/index.php?page=/var/log/auth.log&cmd=id
 ```
+
+

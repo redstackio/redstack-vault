@@ -31,13 +31,23 @@ Use enum4linux to enumerate network facing Samba services for users, groups, ser
 
 Use enum4linux to enumerate network facing Samba services for users, groups, services, etc.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[enum4linux Enumerate SMB/RPC Services]]):
 
 ```bash
 enum4linux $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +71,5 @@ enum4linux $_TARGET_IP
 
 - [[Enumeration]]
 - [[Network]]
+
+

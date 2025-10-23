@@ -32,11 +32,15 @@ This technique involves sending POST requests to the MongoDB instance with a url
 
 The business value of this technique is that it can be used to gain unauthorized access to sensitive data stored in a MongoDB instance, which can lead to data theft, loss of reputation, and financial losses.
 
+ 
+
 ## Requirements
 
 1. Access to the MongoDB instance
 
 1. A tool to automate the brute force process
+
+ 
 
 ## Defense
 
@@ -46,20 +50,30 @@ The business value of this technique is that it can be used to gain unauthorized
 
 1. Monitor the MongoDB instance for suspicious activity and unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a MongoDB instance
 
 1. Steal sensitive data stored in a MongoDB instance
 
+ 
+
 # Instructions
 
 1. This script is used to brute force the password of a MongoDB database. It takes advantage of the $regex operator of MongoDB to try different combinations of passwords until the correct one is found.
+
+ 
+
+
 
 **Code**: [[import requests
 import urllib3
 import string
 impor]]
+
+
 
 > The script first imports necessary libraries and disables warnings. It then sets the username as 'admin' and initializes an empty password. The URL of the login page is set to 'http://example.org/login' and the content type of the headers is set to 'application/x-www-form-urlencoded'.
 
@@ -80,3 +94,5 @@ The while loop runs indefinitely until the correct password is found. The for lo
 - [[Blind NoSQL]]
 - [[NoSQL Injection]]
 - [[POST with urlencoded body]]
+
+

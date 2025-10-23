@@ -46,11 +46,15 @@ To use this technique, an attacker must have valid credentials for the Azure ten
 
 The business value of this technique is that it allows organizations to discover unauthorized resources within their Azure tenant, which can help them to improve their security posture.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the Azure tenant
 
 1. Az PowerShell
+
+ 
 
 ## Defense
 
@@ -60,6 +64,8 @@ The business value of this technique is that it allows organizations to discover
 
 1. Monitor Azure tenant activity for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Discover resources within an Azure tenant
@@ -68,13 +74,23 @@ The business value of this technique is that it allows organizations to discover
 
 1. Discover unauthorized resources within an Azure tenant
 
+ 
+
 # Instructions
 
 1. To use this command, replace the <PASSWORD> and <TENANT NAME> fields with your actual password and tenant name respectively. Then, copy and paste the entire command into a PowerShell terminal. This command will connect you to your Azure account and retrieve information about your resources.
 
+ 
+
+
+
 **Code**: [[PS> $passwd = ConvertTo-SecureString "<PASSWORD>" ]]
 
+
+
 > This command is used to connect to an Azure account using PowerShell and retrieve information about the resources in the account. The first three lines of the command create a secure password and credentials object that are used to authenticate the user. The 'Connect-AzAccount' command is then used to connect to the Azure account using the credentials. Once connected, the command retrieves information about the resources in the account using various 'Get-Az' commands. These commands retrieve information about resources such as virtual machines, web apps, function apps, storage accounts, and key vaults.
+
+
 
 **Command** ([[Connect to Azure Account]]):
 
@@ -84,11 +100,19 @@ $creds = New-Object System.Management.Automation.PSCredential ("test@<TENANT NAM
 Connect-AzAccount -Credential $creds
 ```
 
+
+
+
+
 **Command** ([[List Azure Resources]]):
 
 ```bash
 Get-AzResource
 ```
+
+
+
+
 
 **Command** ([[List Azure Role Assignments]]):
 
@@ -96,11 +120,19 @@ Get-AzResource
 Get-AzRoleAssignment -SignInName test@<TENANT NAME>.onmicrosoft.com
 ```
 
+
+
+
+
 **Command** ([[List Azure Virtual Machines]]):
 
 ```bash
 Get-AzVM | fl
 ```
+
+
+
+
 
 **Command** ([[List Azure Web Apps]]):
 
@@ -108,11 +140,19 @@ Get-AzVM | fl
 Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
 ```
 
+
+
+
+
 **Command** ([[List Azure Function Apps]]):
 
 ```bash
 Get-AzFunctionApp
 ```
+
+
+
+
 
 **Command** ([[List Azure Storage Accounts]]):
 
@@ -120,11 +160,17 @@ Get-AzFunctionApp
 Get-AzStorageAccount | fl
 ```
 
+
+
+
+
 **Command** ([[List Azure Key Vaults]]):
 
 ```bash
 Get-AzKeyVault
 ```
+
+
 
 ## Platforms
 
@@ -157,3 +203,5 @@ Get-AzKeyVault
 - [[Cloud - Azure]]
 - [[Enumerate tenant with Az Powershell]]
 - [[Enumeration]]
+
+

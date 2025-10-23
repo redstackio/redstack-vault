@@ -21,3 +21,5 @@ Set-DomainObject -Credential $Cred -Identity $_TARGET_USER -Clear serviceprincip
 ```
 PS C:\Users\dave\Documents> Set-DomainObject -Credential $Cred -Identity steve -Clear serviceprincipalname
 ```
+
+

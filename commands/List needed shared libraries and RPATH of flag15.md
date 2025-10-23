@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:31.017246+00:00'
 ```bash
 readelf -d flag15 | egrep "NEEDED|RPATH"
 ```
+
+

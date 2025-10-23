@@ -33,11 +33,15 @@ Technical Explanation: The trust ticket is a cryptographic ticket that is used t
 
 Business Value: This procedure allows an attacker to move laterally within a target environment, potentially gaining access to sensitive information and systems.
 
+ 
+
 ## Requirements
 
 1. Administrative access to the target domain controller
 
 1. Mimikatz or similar tool for dumping the hash
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: This procedure allows an attacker to move laterally within a tar
 
 1. Regularly monitor for unusual authentication activity
 
+ 
+
 ## Objectives
 
 1. Dump the hash of a trust ticket from a target domain
@@ -55,13 +61,21 @@ Business Value: This procedure allows an attacker to move laterally within a tar
 
 1. Authenticate to the target domain using the forged trust ticket
 
+ 
+
 # Instructions
 
 1. Use the following command to dump the hash of the target domain:
 
 mimikatz.exe "lsadump::dcsync /user:<username> /domain:<target_domain> /dc:<dc_ip>"
 
+ 
+
+
+
 **Code**: [[currentdomain\targetdomain$]]
+
+
 
 > This command will use Mimikatz to execute the 'lsadump::dcsync' command and dump the hash of the specified user in the target domain. Replace '<username>' with the name of the user whose hash you want to dump, '<target_domain>' with the name of the target domain, and '<dc_ip>' with the IP address of the domain controller in the target domain.
 
@@ -81,3 +95,5 @@ mimikatz.exe "lsadump::dcsync /user:<username> /domain:<target_domain> /dc:<dc_i
 
 - [[Active Directory Attacks]]
 - [[Forest to Forest Compromise - Trust Ticket]]
+
+

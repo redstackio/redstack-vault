@@ -34,9 +34,13 @@ When a SQL Server login has the IMPERSONATE permission, it can impersonate other
 
 The business value of this procedure is that it allows attackers to gain access to sensitive information and perform unauthorized actions, potentially causing significant harm to the target organization.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the SQL Server instance
+
+ 
 
 ## Defense
 
@@ -46,20 +50,32 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Implement multi-factor authentication for SQL Server logins
 
+ 
+
 ## Objectives
 
 1. Identify SQL Server logins that can be impersonated for the current database
 
 1. Escalate privileges from a low-privileged account to an administrative account
 
+ 
+
 # Instructions
 
 1. This command lists all the principals that have impersonation permission. Impersonation permission allows a principal to impersonate another principal and perform actions on their behalf.
 
+ 
+
+
+
 **Code**: [[select distinct b.name
 from sys.server_permissions]]
 
+
+
 > The 'sys.server_permissions' table contains information about the server-level permissions granted to principals. The 'sys.server_principals' table contains information about the server-level principals. In this command, we are selecting the distinct names of the principals who have 'impersonate' permission in the 'sys.server_permissions' table by joining it with the 'sys.server_principals' table using the 'principal_id' and 'grantor_principal_id' columns. The 'where' clause filters the results to only include rows where the permission_name is 'impersonate'.
+
+
 
 **Command** ([[List server principals with impersonation permission]]):
 
@@ -70,6 +86,8 @@ inner join sys.server_principals b
 on a.grantor_principal_id = b.principal_id
 where a.permission_name = 'impersonate'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +108,5 @@ where a.permission_name = 'impersonate'
 - [[Find SQL Server Logins Which can be Impersonated for the Current Database]]
 - [[Manual SQL Server Queries]]
 - [[MSSQL Server]]
+
+

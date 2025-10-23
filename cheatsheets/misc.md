@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # misc
 
+
+
 **Command** ([[python injected shell]]):
 
 ```bash
@@ -16,7 +18,13 @@ __builtins__.__import__('os').system('/bin/bash -i')
 
 ```
 
+
+
+
+
 # exploit development - finding offset
+
+
 
 **Command** ([[gef]]):
 
@@ -26,6 +34,12 @@ pattern search 0x6161616
 
 ```
 
+
+
+
+
+
+
 **Command** ([[msf]]):
 
 ```bash
@@ -34,9 +48,21 @@ pattern search 0x6161616
 
 ```
 
+
+
+
+
+
+
 **Code**: [[python3
 from pwn import *
 # n = 4 == 32Bit; n = 8 ]]
+
+
+
+
+
+
 
 **Command** ([[find "jmp esp" with mona.py]]):
 
@@ -45,10 +71,22 @@ from pwn import *
 
 ```
 
+
+
+
+
+
+
 **Code**: [[python
 b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\]]
 
+
+
+
+
 # gdb
+
+
 
 **Command** ([[list memory of process]]):
 
@@ -57,12 +95,24 @@ info files
 
 ```
 
+
+
+
+
+
+
 **Command** ([[find "jmp esp" with gdb]]):
 
 ```bash
 find /b <from addr>, <to addr>, 0xff, 0xe4
 
 ```
+
+
+
+
+
+
 
 **Command** ([[list shared modules]]):
 
@@ -71,6 +121,12 @@ info sharedlibrary
 
 ```
 
+
+
+
+
+
+
 **Command** ([[serve binary via network]]):
 
 ```bash
@@ -78,17 +134,35 @@ socat TCP-LISTEN:1337,nodelay,reuseaddr,fork EXEC:"stdbuf -i0 -o0 -e0 ./binary"
 
 ```
 
+
+
+
+
+
+
 **Code**: [[python
 import struct
 def p64(x):
     return pack("]]
+
+
+
+
+
+
 
 **Code**: [[python
 #!/usr/bin/python3
 import requests
 from cmd]]
 
+
+
+
+
 # interactive shells
+
+
 
 **Command** ([[cat technique]]):
 
@@ -96,3 +170,9 @@ from cmd]]
 (cat exploit.txt; cat) | ./vulnapp
 
 ```
+
+
+
+
+
+

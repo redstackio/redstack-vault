@@ -35,3 +35,5 @@ $tokenResponse = Invoke-RestMethod -Method Get -Headers @{"X-IDENTITY-HEADER"="$
 $accessToken = $tokenResponse.access_token
 $accessToken
 ```
+
+

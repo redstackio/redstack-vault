@@ -30,9 +30,13 @@ This procedure involves exploiting the XML External Entity (XXE) vulnerability t
 
 To exploit this vulnerability, attackers can inject malicious XML code into an application that uses an XML parser. The malicious code can then execute a request to retrieve a file from the target system. The retrieved file is then encoded in Base64 format and sent back to the attacker's system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses an XML parser
+
+ 
 
 ## Defense
 
@@ -42,15 +46,25 @@ To exploit this vulnerability, attackers can inject malicious XML code into an a
 
 1. Disable external entity parsing in the XML parser configuration to prevent XXE attacks
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive files from the target system
+
+ 
 
 # Instructions
 
 1. The provided XML data contains a DOCTYPE declaration with an external entity reference that can be manipulated to inject arbitrary content into the XML document.
 
+ 
+
+
+
 **Code**: [[<!DOCTYPE test [ <!ENTITY % init SYSTEM "data://te]]
+
+
 
 > This vulnerability can be exploited to perform XML External Entity (XXE) attacks, which can lead to sensitive information disclosure or server-side request forgery (SSRF) attacks. It is recommended to properly validate and sanitize all XML input data to prevent XXE vulnerabilities.
 
@@ -69,3 +83,5 @@ To exploit this vulnerability, attackers can inject malicious XML code into an a
 - [[Classic XXE Base64 encoded]]
 - [[Exploiting XXE to retrieve files]]
 - [[XML External Entity]]
+
+

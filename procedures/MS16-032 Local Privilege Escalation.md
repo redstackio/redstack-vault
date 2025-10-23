@@ -36,9 +36,13 @@ Technical Explanation: The vulnerability exists due to a flaw in the way the Win
 
 Business Value: This procedure allows an attacker to escalate privileges on a Windows system, potentially leading to complete compromise of the affected system. This can be used to gain access to sensitive information, steal data, or carry out further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to an affected Windows system
+
+ 
 
 ## Defense
 
@@ -48,24 +52,42 @@ Business Value: This procedure allows an attacker to escalate privileges on a Wi
 
 1. Monitor for suspicious activity on Windows systems, such as attempts to exploit this vulnerability
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Windows system
+
+ 
 
 # Instructions
 
 1. This command checks if the Windows Update KB3139914 is installed on the system.
 
+ 
+
+
+
 **Code**: [[wmic qfe list | findstr &quot;3139914&quot;]]
+
+
 
 > The 'wmic qfe list' command lists all installed Windows updates and the 'findstr &quot;3139914&quot;' command searches for the specific update KB3139914. If the update is installed, the command will return information about it, otherwise it will return nothing.
 
 2. This command will exploit the MS16-032 vulnerability in Windows to escalate local privileges. The command can be executed in Powershell using the provided script or binary executable. The Metasploit module is also available for this exploit.
 
+ 
+
+
+
 **Code**: [[Powershell:
 https://www.exploit-db.com/exploits/39]]
 
+
+
 > The MS16-032 vulnerability allows an attacker to elevate their privileges on a Windows system by exploiting the Secondary Logon Service. The vulnerability can be exploited locally by an attacker with low privileges. The exploit works by creating a malicious process that inherits the Secondary Logon Service's access token, which has elevated privileges. The attacker can then use this process to execute arbitrary code with elevated privileges.
+
+
 
 **Command** ([[Download PowerShell script]]):
 
@@ -73,17 +95,27 @@ https://www.exploit-db.com/exploits/39]]
 https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Invoke-MS16-032.ps1
 ```
 
+
+
+
+
 **Command** ([[Download binary exe]]):
 
 ```bash
 https://github.com/Meatballs1/ms16-032
 ```
 
+
+
+
+
 **Command** ([[Use Metasploit exploit]]):
 
 ```bash
 exploit/windows/local/ms16_032_secondary_logon_handle_privesc
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -106,3 +138,5 @@ exploit/windows/local/ms16_032_secondary_logon_handle_privesc
 - [[EoP - Common Vulnerabilities and Exposure]]
 - [[MS16-032 - Microsoft Windows 7 < 10 / 2008 < 2012 R2 (x86/x64)]]
 - [[Windows - Privilege Escalation]]
+
+

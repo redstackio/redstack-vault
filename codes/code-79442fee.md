@@ -32,3 +32,5 @@ $authResponse = Invoke-RestMethod `
 # Once the user is authenticated, the response includes an access token that can be used to access the Microsoft Graph API.
 
 ```
+
+

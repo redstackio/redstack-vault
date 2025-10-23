@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # sshuttle
 
+
+
 **Command** ([[pivot via sshuttle]]):
 
 ```bash
@@ -16,3 +18,9 @@ sshuttle -vr <via-ssh-server> <Remote-Net-To-Route>
 sshuttle -vr username@target-ip 10.1.1.0/24
 
 ```
+
+
+
+
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:21.879066+00:00'
 ```bash
 nmap -p 139,445 --script smb-enum-shares.nse,smb-enum-users.nse --script-args smbuser='Guest',smbpass='' -oN nmap.txt 192.168.0.0/24
 ```
+
+

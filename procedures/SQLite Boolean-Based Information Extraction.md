@@ -25,11 +25,16 @@ SQLite is a popular database management system that is used in many applications
 
 From an offensive perspective, this technique can be used to extract sensitive information such as usernames, passwords, and other data that can be used to further compromise the system. Technically, this attack relies on the ability to craft SQL queries that exploit vulnerabilities in the application's input validation mechanisms. From a business perspective, the impact of this attack can be significant, as it can lead to the exposure of sensitive data and the compromise of user accounts.
 
+
+ 
+
 ## Requirements
 
 1. Access to the target application
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -39,17 +44,27 @@ From an offensive perspective, this technique can be used to extract sensitive i
 
 1. Regularly update the application and database software to ensure that known vulnerabilities are patched
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from the database
 
 1. Identify vulnerabilities in the application's input validation mechanisms
 
+ 
+
 # Instructions
 
 1. This command can be used to check if the name of a table in a SQLite database starts with a certain character. The 'some_char' argument should be replaced with the character you want to check for. The command will return a boolean value indicating whether the table name starts with the specified character.
 
+ 
+
+
+
 **Code**: [[and (SELECT hex(substr(tbl_name,1,1)) FROM sqlite_]]
+
+
 
 > The 'SELECT hex(substr(tbl_name,1,1))' part of the command selects the first character of the table name and converts it to its hexadecimal representation. The 'hex('some_char')' part converts the specified character to its hexadecimal representation. The 'and' operator compares the two values and returns true if the table name starts with the specified character.
 
@@ -57,3 +72,5 @@ From an offensive perspective, this technique can be used to extract sensitive i
 
 - [[Boolean - Extract info]]
 - [[SQLite Injection]]
+
+

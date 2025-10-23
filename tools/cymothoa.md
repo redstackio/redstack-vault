@@ -16,3 +16,9 @@ Cymothoa is a stealth backdooring tool, that inject backdoor’s shellcode into 
 ## Description
 
 Cymothoa is a stealth backdooring tool, that inject backdoor’s shellcode into an existing process. The tool uses the ptrace library (available on nearly all * nix), to manipulate processes and infect them.
+
+
+
+
+
+

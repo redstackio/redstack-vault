@@ -31,11 +31,15 @@ Technical Explanation: DSRM or Directory Services Restore Mode is a boot mode in
 
 Business Value: By obtaining DSRM credentials and dumping local administrator hashes, attackers can gain full administrative access to target systems, allowing them to move laterally within the network and access sensitive information. This can result in data theft, intellectual property theft, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to DSRM credentials
 
 1. Access to the target system
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Business Value: By obtaining DSRM credentials and dumping local administrator ha
 1. Monitor and log all DSRM account logins and changes
 
 1. Implement multi-factor authentication for DSRM accounts
+
+ 
 
 ## Objectives
 
@@ -55,6 +61,8 @@ Business Value: By obtaining DSRM credentials and dumping local administrator ha
 
 1. Escalate privileges to gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. To use this command, run the following PowerShell script:
@@ -64,7 +72,13 @@ Business Value: By obtaining DSRM credentials and dumping local administrator ha
 3. Create the key with value "2" if it doesn't exist by running the command: New-ItemProperty "HKLM:\SYSTEM\CURRENTCONTROLSET\CONTROL\LSA" -name DsrmAdminLogonBehavior -value 2 -PropertyType DWORD.
 4. Change the value to "2" by running the command: Set-ItemProperty "HKLM:\SYSTEM\CURRENTCONTROLSET\CONTROL\LSA" -name DsrmAdminLogonBehavior -value 2.
 
+ 
+
+
+
 **Code**: [[Invoke-Mimikatz -Command '"token::elevate" "lsadum]]
+
+
 
 > This command is used to dump the local Administrator hash using Mimikatz and activate the password for remote access to the local Administrator user. The command consists of four steps:
 
@@ -87,3 +101,5 @@ Business Value: By obtaining DSRM credentials and dumping local administrator ha
 
 - [[Active Directory Attacks]]
 - [[DSRM Credentials]]
+
+

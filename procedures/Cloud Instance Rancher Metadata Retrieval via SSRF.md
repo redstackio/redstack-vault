@@ -36,6 +36,8 @@ Technical Explanation: This procedure involves sending a crafted request to the 
 
 Business Value: This technique can be used to gain access to sensitive data such as access keys, which can lead to further compromise of the cloud environment.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server that can be used as a proxy
@@ -43,6 +45,8 @@ Business Value: This technique can be used to gain access to sensitive data such
 1. Knowledge of the metadata API URL for the cloud instance
 
 1. Ability to send crafted requests to the vulnerable server
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ Business Value: This technique can be used to gain access to sensitive data such
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive data such as access keys from cloud instances
 
 1. Gain access to the cloud environment
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve metadata from the Rancher server.
 
+ 
+
+
+
 **Code**: [[curl http://rancher-metadata/<version>/<path>]]
 
+
+
 > The 'version' parameter in the URL should be replaced with the version of the Rancher metadata API you want to use (e.g. '2015-12-19'). The 'path' parameter should be replaced with the path to the metadata you want to retrieve (e.g. 'self/container/name'). This command can be used to retrieve information about the current container, such as its name, IP address, and more.
+
+
 
 **Command** ([[Curl rancher-metadata]]):
 
 ```bash
 curl http://rancher-metadata/<version>/<path>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ curl http://rancher-metadata/<version>/<path>
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Rancher]]
+
+

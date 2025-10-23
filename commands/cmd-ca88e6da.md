@@ -14,3 +14,5 @@ updated_at: '2023-03-13T19:52:35.078857+00:00'
 ```bash
 Add-MpPreference -ExclusionPath C:\$_PATH
 ```
+
+

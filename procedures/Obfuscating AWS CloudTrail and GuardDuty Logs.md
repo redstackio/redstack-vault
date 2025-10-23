@@ -36,6 +36,8 @@ From a technical perspective, this technique involves modifying the user-agent s
 
 The business value of this technique is that it can help attackers avoid detection and maintain access to an AWS environment. By obfuscating their activity, attackers can continue to exfiltrate data, move laterally within the environment, and achieve their objectives without being detected.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS environment
@@ -43,6 +45,8 @@ The business value of this technique is that it can help attackers avoid detecti
 1. AWSCLI installed on the attacker's machine
 
 1. Authentication credentials for the AWS environment
+
+ 
 
 ## Defense
 
@@ -52,20 +56,32 @@ The business value of this technique is that it can help attackers avoid detecti
 
 1. Use multi-factor authentication to protect authentication credentials
 
+ 
+
 ## Objectives
 
 1. Obfuscate AWS CloudTrail and GuardDuty logs to avoid detection
 
 1. Maintain access to an AWS environment and achieve attacker objectives
 
+ 
+
 # Instructions
 
 1. To avoid generating a log when using the AWS CLI on Kali Linux, Pentoo, or Parrot Linux, modify the user agent to hide that information from GuardDuty.
 
+ 
+
+
+
 **Code**: [[boto3_session = boto3.session.Session()
 ua = boto3]]
 
+
+
 > This code modifies the user agent used by the AWS CLI to avoid generating a log when running on Kali Linux, Pentoo, or Parrot Linux. GuardDuty triggers a finding around API calls made from Kali Linux, so modifying the user agent can help you avoid generating unnecessary logs. The `boto3.session.Session()` method is used to create a new session object, and the `ua` variable is set to the current user agent. The `if` statement checks if the user agent contains the name of any of the three Linux distributions mentioned above. If it does, the user agent is modified to hide that information from GuardDuty, and a message is printed to inform the user that the modification has been made.
+
+
 
 **Command** ([[Modify User Agent for Kali/Parrot/Pentoo Linux]]):
 
@@ -76,6 +92,8 @@ if 'kali' in ua.lower() or 'parrot' in ua.lower() or 'pentoo' in ua.lower():  # 
     # GuardDuty triggers a finding around API calls made from Kali Linux, so let's avoid that...
     self.print('Detected environment as one of Kali/Parrot/Pentoo Linux. Modifying user agent to hide that from GuardDuty...')
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +118,5 @@ if 'kali' in ua.lower() or 'parrot' in ua.lower() or 'pentoo' in ua.lower():  # 
 
 - [[Cloud - AWS]]
 - [[Cover tracks by obfuscating Cloudtrail logs and Guard Duty]]
+
+

@@ -30,3 +30,5 @@ mklink /D C:\VscAccess \\?\GLOBALROOT\Device\HardDiskVolumeShadowCopy1
 copy \\?\GLOBALROOT\Device\HardDiskVolumeShadowCopy4\path\to\some\file e:\files
 
 ```
+
+

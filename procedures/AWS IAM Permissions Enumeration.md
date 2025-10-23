@@ -39,6 +39,8 @@ From a technical perspective, this procedure involves making API calls to the AW
 
 From a business perspective, this procedure can be used to identify potential security risks within an AWS environment and to help organizations better understand their exposure to attacks targeting AWS resources. By identifying potential vulnerabilities, organizations can take steps to remediate them and reduce the overall risk of a successful attack.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
@@ -46,6 +48,8 @@ From a business perspective, this procedure can be used to identify potential se
 1. Access to the AWS IAM service
 
 1. AWS CLI or other tools for making API calls
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ From a business perspective, this procedure can be used to identify potential se
 
 1. Monitor AWS IAM activity for suspicious behavior and unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. Identify the permissions associated with an AWS credential
@@ -62,6 +68,8 @@ From a business perspective, this procedure can be used to identify potential se
 1. Determine the level of access an attacker has to AWS resources
 
 1. Identify potential targets for further exploitation
+
+ 
 
 # Instructions
 
@@ -71,9 +79,17 @@ From a business perspective, this procedure can be used to identify potential se
 3. Run the Enumerate-IAM script using the command `./enumerate-iam.py --access-key <ACCESS-KEY> --secret-key <SECRET-KEY>`. Replace `<ACCESS-KEY>` and `<SECRET-KEY>` with the appropriate values for your AWS credential set.
 4. The script will output a list of the permissions associated with the specified AWS credential set.
 
+ 
+
+
+
 **Code**: [[git clone git@github.com:andresriancho/enumerate-i]]
 
+
+
 > The `enumerate-iam` command is a tool used to enumerate the permissions associated with an AWS credential set. This command requires the `access-key` and `secret-key` parameters to be provided in order to authenticate with the AWS API. Once authenticated, the command will query the AWS API for information about the permissions associated with the specified credential set. The output of the command will be a list of the permissions associated with the specified credential set.
+
+
 
 **Command** ([[Git Clone and Install Requirements]]):
 
@@ -83,11 +99,19 @@ pip install -r requirements.txt
 
 ```
 
+
+
+
+
 **Command** ([[Enumerate IAM Permissions]]):
 
 ```bash
 ./enumerate-iam.py --access-key AKIA... --secret-key StF0q...
 ```
+
+
+
+
 
 **Command** ([[List Builds]]):
 
@@ -95,11 +119,19 @@ pip install -r requirements.txt
 gamelift.list_builds()
 ```
 
+
+
+
+
 **Command** ([[List Stack Sets]]):
 
 ```bash
 cloudformation.list_stack_sets()
 ```
+
+
+
+
 
 **Command** ([[Describe Locations]]):
 
@@ -107,17 +139,27 @@ cloudformation.list_stack_sets()
 directconnect.describe_locations()
 ```
 
+
+
+
+
 **Command** ([[Describe Matchmaking Rule Sets]]):
 
 ```bash
 gamelift.describe_matchmaking_rule_sets()
 ```
 
+
+
+
+
 **Command** ([[List Queues]]):
 
 ```bash
 sqs.list_queues()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -143,3 +185,5 @@ sqs.list_queues()
 
 - [[AWS - Enumerate IAM permissions]]
 - [[Cloud - AWS]]
+
+

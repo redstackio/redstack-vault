@@ -30,6 +30,8 @@ DB2 Injection is a technique used by attackers to exploit vulnerabilities in DB2
 
 DB2 Injection is a technique used by attackers to exploit vulnerabilities in DB2 databases. One common method is through SQL Injection, where an attacker can inject malicious SQL code into a database query. In this particular scenario, the attacker is using the 'Char -> ASCII Value' method to convert characters to their corresponding ASCII values. This can be used to bypass input validation checks and execute unauthorized SQL queries. The business value of this attack is that an attacker can gain access to sensitive information stored in the database, such as customer data or financial records.
 
+ 
+
 ## Requirements
 
 1. Access to the target database
@@ -37,6 +39,8 @@ DB2 Injection is a technique used by attackers to exploit vulnerabilities in DB2
 1. Knowledge of SQL Injection techniques
 
 1. Tools to perform SQL Injection attacks
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ DB2 Injection is a technique used by attackers to exploit vulnerabilities in DB2
 
 1. Monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Execute unauthorized SQL queries
 
 1. Gain access to sensitive information stored in the database
 
+ 
+
 # Instructions
 
 1. The ASCII function in SQL returns the ASCII code value of the leftmost character of a character expression. In this case, the character expression is 'A'. The function returns the integer value 65, which represents the ASCII code for the uppercase letter 'A'.
 
+ 
+
+
+
 **Code**: [[select ascii('A') from sysibm.sysdummy1 -- returns]]
 
+
+
 > The ASCII function is useful for converting character data into its corresponding ASCII code value. This can be particularly helpful when working with legacy systems that require ASCII data input. The function takes a single argument, which can be a character expression or a column name containing character data.
+
+
 
 **Command** ([[ASCII value of character 'A']]):
 
 ```bash
 select ascii('A') from sysibm.sysdummy1 -- returns 65
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ select ascii('A') from sysibm.sysdummy1 -- returns 65
 - [[Char -> ASCII Value]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

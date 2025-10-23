@@ -24,12 +24,24 @@ Nmap script hostmap-crtsh queries Google's Certificate Transparency Logs databas
 
 You can use this to find certificate's issued to sub domains by an organization or domain.
 
+
+
+
+
+
+
 **Command** ([[NSE hostmap-crtsh find subdomains by cert]]):
 
 ```bash
 nmap -sn --script hostmap-crtsh $_TARGET_DOMAIN
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[NSE hostmap-crtsh find subdomains by cert]]
+
+

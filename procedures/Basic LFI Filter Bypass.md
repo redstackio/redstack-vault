@@ -36,9 +36,13 @@ Basic LFI filter bypass is a technique used to bypass input filters in PHP appli
 
 The technique works by using a combination of ../ and null byte (%00) characters to bypass the input filters. The ../ is used to navigate up the directory structure, while the null byte is used to terminate the file extension and any characters that follow it. This allows the attacker to include files that are normally blocked by the input filters.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PHP application
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The technique works by using a combination of ../ and null byte (%00) characters
 
 1. Implement access controls to restrict access to sensitive files
 
+ 
+
 ## Objectives
 
 1. To bypass input filters in PHP applications
@@ -55,6 +61,8 @@ The technique works by using a combination of ../ and null byte (%00) characters
 1. To access sensitive files on the server
 
 1. To escalate privileges on the target system
+
+ 
 
 # Instructions
 
@@ -64,9 +72,17 @@ The technique works by using a combination of ../ and null byte (%00) characters
 3. Submit the URL to the vulnerable PHP application and observe the response.
 4. If successful, the response should include the contents of the requested file.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=....//....//etc/]]
 
+
+
 > The command takes advantage of a vulnerability in the PHP application by constructing a URL that includes the ../ and null byte (%00) characters to bypass the input filters. The ../ is used to navigate up the directory structure, while the null byte is used to terminate the file extension and any characters that follow it. This allows the attacker to include files that are normally blocked by the input filters. The command submits the URL to the vulnerable PHP application and observes the response. If successful, the response should include the contents of the requested file.
+
+
 
 **Command** ([[Directory Traversal Vulnerability Check]]):
 
@@ -74,17 +90,27 @@ The technique works by using a combination of ../ and null byte (%00) characters
 http://example.com/index.php?page=....//....//etc/passwd
 ```
 
+
+
+
+
 **Command** ([[Directory Traversal Vulnerability Check]]):
 
 ```bash
 http://example.com/index.php?page=..///////..////..//////etc/passwd
 ```
 
+
+
+
+
 **Command** ([[Directory Traversal Vulnerability Check]]):
 
 ```bash
 http://example.com/index.php?page=/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../etc/passwd
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -111,3 +137,5 @@ http://example.com/index.php?page=/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C
 - [[Basic LFI]]
 - [[File Inclusion]]
 - [[Filter bypass tricks]]
+
+

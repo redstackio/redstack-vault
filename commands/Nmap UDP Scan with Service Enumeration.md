@@ -36,6 +36,7 @@ output: 'root@kali:~# nmap -sU -sV 10.10.10.10 -oN udpports
 
   Service Info: Host: VICTIM-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
 
+
   Service detection performed. Please report any incorrect results at https://nmap.org/submit/
   .
 
@@ -73,3 +74,5 @@ Service Info: Host: VICTIM-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 852.73 seconds
 ```
+
+

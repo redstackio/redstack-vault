@@ -36,6 +36,8 @@ To loot for old passwords in the /etc/security/opasswd file, an attacker can use
 
 From a technical perspective, this attack is relatively simple. However, it can be very effective if an attacker is able to obtain valid credentials. The business value of this attack lies in its ability to allow attackers to gain higher levels of access on a compromised system, potentially leading to further compromise of the organization's assets.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
@@ -43,6 +45,8 @@ From a technical perspective, this attack is relatively simple. However, it can 
 1. Ability to execute commands on the system
 
 1. Knowledge of the 'Security Password File Location' command
+
+ 
 
 ## Defense
 
@@ -52,25 +56,39 @@ From a technical perspective, this attack is relatively simple. However, it can 
 
 1. Implement multi-factor authentication to prevent attackers from gaining access to valid credentials
 
+ 
+
 ## Objectives
 
 1. Obtain old passwords stored in the /etc/security/opasswd file
 
 1. Use these passwords to escalate privileges on the system
 
+ 
+
 # Instructions
 
 1. This file contains the hashed passwords for all users on the system. It is used by the system to authenticate users when they log in.
 
+ 
+
+
+
 **Code**: [[/etc/security/opasswd]]
 
+
+
 > The file is located at /etc/security/opasswd and should only be accessible by the root user. It is recommended to use a strong password policy and to regularly update passwords to ensure the security of the system.
+
+
 
 **Command** ([[View /etc/security/opasswd file]]):
 
 ```bash
 cat /etc/security/opasswd
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ cat /etc/security/opasswd
 - [[Linux - Privilege Escalation]]
 - [[Looting for passwords]]
 - [[Old passwords in /etc/security/opasswd]]
+
+

@@ -32,3 +32,5 @@ Currently loaded vaults:
         Vault Guid:77BC582B-F0A6-4E15-4E80-61736B6F3B29
         Location: C:\Users\Victim\AppData\Local\Microsoft\Vault
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:54.707071+00:00'
 $ aws iam create-policy-version –policy-arn target_policy_arn –policy-document file://path/to/administrator/policy.json –set-as-default
 $ aws iam set-default-policy-version –policy-arn target_policy_arn –version-id v2
 ```
+
+

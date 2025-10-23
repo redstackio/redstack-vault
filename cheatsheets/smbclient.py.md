@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # smbclient.py
 
+
+
 **Command** ([[semi-interactive smb-client]]):
 
 ```bash
@@ -17,3 +19,9 @@ python3 /opt/impacket/examples/smbclient.py 'username'@target-ip
 python3 /opt/impacket/examples/smbclient.py ''@target-ip
 
 ```
+
+
+
+
+
+

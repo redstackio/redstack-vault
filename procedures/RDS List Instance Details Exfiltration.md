@@ -35,9 +35,13 @@ To execute this procedure, the attacker needs to have access to the AWS console 
 
 The business value of this procedure is that attackers can gain access to sensitive data stored in RDS instances, which can be used for various purposes such as identity theft, financial fraud, and espionage.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS console or API credentials
+
+ 
 
 ## Defense
 
@@ -47,23 +51,33 @@ The business value of this procedure is that attackers can gain access to sensit
 
 1. Monitor network traffic for any unusual activity or data exfiltration attempts
 
+ 
+
 ## Objectives
 
 1. Identify and list all RDS instances in the targeted AWS account
 
 1. Exfiltrate sensitive data stored in the RDS instances
 
+ 
+
 # Instructions
 
 1. To retrieve details of one or more Amazon RDS DB instances, run the following command:
 
+ 
+
 This command retrieves details of one or more Amazon RDS DB instances. Use this command to get information about DB instances such as engine type, endpoint, instance class, availability zone, and more. The command takes no arguments, but you can use filters to narrow down the results. For example, you can filter by DB instance identifier, engine type, status, and more. For more information about the available filters, see the AWS documentation.
+
+
 
 **Command** ([[Describe RDS Instances]]):
 
 ```bash
 aws rds describe-db-instances
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -84,3 +98,5 @@ aws rds describe-db-instances
 - [[Data exfiltration]]
 - [[List instances in RDS]]
 - [[RDS - Relational Database Service]]
+
+

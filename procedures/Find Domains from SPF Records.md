@@ -27,12 +27,22 @@ A Python script to parse netblocks & domain names from SPF(Sender Policy Framewo
 
 [Assets from SPF](https://github.com/yamakira/assets-from-spf)
 
+
+
+
+
 **Command** ([[assets_from_spf scan for assets from domain]]):
 
 ```bash
 python assets_from_spf.py owasp.com
 
 ```
+
+
+
+
+
+
 
 **Command** ([[assets_from_spf scan for assets from domain with ASN to jq]]):
 
@@ -41,7 +51,13 @@ python assets_from_spf.py owasp.com --asn | jq .
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[assets_from_spf scan for assets from domain]]
 - [[assets_from_spf scan for assets from domain with ASN to jq]]
+
+

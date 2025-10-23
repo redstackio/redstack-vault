@@ -28,11 +28,15 @@ To execute this technique, attackers use a specially crafted SQL injection paylo
 
 Business value: By exploiting vulnerabilities in PostgreSQL databases, attackers can steal sensitive information, such as customer data or intellectual property, and disrupt business operations. This can result in financial losses, damage to reputation, and legal liability.
 
+ 
+
 ## Requirements
 
 1. Access to an application that uses a PostgreSQL backend database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -42,18 +46,28 @@ Business value: By exploiting vulnerabilities in PostgreSQL databases, attackers
 
 1. Regularly monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from a PostgreSQL database
 
 1. Gain unauthorized access to a system
 
+ 
+
 # Instructions
 
 1. This command is used for SQL injection attacks that cause long execution times. The 'pg_sleep' function is used to delay the execution of the query by the specified number of seconds. The semicolon ';' is used to separate multiple queries, and the '||' operator is used to concatenate the results of multiple queries.
 
+ 
+
+
+
 **Code**: [[select 1 from pg_sleep(5)
 ;(select 1 from pg_sleep]]
+
+
 
 > The attacker can use this command to cause a denial of service attack by making the database unresponsive for an extended period of time. This command can also be used to extract sensitive information from the database by concatenating the results of multiple queries.
 
@@ -62,3 +76,5 @@ Business value: By exploiting vulnerabilities in PostgreSQL databases, attackers
 - [[Identify time based]]
 - [[PostgreSQL injection]]
 - [[PostgreSQL Time Based]]
+
+

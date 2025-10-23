@@ -16,3 +16,5 @@ select xmlagg(xmlrow(table_schema)) from sysibm.tables -- returns all in one xml
 select xmlagg(xmlrow(table_schema)) from (select distinct(table_schema) from sysibm.tables) -- Same but without repeated elements
 select xml2clob(xmelement(name t, table_schema)) from sysibm.tables -- returns all in one xml-formatted string (v8). May need CAST(xml2clob(… AS varchar(500)) to display the result.
 ```
+
+

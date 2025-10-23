@@ -24,3 +24,5 @@ sudo nmap -sSV -oA OUTPUTFILE -T4 -iL INPUTFILE.csv
 
 Instructions: Run the command with sudo privileges to scan for open ports on the target IP address. Use the -oA flag to save the output in all major formats. Use the -iL flag to specify a list of targets to scan from a file.
 ```
+
+

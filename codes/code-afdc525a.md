@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:42.147021+00:00'
 CREATE PROCEDURE [dbo].[cmd_exec] @execCommand NVARCHAR (4000) AS EXTERNAL NAME [my_assembly].[StoredProcedures].[cmd_exec];
 GO
 ```
+
+

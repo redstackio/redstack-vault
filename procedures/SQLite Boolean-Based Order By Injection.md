@@ -34,9 +34,13 @@ Technical Explanation: SQLite is a popular database engine used in many software
 
 Business Value: This technique can be used to extract sensitive information from a target system. This information can be used for further attacks or sold on the black market. By understanding how this technique works, organizations can take steps to secure their systems and prevent attackers from extracting sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses SQLite as its database engine
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ Business Value: This technique can be used to extract sensitive information from
 
 1. Regularly update and patch applications that use SQLite as their database engine
 
+ 
+
 ## Objectives
 
 1. To extract sensitive information from a SQLite database
 
 1. To perform reconnaissance on a target system
 
+ 
+
 # Instructions
 
 1. This command is used to determine which order element to use based on the table name. The command will check if the first character of the SQL statement for the table is equal to 'some_char'. If it is, <order_element_1> will be used as the order element, otherwise <order_element_2> will be used.
 
+ 
+
+
+
 **Code**: [[CASE WHEN (SELECT hex(substr(sql,1,1)) FROM sqlite]]
+
+
 
 > The 'CASE WHEN' statement is used to compare the first character of the SQL statement for the table with 'some_char'. If it is equal, <order_element_1> will be used. If not, <order_element_2> will be used. The 'SELECT hex(substr(sql,1,1))' statement is used to retrieve the first character of the SQL statement for the table in hexadecimal format. The 'FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%' limit 1 offset 0' statement is used to retrieve the SQL statement for the first table in the database that is not a system table. The 'hex' function is used to convert the first character of the SQL statement to hexadecimal format for comparison.
 
@@ -77,3 +91,5 @@ Business Value: This technique can be used to extract sensitive information from
 
 - [[Boolean - Extract info (order by)]]
 - [[SQLite Injection]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:30.729097+00:00'
 ```bash
 echo AAAAAQAAAAAEE[...]Qla6 | base64 -d > EncryptedPfx.bin
 ```
+
+

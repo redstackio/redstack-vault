@@ -21,3 +21,5 @@ EXEC dbo.sp_start_job N'test_powershell_job1';
 -- delete
 EXEC dbo.sp_delete_job @job_name = N'test_powershell_job1';
 ```
+
+

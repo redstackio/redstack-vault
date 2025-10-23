@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:03.075046+00:00'
 ```bash
 curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_OF_PREVIOUS_COMMAND
 ```
+
+

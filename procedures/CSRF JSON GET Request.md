@@ -29,9 +29,13 @@ A Cross-Site Request Forgery (CSRF) JSON GET Request is an attack that leverages
 
 A Cross-Site Request Forgery (CSRF) JSON GET Request is an attack that leverages a victim's authenticated session to perform unauthorized requests on their behalf. The attacker crafts a malicious web page that sends a GET request to a JSON API endpoint that requires authentication. The victim must be logged into the target website for the attack to succeed. The malicious web page sends a GET request to the JSON API endpoint, which returns the victim's sensitive information. The attacker can then use this information to perform further attacks. This attack can be used to steal sensitive data or perform unauthorized actions on behalf of the victim.
 
+ 
+
 ## Requirements
 
 1. Victim must be logged into the target website
+
+ 
 
 ## Defense
 
@@ -41,19 +45,29 @@ A Cross-Site Request Forgery (CSRF) JSON GET Request is an attack that leverages
 
 1. Implement rate limiting to prevent brute-force attacks
 
+ 
+
 ## Objectives
 
 1. Steal sensitive data
 
 1. Perform unauthorized actions on behalf of the victim
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[<script>
 var xhr = new XMLHttpRequest();
 xhr.open(]]
+
+
 
 > This command crafts a malicious web page that sends a GET request to the target's JSON API endpoint. The attacker can modify the URL to point to the API endpoint they want to target. The victim must be logged into the target website for the attack to succeed.
 
@@ -73,3 +87,5 @@ xhr.open(]]
 - [[Cross-Site Request Forgery]]
 - [[JSON GET - Simple Request]]
 - [[Payloads]]
+
+

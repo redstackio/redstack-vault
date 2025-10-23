@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:40.549520+00:00'
 ```bash
 JS code is executed and the background tab is redirected to the website evil.com
 ```
+
+

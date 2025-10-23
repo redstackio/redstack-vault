@@ -37,6 +37,8 @@ MSSQL Injection is a technique used to exploit SQL Injection vulnerabilities in 
 
 From a technical perspective, MSSQL Injection works by injecting malicious SQL code into user inputs, such as login forms or search fields. This code is then executed by the server, allowing the attacker to manipulate the database and execute arbitrary commands. From a business perspective, this attack can result in data theft, data manipulation, and server compromise, leading to reputational damage, financial losses, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Microsoft SQL Server
@@ -44,6 +46,8 @@ From a technical perspective, MSSQL Injection works by injecting malicious SQL c
 1. Knowledge of SQL Injection techniques
 
 1. Access to a tool capable of executing SQL Injection attacks
+
+ 
 
 ## Defense
 
@@ -53,19 +57,31 @@ From a technical perspective, MSSQL Injection works by injecting malicious SQL c
 
 1. Monitor SQL Server logs for suspicious activity and unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. List server and database permissions
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. This command lists all of the effective permissions that the current user has on the server. The output will include details such as the type of permission, the object that the permission applies to, and the grantor of the permission. This command can be useful for troubleshooting permission issues or auditing user access to the server.
 
+ 
+
+
+
 **Code**: [[SELECT * FROM fn_my_permissions(NULL, 'SERVER');]]
 
+
+
 > The 'fn_my_permissions' function takes two arguments: the object for which to retrieve permissions (in this case, 'NULL' indicates the entire server), and the type of object ('SERVER' in this case). The output of the function will return a table with columns for the permission name, the permission state, the permission type, the permission object name, the principal name, and the grantor name.
+
+
 
 **Command** ([[Check Server Permissions]]):
 
@@ -73,11 +89,21 @@ From a technical perspective, MSSQL Injection works by injecting malicious SQL c
 SELECT * FROM fn_my_permissions(NULL, 'SERVER');
 ```
 
+
+
 2. This command retrieves a list of all the permissions that the current user has on the database.
+
+ 
+
+
 
 **Code**: [[SELECT * FROM fn_my_permissions (NULL, 'DATABASE')]]
 
+
+
 > The 'fn_my_permissions' function is used to retrieve the permissions of the current user on the database. The first argument specifies the object for which the permissions are being retrieved, and in this case, it is set to NULL to retrieve permissions for the current database. The second argument specifies the type of object for which permissions are being retrieved, and in this case, it is set to 'DATABASE' to retrieve database-level permissions. The command returns a table with columns for the permission name, the permission type, and whether the permission is granted or denied.
+
+
 
 **Command** ([[Check database permissions]]):
 
@@ -85,9 +111,15 @@ SELECT * FROM fn_my_permissions(NULL, 'SERVER');
 SELECT * FROM fn_my_permissions (NULL, 'DATABASE');
 ```
 
+
+
 3. To list the effective permissions of the current user on a view, execute the following SQL query:
 
+ 
+
 This command will return a list of permissions that the current user has on the specified view. The results will be ordered by subentity_name and permission_name. The subentity_name column will contain the name of the view, and the permission_name column will contain the name of the permission (e.g. SELECT, INSERT, UPDATE, DELETE).
+
+
 
 **Command** ([[View Permissions for Sales.vIndividualCustomer]]):
 
@@ -95,11 +127,21 @@ This command will return a list of permissions that the current user has on the 
 SELECT * FROM fn_my_permissions('Sales.vIndividualCustomer', 'OBJECT') ORDER BY subentity_name, permission_name;
 ```
 
+
+
 4. Specify the server role you want to check membership for in the argument of the is_srvrolemember function.
+
+ 
+
+
 
 **Code**: [[-- possible roles: sysadmin, serveradmin, dbcreato]]
 
+
+
 > This command is used to determine if the current user is a member of a specified server role. The function is_srvrolemember takes a single argument, the name of the server role you want to check membership for. The possible server roles are: sysadmin, serveradmin, dbcreator, setupadmin, bulkadmin, securityadmin, diskadmin, public, processadmin. The function will return a 1 if the user is a member of the specified server role, and a 0 if they are not.
+
+
 
 **Command** ([[Check If User is a sysadmin]]):
 
@@ -107,6 +149,8 @@ SELECT * FROM fn_my_permissions('Sales.vIndividualCustomer', 'OBJECT') ORDER BY 
 -- possible roles: sysadmin, serveradmin, dbcreator, setupadmin, bulkadmin, securityadmin, diskadmin, public, processadmin
 SELECT is_srvrolemember('sysadmin');
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -132,3 +176,5 @@ SELECT is_srvrolemember('sysadmin');
 
 - [[List permissions]]
 - [[MSSQL Injection]]
+
+

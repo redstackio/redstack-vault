@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:09.591812+00:00'
 ```bash
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "remove" --device-id "a8ce856e-9b58-61f9-8fd3-b079689eb46e"
 ```
+
+

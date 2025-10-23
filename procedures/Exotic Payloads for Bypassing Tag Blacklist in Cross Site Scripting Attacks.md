@@ -33,9 +33,13 @@ Exotic payloads are used to bypass tag blacklist filters in Cross Site Scripting
 
 Exotic payloads are used to bypass tag blacklist filters in Cross Site Scripting (XSS) attacks. An attacker can use these payloads to evade detection and execute malicious scripts on a victim's browser. The technical explanation is that the attacker crafts a payload that is not recognized by the filter and can bypass it. The business value of this attack is that an attacker can steal sensitive information, such as login credentials or personal data, from the victim's browser.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -45,18 +49,28 @@ Exotic payloads are used to bypass tag blacklist filters in Cross Site Scripting
 
 1. Educate users on how to identify and avoid phishing attacks that may lead to XSS attacks
 
+ 
+
 ## Objectives
 
 1. Execute malicious scripts on a victim's browser
 
 1. Steal sensitive information from the victim's browser
 
+ 
+
 # Instructions
 
 1. To execute this script, simply inject it into a vulnerable web page using a web vulnerability scanner or by manually modifying the page's HTML code. Once injected, the script will execute and display an alert message with the text 'XSS'.
 
+ 
+
+
+
 **Code**: [[<script x>
 <script x>alert('XSS')<script y>]]
+
+
 
 > This JSON object contains an example of an XSS attack script. The 'data' field contains the actual script code, which is designed to exploit a web page vulnerability and execute malicious code on the user's browser. The 'lang' field specifies that the script is written in JavaScript. The 'instruction' field provides guidance on how to use this script to perform an XSS attack. The 'explain' field provides additional information about the purpose and function of this script.
 
@@ -82,3 +96,5 @@ Exotic payloads are used to bypass tag blacklist filters in Cross Site Scripting
 - [[Bypass tag blacklist]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

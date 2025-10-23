@@ -34,9 +34,13 @@ To execute this technique, the attacker will first identify a vulnerable input f
 
 The business value of understanding and mitigating against DB2 Injection is crucial for organizations that use DB2 databases to store sensitive information. By implementing proper input validation and other security measures, organizations can prevent attackers from exploiting this technique and gaining unauthorized access to their data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable input field in a DB2 database
+
+ 
 
 ## Defense
 
@@ -46,25 +50,39 @@ The business value of understanding and mitigating against DB2 Injection is cruc
 
 1. Regularly monitor and audit database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Inject malicious SQL statements into a vulnerable input field in a DB2 database
 
 1. Bypass input validation and gain unauthorized access to sensitive data
 
+ 
+
 # Instructions
 
 1. The CONCATENATION operator (||) is used to concatenate two or more strings or expressions. In this command, we are concatenating the ASCII values of the characters A, D, R, and I which results in the string 'ADRI'. The SELECT statement is used to retrieve the result. This command can also be used without the SELECT statement.
 
+ 
+
+
+
 **Code**: [[SELECT chr(65)||chr(68)||chr(82)||chr(73) FROM sys]]
 
+
+
 > The chr() function is used to return the character associated with the specified ASCII value. In this command, we are using the chr() function to convert the ASCII values of the characters A, D, R, and I into their corresponding characters, and then concatenating them using the CONCATENATION operator. The result is a string 'ADRI'. The sysibm.sysdummy1 table is a special one-row table that can be used to retrieve a single row of dummy data.
+
+
 
 **Command** ([[Concatenate ASCII values]]):
 
 ```bash
 SELECT chr(65)||chr(68)||chr(82)||chr(73) FROM sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ SELECT chr(65)||chr(68)||chr(82)||chr(73) FROM sysibm.sysdummy1
 - [[Avoiding Quotes]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

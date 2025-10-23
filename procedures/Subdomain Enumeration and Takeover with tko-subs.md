@@ -39,11 +39,15 @@ TKO-Subs is a tool that can be used to enumerate subdomains and identify potenti
 
 This procedure can be used by attackers to gain access to sensitive information, exfiltrate data, or launch further attacks against the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to the internet
 
 1. Access to the tko-subs tool
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ This procedure can be used by attackers to gain access to sensitive information,
 
 1. Monitor DNS records for changes or suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify subdomains associated with the target organization
@@ -61,17 +67,27 @@ This procedure can be used by attackers to gain access to sensitive information,
 
 1. Gain access to sensitive information or systems
 
+ 
+
 # Instructions
 
 1. To enumerate subdomains and find potential subdomain takeovers, run the following command:
 
+ 
+
+
+
 **Code**: [[go get github.com/anshumanbh/tko-subs
 ./bin/tko-su]]
+
+
 
 > - The `go get` command is used to download the `tko-subs` tool.
 - The `-domains` flag specifies the location of the file containing domains to be scanned.
 - The `-data` flag specifies the location of the file containing provider data.
 - This tool will scan the specified domains for potential subdomain takeovers and report any findings.
+
+
 
 **Command** ([[Download and Run tko-subs]]):
 
@@ -79,6 +95,8 @@ This procedure can be used by attackers to gain access to sensitive information,
 go get github.com/anshumanbh/tko-subs
 ./bin/tko-subs -domains=./lists/domains_tkos.txt -data=./lists/providers-data.csv
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -106,3 +124,5 @@ go get github.com/anshumanbh/tko-subs
 - [[Subdomains Enumeration]]
 - [[Subdomain take over]]
 - [[Using tko-subs]]
+
+

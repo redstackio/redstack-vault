@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:40.549496+00:00'
 ```bash
 Victim clicks on the link and the site opens in a new tab
 ```
+
+

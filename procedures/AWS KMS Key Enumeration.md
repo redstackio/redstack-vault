@@ -32,11 +32,15 @@ Technical Explanation: The attacker can use the AWS CLI to list the keys in KMS.
 
 Business Value: An attacker can use this procedure to gain access to sensitive data that is being encrypted with KMS. This data can then be used for financial gain or to gain a competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access KMS
 
 1. Access to the AWS CLI
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ Business Value: An attacker can use this procedure to gain access to sensitive d
 
 1. Encrypt sensitive data at rest and in transit
 
+ 
+
 ## Objectives
 
 1. Enumerate and list the keys in KMS
 
 1. Discover sensitive data that is being encrypted with KMS
 
+ 
+
 # Instructions
 
 1. Use this command to list all AWS KMS keys in your account.
 
+ 
+
+
+
 **Code**: [[aws kms list-keys]]
+
+
 
 > This command takes no arguments and returns a JSON object containing information about all the KMS keys in your account. The output includes the key ID, creation date, and description of each key.
 
@@ -75,3 +89,5 @@ Business Value: An attacker can use this procedure to gain access to sensitive d
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing keys in KMS]]
+
+

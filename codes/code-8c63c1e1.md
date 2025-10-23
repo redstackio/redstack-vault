@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:58.335892+00:00'
 ```sql
 select * from sysibmadm.reg_variables where reg_var_name='DB2PATH' -- requires priv
 ```
+
+

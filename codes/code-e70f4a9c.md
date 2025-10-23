@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:52.412674+00:00'
 ?id=1 and (1,2,3,4) = (SELECT * from db.users UNION SELECT 1,2,3,4 LIMIT 1)
 --Column 'id' cannot be null
 ```
+
+

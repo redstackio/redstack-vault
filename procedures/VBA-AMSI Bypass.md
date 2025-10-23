@@ -30,6 +30,8 @@ The VBA-AMSI Bypass procedure is an offensive technique used to bypass the Antim
 
 The VBA-AMSI Bypass procedure is an offensive technique used to bypass the Antimalware Scan Interface (AMSI) in Microsoft Office VBA macros. This technique is commonly used by attackers to evade detection by security software and execute malicious code. The technique involves obfuscating the VBA code to make it difficult for the AMSI to detect malicious behavior. This procedure is highly effective as AMSI is a built-in defense mechanism in Office applications that scans VBA macros for malicious code before execution. By bypassing AMSI, attackers can execute malicious code without detection.
 
+ 
+
 ## Requirements
 
 1. Access to Microsoft Office VBA macros
@@ -37,6 +39,8 @@ The VBA-AMSI Bypass procedure is an offensive technique used to bypass the Antim
 1. Knowledge of obfuscation techniques
 
 1. Access to AMSI-enabled Office applications
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ The VBA-AMSI Bypass procedure is an offensive technique used to bypass the Antim
 
 1. Implement strict email and web filtering policies to prevent phishing attacks that deliver malicious VBA macros
 
+ 
+
 ## Objectives
 
 1. Bypass AMSI scan and execute malicious code in VBA macros
 
 1. Evade detection by security software
 
+ 
+
 # Instructions
 
 1. This VB script bypasses the AMSI (Antimalware Scan Interface) scan by patching the memory of the AmsiScanBuffer function. It loads the amsi.dll library, gets the address of the AmsiScanBuffer function, changes the memory protection of the AmsiScanBuffer function to allow writing, and then copies the shellcode to the AmsiScanBuffer function.
 
+ 
+
+
+
 **Code**: [[Private Declare PtrSafe Function GetProcAddress Li]]
+
+
 
 > The AMSI is a Windows feature that allows antivirus solutions to integrate with other applications and scan for malicious code. By bypassing the AMSI scan, attackers can execute malicious code without being detected by antivirus solutions. This VB script uses a technique called DLL injection to load the amsi.dll library and patch the memory of the AmsiScanBuffer function. The AmsiScanBuffer function is responsible for scanning a buffer for malicious code. By patching the memory of this function, the script is able to bypass the AMSI scan and execute malicious code without being detected.
 
@@ -77,3 +91,5 @@ The VBA-AMSI Bypass procedure is an offensive technique used to bypass the Antim
 
 - [[Office - Attacks]]
 - [[VBA - AMSI]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-05-24T07:40:26.785283+00:00'
 ```bash
 SharpAzToken.exe mdm --joindevice --accesstoken (or some combination from the token part) --devicename <Name> --outpfxfile <Some path>
 ```
+
+

@@ -33,3 +33,5 @@ PS C:\Tools> $password = "Password" | ConvertToSecureString -AsPlainText -Force
 PS C:\Tools> (Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq "<Username>@<TENANT NAME>.onmicrosoft.com"}).ObjectId | SetAzureADUserPassword -Password $Password -Verbose
 - This command retrieves the object ID of the user with the specified user principal name and sets the user's password to the specified secure string object.
 ```
+
+

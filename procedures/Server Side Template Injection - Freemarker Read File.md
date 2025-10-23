@@ -34,11 +34,15 @@ To execute this procedure, the attacker would first need to identify that the we
 
 This procedure can be used to gain access to sensitive information stored on the server, which can be used to further compromise the system or exfiltrate data.
 
+ 
+
 ## Requirements
 
 1. Knowledge of the target web application's use of Freemarker
 
 1. Identification of an injection point
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ This procedure can be used to gain access to sensitive information stored on the
 
 1. Use file system permissions to restrict access to sensitive files and directories
 
+ 
+
 ## Objectives
 
 1. Read sensitive files on the server
 
 1. Gather information for further attacks
 
+ 
+
 # Instructions
 
 1. This command retrieves the location of the class file of a product object. Replace 'path_to_the_file' with the actual path to the file on your system.
 
+ 
+
+
+
 **Code**: [[${product.getClass().getProtectionDomain().getCode]]
+
+
 
 > The 'product' in the command refers to a product object in the code. This command retrieves the location of the class file of the product object and returns the bytes in the form of an array. The 'join()' function is used to convert the byte array to ASCII format. This command can be useful for debugging and troubleshooting purposes.
 
@@ -79,3 +93,5 @@ This procedure can be used to gain access to sensitive information stored on the
 - [[Freemarker]]
 - [[Freemarker - Read File]]
 - [[Server Side Template Injection]]
+
+

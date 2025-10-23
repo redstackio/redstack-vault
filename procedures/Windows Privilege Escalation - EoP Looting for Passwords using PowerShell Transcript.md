@@ -34,11 +34,15 @@ PowerShell Transcript is a built-in feature in Windows that records all PowerShe
 
 This procedure is valuable to attackers as it allows them to easily escalate their privileges and gain access to sensitive information without being detected by security measures.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system with PowerShell Transcript enabled
 
 1. Knowledge of PowerShell scripting
+
+ 
 
 ## Defense
 
@@ -48,17 +52,27 @@ This procedure is valuable to attackers as it allows them to easily escalate the
 
 1. Implement strong password policies to minimize the impact of password theft
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Windows system
 
 1. Loot passwords and sensitive information
 
+ 
+
 # Instructions
 
 1. Use the PowerShell Transcript command to record all commands and their output to a text file.
 
+ 
+
+
+
 **Code**: [[C:\Users\<USERNAME>\Documents\PowerShell_transcrip]]
+
+
 
 > The PowerShell Transcript command is used to create a record of all PowerShell commands and their output to a text file. This can be useful for troubleshooting, auditing, or training purposes. The <USERNAME> field should be replaced with the username of the user running the command. The <HOSTNAME> field should be replaced with the hostname of the computer running the command. The <RANDOM> field should be replaced with a random string of characters. The <TIMESTAMP> field should be replaced with a timestamp in the format YYYY-MM-DD_HH-MM-SS. The <DATE> field should be replaced with the current date in the format YYYY-MM-DD. The resulting file will be saved in two locations, the user's Documents folder and a folder named Transcripts with the current date as the folder name.
 
@@ -77,3 +91,5 @@ This procedure is valuable to attackers as it allows them to easily escalate the
 - [[EoP - Looting for passwords]]
 - [[Powershell Transcript]]
 - [[Windows - Privilege Escalation]]
+
+

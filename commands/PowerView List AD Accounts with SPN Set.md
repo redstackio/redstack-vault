@@ -6,6 +6,7 @@ executor: powershell
 data: Get-DomainUser -SPN
 output: 'PS C:\Users\steve> Get-DomainUser -SPN
 
+
   logoncount            : 0
 
   badpasswordtime       : 12/31/1600 4:00:00 PM
@@ -105,3 +106,5 @@ pwdlastset            : 7/1/2020 3:13:01 PM
 usnchanged            : 13117
 ...
 ```
+
+

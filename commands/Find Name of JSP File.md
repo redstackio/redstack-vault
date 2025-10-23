@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:27.396541+00:00'
 ```bash
 strings reverse.war | grep jsp
 ```
+
+

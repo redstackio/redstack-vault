@@ -41,11 +41,15 @@ GitLeak is a tool that searches through the code in a Git repository for secrets
 
 GitLeak is a tool that searches through the code in a Git repository for secrets and other sensitive information. It can be used to identify hardcoded passwords, access tokens, and API keys that have been accidentally committed to a repository. Attackers can use this information to gain unauthorized access to systems and data. GitLeak is a powerful tool for identifying and mitigating these risks.
 
+ 
+
 ## Requirements
 
 1. Access to a Git repository.
 
 1. Docker installed on the system.
+
+ 
 
 ## Defense
 
@@ -55,16 +59,26 @@ GitLeak is a tool that searches through the code in a Git repository for secrets
 
 1. Use Git hooks to scan for sensitive information before it is committed to a repository.
 
+ 
+
 ## Objectives
 
 1. Identify and mitigate risks associated with secrets and sensitive information being accidentally committed to a Git repository.
+
+ 
 
 # Instructions
 
 1. This command runs GitLeak against a public repository.
 
+ 
+
+
+
 **Code**: [[# Run gitleaks against a public repository
 docker ]]
+
+
 
 > - `docker run`: Runs a Docker container.
 - `--rm`: Removes the container after it has finished running.
@@ -73,15 +87,25 @@ docker ]]
 - `-v`: Enables verbose output.
 - `-r https://github.com/zricethezav/gitleaks.git`: Specifies the repository to scan.
 
+
+
 **Command** ([[Run gitleaks against a public repository]]):
 
 ```bash
 docker run --rm --name=gitleaks zricethezav/gitleaks -v -r https://github.com/zricethezav/gitleaks.git
 ```
 
+
+
 2. This command runs GitLeak against a local repository.
 
+ 
+
+
+
 **Code**: [[# Run gitleaks against a local repository already ]]
+
+
 
 > - `docker run`: Runs a Docker container.
 - `--rm`: Removes the container after it has finished running.
@@ -91,6 +115,8 @@ docker run --rm --name=gitleaks zricethezav/gitleaks -v -r https://github.com/zr
 - `-v`: Enables verbose output.
 - `--repo-path=/code/gitleaks`: Specifies the path to the repository within the container.
 
+
+
 **Command** ([[Run gitleaks against a local repository]]):
 
 ```bash
@@ -98,9 +124,17 @@ docker run --rm --name=gitleaks -v /tmp/:/code/  zricethezav/gitleaks -v --repo-
 
 ```
 
+
+
 3. This command runs GitLeak against a specific Github Pull request.
 
+ 
+
+
+
 **Code**: [[# Run gitleaks against a specific Github Pull requ]]
+
+
 
 > - `docker run`: Runs a Docker container.
 - `--rm`: Removes the container after it has finished running.
@@ -110,17 +144,25 @@ docker run --rm --name=gitleaks -v /tmp/:/code/  zricethezav/gitleaks -v --repo-
 - `--github-pr=https://github.com/owner/repo/pull/9000`: Specifies the Pull request to scan.
 - `go get -u github.com/zricethezav/gitleaks`: Alternatively, you can install GitLeak using the `go get` command.
 
+
+
 **Command** ([[Run gitleaks against a specific Github Pull request using Docker]]):
 
 ```bash
 docker run --rm --name=gitleaks -e GITHUB_TOKEN={your token} zricethezav/gitleaks --github-pr=https://github.com/owner/repo/pull/9000
 ```
 
+
+
+
+
 **Command** ([[Run gitleaks against a specific Github Pull request using go get]]):
 
 ```bash
 go get -u github.com/zricethezav/gitleaks
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -154,3 +196,5 @@ go get -u github.com/zricethezav/gitleaks
 - [[Harvesting secrets]]
 - [[Insecure Source Code Management]]
 - [[Tools]]
+
+

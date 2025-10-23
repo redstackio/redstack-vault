@@ -29,11 +29,15 @@ The Groovy Java Reverse Shell is a technique that allows an attacker to establis
 
 The Groovy Java Reverse Shell is a technique that allows an attacker to establish a command and control channel from a compromised system to an external network. This technique uses the Groovy language to execute a Java reverse shell payload. The payload connects back to the attacker's system and provides a shell session with the same privileges as the compromised system. This technique can be used to bypass network security controls and exfiltrate data from the compromised system.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system with the Groovy language installed
 
 1. Ability to execute the Java reverse shell payload
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ The Groovy Java Reverse Shell is a technique that allows an attacker to establis
 
 1. Use endpoint detection and response (EDR) solutions to detect and respond to suspicious activity
 
+ 
+
 ## Objectives
 
 1. Establish a command and control channel from a compromised system to an external network
@@ -51,13 +57,21 @@ The Groovy Java Reverse Shell is a technique that allows an attacker to establis
 
 1. Exfiltrate data from the compromised system
 
+ 
+
 # Instructions
 
 1. This command allows you to create a reverse shell connection from the target machine back to your machine. To use this command, you will need to modify the `host` and `port` variables in the code to match your IP and port. Once the code is modified, compile and run it on the target machine. This will establish a connection back to your machine, providing you with a shell on the target machine that you can use to execute commands.
 
+ 
+
+
+
 **Code**: [[String host="10.0.0.1";
 int port=4242;
 String cmd=]]
+
+
 
 > - `host`: The IP address of the machine that the reverse shell should connect back to.
 - `port`: The port number that the reverse shell should connect back to.
@@ -89,3 +103,5 @@ String cmd=]]
 - [[Groovy]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

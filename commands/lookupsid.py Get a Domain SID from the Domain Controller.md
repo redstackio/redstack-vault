@@ -8,6 +8,7 @@ output: 'root@kali:~# lookupsid.py ''bank.local/bsmith:hunter2''@10.10.10.5
 
   Impacket v0.9.22.dev1+20200428.191254.96c7a512 - Copyright 2020 SecureAuth Corporation
 
+
   [*] Brute forcing SIDs at 10.10.10.5
 
   [*] StringBinding ncacn_np:10.10.10.5[\pipe\lsarpc]
@@ -39,3 +40,5 @@ Impacket v0.9.22.dev1+20200428.191254.96c7a512 - Copyright 2020 SecureAuth Corpo
 ...
 ...
 ```
+
+

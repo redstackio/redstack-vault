@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:04.669716+00:00'
 ```bash
 nmap -sV -sC -oA ~/nmap-initial 192.168.1.1
 ```
+
+

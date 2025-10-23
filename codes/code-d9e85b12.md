@@ -22,3 +22,5 @@ PS AADInternals> $SKey = [convert]::ToBase64String( [byte[]] ($ClearKey -replace
 PS AADInternals> New-AADIntUserPRTToken -RefreshToken $PRT -SessionKey $SKey –GetNonce
 eyJ0eXAiOiJKV1QiL...
 ```
+
+

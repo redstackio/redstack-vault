@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:04.063259+00:00'
 ```bash
 ls \\PC1.purple.lab\c$
 ```
+
+

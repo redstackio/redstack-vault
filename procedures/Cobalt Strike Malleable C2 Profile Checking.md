@@ -32,11 +32,15 @@ Cobalt Strike's Malleable C2 allows attackers to customize the network traffic g
 
 From an offensive perspective, profile checking helps the attacker maintain persistence by ensuring that the Beacon is still communicating with a valid C2 server. From a technical standpoint, profile checking is a simple HTTP request/response exchange that can be easily customized to evade detection. From a business perspective, Cobalt Strike's Malleable C2 allows attackers to bypass traditional security controls and maintain access to the target environment.
 
+ 
+
 ## Requirements
 
 1. Access to a Beacon payload that is configured to use Malleable C2
 
 1. Knowledge of the expected HTTP request/response for profile checking
+
+ 
 
 ## Defense
 
@@ -46,17 +50,27 @@ From an offensive perspective, profile checking helps the attacker maintain pers
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. Verify that the Beacon is still communicating with a valid C2 server
 
 1. Maintain persistence within the target environment
 
+ 
+
 # Instructions
 
 1. To check a profile, run the following command: ./c2lint <profile_name>
 
+ 
+
+
+
 **Code**: [[./c2lint]]
+
+
 
 > The <profile_name> argument is the name of the profile you want to check. This command will analyze the profile for any potential issues or errors and provide a report of the findings.
 
@@ -79,3 +93,5 @@ From an offensive perspective, profile checking helps the attacker maintain pers
 
 - [[Cobalt Strike]]
 - [[Malleable C2]]
+
+

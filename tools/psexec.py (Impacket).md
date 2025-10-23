@@ -27,11 +27,27 @@ Impacket suite implementation of PSEXEC, a remote access tool which allows Admin
 
 Impacket suite implementation of PSEXEC, a remote access tool which allows Administrators to interact with the system's command prompt. This tool requires the user have full access to the target's SMB admin share, as it copies a .SVC file to the share, launches a service to run the file, then uses named pipes to connect to the session.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_2151a2d8-f6b2-435f-9161-24aa956d54aa}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Impacket suite implementation of PSEXEC, a remote access tool which allows Admin
 - [[administrator]]
 - [[Network]]
 - [[NTLM]]
+
+

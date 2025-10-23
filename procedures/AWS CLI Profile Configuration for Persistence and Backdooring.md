@@ -38,6 +38,8 @@ Technical Explanation: The attacker can use AWS CLI to create a new user and con
 
 Business Value: This technique can be used by attackers to maintain access to the compromised AWS environment even if the initial access point is discovered and closed. This can result in data theft, data destruction, or other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS environment
@@ -46,6 +48,8 @@ Business Value: This technique can be used by attackers to maintain access to th
 
 1. Credentials for a new user with sufficient permissions
 
+ 
+
 ## Defense
 
 1. Monitor AWS CLI configuration changes and user activity
@@ -53,6 +57,8 @@ Business Value: This technique can be used by attackers to maintain access to th
 1. Limit the permissions of the compromised user to prevent the attacker from performing malicious activities
 
 1. Implement multi-factor authentication for AWS CLI access
+
+ 
 
 ## Objectives
 
@@ -64,17 +70,25 @@ Business Value: This technique can be used by attackers to maintain access to th
 
 1. Create new users with elevated privileges
 
+ 
+
 # Instructions
 
 1. Use this command to configure AWS CLI with a named profile. This is useful when you have multiple AWS accounts and want to switch between them easily.
 
+ 
+
 The `aws configure` command is used to configure the AWS CLI on your local machine. The `--profile` option allows you to specify a named profile for the configuration. Once you run this command, you will be prompted to enter your AWS Access Key ID, AWS Secret Access Key, default region name, and output format. These values will be stored in a configuration file under your home directory. You can then use the `--profile` option with other AWS CLI commands to specify which profile to use for the command. For example, `aws s3 ls --profile example_profile` would list the contents of an S3 bucket using the `example_profile` profile.
+
+
 
 **Command** ([[AWS Configure]]):
 
 ```bash
 aws configure --profile example_profile
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +113,5 @@ aws configure --profile example_profile
 - [[Cloud - AWS]]
 - [[Configuring AWS cli for the new user]]
 - [[Persistence & Backdooring]]
+
+

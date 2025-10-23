@@ -1,1 +1,22 @@
-{}
+{
+  "attachmentFolderPath": "_assets/images",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showInlineTitle": true,
+  "promptDelete": true,
+  "vimMode": false,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "defaultViewMode": "source",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}

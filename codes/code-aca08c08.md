@@ -16,3 +16,5 @@ $settings = [Ref].Assembly.GetType("System.Management.Automation.Utils").GetFiel
 $settings["HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging"] = @{}
 $settings["HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging"].Add("EnableScriptBlockLogging", "0")
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:57.540862+00:00'
 ```bash
 PsExec.exe \\srv01.domain.local -u DOMAIN\username -p password cmd.exe -s
 ```
+
+

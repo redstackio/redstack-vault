@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:54.707071+00:00'
 ```powershell
 $ aws iam put-user-policy –user-name my_username –policy-name my_inline_policy –policy-document file://path/to/administrator/policy.json
 ```
+
+

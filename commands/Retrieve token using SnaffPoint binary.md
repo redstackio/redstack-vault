@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:31.881047+00:00'
 ```bash
 $token = (.\GetBearerToken.exe https://your.sharepoint.com)
 ```
+
+

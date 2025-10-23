@@ -35,11 +35,15 @@ This procedure involves using the rip-hg.pl tool to extract source code from a M
 
 This procedure involves using the rip-hg.pl tool to extract source code from a Mercurial repository. This can be useful for an attacker looking to exfiltrate sensitive code from a target organization. The tool works by cloning the repository and extracting the code to a local directory. This can be done either by running the tool on the host or in a Docker container. The business value of this attack is that an attacker can gain access to sensitive source code, which can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to a Mercurial repository
 
 1. Ability to run the rip-hg.pl tool on the host or in a Docker container
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ This procedure involves using the rip-hg.pl tool to extract source code from a M
 
 1. Implement data loss prevention measures to prevent sensitive code from being exfiltrated
 
+ 
+
 ## Objectives
 
 1. Extract source code from a Mercurial repository
 
 1. Exfiltrate sensitive code from a target organization
+
+ 
 
 # Instructions
 
@@ -62,9 +70,17 @@ This procedure involves using the rip-hg.pl tool to extract source code from a M
 3. Provide the path to the host work directory and the URL of the Mercurial repository.
 4. Use the -v and -u options to enable verbose output and to update the repository if it already exists.
 
+ 
+
+
+
 **Code**: [[wget https://raw.githubusercontent.com/kost/dvcs-r]]
 
+
+
 > The rip-hg.pl tool is used to clone the Mercurial repository and extract the source code to a local directory. The -v option is used to enable verbose output, which can be useful for debugging. The -u option is used to update the repository if it already exists. The -it option is used to run the Docker container in interactive mode. The -v option is used to mount the host work directory to the container's /work directory, which is where the repository will be cloned.
+
+
 
 **Command** ([[Download rip-hg.pl script]]):
 
@@ -72,11 +88,17 @@ This procedure involves using the rip-hg.pl tool to extract source code from a M
 wget https://raw.githubusercontent.com/kost/dvcs-ripper/master/rip-hg.pl
 ```
 
+
+
+
+
 **Command** ([[Run docker container for dvcs-ripper]]):
 
 ```bash
 docker run --rm -it -v /path/to/host/work:/work:rw k0st/alpine-dvcs-ripper rip-hg.pl -v -u
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ docker run --rm -it -v /path/to/host/work:/work:rw k0st/alpine-dvcs-ripper rip-h
 - [[Mercurial]]
 - [[rip-hg.pl]]
 - [[Tools]]
+
+

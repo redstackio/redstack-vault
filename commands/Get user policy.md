@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:04.832422+00:00'
 ```bash
 aws iam get-user-policy --user-name user-name --policy-name policy-name
 ```
+
+

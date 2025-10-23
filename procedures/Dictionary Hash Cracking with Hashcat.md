@@ -33,6 +33,8 @@ From a technical perspective, this technique works by taking the hashed value an
 
 From a business perspective, this technique can be used to test the strength of an organization's password policies and identify weak passwords that could be exploited by attackers. It can also be used to recover lost or forgotten passwords, or to gain access to systems or applications where the password has been lost or forgotten.
 
+ 
+
 ## Requirements
 
 1. Access to the hashed values
@@ -41,6 +43,8 @@ From a business perspective, this technique can be used to test the strength of 
 
 1. Hashcat installed on the system
 
+ 
+
 ## Defense
 
 1. Use strong passwords that are resistant to dictionary attacks
@@ -48,6 +52,8 @@ From a business perspective, this technique can be used to test the strength of 
 1. Implement multi-factor authentication to reduce the risk of password-based attacks
 
 1. Monitor for suspicious activity, such as repeated failed login attempts
+
+ 
 
 ## Objectives
 
@@ -61,11 +67,19 @@ From a business perspective, this technique can be used to test the strength of 
 
 1. Gain access to systems or applications where the password has been lost or forgotten
 
+ 
+
 # Instructions
 
 1. This command is used for brute force hash cracking. The command takes in a hash file and a wordlist file as input, and tries to crack the hash using various combinations of words from the wordlist file. The '-r' option specifies a rule file which can be used to modify the wordlist and create more complex combinations. The '--attack-mode 0' option specifies the brute force attack mode. The '--hash-type $number' option specifies the type of hash being cracked.
 
+ 
+
+
+
 **Code**: [[hashcat --attack-mode 0 --hash-type $number $hashe]]
+
+
 
 > The arguments of the command are:
 1. $hashes_file: The file containing the hashes to be cracked.
@@ -89,3 +103,5 @@ From a business perspective, this technique can be used to test the strength of 
 - [[Dictionary]]
 - [[Hashcat]]
 - [[Hash Cracking]]
+
+

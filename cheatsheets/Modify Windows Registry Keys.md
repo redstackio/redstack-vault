@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Modify Windows Registry Keys
 
+
+
 **Command** ([[Add a registry key / value]]):
 
 ```bash
@@ -16,9 +18,21 @@ reg add \\\ /v """ /t /d #Delete a key/value
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Delete a registry key]]):
 
 ```bash
 reg delete \\\ /v ""
 
 ```
+
+
+
+
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:59.324258+00:00'
 ```bash
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 ```
+
+

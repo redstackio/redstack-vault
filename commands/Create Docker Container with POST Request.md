@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:33:46.886185+00:00'
 ```bash
 $ curl –insecure -X POST -H "Content-Type: application/json" https://tls-opendocker.socket2376/containers/create?name=test -d '{"Image":"alpine", "Cmd":["/usr/bin/tail", "-f", "1234", "/dev/null"], "Binds": [ "/:/mnt" ], "Privileged": true}'
 ```
+
+

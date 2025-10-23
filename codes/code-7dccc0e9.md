@@ -26,3 +26,5 @@ $cred = Get-Credential
 Connect-AzAccount -Credential $cred -Tenant “tenant ID" -ServicePrincipal
 
 ```
+
+

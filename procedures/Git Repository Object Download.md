@@ -29,9 +29,13 @@ The Git Repository Object Download procedure involves using the diggit.py tool t
 
 The Git Repository Object Download procedure involves using the diggit.py tool to download a specific Git object from a remote repository. This technique can be useful for attackers looking to obtain sensitive information such as passwords or other credentials that may be stored in the repository. By cloning the repository and downloading specific objects, attackers can obtain access to sensitive information without having to compromise the entire repository.
 
+ 
+
 ## Requirements
 
 1. Access to a remote Git repository
+
+ 
 
 ## Defense
 
@@ -41,17 +45,29 @@ The Git Repository Object Download procedure involves using the diggit.py tool t
 
 1. Implement monitoring and alerting mechanisms to detect unauthorized access to the repository.
 
+ 
+
 ## Objectives
 
 1. Download specific Git objects from a remote repository
+
+ 
 
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/bl4de/security-tools/]]
 
+
+
 > 
+
+
 
 **Command** ([[Clone bl4de security-tools repository and change directory to diggit]]):
 
@@ -60,11 +76,21 @@ git clone https://github.com/bl4de/security-tools/ && cd security-tools/diggit
 
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[./diggit.py -u remote_git_repo -t temp_folder -o o]]
 
+
+
 > The 'diggit.py' tool is used to download a specific Git object from a remote repository. The '-u' flag specifies the remote path where the .git folder exists, the '-t' flag specifies the path to the local folder with the Git repository and where blob content (files) are saved with their real names, and the '-o' flag specifies the hash of the particular Git object to download. The '-r' flag can be used to recover deleted Git objects.
+
+
 
 **Command** ([[Download Git object]]):
 
@@ -76,6 +102,8 @@ git clone https://github.com/bl4de/security-tools/ && cd security-tools/diggit
 -t is path to local folder with dummy Git repository and where blob content (files) are saved with their real names (cd /path/to/temp/folder && git init)
 -o is a hash of particular Git object to download
 ```
+
+
 
 ## Commands Used
 
@@ -89,3 +117,5 @@ git clone https://github.com/bl4de/security-tools/ && cd security-tools/diggit
 - [[Git]]
 - [[Insecure Source Code Management]]
 - [[Tools]]
+
+

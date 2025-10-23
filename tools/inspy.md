@@ -16,3 +16,9 @@ InSpy is a Python-based LinkedIn enumeration tool with two functionalities: Tech
 ## Description
 
 InSpy is a Python-based LinkedIn enumeration tool with two functionalities: TechSpy and EmpSpy. TechSpy crawls LinkedIn job listings for technologies used by the target company. InSpy attempts to identify technologies by matching job descriptions to keywords from a newline-delimited file.EmpSpy crawls LinkedIn for employees working at the provided company. InSpy searches for employees by title and/or department from a newline-delimited file. InSpy may also create emails for the identified employees if the user specifies an email format.
+
+
+
+
+
+

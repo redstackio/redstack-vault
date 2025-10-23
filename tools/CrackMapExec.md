@@ -27,7 +27,15 @@ CrackMapExec (CME) is a post-exploitation tool that helps automate assessing the
 
 CrackMapExec (CME) is a post-exploitation tool that helps automate assessing the security of Active Directory networks. CME is typically used to brute force valid usernames and passwords using wordlists from services including: SMB/CIFS, HTTP, WinRM, SSH, and MySQL. CME can also be used for Pass-the-Hash attacks, using a password hash instead of the actual password.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_4fc0ee9c-a0b1-4198-9099-1184c8b25805}}
+
+
 
 # Installation
 
@@ -39,7 +47,19 @@ Due to complex dependencies, it is often easiest to use the pre-built binaries f
 
 2. Select an appropriate build from the  "Workflows" and download a single CrackMapExec binary.
 
+
+
 ## Install on Kali
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -66,3 +86,5 @@ Due to complex dependencies, it is often easiest to use the pre-built binaries f
 
 - [[Brute Force]]
 - [[pass the hash]]
+
+

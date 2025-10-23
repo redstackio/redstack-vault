@@ -48,3 +48,5 @@ getting file \Bob\NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TMContainer00
 getting file \Bob\NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000002.regtrans-ms of size 524288 as NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000002.regtrans-ms (51199.5 KiloBytes/sec) (average 28631.6 KiloBytes/sec)
 getting file \Bob\ntuser.ini of size 20 as ntuser.ini (9.8 KiloBytes/sec) (average 27200.5 KiloBytes/sec)
 ```
+
+

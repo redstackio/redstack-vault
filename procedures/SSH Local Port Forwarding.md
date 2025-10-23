@@ -39,6 +39,8 @@ From a technical perspective, SSH Local Port Forwarding works by creating a secu
 
 The business value of SSH Local Port Forwarding is that it allows attackers to gain access to sensitive data and resources that are not publicly accessible. This can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Valid SSH credentials
@@ -46,6 +48,8 @@ The business value of SSH Local Port Forwarding is that it allows attackers to g
 1. Network access to the remote server
 
 1. A tool capable of creating SSH tunnels
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ The business value of SSH Local Port Forwarding is that it allows attackers to g
 
 1. Implement multi-factor authentication for SSH connections
 
+ 
+
 ## Objectives
 
 1. Gain access to internal network resources
@@ -63,11 +69,19 @@ The business value of SSH Local Port Forwarding is that it allows attackers to g
 
 1. Maintain a persistent connection
 
+ 
+
 # Instructions
 
 1. Use this command to create a secure SSH tunnel and forward traffic from a local port to a remote host and port.
 
+ 
+
+
+
 **Code**: [[ssh -L [bindaddr]:[port]:[dsthost]:[dstport] [user]]
+
+
 
 > -L: Specifies that the given port on the local (client) host is to be forwarded to the given host and port on the remote side.
 [bindaddr]: The IP address or hostname of the interface on the client machine to bind the forwarded port to.
@@ -77,11 +91,15 @@ The business value of SSH Local Port Forwarding is that it allows attackers to g
 [user]: The username to use when connecting to the remote machine.
 [host]: The hostname or IP address of the remote machine to connect to.
 
+
+
 **Command** ([[SSH Tunneling Command]]):
 
 ```bash
 ssh -L [bindaddr]:[port]:[dsthost]:[dstport] [user]@[host]
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +125,5 @@ ssh -L [bindaddr]:[port]:[dsthost]:[dstport] [user]@[host]
 - [[Local Port Forwarding]]
 - [[Network Pivoting Techniques]]
 - [[SSH]]
+
+

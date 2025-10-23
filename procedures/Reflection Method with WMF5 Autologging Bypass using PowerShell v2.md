@@ -27,11 +27,15 @@ This procedure leverages Matt Graeber's Reflection method with WMF5 autologging 
 
 From a technical perspective, this procedure first checks for the .Net version 2.0.50727 and then executes PowerShell v2. This allows the attacker to bypass UAC and execute PowerShell v2 with elevated privileges. From a business perspective, this procedure can be used by an attacker to gain access to sensitive information, install malware, or perform other malicious activities on a compromised system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Authentication credentials with administrative privileges
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ From a technical perspective, this procedure first checks for the .Net version 2
 
 1. Monitor and analyze system logs for any suspicious activity, such as the execution of PowerShell v2
 
+ 
+
 ## Objectives
 
 1. Escalate privileges to gain access to sensitive information
@@ -49,15 +55,25 @@ From a technical perspective, this procedure first checks for the .Net version 2
 
 1. Perform other malicious activities on a compromised system
 
+ 
+
 # Instructions
 
 1. This command checks if .Net version 2.0.50727 is installed on the system. If it is installed, it executes PowerShell v2 and runs scripts from the new PowerShell process. If it is not installed, the command will output a message saying that .Net version 2.0.50727 is not found and PowerShell v2 cannot be started.
+
+ 
+
+
 
 **Code**: [[if ($ShowOnly -eq $True)
 {
         Write-Output "I]]
 
+
+
 > The command uses the Get-ChildItem cmdlet to search for the 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' registry key and retrieves the Version property of the subkeys. The Where-Object cmdlet is used to filter out any subkeys that start with the letter 'S'. The Select-Object cmdlet is used to expand the Version property of the remaining subkeys. The resulting versions are stored in the $versions variable. If the $versions variable contains the string '2.0.50727', the command executes PowerShell v2 by using the powershell.exe command with the -version 2 parameter. If the $versions variable does not contain the string '2.0.50727', the command outputs a message saying that PowerShell v2 cannot be started.
+
+
 
 **Command** ([[Check .Net version 2.0.50727 and run PowerShell v2]]):
 
@@ -83,6 +99,8 @@ else
 }
 ```
 
+
+
 ## Commands Used
 
 - [[Check .Net version 2.0.50727 and run PowerShell v2]]
@@ -91,3 +109,5 @@ else
 
 - [[Using Matt Graebers Reflection method with WMF5 autologging bypass]]
 - [[Using PowerShell version 2]]
+
+

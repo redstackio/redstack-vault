@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:54.932661+00:00'
 ```java
 secretsdump.py -system /root/SYSTEM -ntds /root/ntds.dit LOCAL
 ```
+
+

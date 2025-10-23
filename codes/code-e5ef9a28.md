@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:38.975346+00:00'
 ```ps1
 Get-SQLQuery -Instance "<DBSERVERNAME\DBInstance>" -Query 'select TOP 5 * from <DatabaseName>.dbo.<TableName>'
 ```
+
+

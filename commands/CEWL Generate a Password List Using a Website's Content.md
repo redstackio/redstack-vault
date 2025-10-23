@@ -23,3 +23,5 @@ cewl $_TARGET_IP -d $_DEPTH -m $_MAX_SIZE -w $_WORDLIST
 root@kali:~# cewl -d 2 -m 5 http://10.10.10.10 -w  words.txt
 CeWL 5.4.3 (Arkanoid) Robin Wood (robin@digi.ninja) (https://digi.ninja/)
 ```
+
+

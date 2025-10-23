@@ -26,6 +26,8 @@ In technical terms, the AMSI session and context are used by applications to com
 
 The business value of this technique is that it allows attackers to bypass security measures and execute their code without being detected, potentially leading to data theft, system compromise, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to the system
@@ -33,6 +35,8 @@ The business value of this technique is that it allows attackers to bypass secur
 1. Privileges to disable AMSI
 
 1. Ability to execute commands on the system
+
+ 
 
 ## Defense
 
@@ -42,20 +46,32 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. Implement least privilege access to limit the ability to disable AMSI
 
+ 
+
 ## Objectives
 
 1. Disable AMSI to bypass antimalware detection
 
 1. Execute malicious code without being detected
 
+ 
+
 # Instructions
 
 1. This command disables AMSI (Antimalware Scan Interface) session and context by allocating a block of memory and setting the amsiSession and amsiContext fields to null. This can be useful in avoiding detection by antivirus software that relies on AMSI to scan PowerShell code.
 
+ 
+
+
+
 **Code**: [[$mem = [System.Runtime.InteropServices.Marshal]::A]]
+
+
 
 > This command has no arguments.
 
 ## Tags
 
 - [[Forcing an error]]
+
+

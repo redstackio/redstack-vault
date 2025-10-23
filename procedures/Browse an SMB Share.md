@@ -32,15 +32,25 @@ Use smbclient to connect to an SMB share and browse with an interactive shell.
 
 Use smbclient to connect to an SMB share and browse with an interactive shell.
 
+
+
 # Instructions
 
 If attempting to connected without a username and password (a NULL session), omit the "-U" argument and the username and password values.
+
+
+
+
 
 **Command** ([[smbclient Connect to an SMB Share (Autenticated)]]):
 
 ```bash
 smbclient -U $_USERNAME%$_PASSWORD //$_TARGET_IP/$_SHARE_NAME
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ smbclient -U $_USERNAME%$_PASSWORD //$_TARGET_IP/$_SHARE_NAME
 
 - [[Network]]
 - [[Service Attacks]]
+
+

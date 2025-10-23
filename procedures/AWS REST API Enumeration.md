@@ -34,6 +34,8 @@ To perform this technique, the attacker can use various tools or scripts to quer
 
 The business value of this technique is to identify potential security gaps in the AWS environment and take appropriate measures to secure the environment.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS environment
@@ -41,6 +43,8 @@ The business value of this technique is to identify potential security gaps in t
 1. API keys or credentials with appropriate permissions
 
 1. Tools or scripts for querying the AWS environment
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is to identify potential security gaps in t
 
 1. Monitor and analyze the logs for any suspicious activity related to API access
 
+ 
+
 ## Objectives
 
 1. Discover and list the available REST APIs in an AWS environment
@@ -58,19 +64,31 @@ The business value of this technique is to identify potential security gaps in t
 
 1. Gather information for further attacks
 
+ 
+
 # Instructions
 
 1. To list all the REST APIs in your AWS account, run the following command:
 
+ 
+
+
+
 **Code**: [[aws apigateway get-rest-apis]]
 
+
+
 > This command retrieves a list of all the REST APIs in your AWS account. You can use this command to get information about the APIs, such as their IDs, names, and descriptions. This command does not require any arguments.
+
+
 
 **Command** ([[Get all REST APIs]]):
 
 ```bash
 aws apigateway get-rest-apis
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ aws apigateway get-rest-apis
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing Rest API'S]]
+
+

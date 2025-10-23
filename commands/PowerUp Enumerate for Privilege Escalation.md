@@ -24,9 +24,12 @@ C:\Temp>SharpUp.exe audit
 
 === SharpUp: Running Privilege Escalation Checks ===
 
+
 === Modifiable Services ===
 
 Name             : UsoSVC
 DisplayName      : UsoSVC
 ...
 ```
+
+

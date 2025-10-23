@@ -28,11 +28,55 @@ Local file inclusion attacks can be performed using the parameters that accept f
 
 Local file inclusion attacks can be performed using the parameters that accept file names/path as input. Local file from the server is included in the web response. The payload contains ../../../ pattern which makes the application to jump to previous directories.
 
+
+
 # Instructions
 
 1. Pass the file path that should be loaded in the response through page parameter
 
+
+
+
+
+
+
+![d80b2925-79ef-49a4-ad4b-44f8fd34c3cb.jpg](_assets/images/Mash/d80b2925-79ef-49a4-ad4b-44f8fd34c3cb.jpg)
+
+
+
+
+
+
+
+
+
 2. The response is loading the *passwd *file from /etc directory
+
+
+
+
+
+
+
+
+
+
+
+![7f5f2f93-2713-4b91-97c2-94ed5b4e211a.jpg](_assets/images/Mash/7f5f2f93-2713-4b91-97c2-94ed5b4e211a.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -43,3 +87,5 @@ Local file inclusion attacks can be performed using the parameters that accept f
 - [[LFI]]
 - [[Local File Inclusion]]
 - [[Web Applications]]
+
+

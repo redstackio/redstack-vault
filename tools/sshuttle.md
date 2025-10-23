@@ -33,13 +33,33 @@ sshuttle creates a VPN connection between a local system and a remote ssh server
 
 Note: If when trying to create a tunnel to a remote ssh server, sshuttle fails with "error code 255", try appending "-x $_TARGET_IP" to the command, where $_TARGET_IP is the same IP/hostname as the target. Specifically excluding the target server seems to resolve the issue.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_80bffd2d-b8f4-4dd2-92e6-c89a528aaae1}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
+
+
+
+
 ## Install with Python 3
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +74,5 @@ Note: If when trying to create a tunnel to a remote ssh server, sshuttle fails w
 - [[data encryption]]
 - [[Pivot]]
 - [[tunnel]]
+
+

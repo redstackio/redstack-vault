@@ -35,6 +35,8 @@ This procedure involves using PsExec, a Sysinternal tool, to execute a command a
 
 This procedure involves using PsExec, a Sysinternal tool, to execute a command as a different user and switch to the system account. This can be useful for lateral movement within a network or for privilege escalation. PsExec is a legitimate tool used by system administrators, but can also be used maliciously by attackers who have obtained valid credentials. By using PsExec with different user credentials, an attacker can execute commands on a remote system with elevated privileges, allowing them to move laterally within the network or escalate privileges. The business value of this procedure is that it allows an attacker to gain access to sensitive information and systems, potentially leading to data theft or disruption of operations.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for a user with administrative privileges on the target system
@@ -42,6 +44,8 @@ This procedure involves using PsExec, a Sysinternal tool, to execute a command a
 1. Access to the network where the target system is located
 
 1. PsExec tool
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ This procedure involves using PsExec, a Sysinternal tool, to execute a command a
 
 1. Restrict access to sensitive systems and information to limit the impact of a potential attack
 
+ 
+
 ## Objectives
 
 1. Execute a command as a different user with elevated privileges
@@ -58,6 +64,8 @@ This procedure involves using PsExec, a Sysinternal tool, to execute a command a
 1. Move laterally within a network
 
 1. Escalate privileges
+
+ 
 
 # Instructions
 
@@ -67,15 +75,25 @@ PsExec.exe \\server -u domain\username -p password cmd.exe -s
 
 Replace 'server', 'domain', 'username', and 'password' with the appropriate values for your environment. The '-s' argument switches the user context to the local system account.
 
+ 
+
+
+
 **Code**: [[PS C:\> PsExec.exe  \\srv01.domain.local -u DOMAIN]]
 
+
+
 > This command allows you to execute a command on a remote server as a different user and switch to the system account. This can be useful for performing administrative tasks that require elevated privileges. The PsExec.exe tool is part of the Sysinternals suite of tools and can be downloaded from Microsoft's website. The '-u' argument specifies the user account to use for the remote connection, '-p' specifies the password for the user account, and 'cmd.exe' specifies the command to execute on the remote server. The '-s' argument switches the user context to the local system account, which can be useful for performing tasks that require elevated privileges.
+
+
 
 **Command** ([[Switch to NT Authority/System on srv01.domain.local]]):
 
 ```bash
 PsExec.exe \\srv01.domain.local -u DOMAIN\username -p password cmd.exe -s
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +119,5 @@ PsExec.exe \\srv01.domain.local -u DOMAIN\username -p password cmd.exe -s
 - [[Other methods]]
 - [[PsExec - Sysinternal]]
 - [[Windows - Using credentials]]
+
+

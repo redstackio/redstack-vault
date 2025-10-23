@@ -24,9 +24,13 @@ JWKS Key Injection is a technique used by attackers to sign a JWT token with an 
 
 JWKS Key Injection is a technique used by attackers to sign a JWT token with an attacker-controlled Public Key. By injecting a URL pointing to a malicious JWKS file in the "jku" header, the attacker can trick the service into verifying the token with the malicious Public Key. This technique can be used to bypass authentication and authorization controls, allowing an attacker to impersonate a legitimate user and gain access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target service
+
+ 
 
 ## Defense
 
@@ -36,6 +40,8 @@ JWKS Key Injection is a technique used by attackers to sign a JWT token with an 
 
 1. Use a secure method to store and retrieve the Public Key, such as a Hardware Security Module (HSM)
 
+ 
+
 ## Objectives
 
 1. Sign a JWT token with an attacker-controlled Public Key
@@ -44,14 +50,22 @@ JWKS Key Injection is a technique used by attackers to sign a JWT token with an 
 
 1. Impersonate a legitimate user
 
+ 
+
 # Instructions
 
 1. 
+
+ 
+
+
 
 **Code**: [[{
     "keys": [
         {
             "kid": "beae]]
+
+
 
 > The "jku" header value points to the URL of the JWKS file. By replacing the "jku" URL with an attacker-controlled URL containing the Public Key, an attacker can use the paired Private Key to sign the token and let the service retrieve the malicious Public Key and verify the token.
 
@@ -60,3 +74,5 @@ JWKS Key Injection is a technique used by attackers to sign a JWT token with an 
 - [[JWKS - jku header injection]]
 - [[JWT Claims]]
 - [[JWT - JSON Web Token]]
+
+

@@ -32,11 +32,15 @@ A CSRF attack with a semicolon payload is a type of attack where an attacker can
 
 A CSRF attack with a semicolon payload is a type of attack where an attacker can trick a user into performing an action on a website without their knowledge or consent. This attack is possible because the website does not properly validate the referer header. The attacker can then use a semicolon payload to bypass the referer header validation and perform actions on the user's behalf. This attack can be used to steal sensitive information or perform unauthorized actions on the user's behalf. The business value of this attack lies in the ability to bypass security controls and gain unauthorized access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to a website with CSRF vulnerability
 
 1. Ability to send a malicious link to the victim
+
+ 
 
 ## Defense
 
@@ -46,17 +50,25 @@ A CSRF attack with a semicolon payload is a type of attack where an attacker can
 
 1. Educate users on the risks of clicking on links from unknown sources
 
+ 
+
 ## Objectives
 
 1. Perform unauthorized actions on the user's behalf
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. Send a malicious link to the victim
 
+ 
+
 The attacker sends a link to the victim that contains a semicolon payload. When the victim clicks on the link, the website is opened with the semicolon payload in the referer header. The website does not properly validate the referer header and performs the action on the user's behalf.
+
+
 
 **Command** ([[Open CSRF page]]):
 
@@ -64,11 +76,17 @@ The attacker sends a link to the victim that contains a semicolon payload. When 
 Open https://attacker.com/csrf.html;trusted.domain.com
 ```
 
+
+
+
+
 **Command** ([[Set Referer header]]):
 
 ```bash
 Referer: https://attacker.com/csrf.html;trusted.domain.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ Referer: https://attacker.com/csrf.html;trusted.domain.com
 - [[Bypass referer header validation]]
 - [[Cross-Site Request Forgery]]
 - [[With semicolon(`;`) payload]]
+
+

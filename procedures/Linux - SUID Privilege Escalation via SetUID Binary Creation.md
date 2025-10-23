@@ -29,11 +29,15 @@ This procedure involves creating a SUID binary to escalate privileges on a Linux
 
 This procedure involves creating a SUID binary to escalate privileges on a Linux system. SUID binaries are executable files that run with the permissions of the file owner, rather than the permissions of the user who is executing the file. By creating a SUID binary, an attacker can execute commands with elevated privileges, potentially allowing them to access sensitive data or execute other malicious activities. To create a SUID binary, an attacker must first identify a vulnerable binary that can be exploited, then modify the binary's permissions using the 'chmod' command. This procedure can be used in combination with other privilege escalation techniques to gain access to sensitive data or execute other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable binary that can be exploited
 
 1. Ability to modify binary permissions using the 'chmod' command
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ This procedure involves creating a SUID binary to escalate privileges on a Linux
 
 1. Use intrusion detection systems to monitor for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
 
 1. Access sensitive data or execute other malicious activities
 
+ 
+
 # Instructions
 
 1. To create a setuid binary, follow these steps:
 
+ 
+
+
+
 **Code**: [[print 'int main(void){\nsetresuid(0, 0, 0);\nsyste]]
+
+
 
 > 1. Create a new file named suid.c in the /tmp directory and write the following code in it:
 
@@ -92,3 +106,5 @@ After following these steps, you will have a new setuid binary file named suid i
 - [[Create a SUID binary]]
 - [[Linux - Privilege Escalation]]
 - [[SUID]]
+
+

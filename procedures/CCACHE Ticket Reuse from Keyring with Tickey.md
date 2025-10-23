@@ -37,6 +37,8 @@ CCACHE ticket reuse from keyring is a technique used by attackers to steal Kerbe
 
 Tickey works by extracting CCACHE tickets from the keyring and saving them to a file. These tickets can then be reused with other tools to gain access to systems or services. This technique is particularly effective against older systems that do not have the latest security updates or have weak passwords.
 
+ 
+
 ## Requirements
 
 1. Access to a target system
@@ -44,6 +46,8 @@ Tickey works by extracting CCACHE tickets from the keyring and saving them to a 
 1. Administrator or system-level privileges
 
 1. Tickey tool
+
+ 
 
 ## Defense
 
@@ -53,11 +57,15 @@ Tickey works by extracting CCACHE tickets from the keyring and saving them to a 
 
 1. Monitor for suspicious activity such as ticket reuse
 
+ 
+
 ## Objectives
 
 1. Extract Kerberos tickets from memory
 
 1. Reuse Kerberos tickets for privilege escalation or lateral movement
+
+ 
 
 # Instructions
 
@@ -67,10 +75,18 @@ Tickey works by extracting CCACHE tickets from the keyring and saving them to a 
 3. Build the tool using 'make CONF=Release'
 4. Run the tool using '/tmp/tickey -i'
 
+ 
+
+
+
 **Code**: [[# Configuration and build
 git clone https://github]]
 
+
+
 > The tool will try to extract the Kerberos tickets from the Linux kernel keys. If root privileges are detected, all the tickets will be dumped. The tool will then try to inject into the specified user sessions, and the extracted tickets can be found in the respective /tmp/__krb_<uid>.ccache files.
+
+
 
 **Command** ([[Clone tickey repository]]):
 
@@ -78,11 +94,19 @@ git clone https://github]]
 git clone https://github.com/TarlogicSecurity/tickey
 ```
 
+
+
+
+
 **Command** ([[Change directory to tickey]]):
 
 ```bash
 cd tickey/tickey
 ```
+
+
+
+
 
 **Command** ([[Make release build]]):
 
@@ -90,11 +114,17 @@ cd tickey/tickey
 make CONF=Release
 ```
 
+
+
+
+
 **Command** ([[Inject tickets]]):
 
 ```bash
 /tmp/tickey -i
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -122,3 +152,5 @@ make CONF=Release
 
 - [[Active Directory Attacks]]
 - [[CCACHE ticket reuse from keyring]]
+
+

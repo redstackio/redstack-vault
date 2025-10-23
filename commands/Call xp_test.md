@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:30.722000+00:00'
 ```bash
 Get-SQLQuery -UserName sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Query "EXEC xp_test"
 ```
+
+

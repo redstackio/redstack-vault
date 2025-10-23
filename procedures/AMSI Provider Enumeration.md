@@ -33,6 +33,8 @@ Technical Explanation: AMSI is a Windows feature that allows applications to int
 
 Business Value: This procedure can be used by attackers to evade detection and compromise a target system. By identifying the specific AMSI providers installed, an attacker can determine which AMSI bypass techniques will be successful, allowing them to avoid detection by security software. Successful compromise of a target system can result in data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -40,6 +42,8 @@ Business Value: This procedure can be used by attackers to evade detection and c
 1. Privileged access to execute commands
 
 1. PowerShell or other scripting tools
+
+ 
 
 ## Defense
 
@@ -49,19 +53,31 @@ Business Value: This procedure can be used by attackers to evade detection and c
 
 1. Monitor for suspicious activity, such as attempts to modify or disable AMSI providers
 
+ 
+
 ## Objectives
 
 1. Identify the AMSI providers installed on a target system
 
 1. Determine which AMSI bypass techniques are likely to be successful
 
+ 
+
 # Instructions
 
 1. Use this command to retrieve information about software from a CLSID.
 
+ 
+
+
+
 **Code**: [[Get-ChildItem -Path 'HKLM:\SOFTWARE\Classes\CLSID\]]
 
+
+
 > The CLSID (Class ID) is a unique identifier assigned by Microsoft to identify a software component. This command retrieves information about a software component from its CLSID. The command uses the Get-ChildItem cmdlet to retrieve information from the registry path 'HKLM:\SOFTWARE\Classes\CLSID\{CLSID}'. The returned information includes the name and property of the software component. This command can be useful in troubleshooting issues related to software components.
+
+
 
 **Command** ([[Retrieve registry information for CLSID {2781761E-28E0-4109-99FE-B9D127C57AFE}]]):
 
@@ -72,6 +88,8 @@ Name                           Property
 Hosts                          (default) : Scanned Hosting Applications
 InprocServer32                 (default) : "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2210.4-0\MpOav.dll"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ InprocServer32                 (default) : "C:\ProgramData\Microsoft\Windows Def
 
 - [[AMSI Bypass]]
 - [[List AMSI Providers]]
+
+

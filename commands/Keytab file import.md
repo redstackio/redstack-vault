@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:03.595317+00:00'
 ```bash
 $ python3 keytabextract.py krb5.keytab
 ```
+
+

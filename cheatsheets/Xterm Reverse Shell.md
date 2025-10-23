@@ -15,12 +15,32 @@ updated_at: '2023-05-30T20:11:33.758051+00:00'
 
 This xterm attack is staged in two parts, a listener is setup on the attacker machine, then xterm is run on the target system to reverse back into the xhost.
 
+
+
 Setup the listener on the attacker machine using the attacker ip address, then connect to it from the target system.
+
+
 
 ## Payload
 
+
+
 **Command**: [[Xterm Reverse Connection]]
+
+
+
+
+
+
 
 ## Listener
 
+
+
 **Command**: [[xhost Xnest reverse xterm listener]]
+
+
+
+
+
+

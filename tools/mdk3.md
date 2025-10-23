@@ -16,3 +16,9 @@ MDK is a proof-of-concept tool to exploit common IEEE 802.11 protocol weaknesses
 ## Description
 
 MDK is a proof-of-concept tool to exploit common IEEE 802.11 protocol weaknesses. IMPORTANT: It is your responsibility to make sure you have permission from the network owner before running MDK against it.mdk3 Homepage | Kali mdk3 Repo
+
+
+
+
+
+

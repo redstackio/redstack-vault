@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:55.586809+00:00'
 ```bash
 1) Create a malicious web page with a hidden form that performs the desired action on the target web application.
 ```
+
+

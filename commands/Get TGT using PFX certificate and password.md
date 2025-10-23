@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:17.485526+00:00'
 ```bash
 gettgtpkinit.py -cert-pfx "PATH_TO_PFX_CERT" -pfx-pass "CERT_PASSWORD" "FQDN_DOMAIN/TARGET_SAMNAME" "TGT_CCACHE_FILE"
 ```
+
+

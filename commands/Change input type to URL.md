@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:06.140012+00:00'
 ```bash
 document.querySelector('input[type=file]').type = 'url';
 ```
+
+

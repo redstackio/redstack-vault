@@ -29,3 +29,5 @@ root@kali:~# ./chisel server -p 9001 --reverse
 2019/10/01 19:56:38 server: Fingerprint 85:91:1f:ed:c1:0b:f4:b5:01:e1:56:8d:d1:fb:d6:71
 2019/10/01 19:56:38 server: Listening on 0.0.0.0:9001...
 ```
+
+

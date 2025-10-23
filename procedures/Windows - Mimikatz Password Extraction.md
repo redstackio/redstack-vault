@@ -34,6 +34,8 @@ From a technical standpoint, Mimikatz works by patching certain Windows system f
 
 The business value of Mimikatz password extraction is that it allows an attacker to gain access to sensitive data and systems within a network. By extracting passwords for high-privilege accounts, an attacker can move laterally within a network and gain access to additional systems and data.
 
+ 
+
 ## Requirements
 
 1. Local or remote access to a Windows system
@@ -41,6 +43,8 @@ The business value of Mimikatz password extraction is that it allows an attacker
 1. Administrator-level privileges on the target system
 
 1. Mimikatz tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of Mimikatz password extraction is that it allows an attacker
 
 1. Use multi-factor authentication to reduce the impact of password theft
 
+ 
+
 ## Objectives
 
 1. Extract Windows logon passwords from memory
@@ -57,6 +63,8 @@ The business value of Mimikatz password extraction is that it allows an attacker
 1. Escalate privileges and move laterally within a network
 
 1. Gain access to sensitive data and systems within a network
+
+ 
 
 # Instructions
 
@@ -66,15 +74,25 @@ The business value of Mimikatz password extraction is that it allows an attacker
 3. Press Enter to execute the command
 4. The extracted passwords will be displayed in the PowerShell prompt
 
+ 
+
+
+
 **Code**: [[PS C:\temp\mimikatz> .\mimikatz "privilege::debug"]]
 
+
+
 > This command uses Mimikatz, a post-exploitation tool, to extract Windows logon passwords from memory. The 'privilege::debug' command enables debugging privileges for Mimikatz, which is required to extract certain types of passwords. The 'sekurlsa::logonpasswords' command instructs Mimikatz to extract logon passwords from memory. The 'exit' command exits Mimikatz after the passwords have been extracted.
+
+
 
 **Command** ([[Extract logon passwords using Mimikatz]]):
 
 ```powershell
 PS C:\temp\mimikatz> .\mimikatz "privilege::debug" "sekurlsa::logonpasswords" exit
 ```
+
+
 
 2. To extract logon passwords using Mimikatz, follow these steps:
 1. Open Mimikatz console by navigating to the folder where Mimikatz is located and running the command '.\mimikatz'.
@@ -83,10 +101,18 @@ PS C:\temp\mimikatz> .\mimikatz "privilege::debug" "sekurlsa::logonpasswords" ex
 4. Extract logon passwords by running the command 'sekurlsa::logonpasswords'.
 5. Extract passwords stored in WDigest by running the command 'sekurlsa::wdigest'.
 
+ 
+
+
+
 **Code**: [[PS C:\temp\mimikatz> .\mimikatz
 mimikatz # privile]]
 
+
+
 > Mimikatz is a popular tool used for extracting various types of credentials and other sensitive information from Windows systems. The commands listed above are used to extract logon passwords and passwords stored in WDigest from the system. Once the tool is run, it will display the extracted passwords in the console output. It is important to note that the use of Mimikatz may be detected by antivirus software and other security tools, and its use may be a violation of organizational security policies.
+
+
 
 **Command** ([[Extract Logon Passwords and Wdigest]]):
 
@@ -97,6 +123,8 @@ log
 sekurlsa::logonpasswords
 sekurlsa::wdigest
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -117,3 +145,5 @@ sekurlsa::wdigest
 
 - [[Execute commands]]
 - [[Windows - Mimikatz]]
+
+

@@ -32,11 +32,15 @@ To accomplish this attack, the attacker would need to inject code into a templat
 
 The business value of this attack is that it allows an attacker to gain access to sensitive information about the system, which can be used for further attacks. It also demonstrates a vulnerability in the application that can be used to compromise the system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Ruby application
 
 1. Knowledge of the template syntax used by the application
+
+ 
 
 ## Defense
 
@@ -46,13 +50,19 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Regularly monitor and review server logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. List all files and directories in the root directory of the target system
 
+ 
+
 # Instructions
 
 1. To list all files and directories in the root directory, use the following command:
+
+ 
 
 > The command used to list all files and directories in the root directory is 'Dir.entries('/')'. This command uses the 'Dir' class in Ruby to access the root directory ('/') and the 'entries' method to list all files and directories within it. The output is an array of strings, where each string represents a file or directory name. The '.' and '..' entries represent the current and parent directory respectively.
 
@@ -71,3 +81,5 @@ The business value of this attack is that it allows an attacker to gain access t
 - [[Ruby]]
 - [[Ruby - List files and directories]]
 - [[Server Side Template Injection]]
+
+

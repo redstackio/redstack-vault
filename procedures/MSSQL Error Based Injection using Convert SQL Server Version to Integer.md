@@ -36,6 +36,8 @@ Technical Explanation: The Convert SQL Server Version to Integer command convert
 
 Business Value: An attacker can use this technique to extract sensitive information from a database server, such as usernames, passwords, and other confidential data. This can lead to data theft, financial loss, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable parameter in the SQL Server
@@ -43,6 +45,8 @@ Business Value: An attacker can use this technique to extract sensitive informat
 1. Knowledge of SQL Injection techniques
 
 1. The Convert SQL Server Version to Integer command
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: An attacker can use this technique to extract sensitive informat
 
 1. Regularly update and patch the SQL Server to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Extract the version of the SQL Server running on the target system
@@ -60,14 +66,24 @@ Business Value: An attacker can use this technique to extract sensitive informat
 
 1. Plan further attacks based on the version of the SQL Server
 
+ 
+
 # Instructions
 
 1. To convert the SQL Server version to an integer, use the following commands:
 
+ 
+
+
+
 **Code**: [[For integer inputs : convert(int,@@version)
 For in]]
 
+
+
 > The 'convert' and 'cast' functions are used to convert the SQL Server version to an integer. The 'convert' function takes the SQL Server version as an argument and converts it to an integer. The 'cast' function also takes the SQL Server version as an argument and converts it to an integer. Both functions return the same result. If the input is a string, you need to concatenate it with the conversion function. 
+
+
 
 **Command** ([[Convert @@version to integer]]):
 
@@ -75,11 +91,19 @@ For in]]
 convert(int,@@version)
 ```
 
+
+
+
+
 **Command** ([[Cast @@version to integer]]):
 
 ```bash
 cast((SELECT @@version) as int)
 ```
+
+
+
+
 
 **Command** ([[Convert @@version to string]]):
 
@@ -87,11 +111,17 @@ cast((SELECT @@version) as int)
 ' + convert(int,@@version) + '
 ```
 
+
+
+
+
 **Command** ([[Cast @@version to string]]):
 
 ```bash
 ' + cast((SELECT @@version) as int) + '
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -114,3 +144,5 @@ cast((SELECT @@version) as int)
 
 - [[MSSQL Error based]]
 - [[MSSQL Injection]]
+
+

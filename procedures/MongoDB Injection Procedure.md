@@ -27,6 +27,8 @@ From a technical perspective, MongoDB Injection is similar to SQL Injection atta
 
 The business value of MongoDB Injection is that it can be used to gain unauthorized access to sensitive data and compromise the confidentiality, integrity, and availability of the data. This can lead to financial losses, reputational damage, and legal liabilities for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target MongoDB database
@@ -35,6 +37,8 @@ The business value of MongoDB Injection is that it can be used to gain unauthori
 
 1. Tools for crafting and executing MongoDB Injection payloads
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent injection attacks
@@ -42,6 +46,8 @@ The business value of MongoDB Injection is that it can be used to gain unauthori
 1. Use parameterized queries to prevent injection attacks
 
 1. Implement access controls and authentication mechanisms to restrict access to the database
+
+ 
 
 ## Objectives
 
@@ -53,13 +59,21 @@ The business value of MongoDB Injection is that it can be used to gain unauthori
 
 1. To take control of the database server
 
+ 
+
 # Instructions
 
 1. Use this command to exploit MongoDB injection vulnerability by injecting malicious code into a MongoDB query.
 
+ 
+
+
+
 **Code**: [[true, $where: '1 == 1'
 , $where: '1 == 1'
 $where: ]]
+
+
 
 > The command contains a series of payloads that can be injected into a MongoDB query to exploit a vulnerability. The payloads include $where, $or, $comment, $ne, $gt, and mapReduce functions. The injected code can be used to execute arbitrary commands or retrieve sensitive information from the database. It is important to note that this command should only be used for ethical hacking and with the owner's permission.
 
@@ -67,3 +81,5 @@ $where: ]]
 
 - [[MongoDB Payloads]]
 - [[NoSQL Injection]]
+
+

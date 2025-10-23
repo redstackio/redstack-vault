@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:36:07.585270+00:00'
 ```bash
 PS > .\inveighzero.exe -FileOutput Y -NBNS Y -mDNS Y -Proxy Y -MachineAccounts Y -DHCPv6 Y -LLMNRv6 Y [-Elevated N]
 ```
+
+

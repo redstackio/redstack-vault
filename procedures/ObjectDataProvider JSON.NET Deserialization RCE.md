@@ -33,6 +33,8 @@ ObjectDataProvider is a class in the .NET framework that allows developers to cr
 
 ObjectDataProvider is a class in the .NET framework that allows developers to create objects that can be used as a binding source for a variety of UI elements. JSON.NET is a popular third-party library for serializing and deserializing JSON data in .NET applications. This technique abuses the deserialization functionality of JSON.NET to execute arbitrary code on a target system. An attacker can craft a malicious JSON payload that exploits the ObjectDataProvider class to execute a command on the target system. Successful exploitation of this vulnerability can lead to remote code execution on the target system, allowing an attacker to take complete control of the system.
 
+ 
+
 ## Requirements
 
 1. Access to a system running a vulnerable version of JSON.NET
@@ -40,6 +42,8 @@ ObjectDataProvider is a class in the .NET framework that allows developers to cr
 1. Ability to craft a malicious JSON payload
 
 1. Ability to deliver the payload to the target system
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ ObjectDataProvider is a class in the .NET framework that allows developers to cr
 
 1. Consider using alternative serialization libraries that are not vulnerable to this attack
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the target system
@@ -57,11 +63,19 @@ ObjectDataProvider is a class in the .NET framework that allows developers to cr
 
 1. Maintain persistence on the target system
 
+ 
+
 # Instructions
 
 1. Execute the following command:
 
+ 
+
+
+
 **Code**: [[.\ysoserial.exe -f Json.Net -g ObjectDataProvider ]]
+
+
 
 > This command uses the ysoserial tool to generate a malicious JSON payload that exploits the ObjectDataProvider class in JSON.NET to execute the calc.exe process on the target system. The payload is then delivered to the target system where it is deserialized by the vulnerable JSON.NET library, resulting in the execution of the calc.exe process.
 
@@ -87,3 +101,5 @@ ObjectDataProvider is a class in the .NET framework that allows developers to cr
 - [[Formatters]]
 - [[JSON.NET]]
 - [[.NET Serialization]]
+
+

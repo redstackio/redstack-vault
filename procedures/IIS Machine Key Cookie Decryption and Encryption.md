@@ -35,11 +35,15 @@ This procedure allows an attacker to decrypt and encrypt cookie data using the I
 
 This procedure allows an attacker to decrypt and encrypt cookie data using the IIS machine key. By decrypting the cookie, the attacker can view the contents of the cookie, and by encrypting it, they can modify the contents. This can be used to gain unauthorized access to a web application, escalate privileges, or conduct other malicious activities. The IIS machine key is used to encrypt and decrypt sensitive data in ASP.NET applications, and it is often stored in a configuration file on the server.
 
+ 
+
 ## Requirements
 
 1. Access to the IIS machine key configuration file
 
 1. The AspDotNetWrapper.exe tool
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This procedure allows an attacker to decrypt and encrypt cookie data using the I
 
 1. Implement secure cookie handling practices, such as HttpOnly and Secure flags, to prevent cookie theft
 
+ 
+
 ## Objectives
 
 1. Decrypt and view the contents of a cookie
@@ -57,14 +63,24 @@ This procedure allows an attacker to decrypt and encrypt cookie data using the I
 
 1. Escalate privileges or conduct other malicious activities
 
+ 
+
 # Instructions
 
 1. The AspDotNetWrapper.exe tool is used to decrypt and encrypt cookies. To decrypt a cookie, use the --decrypt flag and provide the path to the machine key configuration file with the --keypath flag. The --cookie flag is used to specify the cookie to decrypt. The --purpose flag should be set to owin.cookie, and the --valalgo and --decalgo flags should be set to hmacsha512 and aes, respectively. To encrypt a modified cookie, edit the Decrypted.txt file and use the --decryptDataFilePath flag with the path to the edited file.
 
+ 
+
+
+
 **Code**: [[# decrypt cookie
 $ AspDotNetWrapper.exe --keypath ]]
 
+
+
 > The AspDotNetWrapper.exe tool is used to decrypt and encrypt cookies using the IIS machine key. The --keypath flag is used to specify the path to the machine key configuration file. The --cookie flag is used to specify the cookie to decrypt. The --purpose flag should be set to owin.cookie, and the --valalgo and --decalgo flags should be set to hmacsha512 and aes, respectively. To encrypt a modified cookie, edit the Decrypted.txt file and use the --decryptDataFilePath flag with the path to the edited file.
+
+
 
 **Command** ([[Decrypt cookie using AspDotNetWrapper.exe]]):
 
@@ -72,11 +88,17 @@ $ AspDotNetWrapper.exe --keypath ]]
 $ AspDotNetWrapper.exe --keypath C:\MachineKey.txt --cookie XXXXXXX_XXXXX-XXXXX --decrypt --purpose=owin.cookie --valalgo=hmacsha512 --decalgo=aes
 ```
 
+
+
+
+
 **Command** ([[Edit Decrypted.txt and encrypt cookie using AspDotNetWrapper.exe]]):
 
 ```bash
 $ AspDotNetWrapper.exe --decryptDataFilePath C:\DecryptedText.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +126,5 @@ $ AspDotNetWrapper.exe --decryptDataFilePath C:\DecryptedText.txt
 - [[Edit cookies with the machine key]]
 - [[Exploit]]
 - [[IIS Machine Keys]]
+
+

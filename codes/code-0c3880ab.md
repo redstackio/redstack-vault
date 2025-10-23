@@ -31,3 +31,5 @@ cytool.exe runtime disable
 # Disables event collection
 cytool.exe event_collection disable
 ```
+
+

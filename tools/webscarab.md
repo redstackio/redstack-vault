@@ -16,3 +16,9 @@ WebScarab is designed to be a tool for anyone who needs to expose the workings o
 ## Description
 
 WebScarab is designed to be a tool for anyone who needs to expose the workings of an HTTP(S) based application, whether to allow the developer to debug otherwise difficult problems, or to allow a security specialist to identify vulnerabilities in the way that the application has been designed or implemented.WebScarab Homepage | Kali WebScarab Repo
+
+
+
+
+
+

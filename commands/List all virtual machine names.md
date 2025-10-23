@@ -14,3 +14,5 @@ updated_at: '2023-05-25T04:48:49.579271+00:00'
 ```bash
 az vm list --query "[].[name]" -o table
 ```
+
+

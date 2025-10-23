@@ -18,3 +18,5 @@ PS> $idToImpersonate.Impersonate()
 PS> [System.Security.Principal.WindowsIdentity]::GetCurrent() | select name
 PS> ls \\dc01.offense.local\c$
 ```
+
+

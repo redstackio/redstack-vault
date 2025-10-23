@@ -29,6 +29,8 @@ From a technical perspective, this attack is achieved by exploiting the way Dock
 
 From a business perspective, this attack can result in significant data breaches, intellectual property theft, and financial loss. It is essential for organizations to take proactive measures to prevent this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to the Docker container
@@ -36,6 +38,8 @@ From a business perspective, this attack can result in significant data breaches
 1. Knowledge of the kernel module loading process
 
 1. Ability to write and load a malicious kernel module
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ From a business perspective, this attack can result in significant data breaches
 
 1. Implement network segmentation to prevent lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain access to the host machine
@@ -52,6 +58,8 @@ From a business perspective, this attack can result in significant data breaches
 1. Execute arbitrary code on the host machine
 
 1. Potentially gain access to other containers running on the same host
+
+ 
 
 # Instructions
 
@@ -62,9 +70,17 @@ From a business perspective, this attack can result in significant data breaches
 
 The 'hide' file hides the module from the list of loaded kernel modules and the 'protect' file prevents the module from being unloaded.
 
+ 
+
+
+
 **Code**: [[/proc/escape]]
 
+
+
 > The 'cd' command changes the current directory to '/proc/escape'. The 'echo' command writes the value '1' to the 'hide' and 'protect' files respectively. This hides the module from the list of loaded kernel modules and prevents the module from being unloaded.
+
+
 
 **Command** ([[View /proc/escape file]]):
 
@@ -72,9 +88,17 @@ The 'hide' file hides the module from the list of loaded kernel modules and the 
 /proc/escape
 ```
 
+
+
 2. grep -E '<text>' <data>
 
+ 
+
+
+
 **Code**: [[/proc/output]]
+
+
 
 > This command filters the output of the given data file by searching for lines that contain the specified text. The '-E' option enables extended regular expressions. Replace '<text>' with the text to search for and '<data>' with the path to the data file.
 
@@ -86,3 +110,5 @@ The 'hide' file hides the module from the list of loaded kernel modules and the 
 
 - [[Breaking out of Docker via kernel modules loading]]
 - [[Container - Docker Pentest]]
+
+

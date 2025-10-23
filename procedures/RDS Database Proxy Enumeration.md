@@ -34,9 +34,13 @@ The RDS Database Proxy Description command is used to retrieve information about
 
 From a defensive perspective, monitoring for unauthorized access to database proxies can help detect and prevent potential attacks before they can cause damage.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access RDS resources
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ From a defensive perspective, monitoring for unauthorized access to database pro
 
 1. Regularly monitor access logs for suspicious activity and investigate any anomalies
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further attacks
 
 1. Monitor for unauthorized access to database proxies
 
+ 
+
 # Instructions
 
 1. This command is used to describe the details of one or more database proxies in your AWS account.
 
+ 
+
 The 'describe-db-proxies' command provides information about the specified database proxies including the proxy endpoint, engine family, VPC security groups, and the database instances that the proxy connects to. This command takes no arguments and returns a JSON object with details about the specified database proxies. If no database proxy is specified, then details for all proxies in the account are returned.
+
+
 
 **Command** ([[Retrieve information about all RDS database proxies]]):
 
 ```bash
 aws rds describe-db-proxies
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws rds describe-db-proxies
 - [[Enumeration]]
 - [[Listing information about database proxies]]
 - [[RDS - Relational Database Service]]
+
+

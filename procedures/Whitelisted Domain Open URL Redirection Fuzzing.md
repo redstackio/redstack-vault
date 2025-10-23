@@ -31,11 +31,15 @@ From a technical perspective, this technique involves sending requests to the ta
 
 The business value of this technique is that it can help to identify vulnerabilities in web applications before they can be exploited by attackers. By identifying and fixing these vulnerabilities, organizations can improve the security of their web applications and reduce the risk of data breaches or other security incidents.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
 
 1. A list of whitelisted domains to use as payloads
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ The business value of this technique is that it can help to identify vulnerabili
 
 1. Regularly monitor and review logs to detect and respond to any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify whether the target application is vulnerable to open URL redirection attacks
@@ -53,11 +59,19 @@ The business value of this technique is that it can help to identify vulnerabili
 
 1. Provide information to developers and security teams on how to fix any vulnerabilities identified
 
+ 
+
 # Instructions
 
 1. To use this command, replace the value of WHITELISTEDDOMAIN with the specific white listed domain that you want to use in your test case. Then, run the command in your terminal. The command will replace all instances of www.whitelisteddomain.tld in the Open-Redirect-payloads.txt file with the specified white listed domain. It will also append the specified white listed domain to the end of the Open-Redirect-payloads-burp file.
 
+ 
+
+
+
 **Code**: [[WHITELISTEDDOMAIN="www.test.com" && sed 's/www.whi]]
+
+
 
 > This command is useful for testing open redirect vulnerabilities in web applications. By replacing the default domain with a specific white listed domain, you can test if the application is vulnerable to open redirects to untrusted domains. The command uses sed to replace the default domain in the Open-Redirect-payloads.txt file with the specified white listed domain. It also uses awk to append the specified white listed domain to the end of the Open-Redirect-payloads-burp file. This allows you to easily test for open redirect vulnerabilities using Burp Suite.
 
@@ -75,3 +89,5 @@ The business value of this technique is that it can help to identify vulnerabili
 
 - [[Fuzzing]]
 - [[Open URL Redirection]]
+
+

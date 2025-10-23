@@ -26,6 +26,8 @@ mkpasswd generates hashed passwords from plain text, using popular formats found
 
 mkpasswd generates hashed passwords from plain text, using popular formats found in /etc/passwd and /etc/shadow files.
 
+
+
 Available methods (-m <ALGO>):
 
 - sha512crypt - SHA-512
@@ -36,11 +38,27 @@ Available methods (-m <ALGO>):
 
 - descrypt -  standard 56 bit DES-based crypt(3)
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_5008b449-9ce9-44c0-ba79-6e3644d19a44}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -50,3 +68,5 @@ Available methods (-m <ALGO>):
 
 - [[Cryptography]]
 - [[Operating Systems]]
+
+

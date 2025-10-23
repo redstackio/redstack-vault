@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:39.789164+00:00'
 ```bash
 REG QUERY "HKLM\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine" /v PowerShellVersion
 ```
+
+

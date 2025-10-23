@@ -29,6 +29,8 @@ Technical Explanation: The attacker identifies a web application that is vulnera
 
 Business Value: SSTI with EL can be used to compromise web applications and underlying servers. This can lead to unauthorized access to sensitive data, theft of intellectual property, and disruption of business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -36,6 +38,8 @@ Business Value: SSTI with EL can be used to compromise web applications and unde
 1. Knowledge of SSTI and EL
 
 1. Java RCE Payloads
+
+ 
 
 ## Defense
 
@@ -45,18 +49,28 @@ Business Value: SSTI with EL can be used to compromise web applications and unde
 
 1. Monitor web application logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
 
 1. Compromise the web application and underlying server
 
+ 
+
 # Instructions
 
 1. This JSON object contains a list of Java RCE payloads that can be used for executing arbitrary commands on a target system. The payloads use different methods such as Runtime, ProcessBuilder, Reflection & Invoke, ScriptEngineManager, and JavaClass to execute the commands. The user needs to replace the <COMMAND STRING/ARRAY> and <COMMAND ARRAY/LIST> placeholders with the actual command string or array/list to be executed. The user should also replace the x.x.x.x placeholders with the actual IP address or hostname of the target system.
 
+ 
+
+
+
 **Code**: [[// Common RCE payloads
 ''.class.forName('java.lang]]
+
+
 
 > The Java RCE payloads use various methods to execute arbitrary commands on a target system. These methods include Runtime, ProcessBuilder, Reflection & Invoke, ScriptEngineManager, and JavaClass. The user needs to replace the <COMMAND STRING/ARRAY> and <COMMAND ARRAY/LIST> placeholders with the actual command string or array/list to be executed. The user should also replace the x.x.x.x placeholders with the actual IP address or hostname of the target system. The payloads can be used for various purposes such as remote code execution, privilege escalation, and lateral movement.
 
@@ -65,3 +79,5 @@ Business Value: SSTI with EL can be used to compromise web applications and unde
 - [[Expression Language EL]]
 - [[Expression Language EL - Code Execution]]
 - [[Server Side Template Injection]]
+
+

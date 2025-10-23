@@ -27,13 +27,31 @@ Mount is a standard Linux file system utility, used to attach storage partitions
 
 Mount is a standard Linux file system utility, used to attach storage partitions of various types to the main file hierarchy (branches off of "/"). Mount allows users to add, remove, and modify the way partitions are attached, and supports many file systems including ext3/4, vfat, NTFS, HFSPlus, and their specific mount options.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_045d9046-9c91-4493-a88c-14808b4a3caf}}
+
+
 
 # Installation
 
 Mount is installed by default on Linux systems.
 
+
+
 ## Install NTFS Support on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +69,5 @@ Mount is installed by default on Linux systems.
 ## Tags
 
 - [[File System]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:27.086249+00:00'
 ```bash
 sqlmap.py -d "mysql://user:pass@ip/database" --dump-all
 ```
+
+

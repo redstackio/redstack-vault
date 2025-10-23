@@ -14,7 +14,9 @@ updated_at: '2023-05-24T20:13:51.761604+00:00'
 ```text
 # Azure CLI stores access tokens in clear text in the file accessTokens.json
 c:\Users\<username>\.Azure\accessTokens.json
-
+    
 # information about subscriptions.
 c:\Users\<username>\.Azure\azureProfile.json
 ```
+
+

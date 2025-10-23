@@ -10,6 +10,7 @@ output: 'Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-03 13:04 IST
 
   Host is up (0.39s latency).
 
+
   PORT    STATE SERVICE
 
   443/tcp open  https
@@ -67,3 +68,5 @@ PORT    STATE SERVICE
 |_SHA-1: b300 b380 6bb4 ac20 3236 5cc0 8051 fa5f a97e 1342
 
 ```
+
+

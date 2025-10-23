@@ -28,11 +28,27 @@ xxd creates a hex dump of a given file or standard input. It can also convert a 
 
 xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_72d514b3-35d8-4732-ab46-b9105b060e12}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ xxd creates a hex dump of a given file or standard input. It can also convert a 
 
 - [[convert]]
 - [[data]]
+
+

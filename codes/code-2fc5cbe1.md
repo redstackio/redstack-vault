@@ -17,3 +17,5 @@ MalSCCM.exe inspect /computers
 MalSCCM.exe inspect /primaryusers
 MalSCCM.exe inspect /groups
 ```
+
+

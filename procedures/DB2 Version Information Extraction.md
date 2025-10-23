@@ -40,11 +40,15 @@ When an attacker sends a specially crafted query to the DB2 database, the databa
 Business Value:
 By identifying the version of the DB2 database, organizations can better understand their security posture and identify potential vulnerabilities that need to be addressed. This technique can also be used by organizations to test the effectiveness of their security controls and identify areas for improvement.
 
+ 
+
 ## Requirements
 
 1. Access to the DB2 database
 
 1. Knowledge of SQL queries
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ By identifying the version of the DB2 database, organizations can better underst
 
 1. Regularly monitor the database for unauthorized access or suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify the version of the DB2 database
@@ -62,13 +68,23 @@ By identifying the version of the DB2 database, organizations can better underst
 
 1. Assess the effectiveness of security controls
 
+ 
+
 # Instructions
 
 1. This command provides database version information.
 
+ 
+
+
+
 **Code**: [[select versionnumber, version_timestamp from sysib]]
 
+
+
 > The 'sysibm.sysversions' table contains information about the database version number and the timestamp of the version. The 'sysproc.env_get_inst_info()' function returns information about the instance, including the service level. The 'getvariable('sysibm.version')' function returns the version of the database. The 'sysproc.env_get_prod_info()' function returns information about the installed products, including the product release and the installed product fullname. The 'sysibmadm.env_inst_info' table contains information about the instance, including the service level and the build level.
+
+
 
 **Command** ([[Retrieve database version and timestamp]]):
 
@@ -76,11 +92,19 @@ By identifying the version of the DB2 database, organizations can better underst
 select versionnumber, version_timestamp from sysibm.sysversions;
 ```
 
+
+
+
+
 **Command** ([[Retrieve database service level]]):
 
 ```bash
 select service_level from table(sysproc.env_get_inst_info()) as instanceinfo
 ```
+
+
+
+
 
 **Command** ([[Retrieve database product version]]):
 
@@ -88,17 +112,27 @@ select service_level from table(sysproc.env_get_inst_info()) as instanceinfo
 select getvariable('sysibm.version') from sysibm.sysdummy1 -- (v8+)
 ```
 
+
+
+
+
 **Command** ([[Retrieve installed product information]]):
 
 ```bash
 select prod_release,installed_prod_fullname from table(sysproc.env_get_prod_info()) as productinfo
 ```
 
+
+
+
+
 **Command** ([[Retrieve database and instance service and build level]]):
 
 ```bash
 select service_level,bld_level from sysibmadm.env_inst_info
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +157,5 @@ select service_level,bld_level from sysibmadm.env_inst_info
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Version]]
+
+

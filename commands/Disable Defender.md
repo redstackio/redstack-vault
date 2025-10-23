@@ -20,3 +20,5 @@ Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 ```
 Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 ```
+
+

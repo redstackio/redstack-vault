@@ -29,11 +29,27 @@ Modifying an XML request to add an external entity that results in an error mess
 
 Modifying an XML request to add an external entity that results in an error message. The error message reveals sensitive information along with it.
 
+
+
 # Procedure
+
+
 
 1. Access the product page and click on check stock. Intercept the request in Burp Suite.
 
+
+
+
+
+![bcd7fbc7-c344-4362-a03f-2394fc7103a0.png]()
+
+
+
+
+
 2. Insert the below parameter entity definition between the XML declaration and the *stockCheck* element.
+
+
 
 *`<!DOCTYPE message [`
  `<!ENTITY % local_dtd SYSTEM "file:///usr/share/yelp/dtd/docbookx.dtd">`
@@ -46,7 +62,29 @@ Modifying an XML request to add an external entity that results in an error mess
 * `%local_dtd;`
  `]>`
 
+
+
+
+
+![69d5ac6f-2a0e-48c7-8bf9-dfd243a622f5.png]()
+
+
+
 3. This will import the Yelp DTD, then redefine the `ISOamso` entity, triggering an error message containing the contents of the `/etc/passwd` file.
+
+
+
+
+
+
+
+![c4f17cce-acbb-40d4-99b4-f983ed9eaf24.png]()
+
+
+
+
+
+
 
 ## Platforms
 
@@ -58,3 +96,5 @@ Modifying an XML request to add an external entity that results in an error mess
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xxe]]
+
+

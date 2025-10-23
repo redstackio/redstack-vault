@@ -37,11 +37,15 @@ Technical Explanation: The Unicorn tool is a simple tool for generating payloads
 
 Business Value: This procedure can be used by an attacker to gain access to a target's system or network. By using a payload generated with Unicorn, an attacker can execute code on a target's system without being detected. This can allow the attacker to steal sensitive data or gain access to a target's network.
 
+ 
+
 ## Requirements
 
 1. Access to the Unicorn tool
 
 1. Access to a conversion tool for converting the payload to Office VBA macro format
+
+ 
 
 ## Defense
 
@@ -51,25 +55,39 @@ Business Value: This procedure can be used by an attacker to gain access to a ta
 
 1. Use endpoint protection software to detect and prevent the execution of malicious macros
 
+ 
+
 ## Objectives
 
 1. Generate a payload for use in an Office macro attack
 
 1. Execute code on a target's system
 
+ 
+
 # Instructions
 
 1. To generate a macro payload using Unicorn, run the following command:
 
+ 
+
+
+
 **Code**: [[python unicorn.py payload.cs cs macro]]
 
+
+
 > This command generates a macro payload using the Unicorn tool. The 'payload.cs' is the name of the file that will contain the generated payload. The 'cs' argument specifies the programming language of the payload. The 'macro' argument specifies that the payload will be a macro. The command should be executed in a Python environment.
+
+
 
 **Command** ([[Generate Unicorn Payload]]):
 
 ```bash
 python unicorn.py payload.cs cs macro
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ python unicorn.py payload.cs cs macro
 
 - [[DOCM - C# converted to Office VBA macro]]
 - [[Office - Attacks]]
+
+

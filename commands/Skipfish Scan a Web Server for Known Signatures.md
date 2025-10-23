@@ -91,7 +91,7 @@ Database statistics:
    Issues found : 46 info, 0 warn, 0 low, 0 medium, 0 high impact
       Dict size : 2215 words (0 new), 109 extensions, 0 candidates
      Signatures : 77 total
-
+        
 [+] Copying static resources...
 [+] Sorting and annotating crawl nodes: 277
 [+] Looking for duplicate entries: 277
@@ -103,3 +103,5 @@ Database statistics:
 [+] Report saved to 'results/index.html' [0x7a2d8863].
 [+] This was a great day for science!
 ```
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 Get-ItemProperty -Path Registry::"HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" |Select-Object -ExpandProperty WUServer Get-ItemProperty -Path Registry::"HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" |Select-Object -ExpandProperty WUStatusServer Get-ItemProperty -Path Registry::"HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" |Select-Object -ExpandProperty UseWUServer reg query HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 
 ```
+
+

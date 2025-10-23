@@ -29,6 +29,7 @@ Starting masscan 1.0.5 (http://bit.ly/14GZzcT) at 2020-06-30 18:00:38 GMT
 Initiating SYN Stealth Scan
 Scanning 3 hosts [1 port/host]
 
+
 root@hacker:~/rs# cat masscan.out 
 #masscan
 open tcp 80 104.XX.27.XX 1593540039
@@ -36,3 +37,5 @@ open tcp 80 172.XX.10.XX 1593540039
 open tcp 80 104.XX.26.XX 1593540039
 # end
 ```
+
+

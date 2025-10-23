@@ -32,10 +32,16 @@ Use a domain computer's NTLM hash (or password) and Mimikatz to spawn a terminal
 
 Use a domain computer's NTLM hash (or password) and Mimikatz to spawn a terminal which executes commands using the machine account. Because this technique spawns a new terminal for command execution, a local or RDP session is needed to execute the attack.
 
+
+
 # Instructions
 
 1. Download [Mimikatz](https://github.com/gentilkiwi/mimikatz)  (or Impacket's Invoke Mimikatz) to the target system. 
 2. Execute Mimikatz as Administrator, providing it with the computer's NTLM hash, domain, and the computer's account name (which ends in a "$" symbol).
+
+
+
+
 
 **Command** ([[Mimikatz Spawn a Shell as an AD Machine Account]]):
 
@@ -43,7 +49,11 @@ Use a domain computer's NTLM hash (or password) and Mimikatz to spawn a terminal
 Mimikatz.exe "sekurlsa::pth /user:$_MACHINE_NAME$ /domain:$_DOMAIN /ntlm:$_NTLM_HASH"
 ```
 
+
+
 Note: if the command fails, try first running "privilege::debug" and "token::elevate"  before the "sekurl::pth" command.
+
+
 
 ## Platforms
 
@@ -68,3 +78,5 @@ Note: if the command fails, try first running "privilege::debug" and "token::ele
 - [[Active Directory]]
 - [[NTLM]]
 - [[privileges]]
+
+

@@ -19,3 +19,5 @@ DEVICE=eth0
 EXEC :
 ./etc/sysconfig/network-scripts/ifcfg-1337
 ```
+
+

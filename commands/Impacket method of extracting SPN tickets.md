@@ -18,3 +18,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 proxychains python ./GetUserSPNs.py -request domain.com/domainuser:password -dc-ip -outputfile
 
 ```
+
+

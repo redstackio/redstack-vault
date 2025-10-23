@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:07.385265+00:00'
 ```bash
 To retrieve metadata from within a Droplet, send an HTTP request to 169.254.169.254 with the appropriate path for the data you want to retrieve.
 ```
+
+

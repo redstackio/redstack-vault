@@ -37,11 +37,15 @@ The technical explanation of this procedure involves the use of the 'Bypass Secu
 
 The business value of this procedure is that it allows an attacker to steal sensitive information or perform actions on behalf of the victim. This can lead to financial loss, reputational damage, and legal liability for the victim.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable version of Angular or AngularJS
 
 1. Ability to craft a specially-crafted URL
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows an attacker to steal sens
 
 1. Use Content Security Policy (CSP) to restrict the execution of scripts
 
+ 
+
 ## Objectives
 
 1. Inject malicious scripts into web pages
@@ -59,25 +65,43 @@ The business value of this procedure is that it allows an attacker to steal sens
 
 1. Perform actions on behalf of the victim
 
+ 
+
 # Instructions
 
 1. The bypassSecurityTrustUrl method allows you to bypass Angular's built-in security and trust a URL. This is useful when you need to display content from an untrusted source, such as a third-party website or a user-generated URL.
 
+ 
+
+
+
 **Code**: [[bypassSecurityTrustUrl]]
+
+
 
 > The method takes a single argument, which is the URL you want to trust. This URL will be marked as safe by Angular, meaning that it can be used in an iframe or other context where untrusted content would normally be blocked. However, it's important to note that using this method can introduce security vulnerabilities into your application if you're not careful. Make sure you trust the source of the URL before using this method.
 
 2. To ensure security in Angular, use the DomSanitizer to sanitize untrusted URLs. In this example, the DomSanitizer is injected into the component and used to bypass security for a potentially dangerous URL. The sanitized URL can then be used in the template to create a trusted link.
 
+ 
+
+
+
 **Code**: [[import { Component, OnInit } from '@angular/core';]]
 
+
+
 > The `DomSanitizer` is a security service that sanitizes and escapes values to prevent cross-site scripting (XSS) attacks. In this example, the `dangerousUrl` is set to a potentially dangerous JavaScript URL that could execute malicious code. To make the URL safe, we pass it through the `DomSanitizer`'s `bypassSecurityTrustUrl` method, which returns a sanitized version of the URL that can be used safely in the template. The sanitized URL is then bound to the `href` attribute of the `<a>` tags in the template, creating trusted links that can be clicked without risk of XSS attacks.
+
+
 
 **Command** ([[Sanitize URL]]):
 
 ```bash
 this.sanitizer.bypassSecurityTrustUrl(this.dangerousUrl)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +127,5 @@ this.sanitizer.bypassSecurityTrustUrl(this.dangerousUrl)
 
 - [[Automatic Sanitization]]
 - [[XSS in Angular and AngularJS]]
+
+

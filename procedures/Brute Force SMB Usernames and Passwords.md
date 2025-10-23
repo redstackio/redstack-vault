@@ -35,15 +35,23 @@ Various tools can be used to brute force valid username and password combination
 
 Various tools can be used to brute force valid username and password combinations of exposed SMB shares, and is a common approach when attacking Active Directory environments. This attack is noisy, and should be avoided is stealth is a requirement.
 
+
+
 # Instructions
 
 Run CrackMapExec with a username and password list.
+
+
+
+
 
 **Command** ([[CrackMapExec Brute Force SMB Usernames and Passwords]]):
 
 ```bash
 crackmapexec smb $_TARGET_IP -u $_USERNAME -p $_PASSWORD
 ```
+
+
 
 Note: when using CrackMapExec version 3 or older, omit  the protocol (smb) after the command.
 
@@ -71,3 +79,5 @@ Note: when using CrackMapExec version 3 or older, omit  the protocol (smb) after
 - [[authentication]]
 - [[Network]]
 - [[Service Attacks]]
+
+

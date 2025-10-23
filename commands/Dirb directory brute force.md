@@ -60,9 +60,11 @@ GENERATED WORDS: 4593
 + http://10.10.10.10/index.html (CODE:200|SIZE:10918)                                                                                                
 + http://10.10.10.10/server-status (CODE:403|SIZE:276)                                                                                               
 ==> DIRECTORY: http://10.10.10.10/var/                                                                                                               
-
+                                                                                                                                                     
 -----------------
 END_TIME: Fri Sep 13 21:43:09 2019
 DOWNLOADED: 4593 - FOUND: 2
 
 ```
+
+

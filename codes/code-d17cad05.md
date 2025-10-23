@@ -16,3 +16,5 @@ http://example.com/resources/id%C0
 
 eg: http://redacted/avatar/123%C0
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:24.386328+00:00'
 ```bash
 SELECT * FROM information_schema.tables WHERE table_schema = 'public';
 ```
+
+

@@ -34,11 +34,15 @@ To use this command, the attacker needs to have valid AWS credentials that have 
 
 This procedure can be used as part of a larger attack chain, such as lateral movement or data exfiltration.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the Secret Manager API
 
 1. Access to the internet to communicate with the AWS API
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This procedure can be used as part of a larger attack chain, such as lateral mov
 
 1. Regularly rotate secrets stored in the Secret Manager to mitigate the impact of a potential compromise
 
+ 
+
 ## Objectives
 
 1. Enumerate all secrets stored in an AWS account
@@ -56,19 +62,31 @@ This procedure can be used as part of a larger attack chain, such as lateral mov
 
 1. Use the secrets to further compromise the AWS account
 
+ 
+
 # Instructions
 
 1. Use this command to list all the secrets in your AWS Secrets Manager.
 
+ 
+
+
+
 **Code**: [[aws secretsmanager list-secrets]]
 
+
+
 > The `aws secretsmanager list-secrets` command returns a JSON object containing information about all the secrets in your AWS Secrets Manager. This information includes the secret name, ARN, description, and the date and time the secret was created or last modified. You can use this command to quickly view all the secrets in your account, and use the information to manage and update your secrets as needed.
+
+
 
 **Command** ([[List AWS Secrets]]):
 
 ```bash
 aws secretsmanager list-secrets
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws secretsmanager list-secrets
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing all secrets stored by Secret Manager]]
+
+

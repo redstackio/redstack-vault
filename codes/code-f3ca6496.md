@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:33.397879+00:00'
 ```powershell
 find / -mmin -10 2>/dev/null | grep -Ev "^/proc"
 ```
+
+

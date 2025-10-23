@@ -96,7 +96,7 @@ tlssled  65.61.137.117 443
                  by Raul Siles (www.taddong.com)
 ------------------------------------------------------
     openssl version: OpenSSL 1.1.0h  27 Mar 2018
-
+    
 ------------------------------------------------------
     Date: 20200903-143811
 ------------------------------------------------------
@@ -153,6 +153,7 @@ Not valid before: May 22 00:00:00 2020 GMT
 Not valid after:  May 22 23:59:59 2022 GMT
 
     [.] Checking preferred server ciphers ...
+
 
 [*] Testing for SSL/TLS renegotiation MitM vuln. (CVE-2009-3555) ...
 
@@ -227,3 +228,5 @@ openssl_RENEG_65.61.137.117_443_20200903-143811.err
 [*] done
 
 ```
+
+

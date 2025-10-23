@@ -41,15 +41,25 @@ JAWS (Just Another [Enumeration] Script) identifies potential privilege escalati
 
 JAWS (Just Another [Enumeration] Script) identifies potential privilege escalation paths on Windows systems.
 
+
+
 # Instructions
 
 [Download JAWS from GitHub](https://github.com/411Hall/JAWS) and copy it to the target to run locally.
+
+
+
+
 
 **Command** ([[JAWS Enumerate for Privilege Escalation ]]):
 
 ```bash
 Import-Module .\jaws-enum.ps1 -OutputFileName $_OUTPUT.txt
 ```
+
+
+
+
 
 ## Platforms
 
@@ -83,3 +93,5 @@ Import-Module .\jaws-enum.ps1 -OutputFileName $_OUTPUT.txt
 - [[data exposure]]
 - [[Misconfiguration]]
 - [[Service Attacks]]
+
+

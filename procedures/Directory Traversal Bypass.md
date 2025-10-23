@@ -28,7 +28,11 @@ Technical Explanation: The "../" characters are used to navigate up one director
 
 Business Value: This technique can be used to gain unauthorized access to sensitive data or files stored on servers. By bypassing WAFs, attackers can gain access to data that they are not authorized to view.
 
+ 
+
 ## Requirements
+
+ 
 
 ## Defense
 
@@ -38,18 +42,28 @@ Business Value: This technique can be used to gain unauthorized access to sensit
 
 1. Monitor network traffic for suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Bypass Web Application Firewalls (WAFs)
 
 1. Gain unauthorized access to restricted files or directories
 
+ 
+
 # Instructions
 
 1. Use the following commands to duplicate the "../" characters:
 
+ 
+
+
+
 **Code**: [[..././
 ...\.\]]
+
+
 
 > The "..././" command duplicates the "../" characters by using the "./" sequence. The "...\.\" command duplicates the "../" characters by using the "\.\" sequence.
 
@@ -58,3 +72,5 @@ Business Value: This technique can be used to gain unauthorized access to sensit
 - [[Basic exploitation]]
 - [[Bypass "../" replaced by ""]]
 - [[Directory Traversal]]
+
+

@@ -34,21 +34,37 @@ Connect to LDAP with anonymous bind and enumerate the base DN.
 
 Connect to LDAP with anonymous bind and enumerate the base DN.
 
+
+
+
+
 ## Objectives
 
 By scanning the LDAP service and enumerating objects such as users, groups, ACLs, trusts, and other data, the attacker can gain a better understanding of the target environment, including the organizational structure, user accounts, group memberships, and other information that may be useful in future attacks.
+
+
 
 1. Identify potential targets that could be further exploited
 
 2. Determine the organization structure including domain and forest names, domain controllers and trust
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap LDAP Enumeration with Scripts]]):
 
 ```bash
 nmap -p $_TARGET_PORT -script ldap-search $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -73,3 +89,5 @@ nmap -p $_TARGET_PORT -script ldap-search $_TARGET_IP
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

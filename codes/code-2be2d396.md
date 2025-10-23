@@ -19,3 +19,5 @@ az account get-access-token --resource-type aad-graph
 # or Az
 (Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 ```
+
+

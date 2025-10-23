@@ -29,6 +29,8 @@ An XML request can be modified by adding external entities to access internal/pr
 
 An XML request can be modified by adding external entities to access internal/private portals on the network where the application is hosted.
 
+
+
 # Instructions
 
 # 
@@ -37,7 +39,59 @@ An XML request can be modified by adding external entities to access internal/pr
 
 1. In the below screenshot, an XML request is sent for authentication
 
+
+
+
+
+
+
+![7651704d-6374-44df-98e7-7572ce5c3853.jpg](_assets/images/Mash/7651704d-6374-44df-98e7-7572ce5c3853.jpg)
+
+
+
+
+
+
+
+
+
 2. The XML request is modified and SYSTEM entity is added to request internal portal with sensitive information. The application makes request to the internal portal and loads the contents.
+
+
+
+
+
+
+
+![6336c45e-0575-4359-b964-d7b60112fb07.jpg](_assets/images/Mash/6336c45e-0575-4359-b964-d7b60112fb07.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +103,5 @@ An XML request can be modified by adding external entities to access internal/pr
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xxe]]
+
+

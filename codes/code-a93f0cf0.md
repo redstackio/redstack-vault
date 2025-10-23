@@ -58,6 +58,7 @@ if($WebhookData -ne $null){
     if ($BodyContent.RequestBody.Password -ne $null){$PasswordProfile.Password = $BodyContent.RequestBody.Password}
 }
 else{exit;}
+    
 
 # Add New AzureAD Account
 New-AzureADUser -DisplayName $BodyContent.RequestBody.Username -PasswordProfile $PasswordProfile -UserPrincipalName $UPN -AccountEnabled $true -MailNickName $BodyContent.RequestBody.Username
@@ -65,3 +66,5 @@ New-AzureADUser -DisplayName $BodyContent.RequestBody.Username -PasswordProfile 
 # Add account to Owners Group
 New-AzureRmRoleAssignment -SignInName $UPN -RoleDefinitionName Owner
 ```
+
+

@@ -28,11 +28,25 @@ Xcopy is a simple tool used to copy files and folders. Xcopy is more advanced th
 
 Xcopy is a simple tool used to copy files and folders. Xcopy is more advanced than the standard copy command, and supports features like copying files to/from remote shares, copying files based on file attributes, copying encrypted files to non EFS systems, and more.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_c562c864-1009-4a0a-8e6a-70525df7d968}}
+
+
 
 # Installation
 
 Xcopy is installed with all modern Windows releases
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ Xcopy is installed with all modern Windows releases
 
 - [[File System]]
 - [[file transfer]]
+
+

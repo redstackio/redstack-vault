@@ -28,11 +28,15 @@ From a technical perspective, this attack works by injecting JavaScript code int
 
 From a business perspective, this attack can be used to steal sensitive information or disrupt business operations. It can also lead to reputational damage if customers or partners are impacted by the attack.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable SVG file
 
 1. Knowledge of how to inject JavaScript code into an SVG file
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ From a business perspective, this attack can be used to steal sensitive informat
 
 1. Regularly scan for vulnerable SVG files and patch any vulnerabilities that are found
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into an SVG file
@@ -50,11 +56,19 @@ From a business perspective, this attack can be used to steal sensitive informat
 
 1. Steal sensitive information or perform other malicious actions
 
+ 
+
 # Instructions
 
 1. This command is used to perform an SVG injection attack.
 
+ 
+
+
+
 **Code**: [[<svg xmlns="http://www.w3.org/2000/svg" onload="al]]
+
+
 
 > The SVG injection attack is a type of cross-site scripting (XSS) attack that exploits vulnerabilities in web applications that use SVG images. The attacker injects malicious code into the SVG image, which is then executed by the victim's browser when they view the image on the web page. The injected code can be used to steal sensitive information, such as login credentials, or to perform other malicious actions on the victim's behalf.
 
@@ -63,3 +77,5 @@ From a business perspective, this attack can be used to steal sensitive informat
 - [[Cross Site Scripting]]
 - [[XSS in files]]
 - [[XSS in SVG (short)]]
+
+

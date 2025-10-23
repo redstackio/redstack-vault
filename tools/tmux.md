@@ -27,11 +27,27 @@ Tmux is a terminal multiplexer, allowing users to manage multiple terminal sessi
 
 Tmux is a terminal multiplexer, allowing users to manage multiple terminal sessions, background and reattach sessions, and more. It is often used to create a terminal session which remains active even when a user has disconnected, much like the screen utility.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_d41f0910-0f17-44da-b7cd-e36498bff1e8}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ Tmux is a terminal multiplexer, allowing users to manage multiple terminal sessi
 ## Tags
 
 - [[session]]
+
+

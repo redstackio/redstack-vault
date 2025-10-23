@@ -37,11 +37,15 @@ From a technical standpoint, the attacker needs to have access to the AWS accoun
 
 From a business perspective, this attack can lead to sensitive data being exposed and potentially used for malicious purposes, resulting in financial loss, reputational damage, and legal implications.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS account
 
 1. Properly configured secrets manager service with secure access policies and permissions
+
+ 
 
 ## Defense
 
@@ -51,15 +55,21 @@ From a business perspective, this attack can lead to sensitive data being expose
 
 1. Encrypt sensitive data stored in AWS Secrets Manager to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Exfiltrate sensitive information stored in AWS Secrets Manager
 
 1. Gain access to other parts of the system
 
+ 
+
 # Instructions
 
 1. To retrieve the value of a secret from AWS Secrets Manager, use the 'aws secretsmanager get-secret-value' command.
+
+ 
 
 Arguments:
 --secret-id: The ID of the secret to retrieve the value for. This can be either the Amazon Resource Name (ARN) or the friendly name of the secret.
@@ -67,11 +77,15 @@ Arguments:
 Example:
 aws secretsmanager get-secret-value --secret-id mySecret
 
+
+
 **Command** ([[Retrieve Secret from AWS Secrets Manager]]):
 
 ```bash
 aws secretsmanager get-secret-value --secret-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +108,5 @@ aws secretsmanager get-secret-value --secret-id ID
 - [[Cloud - AWS]]
 - [[Credential Exfiltration]]
 - [[Getting the secret value]]
+
+

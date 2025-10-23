@@ -37,9 +37,17 @@ Extract the cryptographic hash from a LUKS version 1 encrypted file system, and 
 
 Extract the cryptographic hash from a LUKS version 1 encrypted file system, and perform a dictionary brute force to crack the password.
 
+
+
 # Instructions
 
+
+
 1.  Determine the hash offset from the raw encrypted image.
+
+
+
+
 
 **Command** ([[cryptsetup Extract a LUKS v1 Payload Offset]]):
 
@@ -47,9 +55,17 @@ Extract the cryptographic hash from a LUKS version 1 encrypted file system, and 
 cryptsetup luksDump $_FILE.img
 ```
 
+
+
 Take the Payload offset value, add 1, then use it in the next step. For this example, if the Payload offset is 4096, use 097.
 
+
+
 2. Extract the LUKS hash using the offset determined in Step 1.
+
+
+
+
 
 **Command** ([[dd Extract a LUKS v1 Hash]]):
 
@@ -57,7 +73,15 @@ Take the Payload offset value, add 1, then use it in the next step. For this exa
 dd if=$_FILE.img of=$_HASH bs=512 count=$_OFFSET
 ```
 
+
+
+
+
 3. Brute force the LUKS hash
+
+
+
+
 
 **Command** ([[hashcat Brute Force a LUKS v1 Hash]]):
 
@@ -65,7 +89,15 @@ dd if=$_FILE.img of=$_HASH bs=512 count=$_OFFSET
 hashcat -m 14600 $HASH $WORDLIST
 ```
 
+
+
+
+
 4. Unlock the LUKS encrypted volume, specifying the name of the unlocked volume with $_CRYPT
+
+
+
+
 
 **Command** ([[cryptsetup Open a LUKS Encrypted Volume]]):
 
@@ -73,15 +105,27 @@ hashcat -m 14600 $HASH $WORDLIST
 cryptsetup luksOpen $_FILE.img $_CRYPT
 ```
 
+
+
 Note: Unlocked LUKS filesystems are populated in `/dev/mapper`. For example, if the filesystem is unlocked with the name `crypt-home`, it can be found and mounted from `/dev/mapper/crypt-home`
 
+
+
 5. Mount the volume.
+
+
+
+
 
 **Command** ([[Mount a Filesystem]]):
 
 ```bash
 mount $_FILESYSTEM $_MOUNT_POINT
 ```
+
+
+
+
 
 ## Platforms
 
@@ -109,3 +153,5 @@ mount $_FILESYSTEM $_MOUNT_POINT
 
 - [[Cryptography]]
 - [[data encryption]]
+
+

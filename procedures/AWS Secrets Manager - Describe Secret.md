@@ -37,9 +37,13 @@ From a technical perspective, this command sends a request to the AWS Secrets Ma
 
 The business value of this attack is significant, as an attacker can gain access to sensitive information that can lead to further compromise of the target's environment. This can result in data theft, financial loss, and reputational damage to the target organization.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access Secrets Manager
+
+ 
 
 ## Defense
 
@@ -49,23 +53,33 @@ The business value of this attack is significant, as an attacker can gain access
 
 1. Monitor Secrets Manager for suspicious activity, such as unusual requests or changes to secrets
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information such as usernames, passwords, and API keys
 
 1. Gain access to other systems and resources within the target's environment
 
+ 
+
 # Instructions
 
 1. To describe a specific secret in AWS Secrets Manager, use the describe-secret command with the --secret-id parameter followed by the name of the secret.
 
+ 
+
 The describe-secret command is used to retrieve the details of a specific secret in AWS Secrets Manager. The --secret-id parameter is used to specify the name of the secret to be described. This command can be useful for retrieving information such as the ARN, description, and tags associated with a secret. Additionally, the command can be used to retrieve the current version and staging labels of the secret.
+
+
 
 **Command** ([[Describe AWS Secrets Manager Secret]]):
 
 ```bash
 aws secretsmanager describe-secret --secret-id name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws secretsmanager describe-secret --secret-id name
 - [[Cloud - AWS]]
 - [[Credential Exfiltration]]
 - [[Listing information about a specific secret]]
+
+

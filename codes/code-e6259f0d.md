@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:06.621624+00:00'
 ```powershell
 ldapdomaindump -u 'DOMAIN\john' -p MyP@ssW0rd 10.10.10.10 -o ~/Documents/AD_DUMP/
 ```
+
+

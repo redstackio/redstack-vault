@@ -21,10 +21,50 @@ Generate a Powershell script reverse shell payload with MSFVenom.
 
 Creating a Meterpreter listener with a one liner.
 
+
+
 ## Payload
+
+
 
 **Command**: [[msfvenom Powershell Script Reverse Shell]]
 
+
+
+
+
 ## Listener
 
+
+
 **Command**: [[msfconsole Powershell Script Listener]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

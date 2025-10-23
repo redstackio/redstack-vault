@@ -31,11 +31,15 @@ Technical Explanation: HTTP/2 allows multiple requests to be sent over a single 
 
 Business Value: An attacker can use HTTP/2 Request Smuggling to bypass security controls and gain unauthorized access to sensitive data. This can lead to data theft, financial loss, and reputational damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable HTTP/2 server
 
 1. Knowledge of HTTP/2 Request Smuggling techniques
+
+ 
 
 ## Defense
 
@@ -45,20 +49,30 @@ Business Value: An attacker can use HTTP/2 Request Smuggling to bypass security 
 
 1. Regularly update and patch the HTTP/2 server to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass security controls
 
 1. Gain unauthorized access to sensitive data
 
+ 
+
 # Instructions
 
 1. Send an HTTP GET request to www.example.com with the specified headers and path.
+
+ 
+
+
 
 **Code**: [[:method GET
 :path /
 :authority www.example.com
 hea]]
+
+
 
 > The command sends an HTTP GET request to the specified host and path with the specified headers. The :method field specifies the HTTP method used, in this case GET. The :path field specifies the path of the resource being requested, in this case the root directory. The :authority field specifies the host name of the server being requested. The 'Host' header specifies the same information as the :authority field. The 'header ignored' field can be ignored. This command can be used to retrieve information from a web server.
 
@@ -76,3 +90,5 @@ hea]]
 
 - [[HTTP/2 Request Smuggling]]
 - [[Request Smuggling]]
+
+

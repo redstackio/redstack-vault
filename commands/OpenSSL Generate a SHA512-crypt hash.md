@@ -23,3 +23,5 @@ openssl passwd -6 -salt $_SALT $_PASSWORD
 root@kali:~# openssl passwd -6 -salt 12345678 secretpass
 $6$12345678$DgaVYkZjVTY58m0juyhsvwGEjwMI9RB5U0U63JEP2as7KF/gNTboh3MC6aE8CjcVHmb1Er9RWwbRQmaHhBUfs/
 ```
+
+

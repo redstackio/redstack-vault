@@ -36,6 +36,8 @@ From a technical standpoint, a Time Delay attack is achieved by injecting malici
 
 The business value of DB2 Injection - Time Delay lies in its ability to extract sensitive information from a target organization's database. By exploiting vulnerabilities in the application layer, an attacker can gain access to sensitive data such as customer information, financial records, and intellectual property. This can result in significant financial losses, as well as reputational damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that uses DB2
@@ -43,6 +45,8 @@ The business value of DB2 Injection - Time Delay lies in its ability to extract 
 1. Knowledge of SQL Injection techniques
 
 1. Ability to inject malicious SQL code into the application
+
+ 
 
 ## Defense
 
@@ -52,17 +56,27 @@ The business value of DB2 Injection - Time Delay lies in its ability to extract 
 
 1. Implement rate limiting and other timing-based defenses to detect and prevent Time Delay attacks
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a target organization's DB2 database
 
 1. Extract sensitive information from the database
 
+ 
+
 # Instructions
 
 1. To prevent SQL Injection attacks, always use prepared statements with parameterized queries. Never use user input directly in SQL statements.
 
+ 
+
+
+
 **Code**: [[' and (SELECT count(*) from sysibm.columns t1, sys]]
+
+
 
 > The 'data' field contains a SQL Injection attack string that can be used to exploit vulnerabilities in the application's database. The 'text' field explains how the attack works and how it can be prevented. The 'instruction' field provides guidance on how to prevent SQL Injection attacks, and the 'explain' field provides additional information on the attack and its impact.
 
@@ -85,3 +99,5 @@ The business value of DB2 Injection - Time Delay lies in its ability to extract 
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[Time Delay]]
+
+

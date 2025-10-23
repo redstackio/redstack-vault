@@ -28,11 +28,25 @@ Allows a user to run specific tools and programs with the permissions of another
 
 Allows a user to run specific tools and programs with the permissions of another user.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_c5359a0c-7ae4-44d8-b46c-537e5e8eb0dd}}
+
+
 
 # Installation
 
 runas has been installed with all versions of Windows since Vista
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ runas has been installed with all versions of Windows since Vista
 
 - [[Permissions]]
 - [[Pivot]]
+
+

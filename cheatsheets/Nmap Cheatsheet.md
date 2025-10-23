@@ -13,6 +13,12 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 This nmap cheatsheet covers basic and advanced cheatsheet commands.
 
+
+
+
+
+
+
 **Command** ([[Banners and OS]]):
 
 ```bash
@@ -20,7 +26,11 @@ nmap -sV -sT -O $ip
 
 ```
 
+
+
 # Description
+
+
 
 **Command** ([[All scans (Exhaustive)]]):
 
@@ -29,12 +39,24 @@ nmap -A $ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[NSE Port 80, all HTTP scripts]]):
 
 ```bash
 nmap --script=http-* -p 80 $ip
 
 ```
+
+
+
+
+
+
 
 **Command** ([[NSE Port 80 CVEs]]):
 
@@ -43,12 +65,24 @@ nmap --script=http-vuln-cve* -p80 $ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[NSE SMB]]):
 
 ```bash
 nmap --script=smb-* -p139,445 $ip
 
 ```
+
+
+
+
+
+
 
 **Command** ([[NSE SMB unsafe]]):
 
@@ -57,12 +91,24 @@ nmap --script=smb-* -p139,445 --script-args=unsafe=1 $ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[SNMP]]):
 
 ```bash
 nmap -sU -p161 --open $ip
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Decoy Masqurade Scan]]):
 
@@ -71,6 +117,12 @@ nmap -sS -sV -D $ip2,$ip3,$ip4,$ip5 -f --mtu=24 --data-length=1337 -T2 $ip
 nmap -Pn -T2 -sV --randomize-hosts $ip,$ip2
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Aggressive UDP Scan]]):
 
@@ -81,6 +133,12 @@ nmap -sU -P0 -T Aggressive $ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[More aggressive Full TCP Scan]]):
 
 ```bash
@@ -89,9 +147,21 @@ nmap -sS -sV -T4 -F -A -O $ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Default Full Scan]]):
 
 ```bash
 nmap -sC $ip
 
 ```
+
+
+
+
+
+

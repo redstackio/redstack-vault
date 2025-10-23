@@ -32,3 +32,5 @@ root@kali:~# ./chisel client 10.10.10.10:9001 socks
 2019/10/01 21:08:14 client: Fingerprint 79:03:39:25:50:c4:72:48:b3:80:35:1f:5f:9d:50:09
 2019/10/01 21:08:14 client: Connected (Latency 393.56µs)
 ```
+
+

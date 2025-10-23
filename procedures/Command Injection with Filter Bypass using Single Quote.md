@@ -31,11 +31,15 @@ Command Injection is a type of attack where an attacker can execute arbitrary co
 
 Command Injection is a type of attack where an attacker can execute arbitrary commands on a target system by injecting malicious inputs in the command-line interface. In this case, the attacker is bypassing a filter that blocks blacklisted words with a single quote. The single quote is used to escape the filter and execute the command. This technique can be used to gain unauthorized access, escalate privileges, or exfiltrate sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application or system
 
 1. Knowledge of the filter bypass technique
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Command Injection is a type of attack where an attacker can execute arbitrary co
 
 1. Monitor system logs for suspicious activities and commands
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the target system
@@ -53,11 +59,19 @@ Command Injection is a type of attack where an attacker can execute arbitrary co
 
 1. Gain unauthorized access, escalate privileges, or exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. Execute the command using Invoke-Expression in PowerShell
 
+ 
+
+
+
 **Code**: [[w'h'o'am'i]]
+
+
 
 > The single quote is used to escape the filter and execute the command. The command 'whoami' is being executed in this case.
 
@@ -81,3 +95,5 @@ Command Injection is a type of attack where an attacker can execute arbitrary co
 - [[Bypass with single quote]]
 - [[Command Injection]]
 - [[Filter Bypasses]]
+
+

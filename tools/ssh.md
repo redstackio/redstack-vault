@@ -28,11 +28,27 @@ ssh (SSH client) is a program for logging into a remote machine and executing co
 
 ssh (SSH client) is a program for logging into a remote machine and executing commands on it. Unlike services vulnerable to man-in-the-middle attacks (telnet, ftp), ssh securely encrypts data sent from one host to another, allowing secure communication over an untrusted network. X11 connections and arbitrary TCP ports can also be forwarded over the secure channel.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e082f026-1d48-4bf9-86cb-3ee56718cfb2}}
+
+
 
 # Install
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ ssh (SSH client) is a program for logging into a remote machine and executing co
 
 - [[data encryption]]
 - [[Network]]
+
+

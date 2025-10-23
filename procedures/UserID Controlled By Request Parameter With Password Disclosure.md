@@ -27,19 +27,81 @@ Appliaction's detect the unwarranted access of resource without authentication a
 
 Appliaction's detect the unwarranted access of resource without authentication and redirect the response to home page. While redirection , the response sometimes may leak the sensitive inforamtion due to logical flaw of the application
 
+
+
+
+
 # Instructions
+
+
+
+
 
 1.Login with the credentials provided and access *my account* .
 
+
+
+
+
+![9f8e2f9a-7b72-4501-92d4-4c4cbe1902e7.png]()
+
+
+
 2. Intercept the request using burp proxy tab.Observe that update password filed already contains the current password which is masked.
+
+
+
+
+
+![7dbafac2-b65c-48c2-86d8-7e6b83f6256a.png]()
+
+
+
+
 
 3.Change the *id *paramter value to *administrator and send the request. *
 
+
+
+
+
+![8a57cdc1-8eb0-45fe-b5f4-588ec0d9908a.png]()
+
+
+
 4. Observe the request is redirected  because the server didnot permit to access the resource and the response contains a password for the *administrator*.
+
+
+
+
+
+![32ad51b0-3866-4a8d-9fa1-ec6b3a16edf9.png]()
+
+
 
 5. Login with the password identified in the above step
 
+
+
+
+
+
+
+![6e1bb0d9-e2bb-44d3-b4e2-129c7d8d19b6.png]()
+
+
+
+
+
 6. Login was successful
+
+
+
+
+
+![c869f67f-a0e9-42e2-9029-c3983c851dea.png]()
+
+
 
 ## Platforms
 
@@ -49,3 +111,5 @@ Appliaction's detect the unwarranted access of resource without authentication a
 
 - [[access control]]
 - [[Web Applications]]
+
+

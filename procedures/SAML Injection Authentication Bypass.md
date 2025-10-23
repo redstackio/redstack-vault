@@ -35,11 +35,15 @@ From a technical perspective, the attack involves modifying the SAML response to
 
 The business value of this attack is that it allows attackers to gain unauthorized access to sensitive data and resources. This can result in data theft, financial loss, and reputational damage to the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to a SAML enabled application
 
 1. Knowledge of SAML injection and XSLT transformation techniques
+
+ 
 
 ## Defense
 
@@ -49,23 +53,39 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 
 1. Implement multi-factor authentication to add an additional layer of security to the authentication process
 
+ 
+
 ## Objectives
 
 1. Bypass the authentication mechanism of a SAML enabled application
 
 1. Gain unauthorized access to the application and its resources
 
+ 
+
 # Instructions
 
 1. xsltproc
 
+ 
+
+
+
 **Code**: [[transform]]
+
+
 
 > The xsltproc command is used to apply an XSLT stylesheet to an XML document. The command takes two arguments: the path to the XSLT stylesheet and the path to the XML document to be transformed. Additional options can be used to specify output format, output file, and other parameters.
 
 2. The XSLT Exploit Attack involves using XSLT to perform an attack on the system. The attacker creates a malicious XSLT stylesheet that is injected into a vulnerable application. Once the stylesheet is executed, it can be used to perform a variety of attacks such as extracting sensitive data from the system or executing arbitrary code.
 
+ 
+
+
+
 **Code**: [[<ds:Signature xmlns:ds="http://www.w3.org/2000/09/]]
+
+
 
 > The `data` field contains the malicious XSLT stylesheet that is used to perform the attack. The `lang` field specifies that the code is written in XML. The `text` field provides a visual aid to help understand the attack. The `instruction` field gives a brief overview of the attack and what it involves. The `explain` field can be used to provide more detailed information about the attack and how it works.
 
@@ -87,3 +107,5 @@ The business value of this attack is that it allows attackers to gain unauthoriz
 - [[Authentication Bypass]]
 - [[Extensible Stylesheet Language Transformation]]
 - [[SAML Injection]]
+
+

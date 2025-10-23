@@ -17,8 +17,20 @@ Airtun-ng is a virtual tunnel interface creator and is included in the aircrack-
 
 Airtun-ng is a virtual tunnel interface creator and is included in the aircrack-ng package. Airtun-ng two basic functions:
 
+
+
 Allow all encrypted traffic to be monitored for wireless Intrusion Detection System (wIDS) purposes
+
+
 
 Inject arbitrary traffic into a network
 
+
+
 In order to perform wIDS data gathering, you must have the encryption key and the bssid for the network you wish to monitor.
+
+
+
+
+
+

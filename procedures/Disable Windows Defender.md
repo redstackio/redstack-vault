@@ -35,9 +35,15 @@ Windows Defender will often block tools used for information gathering after esc
 
 Windows Defender will often block tools used for information gathering after escalating to Administrator privileges, such as Mimikatz. While it is simple to disable Windows Defender with Administrator privileges, please be aware that this action may alert security teams to an intrusion.
 
+
+
 # Instructions
 
 ## Windows 8+
+
+
+
+
 
 **Command** ([[Set-MpPreference -DisableRealtimeMonitoring $true]]):
 
@@ -45,7 +51,15 @@ Windows Defender will often block tools used for information gathering after esc
 Set-MpPreference -DisableRealtimeMonitoring $true
 ```
 
+
+
+
+
 ## Windows 7 and earlier
+
+
+
+
 
 **Command** ([[Stop and Disable Windows Defender]]):
 
@@ -53,6 +67,10 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 sc config WinDefend start= disabled
 sc stop WinDefend
 ```
+
+
+
+
 
 ## Platforms
 
@@ -78,3 +96,5 @@ sc stop WinDefend
 
 - [[administrator]]
 - [[defender]]
+
+

@@ -32,19 +32,35 @@ List local users on a Windows system using command prompt or PowerShell.
 
 List local users on a Windows system using command prompt or PowerShell.
 
+
+
+
+
 ## Objectives
 
 Local account information is important to an attacker, as it can provide them with valid credentials for lateral movement or privilege escalation. The information obtained from listing local users can also be used to map out the environment and identify potential targets for further exploitation.
 
+
+
 1. Identify the local users on the windows machine
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[List Local Windows Users]]):
 
 ```bash
 net user
 ```
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +83,5 @@ net user
 ## Tags
 
 - [[Enumeration]]
+
+

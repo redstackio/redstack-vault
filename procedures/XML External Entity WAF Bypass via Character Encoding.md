@@ -39,6 +39,8 @@ This procedure involves using UTF-16 conversion and converting UTF-8 to UTF-16BE
 Business Value:
 By exploiting this vulnerability, an attacker can gain access to confidential data, execute remote code, and perform denial of service attacks. This can lead to financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
@@ -47,6 +49,8 @@ By exploiting this vulnerability, an attacker can gain access to confidential da
 
 1. Tools for encoding payloads in different formats
 
+ 
+
 ## Defense
 
 1. Implement input validation and sanitization to prevent XXE attacks
@@ -54,6 +58,8 @@ By exploiting this vulnerability, an attacker can gain access to confidential da
 1. Implement a WAF that can detect and block XXE attacks
 
 1. Regularly update and patch applications and servers to prevent vulnerabilities
+
+ 
 
 ## Objectives
 
@@ -65,13 +71,23 @@ By exploiting this vulnerability, an attacker can gain access to confidential da
 
 1. Perform denial of service attacks
 
+ 
+
 # Instructions
 
 1. Use this command to convert the payload to UTF-16 encoding.
 
+ 
+
+
+
 **Code**: [[UTF-16]]
 
+
+
 > The argument 'UTF-16' specifies the desired encoding format. This command is useful when dealing with text data that needs to be converted to a specific encoding format. The converted payload can then be used for further processing or storage.
+
+
 
 **Command** ([[Convert to UTF-16]]):
 
@@ -79,17 +95,29 @@ By exploiting this vulnerability, an attacker can gain access to confidential da
 UTF-16
 ```
 
+
+
 2. To convert a UTF-8 encoded file to UTF-16BE, use the 'iconv' command followed by the input and output file names. The 'cat' command is used to read the input file and pass it to 'iconv' for conversion. The '>' symbol is used to redirect the output to a new file.
+
+ 
+
+
 
 **Code**: [[cat utf8exploit.xml | iconv -f UTF-8 -t UTF-16BE >]]
 
+
+
 > The 'iconv' command is a character set conversion utility that can be used to convert text files from one character set to another. In this case, we are converting a UTF-8 encoded file to UTF-16BE. The '-f' option specifies the input character set (UTF-8) and the '-t' option specifies the output character set (UTF-16BE). The 'cat' command is used to read the input file and pass it to 'iconv' for conversion. The '>' symbol is used to redirect the output to a new file. This command is useful when working with files that require a specific character set, such as XML files.
+
+
 
 **Command** ([[Convert UTF-8 encoded XML file to UTF-16BE]]):
 
 ```bash
 cat utf8exploit.xml | iconv -f UTF-8 -t UTF-16BE > utf16exploit.xml
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -113,3 +141,5 @@ cat utf8exploit.xml | iconv -f UTF-8 -t UTF-16BE > utf16exploit.xml
 - [[Bypass via character encoding]]
 - [[WAF Bypasses]]
 - [[XML External Entity]]
+
+

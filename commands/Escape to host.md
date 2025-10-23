@@ -26,3 +26,5 @@ chroot /host && clear
 echo 'You are now on the underlying host'
 
 ```
+
+

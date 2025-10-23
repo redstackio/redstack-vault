@@ -36,3 +36,5 @@ dnsvalidator v0.1	by James McLean (@vortexau)
 [22:10:54] [INFO] [9.9.9.9] resolving baseline
 ... [CUT] ...
 ```
+
+

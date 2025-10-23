@@ -31,6 +31,8 @@ This can be helpful to clean up S3 buckets after you are done with them.
 
 1. Delete an S3 bucket
 
+
+
 **Command** ([[aws s3 delete s3 bucket]]):
 
 ```bash
@@ -38,7 +40,13 @@ aws s3 rb s3://<bucket_name>
 
 ```
 
+
+
+
+
 2. Force delete an S3 bucket that is not empty
+
+
 
 **Command** ([[aws s3 delete s3 bucket that is not empty]]):
 
@@ -47,7 +55,13 @@ aws s3 rb s3://practicalaws.com --force
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[aws s3 delete s3 bucket]]
 - [[aws s3 delete s3 bucket that is not empty]]
+
+

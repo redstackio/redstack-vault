@@ -37,11 +37,15 @@ To execute this technique, an attacker needs to have network access to the EC2 i
 
 This technique can be used to gain access to sensitive data stored in EC2 instances, as well as other AWS services and resources. It can also be used to pivot to other systems in the cloud environment.
 
+ 
+
 ## Requirements
 
 1. Access to the EC2 instance's network
 
 1. Ability to send crafted requests
+
+ 
 
 ## Defense
 
@@ -51,22 +55,34 @@ This technique can be used to gain access to sensitive data stored in EC2 instan
 
 1. Monitor and analyze network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Obtain sensitive information from EC2 instances
 
 1. Gain access to other AWS services and resources
 
+ 
+
 # Instructions
 
 1. To access the metadata of an EC2 instance, make a GET request to the following URL: http://169.254.169.254/latest/meta-data. This will return a list of available metadata categories. To retrieve specific metadata, append the category name to the URL.
+
+ 
+
+
 
 **Code**: [[ami-id
 ami-launch-index
 ami-manifest-path
 block-de]]
 
+
+
 > The `ami-id` command returns the ID of the Amazon Machine Image (AMI) used to launch the instance. The `ami-launch-index` command returns the index of this instance in the reservation. The `ami-manifest-path` command returns the path to the AMI manifest file in Amazon S3. The `block-device-mapping/` command returns a list of block device mappings associated with the instance. The `events/` command returns a list of available event categories. The `hostname` command returns the instance hostname. The `iam/` command returns the instance's IAM role. The `identity-credentials/` command returns the temporary security credentials associated with the instance. The `instance-action` command returns the last action performed on the instance. The `instance-id` command returns the ID of the instance.
+
+
 
 **Command** ([[List of Instance Metadata]]):
 
@@ -83,6 +99,8 @@ instance-action
 instance-id
 ```
 
+
+
 2. To extract the temporary keys for an AWS role, use the following command:
 
 aws ec2 instance-metadata --iam --query 'InstanceProfileArn' --output text | cut -d '/' -f 2
@@ -91,9 +109,15 @@ This will return the name of the role that is currently assigned to the EC2 inst
 
 curl http://169.254.169.254/latest/meta-data/iam/security-credentials/<role-name>
 
+ 
+
+
+
 **Code**: [[{
 "Code" : "Success",
 "LastUpdated" : "2019-07-31T]]
+
+
 
 > The AWS Temporary Key Extraction command is used to extract temporary security credentials for an AWS role assigned to an EC2 instance. These credentials are required to access AWS resources using the permissions associated with the role. The command consists of two steps - first, extracting the name of the role assigned to the instance, and second, using that name to extract the temporary keys associated with the role.
 
@@ -119,3 +143,5 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/<role-name
 - [[AWS - Metadata SSRF]]
 - [[Cloud - AWS]]
 - [[Method for Elastic Cloud Compute (EC2)]]
+
+

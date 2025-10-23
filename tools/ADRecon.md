@@ -16,3 +16,7 @@ Is a tool which extracts various artifacts (as highlighted below) out of an AD e
 ## Description
 
 Is a tool which extracts various artifacts (as highlighted below) out of an AD environment in a specially formatted Microsoft Excel report that includes summary views with metrics to facilitate analysis. ​
+
+
+
+

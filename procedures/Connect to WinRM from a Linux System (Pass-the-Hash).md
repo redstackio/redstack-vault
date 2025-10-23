@@ -36,19 +36,33 @@ Spawn a PowerShell instance on a remote system using the WinRM service (usuallyp
 
 Spawn a PowerShell instance on a remote system using the WinRM service (usuallyport 5985) using an NTLM password hash instead of a password.
 
+
+
 ## Objectives
 
 This technique is commonly used in post-exploitation activities to move laterally within a network by gaining access to additional systems. It is particularly effective when combined with other techniques such as pass-the-hash, where the attacker can use stolen credentials to authenticate to the target system via WinRM.
 
+
+
 1. Use a Users NTLM hash to authenticate through the WinRM service on a remote machine as that target user and obtain a shell on the target machine.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[evil-winrm.rb Connect to a WinRM Server (NTLM)]]):
 
 ```bash
 evil-winrm.rb -i $_TARGET -u $_USER -H $_NTLM
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +89,5 @@ evil-winrm.rb -i $_TARGET -u $_USER -H $_NTLM
 - [[Network]]
 - [[pass the hash]]
 - [[shell]]
+
+

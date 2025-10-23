@@ -56,3 +56,5 @@ updated_at: '2023-04-10T20:36:28.745514+00:00'
 (&(sn=administrator)(password=MYK*)) : OK
 (&(sn=administrator)(password=MYKE)) : OK
 ```
+
+

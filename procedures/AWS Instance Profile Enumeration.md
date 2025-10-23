@@ -37,6 +37,8 @@ Technical Explanation: Instance profiles are associated with EC2 instances and c
 
 Business Value: An attacker can use this technique to gain access to sensitive data or resources in an AWS environment, potentially leading to data theft, data manipulation, or service disruption.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permission to list instance profiles
@@ -44,6 +46,8 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 1. Access to the AWS console or AWS CLI
 
 1. Access to the AWS instance metadata service
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 
 1. Disable the AWS instance metadata service if it is not needed
 
+ 
+
 ## Objectives
 
 1. Identify which instance profiles are available in the target AWS environment
@@ -61,17 +67,25 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 
 1. Escalate privileges by assuming the role associated with an instance profile
 
+ 
+
 # Instructions
 
 1. This command lists all the instance profiles in your AWS account.
 
+ 
+
 The 'aws iam list-instance-profiles' command is used to retrieve a list of all the instance profiles in your AWS account. An instance profile is a container for an AWS Identity and Access Management (IAM) role that you can use to pass role information to an EC2 instance when the instance starts. This command does not take any arguments or options.
+
+
 
 **Command** ([[List Instance Profiles]]):
 
 ```bash
 aws iam list-instance-profiles
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws iam list-instance-profiles
 - [[Exploitation]]
 - [[Listing instance profiles]]
 - [[Privilege Escalation]]
+
+

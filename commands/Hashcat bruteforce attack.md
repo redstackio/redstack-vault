@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:35:59.633859+00:00'
 ```bash
 hashcat -m 5500 -a 3 hash.txt
 ```
+
+

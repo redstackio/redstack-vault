@@ -38,6 +38,8 @@ To detect Cron jobs, tools like pspy can be used to monitor system calls and ide
 
 This technique can be valuable for an attacker seeking to gain persistent access to a Linux system and maintain control over it.
 
+ 
+
 ## Requirements
 
 1. Access to the Linux system
@@ -45,6 +47,8 @@ This technique can be valuable for an attacker seeking to gain persistent access
 1. Knowledge of Linux command line tools
 
 1. Access to pspy or similar system call monitoring tool
+
+ 
 
 ## Defense
 
@@ -54,11 +58,15 @@ This technique can be valuable for an attacker seeking to gain persistent access
 
 1. Regularly audit and review scheduled tasks, such as Cron jobs, to identify and remove any unnecessary or potentially vulnerable tasks
 
+ 
+
 ## Objectives
 
 1. Identify vulnerable Cron jobs that can be exploited for privilege escalation
 
 1. Execute code with elevated privileges to gain access to sensitive information or perform malicious actions on the system
+
+ 
 
 # Instructions
 
@@ -73,12 +81,20 @@ This technique can be valuable for an attacker seeking to gain persistent access
 - cat /etc/cron.allow
 - cat /etc/cron.deny*
 
+ 
+
+
+
 **Code**: [[/etc/init.d
 /etc/cron*
 /etc/crontab
 /etc/cron.allo]]
 
+
+
 > This command provides a list of system configuration files that can be checked for write permissions. It also provides a set of commands that can be run to check the permissions of these files. The output of these commands can be used to identify any files that have write permissions and may be vulnerable to exploitation. It is important to ensure that only authorized users have write permissions to these files to prevent unauthorized access and modification of the system configuration.
+
+
 
 **Command** ([[List of Cron Jobs]]):
 
@@ -87,6 +103,10 @@ ls -alh /var/spool/cron;
 ls -al /etc/ | grep cron
 ls -al /etc/cron*
 ```
+
+
+
+
 
 **Command** ([[Cron Configuration Files]]):
 
@@ -108,6 +128,10 @@ cat /etc/init.d
 /var/spool/cron/crontabs/root
 ```
 
+
+
+
+
 **Command** ([[Cron User Access Files]]):
 
 ```bash
@@ -117,9 +141,17 @@ cat /etc/cron.allow
 cat /etc/cron.deny*
 ```
 
+
+
 2. To detect a CRON job using pspy, run the following command:
 
+ 
+
+
+
 **Code**: [[# print both commands and file system events and s]]
+
+
 
 > This command will print both commands and file system events and scan procfs every 1000 ms (=1sec), allowing you to detect any CRON jobs that are running on the system.
 
@@ -146,3 +178,5 @@ cat /etc/cron.deny*
 - [[Cron jobs]]
 - [[Linux - Privilege Escalation]]
 - [[Scheduled tasks]]
+
+

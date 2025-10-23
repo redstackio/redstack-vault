@@ -33,6 +33,8 @@ From a technical standpoint, this vulnerability occurs when a web application fa
 
 The business value of this technique is that it allows attackers to bypass security controls and redirect users to malicious websites. This can result in the theft of sensitive information, such as login credentials or financial data. Additionally, this technique can be used to spread malware or conduct phishing attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -40,6 +42,8 @@ The business value of this technique is that it allows attackers to bypass secur
 1. Knowledge of injection parameters
 
 1. Ability to craft a malicious URL
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. Implement proper access controls to prevent unauthorized access to sensitive data
 
+ 
+
 ## Objectives
 
 1. To redirect users to a malicious website
@@ -57,14 +63,22 @@ The business value of this technique is that it allows attackers to bypass secur
 
 1. To spread malware or conduct phishing attacks
 
+ 
+
 # Instructions
 
 1. Use these payloads to test the URL redirection vulnerability of a web application. Inject the payload in the vulnerable parameter and observe the redirection URL. The payload can be used to redirect the user to a malicious website or phishing page.
+
+ 
+
+
 
 **Code**: [[/{payload}
 ?next={payload}
 ?url={payload}
 ?target=]]
+
+
 
 > The payload contains various parameters such as next, url, target, rurl, dest, destination, redir, redirect_uri, redirect_url, redirect, redirect/{payload}, cgi-bin/redirect.cgi?{payload}, out/{payload}, out?{payload}, view={payload}, login?to={payload}, image_url={payload}, go={payload}, return={payload}, returnTo={payload}, return_to={payload}, checkout_url={payload}, continue={payload}, return_path={payload}. These parameters are used by web applications to redirect the user to a specific page or URL. An attacker can manipulate these parameters to redirect the user to a malicious website or phishing page.
 
@@ -84,3 +98,5 @@ The business value of this technique is that it allows attackers to bypass secur
 
 - [[Common injection parameters]]
 - [[Open URL Redirection]]
+
+

@@ -36,11 +36,15 @@ This procedure involves scanning a target system for the presence of the Log4She
 
 To scan for this vulnerability, the log4j-scan tool is used. This tool sends specially crafted requests to the target system and checks if the system is vulnerable. If the system is vulnerable, the tool will provide information on the vulnerability and the exploitability of the system. This procedure is useful for identifying vulnerable systems and prioritizing them for patching or further exploitation.
 
+ 
+
 ## Requirements
 
 1. Access to the log4j-scan tool
 
 1. Access to the target system
+
+ 
 
 ## Defense
 
@@ -50,9 +54,13 @@ To scan for this vulnerability, the log4j-scan tool is used. This tool sends spe
 
 1. Implement network segmentation to limit the impact of a potential exploit.
 
+ 
+
 ## Objectives
 
 1. Identify systems that are vulnerable to the Log4Shell vulnerability
+
+ 
 
 # Instructions
 
@@ -72,7 +80,13 @@ For example, to scan a target system with the default options, run:
 python3 log4j-scan.py -u http://127.0.0.1:8080
 ```
 
+ 
+
+
+
 **Code**: [[usage: log4j-scan.py [-h] [-u URL] [-l USEDLIST] []]
+
+
 
 > - `-u URL`: The URL of the target system to scan.
 - `--run-all-tests`: Run all tests, including the exploit test.
@@ -81,17 +95,25 @@ python3 log4j-scan.py -u http://127.0.0.1:8080
 - `--dns-callback-provider DNS_CALLBACK_PROVIDER`: The DNS callback provider to use.
 - `--custom-dns-callback-host CUSTOM_DNS_CALLBACK_HOST`: The custom DNS callback host to use.
 
+
+
 **Command** ([[Log4j Scan with default parameters]]):
 
 ```bash
 python3 log4j-scan.py -u http://127.0.0.1:8081 --run-all-test
 ```
 
+
+
+
+
 **Command** ([[Log4j Scan with WAF Bypass]]):
 
 ```bash
 python3 log4j-scan.py -u http://127.0.0.1:808 --waf-bypass
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -118,3 +140,5 @@ python3 log4j-scan.py -u http://127.0.0.1:808 --waf-bypass
 
 - [[CVE-2021-44228 Log4Shell]]
 - [[Scanning]]
+
+

@@ -37,11 +37,15 @@ Mimikatz is a powerful post-exploitation tool that allows attackers to extract p
 
 Dumping AD domain credentials using Mimikatz sekurlsa can be devastating for organizations as it can lead to complete compromise of the network, data exfiltration, and loss of reputation.
 
+ 
+
 ## Requirements
 
 1. Local administrator access on the Windows system
 
 1. Mimikatz tool installed on the system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Dumping AD domain credentials using Mimikatz sekurlsa can be devastating for org
 
 1. Enforcing strong password policies and multi-factor authentication can help prevent password theft and reduce the risk of this attack
 
+ 
+
 ## Objectives
 
 1. Obtain password hashes and LSA secrets from a Windows system
@@ -59,14 +65,24 @@ Dumping AD domain credentials using Mimikatz sekurlsa can be devastating for org
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. To retrieve the password hashes for krbtgt and dump LSA secrets, run the following commands:
 
+ 
+
+
+
 **Code**: [[sekurlsa::krbtgt
 lsadump::lsa /inject /name:krbtgt]]
 
+
+
 > The 'sekurlsa::krbtgt' command is used to retrieve the password hashes for krbtgt, which is a privileged account used by Kerberos to encrypt and decrypt authentication tickets. The 'lsadump::lsa /inject /name:krbtgt' command is used to dump LSA secrets, which are used to store sensitive information such as passwords and keys. These commands can be useful for performing pass-the-hash attacks or for gaining access to other systems that use the same password as krbtgt.
+
+
 
 **Command** ([[Dumping krbtgt credentials using sekurlsa]]):
 
@@ -74,11 +90,17 @@ lsadump::lsa /inject /name:krbtgt]]
 sekurlsa::krbtgt
 ```
 
+
+
+
+
 **Command** ([[Dumping LSA secrets using lsadump]]):
 
 ```bash
 lsadump::lsa /inject /name:krbtgt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +122,5 @@ lsadump::lsa /inject /name:krbtgt
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[Using Mimikatz sekurlsa]]
+
+

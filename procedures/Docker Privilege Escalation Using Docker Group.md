@@ -33,15 +33,25 @@ Docker host systems with users who are part of the "docker" group are able to es
 
 Docker host systems with users who are part of the "docker" group are able to escalate privileges to root by mounting the root file system within a container, bypassing permissions on the host system. This is considered a misconfiguration, as non-admin users should never be added to this group.
 
+
+
+
+
 # Instructions
 
 Mount the root file system within the Docker container
+
+
 
 **Command** ([[Docker Mount a Host's Root Directory in a Container]]):
 
 ```bash
 docker run -v /:/root_fs -i -t bash bash
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -63,3 +73,5 @@ docker run -v /:/root_fs -i -t bash bash
 - [[Hypervisors]]
 - [[known vulnerability]]
 - [[misconfiguration]]
+
+

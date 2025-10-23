@@ -26,11 +26,15 @@ Kubernetes cAdvisor API provides an interface to access and view container resou
 
 Kubernetes cAdvisor API provides an interface to access and view container resource usage data. This procedure aims to access the cAdvisor API address to gain visibility into the Kubernetes cluster's resource usage. By accessing this API, an attacker can identify valuable targets for further exploitation.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes cluster
 
 1. Access to the cAdvisor API address
+
+ 
 
 ## Defense
 
@@ -38,24 +42,38 @@ Kubernetes cAdvisor API provides an interface to access and view container resou
 Enable SSL certificate validation.
 Monitor network traffic for any suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Gain visibility into the Kubernetes cluster's resource usage
+
+ 
 
 # Instructions
 
 1. Execute the following command in a terminal to access the cAdvisor API address. Replace <IP Address> with the IP address of the Kubernetes node where the target container is running.
 
+ 
+
+
+
 **Code**: [[curl -k https://<IP Address>:4194]]
+
+
 
 > -k: Allow connections to SSL sites without certificates.
 https://<IP Address>:4194: The cAdvisor API endpoint URL.
+
+
 
 **Command** ([[Curl Request to IP Address]]):
 
 ```bash
 curl -k https://<IP Address>:4194
 ```
+
+
 
 ## Commands Used
 
@@ -66,3 +84,5 @@ curl -k https://<IP Address>:4194
 - [[API addresses that you should know]]
 - [[cAdvisor]]
 - [[Kubernetes]]
+
+

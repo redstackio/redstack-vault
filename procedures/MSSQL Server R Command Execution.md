@@ -32,6 +32,8 @@ Technical Explanation: The 'Execute SQL OS Command and External Script' command 
 
 Business Value: Attackers can use this technique to gain access to sensitive data stored in the database, such as customer information, financial data, and intellectual property. This can result in reputational damage, financial loss, and legal liability for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to the MSSQL Server
@@ -39,6 +41,8 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 1. Authenticated user account with permission to execute R scripts
 
 1. Knowledge of R scripting language
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 
 1. Implement network segmentation to limit the impact of a successful attack on the MSSQL Server
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the MSSQL Server
@@ -56,11 +62,19 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 
 1. Gain full control of the server
 
+ 
+
 # Instructions
 
 1. This command is used to execute an SQL OS command and an external script on a specified SQL Server instance. The command takes in parameters such as the username and password for the instance, the instance name, and the base64 encoded script for the SQL OS command. It also executes an external script in R language that returns data in the form of a data frame. The script can be modified to execute any desired command.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLOSCmdR -Username sa -Password Password12]]
+
+
 
 > The 'Invoke-SQLOSCmdR' cmdlet is used to execute an SQL OS command on a specified SQL Server instance. The cmdlet takes in parameters such as the username and password for the instance, the instance name, and the base64 encoded script for the SQL OS command. The 'sp_execute_external_script' stored procedure is used to execute an external script in R language that returns data in the form of a data frame. The 'system' function is used to execute the 'cmd.exe /c dir' command and the 'shell' function is used to execute the 'dir' command. The returned data is in the form of a text file containing the output of the executed command.
 
@@ -79,3 +93,5 @@ Business Value: Attackers can use this technique to gain access to sensitive dat
 
 - [[MSSQL Server]]
 - [[R]]
+
+

@@ -27,11 +27,15 @@ Technical Explanation: Smarty is a popular template engine used in many PHP appl
 
 Business Value: An attacker can use this vulnerability to gain unauthorized access to sensitive data or to disrupt business operations. This can result in financial losses, damage to the company's reputation, and legal liabilities.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable application
 
 1. Knowledge of the template engine and its vulnerabilities
+
+ 
 
 ## Defense
 
@@ -41,18 +45,28 @@ Business Value: An attacker can use this vulnerability to gain unauthorized acce
 
 1. Implement strict access controls to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the server
 
 1. Manipulate files on the server
 
+ 
+
 # Instructions
 
 1. This command allows an attacker to execute arbitrary commands and manipulate files on the target system via a vulnerability in the Smarty template engine. The attacker can inject malicious code into the template file, which is then executed on the server when the file is processed. The commands and file manipulation techniques that can be used depend on the version of Smarty being used.
 
+ 
+
+
+
 **Code**: [[{$smarty.version}
 {php}echo `id`;{/php} //deprecat]]
+
+
 
 > The `{$smarty.version}` variable displays the version of Smarty being used. The `{php}echo `id`;{/php}` command displays the user ID of the current user. The `{Smarty_Internal_Write_File::writeFile($SCRIPT_NAME,"<?php passthru($_GET['cmd']); ?>",self::clearConfig())}` command writes a PHP file to the server that allows the attacker to execute arbitrary commands via the `cmd` parameter in the URL. The `{system('ls')}` command lists the files in the current directory, and the `{system('cat index.php')}` command displays the contents of the `index.php` file.
 
@@ -60,3 +74,5 @@ Business Value: An attacker can use this vulnerability to gain unauthorized acce
 
 - [[Server Side Template Injection]]
 - [[Smarty]]
+
+

@@ -21,7 +21,15 @@ PowerView is a PowerShell tool to gain network situational awareness on Windows 
 
 PowerView is a PowerShell tool to gain network situational awareness on Windows domains. It contains a set of pure-PowerShell replacements for various windows "net *" commands, which utilize PowerShell AD hooks and underlying Win32 API functions to perform useful Windows domain functionality.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_c064f88a-085e-4bc5-bb1a-4e5a40ed0c54}}
+
+
 
 # Installation
 
@@ -29,8 +37,18 @@ PowerView is a PowerShell tool to gain network situational awareness on Windows 
 
 PowerView is maintained by POwerShellMafia and included in their PowerSploit modules. Clone the "dev" repository from GitHub to get the latest version of PowerView.
 
+
+
+
+
 The script is located in PowerSploit\Recon\
+
+
+
+
 
 ## Commands (1)
 
 - [[PowerView Add Active Directory Group Privileges]]
+
+

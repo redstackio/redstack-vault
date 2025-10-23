@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 snmpwalk -c public -v1 target-ip 1.3.6.1.2.1.6.13.1.3
 
 ```
+
+

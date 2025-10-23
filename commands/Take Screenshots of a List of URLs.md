@@ -8,6 +8,7 @@ output: 'root@kali:~/dump# aquatone < hosts.txt
 
   aquatone v1.7.0 started at 2020-03-06T03:02:34-05:00
 
+
   Targets    : 15
 
   Threads    : 3
@@ -15,6 +16,7 @@ output: 'root@kali:~/dump# aquatone < hosts.txt
   Ports      : 80, 443, 8000, 8080, 8443
 
   Output dir : .
+
 
   http://megabank.com: 200 OK
 
@@ -49,3 +51,5 @@ http://superfriends.com: 200 OK
 http://cows.com: 200 OK
 ...
 ```
+
+

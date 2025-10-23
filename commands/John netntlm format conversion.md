@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:35:59.633859+00:00'
 ```bash
 john --format=netntlm hash.txt
 ```
+
+

@@ -16,3 +16,5 @@ git clone https://github.com/its-a-feature/KeytabParser
 python KeytabParser.py /etc/krb5.keytab
 klist -k /etc/krb5.keytab
 ```
+
+

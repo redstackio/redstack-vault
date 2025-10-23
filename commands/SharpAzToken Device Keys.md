@@ -15,3 +15,5 @@ updated_at: '2023-05-24T07:40:26.785466+00:00'
 ```bash
 SharpAzToken.exe devicekeys --pfxpath XXXX.pfx --refreshtoken (--prtcookie / ---username + --password )
 ```
+
+

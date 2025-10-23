@@ -35,11 +35,15 @@ This procedure focuses on validating MS14-068 checksums by performing SID enumer
 
 This procedure focuses on validating MS14-068 checksums by performing SID enumeration and WMI queries. This attack allows an attacker to elevate privileges to SYSTEM on the domain controller. The attacker first performs SID enumeration to obtain the SID of the target user. Then, the attacker queries the WMI service on the domain controller for the user's password hash. The password hash can be used to generate a valid Kerberos ticket and authenticate as the target user, effectively elevating privileges to SYSTEM on the domain controller. This attack can be used to gain access to sensitive data and control of the entire Active Directory domain.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the domain controller
 
 1. RPC and WMI access to the domain controller
+
+ 
 
 ## Defense
 
@@ -49,9 +53,13 @@ This procedure focuses on validating MS14-068 checksums by performing SID enumer
 
 1. Monitor and log all WMI and RPC activity to detect and respond to suspicious activity.
 
+ 
+
 ## Objectives
 
 1. Obtain SYSTEM-level access on the domain controller
+
+ 
 
 # Instructions
 
@@ -60,9 +68,17 @@ This procedure focuses on validating MS14-068 checksums by performing SID enumer
 2. Once connected, run the command 'lookupnames <USERNAME>'.
 3. The output will include the user's SID.
 
+ 
+
+
+
 **Code**: [[rpcclient]]
 
+
+
 > The rpcclient command is a tool for interacting with Microsoft's implementation of the DCE/RPC protocol. It can be used to perform various tasks, including user SID enumeration. The 'lookupnames' command is used to lookup the SID of a given username. By using this command, an attacker can obtain the SID of a user on the target system, which can be used in further attacks.
+
+
 
 **Command** ([[Enumerating Users]]):
 
@@ -70,11 +86,19 @@ This procedure focuses on validating MS14-068 checksums by performing SID enumer
 rpcclient -U "" -N 10.10.10.10 -c enumdomusers
 ```
 
+
+
+
+
 **Command** ([[Enumerating Shares]]):
 
 ```bash
 rpcclient -U "" -N 10.10.10.10 -c enumshares
 ```
+
+
+
+
 
 **Command** ([[Enumerating Group Memberships]]):
 
@@ -82,10 +106,18 @@ rpcclient -U "" -N 10.10.10.10 -c enumshares
 rpcclient -U "" -N 10.10.10.10 -c 'querygroupmem 0x200'
 ```
 
+
+
 2. Use the following command to query WMI remotely: 
 wmic /node:<remote_computer_name> <command>
 
+ 
+
+
+
 **Code**: [[wmi]]
+
+
 
 > This command allows you to remotely query the Windows Management Instrumentation (WMI) service on another computer. The <remote_computer_name> parameter specifies the name of the remote computer, and the <command> parameter specifies the WMI query to execute. You must have administrative privileges on the remote computer to use this command.
 
@@ -113,3 +145,5 @@ wmic /node:<remote_computer_name> <command>
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[MS14-068 Checksum Validation]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:54.703524+00:00'
 ```bash
 $ aws lambda create-function –function-name my_function –runtime python3.6 –role arn_of_lambda_role –handler lambda_function.lambda_handler –code file://my/python/code.py
 ```
+
+

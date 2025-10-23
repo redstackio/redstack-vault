@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 HKLM\Software\MS\WindowsNT\CurrentVersion\Image File Execution Options\notepad.exe\debugger(REG_SZ = cmd.exe)
 
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:05.508378+00:00'
 ```bash
 select distinct(definer) from syscat.schemata
 ```
+
+

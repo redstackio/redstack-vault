@@ -29,11 +29,15 @@ Linked databases are a method of connecting two databases on different servers. 
 
 Linked databases are a method of connecting two databases on different servers. This procedure involves crawling links to identify instances of MSSQL Server that are linked to a database on another server. This can be useful for identifying potential targets for lateral movement or privilege escalation. To execute this procedure, the user will need to identify the SQL Server link and crawl the links to enumerate the instances in the domain. This can be done using various tools and techniques. The result of this procedure will be a list of MSSQL Server instances that are linked to databases on other servers.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the domain.
 
 1. Access to tools for crawling links and enumerating instances of MSSQL Server.
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ Linked databases are a method of connecting two databases on different servers. 
 
 1. Monitor network traffic for suspicious activity related to MSSQL Server link crawling.
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for lateral movement or privilege escalation.
 
 1. Enumerate instances of MSSQL Server linked to databases on other servers.
 
+ 
+
 # Instructions
 
 1. This command retrieves information about SQL Server links and identifies valid links based on the DatabaseLinkName field in the results.
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceDomain | Get-SQLServerLink -Verbose]]
+
+
 
 > The 'Get-SQLInstanceDomain' command retrieves information about the SQL Server instances in the current domain. The 'Get-SQLServerLink' command is then used to retrieve information about SQL Server links for each of these instances. The command is run with the '-Verbose' parameter to provide detailed output. The 'select' statement at the end of the 'data' field is used to query the 'sysservers' table in the 'master' database to retrieve additional information about the SQL Server links. The 'text' field provides information about how to identify a valid SQL Server link based on the 'DatabaseLinkName' field in the results.
 
@@ -73,3 +87,5 @@ Linked databases are a method of connecting two databases on different servers. 
 - [[Crawl Links for Instances in the Domain]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

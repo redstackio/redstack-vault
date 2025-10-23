@@ -30,11 +30,15 @@ AWS EC2 Instance Enumeration is the process of discovering all the available EC2
 
 AWS EC2 Instance Enumeration is the process of discovering all the available EC2 instances in an AWS account. This technique can be used by an attacker to identify potential targets for further attacks or to gain a better understanding of the target environment. This technique can be performed using the AWS CLI or APIs. The business value of this technique is that it can help an organization identify and manage their cloud assets.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list EC2 instances
 
 1. Access to the AWS CLI or APIs
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ AWS EC2 Instance Enumeration is the process of discovering all the available EC2
 
 1. Monitor AWS CloudTrail logs for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Discover all available EC2 instances in the target AWS account
@@ -52,17 +58,25 @@ AWS EC2 Instance Enumeration is the process of discovering all the available EC2
 
 1. Gain a better understanding of the target environment
 
+ 
+
 # Instructions
 
 1. Use this command to describe one or more of your EC2 instances.
 
+ 
+
 This command provides details about the specified EC2 instances, such as instance IDs, instance types, security groups, and more. You can use filters to narrow down the results. For example, you can filter by instance ID, instance type, or tag values. This command can be useful for troubleshooting, monitoring, and managing your EC2 instances.
+
+
 
 **Command** ([[List all instances]]):
 
 ```bash
 aws ec2 describe-instances
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws ec2 describe-instances
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing information about all instances]]
+
+

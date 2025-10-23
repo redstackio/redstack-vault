@@ -32,9 +32,13 @@ From a technical perspective, this technique involves using path traversal to na
 
 The business value of this technique is that it can help organizations identify weaknesses in their Linux systems and take steps to secure them before attackers can exploit them.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The business value of this technique is that it can help organizations identify 
 
 1. Implement file integrity monitoring to detect unauthorized changes to files
 
+ 
+
 ## Objectives
 
 1. Discover interesting files on a Linux system
@@ -52,15 +58,23 @@ The business value of this technique is that it can help organizations identify 
 
 1. Assist in securing Linux systems by identifying weaknesses
 
+ 
+
 # Instructions
 
 1. The command above will traverse through all directories and files on the Linux system and list the files and their attributes. The output can be redirected to a file or piped to other commands for further processing.
+
+ 
+
+
 
 **Code**: [[/etc/issue
 /etc/passwd
 /etc/shadow
 /etc/group
 /etc]]
+
+
 
 > The 'find' command is used to search for files on a Linux system. The '-type f' option specifies that only files should be returned, and the '-name "*"' option specifies that all files should be returned. The '-exec' option is used to execute a command on each file found. In this case, the 'ls -al {}' command is executed on each file. The '{}' is a placeholder for the file name. The '2>/dev/null' option is used to redirect error messages to '/dev/null', which discards them.
 
@@ -79,3 +93,5 @@ The business value of this technique is that it can help organizations identify 
 - [[Directory Traversal]]
 - [[Interesting Linux files]]
 - [[Path Traversal]]
+
+

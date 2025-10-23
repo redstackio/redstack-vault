@@ -39,11 +39,15 @@ From a technical perspective, this involves identifying a vulnerable binary that
 
 The business value of this procedure is that it allows an attacker to escalate privileges on a Linux system, potentially gaining access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Linux system
 
 1. Ability to create and load shared libraries
+
+ 
 
 ## Defense
 
@@ -53,19 +57,31 @@ The business value of this procedure is that it allows an attacker to escalate p
 
 1. Regularly update and patch software to minimize the risk of exploitation
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
 
 1. Gain access to sensitive data or systems
 
+ 
+
 # Instructions
 
 1. The 'ldd' command is used to identify the shared libraries that a binary executable is dependent upon.
 
+ 
+
+
+
 **Code**: [[ldd]]
 
+
+
 > The 'ldd' command prints the shared libraries required by each program or shared library specified on the command line. When invoked without any arguments, it displays the shared libraries that the dynamic linker/loader would use to load the executable or shared library specified. The output includes the full path to each shared library, along with any version information that is available.
+
+
 
 **Command** ([[List Dynamic Dependencies]]):
 
@@ -73,12 +89,22 @@ The business value of this procedure is that it allows an attacker to escalate p
 ldd <executable>
 ```
 
+
+
 2. To view the dependencies of a binary file, use the command 'ldd' followed by the path to the binary file.
+
+ 
+
+
 
 **Code**: [[$ ldd /opt/binary
     linux-vdso.so.1 (0x00007ffe9]]
 
+
+
 > The 'ldd' command lists the shared libraries required by the specified binary file. In the given example, the dependencies of '/opt/binary' are listed. The output shows the name of the shared library followed by its location in memory. The 'linux-vdso.so.1' library is a special library that allows the program to access certain system calls directly, while the 'vulnlib.so.8' library is required by the program and is located in '/usr/lib/'. The last library listed is the dynamic linker, which is responsible for loading and linking the shared libraries at run time.
+
+
 
 **Command** ([[Check shared library dependencies]]):
 
@@ -86,15 +112,29 @@ ldd <executable>
 $ ldd /opt/binary
 ```
 
+
+
 3. To create a library, use the 'mkdir' command followed by the name of the library you wish to create. For example, 'mkdir my_library'.
 
+ 
+
+
+
 **Code**: [[/tmp]]
+
+
 
 > The 'mkdir' command allows you to create a new directory or folder. In this case, we are using it to create a library within the '/tmp' directory. The name of the library should be provided after the 'mkdir' command, and it will be created as a subdirectory of '/tmp'.
 
 4. Compile and load a shared library into memory
 
+ 
+
+
+
 **Code**: [[gcc –Wall –fPIC –shared –o vulnlib.so /tmp/vulnlib]]
+
+
 
 > This command compiles a shared library from the source code located at /tmp/vulnlib.c using the gcc compiler with the following options:
 -Wall: enable all warnings
@@ -130,3 +170,5 @@ Finally, the path to the directory containing the compiled shared library is add
 - [[ldconfig]]
 - [[Linux - Privilege Escalation]]
 - [[Shared Library]]
+
+

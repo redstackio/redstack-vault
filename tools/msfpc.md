@@ -16,3 +16,9 @@ MSFvenom Payload Creator (MSFPC) is a wrapper that generates multiple types of p
 ## Description
 
 MSFvenom Payload Creator (MSFPC) is a wrapper that generates multiple types of payloads, based on user-selected options. The idea is to be as simple as possible (using as few as one option) to produce a payload.Fully automating msfvenom & Metasploit is the end goal (well as to be be able to automate MSFPC itself). The rest is to make the user’s life as easy as possible (e.g. IP selection menu, msfconsole resource file/commands, batch payload production and able to enter any argument in any order (in various formats/patterns)).
+
+
+
+
+
+

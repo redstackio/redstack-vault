@@ -16,3 +16,5 @@ Get-Wmiobject -namespace "root\ccm\policy\Machine\ActualConfig" -class "CCM_Netw
 NetworkAccessPassword : <![CDATA[E600000001...8C6B5]]>
 NetworkAccessUsername : <![CDATA[E600000001...00F92]]>
 ```
+
+

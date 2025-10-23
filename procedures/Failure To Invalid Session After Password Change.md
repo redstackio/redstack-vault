@@ -27,11 +27,39 @@ A valid session has to be destroyed once the session is closed. Otherwise an att
 
  A valid session has to be destroyed once the session is closed. Otherwise an attacker will try to exploit the session to impersonate the victim.
 
+
+
 # Instructions
+
+
+
+
 
 1. Login into two different browsers using same credentials.
 
+
+
+
+
+
+
+![177271dc-3b30-4cb5-a7b1-03557dcd71ed.png]()
+
+
+
+
+
+
+
 2.Change password in one browser and observe  that another browser still validate the session even after password change (even after refresh the page).
+
+
+
+
+
+![38495f89-f9f3-4c84-8c53-73633aa1a2d6.png]()
+
+
 
 ## Platforms
 
@@ -41,3 +69,5 @@ A valid session has to be destroyed once the session is closed. Otherwise an att
 
 - [[Session Management]]
 - [[Web Applications]]
+
+

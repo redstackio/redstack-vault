@@ -36,11 +36,15 @@ From a technical perspective, this technique involves crafting a payload that ca
 
 The business value of this technique is that it can be used to gain unauthorized access to sensitive information or to perform actions on behalf of the victim, such as transferring funds or making unauthorized purchases.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web page
 
 1. Knowledge of exotic payload techniques
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it can be used to gain unauthorized
 
 1. Regularly scan web applications for vulnerabilities and apply security patches as needed
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into vulnerable web pages
@@ -58,13 +64,23 @@ The business value of this technique is that it can be used to gain unauthorized
 
 1. Perform actions on behalf of the victim
 
+ 
+
 # Instructions
 
 1. To prevent XSS injection attacks, ensure that all user input is properly sanitized and validated before being used in any context that could be interpreted as code. This includes input to URLs, form fields, and any other input fields. Also, make sure to use output encoding when displaying user input on the page.
 
+ 
+
+
+
 **Code**: [[http://localhost/bla.php?test=</script><script>ale]]
 
+
+
 > In this example, an attacker is attempting to inject malicious code into the URL parameter 'test'. If this parameter is not properly sanitized and validated, the injected code could be executed in the context of the page, leading to a potential security vulnerability. To prevent this, the input should be properly sanitized and validated before being used in any context that could be interpreted as code, and output encoding should be used when displaying user input on the page.
+
+
 
 **Command** ([[URL Injection]]):
 
@@ -76,6 +92,8 @@ http://localhost/bla.php?test=</script><script>alert(1)</script>
   </script>
 </html>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +116,5 @@ http://localhost/bla.php?test=</script><script>alert(1)</script>
 - [[Bypass quotes in script tag]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

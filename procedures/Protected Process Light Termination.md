@@ -29,11 +29,15 @@ Technical Explanation: Protected Process Light is a security feature in Windows 
 
 Business Value: This technique can be used by attackers to gain access to sensitive information such as passwords, which can be used to further compromise a target's network and exfiltrate valuable data.
 
+ 
+
 ## Requirements
 
 1. Administrator-level access
 
 1. Ability to terminate Microsoft Defender process
+
+ 
 
 ## Defense
 
@@ -43,32 +47,52 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Use endpoint detection and response (EDR) tools to monitor for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information such as passwords
 
 1. Bypass Windows Defender's Protected Process Light feature
 
+ 
+
 # Instructions
 
 1. This command is used to check if LSASS (Local Security Authority Subsystem Service) is running in PPL (Protected Process Light) mode. PPL is a security feature that isolates certain critical system processes to prevent tampering and exploitation by malicious software. To run this command, open PowerShell and type the command as it appears in the 'data' field.
 
+ 
+
+
+
 **Code**: [[reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControl]]
+
+
 
 > The command queries the Windows registry for the 'RunAsPPL' value under the 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa' key. If the value is set to '1', LSASS is running in PPL mode. If the value is set to '0' or the value does not exist, LSASS is not running in PPL mode.
 
 2. Use this command to terminate the Microsoft Defender process.
 
+ 
+
+
+
 **Code**: [[taskkill /f /im MsMpEng.exe
 ERROR: The process "Ms]]
 
+
+
 > The 'taskkill' command is used to terminate a process by its name or process ID (PID). The '/f' parameter is used to forcefully terminate the process. The '/im' parameter followed by the process name 'MsMpEng.exe' specifies the process to be terminated. However, in this case, the process is a protected process and cannot be terminated even with Administrator privilege. This command can be used as an example to demonstrate that some processes are protected and cannot be terminated through normal means.
+
+
 
 **Command** ([[Kill MsMpEng.exe process]]):
 
 ```bash
 taskkill /f /im MsMpEng.exe
 ```
+
+
 
 ## Commands Used
 
@@ -78,3 +102,5 @@ taskkill /f /im MsMpEng.exe
 
 - [[Protected Process Light]]
 - [[Windows - Defenses]]
+
+

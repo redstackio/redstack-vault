@@ -24,3 +24,5 @@ $SD = New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList "O:B
 $SDBytes = New-Object byte[] ($SD.BinaryLength)
 $SD.GetBinaryForm($SDBytes, 0)
 ```
+
+

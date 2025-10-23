@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:09.986053+00:00'
 ```bash
 SELECT owner, table_name FROM all_tables;
 ```
+
+

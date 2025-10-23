@@ -16,3 +16,7 @@ Allows the ExternalC2 library from Ryan Hanson () to be leveraged for command an
 ## Description
 
 Allows the ExternalC2 library from Ryan Hanson () to be leveraged for command and control (C2) via DNS over HTTPS (DoH). This is built for the popular Adversary Simulation and Red Team Operations Software Cobalt Strike (). ​
+
+
+
+

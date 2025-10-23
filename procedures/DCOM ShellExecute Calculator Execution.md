@@ -36,6 +36,8 @@ Technical Explanation: The attacker uses the DCOM protocol to remotely execute t
 
 Business Value: This technique can be used to move laterally within a network and gain access to sensitive information. It can also be used to execute commands on a compromised machine, allowing the attacker to maintain access to the network.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target machine
@@ -43,6 +45,8 @@ Business Value: This technique can be used to move laterally within a network an
 1. DCOM service running on the target machine
 
 1. ShellExecute function available on the target machine
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This technique can be used to move laterally within a network an
 
 1. Use network segmentation to limit the impact of lateral movement
 
+ 
+
 ## Objectives
 
 1. Execute a remote process on a target machine via DCOM
@@ -60,13 +66,23 @@ Business Value: This technique can be used to move laterally within a network an
 
 1. Execute commands on a compromised machine
 
+ 
+
 # Instructions
 
 1. This command opens the Windows Calculator. 
 
+ 
+
+
+
 **Code**: [[$com = [Type]::GetTypeFromCLSID('9BA05972-F6A8-11C]]
 
+
+
 > The command uses PowerShell to create an instance of the Windows Script Host Shell Object and then uses the ShellExecute method to run the 'cmd.exe' command with the '/c' switch followed by 'calc.exe' which opens the Calculator application. The fourth argument is set to $null and the last argument is set to 0 to indicate that the command should run hidden and not show any windows.
+
+
 
 **Command** ([[Execute Calculator]]):
 
@@ -76,6 +92,8 @@ $obj = [System.Activator]::CreateInstance($com)
 $item = $obj.Item()
 $item.Document.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\system32",$null,0)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +118,5 @@ $item.Document.Application.ShellExecute("cmd.exe","/c calc.exe","C:\windows\syst
 - [[Active Directory Attacks]]
 - [[DCOM Exploitation]]
 - [[DCOM via ShellExecute]]
+
+

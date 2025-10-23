@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Linux Service Information
 
+
+
 **Command** ([[View processes in branch form]]):
 
 ```bash
 ps auxwff
 
 ```
+
+
+
+
+
+
 
 **Command** ([[View processes in branch form]]):
 
@@ -23,12 +31,24 @@ pstree -A -p
 
 ```
 
+
+
+
+
+
+
 **Command** ([[View processes running as root]]):
 
 ```bash
 ps aux | grep root
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Lookup process binary path and permissions]]):
 
@@ -39,6 +59,12 @@ cat /etc/xinetd.conf
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Show extrated binaries]]):
 
 ```bash
@@ -46,9 +72,21 @@ cat /etc/xinetd.conf 2>/dev/null | awk '{print $7}' |xargs -r ls -la 2>/dev/null
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Permissions and contents of /etc/exports (NFS)]]):
 
 ```bash
 ls -la /etc/exports 2>/dev/null; cat /etc/exports 2>/dev/null
 
 ```
+
+
+
+
+
+

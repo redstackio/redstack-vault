@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:03.071622+00:00'
 ```powershell
 $ aws cloudtrail delete-trail --name cloudgoat_trail --profile administrator
 ```
+
+

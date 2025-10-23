@@ -14,3 +14,5 @@ updated_at: '2023-05-24T07:18:16.200999+00:00'
 ```bash
 Lantern.exe token --username <Username> --password <Password>
 ```
+
+

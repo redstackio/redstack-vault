@@ -34,11 +34,15 @@ Technical Explanation: The vulnerability exists because FFmpeg does not properly
 
 Business Value: An attacker can use this technique to gain access to sensitive data, install malware, or take control of a system. This can result in significant financial losses, reputational damage, and legal liabilities for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to a system running FFmpeg
 
 1. Ability to create a specially crafted AVI file with a malicious HLS playlist
+
+ 
 
 ## Defense
 
@@ -48,15 +52,21 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 
 1. Use network segmentation to prevent attackers from accessing critical systems
 
+ 
+
 ## Objectives
 
 1. Inject arbitrary commands into the FFmpeg command line
 
 1. Execute malicious code on the target system
 
+ 
+
 # Instructions
 
 1. This command creates an AVI file with an HLS playlist inside using GAB2. The resulting playlist contains the specified files in the order they are listed in the 'data' field.
+
+ 
 
 The 'data' field contains the list of files to be included in the playlist, along with their duration. The 'EXTINF' tag specifies the duration of each file in seconds. The 'EXT-X-MEDIA-SEQUENCE' tag specifies the sequence number of the first file in the playlist. The 'EXT-X-ENDLIST' tag indicates that the playlist is complete and no more media files will be added to it. The resulting AVI file will contain the HLS playlist and can be played using any compatible media player.
 
@@ -77,3 +87,5 @@ The 'data' field contains the list of files to be included in the playlist, alon
 
 - [[FFmpeg HLS vulnerability]]
 - [[How it works (Explanations from neex - Hackerone links)]]
+
+

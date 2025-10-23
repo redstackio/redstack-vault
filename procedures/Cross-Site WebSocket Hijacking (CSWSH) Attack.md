@@ -36,6 +36,8 @@ From a technical perspective, the CSWSH attack works by exploiting the fact that
 
 The business value of this attack is that it can be used to gain access to sensitive information or to execute arbitrary code on the server. This can result in a data breach, loss of intellectual property, or disruption of business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -43,6 +45,8 @@ The business value of this attack is that it can be used to gain access to sensi
 1. Knowledge of WebSocket protocol
 
 1. Ability to craft a malicious WebSocket request
+
+ 
 
 ## Defense
 
@@ -52,29 +56,47 @@ The business value of this attack is that it can be used to gain access to sensi
 
 1. Use encryption to protect the WebSocket traffic from interception and tampering
 
+ 
+
 ## Objectives
 
 1. To gain access to sensitive information
 
 1. To execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. To prevent Cross-Site WebSocket Hijacking (CSWSH) attack, ensure that the WebSocket handshake is protected using a CSRF token or a nonce. Always validate the origin of the WebSocket request and ensure that the WebSocket connections are authenticated and authorized.
 
+ 
+
+
+
 **Code**: [[<script>
   ws = new WebSocket('wss://vulnerable.ex]]
+
+
 
 > The given code snippet demonstrates how an attacker can exploit a Cross-Site WebSocket Hijacking (CSWSH) vulnerability to steal sensitive information from a user's authenticated WebSocket connection. The attacker sets up a WebSocket connection to the vulnerable server and sends a message to the server. The server sends a reply which is intercepted by the attacker. The attacker then sends the intercepted data to their own server using the fetch API. As the cookies are automatically sent by the browser, the attacker can use the authenticated WebSocket connection of the user on their own controlled site. This attack can be prevented by using a CSRF token or a nonce to protect the WebSocket handshake and by validating the origin of the WebSocket request.
 
 2. To configure the Sec-WebSocket-Protocol, follow the below instructions:
 
+ 
+
+
+
 **Code**: [[Sec-WebSocket-Protocol]]
+
+
 
 > 1. Identify the websocket protocol used by your web application.
 2. Adjust the code accordingly to your exact situation.
 3. Replace the 'Sec-WebSocket-Protocol' field with the identified protocol.
 4. Save and test the configuration to ensure it's working as expected.
+
+
 
 **Command** ([[Check Sec-WebSocket-Protocol header]]):
 
@@ -82,11 +104,21 @@ The business value of this attack is that it can be used to gain access to sensi
 Sec-WebSocket-Protocol
 ```
 
+
+
 3. To add a WebSocket header in the handshake request, use the following command:
+
+ 
+
+
 
 **Code**: [[WebSocket]]
 
+
+
 > The WebSocket header is used to send additional information in the handshake request. To add it, use the 'WebSocket' object and provide the header value as the second parameter in the 'new WebSocket(url, protocols)' constructor. The 'protocols' parameter is optional and can be used to specify the sub-protocols that the client and server can use to communicate.
+
+
 
 **Command** ([[Installation of WebSocket package]]):
 
@@ -94,12 +126,20 @@ Sec-WebSocket-Protocol
 npm install --save ws
 ```
 
+
+
+
+
 **Command** ([[Creating a WebSocket server]]):
 
 ```bash
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 ```
+
+
+
+
 
 **Command** ([[Handling WebSocket connection]]):
 
@@ -111,6 +151,8 @@ wss.on('connection', function connection(ws) {
   ws.send('something');
 });
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -133,3 +175,5 @@ wss.on('connection', function connection(ws) {
 
 - [[Cross-Site WebSocket Hijacking (CSWSH)]]
 - [[Web Sockets]]
+
+

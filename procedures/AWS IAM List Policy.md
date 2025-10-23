@@ -34,6 +34,8 @@ List all of the IAM policies under an AWS account
 
 1. List all of the IAM Policies
 
+
+
 **Command** ([[aws iam list policies]]):
 
 ```bash
@@ -41,7 +43,13 @@ aws iam list-policies
 
 ```
 
+
+
+
+
 2. (Optional) Describe an IAM policy
+
+
 
 **Command** ([[aws describe iam policy]]):
 
@@ -49,6 +57,12 @@ aws iam list-policies
 aws iam get-policy --policy-arn arn:aws:iam::aws:policy/$AWS_IAM_POLICY
 
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +77,5 @@ aws iam get-policy --policy-arn arn:aws:iam::aws:policy/$AWS_IAM_POLICY
 
 - [[AWS]]
 - [[Cloud]]
+
+

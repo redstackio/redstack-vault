@@ -32,11 +32,15 @@ The AWS Elastic Container Registry (ECR) is a managed container registry service
 
 From an offensive perspective, this procedure can help an attacker identify sensitive repositories that may contain valuable data or code. From a defensive perspective, this procedure can be used by security teams to monitor for any unauthorized access or changes to ECR repositories.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permission to access ECR
 
 1. Network access to the ECR service
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ From an offensive perspective, this procedure can help an attacker identify sens
 
 1. Monitor ECR activity logs for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify sensitive ECR repositories
 
 1. Monitor for unauthorized access or changes to ECR repositories
 
+ 
+
 # Instructions
 
 1. This command is used to describe the repositories in the Amazon Elastic Container Registry (ECR).
 
+ 
+
 The 'aws ecr describe-repositories' command is used to retrieve information about the ECR repositories in your AWS account. It returns a JSON object that contains details such as the repository name, registry ID, creation date, and the number of images in the repository. This command can be useful for managing your ECR repositories, such as checking if a repository exists or retrieving the number of images in a repository. Arguments are not required for this command.
+
+
 
 **Command** ([[List ECR Repositories]]):
 
 ```bash
 aws ecr describe-repositories
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws ecr describe-repositories
 - [[Cloud - AWS]]
 - [[Getting information about the repositories in container registry]]
 - [[Persistence]]
+
+

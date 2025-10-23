@@ -34,6 +34,8 @@ This procedure involves using the SMB Credential Enumeration command to extract 
 
 From a technical perspective, this procedure takes advantage of weaknesses in the way Active Directory stores and manages user credentials. By extracting password hashes and spoofing user accounts, an attacker can bypass authentication mechanisms and gain access to sensitive systems and data. The business value of this attack lies in the ability for an attacker to gain access to critical systems and data, potentially causing significant financial and reputational damage to the organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -41,6 +43,8 @@ From a technical perspective, this procedure takes advantage of weaknesses in th
 1. Authentication credentials with sufficient privileges
 
 1. SMB Credential Enumeration tool
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a technical perspective, this procedure takes advantage of weaknesses in th
 
 1. Use multi-factor authentication to prevent unauthorized access even if credentials are compromised
 
+ 
+
 ## Objectives
 
 1. Extract password hashes from a target system
@@ -58,19 +64,31 @@ From a technical perspective, this procedure takes advantage of weaknesses in th
 
 1. Escalate privileges and obtain a SYSTEM shell on the domain controller
 
+ 
+
 # Instructions
 
 1. This command is used to enumerate SMB credentials from a target machine. The '-u' flag specifies the username to use for authentication, '-p' specifies the password, '-d' specifies the domain to authenticate against, and '-M nopac' disables the use of pre-authentication. 
 
+ 
+
+
+
 **Code**: [[crackmapexec smb 10.10.10.10 -u '' -p '' -d domain]]
 
+
+
 > This command can be used for penetration testing purposes to identify weak credentials on a target machine. It is important to note that unauthorized use of this command may be illegal and could result in legal consequences.
+
+
 
 **Command** ([[crackmapexec smb]]):
 
 ```bash
 crackmapexec smb 10.10.10.10 -u '' -p '' -d domain -M nopac
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +111,5 @@ crackmapexec smb 10.10.10.10 -u '' -p '' -d domain -M nopac
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[samAccountName spoofing]]
+
+

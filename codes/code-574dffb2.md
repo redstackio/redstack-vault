@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:43.232312+00:00'
 ```ps1
 Get-SQLDatabase -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Verbose | Where-Object {$_.is_encrypted -eq "True"} | ForEach-Object { $_.Decrypt() }
 ```
+
+

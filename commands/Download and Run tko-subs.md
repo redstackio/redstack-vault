@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:36.695239+00:00'
 go get github.com/anshumanbh/tko-subs
 ./bin/tko-subs -domains=./lists/domains_tkos.txt -data=./lists/providers-data.csv
 ```
+
+

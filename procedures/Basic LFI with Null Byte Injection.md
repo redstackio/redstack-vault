@@ -28,6 +28,8 @@ From a technical perspective, this technique takes advantage of a vulnerability 
 
 The business value of this technique is that it allows an attacker to access sensitive files on a target system, such as configuration files, user credentials, and other sensitive data. This can lead to further compromise of the target system and potentially other systems within the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -35,6 +37,8 @@ The business value of this technique is that it allows an attacker to access sen
 1. Knowledge of the file path parameter of the targeted application
 
 1. A vulnerable version of PHP below 5.3.4
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The business value of this technique is that it allows an attacker to access sen
 
 1. Implement access controls to ensure that users are only able to access the files and resources that they are authorized to access.
 
+ 
+
 ## Objectives
 
 1. To read sensitive files on a target system
@@ -51,6 +57,8 @@ The business value of this technique is that it allows an attacker to access sen
 1. To gain access to configuration files and user credentials
 
 1. To compromise the target system and potentially other systems within the target organization
+
+ 
 
 # Instructions
 
@@ -61,7 +69,13 @@ The business value of this technique is that it allows an attacker to access sen
 3. Inject a null byte into the file path parameter of the targeted application.
 4. Read the sensitive files on the target system outside the intended scope of the application.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=../../../etc/pas]]
+
+
 
 > The command injects a null byte into the file path parameter of the targeted application, causing the application to terminate the file path string at the null byte. This allows the attacker to read files outside the intended scope of the application.
 
@@ -70,3 +84,5 @@ The business value of this technique is that it allows an attacker to access sen
 - [[Basic LFI]]
 - [[File Inclusion]]
 - [[Null byte]]
+
+

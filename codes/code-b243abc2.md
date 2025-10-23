@@ -17,3 +17,5 @@ config\SAM BUILTIN\Administrators:(I)(F)
            NT AUTHORITY\SYSTEM:(I)(F)
            BUILTIN\Users:(I)(RX)    <-- this is wrong - regular users should not have read access!
 ```
+
+

@@ -31,6 +31,8 @@ This procedure is used to identify MSSQL databases that have been configured as 
 
 This procedure is used to identify MSSQL databases that have been configured as trustworthy. A database marked as trustworthy allows code within that database to be executed with elevated privileges, which can be exploited by an attacker to gain further access to the system. The procedure involves using SQL Audit Privilege Trustworthy command and SQL Injection Commands to query the database for the trustworthy property. By identifying these databases, an attacker can determine which databases are vulnerable and can use this information to escalate privileges.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the MSSQL Server
@@ -38,6 +40,8 @@ This procedure is used to identify MSSQL databases that have been configured as 
 1. SQL Audit Privilege Trustworthy command
 
 1. SQL Injection Commands
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ This procedure is used to identify MSSQL databases that have been configured as 
 
 1. Regularly review MSSQL server logs for suspicious activity related to privilege escalation
 
+ 
+
 ## Objectives
 
 1. Identify MSSQL databases that have been configured as trustworthy
@@ -55,11 +61,19 @@ This procedure is used to identify MSSQL databases that have been configured as 
 
 1. Escalate privileges within the MSSQL environment
 
+ 
+
 # Instructions
 
 1. Use the Invoke-SQLAuditPrivTrustworthy command to check if the SQL Server instance is vulnerable to a Trustworthy Database Privilege Escalation attack. This command will also generate a report of the databases that have the TRUSTWORTHY property set to ON.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLAuditPrivTrustworthy -Instance "<DBSERVE]]
+
+
 
 > -Instance: Specifies the name of the SQL Server instance to connect to. 
 -Exploit: Enables the exploit mode which will attempt to escalate the privilege. 
@@ -75,10 +89,18 @@ The SELECT statement retrieves the name of each database, the name of the databa
 
 3. Invoke-SQLAuditPrivXpFileexist: This command checks if the current user has audit privileges and can execute xp_fileexist. If successful, it will return information about the existence of a file on the server.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLAuditPrivXpDirtree
 Invoke-SQLUncPathInje]]
 
+
+
 > The commands are useful for penetration testers and security researchers to identify SQL injection vulnerabilities in a system. These commands can be used to test for different types of vulnerabilities, such as audit privilege escalation and UNC path injection. The output of these commands can be used to further exploit the vulnerabilities and gain access to sensitive data or systems.
+
+
 
 **Command** ([[Invoke SQL Audit Privilege Escalation via Directory Traversal]]):
 
@@ -86,17 +108,27 @@ Invoke-SQLUncPathInje]]
 Invoke-SQLAuditPrivXpDirtree
 ```
 
+
+
+
+
 **Command** ([[Invoke SQL UNC Path Injection]]):
 
 ```bash
 Invoke-SQLUncPathInjection
 ```
 
+
+
+
+
 **Command** ([[Invoke SQL Audit Privilege Escalation via File Existence]]):
 
 ```bash
 Invoke-SQLAuditPrivXpFileexist
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -118,3 +150,5 @@ Invoke-SQLAuditPrivXpFileexist
 
 - [[Find databases that have been configured as trustworthy]]
 - [[MSSQL Server]]
+
+

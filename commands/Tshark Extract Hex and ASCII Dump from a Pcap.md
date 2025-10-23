@@ -35,6 +35,7 @@ Running as user "root" and group "root". This could be dangerous.
 tshark: Lua: Error during loading:
  /usr/share/wireshark/init.lua:32: dofile has been disabled due to running Wireshark as superuser. See https://wiki.wireshark.org/CaptureSetup/CapturePrivileges for help in running Wireshark as an unprivileged user.
 
+
 0000  00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
 0010  00 8f 9b f9 40 00 40 06 75 6e 0a 0a 0a 77 0a 0a   ....@.@.un...w..
 0020  0a 77 e8 0e 01 85 6f 65 03 0c 5d 2e 65 b2 80 18   .w....oe..].e...
@@ -46,3 +47,5 @@ tshark: Lua: Error during loading:
 0080  38 32 35 31 33 33 32 61 62 65 31 64 37 66 31 30   5646ds64624ss880
 0090  35 64 33 65 35 33 61 64 33 39 61 63 32            465823ad463f2
 ```
+
+

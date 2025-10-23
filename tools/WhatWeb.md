@@ -26,11 +26,27 @@ WhatWeb recognizes web technologies including content management  systems (CMS),
 
 WhatWeb recognizes web technologies including content management  systems (CMS), blogging platforms, statistic/analytics packages,  JavaScript libraries, web servers, and embedded devices. WhatWeb has  over 1800 plugins, each to recognize something different. WhatWeb includes stealthy modes and louder more aggressive modes as well.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_5a83e245-fc3e-4827-9a51-86ae571f2e04}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +67,5 @@ WhatWeb recognizes web technologies including content management  systems (CMS),
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

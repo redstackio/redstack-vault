@@ -42,9 +42,23 @@ rpcclient is a tool that can interact with SMB/CIFS MSRPC servers via an interac
 
 - samlookuprids - look up usrs by RID
 
+
+
+{{EMBEDDED_COMMAND_33ff043a-6e43-4561-ab56-91233e200a36}}
+
+
+
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +79,5 @@ rpcclient is a tool that can interact with SMB/CIFS MSRPC servers via an interac
 
 - [[Enumeration]]
 - [[Network]]
+
+

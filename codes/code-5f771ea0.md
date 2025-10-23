@@ -16,3 +16,5 @@ impacket@linux> getTGT.py -dc-ip 'DomainController.domain.local' 'domain.local'/
 
 cmd@windows> Rubeus.exe asktgt /user:"DomainController" /password:"ComputerPassword" /domain:"domain.local" /dc:"DomainController.domain.local" /nowrap
 ```
+
+

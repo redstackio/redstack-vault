@@ -38,9 +38,15 @@ Spawn a PowerShell interactive session on a remote system using the WinRM servic
 
 Spawn a PowerShell interactive session on a remote system using the WinRM service.
 
+
+
 # Instructions
 
 1. Create a PSCredential object
+
+
+
+
 
 **Command** ([[$Pass = ConvertTo-SecureString -String "$_PASSWORD]]):
 
@@ -49,9 +55,17 @@ $Pass = ConvertTo-SecureString -String "$_PASSWORD" -AsPlainText -Force
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -Argument "$_USER", $Pass
 ```
 
+
+
 Note: if creating domain credentials, specify the user as: "$_DOMAIN\$_USER"
 
+
+
 2. Create and enter a session using the PSCrednetial object
+
+
+
+
 
 **Command** ([[Create a PSSession and Enter It]]):
 
@@ -60,13 +74,23 @@ $Session = New-PSSession -Credential $Cred -ComputerName $_TARGET_IP
 Enter-PSSession $Session
 ```
 
+
+
 3. (Optional) Clean up after exiting the session
+
+
+
+
 
 **Command** ([[Clean up After a PSSession]]):
 
 ```bash
 Remove-PSSession $Session
 ```
+
+
+
+
 
 ## Platforms
 
@@ -95,3 +119,5 @@ Remove-PSSession $Session
 - [[Network]]
 - [[powershell]]
 - [[shell]]
+
+

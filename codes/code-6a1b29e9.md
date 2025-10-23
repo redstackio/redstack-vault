@@ -26,3 +26,5 @@ rundll32 PowerShx.dll,main -i                           Start an interactive con
 rundll32 PowerShx.dll,main -s                           Attempt to bypass AMSI
 rundll32 PowerShx.dll,main -v                           Print Execution Output to the console
 ```
+
+

@@ -30,17 +30,61 @@ Description
 
 Some applications will HTML encode the href attribute and double quotes to prevent the execution of JavaScript code. 
 
+
+
 Instructions
+
+
+
+
 
 1. Navigate to the comment section of the blog and enter details as below.
 
+
+
+
+
+![b83748ca-84a5-4376-828d-de177050a453.png](_assets/images/Mash/b83748ca-84a5-4376-828d-de177050a453.png)
+
+
+
+
+
 2.Observe that the search term has been reflected inside an anchor href attribute.
+
+
+
+
+
+
+
+![db3de8a3-161f-4e36-af7d-3abb71e01575.png](_assets/images/Mash/db3de8a3-161f-4e36-af7d-3abb71e01575.png)
+
+
 
 3. Enter the following payload in the comment box and post the comment.
 
 *`javascript:alert(1*)`
 
+
+
+
+
+![7a13c283-c8c9-4bca-9cc9-25a65b9aa648.png](_assets/images/Mash/7a13c283-c8c9-4bca-9cc9-25a65b9aa648.png)
+
+
+
 4.Naviage to the comment section and observe the comment with *hello hackers. *Click on* hello hackers *to view the comment. Observe that the alert popup is triggered 
+
+
+
+
+
+![c2a0c39f-ef57-4983-82be-ee7a9c24bcfe.png](_assets/images/Mash/c2a0c39f-ef57-4983-82be-ee7a9c24bcfe.png)
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +97,5 @@ Instructions
 - [[owasp top 10]]
 - [[Stored XSS]]
 - [[Web Applications]]
+
+

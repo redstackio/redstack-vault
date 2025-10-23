@@ -36,11 +36,15 @@ From a technical perspective, this technique involves using the 'RetailAdmin Cre
 
 The business value of this technique is that it allows attackers to gain access to sensitive information that can be used for financial gain, such as payment card details. This can result in significant financial losses for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted network
 
 1. Credentials for the 'RetailAdmin' account
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Monitor for suspicious activity, such as failed login attempts or unusual login locations
 
+ 
+
 ## Objectives
 
 1. Obtain credentials for a retail account
@@ -58,14 +64,24 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Extract sensitive information from the retail account
 
+ 
+
 # Instructions
 
 1. To use these credentials, enter the username and password when prompted.
 
+ 
+
+
+
 **Code**: [[Username: RetailAdmin
 Password: trs10]]
 
+
+
 > The RetailAdmin credentials are used to access a retail system. The username is 'RetailAdmin' and the password is 'trs10'. These credentials are provided as a convenience and should be changed immediately after use.
+
+
 
 **Command** ([[Login as RetailAdmin]]):
 
@@ -73,6 +89,8 @@ Password: trs10]]
 Username: RetailAdmin
 Password: trs10
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ Password: trs10
 - [[Get credentials]]
 - [[Retail Credential]]
 - [[Windows - Using credentials]]
+
+

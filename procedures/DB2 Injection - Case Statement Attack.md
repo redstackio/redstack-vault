@@ -28,11 +28,15 @@ Technical Explanation: The case statement is a conditional statement that evalua
 
 Business Value: DB2 injection attacks can result in the theft of sensitive information, such as customer data, financial information, and intellectual property. This can lead to reputational damage, financial losses, and legal liabilities for affected organizations.
 
+ 
+
 ## Requirements
 
 1. Access to the DB2 database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -42,17 +46,27 @@ Business Value: DB2 injection attacks can result in the theft of sensitive infor
 
 1. Regularly monitor the database for unusual activity and suspicious queries
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from a DB2 database
 
 1. Bypass authentication mechanisms
 
+ 
+
 # Instructions
 
 1. This command is used to perform a conditional selection based on a specified condition. The SELECT statement is used to retrieve data from one or more tables. The CASE statement is used to evaluate multiple conditions and return a value based on the first condition that is true. The WHEN keyword is used to specify the condition to be evaluated, and the THEN keyword is used to specify the value to be returned if the condition is true. The ELSE keyword is used to specify the value to be returned if none of the conditions are true.
 
+ 
+
+
+
 **Code**: [[select CASE WHEN (1=1) THEN 'AAAAAAAAAA' ELSE 'BBB]]
+
+
 
 > The data field in this command contains an example SQL statement that demonstrates the usage of the CASE statement. In this example, the CASE statement is used to check if the condition (1=1) is true. If it is true, the value 'AAAAAAAAAA' is returned. If it is false, the value 'BBBBBBBBBB' is returned. The lang field specifies the language used in this command, which is SQL. The text field provides additional information about the usage of this command. The instruction field provides step-by-step instructions on how to use this command. The explain field provides a brief explanation of the purpose and functionality of this command.
 
@@ -61,3 +75,5 @@ Business Value: DB2 injection attacks can result in the theft of sensitive infor
 - [[Case Statement]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

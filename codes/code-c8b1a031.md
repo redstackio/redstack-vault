@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:11.412170+00:00'
 ```sql
 SELECT user FROM dual UNION SELECT * FROM v$version
 ```
+
+

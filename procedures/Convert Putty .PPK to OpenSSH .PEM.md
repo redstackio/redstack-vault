@@ -29,17 +29,35 @@ Windows users often use Putty as their SSH client, which stores private keys in 
 
 Windows users often use Putty as their SSH client, which stores private keys in .PPK format.  While .PPK files are not natively supported in OpenSSH, they can be converted to OpenSSH's .PEM format using Putty's tools.
 
+
+
 # Instructions
 
 Install putty-tools from any popular package manager. Eg:
 
+
+
+
+
 **Code**: [[apt update && apt install putty-tools -y]]
+
+
+
+
+
+
+
+
 
 **Command** ([[puttygen Convert .PPK to .PEM]]):
 
 ```bash
 puttygen $_KEY.ppk -O private-openssh -o $_KEY.pem
 ```
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +71,5 @@ puttygen $_KEY.ppk -O private-openssh -o $_KEY.pem
 
 - [[convert]]
 - [[Cryptography]]
+
+

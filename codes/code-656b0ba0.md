@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:50.600242+00:00'
 ```bash
 Content-Security-Policy: default-src &#39;self&#39; &#39;unsafe-inline&#39;;
 ```
+
+

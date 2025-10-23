@@ -29,6 +29,8 @@ The OWASP Amass Project has developed a tool to help information security profes
 
 The OWASP Amass Project has developed a tool to help information security professionals perform network mapping of attack surfaces and perform external asset discovery using open source information gathering and active reconnaissance techniques.
 
+
+
 amass has 5 subcommands used to enumerate information
 
 - intel - discover target properties and information
@@ -41,9 +43,19 @@ amass has 5 subcommands used to enumerate information
 
 - db - work with the graph database
 
+
+
 These subcommands can be used together to create automated scripts.
 
+
+
 ## Example
+
+
+
+{{EMBEDDED_COMMAND_ed440e9d-f373-4cee-abfd-dbb36948de91}}
+
+
 
 ## Notes
 
@@ -51,23 +63,53 @@ amass enum has a -passive flag that will not actively validate the DNS informati
 
 Another reason is the -passive flag can bring up cached information for domains that are not currently active any more, this information can tip you off on "services that used to be running" or perhaps services that have been migrated to a different framework. For example elk.domain.com is expired but splunk.domain.com is active. It would be safe to assume they transitioned stacks, and residual information or backups might exist.
 
+
+
+
+
+{{EMBEDDED_COMMAND_9dbc5701-85d0-4084-97e4-27ebb9db88bb}}
+
+
+
+
+
 ## Installation
+
+
+
+
 
 # Usage
 
 ## Intel
 
+
+
+
+
 ## Enum
+
+
+
+
 
 ## Viz
 
 ## 
 
+
+
 ## DB
+
+
+
+
 
 ## DNS
 
 ## 
+
+
 
 ## Services
 
@@ -84,3 +126,5 @@ Another reason is the -passive flag can bring up cached information for domains 
 - [[dns]]
 - [[Enumeration]]
 - [[OSINT]]
+
+

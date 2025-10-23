@@ -34,11 +34,15 @@ The Dart Reverse PowerShell Shell technique is used to execute PowerShell comman
 
 The Dart Reverse PowerShell Shell technique is used to execute PowerShell commands on a remote server. This technique is commonly used by attackers to gain remote access to a system and execute arbitrary commands. To use this technique, the attacker must have access to a system with PowerShell installed and the ability to execute PowerShell commands on the target system. Once the attacker has gained access to the target system, they can use this technique to execute commands and perform various actions on the system.
 
+ 
+
 ## Requirements
 
 1. Access to a system with PowerShell installed
 
 1. Ability to execute PowerShell commands on the target system
+
+ 
 
 ## Defense
 
@@ -48,11 +52,15 @@ The Dart Reverse PowerShell Shell technique is used to execute PowerShell comman
 
 1. Implement network segmentation and access controls to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target system
 
 1. Execute arbitrary commands on the target system
+
+ 
 
 # Instructions
 
@@ -62,10 +70,16 @@ The Dart Reverse PowerShell Shell technique is used to execute PowerShell comman
 3. Enter the Powershell commands you want to execute on the remote server in the console.
 4. The output of the commands will be displayed in the console.
 
+ 
+
+
+
 **Code**: [[import 'dart:io';
 import 'dart:convert';
 
 main() {]]
+
+
 
 > This code connects to a remote server using the Socket.connect() method and listens for data. When data is received, it starts a new process using the Process.start() method to execute the Powershell commands on the remote server. The output of the commands is then sent back to the local machine using the socket.
 
@@ -92,3 +106,5 @@ main() {]]
 - [[Dart]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

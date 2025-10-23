@@ -17,4 +17,12 @@ Amap was the first next-generation scanning tool for pentesters. It attempts to 
 
 Amap was the first next-generation scanning tool for pentesters. It attempts to identify applications even if they are running on a different port than normal.
 
+
+
 It also identifies non-ascii based applications. This is achieved by sending trigger packets, and looking up the responses in a list of response strings.
+
+
+
+
+
+

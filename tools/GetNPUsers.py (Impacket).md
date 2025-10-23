@@ -29,11 +29,27 @@ Impacket suite tool which attempts to list the ticket-granting tickets (TGTs) fo
 
 Impacket suite tool which attempts to list the ticket-granting tickets (TGTs) for users with the property "Do not require Kerberos preauthentication" set (UF_DONT_REQUIRE_PREAUTH), effectively getting password hashes without prior authentication. The resulting password hashes can be cracked using tools such as John the Ripper or Hashcat.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_23c39a33-147b-4f0e-8776-9592377ed8b2}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)** 
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -52,3 +68,5 @@ Impacket suite tool which attempts to list the ticket-granting tickets (TGTs) fo
 - [[Active Directory]]
 - [[Enumeration]]
 - [[Kernel Exploit]]
+
+

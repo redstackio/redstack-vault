@@ -41,6 +41,8 @@ To perform SUDO Injection, the attacker needs to have access to the target machi
 
 SUDO Injection can be a powerful technique for attackers to gain persistent access to a system and move laterally within a network. It is important for system administrators to properly secure their SUDO configurations to prevent this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to the target machine
@@ -48,6 +50,8 @@ SUDO Injection can be a powerful technique for attackers to gain persistent acce
 1. Knowledge of the SUDO configuration file
 
 1. Ability to modify the SUDO configuration file
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ SUDO Injection can be a powerful technique for attackers to gain persistent acce
 
 1. Implement least privilege policies to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
@@ -64,6 +70,8 @@ SUDO Injection can be a powerful technique for attackers to gain persistent acce
 1. Gain persistent access to the system
 
 1. Move laterally within a network
+
+ 
 
 # Instructions
 
@@ -77,11 +85,19 @@ SUDO Injection can be a powerful technique for attackers to gain persistent acce
 
 Note: This exploit uses the [sudo_inject](https://github.com/nongiach/sudo_inject) tool.
 
+ 
+
+
+
 **Code**: [[$ sudo whatever
 [sudo] password for user:    
 # Pr]]
 
+
+
 > This command explains how to bypass the sudo password on a system. It provides detailed steps to follow and also mentions the tool used to perform the exploit.
+
+
 
 **Command** ([[Create Invalid Sudo Tokens]]):
 
@@ -90,17 +106,27 @@ Note: This exploit uses the [sudo_inject](https://github.com/nongiach/sudo_injec
 # This creates an invalid sudo tokens.
 ```
 
+
+
+
+
 **Command** ([[Run Exploit Script]]):
 
 ```bash
 $ sh exploit.sh
 ```
 
+
+
+
+
 **Command** ([[Get Root Privileges]]):
 
 ```bash
 $ sudo -i # no password required :)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -128,3 +154,5 @@ $ sudo -i # no password required :)
 - [[Linux - Privilege Escalation]]
 - [[SUDO]]
 - [[sudo_inject]]
+
+

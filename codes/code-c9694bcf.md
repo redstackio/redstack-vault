@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:56.021148+00:00'
 Add-DomainGroupMember -Identity 'LAPS ADM' -Members 'user1' -Credential $cred -Domain "domain.local"
 Add-DomainGroupMember -Identity 'LAPS READ' -Members 'user1' -Credential $cred -Domain "domain.local"
 ```
+
+

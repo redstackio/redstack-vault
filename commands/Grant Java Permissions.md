@@ -23,3 +23,5 @@ exec dbms_java.grant_permission('SCOTT', 'SYS:java.io.FilePermission','<<ALL FIL
 exec dbms_java.grant_permission('SCOTT','SYS:java.lang.RuntimePermission', 'writeFileDescriptor', '');
 exec dbms_java.grant_permission('SCOTT','SYS:java.lang.RuntimePermission', 'readFileDescriptor', '');
 ```
+
+

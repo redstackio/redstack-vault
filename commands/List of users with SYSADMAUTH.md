@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:02.658518+00:00'
 ```bash
 select name from SYSIBM.SYSUSERAUTH where SYSADMAUTH = ‘Y’ or SYSADMAUTH = ‘G’
 ```
+
+

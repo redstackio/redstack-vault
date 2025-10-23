@@ -16,3 +16,9 @@ Easside-ng is an auto-magic tool which allows you to communicate via an WEP-encr
 ## Description
 
 Easside-ng is an auto-magic tool which allows you to communicate via an WEP-encrypted access point (AP) without knowing the WEP key. It first identifies a network, then proceeds to associate with it, obtain PRGA (pseudo random generation algorithm) xor data, determine the network IP scheme and then setup a TAP interface so that you can communicate with the AP without requiring the WEP key. All this is done without your intervention.
+
+
+
+
+
+

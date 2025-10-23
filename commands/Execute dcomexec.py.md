@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:57.936960+00:00'
 ```bash
 dcomexec.py DOMAIN/username:password@10.10.10.10
 ```
+
+

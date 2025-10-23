@@ -36,11 +36,15 @@ Technical Description: This procedure adds an extended stored procedure to the S
 
 Business Value: An attacker can use this procedure to gain persistent access to the target system, escalate privileges, and execute arbitrary code. This can lead to data theft, system compromise, and disruption of business operations.
 
+ 
+
 ## Requirements
 
 1. Administrative privileges on the SQL Server instance
 
 1. Access to the DLL on the target system or network
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: An attacker can use this procedure to gain persistent access to 
 
 1. Use network segmentation to limit access to the SQL Server instance
 
+ 
+
 ## Objectives
 
 1. Load a custom DLL into memory
@@ -58,14 +64,24 @@ Business Value: An attacker can use this procedure to gain persistent access to 
 
 1. Achieve persistence or privilege escalation
 
+ 
+
 # Instructions
 
 1. Use the sp_addextendedproc command to load a DLL into SQL Server. The DLL can be located on the local file system or on a network share. Once the DLL is loaded, you can execute it using the xp_ prefix followed by the name of the DLL function. Finally, use sp_dropextendedproc to remove the DLL from SQL Server.
 
+ 
+
+
+
 **Code**: [[-- can also be loaded from UNC path or Webdav
 sp_a]]
 
+
+
 > {'EXEC xp_calc': {'arguments': {}, 'description': 'Executes the xp_calc extended stored procedure.'}, 'sp_addextendedproc': {'arguments': {'name': 'The name of the extended stored procedure.', 'dll_path': 'The path to the DLL that contains the extended stored procedure.'}, 'description': 'Adds an extended stored procedure to SQL Server.'}, 'sp_dropextendedproc': {'arguments': {'name': 'The name of the extended stored procedure to remove.'}, 'description': 'Removes an extended stored procedure from SQL Server.'}}
+
+
 
 **Command** ([[Load xp_calc.dll using sp_addextendedproc]]):
 
@@ -73,17 +89,27 @@ sp_a]]
 sp_addextendedproc 'xp_calc', 'C:\mydll\xp_calc.dll'
 ```
 
+
+
+
+
 **Command** ([[Execute xp_calc]]):
 
 ```bash
 EXEC xp_calc
 ```
 
+
+
+
+
 **Command** ([[Drop xp_calc]]):
 
 ```bash
 sp_dropextendedproc 'xp_calc'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -106,3 +132,5 @@ sp_dropextendedproc 'xp_calc'
 - [[Add the extended stored procedure and list extended stored procedures]]
 - [[Extended Stored Procedure]]
 - [[MSSQL Server]]
+
+

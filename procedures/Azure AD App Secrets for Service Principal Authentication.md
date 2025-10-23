@@ -38,6 +38,8 @@ This procedure allows the user to add Azure AD App Secrets for Service Principal
 
 This procedure allows the user to add Azure AD App Secrets for Service Principal authentication to all Enterprise Applications. This can be used for initial access by an attacker who has valid credentials or through brute force attacks. The technical explanation is that the Azure AD App Secret is a password that is used by the application to authenticate with Azure AD. This allows the application to access resources in Azure AD that are assigned to the application. The business value of this procedure is that it allows for easier management of credentials for all Enterprise Applications.
 
+ 
+
 ## Requirements
 
 1. Azure PowerShell installed on your local machine
@@ -48,6 +50,8 @@ This procedure allows the user to add Azure AD App Secrets for Service Principal
 
 1. Tenant ID, App ID, and Secret/Password for the Azure AD application
 
+ 
+
 ## Defense
 
 1. Ensure that secrets are stored and used securely, avoiding clear text wherever possible
@@ -56,24 +60,36 @@ This procedure allows the user to add Azure AD App Secrets for Service Principal
 
 1. Regularly rotate Azure AD application secrets and maintain secure access control
 
+ 
+
 ## Objectives
 
 1. Securely add an Azure AD application secret using PowerShell
 
 1. Use the application secret to authenticate as a Service Principal
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+ 
+
+
+
 **Code**: [[# Add secrets
 PS > . C:\Tools\Add-AzADAppSecret.ps]]
+
+
 
 > Ensure that these commands are executed in a secure environment to  prevent unauthorized access to Azure resources. Regularly review and  update your security measures to keep your Azure environment safe.
 
 ## Steps
 
 1. To add secrets for Azure AD App and authenticate as Service Principal using those secrets, follow the below instructions:
+
+
 
 **Command** ([[Add secrets]]):
 
@@ -84,6 +100,10 @@ PS > Add-AzADAppSecret -GraphToken $graphtoken -Verbose
 
 ```
 
+
+
+
+
 **Command** ([[Use secrets to authenticate as Service Principal]]):
 
 ```powershell
@@ -91,6 +111,10 @@ PS > $password = ConvertTo-SecureString '<SECRET/PASSWORD>' -AsPlainText -Force
 PS > $creds = New-Object System.Management.Automation.PSCredential('<AppID>', $password)
 PS > Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant '<TenantID>'
 ```
+
+
+
+ 
 
 ## Platforms
 
@@ -119,3 +143,5 @@ PS > Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant '<TenantID>'
 - [[Add credentials to all Enterprise Applications]]
 - [[Application Registration]]
 - [[Cloud - Azure]]
+
+

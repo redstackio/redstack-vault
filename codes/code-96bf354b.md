@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:03.764209+00:00'
 ```sql
 Char	select chr(65) from sysibm.sysdummy1 -- returns 'A'
 ```
+
+

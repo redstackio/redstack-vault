@@ -33,11 +33,15 @@ To retrieve the password hashes, the attacker uses SQL injection to execute a SE
 
 The business value of this procedure is the ability to obtain sensitive information that can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to the web application that uses a PostgreSQL database.
 
 1. Knowledge of SQL and the PostgreSQL database schema.
+
+ 
 
 ## Defense
 
@@ -47,25 +51,39 @@ The business value of this procedure is the ability to obtain sensitive informat
 
 1. Implement multi-factor authentication to prevent unauthorized access even if passwords are compromised.
 
+ 
+
 ## Objectives
 
 1. Retrieve password hashes from the pg_shadow table in the PostgreSQL database.
 
 1. Use the retrieved password hashes for offline password cracking attacks.
 
+ 
+
 # Instructions
 
 1. This command retrieves the usernames and hashed passwords from the pg_shadow table in PostgreSQL. The pg_shadow table stores password-protected user account information for the PostgreSQL database cluster.
 
+ 
+
+
+
 **Code**: [[SELECT usename, passwd FROM pg_shadow]]
 
+
+
 > The 'usename' column contains the username and the 'passwd' column contains the hashed password. This command can be useful for database administrators to verify user passwords or for security auditing purposes. It is important to note that the passwords are hashed and cannot be retrieved in plain text.
+
+
 
 **Command** ([[Extract user credentials from pg_shadow table]]):
 
 ```bash
 SELECT usename, passwd FROM pg_shadow
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ SELECT usename, passwd FROM pg_shadow
 
 - [[PostgreSQL injection]]
 - [[PostgreSQL List Password Hashes]]
+
+

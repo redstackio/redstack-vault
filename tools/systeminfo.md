@@ -28,11 +28,25 @@ Display detailed configuration information of the local system, including OS con
 
 Display detailed configuration information of the local system, including OS configuration, security information, hardware properties, hotfixes, and more.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_05cd0db7-d0ad-48b5-ae31-ee9a9a07ede4}}
+
+
 
 # Installation
 
 systeminfo is installed with all versions of Windows.
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ systeminfo is installed with all versions of Windows.
 
 - [[Enumeration]]
 - [[Operating Systems]]
+
+

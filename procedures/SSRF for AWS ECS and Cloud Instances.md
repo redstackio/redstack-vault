@@ -33,6 +33,8 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 
 Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to manipulate the server into making requests to other servers on behalf of the attacker. In this scenario, the attacker is targeting cloud instances, specifically AWS ECS. By extracting environment variables from /proc/self/environ and retrieving AWS credentials, the attacker can gain access to the target cloud instance and its resources. The attacker can then use this access to steal data, launch further attacks, or cause damage to the target's infrastructure. This attack can be used for reconnaissance, data exfiltration, or to gain a foothold in the target's environment.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
@@ -40,6 +42,8 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 1. Knowledge of the target's cloud infrastructure
 
 1. Tools for extracting environment variables and retrieving AWS credentials
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to the target cloud instance
@@ -56,6 +62,8 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 1. Retrieve AWS credentials
 
 1. Perform reconnaissance or data exfiltration
+
+ 
 
 # Instructions
 
@@ -65,9 +73,17 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 3. Parse the file to extract the environment variables and their values.
 4. Use the extracted information to further exploit the SSRF vulnerability.
 
+ 
+
+
+
 **Code**: [[/proc/self/environ]]
 
+
+
 > The /proc/self/environ file contains a list of environment variables for the current process. If an attacker has an SSRF vulnerability that allows them to read files on the target system, they can extract sensitive information such as API keys, database credentials, and other secrets from this file. By understanding the format of this file, an attacker can quickly extract the necessary information to further exploit the SSRF vulnerability.
+
+
 
 **Command** ([[Read /proc/self/environ]]):
 
@@ -75,17 +91,29 @@ Server-Side Request Forgery (SSRF) is a vulnerability that allows an attacker to
 /proc/self/environ
 ```
 
+
+
 2. To retrieve AWS credentials, use the following command:
+
+ 
+
+
 
 **Code**: [[curl http://169.254.170.2/v2/credentials/<UUID>]]
 
+
+
 > The 'curl' command is used to transfer data from or to a server, using one of the supported protocols. In this case, it is used to retrieve the AWS credentials. The 'http://169.254.170.2/v2/credentials/<UUID>' URL retrieves the credentials for the specified UUID. Replace <UUID> with the actual UUID of the instance to retrieve its credentials. This command is useful when you need to access AWS resources from within an EC2 instance without hardcoding the credentials.
+
+
 
 **Command** ([[Retrieve credentials from AWS metadata service]]):
 
 ```bash
 curl http://169.254.170.2/v2/credentials/<UUID>
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +137,5 @@ curl http://169.254.170.2/v2/credentials/<UUID>
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for AWS ECS]]
 - [[SSRF URL for Cloud Instances]]
+
+

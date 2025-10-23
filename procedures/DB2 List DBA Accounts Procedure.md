@@ -33,11 +33,15 @@ This procedure aims to list DBA accounts in a DB2 database by exploiting a vulne
 
 This procedure aims to list DBA accounts in a DB2 database by exploiting a vulnerability in the application that allows for DB2 injection. An attacker can use this procedure to gain access to sensitive information stored in the database, including usernames and passwords. To execute this procedure, the attacker needs to have access to the application and be able to inject malicious code into the SQL queries sent to the database. The business value of this procedure is that it allows the attacker to gain access to valuable information that can be used for further attacks or sold on the black market.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable application
 
 1. Ability to inject malicious code into SQL queries
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ This procedure aims to list DBA accounts in a DB2 database by exploiting a vulne
 
 1. Monitor database activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. List all DBA accounts in the DB2 database
 
 1. Gain access to sensitive information stored in the database
+
+ 
 
 # Instructions
 
@@ -61,9 +69,17 @@ select distinct(grantee) from sysibm.systabauth where CONTROLAUTH='Y'
 To list all users with SYSADM authority, run the following SQL command:
 select name from SYSIBM.SYSUSERAUTH where SYSADMAUTH = ‘Y’ or SYSADMAUTH = ‘G’
 
+ 
+
+
+
 **Code**: [[select distinct(grantee) from sysibm.systabauth wh]]
 
+
+
 > The first SQL command lists all users who have control authority over at least one table in the database. The second SQL command lists all users who have SYSADM authority, which grants full administrative access to the database. The 'distinct' keyword in the first command ensures that each user is only listed once, even if they have control authority over multiple tables.
+
+
 
 **Command** ([[List of users with CONTROLAUTH]]):
 
@@ -71,11 +87,17 @@ select name from SYSIBM.SYSUSERAUTH where SYSADMAUTH = ‘Y’ or SYSADMAUTH = �
 select distinct(grantee) from sysibm.systabauth where CONTROLAUTH='Y'
 ```
 
+
+
+
+
 **Command** ([[List of users with SYSADMAUTH]]):
 
 ```bash
 select name from SYSIBM.SYSUSERAUTH where SYSADMAUTH = ‘Y’ or SYSADMAUTH = ‘G’
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +121,5 @@ select name from SYSIBM.SYSUSERAUTH where SYSADMAUTH = ‘Y’ or SYSADMAUTH = �
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
 - [[List DBA Accounts]]
+
+

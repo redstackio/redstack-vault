@@ -13,12 +13,24 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Domain Trust Powershell commands. 
 
+
+
+
+
+
+
 **Command** ([[Get all trusts for current user's domain]]):
 
 ```bash
 Get-NetDomainTrust
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Get forest trusts]]):
 
@@ -27,12 +39,24 @@ Get-NetForestTrust
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Enumerate users in groups outside their principal domain]]):
 
 ```bash
 Find-ForeignUser
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Enumerate members of a domain's groups, finds users outside of queried domain]]):
 
@@ -41,9 +65,21 @@ Find-ForeignGroup
 
 ```
 
+
+
+
+
+
+
 **Command** ([[ Map a relation of all domain trusts]]):
 
 ```bash
 Invoke-MapDomainTrust
 
 ```
+
+
+
+
+
+

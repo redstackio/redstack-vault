@@ -9,39 +9,95 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Linux TTY CheatSheet
 
+
+
 **Code**: [[
 python -c 'import pty; pty.spawn("/bin/sh")'
 ]]
+
+
+
+
+
+
 
 **Code**: [[
 echo os.system('/bin/bash')
 ]]
 
+
+
+
+
+
+
 **Code**: [[
 /bin/sh -i
 ]]
+
+
+
+
+
+
 
 **Code**: [[
 perl —e 'exec "/bin/sh";'
 ]]
 
+
+
+
+
+
+
 **Code**: [[
 exec "/bin/sh"
 ]]
+
+
+
+
+
+
 
 **Code**: [[
 os.execute('/bin/sh')
 ]]
 
+
+
+
+
+
+
 **Code**: [[
 exec "/bin/sh"
 ]]
+
+
+
+
+
+
 
 **Code**: [[
 :set shell=/bin/bash:shell
 :!bash
 ]]
 
+
+
+
+
+
+
 **Code**: [[
 !sh
 ]]
+
+
+
+
+
+

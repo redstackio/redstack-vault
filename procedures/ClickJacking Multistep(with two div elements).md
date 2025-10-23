@@ -27,20 +27,62 @@ In this kind of attack , an attacker will design more than one div elament to tr
 
 In this kind of attack , an attacker will design more than one div elament to trick the user to click on them one after other to make him perform malicious activity.
 
+
+
 # Instructions
+
+
 
 1. Login to the account with the credentials provided
 
+
+
+
+
+![d536cfea-892f-4463-884c-8f5202e544c9.png](_assets/images/Mash/d536cfea-892f-4463-884c-8f5202e544c9.png)
+
+
+
+
+
 2.Navigate to the account actions and intercept the *Delete account* request using burp . Copy the url of the delete account request.
 
+
+
+
+
+![2aad5522-b73b-47b9-9db1-1b3f19f85d3b.png](_assets/images/Mash/2aad5522-b73b-47b9-9db1-1b3f19f85d3b.png)
+
+
+
+
+
 3.Use the below code to create a clickjacking iframe with two div elements.Make sure to aligh the two div elements  with DELETE Account button and account deletion confirmation button. 
+
+
+
+
+
+
 
 **Code**: [[<style>
    iframe {
        position:relative;
  ]]
 
+
+
+
+
+
+
 4.Deliver the above exploit to the victim. Victim unknowingly clicks on* test me first *which is aligned with*** Delete Account** *in the iframe(not visible to victim since its opacity is set to minimal) and then it asks for the confirmation to delete the account . The confirmation button is aligned with* test me next* button of the iframe and when clicked by victim will delete his account 
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +92,5 @@ In this kind of attack , an attacker will design more than one div elament to tr
 
 - [[Clickjacking]]
 - [[Web Applications]]
+
+

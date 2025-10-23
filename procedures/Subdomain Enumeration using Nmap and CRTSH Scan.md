@@ -34,6 +34,8 @@ From a technical standpoint, Nmap performs a DNS resolution of the domain and it
 
 The business value of this procedure is that it can help organizations identify potential attack vectors and take proactive measures to secure their infrastructure.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain
@@ -41,6 +43,8 @@ The business value of this procedure is that it can help organizations identify 
 1. Nmap
 
 1. CRTSH Scan
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this procedure is that it can help organizations identify 
 
 1. Regularly scan for subdomains and remove any that are no longer in use to reduce the attack surface
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains of a given domain
@@ -58,19 +64,31 @@ The business value of this procedure is that it can help organizations identify 
 
 1. Identify potential attack vectors
 
+ 
+
 # Instructions
 
 1. This command uses Nmap to perform a ping scan (-sn) on the specified host and runs the hostmap-crtsh script to find subdomains associated with the target domain using the Certificate Transparency logs. Replace 'host_to_scan.tld' with the target domain you want to scan.
 
+ 
+
+
+
 **Code**: [[nmap -sn --script hostmap-crtsh host_to_scan.tld]]
 
+
+
 > The -sn option tells Nmap to skip the port scan and only perform a ping scan. The hostmap-crtsh script is a Nmap script that queries the Certificate Transparency logs to find subdomains associated with the target domain. This can be useful for discovering additional attack surface. The argument 'host_to_scan.tld' should be replaced with the domain name you want to scan.
+
+
 
 **Command** ([[Hostmap-crtsh scan]]):
 
 ```bash
 nmap -sn --script hostmap-crtsh host_to_scan.tld
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ nmap -sn --script hostmap-crtsh host_to_scan.tld
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Nmap]]
+
+

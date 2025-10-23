@@ -45,3 +45,5 @@ Append memory		4	Append the word saved to memory to current word
 Prepend memory		6	Prepend the word saved to memory to current word
 Memorize		M	Memorize current word
 ```
+
+

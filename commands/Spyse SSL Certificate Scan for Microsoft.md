@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:08.017979+00:00'
 ```bash
 spyse -target "org: Microsoft" --ssl-certificates
 ```
+
+

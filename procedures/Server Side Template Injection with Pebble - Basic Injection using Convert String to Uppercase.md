@@ -31,9 +31,13 @@ Server Side Template Injection (SSTI) is a type of injection attack that allows 
 
 The technical explanation of this procedure involves the attacker exploiting a vulnerability in the Pebble template engine by injecting a payload that executes arbitrary code. The attacker can then use the 'Convert String to Uppercase' command to execute the payload and gain control of the server. The business value of this procedure is that it demonstrates the importance of securing web applications that use template engines, as SSTI attacks can lead to data theft, server compromise, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses the Pebble template engine
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ The technical explanation of this procedure involves the attacker exploiting a v
 
 1. Regularly update the template engine and associated libraries to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
 
 1. Gain control of the server
 
+ 
+
 # Instructions
 
 1. To convert a string to uppercase in Java, you can use the `toUpperCase()` method of the `String` class. This method returns a new string with all the characters in uppercase.
 
+ 
+
+
+
 **Code**: [[{{ SOMESTRING.TOUPPERCASE() }}]]
+
+
 
 > The `toUpperCase()` method takes no arguments and returns a new string with all the characters in uppercase. For example, if `someString` is a string variable, you can convert it to uppercase using the following code:
 
@@ -76,3 +90,5 @@ String upperCaseString = someString.toUpperCase();
 - [[Pebble]]
 - [[Pebble - Basic injection]]
 - [[Server Side Template Injection]]
+
+

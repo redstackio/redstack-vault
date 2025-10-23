@@ -28,7 +28,15 @@ You can use this tool to build a list of verified dns servers to be used in conj
 
 This tool can take a while to run so, do it prior to your pentest and use lots of threads (20-200 should be good).
 
+
+
 This command will store the results in the output file. This file can be used with dns enumeration tools like amass.
+
+
+
+
+
+
 
 **Command** ([[dnsvalidator update dns servers]]):
 
@@ -36,7 +44,17 @@ This command will store the results in the output file. This file can be used wi
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads $_THREADS -o $_OUTPUT_FILE
 ```
 
+
+
+
+
+
+
 There is a docker version available also, please check he tool page for the instruction to build the dnsvalidator docker container.
+
+
+
+
 
 **Command** ([[dnsvalidator update dns servers (DOCKER)]]):
 
@@ -44,9 +62,19 @@ There is a docker version available also, please check he tool page for the inst
 docker run -v $(pwd):$_OUTPUT_DIRECTORY -t dnsvalidator -tL https://public-dns.info/nameservers.txt -threads $_THREADS -o $_OUTPUT_DIRECTORY/$_OUTPUT_RESULTS
 ```
 
+
+
+
+
+
+
 ## Note
 
 You can sort and copy only the number of resolvers you need from this list.
+
+
+
+
 
 **Command** ([[sort and tail # of results]]):
 
@@ -54,8 +82,14 @@ You can sort and copy only the number of resolvers you need from this list.
 cat $_FILE | sort | tail -n 25
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[dnsvalidator update dns servers]]
 - [[dnsvalidator update dns servers (DOCKER)]]
 - [[sort and tail # of results]]
+
+

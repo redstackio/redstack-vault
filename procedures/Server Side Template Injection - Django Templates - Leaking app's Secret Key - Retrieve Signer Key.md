@@ -39,6 +39,8 @@ To exploit this vulnerability, an attacker needs to inject malicious code into a
 
 The business value of exploiting this vulnerability is that it allows an attacker to gain access to sensitive data and perform actions on behalf of the victim user, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to the target server
@@ -46,6 +48,8 @@ The business value of exploiting this vulnerability is that it allows an attacke
 1. Knowledge of the application's technology stack
 
 1. Ability to send requests to the server
+
+ 
 
 ## Defense
 
@@ -55,25 +59,39 @@ The business value of exploiting this vulnerability is that it allows an attacke
 
 1. Use a Web Application Firewall (WAF) to detect and block malicious requests
 
+ 
+
 ## Objectives
 
 1. Retrieve the app's Secret Key
 
 1. Retrieve the Signer Key
 
+ 
+
 # Instructions
 
 1. To retrieve the signer key, use the following command:
 
+ 
+
+
+
 **Code**: [[{{ messages.storages.0.signer.key }}]]
 
+
+
 > This command retrieves the signer key from the first storage location in the messages object. The signer key is a unique identifier used to sign and verify digital signatures. This command is useful when you need to verify the authenticity of a message or document that has been signed by a specific signer.
+
+
 
 **Command** ([[Retrieve Storage Signer Key]]):
 
 ```bash
 {{ messages.storages.0.signer.key }}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -100,3 +118,5 @@ The business value of exploiting this vulnerability is that it allows an attacke
 - [[Django Templates]]
 - [[Leaking app’s Secret Key]]
 - [[Server Side Template Injection]]
+
+

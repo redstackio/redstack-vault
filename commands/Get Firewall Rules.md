@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:05.992696+00:00'
 ```bash
 $f=New-object -comObject HNetCfg.FwPolicy2;$f.rules |  where {$_.action -eq "0"} | select name,applicationname,localports
 ```
+
+

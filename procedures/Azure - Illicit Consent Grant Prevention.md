@@ -31,11 +31,15 @@ This procedure aims to prevent the abuse of Azure's user consent mechanism by ma
 
 This procedure aims to prevent the abuse of Azure's user consent mechanism by malicious actors. Illicit consent grants can allow attackers to gain access to sensitive resources without the knowledge or permission of the resource owner. By disallowing user consent, this procedure helps to mitigate this risk. From an offensive perspective, attackers may attempt to abuse user consent in order to gain access to sensitive resources or data. From a technical standpoint, this procedure involves disabling the ability for users to grant consent to applications. The business value of this procedure is that it helps to protect sensitive data and resources from unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Access to Azure portal
 
 1. Permissions to modify Azure Active Directory settings
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This procedure aims to prevent the abuse of Azure's user consent mechanism by ma
 
 1. Enforce strict access controls and permissions
 
+ 
+
 ## Objectives
 
 1. Prevent the abuse of Azure's user consent mechanism
@@ -53,19 +59,31 @@ This procedure aims to prevent the abuse of Azure's user consent mechanism by ma
 
 1. Protect sensitive data and resources from unauthorized access
 
+ 
+
 # Instructions
 
 1. To disallow user consent, add the following line to your code:
 
+ 
+
+
+
 **Code**: [[Do not allow user consent]]
 
+
+
 > This command prevents users from giving their consent to certain actions or data collection. It is useful for maintaining privacy and security in certain applications or websites.
+
+
 
 **Command** ([[Update registry value]]):
 
 ```bash
 REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors /v DisableLocation /t REG_DWORD /d 1 /f
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors /v DisableLo
 - [[Cloud - Azure]]
 - [[Illicit Consent Grant]]
 - [[Setup Vajra]]
+
+

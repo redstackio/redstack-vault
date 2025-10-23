@@ -34,6 +34,7 @@ output: 'oot@kali:~# openssl req -new -key private.key -out priv.csr
 
   Email Address []:
 
+
   Please enter the following ''extra'' attributes
 
   to be sent with your certificate request
@@ -75,3 +76,5 @@ to be sent with your certificate request
 A challenge password []:
 An optional company name []:
 ```
+
+

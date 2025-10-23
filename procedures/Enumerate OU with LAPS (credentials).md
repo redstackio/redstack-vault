@@ -32,15 +32,23 @@ Domain joined computers can use LAPS (Local Administrator Password). The domain 
 
 Two artifacts in OU enumeration that LAPS use: ms-Mcs-AdmPwd and Mcs-AdmPwdExpirationTime
 
+
+
 ## Objective
 
 1. Check domain joined computers for LAPS by looking at OUs
+
+
 
 # Instructions
 
 1. Enumerate Domain OU for LAPS artifacts
 
 Look for ObjectAceType: ms-Mcs-AdmPwd
+
+
+
+
 
 **Command** ([[Enumerate OU with LAPS PowerView]]):
 
@@ -49,6 +57,10 @@ Get-DomainOU | Get-DomainObjectAcl -ResolveGUIDs | WhereObject {($_.ObjectAceTy
 ($_.ActiveDirectoryRights -match 'ReadProperty')} | ForEach-Object {$_ | AddMember NoteProperty 'IdentityName' $(Convert-SidToName 
 $_.SecurityIdentifier);$_}
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +83,5 @@ $_.SecurityIdentifier);$_}
 ## Tags
 
 - [[Enumeration]]
+
+

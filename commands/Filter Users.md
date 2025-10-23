@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:31.729228+00:00'
 ```bash
 (user.otherMails -any (_ -contains "vendor")) -and (user.userType -eq "guest")
 ```
+
+

@@ -34,6 +34,8 @@ Technically, Nmap sends packets to the target network and analyzes the responses
 
 From a business perspective, network discovery can help an organization identify potential vulnerabilities and improve their overall security posture.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -41,6 +43,8 @@ From a business perspective, network discovery can help an organization identify
 1. Permission to perform network scanning
 
 1. Nmap installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a business perspective, network discovery can help an organization identify
 
 1. Implement network access controls to limit access to sensitive systems
 
+ 
+
 ## Objectives
 
 1. Identify live hosts on a network
@@ -58,19 +64,31 @@ From a business perspective, network discovery can help an organization identify
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. Use this command to discover live hosts on the network.
 
+ 
+
+
+
 **Code**: [[nmap -sn -n --disable-arp-ping 192.168.1.1-254 | g]]
 
+
+
 > This command uses nmap to perform a host discovery scan on the specified IP range. The '-sn' flag disables port scanning and only performs host discovery. The '-n' flag disables DNS resolution. The output is then piped to grep to remove any lines containing 'host down', which indicates that the host is not live. This command is useful for identifying active hosts on a network.
+
+
 
 **Command** ([[Host Discovery using nmap]]):
 
 ```bash
 nmap -sn -n --disable-arp-ping 192.168.1.1-254 | grep -v "host down"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ nmap -sn -n --disable-arp-ping 192.168.1.1-254 | grep -v "host down"
 
 - [[Network Discovery]]
 - [[Nmap]]
+
+

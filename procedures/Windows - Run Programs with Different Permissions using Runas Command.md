@@ -40,9 +40,14 @@ This procedure involves using the Runas command in Windows to run programs with 
 
 From a technical perspective, the Runas command creates a new process with the specified user's security context. This allows the user to run programs with elevated privileges or as a different user without logging out. The business value of this procedure is that it allows users to perform tasks that require elevated privileges or access to resources that they would not normally have access to.
 
+
+ 
+
 ## Requirements
 
 1. Valid user credentials for the target system
+
+ 
 
 ## Defense
 
@@ -52,6 +57,8 @@ From a technical perspective, the Runas command creates a new process with the s
 
 1. Monitor for suspicious command line activity, especially the use of the Runas command
 
+ 
+
 ## Objectives
 
 1. Run programs with different permissions
@@ -60,13 +67,23 @@ From a technical perspective, the Runas command creates a new process with the s
 
 1. Access resources that the user would not normally have access to
 
+ 
+
 # Instructions
 
 1. To use the Runas command, open a Command Prompt window and type 'runas' followed by the command you want to run. You can specify different options such as /user and /netonly to run the program with different permissions.
 
+ 
+
+
+
 **Code**: [[PS C:\> runas /netonly /user:DOMAIN\username "cmd.]]
 
+
+
 > The /user option is used to specify the user account that the command should be run as. The syntax for this option is '/user:DOMAIN\username'. The /netonly option is used to specify that the user's current credentials should not be used to authenticate the user on the network. Instead, the specified user's credentials will be used. The /noprofil option is used to specify that the user's profile should not be loaded when the command is run. This can be useful when running commands that do not require access to the user's profile, as it can speed up the execution time of the command.
+
+
 
 **Command** ([[Run cmd.exe as DOMAIN\username with netonly]]):
 
@@ -74,11 +91,17 @@ From a technical perspective, the Runas command creates a new process with the s
 runas /netonly /user:DOMAIN\username "cmd.exe"
 ```
 
+
+
+
+
 **Command** ([[Run cmd.exe as DOMAIN\username with netonly and no profile]]):
 
 ```bash
 runas /noprofil /netonly /user:DOMAIN\username cmd.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +132,5 @@ runas /noprofil /netonly /user:DOMAIN\username cmd.exe
 - [[Other methods]]
 - [[Runas as another user]]
 - [[Windows - Using credentials]]
+
+

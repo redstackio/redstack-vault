@@ -35,6 +35,8 @@ The 'Into outfile' method is a MYSQL statement that allows the user to write the
 
 The business value of this attack is that it allows an attacker to gain unauthorized access to sensitive data and resources on the target system, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a MYSQL database on the target system
@@ -42,6 +44,8 @@ The business value of this attack is that it allows an attacker to gain unauthor
 1. Knowledge of MYSQL injection techniques
 
 1. Ability to execute SQL statements on the target system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Monitor for suspicious activity, such as the creation of new files or unusual network traffic
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to the target system
@@ -59,11 +65,19 @@ The business value of this attack is that it allows an attacker to gain unauthor
 
 1. Execute commands on the target system using the shell
 
+ 
+
 # Instructions
 
 1. This command is used for SQL injection attacks. It is used to write files to the server by exploiting SQL injection vulnerabilities. The attacker can inject malicious code into the database, which can be executed on the server to create a backdoor or to execute arbitrary commands on the server.
 
+ 
+
+
+
 **Code**: [[[...] UNION SELECT "<?php system($_GET['cmd']); ?>]]
+
+
 
 > This command has multiple variations. The first variation uses the 'into outfile' clause to write a PHP script with a backdoor to the server. The second variation uses the 'into outfile' clause to write a PHP script that displays PHP configuration information. The third variation uses the 'into outfile' clause to write a PHP script with a backdoor to the server. The fourth variation uses the 'into outfile' clause to write a PHP script with a backdoor to the server.
 
@@ -87,3 +101,5 @@ The business value of this attack is that it allows an attacker to gain unauthor
 - [[Into outfile method]]
 - [[MYSQL Injection]]
 - [[MYSQL Write a shell]]
+
+

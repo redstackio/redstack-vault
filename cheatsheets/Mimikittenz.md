@@ -15,6 +15,8 @@ mimikittenz is a post-exploitation powershell tool that utilizes the Windows fun
 
 mimikittenz can also easily extract other kinds of juicy info from target processes using regex patterns including but not limited to:
 
+
+
 **Command** ([[Run mimikittenz]]):
 
 ```bash
@@ -22,5 +24,17 @@ Invoke-Mimikittenz
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 Custom regex - The syntax for adding custom regex]]
+
+
+
+
+
+

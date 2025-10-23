@@ -16,3 +16,9 @@ A tool to perform SIP/SDP INVITE message flooding over UDP/IP. It was tested on 
 ## Description
 
 A tool to perform SIP/SDP INVITE message flooding over UDP/IP. It was tested on a Linux Red Hat Fedora Core 4 platform (Pentium IV, 2.5 GHz), but it is expected this tool will successfully build and execute on a variety of Linux distributions.inviteflood Homepage | Kali inviteflood Repo
+
+
+
+
+
+

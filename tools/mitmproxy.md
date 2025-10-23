@@ -17,12 +17,32 @@ mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console 
 
 mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console interface that allows traffic flows to be inspected and edited on the fly. Also shipped is mitmdump, the command-line version of mitmproxy, with the same functionality but without the frills. Think tcpdump for HTTP.Features:
 
+
+
 intercept and modify HTTP traffic on the fly
+
+
 
 save HTTP conversations for later replay and analysis
 
+
+
 replay both HTTP clients and servers
+
+
 
 make scripted changes to HTTP traffic using Python
 
+
+
 SSL interception certs generated on the fly
+
+
+
+
+
+
+
+
+
+

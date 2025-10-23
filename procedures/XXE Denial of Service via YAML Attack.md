@@ -30,11 +30,16 @@ The XXE Denial of Service via YAML Attack is a technique that leverages the XML 
 
 From an offensive perspective, this attack can be used to disrupt the availability of a target system, causing a loss of service for legitimate users. From a technical standpoint, this attack exploits the XXE vulnerability by injecting malicious code that causes the system to consume resources until it can no longer function. From a business perspective, this attack can result in lost revenue and reputation damage due to the unavailability of critical services.
 
+
+ 
+
 ## Requirements
 
 1. Access to a target system that is vulnerable to XXE
 
 1. Ability to send a specially crafted YAML file to the target system
+
+ 
 
 ## Defense
 
@@ -44,17 +49,27 @@ From an offensive perspective, this attack can be used to disrupt the availabili
 
 1. Regularly update and patch all software components to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Deny access to a target system
 
 1. Disrupt the availability of critical services
 
+ 
+
 # Instructions
 
 1. This command creates a list with the same element repeated multiple times. The number of repetitions is determined by the number of '*' symbols before the reference to the original list.
 
+ 
+
+
+
 **Code**: [[a: &a ["lol","lol","lol","lol","lol","lol","lol","]]
+
+
 
 > The command uses YAML syntax to create a list with repeated elements. The original list is defined in line 'a: &a ["lol","lol","lol","lol","lol","lol","lol","lol","lol"]'. This list is then used to create new lists, where each element is repeated multiple times. For example, the list 'b' is defined as '&b [*a,*a,*a,*a,*a,*a,*a,*a,*a]', which means that each element of list 'a' is repeated 9 times to create the list 'b'. Similarly, the list 'c' is created by repeating each element of list 'b' 9 times, and so on, until the list 'i' is created by repeating each element of list 'h' 9 times.
 
@@ -73,3 +88,5 @@ From an offensive perspective, this attack can be used to disrupt the availabili
 - [[Exploiting XXE to perform a deny of service]]
 - [[XML External Entity]]
 - [[Yaml attack]]
+
+

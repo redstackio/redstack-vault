@@ -26,12 +26,32 @@ You can visualize the results of a scan using the viz sub-command. Our favorite 
 
 This command will create an amass_d3.html file inside the output directory.
 
+
+
+
+
+
+
 **Command** ([[amass visualize assets using d3 from a previous scan]]):
 
 ```bash
 amass viz -d3 -dir $_OUTPUT_DIRECTORY
 ```
 
+
+
+
+
+
+
+![e40e1388-26b2-4e61-aea4-8969064df21f.png]()
+
+
+
+
+
 ## Commands Used
 
 - [[amass visualize assets using d3 from a previous scan]]
+
+

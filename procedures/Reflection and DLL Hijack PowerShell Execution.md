@@ -25,11 +25,15 @@ Reflection and DLL hijack PowerShell execution is a technique used by attackers 
 
 Reflection and DLL hijack PowerShell execution is a technique used by attackers to bypass security measures that detect and prevent malicious PowerShell activity. This technique involves using a legitimate process to execute a PowerShell script. The script is loaded into memory using Matt Graeber's Reflection method, which allows the attacker to bypass anti-malware scan interfaces (AMSI) and Windows Management Framework (WMF) 5 autologging bypass. Additionally, Cornelis de Plaas DLL hijack method is used to execute the script. This method allows the attacker to load a malicious DLL instead of a legitimate one, which can be used to execute the script. This technique can be used to evade detection and execute malicious code on a victim's machine.
 
+ 
+
 ## Requirements
 
 1. Access to a victim's machine.
 
 1. The ability to execute PowerShell scripts on the victim's machine.
+
+ 
 
 ## Defense
 
@@ -39,6 +43,8 @@ Reflection and DLL hijack PowerShell execution is a technique used by attackers 
 
 1. Regularly update and patch software to prevent vulnerabilities that can be exploited by attackers.
 
+ 
+
 ## Objectives
 
 1. Execute malicious PowerShell code on a victim's machine.
@@ -47,14 +53,24 @@ Reflection and DLL hijack PowerShell execution is a technique used by attackers 
 
 1. Evade detection and remain undetected on the victim's machine.
 
+ 
+
 # Instructions
 
 1. The Bypass AMSI and Execute PowerShell command is used to bypass the Anti-Malware Scan Interface (AMSI) and execute PowerShell commands on a system. The command does this by first dropping a fake amsi.dll file to disk and then copying the powershell.exe executable to the current working directory. Finally, it starts PowerShell from the current working directory.
 
+ 
+
+
+
 **Code**: [[[Byte[]] $temp = $DllBytes -split ' '
 Write-Output]]
 
+
+
 > The command takes no arguments.
+
+
 
 **Command** ([[Bypass AMSI]]):
 
@@ -71,6 +87,8 @@ Write-Verbose "Starting powershell.exe from the current working directory."
 & "$pwd\powershell.exe"
 ```
 
+
+
 ## Commands Used
 
 - [[Bypass AMSI]]
@@ -79,3 +97,5 @@ Write-Verbose "Starting powershell.exe from the current working directory."
 
 - [[Using Cornelis de Plaas DLL hijack method]]
 - [[Using Matt Graebers Reflection method with WMF5 autologging bypass]]
+
+

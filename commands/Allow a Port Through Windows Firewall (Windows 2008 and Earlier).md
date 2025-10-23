@@ -20,3 +20,5 @@ netsh firewall add portopening TCP $_PORT "Open Port $_PORT"
 ```
 C:\netsh firewall add portopening 80 "Open Port 80"
 ```
+
+

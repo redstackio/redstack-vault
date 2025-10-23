@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:44.887186+00:00'
 ```bash
 $ aws ec2 create-image --instance-id i-0438b003d81cd7ec5 --name "AWS Audit" --description "Export AMI" --region eu-west-1
 ```
+
+

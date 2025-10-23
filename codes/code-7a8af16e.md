@@ -23,6 +23,7 @@ else:
     interface = sys.argv[1]
     print(f"Sniffing on {interface}")
 
+
 def print_data(pkt):
     if (pkt.haslayer(ICMP)) and (pkt[ICMP].type == 8):
         data = pkt[ICMP].load[-4:].decode("utf-8")
@@ -30,3 +31,5 @@ def print_data(pkt):
 
 sniff(iface = interface, prn=print_data)
 ```
+
+

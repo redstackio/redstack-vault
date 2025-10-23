@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:16.428517+00:00'
 ```bash
 reg.exe save hklm\system c:\exfil\system.bak
 ```
+
+

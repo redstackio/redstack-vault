@@ -16,3 +16,7 @@ SQLdict is a dictionary attack tool for SQL Server.SQLdict Homepage | Kali SQLdi
 ## Description
 
 SQLdict is a dictionary attack tool for SQL Server.SQLdict Homepage | Kali SQLdict Repo
+
+
+
+

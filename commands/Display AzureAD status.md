@@ -44,3 +44,5 @@ C:\ dsregcmd.exe /status
               DomainJoined : NO
                Device Name : Target-PC
 ```
+
+

@@ -32,11 +32,15 @@ AWS API Key Enumeration is a technique used to discover and list the API keys as
 
 AWS API Key Enumeration is a technique used to discover and list the API keys associated with an AWS account. This technique is often used as a precursor to other attacks, as it provides the attacker with the necessary credentials to perform further actions. To perform this technique, an attacker can use various AWS services such as CloudTrail or Access Analyzer to discover the keys. Business value of this technique is to identify and secure any exposed API keys to prevent unauthorized access to AWS resources.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions to list API keys
 
 1. Access to AWS services such as CloudTrail or Access Analyzer
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ AWS API Key Enumeration is a technique used to discover and list the API keys as
 
 1. Regularly rotate API keys and use AWS Secrets Manager to securely store and manage them
 
+ 
+
 ## Objectives
 
 1. Discover and list API keys associated with an AWS account
 
 1. Use the discovered API keys to perform further attacks
 
+ 
+
 # Instructions
 
 1. To retrieve API keys, run the following command:
 
+ 
+
 This command retrieves all API keys associated with your Amazon API Gateway account. The --include-values option will also return the API key values, which can be useful for troubleshooting or auditing purposes.
+
+
 
 **Command** ([[Retrieve API keys including values]]):
 
 ```bash
 aws apigateway get-api-keys --include-values
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws apigateway get-api-keys --include-values
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing API KEYS]]
+
+

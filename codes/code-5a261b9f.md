@@ -16,3 +16,5 @@ Invoke-CMLootInventory -SCCMHost sccm01.domain.local -Outfile sccmfiles.txt
 Invoke-CMLootDownload -SingleFile \\sccm\SCCMContentLib$\DataLib\SC100001.1\x86\MigApp.xml
 Invoke-CMLootDownload -InventoryFile .\sccmfiles.txt -Extension msi
 ```
+
+

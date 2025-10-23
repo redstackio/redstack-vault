@@ -37,6 +37,8 @@ To execute this procedure, an attacker must first identify a vulnerable input fi
 
 The business value of this procedure is that an attacker can use it to gain unauthorized access to sensitive information stored in a DB2 database.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable input field that can be used for injection
@@ -44,6 +46,8 @@ The business value of this procedure is that an attacker can use it to gain unau
 1. Knowledge of SQL Injection techniques
 
 1. Knowledge of the 'Select Character from IBM Dummy Table' command
+
+ 
 
 ## Defense
 
@@ -53,25 +57,39 @@ The business value of this procedure is that an attacker can use it to gain unau
 
 1. Regularly monitor and analyze database logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract ASCII values from a vulnerable DB2 database using the 'Select Character from IBM Dummy Table' command
 
 1. Use the extracted ASCII values for further exploitation or enumeration of the database
 
+ 
+
 # Instructions
 
 1. This command selects a character from the IBM dummy table.
 
+ 
+
+
+
 **Code**: [[Char	select chr(65) from sysibm.sysdummy1 -- retur]]
 
+
+
 > The argument of this command is the ASCII code of the character you want to select. In this example, the argument is 65 which corresponds to the character 'A'. The command uses the chr() function to convert the ASCII code to its corresponding character and then selects it from the IBM dummy table. The IBM dummy table is a special table that only contains one row and is used to test SQL statements without affecting any real data.
+
+
 
 **Command** ([[Select Character A]]):
 
 ```bash
 select chr(65) from sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ select chr(65) from sysibm.sysdummy1
 - [[ASCII Value]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

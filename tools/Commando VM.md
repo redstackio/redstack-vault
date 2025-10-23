@@ -28,6 +28,8 @@ Fully customizable Windows-based pentesting virtual machine distribution from Ma
 
 Fully customizable Windows-based pentesting virtual machine distribution from Mandiant/FireEye, specializing in Windows attacks. Commando is installed on top of a fully updated Windows 10 virtual machine via a PowerShell script. Commando includes most cross-platform tools from Kali (including Kali itself running via Hyper-V and Docker), frameworks like Impacket and PowerSploit, Active Directory tools like PowerView and BloodHound, popular wordlists, and multiple C2 frameworks.
 
+
+
 Recommended VM Specs:
 
 - a fully up-to-date copy of Windows 10
@@ -39,6 +41,8 @@ Recommended VM Specs:
 - 4GB RAM
 
 - Nested virtualization (needed for Docker, but Commando will install OK without it)
+
+
 
 # Installation
 
@@ -56,11 +60,19 @@ Recommended VM Specs:
 
 6. Set PowerShell execution policy to unrestrcited, and select "A" or "Y" to accept
 
+
+
+{{EMBEDDED_COMMAND_a57b7ff5-3ed0-4526-a454-b1514a7b9456}}
+
 7. Create a new checkpoint for the virtual machine, in case the installation fails and the process must be restarted
 
 8. Execute the installation script
 
+
+
 After entering the user's password, the installer will proceed. Expect it to take over 2 hours, and it will restart multiple times. Upon completion, create a new checkpoint for the VM to use as a safe restore point. Having this checkpoint ensures a "clean" state exists, and is priceless for instances where Commando is exposed to malicious software.
+
+
 
 ## Platforms
 
@@ -74,3 +86,5 @@ After entering the user's password, the installer will proceed. Expect it to tak
 
 - [[hacking]]
 - [[Operating Systems]]
+
+

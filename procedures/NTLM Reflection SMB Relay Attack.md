@@ -41,6 +41,8 @@ To perform this attack, the attacker needs to intercept an authentication attemp
 
 This attack can be used to gain access to sensitive information such as usernames and passwords, and can also be used to execute commands on behalf of the user. It is a powerful attack that can be used to compromise entire networks.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -48,6 +50,8 @@ This attack can be used to gain access to sensitive information such as username
 1. Ability to intercept NTLM authentication attempts
 
 1. SMB Relay Exploit tool
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ This attack can be used to gain access to sensitive information such as username
 
 1. Use SMB signing to prevent SMB Relay attacks
 
+ 
+
 ## Objectives
 
 1. Compromise user credentials
@@ -65,14 +71,24 @@ This attack can be used to gain access to sensitive information such as username
 
 1. Execute commands on behalf of the user
 
+ 
+
 # Instructions
 
 1. This command is used to exploit a vulnerability in the SMB protocol, allowing an attacker to relay authentication requests to another machine. This can result in gaining access to the targeted system or stealing sensitive information. To use this exploit, first load it in Metasploit using the 'use' command, followed by specifying the target using the 'set' command. Finally, run the exploit using the 'exploit' command.
 
+ 
+
+
+
 **Code**: [[msf > use exploit/windows/smb/smb_relay
 msf exploi]]
 
+
+
 > The 'use' command is used to load a specific exploit module in Metasploit. The 'show targets' command is used to display the available targets for the loaded exploit. The vulnerability being exploited is a reflection vulnerability in the NTLM authentication protocol used by the SMB protocol. The exploit only works on Windows 2000 to Windows Server 2008 systems. The 'set' command is used to specify the target system and other required parameters for the exploit. The 'exploit' command is used to run the exploit and attempt to gain access to the targeted system.
+
+
 
 **Command** ([[Show Targets for SMB Relay Exploit]]):
 
@@ -80,6 +96,8 @@ msf exploi]]
 use exploit/windows/smb/smb_relay
 show targets
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +127,5 @@ show targets
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
 - [[MS08-068 NTLM reflection]]
+
+

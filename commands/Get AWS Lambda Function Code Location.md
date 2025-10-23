@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:52.665195+00:00'
 ```bash
 $ aws lambda get-function --function-name "LAMBDA-NAME-HERE-FROM-PREVIOUS-QUERY" --query 'Code.Location' --profile uploadcreds
 ```
+
+

@@ -32,11 +32,15 @@ From an offensive perspective, SAML Injection can be used to gain access to sens
 
 The business value of this technique is that it can be used to gain access to sensitive data and systems without the need for valid credentials, which can reduce the time and effort required to perform targeted attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable SAML-based authentication system
 
 1. Knowledge of the target system's SAML implementation
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this technique is that it can be used to gain access to se
 
 1. Monitor SAML logs for suspicious activity such as multiple failed authentication attempts or abnormal user behavior
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms
@@ -54,24 +60,44 @@ The business value of this technique is that it can be used to gain access to se
 
 1. Enumerate user information
 
+ 
+
 # Instructions
 
 1. To prevent SAML Response Spoofing, it is recommended to implement SAML response signature verification and to validate the Assertion Consumer Service (ACS) URL of the SAML response.
 
+ 
+
+
+
 **Code**: [[<SAMLResponse>
     <Issuer>https://idp.com/</Issue]]
+
+
 
 > The SAML protocol is used for exchanging authentication and authorization data between parties, in particular, between an identity provider (IdP) and a service provider (SP). SAML Response Spoofing occurs when a threat actor intercepts a SAML response and modifies its content to impersonate another user. This can happen when the SAML response is not properly validated by the service provider. The vulnerability can be exploited to gain unauthorized access to sensitive information or resources.
 
 2. Use the following command to lookup a user's email address: 'lookup email user@user.com'
 
+ 
+
+
+
 **Code**: [[user@user.com]]
+
+
 
 > This command will search the database for the email address associated with the given username. If the email address is found, it will be returned as the result of the command. If the username is not found, an error message will be returned.
 
 3. Use this domain to create a username for a malicious account.
 
+ 
+
+
+
 **Code**: [[.evil.com]]
+
+
 
 > This field provides a specific domain that can be used to create a username for a malicious account. The username can be used for various purposes such as phishing, spamming, or other malicious activities. The user can append any string before the domain to create a fake email or username to deceive the victims. It is important to note that the use of such usernames is illegal and unethical.
 
@@ -90,3 +116,5 @@ The business value of this technique is that it can be used to gain access to se
 - [[Authentication Bypass]]
 - [[SAML Injection]]
 - [[XML Comment Handling]]
+
+

@@ -33,6 +33,8 @@ Pspy is a utility that can monitor and  report on commands run on the system. Th
 
 Pspy is a utility that can monitor and  report on commands run on the system. This can allow a low privilege user to view commands run by other higher privilege users, cron jobs, system processes, etc.
 
+
+
 # Instructions
 
 1. Download  pspy (static version) which matches the target architecture: [Download from Github](https://github.com/DominicBreuker/pspy)
@@ -40,11 +42,19 @@ Pspy is a utility that can monitor and  report on commands run on the system. Th
 2. Copy the binary to the target system.
 3. Run pspy with no arguments.
 
+
+
+
+
 **Command** ([[pspy Monitor Processes and Commands]]):
 
 ```bash
 pspy
 ```
+
+
+
+
 
 ## Platforms
 
@@ -68,3 +78,5 @@ pspy
 
 - [[Enumeration]]
 - [[Service Attacks]]
+
+

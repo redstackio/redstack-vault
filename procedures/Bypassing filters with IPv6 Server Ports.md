@@ -43,11 +43,15 @@ From a technical perspective, this technique involves sending a request to the t
 
 The business value of this technique is that it allows attackers to access sensitive or confidential information that would otherwise be inaccessible, which can lead to data theft, unauthorized access, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server
 
 1. Knowledge of IPv6 Server Ports
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ The business value of this technique is that it allows attackers to access sensi
 
 1. Monitor network traffic for unusual activity, such as connections to internal resources from external IP addresses
 
+ 
+
 ## Objectives
 
 1. Access sensitive or confidential information
@@ -65,15 +71,25 @@ The business value of this technique is that it allows attackers to access sensi
 
 1. Perform malicious activities on the target system
 
+ 
+
 # Instructions
 
 1. To check if a port is open, use the 'Test-NetConnection' cmdlet followed by the IP address and port number. For example, 'Test-NetConnection -ComputerName [::] -Port 80'
+
+ 
+
+
 
 **Code**: [[http://[::]:80/
 http://[::]:25/ SMTP
 http://[::]:2]]
 
+
+
 > This command provides a list of common network ports and the services that use them. It is useful for network administrators and security professionals who need to monitor network traffic and ensure that only authorized services are running on their systems. The 'Test-NetConnection' cmdlet can be used to test whether a specific port is open or closed on a remote computer. This can help identify potential security vulnerabilities and ensure that network services are functioning correctly.
+
+
 
 **Command** ([[Accessing HTTP service]]):
 
@@ -81,11 +97,19 @@ http://[::]:2]]
 http://[::]:80/
 ```
 
+
+
+
+
 **Command** ([[Accessing SMTP service]]):
 
 ```bash
 http://[::]:25/ SMTP
 ```
+
+
+
+
 
 **Command** ([[Accessing SSH service]]):
 
@@ -93,22 +117,36 @@ http://[::]:25/ SMTP
 http://[::]:22/ SSH
 ```
 
+
+
+
+
 **Command** ([[Accessing Squid service]]):
 
 ```bash
 http://[::]:3128/ Squid
 ```
 
+
+
 2. To access the services running on this IPv6 server, use the following commands:
+
+ 
+
+
 
 **Code**: [[http://0000::1:80/
 http://0000::1:25/ SMTP
 http://]]
 
+
+
 > 1. HTTP: Use the command 'http://[0000:0000:0000:0000:0000:0000:0001]:80/' to access the web server.
 2. SMTP: Use the command 'telnet [0000:0000:0000:0000:0000:0000:0001] 25' to access the SMTP server.
 3. SSH: Use the command 'ssh [0000:0000:0000:0000:0000:0000:0001]' to access the SSH server.
 4. Squid: Use the command 'telnet [0000:0000:0000:0000:0000:0000:0001] 3128' to access the Squid proxy server.
+
+
 
 **Command** ([[Access website on IPv6 address]]):
 
@@ -116,11 +154,19 @@ http://]]
 http://0000::1:80/
 ```
 
+
+
+
+
 **Command** ([[Send email using SMTP on IPv6 address]]):
 
 ```bash
 http://0000::1:25/ SMTP
 ```
+
+
+
+
 
 **Command** ([[Connect to SSH on IPv6 address]]):
 
@@ -128,11 +174,17 @@ http://0000::1:25/ SMTP
 http://0000::1:22/ SSH
 ```
 
+
+
+
+
 **Command** ([[Access Squid proxy on IPv6 address]]):
 
 ```bash
 http://0000::1:3128/ Squid
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -162,3 +214,5 @@ http://0000::1:3128/ Squid
 - [[Bypassing filters]]
 - [[Bypass localhost with [::]]]
 - [[Server-Side Request Forgery]]
+
+

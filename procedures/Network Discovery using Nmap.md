@@ -30,11 +30,15 @@ Network Discovery using Nmap is a process of identifying hosts and services on a
 
 Network Discovery using Nmap is a process of identifying hosts and services on a network by sending packets and analyzing the responses. This procedure is commonly used by attackers to identify potential attack vectors and vulnerabilities on a network. Nmap is a powerful tool that can be used to perform a wide range of network scanning and reconnaissance tasks. It can be used to identify open ports, running services, and operating systems on a target network. By analyzing the results of a network scan, an attacker can identify potential vulnerabilities and misconfigurations that can be exploited to gain unauthorized access to a network.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
 
 1. Nmap tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Network Discovery using Nmap is a process of identifying hosts and services on a
 
 1. Implement access control measures to prevent unauthorized access to the target network
 
+ 
+
 ## Objectives
 
 1. Identify hosts and services on a target network
@@ -52,11 +58,19 @@ Network Discovery using Nmap is a process of identifying hosts and services on a
 
 1. Identify misconfigurations that can be exploited to gain unauthorized access to a network
 
+ 
+
 # Instructions
 
 1. This command performs a port scan on the specified IP address using nmap and saves the results in an XML file. It then uses the searchsploit tool to search for exploits related to the identified services and ports. 
 
+ 
+
+
+
 **Code**: [[nmap -p- -sV -oX a.xml IP_ADDRESS; searchsploit --]]
+
+
 
 > The nmap command performs a port scan on the specified IP address. The -p- option tells nmap to scan all ports. The -sV option enables version detection for each service that is found. The -oX option specifies that the results should be saved in an XML file named a.xml.
 
@@ -64,11 +78,15 @@ The searchsploit command searches the a.xml file for exploits related to the ide
 
 Note: This command requires the nmap and searchsploit tools to be installed on the system.
 
+
+
 **Command** ([[Port Scan with nmap and searchsploit]]):
 
 ```bash
 nmap -p- -sV -oX a.xml IP_ADDRESS; searchsploit --nmap a.xml
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ nmap -p- -sV -oX a.xml IP_ADDRESS; searchsploit --nmap a.xml
 
 - [[Network Discovery]]
 - [[Nmap]]
+
+

@@ -36,11 +36,15 @@ From a technical perspective, the Kerberos Bronze Bit Attack works by manipulati
 
 Business value of this attack is that it can be used to gain access to sensitive data, intellectual property, and other confidential information. This can result in financial loss, reputational damage, and legal consequences for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
 
 1. Access to a vulnerable Microsoft implementation of Kerberos
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business value of this attack is that it can be used to gain access to sensitive
 
 1. Monitoring network traffic and user activity can help detect and prevent this type of attack
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to an Active Directory environment
@@ -57,6 +63,8 @@ Business value of this attack is that it can be used to gain access to sensitive
 1. Move laterally through the network
 
 1. Exfiltrate sensitive data
+
+ 
 
 # Instructions
 
@@ -68,15 +76,25 @@ Business value of this attack is that it can be used to gain access to sensitive
 5. In the Reset Account dialog box, click Yes.
 6. Quit Active Directory Users and Computers, and then restart the domain controller.
 
+ 
+
+
+
 **Code**: [[[-] Kerberos SessionError: KRB_AP_ERR_MODIFIED(Mes]]
 
+
+
 > This error occurs when the Kerberos authentication process detects that the message stream has been modified. This can happen due to a variety of reasons, including incorrect system time, incorrect service principal name (SPN), or an attacker's attempt to tamper with the authentication process. Resetting the computer account password for the domain controller is a common solution to this issue.
+
+
 
 **Command** ([[Kerberos Session Error]]):
 
 ```bash
 [-] Kerberos SessionError: KRB_AP_ERR_MODIFIED(Message stream modified)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +119,5 @@ Business value of this attack is that it can be used to gain access to sensitive
 
 - [[Active Directory Attacks]]
 - [[Kerberos Bronze Bit Attack - CVE-2020-17049]]
+
+

@@ -21,3 +21,5 @@ import-module .\sharphound.ps1
 invoke-bloodHound -CollectionMethod All -domain target-domain -LDAPUser username -LDAPPass password
 
 ```
+
+

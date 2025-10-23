@@ -33,11 +33,15 @@ Technical Explanation: .NET serialization is a feature in the .NET framework tha
 
 Business Value: This procedure helps to protect against .NET serialization attacks, which can be used to execute arbitrary code on a target system. By detecting these attacks early, defenders can respond before any damage is done, preventing data theft, system compromise, or other negative outcomes.
 
+ 
+
 ## Requirements
 
 1. Access to logs and monitoring tools
 
 1. Knowledge of .NET serialization and its potential for abuse
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: This procedure helps to protect against .NET serialization attac
 
 1. Train employees on how to recognize and respond to suspicious activity or indicators of compromise
 
+ 
+
 ## Objectives
 
 1. Detect the use of .NET serialization by an attacker
@@ -55,11 +61,19 @@ Business Value: This procedure helps to protect against .NET serialization attac
 
 1. Prevent data theft, system compromise, or other negative outcomes
 
+ 
+
 # Instructions
 
 1. To monitor for .NET serialization attacks, you can use tools such as Sysmon or network intrusion detection systems (NIDS) to look for certain indicators of compromise (IOCs). These can include the creation of serialized objects in the network traffic or file system, or the use of certain .NET serialization libraries. When these IOCs are detected, an alert can be generated and sent to security personnel for further investigation.
 
+ 
+
+
+
 **Code**: [[AAEAAAD/////AQAAAAAAAAAMAgAAAF9TeXN0ZW0u[...]0KPC9]]
+
+
 
 > Serialized objects can be identified by their file extension (.dat, .bin, .ser, etc.) or by their content, which will be a stream of bytes that can be converted back into an object. Some .NET serialization libraries that are commonly abused by attackers include BinaryFormatter, NetDataContractSerializer, and DataContractSerializer.
 
@@ -79,3 +93,5 @@ Business Value: This procedure helps to protect against .NET serialization attac
 
 - [[Detection]]
 - [[.NET Serialization]]
+
+

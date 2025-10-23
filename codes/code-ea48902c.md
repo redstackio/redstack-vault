@@ -24,3 +24,5 @@ function validate_cookie($cookie, $key) {
     return true;
 }
 ```
+
+

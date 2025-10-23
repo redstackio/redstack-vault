@@ -14,3 +14,5 @@ updated_at: '2023-05-24T03:35:02.314062+00:00'
 ```bash
 evilginx2 -p C:\Tools\evilginx2\phishlets
 ```
+
+

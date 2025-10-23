@@ -35,6 +35,8 @@ Basic enumeration of human readable strings can quickly provide information from
 
 Basic enumeration of human readable strings can quickly provide information from a raw memory dump. Depending on the source, a dump may include usernames and passwords, encryption keys, cookies, library calls, etc, all of which can be easily identified without the need for more sophisticated analysis.
 
+
+
 # Instructions
 
 **Tips**: Search for strings which are contextually relevant to the memory dump. If searching for:
@@ -49,11 +51,19 @@ Basic enumeration of human readable strings can quickly provide information from
 
 - Nearby Lines - Use the "-B $_VALUE" argument for grep to includes lines before the match, "-A $_VALUE" to include those after, or "-C $_VALUE" to include before and after
 
+
+
+
+
 **Command** ([[Search Raw Data for Human Readable Strings]]):
 
 ```bash
 strings $_DUMP | grep $_STRING
 ```
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +89,5 @@ strings $_DUMP | grep $_STRING
 ## Tags
 
 - [[memory]]
+
+

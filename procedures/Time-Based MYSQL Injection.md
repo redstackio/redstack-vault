@@ -27,6 +27,8 @@ Technical Explanation: Time-based MYSQL injection is a type of SQL injection tha
 
 Business Value: Time-based MYSQL injection can be used by attackers to steal sensitive data from web applications. This can lead to financial losses, damage to reputation, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses a MYSQL database
@@ -34,6 +36,8 @@ Business Value: Time-based MYSQL injection can be used by attackers to steal sen
 1. Knowledge of SQL injection techniques
 
 1. Access to a tool that can automate the injection process
+
+ 
 
 ## Defense
 
@@ -43,18 +47,28 @@ Business Value: Time-based MYSQL injection can be used by attackers to steal sen
 
 1. Monitor database activity for suspicious behavior, such as delays in response time
 
+ 
+
 ## Objectives
 
 1. To successfully inject malicious SQL code into the web application's database
 
 1. To extract sensitive data such as usernames and passwords from the database
 
+ 
+
 # Instructions
 
 1. This command is used to test the performance of MySQL database by delaying the output. The command uses the BENCHMARK function to execute a given number of iterations of a specific function. The SLEEP function is used to introduce a delay in the execution of the command. The RANDNUM and RANDSTR are placeholders for randomly generated numbers and strings respectively. The ELT function is used to return the Nth element of a given list, in this case, it is used to introduce a delay.
 
+ 
+
+
+
 **Code**: [[+BENCHMARK(40000000,SHA1(1337))+
 '%2Bbenchmark(320]]
+
+
 
 > The BENCHMARK function is used to execute a function multiple times to test the performance of MySQL. The function is executed a specified number of times, in this case, 40,000,000 times for the first BENCHMARK function and 3,200 times for the second BENCHMARK function. The SHA1 function is used to generate a hash value for the input value. The SLEEP function is used to introduce a delay in the execution of the command, the delay time is determined by the value of [SLEEPTIME]. The MD5 function is used to generate a hash value for the input value. The RLIKE function is used to match a regular expression pattern against a string. The ELT function is used to return the Nth element of a given list, in this case, it is used to introduce a delay.
 
@@ -62,3 +76,5 @@ Business Value: Time-based MYSQL injection can be used by attackers to steal sen
 
 - [[MYSQL Injection]]
 - [[MYSQL Time Based]]
+
+

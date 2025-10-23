@@ -14,3 +14,5 @@ updated_at: '2023-05-23T17:02:42.699898+00:00'
 ```bash
 Get-AzureADTenantDetail
 ```
+
+

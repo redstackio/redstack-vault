@@ -37,13 +37,21 @@ Enumerate Windows systems for potential privilege escalations using SharpUp, a C
 
 Enumerate Windows systems for potential privilege escalations using SharpUp, a C# implementation of PowerUp. Scan for common privilege escalation paths, vulnerable servi ces, DLL hijacking opportunities, and vulnerable registry settings.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[PowerUp Enumerate for Privilege Escalation]]):
 
 ```bash
 SharpUp.exe audit
 ```
+
+
 
 Note: SharpUp also comes as a .ps1 script, which can be run from a PowerShell prompt with the same arguments.
 
@@ -75,3 +83,5 @@ Note: SharpUp also comes as a .ps1 script, which can be run from a PowerShell pr
 ## Tags
 
 - [[Enumeration]]
+
+

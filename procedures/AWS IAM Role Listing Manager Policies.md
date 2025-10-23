@@ -28,9 +28,13 @@ The AWS IAM Role Listing Manager Policies procedure involves listing the policie
 
 From an offensive perspective, an attacker could use this information to identify roles with overly permissive policies and exploit them to gain access to sensitive resources. From a defensive perspective, this procedure can be used to identify and remediate overly permissive policies attached to roles.
 
+ 
+
 ## Requirements
 
 1. IAM permissions to view policies attached to the role
+
+ 
 
 ## Defense
 
@@ -40,6 +44,8 @@ From an offensive perspective, an attacker could use this information to identif
 
 1. Use AWS Config to monitor and enforce compliance with security best practices
 
+ 
+
 ## Objectives
 
 1. Identify the policies attached to a specific IAM role
@@ -48,17 +54,25 @@ From an offensive perspective, an attacker could use this information to identif
 
 1. Identify potential areas of privilege escalation
 
+ 
+
 # Instructions
 
 1. To list all the attached policies for a specific IAM role, use the following command:
 
+ 
+
 This command will return a list of all the policies that are attached to the specified IAM role. The output will include the policy name, policy ARN, and the policy description. This can be useful for reviewing the permissions that are associated with a specific IAM role.
+
+
 
 **Command** ([[List Attached Role Policies]]):
 
 ```bash
 aws iam list-attached-role-policies --role-name name
 ```
+
+
 
 ## Commands Used
 
@@ -69,3 +83,5 @@ aws iam list-attached-role-policies --role-name name
 - [[Cloud - AWS]]
 - [[Listing manager policies attached to the IAM role]]
 - [[Persistence]]
+
+

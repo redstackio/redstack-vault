@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:15.130562+00:00'
 ```bash
 $ curl https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=ya29.XXXXXKuXXXXXXXkGT0rJSA
 ```
+
+

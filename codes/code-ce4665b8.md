@@ -22,3 +22,5 @@ $ git clone https://github.com/iphelix/pack/blob/master/README
 $ python2 statsgen.py ../hashcat.potfile -o hashcat.mask
 $ python2 maskgen.py hashcat.mask --targettime 3600 --optindex -q -o hashcat_1H.hcmask
 ```
+
+

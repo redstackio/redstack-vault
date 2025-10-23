@@ -33,6 +33,8 @@ The Kubernetes API Request Simulation procedure is used to simulate `kubectl` AP
 
 The Kubernetes API Request Simulation procedure is used to simulate `kubectl` API requests within a Kubernetes cluster. This procedure is useful when `kubectl` is not available within a container and manual API requests need to be crafted. The procedure involves crafting HTTP API requests manually using a tool such as `curl` or a programming language such as Python. The Kubernetes API allows for various operations such as creating, updating, and deleting Kubernetes objects such as pods, services, and deployments. By simulating `kubectl` API requests, an attacker can gain access to sensitive information within the cluster, execute arbitrary code, and create persistence mechanisms.
 
+ 
+
 ## Requirements
 
 1. Access to the Kubernetes API
@@ -41,6 +43,8 @@ The Kubernetes API Request Simulation procedure is used to simulate `kubectl` AP
 
 1. A tool such as `curl` or a programming language such as Python
 
+ 
+
 ## Defense
 
 1. Ensure that only authorized users have access to the Kubernetes API server
@@ -48,6 +52,8 @@ The Kubernetes API Request Simulation procedure is used to simulate `kubectl` AP
 1. Implement RBAC (Role-Based Access Control) to restrict access to sensitive resources within the cluster
 
 1. Enable audit logging to detect unauthorized access to the Kubernetes API server
+
+ 
 
 ## Objectives
 
@@ -59,19 +65,31 @@ The Kubernetes API Request Simulation procedure is used to simulate `kubectl` AP
 
 1. Create persistence mechanisms within the cluster
 
+ 
+
 # Instructions
 
 1. curl -k -H "Authorization: Bearer <TOKEN>" https://<API_SERVER>/api/v1/namespaces/<NAMESPACE>/pods
 
+ 
+
+
+
 **Code**: [[curl]]
 
+
+
 > This command will retrieve a list of pods within the specified namespace using the Kubernetes API. The `Authorization` header is used to authenticate the request using a bearer token. The `API_SERVER` is the URL of the Kubernetes API server and the `NAMESPACE` is the name of the Kubernetes namespace.
+
+
 
 **Command** ([[Fetch data using curl]]):
 
 ```bash
 curl http://example.com/data
 ```
+
+
 
 2. import requests
 
@@ -84,7 +102,13 @@ headers = {
 response = requests.get(url, headers=headers, verify=False)
 print(response.json())
 
+ 
+
+
+
 **Code**: [[Python]]
+
+
 
 > This code will retrieve a list of pods within the specified namespace using the Kubernetes API. The `Authorization` header is used to authenticate the request using a bearer token. The `API_SERVER` is the URL of the Kubernetes API server and the `NAMESPACE` is the name of the Kubernetes namespace. The `Content-Type` header specifies that the request body is in JSON format. The `verify=False` parameter is used to disable SSL verification.
 
@@ -110,3 +134,5 @@ print(response.json())
 - [[Container Environment]]
 - [[Kubernetes]]
 - [[Simulating `kubectl` API Requests]]
+
+

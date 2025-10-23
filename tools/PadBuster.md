@@ -30,11 +30,27 @@ PadBuster is a Perl script for automating Padding Oracle Attacks. PadBuster prov
 
 PadBuster is a Perl script for automating Padding Oracle Attacks. PadBuster provides the capability to decrypt arbitrary ciphertext, encrypt arbitrary plaintext, and perform automated response analysis to determine whether a request is vulnerable to padding oracle attacks.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e0bcfe1b-e00f-4078-a584-9085b8155695}}
+
+
 
 # Installation
 
 ## Install on Kali
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +73,5 @@ PadBuster is a Perl script for automating Padding Oracle Attacks. PadBuster prov
 - [[Brute Force]]
 - [[Cryptography]]
 - [[Web Applications]]
+
+

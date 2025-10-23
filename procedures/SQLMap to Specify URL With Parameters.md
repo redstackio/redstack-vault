@@ -32,9 +32,19 @@ SQLMap is an automated SQL injection exploitation tool. Parameters on which the 
 
 SQLMap is an automated SQL injection exploitation tool. Parameters on which the tool injects the SQL payloads can be specified using *-p* option.
 
+
+
 # Procedure
 
+
+
 1. Use the below SQLMap command along with *-p* option to test for SQL injection on a web application.
+
+
+
+
+
+
 
 **Command** ([[SQLMap Command With Parameter]]):
 
@@ -42,7 +52,13 @@ SQLMap is an automated SQL injection exploitation tool. Parameters on which the 
 sqlmap -u "http://192.168.1.10/vcart/login.php?user=demo@vcart.com&pass=demo&selop=2" -p user
 ```
 
+
+
+
+
 2. Output shows the payloads used to exploit the parameter.
+
+
 
 ## Platforms
 
@@ -59,3 +75,5 @@ sqlmap -u "http://192.168.1.10/vcart/login.php?user=demo@vcart.com&pass=demo&sel
 - [[sqli]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

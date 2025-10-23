@@ -31,3 +31,5 @@ Active sessions
   --  ----  ----                     -----------                     ----------
   1         meterpreter x86/windows  BOBPC\BOB @ BOBPC  10.0.1.100:444 -> 10.0.1.10:1213 (10.0.1.10)
 ```
+
+

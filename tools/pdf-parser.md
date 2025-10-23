@@ -16,3 +16,9 @@ This tool will parse a PDF document to identify the fundamental elements used in
 ## Description
 
 This tool will parse a PDF document to identify the fundamental elements used in the analyzed file. It will not render a PDF document.
+
+
+
+
+
+

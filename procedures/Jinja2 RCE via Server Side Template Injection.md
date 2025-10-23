@@ -32,6 +32,8 @@ Jinja2 is a widely used templating engine for Python-based web applications. It 
 
 To exploit this vulnerability, an attacker can inject malicious code into a template file, which will then be executed by the server when the template is rendered. This can be achieved by using various techniques such as string formatting, function calls, and object injection. Once the attacker has achieved RCE, they can perform various malicious activities such as stealing sensitive data, installing backdoors, and launching further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -39,6 +41,8 @@ To exploit this vulnerability, an attacker can inject malicious code into a temp
 1. Knowledge of the application's templating engine (Jinja2)
 
 1. Ability to inject malicious code into the application's templates
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ To exploit this vulnerability, an attacker can inject malicious code into a temp
 
 1. Implement least privilege access control to limit the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. Gain remote code execution on the target server
@@ -56,19 +62,31 @@ To exploit this vulnerability, an attacker can inject malicious code into a temp
 
 1. Steal sensitive data from the target system
 
+ 
+
 # Instructions
 
 1. This command sets up a listener on port 8000 using the netcat utility. It waits for incoming connections and displays any data that is received.
 
+ 
+
+
+
 **Code**: [[nc -lnvp 8000]]
 
+
+
 > The 'nc' command is used to establish a network connection. The '-l' flag is used to specify that the command should listen for incoming connections. The '-n' flag disables DNS lookups, which can speed up the connection process. The '-v' flag enables verbose output, which displays more information about the connection. The '-p' flag is used to specify the port number to listen on. In this case, port 8000 is used. Once a connection is established, any data that is received will be displayed in the terminal window.
+
+
 
 **Command** ([[Start netcat listener on port 8000]]):
 
 ```bash
 nc -lnvp 8000
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ nc -lnvp 8000
 - [[Jinja2]]
 - [[Jinja2 - Remote Code Execution]]
 - [[Server Side Template Injection]]
+
+

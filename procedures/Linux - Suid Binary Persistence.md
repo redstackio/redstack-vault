@@ -34,11 +34,15 @@ From a technical perspective, SUID (Set User ID) is a special type of file permi
 
 The business value of this procedure is that it allows attackers to maintain access to a compromised system even after a reboot. This can be used to steal sensitive data, install additional malware or use the system as a jumping-off point for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target system with the ability to create files.
 
 1. Knowledge of Linux command line and file permissions.
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure is that it allows attackers to maintain acc
 
 1. Implement the principle of least privilege to limit the impact of a successful attack.
 
+ 
+
 ## Objectives
 
 1. Create a SUID binary that will run with elevated privileges every time the system boots.
@@ -56,12 +62,20 @@ The business value of this procedure is that it allows attackers to maintain acc
 
 1. Gain access to sensitive files or execute malicious code with elevated privileges.
 
+ 
+
 # Instructions
 
 1. This command creates a setuid binary called 'croissant' in the /var/tmp directory. The binary is compiled from a C code which spawns a shell with root privileges. The binary is then given the setuid bit which allows any user to execute it with root privileges.
 
+ 
+
+
+
 **Code**: [[TMPDIR2="/var/tmp"
 echo 'int main(void){setresuid(]]
+
+
 
 > The 'TMPDIR2' variable is set to '/var/tmp'. A C code is then written to a file called 'croissant.c' in the '/var/tmp' directory. The C code is compiled using gcc and the binary is named 'croissant'. The C code spawns a shell with root privileges using the 'setresuid(0, 0, 0);system("/bin/sh");' command. The 'croissant.c' file is then removed. The ownership of the 'croissant' binary is changed to 'root:root' and the setuid bit is set using 'chmod 4777'. This allows any user to execute the binary with root privileges.
 
@@ -84,3 +98,5 @@ echo 'int main(void){setresuid(]]
 
 - [[Linux - Persistence]]
 - [[Suid Binary]]
+
+

@@ -34,11 +34,17 @@ Dump a process's memory  into a file using PowerSploit's Out-Minidump cmdlet.
 
 Dump a process's memory  into a file using PowerSploit's Out-Minidump cmdlet.
 
+
+
 # Instructions
 
 1. Download PowerSploit's Out-Minidump and import it into a PowerShell session: [Download from GitHub](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Exfiltration/Out-Minidump.ps1)
 
 2. Identify a process to target.
+
+
+
+
 
 **Command** ([[Get-Process List Running Processes]]):
 
@@ -46,13 +52,25 @@ Dump a process's memory  into a file using PowerSploit's Out-Minidump cmdlet.
 Get-Process
 ```
 
+
+
+
+
 3. Execute Get-Process and specify the process name, pipe the output into Out-Minidump, and specify a directory to output the results.
+
+
+
+
 
 **Command** ([[Out-Minidump Dump the Memory of a Process]]):
 
 ```bash
 Get-Process -Name $_NAME | Out-Minidump -DumpFilePath $_PATH
 ```
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +95,5 @@ Get-Process -Name $_NAME | Out-Minidump -DumpFilePath $_PATH
 
 - [[data exposure]]
 - [[memory]]
+
+

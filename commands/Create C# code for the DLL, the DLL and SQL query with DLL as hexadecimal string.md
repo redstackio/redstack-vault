@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:39.601743+00:00'
 ```bash
 Create-SQLFileCLRDll -ProcedureName "runcmd" -OutFile runcmd -OutDir C:\Users\user\Desktop
 ```
+
+

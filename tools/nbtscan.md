@@ -28,11 +28,27 @@ Scan networks for NetBIOS name information. Nbtscan sends NetBIOS status queries
 
 Scan networks for NetBIOS name information. Nbtscan sends NetBIOS status queries to each address in the supplied address range and lists the results. Each host that responds to the query will include its IP, NetBIOS computer name, logged-in user, and MAC address.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_798e0c1d-4390-4d07-8337-65ec36c2d7ab}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -52,3 +68,5 @@ Scan networks for NetBIOS name information. Nbtscan sends NetBIOS status queries
 
 - [[Enumeration]]
 - [[Network]]
+
+

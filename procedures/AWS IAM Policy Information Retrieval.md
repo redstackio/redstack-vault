@@ -36,6 +36,8 @@ Technical: The attacker can use the 'Retrieve AWS IAM Policy' command to retriev
 
 Business Value: By understanding the policies in an AWS environment, an attacker can potentially escalate their privileges and gain access to more sensitive data. This can lead to data theft, data manipulation, and other malicious activities that can harm the business.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS environment
@@ -43,6 +45,8 @@ Business Value: By understanding the policies in an AWS environment, an attacker
 1. Valid credentials with appropriate permissions
 
 1. Access to the 'Retrieve AWS IAM Policy' command
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: By understanding the policies in an AWS environment, an attacker
 
 1. Regularly review and update AWS IAM policies to ensure they are up-to-date and secure
 
+ 
+
 ## Objectives
 
 1. Retrieve information about a specific AWS IAM policy
@@ -60,17 +66,25 @@ Business Value: By understanding the policies in an AWS environment, an attacker
 
 1. Plan next steps for escalating privileges
 
+ 
+
 # Instructions
 
 1. To retrieve an AWS IAM policy, use the following command:
 
+ 
+
 This command retrieves the policy document for the specified IAM policy ARN. The policy document contains the permissions that are granted to the policy. The ARN of the policy is required as an argument for the command.
+
+
 
 **Command** ([[Get IAM policy]]):
 
 ```bash
 aws iam get-policy --policy-arn ARN
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -93,3 +107,5 @@ aws iam get-policy --policy-arn ARN
 - [[Cloud - AWS]]
 - [[Persistence & Backdooring]]
 - [[Retrieving information about an specific policy]]
+
+

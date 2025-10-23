@@ -8,6 +8,7 @@ output: 'root@kali:~# p0f -i eth0 -p -o output.log
 
   --- p0f 3.09b by Michal Zalewski <lcamtuf@coredump.cx> ---
 
+
   [+] Closed 1 file descriptor.
 
   [+] Loaded 322 signatures from ''/etc/p0f/p0f.fp''.
@@ -19,6 +20,7 @@ output: 'root@kali:~# p0f -i eth0 -p -o output.log
   [+] Log file ''output.log'' opened for writing.
 
   [+] Entered main event loop.
+
 
   .-[ 10.10.10.11/57962 -> 10.10.10.10/199 (syn) ]-
 
@@ -70,3 +72,5 @@ root@kali:~# p0f -i eth0 -p -o output.log
 ...
 ...
 ```
+
+

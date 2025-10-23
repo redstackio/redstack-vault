@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # iptables
 
+
+
 **Command** ([[Append rules to top of the Input filter and make persistent]]):
 
 ```bash
@@ -19,9 +21,21 @@ iptables -L -v
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Delete rule]]):
 
 ```bash
 iptables -D INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
 
 ```
+
+
+
+
+
+

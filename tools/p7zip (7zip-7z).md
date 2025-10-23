@@ -27,11 +27,25 @@ p7zip is a command-line port of 7-Zip for POSIX systems and Linux. It implements
 
 p7zip is a command-line port of 7-Zip for POSIX systems and Linux. It implements the popular 7-Zip compression algorithm, and if the full package is installed (p7zip-full), includes support for ZIP, ARJ, GZIP, BZIP2, TAR, CPIO, RPM, ISO, most filesystem images, and DEB format. p7zip is especially useful for decompressing ZIP archives which use a password and AES-256 encryption, as the standard "unzip" utility does not support these features.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_5409414a-d84c-40b4-bc1d-ea68fb61edc3}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +58,5 @@ p7zip is a command-line port of 7-Zip for POSIX systems and Linux. It implements
 ## Tags
 
 - [[compression]]
+
+

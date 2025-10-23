@@ -26,6 +26,8 @@ SQL injection is a type of injection attack that allows an attacker to execute m
 
 From an offensive perspective, this procedure can be used to identify SQL injection vulnerabilities in web applications and exploit them to gain unauthorized access to sensitive data. From a technical standpoint, this procedure involves loading a request file with the vulnerable parameter and using sqlmap to detect the vulnerability. From a business perspective, this procedure can help organizations identify and remediate SQL injection vulnerabilities before they can be exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Access to the web application
@@ -33,6 +35,8 @@ From an offensive perspective, this procedure can be used to identify SQL inject
 1. A request file with the vulnerable parameter
 
 1. Sqlmap tool installed
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ From an offensive perspective, this procedure can be used to identify SQL inject
 
 1. Implement network security measures to prevent unauthorized access to the web application
 
+ 
+
 ## Objectives
 
 1. Detect SQL injection vulnerabilities in a web application
@@ -49,6 +55,8 @@ From an offensive perspective, this procedure can be used to identify SQL inject
 1. Identify the vulnerable parameter for the SQL injection
 
 1. Retrieve sensitive data from the database server
+
+ 
 
 # Instructions
 
@@ -62,7 +70,15 @@ where:
 --mobile: enables mobile device testing
 --safe-freq: specifies the number of seconds to wait between tests
 
+
+
+ 
+
+
+
 **Code**: [[sqlmap -r sqli.req --safe-url=http://10.10.10.10/ ]]
+
+
 
 > SQL injection is a common web application vulnerability that allows an attacker to execute malicious SQL statements against a database. Sqlmap is a popular tool for detecting and exploiting SQL injection vulnerabilities. The command provided above demonstrates how to use sqlmap to detect SQL injection vulnerabilities in a web application. The options used in the command are explained in the instruction field above.
 
@@ -71,3 +87,5 @@ where:
 - [[Load a request file and use mobile user-agent]]
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
+
+

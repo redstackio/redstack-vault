@@ -30,11 +30,15 @@ This procedure involves exploiting a vulnerability in PostMessage to execute a c
 
 This procedure involves exploiting a vulnerability in PostMessage to execute a cross-site scripting (XSS) attack through a button click. An attacker can inject malicious code into a website that uses PostMessage to communicate between different domains or windows. When a user clicks on a button on the vulnerable website, the injected code is executed on the user's browser, allowing the attacker to steal sensitive information, such as login credentials or session cookies. This attack can be used to gain initial access to a target organization's network, and can be difficult to detect and mitigate.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website that uses PostMessage to communicate between different domains or windows.
 
 1. Knowledge of how to inject malicious code into the website.
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ This procedure involves exploiting a vulnerability in PostMessage to execute a c
 
 1. Implement strict cross-origin resource sharing (CORS) policies to prevent unauthorized access to resources from different domains.
 
+ 
+
 ## Objectives
 
 1. Execute a successful XSS attack through a button click on a vulnerable website.
@@ -52,15 +58,25 @@ This procedure involves exploiting a vulnerability in PostMessage to execute a c
 
 1. Gain initial access to a target organization's network.
 
+ 
+
 # Instructions
 
 1. This command is used to perform a Cross-Site Scripting (XSS) attack through a button click. 
+
+ 
+
+
 
 **Code**: [[<html>
 <body>
     <input type=button value="Click ]]
 
+
+
 > The attacker creates a webpage with a button that, when clicked, opens a new window to the target website. After a delay of 2 seconds, the attacker sends a message to the new window with a payload that executes a JavaScript code to display a confirmation box with the message 'XSS'. This attack can be used to steal credentials, inject malicious code or perform other malicious actions on the target website.
+
+
 
 **Command** ([[Click button to open a new window and execute script]]):
 
@@ -87,6 +103,8 @@ document.getElementById('btn').onclick = function(e){
 </html>
 ```
 
+
+
 ## MITRE ATT&CK Mapping
 
 ### Tactics
@@ -106,3 +124,5 @@ document.getElementById('btn').onclick = function(e){
 
 - [[Cross Site Scripting]]
 - [[XSS in PostMessage]]
+
+

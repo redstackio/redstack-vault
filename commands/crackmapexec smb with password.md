@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:03.882727+00:00'
 ```bash
 crackmapexec smb 192.168.1.100 -u Administrator -p "Password123?"
 ```
+
+

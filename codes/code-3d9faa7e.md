@@ -21,3 +21,5 @@ $AADToken = 'eyJ0…'
 # Connect to Azure AD using the 'Connect-AzureAD' command with the '-AadAccessToken', '-TenantId', and '-AccountId' arguments. Replace <TENANT-ID> with your tenant ID and <ACCOUNT-ID> with your account ID.
 Connect-AzureAD -AadAccessToken $AADToken -TenantId <TENANT-ID> -AccountId <ACCOUNT-ID>
 ```
+
+

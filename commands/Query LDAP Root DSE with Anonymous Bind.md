@@ -20,6 +20,7 @@ output: 'root@kali:~# ldapsearch -x -h 10.10.10.10 -s base
 
   #
 
+
   #
 
   dn:
@@ -72,3 +73,5 @@ isGlobalCatalogReady: TRUE
 supportedSASLMechanisms: GSSAP
 ...
 ```
+
+

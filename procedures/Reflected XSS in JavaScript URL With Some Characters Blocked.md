@@ -30,19 +30,79 @@ Few application servers blocks the execution of JS code by blocking some special
 
 Few application servers blocks the execution of JS code by blocking some special characters.An attacker can bypass these application level or WAF protections through different means. One way is to randomly experiment with the ways of calling JS functions.
 
+
+
 # Instructions
+
+
 
 1.Observe the url with postID=1 whose value can be controlled by an user.
 
+
+
+
+
+
+
+![699d1799-d1d0-41cf-a89f-bf10438b3ae9.png]()
+
+
+
+
+
 2. Add a single quote at the end of the postID value. Observe that the response throws an error with* Invalid blog postID.*
 
+
+
+
+
+
+
+![011a6191-bbc6-4a38-91a5-4e3bf4811170.png]()
+
+
+
+
+
 3.To bypass the filtering of charecters by the application server add an & before the single quote.
+
+
+
+
+
+
+
+![1b4a9da4-0409-4332-83a2-92073a9c4267.png]()
+
+
+
+
 
 4.Use the belwo payload to alert a popup in the rsponse page of the application.
 
 *payload : &'},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'',{x:'*
 
+
+
+
+
+
+
+![aef94b63-37d0-454b-93ac-cac1305035dd.png]()
+
+
+
+
+
 5. Observe that the response page contains a popup loaded from the payload .
+
+
+
+
+
+![316209d7-ef46-4b49-af00-343a34e9354d.png]()
+
+
 
 ## Platforms
 
@@ -55,3 +115,5 @@ Few application servers blocks the execution of JS code by blocking some special
 - [[owasp top 10]]
 - [[Reflected XSS]]
 - [[Web Applications]]
+
+

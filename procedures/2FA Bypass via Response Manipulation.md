@@ -33,11 +33,15 @@ This procedure involves manipulating the response of a 2FA challenge to bypass i
 
 From an offensive standpoint, this technique can be used to gain unauthorized access to sensitive information or systems. On a technical level, the attacker needs to intercept the 2FA response and modify it to bypass the authentication check. From a business perspective, this can result in data breaches, loss of customer trust, and financial damage.
 
+ 
+
 ## Requirements
 
 1. Ability to intercept and modify network traffic.
 
 1. Knowledge of the authentication process and the 2FA implementation being used.
+
+ 
 
 ## Defense
 
@@ -47,19 +51,31 @@ From an offensive standpoint, this technique can be used to gain unauthorized ac
 
 1. Implement anomaly detection systems to identify unusual login activity and potential account takeover attempts.
 
+ 
+
 ## Objectives
 
 1. Bypass 2FA and gain unauthorized access to an account or system.
 
 1. Steal sensitive information or perform malicious actions on the compromised system.
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [["success":false]]
 
+
+
 > This parameter indicates that the 2FA challenge was not successful.
+
+
 
 **Command** ([[Check Success Status]]):
 
@@ -67,17 +83,29 @@ From an offensive standpoint, this technique can be used to gain unauthorized ac
 "success":false
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [["success":true]]
 
+
+
 > This will modify the response to make it appear as if the 2FA challenge was successful, even if it was not.
+
+
 
 **Command** ([[Success Check]]):
 
 ```bash
 "success":true"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +127,5 @@ From an offensive standpoint, this technique can be used to gain unauthorized ac
 - [[2FA Bypasses]]
 - [[Account Takeover]]
 - [[Response Manipulation]]
+
+

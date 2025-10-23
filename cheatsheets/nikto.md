@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # nikto
 
+
+
 **Command** ([[scan website for vulnerabilities]]):
 
 ```bash
 nikto -C all -h http://target-ip
 
 ```
+
+
+
+
+
+

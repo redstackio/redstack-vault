@@ -22,7 +22,15 @@ description
 
 Enumerating domain names from a CIDR IP Range can prove useful when dealing with organizations hosting with Managed Service Providers or in their own Data Centers.
 
+
+
 This won't be as useful with cloud hosting environments because the elastic IP's provisioned will not belong to a single IP Range or Organization ASN, they will belong to the Cloud Hosting Provider
+
+
+
+
+
+
 
 **Command** ([[amass enumerate domains from cidr ip range]]):
 
@@ -30,6 +38,12 @@ This won't be as useful with cloud hosting environments because the elastic IP's
 amass intel -ip -cidr 13.224.8.0/21
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[amass enumerate domains from cidr ip range]]
+
+

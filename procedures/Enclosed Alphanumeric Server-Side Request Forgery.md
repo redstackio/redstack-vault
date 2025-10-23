@@ -33,11 +33,15 @@ Enclosed Alphanumeric Server-Side Request Forgery is a technique that allows an 
 
 Enclosed Alphanumeric Server-Side Request Forgery is a technique that allows an attacker to bypass filters implemented to prevent Server-Side Request Forgery (SSRF) attacks. In this technique, the attacker encloses the target URL within an alphanumeric string to bypass the filter. This technique works because many filters only look for exact matches of blacklisted keywords or patterns. Enclosing the target URL within an alphanumeric string makes it difficult for the filter to detect the malicious URL. This technique can be used to exploit vulnerable web applications to perform unauthorized actions, such as accessing internal systems, exfiltrating data, or executing arbitrary commands.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of the target URL to be accessed
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Enclosed Alphanumeric Server-Side Request Forgery is a technique that allows an 
 1. Implement filters that look for encodings and obfuscation techniques
 
 1. Monitor network traffic for suspicious activity, such as requests to internal systems
+
+ 
 
 ## Objectives
 
@@ -57,14 +63,22 @@ Enclosed Alphanumeric Server-Side Request Forgery is a technique that allows an 
 
 1. Execute arbitrary commands
 
+ 
+
 # Instructions
 
 1. To get the Twitter account link for a user, replace 'EdOverflow' with the desired Twitter username.
+
+ 
+
+
 
 **Code**: [[http://example.com
 
 List:
 ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ]]
+
+
 
 > This command provides a quick way to get the Twitter account link for a user. Simply replace 'EdOverflow' in the 'text' field with the desired Twitter username and run the command. The resulting link will be displayed in the 'data' field. The 'instruction' field provides clear guidance on how to use the command, and the 'explain' field provides additional context and details about the command.
 
@@ -88,3 +102,5 @@ List:
 - [[Bypassing filters]]
 - [[Bypass using enclosed alphanumerics]]
 - [[Server-Side Request Forgery]]
+
+

@@ -98,3 +98,5 @@ root@kali ~# amass intel -org google
 396982, GOOGLE-PRIVATE-CLOUD - Google LLC
 
 ```
+
+

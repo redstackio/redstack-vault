@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:03.093770+00:00'
 ```bash
 rdesktop -u username -p password -g 70% -r disk:share=/tmp/myshare 10.10.10.10
 ```
+
+

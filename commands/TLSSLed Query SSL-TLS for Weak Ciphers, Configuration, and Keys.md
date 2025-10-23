@@ -52,22 +52,22 @@ root@kali:~/Documents# tlssled 10.10.10.10 443
                  by Raul Siles (www.taddong.com)
 ------------------------------------------------------              
     openssl version: OpenSSL 1.1.1a  20 Nov 2018 (Library: OpenSSL 1.1.1c  28 May 2019)
-
+                                                                           
 ------------------------------------------------------
     Date: 20191031-145453            
 ------------------------------------------------------                   
 
 [*] Analyzing SSL/TLS on 10.10.10.10:443 ...                                                                                                          
     [.] Output directory: TLSSLed_1.3_10.10.10.10_443_20191031-145453 ...                                                                             
-
+                                                                                                                                                      
 [*] Checking if the target service speaks SSL/TLS...                                                                                                  
     [.] The target service 10.10.10.10:443 seems to speak SSL/TLS...       
 
     [.] Using SSL/TLS protocol version:                             
         (empty means I'm using the default openssl protocol version(s))
-
+                                                                           
 [*] Running sslscan on 10.10.10.10:443 ...
-
+                                                                           
     [-] Testing for SSLv2 ...        
 
     [-] Testing for the NULL cipher ...
@@ -83,3 +83,5 @@ Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-SHA            DHE 2048 bits
 ...
 ...
 ```
+
+

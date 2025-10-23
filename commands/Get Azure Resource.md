@@ -17,3 +17,5 @@ updated_at: '2023-05-30T13:47:19.298036+00:00'
 PS C:\Tools> Get-AzResource
 
 ```
+
+

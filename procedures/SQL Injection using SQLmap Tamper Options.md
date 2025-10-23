@@ -30,6 +30,8 @@ Technical Explanation: SQL injection is a technique where an attacker injects ma
 
 Business Value: SQL injection attacks can result in the theft of sensitive data, such as customer information, financial data, and intellectual property. By exploiting SQL injection vulnerabilities, an attacker can gain unauthorized access to the database and steal this information. This can result in financial losses, damage to the company's reputation, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -37,6 +39,8 @@ Business Value: SQL injection attacks can result in the theft of sensitive data,
 1. SQLmap installed on the attacker's machine
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Business Value: SQL injection attacks can result in the theft of sensitive data,
 
 1. Implement database security measures such as access controls and encryption to protect sensitive data
 
+ 
+
 ## Objectives
 
 1. Exploit SQL injection vulnerabilities in web applications using SQLmap
@@ -54,19 +60,31 @@ Business Value: SQL injection attacks can result in the theft of sensitive data,
 
 1. Extract sensitive data from the database
 
+ 
+
 # Instructions
 
 1. The 'tamper' command allows you to modify the name of a file by appending a specified string to the existing file name. The 'name_of_the_tamper' argument is the string that will be appended to the file name.
 
+ 
+
+
+
 **Code**: [[tamper=name_of_the_tamper]]
 
+
+
 > To use this command, navigate to the directory where the file is located and enter the following command in PowerShell: 'tamper=name_of_the_tamper'. Replace 'name_of_the_tamper' with the string you want to append to the file name. For example, if you want to add the string '_edited' to the end of a file named 'example.txt', you would enter 'tamper=_edited' in PowerShell. The resulting file name would be 'example_edited.txt'.
+
+
 
 **Command** ([[Tamper Name Set]]):
 
 ```bash
 tamper=name_of_the_tamper
 ```
+
+
 
 ## Commands Used
 
@@ -77,3 +95,5 @@ tamper=name_of_the_tamper
 - [[General tamper option and tamper's list]]
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
+
+

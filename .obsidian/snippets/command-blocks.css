@@ -1,0 +1,69 @@
+/* Command Blocks Styling */
+
+/* Enhanced code blocks for commands */
+.markdown-preview-view pre code {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+  border-left: 3px solid #007acc;
+}
+
+/* PowerShell command blocks */
+pre code.language-powershell,
+pre code.language-ps1 {
+  border-left-color: #012456;
+  background-color: #012456;
+  color: #eeffff;
+}
+
+/* Bash command blocks */
+pre code.language-bash,
+pre code.language-sh {
+  border-left-color: #4eaa25;
+  background-color: #1e1e1e;
+  color: #4af626;
+}
+
+/* CMD command blocks */
+pre code.language-cmd,
+pre code.language-batch {
+  border-left-color: #c7c7c7;
+  background-color: #0c0c0c;
+  color: #cccccc;
+}
+
+/* Python command blocks */
+pre code.language-python {
+  border-left-color: #306998;
+  background-color: #1e1e1e;
+  color: #ffd343;
+}
+
+/* Copy button styling (for plugins that add copy buttons) */
+.copy-code-button {
+  background-color: var(--interactive-accent);
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.85em;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.copy-code-button:hover {
+  opacity: 1;
+}
+
+/* Inline code styling */
+code {
+  background-color: var(--background-secondary-alt);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: var(--text-accent);
+}

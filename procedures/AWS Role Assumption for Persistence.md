@@ -40,9 +40,13 @@ To assume a role, the attacker must first obtain valid AWS credentials. They can
 
 This technique can be valuable for an attacker seeking to maintain a long-term presence in an AWS environment.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This technique can be valuable for an attacker seeking to maintain a long-term p
 
 1. Enable multi-factor authentication (MFA) for AWS accounts to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Assume a role in an AWS environment
@@ -60,17 +66,25 @@ This technique can be valuable for an attacker seeking to maintain a long-term p
 
 1. Maintain persistent access to target resources
 
+ 
+
 # Instructions
 
 1. To assume a role in AWS, use the 'aws sts assume-role' command followed by the ARN of the role you want to assume and a session name.
 
+ 
+
 This command is used to temporarily assume a role in AWS. The role ARN is the Amazon Resource Name (ARN) of the role that you want to assume. The session name is a unique identifier for the session. The temporary security credentials that are returned by this command can be used to make AWS API calls with the permissions of the assumed role.
+
+
 
 **Command** ([[Assume AWS Role]]):
 
 ```bash
 aws sts assume-role --role-arn role_arn --role-session-name session_name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +111,5 @@ aws sts assume-role --role-arn role_arn --role-session-name session_name
 - [[Cloud - AWS]]
 - [[Getting temporary credentials for the role]]
 - [[Persistence & Backdooring]]
+
+

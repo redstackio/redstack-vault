@@ -27,11 +27,27 @@ The GNU project C and C++ compiler (GCC) is used to invoke the processing, compi
 
 The GNU project C and C++ compiler (GCC) is used to invoke the processing, compilation, assembly and linking of software when building it from C/C++ source code. While GCC can be invoked from the command line, it is often used in conjunction with a "Makefile", which specifies the options required to build more complex programs. GCC can also be used to build libraries and kernel modules, and can cross-compile for other systems and architectures, assuming the proper supporting packages are installed.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_725d499e-30f5-4584-92fa-65ebb36f4ca3}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ The GNU project C and C++ compiler (GCC) is used to invoke the processing, compi
 ## Tags
 
 - [[Build]]
+
+

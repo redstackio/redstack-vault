@@ -35,6 +35,8 @@ From a technical standpoint, the attacker uses the SQL Column Enumeration and SQ
 
 The business value of this technique is that it allows attackers to gain valuable information about the target database, such as the table structure and data types. This information can be used to launch further attacks, such as data exfiltration or privilege escalation.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application with a SQL injection vulnerability
@@ -42,6 +44,8 @@ The business value of this technique is that it allows attackers to gain valuabl
 1. Knowledge of SQL injection techniques
 
 1. Knowledge of the target database management system
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this technique is that it allows attackers to gain valuabl
 
 1. Database activity should be monitored for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Identify the number of columns in a database table
@@ -59,21 +65,35 @@ The business value of this technique is that it allows attackers to gain valuabl
 
 1. Identify the data types of each column
 
+ 
+
 # Instructions
 
 1. To enumerate the number of columns in an SQL query, you can use the ORDER BY clause with sequential numbers and check for errors. If the query returns an error for a certain number, it means that the table has fewer columns than that number. If the query executes successfully for a certain number, it means that the table has at least that many columns.
+
+ 
+
+
 
 **Code**: [[1' ORDER BY 1--+	#True
 1' ORDER BY 2--+	#True
 1' O]]
 
+
+
 > In this example, the ORDER BY clause is used with sequential numbers to check the number of columns in the table. The query is executed with different numbers until an error is returned. The last successful query is used to confirm the number of columns. Additionally, the UNION SELECT statement can be used to add columns to the query and confirm the number of columns in the table.
 
 2. The SQL GROUP BY command is used to group rows that have the same values into summary rows, like “find the number of customers in each country”. It is often used with aggregate functions such as COUNT, SUM, AVG, etc. In this example, the GROUP BY command is used to group the rows by the first, second, and third columns. The fourth query returns false because the query is only using 3 columns. The last query shows an example of how the GROUP BY command can be used in a UNION SELECT statement.
 
+ 
+
+
+
 **Code**: [[1' GROUP BY 1--+	#True
 1' GROUP BY 2--+	#True
 1' G]]
+
+
 
 > The arguments of the GROUP BY command are the columns that you want to group the rows by. For example, if you have a table of customer data with columns for name, country, and age, you could use the GROUP BY command to group the rows by country. The syntax for the GROUP BY command is as follows:
 
@@ -101,3 +121,5 @@ ORDER BY column1, column2, ..., columnN;
 - [[MYSQL Injection]]
 - [[MYSQL Union Based]]
 - [[Using `order by` or `group by`]]
+
+

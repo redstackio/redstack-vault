@@ -17,3 +17,5 @@ $ dig www.example.com +noall +answer
 ;; global options: +cmd
 localhost.example.com.            381     IN      CNAME   localhost.
 ```
+
+

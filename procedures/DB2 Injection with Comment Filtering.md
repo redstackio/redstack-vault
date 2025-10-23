@@ -34,6 +34,8 @@ From a technical standpoint, this procedure involves injecting malicious SQL cod
 
 The business value of this procedure is that attackers can gain access to sensitive data, such as customer information or financial records. This can lead to reputational damage, financial losses, and legal liabilities for the affected organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -41,6 +43,8 @@ The business value of this procedure is that attackers can gain access to sensit
 1. Knowledge of the target DB2 database
 
 1. Ability to inject SQL code into a select query
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this procedure is that attackers can gain access to sensit
 
 1. Monitor database logs for suspicious activity and review access controls regularly
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to the DB2 database
@@ -58,11 +64,19 @@ The business value of this procedure is that attackers can gain access to sensit
 
 1. Evade detection by security measures
 
+ 
+
 # Instructions
 
 1. To retrieve data from a database table, use the SELECT statement followed by the column names separated by commas. You can include comments in your query by using double dashes (--) followed by your comment.
 
+ 
+
+
+
 **Code**: [[select blah from foo -- comment like this (double ]]
+
+
 
 > The above command will select the 'blah' column from the 'foo' table in the database. The double dash comment is used to add a comment to the query that will not be executed. This can be used to explain the purpose of the query or to temporarily disable a part of the query.
 
@@ -83,3 +97,5 @@ The business value of this procedure is that attackers can gain access to sensit
 - [[Comments]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

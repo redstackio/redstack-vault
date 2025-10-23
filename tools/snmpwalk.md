@@ -29,7 +29,15 @@ Query a network entity for a tree of information typically related to the entity
 
 Query a network entity for a tree of information typically related to the entity, using SNMP GETNEXT requests.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_7236f3bd-a6a2-4df0-9604-c3b517eb9a2c}}
+
+
 
 # Installation
 
@@ -37,7 +45,17 @@ Query a network entity for a tree of information typically related to the entity
 
 1. Install the base snmp package
 
+
+
 2. (Optional) Install and configure the snmp-mibs-downloader package to improve readability
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -56,3 +74,5 @@ Query a network entity for a tree of information typically related to the entity
 
 - [[Enumeration]]
 - [[Network]]
+
+

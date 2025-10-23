@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:34:12.040072+00:00'
 # Clears the in-memory history and writes the empty history to disk.
 history -c && history -w
 ```
+
+

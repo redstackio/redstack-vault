@@ -29,13 +29,27 @@ Ssh2john is a Python script packaged with John the Ripper, which takes a private
 
 Ssh2john is a Python script packaged with John the Ripper, which takes a private SSH key as input and outputs the hash, that can then be cracked with John. It's worth noting that John the Ripper must be used to crack the hash, and that the hashes are not supported by other programs such as Hashcat. Ssh2john supports RSA, DSA, and EC keys.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e5f3c57e-34be-470f-8101-3eb13a524584}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
 ssh2john is included when installing John the Ripper, but can be downloaded directly from: https://github.com/magnumripper/JohnTheRipper/raw/bleeding-jumbo/run/ssh2john.py
+
+
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +69,5 @@ ssh2john is included when installing John the Ripper, but can be downloaded dire
 
 - [[Brute Force]]
 - [[Cryptography]]
+
+

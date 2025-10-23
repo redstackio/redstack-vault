@@ -35,11 +35,15 @@ Spyse's Reverse IP Lookup feature works by querying a database of DNS records an
 
 From a business perspective, this procedure can help organizations identify potential security risks and take proactive measures to mitigate them. By identifying all domains hosted on a given server, organizations can ensure that all systems are properly secured and that there are no unnecessary attack vectors.
 
+ 
+
 ## Requirements
 
 1. Access to the Spyse platform
 
 1. Knowledge of the target domain
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ From a business perspective, this procedure can help organizations identify pote
 
 1. Implementing SSL certificates and properly configuring DNS records can help prevent unauthorized access to systems
 
+ 
+
 ## Objectives
 
 1. Identify other domains and IP addresses hosted on the same server as the target domain
@@ -57,19 +63,31 @@ From a business perspective, this procedure can help organizations identify pote
 
 1. Identify potential attack vectors
 
+ 
+
 # Instructions
 
 1. This command uses the Spyse tool to look up domains associated with the IP address 52.14.144.171.
 
+ 
+
+
+
 **Code**: [[spyse -target 52.14.144.171 --domains-on-ip]]
 
+
+
 > The `spyse` command is used to perform reconnaissance on a target. The `-target` flag specifies the IP address of the target. The `--domains-on-ip` flag instructs Spyse to look up domains associated with the target IP address. This command can be useful for discovering other domains that may be associated with a target, which can be helpful in identifying potential attack vectors or expanding the scope of a reconnaissance effort.
+
+
 
 **Command** ([[Spyse Domain Lookup]]):
 
 ```bash
 spyse -target 52.14.144.171 --domains-on-ip
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ spyse -target 52.14.144.171 --domains-on-ip
 - [[Network Discovery]]
 - [[Reverse IP Lookup]]
 - [[Spyse]]
+
+

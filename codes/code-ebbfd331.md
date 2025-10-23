@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:57.309257+00:00'
 ```sql
 SELECT json_arrayagg(concat_ws(0x3a,table_schema,table_name)) from INFORMATION_SCHEMA.TABLES;
 ```
+
+

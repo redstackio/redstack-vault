@@ -36,11 +36,15 @@ GitTools is a collection of tools for interacting with and exploiting Git reposi
 
 GitTools is a collection of tools for interacting with and exploiting Git repositories. The gitdumper.sh script can be used to clone a target's .git repository and then checkout the entire repository. If the target's .git repository is not properly secured, this tool can be used to exfiltrate sensitive information such as passwords, source code, and other sensitive information. This tool can be used by an attacker to gain access to sensitive information and pivot to other systems within the network.
 
+ 
+
 ## Requirements
 
 1. Access to the target's .git repository
 
 1. GitTools installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ GitTools is a collection of tools for interacting with and exploiting Git reposi
 
 1. Regularly review and audit the access control policies for the .git repository
 
+ 
+
 ## Objectives
 
 1. Clone a target's .git repository
@@ -58,13 +64,23 @@ GitTools is a collection of tools for interacting with and exploiting Git reposi
 
 1. Checkout the entire repository
 
+ 
+
 # Instructions
 
 1. Run the following commands:
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/internetwache/GitTool]]
 
+
+
 > The first command clones GitTools from the official repository. The second command uses gitdumper.sh to clone the target's .git repository to the specified destination directory. The third command checks out all the files in the repository to the current directory.
+
+
 
 **Command** ([[Clone GitTools repository]]):
 
@@ -72,17 +88,27 @@ GitTools is a collection of tools for interacting with and exploiting Git reposi
 git clone https://github.com/internetwache/GitTools
 ```
 
+
+
+
+
 **Command** ([[Dump Git repository]]):
 
 ```bash
 ./gitdumper.sh http://target.tld/.git/ /tmp/destdir
 ```
 
+
+
+
+
 **Command** ([[Checkout Git repository]]):
 
 ```bash
 git checkout -- .
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -109,3 +135,5 @@ git checkout -- .
 - [[GitTools]]
 - [[Insecure Source Code Management]]
 - [[Tools]]
+
+

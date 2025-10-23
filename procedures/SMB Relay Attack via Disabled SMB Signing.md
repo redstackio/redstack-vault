@@ -35,11 +35,15 @@ A SMB relay attack is a type of man-in-the-middle attack that allows an attacker
 
 This attack can be used to gain access to sensitive information, such as user credentials, and to move laterally within a network.
 
+ 
+
 ## Requirements
 
 1. Access to a network with SMB signing disabled and IPv4 enabled
 
 1. Tools for SMB relay attacks, such as Responder or Inveigh
+
+ 
 
 ## Defense
 
@@ -49,11 +53,15 @@ This attack can be used to gain access to sensitive information, such as user cr
 
 1. Monitor network traffic for signs of SMB relay attacks
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information
 
 1. Move laterally within a network
+
+ 
 
 # Instructions
 
@@ -65,9 +73,17 @@ To disable SMB signing, run the following command:
 
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0
 
+ 
+
+
+
 **Code**: [[SMB signing]]
 
+
+
 > SMB signing is a security mechanism in the SMB protocol that ensures the authenticity of the sender and receiver of a message. When SMB signing is enabled, a digital signature is added to each SMB packet, which prevents attackers from tampering with the packet in transit. The command provided enables or disables SMB signing on a machine. The 'RequireSecuritySignature' parameter is set to 1 to enable SMB signing and 0 to disable it.
+
+
 
 **Command** ([[Check if SMB signing is enabled]]):
 
@@ -75,15 +91,27 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstatio
 Get-SmbServerConfiguration | Select-Object -ExpandProperty 'EnableSMBSigning'
 ```
 
+
+
+
+
 **Command** ([[Enable SMB signing]]):
 
 ```bash
 Set-SmbServerConfiguration -EnableSMBSigning $true
 ```
 
+
+
 2. COMMANDS
 
+ 
+
+
+
 **Code**: [[disabled]]
+
+
 
 > This command disables multiple commands at once. To use this command, provide a list of the commands you want to disable separated by spaces after the 'COMMANDS' keyword. For example, 'COMMANDS command1 command2 command3'. The disabled commands will no longer be available for use until they are re-enabled.
 
@@ -92,9 +120,17 @@ Set-SmbServerConfiguration -EnableSMBSigning $true
 2. Use the Multirelay.py script to relay authentication requests to a target system.
 3. Capture the NTLMv2 hashes and crack them to obtain the plaintext password.
 
+ 
+
+
+
 **Code**: [[NTLMv2 hashes relay]]
 
+
+
 > This attack takes advantage of the fact that many systems still use the outdated NTLMv2 authentication protocol. By relaying authentication requests from a target system to a rogue SMB server, an attacker can capture the NTLMv2 hashes and crack them to obtain the plaintext password. This attack can be particularly effective in environments where users have local administrator privileges on their machines, as the stolen credentials can be used to move laterally through the network and gain access to sensitive resources.
+
+
 
 **Command** ([[Enumerate Targets]]):
 
@@ -102,11 +138,17 @@ Set-SmbServerConfiguration -EnableSMBSigning $true
 nmap -p 139,445 --script smb-enum-shares.nse,smb-enum-users.nse --script-args smbuser='Guest',smbpass='' -oN nmap.txt 192.168.0.0/24
 ```
 
+
+
+
+
 **Command** ([[Exploit]]):
 
 ```bash
 ntlmrelayx.py -tf targets.txt -smb2support
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -130,3 +172,5 @@ ntlmrelayx.py -tf targets.txt -smb2support
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
 - [[SMB Signing Disabled and IPv4]]
+
+

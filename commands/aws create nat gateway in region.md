@@ -25,3 +25,5 @@ aws ec2 create-nat-gateway --subnet-id $AWS_SUBNET_ID --allocation-id $AWS_ALLOC
 ```
 aws ec2 create-nat-gateway --subnet-id <subnet_id> --allocation-id <allocation_id> --region <region>
 ```
+
+

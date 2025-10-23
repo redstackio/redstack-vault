@@ -36,6 +36,7 @@ output: 'root@kali:~# nmap -O -sV 10.10.10.10
   Service Info: Hosts:  host.localdomain, localhost, irc.host.LAN; OSs: Unix, Linux;
   CPE: cpe:/o:linux:linux_kernel
 
+
   OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/
   .
 
@@ -72,3 +73,5 @@ Service Info: Hosts:  host.localdomain, localhost, irc.host.LAN; OSs: Unix, Linu
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 13.72 seconds
 ```
+
+

@@ -29,3 +29,5 @@ meterpreter > screenshare
 [*] Opening player at: /root/GXGgqhwf.html
 [*] Streaming...
 ```
+
+

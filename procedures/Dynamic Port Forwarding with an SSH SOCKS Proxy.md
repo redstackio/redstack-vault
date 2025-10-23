@@ -34,9 +34,15 @@ OpenSSH is typically configured to allow TCP port forwarding. This allows authen
 
 OpenSSH is typically configured to allow TCP port forwarding. This allows authenticated SSH users to forward local ports on the target to the user's local machine, potentially bypassing the system's firewall and exposing services which are only set to listen on other interfaces, for example the loopback (127.0.0.1). SSH dynamic port forwarding can also be used, potentially exposing not only the local ports of the target, but also local networks. This vulnerability exists even if OpenSSH is configured to only allow restrictive shells, such as SFTP or Python interactive shell.
 
+
+
 # Instructions
 
 1. Connect to the target SSH server using dynamic port forwarding. If using dynamic port forwarding with proxychains, use port 9050 as that is the default SOCKS4 port set in /etc/proxychains.conf.
+
+
+
+
 
 **Command** ([[SSH Dynamic Port Forwarding Through a Remote Host]]):
 
@@ -44,7 +50,15 @@ OpenSSH is typically configured to allow TCP port forwarding. This allows authen
 ssh -f -N -D $_PORT $_USERNAME@$_TARGET_IP
 ```
 
+
+
+
+
 2. a) Use proxychains to open a program (Firefox, curl, Nmap, etc), and forward the traffic through a SOCKS5 proxy.
+
+
+
+
 
 **Command** ([[Proxychains Redirect an Application's Network Traffic Through a SOCKS Proxy]]):
 
@@ -52,11 +66,19 @@ ssh -f -N -D $_PORT $_USERNAME@$_TARGET_IP
 proxychains $_PROGRAM
 ```
 
+
+
+
+
 2. b) Burp Suite can also be configured to connect to a SOCKS proxy instead of using proxychains. Simply enter the proxy information in Burp under `User Options > SOCKS Proxy`
 
 - SOCKS Proxy Host: 127.0.0.1
 
 - SOCKS Proxy Port: 9050
+
+![2e3414ea-f849-4b22-8fae-93ef052d2c40.png](_assets/images/Mark/2e3414ea-f849-4b22-8fae-93ef052d2c40.png)
+
+
 
 ## Platforms
 
@@ -83,3 +105,5 @@ proxychains $_PROGRAM
 - [[Network]]
 - [[Pivot]]
 - [[tunnel]]
+
+

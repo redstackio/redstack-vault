@@ -30,13 +30,21 @@ Using hashcat to crack  krb5-tgs hash obtained from impacket or rubeus tools on 
 
 Using hashcat to crack  krb5-tgs hash obtained from impacket or rubeus tools on DC.
 
+
+
 ## Objective
 
 1. Crack a Kerberos 5 TGS hash using a dictionary to obtain a password for valid credentials
 
+
+
 # Instructions
 
 ## Use hashcat to crack krb5tgs
+
+
+
+
 
 **Command** ([[hashcat Kerberos 5 TGS (krb5-tgs)]]):
 
@@ -44,15 +52,27 @@ Using hashcat to crack  krb5-tgs hash obtained from impacket or rubeus tools on 
 hashcat -m 13100 -a 0 hash.txt password-list.txt
 ```
 
+
+
+
+
+
+
 ## Use john to crack krb5tgs
 
 ## 
+
+
 
 **Command** ([[john crack Kerberos 5 TGS (krb5-tgs)]]):
 
 ```bash
 john hash.txt --format=krb5tgs --wordlist=password-list.txt
 ```
+
+
+
+
 
 ## 
 
@@ -71,3 +91,5 @@ john hash.txt --format=krb5tgs --wordlist=password-list.txt
 - [[john]]
 - [[kerberos]]
 - [[password cracking]]
+
+

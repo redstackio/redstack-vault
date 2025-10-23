@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:21.654720+00:00'
 ```linux
 https://www.exploit-db.com/exploits/50808
 ```
+
+

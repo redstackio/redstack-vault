@@ -38,3 +38,5 @@ root@kali:~# smbmap -u bob -p secretpass -R stuff -H 10.10.10.10 -A secret -q
         [+] Match found! Downloading: stuff\secret
 
 ```
+
+

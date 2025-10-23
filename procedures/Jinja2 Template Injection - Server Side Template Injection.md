@@ -30,6 +30,10 @@ Jinja2 is a popular templating engine used for web applications. It allows devel
 
 From a technical perspective, an attacker can inject malicious code into the template engine, which is executed on the server-side. This can allow the attacker to execute arbitrary code on the server, read or modify sensitive data, and even gain access to the underlying system. From a business perspective, this attack can lead to loss of sensitive data, financial loss, and damage to the reputation of the organization.
 
+
+
+ 
+
 ## Requirements
 
 1. Access to the web application
@@ -37,6 +41,8 @@ From a technical perspective, an attacker can inject malicious code into the tem
 1. Knowledge of the templating engine used by the application
 
 1. Knowledge of the input fields that are vulnerable to SSTI
+
+ 
 
 ## Defense
 
@@ -46,6 +52,8 @@ From a technical perspective, an attacker can inject malicious code into the tem
 
 1. Regularly monitor the application for any suspicious activity or unexpected behavior.
 
+ 
+
 ## Objectives
 
 1. To execute arbitrary code on the server
@@ -54,13 +62,21 @@ From a technical perspective, an attacker can inject malicious code into the tem
 
 1. To gain access to the underlying system
 
+ 
+
 # Instructions
 
 1. To perform a Jinja2 template injection, an attacker can manipulate the input parameters of a Flask application that uses Jinja2 templates. By injecting malicious code into the input parameters, an attacker can execute arbitrary code on the server.
 
+ 
+
+
+
 **Code**: [[{% extends "layout.html" %}
 {% block body %}
   <ul]]
+
+
 
 > Jinja2 is a powerful templating engine for Python web frameworks such as Flask or Django. It allows developers to create dynamic web pages by rendering templates with variables and control structures. However, if user input is not properly sanitized and validated, it can lead to a Jinja2 template injection vulnerability. An attacker can inject malicious code into the input parameters, which can be executed on the server-side, leading to data theft, server compromise, or other malicious activities.
 
@@ -79,3 +95,5 @@ From a technical perspective, an attacker can inject malicious code into the tem
 - [[Jinja2]]
 - [[Jinja2 - Template format]]
 - [[Server Side Template Injection]]
+
+

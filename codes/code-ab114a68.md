@@ -17,3 +17,5 @@ Rubeus.exe dump [/service:SERVICE] [/luid:LOGINID]
 Rubeus.exe klist [/luid:LOGINID]
 Rubeus.exe kerberoast [/spn:"blah/blah"] [/user:USER] [/domain:DOMAIN] [/dc:DOMAIN_CONTROLLER] [/ou:"OU=,..."]
 ```
+
+

@@ -19,3 +19,5 @@ $ ./prowler -E check42,check43
 $ ./prowler -p custom-profile -r us-east-1 -c check11
 $ ./prowler -A 123456789012 -R ProwlerRole  # sts assume-role
 ```
+
+

@@ -33,11 +33,15 @@ To execute this technique, the attacker must first identify a public S3 bucket t
 
 Business value: An attacker can use this technique to steal sensitive data from an organization, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a public AWS S3 bucket containing desired data
 
 1. Valid AWS credentials with permissions to execute the AWS S3 Secret Text Retrieval command
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ Business value: An attacker can use this technique to steal sensitive data from 
 
 1. Monitor AWS S3 bucket activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive data from a public AWS S3 bucket
 
 1. Use the retrieved data to escalate privileges or perform further attacks
 
+ 
+
 # Instructions
 
 1. To retrieve a secret text file from an AWS S3 bucket, use the following Python code:
 
+ 
+
+
+
 **Code**: [[https://bucket-name.region.amazonaws.com/secret.tx]]
+
+
 
 > The 'data' field should contain the URL of the secret text file in the AWS S3 bucket. The 'lang' field should be set to 'python'. Use the 'boto3' library to access the AWS S3 bucket. First, create a client object for the AWS S3 service. Then, use the 'get_object' method to retrieve the secret text file from the bucket. Finally, access the text data from the response object using the 'read' method. Be sure to handle any exceptions that may occur during the process.
 
@@ -76,3 +90,5 @@ Business value: An attacker can use this technique to steal sensitive data from 
 - [[Cloud - AWS]]
 - [[Data Exfiltration]]
 - [[Public Access]]
+
+

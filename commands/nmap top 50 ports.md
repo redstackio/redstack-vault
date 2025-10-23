@@ -20,3 +20,5 @@ nmap -PN -sV --top-ports 50 --open $IPRANGE
 ```
 nmap -PN -sV --top-ports 50 --open 192.168.1.0/24
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:07.810151+00:00'
 ```bash
 [*] Using domain controller: DC01-WW2.factory.lan (172.16.42.5)
 ```
+
+

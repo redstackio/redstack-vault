@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:05.177436+00:00'
 select 'a' concat 'b' concat 'c' from sysibm.sysdummy1 -- returns 'abc'
 select 'a' || 'b' from sysibm.sysdummy1 -- returns 'ab'
 ```
+
+

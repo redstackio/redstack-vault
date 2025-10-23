@@ -34,6 +34,8 @@ Technical Explanation: The attacker will identify an XML file with a vulnerabili
 
 Business Value: This procedure can be used by attackers to steal sensitive information, such as session cookies, or perform actions on behalf of the victim. This can result in financial loss, reputational damage, or legal consequences for the victim.
 
+ 
+
 ## Requirements
 
 1. Access to an XML file with a vulnerability that allows for user-controlled input to be injected
@@ -41,6 +43,8 @@ Business Value: This procedure can be used by attackers to steal sensitive infor
 1. Knowledge of XML payload injection techniques
 
 1. Access to a victim who will open the XML file
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: This procedure can be used by attackers to steal sensitive infor
 
 1. Use a web application firewall (WAF) to detect and block malicious XML payloads
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into an XML file
@@ -58,12 +64,20 @@ Business Value: This procedure can be used by attackers to steal sensitive infor
 
 1. Steal sensitive information or perform actions on behalf of the victim
 
+ 
+
 # Instructions
 
 1. This command is used to inject malicious payloads into XML data fields. The payload is enclosed within CDATA section to avoid XML parsing errors.
 
+ 
+
+
+
 **Code**: [[<name>
   <value><![CDATA[<script>confirm(document.]]
+
+
 
 > The 'name' field specifies the name of the XML element that the payload will be injected into. The 'value' field contains the actual payload. The payload can be any malicious code, in this case a JavaScript code that executes the 'confirm()' function to display a pop-up dialog box showing the current domain name. This can be used for various attacks such as Cross-Site Scripting (XSS) and SQL Injection (SQLi) attacks.
 
@@ -84,3 +98,5 @@ Business Value: This procedure can be used by attackers to steal sensitive infor
 
 - [[Cross Site Scripting]]
 - [[XSS in files]]
+
+

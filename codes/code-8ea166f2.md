@@ -19,3 +19,5 @@ Invoke-DCOM -ComputerName '10.10.10.10' -Method ServiceStart "MyService"
 Invoke-DCOM -ComputerName '10.10.10.10' -Method ShellBrowserWindow -Command "calc.exe"
 Invoke-DCOM -ComputerName '10.10.10.10' -Method ShellWindows -Command "calc.exe"
 ```
+
+

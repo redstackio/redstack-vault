@@ -17,12 +17,32 @@ Spooftooph is designed to automate spoofing or cloning Bluetooth device informat
 
 Spooftooph is designed to automate spoofing or cloning Bluetooth device information. Make a Bluetooth device hide in plain site.Features:
 
+
+
 Clone and log Bluetooth device information
+
+
 
 Generate a random new Bluetooth profile
 
+
+
 Change Bluetooth profile every X seconds
+
+
 
 Specify device information for Bluetooth interface
 
+
+
 Select device to clone from scan log
+
+
+
+
+
+
+
+
+
+

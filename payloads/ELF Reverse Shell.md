@@ -21,10 +21,26 @@ Generate a Linux ELF Binary reverse shell payload with MSFVenom.
 
 Creating a Meterpreter listener with a one liner.
 
+
+
 ## Payload
+
+
 
 **Command**: [[msfvenom Meterpreter elf reverse shell]]
 
+
+
+
+
 ## Listener
 
+
+
 **Command**: [[msfconsole Meterpreter Listener linux reverse shell]]
+
+
+
+
+
+

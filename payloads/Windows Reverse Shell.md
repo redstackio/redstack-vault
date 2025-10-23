@@ -21,10 +21,54 @@ Generate a Windows reverse shell payloads.
 
 Creating listeners.
 
+
+
 ## Payload
+
+
 
 **Command**: [[msfvenom Windows Reverse Shell]]
 
+
+
+
+
 ## Listener
 
+
+
 **Command**: [[msfconsole Meterpreter Windows Listener]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

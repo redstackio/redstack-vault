@@ -32,6 +32,8 @@ Jinja2 is a widely used template engine for Python. Server Side Template Injecti
 
 This procedure can be used for offensive purposes to gain unauthorized access to a target server. From a technical perspective, the attacker can inject malicious code into a template file, which is then executed by the server. This can lead to data exfiltration, privilege escalation, and other malicious activities. From a business perspective, this procedure highlights the importance of securing web applications and servers to prevent unauthorized access and data breaches.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application that uses Jinja2 template engine
@@ -39,6 +41,8 @@ This procedure can be used for offensive purposes to gain unauthorized access to
 1. Knowledge of the SSTI vulnerability and how to exploit it
 
 1. Access to a command line interface
+
+ 
 
 ## Defense
 
@@ -48,23 +52,39 @@ This procedure can be used for offensive purposes to gain unauthorized access to
 
 1. Implement access controls and limit privileges to prevent unauthorized access to sensitive data
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information from the target server
 
 1. Execute arbitrary commands on the target server
 
+ 
+
 # Instructions
 
 1. To retrieve the flag, execute this command on the target machine in a Python environment.
 
+ 
+
+
+
 **Code**: [[{% for x in ().__class__.__base__.__subclasses__()]]
+
+
 
 > This command uses Python to establish a socket connection to an IP address on port 4444. It then redirects standard input, output, and error to the socket and uses subprocess to execute the command '/bin/cat flag.txt', which reads and outputs the contents of the 'flag.txt' file. The output is then padded with zeros to a length of 417 characters to avoid detection by some intrusion detection systems.
 
 2. To execute an operating system command, include a variable named "input" in the GET parameter and set its value to the command you want to run.
 
+ 
+
+
+
 **Code**: [[{% for x in ().__class__.__base__.__subclasses__()]]
+
+
 
 > This payload can be used to exploit a vulnerability in a web application that allows for operating system command injection. The payload uses Python code to execute the command specified in the "input" variable. The output of the command is then returned in the response. It is important to note that this vulnerability can be used by an attacker to execute any command on the system with the privileges of the web server process.
 
@@ -85,3 +105,5 @@ This procedure can be used for offensive purposes to gain unauthorized access to
 - [[Jinja2]]
 - [[Jinja2 - Remote Code Execution]]
 - [[Server Side Template Injection]]
+
+

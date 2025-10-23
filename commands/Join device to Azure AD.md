@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:35.333064+00:00'
 ```bash
 Join-AADIntDeviceToAzureAD -DeviceName "SixByFour" -DeviceType "Commodore" -OSVersion "C64"
 ```
+
+

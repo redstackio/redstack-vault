@@ -36,6 +36,8 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 
 Subdomain enumeration is the process of discovering subdomains of a domain. It is a critical step in reconnaissance for an attacker as it can provide valuable information about the target's infrastructure. Hostile Subdomain Bruteforcer is a tool that automates the process of subdomain enumeration and can help an attacker identify subdomains that may be vulnerable to takeover. Subdomain takeover is a type of attack where an attacker takes control of a subdomain by pointing it to their own server. This can result in various types of attacks including phishing, malware distribution or sensitive data theft. The tool works by bruteforcing subdomains using a wordlist and then checking for known vulnerabilities that can be exploited to take over the subdomain. Hostile Subdomain Bruteforcer can be used by both Red and Blue teams for reconnaissance and vulnerability identification.
 
+ 
+
 ## Requirements
 
 1. Access to the internet
@@ -43,6 +45,8 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 1. Target domain name
 
 1. Hostile Subdomain Bruteforcer tool
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 
 1. Implement DNSSEC to prevent DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Identify subdomains of a given domain
@@ -59,6 +65,8 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 1. Check if any of the subdomains are vulnerable to takeover
 
 1. Take control of the subdomain if it is vulnerable
+
+ 
 
 # Instructions
 
@@ -68,9 +76,17 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 3. Make the sub_brute.rb file executable using the command 'chmod +x sub_brute.rb'
 4. Run the sub_brute.rb file using the command './sub_brute.rb'
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/nahamsec/HostileSubBr]]
 
+
+
 > The Hostile Subdomain Bruteforcer is a tool used to discover subdomains of a target domain. The tool works by brute forcing subdomains using a wordlist. The user can provide their own wordlist or use the default wordlist provided with the tool. The tool also allows the user to specify the number of threads to use for the brute forcing process. The Hostile Subdomain Bruteforcer can be used for security testing purposes to identify potential attack vectors on a target domain.
+
+
 
 **Command** ([[Clone HostileSubBruteforcer repository]]):
 
@@ -78,17 +94,27 @@ Subdomain enumeration is the process of discovering subdomains of a domain. It i
 git clone https://github.com/nahamsec/HostileSubBruteforcer
 ```
 
+
+
+
+
 **Command** ([[Make sub_brute.rb executable]]):
 
 ```bash
 chmod +x sub_brute.rb
 ```
 
+
+
+
+
 **Command** ([[Run sub_brute.rb]]):
 
 ```bash
 ./sub_brute.rb
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -117,3 +143,5 @@ chmod +x sub_brute.rb
 - [[Subdomains Enumeration]]
 - [[Subdomain take over]]
 - [[Using HostileSubBruteForcer]]
+
+

@@ -36,11 +36,15 @@ Technically, this procedure involves querying the Spyse API to retrieve all DNS 
 
 From a business perspective, this procedure can help organizations identify potential security risks and take steps to mitigate them before they can be exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Valid API key for Spyse
 
 1. Access to the internet
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From a business perspective, this procedure can help organizations identify pote
 
 1. Regularly monitor network activity for signs of malicious activity.
 
+ 
+
 ## Objectives
 
 1. Identify all DNS records associated with a target domain.
@@ -58,19 +64,31 @@ From a business perspective, this procedure can help organizations identify pote
 
 1. Mitigate potential security risks before they can be exploited by attackers.
 
+ 
+
 # Instructions
 
 1. Use Spyse to enumerate all DNS records for the target domain xbox.com.
 
+ 
+
+
+
 **Code**: [[spyse -target xbox.com --dns-all]]
 
+
+
 > This command will use Spyse to perform a DNS enumeration of the target domain xbox.com. The --dns-all flag will retrieve all DNS records for the domain, including A, AAAA, CNAME, MX, NS, PTR, SOA, SRV, and TXT records. This information can be useful for reconnaissance and vulnerability assessment purposes.
+
+
 
 **Command** ([[DNS lookup for xbox.com]]):
 
 ```bash
 spyse -target xbox.com --dns-all
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ spyse -target xbox.com --dns-all
 - [[Getting all DNS records]]
 - [[Network Discovery]]
 - [[Spyse]]
+
+

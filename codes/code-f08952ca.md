@@ -16,3 +16,5 @@ NS  example.com directs to 10.10.10.10. 86400
 NS  polling.campaigns.example.com directs to campaigns.example.com. 3600
 A campaigns.example.com directs to 10.10.10.10 3600
 ```
+
+

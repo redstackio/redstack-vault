@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:22:47.331484+00:00'
 -- possible roles: sysadmin, serveradmin, dbcreator, setupadmin, bulkadmin, securityadmin, diskadmin, public, processadmin
 SELECT is_srvrolemember('sysadmin');
 ```
+
+

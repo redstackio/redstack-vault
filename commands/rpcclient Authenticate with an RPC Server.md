@@ -20,3 +20,5 @@ rpcclient -U "$_USERNAME%$_PASSWORD" $_TARGET_IP
 ```
 rpcclient -U "bob%secretpass" 10.10.10.10
 ```
+
+

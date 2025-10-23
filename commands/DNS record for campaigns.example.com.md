@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:21.464920+00:00'
 ```bash
 A campaigns.example.com directs to 10.10.10.10 3600
 ```
+
+

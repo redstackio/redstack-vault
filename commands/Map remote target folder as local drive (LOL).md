@@ -20,3 +20,5 @@ net use t: \\$DOMAIN\C$\Users\Public /user:$DOMAIN\$USERNAME $PASSWORD
 ```
 The command completed successfully
 ```
+
+

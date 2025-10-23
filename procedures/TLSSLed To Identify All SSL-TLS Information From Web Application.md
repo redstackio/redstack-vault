@@ -30,11 +30,25 @@ SSL/TLS implementation enables secure communication between client and server. A
 
 # Description
 
+
+
 SSL/TLS implementation enables secure communication between client and server. All SSL/TLS information like versions, HSTS header, secure flag on cookie etc. can be identified using the TLSSLed tool.
+
+
 
 # Procedure
 
+
+
+
+
 1. Below TLSSLed command can be used to scan the host on specific port to obtain SSL/TLS details.
+
+
+
+
+
+
 
 **Command** ([[TLSSLed Command]]):
 
@@ -42,7 +56,15 @@ SSL/TLS implementation enables secure communication between client and server. A
 tlssled  65.61.137.117 443
 ```
 
+
+
+
+
+
+
 2. Output contains supported TLS versions, certificate validity, secure flags on cookies, HSTS configuration etc.
+
+
 
 ## Platforms
 
@@ -59,3 +81,5 @@ tlssled  65.61.137.117 443
 - [[SSL]]
 - [[TLS]]
 - [[Web Applications]]
+
+

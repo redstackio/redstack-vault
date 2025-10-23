@@ -16,3 +16,7 @@ Red Team Infrastructure... Quick... Fast... Simplified One of the most tedious p
 ## Description
 
 Red Team Infrastructure... Quick... Fast... Simplified One of the most tedious phases of a Red Team Operation is usually the infrastructure setup. This usually entails a teamserver or controller, domains, redirectors, and a Phishing server. ​
+
+
+
+

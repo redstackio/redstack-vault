@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:01.550894+00:00'
 ```bash
 SELECT chr(65)||chr(68)||chr(82)||chr(73) FROM sysibm.sysdummy1
 ```
+
+

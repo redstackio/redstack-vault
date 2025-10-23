@@ -26,11 +26,25 @@ The Microsoft Connection Manager Profile Installer (CMSTP.exe) is a command line
 
 The Microsoft Connection Manager Profile Installer (CMSTP.exe) is a command line utility used to install Connection Manager service profiles via INF files. Attackers can craft INF files to load and execute DLLs and/or COM scripts (SCT) from remote servers. This technique may act as an AppLocker bypass, if AppLocker is configured to only execute signed Microsoft binaries.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_b5428658-adfc-4265-be49-f8c7a295a246}}
+
+
 
 # Installation
 
 CMSTP.exe is installed with Windows
+
+
+
+
+
+
 
 ## Platforms
 
@@ -44,3 +58,5 @@ CMSTP.exe is installed with Windows
 
 - [[applocker]]
 - [[Defense Bypass]]
+
+

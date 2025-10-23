@@ -35,13 +35,21 @@ SMB shares often contain sensitive information, which can be easily enumerated. 
 
 SMB shares often contain sensitive information, which can be easily enumerated. Tools such as smbmap can crawl a SMB share, looking for and downloading files which match certain name criteria.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[SMBMap Search an SMB Share Recursively by File Name]]):
 
 ```bash
 smbmap -u $_USERNAME -p $_PASSWORD -R $_SHARE_NAME -H $_TARGET_IP -A $_FILENAME -q
 ```
+
+
 
 Note: If attempting to list SMB shares without a valid username and password, try ommitting the "-u" and "-p" flags to attempt to authenticate with a null session.
 
@@ -69,3 +77,5 @@ Note: If attempting to list SMB shares without a valid username and password, tr
 - [[data exposure]]
 - [[Network]]
 - [[Service Attacks]]
+
+

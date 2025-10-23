@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.708625+00:00'
 ```bash
 $ chmod 400 YOUR_KEY.pem
 ```
+
+

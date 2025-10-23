@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:17.568244+00:00'
 ```powershell
 hashcat --attack-mode 0 --hash-type $number $hashes_file $wordlist_file -r $my_rules
 ```
+
+

@@ -35,11 +35,15 @@ The AWS IAM User Policy Attachment is a technique used by attackers to escalate 
 
 From a technical perspective, this technique involves adding a policy to an existing IAM user that grants the attacker additional permissions. The attacker can then use these permissions to perform further actions within the environment, such as creating new users or modifying existing resources. From a business value perspective, this technique can lead to a complete compromise of an AWS environment, resulting in data theft, service disruption, and reputational damage.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS environment
 
 1. Ability to add an IAM user policy
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ From a technical perspective, this technique involves adding a policy to an exis
 
 1. Enable MFA for all IAM users to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Escalate privileges in an AWS environment
@@ -57,17 +63,25 @@ From a technical perspective, this technique involves adding a policy to an exis
 
 1. Perform further actions within an AWS environment
 
+ 
+
 # Instructions
 
 1. Use the 'aws iam put-user-policy' command to add a policy to an IAM user.
 
+ 
+
 This command allows you to add a policy to an IAM user. The 'user-name' parameter specifies the name of the user you want to add the policy to. The 'policy-name' parameter specifies the name of the policy. The 'policy-document' parameter specifies the JSON policy document that contains the permissions you want to grant to the user. The policy document must be stored in a file and the file path should be specified with the 'file://' prefix. This command can be useful when you want to grant permissions to an IAM user to access specific AWS resources.
+
+
 
 **Command** ([[Create IAM user policy]]):
 
 ```bash
 aws iam put-user-policy --user-name example_username --policy-name example_name --policy-document file://AdminPolicy.json
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws iam put-user-policy --user-name example_username --policy-name example_name 
 - [[5. Exploitation Scenario]]
 - [[Attaching this policy into our user]]
 - [[Cloud - AWS]]
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:17.485526+00:00'
 ```bash
 gettgtpkinit.py -pfx-base64 $(cat "PATH_TO_B64_PFX_CERT") "FQDN_DOMAIN/TARGET_SAMNAME" "TGT_CCACHE_FILE"
 ```
+
+

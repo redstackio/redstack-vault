@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:37.228245+00:00'
 ```bash
 aws lambda list-functions --region region
 ```
+
+

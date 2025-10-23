@@ -16,3 +16,7 @@ Search for categorized domain that can be used during red teaming engagement. Pe
 ## Description
 
 Search for categorized domain that can be used during red teaming engagement. Perfect to setup whitelisted domain for your Cobalt Strike beacon C&C. ​
+
+
+
+

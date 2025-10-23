@@ -17,3 +17,5 @@ select grantee from syscat.dbauth -- This command retrieves a list of all users 
 select distinct(definer) from syscat.schemata -- This command retrieves a list of all schema owners in the DB2 instance.
 select distinct(grantee) from sysibm.systabauth -- This command retrieves a list of all users with table-level privileges, and it provides more accurate results than the previous command.
 ```
+
+

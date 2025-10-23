@@ -15,7 +15,13 @@ updated_at: '2023-06-06T15:16:42.238866+00:00'
 
 Approaches to connecting to and enumerating SMB and RPC services.
 
+
+
 ## smbclient
+
+
+
+
 
 **Command** ([[smbclient List SMB Shares]]):
 
@@ -23,11 +29,23 @@ Approaches to connecting to and enumerating SMB and RPC services.
 smbclient -U '$_USERNAME%$_PASSWORD' -L $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[smbclient List SMB Shares with an Authenticated Session]]):
 
 ```bash
 smbclient -U $_USERNAME%$_PASSWORD -L $_TARGET_IP
 ```
+
+
+
+
+
+
 
 **Command** ([[smbclient Connect to an SMB Share (Autenticated)]]):
 
@@ -35,11 +53,23 @@ smbclient -U $_USERNAME%$_PASSWORD -L $_TARGET_IP
 smbclient -U $_USERNAME%$_PASSWORD //$_TARGET_IP/$_SHARE_NAME
 ```
 
+
+
+
+
+
+
 **Command** ([[smbclient Connect to an SMB Share (NTLM)]]):
 
 ```bash
 smbclient -U $_USERNAME%$_NTLM_HASH:$_NTLM_HASH --pw-nt-hash //$_TARGET_IP/$_SHARE_NAME
 ```
+
+
+
+
+
+
 
 **Command** ([[smbclient Download All Files Recursively From SMB]]):
 
@@ -49,7 +79,17 @@ smb: \Victim\> PROMPT OFF
 smb: \Victim\> mget *
 ```
 
+
+
+
+
 ## SMBMap
+
+
+
+
+
+
 
 **Command** ([[SMBMap List SMB Shares]]):
 
@@ -57,11 +97,23 @@ smb: \Victim\> mget *
 smbmap -u '$_USERNAME' -p '$_PASSWORD' -H $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[SMBMap List SMB Shares Using an Authenticated Session]]):
 
 ```bash
 smbmap -u $_USERNAME -p $_PASSWORD -H $_TARGET_IP
 ```
+
+
+
+
+
+
 
 **Command** ([[SMBMap List an SMB Share's Contents Recursively]]):
 
@@ -69,11 +121,23 @@ smbmap -u $_USERNAME -p $_PASSWORD -H $_TARGET_IP
 smbmap -u $_USERNAME -p $_PASSWORD -R $_SHARE_NAME -H $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[SMBMap Search an SMB Share Recursively by File Name]]):
 
 ```bash
 smbmap -u $_USERNAME -p $_PASSWORD -R $_SHARE_NAME -H $_TARGET_IP -A $_FILENAME -q
 ```
+
+
+
+
+
+
 
 **Command** ([[SMBMap Upload a File to an SMB Share]]):
 
@@ -81,7 +145,15 @@ smbmap -u $_USERNAME -p $_PASSWORD -R $_SHARE_NAME -H $_TARGET_IP -A $_FILENAME 
 smbmap -u $_USERNAME -p $_PASSWORD --upload $_FILENAME $_SHARE_NAME/$_FILENAME -H $_TARGET_IP
 ```
 
+
+
+
+
 ## rpcclient
+
+
+
+
 
 **Command** ([[rpcclient Connect to an RPC Server with a NULL Session]]):
 
@@ -89,11 +161,23 @@ smbmap -u $_USERNAME -p $_PASSWORD --upload $_FILENAME $_SHARE_NAME/$_FILENAME -
 rpcclient -U "" -N $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[rpcclient Authenticate with an RPC Server]]):
 
 ```bash
 rpcclient -U "$_USERNAME%$_PASSWORD" $_TARGET_IP
 ```
+
+
+
+
+
+
 
 **Command** ([[List Domain Users on an SMB/RPC Server]]):
 
@@ -101,11 +185,23 @@ rpcclient -U "$_USERNAME%$_PASSWORD" $_TARGET_IP
 enumdomusers
 ```
 
+
+
+
+
+
+
 **Command** ([[rpcclient Query an RPC Server for a User's Information]]):
 
 ```bash
 queryuser $_USER_RID
 ```
+
+
+
+
+
+
 
 **Command** ([[rpcclient Query an RPC Server's Information]]):
 
@@ -113,11 +209,23 @@ queryuser $_USER_RID
 srvinfo
 ```
 
+
+
+
+
+
+
 **Command** ([[rpcclient Query an RPC Server for SMB Shares]]):
 
 ```bash
 netshareenumall
 ```
+
+
+
+
+
+
 
 **Command** ([[rpcclient Query an RPC Server for Share Information]]):
 
@@ -125,13 +233,27 @@ netshareenumall
 netsharegetinfo $_SHARE_NAME
 ```
 
+
+
+
+
+
+
 **Command** ([[enum4linux Enumerate SMB/RPC Services]]):
 
 ```bash
 enum4linux $_TARGET_IP
 ```
 
+
+
+
+
 ## showmount
+
+
+
+
 
 **Command** ([[showmount List NFS Exports]]):
 
@@ -139,8 +261,20 @@ enum4linux $_TARGET_IP
 showmount -e $_TARGET_IP
 ```
 
+
+
+
+
+
+
 **Command** ([[Showmount List Mounted NFS Directories]]):
 
 ```bash
 showmount -d $_TARGET_IP
 ```
+
+
+
+
+
+

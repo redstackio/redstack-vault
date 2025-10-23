@@ -89,3 +89,5 @@ root@kali:~# dnsrecon -d testsite.com -t axfr
 [*]      NAPTR P 2 3 !^.*$!sip:customer-service@testsite.com! . E2U+sip
 [*]      NAPTR P 1 1  email.testsite.com E2U+email
 ```
+
+

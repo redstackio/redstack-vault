@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:53.115997+00:00'
 ```powershell
 curl https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:09.845260+00:00'
 mkfifo response
 sudo openssl s_server -cert server.pem -accept [INTERFACE TO LISTEN TO]:[PORT] -quiet < response | tee | openssl s_client -quiet -servername [domain.of.server.to.mitm] -connect[IP of server to MITM]:[PORT] | tee | cat > response
 ```
+
+

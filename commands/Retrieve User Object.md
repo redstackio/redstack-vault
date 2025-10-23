@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:00.143985+00:00'
 ```bash
 $UserObject = ([ADSI]("LDAP://CN=User,OU=Users,DC=ad,DC=domain,DC=tld"))
 ```
+
+

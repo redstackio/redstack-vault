@@ -16,3 +16,7 @@ Is a tool by @EmericNasi used to automatize obfuscation and generation of MS Off
 ## Description
 
 Is a tool by @EmericNasi used to automatize obfuscation and generation of MS Office documents, VB scripts, and other formats for pentest, demo, and social engineering assessments. ​
+
+
+
+

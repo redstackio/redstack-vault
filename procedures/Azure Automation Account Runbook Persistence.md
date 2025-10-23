@@ -38,11 +38,15 @@ Technical Explanation: The attacker triggers a webhook to create a new user with
 
 Business Value: This procedure allows an attacker to maintain access to the environment even if other methods of access are removed. This can be used to exfiltrate data, install malware, or perform other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Valid credentials for the Azure Automation account
 
 1. Access to trigger webhooks within the Azure Automation account
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ Business Value: This procedure allows an attacker to maintain access to the envi
 
 1. Use multi-factor authentication to protect against unauthorized access to Azure Automation accounts
 
+ 
+
 ## Objectives
 
 1. Create a new user within an Azure Automation account
@@ -60,23 +66,47 @@ Business Value: This procedure allows an attacker to maintain access to the envi
 
 1. Gain elevated privileges within the environment
 
+ 
+
 # Instructions
 
+
+
 1. Save this as example as runbook.ps1. This script initiates the azure connection and context using the service principal and configures a webhook that triggers the functionality and creates a user based on the parsed data from the webhook.
+
+
+
+
 
 **Code**: [[# runbook.ps1
 # NetSPI - https://github.com/NetSPI]]
 
+
+
+
+
 2. Fill in the variables and run this script, it will create an automation account, import, publish and configure the webhook for the runbook.ps1
+
+
 
 **Code**: [[# Red Stack Labs
 
 # Variables
 $automationAccountNa]]
 
+
+
+
+
 3. When the need arises for a persistent user, proceed to create a new user with this command:
 
+
+
 **Code**: [[# Send a request to the persistent webhook to crea]]
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +127,5 @@ $automationAccountNa]]
 - [[Cloud - Azure]]
 - [[Persistence via Automation accounts]]
 - [[Runbook Automation]]
+
+

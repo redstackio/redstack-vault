@@ -20,3 +20,5 @@ $ impacket-smbclient Administrator@10.10.10.10
 # who
 host:  \\10.10.10.10, user: Administrator, active:     1, idle:     0
 ```
+
+

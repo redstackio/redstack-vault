@@ -34,11 +34,15 @@ Technical Explanation: MSSQL Injection is a type of injection attack that exploi
 
 Business Value: MSSQL Database Name Enumeration can help attackers better understand the target environment and plan future attacks. By identifying the name of a database, attackers can launch targeted attacks against specific systems.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application
 
 1. Knowledge of SQL Injection techniques
+
+ 
 
 ## Defense
 
@@ -48,25 +52,39 @@ Business Value: MSSQL Database Name Enumeration can help attackers better unders
 
 1. Monitor network traffic for suspicious SQL statements
 
+ 
+
 ## Objectives
 
 1. Identify the name of the MSSQL database
 
 1. Gather information about the target environment
 
+ 
+
 # Instructions
 
 1. This command retrieves the name of the current database being used.
 
+ 
+
+
+
 **Code**: [[SELECT DB_NAME()]]
 
+
+
 > The SELECT DB_NAME() command is used to retrieve the name of the current database being used. This is useful when working with multiple databases or when needing to know the name of the current database for administrative purposes. There are no arguments required for this command.
+
+
 
 **Command** ([[Get current database name]]):
 
 ```bash
 SELECT DB_NAME()
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ SELECT DB_NAME()
 
 - [[MSSQL Database name]]
 - [[MSSQL Injection]]
+
+

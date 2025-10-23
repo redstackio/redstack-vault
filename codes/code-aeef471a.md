@@ -16,3 +16,5 @@ PowerView PS C:\> Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCo
 PowerView PS C:\> Get-AppLockerPolicy -effective -xml
 Get-ChildItem -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe # (Keys: Appx, Dll, Exe, Msi and Script
 ```
+
+

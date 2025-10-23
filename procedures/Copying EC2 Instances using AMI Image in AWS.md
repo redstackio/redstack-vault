@@ -44,6 +44,8 @@ Technical Explanation: The procedure involves creating a new AMI image from the 
 
 Business Value: This procedure can save time and resources when creating multiple instances with the same configuration. It can also be used to create backup instances and test environments, which can improve business continuity and reduce downtime.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS Management Console
@@ -52,6 +54,8 @@ Business Value: This procedure can save time and resources when creating multipl
 
 1. Access to the source EC2 instance
 
+ 
+
 ## Defense
 
 1. Limit access to the AWS Management Console to authorized personnel only
@@ -59,6 +63,8 @@ Business Value: This procedure can save time and resources when creating multipl
 1. Implement least privilege access controls to limit the permissions of IAM roles
 
 1. Regularly monitor EC2 instances for unauthorized access and suspicious activity
+
+ 
 
 ## Objectives
 
@@ -70,19 +76,31 @@ Business Value: This procedure can save time and resources when creating multipl
 
 1. Create test environments to reduce downtime
 
+ 
+
 # Instructions
 
 1. To describe the available Amazon Machine Images (AMIs), you can use the describe-images command. This command will return a list of all the available AMIs in the specified region, along with their details such as ID, name, description, architecture, and creation date.
 
+ 
+
+
+
 **Code**: [[aws ec2 describe-images --region eu-west-1]]
 
+
+
 > The --region parameter specifies the region in which to describe the images. If this parameter is not specified, the default region will be used. You can also use filters to narrow down the search results by specifying criteria such as the image owner, image type, or image state. For more information on the available filters, please refer to the AWS documentation.
+
+
 
 **Command** ([[List EC2 images in eu-west-1 region]]):
 
 ```bash
 aws ec2 describe-images --region eu-west-1
 ```
+
+
 
 2. To create an AWS Audit Instance, follow these steps:
 1. Create a new image for the instance-id using the command 'aws ec2 create-image'.
@@ -92,10 +110,18 @@ aws ec2 describe-images --region eu-west-1
 5. If needed, edit groups using the command 'aws ec2 modify-instance-attribute'.
 6. To avoid any useless cost, stop and terminate the instance using the commands 'aws ec2 stop-instances' and 'aws ec2 terminate-instances' respectively.
 
+ 
+
+
+
 **Code**: [[# create a new image for the instance-id
 $ aws ec2]]
 
+
+
 > The 'create-image' command is used to create a new image for the instance-id. The 'import-key-pair' command is used to add the key to AWS. The 'run-instances' command is used to create ec2 using the previously created AMI, use the same security group and subnet to connect easily. The 'describe-instances' command is used to check the instance. The 'modify-instance-attribute' command is used to edit groups. The 'stop-instances' and 'terminate-instances' commands are used to stop and terminate the instance respectively.
+
+
 
 **Command** ([[Create Image for instance]]):
 
@@ -103,11 +129,19 @@ $ aws ec2]]
 $ aws ec2 create-image --instance-id i-0438b003d81cd7ec5 --name "AWS Audit" --description "Export AMI" --region eu-west-1
 ```
 
+
+
+
+
 **Command** ([[Import key pair]]):
 
 ```bash
 $ aws ec2 import-key-pair --key-name "AWS Audit" --public-key-material file://~/.ssh/id_rsa.pub --region eu-west-1
 ```
+
+
+
+
 
 **Command** ([[Create EC2 instance]]):
 
@@ -115,11 +149,19 @@ $ aws ec2 import-key-pair --key-name "AWS Audit" --public-key-material file://~/
 $ aws ec2 run-instances --image-id ami-0b77e2d906b00202d --security-group-ids "sg-6d0d7f01" --subnet-id subnet-9eb001ea --count 1 --instance-type t2.micro --key-name "AWS Audit" --query "Instances[0].InstanceId" --region eu-west-1
 ```
 
+
+
+
+
 **Command** ([[Describe EC2 instance]]):
 
 ```bash
 aws ec2 describe-instances --instance-ids i-0546910a0c18725a1
 ```
+
+
+
+
 
 **Command** ([[Modify instance attribute]]):
 
@@ -127,17 +169,27 @@ aws ec2 describe-instances --instance-ids i-0546910a0c18725a1
 aws ec2 modify-instance-attribute --instance-id "i-0546910a0c18725a1" --groups "sg-6d0d7f01"  --region eu-west-1
 ```
 
+
+
+
+
 **Command** ([[Stop EC2 instance]]):
 
 ```bash
 aws ec2 stop-instances --instance-id "i-0546910a0c18725a1" --region eu-west-1
 ```
 
+
+
+
+
 **Command** ([[Terminate EC2 instance]]):
 
 ```bash
 aws ec2 terminate-instances --instance-id "i-0546910a0c18725a1" --region eu-west-1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -170,3 +222,5 @@ aws ec2 terminate-instances --instance-id "i-0546910a0c18725a1" --region eu-west
 
 - [[AWS - Copy EC2 using AMI Image]]
 - [[Cloud - AWS]]
+
+

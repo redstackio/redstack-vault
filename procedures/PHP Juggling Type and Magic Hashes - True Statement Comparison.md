@@ -42,6 +42,8 @@ Technical Explanation: Type juggling is the process of converting a variable fro
 
 Business Value: This technique can be used by attackers to gain unauthorized access to sensitive data, leading to data breaches and financial losses for organizations.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -49,6 +51,8 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 1. Knowledge of PHP type juggling and magic hashes
 
 1. Ability to craft a specially-crafted input
+
+ 
 
 ## Defense
 
@@ -58,11 +62,15 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 
 1. Implement multi-factor authentication to mitigate the risk of authentication bypass
 
+ 
+
 ## Objectives
 
 1. Bypass authentication mechanisms
 
 1. Gain unauthorized access to sensitive data
+
+ 
 
 # Instructions
 
@@ -72,8 +80,14 @@ The '==' operator compares the values of the variables, but it does not compare 
 
 The '===' operator, on the other hand, compares both the values and the data types of the variables. For example, '0x01' is not equal to 1 when using the '===' operator because they have different data types.
 
+ 
+
+
+
 **Code**: [[var_dump('0010e2' == '1e3');           # true
 var_]]
+
+
 
 > In the provided code snippet, we are comparing different variables using both the '==' and '===' operators in PHP. The comments in the code indicate whether the comparison returns true or false.
 
@@ -87,6 +101,8 @@ The fourth comparison returns true in PHP 5.0 because it only compares the value
 
 The fifth comparison returns false because '0x1234Ab' and '1193131' have different values and data types.
 
+
+
 **Command** ([[Comparison of strings and hexadecimals]]):
 
 ```bash
@@ -97,13 +113,23 @@ var_dump('0x01' == 1)                # true PHP 5.0 / false PHP 7.0
 var_dump('0x1234Ab' == '1193131');
 ```
 
+
+
 2. The string equality operator (==) compares two values for equality, and returns true if they are equal. In PHP, the == operator performs type coercion, which means that if the two values being compared are of different types, PHP will attempt to convert one or both of the values to a compatible type. In the example above, the first comparison returns true because the string '123' is converted to the integer 123 before the comparison is made. The second comparison returns true because the string '123a' is converted to the integer 123 before the comparison is made. The third comparison returns false because the string 'abc' cannot be converted to a numeric value, so it is treated as 0.
+
+ 
+
+
 
 **Code**: [['123'  == 123
 '123a' == 123
 'abc'  == 0]]
 
+
+
 > The == operator is useful for checking if two values are equal, regardless of their type. However, it can lead to unexpected results if you are not careful. It is generally recommended to use the === operator for strict equality checking, which compares both the value and the type of the operands.
+
+
 
 **Command** ([[Comparison of strings and numbers]]):
 
@@ -111,11 +137,19 @@ var_dump('0x1234Ab' == '1193131');
 '123'  == 123
 ```
 
+
+
+
+
 **Command** ([[Comparison of strings and numbers]]):
 
 ```bash
 '123a' == 123
 ```
+
+
+
+
 
 **Command** ([[Comparison of strings and numbers]]):
 
@@ -123,11 +157,19 @@ var_dump('0x1234Ab' == '1193131');
 'abc'  == 0
 ```
 
+
+
 3. To compare empty string, 0, false and NULL in PHP, you can use the double equals (==) operator.
+
+ 
+
+
 
 **Code**: [['' == 0 == false == NULL
 '' == 0       # true
 0  =]]
+
+
 
 > The double equals (==) operator in PHP compares the values of two operands, and returns true if they are equal, regardless of their data types. In the given example, the comparison between empty string, 0, false and NULL is evaluated as follows:
 
@@ -137,11 +179,17 @@ var_dump('0x1234Ab' == '1193131');
 - false == NULL: This expression compares false with NULL, and returns true because both values are considered falsy in PHP.
 - NULL == '': This expression compares NULL with empty string, and returns true because both values are considered falsy in PHP.
 
+
+
 **Command** ([[Comparison of empty string, 0, false and null]]):
 
 ```bash
 '' == 0 == false == NULL
 ```
+
+
+
+
 
 **Command** ([[Comparison of empty string and 0]]):
 
@@ -149,11 +197,19 @@ var_dump('0x1234Ab' == '1193131');
 '' == 0
 ```
 
+
+
+
+
 **Command** ([[Comparison of 0 and false]]):
 
 ```bash
 0  == false
 ```
+
+
+
+
 
 **Command** ([[Comparison of false and null]]):
 
@@ -161,11 +217,17 @@ var_dump('0x1234Ab' == '1193131');
 false == NULL
 ```
 
+
+
+
+
 **Command** ([[Comparison of null and empty string]]):
 
 ```bash
 NULL == ''
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -194,3 +256,5 @@ NULL == ''
 - [[PHP Juggling type and magic hashes]]
 - [[True statements]]
 - [[Type Juggling]]
+
+

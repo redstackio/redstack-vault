@@ -17,22 +17,48 @@ Oscanner is an Oracle assessment framework developed in Java. It has a plugin-ba
 
 Oscanner is an Oracle assessment framework developed in Java. It has a plugin-based architecture and comes with a couple of plugins that currently do:
 
+
+
 Sid Enumeration
+
+
 
 Passwords tests (common & dictionary)
 
+
+
 Enumerate Oracle version
+
+
 
 Enumerate account roles
 
+
+
 Enumerate account privileges
+
+
 
 Enumerate account hashes
 
+
+
 Enumerate audit information
+
+
 
 Enumerate password policies
 
+
+
 Enumerate database links
 
+
+
 The results are given in a graphical java tree.
+
+
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:04.063259+00:00'
 ```bash
 .\Rubeus.exe hash /domain:purple.lab /user:WVLFLLKZ$ /password:'iUAL)l<i$;UzD7W'
 ```
+
+

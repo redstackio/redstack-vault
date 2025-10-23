@@ -20,3 +20,5 @@ ssh -f -N -L $_ATTACKER_PORT:$_REMOTE_IP:$_REMOTE_PORT $_USER@$_TARGET_IP
 ```
 root@kali:~# ssh -f -N -L 8001:10.10.10.11:80 root@10.10.10.10
 ```
+
+

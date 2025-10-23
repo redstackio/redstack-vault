@@ -31,11 +31,15 @@ To extract the code of an AWS Lambda function, an attacker can use the AWS Lambd
 
 The business value of this technique is that it allows attackers to gain access to sensitive information stored in AWS Lambda functions. This information can be used to further compromise the target environment, leading to potential data breaches and financial losses.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the AWS Lambda service
+
+ 
 
 ## Defense
 
@@ -45,21 +49,33 @@ The business value of this technique is that it allows attackers to gain access 
 
 1. Encrypt sensitive information stored in AWS Lambda functions
 
+ 
+
 ## Objectives
 
 1. Extract the code of an AWS Lambda function
 
 1. Search for sensitive information in the code of the function
 
+ 
+
 # Instructions
 
 1. To download the code of an AWS Lambda function, follow the below steps:
 
+ 
+
+
+
 **Code**: [[# https://blog.appsecco.com/getting-shell-and-data]]
+
+
 
 > 1. Use the command `aws lambda list-functions --profile uploadcreds` to list all the available AWS Lambda functions.
 2. Use the command `aws lambda get-function --function-name "LAMBDA-NAME-HERE-FROM-PREVIOUS-QUERY" --query 'Code.Location' --profile uploadcreds` to get the location of the code of the desired Lambda function.
 3. Use the `wget` command to download the code to a file with the `.zip` extension. Replace `url-from-previous-query` with the URL obtained from the previous command. The final command should look like `wget -O lambda-function.zip url-from-previous-query --profile uploadcreds`.
+
+
 
 **Command** ([[Download AWS Lambda Function Code]]):
 
@@ -67,17 +83,27 @@ The business value of this technique is that it allows attackers to gain access 
 $ aws lambda list-functions --profile uploadcreds
 ```
 
+
+
+
+
 **Command** ([[Get AWS Lambda Function Code Location]]):
 
 ```bash
 $ aws lambda get-function --function-name "LAMBDA-NAME-HERE-FROM-PREVIOUS-QUERY" --query 'Code.Location' --profile uploadcreds
 ```
 
+
+
+
+
 **Command** ([[Download AWS Lambda Function Code]]):
 
 ```bash
 $ wget -O lambda-function.zip url-from-previous-query --profile uploadcreds
 ```
+
+
 
 ## Commands Used
 
@@ -89,3 +115,5 @@ $ wget -O lambda-function.zip url-from-previous-query --profile uploadcreds
 
 - [[AWS - Lambda - Extract function's code]]
 - [[Cloud - AWS]]
+
+

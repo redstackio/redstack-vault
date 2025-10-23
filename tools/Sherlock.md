@@ -29,13 +29,27 @@ A PowerShell script to quickly find missing software patches for local privilege
 
 A PowerShell script to quickly find missing software patches for local privilege escalation vulnerabilities.​
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_015c5798-554b-4d34-833d-022bbbd701c7}}
+
+
 
 # Installation
 
 ## Clone from GitHub
 
 Clone the git repository then copy Sherlock.ps1 to the target
+
+
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +65,5 @@ Find-AllVulns]]
 
 - [[Enumeration]]
 - [[powershell]]
+
+

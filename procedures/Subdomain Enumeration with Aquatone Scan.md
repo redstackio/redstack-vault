@@ -36,11 +36,15 @@ Subdomain enumeration is a technique used by attackers to identify subdomains of
 
 From an offensive perspective, subdomain enumeration can be used to identify potential attack vectors and targets. It can also be used to gather information about a target's infrastructure and architecture. From a defensive perspective, subdomain enumeration can help organizations identify and mitigate potential vulnerabilities and attack vectors.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain
 
 1. Aquatone tool installed on the system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ From an offensive perspective, subdomain enumeration can be used to identify pot
 
 1. Use intrusion detection and prevention systems to detect and prevent attacks
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains of a target domain
@@ -57,6 +63,8 @@ From an offensive perspective, subdomain enumeration can be used to identify pot
 1. Scan the discovered subdomains for open ports and HTTP(S) servers
 
 1. Gather information about a target's infrastructure and architecture
+
+ 
 
 # Instructions
 
@@ -70,8 +78,14 @@ Next, the command uses Aquatone to scan the discovered subdomains by running the
 
 Finally, the command uses Amass to perform active brute force subdomain enumeration and saves the results in the file /tmp/hosts.txt. The file is then scanned using Aquatone to generate an HTML report in the directory /tmp/aquatone$1.
 
+ 
+
+
+
 **Code**: [[# Subfinder version
 ./Subfinder/subfinder -d $1 -r]]
+
+
 
 > The command uses Subfinder and Amass for subdomain enumeration and Aquatone for scanning the discovered subdomains. 
 
@@ -81,6 +95,8 @@ The '-active' and '-brute' options in the Amass command specify active brute for
 
 The 'cat' command is used to concatenate the contents of the output files and pipe them to Aquatone for scanning. The '-ports' option in the Aquatone command specifies the ports to be scanned. The '-out' option specifies the output directory for the scan results.
 
+
+
 **Command** ([[Subfinder and Aquatone]]):
 
 ```bash
@@ -88,12 +104,18 @@ The 'cat' command is used to concatenate the contents of the output files and pi
 cat /tmp/subresult$1 | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ```
 
+
+
+
+
 **Command** ([[Amass and Aquatone]]):
 
 ```bash
 ./Amass/amass -active -brute -o /tmp/hosts.txt -d $1
 cat /tmp/hosts.txt | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +142,5 @@ cat /tmp/hosts.txt | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Aquatone - new version (Go)]]
+
+

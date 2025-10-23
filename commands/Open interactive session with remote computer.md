@@ -20,3 +20,5 @@ $cred = Get-Credential
 Enter-PSSession -ComputerName 'winserver1' -Credential $cred -Authentication Basic
 
 ```
+
+

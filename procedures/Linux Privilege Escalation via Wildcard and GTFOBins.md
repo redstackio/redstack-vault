@@ -27,6 +27,8 @@ This procedure involves exploiting a wildcard vulnerability and using GTFOBins t
 
 This procedure involves exploiting a wildcard vulnerability and using GTFOBins to escalate privileges on a Linux system. Attackers can use this technique to gain access to sensitive data or systems that they would not normally have access to. By exploiting a vulnerability in the wildcard functionality, attackers can execute commands as a higher privileged user. Once escalated, attackers can perform malicious activities such as stealing sensitive data, installing malware or pivoting to other systems. This technique is commonly used by attackers to gain full control of a targeted system.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Linux system
@@ -34,6 +36,8 @@ This procedure involves exploiting a wildcard vulnerability and using GTFOBins t
 1. Knowledge of wildcard vulnerability exploitation
 
 1. GTFOBins tool
+
+ 
 
 ## Defense
 
@@ -43,11 +47,15 @@ This procedure involves exploiting a wildcard vulnerability and using GTFOBins t
 
 1. Monitor system logs for suspicious activity and implement intrusion detection and prevention measures
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
 
 1. Gain access to sensitive data or systems
+
+ 
 
 # Instructions
 
@@ -59,8 +67,14 @@ This procedure involves exploiting a wildcard vulnerability and using GTFOBins t
 5. Make the file executable.
 6. Run the file to exploit the binary.
 
+ 
+
+
+
 **Code**: [[# create file for exploitation
 touch -- "--checkpo]]
+
+
 
 > This command provides a set of instructions to exploit Unix binaries using GTFOBins, which is a curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions. The `data` field provides a sample exploit code to create a file for exploitation and run a vulnerable script. The `lang` field specifies the language used in the exploit code. The `text` field provides a brief introduction to GTFOBins. The `instruction` field provides step-by-step instructions to exploit a Unix binary using GTFOBins. The `name` field provides a name for the command, which is 'Exploit Unix Binaries using GTFOBins'.
 
@@ -78,3 +92,5 @@ touch -- "--checkpo]]
 
 - [[Linux - Privilege Escalation]]
 - [[Wildcard]]
+
+

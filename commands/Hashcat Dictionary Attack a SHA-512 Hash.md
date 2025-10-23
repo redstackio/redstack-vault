@@ -9,6 +9,7 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
 
   hashcat (v5.1.0) starting...
 
+
   OpenCL Platform #1: The pocl project
 
   ====================================
@@ -16,11 +17,13 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
   * Device #1: pthread-Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz, 1024/2942 MB allocatable,
   2MCU
 
+
   Hashes: 1 digests; 1 unique digests, 1 unique salts
 
   Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
 
   Rules: 1
+
 
   Applicable optimizers:
 
@@ -31,6 +34,7 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
   * Single-Salt
 
   * Uses-64-Bit
+
 
   Minimum password length supported by kernel: 0
 
@@ -45,6 +49,7 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
   * Keyspace..: 14
 
   * Runtime...: 0 secs
+
 
   Session..........: hashcat
 
@@ -75,6 +80,7 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
   Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
 
   Candidates.#1....: 123456 -> RedStack
+
 
   Started: Mon Sep 16 15:02:54 2019
 
@@ -136,3 +142,5 @@ Candidates.#1....: 123456 -> RedStack
 Started: Mon Sep 16 15:02:54 2019
 Stopped: Mon Sep 16 15:03:06 2019
 ```
+
+

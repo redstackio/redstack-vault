@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Windows Services
 
+
+
 **Command** ([[Query service]]):
 
 ```bash
 sc query
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Create service]]):
 
@@ -23,9 +31,21 @@ sc create <\\Target(optional)> binPath= type= share start= auto DisplayName=
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Delete service]]):
 
 ```bash
 sc delete
 
 ```
+
+
+
+
+
+

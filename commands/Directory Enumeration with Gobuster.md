@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:21:17.629553+00:00'
 # gobuster -w wordlist -u URL -t threads
 ./gobuster -u http://example.com/ -w words.txt -t 10
 ```
+
+

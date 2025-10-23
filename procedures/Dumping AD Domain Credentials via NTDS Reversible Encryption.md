@@ -34,11 +34,15 @@ To exploit this vulnerability, an attacker must first gain access to the domain 
 
 From a business perspective, this attack can be devastating as it can result in the compromise of sensitive data, including intellectual property, financial information, and personal data of employees and customers.
 
+ 
+
 ## Requirements
 
 1. Access to the domain controller
 
 1. Tools for dumping the NTDS.dit file and extracting passwords
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this attack can be devastating as it can result in 
 
 1. Monitor for suspicious activity on the domain controller, such as unusual logins or file access
 
+ 
+
 ## Objectives
 
 1. Dump the NTDS.dit file from the domain controller
@@ -56,19 +62,31 @@ From a business perspective, this attack can be devastating as it can result in 
 
 1. Gain full access to the AD domain and its resources
 
+ 
+
 # Instructions
 
 1. This command allows for the use of encrypted passwords in the system.
 
+ 
+
+
+
 **Code**: [[UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED]]
 
+
+
 > When this command is set to true, users will be able to use encrypted passwords in the system. Encrypted passwords provide an added layer of security as they cannot be easily deciphered by unauthorized users. To use encrypted passwords, users will need to follow the specific instructions provided by the system. This command should only be used if encrypted passwords are supported by the system and if users are aware of how to use them.
+
+
 
 **Command** ([[Check if password encryption is allowed]]):
 
 ```bash
 UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[NTDS Reversible Encryption]]
+
+

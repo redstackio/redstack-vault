@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:50.274977+00:00'
 ```bash
 aws iam list-attached-user-policies --user-name example_name --profile example_profile
 ```
+
+

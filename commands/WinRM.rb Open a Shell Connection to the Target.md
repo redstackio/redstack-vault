@@ -23,3 +23,5 @@ ruby winrm_shell_with_upload.rb
 root@kali:~# ruby winrm_shell_with_upload.rb
 PS desktop-rfojcja\bob@DESKTOP-RFOJCJA Documents>
 ```
+
+

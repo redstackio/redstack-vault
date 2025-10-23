@@ -35,11 +35,15 @@ From a technical perspective, this attack exploits the way Windows systems authe
 
 From a business perspective, this attack can be used to gain access to sensitive information or systems within an organization. It is particularly effective against organizations that rely heavily on Active Directory for authentication and authorization.
 
+ 
+
 ## Requirements
 
 1. Access to a system on the target network that can be used for relaying authentication requests
 
 1. Tools like Hashcat for cracking password hashes
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ From a business perspective, this attack can be used to gain access to sensitive
 
 1. Monitoring network traffic for signs of relaying attacks can help detect and mitigate this type of attack
 
+ 
+
 ## Objectives
 
 1. Obtain credentials for a target user account
@@ -57,11 +63,19 @@ From a business perspective, this attack can be used to gain access to sensitive
 
 1. Gain access to sensitive information or systems within an organization
 
+ 
+
 # Instructions
 
 1. To use hashcat, you need to provide the hash file and the wordlist file. The hash file contains the hashed password(s) you want to crack, while the wordlist file contains a list of words that will be used to guess the password. You can also use rules to modify the words in the wordlist to increase your chances of success. The basic syntax is as follows: hashcat [options] hashfile wordlist
 
+ 
+
+
+
 **Code**: [[hashcat]]
+
+
 
 > The arguments for hashcat are as follows:
 
@@ -71,26 +85,40 @@ From a business perspective, this attack can be used to gain access to sensitive
 
 -options : Various options that can be used to modify the behavior of hashcat, such as the type of hash, the type of attack, the use of rules, etc.
 
+
+
 **Command** ([[Hashcat Installation]]):
 
 ```bash
 sudo apt-get install hashcat
 ```
 
+
+
 2. To crack password hashes using Hashcat, use the following command:
 
+ 
+
+
+
 **Code**: [[hashcat -m 5600 -a 0 hash.txt crackstation.txt]]
+
+
 
 > -m 5600: specifies the hash type to be cracked
 -a 0: specifies the attack mode (0 for straight)
 hash.txt: the file containing the password hashes
 crackstation.txt: the wordlist file used for cracking the hashes
 
+
+
 **Command** ([[Crack Password Hashes with Hashcat]]):
 
 ```bash
 hashcat -m 5600 -a 0 hash.txt crackstation.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -112,3 +140,5 @@ hashcat -m 5600 -a 0 hash.txt crackstation.txt
 
 - [[Active Directory Attacks]]
 - [[Man-in-the-Middle attacks & relaying]]
+
+

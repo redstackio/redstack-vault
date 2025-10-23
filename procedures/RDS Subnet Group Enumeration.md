@@ -35,11 +35,16 @@ Technical Description: The RDS DB Subnet Groups Description command provides inf
 
 Business Value: This technique can be used by attackers to identify potential targets for further exploitation. By identifying vulnerable RDS instances, attackers can gain access to sensitive data and compromise the confidentiality, integrity, and availability of the target organization's data.
 
+
+ 
+
 ## Requirements
 
 1. Access to the AWS Management Console or API
 
 1. Valid credentials with permissions to access the RDS service
+
+ 
 
 ## Defense
 
@@ -49,23 +54,33 @@ Business Value: This technique can be used by attackers to identify potential ta
 
 1. Enable VPC Flow Logs to monitor network traffic to and from RDS instances
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further exploitation
 
 1. Gather information about the subnet groups used by an RDS instance
 
+ 
+
 # Instructions
 
 1. Use this command to describe RDS DB subnet groups.
 
+ 
+
 This command returns information about the specified RDS DB subnet group, including VPC ID, subnet group name, description, and the subnets in the subnet group. The command takes no arguments and returns a JSON object with the details of the DB subnet group.
+
+
 
 **Command** ([[Describe DB Subnet Groups]]):
 
 ```bash
 N/A
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +102,5 @@ N/A
 - [[Enumeration]]
 - [[Listing information about subnet groups in RDS]]
 - [[RDS - Relational Database Service]]
+
+

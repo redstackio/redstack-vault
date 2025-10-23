@@ -36,6 +36,8 @@ DNS Rebinding Server-Side Request Forgery is a technique used to bypass filters 
 
 This technique can be used to gain access to sensitive data, such as customer information or financial data. It can also be used to compromise the entire network, as an attacker can use the compromised server to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server
@@ -44,6 +46,8 @@ This technique can be used to gain access to sensitive data, such as customer in
 
 1. Victim's browser must be used to make requests to internal systems
 
+ 
+
 ## Defense
 
 1. Use a web application firewall that can detect and block server-side request forgery attacks
@@ -51,6 +55,8 @@ This technique can be used to gain access to sensitive data, such as customer in
 1. Ensure that internal systems are not accessible from the public internet
 
 1. Use DNS filtering to block requests to known malicious domains
+
+ 
 
 ## Objectives
 
@@ -62,6 +68,8 @@ This technique can be used to gain access to sensitive data, such as customer in
 
 1. Compromise the entire network
 
+ 
+
 # Instructions
 
 1. To create a rotating IP domain, follow these steps:
@@ -70,15 +78,25 @@ This technique can be used to gain access to sensitive data, such as customer in
 3. Save the generated domain name for use in your application.
 Note: The IPs must be separated by '-rebind-' and the domain must end with '-rr.1u.ms'.
 
+ 
+
+
+
 **Code**: [[Create a domain that rotates between two IPs. For ]]
 
+
+
 > The 'make' keyword in the domain name indicates that this is a rotating IP domain. The first IP specified before '-rebind-' is the initial IP that will be used. The second IP specified after '-rebind-' is the IP that will be used after the initial IP. The '-rr' at the end of the domain name indicates that the rotation should be round-robin, meaning that the IPs will be used in alternating order.
+
+
 
 **Command** ([[Create rotating domain with two IPs]]):
 
 ```bash
 make-1.2.3.4-rebind-169.254-169.254-rr.1u.ms
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +121,5 @@ make-1.2.3.4-rebind-169.254-169.254-rr.1u.ms
 - [[Bypassing filters]]
 - [[Bypassing using DNS Rebinding (TOCTOU)]]
 - [[Server-Side Request Forgery]]
+
+

@@ -28,11 +28,16 @@ Technical Explanation: The tool uses a Windows PowerShell script to disable Wind
 
 Business Value: By disabling Windows Defender, an attacker can avoid detection by the target's anti-virus and security software. This can allow the attacker to execute malicious code on the target system without being detected, which can lead to data theft, system compromise, and other malicious activities. 
 
+
+ 
+
 ## Requirements
 
 1. Local administrator access to the target system
 
 1. PowerShell access on the target system
+
+ 
 
 ## Defense
 
@@ -42,6 +47,8 @@ Business Value: By disabling Windows Defender, an attacker can avoid detection b
 
 1. Monitor for registry changes related to Windows Defender and other security software
 
+ 
+
 ## Objectives
 
 1. Disable Windows Defender on the target system
@@ -50,12 +57,20 @@ Business Value: By disabling Windows Defender, an attacker can avoid detection b
 
 1. Execute malicious code on the target system without being detected
 
+ 
+
 # Instructions
 
 1. This command disables Windows Defender and all its components. It includes disabling real-time monitoring, IOAV protection, script scanning, and AMSI. It also excludes some processes and locations from scanning. Additionally, it removes all definitions and signatures and disables the Windows Defender Security Center and Real Time Protection.
 
+ 
+
+
+
 **Code**: [[# Disable Defender
 sc config WinDefend start= disa]]
+
+
 
 > The command is written in PowerShell and is used to disable Windows Defender on a Windows machine. It includes multiple commands to disable different components of Windows Defender. The 'Set-MpPreference' command is used to disable real-time monitoring, IOAV protection, script scanning, and AMSI. The 'Add-MpPreference' command is used to exclude some processes and locations from scanning. The 'reg' command is used to disable the Windows Defender Security Center and Real Time Protection. The 'MpCmdRun.exe' command is used to remove all definitions and signatures.
 
@@ -64,3 +79,5 @@ sc config WinDefend start= disa]]
 - [[Disable Antivirus and Security]]
 - [[Disable Windows Defender]]
 - [[Windows - Persistence]]
+
+

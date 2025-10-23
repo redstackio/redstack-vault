@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:23:56.681624+00:00'
 ```bash
 Users can still access the VM Metadata service from outside the VM, such as from the Azure portal or from another VM in the same virtual network. However, this requires additional configuration to ensure that the request is authenticated and authorized.
 ```
+
+

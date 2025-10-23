@@ -32,11 +32,15 @@ Linux systems often use Systemd timers to schedule recurring tasks or jobs. Atta
 
 Linux systems often use Systemd timers to schedule recurring tasks or jobs. Attackers can abuse these timers to escalate their privileges on a system. By creating a malicious timer or modifying an existing one, an attacker can execute arbitrary code with elevated privileges. This technique is often used in post-exploitation scenarios to maintain persistence on a compromised system. To mitigate this attack, it is important to regularly review and audit the existing timers on a system.
 
+ 
+
 ## Requirements
 
 1. Access to a Linux system with Systemd timers
 
 1. Knowledge of Linux command line
+
+ 
 
 ## Defense
 
@@ -46,26 +50,40 @@ Linux systems often use Systemd timers to schedule recurring tasks or jobs. Atta
 
 1. Monitor for suspicious or unauthorized changes to the timers configuration files
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Linux system
 
 1. Maintain persistence on a compromised system
 
+ 
+
 # Instructions
 
 1. To list all the system timers, use the command 'systemctl list-timers --all'.
 
+ 
+
+
+
 **Code**: [[systemctl list-timers --all
 NEXT                  ]]
 
+
+
 > This command lists all the active timers on the system along with their next activation time, time left until next activation, last activation time, and the service they activate. The output also includes the number of timers listed. This command is particularly useful in managing system services and scheduling tasks.
+
+
 
 **Command** ([[List Timers]]):
 
 ```bash
 systemctl list-timers --all
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -90,3 +108,5 @@ systemctl list-timers --all
 
 - [[Linux - Privilege Escalation]]
 - [[Systemd timers]]
+
+

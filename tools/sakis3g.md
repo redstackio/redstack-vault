@@ -16,3 +16,9 @@ Sakis3G is a tweaked shell script which is supposed to work out-of-the-box for e
 ## Description
 
 Sakis3G is a tweaked shell script which is supposed to work out-of-the-box for establishing a 3G connection with any combination of modem or operator. It automagically setups your USB or Bluetooth™ modem, and may even detect operator settings. You should try it when anything else fails.Sakis3G Homepage | Kali Sakis3G Repo
+
+
+
+
+
+

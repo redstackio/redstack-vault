@@ -32,6 +32,8 @@ AWS Managed Policy Version Enumeration is a technique used to gather information
 
 AWS Managed Policy Version Enumeration is a technique used to gather information about the specific version of the specified managed policy. This technique can be used by an attacker to gain a better understanding of the permissions granted by the policy and to identify potential areas of weakness within the policy. To retrieve the version information, the attacker can use the 'Retrieve IAM Policy Version' command. This command will return the policy version and the policy document for the specified policy.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
@@ -39,6 +41,8 @@ AWS Managed Policy Version Enumeration is a technique used to gather information
 1. Access to the AWS console or CLI
 
 1. Knowledge of the policy name and version to retrieve
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ AWS Managed Policy Version Enumeration is a technique used to gather information
 
 1. Enable AWS CloudTrail to monitor and log all API activity
 
+ 
+
 ## Objectives
 
 1. Identify the version of a specific managed policy
@@ -56,17 +62,25 @@ AWS Managed Policy Version Enumeration is a technique used to gather information
 
 1. Identify potential areas of weakness within the policy
 
+ 
+
 # Instructions
 
 1. To retrieve a specific version of an IAM policy, use the `aws iam get-policy-version` command.
 
+ 
+
 This command requires the `policy-arn` and `version-id` arguments to specify which policy version to retrieve. The `policy-arn` argument is the Amazon Resource Name (ARN) of the policy you want to retrieve the version for. The `version-id` argument is the identifier for the version of the policy you want to retrieve. This command returns the policy version in JSON format.
+
+
 
 **Command** ([[Get IAM Policy Version]]):
 
 ```bash
 aws iam get-policy-version --policy-arn policy-arn --version-id version-id
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws iam get-policy-version --policy-arn policy-arn --version-id version-id
 - [[4. Enumerating Policies]]
 - [[Cloud - AWS]]
 - [[Retrieving information about the specific version of the specified managed policy]]
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:31.637967+00:00'
 ```bash
 aws cloudtrail list-trails
 ```
+
+

@@ -18,3 +18,5 @@ WorkingDirectory=whatever
 IconFile=\\10.10.10.10\%USERNAME%.icon
 IconIndex=1
 ```
+
+

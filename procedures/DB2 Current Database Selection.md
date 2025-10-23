@@ -32,9 +32,13 @@ The DB2 Current Database Selection procedure is used to obtain information about
 
 The DB2 Current Database Selection procedure is used to obtain information about the current database in use. This information can be used to identify the type of database and version, as well as to determine the level of access that an attacker has to the database. The technical explanation of this procedure involves injecting SQL commands into the database through user input fields or other vulnerabilities to extract the current database information. The business value of this procedure is that it allows an attacker to gain a better understanding of the target's infrastructure and potentially identify other vulnerabilities to exploit.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application or system with user input fields or other vulnerabilities that can be exploited to inject SQL commands
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The DB2 Current Database Selection procedure is used to obtain information about
 
 1. Monitor the database for suspicious activity and unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. Obtain information about the current database in use
@@ -52,19 +58,31 @@ The DB2 Current Database Selection procedure is used to obtain information about
 
 1. Determine the level of access that an attacker has to the database
 
+ 
+
 # Instructions
 
 1. To select the current server, execute the provided SQL statement. This command returns the name of the server that you are currently connected to.
 
+ 
+
+
+
 **Code**: [[select current server from sysibm.sysdummy1]]
 
+
+
 > This command is useful in a multi-server environment where you may have connections to multiple servers. The output of this command can be used to verify that you are connected to the correct server before executing any further commands.
+
+
 
 **Command** ([[Select current server]]):
 
 ```bash
 select current server from sysibm.sysdummy1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ select current server from sysibm.sysdummy1
 - [[Current Database]]
 - [[DB2 Cheatsheet]]
 - [[DB2 Injection]]
+
+

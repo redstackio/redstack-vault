@@ -32,6 +32,8 @@ Technical Explanation: The FindFirstFile function is used to search for a file o
 
 Business Value: An attacker can use this procedure to gain unauthorized access to a system and steal sensitive data, install malware or ransomware, or use the target system as a foothold to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -39,6 +41,8 @@ Business Value: An attacker can use this procedure to gain unauthorized access t
 1. Knowledge of the application's file inclusion functionality
 
 1. Ability to craft malicious input
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: An attacker can use this procedure to gain unauthorized access t
 
 1. Implement least privilege access controls to limit the impact of a successful attack.
 
+ 
+
 ## Objectives
 
 1. Upload and execute malicious code on the target system
@@ -56,15 +62,25 @@ Business Value: An attacker can use this procedure to gain unauthorized access t
 
 1. Use the target system as a foothold to launch further attacks
 
+ 
+
 # Instructions
 
 1. The FindFirstFile function is used to search for a file or directory on a file system.
+
+ 
 
 > To exploit the LFI vulnerability, an attacker would call the FindFirstFile function with a path that includes user-controlled input. The function will then search for the file or directory specified in the input. If the input is carefully crafted, the function will include the attacker's malicious file in its execution flow, allowing the attacker to execute arbitrary code on the target system.
 
 2. Masks are used to match multiple files or directories based on a pattern.
 
+ 
+
+
+
 **Code**: [[&lt;&lt; * &gt;&gt; ?]]
+
+
 
 > An attacker can use masks as wildcards to match multiple files or directories when calling the FindFirstFile function. By using carefully crafted masks, an attacker can include their malicious file in the search results, allowing them to execute arbitrary code on the target system.
 
@@ -83,3 +99,5 @@ Business Value: An attacker can use this procedure to gain unauthorized access t
 
 - [[File Inclusion]]
 - [[LFI to RCE via upload (FindFirstFile)]]
+
+

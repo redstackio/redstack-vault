@@ -20,3 +20,5 @@ PS Az> Save-AzResourceGroupDeploymentTemplate -ResourceGroupName <RESOURCE GROUP
 cat <DEPLOYMENT NAME>.json # search for hardcoded password
 cat <PATH TO .json FILE> | Select-String password
 ```
+
+

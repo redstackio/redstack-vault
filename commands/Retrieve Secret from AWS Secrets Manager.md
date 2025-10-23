@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:46.430395+00:00'
 ```bash
 aws secretsmanager get-secret-value --secret-id ID
 ```
+
+

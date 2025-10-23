@@ -29,6 +29,9 @@ Server Side Template Injection (SSTI) is a vulnerability that allows an attacker
 
 From a technical standpoint, patTemplate's Page Template command allows for the creation of dynamic web pages by defining placeholders in a template that are replaced with dynamic content at runtime. However, if user input is not properly sanitized, an attacker can inject malicious code into the template, leading to SSTI. From a business perspective, this vulnerability can lead to data theft, server compromise, and reputational damage.
 
+
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -37,6 +40,8 @@ From a technical standpoint, patTemplate's Page Template command allows for the 
 
 1. Ability to inject malicious code into the template
 
+ 
+
 ## Defense
 
 1. Ensure that all user input is properly sanitized before being used in server-side templates
@@ -44,6 +49,8 @@ From a technical standpoint, patTemplate's Page Template command allows for the 
 1. Implement content security policies (CSPs) to restrict the types of content that can be included in templates
 
 1. Regularly scan web applications for vulnerabilities and apply patches as needed
+
+ 
 
 ## Objectives
 
@@ -55,12 +62,20 @@ From a technical standpoint, patTemplate's Page Template command allows for the 
 
 1. Take control of the server
 
+ 
+
 # Instructions
 
 1. The PatTemplate Page Template is a template that contains multiple other templates. It is used to create complex pages with reusable components. The <patTemplate:tmpl> tag is used to define a new template within the page template. The 'name' attribute is used to give the template a unique name that can be referenced later. The {NAME} placeholder is used to insert dynamic content into the template.
 
+ 
+
+
+
 **Code**: [[<patTemplate:tmpl name="page">
   This is the main ]]
+
+
 
 > Arguments:
 - name: The name of the template. Must be unique within the page template.
@@ -84,3 +99,5 @@ From a technical standpoint, patTemplate's Page Template command allows for the 
 
 - [[patTemplate]]
 - [[Server Side Template Injection]]
+
+

@@ -41,11 +41,15 @@ Metasploit's Meterpreter provides a powerful tool for pivoting within a network.
 
 Metasploit's Meterpreter provides a powerful tool for pivoting within a network. Using port forwarding and routing, an attacker can use a compromised host as a proxy to access other network segments. This technique can be used to bypass network segmentation and access sensitive data or systems. The technical implementation involves setting up a listener on the compromised host and forwarding traffic through it. The business value of this technique is that it allows attackers to move laterally within a network and access additional resources that would otherwise be inaccessible.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised host within the target network
 
 1. Metasploit framework installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ Metasploit's Meterpreter provides a powerful tool for pivoting within a network.
 
 1. Monitor network traffic for signs of port forwarding or proxy use
 
+ 
+
 ## Objectives
 
 1. Gain access to a compromised host within a network
@@ -63,22 +69,36 @@ Metasploit's Meterpreter provides a powerful tool for pivoting within a network.
 
 1. Access other network segments and systems
 
+ 
+
 # Instructions
 
 1. This JSON object provides a set of commands for port forwarding and routing using Meterpreter. These commands can be used to forward ports, add and delete routes, and view active port forwards and routes. To use these commands, open a Meterpreter shell and enter the command in the terminal.
 
+ 
+
+
+
 **Code**: [[# Meterpreter list active port forwards
 portfwd li]]
+
+
 
 > The 'portfwd list' command lists all active port forwards. The 'portfwd add' command forwards a specified local port to a remote host and port. The 'portfwd delete' command removes a specified port forward. The 'portfwd flush' command removes all port forwards.
 
 The 'run autoroute -s' command adds a route for a specified subnet. The 'run autoroute -p' command lists all active routes. The 'route add' command adds a route for a specified network via a session number. The 'route delete' command removes a specified route. The 'route flush' command removes all routes.
+
+
 
 **Command** ([[List active port forwards]]):
 
 ```bash
 portfwd list
 ```
+
+
+
+
 
 **Command** ([[Forward RDP traffic to compromised machine]]):
 
@@ -88,11 +108,19 @@ portfwd add -l 88 -p 88 -r 127.0.0.1
 portfwd add -L 0.0.0.0 -l 445 -r 192.168.57.102 -p 445
 ```
 
+
+
+
+
 **Command** ([[Delete RDP port forward]]):
 
 ```bash
 portfwd delete –l 3389 –p 3389 –r target-host
 ```
+
+
+
+
 
 **Command** ([[Delete all port forwards]]):
 
@@ -100,11 +128,19 @@ portfwd delete –l 3389 –p 3389 –r target-host
 portfwd flush
 ```
 
+
+
+
+
 **Command** ([[Add route for specified subnet]]):
 
 ```bash
 run autoroute -s 192.168.15.0/24
 ```
+
+
+
+
 
 **Command** ([[Set up SOCKS proxy]]):
 
@@ -114,11 +150,19 @@ set SRVPORT 9090
 set VERSION 4a
 ```
 
+
+
+
+
 **Command** ([[List all active routes]]):
 
 ```bash
 run autoroute -p
 ```
+
+
+
+
 
 **Command** ([[View available networks]]):
 
@@ -126,11 +170,19 @@ run autoroute -p
 route
 ```
 
+
+
+
+
 **Command** ([[Add route for specific network]]):
 
 ```bash
 route add 192.168.14.0 255.255.255.0 3
 ```
+
+
+
+
 
 **Command** ([[Delete route for specific network]]):
 
@@ -138,11 +190,17 @@ route add 192.168.14.0 255.255.255.0 3
 route delete 192.168.14.0 255.255.255.0 3
 ```
 
+
+
+
+
 **Command** ([[Delete all routes]]):
 
 ```bash
 route flush
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -174,3 +232,5 @@ route flush
 
 - [[Metasploit]]
 - [[Network Pivoting Techniques]]
+
+

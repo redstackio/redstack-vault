@@ -16,3 +16,5 @@ curl -k https://<IP address>:10250
 curl -k https://<IP address>:10250/metrics
 curl -k https://<IP address>:10250/pods
 ```
+
+

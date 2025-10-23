@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:13.685993+00:00'
 Create a domain that rotates between two IPs. For this purpose, you can use http://1u.ms/.
 For example, to rotate between 1.2.3.4 and 169.254-169.254, use the following domain: make-1.2.3.4-rebind-169.254-169.254-rr.1u.ms
 ```
+
+

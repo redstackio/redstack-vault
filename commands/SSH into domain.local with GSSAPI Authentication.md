@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:38:00.094828+00:00'
 ```bash
 ssh -o GSSAPIAuthentication=yes user@domain.local -vv
 ```
+
+

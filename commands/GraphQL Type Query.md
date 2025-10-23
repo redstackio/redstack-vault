@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:21.838496+00:00'
 ```bash
 {__type (name: "User") {name fields{name type{name kind ofType{name kind}}}}}
 ```
+
+

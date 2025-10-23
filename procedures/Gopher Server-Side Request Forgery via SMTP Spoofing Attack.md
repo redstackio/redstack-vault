@@ -30,6 +30,8 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 
 Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used by attackers to exploit SSRF vulnerabilities in web applications that allow the attacker to send crafted requests to the server. The attacker sends a specially crafted URL that contains a Gopher scheme, which tricks the server into making requests to internal resources. By sending a SMTP Spoofing Attack request, the attacker can then send emails from the server to other users, allowing them to perform phishing attacks or spread malware. This technique can be used to bypass network restrictions and access sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -37,6 +39,8 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 1. Knowledge of the internal resources of the target system
 
 1. Tools to craft Gopher URLs and SMTP Spoofing Attack requests
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 
 1. Monitor outgoing network traffic for unusual activity
 
+ 
+
 ## Objectives
 
 1. Exploit SSRF vulnerabilities in web applications
@@ -53,6 +59,8 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 1. Send crafted requests to the server
 
 1. Send emails from the server to other users
+
+ 
 
 # Instructions
 
@@ -68,7 +76,13 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 9. The period (.) indicates the end of the message.
 10. The QUIT command is used to terminate the connection.
 
+ 
+
+
+
 **Code**: [[ssrf.php?url=gopher://127.0.0.1:25/xHELO%20localho]]
+
+
 
 > This command is used to send a spoofed email to a victim. The attacker can specify any sender email address and any recipient email address. The email message can contain any text that the attacker desires. This attack can be used to trick the victim into revealing sensitive information or taking some other action that is detrimental to their security. It is important to note that this attack requires access to an SMTP server that allows unauthenticated email sending.
 
@@ -89,3 +103,5 @@ Gopher Server-Side Request Forgery via SMTP Spoofing Attack is a technique used 
 - [[Gopher]]
 - [[Server-Side Request Forgery]]
 - [[SSRF exploitation via URL Scheme]]
+
+

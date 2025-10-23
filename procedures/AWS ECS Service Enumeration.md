@@ -33,11 +33,15 @@ AWS Elastic Container Service (ECS) is a highly scalable, high-performance conta
 
 From an offensive perspective, this technique can be used to identify potential targets for further exploitation or to gather information for a more targeted attack. From a defensive perspective, this procedure can be used to identify potential misconfigurations or vulnerabilities and to ensure that services are properly secured and monitored.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access ECS services
 
 1. AWS CLI or SDK installed
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ From an offensive perspective, this technique can be used to identify potential 
 
 1. Monitor for suspicious activity and unauthorized access to ECS services
 
+ 
+
 ## Objectives
 
 1. Identify potential vulnerabilities and misconfigurations in the service
@@ -55,9 +61,13 @@ From an offensive perspective, this technique can be used to identify potential 
 
 1. Ensure that services are properly secured and monitored
 
+ 
+
 # Instructions
 
 1. Use the aws ecs describe-services command to retrieve information about a specified ECS service.
+
+ 
 
 This command requires the following arguments:
 1. cluster: The name of the ECS cluster that the service is associated with.
@@ -65,11 +75,15 @@ This command requires the following arguments:
 
 This command returns a JSON object that contains information about the specified service, including its name, status, desired count, and running count. Additionally, it includes information about the tasks associated with the service, including their task definition, status, and health. This information can be useful for monitoring and troubleshooting purposes.
 
+
+
 **Command** ([[Describe ECS Service]]):
 
 ```bash
 aws ecs describe-services --cluster name --services name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +105,5 @@ aws ecs describe-services --cluster name --services name
 - [[ECS]]
 - [[Enumeration]]
 - [[Listing information about a specific service]]
+
+

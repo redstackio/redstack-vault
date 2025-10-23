@@ -27,11 +27,27 @@ This script will generate payloads for basic intrusion detection avoidance. It s
 
 This script will generate payloads for basic intrusion detection avoidance. It supports HTA payloads which are placed on a web server and execute  code on a victim's browser,  and XML payloads which are used on the local machine in conjunction with MSBuild.exe to execute the code, which may bypass AppLocker rules that require all binaries be signed. 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_d0bf3279-d755-47cb-b6b7-743b00c9041b}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu (Python 2)
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ This script will generate payloads for basic intrusion detection avoidance. It s
 - [[applocker]]
 - [[Defense Bypass]]
 - [[Web Applications]]
+
+

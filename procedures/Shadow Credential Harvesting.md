@@ -33,11 +33,15 @@ To harvest shadow credentials, an attacker can use techniques such as credential
 
 The business value of this attack is that it allows an attacker to move laterally within a network, potentially gaining access to sensitive data or systems.
 
+ 
+
 ## Requirements
 
 1. Access to the target network.
 
 1. Tools for dumping credentials and cracking password hashes.
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ The business value of this attack is that it allows an attacker to move laterall
 
 1. Use multi-factor authentication to prevent unauthorized access even if credentials are compromised.
 
+ 
+
 ## Objectives
 
 1. Harvest shadow credentials from the target network.
 
 1. Use the harvested credentials to move laterally within the network and access sensitive data or systems.
 
+ 
+
 # Instructions
 
 1. This command is used to manage the key credentials for a user object in Active Directory. It allows administrators to add, remove, or view the key credentials associated with a user account.
 To add a new key credential, use the 'Add-ADUserKeyCredential' cmdlet. To remove a key credential, use the 'Remove-ADUserKeyCredential' cmdlet. To view the key credentials associated with a user account, use the 'Get-ADUserKeyCredential' cmdlet.
 
+ 
+
+
+
 **Code**: [[msDS-KeyCredentialLink]]
+
+
 
 > The 'msDS-KeyCredentialLink' attribute is used to store the link between a user object and its associated key credentials. This attribute is managed automatically by Active Directory and cannot be edited by user objects themselves. This is a security measure to prevent users from tampering with their own key credentials and potentially compromising the security of the domain.
 
@@ -76,3 +90,5 @@ To add a new key credential, use the 'Add-ADUserKeyCredential' cmdlet. To remove
 
 - [[Active Directory Attacks]]
 - [[Shadow Credentials]]
+
+

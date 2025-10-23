@@ -17,3 +17,5 @@ echo AAAAAQAAAAAEE[...]Qla6 | base64 -d > EncryptedPfx.bin
 # For the private key
 echo f7404c7f[...]aabd8b | xxd -r -p > dkmKey.bin 
 ```
+
+

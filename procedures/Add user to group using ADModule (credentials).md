@@ -30,23 +30,37 @@ If permissions are obtained to add a user to a group, the following ADModule can
 
 If permissions are obtained to add a user to a group, the following ADModule can be used.
 
+
+
 ## Objective
 
 There are instances administrative rights can be accessed and deemed necessary to add a user to a group.
 
 Or a users group has GenericAll permissions on another group, whereas can add user to the group and access privileges.
 
+
+
 1. Add user to a group using ADModule
+
+
 
 # Instructions
 
 1. Add a user to a group
+
+
+
+
 
 **Command** ([[Add member to group with ADModule]]):
 
 ```bash
 Add-ADGroupMember -Identity $GROUP_NAME -Members $USER
 ```
+
+
+
+
 
 ## Platforms
 
@@ -69,3 +83,5 @@ Add-ADGroupMember -Identity $GROUP_NAME -Members $USER
 ## Tags
 
 - [[persistence]]
+
+

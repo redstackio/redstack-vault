@@ -32,6 +32,8 @@ To dump the NTDS.dit file, an attacker must have administrative access to a doma
 
 Dumping AD credentials via the NTDS.dit file can have serious business impact, as it can allow an attacker to gain access to sensitive information and resources within the domain.
 
+ 
+
 ## Requirements
 
 1. Administrative access to a domain controller or a compromised domain admin account
@@ -39,6 +41,8 @@ Dumping AD credentials via the NTDS.dit file can have serious business impact, a
 1. Tools such as ntdsutil or PowerSploit's Invoke-NinjaCopy to copy the NTDS.dit file
 
 1. Tools such as Hashcat or John the Ripper to crack password hashes
+
+ 
 
 ## Defense
 
@@ -48,23 +52,39 @@ Dumping AD credentials via the NTDS.dit file can have serious business impact, a
 
 1. Monitor for suspicious activity, such as unusual file access or use of ntdsutil or PowerSploit's Invoke-NinjaCopy
 
+ 
+
 ## Objectives
 
 1. Obtain domain credentials via dumping the NTDS.dit file
 
 1. Use obtained credentials to gain access to domain resources
 
+ 
+
 # Instructions
 
 1. To locate the NTDS database, open the Command Prompt and type 'ntdsutil.exe'. From there, type 'Activate instance NTDS' and then 'Files'. Finally, type 'Info' to display the NTDS database location.
 
+ 
+
+
+
 **Code**: [[systemroot\NTDS\ntds.dit]]
+
+
 
 > The NTDS database is a crucial component of Active Directory and contains information about all objects in the directory. It is important to know the location of this file for backup and disaster recovery purposes.
 
 2. To locate the NTDS.dit file, open File Explorer and navigate to the following path: systemroot\System32\ntds.dit
 
+ 
+
+
+
 **Code**: [[systemroot\System32\ntds.dit]]
+
+
 
 > The NTDS.dit file is a critical component of the Active Directory database. It contains the data for all objects in the directory, including users, groups, and computers. It is important to know the location of this file for troubleshooting and disaster recovery purposes.
 
@@ -83,3 +103,5 @@ Dumping AD credentials via the NTDS.dit file can have serious business impact, a
 
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
+
+

@@ -33,11 +33,15 @@ GraphQL is a query language for APIs that allows clients to request only the dat
 
 The attacker can use the following GraphQL query to retrieve the fields and types of the chosen type: {__type (name: "User") {name fields{name type{name kind ofType{name kind}}}}}. The attacker can replace "User" with the name of the type they are interested in.
 
+ 
+
 ## Requirements
 
 1. Access to a GraphQL endpoint
 
 1. Knowledge of the GraphQL query language
+
+ 
 
 ## Defense
 
@@ -47,25 +51,39 @@ The attacker can use the following GraphQL query to retrieve the fields and type
 
 1. Restrict access to the GraphQL endpoint to authorized users only.
 
+ 
+
 ## Objectives
 
 1. Enumerate the definition of interesting types
 
 1. Identify additional attack vectors
 
+ 
+
 # Instructions
 
 1. To enumerate the definition of a type, replace "User" with the name of the type you are interested in and execute the following GraphQL query: {__type (name: "User") {name fields{name type{name kind ofType{name kind}}}}}
 
+ 
+
+
+
 **Code**: [[{__type (name: "User") {name fields{name type{name]]
 
+
+
 > This command sends a GraphQL query to the endpoint, requesting the definition of the specified type. The query uses the __type field to retrieve the type's name, fields, and their respective types. The ofType field is used to retrieve the underlying type of a list or non-null type.
+
+
 
 **Command** ([[GraphQL Type Query]]):
 
 ```bash
 {__type (name: "User") {name fields{name type{name kind ofType{name kind}}}}}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ The attacker can use the following GraphQL query to retrieve the fields and type
 - [[Enumerate the types' definition]]
 - [[Exploit]]
 - [[GraphQL Injection]]
+
+

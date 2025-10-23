@@ -41,6 +41,8 @@ Technical Explanation: To perform subdomain enumeration with Google Dorks, an at
 
 Business Value: Subdomain enumeration can help attackers to identify potential targets and vulnerabilities that can be exploited to gain access to sensitive information or systems.
 
+ 
+
 ## Requirements
 
 1. Access to Google search engine
@@ -48,6 +50,8 @@ Business Value: Subdomain enumeration can help attackers to identify potential t
 1. Knowledge of Google Dorks
 
 1. Access to Google Transparency Report
+
+ 
 
 ## Defense
 
@@ -57,18 +61,28 @@ Business Value: Subdomain enumeration can help attackers to identify potential t
 
 1. Implement network segmentation to limit the impact of a potential subdomain takeover
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains of a domain
 
 1. Identify potential targets and vulnerabilities for further attacks
 
+ 
+
 # Instructions
 
 1. These commands can be used for domain reconnaissance, to gather information about a domain and its subdomains. The 'site' command filters results to a specific domain or subdomain. The 'filetype' command filters results to a specific file type. The 'inurl' command filters results to pages that contain a specific string in their URL. The 'ext' command filters results to pages with a specific file extension.
 
+ 
+
+
+
 **Code**: [[site:*.domain.com -www
 site:domain.com filetype:pd]]
+
+
 
 > The first command 'site:*.domain.com -www' searches for all subdomains of the specified domain, excluding any subdomains that contain 'www'.
 The second command 'site:domain.com filetype:pdf' searches for all PDF files on the specified domain.
@@ -77,11 +91,17 @@ The fourth command 'site:domain.com inurl:login,register,upload,logout,redirect,
 The fifth command 'site:domain.com ext:php,asp,aspx,jsp,jspa,txt,swf' searches for pages on the specified domain with any of the specified file extensions.
 The sixth command 'site:*.*.domain.com' searches for all subdomains of the specified domain, regardless of their subdomain name.
 
+
+
 **Command** ([[Search for subdomains]]):
 
 ```bash
 site:*.domain.com -www
 ```
+
+
+
+
 
 **Command** ([[Search for PDF files]]):
 
@@ -89,11 +109,19 @@ site:*.domain.com -www
 site:domain.com filetype:pdf
 ```
 
+
+
+
+
 **Command** ([[Search for URLs with ampersand]]):
 
 ```bash
 site:domain.com inurl:'&'
 ```
+
+
+
+
 
 **Command** ([[Search for login, register, upload, logout, redirect, redir, goto, admin URLs]]):
 
@@ -101,17 +129,27 @@ site:domain.com inurl:'&'
 site:domain.com inurl:login,register,upload,logout,redirect,redir,goto,admin
 ```
 
+
+
+
+
 **Command** ([[Search for files with specific extensions]]):
 
 ```bash
 site:domain.com ext:php,asp,aspx,jsp,jspa,txt,swf
 ```
 
+
+
+
+
 **Command** ([[Search for subdomains with any level]]):
 
 ```bash
 site:*.*.domain.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -141,3 +179,5 @@ site:*.*.domain.com
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Google Dorks and Google Transparency Report]]
+
+

@@ -26,11 +26,15 @@ SID Hijacking is a technique that allows an attacker to elevate their privileges
 
 SID Hijacking is a technique that allows an attacker to elevate their privileges within a domain. In this specific scenario, the attacker has compromised a child domain and is attempting to move laterally to the parent domain. By using the Convert-NameToSid command, the attacker can obtain a SID (Security Identifier) of a user in the parent domain. They can then use this SID to create a new user object in the child domain with the same SID as the user in the parent domain. This new user object will have the same privileges as the user in the parent domain, allowing the attacker to move laterally to the parent domain. Once in the parent domain, the attacker can use a Golden Ticket attack to generate a forged Kerberos ticket and gain access to any resource in the domain. This attack is difficult to detect and can persist even after the initial compromise is mitigated.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised child domain
 
 1. Knowledge of a user in the parent domain
+
+ 
 
 ## Defense
 
@@ -40,20 +44,32 @@ SID Hijacking is a technique that allows an attacker to elevate their privileges
 
 1. Implement multi-factor authentication and limit the use of Kerberos tickets to mitigate Golden Ticket attacks
 
+ 
+
 ## Objectives
 
 1. Move laterally from a compromised child domain to the parent domain
 
 1. Gain access to resources in the parent domain
 
+ 
+
 # Instructions
 
 1. This command helps to convert a username or group name to a Security Identifier (SID) for a specified domain. The SID is a unique value that identifies a security principal, such as a user, group, or computer account. To use this command, replace 'target.domain.com\krbtgt' with the username or group name you want to convert to a SID.
 
+ 
+
+
+
 **Code**: [[$ Convert-NameToSid target.domain.com\krbtgt
 S-1-5]]
 
+
+
 > The 'Convert-NameToSid' command can be used to find the SID of a domain. The command takes a username or group name as an argument and returns the corresponding SID. This can be helpful in various scenarios, such as when you need to grant permissions to a user or group on a remote system. Additionally, the command can be used in combination with the Impacket tool 'lookupsid.py' to perform SID lookups on remote systems.
+
+
 
 **Command** ([[Convert target.domain.com\krbtgt to SID]]):
 
@@ -61,7 +77,12 @@ S-1-5]]
 $ Convert-NameToSid target.domain.com\krbtgt
 S-1-5-21-2941561648-383941485-1389968811-502
 
+
 ```
+
+
+
+
 
 **Command** ([[Lookup SID using Impacket]]):
 
@@ -69,9 +90,17 @@ S-1-5-21-2941561648-383941485-1389968811-502
 lookupsid.py domain/user:password@10.10.10.10
 ```
 
+
+
 2. This command is used to create a golden ticket and launch a Golden Ticket Attack on the parent domain. The /user argument specifies the user account that will be used to generate the ticket. The /krbtgt argument specifies the hash of the KRBTGT account. The /domain argument specifies the domain to attack. The /sid argument specifies the security identifier (SID) of the domain. The /sids argument specifies the SIDs of the groups to add to the ticket. The /ptt argument specifies that the ticket should be loaded into memory for immediate use.
 
+ 
+
+
+
 **Code**: [[kerberos::golden /user:Administrator /krbtgt:HASH_]]
+
+
 
 > A Golden Ticket Attack is a type of attack that allows an attacker to create a forged Kerberos ticket that grants them full access to a domain. This attack is possible because of a flaw in the way that Kerberos handles authentication. By creating a golden ticket, an attacker can bypass authentication and gain access to any resource on the domain. This command is typically used by attackers who have already gained access to a domain and want to escalate their privileges.
 
@@ -84,3 +113,5 @@ lookupsid.py domain/user:password@10.10.10.10
 
 - [[Active Directory Attacks]]
 - [[Child Domain to Forest Compromise - SID Hijacking]]
+
+

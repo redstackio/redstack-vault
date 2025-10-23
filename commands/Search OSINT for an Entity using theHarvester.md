@@ -50,6 +50,7 @@ theHarvester -d cisco.com -l 50 -b google -f results.txt
 * cmartorella@edge-security.com                                   *
 *******************************************************************
 
+
 found supported engines
 [-] Starting harvesting process for domain: cisco.com
 
@@ -59,17 +60,18 @@ found supported engines
 Harvesting results
 No IP addresses found
 
+
 [+] Emails found:
 ------------------
 beerswithtalos@cisco.com
-
+ 
 [+] Hosts found in search engines:
 ------------------------------------
 
 Total hosts: 4
 
 [-] Resolving hostnames IPs... 
-
+ 
 newsroom.cisco.com:173.36.124.49
 sleepytime.cisco.com:empty
 tools.cisco.com:72.163.4.38
@@ -80,3 +82,5 @@ NEW REPORTING FINISHED!
 Files saved!
 
 ```
+
+

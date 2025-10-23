@@ -29,11 +29,15 @@ From an offensive perspective, this technique can be used to bypass Cloudflare's
 
 To prevent this attack, it is important to keep your web application firewall up to date and configure it properly. Additionally, input validation and output encoding can be used to prevent XSS attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable website protected by Cloudflare
 
 1. Knowledge of the SVG OnLoad Prompt technique
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ To prevent this attack, it is important to keep your web application firewall up
 
 1. Educate users on how to identify and avoid phishing attacks
 
+ 
+
 ## Objectives
 
 1. Bypass Cloudflare's web application firewall
 
 1. Execute arbitrary code on the victim's browser
 
+ 
+
 # Instructions
 
 1. Add a prompt to an SVG element's OnLoad event
 
+ 
+
+
+
 **Code**: [[<svg/OnLoad="`${prompt()}`">]]
+
+
 
 > This command adds a prompt to an SVG element's OnLoad event. When the SVG is loaded, the prompt will appear and the user can enter a value. This value can then be used in other parts of the SVG or in the surrounding HTML code.
 
@@ -63,3 +77,5 @@ To prevent this attack, it is important to keep your web application firewall up
 - [[Cloudflare XSS Bypasses by [@Bohdan Korzhynskyi](https://twitter.com/bohdansec)]]
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
+
+

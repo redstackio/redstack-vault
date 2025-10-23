@@ -31,17 +31,39 @@ Dnsvalidator uses this tool to maintain a list of IPv4 DNS servers by verifying 
 
 Dnsvalidator uses this tool to maintain a list of IPv4 DNS servers by verifying them against baseline servers and ensuring accurate responses.
 
+
+
 You can use this tool in conjunction with other dns enumeration tools like amass.
+
+
 
 ## Example
 
+
+
+{{EMBEDDED_COMMAND_2a348104-5b4e-4c74-a8ae-005d4285c876}}
+
+
+
 ## Installation
 
+
+
 Docker Usage:
+
+
+
+{{EMBEDDED_COMMAND_8b07685e-9f19-4168-9801-e334c5822830}}
+
+
+
+
 
 ## Usage
 
 ## 
+
+
 
 ## Platforms
 
@@ -62,3 +84,5 @@ Docker Usage:
 
 - [[dns]]
 - [[Enumeration]]
+
+

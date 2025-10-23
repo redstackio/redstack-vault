@@ -30,6 +30,8 @@ AWS Lambda is a serverless compute service that allows users to run code without
 
 AWS Lambda is a serverless compute service that allows users to run code without provisioning or managing servers. By default, Lambda functions are given an execution role that grants them permissions to access AWS resources. If an attacker gains access to the Lambda function's environment variables, they may be able to extract sensitive credentials or keys that can be used to access other AWS resources. This technique can be used by attackers to escalate privileges and perform lateral movement within an AWS environment.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS CLI or SDK
@@ -37,6 +39,8 @@ AWS Lambda is a serverless compute service that allows users to run code without
 1. Knowledge of the Lambda function's name and region
 
 1. Permissions to execute the 'aws lambda get-function-configuration' command
+
+ 
 
 ## Defense
 
@@ -46,23 +50,33 @@ AWS Lambda is a serverless compute service that allows users to run code without
 
 1. Use AWS IAM policies to restrict permissions for Lambda functions and their associated roles
 
+ 
+
 ## Objectives
 
 1. Extract sensitive credentials or keys from Lambda environment variables
 
 1. Use extracted credentials to access other AWS resources
 
+ 
+
 # Instructions
 
 1. To retrieve details of an AWS Lambda function, run the following command:
 
+ 
+
 This command retrieves details of an AWS Lambda function such as its configuration, tags, and code location. The --function-name argument specifies the name of the function for which you want to retrieve the details. You can also use the --query option to filter the output and retrieve specific details of the function. For example, to retrieve the ARN of the function, you can use the following query: 'aws lambda get-function --function-name NAME --query Configuration.FunctionArn'
+
+
 
 **Command** ([[Get AWS Lambda function]]):
 
 ```bash
 aws lambda get-function --function-name NAME
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +97,5 @@ aws lambda get-function --function-name NAME
 - [[Cloud - AWS]]
 - [[Credential Access]]
 - [[Getting credentials from lambda environment variables (cli)]]
+
+

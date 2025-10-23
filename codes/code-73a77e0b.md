@@ -16,3 +16,5 @@ curl http://metadata.google.internal/computeMetadata/v1beta1/instance/service-ac
 curl -s http://metadata.google.internal/computeMetadata/v1beta1/instance/service-accounts/default/token 
 docker login -e <email> -u oauth2accesstoken -p "<access token>" https://gcr.io
 ```
+
+

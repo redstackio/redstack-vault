@@ -35,9 +35,15 @@ Query a Windows system for a list of users, then request basic account informati
 
 Query a Windows system for a list of users, then request basic account information and group membership of a user.
 
+
+
 # Instructions
 
 1. Get a list of local users
+
+
+
+
 
 **Command** ([[List Local Windows Users]]):
 
@@ -45,13 +51,25 @@ Query a Windows system for a list of users, then request basic account informati
 net user
 ```
 
+
+
+
+
 2. Query a specific user for account information and group membership
+
+
+
+
 
 **Command** ([[List a Local Windows User's Info and Group Membership]]):
 
 ```bash
 net user $_USER
 ```
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +95,5 @@ net user $_USER
 - [[Enumeration]]
 - [[Operating Systems]]
 - [[security]]
+
+

@@ -36,11 +36,15 @@ When an AWS account is compromised, an attacker can use this procedure to gain a
 
 From a business perspective, this procedure highlights the importance of securing AWS credentials and access to services. Proper access controls and monitoring can help prevent unauthorized access to sensitive information.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials
 
 1. Access to the AWS Secret Manager service
+
+ 
 
 ## Defense
 
@@ -50,24 +54,34 @@ From a business perspective, this procedure highlights the importance of securin
 
 1. Regularly rotate and revoke AWS credentials
 
+ 
+
 ## Objectives
 
 1. Access the AWS Secret Manager
 
 1. View all secrets stored within the Secret Manager
 
+ 
+
 # Instructions
 
 1. To list all the secrets available in AWS Secrets Manager, run the following command:
 
+ 
+
 - The 'aws secretsmanager list-secrets' command lists all the secrets available in the Secrets Manager.
 - This command does not require any arguments or options.
+
+
 
 **Command** ([[List Secrets in AWS Secrets Manager]]):
 
 ```bash
 aws secretsmanager list-secrets
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +106,5 @@ aws secretsmanager list-secrets
 - [[Cloud - AWS]]
 - [[Credential Exfiltration]]
 - [[Listing all secrets stored by Secret Manager]]
+
+

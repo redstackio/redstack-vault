@@ -16,3 +16,7 @@ airodump-ng-oui-update is a small utility included in the aircrack-ng package an
 ## Description
 
 airodump-ng-oui-update is a small utility included in the aircrack-ng package and is used to download the OUI list from the IEEE. It allows airodump-ng to fill in the manufacturer name when generating NetXML files.
+
+
+
+

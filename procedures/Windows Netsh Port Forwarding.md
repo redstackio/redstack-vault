@@ -31,11 +31,15 @@ From a technical perspective, netsh Port Forwarding works by creating a TCP port
 
 The business value of Windows netsh Port Forwarding lies in its ability to provide attackers with a foothold on a target network. Once attackers have access to one machine on the network, they can use this technique to pivot to other machines and gain access to sensitive data and systems.
 
+ 
+
 ## Requirements
 
 1. Compromised Windows machine with netsh command access
 
 1. Access to target network
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ The business value of Windows netsh Port Forwarding lies in its ability to provi
 
 1. Disable unnecessary services and protocols to limit attack surface
 
+ 
+
 ## Objectives
 
 1. Gain access to machines on a target network
@@ -53,13 +59,23 @@ The business value of Windows netsh Port Forwarding lies in its ability to provi
 
 1. Steal sensitive data and compromise systems
 
+ 
+
 # Instructions
 
 1. Use the following commands to forward ports on your machine:
 
+ 
+
+
+
 **Code**: [[netsh interface portproxy add v4tov4 listenaddress]]
 
+
+
 > The above commands will allow you to forward ports on your machine. The 'listenaddress' and 'listenport' fields specify the local address and port where the traffic is coming from, while the 'connectaddress' and 'connectport' fields specify the destination address and port where the traffic will be forwarded to. The 'netsh advfirewall firewall add rule' commands are used to open the specified ports on the machine's firewall.
+
+
 
 **Command** ([[Port Forwarding from local port to destination port]]):
 
@@ -68,12 +84,20 @@ netsh interface portproxy add v4tov4 listenaddress=localaddress listenport=local
 netsh interface portproxy add v4tov4 listenport=3340 listenaddress=10.1.1.110 connectport=3389 connectaddress=10.1.1.110
 ```
 
+
+
+
+
 **Command** ([[Forwarding ports 4545 and 80]]):
 
 ```bash
 netsh interface portproxy add v4tov4 listenport=4545 connectaddress=192.168.50.44 connectport=4545
 netsh interface portproxy add v4tov4 listenport=80 connectaddress=192.168.50.44 connectport=80
 ```
+
+
+
+
 
 **Command** ([[Opening ports 80 and 4545 on the machine]]):
 
@@ -83,6 +107,8 @@ netsh advfirewall firewall add rule name="PortForwarding 80" dir=out action=allo
 netsh advfirewall firewall add rule name="PortForwarding 4545" dir=in action=allow protocol=TCP localport=4545
 netsh advfirewall firewall add rule name="PortForwarding 4545" dir=out action=allow protocol=TCP localport=4545
 ```
+
+
 
 ## Commands Used
 
@@ -94,3 +120,5 @@ netsh advfirewall firewall add rule name="PortForwarding 4545" dir=out action=al
 
 - [[Network Pivoting Techniques]]
 - [[Windows netsh Port Forwarding]]
+
+

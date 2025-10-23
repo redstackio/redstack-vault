@@ -33,11 +33,15 @@ From a technical perspective, the Export Azure Resource Group Deployment Templat
 
 The business value of this procedure is that it allows organizations to easily recreate deployments in different environments or to make changes to deployments in a controlled manner. This can help to ensure consistency across deployments and reduce the risk of errors or misconfigurations.
 
+ 
+
 ## Requirements
 
 1. Access to an Azure subscription
 
 1. Permission to view and export Azure Resource Group deployments
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The business value of this procedure is that it allows organizations to easily r
 
 1. Regularly review and update Azure Resource Group deployments to ensure they are configured securely
 
+ 
+
 ## Objectives
 
 1. To export the JSON template for an Azure Resource Group deployment
@@ -54,6 +60,8 @@ The business value of this procedure is that it allows organizations to easily r
 1. To gain insight into an organization's deployment structure (offensive)
 
 1. To ensure consistency across deployments (defensive)
+
+ 
 
 # Instructions
 
@@ -64,8 +72,14 @@ The business value of this procedure is that it allows organizations to easily r
 4. Use the 'cat' command to search for hardcoded passwords in the exported JSON file.
 5. Review the exported JSON file to ensure that no sensitive information is present.
 
+ 
+
+
+
 **Code**: [[PS Az> Get-AzResourceGroup
 PS Az> Get-AzResourceGr]]
+
+
 
 > This command exports an Azure Resource Group Deployment Template to a JSON file. The exported JSON file can be used to recreate the deployment in the future. It is important to review the exported JSON file to ensure that no sensitive information, such as hardcoded passwords, is present.
 
@@ -85,3 +99,5 @@ PS Az> Get-AzResourceGr]]
 
 - [[Cloud - Azure]]
 - [[Deployment Template]]
+
+

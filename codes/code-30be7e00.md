@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:44.928160+00:00'
 SELECT HOST_NAME()
 SELECT @@hostname;
 ```
+
+

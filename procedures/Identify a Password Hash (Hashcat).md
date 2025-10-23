@@ -29,15 +29,25 @@ Analyze a password hash to identify the type and Hashcat mode.
 
 Analyze a password hash to identify the type and Hashcat mode.
 
+
+
+
+
 ## Objectives
 
 Analyzing the format of the hash, and then using tools or techniques to identify the specific hash type, such as NTLMv1, NTLMv2, or other types of hashes.
 
+
+
 1. Identify the type of hash
+
+
 
 # Instructions
 
 Use Hashcat's Example Hashes web page as a reference to identify the Hash Name and Hash Mode values: [Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
+
+
 
 Considerations:
 
@@ -47,7 +57,13 @@ Considerations:
 
 Example:
 
+
+
+
+
 **Code**: [[$axcrypt_sha1$b89eaac7e61417341b710b727768294d0e6a]]
+
+
 
 In this case, the identifier is "axcrypt_sha1". Search Example Hashes for: "$axcrypt_sha1$" to find this is AxCrypt, Hash Mode 13300.
 
@@ -65,3 +81,5 @@ In this case, the identifier is "axcrypt_sha1". Search Example Hashes for: "$axc
 
 - [[Cryptography]]
 - [[password cracking]]
+
+

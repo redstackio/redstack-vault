@@ -29,11 +29,27 @@ Impacket suite tool used to find Service Principal Names that are associated wit
 
 Impacket suite tool used to find Service Principal Names that are associated with normal user account and make a TGS request. Since the TGS request will encrypt the ticket with the account the SPN is running under, this retrieves that user's password hash which John the Ripper or Hashcat can brute force.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_cfe8a48e-084c-42b7-b6b5-b66fba573639}}
+
+
 
 # Installation
 
 ## **Install using Python 3's pip (Windows/Linux)**
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +70,5 @@ Impacket suite tool used to find Service Principal Names that are associated wit
 - [[Active Directory]]
 - [[Enumeration]]
 - [[kerberoast]]
+
+

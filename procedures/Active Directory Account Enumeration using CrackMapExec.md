@@ -37,11 +37,15 @@ Technical Explanation: By using the CrackMapExec tool, an attacker can query Act
 
 Business Value: By identifying machine accounts in an AD environment, an attacker can gain valuable information about the network architecture and potential targets for further exploitation. This can lead to the compromise of sensitive information or systems, which can have significant financial and reputational impacts on the victim organization.
 
+ 
+
 ## Requirements
 
 1. Access to an AD environment
 
 1. CrackMapExec tool installed
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: By identifying machine accounts in an AD environment, an attacke
 
 1. Monitor AD logs for suspicious activity, such as failed login attempts or unusual queries
 
+ 
+
 ## Objectives
 
 1. Identify machine accounts in an AD environment
@@ -59,13 +65,23 @@ Business Value: By identifying machine accounts in an AD environment, an attacke
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. This command uses CrackMapExec to perform LDAP queries against a domain controller to enumerate machine accounts. The '-u' flag specifies the username to use for authentication, '-p' specifies the password, '-d' specifies the domain to query, and '--kdcHost' specifies the IP address of the Kerberos Distribution Center. The '-M MAQ' flag specifies to use the 'ms-DS-MachineAccountQuota' object class for querying machine accounts. The 'StandIn.exe --object ms-DS-MachineAccountQuota=*' command is used to retrieve the results of the LDAP query.
 
+ 
+
+
+
 **Code**: [[crackmapexec ldap 10.10.10.10 -u username -p 'Pass]]
 
+
+
 > This command can be used by security professionals to discover all the machine accounts in a domain. This information can be useful for identifying potential targets for lateral movement or privilege escalation attacks.
+
+
 
 **Command** ([[Enumerate machine account quota]]):
 
@@ -73,12 +89,18 @@ Business Value: By identifying machine accounts in an AD environment, an attacke
 ldap 10.10.10.10 -u username -p 'Password123' -d 'domain.local' --kdcHost 10.10.10.10
 ```
 
+
+
+
+
 **Command** ([[Execute StandIn.exe with ms-DS-MachineAccountQuota]]):
 
 ```bash
 MAQ
 StandIn.exe --object ms-DS-MachineAccountQuota=*
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +124,5 @@ StandIn.exe --object ms-DS-MachineAccountQuota=*
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[samAccountName spoofing]]
+
+

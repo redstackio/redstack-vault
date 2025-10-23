@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:04.220556+00:00'
 ```bash
 https://www.example.com/oauth20_authorize.srf?[...]&redirect_uri=https://accounts.google.com/BackToAuthSubTarget?next=https://evil.com
 ```
+
+

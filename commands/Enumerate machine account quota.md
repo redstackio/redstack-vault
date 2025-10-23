@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:23.355315+00:00'
 ```bash
 ldap 10.10.10.10 -u username -p 'Password123' -d 'domain.local' --kdcHost 10.10.10.10
 ```
+
+

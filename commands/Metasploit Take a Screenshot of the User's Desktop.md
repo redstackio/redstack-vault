@@ -23,3 +23,5 @@ screenshot
 meterpreter > screenshot
 Screenshot saved to: /root/MpfRUdLk.jpeg
 ```
+
+

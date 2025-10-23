@@ -28,11 +28,27 @@ Cryptsetup is used to conveniently setup dm-crypt managed device-mapper mappings
 
 Cryptsetup is used to conveniently setup dm-crypt managed device-mapper mappings. One of the most common uses of cryptsetup is to work with encrypted volumes using the Linux Unified Key Setup (LUKS) extension, allowing users to create and open LUKS encrypted volumes, as well as extract meaningful information from them.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_d00c3b56-7bcb-4183-9733-6d25428faf90}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +62,5 @@ Cryptsetup is used to conveniently setup dm-crypt managed device-mapper mappings
 
 - [[Cryptography]]
 - [[data encryption]]
+
+

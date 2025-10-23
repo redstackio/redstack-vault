@@ -26,3 +26,5 @@ C:\>wmic.exe group where name="Enterprise Admins" get name,sid,domain
 Domain  Name               SID
 TESLA   Enterprise Admins  S-1-5-21-3428605742-3005092657-1212549955-519
 ```
+
+

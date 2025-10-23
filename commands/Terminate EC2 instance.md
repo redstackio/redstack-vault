@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:44.887186+00:00'
 ```bash
 aws ec2 terminate-instances --instance-id "i-0546910a0c18725a1" --region eu-west-1
 ```
+
+

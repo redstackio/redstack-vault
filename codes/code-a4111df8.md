@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:21:06.104767+00:00'
 # Error based - casting: select CAST(@@project_id AS INT64)
 dataset_name.column_name` union all select CAST(@@project_id AS INT64) ORDER BY 1 DESC#
 ```
+
+

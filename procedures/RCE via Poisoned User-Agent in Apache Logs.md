@@ -26,6 +26,8 @@ This procedure involves exploiting a file inclusion vulnerability to achieve rem
 
 This procedure involves exploiting a file inclusion vulnerability to achieve remote code execution (RCE) via poisoned User-Agent in Apache logs. An attacker can inject PHP code into the User-Agent field of an HTTP request, which will then be logged in the Apache access logs. The attacker can then use a local file inclusion (LFI) vulnerability to include the poisoned access log file, resulting in the execution of the injected PHP code. This technique can be used to gain remote access to the target system, steal data, or perform other malicious actions.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with a file inclusion vulnerability
@@ -33,6 +35,8 @@ This procedure involves exploiting a file inclusion vulnerability to achieve rem
 1. Ability to inject PHP code into the User-Agent field of an HTTP request
 
 1. Knowledge of a local file inclusion (LFI) vulnerability on the target system
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ This procedure involves exploiting a file inclusion vulnerability to achieve rem
 
 1. Restrict access to sensitive system files and directories to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Achieve remote code execution on the target system
@@ -50,21 +56,31 @@ This procedure involves exploiting a file inclusion vulnerability to achieve rem
 
 1. Perform other malicious actions on the target system
 
+ 
+
 # Instructions
 
 1. Replace `http://example.org/` with the target URL and `system(\$_GET['cmd']);` with the desired PHP code.
+
+ 
 
 This command injects PHP code into the User-Agent field of an HTTP request, which will then be logged in the Apache access logs.
 
 2. Replace `http://example.org/test.php` with the vulnerable URL and `/var/log/apache2/access.log` with the path to the poisoned access log file.
 
+ 
+
 This command exploits the LFI vulnerability to include the poisoned access log file, resulting in the execution of the injected PHP code.
+
+
 
 **Command** ([[Execute curl command]]):
 
 ```bash
 $ curl http://example.org/test.php?page=/var/log/apache2/access.log&cmd=id
 ```
+
+
 
 ## Commands Used
 
@@ -75,3 +91,5 @@ $ curl http://example.org/test.php?page=/var/log/apache2/access.log&cmd=id
 - [[File Inclusion]]
 - [[LFI to RCE via controlled log file]]
 - [[RCE via Apache logs]]
+
+

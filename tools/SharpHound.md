@@ -26,7 +26,15 @@ Bloodhound ingestor built in C# using .NET 4.5. Gathers information about an Act
 
 Bloodhound ingestor built in C# using .NET 4.5. Gathers information about an Active Directory environment and outputs files that can be processed by BloodHound. It must be run with domain user privileges, be that from the current user, using runas.exe, or the "ldapusername" and "ldappassword" arguments.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_c7f78e78-40b6-4eb9-b292-a59d1329a88e}}
+
+
 
 # Installation
 
@@ -34,17 +42,29 @@ Bloodhound ingestor built in C# using .NET 4.5. Gathers information about an Act
 
 The latest pre-built version of SharpHound can be downloaded here: [SharpHound Ingestors](https://github.com/BloodHoundAD/BloodHound/tree/master/Ingestors)
 
+
+
 ## Build from Source (Windows)
 
 SharpHound can be compiled using Microsoft Visual Studio Community 2019, with ".NET desktop development" , "ASP.NET and web development, and ".NET Core cross-platform development" installed.
 
+
+
 1. Clone the repository
+
+
 
 2. Open SharpHound.sln with Visual Studio
 3. Set "Solutions Configuration" to "Release"
 4. Select "Build" > "Rebuild Solution"
 
 The compiled .exe and .ps1 can be found in <SharpHound Directory>/SharpHound/bin/Release/
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +83,5 @@ The compiled .exe and .ps1 can be found in <SharpHound Directory>/SharpHound/bin
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

@@ -29,11 +29,27 @@ sudo allows a permitted user to execute a command as the superuser or another us
 
 sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to give a user root privileges, this introduces a massive security risk and is considered a bad practice. Administrators may set specific commands to be whitelisted instead of all (such as docker), but this is often not sufficient, as many programs running with sudo privileges would allow attackers to escalate to root.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_cde9bd25-24c4-4f03-8766-af251aed3a82}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +64,5 @@ sudo allows a permitted user to execute a command as the superuser or another us
 
 - [[administrator]]
 - [[privileges]]
+
+

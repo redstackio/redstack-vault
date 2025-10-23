@@ -16,3 +16,7 @@ A tool to dump the login password from the current linux desktop user. Adapted f
 ## Description
 
 A tool to dump the login password from the current linux desktop user. Adapted from the idea behind the popular Windows tool mimikatz. ​
+
+
+
+

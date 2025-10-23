@@ -36,9 +36,13 @@ This procedure involves exploiting a misconfigured AWS IAM policy to escalate pr
 
 Technical Explanation: An attacker with access to a user's AWS access key can use the 'ListAttachedUserPolicies' API call to identify the policies attached to that user. The attacker can then modify the policy to grant themselves additional privileges, such as the ability to read or write to an S3 bucket. This is possible if the policy is not properly scoped to the resources that the user needs access to. Business Value: This procedure can allow attackers to gain access to sensitive data or intellectual property, which can be sold or used for competitive advantage.
 
+ 
+
 ## Requirements
 
 1. Valid AWS access key for a user with attached policies
+
+ 
 
 ## Defense
 
@@ -48,23 +52,33 @@ Technical Explanation: An attacker with access to a user's AWS access key can us
 
 1. Implement multi-factor authentication for AWS accounts to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain additional privileges within the AWS environment
 
 1. Access sensitive resources such as customer data or intellectual property
 
+ 
+
 # Instructions
 
 1. Use this command to list all the policies that are attached to a specific IAM user.
 
+ 
+
 The 'aws iam list-attached-user-policies' command is a helpful tool for administrators who need to manage the policies that are attached to their IAM users. The '--user-name' parameter specifies the name of the IAM user whose attached policies you want to list. The '--profile' parameter specifies the named profile you want to use to interact with AWS. If you don't specify a profile, this command will use the default profile. Once you run this command, you will receive a list of all the policies that are attached to the specified IAM user.
+
+
 
 **Command** ([[List Attached User Policies for IAM User]]):
 
 ```bash
 aws iam list-attached-user-policies --user-name example_name --profile example_profile
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws iam list-attached-user-policies --user-name example_name --profile example_p
 - [[Exploitation]]
 - [[Privilege Escalation]]
 - [[Study Case]]
+
+

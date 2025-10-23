@@ -17,3 +17,5 @@ updated_at: '2023-04-06T03:56:40.681271+00:00'
 var_dump(sha1([])); # NULL
 var_dump(md5([]));  # NULL
 ```
+
+

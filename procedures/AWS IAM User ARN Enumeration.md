@@ -33,9 +33,13 @@ Technical Description: AWS Identity and Access Management (IAM) is a web service
 
 Business Value: By discovering the ARNs of all the IAM users in an AWS account, an attacker can identify potential targets for further attacks. This can lead to unauthorized access to sensitive data, theft of intellectual property, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with the necessary permissions to run the 'AWS IAM User ARN' command.
+
+ 
 
 ## Defense
 
@@ -45,15 +49,25 @@ Business Value: By discovering the ARNs of all the IAM users in an AWS account, 
 
 1. Monitor AWS CloudTrail logs for suspicious activity related to IAM users.
 
+ 
+
 ## Objectives
 
 1. Discover the ARNs of all the IAM users in an AWS account.
+
+ 
 
 # Instructions
 
 1. The AWS IAM User ARN (Amazon Resource Name) is a unique identifier assigned to each user in the AWS Identity and Access Management (IAM) service. The ARN is a string of characters that identifies the user and their account. The ARN can be used to reference the user in various AWS services and APIs.
 
+ 
+
+
+
 **Code**: [[arn:aws:iam:100:user/admin]]
+
+
 
 > The 'arn:aws:iam:100:user/admin' value in this JSON object is an example of an IAM User ARN. The '100' in the ARN represents the AWS account ID, while 'user' indicates that the resource is a user. 'admin' is the name of the user. The ARN can be used to identify the user in various AWS services such as Amazon S3, Amazon EC2, or AWS Lambda. It can also be used in IAM policies to grant or deny access to specific resources or actions. It is important to keep the ARN of the user confidential to prevent unauthorized access to AWS resources.
 
@@ -71,3 +85,5 @@ Business Value: By discovering the ARNs of all the IAM users in an AWS account, 
 
 - [[ARN]]
 - [[Cloud - AWS]]
+
+

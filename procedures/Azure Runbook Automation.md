@@ -44,11 +44,15 @@ Azure Runbook Automation is a method for automating repetitive tasks in Azure. T
 
 Azure Runbook Automation is a method for automating repetitive tasks in Azure. This can include tasks such as scaling resources, deploying infrastructure, or performing maintenance tasks. By creating a runbook, users can automate these tasks and save time and effort. From an offensive perspective, this can be used to automate malicious activities, such as data exfiltration or privilege escalation. From a technical perspective, runbooks are created using PowerShell scripts and can be triggered manually or on a schedule. From a business value perspective, this can reduce the time and effort needed for routine tasks, allowing IT staff to focus on more strategic initiatives.
 
+ 
+
 ## Requirements
 
 1. Access to an Automation Account in Azure
 
 1. Knowledge of PowerShell scripting
+
+ 
 
 ## Defense
 
@@ -57,6 +61,8 @@ Azure Runbook Automation is a method for automating repetitive tasks in Azure. T
 1. Monitor the execution of runbooks for any suspicious activity
 
 1. Implement logging and auditing to track changes and actions taken through runbooks
+
+ 
 
 ## Objectives
 
@@ -74,12 +80,20 @@ Azure Runbook Automation is a method for automating repetitive tasks in Azure. T
 
 1. Execute Runbook on Hybrid Worker group.
 
+ 
+
 # Instructions
 
 *<u>Overv*iew</u>
 
+ 
+
+
+
 **Code**: [[# Check user right for automation
 az extension add]]
+
+
 
 ## 
 
@@ -87,7 +101,11 @@ az extension add]]
 
 To Create and Execute an Azure Runbook, follow these steps:
 
+
+
 1. Check user right for automation by running the following commands:
+
+
 
 **Command** ([[Check user right for automation]]):
 
@@ -95,11 +113,19 @@ To Create and Execute an Azure Runbook, follow these steps:
 az extension add --upgrade -n automation
 ```
 
+
+
+
+
 **Command** ([[List automation account]]):
 
 ```bash
 az automation account list
 ```
+
+
+
+
 
 **Command** ([[List owned objects]]):
 
@@ -107,11 +133,19 @@ az automation account list
 az ad signed-in-user list-owned-objects
 ```
 
+
+
+
+
 **Command** ([[Add user to Automation Admins group]]):
 
 ```bash
 Add-AzureADGroupMember -ObjectId <OBJID> -RefObjectId <REFOBJID> -Verbose
 ```
+
+
+
+
 
 **Command** ([[Get user role on the Automation account]]):
 
@@ -119,11 +153,19 @@ Add-AzureADGroupMember -ObjectId <OBJID> -RefObjectId <REFOBJID> -Verbose
 Get-AzRoleAssignment -Scope /subscriptions/<ID>/resourceGroups/<RG-NAME>/providers/Microsoft.Automation/automationAccounts/<AUTOMATION-ACCOUNT>
 ```
 
+
+
+
+
 **Command** ([[List hybrid workers]]):
 
 ```bash
 Get-AzAutomationHybridWorkerGroup -AutomationAccountName <AUTOMATION-ACCOUNT> -ResourceGroupName <RG-NAME>
 ```
+
+
+
+
 
 **Command** ([[Create PowerShell Runbook]]):
 
@@ -131,17 +173,27 @@ Get-AzAutomationHybridWorkerGroup -AutomationAccountName <AUTOMATION-ACCOUNT> -R
 Import-AzAutomationRunbook -Name <RUNBOOK-NAME> -Path C:\Tools\username.ps1 -AutomationAccountName <AUTOMATION-ACCOUNT> -ResourceGroupName <RG-NAME> -Type PowerShell -Force -Verbose
 ```
 
+
+
+
+
 **Command** ([[Publish Runbook]]):
 
 ```bash
 Publish-AzAutomationRunbook -RunbookName <RUNBOOK-NAME> -AutomationAccountName <AUTOMATION-ACCOUNT> -ResourceGroupName <RG-NAME> -Verbose
 ```
 
+
+
+
+
 **Command** ([[Start Runbook]]):
 
 ```bash
 Start-AzAutomationRunbook -RunbookName <RUNBOOK-NAME> -RunOn Workergroup1 -AutomationAccountName <AUTOMATION-ACCOUNT> -ResourceGroupName <RG-NAME> -Verbose
 ```
+
+
 
 ## Platforms
 
@@ -176,3 +228,5 @@ Start-AzAutomationRunbook -RunbookName <RUNBOOK-NAME> -RunOn Workergroup1 -Autom
 - [[Cloud - Azure]]
 - [[Create a Runbook]]
 - [[Runbook Automation]]
+
+

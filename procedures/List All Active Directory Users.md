@@ -34,15 +34,25 @@ Attackers with valid credentials to an Active Directory domain user can authenti
 
 Attackers with valid credentials to an Active Directory domain user can authenticate with a domain controller and list other users in the domain.
 
+
+
 # Instructions
 
 Enumerate Active Directory users (enabled, disabled, and those without e-mail addresses)  using impacket's GetADUser.py
+
+
+
+
 
 **Command** ([[List All Active Directory Users (Authenticated)]]):
 
 ```bash
 GetADUsers.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -all
 ```
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +77,5 @@ GetADUsers.py '$_DOMAIN/$_USERNAME:$_PASSWORD' -dc-ip $_DOMAIN_IP -all
 - [[Active Directory]]
 - [[Network]]
 - [[Service Attacks]]
+
+

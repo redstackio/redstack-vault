@@ -26,7 +26,15 @@ Aquatone is a tool for visual inspection of websites across a large amount of ho
 
 Aquatone is a tool for visual inspection of websites across a large amount of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_783a7a2a-44e3-4431-a8e9-65971e931a21}}
+
+
 
 # Installation
 
@@ -36,7 +44,11 @@ Aquatone is a tool for visual inspection of websites across a large amount of ho
 
 2. Copy the "aquatone" binary to "/usr/local/bin",  or create a symlink to link it there.
 
+
+
 Note: Aquatone recommends using the Chromium browser, which can be installed via most package managers.
+
+
 
 ## Platforms
 
@@ -57,3 +69,5 @@ Note: Aquatone recommends using the Chromium browser, which can be installed via
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

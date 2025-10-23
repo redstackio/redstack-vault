@@ -21,3 +21,5 @@ type Servicenames.txt
 FOR /F "tokens=2 delims= " %i in (Servicenames.txt) DO @echo %i >> services.txt
 FOR /F %i in (services.txt) DO @sc qc %i | findstr "BINARY_PATH_NAME" >> path.txt
 ```
+
+

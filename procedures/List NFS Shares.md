@@ -29,9 +29,17 @@ Network File System (NFS) is similar to SMB, in that it allows users to access s
 
 # Description
 
+
+
 Network File System (NFS) is similar to SMB, in that it allows users to access shared files and folders over a network. Systems with NFS enabled may be queried for information on shared folders, available mounts, and other useful information.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Showmount List Mounted NFS Directories]]):
 
@@ -39,11 +47,23 @@ Network File System (NFS) is similar to SMB, in that it allows users to access s
 showmount -d $_TARGET_IP
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[showmount List NFS Exports]]):
 
 ```bash
 showmount -e $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -67,3 +87,5 @@ showmount -e $_TARGET_IP
 ## Tags
 
 - [[Network]]
+
+

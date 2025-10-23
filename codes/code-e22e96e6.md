@@ -17,3 +17,5 @@ bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setGenericAl
 # Remove right
 bloodyAD.py --host my.dc.corp -d corp -u devil_user1 -p P@ssword123 setGenericAll devil_user1 cn=INTERESTING_GROUP,dc=corp False
 ```
+
+

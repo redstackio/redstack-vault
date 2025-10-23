@@ -35,9 +35,13 @@ Technical Explanation: CL.TE Request Smuggling involves sending a specially craf
 
 Business Value: An attacker can use CL.TE Request Smuggling to gain unauthorized access to sensitive information or execute commands on a server, which can lead to significant financial and reputational damage for a business.
 
+ 
+
 ## Requirements
 
 1. Access to a web application that has both the CL.TE and TE.CL vulnerabilities
+
+ 
 
 ## Defense
 
@@ -47,11 +51,15 @@ Business Value: An attacker can use CL.TE Request Smuggling to gain unauthorized
 
 1. Implement a web application firewall (WAF) that can detect and block CL.TE Request Smuggling attacks
 
+ 
+
 ## Objectives
 
 1. To bypass security controls and smuggle malicious requests into a web application
 
 1. To gain unauthorized access to sensitive information or execute commands on a server
+
+ 
 
 # Instructions
 
@@ -62,15 +70,25 @@ Business Value: An attacker can use CL.TE Request Smuggling to gain unauthorized
 4. Add the length of the chunk extension (which is 5 for TE.CL vulnerability).
 5. The resulting value is the chunk size for the second request.
 
+ 
+
+
+
 **Code**: [[Manually fixing the length fields in request smugg]]
 
+
+
 > In TE.CL vulnerability, the attacker sends a request with Transfer-Encoding: chunked header and a chunk size that is less than the actual size of the request body, causing the server to wait for more data that will never arrive. The attacker then sends a second request with a Content-Length header that is less than the actual size of the request body. This causes the second request body to be interpreted as a chunk of the first request body, resulting in request smuggling. To calculate the chunk size for the second request, the length of the first and second request bodies must be known, along with the length of the chunk extension (which is 5 for TE.CL vulnerability). This calculation allows the attacker to craft a second request that will be interpreted as a separate request by the server, allowing them to smuggle their payload.
+
+
 
 **Command** ([[Introduction]]):
 
 ```bash
 Manually fixing the length fields in request smuggling attacks can be tricky.
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -92,3 +110,5 @@ Manually fixing the length fields in request smuggling attacks can be tricky.
 
 - [[About CL.TE | TE.CL Vulnerabilities]]
 - [[Request Smuggling]]
+
+

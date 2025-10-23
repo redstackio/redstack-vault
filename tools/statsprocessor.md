@@ -16,3 +16,9 @@ Statsprocessor is a high-performance word-generator based on per-position markov
 ## Description
 
 Statsprocessor is a high-performance word-generator based on per-position markov-attack packed into a single stand-alone binary.
+
+
+
+
+
+

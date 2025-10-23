@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:00.136780+00:00'
 ```bash
 select name, tbname, coltype from sysibm.syscolumns -- also valid syscat and sysstat
 ```
+
+

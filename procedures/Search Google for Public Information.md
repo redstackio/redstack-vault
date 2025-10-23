@@ -34,13 +34,23 @@ Scrape Google search results for references to a target, including their known I
 
 Scrape Google search results for references to a target, including their known IP addresses, domain, users, e-mail addresses and more.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Search OSINT for an Entity using theHarvester]]):
 
 ```bash
 theHarvester -d $_DOMAIN -l 50 -b google -f $_OUTPUT.txt
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ theHarvester -d $_DOMAIN -l 50 -b google -f $_OUTPUT.txt
 - [[data exposure]]
 - [[OSINT]]
 - [[public]]
+
+

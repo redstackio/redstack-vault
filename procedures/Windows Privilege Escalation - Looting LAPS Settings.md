@@ -35,6 +35,8 @@ Technical Explanation: The LAPS password is stored in the Active Directory attri
 
 Business Value: By obtaining the LAPS password, an attacker can gain access to sensitive data and systems within an organization. This can lead to data theft, financial loss, and damage to the organization's reputation.
 
+ 
+
 ## Requirements
 
 1. Access to Active Directory
@@ -42,6 +44,8 @@ Business Value: By obtaining the LAPS password, an attacker can gain access to s
 1. LDAP queries
 
 1. Knowledge of the LAPS password format
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: By obtaining the LAPS password, an attacker can gain access to s
 
 1. Implement a strong password policy and regularly rotate local administrator passwords to mitigate the risk of LAPS password theft
 
+ 
+
 ## Objectives
 
 1. Obtain the LAPS password for a target system
@@ -58,6 +64,8 @@ Business Value: By obtaining the LAPS password, an attacker can gain access to s
 1. Escalate privileges on the target system using the LAPS password
 
 1. Move laterally within the network
+
+ 
 
 # Instructions
 
@@ -67,7 +75,13 @@ Business Value: By obtaining the LAPS password, an attacker can gain access to s
 3. Look for the desired policy setting and note its value.
 4. Close the Registry Editor.
 
+ 
+
+
+
 **Code**: [[HKLM\Software\Policies\Microsoft Services\AdmPwd]]
+
+
 
 > The AdmPwd policy settings are used to manage the local administrator password solution (LAPS) in a Windows environment. These settings allow administrators to configure the password length, complexity, expiration, and other security-related policies for the local administrator account on Windows machines. By extracting these policy settings, administrators can review and audit the current configuration to ensure compliance with security policies and best practices.
 
@@ -89,3 +103,5 @@ Business Value: By obtaining the LAPS password, an attacker can gain access to s
 - [[EoP - Looting for passwords]]
 - [[LAPS Settings]]
 - [[Windows - Privilege Escalation]]
+
+

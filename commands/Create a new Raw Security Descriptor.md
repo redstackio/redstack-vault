@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:56:07.808387+00:00'
 ```bash
 $SD = New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList "O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;$SID_FROM_PREVIOUS_COMMAND)"
 ```
+
+

@@ -16,3 +16,9 @@ BED stands for Bruteforce Exploit Detector. It is designed to check daemons for 
 ## Description
 
 BED stands for Bruteforce Exploit Detector. It is designed to check daemons for potential buffer overflows, format strings et. al.Kali BED Repo
+
+
+
+
+
+

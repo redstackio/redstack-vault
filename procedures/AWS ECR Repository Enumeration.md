@@ -37,9 +37,13 @@ Technical Description: The procedure uses the 'ECR Repository Details' command t
 
 Business Value: An attacker can use this procedure to identify valuable container images that can be used for further attacks, such as running malicious code or exfiltrating data from the container.
 
+ 
+
 ## Requirements
 
 1. Valid AWS authentication credentials.
+
+ 
 
 ## Defense
 
@@ -49,23 +53,33 @@ Business Value: An attacker can use this procedure to identify valuable containe
 
 1. Monitor ECR activity using AWS CloudTrail logs.
 
+ 
+
 ## Objectives
 
 1. List all the repositories in an AWS ECR.
 
 1. Identify valuable container images for further attacks.
 
+ 
+
 # Instructions
 
 1. This command is used to retrieve details of all the repositories in Amazon Elastic Container Registry (ECR).
 
+ 
+
 The 'aws ecr describe-repositories' command is used to list all the available repositories in ECR. This command does not require any arguments. It returns a JSON object containing the details of all the repositories such as repository name, ARN, creation date, and more. This information can be useful to get an overview of all the available repositories in ECR and to choose the appropriate repository for your container images. 
+
+
 
 **Command** ([[List ECR Repositories]]):
 
 ```bash
 aws ecr describe-repositories
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws ecr describe-repositories
 - [[ECR]]
 - [[Enumeration]]
 - [[Listing all repositories in container registry]]
+
+

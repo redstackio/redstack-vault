@@ -32,6 +32,8 @@ The PrintNightmare vulnerability allows an attacker to remotely execute code wit
 
 The PrintNightmare vulnerability allows an attacker to remotely execute code with SYSTEM level privileges on a Domain Controller (DC). This procedure involves hosting a malicious SMB server payload that can be used to exploit the PrintNightmare vulnerability. By exploiting this vulnerability, an attacker can gain access to sensitive information stored within the Active Directory environment, including user credentials, and potentially move laterally to other systems. This attack can be devastating to an organization as it can lead to complete compromise of their Active Directory environment.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system
@@ -39,6 +41,8 @@ The PrintNightmare vulnerability allows an attacker to remotely execute code wit
 1. Knowledge of the PrintNightmare vulnerability
 
 1. Ability to host a malicious SMB server payload
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The PrintNightmare vulnerability allows an attacker to remotely execute code wit
 
 1. Monitor network traffic for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain SYSTEM level access on a Domain Controller
@@ -56,19 +62,31 @@ The PrintNightmare vulnerability allows an attacker to remotely execute code wit
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. This command starts an SMB server that can be used to host payloads on a specified share directory (/tmp/smb/ in this case).
 
+ 
+
+
+
 **Code**: [[python3 ./smbserver.py share /tmp/smb/]]
 
+
+
 > The 'python3' command is used to execute the 'smbserver.py' script. The 'share' parameter specifies the name of the share that will be created on the SMB server. The '/tmp/smb/' parameter specifies the directory on the local file system that will be shared on the SMB server. This can be replaced with any other directory on the system. The SMB server can be used to host payloads that can be executed on a target system by exploiting vulnerabilities in the SMB protocol.
+
+
 
 **Command** ([[Start SMB Server]]):
 
 ```bash
 python3 ./smbserver.py share /tmp/smb/
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +109,5 @@ python3 ./smbserver.py share /tmp/smb/
 - [[Active Directory Attacks]]
 - [[From CVE to SYSTEM shell on DC]]
 - [[PrintNightmare]]
+
+

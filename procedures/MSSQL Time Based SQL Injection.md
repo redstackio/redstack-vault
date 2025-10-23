@@ -35,6 +35,8 @@ From a technical perspective, the attacker sends specially crafted SQL queries t
 
 From a business perspective, a successful MSSQL Time Based SQL Injection attack can result in the compromise of sensitive data which can lead to financial loss, reputational damage, and legal liability.
 
+ 
+
 ## Requirements
 
 1. Access to the target web application
@@ -42,6 +44,8 @@ From a business perspective, a successful MSSQL Time Based SQL Injection attack 
 1. Knowledge of MSSQL Time Based SQL Injection techniques
 
 1. Access to a tool that can automate the injection process
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From a business perspective, a successful MSSQL Time Based SQL Injection attack 
 
 1. Regularly update the web application and database software to patch known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To extract sensitive data from the target database
@@ -59,12 +65,20 @@ From a business perspective, a successful MSSQL Time Based SQL Injection attack 
 
 1. To gain unauthorized access to the target network
 
+ 
+
 # Instructions
 
 1. This command is used to perform an SQL injection delay attack. It allows the attacker to delay the execution of a query by injecting a 'waitfor delay' statement into the SQL query. The attacker can use this technique to slow down the response time of the application and cause it to crash or become unresponsive.
 
+ 
+
+
+
 **Code**: [[ProductID=1;waitfor delay '0:0:10'--
 ProductID=1);]]
+
+
 
 > The 'waitfor delay' statement is used to delay the execution of a query for a specified amount of time. The attacker can use this statement to cause the application to wait for an extended period of time, which can cause it to become unresponsive. The attacker can inject this statement into the SQL query by appending it to the end of the query. The attacker can also use this technique to test for SQL injection vulnerabilities in the application by modifying the 'SLEEPTIME' parameter to see how long the application takes to respond.
 
@@ -86,3 +100,5 @@ ProductID=1);]]
 
 - [[MSSQL Injection]]
 - [[MSSQL Time based]]
+
+

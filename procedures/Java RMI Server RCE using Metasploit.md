@@ -32,11 +32,15 @@ Java Remote Method Invocation (RMI) is a Java API that allows remote execution o
 
 Java Remote Method Invocation (RMI) is a Java API that allows remote execution of methods between Java Virtual Machines (JVMs). This exploit uses Metasploit framework to exploit Java RMI servers to execute arbitrary code on the target system. The attacker can use this exploit to gain remote access to the target system and perform various malicious activities such as data exfiltration, privilege escalation, and lateral movement. This technique is commonly used by threat actors to target enterprise networks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Java RMI server
 
 1. Metasploit framework installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ Java Remote Method Invocation (RMI) is a Java API that allows remote execution o
 
 1. Regularly monitor network traffic for any suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain remote access to the target system
 
 1. Execute arbitrary code on the target system
+
+ 
 
 # Instructions
 
@@ -58,10 +66,18 @@ Java Remote Method Invocation (RMI) is a Java API that allows remote execution o
 2. Configure the payload if needed
 3. Run the exploit
 
+ 
+
+
+
 **Code**: [[use exploit/multi/misc/java_rmi_server
 set RHOSTS ]]
 
+
+
 > This command sets the exploit module to use, sets the target IP address and port, and runs the exploit. The payload can also be configured if needed.
+
+
 
 **Command** ([[Configure Java RMI Server Exploit]]):
 
@@ -72,6 +88,8 @@ set RPORT <PORT>
 # configure also the payload if needed
 run
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ run
 - [[Exploitation]]
 - [[Java RMI]]
 - [[RCE using Metasploit]]
+
+

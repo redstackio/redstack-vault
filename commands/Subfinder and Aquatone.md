@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:37.405281+00:00'
 ./Subfinder/subfinder -d $1 -r 8.8.8.8,1.1.1.1 -nW -o /tmp/subresult$1
 cat /tmp/subresult$1 | ./Aquatone/aquatone -ports large -out /tmp/aquatone$1
 ```
+
+

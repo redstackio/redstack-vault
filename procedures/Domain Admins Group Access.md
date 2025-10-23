@@ -29,11 +29,15 @@ This procedure involves gaining access to the Domain Admins group within Active 
 
 This procedure involves gaining access to the Domain Admins group within Active Directory by exploiting trust relationships between domains. By gaining access to this group, an attacker can essentially have full control over the entire Active Directory environment. To accomplish this, the attacker may use various techniques such as abusing trust relationships between domains, exploiting vulnerabilities in Active Directory, or using stolen credentials. The business value of this procedure is that it allows an attacker to gain complete control over the target organization's Active Directory environment, which can be used to further compromise the entire network.
 
+ 
+
 ## Requirements
 
 1. Valid credentials or knowledge of a vulnerability in Active Directory
 
 1. Access to the target network
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ This procedure involves gaining access to the Domain Admins group within Active 
 
 1. Implement multi-factor authentication to prevent stolen credentials from being used
 
+ 
+
 ## Objectives
 
 1. Gain access to the Domain Admins group within Active Directory
@@ -51,19 +57,31 @@ This procedure involves gaining access to the Domain Admins group within Active 
 
 1. Compromise the entire network
 
+ 
+
 # Instructions
 
 1. Use this command to identify potential access to the Domain Admins group.
 
+ 
+
+
+
 **Code**: [[Domain Admins]]
 
+
+
 > The 'Domain Admins' group is a powerful group in Active Directory that grants complete control over all domain-joined computers. This command may be used to identify systems that have potential access to the Domain Admins group, which can help identify systems that may be at a higher risk of compromise. The output of this command should be reviewed carefully to determine if any systems identified require further investigation.
+
+
 
 **Command** ([[List Domain Admins]]):
 
 ```bash
 Domain Admins
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ Domain Admins
 
 - [[Active Directory Attacks]]
 - [[Privileged Access Management (PAM) Trust]]
+
+

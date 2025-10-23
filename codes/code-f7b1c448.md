@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:38.120613+00:00'
 ```powershell
 nmap -sn --script hostmap-crtsh host_to_scan.tld
 ```
+
+

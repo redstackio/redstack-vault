@@ -32,11 +32,15 @@ From a technical standpoint, a NodeJS Reverse Shell works by establishing a conn
 
 From a business perspective, a NodeJS Reverse Shell can be used by attackers to gain access to sensitive information, disrupt business operations, or deploy additional malware on the target network.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. NodeJS installed on the target system
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ From a business perspective, a NodeJS Reverse Shell can be used by attackers to 
 
 1. Implement strong authentication measures to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Establish a remote command line session with a target system
@@ -53,6 +59,8 @@ From a business perspective, a NodeJS Reverse Shell can be used by attackers to 
 1. Execute commands on the target system
 
 1. Move laterally through the target network
+
+ 
 
 # Instructions
 
@@ -63,9 +71,15 @@ Instructions:
 2. Execute the command in the target machine's terminal.
 3. The attacker can now use the remote shell to execute commands on the target machine.
 
+ 
+
+
+
 **Code**: [[(function(){
     var net = require("net"),
        ]]
+
+
 
 > The command uses the 'net' and 'child_process' modules in Node.js to establish a connection to the attacker's machine. Once the connection is established, the 'spawn' function is used to create a new shell process on the target machine. The 'pipe' function is then used to redirect the input and output of the shell process to the network socket. This allows the attacker to send commands to the shell process and receive the output on their own machine. The command can also be executed using the 'exec' function of the 'child_process' module along with the 'nc' command to establish the connection and open a shell.
 
@@ -84,3 +98,5 @@ Instructions:
 - [[NodeJS]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

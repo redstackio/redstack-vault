@@ -23,9 +23,13 @@ Basic LFI (Local File Inclusion) is a technique used by attackers to exploit web
 
 Basic LFI (Local File Inclusion) is a technique used by attackers to exploit web applications that dynamically include files or resources. Attackers can use this technique to read sensitive files on the server or execute malicious code. In this scenario, the attacker is including the /etc/passwd file to retrieve sensitive information about the system's users.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
+
+ 
 
 ## Defense
 
@@ -35,27 +39,45 @@ Basic LFI (Local File Inclusion) is a technique used by attackers to exploit web
 
 1. Use server-side includes (SSI) instead of client-side includes (CSI) to prevent LFI vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Retrieve sensitive information from the server
 
 1. Gain unauthorized access to the system
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[/etc/passwd]]
+
+
 
 > 
 
 2. 
 
+ 
+
 > 
 
 3. curl http://example.com/index.php?page=../../../etc/passwd
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=../../../etc/pas]]
+
+
 
 > This command sends a GET request to the vulnerable web application and includes the /etc/passwd file using a URL. The server will return the contents of the file, which can include sensitive information about the system's users.
 
@@ -63,3 +85,5 @@ Basic LFI (Local File Inclusion) is a technique used by attackers to exploit web
 
 - [[Basic LFI]]
 - [[File Inclusion]]
+
+

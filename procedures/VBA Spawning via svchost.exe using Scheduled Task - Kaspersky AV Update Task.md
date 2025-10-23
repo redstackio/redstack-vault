@@ -35,9 +35,13 @@ Technical Explanation: The malicious macro in the DOCM file creates a scheduled 
 
 Business Value: This procedure can be used by attackers to gain access to sensitive information, establish persistence on the target system, or execute additional attacks on the target organization.
 
+ 
+
 ## Requirements
 
 1. Access to a malicious macro-enabled Microsoft Word document (DOCM)
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Monitor for suspicious scheduled tasks and anomalous network traffic
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information
@@ -55,12 +61,20 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Execute additional attacks on the target organization
 
+ 
+
 # Instructions
 
 1. Create a scheduled task to update Kaspersky Anti-Virus definitions
 
+ 
+
+
+
 **Code**: [[Sub AutoOpen()
     Set service = CreateObject("Sch]]
+
+
 
 > This command creates a scheduled task that will update Kaspersky Anti-Virus definitions. The task is set to start when available, and is not hidden. It uses a time trigger to start 30 seconds from the current time, and runs the specified PowerShell command to download and execute a script to update the definitions. The task is registered with the name 'AVUpdateTask'.
 
@@ -82,3 +96,5 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 - [[DOCM - VBA Spawning via svchost.exe using Scheduled Task]]
 - [[Office - Attacks]]
+
+

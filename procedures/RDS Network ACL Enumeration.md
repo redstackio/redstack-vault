@@ -34,9 +34,13 @@ From a technical perspective, this procedure involves making API calls to the AW
 
 From a business perspective, this technique can be used to identify potential vulnerabilities in an organization's AWS environment, and can help inform decisions around security investments and risk management.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials or access to an instance with appropriate permissions
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ From a business perspective, this technique can be used to identify potential vu
 
 1. Monitor network traffic for suspicious activity, such as repeated failed login attempts
 
+ 
+
 ## Objectives
 
 1. Identify the network ACL's associated with an RDS instance
@@ -54,17 +60,25 @@ From a business perspective, this technique can be used to identify potential vu
 
 1. Identify potential targets for further exploitation
 
+ 
+
 # Instructions
 
 1. This command retrieves the details of all the network ACLs in your AWS account.
 
+ 
+
 The `describe-network-acls` command is used to retrieve the details of all the network access control lists (ACLs) in your AWS account. Network ACLs are an optional layer of security for your VPC that act as a firewall for controlling traffic in and out of one or more subnets. The command returns a JSON object that contains information such as the ID, name, and rules associated with each network ACL. You can use this information to troubleshoot network issues or to verify the configuration of your network ACLs.
+
+
 
 **Command** ([[Describe Network ACLs]]):
 
 ```bash
 aws ec2 describe-network-acls
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws ec2 describe-network-acls
 - [[Enumeration]]
 - [[Listing Network ACL's]]
 - [[RDS - Relational Database Service]]
+
+

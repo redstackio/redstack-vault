@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Misc Powershell Pasties
 
+
+
 **Command** ([[List Removeable Drives]]):
 
 ```bash
@@ -16,5 +18,17 @@ Get-WmiObject Win32_LogicalDisk | Where-Object {($_.DriveType -eq 2) -and ($_.De
 
 ```
 
+
+
+
+
+
+
 **Code**: [[
 $visio = [activator]::CreateInstance([type]::GetT]]
+
+
+
+
+
+

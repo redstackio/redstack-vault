@@ -32,11 +32,16 @@ Mounting an Elastic Block Store (EBS) volume to a directory is a common task for
 
 From a technical perspective, mounting an EBS volume is a straightforward process that involves attaching a volume to an EC2 instance and then mounting it to a directory. Once the volume is mounted, an attacker can use it to store and exfiltrate data. From a business perspective, this technique can lead to data theft, intellectual property theft, and reputational damage.
 
+
+ 
+
 ## Requirements
 
 1. Access to an EC2 instance
 
 1. Authentication credentials with sufficient permissions to mount an EBS volume
+
+ 
 
 ## Defense
 
@@ -46,11 +51,15 @@ From a technical perspective, mounting an EBS volume is a straightforward proces
 
 1. Regularly review and audit EBS volume usage to ensure that it aligns with business requirements
 
+ 
+
 ## Objectives
 
 1. Establish persistence on a compromised system
 
 1. Maintain access to stolen data even if the original system is taken offline
+
+ 
 
 # Instructions
 
@@ -60,13 +69,19 @@ sudo mount /dev/device_name /mount_point
 
 Replace 'device_name' with the name of the device you want to mount and 'mount_point' with the directory where you want to mount it.
 
+ 
+
 The 'mount' command is used to mount a file system or device to a directory in the file system. This allows you to access the contents of the device through the directory. The 'sudo' command is used to run the 'mount' command with root privileges, which is required to mount a device. The '/dev/sdfd' argument specifies the device you want to mount, and the '/directory' argument specifies the directory where you want to mount it.
+
+
 
 **Command** ([[Mount Device to Directory]]):
 
 ```bash
 sudo mount /dev/sdfd /directory
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +102,5 @@ sudo mount /dev/sdfd /directory
 - [[Elastic Block Store]]
 - [[Exploitation & Data Exfiltration]]
 - [[Mounting the volume]]
+
+

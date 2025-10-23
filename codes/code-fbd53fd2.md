@@ -19,3 +19,5 @@ echo "# Do not remove. Generated from /etc/issue.conf by configure." >> script.s
 # When printed, the terminal will be cleared and only the last line will be visible:
 cat script.sh
 ```
+
+

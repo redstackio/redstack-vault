@@ -39,6 +39,8 @@ From a technical perspective, an attacker can generate an SSH key pair using the
 
 From a business value perspective, an attacker can use this technique to maintain access to an AWS environment even if the organization terminates or replaces instances. This can allow the attacker to steal data, install malware, or further pivot within the environment.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS instance
@@ -46,6 +48,8 @@ From a business value perspective, an attacker can use this technique to maintai
 1. Ability to generate SSH key pair
 
 1. Ability to add public key to authorized_keys file
+
+ 
 
 ## Defense
 
@@ -55,23 +59,33 @@ From a business value perspective, an attacker can use this technique to maintai
 
 1. Monitor SSH logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Maintain access to an AWS instance
 
 1. Maintain persistence in an AWS environment
 
+ 
+
 # Instructions
 
 1. The ssh-keygen command is used to generate a new SSH key pair. By default, the command generates a 2048-bit RSA key pair, which is secure enough for most use cases. However, you can customize the key type, size, and other parameters using command-line options.
 
+ 
+
 The ssh-keygen command takes several arguments, including the path to the file where you want to save the key pair, the type of key to generate (RSA, DSA, ECDSA, or ED25519), and the size of the key (in bits). You can also specify a passphrase to protect the private key, or use an existing key as a template for the new one. Once the key pair is generated, you can use it to authenticate with remote servers using the SSH protocol.
+
+
 
 **Command** ([[Generate SSH Key Pair]]):
 
 ```bash
 ssh-keygen
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +111,5 @@ ssh-keygen
 - [[Exploitation]]
 - [[Persistence]]
 - [[SSH Persistence example]]
+
+

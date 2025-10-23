@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:46.493665+00:00'
 ```ps1
 certipy account update -username John@corp.local -password Passw0rd -user Jane@corp.local
 ```
+
+

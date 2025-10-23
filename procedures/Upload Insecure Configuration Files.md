@@ -38,6 +38,8 @@ From a technical perspective, attackers can use various methods to upload insecu
 
 The business value of this technique is that it allows attackers to gain unauthorized access to sensitive information, which can result in financial loss, reputational damage, and legal consequences.
 
+ 
+
 ## Requirements
 
 1. Authenticated access to the target system
@@ -45,6 +47,8 @@ The business value of this technique is that it allows attackers to gain unautho
 1. Vulnerability in the file upload functionality
 
 1. Ability to upload malicious files
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this technique is that it allows attackers to gain unautho
 
 1. Conduct regular security assessments and penetration testing to identify and mitigate vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to sensitive information
@@ -62,22 +68,38 @@ The business value of this technique is that it allows attackers to gain unautho
 
 1. Install backdoors
 
+ 
+
 # Instructions
 
 1. To use this command, navigate to the directory containing the package.json file and run the following command: npm run prepare
 
+ 
+
+
+
 **Code**: [["scripts": {
     "prepare" : "/bin/touch /tmp/pwne]]
+
+
 
 > This command will create a file named 'pwned.txt' in the '/tmp' directory. The 'touch' command is used to create an empty file. The 'npm run prepare' command is used to execute the 'prepare' script defined in the 'scripts' section of the 'package.json' file. This command can be used as a pre-build step to ensure that the file exists before the build process starts.
 
 2. Add the following code to the 'scripts' section of your composer.json file:
 
+ 
+
+
+
 **Code**: [["scripts": {
     "pre-command-run" : [
     "/bin/t]]
 
+
+
 > This command adds a pre-command hook to composer.json file. The 'pre-command-run' script will be executed before running any command. In this case, it will touch a file named 'pwned.txt' in the '/tmp' directory.
+
+
 
 **Command** ([[pre-command-run]]):
 
@@ -88,6 +110,8 @@ The business value of this technique is that it allows attackers to gain unautho
     ]
 }
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -112,3 +136,5 @@ The business value of this technique is that it allows attackers to gain unautho
 - [[Configuration Files]]
 - [[Exploits]]
 - [[Upload Insecure Files]]
+
+

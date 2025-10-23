@@ -6,6 +6,7 @@ executor: powershell
 data: (Get-ADForest).Domains| %{Get-ADDomain -Server $_}|select name, domainsid
 output: 'PS C:\> (Get-ADForest).Domains| %{Get-ADDomain -Server $_}|select name, domainsid
 
+
   Name  DomainSID
 
   ----  ---------
@@ -33,3 +34,5 @@ Name  DomainSID
 DEV   S-1-5-21-1576920733-1301476157-954876328
 BANK S-1-5-21-3428605742-3005092657-1212549955
 ```
+
+

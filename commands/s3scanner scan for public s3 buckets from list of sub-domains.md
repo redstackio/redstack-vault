@@ -17,3 +17,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 python3 ./s3scanner.py -l domains.txt -o buckets.txt
 
 ```
+
+

@@ -30,19 +30,73 @@ In Some application's search functionality , the searh term gets reflected insid
 
 In Some application's search functionality , the searh term gets reflected inside the JavaSript string. In order for an attacker to execute the JS code ,the code needs to be escaped from the JavaSrcipt string.
 
+
+
 # Instructions
+
+
+
+
 
 1. Navigate to the search box and enter random alpha numeric string.
 
+
+
+
+
+
+
+![f1713008-03e3-4802-b663-c3cf67a1228c.png]()
+
+
+
+
+
 2.Observe that the random string has been reflected inside a JavaScript string 
 
+
+
+
+
+
+
+![f12234d0-77d7-4b0e-9bfd-64d4f0102fe5.png]()
+
+
+
+
+
 3.Use the below payload to check how the response. Observe that the  payload is not breaking the JavaScript.
+
+
+
+
+
+![dbbb1bc7-fb9d-487f-bc84-6e110afd0064.png]()
+
+
 
 4. Since the payload from above step didnt escape the javascript string , try with the following payload:
 
 *`'-alert(1)-*'`
 
+
+
+
+
+![df927fa5-552a-4d8a-a5f4-6accac0e598a.png]()
+
+
+
 5. Observe a alert popup triggered by the payload.
+
+
+
+
+
+![613b4c00-a218-4d55-bb8e-32235f98a93a.png]()
+
+
 
 ## Platforms
 
@@ -55,3 +109,5 @@ In Some application's search functionality , the searh term gets reflected insid
 - [[owasp top 10]]
 - [[Reflected XSS]]
 - [[Web Applications]]
+
+

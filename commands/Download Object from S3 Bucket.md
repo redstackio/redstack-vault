@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:19:54.016757+00:00'
 ```bash
 aws s3api get-object --bucket name --key object-name download-file-location
 ```
+
+

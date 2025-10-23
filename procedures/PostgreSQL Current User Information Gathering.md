@@ -33,11 +33,15 @@ The PostgreSQL Current User Information Gathering procedure is used to gather in
 
 The PostgreSQL Current User Information Gathering procedure is used to gather information about the current user on a PostgreSQL database through SQL injection. This technique can be used to determine the level of access a user has to the database and potentially escalate privileges. This procedure involves injecting SQL code into the PostgreSQL database to extract information about the current user. Once the information is obtained, an attacker can use it to plan further attacks on the database.
 
+ 
+
 ## Requirements
 
 1. Access to the PostgreSQL database
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -47,6 +51,8 @@ The PostgreSQL Current User Information Gathering procedure is used to gather in
 
 1. Limit user privileges to reduce the impact of a successful attack
 
+ 
+
 ## Objectives
 
 1. To gather information about the current user on a PostgreSQL database
@@ -54,6 +60,8 @@ The PostgreSQL Current User Information Gathering procedure is used to gather in
 1. To determine the level of access a user has to the database
 
 1. To potentially escalate privileges
+
+ 
 
 # Instructions
 
@@ -65,11 +73,19 @@ The PostgreSQL Current User Information Gathering procedure is used to gather in
 4. SELECT usename FROM pg_user; - Returns a list of all users in the PostgreSQL cluster.
 5. SELECT getpgusername(); - Returns the name of the current database user.
 
+ 
+
+
+
 **Code**: [[SELECT user;
 SELECT current_user;
 SELECT session_u]]
 
+
+
 > The commands listed above are used to retrieve information about users in a PostgreSQL database. The first three commands return the name of the current user or the user that owns the current session. The fourth command returns a list of all users in the PostgreSQL cluster. The fifth command returns the name of the current database user. These commands can be useful for troubleshooting and auditing purposes.
+
+
 
 **Command** ([[List all users]]):
 
@@ -77,11 +93,19 @@ SELECT session_u]]
 SELECT user;
 ```
 
+
+
+
+
 **Command** ([[Get current user]]):
 
 ```bash
 SELECT current_user;
 ```
+
+
+
+
 
 **Command** ([[Get session user]]):
 
@@ -89,17 +113,27 @@ SELECT current_user;
 SELECT session_user;
 ```
 
+
+
+
+
 **Command** ([[List all PostgreSQL users]]):
 
 ```bash
 SELECT usename FROM pg_user;
 ```
 
+
+
+
+
 **Command** ([[Get current username]]):
 
 ```bash
 SELECT getpgusername();
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -123,3 +157,5 @@ SELECT getpgusername();
 
 - [[PostgreSQL Current User]]
 - [[PostgreSQL injection]]
+
+

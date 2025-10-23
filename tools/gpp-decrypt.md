@@ -26,7 +26,15 @@ gpp-decrypt is a Ruby script used for decrypting passwords encrypted in Microsof
 
 gpp-decrypt is a Ruby script used for decrypting passwords encrypted in Microsoft Group Policy Preferences (GPP) files, often found in Active Directory environments on the SYSVOL share. Though the passwords contained in GPP files are encrypted, Microsoft disclosed the key, making decryption  trivial with tools like gpp-decrypt.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_e7acf84f-ffe3-4c0b-a483-99c997916834}}
+
+
 
 # Installation
 
@@ -34,7 +42,17 @@ gpp-decrypt is a Ruby script used for decrypting passwords encrypted in Microsof
 
 - Ruby
 
+
+
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +66,5 @@ gpp-decrypt is a Ruby script used for decrypting passwords encrypted in Microsof
 
 - [[Cryptography]]
 - [[known vulnerability]]
+
+

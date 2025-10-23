@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:09.845260+00:00'
 ```powershell
 openssl req -subj '/CN=[domain.of.server.to.mitm]' -batch -new -x509 -days 365 -nodes -out server.pem -keyout server.pem
 ```
+
+

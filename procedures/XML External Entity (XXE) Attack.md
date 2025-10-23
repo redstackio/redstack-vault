@@ -32,6 +32,8 @@ To execute an XXE attack, an attacker needs to send specially crafted XML input 
 
 Business value: An attacker can use an XXE attack to gain access to sensitive data, such as passwords or customer information, or to execute arbitrary code on the server. This can result in financial loss, reputational damage, and legal liability for the organization.
 
+ 
+
 ## Requirements
 
 1. Access to the application that processes XML input
@@ -39,6 +41,8 @@ Business value: An attacker can use an XXE attack to gain access to sensitive da
 1. Knowledge of the XML parser used by the application
 
 1. Ability to send specially crafted XML input to the application
+
+ 
 
 ## Defense
 
@@ -48,19 +52,31 @@ Business value: An attacker can use an XXE attack to gain access to sensitive da
 
 1. Use a secure XML parser that does not support external entities by default
 
+ 
+
 ## Objectives
 
 1. To gain access to sensitive data
 
 1. To execute arbitrary code on the server
 
+ 
+
 # Instructions
 
 1. Define an entity with a given name and value.
 
+ 
+
+
+
 **Code**: [[&lt;!ENTITY entity_name &quot;entity_value&quot;&g]]
 
+
+
 > This command is used to define an entity in an XML document. The entity name is given as 'entity_name' and the entity value is given as 'entity_value'. The entity value can be any valid XML content, including other entities, text, or markup. Once defined, the entity can be referenced using its name in the XML document.
+
+
 
 **Command** ([[Define ENTITY]]):
 
@@ -68,17 +84,31 @@ Business value: An attacker can use an XXE attack to gain access to sensitive da
 &lt;!ENTITY entity_name &quot;entity_value&quot;&gt;
 ```
 
+
+
 2. To declare an external entity, use the following syntax:
 
 <!ENTITY entity_name SYSTEM "file_path">
 
+ 
+
+
+
 **Code**: [[SYSTEM]]
+
+
 
 > Here, entity_name is the name of the entity, SYSTEM is the type of the entity, and file_path is the path to the file containing the entity's content. This command is used to create an entity that can be referenced within an XML document but is defined outside of it.
 
 3. To define an XML entity, use the ENTITY keyword followed by the entity name and its value. The SYSTEM keyword is used to specify the location of the entity value file.
 
+ 
+
+
+
 **Code**: [[&lt;!ENTITY entity_name SYSTEM &quot;entity_value&]]
+
+
 
 > The ENTITY keyword is used in Document Type Definition (DTD) files to define an entity. An entity is a piece of text that can be referenced within an XML document. The value of an entity can be a string of characters or a reference to an external file. The SYSTEM keyword is used to specify the location of the external file that contains the entity value.
 
@@ -99,3 +129,5 @@ Business value: An attacker can use an XXE attack to gain access to sensitive da
 ## Tags
 
 - [[XML External Entity]]
+
+

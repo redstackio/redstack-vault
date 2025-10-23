@@ -8,6 +8,8 @@ data: Get-ChildItem -Recurse -Path $_PATH | % { Get-Item $_.FullName -stream * }
 output: 'PS C:\> Get-ChildItem -Recurse -Path "Users" | % { Get-Item $_.FullName -stream
   * } | where stream -ne '':$Data''
 
+
+
   PSPath        : Microsoft.PowerShell.Core\FileSystem::C:\Users\Bob\Desktop\normal.txt:hidden.txt
 
   PSParentPath  : Microsoft.PowerShell.Core\FileSystem::C:\Users\Bob\Desktop
@@ -40,6 +42,7 @@ Get-ChildItem -Recurse -Path $_PATH | % { Get-Item $_.FullName -stream * } | whe
 ```
 PS C:\> Get-ChildItem -Recurse -Path "Users" | % { Get-Item $_.FullName -stream * } | where stream -ne ':$Data'
 
+
 PSPath        : Microsoft.PowerShell.Core\FileSystem::C:\Users\Bob\Desktop\normal.txt:hidden.txt
 PSParentPath  : Microsoft.PowerShell.Core\FileSystem::C:\Users\Bob\Desktop
 PSChildName   : normal.txt:hidden.txt
@@ -50,3 +53,5 @@ FileName      : C:\Users\Bob\Desktop\normal.txt
 Stream        : hidden.txt
 Length        : 13
 ```
+
+

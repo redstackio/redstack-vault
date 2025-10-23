@@ -15,7 +15,15 @@ updated_at: '2023-09-27T03:13:37.912100+00:00'
 
 Basic built-in Windows tools for file system enumeration.
 
+
+
+
+
 ## Command Prompt (cmd.exe)
+
+
+
+
 
 **Command** ([[dir /s "$_STRING"]]):
 
@@ -23,11 +31,27 @@ Basic built-in Windows tools for file system enumeration.
 dir /s "$_STRING"
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[findstr Grep Files Recursively for a Case Insensitive String]]):
 
 ```bash
 findstr /si $_STRING *.*
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[List Directory Contents Including ADS]]):
 
@@ -35,25 +59,59 @@ findstr /si $_STRING *.*
 dir /R
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[more Extract ADS Embedded Data from a File]]):
 
 ```bash
 more < $_FILE:$_ADS
 ```
 
+
+
+
+
 **Common Environmental Variables (Windows Vista+)**
+
+
+
+
 
 **Code**: [[# KEY                           # VALUE
 %ALLUSERSP]]
+
+
+
+
 
 **Common Environmental Variables (Windows XP and earlier)**
 
+
+
+
+
 **Code**: [[# KEY                           # VALUE
 %ALLUSERSP]]
 
+
+
 List all current Environmental Variables in a command prompt with the "SET" command.
 
+
+
+
+
 ## PowerShell
+
+
+
+
 
 **Command** ([[Get-ChildItem Recursive Search for Files and Folders]]):
 
@@ -61,11 +119,27 @@ List all current Environmental Variables in a command prompt with the "SET" comm
 Get-ChildItem -Recurse -Filter "$_FILENAME"
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Get-ChildItem Grep Files Recursively for a String]]):
 
 ```bash
 Get-ChildItem -Recurse -Path $_PATH | Select-String -Pattern "$_STRING"
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[Get-ChildItem List Files with ADS]]):
 
@@ -73,11 +147,27 @@ Get-ChildItem -Recurse -Path $_PATH | Select-String -Pattern "$_STRING"
 Get-ChildItem -Recurse -Path $_PATH | % { Get-Item $_.FullName -stream * } | where stream -ne ':$Data'
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Extract ADS Embedded Data from a File (PowerShell)]]):
 
 ```bash
 Get-Content -Path $_FILE -stream $_ADS
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[PowerShell List Installed Versions of .NET Framework]]):
 
@@ -85,9 +175,29 @@ Get-Content -Path $_FILE -stream $_ADS
 Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -recurse | Get-ItemProperty -name Version,Release -EA 0 |  Where { $_.PSChildName -match '^(?!S)\p{L}'} | Select PSChildName, Version, Release
 ```
 
+
+
+
+
+
+
+
+
 **Common Environmental Variables**
+
+
+
+
 
 **Code**: [[# KEY                          # VALUE
 _NT_SYMBOL_]]
 
+
+
 List all current Environmental Variables in a PowerShell session with the "gci env:" command.
+
+
+
+
+
+

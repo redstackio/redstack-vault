@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:24:19.580819+00:00'
 ```bash
 python sqlmap.py -u "http://example.com/?id=1"  -p id --suffix="-- "
 ```
+
+

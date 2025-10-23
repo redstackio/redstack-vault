@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:16.533492+00:00'
 ```sql
 select case when substring(table_name,1,1)='a' then pg_sleep(5) else pg_sleep(0) end from information_schema.tables limit 1
 ```
+
+

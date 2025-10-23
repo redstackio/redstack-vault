@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:38.485387+00:00'
 ```bash
 Get-ADDomainController -filter * | Select-Object name
 ```
+
+

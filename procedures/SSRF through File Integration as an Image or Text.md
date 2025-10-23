@@ -34,11 +34,15 @@ This technique can be used by attackers to gain access to sensitive data or to e
 
 From a business perspective, this attack can result in data loss or data leakage, which can damage a company's reputation and lead to legal consequences.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Ability to inject a malicious file as an image or text
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a business perspective, this attack can result in data loss or data leakage
 
 1. Monitor network traffic for suspicious activity, such as requests to known vulnerable endpoints
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data on a remote server
@@ -56,11 +62,19 @@ From a business perspective, this attack can result in data loss or data leakage
 
 1. Bypass network security controls
 
+ 
+
 # Instructions
 
 1. To integrate the content of a file as an image or text, use the 'img' tag in HTML and specify the source of the image as the file path. In case of text, use the 'p' tag or another appropriate tag and write the content of the file within the tag. Make sure to properly sanitize the input and validate the file path to prevent any security vulnerabilities.
 
+ 
+
+
+
 **Code**: [[<img src="echopwn" onerror="document.write('<ifram]]
+
+
 
 > The 'img' tag in HTML is used to display an image on a web page. In this case, we are using it to display the content of a file as an image in a PDF. The 'onerror' attribute is used to execute JavaScript code in case the image fails to load. In this example, we are using it to execute a command that displays the contents of the '/etc/passwd' file. Similarly, we can use other HTML tags to display the content of a file as text in a PDF. However, it is important to properly sanitize the input and validate the file path to prevent any security vulnerabilities.
 
@@ -81,3 +95,5 @@ From a business perspective, this attack can result in data loss or data leakage
 - [[Server-Side Request Forgery]]
 - [[SSRF from XSS]]
 - [[Using an iframe]]
+
+

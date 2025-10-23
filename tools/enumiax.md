@@ -16,3 +16,9 @@ enumIAX is an Inter Asterisk Exchange protocol username brute-force enumerator. 
 ## Description
 
 enumIAX is an Inter Asterisk Exchange protocol username brute-force enumerator. enumIAX may operate in two distinct modes; Sequential Username Guessing or Dictionary Attack.
+
+
+
+
+
+

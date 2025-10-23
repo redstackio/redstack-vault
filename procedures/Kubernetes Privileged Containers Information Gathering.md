@@ -26,9 +26,13 @@ Kubernetes privileged containers are containers that run with elevated privilege
 
 Kubernetes privileged containers are containers that run with elevated privileges on the host node. Attackers can abuse privileged containers to gain access to sensitive information and resources. By running commands such as 'ls /dev' and 'cat /dev/kmsg' within a privileged container, attackers can gather information about the host node's devices and kernel messages, respectively. This information can be used to further exploit the Kubernetes cluster and compromise its security.
 
+ 
+
 ## Requirements
 
 1. Access to a Kubernetes cluster with privileged containers
+
+ 
 
 ## Defense
 
@@ -38,19 +42,31 @@ Kubernetes privileged containers are containers that run with elevated privilege
 
 1. Implement RBAC policies to limit access to privileged containers
 
+ 
+
 ## Objectives
 
 1. Gather information about the host node's devices and kernel messages
 
 1. Identify potential vulnerabilities and attack paths within the Kubernetes cluster
 
+ 
+
 # Instructions
 
 1. kubectl exec -it <pod-name> --privileged -- ls /dev
 
+ 
+
+
+
 **Code**: [[/dev]]
 
+
+
 > This command runs the 'ls' command within a privileged container to list the host node's devices.
+
+
 
 **Command** ([[List all files in /dev directory]]):
 
@@ -58,9 +74,17 @@ Kubernetes privileged containers are containers that run with elevated privilege
 ls /dev
 ```
 
+
+
 2. kubectl exec -it <pod-name> --privileged -- cat /dev/kmsg
 
+ 
+
+
+
 **Code**: [[/dev/kmsg]]
+
+
 
 > This command runs the 'cat' command within a privileged container to read the kernel messages on the host node.
 
@@ -73,3 +97,5 @@ ls /dev
 - [[Information Gathering]]
 - [[Kubernetes]]
 - [[Privileged Containers]]
+
+

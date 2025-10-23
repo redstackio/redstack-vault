@@ -30,11 +30,15 @@ A CRLF injection attack is a type of phishing attack that involves injecting mal
 
 A CRLF injection attack is a type of phishing attack that involves injecting malicious code into HTTP headers. In this attack, an attacker can inject a CRLF sequence into an HTTP header, which can be used to insert additional headers or modify existing ones. This can be used to inject malicious content into legitimate websites by modifying the HTTP response header. This attack can be used to steal sensitive information such as login credentials, credit card information, and other personal data. This attack can be carried out using various methods such as social engineering, email phishing, or by exploiting vulnerabilities in web applications.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Ability to inject malicious code into HTTP headers
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ A CRLF injection attack is a type of phishing attack that involves injecting mal
 
 1. Train employees on how to identify and avoid phishing attacks
 
+ 
+
 ## Objectives
 
 1. To inject malicious code into HTTP headers
@@ -52,21 +58,35 @@ A CRLF injection attack is a type of phishing attack that involves injecting mal
 
 1. To exploit vulnerabilities in web applications
 
+ 
+
 # Instructions
 
 1. The attacker injects a CRLF sequence into the HTTP header by adding %0D%0A to the header fields. This can be used to inject additional headers or modify existing ones.
 
+ 
+
+
+
 **Code**: [[http://www.example.net/index.php?lang=en%0D%0ACont]]
+
+
 
 > The attacker can use this command to inject malicious code into the HTTP headers of a vulnerable web application. The CRLF sequence is used to insert additional headers or modify existing ones. This can be used to inject malicious content into legitimate websites by modifying the HTTP response header.
 
 2. The attacker injects malicious content into the HTTP response by modifying the HTTP response header. This can be used to steal sensitive information such as login credentials, credit card information, and other personal data.
+
+ 
+
+
 
 **Code**: [[Set-Cookie:en
 Content-Length: 0
 
 HTTP/1.1 200 OK
 C]]
+
+
 
 > The attacker can use this command to inject malicious content into the HTTP response of a vulnerable web application. By modifying the HTTP response header, the attacker can steal sensitive information such as login credentials, credit card information, and other personal data.
 
@@ -89,3 +109,5 @@ C]]
 
 - [[Carriage Return Line Feed]]
 - [[CRLF - Write HTML]]
+
+

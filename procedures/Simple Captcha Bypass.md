@@ -26,17 +26,63 @@ Description Captcha is used as an defense against the attacks by the bots on the
 
 Description 
 
+
+
 Captcha is used as an defense against the attacks by the bots on the application server . An attacker can bypass the captcha reqeust by simply removing the capthca parameter.
+
+
 
 Instructions
 
+
+
 1. Fill the application form and click on* i'm not a robot* captcha and intercept the request though burp suite proxy .
+
+
+
+
+
+![456c5e0e-feb3-42be-a025-e0c040182291.png]()
+
+
+
+
 
 2. Observe the re-captcha parameter in the body of the request.
 
+
+
+
+
+![81d943f0-e0f3-4b32-8703-1f80b9b11a50.png]()
+
+
+
+
+
 3. Remove the whole parameter and forward the request.
 
+
+
+
+
+![15c78d84-a314-460f-b34e-700227b5f1ff.png]()
+
+
+
+
+
+
+
 4. Observe that register form has been successfully submitted due to no validation on the captcha parameter.
+
+
+
+
+
+![a69dcc70-028c-4a1b-8334-3feb49e5c3a1.png]()
+
+
 
 ## Platforms
 
@@ -47,3 +93,5 @@ Instructions
 - [[Bypass]]
 - [[Captcha ]]
 - [[Web Applications]]
+
+

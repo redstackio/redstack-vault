@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:05.094903+00:00'
 ```bash
 ls /usr/share/nmap/scripts/
 ```
+
+

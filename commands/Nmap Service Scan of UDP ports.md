@@ -30,6 +30,7 @@ output: 'root@kali:~# nmap -sU -sV 10.10.10.10
 
   Service Info: Host: HOST
 
+
   Service detection performed. Please report any incorrect results at https://nmap.org/submit/
   .
 
@@ -64,3 +65,5 @@ Service Info: Host: HOST
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 1236.35 seconds
 ```
+
+

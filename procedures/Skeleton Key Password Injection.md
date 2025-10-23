@@ -34,11 +34,15 @@ Skeleton Key Password Injection is a technique used by attackers to inject a pas
 
 From a technical perspective, Skeleton Key Password Injection works by exploiting a vulnerability in the domain controller's implementation of the Kerberos authentication protocol. The attacker sends a specially crafted authentication request to the domain controller, which causes it to load the attacker's password into memory. The attacker can then use this password to authenticate as any user in the domain. The business value of this attack is that it allows attackers to gain persistent access to a network and steal sensitive data over a longer period of time.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows domain controller
 
 1. Mimikatz or similar post-exploitation tool
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ From a technical perspective, Skeleton Key Password Injection works by exploitin
 
 1. Implement multi-factor authentication to make it more difficult for attackers to gain access to user accounts
 
+ 
+
 ## Objectives
 
 1. Gain access to a Windows domain controller
@@ -55,6 +61,8 @@ From a technical perspective, Skeleton Key Password Injection works by exploitin
 1. Bypass authentication and gain access to any account in the domain
 
 1. Steal sensitive data from the domain
+
+ 
 
 # Instructions
 
@@ -65,12 +73,20 @@ From a technical perspective, Skeleton Key Password Injection works by exploitin
 4. Once the command is executed, a new drive letter P: will be mapped to the target machine's admin share.
 5. Use the provided RDP command to login as a user with elevated privileges.
 
+ 
+
+
+
 **Code**: [[privilege::debug
 misc::skeleton
 # map the share
 ne]]
 
+
+
 > The provided command uses Mimikatz to escalate privileges on the target machine. The 'privilege::debug' command is used to enable debug privileges for the current user. The 'misc::skeleton' command is used to load the Mimikatz Skeleton module which adds additional functionality to Mimikatz. The 'net use' command is used to map the target machine's admin share to a new drive letter P:. The '/user:john' parameter is used to specify the username 'john' which has administrative privileges on the target machine. The 'mimikatz' parameter is used to specify the password for the 'john' user. Finally, the 'rdesktop' command is used to connect to the target machine using RDP with the provided credentials.
+
+
 
 **Command** ([[Map share]]):
 
@@ -78,11 +94,17 @@ ne]]
 net use p: \\WIN-PTELU2U07KG\admin$ /user:john mimikatz
 ```
 
+
+
+
+
 **Command** ([[Login to remote desktop]]):
 
 ```bash
 rdesktop 10.0.0.2:3389 -u test -p mimikatz -d pentestlab
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +127,5 @@ rdesktop 10.0.0.2:3389 -u test -p mimikatz -d pentestlab
 
 - [[Skeleton key]]
 - [[Windows - Mimikatz]]
+
+

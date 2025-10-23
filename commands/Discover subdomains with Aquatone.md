@@ -23,3 +23,5 @@ aquatone-discover --domain example.com --threads 25
 aquatone-discover --domain example.com --sleep 5 --jitter 30
 aquatone-discover --set-key shodan o1hyw8pv59vSVjrZU3Qaz6ZQqgM91ihQ
 ```
+
+

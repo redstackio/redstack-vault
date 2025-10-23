@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Nmap
 
+
+
 **Command** ([[Host discovery]]):
 
 ```bash
 nmap -sn -n
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Scan for everything]]):
 
@@ -23,12 +31,24 @@ nmap -A (run this second)
 
 ```
 
+
+
+
+
+
+
 **Command** ([[sV Scan]]):
 
 ```bash
 nmap -sV -F
 
 ```
+
+
+
+
+
+
 
 **Command** ([[??]]):
 
@@ -37,12 +57,24 @@ nmap -p- -sV -O -T4 -v7 -sC
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Open SMB shares]]):
 
 ```bash
 nmap --script=smb-enum-shares -p445
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Open NFS Shares]]):
 
@@ -51,12 +83,24 @@ nmap -p 111,2049 --script nfs-ls,nfs-showmount
 
 ```
 
+
+
+
+
+
+
 **Command** ([[UDP scan:]]):
 
 ```bash
 nmap -sU -F -Pn -v -d -sC -sV --open --reason -T5
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Anonymous FTP]]):
 
@@ -66,12 +110,24 @@ nmap -sV -n -sS -Pn-vv --open -p21 --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-
 
 ```
 
+
+
+
+
+
+
 **Command** ([[VNC Brute]]):
 
 ```bash
 nmap --script=vnc-brute -p5800,5900
 
 ```
+
+
+
+
+
+
 
 **Command** ([[Rawr Scan]]):
 
@@ -80,6 +136,12 @@ nmap -sV --open -T4 -v7 -p80,280,443,591,593,981,1311,2031,2480,3181,4444,4445,4
 
 ```
 
+
+
+
+
+
+
 **Command** ([[MSSQL Scan]]):
 
 ```bash
@@ -87,9 +149,21 @@ nmap -vv-sV -Pn-n -p1433 --script=ms-sql-info,ms-sql-config,ms-sql-dump-hashes -
 
 ```
 
+
+
+
+
+
+
 **Command** ([[HTTP Scan]]):
 
 ```bash
 nmap -vv -sS -Pn-n -p80,443,8080 --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-email-harvest,http-methods,http-method-tamper,http-passwd,http-robots.txt -oA
 
 ```
+
+
+
+
+
+

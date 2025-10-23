@@ -35,6 +35,8 @@ Subdomain Enumeration is the process of finding subdomains of a domain. Subbrute
 
 From an offensive perspective, subdomain enumeration can be used to find potential targets for further attacks. It can also be used to discover hidden services or infrastructure that may be vulnerable to attack. From a defensive perspective, subdomain enumeration can be used to identify potential attack surfaces and prioritize security efforts.
 
+ 
+
 ## Requirements
 
 1. Access to a DNS server
@@ -42,6 +44,8 @@ From an offensive perspective, subdomain enumeration can be used to find potenti
 1. Permission to perform subdomain enumeration
 
 1. Subbrute tool installed
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ From an offensive perspective, subdomain enumeration can be used to find potenti
 
 1. Use DNSSEC to protect against DNS spoofing attacks
 
+ 
+
 ## Objectives
 
 1. Discover subdomains of a domain
@@ -59,14 +65,24 @@ From an offensive perspective, subdomain enumeration can be used to find potenti
 
 1. Identify hidden services or infrastructure
 
+ 
+
 # Instructions
 
 1. This command is used for subdomain enumeration. It clones the subbrute tool from the GitHub repository and runs it against the specified domain. 
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/TheRook/subbrute
 pyth]]
 
+
+
 > The 'git clone' command is used to download the subbrute tool from the GitHub repository. The 'python subbrute.py' command is then used to run the tool against the specified domain. This command will generate a list of subdomains for the specified domain.
+
+
 
 **Command** ([[Clone subbrute repository]]):
 
@@ -74,11 +90,17 @@ pyth]]
 git clone https://github.com/TheRook/subbrute
 ```
 
+
+
+
+
 **Command** ([[Run subbrute against domain.example.com]]):
 
 ```bash
 python subbrute.py domain.example.com
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +126,5 @@ python subbrute.py domain.example.com
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using Subbrute]]
+
+

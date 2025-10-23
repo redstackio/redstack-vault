@@ -37,9 +37,13 @@ From a technical perspective, TE Header Obfuscation involves sending HTTP reques
 
 From a business perspective, TE Header Obfuscation can be used to bypass security controls and gain unauthorized access to sensitive data. This can lead to data theft, data manipulation, and other types of cyber attacks.
 
+ 
+
 ## Requirements
 
 1. Access to HTTP requests
+
+ 
 
 ## Defense
 
@@ -49,9 +53,13 @@ From a business perspective, TE Header Obfuscation can be used to bypass securit
 
 1. Monitor network traffic for suspicious activity and investigate any anomalies.
 
+ 
+
 ## Objectives
 
 1. Bypass security controls and gain unauthorized access to sensitive data
+
+ 
 
 # Instructions
 
@@ -60,10 +68,18 @@ From a business perspective, TE Header Obfuscation can be used to bypass securit
 2. Ensure that the "Update Content-Length" option is unchecked.
 3. Include the trailing sequence \r\n\r\n following the final 0 in the request.
 
+ 
+
+
+
 **Code**: [[Transfer-Encoding: xchunked
 Transfer-Encoding : ch]]
 
+
+
 > The Transfer-Encoding command is used to specify the form of encoding used to transfer the entity to the recipient. This command can take multiple arguments such as xchunked, chunked, and x. The arguments specify the encoding format used to transfer the data. When using Burp Repeater, it is important to ensure that the "Update Content-Length" option is unchecked to avoid issues with the request. Additionally, it is important to include the trailing sequence \r\n\r\n following the final 0 to ensure that the request is properly formatted.
+
+
 
 **Command** ([[Transfer Encoding]]):
 
@@ -78,6 +94,8 @@ X: X[\n]Transfer-Encoding: chunked
 Transfer-Encoding
 : chunked
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +121,5 @@ Transfer-Encoding
 
 - [[Request Smuggling]]
 - [[TE.TE behavior: obfuscating the TE header]]
+
+

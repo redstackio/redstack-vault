@@ -20,3 +20,5 @@ cmstp.exe /ni /s C:\$_DEST_DIR\$_FILE_NAME.inf
 ```
 C:\>cmstp.exe /ni /s C:\Windows\Tasks\pwn.inf
 ```
+
+

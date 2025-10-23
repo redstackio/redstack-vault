@@ -36,11 +36,15 @@ Technical Explanation: AD Sync Account DCSync is a method of replicating passwor
 
 Business Value: An attacker can use this technique to gain access to sensitive data and elevate privileges within the network.
 
+ 
+
 ## Requirements
 
 1. Access to the AD Sync account
 
 1. Access to the on-premises Active Directory
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 1. Implement strong password policies to make brute force attacks more difficult
 
 1. Monitor for unusual activity, such as large numbers of failed login attempts
+
+ 
 
 ## Objectives
 
@@ -60,20 +66,32 @@ Business Value: An attacker can use this technique to gain access to sensitive d
 
 1. Escalate privileges and move laterally within the network
 
+ 
+
 # Instructions
 
 1. To perform a DCSync attack using the AD Sync account, first clone the adconnectdump repository using the provided git command. Then, navigate to the adconnectdump directory and run the following command: ./adconnectdump.py -u <username> -d <domain> -p <password> --ntds <path_to_ntds.dit_file> --ldap-ip <domain_controller_ip_address> --ldap-port <ldap_port_number>. Replace the placeholders with the appropriate values for your environment. This will extract the NTLM hashes from the ntds.dit file using the AD Sync account credentials stored in the ADSync.mdf file.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/fox-it/adconnectdump
 ]]
 
+
+
 > This command is used to perform a DCSync attack using the AD Sync account. The adconnectdump tool is used to extract the NTLM hashes from the ntds.dit file on a domain controller. The AD Sync account credentials are stored in the ADSync.mdf file, which is located in the C:\Program Files\Microsoft Azure AD Sync\Data directory. The -u, -d, and -p flags are used to specify the username, domain, and password for the AD Sync account. The --ntds flag is used to specify the path to the ntds.dit file on the domain controller. The --ldap-ip and --ldap-port flags are used to specify the IP address and port number of the domain controller's LDAP service.
+
+
 
 **Command** ([[Clone adconnectdump repository]]):
 
 ```bash
 git clone https://github.com/fox-it/adconnectdump
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -98,3 +116,5 @@ git clone https://github.com/fox-it/adconnectdump
 - [[Azure AD Connect]]
 - [[Azure AD Connect - Password extraction]]
 - [[Cloud - Azure]]
+
+

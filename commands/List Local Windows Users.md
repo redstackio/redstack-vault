@@ -6,7 +6,9 @@ executor: command_prompt
 data: net user
 output: 'PS C:\ > net user
 
+
   User accounts for \\DESKTOP-29CSGFA
+
 
   -------------------------------------------------------------------------------
 
@@ -37,3 +39,5 @@ Administrator            Bob                      DefaultAccount
 Guest                    Alice                    WDAGUtilityAccount
 The command completed successfully.
 ```
+
+

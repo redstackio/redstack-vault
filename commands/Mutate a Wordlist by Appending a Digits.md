@@ -20,3 +20,5 @@ hashcat -a 6 --stdout $_WORDLIST ?d > $_WORDLIST.mutated
 ```
 root@kali:~# hashcat -a 6 --stdout wordlist.txt  ?d > output.txt
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:14.196507+00:00'
 ```bash
 certipy find 'corp.local/john:Passw0rd@dc.corp.local' -bloodhound
 ```
+
+

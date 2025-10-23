@@ -16,3 +16,9 @@ SIPVicious suite is a set of tools that can be used to audit SIP based VoIP syst
 ## Description
 
 SIPVicious suite is a set of tools that can be used to audit SIP based VoIP systems. It currently consists of four tools:. svmap – this is a sip scanner. Lists SIP devices found on an IP range svwar – identifies active extensions on a PBX svcrack – an online password cracker for SIP PBX svreport – manages sessions and exports reports to various formats svcrash – attempts to stop unauthorized svwar and svcrack scans.
+
+
+
+
+
+

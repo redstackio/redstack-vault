@@ -36,11 +36,15 @@ To extract the database name, the attacker sends an SQL query that uses error-ba
 
 This technique can be valuable to an attacker as it provides information about the target's infrastructure and can help them plan subsequent attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the Oracle SQL server
 
 1. Knowledge of SQL injection techniques
+
+ 
 
 ## Defense
 
@@ -50,20 +54,32 @@ This technique can be valuable to an attacker as it provides information about t
 
 1. Monitor the server logs for suspicious activity, including SQL injection attempts
 
+ 
+
 ## Objectives
 
 1. Extract the name of the Oracle SQL database running on the target server
 
 1. Gather reconnaissance information to plan subsequent attacks
 
+ 
+
 # Instructions
 
 1. This command retrieves information about the database. The first query retrieves the global name of the database. The second query retrieves the name of the database. The third query retrieves the instance name of the database. The fourth query retrieves the database name using the DUAL table.
 
+ 
+
+
+
 **Code**: [[SELECT global_name FROM global_name;
 SELECT name F]]
 
+
+
 > The 'global_name' is the globally unique name of the database. The 'name' is the name of the database. The 'instance_name' is the name of the instance that is connected to the database. The 'SYS.DATABASE_NAME' is the name of the database.
+
+
 
 **Command** ([[Retrieve Global Database Name]]):
 
@@ -71,11 +87,19 @@ SELECT name F]]
 SELECT global_name FROM global_name;
 ```
 
+
+
+
+
 **Command** ([[Retrieve Database Name]]):
 
 ```bash
 SELECT name FROM V$DATABASE;
 ```
+
+
+
+
 
 **Command** ([[Retrieve Instance Name]]):
 
@@ -83,11 +107,17 @@ SELECT name FROM V$DATABASE;
 SELECT instance_name FROM V$INSTANCE;
 ```
 
+
+
+
+
 **Command** ([[Retrieve System Database Name]]):
 
 ```bash
 SELECT SYS.DATABASE_NAME FROM DUAL;
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -110,3 +140,5 @@ SELECT SYS.DATABASE_NAME FROM DUAL;
 
 - [[Oracle SQL database name]]
 - [[Oracle SQL Injection]]
+
+

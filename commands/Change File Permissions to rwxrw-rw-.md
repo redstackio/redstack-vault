@@ -20,3 +20,5 @@ chmod 755 $_FILENAME
 ```
 root@kali:~# chmod 755 pwn.sh
 ```
+
+

@@ -35,11 +35,15 @@ To retrieve SSL certificates for a target domain using Spyse, the attacker can u
 
 The business value of this technique is that it allows organizations to identify potential security risks in their infrastructure and take proactive measures to mitigate those risks.
 
+ 
+
 ## Requirements
 
 1. Access to the Spyse API
 
 1. Access to Microsoft SSL Certificates
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of this technique is that it allows organizations to identify
 
 1. Use multi-factor authentication to prevent unauthorized access to the Spyse API
 
+ 
+
 ## Objectives
 
 1. Identify SSL/TLS certificates for a target domain
@@ -57,13 +63,23 @@ The business value of this technique is that it allows organizations to identify
 
 1. Gain insight into the target's infrastructure
 
+ 
+
 # Instructions
 
 1. To retrieve SSL certificates for a target domain using Spyse, run the following command:
 
+ 
+
+
+
 **Code**: [[spyse -target hotmail.com --ssl-certificates]]
 
+
+
 > The 'spyse' command is used to access the Spyse API. The '-target' flag specifies the target domain, in this case 'hotmail.com'. The '--ssl-certificates' flag tells Spyse to retrieve SSL certificates for the specified domain. This command can be useful for security researchers or system administrators who need to verify SSL certificates for a domain.
+
+
 
 **Command** ([[Spyse SSL Certificate Lookup for hotmail.com]]):
 
@@ -71,17 +87,29 @@ The business value of this technique is that it allows organizations to identify
 spyse -target hotmail.com --ssl-certificates
 ```
 
+
+
 2. Use the spyse tool to retrieve SSL certificates for the Microsoft organization.
+
+ 
+
+
 
 **Code**: [[spyse -target "org: Microsoft" --ssl-certificates]]
 
+
+
 > This command uses the spyse tool to retrieve SSL certificates for the Microsoft organization. The "-target" flag specifies the target organization as Microsoft, and the "--ssl-certificates" flag specifies that SSL certificates should be retrieved. This command can be useful for security researchers or system administrators who need to monitor SSL certificates for a particular organization.
+
+
 
 **Command** ([[Spyse SSL Certificate Scan for Microsoft]]):
 
 ```bash
 spyse -target "org: Microsoft" --ssl-certificates
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -103,3 +131,5 @@ spyse -target "org: Microsoft" --ssl-certificates
 - [[Network Discovery]]
 - [[Searching for SSL certificates]]
 - [[Spyse]]
+
+

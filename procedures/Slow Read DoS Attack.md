@@ -32,7 +32,15 @@ Slow read Dos attack is similar to slowloris attack except that instead of prolo
 
 # Instructions
 
+
+
 1. Slowhttp test tool can be used to test for this kind of attack.Install slowhttp test use the following command in linux machine. 
+
+
+
+
+
+
 
 **Command** ([[Slowhttp test]]):
 
@@ -41,7 +49,17 @@ sudo apt-get install slowhttptest
 
 ```
 
+
+
+
+
 2. Once the tool is installed use the following command on the target url . 
+
+
+
+
+
+
 
 **Command** ([[slow read DoS]]):
 
@@ -49,7 +67,13 @@ sudo apt-get install slowhttptest
 slowhttptest -c 500 -H -g -o ./output_file -i 10 -r 200 -t GET -u http://yourwebsite-or-server-ip.com -x 24 -p 2
 ```
 
+
+
+
+
 Below are the switches used in the above command
+
+
 
 - `-c `: Specifies the target number of connections to establish during the test (in this example 500, normally with 200 should be enough to hang a server that doesn't have      protection against this attack).
 
@@ -71,7 +95,13 @@ Below are the switches used in the above command
 
 - `-p`: Specifies the interval to wait for HTTP response onprobe connection, before marking the server as DoSed (in seconds).
 
+
+
 3. Load the application in the browser to confirm the DoS attack.
+
+
+
+
 
 ## Platforms
 
@@ -86,3 +116,5 @@ Below are the switches used in the above command
 
 - [[DOS]]
 - [[Web Applications]]
+
+

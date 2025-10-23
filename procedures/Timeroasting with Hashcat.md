@@ -30,6 +30,8 @@ Timeroasting is a technique used to manipulate the timestamps of kerberos ticket
 
 Timeroasting is a technique used to manipulate the timestamps of kerberos tickets to extend their validity period. Attackers can use this technique to maintain persistence in the target environment. By cracking NTP hashes with Hashcat, an attacker can obtain the NTP server's symmetric key, which can be used to manipulate the time on the target system. This procedure will allow an attacker to perform timeroasting attacks on the target system.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
@@ -37,6 +39,8 @@ Timeroasting is a technique used to manipulate the timestamps of kerberos ticket
 1. Hashcat tool installed
 
 1. NTP hash to crack
+
+ 
 
 ## Defense
 
@@ -46,19 +50,31 @@ Timeroasting is a technique used to manipulate the timestamps of kerberos ticket
 
 1. Use secure protocols such as NTS (Network Time Security) to secure NTP communication
 
+ 
+
 ## Objectives
 
 1. Extend the validity period of kerberos tickets
 
 1. Maintain persistence in the target environment
 
+ 
+
 # Instructions
 
 1. The `timeroast.py` script is used to retrieve NTP timestamps from a target machine. The resulting hashes are saved to a file called `ntp-hashes.txt`. This file can then be used as input for the `hashcat` command to crack the hashes. The `-m 31300` flag specifies the hash type to be cracked, which in this case is the NTP hash.
 
+ 
+
+
+
 **Code**: [[sudo ./timeroast.py 10.0.0.42 | tee ntp-hashes.txt]]
 
+
+
 > This command is useful for cracking NTP hashes, which can be used to gain access to a target machine. By retrieving the hashes using `timeroast.py` and then cracking them with `hashcat`, an attacker can potentially gain access to the target machine's network. It is important to note that this command should only be used for legal and ethical purposes, such as in a penetration testing scenario with proper authorization.
+
+
 
 **Command** ([[Run timeroast.py to get NTP hashes]]):
 
@@ -66,11 +82,17 @@ Timeroasting is a technique used to manipulate the timestamps of kerberos ticket
 sudo ./timeroast.py 10.0.0.42 | tee ntp-hashes.txt
 ```
 
+
+
+
+
 **Command** ([[Crack NTP hashes with hashcat]]):
 
 ```bash
 hashcat -m 31300 ntp-hashes.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -91,3 +113,5 @@ hashcat -m 31300 ntp-hashes.txt
 
 - [[Active Directory Attacks]]
 - [[Timeroasting]]
+
+

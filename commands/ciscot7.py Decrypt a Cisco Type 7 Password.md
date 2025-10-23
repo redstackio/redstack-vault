@@ -23,3 +23,5 @@ python ciscot7.py -d -p $_PASSWORD
 root@kali:~/ciscot7# python3 ciscot7.py -d -p 01000307490e121c60
 Decrypted password: secrets!
 ```
+
+

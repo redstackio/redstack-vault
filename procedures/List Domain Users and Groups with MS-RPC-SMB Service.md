@@ -35,9 +35,15 @@ Connect to a Microsoft SMB server using rpcclient, and enumerate domain users an
 
 Connect to a Microsoft SMB server using rpcclient, and enumerate domain users and groups.
 
+
+
+
+
 ## Objectives
 
 Having a list of domain users and groups can help the attacker identify potential targets for reconnaissance and further information gathering. For example, the attacker might use the list of domain users and groups to identify individuals with privileged access, such as domain administrators or service accounts, and focus their efforts on obtaining their credentials or performing lateral movement.
+
+
 
 1. Authenticate with an RPC service on a remote machine
 
@@ -45,11 +51,19 @@ Having a list of domain users and groups can help the attacker identify potentia
 
 3. Obtain a list of domain groups
 
+
+
 # Instructions
 
 Instructions on how to complete the procedure. Typically multiple numbered lists with commands included, and may contain H2 subheadings.
 
+
+
 1. Connect to the server using rpcclient. To attempt to authenticate without credentials (Null session), omit the username and password leaving only the empty quotes.
+
+
+
+
 
 **Command** ([[rpcclient Authenticate with an RPC Server]]):
 
@@ -57,7 +71,15 @@ Instructions on how to complete the procedure. Typically multiple numbered lists
 rpcclient -U "$_USERNAME%$_PASSWORD" $_TARGET_IP
 ```
 
+
+
+
+
 2. Enumerate domain users.
+
+
+
+
 
 **Command** ([[List Domain Users on an SMB/RPC Server]]):
 
@@ -65,13 +87,25 @@ rpcclient -U "$_USERNAME%$_PASSWORD" $_TARGET_IP
 enumdomusers
 ```
 
+
+
+
+
 3. Enumerate domain groups.
+
+
+
+
 
 **Command** ([[List Domain Groups on an SMB/RPC Server]]):
 
 ```bash
 enumdomgroups
 ```
+
+
+
+
 
 ## Platforms
 
@@ -97,3 +131,5 @@ enumdomgroups
 
 - [[Enumeration]]
 - [[Network]]
+
+

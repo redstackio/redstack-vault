@@ -40,6 +40,8 @@ To crack NTLM hashes, an attacker first needs to obtain them. This can be done b
 
 This procedure can be used by attackers to gain access to user accounts and escalate privileges within a Windows environment.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows domain controller
@@ -47,6 +49,8 @@ This procedure can be used by attackers to gain access to user accounts and esca
 1. NTLM hashes to crack
 
 1. Hashcat installed
+
+ 
 
 ## Defense
 
@@ -56,6 +60,8 @@ This procedure can be used by attackers to gain access to user accounts and esca
 
 1. Use multi-factor authentication to prevent unauthorized access to user accounts
 
+ 
+
 ## Objectives
 
 1. Obtain NTLM hashes from a Windows domain controller
@@ -63,6 +69,8 @@ This procedure can be used by attackers to gain access to user accounts and esca
 1. Use hashcat to generate custom masks and crack the passwords
 
 1. Gain access to user accounts and escalate privileges within a Windows environment
+
+ 
 
 # Instructions
 
@@ -74,8 +82,14 @@ This procedure can be used by attackers to gain access to user accounts and esca
 To crack passwords using hashcat:
 1. Run the command: $ hashcat64.exe -m 1000 -w 4 -O -a 0 -o pathtopotfile pathtohashes pathtodico -r myrules.rule --opencl-device-types 1,2
 
+ 
+
+
+
 **Code**: [[# Basic wordlist
 # (-O) will Optimize for 32 chara]]
+
+
 
 > The above command is useful when you want to crack passwords using hashcat. The command takes multiple arguments, which are explained below:
 1. -m: Hash type. In this case, it is set to 1000, which corresponds to NTLM.
@@ -88,11 +102,17 @@ To crack passwords using hashcat:
 
 The custom mask generated using the above command can be used to crack passwords that are similar to the words in the wordlist. The targettime argument specifies the time in seconds that the mask generation algorithm should run for. The optindex argument specifies the optimization index to use. The -q flag suppresses the output, and the -o flag specifies the output file.
 
+
+
 **Command** ([[Optimize wordlist for hashcat]]):
 
 ```bash
 $ hashcat64.exe -m 1000 -w 4 -O -a 0 -o pathtopotfile pathtohashes pathtodico -r myrules.rule --opencl-device-types 1,2
 ```
+
+
+
+
 
 **Command** ([[Generate custom mask for hashcat]]):
 
@@ -100,6 +120,8 @@ $ hashcat64.exe -m 1000 -w 4 -O -a 0 -o pathtopotfile pathtohashes pathtodico -r
 $ python2 statsgen.py ../hashcat.potfile -o hashcat.mask
 $ python2 maskgen.py hashcat.mask --targettime 3600 --optindex -q -o hashcat_1H.hcmask
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -126,3 +148,5 @@ $ python2 maskgen.py hashcat.mask --targettime 3600 --optindex -q -o hashcat_1H.
 - [[Active Directory Attacks]]
 - [[Crack NTLM hashes with hashcat]]
 - [[Dumping AD Domain Credentials]]
+
+

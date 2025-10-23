@@ -19,3 +19,5 @@ updated_at: '2023-04-10T20:23:21.773343+00:00'
 /?whatever=1;(select 1 from pg_sleep(5))
 /?whatever=1||(select 1 from pg_sleep(5))
 ```
+
+

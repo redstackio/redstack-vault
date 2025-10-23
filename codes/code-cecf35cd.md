@@ -17,3 +17,5 @@ docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --org=tru
 trufflehog git https://github.com/trufflesecurity/trufflehog.git
 trufflehog github --endpoint https://api.github.com --org trufflesecurity --token GITHUB_TOKEN --debug --concurrency 2
 ```
+
+

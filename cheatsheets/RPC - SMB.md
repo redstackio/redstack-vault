@@ -9,14 +9,28 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # RPC / SMB
 
+
+
 **Code**: [[
 rpcclient -U "" -N
 rpcclient -U
 rpcclient $> srvi]]
 
+
+
+
+
+
+
 **Code**: [[
 for u in `cat users_sorted.txt`; do
   echo -n "[*]]
+
+
+
+
+
+
 
 **Command** ([[Pass the Hash Variant]]):
 
@@ -25,9 +39,21 @@ pth-rpcclient -U "domain\name%hash" --pw-nt-hash 10.4.128.41
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Domain Controller Anonymous Enumeration]]):
 
 ```bash
 enum4linux -A | tee -anon-enum.txt
 
 ```
+
+
+
+
+
+

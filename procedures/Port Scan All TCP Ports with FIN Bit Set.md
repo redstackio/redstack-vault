@@ -31,13 +31,23 @@ Firewalls may not disclose all listening ports to a SYN scan, and other scans ar
 
 Firewalls may not disclose all listening ports to a SYN scan, and other scans are needed. A FIN scan monitors different aspects of a TCP handshake, and may discover more ports.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap FIN Scan with Service Enumeration]]):
 
 ```bash
 nmap -sV -sF -p- $_TARGET_IP
 ```
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -57,3 +67,5 @@ nmap -sV -sF -p- $_TARGET_IP
 
 - [[Enumeration]]
 - [[Network]]
+
+

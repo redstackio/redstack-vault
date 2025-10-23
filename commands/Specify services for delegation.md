@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:20.679788+00:00'
 ```bash
 Set-ADUser -Identity 'User1' -ServicePrincipalNames 'http/Server1.domain.com', 'http/Server2.domain.com'
 ```
+
+

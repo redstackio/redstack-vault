@@ -33,6 +33,8 @@ Azure CLI and Azure PowerShell are prominent tools for managing Azure  resources
 
 Azure CLI and Azure PowerShell are prominent tools for managing Azure  resources. They conveniently store access tokens and service principal  secrets, facilitating interaction with Azure services without constant  authentication prompts. However, these credentials are stored in clear  text, posing a potential security risk. This procedure focuses on the  safe handling and protection of these tokens to prevent unauthorized  access.
 
+
+
 ## Requirements
 
 - A local or remote machine with Azure CLI or Azure PowerShell installed
@@ -55,18 +57,38 @@ Azure CLI and Azure PowerShell are prominent tools for managing Azure  resources
 
 - Maintain secure interaction with Azure resources for long running processes or frequent Azure management tasks
 
+
+
 # Instructions
+
+
 
 1. Azure CLI can store secrets in plain text in the following files:
 
+
+
+
+
 **Code**: [[# Azure CLI stores access tokens in clear text in ]]
 
+
+
+
+
 2. (Optional) Azure Powershell can store secrets in plain text:
+
+
+
+
 
 **Code**: [[# Access tokens in clear text
 c:\Users\<username>\]]
 
+
+
 > Users can save tokens using the Save-AzContext command.
+
+
 
 ## Platforms
 
@@ -88,3 +110,5 @@ c:\Users\<username>\]]
 - [[Access Tokens]]
 - [[Cloud - Azure]]
 - [[Plain Text Credentials]]
+
+

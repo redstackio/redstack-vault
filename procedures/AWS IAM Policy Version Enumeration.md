@@ -36,9 +36,13 @@ To execute this procedure, the attacker uses the 'List IAM Policy Versions' comm
 
 The business value of this procedure is that it helps organizations identify potential security risks in their AWS environment and take appropriate action to mitigate them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with IAM permissions
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this procedure is that it helps organizations identify pot
 
 1. Monitor AWS logs and alerts for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Discover information about the policy versions in use
@@ -56,17 +62,25 @@ The business value of this procedure is that it helps organizations identify pot
 
 1. Identify the permissions granted to different users or roles
 
+ 
+
 # Instructions
 
 1. Use this command to list all the versions of an IAM policy.
 
+ 
+
 The 'aws iam list-policy-versions' command lists all the versions of an IAM policy. The command requires the Amazon Resource Name (ARN) of the policy as an argument. The output of the command includes the version number, create date, and whether the version is the default version. This command is useful when you need to view the different versions of a policy and compare them to each other. You can also use this command to determine which version of a policy is currently set as the default version.
+
+
 
 **Command** ([[List IAM Policy Versions]]):
 
 ```bash
 aws iam list-policy-versions --policy-arn ARN
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +103,5 @@ aws iam list-policy-versions --policy-arn ARN
 - [[Cloud - AWS]]
 - [[Listing information about the version of the policy]]
 - [[Persistence & Backdooring]]
+
+

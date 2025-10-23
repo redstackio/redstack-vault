@@ -28,11 +28,27 @@ sqlmap is an open source penetration testing tool that automates the process of 
 
 sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features and a broad range of switches lasting from database fingerprinting, over data fetching from the database, to accessing the underlying file system and executing commands on the operating system via out-of-band connections.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_3281f239-fa6d-4285-a224-21f67fba90a8}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -54,3 +70,5 @@ sqlmap is an open source penetration testing tool that automates the process of 
 - [[Network]]
 - [[Service Attacks]]
 - [[SQL]]
+
+

@@ -26,3 +26,5 @@ root@kali:~# host -t mx testsite.com
 testsite.com mail is handled by 10 MX1.TESTSITE.COM.
 testsite.com mail is handled by 10 MX2.TESTSITE.COM.
 ```
+
+

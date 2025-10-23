@@ -34,9 +34,13 @@ Technical Explanation: This technique takes advantage of the vulnerability in th
 
 Business Value: This technique can be used by attackers to gain access to sensitive information stored on the server. By exploiting LFI vulnerabilities, attackers can bypass authentication and authorization controls and gain access to data that they are not authorized to view.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application.
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ Business Value: This technique can be used by attackers to gain access to sensit
 
 1. Restrict access to sensitive files and directories to prevent unauthorized access.
 
+ 
+
 ## Objectives
 
 1. To include files on the server that are not intended to be viewed by the user.
 
 1. To view the contents of files that are outside the web root directory.
+
+ 
 
 # Instructions
 
@@ -58,7 +66,13 @@ Business Value: This technique can be used by attackers to gain access to sensit
 2. Replace the file name with the name of the file that you want to include.
 3. Use the UTF-8 encoding to bypass filters and include files that are outside the web root directory.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=%c0%ae%c0%ae/%c0]]
+
+
 
 > The attacker can use the above command to exploit the LFI vulnerability using UTF-8 encoding. The attacker can replace the URL with the URL of the vulnerable web application and the file name with the name of the file that they want to include. The attacker can use the UTF-8 encoding to bypass filters and include files that are outside the web root directory.
 
@@ -81,3 +95,5 @@ Business Value: This technique can be used by attackers to gain access to sensit
 - [[Basic LFI]]
 - [[File Inclusion]]
 - [[UTF-8 encoding]]
+
+

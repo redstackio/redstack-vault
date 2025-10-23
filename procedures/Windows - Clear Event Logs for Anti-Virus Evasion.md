@@ -36,11 +36,15 @@ To clear the logs, the attacker can use the 'Clear Windows Event Logs' command. 
 
 The business value of this technique is that it allows the attacker to remain undetected and maintain access to the target system for a longer period of time.
 
+ 
+
 ## Requirements
 
 1. Administrator access to the target system
 
 1. Access to the 'Clear Windows Event Logs' command
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ The business value of this technique is that it allows the attacker to remain un
 
 1. Regularly back up event logs to prevent loss of critical security information
 
+ 
+
 ## Objectives
 
 1. To evade detection from antivirus and security tools
@@ -57,6 +63,8 @@ The business value of this technique is that it allows the attacker to remain un
 1. To cover the attacker's tracks and avoid detection
 
 1. To maintain access to the target system
+
+ 
 
 # Instructions
 
@@ -69,10 +77,18 @@ The business value of this technique is that it allows the attacker to remain un
 
 Note: This command will clear the System and Security event logs.
 
+ 
+
+
+
 **Code**: [[cmd.exe /c wevtutil.exe cl System
 cmd.exe /c wevtu]]
 
+
+
 > This command clears the Windows event logs for the System and Security logs. The 'wevtutil.exe cl' command is used to clear the logs. The 'System' and 'Security' parameters specify which logs to clear. The 'cmd.exe /c' command is used to run the 'wevtutil.exe' command in the Command Prompt window. This command can be useful for troubleshooting issues or for security purposes.
+
+
 
 **Command** ([[Clear Windows Event Logs]]):
 
@@ -80,6 +96,8 @@ cmd.exe /c wevtu]]
 cmd.exe /c wevtutil.exe cl System
 cmd.exe /c wevtutil.exe cl Security
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +122,5 @@ cmd.exe /c wevtutil.exe cl Security
 - [[Clear System and Security Logs]]
 - [[Disable Antivirus and Security]]
 - [[Windows - Persistence]]
+
+

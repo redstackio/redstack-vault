@@ -26,3 +26,5 @@ root@kali ~# amass intel -asn 41264
 corp.google.com
 
 ```
+
+

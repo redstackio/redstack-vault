@@ -24,7 +24,11 @@ You will find it useful to build your own subdomain wordlist to brute force with
 
 You will find it useful to build your own subdomain wordlist to brute force with tools like massdns.
 
+
+
 Once you obtain SecLists wordlist from github and un-gzip / un-tar it, run this command against your target domain to build the wordlist into your local directory.
+
+
 
 **Command** ([[build dns subdomain wordlist with sed]]):
 
@@ -32,6 +36,12 @@ Once you obtain SecLists wordlist from github and un-gzip / un-tar it, run this 
 sed 's/$/.$_TARGET_DOMAIN/' $_SECLISTS_WORDLIST > $_OUTPUT_FILE
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[build dns subdomain wordlist with sed]]
+
+

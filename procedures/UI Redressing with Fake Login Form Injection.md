@@ -36,9 +36,13 @@ From a technical perspective, the attacker injects a script into a vulnerable we
 
 The business value of this attack is that it allows an attacker to gain access to sensitive information, such as usernames and passwords. This information can be used for further attacks, such as spear-phishing or credential stuffing.
 
+ 
+
 ## Requirements
 
 1. Vulnerable website with a cross-site scripting (XSS) vulnerability
+
+ 
 
 ## Defense
 
@@ -48,18 +52,28 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Educate users on how to identify and avoid phishing attacks
 
+ 
+
 ## Objectives
 
 1. Steal user credentials
 
 1. Gain access to sensitive information
 
+ 
+
 # Instructions
 
 1. Inject the provided payload into the vulnerable input field to display a fake login form.
 
+ 
+
+
+
 **Code**: [[<script>
 history.replaceState(null, null, '../../.]]
+
+
 
 > This command demonstrates the ability to exploit a Cross-Site Scripting (XSS) vulnerability in order to inject malicious code into a web page. The provided payload is designed to replace the existing content of the page with a fake login form, which can be used to steal user credentials. The attacker would typically send a link to the victim that contains the malicious payload, and if the victim clicks on the link, the payload would execute in their browser. To prevent this type of attack, web developers should ensure that user input is properly sanitized and validated before being displayed on a web page.
 
@@ -84,3 +98,5 @@ history.replaceState(null, null, '../../.]]
 - [[Cross Site Scripting]]
 - [[Exploit code or POC]]
 - [[UI redressing]]
+
+

@@ -28,11 +28,25 @@ Command-line tool used to create download and upload jobs and monitor their prog
 
 Command-line tool used to create download and upload jobs and monitor their progress. This tool can list all jobs owned by the current user, but administrator privileges are required to see all jobs on the system.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_147362a9-7135-4ebb-8310-c12b8a5e2600}}
+
+
 
 # Installation
 
 BITSAdmin is included with all modern version of Windows
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +60,5 @@ BITSAdmin is included with all modern version of Windows
 
 - [[file transfer]]
 - [[Network]]
+
+

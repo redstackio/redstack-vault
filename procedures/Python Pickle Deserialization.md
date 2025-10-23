@@ -32,9 +32,13 @@ Python Pickle Deserialization is a vulnerability that allows attackers to execut
 
 This vulnerability can be mitigated by not using pickle module with untrusted sources, and by properly validating user input. 
 
+ 
+
 ## Requirements
 
 1. Python environment
+
+ 
 
 ## Defense
 
@@ -44,28 +48,46 @@ This vulnerability can be mitigated by not using pickle module with untrusted so
 
 1. Use the latest version of Python to ensure that known vulnerabilities are patched.
 
+ 
+
 ## Objectives
 
 1. Execute arbitrary code on the server
 
 1. Gain persistence on the system
 
+ 
+
 # Instructions
 
 1. Run the following code in a Python environment:
 
+ 
+
+
+
 **Code**: [[cPickle]]
+
+
 
 > This command generates an auth_token which is a serialized User object using the cPickle module.
 
 2. Run the following code in a Python environment:
+
+ 
+
+
 
 **Code**: [[import cPickle
 from base64 import b64decode
 
 def l]]
 
+
+
 > This command loads the auth_token from user input and deserializes it using the cPickle module. It then prints the username of the deserialized object.
+
+
 
 **Command** ([[Load Auth Token]]):
 
@@ -80,18 +102,30 @@ auth_token = raw_input("Enter Auth Token : ")
 user = load_token(auth_token)
 ```
 
+
+
+
+
 **Command** ([[Print Welcome Message]]):
 
 ```bash
 print "Welcome {}".format(user.username)
 ```
 
+
+
 3. Run the following code in a Python environment:
+
+ 
+
+
 
 **Code**: [[import cPickle, os
 from base64 import b64encode
 
 c]]
+
+
 
 > This command generates a malicious pickle object that will execute the 'whoami' command on the server when deserialized using the cPickle module. The output of the 'whoami' command will be printed as the evil token.
 
@@ -114,3 +148,5 @@ c]]
 
 - [[Pickle]]
 - [[Python Deserialization]]
+
+

@@ -28,9 +28,13 @@ This procedure involves simulating `kubectl` API requests to perform a Self Subj
 
 To perform a Self Subject Rules Review, an attacker can send a POST request to the `/apis/authorization.k8s.io/v1/selfsubjectrulesreviews` endpoint with the Service Account token in the Authorization header. The response will contain a list of all the rules and permissions that the Service Account has within the Kubernetes environment.
 
+ 
+
 ## Requirements
 
 1. Valid Service Account token
+
+ 
 
 ## Defense
 
@@ -40,25 +44,39 @@ To perform a Self Subject Rules Review, an attacker can send a POST request to t
 
 1. Monitor for anomalous activity within the Kubernetes environment, such as unusual API requests or unauthorized Service Account usage
 
+ 
+
 ## Objectives
 
 1. Identify potential privilege escalation opportunities within the Kubernetes environment
 
 1. Gain information for lateral movement within the environment
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[# NOTE: only the Authorization and Content-Type he]]
 
+
+
 > 
+
+
 
 **Command** ([[Check Authorization]]):
 
 ```bash
 $ kubectl -v9 auth can-i --list
 ```
+
+
 
 ## Commands Used
 
@@ -69,3 +87,5 @@ $ kubectl -v9 auth can-i --list
 - [[Container Environment]]
 - [[Kubernetes]]
 - [[Simulating `kubectl` API Requests]]
+
+

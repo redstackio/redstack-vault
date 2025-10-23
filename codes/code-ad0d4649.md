@@ -16,3 +16,5 @@ crackmapexec smb 192.168.1.100 -u Administrator -p "Password123?" # Password
 crackmapexec smb 192.168.1.100 -u Administrator -H ":31d6cfe0d16ae931b73c59d7e0c089c0" # NT Hash
 export KRB5CCNAME=/tmp/kerberos/admin.ccache; crackmapexec smb 192.168.1.100 -u admin --use-kcache # Kerberos
 ```
+
+

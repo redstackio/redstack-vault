@@ -38,11 +38,15 @@ The technical process involves writing C# code that generates an obfuscated VBA 
 
 The business value of this procedure is that it can be used to gain access to sensitive information or systems. This can be used for espionage, financial gain, or to disrupt business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a C# compiler
 
 1. Access to a Microsoft Excel file
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ The business value of this procedure is that it can be used to gain access to se
 
 1. Use antivirus software to detect and block malicious files and macros
 
+ 
+
 ## Objectives
 
 1. Generate an obfuscated VBA macro from C# code
@@ -59,6 +65,8 @@ The business value of this procedure is that it can be used to gain access to se
 1. Deliver the VBA macro to a victim via a spear-phishing email or infected document
 
 1. Execute malicious commands on the victim's machine
+
+ 
 
 # Instructions
 
@@ -71,9 +79,17 @@ The business value of this procedure is that it can be used to gain access to se
    .\hot-manchego.exe .\blank.xlsm .\vba.txt
 5. The VBA macro will be saved to 'vba.txt' in the same folder as the C# code.
 
+ 
+
+
+
 **Code**: [[Generate CS Macro and save it to Windows as vba.tx]]
 
+
+
 > This command generates a VBA macro from C# code. The 'hot-manchego.cs' file contains the C# code for the macro. The 'blank.xlsm' file is a new Excel workbook that will be used to create the macro. The 'vba.txt' file is where the generated macro will be saved. The 'csc.exe' command is used to compile the C# code and the 'hot-manchego.exe' command is used to generate the macro. The 'EPPlus.dll' file is a reference that is needed to compile the C# code.
+
+
 
 **Command** ([[Create new Excel file]]):
 
@@ -81,17 +97,27 @@ The business value of this procedure is that it can be used to gain access to se
 New-Item blank.xlsm
 ```
 
+
+
+
+
 **Command** ([[Compile C# code]]):
 
 ```bash
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /reference:EPPlus.dll hot-manchego.cs
 ```
 
+
+
+
+
 **Command** ([[Generate CS Macro]]):
 
 ```bash
 .\hot-manchego.exe .\blank.xlsm .\vba.txt
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -118,3 +144,5 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /reference:EPPlus.dll hot-
 
 - [[Office - Attacks]]
 - [[XLSM - Hot Manchego]]
+
+

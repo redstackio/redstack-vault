@@ -16,3 +16,7 @@ Quick Malicious ClickOnceGenerator for Red Team. The default application a simpl
 ## Description
 
 Quick Malicious ClickOnceGenerator for Red Team. The default application a simple WebBrowser widget that point to a website of your choice. ​
+
+
+
+

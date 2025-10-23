@@ -33,13 +33,23 @@ Query Open Source Intelligence for information on a target's domain and sub doma
 
 Query Open Source Intelligence for information on a target's domain and sub domains.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Sublist3r Domain Name Enumeration with OSINT]]):
 
 ```bash
 sublist3r -d $_DOMAIN
 ```
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +73,5 @@ sublist3r -d $_DOMAIN
 
 - [[OSINT]]
 - [[public]]
+
+

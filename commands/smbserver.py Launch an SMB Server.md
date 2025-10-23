@@ -8,6 +8,7 @@ output: 'smbserver.py share /tmp
 
   Impacket v0.9.20-dev - Copyright 2019 SecureAuth Corporation
 
+
   [*] Config file parsed
 
   [*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
@@ -42,3 +43,5 @@ Impacket v0.9.20-dev - Copyright 2019 SecureAuth Corporation
 [*] Config file parsed
 [*] Config file parsed
 ```
+
+

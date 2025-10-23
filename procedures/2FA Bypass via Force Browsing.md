@@ -30,11 +30,15 @@ Bypassing 2FA by force browsing is an attack technique that allows an attacker t
 
 Bypassing 2FA by force browsing is an attack technique that allows an attacker to bypass 2FA authentication by directly accessing the authenticated page without the 2FA check. This technique works when the application does not properly validate the 2FA code and allows the user to access the page without it. Attackers can use this technique to gain unauthorized access to a user's account and steal sensitive information or perform malicious activities. This technique is commonly used in phishing attacks to steal user credentials and bypass 2FA authentication.
 
+ 
+
 ## Requirements
 
 1. Access to the authenticated page
 
 1. Knowledge of the URL structure
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ Bypassing 2FA by force browsing is an attack technique that allows an attacker t
 
 1. Monitor for suspicious activities and unauthorized access
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a user's account
@@ -52,19 +58,31 @@ Bypassing 2FA by force browsing is an attack technique that allows an attacker t
 
 1. Perform malicious activities
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[/my-account]]
 
+
+
 > This command instructs the attacker to access the authenticated page and try to bypass 2FA authentication by replacing the /my-account URL with /2fa/verify. If the application does not properly validate the 2FA code, the attacker can gain access to the account without it.
+
+
 
 **Command** ([[Navigate to My Account page]]):
 
 ```bash
 go to /my-account
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ go to /my-account
 - [[2FA Bypasses]]
 - [[Account Takeover]]
 - [[Bypass 2FA by Force Browsing]]
+
+

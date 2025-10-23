@@ -28,6 +28,10 @@ This tool generates potential subdomains that can be resolved.
 
 [altdns](https://github.com/infosec-au/altdns)
 
+
+
+
+
 **Command** ([[altdns mutate sub domain wordlist and output resolved hosts]]):
 
 ```bash
@@ -35,6 +39,12 @@ altdns -i subdomains.txt -o data_output -w words.txt -r -s results_output.txt
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[altdns mutate sub domain wordlist and output resolved hosts]]
+
+

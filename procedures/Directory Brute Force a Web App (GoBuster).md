@@ -33,13 +33,29 @@ Enumerate a website's files and folders by performing a dictionary brute force o
 
 Enumerate a website's files and folders by performing a dictionary brute force on possible file and folder names.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Gobuster Directory Brute Force]]):
 
 ```bash
 gobuster dir -w $_WORDLIST -u http://$_TARGET_IP
 ```
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -63,3 +79,5 @@ gobuster dir -w $_WORDLIST -u http://$_TARGET_IP
 
 - [[Enumeration]]
 - [[Web Applications]]
+
+

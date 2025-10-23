@@ -29,3 +29,5 @@ aquatone-scan --domain example.com --threads 25
 Final results
 aquatone-gather --domain example.com
 ```
+
+

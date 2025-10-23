@@ -36,6 +36,8 @@ From a technical perspective, the Silver Ticket Attack involves creating a forge
 
 The business value of this attack is that it allows an attacker to gain access to sensitive data and resources in the AAD environment, potentially leading to data theft, data manipulation, or further compromise of the organization's systems.
 
+ 
+
 ## Requirements
 
 1. Access to the Azure AD Connect server
@@ -44,6 +46,8 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Knowledge of the AADG
 
+ 
+
 ## Defense
 
 1. Limit access to the Azure AD Connect server to authorized personnel only
@@ -51,6 +55,8 @@ The business value of this attack is that it allows an attacker to gain access t
 1. Monitor for unusual activity, such as the creation of Silver Tickets or other unauthorized authentication attempts
 
 1. Implement multi-factor authentication to prevent unauthorized access to user accounts
+
+ 
 
 ## Objectives
 
@@ -62,13 +68,23 @@ The business value of this attack is that it allows an attacker to gain access t
 
 1. Further compromise the organization's systems
 
+ 
+
 # Instructions
 
 1. This command uses Mimikatz to retrieve the NTLM password hash of the AZUREADSSOACC account. The account name is specified using the /user argument.
 
+ 
+
+
+
 **Code**: [[mimikatz.exe "lsadump::dcsync /user:AZUREADSSOACC$]]
 
+
+
 > This command is useful for testing the security of an Active Directory environment. By retrieving the NTLM password hash of a privileged account like AZUREADSSOACC, an attacker could potentially use this hash to gain access to other systems or escalate their privileges within the network. It is important to ensure that privileged accounts have strong passwords and that their password hashes are properly secured.
+
+
 
 **Command** ([[DCSync AzureADSSOACC$]]):
 
@@ -76,10 +92,18 @@ The business value of this attack is that it allows an attacker to gain access t
 mimikatz.exe "lsadump::dcsync /user:AZUREADSSOACC$" exit
 ```
 
+
+
 2. Run the mimikatz command with the given arguments to create a Silver Ticket for AADG.
+
+ 
+
+
 
 **Code**: [[mimikatz.exe "kerberos::golden /user:elrond
 /sid:S]]
+
+
 
 > The command uses mimikatz to create a Kerberos Golden Ticket with the given user, domain, and SID. The /rc4 argument specifies the NTLM hash of the user's password. The /target argument specifies the target service for the ticket. The /service argument specifies the service type for the ticket. The /ptt argument injects the ticket into the current user's Kerberos cache. This command is useful for lateral movement and privilege escalation within a Windows domain.
 
@@ -104,3 +128,5 @@ mimikatz.exe "lsadump::dcsync /user:AZUREADSSOACC$" exit
 - [[Azure AD Connect]]
 - [[Azure AD Connect - Seamless Single Sign On Silver Ticket]]
 - [[Cloud - Azure]]
+
+

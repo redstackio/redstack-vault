@@ -16,3 +16,7 @@ SPARTA is a python GUI application that simplifies network infrastructure penetr
 ## Description
 
 SPARTA is a python GUI application that simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase. It allows the tester to save time by having point-and-click access to their toolkit and by displaying all tool output in a convenient way. If less time is spent setting up commands and tools, more time can be spent focusing on analysing results.
+
+
+
+

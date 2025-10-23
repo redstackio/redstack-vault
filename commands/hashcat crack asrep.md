@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:52.884824+00:00'
 ```bash
 hashcat -m 18200 --force -a 0 hashes.text password.txt
 ```
+
+

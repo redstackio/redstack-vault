@@ -32,11 +32,15 @@ DNS rebinding to localhost is a technique that can be used to bypass filters blo
 
 To perform DNS rebinding to localhost, the attacker first sends a DNS response to the victim's computer with a TTL value of 0. This causes the victim's computer to send a new DNS request to the attacker's server, which can then respond with a DNS response containing the IP address of localhost. The attacker can then use this IP address to communicate with a service running on localhost that is not accessible from the internet.
 
+ 
+
 ## Requirements
 
 1. Access to a DNS server
 
 1. Ability to send and receive DNS responses
+
+ 
 
 ## Defense
 
@@ -44,26 +48,40 @@ To perform DNS rebinding to localhost, the attacker first sends a DNS response t
 
 1. Monitor DNS traffic for signs of DNS rebinding attacks.
 
+ 
+
 ## Objectives
 
 1. Bypass DNS filters to communicate with a service running on localhost
 
 1. Gain access to sensitive information or systems
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[$ dig www.example.com +noall +answer
 ; <<>> DiG 9.]]
 
+
+
 > The command uses the dig utility to create a CNAME record for "localhost.example.com" that points to "localhost".
+
+
 
 **Command** ([[DNS Lookup for www.example.com]]):
 
 ```bash
 $ dig www.example.com +noall +answer
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -84,3 +102,5 @@ $ dig www.example.com +noall +answer
 - [[DNS Rebinding]]
 - [[localhost]]
 - [[Protection Bypasses]]
+
+

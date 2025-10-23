@@ -16,3 +16,9 @@ MagicTree is a penetration tester productivity tool. It is designed to allow eas
 ## Description
 
 MagicTree is a penetration tester productivity tool. It is designed to allow easy and straightforward data consolidation, querying, external command execution and (yeah!) report generation. In case you wonder, “Tree” is because all the data is stored in a tree structure, and “Magic” is because it is designed to magically do the most cumbersome and boring part of penetration testing – data management and reporting.
+
+
+
+
+
+

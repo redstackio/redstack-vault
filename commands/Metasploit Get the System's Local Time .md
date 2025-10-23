@@ -23,3 +23,5 @@ localtime
 meterpreter > localtime
 Local Date/Time: 2020-07-08 17:21:45.649 Pacific Daylight Time (UTC-800)
 ```
+
+

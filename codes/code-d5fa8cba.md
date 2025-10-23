@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:05.172939+00:00'
 ```ps1
 ' WHERE SUBSTRING((select column_name from `project_id.dataset_name.table_name` limit 1),1,1)='A'#
 ```
+
+

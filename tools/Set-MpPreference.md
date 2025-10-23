@@ -30,11 +30,25 @@ Set-MpPreference is a PowerShell cmdlet used to configure the Windows Defender s
 
 Set-MpPreference is a PowerShell cmdlet used to configure the Windows Defender scans and updates. It can be used to turn on/off real-time monitoring, add/remove file/folder exclusions, processes, and default actions.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_72405142-2fb5-4abf-bbc5-f105ccf398be}}
+
+
 
 # Installation
 
 Set-MpPreferences is installed by default with modern PowerShell versions.
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +64,5 @@ Set-MpPreferences is installed by default with modern PowerShell versions.
 - [[administrator]]
 - [[defender]]
 - [[Defense Bypass]]
+
+

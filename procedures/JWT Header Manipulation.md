@@ -26,6 +26,8 @@ JWT Header Manipulation is a technique used to modify the header of a JSON Web T
 
 JWT Header Manipulation is a technique used to modify the header of a JSON Web Token (JWT). JWTs are used to securely transmit information between parties as a JSON object. The header of a JWT contains information about the algorithm used to sign the token and the type of token. By manipulating the header, an attacker can change the algorithm used to sign the token, which can result in the token being accepted as valid when it is not. This technique can be used to gain unauthorized access to a system or to elevate privileges.
 
+ 
+
 ## Requirements
 
 1. Access to a JWT
@@ -33,6 +35,8 @@ JWT Header Manipulation is a technique used to modify the header of a JSON Web T
 1. Knowledge of the JWT header structure
 
 1. jwt_tool.py installed
+
+ 
 
 ## Defense
 
@@ -42,34 +46,54 @@ JWT Header Manipulation is a technique used to modify the header of a JSON Web T
 
 1. Implement proper input validation to prevent header manipulation
 
+ 
+
 ## Objectives
 
 1. Modify the header of a JWT to bypass authentication or elevate privileges
 
 1. Gain unauthorized access to a system
 
+ 
+
 # Instructions
 
 1. 
+
+ 
+
+
 
 **Code**: [[{
     "typ": "JWT",
     "alg": "HS256"
 }]]
 
+
+
 > 
 
 2. To modify the header of a JWT, run the following command:
 
+ 
+
+
+
 **Code**: [[python3 jwt_tool.py JWT_HERE -I -hc header1 -hv te]]
 
+
+
 > This command will modify the header of the JWT by setting the value of 'header1' to 'testval1' and the value of 'header2' to 'testval2'.
+
+
 
 **Command** ([[Add JWT headers]]):
 
 ```bash
 python3 jwt_tool.py JWT_HERE -I -hc header1 -hv testval1 -hc header2 -hv testval2
 ```
+
+
 
 ## Commands Used
 
@@ -80,3 +104,5 @@ python3 jwt_tool.py JWT_HERE -I -hc header1 -hv testval1 -hc header2 -hv testval
 - [[Header]]
 - [[JWT Format]]
 - [[JWT - JSON Web Token]]
+
+

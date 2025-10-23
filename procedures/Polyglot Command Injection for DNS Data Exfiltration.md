@@ -31,9 +31,13 @@ Polyglot command injection is a technique used by attackers to inject malicious 
 
 Polyglot command injection is a technique used by attackers to inject malicious commands into a vulnerable application. This technique involves using multiple comment types to evade detection and achieve successful injection. In this specific case, the attacker is using polyglot command injection to exfiltrate data using DNS queries. The attacker is injecting malicious commands into the application, which are then executed on the server, allowing the attacker to exfiltrate data through DNS queries. This technique is highly effective because DNS requests are often allowed through firewalls and other security measures, making it difficult to detect and block this type of attack.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable application with command injection vulnerability
+
+ 
 
 ## Defense
 
@@ -43,23 +47,39 @@ Polyglot command injection is a technique used by attackers to inject malicious 
 
 1. Implement network segmentation to prevent lateral movement in case of a successful attack.
 
+ 
+
 ## Objectives
 
 1. Inject malicious commands into the vulnerable application
 
 1. Exfiltrate data through DNS queries
 
+ 
+
 # Instructions
 
 1. The attacker injects the payload into the vulnerable application to execute the malicious command.
 
+ 
+
+
+
 **Code**: [[1;sleep${IFS}9;#${IFS}';sleep${IFS}9;#${IFS}";slee]]
+
+
 
 > This command injects a malicious payload into the vulnerable application, which is then executed on the server. The payload is designed to sleep for 9 seconds and then send a DNS query to the attacker-controlled DNS server, thereby exfiltrating the data. The payload uses multiple comment types to evade detection and achieve successful injection.
 
 2. The attacker injects the payload into the vulnerable application to execute the malicious command.
 
+ 
+
+
+
 **Code**: [[/*$(sleep 5)`sleep 5``*/-sleep(5)-'/*$(sleep 5)`sl]]
+
+
 
 > This command injects a malicious payload into the vulnerable application, which is then executed on the server. The payload is designed to sleep for 5 seconds and then send a DNS query to the attacker-controlled DNS server, thereby exfiltrating the data. The payload uses multiple comment types to evade detection and achieve successful injection.
 
@@ -83,3 +103,5 @@ Polyglot command injection is a technique used by attackers to inject malicious 
 
 - [[Command Injection]]
 - [[Polyglot command injection]]
+
+

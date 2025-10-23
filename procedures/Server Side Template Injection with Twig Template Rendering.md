@@ -35,11 +35,15 @@ From a technical perspective, SSTI with Twig Template Rendering occurs when an a
 
 The business value of understanding and mitigating SSTI with Twig Template Rendering is significant. By understanding the vulnerability, organizations can prevent attackers from accessing sensitive information, executing arbitrary code, and disrupting critical business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a system running Twig Template Rendering
 
 1. Knowledge of Twig syntax and SSTI vulnerabilities
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ The business value of understanding and mitigating SSTI with Twig Template Rende
 
 1. Implement content security policies to prevent malicious code injection
 
+ 
+
 ## Objectives
 
 1. Identify potential SSTI vulnerabilities in Twig templates
@@ -57,14 +63,24 @@ The business value of understanding and mitigating SSTI with Twig Template Rende
 
 1. Mitigate SSTI vulnerabilities to prevent exploitation
 
+ 
+
 # Instructions
 
 1. This command is used to render a Twig template with dynamic data. The data is passed to the template in the form of an array. The first argument is the path to the template file and the second argument is the data array.
 
+ 
+
+
+
 **Code**: [[$output = $twig->render(
   'Dear' . $_GET['custom_]]
 
+
+
 > In the given code, the Twig template is being rendered with a custom greeting and the user's first name. The first argument in the render function is the string 'Dear' concatenated with the value of the custom_greeting parameter from the GET request. The second argument is an array with the key 'first_name' and the value of the user's first name. The second render function is similar, but uses a string with a placeholder for the first name instead. The rendered output is stored in the $output variable.
+
+
 
 **Command** ([[Render Twig Template with Custom Greeting]]):
 
@@ -76,6 +92,10 @@ $output = $twig->render(
 
 ```
 
+
+
+
+
 **Command** ([[Render Twig Template with First Name]]):
 
 ```bash
@@ -84,6 +104,8 @@ $output = $twig->render(
   array("first_name" => $user.first_name)
 );
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -105,3 +127,5 @@ $output = $twig->render(
 - [[Server Side Template Injection]]
 - [[Twig]]
 - [[Twig - Template format]]
+
+

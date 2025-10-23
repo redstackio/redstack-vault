@@ -19,4 +19,18 @@ updated_at: '2023-05-30T20:05:02.606483+00:00'
 
 This payload opens an administrator powershell terminal and accepts the UAC popup, downloads a payload from the web and runs it. This payload will have to avoid AV and other mitigations on the system, ensure you have done the research to know which mitigations to avoid, and what type of payloads you can run.
 
+
+
+
+
+
+
 **Code**: [[REM Windows 10: Poweshell administrator download a]]
+
+
+
+
+
+
+
+

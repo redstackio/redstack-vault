@@ -15,3 +15,5 @@ updated_at: '2023-04-06T03:56:07.808296+00:00'
 ```bash
 $SID_FROM_PREVIOUS_COMMAND = Get-DomainComputer MACHINE_ACCOUNT_NAME -Properties objectsid | Select -Expand objectsid
 ```
+
+

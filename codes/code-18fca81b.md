@@ -17,3 +17,5 @@ Get-ADUser -Filter * -Identity <user> -Properties *
 #Get a specific "string" on a user's attribute
 Get-ADUser -Filter 'Description -like "*wtver*"' -Properties Description | select Name, Description
 ```
+
+

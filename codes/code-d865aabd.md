@@ -27,3 +27,5 @@ BadAssMacros.exe -i <path_to_doc/excel_file> -w <doc/excel> -p yes -l
 # Purge Doc/Excel file
 BadAssMacros.exe -i <path_to_doc/excel_file> -w <doc/excel> -p yes -o <path_to_output_file> -m <module_name>
 ```
+
+

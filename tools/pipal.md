@@ -16,3 +16,9 @@ All this tool does is to give you the stats and the information to help you anal
 ## Description
 
 All this tool does is to give you the stats and the information to help you analyse the passwords. The real work is done by you in interpreting the results.pipal Homepage | Kali pipal Repo
+
+
+
+
+
+

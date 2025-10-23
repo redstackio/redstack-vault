@@ -20,3 +20,5 @@ host -t mx domain.com
 host -t ns domain.com
 
 ```
+
+

@@ -34,9 +34,15 @@ After escalating privileges to gain code execution as a local Administrator, it 
 
 After escalating privileges to gain code execution as a local Administrator, it is often preferable to add an additional user with local Administrator rights, rather than using the standard Administrator account.
 
+
+
 # Instructions
 
 1. Add a new user and specify the password
+
+
+
+
 
 **Command** ([[Windows Add a New User]]):
 
@@ -44,13 +50,25 @@ After escalating privileges to gain code execution as a local Administrator, it 
 net user $_USERNAME $_PASSWORD /add
 ```
 
+
+
+
+
 2. Add the user to the local Administrators group
+
+
+
+
 
 **Command** ([[Windows Add a User to the Local Administrators Group]]):
 
 ```bash
 net localgroup Administrators $_USERNAME /add
 ```
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +93,5 @@ net localgroup Administrators $_USERNAME /add
 
 - [[administrator]]
 - [[Setup]]
+
+

@@ -34,6 +34,8 @@ Technical Explanation: MassDNS performs DNS resolutions by sending multiple quer
 
 Business Value: Subdomain enumeration with MassDNS can help businesses identify potential security risks in their infrastructure. By identifying subdomains, businesses can take steps to secure them and prevent attacks that target these subdomains.
 
+ 
+
 ## Requirements
 
 1. Access to the target domain's DNS server
@@ -41,6 +43,8 @@ Business Value: Subdomain enumeration with MassDNS can help businesses identify 
 1. A list of subdomains to resolve
 
 1. MassDNS tool installed on the attacker's system
+
+ 
 
 ## Defense
 
@@ -50,6 +54,8 @@ Business Value: Subdomain enumeration with MassDNS can help businesses identify 
 
 1. Use subdomain takeover services to identify and secure unused subdomains
 
+ 
+
 ## Objectives
 
 1. Identify all subdomains for a target domain
@@ -58,12 +64,20 @@ Business Value: Subdomain enumeration with MassDNS can help businesses identify 
 
 1. Identify potential security risks in the target's infrastructure
 
+ 
+
 # Instructions
 
 1. This command resolves the subdomains found by Subfinder using MassDNS. The command reads the subdomains from a file called `results_subfinder.txt` and writes the resolved IP addresses to a file called `results_subfinder_resolved.txt`. The `-r` flag specifies the path to a file containing a list of DNS resolvers. The `-t A` flag specifies to resolve A records. The `-o S` flag specifies to write the output in a sorted format. The `-w` flag specifies the path to the output file.
 
+ 
+
+
+
 **Code**: [[DNS_RESOLVERS="./resolvers.txt"
 cat /tmp/results_s]]
+
+
 
 > The `DNS_RESOLVERS` variable can be set to the path of a file containing a list of DNS resolvers. The `cat` command reads the contents of the `results_subfinder.txt` file and pipes it as input to the `massdns` command. The `-r` flag specifies the path to a file containing a list of DNS resolvers. The `-t A` flag specifies to resolve A records. The `-o S` flag specifies to write the output in a sorted format. The `-w` flag specifies the path to the output file. The `goaltdns` tool is an alternative to MassDNS that can also be used to resolve subdomains.
 
@@ -86,3 +100,5 @@ cat /tmp/results_s]]
 - [[Enumerate all subdomains (only if the scope is *.domain.ext)]]
 - [[Subdomains Enumeration]]
 - [[Using MassDNS]]
+
+

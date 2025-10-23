@@ -35,9 +35,13 @@ To exploit this vulnerability, an attacker would need to execute code on a targe
 
 This procedure can be used by an attacker to gain full control of a target system by exploiting a known vulnerability in a Windows kernel-mode driver. The business value of this procedure is that it allows an attacker to gain access to sensitive information or systems that they would not normally have access to.
 
+ 
+
 ## Requirements
 
 1. Ability to execute code on a target system
+
+ 
 
 ## Defense
 
@@ -47,20 +51,32 @@ This procedure can be used by an attacker to gain full control of a target syste
 
 1. Implement least privilege access controls to limit the impact of a successful privilege escalation attack
 
+ 
+
 ## Objectives
 
 1. Gain elevated privileges on a target system
 
 1. Gain full control of a target system
 
+ 
+
 # Instructions
 
 1. Use the provided Python or Metasploit exploit to escalate privileges on a Windows system by exploiting the AFD JoinLeaf vulnerability (MS11-080).
 
+ 
+
+
+
 **Code**: [[Python: https://www.exploit-db.com/exploits/18176
 ]]
 
+
+
 > This command requires access to the target system and knowledge of the system's vulnerabilities. The Python or Metasploit exploit can be used to gain elevated privileges on the system and potentially gain access to sensitive information or perform malicious actions.
+
+
 
 **Command** ([[Download Exploit]]):
 
@@ -68,11 +84,17 @@ This procedure can be used by an attacker to gain full control of a target syste
 Python: https://www.exploit-db.com/exploits/18176
 ```
 
+
+
+
+
 **Command** ([[Use Metasploit Framework]]):
 
 ```bash
 exploit/windows/local/ms11_080_afdjoinleaf
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +116,5 @@ exploit/windows/local/ms11_080_afdjoinleaf
 - [[EoP - Common Vulnerabilities and Exposure]]
 - [[MS11-080 (afd.sys) - Microsoft Windows XP/2003]]
 - [[Windows - Privilege Escalation]]
+
+

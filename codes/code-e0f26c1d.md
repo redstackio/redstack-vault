@@ -24,3 +24,5 @@ Adds a new key credential to the specified user.
 python3 pywhisker.py -d "domain.local" -u "user1" -p "complexpassword" --target "user2" --action "remove" --device-id "a8ce856e-9b58-61f9-8fd3-b079689eb46e"
 Removes the specified key credential from the specified user.
 ```
+
+

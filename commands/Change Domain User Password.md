@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:26:31.595504+00:00'
 $NewPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
 Set-DomainUserPassword -Identity 'TargetUser' -AccountPassword $NewPassword
 ```
+
+

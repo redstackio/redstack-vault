@@ -35,6 +35,9 @@ Credential harvesting from DynamoDB involves the extraction of sensitive informa
 
 From a technical standpoint, attackers can use the AWS SDKs or APIs to interact with DynamoDB and retrieve data. Business value of this technique is that it can be used to steal sensitive information such as user credentials, which can then be used to gain access to other cloud resources and data.
 
+
+ 
+
 ## Requirements
 
 1. Access to the DynamoDB database
@@ -42,6 +45,8 @@ From a technical standpoint, attackers can use the AWS SDKs or APIs to interact 
 1. Credentials with appropriate permissions
 
 1. Tools to extract sensitive information
+
+ 
 
 ## Defense
 
@@ -51,25 +56,39 @@ From a technical standpoint, attackers can use the AWS SDKs or APIs to interact 
 
 1. Encrypt sensitive data stored in DynamoDB to protect against unauthorized access
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information such as user credentials from DynamoDB
 
 1. Gain access to other cloud resources and data using the stolen credentials
 
+ 
+
 # Instructions
 
 1. The above command retrieves the user credentials from a DynamoDB table named `users` and uses `jq` to parse the output. The `--endpoint-url` flag specifies the URL of the DynamoDB service endpoint. The `scan` command is used to retrieve all items from the `users` table. The `jq` command is used to extract the `username` and `password` fields from the output.
 
+ 
+
+
+
 **Code**: [[$ aws --endpoint-url http://s3.bucket.htb dynamodb]]
 
+
+
 > The `aws` command-line interface (CLI) is used to interact with Amazon Web Services (AWS) services. In this case, the `dynamodb` command is used to interact with DynamoDB, a NoSQL database service provided by AWS. The `scan` command is used to retrieve all items from the `users` table. The `--table-name` flag specifies the name of the table to scan. The `jq` command is used to parse the output and extract the `username` and `password` fields. The `--endpoint-url` flag is used to specify the URL of the DynamoDB service endpoint, which in this case is `http://s3.bucket.htb`. The `username` and `password` fields are stored as `S` (string) data types in DynamoDB.
+
+
 
 **Command** ([[Scan DynamoDB table for users]]):
 
 ```bash
 $ aws --endpoint-url http://s3.bucket.htb dynamodb scan --table-name users | jq -r '.Items[]'
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +114,5 @@ $ aws --endpoint-url http://s3.bucket.htb dynamodb scan --table-name users | jq 
 
 - [[Cloud - AWS]]
 - [[DynamoDB]]
+
+

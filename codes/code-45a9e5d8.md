@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:24.684667+00:00'
 ```powershell
 SharPersist -t service -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Some Service" -m add
 ```
+
+

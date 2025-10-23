@@ -20,3 +20,5 @@ python ssh2john.py $_PRIVATE_KEY.enc > $_OUTPUT.txt
 ```
 root@kali:~# python /usr/share/john/ssh2john.py id_rsa.enc > hash.txt
 ```
+
+

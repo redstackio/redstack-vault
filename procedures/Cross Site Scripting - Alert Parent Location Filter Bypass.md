@@ -34,11 +34,15 @@ Technical Explanation: The 'Alert Parent Location' command is used to display an
 
 Business Value: This procedure can be used by attackers to gain access to a victim's sensitive data or to gain control over their browser. This can lead to financial loss, reputational damage, and legal liability for the victim and their organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web page
 
 1. Knowledge of the 'Alert Parent Location' command
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This procedure can be used by attackers to gain access to a vict
 
 1. Regularly update and patch web applications to address known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Bypass document blacklist to execute arbitrary code in the victim's browser
@@ -56,11 +62,19 @@ Business Value: This procedure can be used by attackers to gain access to a vict
 
 1. Steal sensitive information or take control of the victim's browser
 
+ 
+
 # Instructions
 
 1. This command will create a div element with id 'x' and then execute a script that will show an alert with the parent location of the third parent node of the div element.
 
+ 
+
+
+
 **Code**: [[<div id = "x"></div><script>alert(x.parentNode.par]]
+
+
 
 > The script uses the parentNode property to navigate up the DOM tree and access the location property of the parent of the parent of the parent of the div element with id 'x'. The last line of the script uses bracket notation to access the 'document' property of the 'window' object.
 
@@ -81,3 +95,5 @@ Business Value: This procedure can be used by attackers to gain access to a vict
 - [[Bypass document blacklist]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

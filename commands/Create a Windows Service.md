@@ -23,3 +23,5 @@ sc.exe create $_SERVICE_NAME binpath= "$_PATH\$_PROGRAM"
 C:\Windows\system32>sc.exe create pwnSVC binpath= "C:\Windows\Tasks\runme.bat"
 [SC] CreateService SUCCESS
 ```
+
+

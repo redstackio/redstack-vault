@@ -25,13 +25,25 @@ The DB subcommand can be used to present information from previous scans back to
 
 List all of the previous scans
 
+
+
+
+
+
+
 **Command** ([[amass db list previous scans]]):
 
 ```bash
 amass db -dir $_OUTPUT_DIRECTORY -list
 ```
 
+
+
 Show the assets that where identified in that scan, the -enum # should match one of the scans listed in the above command.
+
+
+
+
 
 **Command** ([[amass db display assets from previous scan]]):
 
@@ -39,7 +51,15 @@ Show the assets that where identified in that scan, the -enum # should match one
 amass db -dir $_OUTPUT_DIRECTORY -d $_TARGET_DOMAIN -enum $_LIST_NUMBER -show
 ```
 
+
+
+
+
+
+
 ## Commands Used
 
 - [[amass db display assets from previous scan]]
 - [[amass db list previous scans]]
+
+

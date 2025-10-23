@@ -18,3 +18,5 @@ exploit/windows/smb/ms17_010_eternalblue      MS17-010 EternalBlue SMB Remote Wi
 exploit/windows/smb/ms17_010_eternalblue_win8 MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption for Win8+
 exploit/windows/smb/ms17_010_psexec           MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Code Execution
 ```
+
+

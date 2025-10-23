@@ -24,3 +24,5 @@ aws ec2 create-snapshot --volume-id $AWS_VOLUME_ID --description $AWS_DESCRIPTIO
 ```
 aws ec2 create-snapshot --volume-id <vol-id> --description "snapshot-$(date +'%Y-%m-%d_%H-%M-%S')"
 ```
+
+

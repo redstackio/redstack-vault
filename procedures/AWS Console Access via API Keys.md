@@ -41,9 +41,13 @@ To execute this attack, an attacker first needs to obtain valid API keys. This c
 
 The business value of this procedure is that it allows attackers to gain access to sensitive data and resources within an AWS environment. This can result in data theft, resource modification or destruction, and ultimately financial loss for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Valid AWS API keys
+
+ 
 
 ## Defense
 
@@ -53,19 +57,31 @@ The business value of this procedure is that it allows attackers to gain access 
 
 1. Monitor AWS console access logs for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to an AWS console via API keys
 
 1. Perform actions within the AWS environment such as modifying or deleting resources
 
+ 
+
 # Instructions
 
 1. To use AWS Consoler, first clone the repository and then run the command with the appropriate arguments. The -a flag is used to specify the access key ID and the -s flag is used to specify the secret access key. Once the command has been run, a URL will be generated that can be used to access the AWS console.
 
+ 
+
+
+
 **Code**: [[$> git clone https://github.com/NetSPI/aws_console]]
 
+
+
 > AWS Consoler is a command line utility that allows you to convert your AWS CLI credentials into AWS console access. This can be useful if you prefer to use the console for some tasks rather than the CLI. The command requires you to specify your access key ID and secret access key as arguments. Once the command has been run, a URL will be generated that can be used to access the AWS console. The URL will be valid for a limited time and can be used to log in to the console without having to enter your credentials again.
+
+
 
 **Command** ([[Clone aws_consoler from GitHub]]):
 
@@ -73,11 +89,17 @@ The business value of this procedure is that it allows attackers to gain access 
 $> git clone https://github.com/NetSPI/aws_consoler
 ```
 
+
+
+
+
 **Command** ([[Run aws_consoler with provided arguments]]):
 
 ```bash
 $> aws_consoler -v -a AKIA[REDACTED] -s [REDACTED]
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -107,3 +129,5 @@ $> aws_consoler -v -a AKIA[REDACTED] -s [REDACTED]
 
 - [[AWS - Gaining AWS Console Access via API Keys]]
 - [[Cloud - AWS]]
+
+

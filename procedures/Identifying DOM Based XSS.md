@@ -33,15 +33,63 @@ DOM (Document Object Model) XSS can be tested in the cases where the user input 
 
 # Instructions
 
+
+
 1. In the below screenshot, *Page 1* value which is after *#* symbol can be modified and added with Javascript.
+
+
+
+
+
+![696fc0a6-4198-4ff8-98c8-0d96dbca9c25.jpg](_assets/images/Mash/696fc0a6-4198-4ff8-98c8-0d96dbca9c25.jpg)
+
+
+
+
+
+
 
 2. Following payload is added after the # symbol in the URL.
 
+
+
 *<script>alert("XSS");</script>*
+
+
+
+![c924d20c-4bd3-456f-939c-75cf17878d5f.jpg](_assets/images/Mash/c924d20c-4bd3-456f-939c-75cf17878d5f.jpg)
+
+
+
+
+
+
 
 3. The request is intercepted in Burp to check if the payload is sent to the server. It can be observed that the payload is not part of the GET request.
 
+
+
+
+
+
+
+![312accd7-2bad-477e-a690-c8f8bd51a5ae.jpg](_assets/images/Mash/312accd7-2bad-477e-a690-c8f8bd51a5ae.jpg)
+
+
+
+
+
 4. Payload gets executed in the browser.
+
+
+
+
+
+![61c468e2-93a5-4396-8f85-c1f854696a1d.jpg](_assets/images/Mash/61c468e2-93a5-4396-8f85-c1f854696a1d.jpg)
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +103,5 @@ DOM (Document Object Model) XSS can be tested in the cases where the user input 
 - [[owasp top 10]]
 - [[Web Applications]]
 - [[xss]]
+
+

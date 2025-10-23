@@ -16,3 +16,5 @@ updated_at: '2023-04-10T20:19:39.807633+00:00'
 ```bash
 .\Azucar.ps1 -ExportTo CSV,JSON,XML,EXCEL -AuthMode Certificate_Credentials -Certificate C:\AzucarTest\server.pfx -ApplicationId 00000000-0000-0000-0000-000000000000 -TenantID 00000000-0000-0000-0000-000000000000
 ```
+
+

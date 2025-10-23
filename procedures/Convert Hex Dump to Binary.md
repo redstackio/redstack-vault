@@ -28,17 +28,35 @@ Hex dump is binary data represented in hex pairs. Data in this format can be con
 
 Hex dump is binary data represented in hex pairs. Data in this format can be converted back to binary using tools such as xxd.
 
+
+
 Example of data in hex pairs:
+
+
+
+
 
 **Code**: [[eb 1d 1f 48 31 c0 5f 88 67 07 48 89 7f 08 48 89 47]]
 
+
+
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[xxd Convert Hex Dump to Binary]]):
 
 ```bash
 xxd -ps -r $_INPUT > $_OUTPUT
 ```
+
+
+
+
 
 ## Platforms
 
@@ -51,3 +69,5 @@ xxd -ps -r $_INPUT > $_OUTPUT
 ## Tags
 
 - [[convert]]
+
+

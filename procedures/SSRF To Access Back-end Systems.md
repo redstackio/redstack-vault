@@ -29,13 +29,57 @@ An attacker can exploit the SSRF vulnerability to access application's back-end 
 
 # Instructions
 
+
+
+
+
 1.Navigate to product , click on* check stock*. Intercept the request using BurpSuite and send the request to *intruder* tab. Change the stopckapi parameter to *http://192.168.0.1:8080/admin*
+
+
+
+![f4fce536-afd3-4858-88e9-0ad9626a03c3.png]()
+
+
+
+
 
 2.In the burp intruder tab, highlight the last octet of the IP and then click on *add *to add the octet for bruteforcing the last octet.
 
+
+
+
+
+![f98f61d2-98b1-4ffd-890a-af5003c867df.png]()
+
+
+
+
+
+
+
 3.Navigate to *payloads *tab in the bur intruder tab and change the payload type to* numbers *and enter " 1" in the *to *field and "255" in the *from *filed . Choose *step *in the below option and start attack. A new window will be opened.
 
+
+
+![080ffa87-2c1f-4a25-abbe-b4f4c466eb5b.png]()
+
+
+
+
+
+
+
 4. Observe the status in the now opened attack window. Check the response of the 200 status code . The response shows the admin interface. 
+
+
+
+
+
+![9cc0808c-430c-4cc0-847a-c56ad479c782.png]()
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +89,5 @@ An attacker can exploit the SSRF vulnerability to access application's back-end 
 
 - [[SSRF]]
 - [[Web Applications]]
+
+

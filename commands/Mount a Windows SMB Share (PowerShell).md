@@ -7,6 +7,7 @@ data: New-PSDrive -Name "$_NAME" -PSProvider FileSystem -Credential $Cred -Root 
 output: 'PS C:\> New-PSDrive -Name "Remote Share" -PSProvider FileSystem -Credential
   $Cred -Root "\\10.10.10.10\Shared Files"
 
+
   Name           Used (GB)     Free (GB) Provider      Root                                               CurrentLocation
 
   ----           ---------     --------- --------      ----                                               ---------------
@@ -31,3 +32,5 @@ Name           Used (GB)     Free (GB) Provider      Root                       
 ----           ---------     --------- --------      ----                                               ---------------
 Remote ...                             FileSystem    \\192.168.1.173\Shared Files
 ```
+
+

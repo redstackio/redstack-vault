@@ -35,9 +35,13 @@ To disable CloudTrail logging, an attacker can use the 'Delete AWS CloudTrail Tr
 
 Disabling CloudTrail logging can be valuable for an attacker because it allows them to operate undetected and avoid triggering alerts that could lead to their discovery.
 
+ 
+
 ## Requirements
 
 1. Access to an AWS account with permissions to delete CloudTrail trails
+
+ 
 
 ## Defense
 
@@ -47,25 +51,39 @@ Disabling CloudTrail logging can be valuable for an attacker because it allows t
 
 1. Restrict access to the CloudTrail service and trails to only authorized users and roles
 
+ 
+
 ## Objectives
 
 1. Disable CloudTrail logging to avoid detection and operate undetected
+
+ 
 
 # Instructions
 
 1. To delete an AWS CloudTrail trail, run the following command:
 
+ 
+
+
+
 **Code**: [[aws cloudtrail delete-trail --name example_trail -]]
+
+
 
 > This command will delete the CloudTrail trail with the name 'example_trail'. The '--profile' flag is optional and is used to specify the name of the AWS CLI profile to use. If this flag is not used, the default profile will be used.
 
 Note: Deleting a trail will permanently delete all of the trail's log files and cannot be undone. Make sure you have exported any logs you need before deleting a trail.
+
+
 
 **Command** ([[Delete AWS CloudTrail example_trail]]):
 
 ```bash
 aws cloudtrail delete-trail --name example_trail --profile name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +105,5 @@ aws cloudtrail delete-trail --name example_trail --profile name
 - [[Disabling CloudTrail]]
 - [[RDS - Relational Database Service]]
 - [[Userful Commands]]
+
+

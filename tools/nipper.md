@@ -16,3 +16,9 @@ Nipper-ng is the next generation of nippper, and will always remain free and ope
 ## Description
 
 Nipper-ng is the next generation of nippper, and will always remain free and open source. This software will be used to make observations about the security configurations of many different device types such as routers, firewalls, and switches of a network infrastructure. This is a fork from nipper 0.11.10 release of the GNUv3 GPL code.
+
+
+
+
+
+

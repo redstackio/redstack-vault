@@ -29,11 +29,27 @@ Ruby is a popular interpreted scripting language for quick and easy object-orien
 
 Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_b47d8829-bbd4-43fe-81e9-50d04f76df8e}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -48,3 +64,5 @@ Ruby is a popular interpreted scripting language for quick and easy object-orien
 ## Tags
 
 - [[language]]
+
+

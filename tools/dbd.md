@@ -16,3 +16,9 @@ dbd is a Netcat-clone, designed to be portable and offer strong encryption. It r
 ## Description
 
 dbd is a Netcat-clone, designed to be portable and offer strong encryption. It runs on Unix-like operating systems and on Microsoft Win32. dbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. dbd supports TCP/IP communication only. Source code and binaries are distributed under the GNU General Public License.
+
+
+
+
+
+

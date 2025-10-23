@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:34:24.376584+00:00'
 ```powershell
 strings /dev/mem -n10 | grep -i PASS
 ```
+
+

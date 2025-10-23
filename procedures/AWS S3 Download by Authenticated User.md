@@ -38,6 +38,8 @@ From a technical perspective, this technique abuses the legitimate functionality
 
 The business value of this technique is that an attacker can obtain sensitive data from an AWS environment without being detected. This can lead to reputational damage, financial loss, and legal penalties for the victim organization.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with S3 access
@@ -45,6 +47,8 @@ The business value of this technique is that an attacker can obtain sensitive da
 1. Access to the S3 bucket containing the target data
 
 1. AWS CLI or SDKs installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -54,23 +58,33 @@ The business value of this technique is that an attacker can obtain sensitive da
 
 1. Monitor S3 bucket activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Download sensitive data from an AWS S3 bucket
 
 1. Avoid detection while exfiltrating data
 
+ 
+
 # Instructions
 
 1. To download an object from an S3 bucket, use the following command:
 
+ 
+
 Replace 'name' with the name of the S3 bucket, 'object-name' with the name of the object you want to download, and 'download-file-location' with the location on your local machine where you want to save the downloaded file. This command will download the specified object from the S3 bucket to your local machine.
+
+
 
 **Command** ([[Download Object from S3 Bucket]]):
 
 ```bash
 aws s3api get-object --bucket name --key object-name download-file-location
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +109,5 @@ aws s3api get-object --bucket name --key object-name download-file-location
 - [[Authenticated User]]
 - [[Cloud - AWS]]
 - [[Data Exfiltration]]
+
+

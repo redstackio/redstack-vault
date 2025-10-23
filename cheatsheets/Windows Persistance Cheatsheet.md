@@ -13,23 +13,41 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 Windows Persistence techniques
 
+
+
+
+
 After replacing the sethc or utilman  commands:
 
 > To invoke sethc press the Shift Key 5 times
 
 > To invoke util man press the windows key + U
 
+
+
+
+
 ## SETHC Replacement Location
 
 Replace this binary with cmd.exe
 
+
+
 **Code**: [[%WINDIR%\System32\sethc.exe]]
+
+
 
 ## Utilman Replacement Location
 
 Replace this binary with cmd.exe
 
+
+
 **Code**: [[%WINDIR%\System32\utilman.exe]]
+
+
+
+
 
 ## Sethc / Utilman Non Persistent Debugger Keys
 
@@ -37,21 +55,47 @@ Navigate to HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Executi
 
 Hit SHIFT 5 times and get a shell as nt authority\system
 
+
+
 Add the sethc debugger registry key
 
+
+
 **Code**: [[reg add "\\hostname\HKLM\Software\Microsoft\Window]]
+
+
+
+
 
 Add the utilman debugger registry key
 
+
+
 **Code**: [[reg add "\\hostname\HKLM\Software\Microsoft\Window]]
+
+
+
+
 
 Remove the Sethc debugger registry key
 
+
+
 **Code**: [[reg delete "\\hostname\HKLM\Software\Microsoft\Win]]
+
+
+
+
 
 Remove the utilman debugger Registry key
 
+
+
 **Code**: [[reg delete "\\hostname\HKLM\Software\Microsoft\Win]]
+
+
+
+
 
 ## 
 
@@ -59,6 +103,14 @@ Remove the utilman debugger Registry key
 
 Startup Folders Locations
 
+
+
 **Code**: [[
 #All Users - Windows XP
 C:\Documents and Settings]]
+
+
+
+
+
+

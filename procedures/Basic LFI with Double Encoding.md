@@ -28,9 +28,13 @@ To exploit this vulnerability, the attacker sends a specially crafted request to
 
 Business Value: This technique can be used to gain access to sensitive information on a server, such as passwords or configuration files. This information can then be used to further exploit the system and gain access to additional resources.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application with a basic LFI vulnerability
+
+ 
 
 ## Defense
 
@@ -40,17 +44,27 @@ Business Value: This technique can be used to gain access to sensitive informati
 
 1. Web application firewalls (WAFs) can be used to detect and block attempts to exploit LFI vulnerabilities
 
+ 
+
 ## Objectives
 
 1. To demonstrate how to use double encoding to bypass filters and exploit a basic LFI vulnerability
 
 1. To read sensitive files on the server that the attacker doesn't have access to
 
+ 
+
 # Instructions
 
 1. Send a specially crafted request to the server with the path to the file you want to read. Use double encoding to bypass filters that are looking for specific characters.
 
+ 
+
+
+
 **Code**: [[http://example.com/index.php?page=%252e%252e%252fe]]
+
+
 
 > The command sends a request to the server with the path to the file the attacker wants to read. The %25 characters are used to represent the % character in the URL, which is then interpreted as a % character by the server. By using %252e%252e%252f to represent ../, the attacker can bypass filters that are looking for the dot (.) and slash (/) characters. The %00 character is used to terminate the string and prevent any additional characters from being interpreted.
 
@@ -59,3 +73,5 @@ Business Value: This technique can be used to gain access to sensitive informati
 - [[Basic LFI]]
 - [[Double encoding]]
 - [[File Inclusion]]
+
+

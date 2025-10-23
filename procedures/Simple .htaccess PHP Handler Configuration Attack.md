@@ -24,11 +24,15 @@ This attack involves modifying the .htaccess file on a web server to configure t
 
 This attack involves modifying the .htaccess file on a web server to configure the PHP handler to allow remote code execution. The attacker can then upload a PHP script containing malicious code that will be executed on the server. This attack can be used to gain access to sensitive data, launch further attacks, or use the server as a platform for other malicious activity. From a technical perspective, this attack involves modifying the .htaccess file to include a specific configuration that enables remote code execution. From a business standpoint, this attack can result in significant damage to a company's reputation and financial losses due to stolen data or system downtime.
 
+ 
+
 ## Requirements
 
 1. Access to the web server's .htaccess file
 
 1. Ability to upload a PHP script containing malicious code
+
+ 
 
 ## Defense
 
@@ -38,6 +42,8 @@ This attack involves modifying the .htaccess file on a web server to configure t
 
 1. Use a web application firewall to detect and block suspicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive data on the web server
@@ -46,13 +52,23 @@ This attack involves modifying the .htaccess file on a web server to configure t
 
 1. Cause system downtime or other damage to the target organization
 
+ 
+
 # Instructions
 
 1. To configure PHP handler on Apache web server, add the above line to your .htaccess file.
 
+ 
+
+
+
 **Code**: [[AddType application/x-httpd-php .rce]]
 
+
+
 > This command adds a new MIME type to the Apache web server configuration, which associates the .rce file extension with the PHP scripting language. This allows the server to correctly interpret and execute PHP code contained within .rce files. To use this command, simply upload an .htaccess file to the root directory of your website, and add the above line to the file.
+
+
 
 **Command** ([[AddType application/x-httpd-php .rce]]):
 
@@ -60,9 +76,17 @@ This attack involves modifying the .htaccess file on a web server to configure t
 AddType application/x-httpd-php .rce
 ```
 
+
+
 2. To upload a file for remote code execution, use the following command: 'upload <local_file_path> <remote_file_path>'.
 
+ 
+
+
+
 **Code**: [[.rce]]
+
+
 
 > This command allows you to upload a file from your local machine to the remote server, which can then be executed remotely using another command. The first argument is the path to the file on your local machine, while the second argument is the path where you want to upload the file on the remote server. Make sure to specify the correct paths for both arguments. Once the file is uploaded, you can use another command to execute it remotely.
 
@@ -73,3 +97,5 @@ AddType application/x-httpd-php .rce
 ## Tags
 
 - [[.htaccess simple php]]
+
+

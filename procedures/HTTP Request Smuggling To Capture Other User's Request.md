@@ -31,11 +31,59 @@ In this kind of attack, an attacker will smuggle a request to the back-end serve
 
 1. Intercept the comment post request of the application and send it to the repeater .
 
+
+
+
+
+
+
+![db9dd5b9-6f73-46ff-adc1-5cbfc348f041.jpg](_assets/images/Mash/db9dd5b9-6f73-46ff-adc1-5cbfc348f041.jpg)
+
+
+
+
+
 2.Increase the comment-post request's Content-Lengthto 400, then smuggle it to the backend server
+
+
+
+
+
+![b40b344f-3a5a-4fd0-b999-255d913ebcff.jpg](_assets/images/Mash/b40b344f-3a5a-4fd0-b999-255d913ebcff.jpg)
+
+
+
+
+
+
 
 3.1. If the stored request is incomplete and doesn't include the Cookie header, you will need to slowly increase the value of the Content-Length header in the smuggled request, until the whole cookie is captured. 
 
+
+
 Copy the user's cookie from the response and use it to access the victim's account.
+
+
+
+
+
+
+
+
+
+
+
+![405dfe1d-9e54-449c-8838-1bde3b13a7d1.jpg]()
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -45,3 +93,5 @@ Copy the user's cookie from the response and use it to access the victim's accou
 
 - [[http request smuggling]]
 - [[Web Applications]]
+
+

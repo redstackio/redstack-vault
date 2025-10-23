@@ -28,6 +28,8 @@ Technical: The attacker crafts a malicious payload using JavaScript code that is
 
 Business Value: This technique can be used by attackers to steal sensitive information such as cookies, passwords, and session tokens. This information can then be used to gain unauthorized access to a victim's accounts and steal sensitive data. This can have serious consequences for individuals and organizations, including financial loss, reputational damage, and legal liability.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable webpage with an XSS filter that only checks for ASCII characters
@@ -35,6 +37,8 @@ Business Value: This technique can be used by attackers to steal sensitive infor
 1. Ability to craft a malicious JavaScript payload and encode it in octal format
 
 1. Ability to deliver the payload using an SVG image
+
+ 
 
 ## Defense
 
@@ -44,17 +48,27 @@ Business Value: This technique can be used by attackers to steal sensitive infor
 
 1. Educate users about the risks of clicking on unknown links or visiting untrusted websites
 
+ 
+
 ## Objectives
 
 1. Bypass XSS filters and execute malicious JavaScript code on a victim's browser
 
 1. Steal sensitive information such as cookies, passwords, and session tokens
 
+ 
+
 # Instructions
 
 1. The JavaScript SVG command is used to execute a JavaScript payload in an SVG object. The payload can be any valid JavaScript code that is executed when the SVG object is loaded.
 
+ 
+
+
+
 **Code**: [[javascript:'<svg onload=alert(1)>']]
+
+
 
 > The 'data' field should contain the JavaScript payload that is to be executed when the SVG object is loaded. This can be used to perform various types of attacks, including XSS and CSRF attacks.
 
@@ -63,3 +77,5 @@ Business Value: This technique can be used by attackers to steal sensitive infor
 - [[Bypass using Octal encoding]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

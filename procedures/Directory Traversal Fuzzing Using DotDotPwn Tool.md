@@ -29,17 +29,33 @@ Directory traversal will allow writing or reading files to arbitrary locations. 
 
 # Description
 
+
+
 Directory traversal will allow writing or reading files to arbitrary locations. DotDotPwn tool can be used to test directory traversal issues in an application. The tool fuzzes at all the possible locations in the application.
+
+
 
 # Procedure
 
+
+
 1. The below DotDotPwn command can be used to perform directory traversal fuzzing. The tool tries to fuzz with all possible paths for directory traversal.
+
+
+
+
+
+
 
 **Command** ([[DotDotPwn Command to Perform Directory Traversal Fuzzing]]):
 
 ```bash
 dotdotpwn -m http -h 192.168.1.5 -M GET
 ```
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +71,5 @@ dotdotpwn -m http -h 192.168.1.5 -M GET
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

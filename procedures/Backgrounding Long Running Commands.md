@@ -31,9 +31,13 @@ Backgrounding long running commands is a technique used to bypass time-outs of i
 
 Backgrounding long running commands is a technique used to bypass time-outs of injected processes. The attacker can use this technique to run a command that takes a long time to complete, without the risk of it being killed by the process injecting it. This technique is commonly used in command injection attacks.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system with a command injection vulnerability.
+
+ 
 
 ## Defense
 
@@ -43,9 +47,13 @@ Backgrounding long running commands is a technique used to bypass time-outs of i
 
 1. Implement network segmentation and access controls to limit the impact of a successful command injection attack.
 
+ 
+
 ## Objectives
 
 1. Execute a long running command without the risk of it being killed by the process injecting it.
+
+ 
 
 # Instructions
 
@@ -55,15 +63,25 @@ nohup <command> > /dev/null &
 
 Replace <command> with the command you want to run in the background.
 
+ 
+
+
+
 **Code**: [[nohup sleep 120 > /dev/null &]]
 
+
+
 > The 'nohup' command is used to run a command immune to hangups, with output to a non-tty. The 'sleep' command is used to simulate a long running command. The '>/dev/null' part of the command is used to redirect the output to a null device, which means that the output will not be saved anywhere. Finally, the '&' symbol is used to background the command. This will allow the command to continue running even after the process that injected it has timed out.
+
+
 
 **Command** ([[Sleep for 2 minutes]]):
 
 ```bash
 nohup sleep 120 > /dev/null &
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ nohup sleep 120 > /dev/null &
 
 - [[Backgrounding long running commands]]
 - [[Command Injection]]
+
+

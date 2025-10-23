@@ -31,11 +31,19 @@ Extract the password hash from a password protected XLSX file, and attempt to br
 
 Extract the password hash from a password protected XLSX file, and attempt to brute force it with John the Ripper.
 
+
+
 # Instructions
 
 Instructions on how to complete the procedure. Typically multiple numbered lists with commands included, and may contain H2 subheadings.
 
+
+
 1. Use John the Ripper's office2john.py script to extract the password hash. On Kali, this script is often located at: /usr/share/john/office2john.py
+
+
+
+
 
 **Command** ([[office2john.py Extract a Password Hash from an XLSX File]]):
 
@@ -43,13 +51,27 @@ Instructions on how to complete the procedure. Typically multiple numbered lists
 office2john.py $_TARGET_FILE.xslx
 ```
 
+
+
+
+
 2. Use John the Ripper to brute force the hash
+
+
+
+
 
 **Command** ([[John the Ripper Brute Force a Hash File]]):
 
 ```bash
 john --wordlist=$_WORDLIST $_HASH_FILE
 ```
+
+
+
+
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -69,3 +91,5 @@ john --wordlist=$_WORDLIST $_HASH_FILE
 ## Tags
 
 - [[Brute Force]]
+
+

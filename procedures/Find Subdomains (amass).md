@@ -35,7 +35,15 @@ Identifying the targets subdomains is important to:
 
 - Provide more options to enumerate the target.
 
+
+
+
+
 Use the 'amass' tool to automate the process of enumerating subdomains on a target.
+
+
+
+
 
 **Command** ([[amass dns enumerate subdomains]]):
 
@@ -43,11 +51,21 @@ Use the 'amass' tool to automate the process of enumerating subdomains on a targ
 amass enum -ip -d $_TARGET_DOMAIN
 ```
 
+
+
+
+
 ## Note
 
 This is just a little bit of linux magic for you to organize and sort the results of the amass dns enumeration into a domains and ips document.
 
 You can cut the results file and extract just the domains into a new file.
+
+
+
+
+
+
 
 **Command** ([[sort amass results into domain file]]):
 
@@ -55,7 +73,15 @@ You can cut the results file and extract just the domains into a new file.
 cat $_RESULTS_FILE | cut -d']' -f2 | awk '{print $1}' | sort -u > $_OUTPUT_FILE
 ```
 
+
+
+
+
 You can cut the results file and extract the IPv4 addresses into a new file.
+
+
+
+
 
 **Command** ([[sort amass results into ip file]]):
 
@@ -63,9 +89,25 @@ You can cut the results file and extract the IPv4 addresses into a new file.
 cat $_RESULTS_FILE | cut -d']' -f2 | awk '{print $2}' | sort -u > $_OUTPUT_FILE
 ```
 
+
+
+
+
+
+
 # Advanced
 
+
+
+
+
 You can use the server list built by dnsvalidator with amass, and special arguments to obtain an accurate list of responses. The max dns queries will limit the amount of queries and help to speed up the results. Careful if you use too many validated dns servers in the resolvers.txt list, try between 25-100.
+
+
+
+
+
+
 
 **Command** ([[amass dns enum subdomains with validated dns servers list]]):
 
@@ -73,9 +115,17 @@ You can use the server list built by dnsvalidator with amass, and special argume
 amass enum -rf $_RESOLVERS_FILE -src -ip -d $_TARGET_DOMAIN -max-dns-queries $_MAX_QUERIES_NUM
 ```
 
+
+
+
+
+
+
 ## Commands Used
 
 - [[amass dns enumerate subdomains]]
 - [[amass dns enum subdomains with validated dns servers list]]
 - [[sort amass results into domain file]]
 - [[sort amass results into ip file]]
+
+

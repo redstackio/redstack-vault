@@ -14,3 +14,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 ```python
 target = "/etc/passwd"; f = open(target, "r"); print(f.read()); f.close()
 ```
+
+

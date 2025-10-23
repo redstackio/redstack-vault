@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:36:34.225530+00:00'
 ```ps1
 Get-SQLInstanceDomain | Get-SQLColumnSampleData -Keywords "<columnname1,columnname2,columnname3,columnname4,columnname5>" -Verbose -SampleSize 5
 ```
+
+

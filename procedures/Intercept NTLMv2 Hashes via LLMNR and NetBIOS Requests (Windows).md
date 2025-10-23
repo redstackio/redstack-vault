@@ -31,17 +31,25 @@ Use the Inveigh PowerShell module to capture and log NTLMv2 hashes. By specifyin
 
 Use the Inveigh PowerShell module to capture and log NTLMv2 hashes. By specifying the "LLMNR" and "NBNS" arguments, Inveigh can sniff and respond to those services without elevated privileges.
 
+
+
 # Instructions
 
 1. Download and import Inveigh: [Download from GitHub](https://github.com/Kevin-Robertson/Inveigh).
 
 2. Execute the listener.
 
+
+
+
+
 **Command** ([[Inveigh Intercept and Log NTLMv2 Hashes via LLMNR and NetBIOS Requests]]):
 
 ```bash
 Invoke-Inveigh -LLMNR Y -NBNS Y -IP $_LISTEN_IP -ConsoleOutput Y
 ```
+
+
 
 Note: When finished, execute "Stop-Inveigh" to exit the listener.
 
@@ -67,3 +75,5 @@ Note: When finished, execute "Stop-Inveigh" to exit the listener.
 
 - [[Network]]
 - [[NTLM]]
+
+

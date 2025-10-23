@@ -34,13 +34,23 @@ Connect to LDAP and enumerate the root DSE for information. This discloses infor
 
 Connect to LDAP and enumerate the root DSE for information. This discloses information necessary for domain enumeration, such as domain names, user names, etc.
 
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Nmap Query LDAP for Root DSE Object Information]]):
 
 ```bash
 nmap -script ldap-rootdse -p 389 $_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ nmap -script ldap-rootdse -p 389 $_TARGET_IP
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

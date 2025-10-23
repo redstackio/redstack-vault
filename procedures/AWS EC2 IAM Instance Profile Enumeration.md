@@ -34,9 +34,13 @@ To list the roles attached to an instance, an attacker can use the AWS CLI or AW
 
 Knowing the roles attached to an instance can be valuable information for both red and blue teams. Red teams can use this information to plan further attacks against the AWS environment, while blue teams can use this information to identify instances with overly permissive roles and take action to remediate them.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to list EC2 instances
+
+ 
 
 ## Defense
 
@@ -46,15 +50,21 @@ Knowing the roles attached to an instance can be valuable information for both r
 
 1. Monitor AWS CloudTrail logs for suspicious activity related to IAM role enumeration
 
+ 
+
 ## Objectives
 
 1. Identify the IAM roles attached to an EC2 instance
 
 1. Gain insight into the level of access the application running on the instance has to other AWS services
 
+ 
+
 # Instructions
 
 1. Use this command to describe the IAM instance profile associations for the specified instances or a specified IAM instance profile. This command returns a list of instance profiles that are associated with the specified instances, or a list of instances that are associated with the specified instance profile.
+
+ 
 
 The 'describe-iam-instance-profile-associations' command is used to retrieve information about the IAM instance profile associations for EC2 instances. This command can be used to retrieve information about the instance profiles associated with a specific instance or to retrieve information about the instances associated with a specific instance profile. The command takes no arguments and returns a JSON object containing information about the instance profiles or instances.
 
@@ -75,3 +85,5 @@ The 'describe-iam-instance-profile-associations' command is used to retrieve inf
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Listing roles of an instance]]
+
+

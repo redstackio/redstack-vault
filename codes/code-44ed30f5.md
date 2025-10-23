@@ -44,6 +44,7 @@ $vmname = "IT Recovery"
 # Start the VM
 .\VBoxManage.exe startvm $vmname –type headless 
 
+
 # optional - adding a shared folder
 # require: VirtualBox Guest Additions
 .\VBoxManage.exe sharedfolder add $vmname -name shadow_c -hostpath c:\ -automount
@@ -51,3 +52,5 @@ $vmname = "IT Recovery"
 sudo mkdir /mnt/c
 sudo mount -t vboxsf shadow_c /mnt/c
 ```
+
+

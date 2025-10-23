@@ -31,6 +31,8 @@ A Phar Deserialization attack is a technique used by attackers to exploit vulner
 
 A Phar Deserialization attack is a technique used by attackers to exploit vulnerabilities in PHP applications that can be triggered by unserializing user-controlled data. Attackers can use the phar:// wrapper to trigger a deserialization on a specified file, which can lead to remote code execution. This technique is used to gain initial access to a system and execute arbitrary code on the target system. It is commonly used in web application attacks to compromise web servers and gain access to sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to the target system.
@@ -38,6 +40,8 @@ A Phar Deserialization attack is a technique used by attackers to exploit vulner
 1. Knowledge of the target system and its vulnerabilities.
 
 1. Ability to craft malicious serialized data.
+
+ 
 
 ## Defense
 
@@ -47,19 +51,31 @@ A Phar Deserialization attack is a technique used by attackers to exploit vulner
 
 1. Implement a web application firewall (WAF) to detect and block malicious requests.
 
+ 
+
 ## Objectives
 
 1. Gain remote code execution on the target system.
 
 1. Compromise web servers and gain access to sensitive data.
 
+ 
+
 # Instructions
 
 1. 
 
+ 
+
+
+
 **Code**: [[phar://]]
 
+
+
 > The phar:// wrapper is used to access files inside a phar archive. An attacker can use this wrapper to trigger a deserialization on a specified file.
+
+
 
 **Command** ([[Extract files from Phar archive]]):
 
@@ -67,17 +83,29 @@ A Phar Deserialization attack is a technique used by attackers to exploit vulner
 phar://path/to/archive.phar/file.txt
 ```
 
+
+
 2. 
+
+ 
+
+
 
 **Code**: [[file_get_contents("phar://./archives/app.phar")]]
 
+
+
 > The file_get_contents() function is used to read the contents of a file. An attacker can use this function to trigger a deserialization on a specified file.
+
+
 
 **Command** ([[Retrieve contents from phar archive]]):
 
 ```bash
 file_get_contents("phar://./archives/app.phar")
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -99,3 +127,5 @@ file_get_contents("phar://./archives/app.phar")
 
 - [[Phar Deserialization]]
 - [[PHP Deserialization]]
+
+

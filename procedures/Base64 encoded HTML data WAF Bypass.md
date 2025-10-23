@@ -29,11 +29,15 @@ This technique is effective against WAFs that only inspect plain text data and d
 
 Business value: This technique can be used by attackers to gain unauthorized access to sensitive data and compromise the security of web applications. By bypassing WAFs, attackers can gain access to valuable information, which can be used for financial gain or other malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Access to a web application with a WAF configured to block malicious HTML content
 
 1. Knowledge of Base64 encoding
+
+ 
 
 ## Defense
 
@@ -43,17 +47,27 @@ Business value: This technique can be used by attackers to gain unauthorized acc
 
 1. Regularly update the WAF to ensure it is capable of detecting new attack techniques and patterns
 
+ 
+
 ## Objectives
 
 1. Bypass WAFs to execute malicious HTML content
 
 1. Perform a Cross Site Scripting (XSS) attack
 
+ 
+
 # Instructions
 
 1. Use the 'data' attribute of the 'object' tag to display base64 encoded HTML data.
 
+ 
+
+
+
 **Code**: [[<object data='data:text/html;;;;;base64,PHNjcmlwdD]]
+
+
 
 > The 'data' attribute of the 'object' tag can be used to display any type of data that can be represented as a URL. In this case, we are using a base64 encoded HTML string. The 'object' tag is a versatile HTML tag that can be used to display various types of content, including images, videos, and audio files, as well as HTML content.
 
@@ -62,3 +76,5 @@ Business value: This technique can be used by attackers to gain unauthorized acc
 - [[Common WAF Bypass]]
 - [[Cross Site Scripting]]
 - [[Incapsula WAF Bypass by [@c0d3G33k](https://twitter.com/c0d3G33k) - 11th September 2018]]
+
+

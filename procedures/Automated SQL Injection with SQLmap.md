@@ -34,11 +34,15 @@ From a technical perspective, SQL injection is a type of attack that allows an a
 
 The business value of this technique is that it allows attackers to steal sensitive data from a website's database, which can then be sold on the black market. This can lead to financial loss, reputational damage, and legal consequences for the targeted organization.
 
+ 
+
 ## Requirements
 
 1. Access to the targeted website
 
 1. SQLmap tool installed on the attacker's machine
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ The business value of this technique is that it allows attackers to steal sensit
 
 1. Regularly scan web applications for vulnerabilities using automated tools such as SQLmap
 
+ 
+
 ## Objectives
 
 1. Identify SQL injection vulnerabilities in a web application
@@ -56,19 +62,31 @@ The business value of this technique is that it allows attackers to steal sensit
 
 1. Gain unauthorized access to a website's database
 
+ 
+
 # Instructions
 
 1. Use this command to scan a website for SQL injection vulnerabilities.
 
+ 
+
+
+
 **Code**: [[sqlmap -u "http://example.com/" --crawl=1 --random]]
 
+
+
 > This command uses SQLmap, a popular tool for detecting and exploiting SQL injection vulnerabilities. The -u flag specifies the URL of the website to be scanned. The --crawl flag specifies the depth of the crawl. The --random-agent flag adds a random User-Agent header to each request. The --batch flag enables non-interactive mode, which accepts the default answers to any questions. The --forms flag instructs SQLmap to parse and test forms. The --threads flag specifies the number of threads to be used. The --level flag sets the level of tests to be performed. The --risk flag sets the risk level of tests to be performed.
+
+
 
 **Command** ([[SQL Injection Test with sqlmap]]):
 
 ```bash
 sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -89,3 +107,5 @@ sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threa
 - [[Crawl a website with SQLmap and auto-exploit]]
 - [[SQL Injection]]
 - [[SQL injection using SQLmap]]
+
+

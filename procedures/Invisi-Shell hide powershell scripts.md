@@ -30,6 +30,8 @@ Bypass powershell security features and hide your powershell script in plain sig
 
 It only functions in the current powershell console session this is executed on.
 
+
+
 - ScriptBlock logging
 
 - Module Logging
@@ -38,11 +40,17 @@ It only functions in the current powershell console session this is executed on.
 
 - AMSI
 
+
+
 [Invisi-Shell](https://github.com/OmerYa/Invisi-Shell)
+
+
 
 ## Objective
 
 1. Hide powershell scripts from security features and logging
+
+
 
 # Instructions
 
@@ -50,13 +58,23 @@ It only functions in the current powershell console session this is executed on.
 
 Non-Admin user type:
 
+
+
+
+
 **Command** ([[Invisi-shell hide powershell scripts (non admin)]]):
 
 ```bash
 RunWithRegistryNonAdmin.bat
 ```
 
+
+
+
+
 Admin user type:
+
+
 
 **Command** ([[Inivis-shell hide powershell scripts (admin)]]):
 
@@ -64,13 +82,25 @@ Admin user type:
 RunWithPathAsAdmin.bat
 ```
 
+
+
+
+
 2. Load a powershell prompt from the same CMD prompt
+
+
+
+
 
 **Command** ([[Load Powershell]]):
 
 ```powershell
 powershell
 ```
+
+
+
+
 
 ## Platforms
 
@@ -85,3 +115,5 @@ powershell
 ## Tags
 
 - [[Defense Bypass]]
+
+

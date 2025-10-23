@@ -19,3 +19,5 @@ updated_at: '2023-05-24T18:03:18.179034+00:00'
 curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&apiversion=2017-09-01" -H secret:$IDENTITY_HEADER
 curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&apiversion=2017-09-01" -H secret:$IDENTITY_HEADER
 ```
+
+

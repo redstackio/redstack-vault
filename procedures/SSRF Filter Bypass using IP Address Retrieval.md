@@ -34,6 +34,8 @@ To exploit this vulnerability, the attacker sends a request to the server with a
 
 The business value of this procedure is that it allows an attacker to bypass filters and gain access to sensitive information or systems. This can result in data theft, system compromise, and financial loss.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable server
@@ -41,6 +43,8 @@ The business value of this procedure is that it allows an attacker to bypass fil
 1. Ability to craft a specially crafted URL
 
 1. Knowledge of IP address retrieval techniques
+
+ 
 
 ## Defense
 
@@ -50,11 +54,15 @@ The business value of this procedure is that it allows an attacker to bypass fil
 
 1. Use a web application firewall (WAF) to detect and block SSRF attacks
 
+ 
+
 ## Objectives
 
 1. Bypass filters that are blocking certain domains or IP addresses
 
 1. Gain access to sensitive information or systems
+
+ 
 
 # Instructions
 
@@ -63,8 +71,14 @@ The business value of this procedure is that it allows an attacker to bypass fil
 2. requests + browsers: This command retrieves the IP address using requests library and browsers in Python.
 3. urllib: This command retrieves the IP address using urllib library in Python.
 
+ 
+
+
+
 **Code**: [[http://1.1.1.1 &@2.2.2.2# @3.3.3.3/
 urllib2 : 1.1.]]
+
+
 
 > Arguments:
 - URL: The URL for which you want to retrieve the IP address.
@@ -108,3 +122,5 @@ print ip
 - [[Bypassing filters]]
 - [[Bypass using tricks combination]]
 - [[Server-Side Request Forgery]]
+
+

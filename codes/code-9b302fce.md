@@ -18,3 +18,5 @@ updated_at: '2023-04-06T03:56:40.549324+00:00'
 4. If the victim opens the background tab again and doesn't look at the address bar, it may happen that he thinks he is logged out, because a login page appears, for example.
 5. The victim tries to log on again and the attacker receives the credentials
 ```
+
+

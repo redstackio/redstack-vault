@@ -27,6 +27,8 @@ To exploit this vulnerability, attackers use SQL Injection Commands to inject ma
 
 MSSQL Blind based Injection can be used to bypass authentication, escalate privileges, and execute arbitrary code on the database server. This technique can have serious consequences for businesses, as it can lead to data breaches and compromise sensitive information.
 
+ 
+
 ## Requirements
 
 1. Access to the target application
@@ -34,6 +36,8 @@ MSSQL Blind based Injection can be used to bypass authentication, escalate privi
 1. Knowledge of SQL Injection Commands
 
 1. Access to a tool for SQL Injection, such as SQLMap
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ MSSQL Blind based Injection can be used to bypass authentication, escalate privi
 
 1. Regularly update and patch MSSQL databases to reduce the risk of exploitation
 
+ 
+
 ## Objectives
 
 1. Extract sensitive information from MSSQL databases
@@ -51,11 +57,19 @@ MSSQL Blind based Injection can be used to bypass authentication, escalate privi
 
 1. Execute arbitrary code on the database server
 
+ 
+
 # Instructions
 
 1. These commands are used for SQL injection attacks. The commands are designed to extract sensitive information from a database by exploiting vulnerabilities in the SQL code.
 
+ 
+
+
+
 **Code**: [[AND LEN(SELECT TOP 1 username FROM tblusers)=5 ; -]]
+
+
 
 > The first command checks if the length of the username field in the tblusers table is 5. The second command checks if the first character of the username is 'a'. The third command checks if the ASCII value of the first character of the string 'A' is greater than 64. The fourth command checks if the ASCII value of the first character of the lowercase version of the current database name is greater than 90. The fifth command selects the version of the database if the version is '12.0.2000.8'. The sixth command selects the first message from the log_table where the message starts with the letter 't'.
 
@@ -63,3 +77,5 @@ MSSQL Blind based Injection can be used to bypass authentication, escalate privi
 
 - [[MSSQL Blind based]]
 - [[MSSQL Injection]]
+
+

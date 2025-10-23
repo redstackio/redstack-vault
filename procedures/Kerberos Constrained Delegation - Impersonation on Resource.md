@@ -39,9 +39,13 @@ To perform this attack, the attacker must have access to a user account that has
 
 The business value of this attack is that it allows attackers to gain access to sensitive data and systems, which can be used for financial gain or to disrupt business operations.
 
+ 
+
 ## Requirements
 
 1. Access to a user account that has been granted the 'Trust this computer for delegation' privilege
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this attack is that it allows attackers to gain access to 
 
 1. Implement strong password policies to make it more difficult for attackers to obtain valid user credentials
 
+ 
+
 ## Objectives
 
 1. Impersonate a domain user on a resource
@@ -59,11 +65,19 @@ The business value of this attack is that it allows attackers to gain access to 
 
 1. Elevate privileges and move laterally within the network
 
+ 
+
 # Instructions
 
 1. This command impersonates the administrator account and accesses a remote share. To use this command, replace 'dc01.offense.local' with the name of the remote server and ensure that you have the necessary permissions to access the share.
 
+ 
+
+
+
 **Code**: [[PS> [Reflection.Assembly]::LoadWithPartialName('Sy]]
+
+
 
 > This command loads the 'System.IdentityModel' assembly, creates a new WindowsIdentity object for the 'administrator' account, impersonates the account, and then uses the 'ls' command to list the contents of the remote share '\\dc01.offense.local\c$'.
 
@@ -91,3 +105,5 @@ The business value of this attack is that it allows attackers to gain access to 
 - [[Active Directory Attacks]]
 - [[Impersonate a domain user on a resource]]
 - [[Kerberos Constrained Delegation]]
+
+

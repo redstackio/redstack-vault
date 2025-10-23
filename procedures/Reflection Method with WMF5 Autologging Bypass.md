@@ -29,6 +29,8 @@ The Reflection method with WMF5 autologging bypass is a technique used to bypass
 
 The Reflection method with WMF5 autologging bypass is a technique used to bypass security software and evade detection. This technique involves disabling AMSI, which is a Windows feature that is used by antivirus and other security software to scan PowerShell scripts for malicious code. By disabling AMSI, attackers can execute malicious PowerShell scripts without detection. The technique also leverages the WMF5 autologging bypass, which allows attackers to bypass User Account Control (UAC) and execute PowerShell scripts with elevated privileges. This technique is commonly used by attackers to gain access to sensitive information or to install malware on a target system.
 
+ 
+
 ## Requirements
 
 1. Access to a system with Windows Management Framework 5 (WMF5) installed
@@ -36,6 +38,8 @@ The Reflection method with WMF5 autologging bypass is a technique used to bypass
 1. Authentication credentials with administrative privileges
 
 1. PowerShell or other scripting tools
+
+ 
 
 ## Defense
 
@@ -45,17 +49,27 @@ The Reflection method with WMF5 autologging bypass is a technique used to bypass
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to malicious activity
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information
 
 1. Install malware on a target system
 
+ 
+
 # Instructions
 
 1. Disable AMSI
 
+ 
+
+
+
 **Code**: [[[Delegate]::CreateDelegate(("Func``3[String, $(([S]]
+
+
 
 > This command disables the Antimalware Scan Interface (AMSI) which is a feature of Windows Defender that helps in detecting and preventing malicious scripts from running on the system. By disabling the AMSI, it is possible to bypass the detection mechanism and execute malicious scripts without being detected.
 
@@ -75,3 +89,5 @@ The Reflection method with WMF5 autologging bypass is a technique used to bypass
 ## Tags
 
 - [[Using Matt Graebers Reflection method with WMF5 autologging bypass]]
+
+

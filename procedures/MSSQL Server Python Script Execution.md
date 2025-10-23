@@ -29,6 +29,8 @@ This procedure allows an attacker to execute PowerShell scripts and Python comma
 
 This procedure allows an attacker to execute PowerShell scripts and Python commands on a MSSQL server. By gaining access to a MSSQL server, an attacker can leverage this procedure to execute malicious code on the server, which can lead to data theft, privilege escalation, and further network compromise. The attacker can use PowerShell to run commands or scripts on the server, and use Python to interact with the server's resources and data. This procedure can be used to bypass security controls and gain persistent access to the server.
 
+ 
+
 ## Requirements
 
 1. Access to a MSSQL server
@@ -36,6 +38,8 @@ This procedure allows an attacker to execute PowerShell scripts and Python comma
 1. Authentication credentials with sufficient privileges
 
 1. Ability to run PowerShell scripts and Python commands on the server
+
+ 
 
 ## Defense
 
@@ -45,6 +49,8 @@ This procedure allows an attacker to execute PowerShell scripts and Python comma
 
 1. Monitor MSSQL server logs for suspicious activity and unauthorized access attempts
 
+ 
+
 ## Objectives
 
 1. Execute PowerShell scripts and Python commands on a MSSQL server
@@ -53,11 +59,19 @@ This procedure allows an attacker to execute PowerShell scripts and Python comma
 
 1. Maintain persistent access to the server
 
+ 
+
 # Instructions
 
 1. The 'Invoke-SQLOSCmdPython' command is used to execute a PowerShell script and a Python command. The 'Username' parameter specifies the SQL Server login name, the 'Password' parameter specifies the login password, and the 'Instance' parameter specifies the SQL Server instance name. The 'Command' parameter specifies the PowerShell script to execute in base64 encoded format. The 'sp_execute_external_script' command is used to execute the Python command. The '@language' parameter specifies the language of the script, and the '@script' parameter specifies the Python script to execute. The 'WITH RESULT SETS' clause specifies the format of the result set.
 
+ 
+
+
+
 **Code**: [[Invoke-SQLOSCmdPython -Username sa -Password Passw]]
+
+
 
 > The 'Invoke-SQLOSCmdPython' command executes a PowerShell script and a Python command on a SQL Server instance. The 'Username' parameter specifies the SQL Server login name, and the 'Password' parameter specifies the login password. The 'Instance' parameter specifies the SQL Server instance name. The 'Command' parameter specifies the PowerShell script to execute in base64 encoded format. The 'sp_execute_external_script' command is used to execute the Python command. The '@language' parameter specifies the language of the script, and the '@script' parameter specifies the Python script to execute. The 'WITH RESULT SETS' clause specifies the format of the result set. This command can be used to execute complex scripts that combine PowerShell and Python commands.
 
@@ -77,3 +91,5 @@ This procedure allows an attacker to execute PowerShell scripts and Python comma
 
 - [[MSSQL Server]]
 - [[Python:]]
+
+

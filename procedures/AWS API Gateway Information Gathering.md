@@ -30,9 +30,13 @@ The AWS API Gateway Information Gathering procedure involves using the 'Get API 
 
 The AWS API Gateway Information Gathering procedure involves using the 'Get API Gateway' command to list information about a specific API. This procedure can be used by an attacker to gather intelligence about the API's structure, resources, and methods in order to identify potential vulnerabilities or weaknesses. From a technical perspective, this procedure is relatively simple and only requires access to the AWS API Gateway service. However, the business value of this procedure is significant as it can help attackers identify sensitive data or functionality that can be abused for malicious purposes.
 
+ 
+
 ## Requirements
 
 1. Valid AWS API Gateway credentials
+
+ 
 
 ## Defense
 
@@ -42,23 +46,33 @@ The AWS API Gateway Information Gathering procedure involves using the 'Get API 
 
 1. Regularly monitor API Gateway logs and traffic to identify suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify potential vulnerabilities or weaknesses in the API's structure
 
 1. Identify sensitive data or functionality that can be abused for malicious purposes
 
+ 
+
 # Instructions
 
 1. To get information about an existing API Gateway, run the following command:
 
+ 
+
 This command retrieves information about a specific API Gateway by providing the ID of the REST API. The ID can be found in the API Gateway console or by running 'aws apigateway get-rest-apis' command. This command returns a JSON object that contains the details of the API Gateway, including its name, description, endpoint URL, and more.
+
+
 
 **Command** ([[Get API Gateway REST API]]):
 
 ```bash
 aws apigateway get-rest-api --rest-api-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -79,3 +93,5 @@ aws apigateway get-rest-api --rest-api-id ID
 - [[Cloud - AWS]]
 - [[Listing information about a specific API]]
 - [[Persistence]]
+
+

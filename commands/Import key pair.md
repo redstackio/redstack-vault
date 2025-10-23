@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:19:44.887186+00:00'
 ```bash
 $ aws ec2 import-key-pair --key-name "AWS Audit" --public-key-material file://~/.ssh/id_rsa.pub --region eu-west-1
 ```
+
+

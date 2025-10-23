@@ -33,15 +33,25 @@ Some web applications use virtual hosts (vhosts) to serve different web sites de
 
 Some web applications use virtual hosts (vhosts) to serve different web sites depending on the domain being requested. These web apps can be fuzzed using the "Host" parameter of the header.
 
+
+
 # Instructions
 
 Brute force subdomains using the header field.
+
+
+
+
 
 **Command** ([[Wfuzz Brute Force DNS with the Host Parameter]]):
 
 ```bash
 wfuzz --hc 404 -c -w $_WORDLIST -u http://$_TARGET_IP -H 'Host: FUZZ.$_DOMAIN'
 ```
+
+
+
+
 
 ## Platforms
 
@@ -65,3 +75,5 @@ wfuzz --hc 404 -c -w $_WORDLIST -u http://$_TARGET_IP -H 'Host: FUZZ.$_DOMAIN'
 
 - [[Brute Force]]
 - [[Web Applications]]
+
+

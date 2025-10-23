@@ -31,3 +31,5 @@ root@hacker:~# cat massdns.out | awk '{print $3}' | sort -u | grep -oE "\b([0-9]
 104.22.27.77
 172.67.10.39
 ```
+
+

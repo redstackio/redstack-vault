@@ -18,3 +18,5 @@ updated_at: '2023-04-10T20:37:03.357263+00:00'
 & "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe" -RemoveDefinitions -All
 & "C:\Program Files\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All
 ```
+
+

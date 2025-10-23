@@ -42,3 +42,5 @@ Stored XSS with CSS injection - Hello {}*{xss:expression(open(alert(1)))}
 </body>
 </html>
 ```
+
+

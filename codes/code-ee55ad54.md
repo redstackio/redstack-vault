@@ -16,3 +16,5 @@ select suser_sname()
 Select system_user
 select is_srvrolemember('sysadmin')
 ```
+
+

@@ -26,11 +26,29 @@ BloodHound ingestor built in Python and using the Impacket framework. Bloodhound
 
 BloodHound ingestor built in Python and using the Impacket framework. Bloodhound.py gathers information about an Active Directory environment and outputs files that can be processed by BloodHound. Bloodhound.py can be run locally on a domain joined system, or can easily authenticate remotely with Active Directory.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_2883aaeb-d8fe-4ea5-99d9-a3539bac3dc9}}
+
+
 
 # Installation
 
 ## Download and Install (Python 2)
+
+
+
+{{EMBEDDED_CODE_024b98a7-4aad-4265-9e80-e15d7aeb90fb}}
+
+
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +67,5 @@ BloodHound ingestor built in Python and using the Impacket framework. Bloodhound
 
 - [[Active Directory]]
 - [[Enumeration]]
+
+

@@ -35,6 +35,8 @@ Technical Explanation: Windows Search Connectors are XML files that allow users 
 
 Business Value: This attack can be used to gain access to sensitive information or to escalate privileges on a compromised system. It can also be used as a way to deliver malware to a target system.
 
+ 
+
 ## Requirements
 
 1. Access to a writable share
@@ -42,6 +44,8 @@ Business Value: This attack can be used to gain access to sensitive information 
 1. Ability to create a Windows Search Connector file
 
 1. Ability to host a malicious SCF or URL file
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ Business Value: This attack can be used to gain access to sensitive information 
 
 1. Educate users on the dangers of opening files from untrusted sources
 
+ 
+
 ## Objectives
 
 1. Gain access to sensitive information
@@ -59,12 +65,20 @@ Business Value: This attack can be used to gain access to sensitive information 
 
 1. Deliver malware to a target system
 
+ 
+
 # Instructions
 
 1. This command creates a search connector for Microsoft Outlook
 
+ 
+
+
+
 **Code**: [[<?xml version="1.0" encoding="UTF-8"?>
 <searchConn]]
+
+
 
 > The 'data' field contains the XML code necessary to create the search connector for Microsoft Outlook. The 'lang' field specifies the language used in the XML code. The 'instruction' field provides instructions on how to use this command. The 'explain' field provides additional details on what this command does.
 
@@ -85,3 +99,5 @@ Business Value: This attack can be used to gain access to sensitive information 
 - [[Active Directory Attacks]]
 - [[SCF and URL file attack against writeable share]]
 - [[Windows Search Connectors Files]]
+
+

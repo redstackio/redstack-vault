@@ -23,3 +23,5 @@ amass intel -active -asn $_ASN -ip
 root@kali ~# amass intel -active -asn 41264 -ip
 corp.google.com 104.132.31.80
 ```
+
+

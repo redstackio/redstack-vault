@@ -34,17 +34,43 @@ SQL injection tests are automated using SQLMap tool. SQLMap is pre-installed in 
 
 SQL injection tests are automated using SQLMap tool. SQLMap is pre-installed in Kali Linux.
 
+
+
 # Instructions
 
 # 
 
 1. Any URL with parameter that accepts input can be used with SQLMap. In the following screenshot, *term* parameter in the URL is found to be vulnerable and payload that is successfully executed is listed at the end.
 
+
+
+
+
+
+
 **Command** ([[SQLMap on URL Parameter]]):
 
 ```bash
 sqlmap -u http://$_Target_URL
 ```
+
+
+
+
+
+
+
+![f9cb5146-2a2f-4285-b6ef-19ffdb16547b.png](_assets/images/Mash/f9cb5146-2a2f-4285-b6ef-19ffdb16547b.png)
+
+
+
+
+
+
+
+
+
+
 
 # 
 
@@ -65,3 +91,5 @@ sqlmap -u http://$_Target_URL
 - [[sqli]]
 - [[SQLMap]]
 - [[Web Applications]]
+
+

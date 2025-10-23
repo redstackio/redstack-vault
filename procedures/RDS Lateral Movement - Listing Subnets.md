@@ -36,9 +36,13 @@ To perform this attack, an attacker will typically use a compromised EC2 instanc
 
 The business value of this technique is that it allows an attacker to gain access to additional resources within a target network, potentially leading to the compromise of sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a compromised EC2 instance within the target network
+
+ 
 
 ## Defense
 
@@ -48,25 +52,39 @@ The business value of this technique is that it allows an attacker to gain acces
 
 1. Monitor network traffic for signs of lateral movement
 
+ 
+
 ## Objectives
 
 1. Identify subnets within a specific VPC
 
 1. Gain access to additional resources within a target network
 
+ 
+
 # Instructions
 
 1. The above command is used to describe the subnets in a specified VPC. Replace 'ID' with the ID of the VPC you want to describe the subnets for.
 
+ 
+
+
+
 **Code**: [[aws ec2 describe-subnets --filters "Name=vpc-id,Va]]
 
+
+
 > This command retrieves information about the subnets in a specified VPC. The output includes the subnet ID, availability zone, CIDR block, and the VPC ID. You can filter the results using various parameters such as the VPC ID, availability zone, and subnet ID. The command can be used to get a detailed view of the subnets in a VPC, which can be useful for troubleshooting network issues and for planning network architecture.
+
+
 
 **Command** ([[Describe Subnets]]):
 
 ```bash
 aws ec2 describe-subnets --filters "Name=vpc-id,Values=ID"
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -88,3 +106,5 @@ aws ec2 describe-subnets --filters "Name=vpc-id,Values=ID"
 - [[Listing subnets of specific VPC (Important because the access can be restricted to specific subnets to other VPC's)]]
 - [[RDS - Relational Database Service]]
 - [[Scenario]]
+
+

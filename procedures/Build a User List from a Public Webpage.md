@@ -30,6 +30,8 @@ Administrators will often create user names following predictable patterns, maki
 
 Administrators will often create user names following predictable patterns, making it possible for attackers to guess at valid names. This procedure will go over popular naming schemes for building potential user lists from a public website, which can be then used to brute force logins. 
 
+
+
 # Instructions
 
 User name policies vary from company to company, but a large portion tend to use combinations of a person's the first and last name. The following is a basic list of common user name schemes:
@@ -51,6 +53,10 @@ User name policies vary from company to company, but a large portion tend to use
 
 For example, if a site discloses "Mary Washington", potential user names may be:
 
+
+
+
+
 **Code**: [[mary
 Mary
 Washington
@@ -58,7 +64,11 @@ washington
 marywashington
 Mar]]
 
+
+
 Valid users can often be enumerated with "Forgotten Password" links on web pages, certain services which disclose user names (some mail clients), etc. Once a single valid user name is identified, administrator's naming scheme usually becomes obvious.
+
+
 
 ## Platforms
 
@@ -77,3 +87,5 @@ Valid users can often be enumerated with "Forgotten Password" links on web pages
 ## Tags
 
 - [[Enumeration]]
+
+

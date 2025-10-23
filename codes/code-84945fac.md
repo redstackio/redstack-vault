@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:22:23.244662+00:00'
 example.com/graphql?query={__schema{types{name}}}
 example.com/graphiql?query={__schema{types{name}}}
 ```
+
+

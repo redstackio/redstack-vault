@@ -16,3 +16,7 @@ Lateral Movement technique using DCOM and HTA. ​
 ## Description
 
 Lateral Movement technique using DCOM and HTA. ​
+
+
+
+

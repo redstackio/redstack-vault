@@ -31,6 +31,8 @@ SQL injection can be used to bypass authentication mechanism in an application. 
 
 SQL injection can be used to bypass authentication mechanism in an application. The injected payload will evaluate the SQL statement to True, allowing the attacker to login into the application without any credentials. Following similar SQL injection payloads can be used to bypass login.
 
+
+
 *' or '1'='1*
 
 *')-'*
@@ -95,11 +97,31 @@ SQL injection can be used to bypass authentication mechanism in an application. 
 
 *")) or (("x"))=(("x*
 
+
+
 # Instructions
 
 1. Inject the payload *' or '1'='1 *into the username and password fields
 
+
+
+
+
+![98148688-af5c-4a4e-9e5a-d9056d2cdb63.png](_assets/images/Mash/98148688-af5c-4a4e-9e5a-d9056d2cdb63.png)
+
+
+
 2. Payload is accepted by the application and the attacker is logged in as the first user in the database.
+
+
+
+
+
+
+
+![48acec08-cb79-4941-aa66-900ce2680598.png](_assets/images/Mash/48acec08-cb79-4941-aa66-900ce2680598.png)
+
+
 
 Note: If the payload doesn't work, try using the other payloads listed above or construct something similar that matches the application
 
@@ -115,3 +137,5 @@ Note: If the payload doesn't work, try using the other payloads listed above or 
 - [[SQL]]
 - [[sqli]]
 - [[Web Applications]]
+
+

@@ -99,6 +99,9 @@ Flags      : 00000000
 Credential : hunter2
 Attributes : 0
 
+
 mimikatz(commandline) # exit
 Bye!
 ```
+
+

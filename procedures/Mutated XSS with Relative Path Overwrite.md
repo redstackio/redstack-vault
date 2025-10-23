@@ -33,6 +33,8 @@ Technical Explanation: The attack works by manipulating the path of the URL to i
 
 Business Value: This technique can be used by attackers to gain unauthorized access to sensitive information, such as user credentials and financial data. It can also be used to take control of user sessions, allowing the attacker to perform actions on behalf of the user.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
@@ -40,6 +42,8 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 1. Knowledge of the Listing ID parameter vulnerability
 
 1. Internet Explorer 8 or 9
+
+ 
 
 ## Defense
 
@@ -49,6 +53,8 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 
 1. Regularly update and patch web applications to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject and execute malicious code on a vulnerable web application
@@ -57,11 +63,19 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 
 1. Take control of user sessions
 
+ 
+
 # Instructions
 
 1. To exploit this vulnerability, an attacker can inject malicious code into the Listing ID parameter. This can be done by inserting a script tag with a payload that executes arbitrary code.
 
+ 
+
+
+
 **Code**: [[<listing id=x>&lt;img src=1 onerror=alert(1)&gt;</]]
+
+
 
 > The Listing ID parameter is vulnerable to a cross-site scripting (XSS) attack. This occurs when an attacker is able to inject malicious code into a vulnerable web page, which is then executed by unsuspecting users who visit the page. In this case, an attacker can inject a script tag with a payload that executes arbitrary code. When the page is loaded, the script is executed and the payload is executed, allowing the attacker to steal sensitive information or perform other malicious actions on the user's behalf.
 
@@ -81,3 +95,5 @@ Business Value: This technique can be used by attackers to gain unauthorized acc
 
 - [[Mutated XSS for Browser IE8/IE9]]
 - [[XSS with Relative Path Overwrite - IE 8/9 and lower]]
+
+

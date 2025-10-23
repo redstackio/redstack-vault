@@ -30,6 +30,8 @@ The XLM Excel 4.0 GruntHttp Payload Generation procedure is used to generate a p
 
 The XLM Excel 4.0 GruntHttp Payload Generation procedure is used to generate a payload that can be used to execute arbitrary code on a target system. This payload is generated using the GruntHttp tool and is delivered via an Excel 4.0 macro. The payload is designed to bypass traditional antivirus and endpoint detection and response solutions. The GruntHttp tool is used to generate the payload, which is then inserted into an Excel 4.0 macro. When the macro is executed, the payload is delivered to the target system and executed. This technique is effective because it does not rely on any external tools or libraries, and it can be executed using standard Microsoft Office functionality.
 
+ 
+
 ## Requirements
 
 1. Access to a target system running Microsoft Office
@@ -37,6 +39,8 @@ The XLM Excel 4.0 GruntHttp Payload Generation procedure is used to generate a p
 1. Ability to generate a payload using the GruntHttp tool
 
 1. Knowledge of Excel 4.0 macro execution
+
+ 
 
 ## Defense
 
@@ -46,11 +50,15 @@ The XLM Excel 4.0 GruntHttp Payload Generation procedure is used to generate a p
 
 1. Monitor network traffic for suspicious activity, including traffic associated with GruntHttp payloads
 
+ 
+
 ## Objectives
 
 1. Deliver and execute arbitrary code on a target system
 
 1. Bypass traditional antivirus and endpoint detection and response solutions
+
+ 
 
 # Instructions
 
@@ -66,7 +74,13 @@ The XLM Excel 4.0 GruntHttp Payload Generation procedure is used to generate a p
 
 After running the above command, you can use the GruntHttp payload by following the instructions provided in the 'text' field.
 
+ 
+
+
+
 **Code**: [[git clone https://github.com/FortyNorthSecurity/EX]]
+
+
 
 > 
 
@@ -87,3 +101,5 @@ After running the above command, you can use the GruntHttp payload by following 
 
 - [[Office - Attacks]]
 - [[XLM Excel 4.0 - EXCELntDonut]]
+
+

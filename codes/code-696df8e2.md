@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:21:59.437694+00:00'
 ```sql
 select bitand(1,0) from sysibm.sysdummy1 -- returns 0. Also available bitandnot, bitor, bitxor, bitnot
 ```
+
+

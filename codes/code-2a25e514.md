@@ -27,3 +27,5 @@ SharpAzToken.exe mdm --joindevice --accesstoken (or some combination from the to
 # Generate PRT and session key from a Device Certificate (device must be joined to MDM first)
 SharpAzToken.exe devicekeys --pfxpath XXXX.pfx --refreshtoken (--prtcookie / ---username + --password )
 ```
+
+

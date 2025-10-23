@@ -32,9 +32,13 @@ GraphQL Projection Data Extraction is a technique used to extract sensitive data
 
 GraphQL Projection Data Extraction is a technique used to extract sensitive data from a GraphQL endpoint by manipulating the projection fields. This technique is often used by attackers to extract data such as personal identifiable information (PII) and credentials. To perform this attack, an attacker first identifies a GraphQL endpoint and then injects a malicious payload into the projection fields. The payload is designed to extract data from the GraphQL endpoint and return it to the attacker. This technique is effective because it allows the attacker to bypass GraphQL query restrictions and extract data that they are not authorized to access.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable GraphQL endpoint
+
+ 
 
 ## Defense
 
@@ -44,25 +48,39 @@ GraphQL Projection Data Extraction is a technique used to extract sensitive data
 
 1. Monitor GraphQL endpoint for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Extract sensitive data from a GraphQL endpoint
 
 1. Bypass GraphQL query restrictions
 
+ 
+
 # Instructions
 
 1. To perform a GraphQL Projection Data Extraction attack, an attacker can use the following payload:
 
+ 
+
+
+
 **Code**: [[{doctors(options: "{\"patients.ssn\" :1}"){firstNa]]
 
+
+
 > The payload is injected into the projection fields and is designed to extract sensitive data from the GraphQL endpoint. In this example, the payload is extracting the first name, last name, and social security number (SSN) of all the doctors' patients.
+
+
 
 **Command** ([[Retrieve doctor's information]]):
 
 ```bash
 {doctors(options: "{\"patients.ssn\" :1}"){firstName lastName id patients{ssn}}}
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +103,5 @@ GraphQL Projection Data Extraction is a technique used to extract sensitive data
 - [[Exploit]]
 - [[Extract data using projections]]
 - [[GraphQL Injection]]
+
+

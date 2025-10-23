@@ -32,6 +32,8 @@ This procedure involves exploiting an insecure password reset feature and an Ins
 
 This attack can be used to gain access to sensitive information or perform unauthorized actions on behalf of the victim, such as transferring funds or stealing confidential data. Businesses can suffer reputational damage and financial losses as a result of such attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target's password reset feature
@@ -39,6 +41,8 @@ This attack can be used to gain access to sensitive information or perform unaut
 1. Knowledge of the victim's email address or user ID
 
 1. Access to the target's API endpoint
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ This attack can be used to gain access to sensitive information or perform unaut
 
 1. Monitor for suspicious activity, such as multiple failed login attempts or changes to account information
 
+ 
+
 ## Objectives
 
 1. Gain unauthorized access to a victim's account
@@ -56,17 +62,27 @@ This attack can be used to gain access to sensitive information or perform unaut
 
 1. Steal sensitive information
 
+ 
+
 # Instructions
 
 1. Follow these steps to execute the attack:
+
+ 
+
+
 
 **Code**: [[POST /api/changepass
 [...]
 ("form": {"email":"vict]]
 
+
+
 > 1. Identify the victim's email address or user ID
 2. Send a POST request to the target's API endpoint with the victim's email address/user ID and the new password
 3. If the attack is successful, the victim's password will be changed and the attacker will have access to their account
+
+
 
 **Command** ([[Change Password]]):
 
@@ -74,6 +90,8 @@ This attack can be used to gain access to sensitive information or perform unaut
 POST /api/changepass
 ("form": {"email":"victim@email.com","password":"securepwd"})
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ POST /api/changepass
 - [[Account Takeover]]
 - [[IDOR on API Parameters]]
 - [[Password Reset Feature]]
+
+

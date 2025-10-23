@@ -26,13 +26,31 @@ Tcpdump prints out a description of the contents of packets on a network interfa
 
 Tcpdump prints out a description of the contents of packets on a network interface that match the boolean expression; the description is preceded by a time stamp, printed, by default, as hours,minutes, seconds, and fractions of a second since midnight.  It can also be run with the -w flag, which causes it to save the packet data to a file for later analysis, and/or with the -r flag, which causes it to read from a saved packet file rather than to read packets from a network interface.
 
+
+
 Tcpdump is a priceless tool when it comes to penetration testing, as attackers can use it to monitor network traffic reaching a system and potentially derive sensitive information from the packet dumps.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_49050e1d-dc03-4106-91df-bdf554795820}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -46,3 +64,5 @@ Tcpdump is a priceless tool when it comes to penetration testing, as attackers c
 
 - [[data exposure]]
 - [[Network]]
+
+

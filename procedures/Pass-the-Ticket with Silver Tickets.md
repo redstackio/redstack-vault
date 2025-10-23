@@ -32,6 +32,8 @@ Pass-the-Ticket attacks occur when an attacker uses a Kerberos ticket to authent
 
 Pass-the-Ticket attacks occur when an attacker uses a Kerberos ticket to authenticate to a service as a legitimate user without the need for the user's password. Pass-the-Ticket with Silver Tickets is a technique used by attackers to forge a Kerberos ticket with Domain Admin privileges. This is achieved by forging a Ticket Granting Service (TGS) ticket for the krbtgt account, which is used to generate service tickets for any account within the domain. Once the attacker has the Silver Ticket, they can access any service within the domain as any user without being detected.
 
+ 
+
 ## Requirements
 
 1. Valid domain credentials
@@ -39,6 +41,8 @@ Pass-the-Ticket attacks occur when an attacker uses a Kerberos ticket to authent
 1. Access to the domain controller
 
 1. Mimikatz or other tool to generate Silver Tickets
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Pass-the-Ticket attacks occur when an attacker uses a Kerberos ticket to authent
 
 1. Disable Kerberos ticket caching to limit the impact of stolen tickets
 
+ 
+
 ## Objectives
 
 1. Forge a Silver Ticket for the krbtgt account
@@ -56,13 +62,23 @@ Pass-the-Ticket attacks occur when an attacker uses a Kerberos ticket to authent
 
 1. Access any service within the domain as any user
 
+ 
+
 # Instructions
 
 1. Use the following commands to generate a silver ticket for a specific user and domain:
 
+ 
+
+
+
 **Code**: [[ticketer.py -request -domain 'lab.local' -user 'do]]
 
+
+
 > The above commands can be used to generate a silver ticket for a specific user and domain. The 'ticketer.py' command generates a silver ticket using the provided arguments such as domain name, user name, password, NT hash, AES key, domain SID, user ID, and group IDs. The 'Rubeus.exe' command is used to request a TGS ticket for the specified service using the provided credentials and ticket information. This ticket can then be used to access the service as the specified user. The 'Interesting services to target with a silver ticket' text provides a list of services that can be targeted using a silver ticket.
+
+
 
 **Command** ([[Request Ticket from ticketer.py and Export it using Rubeus.exe]]):
 
@@ -71,6 +87,8 @@ ticketer.py -request -domain 'lab.local' -user 'domain_user' -password 'password
 
 Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTROLLER /enctype:AES256 /krbkey:HASH /ticketuser:USERNAME /ticketuserid:USER_ID /groups:GROUP_IDS
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -95,3 +113,5 @@ Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTR
 - [[Active Directory Attacks]]
 - [[Kerberos Tickets]]
 - [[Pass-the-Ticket Diamond Tickets]]
+
+

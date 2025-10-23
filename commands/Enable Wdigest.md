@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:16.231490+00:00'
 ```bash
 reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /f /d 1
 ```
+
+

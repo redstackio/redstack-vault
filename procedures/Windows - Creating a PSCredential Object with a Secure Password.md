@@ -35,6 +35,8 @@ To create a new PSCredential object, the 'New-Object' cmdlet is used with the 'S
 
 The business value of this procedure is that it allows for secure remote management of systems without the need for manual authentication each time. This can save time and increase efficiency for IT administrators.
 
+ 
+
 ## Requirements
 
 1. Access to Powershell Remoting Protocol
@@ -42,6 +44,8 @@ The business value of this procedure is that it allows for secure remote managem
 1. Ability to create and store a secure password
 
 1. Permission to remotely execute commands on target systems
+
+ 
 
 ## Defense
 
@@ -51,6 +55,8 @@ The business value of this procedure is that it allows for secure remote managem
 
 1. Monitor for suspicious activity and unauthorized access to remote systems
 
+ 
+
 ## Objectives
 
 1. Create a new PSCredential object with a secure password
@@ -59,16 +65,26 @@ The business value of this procedure is that it allows for secure remote managem
 
 1. Remotely execute commands on target systems using the PSCredential object
 
+ 
+
 # Instructions
 
 1. To create a new PSCredential object with a secure password, follow the steps below:
 1. Use the ConvertTo-SecureString cmdlet to convert the password to a secure string. Example: $pass = ConvertTo-SecureString 'supersecurepassword' -AsPlainText -Force
 2. Use the New-Object cmdlet to create a new PSCredential object. Example: $cred = New-Object System.Management.Automation.PSCredential ('DOMAIN\Username', $pass)
 
+ 
+
+
+
 **Code**: [[PS> $pass = ConvertTo-SecureString 'supersecurepas]]
+
+
 
 > The ConvertTo-SecureString cmdlet converts a plain text password to a secure string. The -AsPlainText parameter specifies that the input is a plain text password. The -Force parameter forces the conversion even if the input string is not considered secure. The resulting secure string can be used to create a secure PSCredential object.
 The New-Object cmdlet creates a new instance of a .NET object. In this case, it creates a new PSCredential object with the specified username and secure password.
+
+
 
 **Command** ([[Create new PSCredential object]]):
 
@@ -76,6 +92,8 @@ The New-Object cmdlet creates a new instance of a .NET object. In this case, it 
 $pass = ConvertTo-SecureString 'supersecurepassword' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ('DOMAIN\Username', $pass)
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -97,3 +115,5 @@ $cred = New-Object System.Management.Automation.PSCredential ('DOMAIN\Username',
 - [[Powershell Credentials]]
 - [[Powershell Remoting Protocol]]
 - [[Windows - Using credentials]]
+
+

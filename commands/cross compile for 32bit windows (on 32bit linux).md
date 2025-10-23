@@ -20,3 +20,5 @@ apt-get install mingw32
 i586-mingw32msvc-gcc <source>.c -o <outfile> -lws2_32
 
 ```
+
+

@@ -9,9 +9,17 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Windows Defender
 
+
+
 **Command** ([[Remove definitions and disable AV protection (Useful when Powershell scripts are being blocked by Defender)]]):
 
 ```bash
 c:\program files\windows defender\mpcmdrun.exe" -RemoveDefinitions -All Set-MpPreference -DisableIOAVProtection $true
 
 ```
+
+
+
+
+
+

@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:26:11.213305+00:00'
 ```bash
 python dementor.py -d domain -u username -p password <UNCONSTRAINED-SERVER-DC-NAME> <VICTIM-DC-NAME>
 ```
+
+

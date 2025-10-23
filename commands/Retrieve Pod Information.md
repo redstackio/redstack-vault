@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:34:00.981832+00:00'
 curl -k https://<IP Address>:10255
 http://<external-IP>:10255/pods
 ```
+
+

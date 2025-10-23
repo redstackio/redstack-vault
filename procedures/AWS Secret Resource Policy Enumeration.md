@@ -34,9 +34,13 @@ The technical explanation of this procedure involves querying the AWS Secrets Ma
 
 The business value of this procedure is that it allows organizations to identify potential weaknesses in their access control mechanisms and take steps to address them before they can be exploited by attackers.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access the Secrets Manager API
+
+ 
 
 ## Defense
 
@@ -46,6 +50,8 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Regularly review and update access control policies to ensure they are effective and up-to-date
 
+ 
+
 ## Objectives
 
 1. Retrieve policies attached to a specified secret
@@ -54,17 +60,25 @@ The business value of this procedure is that it allows organizations to identify
 
 1. Gain insight into access control mechanisms in place
 
+ 
+
 # Instructions
 
 1. To get the resource policy for a secret, use the following command:
 
+ 
+
 This command retrieves the resource-based policy attached to the specified secret. The resource-based policy is a JSON document that defines who can access the secret and what actions they can perform on it. The --secret-id parameter specifies the ID of the secret for which you want to retrieve the resource policy.
+
+
 
 **Command** ([[Get Secrets Manager Resource Policy]]):
 
 ```bash
 aws secretsmanager get-resource-policy --secret-id ID
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -85,3 +99,5 @@ aws secretsmanager get-resource-policy --secret-id ID
 - [[Cloud - AWS]]
 - [[Enumeration]]
 - [[Getting policies attached to the specified secret]]
+
+

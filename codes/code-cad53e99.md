@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:33:58.600564+00:00'
 ```powershell
 kubectl auth can-i --list --namespace=kube-system
 ```
+
+

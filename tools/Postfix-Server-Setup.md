@@ -16,3 +16,7 @@ Setting up a phishing server is a very long and tedious process. It can take hou
 ## Description
 
 Setting up a phishing server is a very long and tedious process. It can take hours to setup, and can be compromised in minutes. ​
+
+
+
+

@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:14.072280+00:00'
 ```bash
 aws iam get-policy --policy-arn policy-arn
 ```
+
+

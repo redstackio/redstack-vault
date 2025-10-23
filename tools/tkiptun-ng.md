@@ -16,3 +16,9 @@ Tkiptun-ng is the proof-of-concept implementation the WPA/TKIP attack. This atta
 ## Description
 
 Tkiptun-ng is the proof-of-concept implementation the WPA/TKIP attack. This attack is described in the paper, Practical attacks against WEP and WPA written by Martin Beck and Erik Tews. The paper describes advanced attacks on WEP and the first practical attack on WPA.
+
+
+
+
+
+

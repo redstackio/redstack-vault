@@ -30,11 +30,15 @@ From a technical perspective, this attack works by using Unicode character trans
 
 From a business perspective, this attack can be used to steal sensitive information such as login credentials, credit card numbers, and other personal data. It can also be used to take control of the victim's browser, allowing the attacker to perform actions on their behalf.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Knowledge of Unicode character transformation techniques
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ From a business perspective, this attack can be used to steal sensitive informat
 
 1. Regularly update and patch web applications to prevent known vulnerabilities
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into web pages
@@ -52,13 +58,23 @@ From a business perspective, this attack can be used to steal sensitive informat
 
 1. Take control of the victim's browser
 
+ 
+
 # Instructions
 
 1. This command transforms Unicode characters into their corresponding characters, encoded in UTF-8 format. The transformed characters are shown in the 'data' field.
 
+ 
+
+
+
 **Code**: [[Unicode character U+FF1C FULLWIDTH LESS­THAN SIGN ]]
 
+
+
 > The 'data' field shows the list of Unicode characters that were transformed along with their corresponding characters. This command is useful when dealing with encoded text or URLs, where certain characters may be encoded in Unicode format. By using this command, the encoded characters can be transformed into their corresponding characters, making it easier to read and understand the text or URL. The 'E.g' field provides an example of how the command can be used to transform encoded characters in a URL.
+
+
 
 **Command** ([[Unicode character transformation]]):
 
@@ -74,10 +90,18 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
 %EF%BC%9C becomes <
 ```
 
+
+
 2. To use this Unicode Uppercase Bypass, you can convert the Unicode characters to uppercase or lowercase to bypass certain security restrictions. The specific characters that can be used to bypass security restrictions are provided in the 'data' field of this command.
+
+ 
+
+
 
 **Code**: [[İ (%c4%b0).toLowerCase() => i
 ı (%c4%b1).toUpperCa]]
+
+
 
 > The 'data' field provides a list of Unicode characters that can be used to bypass security restrictions. By converting these characters to uppercase or lowercase, you can bypass certain security restrictions that may be in place. This technique can be used in various contexts, such as in HTML tags or in JavaScript code.
 
@@ -90,3 +114,5 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
 - [[Bypass using Unicode]]
 - [[Cross Site Scripting]]
 - [[Filter Bypass and exotic payloads]]
+
+

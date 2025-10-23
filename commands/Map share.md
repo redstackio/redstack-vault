@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:18.434293+00:00'
 ```bash
 net use p: \\WIN-PTELU2U07KG\admin$ /user:john mimikatz
 ```
+
+

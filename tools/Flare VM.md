@@ -28,6 +28,8 @@ Fully customizable Windows-based security distribution for malware analysis, inc
 
 Fully customizable Windows-based security distribution for malware analysis, incident response, penetration testing, reverse engineering, etc. Flare is installed on top of a fully updated Windows 10 virtual machine via a PowerShell script. Flare includes popular debuggers like x64dbg/Olly and WinDbg, disassemblers like Cutter and Ghidra, malware dumping tools, and more. See [Flare ](https://github.com/fireeye/flare-vm)[VM](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection)['s GitHub page](https://github.com/fireeye/flare-vm/blob/master/install.ps1) for a full list of default packages.
 
+
+
 Recommended VM Specs:
 
 - a fully up-to-date copy of Windows 10
@@ -37,6 +39,8 @@ Recommended VM Specs:
 - 3+ CPU Processors
 
 - 4GB RAM
+
+
 
 # Installation
 
@@ -53,10 +57,22 @@ Recommended VM Specs:
 5. Open a new PowerShell session as Admin (right-click Start > Windows PowerShell (Admin))
 6. Set PowerShell execution policy to unrestrcited, and select "A" or "Y" to accept
 
+
+
+{{EMBEDDED_COMMAND_a57b7ff5-3ed0-4526-a454-b1514a7b9456}}
+
 7. Create a new checkpoint for the virtual machine, in case the installation fails and the process must be restarted
 8. Execute the installation script
 
+
+
+{{EMBEDDED_CODE_fbc7667b-467f-4ba7-9be8-1d0704723cef}}
+
+
+
 After entering the user's password, the installer will proceed. Expect it to take over an hour, and it will restart multiple times. Upon completion, create a new checkpoint for the VM to use as a safe restore point. Having this checkpoint ensures a "clean" state exists, and is priceless for instances where Flare is exposed to malicious software.
+
+
 
 ## Platforms
 
@@ -70,3 +86,5 @@ After entering the user's password, the installer will proceed. Expect it to tak
 
 - [[hacking]]
 - [[Operating Systems]]
+
+

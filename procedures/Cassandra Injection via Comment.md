@@ -25,6 +25,8 @@ Cassandra is a popular NoSQL database used by many organizations. However, it is
 
 Cassandra is a popular NoSQL database used by many organizations. However, it is vulnerable to injection attacks, including via comments. An attacker can use the 'Cassandra Comment' command to inject malicious code into the database by adding comments with malicious payloads. This can lead to a compromise of the database, as well as potential credential access. The attack can be executed remotely and can be difficult to detect, making it a popular technique for attackers.
 
+ 
+
 ## Requirements
 
 1. Access to the target network
@@ -32,6 +34,8 @@ Cassandra is a popular NoSQL database used by many organizations. However, it is
 1. Knowledge of the target's Cassandra database
 
 1. Ability to execute the 'Cassandra Comment' command
+
+ 
 
 ## Defense
 
@@ -41,6 +45,8 @@ Cassandra is a popular NoSQL database used by many organizations. However, it is
 
 1. Use least privilege access control to limit the potential damage of an attack
 
+ 
+
 ## Objectives
 
 1. Inject malicious code into the Cassandra database
@@ -49,19 +55,31 @@ Cassandra is a popular NoSQL database used by many organizations. However, it is
 
 1. Potentially gain access to credentials
 
+ 
+
 # Instructions
 
 1. Comment
 
+ 
+
+
+
 **Code**: [[/* Cassandra Comment */]]
 
+
+
 > This command is used to add comments to Cassandra queries. Comments are ignored during query execution and are useful for adding notes or explanations to queries. The comment text is enclosed in /* */ characters.
+
+
 
 **Command** ([[Cassandra Comment]]):
 
 ```bash
 /* Cassandra Comment */
 ```
+
+
 
 ## Commands Used
 
@@ -71,3 +89,5 @@ Cassandra is a popular NoSQL database used by many organizations. However, it is
 
 - [[Cassandra comment]]
 - [[Cassandra Injection]]
+
+

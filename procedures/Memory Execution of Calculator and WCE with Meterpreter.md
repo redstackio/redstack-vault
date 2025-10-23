@@ -31,9 +31,13 @@ Memory execution of Calculator and Windows Credential Editor (WCE) with Meterpre
 
 Memory execution of Calculator and Windows Credential Editor (WCE) with Meterpreter is a technique used by attackers to bypass detection mechanisms and execute malicious code from memory. This technique is often used to evade antivirus and endpoint detection and response (EDR) solutions. In this procedure, the attacker uses Meterpreter to inject the code of Calculator and WCE into a legitimate process running on the victim's machine. Once executed, the attacker can use WCE to steal Windows credentials and gain access to other systems on the network. The business value of this procedure is that it allows attackers to gain access to critical systems and steal sensitive data.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable system with Meterpreter installed
+
+ 
 
 ## Defense
 
@@ -43,6 +47,8 @@ Memory execution of Calculator and Windows Credential Editor (WCE) with Meterpre
 
 1. Implement network segmentation to limit lateral movement of attackers
 
+ 
+
 ## Objectives
 
 1. Execute Calculator and WCE in memory on the victim's machine
@@ -50,6 +56,8 @@ Memory execution of Calculator and Windows Credential Editor (WCE) with Meterpre
 1. Steal Windows credentials using WCE
 
 1. Gain access to other systems on the network
+
+ 
 
 # Instructions
 
@@ -64,15 +72,25 @@ Memory execution of Calculator and Windows Credential Editor (WCE) with Meterpre
 -a: Specify the arguments to be passed to the program.
 -w: Wait for the program to finish executing before continuing with the script.
 
+ 
+
+
+
 **Code**: [[execute -H -i -c -m -d calc.exe -f /root/wce.exe -]]
 
+
+
 > This command executes the 'calc.exe' program with the 'wce.exe' program as an argument. The 'calc.exe' program will be run with high integrity level, interactively, in a new console window, and as a new process. The 'wce.exe' program will be run with the specified arguments. The command will wait for both programs to finish executing before continuing with the script.
+
+
 
 **Command** ([[Execute WCE]]):
 
 ```bash
 execute -H -i -c -m -d calc.exe -f /root/wce.exe -a  -w
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -94,3 +112,5 @@ execute -H -i -c -m -d calc.exe -f /root/wce.exe -a  -w
 - [[Execute from Memory]]
 - [[Metasploit]]
 - [[Meterpreter - Basic]]
+
+

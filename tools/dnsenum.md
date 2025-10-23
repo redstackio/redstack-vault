@@ -24,11 +24,27 @@ Dnsenum is a multi-threaded perl script to enumerate DNS information of a domain
 
 Dnsenum is a multi-threaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks. Dnsenum can be used with word lists to launch dictionary attacks to search for subdomains.
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_baf65f95-02ed-4fe8-81e5-32b801ce7b5e}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Services
 
@@ -42,3 +58,5 @@ Dnsenum is a multi-threaded perl script to enumerate DNS information of a domain
 
 - [[Enumeration]]
 - [[Service Attacks]]
+
+

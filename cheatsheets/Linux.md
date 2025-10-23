@@ -9,18 +9,38 @@ updated_at: '2023-05-29T16:48:52.690130+00:00'
 
 # Linux
 
+
+
 **Code**: [[
 for u in `cat hosts.txt`; do
   echo -n "[*] user:]]
+
+
+
+
+
+
 
 **Code**: [[
 function start_sshtunnel() {
   ssh -A -t -p22 -L ]]
 
+
+
+
+
+
+
 **Code**: [[
 # .bash_profile PATH=$PATH:/home/james/ export PA]]
 
+
+
+
+
 # Linux Enumeration
+
+
 
 **Command** ([[List open files]]):
 
@@ -29,12 +49,24 @@ lsof
 
 ```
 
+
+
+
+
+
+
 **Command** ([[without kernel]]):
 
 ```bash
 lsof -b
 
 ```
+
+
+
+
+
+
 
 **Command** ([[PIDs only]]):
 
@@ -43,12 +75,24 @@ lsof -t
 
 ```
 
+
+
+
+
+
+
 **Command** ([[by user]]):
 
 ```bash
 lsof -u username1,username2
 
 ```
+
+
+
+
+
+
 
 **Command** ([[omit user]]):
 
@@ -57,12 +101,24 @@ lsof -u ^username3
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List network files]]):
 
 ```bash
 lsof -i
 
 ```
+
+
+
+
+
+
 
 **Command** ([[IPv4]]):
 
@@ -71,12 +127,24 @@ lsof -i4
 
 ```
 
+
+
+
+
+
+
 **Command** ([[IPv6]]):
 
 ```bash
 lsof -i6
 
 ```
+
+
+
+
+
+
 
 **Command** ([[by protocol]]):
 
@@ -86,12 +154,24 @@ lsof -i UDP
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List open network files by service]]):
 
 ```bash
 lsof -i TCP:https
 
 ```
+
+
+
+
+
+
 
 **Command** ([[by port]]):
 
@@ -101,12 +181,24 @@ lsof -i TCP:10-1024
 
 ```
 
+
+
+
+
+
+
 **Command** ([[list PIDs]]):
 
 ```bash
 lsof -t -i
 
 ```
+
+
+
+
+
+
 
 **Command** ([[no port conversion]]):
 
@@ -115,12 +207,24 @@ lsof -i -P
 
 ```
 
+
+
+
+
+
+
 **Command** ([[no name conversion]]):
 
 ```bash
 lsof -i -n
 
 ```
+
+
+
+
+
+
 
 **Command** ([[listening]]):
 
@@ -129,12 +233,24 @@ lsof -nP -i TCP -s TCP:LISTEN
 
 ```
 
+
+
+
+
+
+
 **Command** ([[connections]]):
 
 ```bash
 lsof -i | awk '{print $8}' | sort | uniq -c | grep 'TCP\|UDP'
 
 ```
+
+
+
+
+
+
 
 **Command** ([[established]]):
 
@@ -143,12 +259,24 @@ lsof -i -nP | grep ESTABLISHED | awk '{print $1, $9}' | sort -u
 
 ```
 
+
+
+
+
+
+
 **Command** ([[active]]):
 
 ```bash
 lsof -nP -iTCP -sTCP:ESTABLISHED | grep HTTPS
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List files by PID]]):
 
@@ -157,12 +285,24 @@ lsof -p 5432,8484
 
 ```
 
+
+
+
+
+
+
 **Command** ([[include PPID]]):
 
 ```bash
 lsof -R
 
 ```
+
+
+
+
+
+
 
 **Command** ([[include PPID by PID]]):
 
@@ -171,12 +311,24 @@ lsof -p 5432 -R
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List PIDs that opened file]]):
 
 ```bash
 lsof -t /path/to/file
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List files by Process Name]]):
 
@@ -185,12 +337,24 @@ lsof -c firefox
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List files in directory]]):
 
 ```bash
 lsof +D DirectoryName
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List files with subdirectories]]):
 
@@ -199,12 +363,24 @@ lsof +d DirectoryName
 
 ```
 
+
+
+
+
+
+
 **Command** ([[List NFS use]]):
 
 ```bash
 lsof -N
 
 ```
+
+
+
+
+
+
 
 **Command** ([[List IPC]]):
 
@@ -213,6 +389,12 @@ lsof -U
 
 ```
 
+
+
+
+
+
+
 **Command** ([[by PID]]):
 
 ```bash
@@ -220,9 +402,21 @@ lsof -U -a -p 8484
 
 ```
 
+
+
+
+
+
+
 **Command** ([[Kill processes of specific user]]):
 
 ```bash
 sudo kill -9 `lsof -t -u username1`
 
 ```
+
+
+
+
+
+

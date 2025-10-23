@@ -26,9 +26,13 @@ This tool works with a logal cloned git repo, so clone the target repo first.
 
 [git-secrets](https://github.com/awslabs/git-secrets)
 
+
+
 ##  Instructions
 
 1. Using git-secrets from inside a git repo directory (any directory containing a .git folder)
+
+
 
 **Command** ([[git-secrets scan the current directory for secrets]]):
 
@@ -37,6 +41,12 @@ git-secrets --scan
 
 ```
 
+
+
+
+
 ## Commands Used
 
 - [[git-secrets scan the current directory for secrets]]
+
+

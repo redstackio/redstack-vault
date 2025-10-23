@@ -29,17 +29,33 @@ Web headers will reveal web technologies used, version details etc. http-headers
 
 # Description
 
+
+
 Web headers will reveal web technologies used, version details etc. *http-headers *nmap script will reveal the HTTP response headers.
+
+
 
 # Procedure
 
+
+
 1. Following nmap command can be used to identify the web response headers on a website.
+
+
+
+
+
+
 
 **Command** ([[Nmap Command to Find Response Headers]]):
 
 ```bash
 nmap -sV --script=http-headers 192.168.1.11
 ```
+
+
+
+
 
 ## Platforms
 
@@ -55,3 +71,5 @@ nmap -sV --script=http-headers 192.168.1.11
 - [[owasp]]
 - [[owasp top 10]]
 - [[Web Applications]]
+
+

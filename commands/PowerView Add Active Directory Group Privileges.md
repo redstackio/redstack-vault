@@ -21,3 +21,5 @@ Add-DomainGroupMember -Identity '$_GROUP' -Members '$_USER'
 ```
 PS C:\> Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'bob'
 ```
+
+

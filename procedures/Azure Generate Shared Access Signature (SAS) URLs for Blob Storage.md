@@ -33,6 +33,8 @@ Azure Shared Access Signatures (SAS) are a secure way to provide  granular permi
 
 Azure Shared Access Signatures (SAS) are a secure way to provide  granular permissions to Azure Storage resources without exposing your  account keys. A SAS URL gives specific, time-limited permissions to  access objects in your storage account. This guide illustrates the  process of generating a SAS URL for an Azure Blob Storage container  using Azure PowerShell or Azure CLI.
 
+ 
+
 ## Requirements
 
 1. An active Azure subscription
@@ -40,6 +42,8 @@ Azure Shared Access Signatures (SAS) are a secure way to provide  granular permi
 1. Azure Storage Account and Blob container
 
 1. Azure PowerShell or Azure CLI installed
+
+ 
 
 ## Defense
 
@@ -49,23 +53,39 @@ Azure Shared Access Signatures (SAS) are a secure way to provide  granular permi
 
 1. Use HTTPS only option to ensure secure transmission of the SAS token
 
+ 
+
 ## Objectives
 
 1. Generate a SAS URL for an Azure Blob Storage container
 
 1. Securely manage access to Azure Blob Storage data
 
+ 
+
 # Instructions
 
 1.Install the `Az` module if you haven't already
 
+
+
 **Code**: [[# Install the AZ Module
 Install-Module -Name Az -A]]
 
+
+
 2 (Optional) Using az-cli instead of the powershell module
+
+
+
+
 
 **Code**: [[az login
 token=$(az storage container generate-sas]]
+
+
+
+
 
 ## Platforms
 
@@ -87,3 +107,5 @@ token=$(az storage container generate-sas]]
 - [[Azure Storage Blob]]
 - [[Cloud - Azure]]
 - [[SAS URL]]
+
+

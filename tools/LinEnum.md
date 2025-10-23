@@ -45,11 +45,27 @@ LinEnum is a Linux/BSD automated enumeration script written in Bash, which scans
 
 - Notable Files and Folders
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_ddf41931-9f6b-4e38-9310-3283215f7ba9}}
+
+
 
 # Installation
 
 Download the repo and copy LinEnum.sh to the target
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -64,3 +80,5 @@ Download the repo and copy LinEnum.sh to the target
 - [[Enumeration]]
 - [[File System]]
 - [[Misconfiguration]]
+
+

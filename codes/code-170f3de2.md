@@ -22,3 +22,5 @@ $ wall -n "System will go down for 2 hours maintenance at 13:00 PM"  # "-n" only
 $ who
 $ write root pts/2	# press Ctrl+D  after typing the message. 
 ```
+
+

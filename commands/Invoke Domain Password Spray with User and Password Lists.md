@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:25:55.315382+00:00'
 ```bash
 Invoke-DomainPasswordSpray -UserList users.txt -Domain domain-name -PasswordList passlist.txt -OutFile sprayed-creds.txt
 ```
+
+

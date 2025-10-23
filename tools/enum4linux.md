@@ -29,6 +29,8 @@ enum4linux  is a Windows and Samba enumeration tool written in Perl. It wraps th
 
 enum4linux  is a Windows and Samba enumeration tool written in Perl. It wraps the common tools smbclient, rpclient, nmblookup to gather information from a target host.
 
+
+
 Features:
 
 - RID cycling
@@ -45,15 +47,25 @@ Features:
 
 - Password policy retrieval
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_433d22a4-beff-4106-87f1-2d69f833766d}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
 
-Bash
-
 > apt install enum4linux
+
+
+
+
 
 ## Platforms
 
@@ -75,3 +87,5 @@ Bash
 - [[rpc]]
 - [[samba]]
 - [[smb]]
+
+

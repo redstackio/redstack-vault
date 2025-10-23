@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:26:11.555942+00:00'
 ```bash
 getTGT.py -dc-ip 'DomainController.domain.local' 'domain.local'/'DomainController':'ComputerPassword'
 ```
+
+

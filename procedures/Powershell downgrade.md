@@ -27,15 +27,25 @@ Older versions of powershell do not have the same security features as the later
 
 Older versions of powershell do not have the same security features as the later powershell versions.  Bypassing certain features may not be necessary if Powershell v2 is installed.
 
+
+
 ## Instructions
 
 1. Run the following powershell command
+
+
+
+
 
 **Command** ([[Powershell downgrade]]):
 
 ```powershell
 powershell -version 2
 ```
+
+
+
+
 
 ## Platforms
 
@@ -49,3 +59,5 @@ powershell -version 2
 
 - [[Bypass]]
 - [[downgrade]]
+
+

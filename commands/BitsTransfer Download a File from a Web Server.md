@@ -26,3 +26,5 @@ Start-BitsTransfer -Source http://$_REMOTE_IP/$_FILENAME -Destination $_FILENAME
 PS C:\> Import-Module BitsTransfer
 PS C:\> Start-BitsTransfer -Source http://10.10.10.100/secrets -Destination secrets
 ```
+
+

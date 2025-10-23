@@ -30,11 +30,27 @@ Open source browser from Google on which many other browsers (Chrome, Edge, Oper
 
 Open source browser from Google on which many other browsers (Chrome, Edge, Opera, etc) are based. 
 
+
+
 # Example
+
+
+
+{{EMBEDDED_COMMAND_ea3949fb-1e1a-4126-ba9e-247a8ccfe104}}
+
+
 
 # Installation
 
 ## Install on Debian/Ubuntu
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -50,3 +66,5 @@ Open source browser from Google on which many other browsers (Chrome, Edge, Oper
 
 - [[Browser]]
 - [[Web Applications]]
+
+

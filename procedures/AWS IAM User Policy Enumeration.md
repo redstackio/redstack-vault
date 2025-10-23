@@ -34,11 +34,15 @@ Technical Explanation: This procedure uses the AWS CLI command 'ListAttachedUser
 
 Business Value: This procedure can be used by security teams to identify potential security risks and ensure that users are only granted the access they need to perform their job functions.
 
+ 
+
 ## Requirements
 
 1. Valid AWS credentials with permissions to access IAM
 
 1. Access to the AWS CLI
+
+ 
 
 ## Defense
 
@@ -48,6 +52,8 @@ Business Value: This procedure can be used by security teams to identify potenti
 
 1. Monitor IAM activity for suspicious behavior
 
+ 
+
 ## Objectives
 
 1. Enumerate the managed policies attached to a specified IAM user
@@ -56,17 +62,25 @@ Business Value: This procedure can be used by security teams to identify potenti
 
 1. Gather intelligence on potential targets
 
+ 
+
 # Instructions
 
 1. Use this command to list all the policies that are attached to a specific IAM user.
 
+ 
+
 The 'aws iam list-attached-user-policies' command is used to retrieve a list of policies that are attached to a specific IAM user. The '--user-name' argument is used to specify the name of the user whose attached policies you want to list. This command returns a JSON object that contains information about the policies that are attached to the specified user, including the policy name, policy ARN, and the name of the user to which the policy is attached. This command is useful for managing user permissions and understanding the access that users have to AWS resources.
+
+
 
 **Command** ([[List Attached User Policies]]):
 
 ```bash
 aws iam list-attached-user-policies --user-name user-name
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -87,3 +101,5 @@ aws iam list-attached-user-policies --user-name user-name
 - [[1. Enumerating IAM users]]
 - [[Cloud - AWS]]
 - [[Listing all manages policies that are attached to the specified IAM user]]
+
+

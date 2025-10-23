@@ -21,10 +21,22 @@ The Exploit Database is an archive of public exploits and corresponding vulnerab
 
 The Exploit Database is an archive of public exploits and corresponding vulnerable software, developed for use by penetration testers and vulnerability researchers. Its aim is to serve as the most comprehensive collection of exploits, shellcode and papers gathered through direct submissions, mailing lists, and other public sources, and present them in a freely-available and easy-to-navigate database.
 
+
+
 # Installation
 
 ## Install on Debian/Ubuntu
 
+
+
+
+
+
+
+
+
 ## Tags
 
 - [[exploit]]
+
+

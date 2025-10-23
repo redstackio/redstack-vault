@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:09.104184+00:00'
 ```bash
 spyse -target xbox.com --dns-all
 ```
+
+

@@ -35,9 +35,15 @@ Use Impacket's secretsdump.py to dump password hashes on a remote system, using 
 
 Use Impacket's secretsdump.py to dump password hashes on a remote system, using a variety of methods, including SAM/SYSTEM hive dumps, NTDS, LSA, etc. This typically requires authentication with Administrator rights.
 
+
+
+
+
 ## Objectives
 
 Credential dumping is a critical step in the attack process, as it allows the attacker to obtain valid credentials for use in lateral movement, privilege escalation, and other activities. It is also a key method used by attackers to evade detection and bypass security controls, as the use of stolen credentials can make it difficult to detect unauthorized access to systems or data.
+
+
 
 1. Dump hahses from a remote machine
 
@@ -45,13 +51,25 @@ Credential dumping is a critical step in the attack process, as it allows the at
 
 - **LM** and **NTLM** can be used for Pass-the-Hash
 
+
+
+
+
 # Instructions
+
+
+
+
 
 **Command** ([[Dump Password Hashes from a Remote System (Authenticated)]]):
 
 ```bash
 python3 secretsdump.py $_DOMAIN/$_USER:$_PASSWORD@$_TARGET_IP
 ```
+
+
+
+
 
 ## Platforms
 
@@ -77,3 +95,5 @@ python3 secretsdump.py $_DOMAIN/$_USER:$_PASSWORD@$_TARGET_IP
 - [[administrator]]
 - [[NTLM]]
 - [[pass the hash]]
+
+

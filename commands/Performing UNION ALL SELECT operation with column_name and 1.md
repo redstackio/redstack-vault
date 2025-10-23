@@ -15,3 +15,5 @@ updated_at: '2023-04-10T20:21:05.529526+00:00'
 ```bash
 UNION ALL SELECT column_name,1,1 FROM (select column_name AS new_name from `project_id.dataset_name.table_name`) AS A GROUP BY column_name
 ```
+
+

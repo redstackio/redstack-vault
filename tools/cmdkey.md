@@ -28,9 +28,25 @@ cmdkey.exe is used to create, list or delete stored user names, passwords or cre
 
 cmdkey.exe is used to create, list or delete stored user names, passwords or credentials
 
+
+
 ## Example
 
+
+
+{{EMBEDDED_COMMAND_f8d06b8d-844e-4a25-9b71-8c8d5d84d110}}
+
+
+
+
+
 ## Usage
+
+
+
+{{EMBEDDED_CODE_f6b3437d-f33f-4697-8bbf-bf5027787070}}
+
+
 
 ## Platforms
 
@@ -44,3 +60,5 @@ cmdkey.exe is used to create, list or delete stored user names, passwords or cre
 
 - [[authentication]]
 - [[Cryptography]]
+
+

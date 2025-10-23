@@ -17,3 +17,5 @@ updated_at: '2023-04-10T20:25:15.147150+00:00'
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip
 ```
+
+

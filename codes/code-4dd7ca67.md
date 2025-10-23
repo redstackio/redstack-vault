@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:54.234742+00:00'
 ```powershell
 reg query HKLM\SYSTEM\CurrentControlSet\Services\NTDS\Parameters /v "DSA Database file"
 ```
+
+

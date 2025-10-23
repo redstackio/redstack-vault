@@ -14,3 +14,5 @@ updated_at: '2023-04-06T03:55:52.080901+00:00'
 ```bash
 docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --org=trufflesecurity
 ```
+
+

@@ -31,23 +31,49 @@ Use smbclient to browse an SMB share, authenticating with an NTLM password hash 
 
 Use smbclient to browse an SMB share, authenticating with an NTLM password hash instead of the password itself.
 
+
+
 # Instructions
 
 Smbclient expects hashes to be supplied in NT hash format, meaning both LM and NTLM are included. Format:
 
+
+
+
+
 **Code**: [[<32 character LM hash>:<32 character NTLM hash>]]
+
+
+
+
 
 The LM portion of the hash is not needed, so a common solution is to include the NTLM hash twice, separated with a colon. Example:
 
+
+
+
+
 **Code**: [[81ABA903C80B8F4DAAD5225F7D996FBC:81ABA903C80B8F4DA]]
 
+
+
+
+
 To authenticate with a hash, replace the password with the hash value, and include the "--pw-hash" argument.
+
+
+
+
 
 **Command** ([[smbclient Connect to an SMB Share (NTLM)]]):
 
 ```bash
 smbclient -U $_USERNAME%$_NTLM_HASH:$_NTLM_HASH --pw-nt-hash //$_TARGET_IP/$_SHARE_NAME
 ```
+
+
+
+
 
 ## Platforms
 
@@ -71,3 +97,5 @@ smbclient -U $_USERNAME%$_NTLM_HASH:$_NTLM_HASH --pw-nt-hash //$_TARGET_IP/$_SHA
 
 - [[Network]]
 - [[Service Attacks]]
+
+

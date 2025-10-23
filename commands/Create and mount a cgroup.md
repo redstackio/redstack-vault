@@ -14,6 +14,8 @@ updated_at: '2023-04-10T20:33:50.379078+00:00'
 
 ```bash
 mkdir /tmp/cgrp && mount -t cgroup -o rdma cgroup /tmp/cgrp && mkdir /tmp/cgrp/x
-
+ 
 echo 1 > /tmp/cgrp/x/notify_on_release
 ```
+
+

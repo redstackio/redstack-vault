@@ -31,9 +31,13 @@ Discovery of local MSSQL Server instances is a technique used to identify any MS
 
 Discovery of local MSSQL Server instances is a technique used to identify any MSSQL Server instances running on the local machine. This information can be useful for attackers to determine what type of database is running and to identify potential targets. The discovery can be achieved by running a simple command that lists all local instances of MSSQL Server. The business value of this procedure is that it helps attackers to identify potential targets for further attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the local machine
+
+ 
 
 ## Defense
 
@@ -43,25 +47,39 @@ Discovery of local MSSQL Server instances is a technique used to identify any MS
 
 1. Implement network segmentation to limit access to MSSQL Server instances
 
+ 
+
 ## Objectives
 
 1. Identify local MSSQL Server instances
 
 1. Determine the version and configuration of the MSSQL Server instance
 
+ 
+
 # Instructions
 
 1. This command retrieves information about all the SQL Server instances installed on the local machine.
 
+ 
+
+
+
 **Code**: [[Get-SQLInstanceLocal]]
 
+
+
 > The 'Get-SQLInstanceLocal' command is used to query the local machine for any installed SQL Server instances. The command returns a list of instances with details such as instance name, version, and edition. This command can be helpful when troubleshooting or managing SQL Server instances on a local machine. There are no arguments required for this command.
+
+
 
 **Command** ([[Get Local SQL Instances]]):
 
 ```bash
 Get-SQLInstanceLocal
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -83,3 +101,5 @@ Get-SQLInstanceLocal
 - [[Discover Local SQL Server Instances]]
 - [[Identify Instances and Databases]]
 - [[MSSQL Server]]
+
+

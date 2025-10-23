@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:37:18.434293+00:00'
 ```bash
 rdesktop 10.0.0.2:3389 -u test -p mimikatz -d pentestlab
 ```
+
+

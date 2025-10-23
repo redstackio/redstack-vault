@@ -38,6 +38,8 @@ From a technical standpoint, SAML injection involves manipulating the SAML respo
 
 From a business perspective, this attack can have severe consequences. An attacker with admin privileges can access sensitive data, modify configurations, and cause significant damage to the organization. This procedure can be used by malicious actors to gain access to high-value targets, such as financial institutions, government agencies, or healthcare organizations.
 
+ 
+
 ## Requirements
 
 1. Access to the target SAML implementation
@@ -45,6 +47,8 @@ From a business perspective, this attack can have severe consequences. An attack
 1. Knowledge of the SAML protocol and injection techniques
 
 1. Tools for crafting and sending malicious SAML responses
+
+ 
 
 ## Defense
 
@@ -54,6 +58,8 @@ From a business perspective, this attack can have severe consequences. An attack
 
 1. Monitor for suspicious SAML responses and unusual admin activity
 
+ 
+
 ## Objectives
 
 1. Bypass authentication and gain admin privileges
@@ -61,6 +67,8 @@ From a business perspective, this attack can have severe consequences. An attack
 1. Steal credentials and perform lateral movement
 
 1. Access sensitive data and modify configurations
+
+ 
 
 # Instructions
 
@@ -70,15 +78,25 @@ From a business perspective, this attack can have severe consequences. An attack
 3. Locate the 'NameID' field and enter 'admin'.
 4. Save your changes and generate a new SAML assertion.
 
+ 
+
+
+
 **Code**: [[NameID=admin]]
 
+
+
 > The 'NameID' field in a SAML assertion identifies the user or entity that is being authenticated. In this example, the NameID is set to 'admin', indicating that the user being authenticated is an administrator. The SAML assertion can be generated using a SAML service provider and can be used for single sign-on (SSO) authentication with a SAML identity provider (IdP).
+
+
 
 **Command** ([[Set NameID to admin]]):
 
 ```bash
 NameID=admin
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -102,3 +120,5 @@ NameID=admin
 - [[Authentication Bypass]]
 - [[SAML Injection]]
 - [[Signature Stripping]]
+
+

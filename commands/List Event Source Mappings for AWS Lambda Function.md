@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:20:21.490853+00:00'
 ```bash
 aws lambda list-event-source-mappings --function-name function_name
 ```
+
+

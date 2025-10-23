@@ -38,11 +38,15 @@ The Active Directory Domain Controller Lookup procedure is used to identify the 
 
 From an offensive perspective, this procedure can be used to identify potential targets for credential harvesting, lateral movement, and privilege escalation. From a defensive perspective, this procedure can be used to identify potential attack vectors and harden the environment against these types of attacks.
 
+ 
+
 ## Requirements
 
 1. Access to the target Active Directory environment
 
 1. Authenticated access to the DNS server(s) for the target domain
+
+ 
 
 ## Defense
 
@@ -52,20 +56,32 @@ From an offensive perspective, this procedure can be used to identify potential 
 
 1. Monitor DNS queries and look for suspicious activity
 
+ 
+
 ## Objectives
 
 1. Identify the domain controller(s) for a targeted Active Directory environment
 
 1. Enumerate the environment and identify potential targets for attack
 
+ 
+
 # Instructions
 
 1. This command provides multiple ways to look up domain controllers in a Windows domain environment.
 
+ 
+
+
+
 **Code**: [[nslookup domain.com
 nslookup -type=srv _ldap._tcp.]]
 
+
+
 > The first command 'nslookup domain.com' returns the IP addresses of domain controllers for the domain specified. The second command 'nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>.com' returns the SRV records of domain controllers for the domain specified. The third command 'nltest /dclist:domain.com' returns a list of domain controllers for the domain specified. The fourth command 'Get-ADDomainController -filter * | Select-Object name' returns a list of all domain controllers in the current domain. The fifth command 'gpresult /r' displays the Resultant Set of Policy (RSoP) for the current user and computer. The sixth command '$Env:LOGONSERVER' displays the name of the domain controller that authenticated the current user. The seventh command 'echo %LOGONSERVER%' displays the name of the domain controller that authenticated the current user.
+
+
 
 **Command** ([[DNS Lookup for domain.com]]):
 
@@ -73,11 +89,19 @@ nslookup -type=srv _ldap._tcp.]]
 nslookup domain.com
 ```
 
+
+
+
+
 **Command** ([[DNS Lookup for _ldap._tcp.dc._msdcs.<domain>.com]]):
 
 ```bash
 nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>.com
 ```
+
+
+
+
 
 **Command** ([[List of Domain Controllers]]):
 
@@ -85,11 +109,19 @@ nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>.com
 nltest /dclist:domain.com
 ```
 
+
+
+
+
 **Command** ([[List of Domain Controllers using Get-ADDomainController]]):
 
 ```bash
 Get-ADDomainController -filter * | Select-Object name
 ```
+
+
+
+
 
 **Command** ([[Group Policy Results]]):
 
@@ -97,17 +129,27 @@ Get-ADDomainController -filter * | Select-Object name
 gpresult /r
 ```
 
+
+
+
+
 **Command** ([[Logon Server Environment Variable]]):
 
 ```bash
 $Env:LOGONSERVER
 ```
 
+
+
+
+
 **Command** ([[Logon Server Command]]):
 
 ```bash
 echo %LOGONSERVER%
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -134,3 +176,5 @@ echo %LOGONSERVER%
 - [[Active Directory Attacks]]
 - [[Active Directory Recon]]
 - [[Other Interesting Commands]]
+
+

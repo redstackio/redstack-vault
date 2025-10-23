@@ -14,3 +14,5 @@ updated_at: '2023-04-10T20:25:48.419627+00:00'
 ```bash
 pingcastle.exe --scanner scanner_name --server domain.local
 ```
+
+

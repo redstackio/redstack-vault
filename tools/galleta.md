@@ -16,3 +16,9 @@ Galleta is a forensic tool that examines the content of cookie files produced by
 ## Description
 
 Galleta is a forensic tool that examines the content of cookie files produced by Microsofts Internet Explorer. It parses the file and outputs a field separated that can be loaded in a spreadsheet.Galleta Homepage | Kali Galleta Repo
+
+
+
+
+
+

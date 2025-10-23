@@ -39,6 +39,8 @@ Technical Explanation: An attacker can use SQL injection to bypass authenticatio
 
 Business Value: Detecting SQL injection attacks in BigQuery can prevent unauthorized access to sensitive data and protect the integrity of the system.
 
+ 
+
 ## Requirements
 
 1. Access to Google BigQuery
@@ -46,6 +48,8 @@ Business Value: Detecting SQL injection attacks in BigQuery can prevent unauthor
 1. Knowledge of SQL and SQL injection techniques
 
 1. Proper authentication and access control measures in place
+
+ 
 
 ## Defense
 
@@ -55,6 +59,8 @@ Business Value: Detecting SQL injection attacks in BigQuery can prevent unauthor
 
 1. Limit access to BigQuery and ensure proper authentication and access control measures are in place
 
+ 
+
 ## Objectives
 
 1. Detect and prevent SQL injection attacks in Google BigQuery
@@ -62,6 +68,8 @@ Business Value: Detecting SQL injection attacks in BigQuery can prevent unauthor
 1. Protect sensitive data stored in BigQuery
 
 1. Ensure the integrity of the system
+
+ 
 
 # Instructions
 
@@ -73,10 +81,16 @@ Business Value: Detecting SQL injection attacks in BigQuery can prevent unauthor
 
 3. select * from `project_id.dataset_name.table_name`: This command will return all the data from the specified table in the specified dataset of the current project.
 
+ 
+
+
+
 **Code**: [[# Gathering project id
 select @@project_id
 
 # Gath]]
+
+
 
 > The first command is used to get the project ID of the current project. This can be useful when working with multiple projects.
 
@@ -84,11 +98,17 @@ The second command is used to get the names of all datasets in the current proje
 
 The third command is used to get data from a specific table in a specific dataset of the current project. You need to replace 'project_id', 'dataset_name' and 'table_name' with the actual names of the project, dataset and table that you want to get data from.
 
+
+
 **Command** ([[Gathering project id]]):
 
 ```bash
 select @@project_id
 ```
+
+
+
+
 
 **Command** ([[Gathering all dataset names]]):
 
@@ -96,11 +116,17 @@ select @@project_id
 select schema_name from INFORMATION_SCHEMA.SCHEMATA
 ```
 
+
+
+
+
 **Command** ([[Gathering data from specific project id & dataset]]):
 
 ```bash
 select * from `project_id.dataset_name.table_name`
 ```
+
+
 
 ## MITRE ATT&CK Mapping
 
@@ -126,3 +152,5 @@ select * from `project_id.dataset_name.table_name`
 
 - [[Detection]]
 - [[Google BigQuery SQL Injection]]
+
+

