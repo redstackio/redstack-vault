@@ -139,6 +139,11 @@ output: 'PS C:\> Find-AllVulns
   VulnStatus : Not Vulnerable'
 created_at: '2020-01-24T21:45:44.862325+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Sherlock]]'
+- '[[find]]'
+- '[[ps]]'
+- '[[windows-kernel-exploits]]'
 ---
 
 # Sherlock Import Module and Enumerate Vulnerabilities

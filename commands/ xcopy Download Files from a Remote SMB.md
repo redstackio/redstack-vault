@@ -13,6 +13,8 @@ output: 'C:\>xcopy \\10.10.10.100\files\secrets .
   '
 created_at: '2019-11-25T23:00:09.678942+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[xcopy]]'
 ---
 
 #  xcopy Download Files from a Remote SMB

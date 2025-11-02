@@ -20,6 +20,9 @@ output: 'PS C:\Users\Victim\Desktop\neo4j-community-4.0.1\bin> .\neo4j.bat conso
   2020-03-09 21:13:14.743+0000 INFO  Remote interface available at http://localhost:7474/'
 created_at: '2020-03-23T21:16:50.675749+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Neo4j]]'
+- '[[ps]]'
 ---
 
 # Launch a Neo4j Instance

@@ -15,6 +15,8 @@ output: 'Ncat: Version 7.80 ( https://nmap.org/ncat )
   Ncat: Connection from 192.168.11.7:56753.'
 created_at: '2020-08-01T18:06:44.460210+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
 ---
 
 # ncat reverse shell output

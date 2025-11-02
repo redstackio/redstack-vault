@@ -26,6 +26,9 @@ output: "PS C:\\> Get-ForestGlobalCatalog\n\n\nForest                     : TESL
   \ DC=DEV,DC=TESLA,DC=LOCAL...}"
 created_at: '2020-07-01T22:54:44.508867+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[ps]]'
 ---
 
 # PowerView Get Global Catalogs for the Current Forest

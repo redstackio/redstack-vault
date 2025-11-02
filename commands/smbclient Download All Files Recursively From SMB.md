@@ -24,6 +24,8 @@ output: "smb: \\Bob\\> RECURSE ON                                            \ns
   ntuser.ini of size 20 as ntuser.ini (9.8 KiloBytes/sec) (average 27200.5 KiloBytes/sec)"
 created_at: '2019-09-18T01:44:02.128880+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[smbclient]]'
 ---
 
 # smbclient Download All Files Recursively From SMB

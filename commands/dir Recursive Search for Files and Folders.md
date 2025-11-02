@@ -11,6 +11,8 @@ output: "C:\\Users>dir /s \"secrets.txt\"\n Volume in drive C has no label.\n Vo
   \               0 Dir(s)  34,972,065,792 bytes free"
 created_at: '2019-11-26T16:37:00.743722+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dir]]'
 ---
 
 # dir Recursive Search for Files and Folders

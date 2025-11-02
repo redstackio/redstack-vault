@@ -11,6 +11,9 @@ output: 'root@kali:~# whatweb http://10.10.10.10
   - Linux], WebDAV[2], X-Powered-By[PHP/5.2.4-2ubuntu5.10]'
 created_at: '2019-09-13T22:29:10.949912+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[WhatWeb]]'
+- '[[host]]'
 ---
 
 # Whatweb Identify a Web Server's Technology

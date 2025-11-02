@@ -11,6 +11,8 @@ output: 'root@hackers:~# gcc -o suid suid.c
   # '
 created_at: '2019-09-17T20:10:55.530193+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[GCC]]'
 ---
 
 # gcc Compile C Code Binary

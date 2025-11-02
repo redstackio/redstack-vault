@@ -14,6 +14,9 @@ output: "root@kali ~# docker run -v $(pwd):/dnsvalidator/output -t dnsvalidator 
   [22:10:54] [INFO] [9.9.9.9] resolving baseline\n... [CUT] ..."
 created_at: '2020-06-30T02:34:45.156833+00:00'
 updated_at: '2023-03-13T19:50:21.945040+00:00'
+tools:
+- '[[Docker]]'
+- '[[dnsvalidator]]'
 ---
 
 # dnsvalidator update dns servers (DOCKER)

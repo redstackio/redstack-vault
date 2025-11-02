@@ -10,6 +10,10 @@ output: "Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-01 15:29 IST\nNmap s
   \ /img/ /js/ /bin/"
 created_at: '2020-09-01T17:18:29.803350+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
+- '[[host]]'
 ---
 
 # Nmap Command to Find Directories From Robots.txt File

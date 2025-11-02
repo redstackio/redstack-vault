@@ -25,6 +25,8 @@ output: 'root@kali:~# git clone https://github.com/trustedsec/nps_payload.git
   -r requirements.txt (line 2)) (4.6.0)'
 created_at: '2019-11-14T23:38:41.520291+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Git]]'
 ---
 
 # Git Download and Install nps_payload

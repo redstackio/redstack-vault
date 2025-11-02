@@ -7,6 +7,8 @@ data: crackmapexec smb $IPRANGE
 output: crackmapexec smb 192.168.1.0/24
 created_at: '2023-01-11T19:54:18.094258+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CrackMapExec]]'
 ---
 
 # crackmapexec scan smb ip range

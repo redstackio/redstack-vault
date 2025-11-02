@@ -9,6 +9,9 @@ output: 'PS C:\> $ExecutionContext.SessionState.LanguageMode
   ConstrainedLanguage'
 created_at: '2020-03-30T18:49:29.621558+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # PowerShell Show Current Language Mode

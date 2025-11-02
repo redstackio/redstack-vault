@@ -33,6 +33,9 @@ output: "Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-03 13:03 IST\nFailed
   \ key\n|_  least strength: A\n"
 created_at: '2020-09-03T14:25:24.550802+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Command to Identify SSL/TLS Ciphers Using ssl-enum-ciphers Script

@@ -9,6 +9,8 @@ output: 'PS C:\Windows\system32\spool\drivers\color> Enter-PSSession dc-dev.dev.
   [dc-dev.dev.tsla.local]: PS C:\Users\Administrator\Documents>'
 created_at: '2020-07-07T04:30:50.322541+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # PSSession Spawn a WinRM Session on a Remote System

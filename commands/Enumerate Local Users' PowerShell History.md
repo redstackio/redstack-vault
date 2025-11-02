@@ -32,6 +32,11 @@ output: 'PS C:\ > Get-ChildItem -Path "C:\Users\*\APPDATA\Roaming\Microsoft\Wind
   | Get-Content'
 created_at: '2020-06-24T23:40:58.199833+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[SET]]'
+- '[[dir]]'
+- '[[ps]]'
 ---
 
 # Enumerate Local Users' PowerShell History

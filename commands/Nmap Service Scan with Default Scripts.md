@@ -17,6 +17,10 @@ output: "root@kali:~# nmap -sV -sC 10.10.10.10\nStarting Nmap 7.80 ( https://nma
   \ host up) scanned in 34.97 seconds"
 created_at: '2019-09-12T18:35:43.264851+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
+- '[[type]]'
 ---
 
 # Nmap Service Scan with Default Scripts

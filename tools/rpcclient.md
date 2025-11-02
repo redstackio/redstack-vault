@@ -6,7 +6,13 @@ verified: true
 created_at: '2020-02-29T00:38:05.064399+00:00'
 updated_at: '2023-05-30T19:51:14.399577+00:00'
 commands:
+- '[[List Domain Groups on an SMB/RPC Server]]'
+- '[[List Domain Users on an SMB/RPC Server]]'
 - '[[rpcclient Authenticate with an RPC Server]]'
+- '[[rpcclient Connect to an RPC Server with a NULL Session]]'
+- '[[rpcclient Query an RPC Server for SMB Shares]]'
+- '[[rpcclient Query an RPC Server for a User''s Information]]'
+- '[[rpcclient Query an RPC Server''s Information]]'
 platforms:
 - Windows
 tags:

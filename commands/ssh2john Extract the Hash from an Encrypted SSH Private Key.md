@@ -7,6 +7,9 @@ data: python ssh2john.py $_PRIVATE_KEY.enc > $_OUTPUT.txt
 output: root@kali:~# python /usr/share/john/ssh2john.py id_rsa.enc > hash.txt
 created_at: '2019-10-25T19:09:24.118813+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ssh2john]]'
+- '[[ssh]]'
 ---
 
 # ssh2john Extract the Hash from an Encrypted SSH Private Key

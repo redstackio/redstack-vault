@@ -11,6 +11,9 @@ output: 'C:\>netsh advfirewall firewall add rule name="Open Port 80" dir=in acti
   Ok.'
 created_at: '2019-11-15T01:22:12.204754+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dir]]'
+- '[[netsh]]'
 ---
 
 # Allow a Port Through Windows Firewall (Windows 7+)

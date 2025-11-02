@@ -15,6 +15,8 @@ output: 'openssl x509 -req -in priv.csr -CA rootca.crt -CAkey id_rsa -CAcreatese
   Getting CA Private Key'
 created_at: '2019-09-30T19:48:33.637991+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # OpenSSL Sign a CSR with a CA Key

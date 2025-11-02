@@ -13,6 +13,10 @@ output: 'PS C:\users> powershell -nop -c "Import-Module AppLocker; Get-AppLocker
   EnforcementMode="Enabled"><FilePathRule Id="921cc481-6e17-4653-8f75-050b80acca20" '
 created_at: '2019-11-14T23:38:41.540665+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
+- '[[type]]'
 ---
 
 # Export AppLocker Rules in XML

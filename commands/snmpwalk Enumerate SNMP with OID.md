@@ -22,6 +22,8 @@ output: 'root@kali:~# snmpwalk -c public -v 2c 10.10.10.10 1.3.6.1.2.1.4.34.1.3
   = INTEGER: 2'
 created_at: '2019-10-18T21:24:21.329965+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[snmpwalk]]'
 ---
 
 # snmpwalk Enumerate SNMP with OID

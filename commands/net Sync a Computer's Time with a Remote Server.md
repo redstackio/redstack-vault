@@ -7,6 +7,8 @@ data: net time set -S $_TARGET_IP
 output: root@kali:~# net time set -S 10.10.10.5
 created_at: '2020-06-25T00:11:34.104899+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
 ---
 
 # net Sync a Computer's Time with a Remote Server

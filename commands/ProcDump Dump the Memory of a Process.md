@@ -23,6 +23,8 @@ output: 'C:\Users\Bob\Desktop>procdump.exe -ma 2416 output-2416.dmp
   [10:44:17] Dump count reached.'
 created_at: '2020-01-02T18:45:14.101098+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ProcDump]]'
 ---
 
 # ProcDump Dump the Memory of a Process

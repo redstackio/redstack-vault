@@ -31,6 +31,10 @@ output: 'Gobuster v1.4.1              OJ Reeves (@TheColonial)
   ====================================================='
 created_at: '2020-08-31T18:06:27.192074+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Gobuster]]'
+- '[[dir]]'
+- '[[find]]'
 ---
 
 # Gobuster Command to Find Existent Directories

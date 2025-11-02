@@ -7,6 +7,8 @@ data: dir /s "$_STRING"
 output: ''
 created_at: '2023-03-13T19:52:35.078857+00:00'
 updated_at: '2023-03-14T01:22:44.194297+00:00'
+tools:
+- '[[dir]]'
 ---
 
 # Command b9fea253

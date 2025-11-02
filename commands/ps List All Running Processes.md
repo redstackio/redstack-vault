@@ -16,6 +16,9 @@ output: "bob@host:~$ ps aux\n\nUSER        PID %CPU %MEM    VSZ   RSS TTY      S
   \ -k start"
 created_at: '2019-11-25T19:44:10.696221+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[ps]]'
 ---
 
 # ps List All Running Processes

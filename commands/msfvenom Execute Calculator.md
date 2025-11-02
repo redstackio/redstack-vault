@@ -17,6 +17,8 @@ output: 'root@hacker:~# msfvenom -p windows/exec cmd=calc.exe -a x86 -f exe > ms
   '
 created_at: '2019-10-10T18:41:08.050852+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[msfvenom]]'
 ---
 
 # msfvenom Execute Calculator

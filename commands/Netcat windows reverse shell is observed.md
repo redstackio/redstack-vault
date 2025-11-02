@@ -14,6 +14,10 @@ output: "Ncat: Version 7.80 ( https://nmap.org/ncat )\nNcat: Listening on :::999
   \ 18:36    <DIR>          .ghidra\n"
 created_at: '2020-08-01T18:00:53.942987+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Netcat]]'
+- '[[Nmap]]'
+- '[[dir]]'
 ---
 
 # Netcat windows reverse shell is observed

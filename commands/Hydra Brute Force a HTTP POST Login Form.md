@@ -25,6 +25,9 @@ output: 'root@kali:~# hydra -L users.txt -P wordlist.txt 10.10.10.10  http-post-
   Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2019-09-24 20:27:24'
 created_at: '2019-09-25T02:38:27.477012+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hydra]]'
+- '[[host]]'
 ---
 
 # Hydra Brute Force a HTTP POST Login Form

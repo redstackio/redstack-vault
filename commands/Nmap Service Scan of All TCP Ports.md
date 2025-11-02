@@ -32,6 +32,9 @@ output: 'root@kali:~# nmap -p- -sV 10.10.10.10
   Nmap done: 1 IP address (1 host up) scanned in 122.34 seconds'
 created_at: '2019-09-13T22:29:10.912781+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Service Scan of All TCP Ports

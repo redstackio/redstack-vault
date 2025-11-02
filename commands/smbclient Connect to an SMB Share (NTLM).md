@@ -15,6 +15,8 @@ output: "root@kali:~# smbclient -U bob%43239e3a0af748020d5b426a4977d7e5 --pw-nt-
   \ blocks of size 4096. 13836018 blocks available"
 created_at: '2019-09-18T01:44:02.127015+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[smbclient]]'
 ---
 
 # smbclient Connect to an SMB Share (NTLM)

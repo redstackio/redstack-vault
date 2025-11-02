@@ -15,6 +15,9 @@ output: "root@kali:~# keytool -printcert -sslserver 10.10.10.10:443\nCertificate
   \ RSA key\nVersion: 3"
 created_at: '2019-10-31T19:06:18.268163+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[keytool]]'
 ---
 
 # Keytool Extract Owner Information from SSL Certificate

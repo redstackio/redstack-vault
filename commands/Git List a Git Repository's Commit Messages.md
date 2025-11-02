@@ -11,6 +11,8 @@ output: "root@kali:~# git log --all\ncommit 766c5f1a2f95e117244d9128bff7a579ca1d
   \ mysql"
 created_at: '2019-10-16T22:13:26.097794+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Git]]'
 ---
 
 # Git List a Git Repository's Commit Messages

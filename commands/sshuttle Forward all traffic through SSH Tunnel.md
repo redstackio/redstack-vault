@@ -11,6 +11,9 @@ output: 'root@localhost''s password:
   '
 created_at: '2019-10-16T01:44:10.322144+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ssh]]'
+- '[[sshuttle]]'
 ---
 
 # sshuttle Forward all traffic through SSH Tunnel

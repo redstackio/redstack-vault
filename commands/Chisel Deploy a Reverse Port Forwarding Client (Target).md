@@ -13,6 +13,8 @@ output: 'bob@securehost:/tmp$ ./chisel client 10.10.10.100:9000 R:9999:52846
   2020/01/21 23:15:33 client: Connected (Latency 112.671627ms)'
 created_at: '2019-10-02T01:17:50.993449+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Chisel]]'
 ---
 
 # Chisel Deploy a Reverse Port Forwarding Client (Target)

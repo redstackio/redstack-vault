@@ -17,6 +17,8 @@ output: "msf5 exploit(windows/local/payload_inject) > use exploit/windows/local/
   \ -> 10.10.10.10:50223) at 2019-11-13 19:36:41 -0500"
 created_at: '2019-11-14T01:00:13.488117+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
 ---
 
 # Meterpreter Migrate to x64 Process with Payload Inject

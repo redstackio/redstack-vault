@@ -11,6 +11,8 @@ output: "C:\\>vaultcmd.exe /list\nCurrently loaded vaults:\n        Vault: Web C
   \        Location: C:\\Users\\Victim\\AppData\\Local\\Microsoft\\Vault"
 created_at: '2019-12-12T18:42:23.953995+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[vaultcmd]]'
 ---
 
 # List Stored Windows Credentials (vaultcmd.exe)

@@ -18,6 +18,8 @@ output: 'root@kali:~# wmiexec.py Bob:secretpass@10.10.10.10
   C:\>'
 created_at: '2019-10-01T17:58:48.948874+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # wmiexec.py Connect and Spawn a Command Shell

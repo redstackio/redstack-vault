@@ -15,6 +15,8 @@ output: "root@kali:~# ldapsearch -x -h 10.10.10.10 -b 'dc=corporatehq,dc=com'\n#
   \ Bob\nhomeDirectory: /home/bob\nloginShell: /bin/sh"
 created_at: '2019-12-15T22:33:38.234260+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ldapsearch]]'
 ---
 
 # Query the Base DN with Anonymous Bind

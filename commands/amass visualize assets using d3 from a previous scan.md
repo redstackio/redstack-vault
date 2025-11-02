@@ -9,6 +9,9 @@ output: 'root@kali in ~# ls owasp.org/
   amass_d3.html  amass.json  amass.log  amass.txt  indexes.bolt'
 created_at: '2020-06-29T18:05:44.400879+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[amass]]'
+- '[[dir]]'
 ---
 
 # amass visualize assets using d3 from a previous scan

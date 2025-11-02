@@ -31,6 +31,8 @@ output: 'root@kali:~# proxychains firefox
   [proxychains] Strict chain  ...  127.0.0.1:9050  ...  ocsp.digicert.com:80  ...  OK'
 created_at: '2019-10-02T01:17:50.984250+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Proxychains]]'
 ---
 
 # Proxychains Redirect an Application's Network Traffic Through a SOCKS Proxy

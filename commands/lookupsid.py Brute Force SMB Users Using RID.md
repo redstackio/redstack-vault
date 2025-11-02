@@ -28,6 +28,8 @@ output: 'root@kali:~# lookupsid.py ''bob'':''secretpass''@10.10.10.10
   1008: Bob-PC\Bob (SidTypeUser)'
 created_at: '2019-12-27T22:38:42.675982+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # lookupsid.py Brute Force SMB Users Using RID

@@ -18,6 +18,9 @@ output: "PS C:\\> Get-WmiObject -Namespace root\\SecurityCenter2 -Class AntiViru
   \            : Wed, 08 Jul 2020 03:25:31 GMT\nPSComputerName           : WS01"
 created_at: '2020-07-09T04:30:18.659248+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # PowerShell Check for Anti-Virus in Windows (SecurityCenter2)

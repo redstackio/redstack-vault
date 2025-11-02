@@ -9,6 +9,8 @@ output: "root@kali:~/# python firefox_decrypt.py .mozilla/firefox\n\nMaster Pass
   Username: 'root'\nPassword: 'secretpassword'"
 created_at: '2019-10-23T21:39:44.671318+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Firefox Decrypt]]'
 ---
 
 # Firefox Decrypt Extract Passwords from a Profile

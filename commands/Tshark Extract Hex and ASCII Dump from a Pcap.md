@@ -19,6 +19,9 @@ output: "root@kali:~# tshark -r dump.pcap -x\nRunning as user \"root\" and group
   0090  35 64 33 65 35 33 61 64 33 39 61 63 32            465823ad463f2"
 created_at: '2019-10-09T21:17:13.470504+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[TShark]]'
+- '[[Wireshark]]'
 ---
 
 # Tshark Extract Hex and ASCII Dump from a Pcap

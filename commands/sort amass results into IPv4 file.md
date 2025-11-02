@@ -54,6 +54,10 @@ output: '104.22.26.77
   104.22.26.77'
 created_at: '2020-06-30T04:33:39.071893+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
+- '[[amass]]'
+- '[[grep]]'
 ---
 
 # sort amass results into IPv4 file

@@ -11,6 +11,9 @@ output: "http://192.168.1.11/vcart/login.php [200 OK] \nApache[2.4.41][mod_perl/
   X-Powered-By[PHP/7.1.32]"
 created_at: '2020-08-31T17:47:18.032386+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[WhatWeb]]'
+- '[[openssl]]'
 ---
 
 # Command 78a34c7c

@@ -64,6 +64,10 @@ output: 'PS C:\Users\steve> Get-DomainUser -SPN
   ...'
 created_at: '2020-07-01T22:54:44.508711+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # PowerView List AD Accounts with SPN Set

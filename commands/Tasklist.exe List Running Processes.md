@@ -26,6 +26,8 @@ output: 'C:\>tasklist.exe
   firefox.exe                   1724 Console                    1    111,388 K'
 created_at: '2020-01-02T18:45:14.100849+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[tasklist]]'
 ---
 
 # Tasklist.exe List Running Processes

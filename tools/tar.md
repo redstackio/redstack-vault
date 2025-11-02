@@ -7,6 +7,7 @@ created_at: '2020-02-27T22:04:18.356559+00:00'
 updated_at: '2023-05-30T19:47:35.650015+00:00'
 commands:
 - '[[tar Archive a Folder with gzip]]'
+- '[[tar Bypass restricted shell checkpoint]]'
 platforms:
 - Windows
 tags:

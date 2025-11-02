@@ -22,6 +22,9 @@ output: 'bob@a7ffb5e7e757:/$ grep -R passw /etc/* 2>/dev/null
   /etc/debconf.conf:Name: passwords'
 created_at: '2020-03-10T07:20:54.637311+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[grep]]'
+- '[[type]]'
 ---
 
 # Recursive Search for Text in All Files

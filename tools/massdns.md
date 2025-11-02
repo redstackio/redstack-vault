@@ -5,6 +5,10 @@ type: tool
 verified: true
 created_at: '2020-06-30T04:48:39.331827+00:00'
 updated_at: '2023-05-30T19:46:03.960695+00:00'
+commands:
+- '[[massdns check for online subdomains]]'
+- '[[sort massdns output for ips]]'
+- '[[sort massdns output for online hosts]]'
 ---
 
 # massdns

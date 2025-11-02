@@ -29,6 +29,8 @@ output: 'root@kali ~# cat resolvers.txt | sort | tail -n 10
   '
 created_at: '2020-06-30T02:54:42.363161+00:00'
 updated_at: '2023-03-13T19:50:21.945040+00:00'
+tools:
+- '[[CAT]]'
 ---
 
 # sort and tail # of results

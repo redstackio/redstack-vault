@@ -54,6 +54,12 @@ output: "####################################\n# Uniscan project                
   \ value</i>\n| \tOpenSSL Library Version: OpenSSL 1.1.1d  10 Sep 2019 "
 created_at: '2020-08-31T18:28:13.588477+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Git]]'
+- '[[host]]'
+- '[[make]]'
+- '[[openssl]]'
+- '[[uniscan]]'
 ---
 
 # Uniscan Command to Scan the Application

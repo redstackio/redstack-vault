@@ -13,6 +13,8 @@ output: "PS C:\\> reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\Currentvers
   \    REG_DWORD    0x0\n    DefaultPassword    REG_SZ    IcanhasCash!"
 created_at: '2020-03-17T23:49:26.705170+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Query Windows Registry for Auto Logon Credentials

@@ -11,6 +11,8 @@ output: 'PS C:\Users\Victim > reg.exe add "HKEY_CURRENT_USER\Environment" /v Use
   The operation completed successfully.'
 created_at: '2020-06-21T22:27:46.719543+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Launch a Program on Login with Userinit

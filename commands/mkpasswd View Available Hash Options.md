@@ -17,6 +17,8 @@ output: 'root@hackers:~# mkpasswd -m help
   descrypt        standard 56 bit DES-based crypt(3)'
 created_at: '2019-09-16T18:26:12.739305+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[mkpasswd]]'
 ---
 
 # mkpasswd View Available Hash Options

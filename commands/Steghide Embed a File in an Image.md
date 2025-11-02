@@ -8,6 +8,8 @@ output: "root@kali:~# steghide embed -ef id_rsa.pub -cf wallpaper.jpg \nEnter pa
   \ \nRe-Enter passphrase: \nembedding \"id_rsa.pub\" in \"wallpaper.jpg\"... done"
 created_at: '2019-10-10T00:28:44.037684+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Steghide]]'
 ---
 
 # Steghide Embed a File in an Image

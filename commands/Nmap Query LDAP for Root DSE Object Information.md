@@ -13,6 +13,9 @@ output: "root@kali:~# nmap -script ldap-rootdse -p 389 10.10.10.10\nStarting Nma
   \ in 1.08 seconds"
 created_at: '2019-12-15T22:33:38.234029+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Query LDAP for Root DSE Object Information

@@ -15,6 +15,8 @@ output: 'root@ub18:/home/victim# dd if=/dev/urandom of=/etc/shadow bs=1 count=20
   '
 created_at: '2019-09-19T19:31:53.344816+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[DD]]'
 ---
 
 # Test Command

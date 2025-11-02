@@ -59,6 +59,8 @@ output: 'root@kali ~# amass intel -org google
   '
 created_at: '2020-06-29T16:27:45.186511+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[amass]]'
 ---
 
 # amass enumerate company properties

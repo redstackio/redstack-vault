@@ -27,6 +27,9 @@ output: 'root@kali:~# nmap -sV 10.10.10.10
   '
 created_at: '2019-09-12T18:24:17.551382+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Port Scan with Banner Enumeration

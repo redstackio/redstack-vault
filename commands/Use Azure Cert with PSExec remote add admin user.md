@@ -18,6 +18,8 @@ output: '# Installation instructtions for the tool
   /Y && net localgroup administrators username /add"'
 created_at: '2023-05-25T18:50:44.626890+00:00'
 updated_at: '2023-05-25T18:50:44.779119+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # Use Azure Cert with PSExec remote add admin user

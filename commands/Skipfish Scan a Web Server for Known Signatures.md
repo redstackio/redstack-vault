@@ -35,6 +35,10 @@ output: "root@kali:~# skipfish -m 5 -o results -LY -S /usr/share/skipfish/dictio
   \ [0x7a2d8863].\n[+] This was a great day for science!"
 created_at: '2019-09-14T05:30:22.077322+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dir]]'
+- '[[skipfish]]'
+- '[[unique]]'
 ---
 
 # Skipfish Scan a Web Server for Known Signatures

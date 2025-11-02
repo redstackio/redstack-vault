@@ -87,6 +87,11 @@ output: 'root@hackers:~/Content/crypto# hashcat -m 1800 -a 0 -o output.txt --rem
   Stopped: Mon Sep 16 15:03:06 2019'
 created_at: '2019-09-16T22:24:57.351529+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hashcat]]'
+- '[[SecLists]]'
+- '[[type]]'
+- '[[unique]]'
 ---
 
 # Hashcat Dictionary Attack a SHA-512 Hash

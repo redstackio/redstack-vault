@@ -6,7 +6,10 @@ verified: true
 created_at: '2020-02-12T23:50:36.366144+00:00'
 updated_at: '2023-05-30T01:04:55.193127+00:00'
 commands:
+- '[[Check Group Membership of a User]]'
 - '[[Docker Mount a Host''s Root Directory in a Container]]'
+- '[[List a Local Windows User''s Info and Group Membership]]'
+- '[[dnsvalidator update dns servers (DOCKER)]]'
 platforms:
 - Linux
 tags:

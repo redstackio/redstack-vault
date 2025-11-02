@@ -26,6 +26,10 @@ output: "root@kali:~# nmap -A 10.10.10.10\nStarting Nmap 7.80 ( https://nmap.org
   \ .\nNmap done: 1 IP address (1 host up) scanned in 35.76 seconds\n"
 created_at: '2019-09-12T18:44:52.374985+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
+- '[[type]]'
 ---
 
 # Nmap Aggressive Scan with Version and OS Detection

@@ -11,6 +11,9 @@ output: "bob@a7ffb5e7e757:/$ find / -name '*conf*' -exec grep passwd {} \\; 2>/d
   \ \n    # sometimes the passwd perms get munged\n..."
 created_at: '2020-03-10T06:28:38.723796+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[find]]'
+- '[[grep]]'
 ---
 
 # Find Files by Name and Execute a Command

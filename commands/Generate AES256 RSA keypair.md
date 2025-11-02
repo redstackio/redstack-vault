@@ -19,6 +19,8 @@ output: 'root@kali:~# openssl genrsa -aes256 -out encrypted 4096
   Verifying - Enter pass phrase for encrypted:'
 created_at: '2019-09-16T23:41:09.220142+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # Generate AES256 RSA keypair

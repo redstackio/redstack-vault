@@ -27,6 +27,8 @@ output: 'C:\Users\BOB\Desktop>PwDump7.exe
   CA4C7:::'
 created_at: '2019-09-26T22:51:06.757922+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PwDump7]]'
 ---
 
 # pwdump7 Dump NTLM and LM hashes from a Local Windows System

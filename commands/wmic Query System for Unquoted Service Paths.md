@@ -11,6 +11,8 @@ output: 'C:\>wmic.exe service get name,displayname,pathname,startmode |findstr /
   Skype Service    Skype C:\Program Files (x86)\Microsoft\Skype.exe --service    Auto'
 created_at: '2020-01-27T20:41:03.448594+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[wmic]]'
 ---
 
 # wmic Query System for Unquoted Service Paths

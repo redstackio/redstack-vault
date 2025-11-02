@@ -9,6 +9,8 @@ output: 'listening on [any] 80 ...
   '
 created_at: '2020-07-27T17:11:46.385430+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Netcat]]'
 ---
 
 # Netcat windows in listening mode on port 80

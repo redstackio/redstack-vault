@@ -77,6 +77,10 @@ output: "[22:09:11] dumping options:\n\tfilename: </usr/share/sfuzz-db/basic.htt
   </body>\n</html>\n\n\n===============================================================================\n"
 created_at: '2020-09-03T17:39:57.862926+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
+- '[[sfuzz]]'
+- '[[type]]'
 ---
 
 # Sfuzz Command to Fuzz the Web Application

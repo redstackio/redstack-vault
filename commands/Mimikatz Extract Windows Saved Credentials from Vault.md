@@ -27,6 +27,10 @@ output: "C:\\Users\\BOB\\Desktop>mimikatz.exe \"log\" \"privilege::debug\" \"vau
   \ : hunter2\nAttributes : 0\n\n\nmimikatz(commandline) # exit\nBye!"
 created_at: '2019-09-27T21:15:40.395046+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
+- '[[type]]'
 ---
 
 # Mimikatz Extract Windows Saved Credentials from Vault

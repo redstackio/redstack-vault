@@ -11,6 +11,8 @@ output: 'root@kali:~# openssl rsa -in key -pubout > mykey.pub
   writing RSA key'
 created_at: '2019-11-04T21:31:41.679512+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # Generate Public Key from Private

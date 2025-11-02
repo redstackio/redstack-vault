@@ -6,7 +6,17 @@ verified: false
 created_at: '2019-08-28T21:17:39.946056+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
+- '[[Hashcat Dictionary Attack a SHA-512 Hash]]'
+- '[[Hashcat Find Hash Mode from Example Hashes]]'
+- '[[Hashcat Generate a Wordlist Using a Mask]]'
+- '[[Hashcat Mutate a Wordlist Using Rules]]'
+- '[[Mutate a Wordlist by Appending a Digits]]'
+- '[[Mutate a Wordlist with Alphanumeric and Special Characters]]'
 - '[[hashcat Brute Force Password Hashes]]'
+- '[[hashcat Brute Force a LUKS v1 Hash]]'
+- '[[hashcat Brute Force a sha-512 crypt password]]'
+- '[[hashcat Dictionary Attack Against MD5 Hashes]]'
+- '[[hashcat Mutate a Password Using Mask Attack]]'
 platforms:
 - Linux
 - Windows

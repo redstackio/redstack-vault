@@ -42,6 +42,8 @@ output: 'root@kali:~# ldapsearch -x -h 10.10.10.10 -s base
   ...'
 created_at: '2020-03-24T19:57:21.478052+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ldapsearch]]'
 ---
 
 # Query LDAP Root DSE with Anonymous Bind

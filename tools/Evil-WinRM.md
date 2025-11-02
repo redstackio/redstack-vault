@@ -6,6 +6,7 @@ verified: true
 created_at: '2020-03-16T01:49:25.694116+00:00'
 updated_at: '2023-05-30T19:59:15.025255+00:00'
 commands:
+- '[[evil-winrm.rb Connect to a WinRM Server (NTLM)]]'
 - '[[evil-winrm.rb Connect to a WinRM Server]]'
 platforms:
 - Linux

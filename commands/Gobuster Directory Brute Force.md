@@ -57,6 +57,9 @@ output: 'root@kali:~# gobuster dir -w common.txt -u http://10.10.10.10
   ==============================================================='
 created_at: '2019-09-14T01:56:14.216810+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Gobuster]]'
+- '[[dir]]'
 ---
 
 # Gobuster Directory Brute Force

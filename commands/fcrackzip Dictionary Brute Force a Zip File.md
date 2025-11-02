@@ -9,6 +9,9 @@ output: "root@kali:~# fcrackzip -v -u secret.zip -D -p /usr/share/wordlists/rock
   \ FOUND!!!!: pw == princess1"
 created_at: '2019-09-24T22:44:39.876065+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wordlists]]'
+- '[[fcrackzip]]'
 ---
 
 # fcrackzip Dictionary Brute Force a Zip File

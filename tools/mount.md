@@ -6,7 +6,11 @@ verified: true
 created_at: '2020-02-06T21:03:08.865021+00:00'
 updated_at: '2023-05-30T19:59:28.070569+00:00'
 commands:
+- '[[Docker Mount a Host''s Root Directory in a Container]]'
 - '[[Mount a Filesystem]]'
+- '[[Mount a Remove SMB Share]]'
+- '[[find Search for Files with SUID Rights]]'
+- '[[guestmount Mount a VHD file]]'
 platforms:
 - Linux
 tags:

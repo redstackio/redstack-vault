@@ -11,6 +11,8 @@ output: 'root@kali:~# showmount -d 10.10.10.12
   /'
 created_at: '2019-09-11T21:53:20.838942+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[showmount]]'
 ---
 
 # Showmount List Mounted NFS Directories

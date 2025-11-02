@@ -58,6 +58,9 @@ output: 'PS C:\ > Invoke-Inveigh -LLMNR Y -NBNS Y -IP 10.10.10.100 -ConsoleOutpu
   [*] Press any key to stop console output'
 created_at: '2020-07-06T23:40:45.742475+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Inveigh]]'
+- '[[ps]]'
 ---
 
 # Inveigh Intercept and Log NTLMv2 Hashes via LLMNR and NetBIOS Requests

@@ -8,6 +8,8 @@ output: "@kali:~# RsaCtfTool.py --dumpkey --key id_rsa.pub \n[*] n: 287949952502
   [*] e: 65537"
 created_at: '2019-09-27T21:57:34.941013+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[RsaCtfTool]]'
 ---
 
 # RsaCtfTool Dump parameters from a public key

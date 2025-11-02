@@ -13,6 +13,9 @@ output: "root@kali:~# wget -r --no-passive --no-parent -m ftp://10.10.10.10 \n--
   \               [ <=>                            ]     782  --.-KB/s    in 0s"
 created_at: '2019-10-25T23:22:29.819127+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wget]]'
+- '[[type]]'
 ---
 
 # Wget Download Recursively from FTP

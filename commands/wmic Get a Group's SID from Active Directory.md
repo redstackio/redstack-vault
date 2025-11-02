@@ -11,6 +11,8 @@ output: 'C:\>wmic.exe group where name="Enterprise Admins" get name,sid,domain
   TESLA   Enterprise Admins  S-1-5-21-3428605742-3005092657-1212549955-519'
 created_at: '2023-03-14T05:28:32.527173+00:00'
 updated_at: '2023-03-14T06:02:49.008864+00:00'
+tools:
+- '[[wmic]]'
 ---
 
 # wmic Get a Group's SID from Active Directory

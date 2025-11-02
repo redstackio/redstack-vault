@@ -6,7 +6,17 @@ verified: true
 created_at: '2020-02-11T00:58:14.555909+00:00'
 updated_at: '2023-05-30T01:10:08.873532+00:00'
 commands:
+- '[[Find Files by Name and Execute a Command]]'
+- '[[Get-ChildItem Grep Files Recursively for a String]]'
+- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
 - '[[Grep Search Files for Keywords]]'
+- '[[Hashcat Find Hash Mode from Example Hashes]]'
+- '[[Recursive Search for Text in All Files]]'
+- '[[Recursive Search for Text in Files with Regex]]'
+- '[[Search Raw Data for Human Readable Strings]]'
+- '[[Search for Text in a File (Case Insensitive)]]'
+- '[[sort amass results into IPv4 file]]'
+- '[[sort massdns output for ips]]'
 platforms:
 - Linux
 tags:

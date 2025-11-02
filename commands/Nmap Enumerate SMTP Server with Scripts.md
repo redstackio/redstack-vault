@@ -15,6 +15,9 @@ output: "root@kali:~# nmap --script smtp* -p25 10.10.10.10\nStarting Nmap 7.70 (
   \ address (1 host up) scanned in 21.53 seconds"
 created_at: '2019-09-24T19:45:11.088786+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Enumerate SMTP Server with Scripts

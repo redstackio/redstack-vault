@@ -23,6 +23,10 @@ output: 'PS C:\Windows\system32> Set-ExecutionPolicy Unrestricted
   PS C:\Windows\system32>'
 created_at: '2020-03-10T21:52:48.532165+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # Disable PowerShell Execution Policy Restrictions

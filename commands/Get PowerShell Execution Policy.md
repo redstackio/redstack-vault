@@ -9,6 +9,9 @@ output: 'PS C:\ > Get-ExecutionPolicy
   Unrestricted'
 created_at: '2020-04-03T18:57:21.819133+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # Get PowerShell Execution Policy

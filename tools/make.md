@@ -6,7 +6,9 @@ verified: true
 created_at: '2020-02-27T20:25:07.916749+00:00'
 updated_at: '2023-05-30T19:50:22.128974+00:00'
 commands:
+- '[[Uniscan Command to Scan the Application]]'
 - '[[make Compile an Application with a Makefile]]'
+- '[[rbash Escape using make to launch bash]]'
 platforms:
 - Linux
 tags:

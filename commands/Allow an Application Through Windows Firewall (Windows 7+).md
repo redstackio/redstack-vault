@@ -12,6 +12,9 @@ output: 'C:\Windows\System32>netsh advfirewall firewall add rule name="Allow cal
   Ok.'
 created_at: '2019-11-15T01:22:12.216549+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dir]]'
+- '[[netsh]]'
 ---
 
 # Allow an Application Through Windows Firewall (Windows 7+)

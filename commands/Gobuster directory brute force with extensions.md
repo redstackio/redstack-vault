@@ -56,6 +56,10 @@ output: 'root@kali:~# gobuster dir -w /opt/SecLists/Discovery/Web-Content/common
   ==============================================================='
 created_at: '2019-10-10T21:55:34.546563+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Gobuster]]'
+- '[[SecLists]]'
+- '[[dir]]'
 ---
 
 # Gobuster Directory Brute Force with Extensions

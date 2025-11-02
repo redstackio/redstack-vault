@@ -8,6 +8,8 @@ output: "root@kali:~# hashid hash.txt \n--File 'hash.txt'--\nAnalyzing '$6$fN8i1
   [+] SHA-512 Crypt \n--End of file 'hash.txt'--"
 created_at: '2019-09-24T22:00:40.485941+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[hashid]]'
 ---
 
 # hashid Identify Hashes in a File

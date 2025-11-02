@@ -13,6 +13,8 @@ output: "bob@3f01c92204f2:/tmp$ ./linpeas.sh -a                                 
   \ Your username\n..."
 created_at: '2020-03-22T20:44:11.639375+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[linPEAS]]'
 ---
 
 # linPEAS Enumerate a Linux/Unix System with All Checks

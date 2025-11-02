@@ -6,7 +6,7 @@ verified: true
 created_at: '2020-02-19T23:08:13.147049+00:00'
 updated_at: '2023-05-30T19:45:23.367846+00:00'
 commands:
-- '[[systemctl Enable and Start a Service by File Name]]'
+- '[[systemctl Link a Service Unit File]]'
 platforms:
 - Linux
 tags:

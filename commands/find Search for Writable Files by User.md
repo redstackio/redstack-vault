@@ -45,6 +45,9 @@ output: 'root@hackers:~# find /etc/cron.daily -user root -writable ! -type l 2>/
   /etc/cron.daily/passwd'
 created_at: '2019-09-17T06:24:10.219337+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[find]]'
+- '[[type]]'
 ---
 
 # find Search for Writable Files by User

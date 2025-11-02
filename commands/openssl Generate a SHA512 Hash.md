@@ -9,6 +9,8 @@ output: 'root@hackers:~# openssl passwd -6 -salt 16bytesXX16bytes Thisisyourpass
   $6$16bytesXX16bytes$FXuYP0OI7qYB3K6u6.91Blr7rtvjLZmpcuAWuWVnTj4G2nVGny6k5yzaDbV3iQCwoSDMGgXePvFxddnxYkpa5/'
 created_at: '2019-09-16T18:26:12.711397+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # openssl Generate a SHA512 Hash

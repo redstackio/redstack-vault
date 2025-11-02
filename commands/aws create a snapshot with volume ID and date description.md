@@ -10,6 +10,8 @@ output: aws ec2 create-snapshot --volume-id <vol-id> --description "snapshot-$(d
   +'%Y-%m-%d_%H-%M-%S')"
 created_at: '2020-07-31T04:25:23.794896+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[vol]]'
 ---
 
 # aws create a snapshot with volume ID and date description

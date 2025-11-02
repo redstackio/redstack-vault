@@ -6,7 +6,18 @@ verified: false
 created_at: '2019-08-28T21:17:40.304206+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
+- '[[Enumerate OU with LAPS PowerView]]'
+- '[[PowerShell Import a Module]]'
 - '[[PowerView Add Active Directory Group Privileges]]'
+- '[[PowerView Add DCSync Rights to a User]]'
+- '[[PowerView Add SPN to a Domain User]]'
+- '[[PowerView Get Global Catalogs for the Current Forest]]'
+- '[[PowerView List AD Accounts with SPN Set]]'
+- '[[PowerView List Domain Users with Kerberos Preauthentication Disabled]]'
+- '[[PowerView Recursively List Users of a Group]]'
+- '[[PowerView Recursively List a User''s Groups]]'
+- '[[PowerView Remove SPN to a Domain User]]'
+- '[[PowerView Reset a Domain User''s Password]]'
 ---
 
 # PowerView

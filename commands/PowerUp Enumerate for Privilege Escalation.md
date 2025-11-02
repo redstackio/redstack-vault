@@ -9,6 +9,9 @@ output: "C:\\Temp>SharpUp.exe audit \n\n=== SharpUp: Running Privilege Escalatio
   \      : UsoSVC\n..."
 created_at: '2020-03-13T18:30:55.939823+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerUp]]'
+- '[[SharpUp]]'
 ---
 
 # PowerUp Enumerate for Privilege Escalation

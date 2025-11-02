@@ -47,6 +47,9 @@ output: 'root@kali:~# nmap -sV 10.10.10.10 -oN default
   Nmap done: 1 IP address (1 host up) scanned in 60.51 seconds'
 created_at: '2019-10-11T19:37:17.057364+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Scan with Service Enumeration

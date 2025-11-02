@@ -36,6 +36,9 @@ output: 'root@kali:~# python bloodhound.py -c All -u bob -p s3cr3tpass  -ns 10.1
   INFO: Done in 00M 25S'
 created_at: '2020-03-23T21:16:03.287744+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[BloodHound.py]]'
+- '[[BloodHound]]'
 ---
 
 # BloodHound.py Enumerate Active Directory

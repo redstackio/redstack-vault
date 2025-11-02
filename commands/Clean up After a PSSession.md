@@ -7,6 +7,8 @@ data: Remove-PSSession $Session
 output: PS C:\ > Remove-PSSession $Session
 created_at: '2020-03-21T01:59:57.750419+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Clean up After a PSSession

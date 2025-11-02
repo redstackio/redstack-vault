@@ -35,6 +35,9 @@ output: 'root@kali:~# dnsrecon -d testsite.com -D `pwd`/words.txt -t brt
   [+] 12 Records Found'
 created_at: '2019-09-20T18:53:20.015420+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[DNSRecon]]'
+- '[[host]]'
 ---
 
 # DNSRecon Brute Force DNS Subdomains

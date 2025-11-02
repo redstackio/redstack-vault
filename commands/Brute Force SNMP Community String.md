@@ -12,6 +12,9 @@ output: 'root@kali:~/Documents# onesixtyone -c wordlist.txt 10.10.10.10
   20 11:06:56 UTC 2017 i686'
 created_at: '2019-09-17T00:51:23.939596+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[onesixtyone]]'
 ---
 
 # Brute Force SNMP Community String

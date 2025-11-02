@@ -20,6 +20,9 @@ output: "root@kali:/opt/Sublist3r# ./sublist3r.py -d cisco.com           \n     
   173-39-234-141.cisco.com\n6lab.cisco.com"
 created_at: '2019-09-12T17:55:35.975030+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Sublist3r]]'
+- '[[unique]]'
 ---
 
 # Sublist3r Domain Name Enumeration with OSINT

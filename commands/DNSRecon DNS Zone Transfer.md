@@ -53,6 +53,8 @@ output: 'root@kali:~# dnsrecon -d testsite.com -t axfr
   [*]      NAPTR P 1 1  email.testsite.com E2U+email'
 created_at: '2019-09-20T18:53:20.010961+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[DNSRecon]]'
 ---
 
 # DNSRecon DNS Zone Transfer

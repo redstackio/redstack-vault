@@ -6,6 +6,7 @@ verified: true
 created_at: '2020-02-19T19:40:55.990419+00:00'
 updated_at: '2023-05-30T19:57:50.509969+00:00'
 commands:
+- '[[fcrackzip Charset Brute Force a Zip File]]'
 - '[[fcrackzip Dictionary Brute Force a Zip File]]'
 platforms:
 - Linux

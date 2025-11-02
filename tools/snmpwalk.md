@@ -7,6 +7,7 @@ created_at: '2020-03-22T23:04:57.115261+00:00'
 updated_at: '2023-05-30T01:05:13.142950+00:00'
 commands:
 - '[[snmpwalk Enumerate SNMP Server]]'
+- '[[snmpwalk Enumerate SNMP with OID]]'
 platforms:
 - Linux
 - Windows

@@ -7,6 +7,8 @@ created_at: '2020-03-04T22:55:06.385887+00:00'
 updated_at: '2023-05-30T19:57:13.757876+00:00'
 commands:
 - '[[ xcopy Download Files from a Remote SMB]]'
+- '[[ xcopy Upload Files to a Remote SMB]]'
+- '[[Copy file to folder]]'
 platforms:
 - Windows
 tags:

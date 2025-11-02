@@ -6,8 +6,8 @@ verified: true
 created_at: '2020-06-30T02:34:45.191181+00:00'
 updated_at: '2023-05-30T19:48:29.836176+00:00'
 commands:
-- '[[dnsvalidator update dns servers]]'
 - '[[dnsvalidator update dns servers (DOCKER)]]'
+- '[[dnsvalidator update dns servers]]'
 platforms:
 - Linux
 - Mac OSx

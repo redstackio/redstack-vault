@@ -38,6 +38,8 @@ output: 'root@kali:~# wfuzz --hc 200 -c -w names.txt -u ''http://10.10.10.10/wp-
   Filtered Requests: 1016'
 created_at: '2019-12-04T23:27:07.447960+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wfuzz]]'
 ---
 
 # wfuzz Brute Force a HTTP POST Form

@@ -16,6 +16,10 @@ output: "PS C:\\Users\\Bob > net user bob\nUser name                    Bob\nFul
   \ Log Users\nGlobal Group memberships     *None\nThe command completed successfully."
 created_at: '2020-03-20T20:55:40.966792+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Docker]]'
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # List a Local Windows User's Info and Group Membership

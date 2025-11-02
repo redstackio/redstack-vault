@@ -6,7 +6,7 @@ verified: true
 created_at: '2020-03-06T06:10:32.852556+00:00'
 updated_at: '2023-05-30T19:49:57.150296+00:00'
 commands:
-- '[[Command Shell Scheduled Task Repeating Every 5 Minutes]]'
+- '[[JAWS Enumerate for Privilege Escalation ]]'
 platforms:
 - Windows
 tags:

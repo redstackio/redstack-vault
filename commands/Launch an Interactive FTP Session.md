@@ -23,6 +23,8 @@ output: 'root@kali:~# ftp 10.10.10.10
   ftp>'
 created_at: '2019-09-11T22:47:55.931243+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[type]]'
 ---
 
 # Launch an Interactive FTP Session

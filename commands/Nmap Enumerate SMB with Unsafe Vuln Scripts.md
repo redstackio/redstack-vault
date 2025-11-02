@@ -20,6 +20,9 @@ output: "root@kali:~# nmap --script=vuln -p135,445 --script-args=unsafe=1 10.10.
   \ 1 IP address (1 host up) scanned in 15.44 seconds\n"
 created_at: '2019-09-13T22:29:10.943183+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
 ---
 
 # Nmap Enumerate SMB with Unsafe Vuln Scripts

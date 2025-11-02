@@ -17,6 +17,8 @@ output: "root@kali:~# wfuzz --hc 404 -w common.txt -u http://10.10.10.10/FUZZ -p
   \ 141.7527"
 created_at: '2019-09-13T23:40:37.680161+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wfuzz]]'
 ---
 
 # Wfuzz Directory Brute Force with Burp Proxy

@@ -422,6 +422,9 @@ output: '#######################################################################
   '
 created_at: '2020-09-03T18:36:33.270627+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dotdotpwn]]'
+- '[[type]]'
 ---
 
 # DotDotPwn Command to Perform Directory Traversal Fuzzing

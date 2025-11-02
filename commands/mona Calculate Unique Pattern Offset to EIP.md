@@ -9,6 +9,9 @@ output: "[+] Command used:\n!mona pattern_offset 0x7A46317A\nLooking for z1Fz in
   \ 4654\n..."
 created_at: '2019-09-21T00:36:54.545004+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[mona]]'
+- '[[unique]]'
 ---
 
 # mona Calculate Unique Pattern Offset to EIP

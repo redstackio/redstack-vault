@@ -14,6 +14,9 @@ output: "root@kali:~# xmllint --format - < rules.xml \n<?xml version=\"1.0\"?>\n
   ..."
 created_at: '2020-03-04T05:01:54.789273+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[type]]'
+- '[[xmllint]]'
 ---
 
 # xmllint Beautify XML

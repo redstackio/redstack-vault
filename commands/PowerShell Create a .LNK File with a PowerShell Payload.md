@@ -24,6 +24,9 @@ output: 'PS C:\Users\Victim> $WScript = New-Object -COM WScript.shell
   PS C:\Users\Victim> $SC.Save()'
 created_at: '2019-12-09T19:56:59.768700+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # PowerShell Create a .LNK File with a PowerShell Payload

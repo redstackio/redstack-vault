@@ -27,6 +27,8 @@ output: 'PS C:\> Get-ADGroup "Enterprise Admins" -Server "dc-main.bank.local"
   SID               : S-1-5-21-3428605742-3005092657-1212549955-519'
 created_at: '2020-07-01T22:19:32.737990+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # ActiveDirectory Get SID of a Foreign Group in Trusted Domain

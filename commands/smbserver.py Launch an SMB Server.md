@@ -22,6 +22,8 @@ output: 'smbserver.py share /tmp
   [*] Config file parsed'
 created_at: '2019-10-29T22:25:12.709431+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # smbserver.py Launch an SMB Server

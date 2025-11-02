@@ -6,7 +6,10 @@ verified: true
 created_at: '2020-02-21T02:30:15.150525+00:00'
 updated_at: '2023-05-30T19:47:23.227969+00:00'
 commands:
+- '[[mkpasswd Generate a MD5 Hash]]'
 - '[[mkpasswd Generate a SHA512 Hash]]'
+- '[[mkpasswd Generate a SHA512-crypt hash]]'
+- '[[mkpasswd View Available Hash Options]]'
 tags:
 - '[[Cryptography]]'
 - '[[Operating Systems]]'

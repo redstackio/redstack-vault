@@ -9,6 +9,8 @@ output: 'root@a7ffb5e7e757:/# grep -RE ''^root'' /etc/shadow
   root:*:18291:0:99999:7:::'
 created_at: '2020-03-10T07:20:54.638165+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[grep]]'
 ---
 
 # Recursive Search for Text in Files with Regex

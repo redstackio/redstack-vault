@@ -27,6 +27,8 @@ output: 'C:\>wmic qfe get Caption,Description,HotFixID,InstalledOn
   http://support.microsoft.com/?kbid=4517389  Update           KB4517389  10/21/2019'
 created_at: '2020-01-24T21:45:44.859843+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[wmic]]'
 ---
 
 # Query a System for Installed Patches

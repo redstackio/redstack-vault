@@ -9,6 +9,8 @@ output: "root@kali:~# readpst -tea -m backup.pst\nOpening PST file and indexes..
   \ skipped."
 created_at: '2019-12-13T22:39:54.282259+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[readpst]]'
 ---
 
 # Extract E-mails and Attachments from a .PST File

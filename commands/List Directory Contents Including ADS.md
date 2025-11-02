@@ -12,6 +12,8 @@ output: "C:\\temp>dir /R\n Volume in drive C has no label.\n Volume Serial Numbe
   \          1,056 bytes\n               2 Dir(s)  26,816,774,144 bytes free"
 created_at: '2019-11-22T18:04:45.283994+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[dir]]'
 ---
 
 # List Directory Contents Including ADS

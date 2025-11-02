@@ -6,7 +6,11 @@ verified: true
 created_at: '2020-03-07T02:03:16.469422+00:00'
 updated_at: '2023-05-30T01:08:15.809339+00:00'
 commands:
-- '[[mona Search for a JMP to ESP Instruction]]'
+- '[[mona Calculate Unique Pattern Offset to EIP]]'
+- '[[mona Config Working Directory]]'
+- '[[mona Create Unique Cylic Pattern]]'
+- '[[mona Generate Byte Array excluding known badchars]]'
+- '[[mona Generate egghunter]]'
 platforms:
 - Windows
 tags:

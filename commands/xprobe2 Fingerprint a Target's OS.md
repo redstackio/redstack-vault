@@ -79,6 +79,9 @@ output: 'root@kali:~# xprobe2 10.10.10.10
   [+] Execution completed.'
 created_at: '2019-09-13T22:29:10.947332+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[xprobe2]]'
 ---
 
 # xprobe2 Fingerprint a Target's OS

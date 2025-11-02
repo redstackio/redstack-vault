@@ -27,6 +27,8 @@ output: 'root@kali:~# crackmapexec smb 10.10.10.10 -u ''bob'' -p ''secretpass'' 
   SMB         10.10.10.149    445    Bob-PC           1008: Bob-PC\Bob (SidTypeUser)'
 created_at: '2019-12-27T22:38:42.675767+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CrackMapExec]]'
 ---
 
 # CrackMapExec Brute Force SMB Users Using RID

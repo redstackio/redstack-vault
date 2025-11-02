@@ -11,6 +11,8 @@ platforms:
 tags:
 - '[[Brute Force]]'
 - '[[Network]]'
+commands:
+- '[[Brute Force SNMP Community String]]'
 ---
 
 # onesixtyone

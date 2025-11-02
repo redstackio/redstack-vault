@@ -11,6 +11,9 @@ output: 'root@kali:~# gpp-decrypt ''CiDUq6tbrBL1m/js9DmZNIydXpsE69WB9JrhwYRW9xyw
   MyUnclesAreMarioAndLuigi!!1!'
 created_at: '2019-09-26T22:51:06.756813+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[gpp-decrypt]]'
+- '[[openssl]]'
 ---
 
 # gpp-decrypt Extract Password from a GPP Encrypted String

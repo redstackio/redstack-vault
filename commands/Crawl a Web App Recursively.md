@@ -21,6 +21,8 @@ output: "root@kali:~# wget --recursive --html-extension --convert-links --restri
   \ 70-0\nConverted links in 3 files in 0.002 seconds."
 created_at: '2019-10-09T18:38:08.462994+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wget]]'
 ---
 
 # Crawl a Web App Recursively

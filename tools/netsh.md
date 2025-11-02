@@ -6,6 +6,10 @@ verified: true
 created_at: '2020-03-04T22:22:18.016963+00:00'
 updated_at: '2023-05-30T19:58:38.843982+00:00'
 commands:
+- '[[Allow a Port Through Windows Firewall (Windows 2008 and Earlier)]]'
+- '[[Allow a Port Through Windows Firewall (Windows 7+)]]'
+- '[[Allow an Application Through Windows Firewall (Windows 7+)]]'
+- '[[Disable Windows Firewall (Windows 7+)]]'
 - '[[Windows Firewall Disable Firewall (Windows 2008 and Earlier)]]'
 platforms:
 - Windows

@@ -18,6 +18,9 @@ output: "Sun Sep 07 10:45:26 2020:\nSun Sep 17 10:45:26 2020:\n    slowhttptest 
   \ 0\nclosed:              0\nservice available:   No"
 created_at: '2020-09-06T18:43:30.675561+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[slowhttptest]]'
+- '[[type]]'
 ---
 
 # slow read DoS

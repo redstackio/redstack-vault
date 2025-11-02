@@ -7,6 +7,7 @@ created_at: '2020-02-14T20:25:42.487538+00:00'
 updated_at: '2023-05-30T01:07:07.563017+00:00'
 commands:
 - '[[Steghide Embed a File in an Image]]'
+- '[[Steghide Extract a Hidden File in an Image]]'
 tags:
 - '[[Obfuscation]]'
 - '[[Steganography]]'

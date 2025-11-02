@@ -15,6 +15,8 @@ output: 'xcopy c:\file.exe t:\file.exe
   1 File(s) copied'
 created_at: '2023-01-12T22:19:00.383458+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[xcopy]]'
 ---
 
 # Copy file to folder

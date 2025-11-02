@@ -1,0 +1,5 @@
+# Ignore logs and virtual environment
+mcp-server.log
+.venv/
+__pycache__/
+*.pyc

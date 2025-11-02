@@ -17,6 +17,9 @@ output: 'root@kali:~/Documents/evil-winrm# ./evil-winrm.rb -i 10.10.10.10 -u bob
   *Evil-WinRM* PS C:\Users\bob\Documents>'
 created_at: '2020-03-03T01:24:01.684830+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Evil-WinRM]]'
+- '[[ps]]'
 ---
 
 # evil-winrm.rb Connect to a WinRM Server

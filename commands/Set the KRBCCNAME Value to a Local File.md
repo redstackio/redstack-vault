@@ -7,6 +7,8 @@ data: export KRB5CCNAME="$(pwd)/Administrator.ccache"
 output: root@kali:~# export KRB5CCNAME="$(pwd)/Administrator.ccache"
 created_at: '2020-06-24T05:08:26.192345+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
 ---
 
 # Set the KRBCCNAME Value to a Local File

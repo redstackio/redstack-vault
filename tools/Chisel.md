@@ -6,7 +6,11 @@ verified: true
 created_at: '2020-02-20T07:17:13.475860+00:00'
 updated_at: '2023-05-30T19:47:09.397765+00:00'
 commands:
+- '[[Chisel Deploy a Reverse Port Forwarding Client (Target)]]'
 - '[[Chisel Deploy a Reverse Port Forwarding Server]]'
+- '[[Chisel Deploy a SOCKS5 Client (Attacker)]]'
+- '[[Chisel Deploy a SOCKS5 Proxy Server (Target)]]'
+- '[[cmd-abe53f5a]]'
 tags:
 - '[[Network]]'
 - '[[Pivot]]'

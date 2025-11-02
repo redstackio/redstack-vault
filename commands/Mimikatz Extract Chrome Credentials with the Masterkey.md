@@ -22,6 +22,9 @@ output: "C:\\Windows\\system32\\spool\\drivers\\color>mimikatz.exe\n\n  .#####. 
   \ with AES-256-GCM\nPassword: S3c47pA55"
 created_at: '2020-07-21T05:09:20.612670+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
 ---
 
 # Mimikatz Extract Chrome Credentials with the Masterkey

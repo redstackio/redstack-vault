@@ -12,6 +12,8 @@ output: "C:\\Windows\\system32>sc.exe start pwnSVC\n\nSERVICE_NAME: pwnSVC\n    
   \                : 1884\n        FLAGS              :"
 created_at: '2020-04-28T21:10:21.094874+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[type]]'
 ---
 
 # Start a Windows Service

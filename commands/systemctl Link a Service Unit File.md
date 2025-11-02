@@ -9,6 +9,9 @@ output: "bob@ubuntu18:/tmp$ sudo systemctl enable --now /tmp/root.service \n\nCr
   Created symlink /etc/systemd/system/root.service → /tmp/root.service."
 created_at: '2019-10-16T23:21:22.677582+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[sudo]]'
+- '[[systemctl]]'
 ---
 
 # systemctl Link a Service Unit File

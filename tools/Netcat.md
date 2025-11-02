@@ -6,7 +6,14 @@ verified: false
 created_at: '2019-08-28T21:17:40.581707+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
-- '[[Netcat Connect to a Remote Server]]'
+- '[[Create a Netcat Listener]]'
+- '[[Netcat Command]]'
+- '[[Netcat Download a File to a Listener]]'
+- '[[Netcat Download a File with a Listener]]'
+- '[[Netcat Upload a File to a Listener]]'
+- '[[Netcat Upload a File with a Listener]]'
+- '[[Netcat windows in listening mode on port 80]]'
+- '[[Netcat windows reverse shell is observed]]'
 platforms:
 - Linux
 - Windows

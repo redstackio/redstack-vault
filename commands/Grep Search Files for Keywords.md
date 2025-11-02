@@ -11,6 +11,8 @@ output: 'root@kali:~# grep -C 5 -iR ''password\|secret'' *
   '
 created_at: '2019-10-09T18:38:08.439612+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[grep]]'
 ---
 
 # Grep Search Files for Keywords

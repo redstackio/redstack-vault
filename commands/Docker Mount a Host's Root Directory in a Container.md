@@ -15,6 +15,11 @@ output: "alice@kali:~$ docker run -v /:/root_fs -i -t bash bash\nUnable to find 
   \      opt             root            srv             usr             vmlinuz.old"
 created_at: '2019-10-09T19:15:07.838000+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Docker]]'
+- '[[find]]'
+- '[[host]]'
+- '[[mount]]'
 ---
 
 # Docker Mount a Host's Root Directory in a Container

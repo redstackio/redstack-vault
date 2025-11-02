@@ -18,6 +18,8 @@ output: "root@hackers:~# openssl passwd --help\nUsage: passwd [options]\nValid o
   \  Write random data to the specified file\n"
 created_at: '2019-09-16T18:26:12.743702+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # openssl View Available Hash Options

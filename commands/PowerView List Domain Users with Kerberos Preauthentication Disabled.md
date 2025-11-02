@@ -63,6 +63,9 @@ output: 'PS C:\Users\steve> Get-DomainUser -PreauthNotRequired
   usnchanged                    : 13137'
 created_at: '2020-07-01T22:54:44.509214+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[ps]]'
 ---
 
 # PowerView List Domain Users with Kerberos Preauthentication Disabled

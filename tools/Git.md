@@ -6,7 +6,11 @@ verified: true
 created_at: '2020-02-20T04:34:09.669877+00:00'
 updated_at: '2023-05-30T19:49:44.196122+00:00'
 commands:
-- '[[Git List a Git Repository''s Commit History]]'
+- '[[Git Download and Install nps_payload]]'
+- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
+- '[[Git List a Git Repository''s Commit Messages]]'
+- '[[Uniscan Command to Scan the Application]]'
+- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
 platforms:
 - Linux
 - Mac OSx

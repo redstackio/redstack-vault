@@ -7,7 +7,6 @@ created_at: '2020-03-12T21:04:39.211694+00:00'
 updated_at: '2023-05-30T01:07:27.396827+00:00'
 commands:
 - '[[Launch a Neo4j Instance]]'
-- '[[Launch a Neo4j Instance]]'
 platforms:
 - Linux
 - Windows

@@ -29,6 +29,9 @@ output: 'PS C:\> [System.IO.Directory]::GetFiles("\\.\pipe\")
   ...'
 created_at: '2020-04-29T00:05:04.345714+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[ps]]'
 ---
 
 # List Open Named Pipes on Windows (PowerShell)

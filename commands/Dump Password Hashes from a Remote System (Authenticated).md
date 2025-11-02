@@ -13,6 +13,9 @@ output: "root@kali:/usr/share/doc/python3-impacket/examples# python3 secretsdump
   krbtgt:502:aad3b435b51404eeaad3b435b51404ee:818af826bb138e603acb0f33d17632f8:::"
 created_at: '2020-03-16T01:39:57.837512+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
+- '[[secretsdump.py]]'
 ---
 
 # Dump Password Hashes from a Remote System (Authenticated)

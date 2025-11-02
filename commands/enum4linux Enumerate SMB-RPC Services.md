@@ -18,6 +18,8 @@ output: "root@kali:~/Documents# enum4linux 10.10.10.10\nStarting enum4linux v0.8
   \ 18 16:23:35 2019"
 created_at: '2019-09-18T20:47:12.029163+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[enum4linux]]'
 ---
 
 # enum4linux Enumerate SMB/RPC Services

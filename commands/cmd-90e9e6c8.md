@@ -7,6 +7,8 @@ data: find $DIRECTORY -perm -4000 -ls 2>/dev/null
 output: ''
 created_at: '2023-03-13T19:52:35.078857+00:00'
 updated_at: '2023-03-13T19:52:35.078857+00:00'
+tools:
+- '[[find]]'
 ---
 
 # Command 90e9e6c8

@@ -15,6 +15,10 @@ output: 'root@hacker:~# cat massdns.out | awk ''{print $3}'' | sort -u | grep -o
   172.67.10.39'
 created_at: '2020-06-30T05:03:09.607678+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
+- '[[grep]]'
+- '[[massdns]]'
 ---
 
 # sort massdns output for ips

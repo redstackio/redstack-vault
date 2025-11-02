@@ -9,6 +9,8 @@ output: "root@kali:~# hashcat --stdout -a 3 foobar?d?d?d?s > wordlist.txt\nroot@
   foobar999*\nfoobar456.\nfoobar789*\nfoobar699*\nfoobar556."
 created_at: '2019-09-24T22:00:40.482801+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hashcat]]'
 ---
 
 # hashcat Mutate a Password Using Mask Attack

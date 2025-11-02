@@ -8,6 +8,10 @@ output: PS C:\Users\dave\Documents> Set-DomainObject -Credential $Cred -Identity
   -Clear serviceprincipalname
 created_at: '2020-06-25T20:16:48.076258+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # PowerView Remove SPN to a Domain User

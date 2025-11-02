@@ -9,6 +9,8 @@ output: "root@kali:~# hashcat -a 0 words.txt --stdout -r rules.txt \nDavidson\nn
   321password\nPASSWORD\n"
 created_at: '2019-10-18T00:45:16.427214+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hashcat]]'
 ---
 
 # Hashcat Mutate a Wordlist Using Rules

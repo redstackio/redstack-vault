@@ -16,6 +16,8 @@ output: 'PS > Invoke-EnumerateAzureBlobs -Base <SHORT DOMAIN> -OutputFile azureb
   Found Storage Account -  securefiles.blob.core.windows.net'
 created_at: '2023-05-24T22:11:13.024040+00:00'
 updated_at: '2023-05-24T22:11:13.198951+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Enumerate Azure Blobs with Microburst

@@ -32,6 +32,10 @@ output: 'root@kali:~# nmap -sV -oA results.log 10.10.10.10
   Nmap done: 1 IP address (1 host up) scanned in 12.08 seconds'
 created_at: '2019-09-13T22:29:10.930324+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
+- '[[ssh]]'
 ---
 
 # Nmap Service Scan with Log File Output

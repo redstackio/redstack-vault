@@ -20,6 +20,8 @@ output: 'root@kali:~# lookupsid.py ''bank.local/bsmith:hunter2''@10.10.10.5
   ...'
 created_at: '2020-06-24T05:08:26.191958+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # lookupsid.py Get a Domain SID from the Domain Controller

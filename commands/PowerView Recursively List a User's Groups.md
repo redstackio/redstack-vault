@@ -27,6 +27,9 @@ output: 'PS C:\> Get-DomainGroup -MemberIdentity dave
   ...'
 created_at: '2020-07-01T22:54:44.510303+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[ps]]'
 ---
 
 # PowerView Recursively List a User's Groups

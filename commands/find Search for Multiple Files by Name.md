@@ -16,6 +16,8 @@ output: 'root@hackers:~# find . -name "user.txt" -o -name "root.txt" -o -name "p
   '
 created_at: '2019-09-17T06:24:10.223849+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[find]]'
 ---
 
 # find Search for Multiple Files by Name

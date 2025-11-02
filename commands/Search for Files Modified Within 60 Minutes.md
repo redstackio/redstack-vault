@@ -37,6 +37,8 @@ output: 'root@hackers:~/Content/Enumeration# find /etc -ctime -1
   /etc/ld.so.cache'
 created_at: '2019-09-17T06:24:10.225354+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[find]]'
 ---
 
 # Search for Files Modified Within 60 Minutes

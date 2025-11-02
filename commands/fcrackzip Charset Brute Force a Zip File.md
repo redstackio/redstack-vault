@@ -8,6 +8,8 @@ output: "root@kali:~# fcrackzip -b -c 'a1' -l 3-4 -u secret.zip \n\n\nPASSWORD F
   \ pw == 5555"
 created_at: '2019-09-24T22:44:39.881514+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[fcrackzip]]'
 ---
 
 # fcrackzip Charset Brute Force a Zip File

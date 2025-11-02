@@ -35,6 +35,9 @@ output: 'root@host:~$ ./LinEnum.sh
   ### SCAN COMPLETE ####################################'
 created_at: '2019-09-17T06:34:44.715137+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[LinEnum]]'
+- '[[host]]'
 ---
 
 # Scan a Linux Filesystem for Vulnerabilities (LinEnum)

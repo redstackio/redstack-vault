@@ -21,6 +21,8 @@ output: 'root@kali:~# strings dump  | grep password
   RG_1=mail.megabank.com/login.php?username=admin&login_password=wh3r3sth3b33f?%3f&login='
 created_at: '2020-03-31T05:01:26.325180+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[grep]]'
 ---
 
 # Search Raw Data for Human Readable Strings

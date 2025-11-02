@@ -32,6 +32,9 @@ output: "C:\\Windows\\system32\\spool\\drivers\\color>mimikatz.exe\n\n  .#####. 
   \    pbAccesscheck    : c7725bc1e39f008edbe46d70baa332409bea33e6fc29afe19ca9a5fe681b5cdf7be2cfa5b4e83ec086278174d990aefef39b0add0a24c35a0a58ac8f45c5d0256e7d7cd018da5550f0a3b26f1de8713d06f67988dc49f78f"
 created_at: '2020-07-21T06:52:31.033117+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
 ---
 
 # Mimikatz Decrypt a User's Masterkey with the Domain's Private key

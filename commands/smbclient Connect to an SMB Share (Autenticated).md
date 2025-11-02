@@ -17,6 +17,9 @@ output: "root@kali:~# smbclient -U $_USERNAME%$_PASSWORD //$_TARGET_IP/$_SHARE_N
   \ size 1024. 0 blocks available"
 created_at: '2019-09-18T01:44:02.126589+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[smbclient]]'
+- '[[ssh]]'
 ---
 
 # smbclient Connect to an SMB Share (Autenticated)

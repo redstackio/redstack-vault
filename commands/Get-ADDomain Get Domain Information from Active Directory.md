@@ -29,6 +29,8 @@ output: "PS C:\\> Get-ADDomain -Identity dev.tesla.local\n\nAllowedDNSSuffixes  
   UsersContainer                     : CN=Users,DC=DEV,DC=TESLA,DC=LOCAL"
 created_at: '2020-07-07T04:30:50.322379+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Get-ADDomain Get Domain Information from Active Directory

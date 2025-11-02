@@ -21,6 +21,10 @@ output: "PS C:\\> setspn.exe -T dev.tesla.local -Q */*\nChecking domain DC=DEV,D
   \        ldap/DC-DEV.DEV.TESLA.LOCAL/DEV.TESLA.LOCAL"
 created_at: '2020-07-01T22:19:32.737391+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[host]]'
+- '[[ps]]'
 ---
 
 # setspn List AD Accounts with SPN Set

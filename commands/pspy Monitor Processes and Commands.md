@@ -18,6 +18,9 @@ output: "bob@host:$ ./pspy \npspy - version: v1.2.0 - Commit SHA: 9c63e5d6c58f7b
   \ CMD: UID=0    PID=2222   | /bin/sh -c /root/bin/cleanup.pl >/dev/null 2>&1 \n"
 created_at: '2019-11-06T00:02:27.757627+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[pspy]]'
 ---
 
 # pspy Monitor Processes and Commands

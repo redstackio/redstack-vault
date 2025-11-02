@@ -21,6 +21,8 @@ output: "oot@kali:~/Documents# wpscan --url http://10.10.10.10 --enumerate p,t,u
   \ Data Received: 758.476 KB\n[+] Memory used: 210.875 MB\n[+] Elapsed time: 00:01:50\n"
 created_at: '2019-09-16T17:49:55.971905+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[WPScan]]'
 ---
 
 # WPScan Enumerate WordPress Plugins, Users, Themes and TimThumb

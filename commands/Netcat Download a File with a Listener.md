@@ -13,6 +13,9 @@ output: 'nc -lvnp 443 > foo
   Ncat: Listening on 0.0.0.0:443'
 created_at: '2019-10-29T22:25:12.732336+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Netcat]]'
+- '[[Nmap]]'
 ---
 
 # Netcat Download a File with a Listener

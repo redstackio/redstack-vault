@@ -14,6 +14,8 @@ output: 'C:\Tools\Sysinternals>PsExec.exe -accepteula \\WS01 powershell.exe
   Sysinternals - www.sysinternals.com'
 created_at: '2020-07-06T23:55:46.925292+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
 ---
 
 # PsExec Spawn a PowerShell Prompt as SYSTEM

@@ -6,7 +6,7 @@ verified: true
 created_at: '2020-02-14T23:56:13.171261+00:00'
 updated_at: '2023-05-30T19:56:10.869468+00:00'
 commands:
-- '[[curl Make a POST Request with JSON Data]]'
+- '[[curl Exploit a ShellShock Vulnerability]]'
 platforms:
 - Web
 tags:

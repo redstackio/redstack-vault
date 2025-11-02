@@ -13,6 +13,8 @@ output: "root@kali:~# cryptsetup luksDump backup.img\nLUKS header information fo
   \       \td931ebb1-5edc-4453-8ab1-3d23bb85b38e"
 created_at: '2019-10-17T20:33:28.982295+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[cryptsetup]]'
 ---
 
 # cryptsetup Extract a LUKS v1 Payload Offset

@@ -23,6 +23,12 @@ output: "Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-01 00:20 IST\nNmap s
   \ PHP/7.1.32 mod_perl/2.0.8-dev Perl/v5.16.3"
 created_at: '2020-08-31T19:08:46.847809+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
+- '[[host]]'
+- '[[openssl]]'
+- '[[type]]'
 ---
 
 # Nmap Command to Find Response Headers

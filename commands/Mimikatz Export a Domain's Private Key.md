@@ -30,6 +30,10 @@ output: "C:\\Windows\\system32\\spool\\drivers\\color>mimikatz.exe \"lsadump::ba
   \nmimikatz(commandline) # exit\nBye!"
 created_at: '2020-07-21T06:52:31.032892+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
+- '[[unique]]'
 ---
 
 # Mimikatz Export a Domain's Private Key

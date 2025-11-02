@@ -26,6 +26,9 @@ output: "root@kali:~# wfuzz --hc 404,403 -R5 -w common.txt -u http://10.10.10.10
   \ 36752\nFiltered Requests: 36743\nRequests/sec.: 1435.772"
 created_at: '2019-09-14T01:56:14.217445+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wfuzz]]'
+- '[[openssl]]'
 ---
 
 # Wfuzz recursive directory brute force

@@ -13,6 +13,10 @@ output: "root@kali ~/owasp.org=# nmap -sn --script hostmap-crtsh redstack.io\nSt
   \ (1 host up) scanned in 1.21 seconds\n"
 created_at: '2020-06-30T01:33:49.185132+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
+- '[[host]]'
 ---
 
 # NSE hostmap-crtsh find subdomains by cert

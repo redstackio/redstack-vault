@@ -102,6 +102,11 @@ output: 'root@kali:~# hashcat -m 1800 test /usr/share/wordlists/rockyou.txt
   Stopped: Mon Jan 20 15:32:09 2020'
 created_at: '2020-01-20T20:42:02.727182+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hashcat]]'
+- '[[Wordlists]]'
+- '[[type]]'
+- '[[unique]]'
 ---
 
 # hashcat Brute Force Password Hashes

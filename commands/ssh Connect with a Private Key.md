@@ -15,6 +15,9 @@ output: "root@kali:~# ssh -i id_rsa -l bob 10.10.10.10\nThe authenticity of host
   \                     "
 created_at: '2019-11-25T20:01:51.811071+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[ssh]]'
 ---
 
 # ssh Connect with a Private Key

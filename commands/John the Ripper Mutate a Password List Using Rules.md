@@ -10,6 +10,8 @@ output: "root@kali:~# john --wordlist=wordlist.txt --rules --stdout > mutated.wo
   \ wordlist.txt\n 500 mutated.wordlist.txt\n  10 wordlist.txt\n 510 total"
 created_at: '2019-09-24T22:00:40.479915+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[John the Ripper]]'
 ---
 
 # John the Ripper Mutate a Password List Using Rules

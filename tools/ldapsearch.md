@@ -6,6 +6,7 @@ verified: true
 created_at: '2020-02-25T23:02:18.196335+00:00'
 updated_at: '2023-05-30T19:51:38.954195+00:00'
 commands:
+- '[[Query LDAP Root DSE with Anonymous Bind]]'
 - '[[Query the Base DN with Anonymous Bind]]'
 platforms:
 - Linux

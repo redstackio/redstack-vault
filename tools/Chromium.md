@@ -6,7 +6,7 @@ verified: true
 created_at: '2020-03-06T08:50:22.049765+00:00'
 updated_at: '2023-05-30T01:04:32.895899+00:00'
 commands:
-- '[[Run Chromium as Root]]'
+- '[[find Search for Files with SUID Rights]]'
 platforms:
 - Linux
 - Mac OSx

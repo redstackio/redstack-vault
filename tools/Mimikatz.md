@@ -6,7 +6,21 @@ verified: false
 created_at: '2019-08-28T21:17:38.065570+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
+- '[[.NET Load a remote executable into memory]]'
 - '[[Extract Windows LM/NTLM Hashes From LSASS]]'
+- '[[Mimikatz Capture Windows Logins to a File]]'
+- '[[Mimikatz Create a Golden Ticket with the krbtgt hash]]'
+- '[[Mimikatz Decrypt a User''s Masterkey with the Domain''s Private key]]'
+- '[[Mimikatz Dump Masterkeys in Memory]]'
+- '[[Mimikatz Export a Domain''s Private Key]]'
+- '[[Mimikatz Extract Chrome Credentials from the Current User''s Session]]'
+- '[[Mimikatz Extract Chrome Credentials with the Masterkey]]'
+- '[[Mimikatz Extract Windows LM/NTLM Hashes From SAM]]'
+- '[[Mimikatz Extract Windows Saved Credentials from Vault]]'
+- '[[Mimikatz Extract a User''s Masterkey using their Password]]'
+- '[[Mimikatz Forge an Internal AD Forest Trust Ticket]]'
+- '[[Mimikatz Spawn a Shell as an AD Machine Account]]'
+- '[[cmd-ae14bc4f]]'
 platforms:
 - Windows
 tags:

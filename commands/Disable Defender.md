@@ -7,6 +7,9 @@ data: Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 output: Set-MpPReference -DisableRealtimeMonitoring $true -Verbose
 created_at: '2023-01-10T04:46:44.806628+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[Set-MpPreference]]'
 ---
 
 # Disable Defender

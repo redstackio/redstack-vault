@@ -48,6 +48,8 @@ output: 'Initializing the backend...
   commands will detect it and remind you to do so if necessary.'
 created_at: '2019-10-10T18:18:30.568376+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
 ---
 
 # Terraform Initialization

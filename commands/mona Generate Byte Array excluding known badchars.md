@@ -11,6 +11,8 @@ output: "[+] Command used:\n!mona bytearray -cpb \"\\x00\\x0a\"\nGenerating tabl
   x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f\\x20\\x21\"\n..."
 created_at: '2019-09-21T00:36:54.556085+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[mona]]'
 ---
 
 # mona Generate Byte Array excluding known badchars

@@ -7,6 +7,8 @@ created_at: '2020-03-03T02:41:11.369174+00:00'
 updated_at: '2023-05-30T01:05:33.199877+00:00'
 commands:
 - '[[MSBuild Build Package from XML]]'
+- '[[cmd-b88fb2f0]]'
+- '[[nps payload Execute and Build]]'
 platforms:
 - Windows
 tags:

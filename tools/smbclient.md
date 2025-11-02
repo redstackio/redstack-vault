@@ -6,8 +6,10 @@ verified: false
 created_at: '2019-08-28T21:17:32.203892+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
-- '[[smbclient -U '''' -N -L $_TARGET_IP]]'
-- '[[smbclient List SMB Shares]]'
+- '[[cmd-99e435c6]]'
+- '[[smbclient Connect to an SMB Share (Autenticated)]]'
+- '[[smbclient Connect to an SMB Share (NTLM)]]'
+- '[[smbclient Download All Files Recursively From SMB]]'
 platforms:
 - Linux
 - Windows

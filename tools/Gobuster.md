@@ -6,6 +6,9 @@ verified: false
 created_at: '2019-08-28T21:17:36.051053+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
+- '[[Gobuster Command to Find Existent Directories]]'
+- '[[Gobuster Directory Brute Force with Burp proxy]]'
+- '[[Gobuster Directory Brute Force with Extensions]]'
 - '[[Gobuster Directory Brute Force]]'
 platforms:
 - Web

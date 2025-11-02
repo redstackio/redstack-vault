@@ -11,6 +11,8 @@ output: 'root@kali:~# host -t ns testsite.com
   testsite.com name server nsztm2.testsite.com'
 created_at: '2019-09-19T00:39:41.661335+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
 ---
 
 # host Query a DNS Server for Name Servers

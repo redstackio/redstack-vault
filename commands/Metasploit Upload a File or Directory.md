@@ -13,6 +13,8 @@ output: 'meterpreter > upload /root/.ssh/id_rsa.pub
   [*] uploaded   : /root/.ssh/id_rsa.pub -> id_rsa.pub'
 created_at: '2020-07-08T23:57:32.895335+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ssh]]'
 ---
 
 # Metasploit Upload a File or Directory

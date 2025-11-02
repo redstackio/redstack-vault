@@ -8,6 +8,8 @@ output: "root@kali:~# mdb-tables -1 database.mdb                                
   \ \nacc_antiback\naccounting\naccounts\nhelpdesk\nmarketing\nusers\nservers"
 created_at: '2019-12-13T19:52:08.153041+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[mdb-tables]]'
 ---
 
 # mdb-tables List Tables in a Database

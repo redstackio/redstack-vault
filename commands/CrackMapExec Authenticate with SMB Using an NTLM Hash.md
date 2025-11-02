@@ -24,6 +24,8 @@ output: 'root@kali:~/Documents# crackmapexec smb 10.10.10.10 -u Bob -H 6608e4bc7
   [*] KTHXBYE!'
 created_at: '2019-10-01T17:58:48.949200+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CrackMapExec]]'
 ---
 
 # CrackMapExec Authenticate with SMB Using an NTLM Hash

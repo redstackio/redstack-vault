@@ -6,7 +6,8 @@ verified: true
 created_at: '2020-03-03T22:10:24.884830+00:00'
 updated_at: '2023-05-30T19:52:49.886515+00:00'
 commands:
-- '[[ruby Execute TTY Shell]]'
+- '[[Ruby Install WinRM Dependencies]]'
+- '[[WinRM.rb Open a Shell Connection to the Target]]'
 platforms:
 - Linux
 - Mac OSx

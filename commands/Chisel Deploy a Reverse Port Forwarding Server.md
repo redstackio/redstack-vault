@@ -13,6 +13,8 @@ output: 'root@kali:~# ./chisel server -p 9001 --reverse
   2019/10/01 19:56:38 server: Listening on 0.0.0.0:9001...'
 created_at: '2019-10-02T01:17:50.992676+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Chisel]]'
 ---
 
 # Chisel Deploy a Reverse Port Forwarding Server

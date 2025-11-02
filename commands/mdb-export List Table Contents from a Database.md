@@ -15,6 +15,8 @@ output: 'root@kali:~# mdb-export database.mdb users
   8,"security","s3cr3tp@ssw0rd",0,'
 created_at: '2019-12-13T19:52:08.153254+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[mdb-export]]'
 ---
 
 # mdb-export List Table Contents from a Database

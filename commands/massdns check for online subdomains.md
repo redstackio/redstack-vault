@@ -22,6 +22,8 @@ output: "root@hacker:~# massdns -r resolvers.txt -t A -o S -w massdns.out hosts-
   \            0 (  0.00%)\nFORMERR:  |            0 (  0.00%) |            0 (  0.00%)"
 created_at: '2020-06-30T05:00:10.524058+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[massdns]]'
 ---
 
 # massdns check for online subdomains

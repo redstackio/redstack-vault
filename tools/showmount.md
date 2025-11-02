@@ -6,7 +6,9 @@ verified: true
 created_at: '2020-02-04T22:05:00.242110+00:00'
 updated_at: '2023-05-30T19:56:58.826497+00:00'
 commands:
+- '[[Showmount List Mounted NFS Directories]]'
 - '[[showmount List NFS Exports]]'
+- '[[showmount List NFS directories]]'
 platforms:
 - Linux
 - Windows

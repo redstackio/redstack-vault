@@ -8,6 +8,8 @@ output: "meterpreter > search -d \"C:\\Users\\Victim\" -f \"passw*\" -r\nFound 1
   \    C:\\Users\\Victim\\Desktop\\passwords.txt (391 bytes)\n"
 created_at: '2020-07-09T00:22:14.472947+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
 ---
 
 # Metasploit Search Remote Host's Files and Directories Recursively

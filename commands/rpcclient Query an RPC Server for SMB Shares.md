@@ -11,6 +11,9 @@ output: "rpcclient $> netshareenumall\nnetname: print$\n\tremark:\tPrinter Drive
   IPC Service (host server (Samba 3.0.20-Debian))\n\tpath:\tC:\\tmp\n\tpassword:\n"
 created_at: '2019-09-18T22:53:24.472705+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[rpcclient]]'
 ---
 
 # rpcclient Query an RPC Server for SMB Shares

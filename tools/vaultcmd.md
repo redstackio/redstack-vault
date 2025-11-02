@@ -6,6 +6,7 @@ verified: true
 created_at: '2020-03-05T01:00:01.909221+00:00'
 updated_at: '2023-05-30T19:55:46.658948+00:00'
 commands:
+- '[[List Stored Windows Credentials (vaultcmd.exe)]]'
 - '[[vaultcmd.exe List Stored Windows Credentials]]'
 platforms:
 - Windows

@@ -12,6 +12,10 @@ output: "root@hacker:~/rs# masscan -iL ips-online.txt --rate 10000 -p80-80 -oL m
   \ 80 104.XX.26.XX 1593540039\n# end"
 created_at: '2020-06-30T18:05:36.049153+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
+- '[[host]]'
+- '[[masscan]]'
 ---
 
 # masscan portscan list of ips

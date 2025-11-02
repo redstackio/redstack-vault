@@ -40,6 +40,8 @@ output: 'root@kali:~# 7z backup.zip
   Compressed: 10320'
 created_at: '2019-12-13T22:09:49.766527+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[type]]'
 ---
 
 # 7z Decompress a Password Protected Zip Archive

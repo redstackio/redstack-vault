@@ -16,6 +16,10 @@ output: "user@ubuntu18x64:~$ find / -perm -4000 -ls 2>/dev/null\n  1180389     4
   \  1181285   2612 -rwsr-xr-x   1 root     root      2671240 Jun  6 17:31 /usr/bin/vim.basic"
 created_at: '2019-10-11T21:24:57.011696+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[find]]'
+- '[[sudo]]'
 ---
 
 # Find List All Files with Setuid Permissions Set

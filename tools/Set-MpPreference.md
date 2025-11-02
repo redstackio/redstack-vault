@@ -6,8 +6,8 @@ verified: true
 created_at: '2020-03-04T05:39:38.734754+00:00'
 updated_at: '2023-05-30T19:57:25.636401+00:00'
 commands:
-- '[[Set-MpPreference -DisableRealtimeMonitoring $true]]'
-- '[[powershell disable av]]'
+- '[[Disable Defender]]'
+- '[[cmd-72405142]]'
 platforms:
 - Windows
 tags:

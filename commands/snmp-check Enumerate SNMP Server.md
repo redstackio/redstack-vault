@@ -29,6 +29,9 @@ output: "root@kali:~# snmp-check -c public -v 2c 10.10.10.10                    
   \           : 2019-9-17 02:15:24.0 "
 created_at: '2019-09-17T00:51:23.956542+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[snmp-check]]'
 ---
 
 # snmp-check Enumerate SNMP Server

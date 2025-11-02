@@ -14,6 +14,9 @@ output: "root@hackers:~# john --format=md5crypt --wordlist=/opt/SecLists/Passwor
   \ completed\n"
 created_at: '2019-09-16T23:24:10.097830+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[John the Ripper]]'
+- '[[SecLists]]'
 ---
 
 # John the Ripper Dictionary Attack Against MD5 Hashes

@@ -27,6 +27,10 @@ output: "root@kali:~# hashcat -m 1800 hash.txt wordlist.txt\nhashcat (v5.1.0) st
   \ 24 18:15:51 2019"
 created_at: '2019-09-24T22:44:39.861672+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hashcat]]'
+- '[[type]]'
+- '[[unique]]'
 ---
 
 # hashcat Brute Force a sha-512 crypt password

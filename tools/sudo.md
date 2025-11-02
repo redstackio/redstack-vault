@@ -6,8 +6,11 @@ verified: true
 created_at: '2020-02-28T02:56:35.309492+00:00'
 updated_at: '2023-05-30T19:51:51.199938+00:00'
 commands:
-- '[[sudo -l]]'
-- '[[description]]'
+- '[[Find List All Files with Setuid Permissions Set]]'
+- '[[Perl Spawn a Root Shell Using Sudo]]'
+- '[[cmd-cde9bd25]]'
+- '[[find Search for Files with SUID Rights]]'
+- '[[systemctl Link a Service Unit File]]'
 platforms:
 - Linux
 tags:

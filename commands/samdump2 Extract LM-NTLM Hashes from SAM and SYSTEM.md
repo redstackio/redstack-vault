@@ -13,6 +13,8 @@ output: 'root@kali:~# samdump2 SYSTEM SAM
   Bob:1000:aad3b435b51404eeaad3b435b51404ee:81ABA903C80B8F4DAAD5225F7D996FBC:::'
 created_at: '2019-12-28T01:37:58.768729+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[samdump2]]'
 ---
 
 # samdump2 Extract LM/NTLM Hashes from SAM and SYSTEM

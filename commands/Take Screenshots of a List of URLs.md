@@ -27,6 +27,9 @@ output: 'root@kali:~/dump# aquatone < hosts.txt
   ...'
 created_at: '2020-03-23T21:07:34.528153+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Aquatone]]'
+- '[[dir]]'
 ---
 
 # Take Screenshots of a List of URLs

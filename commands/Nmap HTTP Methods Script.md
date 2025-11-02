@@ -13,6 +13,8 @@ output: 'PORT   STATE SERVICE REASON
   |_  Supported Methods: GET HEAD POST OPTIONS TRACE'
 created_at: '2020-07-19T06:50:16.838896+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
 ---
 
 # Nmap HTTP Methods Script

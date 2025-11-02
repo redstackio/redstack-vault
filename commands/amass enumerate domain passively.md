@@ -85,6 +85,8 @@ output: 'root@kali ~# amass enum -passive -d redstack.io -src
   [Yahoo]           www.redstack.io'
 created_at: '2020-06-29T17:07:22.477341+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[amass]]'
 ---
 
 # amass enumerate domain passively

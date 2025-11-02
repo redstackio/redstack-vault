@@ -13,6 +13,8 @@ output: 'C:\Windows\system32>reg.exe add "hklm\system\currentcontrolset\control\
   The operation completed successfully.'
 created_at: '2020-07-13T02:28:14.896041+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
 ---
 
 # Mimikatz Capture Windows Logins to a File

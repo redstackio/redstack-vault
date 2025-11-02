@@ -17,6 +17,9 @@ output: '[+] Command used:
   ...'
 created_at: '2019-09-21T00:48:04.888330+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[mona]]'
 ---
 
 # mona Generate egghunter

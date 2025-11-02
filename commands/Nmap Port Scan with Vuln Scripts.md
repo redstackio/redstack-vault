@@ -44,6 +44,12 @@ output: "root@kali:~# nmap -script vuln 10.10.10.10\nNmap scan report for 10.10.
   \ up) scanned in 694.61 seconds"
 created_at: '2019-11-25T18:08:22.068973+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
+- '[[host]]'
+- '[[openssl]]'
+- '[[ssh]]'
 ---
 
 # Nmap Port Scan with Vuln Scripts

@@ -11,6 +11,9 @@ output: "PS C:\\Users\\Bob\\Downloads> Import-Module .\\jaws-enum.ps1 -OutputFil
   \ for Simple Priv Esc Methods"
 created_at: '2019-11-26T19:36:52.433603+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Scheduled Tasks]]'
+- '[[ps]]'
 ---
 
 # JAWS Enumerate for Privilege Escalation 

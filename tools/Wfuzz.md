@@ -6,7 +6,12 @@ verified: false
 created_at: '2019-08-28T21:17:17.782157+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 commands:
+- '[[Wfuzz Brute Force DNS with the Host Parameter]]'
+- '[[Wfuzz Directory Brute Force with Burp Proxy]]'
 - '[[Wfuzz Directory Brute Force]]'
+- '[[Wfuzz directory brute force with extensions]]'
+- '[[Wfuzz recursive directory brute force]]'
+- '[[wfuzz Brute Force a HTTP POST Form]]'
 platforms:
 - Web
 tags:

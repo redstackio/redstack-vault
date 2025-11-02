@@ -28,6 +28,9 @@ output: 'PS C:\> Get-ObjectAcl -Identity "dc=megabank,dc=local" -ResolveGUIDs | 
   ObjectAceFlags         : ObjectAceTypePresent'
 created_at: '2020-03-20T22:38:48.722323+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # Query Active Directory User by SID for DCSync Rights

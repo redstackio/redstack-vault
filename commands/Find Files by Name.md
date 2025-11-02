@@ -13,6 +13,8 @@ output: "bob@a7ffb5e7e757:/$ find / -name \"*passw*\" 2>/dev/null\n/etc/cron.dai
   \               \n/usr/sbin/chpasswd               \n/usr/sbin/update-passwd"
 created_at: '2020-03-10T06:28:38.723242+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[find]]'
 ---
 
 # Find Files by Name

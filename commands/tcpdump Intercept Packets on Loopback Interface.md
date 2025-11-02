@@ -15,6 +15,9 @@ output: 'kali:~# tcpdump -i lo -w dump2.pcap -c 10 port 389
   0 packets dropped by kernel'
 created_at: '2019-10-09T21:17:13.469264+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[tcpdump]]'
+- '[[type]]'
 ---
 
 # tcpdump Intercept Packets on Loopback Interface

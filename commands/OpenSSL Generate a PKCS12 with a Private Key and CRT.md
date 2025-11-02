@@ -8,6 +8,8 @@ output: "root@kali:~# openssl pkcs12  -export -out test1.pfx -inkey private.key 
   \ signed.crt \nEnter Export Password:\nVerifying - Enter Export Password:"
 created_at: '2019-09-30T19:48:33.639137+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[openssl]]'
 ---
 
 # OpenSSL Generate a PKCS12 with a Private Key and CRT

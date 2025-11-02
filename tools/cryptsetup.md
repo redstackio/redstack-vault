@@ -6,6 +6,7 @@ verified: true
 created_at: '2020-02-06T00:37:43.504273+00:00'
 updated_at: '2023-05-30T19:46:31.514897+00:00'
 commands:
+- '[[cryptsetup Extract a LUKS v1 Payload Offset]]'
 - '[[cryptsetup Open a LUKS Encrypted Volume]]'
 platforms:
 - Linux

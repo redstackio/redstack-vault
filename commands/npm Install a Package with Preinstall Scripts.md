@@ -22,6 +22,9 @@ output: 'root@kali:# npm i /home/alice/pwnme --unsafe
   found 0 vulnerabilities'
 created_at: '2019-10-31T22:50:53.761328+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
+- '[[npm]]'
 ---
 
 # npm Install a Package with Preinstall Scripts

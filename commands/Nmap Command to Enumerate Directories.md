@@ -10,6 +10,8 @@ output: "PORT   STATE SERVICE\n80/tcp open  http\n| http-enum: \n|   /icons/: Po
   \ listing"
 created_at: '2020-09-01T17:09:05.183875+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
 ---
 
 # Nmap Command to Enumerate Directories

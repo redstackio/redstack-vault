@@ -30,6 +30,8 @@ output: 'root@hacker:~# sed ''s/$/.owasp.org/'' /opt/SecLists/Discovery/DNS/subd
   ... CUT'
 created_at: '2020-06-30T04:41:15.217716+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SecLists]]'
 ---
 
 # build dns subdomain wordlist with sed

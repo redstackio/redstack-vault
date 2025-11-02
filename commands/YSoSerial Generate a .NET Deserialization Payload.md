@@ -16,6 +16,11 @@ output: "PS C:\\Users\\Bob\\Desktop\\ysoserial.net\\ysoserial\\bin\\Release > .\
   \ Culture=neutral, PublicKeyToken=b77a5c561934e089'}\n}"
 created_at: '2020-03-23T21:07:08.578682+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Powershell]]'
+- '[[YSoSerial.Net]]'
+- '[[ps]]'
+- '[[type]]'
 ---
 
 # YSoSerial Generate a .NET Deserialization Payload

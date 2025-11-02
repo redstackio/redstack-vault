@@ -26,6 +26,10 @@ output: 'root@kali:~# hydra -L users.txt -P wordlist.txt ssh://10.10.10.10
   Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2019-09-24 20:48:44'
 created_at: '2019-09-25T02:38:27.478618+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hydra]]'
+- '[[host]]'
+- '[[ssh]]'
 ---
 
 # Hydra Dictionary Brute Force SSH

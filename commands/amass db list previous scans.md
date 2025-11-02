@@ -18,6 +18,9 @@ output: 'root@kali ~# amass db -dir owasp.org/ -list
   178.in-addr.arpa, owasp.org'
 created_at: '2020-06-29T18:05:44.399891+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[amass]]'
+- '[[dir]]'
 ---
 
 # amass db list previous scans

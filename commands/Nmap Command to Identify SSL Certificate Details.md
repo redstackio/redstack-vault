@@ -39,6 +39,10 @@ output: 'Starting Nmap 7.70 ( https://nmap.org ) at 2020-09-03 13:04 IST
   '
 created_at: '2020-09-03T14:48:30.690046+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[host]]'
+- '[[type]]'
 ---
 
 # Nmap Command to Identify SSL Certificate Details

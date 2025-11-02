@@ -8,6 +8,9 @@ output: guestmount --add 5c2dcac3-335e-14a3-a34c-604e6b6e6969.vhd  --inspector -
   /mnt
 created_at: '2019-10-11T22:11:00.200134+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[guestmount]]'
+- '[[mount]]'
 ---
 
 # guestmount Mount a VHD file

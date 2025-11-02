@@ -9,6 +9,8 @@ output: "bob@ubuntu18x64:~$ ./chisel server -p 9001 --socks5 \n2019/10/02 01:08:
   2019/10/02 01:08:13 server: Listening on 0.0.0.0:9001..."
 created_at: '2019-10-02T01:17:50.993800+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Chisel]]'
 ---
 
 # Chisel Deploy a SOCKS5 Proxy Server (Target)

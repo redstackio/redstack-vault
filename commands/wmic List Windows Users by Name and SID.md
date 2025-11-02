@@ -41,6 +41,8 @@ output: 'C:\Windows\system32> wmic.exe useraccount get name,sid
   sally               S-1-5-21-3428605742-3005092657-1212549955-1110'
 created_at: '2020-07-21T05:42:41.809918+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[wmic]]'
 ---
 
 # wmic List Windows Users by Name and SID

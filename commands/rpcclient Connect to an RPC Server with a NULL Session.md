@@ -9,6 +9,8 @@ output: 'root@kali:~# rpcclient -U '''' -N 10.10.10.10
   rpcclient $> '
 created_at: '2019-09-18T23:26:06.919115+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[rpcclient]]'
 ---
 
 # rpcclient Connect to an RPC Server with a NULL Session

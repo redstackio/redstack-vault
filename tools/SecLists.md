@@ -8,6 +8,13 @@ updated_at: '2023-05-29T16:48:53.029709+00:00'
 tags:
 - '[[Brute Force]]'
 - '[[Enumeration]]'
+commands:
+- '[[Gobuster Directory Brute Force with Extensions]]'
+- '[[Hashcat Dictionary Attack a SHA-512 Hash]]'
+- '[[John the Ripper Dictionary Attack Against MD5 Hashes]]'
+- '[[John the Ripper Dictionary Attack a SHA-512 Hash]]'
+- '[[build dns subdomain wordlist with sed]]'
+- '[[hashcat Dictionary Attack Against MD5 Hashes]]'
 ---
 
 # SecLists

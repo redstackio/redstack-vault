@@ -14,6 +14,8 @@ output: 'PS C:\Users\Bob > $Pass = ConvertTo-SecureString -String "secretpass" -
   -Argument "bank.local\Administrator", $Pass'
 created_at: '2020-03-17T05:07:20.698649+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[ps]]'
 ---
 
 # Create a Windows PSCredential Object

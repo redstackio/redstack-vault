@@ -7,6 +7,7 @@ created_at: '2020-03-06T00:31:36.728802+00:00'
 updated_at: '2023-05-30T19:48:01.361550+00:00'
 commands:
 - '[[Bitsadmin Download File from a Remote Web Server]]'
+- '[[Copy file to remote machine Bitsadmin LOL]]'
 platforms:
 - Windows
 tags:

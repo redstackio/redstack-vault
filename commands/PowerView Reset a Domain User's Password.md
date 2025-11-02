@@ -9,6 +9,10 @@ output: PS C:\Users\Bob > Set-DomainUserPassword -Identity alice -AccountPasswor
   $NewPassword -Credential $Cred
 created_at: '2020-06-25T22:16:45.303287+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[PowerView]]'
+- '[[SET]]'
+- '[[ps]]'
 ---
 
 # PowerView Reset a Domain User's Password

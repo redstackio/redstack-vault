@@ -29,6 +29,9 @@ output: 'root@kali:~# hydra -t 1 -f -l victim -P wordlist.txt rdp://10.0.1.105
   Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2019-09-24 21:05:26'
 created_at: '2019-09-25T02:38:27.482716+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Hydra]]'
+- '[[host]]'
 ---
 
 # Hydra Dictionary Brute Force Remote Desktop Protocol (RDP)

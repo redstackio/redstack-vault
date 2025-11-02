@@ -6,8 +6,8 @@ verified: true
 created_at: '2020-03-04T18:53:49.229196+00:00'
 updated_at: '2023-05-30T19:55:23.144003+00:00'
 commands:
-- '[[Add-MpPreference -ExclusionPath C:\$_PATH]]'
 - '[[Exclude a Folder from Windows Defender (PowerShell 4+)]]'
+- '[[cmd-ca88e6da]]'
 platforms:
 - Windows
 tags:

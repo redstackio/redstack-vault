@@ -21,6 +21,8 @@ output: 'root@kali:~# java -jar duckencoder.jar -i ../Payloads/AV/EICAR-Test.txt
   DuckyScript Complete..... [ OK ]'
 created_at: '2023-02-17T02:28:40.027279+00:00'
 updated_at: '2023-03-13T19:50:21.945040+00:00'
+tools:
+- '[[Rubber Ducky]]'
 ---
 
 # duckencoder Encode Rubber Ducky Script into inject.bin

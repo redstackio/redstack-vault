@@ -12,6 +12,9 @@ output: "root@hackers:~/git/linuxprivchecker# python linuxprivchecker.py \n=====
   \ Rolling \\n \\l\n\n.... CUT ....\n"
 created_at: '2019-09-17T06:34:44.714301+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[GCC]]'
+- '[[Git]]'
 ---
 
 # linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities

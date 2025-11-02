@@ -16,6 +16,10 @@ output: "root@kali:~# nmap --script vuln -p80 10.10.10.10\nStarting Nmap 7.70 ( 
   \ seconds"
 created_at: '2019-09-13T22:29:10.939839+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
+- '[[host]]'
 ---
 
 # Nmap Enumerate HTTP with Vuln Scripts

@@ -17,6 +17,11 @@ output: "rpcclient $> queryuser 0x3e8\n\tUser Name   :\troot\n\tFull Name   :\tr
   0x00000000\n\tpadding1[0..7]...\n\tlogon_hrs[0..21]..."
 created_at: '2019-09-18T22:53:24.467223+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[SET]]'
+- '[[dir]]'
+- '[[host]]'
+- '[[rpcclient]]'
 ---
 
 # rpcclient Query an RPC Server for a User's Information

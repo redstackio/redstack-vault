@@ -46,6 +46,10 @@ output: 'root@kali ~# cat owasp_results.txt | cut -d'']'' -f2 | awk ''{print $1}
   '
 created_at: '2020-06-30T04:31:50.451664+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[CAT]]'
+- '[[amass]]'
+- '[[host]]'
 ---
 
 # sort amass results into domain file

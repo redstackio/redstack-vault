@@ -37,6 +37,9 @@ output: 'root@kali:~# find /usr/share/nmap/scripts/
   /usr/share/nmap/scripts/broadcast-novell-locate.nse'
 created_at: '2019-09-13T22:29:10.936760+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[Nmap]]'
+- '[[find]]'
 ---
 
 # Fnd and Display All Nmap Scripts

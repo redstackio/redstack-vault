@@ -19,6 +19,8 @@ output: 'rpcclient $> enumdomusers
   user:[root] rid:[0x3e8]'
 created_at: '2019-09-18T22:53:24.469030+00:00'
 updated_at: '2023-05-29T16:48:52.884824+00:00'
+tools:
+- '[[rpcclient]]'
 ---
 
 # List Domain Users on an SMB/RPC Server
