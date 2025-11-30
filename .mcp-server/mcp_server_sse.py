@@ -236,6 +236,25 @@ async def list_tools() -> list[Tool]:
             }
         ),
         Tool(
+            name="text_search_procedures",
+            description="Text search procedures across name, description, tags, tactics, techniques. Use this for keyword searches like 'XSS', 'SQL injection', 'privilege escalation'",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Search text (searches in name, description, tags, tactics, techniques)"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "Maximum number of results (default: 20)",
+                        "default": 20
+                    }
+                },
+                "required": ["query"]
+            }
+        ),
+        Tool(
             name="get_vault_stats",
             description="Get statistics about the vault (procedures, commands, attack chains, verified content)",
             inputSchema={
@@ -280,6 +299,12 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
         
         elif name == "search_procedures":
             result = vault.search_procedures(**arguments)
+        
+        elif name == "text_search_procedures":
+            result = vault.text_search_procedures(
+                arguments["query"],
+                arguments.get("limit", 20)
+            )
         
         elif name == "get_vault_stats":
             result = vault.get_stats()

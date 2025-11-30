@@ -443,6 +443,68 @@ class RedstackVault:
         
         return results
     
+    def text_search_procedures(self, query: str, limit: int = 20) -> List[Dict]:
+        """Text search procedures across name, description, tags, tactics, techniques.
+        
+        Args:
+            query: Search text (case-insensitive)
+            limit: Maximum number of results
+        
+        Returns:
+            List of matching procedures, scored and sorted by relevance
+        """
+        query_lower = query.lower()
+        query_terms = query_lower.split()
+        
+        def score_procedure(proc):
+            """Score procedure relevance."""
+            score = 0
+            
+            # Build searchable text
+            name_lower = proc.name.lower()
+            desc_lower = proc.description.lower()
+            tags_text = ' '.join(proc.tags).lower()
+            tactics_text = ' '.join(proc.tactics).lower()
+            techniques_text = ' '.join(proc.techniques).lower()
+            
+            # Exact match in name - highest priority
+            if query_lower in name_lower:
+                score += 100
+            
+            # Match in description
+            if query_lower in desc_lower:
+                score += 50
+            
+            # Match in tags
+            for tag in proc.tags:
+                if query_lower in tag.lower():
+                    score += 30
+            
+            # Match in tactics
+            if query_lower in tactics_text:
+                score += 20
+            
+            # Match in techniques
+            if query_lower in techniques_text:
+                score += 20
+            
+            # Match individual terms
+            combined_text = f"{name_lower} {desc_lower} {tags_text} {tactics_text} {techniques_text}"
+            for term in query_terms:
+                if len(term) >= 2 and term in combined_text:
+                    score += 10
+            
+            return score
+        
+        # Score all procedures
+        scored = [(proc, score_procedure(proc)) for proc in self._procedures.values()]
+        
+        # Filter out zero scores and sort
+        results = [asdict(proc) for proc, score in scored if score > 0]
+        results.sort(key=lambda p: score_procedure(self._procedures[p['name']]), reverse=True)
+        
+        return results[:limit]
+    
     def get_command(self, name: str) -> Optional[Dict]:
         """Get command by name."""
         cmd = self._commands.get(name)
