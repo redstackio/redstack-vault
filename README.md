@@ -447,14 +447,6 @@ The vault is optimized for these community plugins:
 
 ---
 
-## ▓▓ LICENSE ▓▓
-
-```
-MIT License - See LICENSE file for details
-```
-
----
-
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
