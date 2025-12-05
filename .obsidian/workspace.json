@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Metasploitable2 Multi-Service Exploitation Chain"
             }
+          },
+          {
+            "id": "2ac4848d8e255ed3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "procedures/Network Service Discovery and Enumeration (Nmap).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Network Service Discovery and Enumeration (Nmap)"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,34 +188,36 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "70380d42e868b44d",
+  "active": "2ac4848d8e255ed3",
   "lastOpenFiles": [
-    "attack-chains/LDAP user search + SMB brute force w- custom dictionary attack & WinRM Remote.md",
-    "attack-chains/Metasploitable2 Multi-Service Exploitation Chain.md",
-    "attack-chains/Enum RPC, Kerberos TGT Brute Force w- hashcat & Sharphound + Auto Logon Registry + Dump Secrets (no creds).md",
-    "procedures/AWS VPC.md",
-    "procedures/AWS S3 Bucket Public Access Block Enumeration.md",
-    "procedures/AWS S3 Bucket Policy Enumeration.md",
-    "procedures/AWS Inline Policy Enumeration.md",
-    "procedures/AWS CLI Profile Configuration for Persistence and Backdooring.md",
-    "attack-chains/Enum RPC, Kerberos TGT Brute Force w- hashcat & Sharphound + DCSync (creds).md",
-    "tactics/Discovery.md",
-    "procedures/Basic Port Scan with Service Enumeration.md",
-    "attack-chains/Enum RPC, Kerberos TGT Brute Force w- hashcat & Sharphound + DCSync (no kerberos preauth).md",
-    "procedures/Akamai WAF Bypass via Common XSS Injection Attack.md",
-    "procedures/Active Directory Recon using BloodHound and Certipy.md",
-    "procedures/Active Directory Recon - Using AD Module.md",
-    "procedures/Active Directory Man-in-the-Middle and Password Cracking.md",
-    "procedures/Active Directory Integrated DNS Enumeration.md",
-    "procedures/Active Directory Account Enumeration using CrackMapExec.md",
-    "procedures/Abusing Golden Privileges with Juicy Potato.md",
-    "procedures/Abusing DNSAdmins Group to Change DNS Service DLL.md",
-    "procedures/Abusing Backup Operators Group for Sensitive File Access.md",
-    "techniques/Access Token Manipulation.md",
-    "commands/Check SeBackupPrivilege Status.md",
-    "MITRE-Framework.md",
-    "Dashboard.md",
-    "Platforms/Windows.md",
+    "procedures/Stored XSS to Perform CSRF.md",
+    "procedures/ Stored XSS to Perform CSRF.md",
+    "tools/ngrok.md",
+    "tools/Flask.md",
+    "commands/curl trigger request.md",
+    "commands/curl import request.md",
+    "commands/FLASK_APP=fake_server3.py flask run.md",
+    "commands/ngrok http 5000.md",
+    "commands/ruby gen_payload3.rb.md",
+    "procedures/Verify Command Execution.md",
+    "procedures/Trigger Payload Execution.md",
+    "procedures/Initiate GitHub Repository Import.md",
+    "procedures/Setup Fake GitHub Server.md",
+    "procedures/Generate Malicious Payload.md",
+    "attack-chains/GitLab GitHub Import Remote Command Execution Chain.md",
+    "tools/Asar.md",
+    "commands/curl github repos.md",
+    "commands/curl github orgs.md",
+    "commands/curl github user.md",
+    "commands/npx asar extract.md",
+    "procedures/Check Repository Permissions.md",
+    "procedures/Verify Token with GitHub API.md",
+    "procedures/Extract GitHub Token from Env.md",
+    "procedures/Locate Env File in Extracted Contents.md",
+    "procedures/Extract ASAR from Electron App.md",
+    "attack-chains/GitHub Access Token Exposure in Electron App.md",
+    "_assets/templates/command.md.tmp.2996.1764716670711",
+    "_assets/templates",
     "Platforms",
     "_assets/images/lazy1/dede9694-b77f-4750-9216-4581c5a0b7ac.jpg",
     "_assets/images/thecondor/9582cebb-c11e-4864-96a5-72e5a206d0f9.png",
@@ -218,8 +235,6 @@
     "_assets/images/lazy1/0381d4ca-bb27-41df-bff0-51aa6a4ecff9.jpg",
     "_assets/images/lazy1/0963111a-502b-4094-b98a-682d7302c380.png.d79F9BDc",
     "_assets/images/design/c531769d-2aeb-4412-8134-93391705c266.jpg.27fC80Af",
-    "_assets/images/Mash/f8ec3cc4-9322-40fd-9d0c-505b3a39947b.png.EFFa8A1F",
-    "_assets/images/Mash/f89b3903-9db3-42af-a8b2-da5af8a2e8d1.png.68cEA3b8",
-    "_assets/images/Mash/e81ae704-f864-4719-946f-6474ecff26fe.png.02D08ECA"
+    "_assets/images/Mash/f8ec3cc4-9322-40fd-9d0c-505b3a39947b.png.EFFa8A1F"
   ]
 }

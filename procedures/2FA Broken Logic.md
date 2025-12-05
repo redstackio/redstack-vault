@@ -7,10 +7,14 @@ submitted: true
 created_at: '2020-09-05T05:40:56.124670+00:00'
 updated_at: '2023-05-26T01:29:57.813833+00:00'
 platforms:
-- Web
+  - Web
 tags:
-- '[[broken authentication]]'
-- '[[Web Applications]]'
+  - '[[broken authentication]]'
+  - '[[Web Applications]]'
+  - intruder-attack
+title: Bypassing 2FA via Broken Authentication Logic
+mitre_techniques:
+  - T1621
 ---
 
 # 2FA Broken Logic

@@ -7,15 +7,33 @@ submitted: false
 created_at: '2023-04-06T03:55:53.960614+00:00'
 updated_at: '2023-04-06T03:55:53.973875+00:00'
 tactics:
-- '[[Credential Access|TA0006 - Credential Access]]'
+  - '[[Credential Access|TA0006 - Credential Access]]'
 techniques:
-- '[[Brute Force|T1110 - Brute Force]]'
+  - '[[Brute Force|T1110 - Brute Force]]'
 tags:
-- '[[2FA Bypasses]]'
-- '[[Account Takeover]]'
-- '[[Bypass 2FA by Force Browsing]]'
+  - '[[2FA Bypasses]]'
+  - '[[Account Takeover]]'
+  - '[[Bypass 2FA by Force Browsing]]'
+  - authentication-bypass
+  - web-vulnerability
+  - bypass-technique
 commands:
-- '[[Navigate to My Account page]]'
+  - '[[Navigate to My Account page]]'
+ports:
+  - 80
+  - 443
+services:
+  - HTTP
+  - HTTPS
+platforms:
+  - Web
+mitre_tactics:
+  - Initial Access
+mitre_techniques:
+  - T1078
+  - T1190
+  - T1621
+title: Bypassing Two-Factor Authentication via Forced Browsing
 ---
 
 # 2FA Bypass via Force Browsing

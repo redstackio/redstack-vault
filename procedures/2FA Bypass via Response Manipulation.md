@@ -7,16 +7,25 @@ submitted: false
 created_at: '2023-04-06T03:55:53.929168+00:00'
 updated_at: '2023-04-06T03:55:53.944949+00:00'
 tactics:
-- '[[Credential Access|TA0006 - Credential Access]]'
+  - '[[Credential Access|TA0006 - Credential Access]]'
 techniques:
-- '[[Two-Factor Authentication Interception|T1111 - Two-Factor Authentication Interception]]'
+  - >-
+    [[Two-Factor Authentication Interception|T1111 - Two-Factor Authentication
+    Interception]]
 tags:
-- '[[2FA Bypasses]]'
-- '[[Account Takeover]]'
-- '[[Response Manipulation]]'
+  - '[[2FA Bypasses]]'
+  - '[[Account Takeover]]'
+  - '[[Response Manipulation]]'
+  - 'Add: mitm-attack, authentication-bypass'
 commands:
-- '[[Check Success Status]]'
-- '[[Success Check]]'
+  - '[[Check Success Status]]'
+  - '[[Success Check]]'
+services:
+  - 'Add: TLS'
+platforms:
+  - 'Add: Linux, Windows'
+mitre_techniques:
+  - 'T1111, T1556'
 ---
 
 # 2FA Bypass via Response Manipulation
