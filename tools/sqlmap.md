@@ -1,74 +1,115 @@
 ---
-id: fdef8438-49e5-4441-a74f-928238ac854c
-name: sqlmap
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:19.220959+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[SQLMap Dump a SQL Database By Exploiting a SQL Injection]]'
-platforms:
-- Web
+url: 'https://sqlmap.org'
 tags:
-- '[[Brute Force]]'
-- '[[Network]]'
-- '[[Service Attacks]]'
-- '[[SQL]]'
+  - sql-injection
+  - exploitation
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: Automated SQL injection detection and exploitation tool
+id: 0cb3c74d-fcaa-4e25-b356-a819dd464e96
+created_at: '2025-12-11T06:10:30.689Z'
+updated_at: '2025-12-11T06:10:30.689Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # sqlmap
+
+**Status**: Unverified
 
 ## Overview
 
-sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features and a broad range of switches lasting from database fingerprinting, over d
+sqlmap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over database servers.
 
 ## Description
 
-# Description
+It supports a wide range of database management systems and includes features for database fingerprinting, data fetching, and access to the underlying file system.
 
-sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features and a broad range of switches lasting from database fingerprinting, over data fetching from the database, to accessing the underlying file system and executing commands on the operating system via out-of-band connections.
+## Features
 
+- Feature 1: Automatic SQL injection detection
+- Feature 2: Support for multiple DBMS
+- Feature 3: Tamper scripts for evasion
 
+## Installation
 
-# Example
+### Requirements
 
+- Python 3.x
+- Git
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3281f239-fa6d-4285-a224-21f67fba90a8}}
+```bash
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+```
 
+## Basic Usage
 
+```bash
+python sqlmap.py --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `--tamper` | Use tamper script |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+python sqlmap.py -u "http://target.com/vuln.php?id=1"
+```
 
+### Example 2: Advanced Usage
 
+```bash
+python sqlmap.py -u "http://target.com" --tamper htmlencode --dbms mssql
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Exploit Public-Facing Application]]
+- [[Network Sniffing]]
 
-- Web
+### Tactics
 
-## Services
+- [[Collection]]
 
-- ms-sql
-- mysql
-- postgres
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[SQLMap Dump a SQL Database By Exploiting a SQL Injection]]
+- Detection method 1: Unusual HTTP traffic patterns
+- Detection method 2: sqlmap user-agent in logs
 
-## Tags
+## Related Procedures
 
-- [[Brute Force]]
-- [[Network]]
-- [[Service Attacks]]
-- [[SQL]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[Burp Suite]]
+- [[ZAP]]
+
+## References
+
+- Official documentation: https://sqlmap.org
+- Related resources: GitHub repository

@@ -1,43 +1,105 @@
 ---
-id: 0875b4fe-a762-4c91-a2fa-9be0672e7181
-name: CAT
+url: null
+tags:
+  - file-read
 type: tool
+platforms:
+  - Linux
+description: >-
+  Command-line utility to concatenate and display file contents, used for
+  verification in exploits.
+id: 96b74f2b-9213-4992-995d-6bd92e8ffbbe
+created_at: '2025-12-11T06:10:40.377Z'
+updated_at: '2025-12-11T06:10:40.377Z'
 verified: false
-created_at: '2019-08-28T21:17:30.767231+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Bash Download a File from a Listener]]'
-- '[[Bash Upload a File to a Listener]]'
-- '[[Concatenate Two Files into a New File]]'
-- '[[PHP Command Execution with Base64 Encoded Payload]]'
-- '[[Print a Files Contents]]'
-- '[[cmd-be3fbbae]]'
-- '[[masscan portscan list of ips]]'
-- '[[npm Install a Package with Preinstall Scripts]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort amass results into domain file]]'
-- '[[sort amass results into ip file]]'
-- '[[sort and tail # of results]]'
-- '[[sort massdns output for ips]]'
-- '[[sort massdns output for online hosts]]'
+validated: true
+submitted: true
 ---
+# cat
 
-# CAT
+**Status**: Unverified
 
 ## Overview
 
-Perl script which scans cisco routers for common vulnerabilities. cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo 
+cat is a standard Unix utility for reading and displaying file contents, often used to verify the results of file writes or command executions in security testing.
 
 ## Description
 
-Perl script which scans cisco routers for common vulnerabilities.
+Simple tool for outputting file data to stdout, useful in post-exploitation verification.
 
+## Features
 
+- File content display
+- Concatenation
 
-cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo
+## Installation
 
+### Requirements
 
+- Standard on Unix-like systems
 
+### Install Commands
 
+N/A
 
+## Basic Usage
 
+```bash
+cat --help
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-n` | Number lines |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+cat file.txt
+```
+
+### Example 2: Advanced Usage
+
+```bash
+cat /tmp/vakzz
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Use Alternate Authentication Material]]
+
+### Tactics
+
+- [[Discovery]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- File access logs
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/curl]]
+
+## References
+
+- cat man page

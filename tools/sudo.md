@@ -1,71 +1,111 @@
 ---
-id: 2f6b92d2-0bcc-4770-9e43-36172f701612
-name: sudo
-type: tool
-verified: true
-created_at: '2020-02-28T02:56:35.309492+00:00'
-updated_at: '2023-05-30T19:51:51.199938+00:00'
-commands:
-- '[[Find List All Files with Setuid Permissions Set]]'
-- '[[Perl Spawn a Root Shell Using Sudo]]'
-- '[[cmd-cde9bd25]]'
-- '[[find Search for Files with SUID Rights]]'
-- '[[systemctl Link a Service Unit File]]'
-platforms:
-- Linux
+url: 'https://www.sudo.ws/'
 tags:
-- '[[administrator]]'
-- '[[privileges]]'
+  - privilege
+  - admin
+type: tool
+platforms:
+  - Linux
+  - macOS
+description: 'Execute commands as another user, typically root'
+id: 4ddb7ae6-a8e0-4df7-8623-7e2b10c25ea6
+created_at: '2025-12-11T06:10:15.378Z'
+updated_at: '2025-12-11T06:10:15.378Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # sudo
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to giv
+sudo allows running commands with elevated privileges, used in testing for changing file ownership in exploit setups.
 
 ## Description
 
-# Description
+Essential for administrative tasks like chown in controlled environments to simulate permission scenarios.
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to give a user root privileges, this introduces a massive security risk and is considered a bad practice. Administrators may set specific commands to be whitelisted instead of all (such as docker), but this is often not sufficient, as many programs running with sudo privileges would allow attackers to escalate to root.
+## Features
 
+- Feature 1: User switching
+- Feature 2: Command execution
+- Feature 3: Configuration via sudoers
 
+## Installation
 
-# Example
+### Requirements
 
+- Installed on most Unix-like systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_cde9bd25-24c4-4f03-8766-af251aed3a82}}
+```bash
+sudo apt install sudo
+```
 
+## Basic Usage
 
+```bash
+sudo --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-u` | Specify user |
+| `-k` | Invalidate timestamp |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+sudo chown user:group file
+```
 
+### Example 2: Advanced Usage
 
+```bash
+sudo -u git chown git:git /tmp/ggg
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Abuse Elevation Control Mechanism]]
 
-- Linux
+### Tactics
 
-## Commands (2)
+- [[Privilege Escalation]]
 
-- [[sudo -l]]
-- [[description]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[administrator]]
-- [[privileges]]
+- Detection method 1: Audit sudo logs
+- Detection method 2: Monitor privilege escalations
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[su]]
+- [[pkexec]]
+
+## References
+
+- Official documentation: https://www.sudo.ws/docs/

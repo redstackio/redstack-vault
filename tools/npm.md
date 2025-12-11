@@ -1,62 +1,114 @@
 ---
-id: 05ebd866-cc9e-4d05-80ba-c885e4c0e679
-name: npm
-type: tool
-verified: true
-created_at: '2020-03-03T02:00:06.731825+00:00'
-updated_at: '2023-05-30T19:51:01.126706+00:00'
-commands:
-- '[[npm Install a Package with Preinstall Scripts]]'
-platforms:
-- BSD
-- Linux
-- Mac OSx
-- Windows
+url: 'https://www.npmjs.com/'
 tags:
-- '[[package manager]]'
+  - npm
+  - package-manager
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: Node Package Manager for managing JavaScript packages
+id: 8fbe060b-240e-4720-9ea3-69ea7b165bd5
+created_at: '2025-12-11T06:10:40.139Z'
+updated_at: '2025-12-11T06:10:40.139Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # npm
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-npm is the package manager for the NOde JavaScript platform. It putsmodules in place so that node can find them, and manages dependency conflicts intelligently. 
+npm is the default package manager for Node.js, used to install, publish, and manage dependencies in JavaScript projects.
 
 ## Description
 
-# Description
+It interacts with the NPM registry to fetch and publish packages, commonly used in development for dependency management but exploitable in supply chain attacks like dependency confusion.
 
-npm is the package manager for the NOde JavaScript platform. It putsmodules in place so that node can find them, and manages dependency conflicts intelligently.
+## Features
 
+- Package installation and publishing.
+- Dependency resolution.
+- Scripting and automation.
 
+## Installation
 
-# Example
+### Requirements
 
+- Node.js installed.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_117268c7-a771-473c-8253-ec2e6a64997e}}
+```bash
+# Typically installed with Node.js
+node -v  # Verify installation
+```
 
+## Basic Usage
 
+```bash
+npm --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `--loglevel=verbose` | Verbose output |
 
+## Examples
 
+### Example 1: Basic Usage
 
-## Platforms
+```bash
+npm install express
+```
 
-- BSD
-- Linux
-- Mac OSx
-- Windows
+### Example 2: Advanced Usage
 
-## Commands (1)
+```bash
+npm publish --access public
+```
 
-- [[npm Install a Package with Preinstall Scripts]]
+## MITRE ATT&CK Mapping
 
-## Tags
+This tool is commonly associated with:
 
-- [[package manager]]
+### Techniques
 
+- [[Supply Chain Compromise]]
+- [[Command-Line Interface]]
 
+### Tactics
+
+- [[Initial Access]]
+- [[Execution]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Monitor registry accesses.
+- Audit package installations.
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[Node.js]]
+
+## References
+
+- https://docs.npmjs.com/

@@ -1,69 +1,117 @@
 ---
-id: c678776a-c660-48d1-a56a-55b2d1f5d9cc
+id: f02ce370-55ae-46d2-ae32-00d65b42809c
 name: Docker
 type: tool
-verified: true
-created_at: '2020-02-12T23:50:36.366144+00:00'
-updated_at: '2023-05-30T01:04:55.193127+00:00'
-commands:
-- '[[Check Group Membership of a User]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[dnsvalidator update dns servers (DOCKER)]]'
+verified: false
+created_at: '2025-12-11T06:10:28.479Z'
+updated_at: '2025-12-11T06:10:28.479Z'
 platforms:
-- Linux
+  - Linux
 tags:
-- '[[Docker]]'
-- '[[Hypervisors]]'
+  - containerization
+  - deployment
+url: ''
+description: >-
+  Containerization platform used for installing and running GitLab Enterprise
+  Edition.
+validated: true
+submitted: true
 ---
 
 # Docker
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containe
+Docker is a platform for developing, shipping, and running applications inside containers, commonly used for deploying services like GitLab in isolated environments.
 
 ## Description
 
-# Description
+Enables containerization of GitLab Enterprise Edition, allowing easy setup and management of the application for testing vulnerabilities.
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containers share the kernel of the host operating system, making them more lightweight than traditional virtual machines. Containers are extremely versatile, as they can be built with specific very software requirements, making them not only excellent development environments, but also reliable environments for production applications and services.
+## Features
 
+- Feature 1: Container isolation for security testing
+- Feature 2: Easy deployment of complex applications
+- Feature 3: Portability across environments
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux host
+- Docker engine installed
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_074c76c5-56de-49ac-b522-4c7621c8a549}}
+```bash
+# Follow official Docker installation guide for your OS
+```
 
+## Basic Usage
 
+```bash
+docker --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-v, --version` | Show version |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+docker run -d gitlab/gitlab-ee:11.9.4-ee
+```
 
+### Example 2: Advanced Usage
 
+```bash
+docker run -d -p 80:80 gitlab/gitlab-ee:11.9.4-ee
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Escape to Host]]
+- [[Exploitation for Client Execution]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Execution]]
+- [[Persistence]]
 
-- [[Docker Mount a Host's Root Directory in a Container]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Docker]]
-- [[Hypervisors]]
+- Monitor container creation logs
+- Network traffic to Docker registries
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[Kubernetes]]
+- [[Podman]]
+
+## References
+
+- https://docs.docker.com
