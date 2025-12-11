@@ -1,71 +1,112 @@
 ---
-id: a331c1ff-0db6-454c-9f76-1aa67ec48d5e
-name: cURL
-type: tool
-verified: true
-created_at: '2020-02-14T23:56:13.171261+00:00'
-updated_at: '2023-05-30T19:56:10.869468+00:00'
-commands:
-- '[[curl Exploit a ShellShock Vulnerability]]'
-platforms:
-- Web
+url: 'https://curl.se/'
 tags:
-- '[[Web Applications]]'
+  - http
+  - authentication
+type: tool
+platforms:
+  - Linux
+  - macOS
+  - Windows
+description: Command-line tool for transferring data with URLs.
+id: 8d2b3ffb-b039-4438-bb83-9385bfcbdeeb
+created_at: '2025-12-11T03:48:06.073Z'
+updated_at: '2025-12-11T03:48:06.073Z'
+verified: false
+validated: true
+submitted: true
 ---
+# curl
 
-# cURL
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extr
+Curl is a command-line client for making HTTP requests, commonly used in security testing for API interactions and authentication testing.
 
 ## Description
 
-# Description
+Curl supports various protocols and authentication methods, including client certificates, making it suitable for exploiting leaked credentials.
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extremely useful in both single use cases and scripts.
+## Features
 
+- HTTP requests: GET, POST, etc.
+- Authentication: Basic, cert-based
+- Custom headers and data
 
+## Installation
 
-# Example
+### Requirements
 
+- Compatible OS
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3efa41e4-90cf-4cd4-afc5-6dbd9c1dbe5a}}
+```bash
+sudo apt install curl  # Debian-based
+```
 
+## Basic Usage
 
+```bash
+curl --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-u, --user` | Specify user and password |
+| `--cert` | Client certificate file |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+curl https://example.com
+```
 
+### Example 2: Advanced Usage
 
+```bash
+curl -u user: --cert cert.pem https://api.example.com
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Valid Accounts]]
 
-- Web
+### Tactics
 
-## Services
+- [[Initial Access]]
 
-- http
-- http
-- https
-- https
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[curl Make a POST Request with JSON Data]]
+- Monitor HTTP traffic for curl user-agents
+- Log authentication attempts
 
-## Tags
+## Related Procedures
 
-- [[Web Applications]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- #git
+
+## References
+
+- https://curl.se/docs

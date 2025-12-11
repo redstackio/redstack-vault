@@ -1,79 +1,118 @@
 ---
-id: 7e7f4297-8a04-4c6d-a583-d872b6addbb4
-name: Netcat
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:40.581707+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Create a Netcat Listener]]'
-- '[[Netcat Command]]'
-- '[[Netcat Download a File to a Listener]]'
-- '[[Netcat Download a File with a Listener]]'
-- '[[Netcat Upload a File to a Listener]]'
-- '[[Netcat Upload a File with a Listener]]'
-- '[[Netcat windows in listening mode on port 80]]'
-- '[[Netcat windows reverse shell is observed]]'
-platforms:
-- Linux
-- Windows
+url: null
 tags:
-- '[[Exfiltration]]'
-- '[[Network]]'
-- '[[Service Attacks]]'
+  - network
+  - payload-delivery
+type: tool
+platforms:
+  - Linux
+  - macOS
+  - Windows
+description: >-
+  Networking utility for reading from and writing to network connections using
+  TCP or UDP
+id: 411322d4-09dd-402a-8c62-2f320cb55062
+created_at: '2025-12-11T03:47:57.194Z'
+updated_at: '2025-12-11T03:47:57.194Z'
+verified: false
+validated: true
+submitted: true
 ---
+# netcat
 
-# Netcat
+**Status**: Unverified
 
 ## Overview
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-ric
+Netcat (nc) is a versatile networking tool used for sending data over networks, commonly in security testing for payload delivery and port scanning.
 
 ## Description
 
-# Description
+Netcat can create connections to send or receive data, making it ideal for exploiting network-based vulnerabilities like the BD-J chain on PS4/PS5.
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and investigation tool, since it can produce almost any kind of connection its user could need and has a number of built-in capabilities.
+## Features
 
-Netcat is most commonly used in penetration testing to connect to and receive connections from remote servers, often with a command prompt or Bash terminal session. Netcat is often set to either listen on a system and catch reverse shells, or connect to a remote system which is listening with a bind shell.
+- Feature 1: TCP/UDP connections
+- Feature 2: Data transfer
+- Feature 3: Port listening/scanning
 
-There are multiple versions of Netcat with slightly different features. The main difference between them is the OpenBSD version does not support the "-e" argument, which executes a program and connects the stdin/stdout/stderr to a network socket.
+## Installation
 
+### Requirements
 
+- Standard on most Unix-like systems
+- Install via package manager if needed
 
-# Example
+### Install Commands
 
+```bash
+sudo apt install netcat
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_e9aff3c0-e1ef-4e0e-9494-1ee946a32778}}
+```bash
+nc --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-v` | Verbose output |
+| `-l` | Listen mode |
 
-# Installation
+## Examples
 
-## Install on Debian/Ubuntu
+### Example 1: Basic Usage
 
+```bash
+nc target_ip 1337 < file.bin
+```
 
+### Example 2: Advanced Usage
 
-Note: Depending on the package manager and sources, Netcat may need to be installed using the name "nc" , "ncat" , or "netcat". 
+```bash
+nc -v target_ip 1337 < payload.bin
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Exploitation for Client Execution]]
+- [[Exploitation for Privilege Escalation]]
 
-## Platforms
+### Tactics
 
-- Linux
-- Windows
+- [[Execution]]
+- [[Privilege Escalation]]
 
-## Commands (1)
+## Detection
 
-- [[Netcat Connect to a Remote Server]]
+Indicators and methods for detecting this tool's usage:
 
-## Tags
+- Network traffic on unusual ports
+- Anomalous data transfers
 
-- [[Exfiltration]]
-- [[Network]]
-- [[Service Attacks]]
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
+
+- #socat
+- [[tools/netcat]]
+
+## References
+
+- Man page: nc(1)
+- Related resources

@@ -1,76 +1,113 @@
 ---
-id: 49abdcd0-2678-4552-9891-9d30feef3f45
-name: grep
-type: tool
-verified: true
-created_at: '2020-02-11T00:58:14.555909+00:00'
-updated_at: '2023-05-30T01:10:08.873532+00:00'
-commands:
-- '[[Find Files by Name and Execute a Command]]'
-- '[[Get-ChildItem Grep Files Recursively for a String]]'
-- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
-- '[[Grep Search Files for Keywords]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[Recursive Search for Text in All Files]]'
-- '[[Recursive Search for Text in Files with Regex]]'
-- '[[Search Raw Data for Human Readable Strings]]'
-- '[[Search for Text in a File (Case Insensitive)]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort massdns output for ips]]'
-platforms:
-- Linux
+url: null
 tags:
-- '[[Enumeration]]'
-- '[[File System]]'
+  - pattern-search
+  - credential-extraction
+type: tool
+platforms:
+  - Linux
+  - macOS
+  - Windows
+description: >-
+  Command-line utility for searching plain-text data sets for lines matching a
+  regular expression.
+id: 3e032f13-5175-4776-99e6-fc869aac9c2f
+created_at: '2025-12-11T03:47:59.561Z'
+updated_at: '2025-12-11T03:47:59.561Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # grep
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Gr
+grep is a standard Unix command-line tool used to search and extract data from files based on patterns, commonly employed in security for parsing logs or extracted files for credentials.
 
 ## Description
 
-# Description
+It supports regular expressions and is ideal for post-exploitation data mining, such as finding usernames and passwords in VPN cache files.
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Grep also supports regex and wildcards, and has extensive features handling formatting, output, and metrics.
+## Features
 
+- Regex pattern matching
+- File searching and output redirection
+- Recursive directory search
 
+## Installation
 
-# Example
+### Requirements
 
+- Available on most Unix-like systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_0db9e66b-66a6-404a-9eb0-ab25b367fb03}}
+```bash
+# Typically pre-installed; on Windows, use Git Bash or install via package manager
+```
 
+## Basic Usage
 
+```bash
+grep --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-E` | Extended regex |
+| `-r` | Recursive search |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+grep 'password' file.txt
+```
 
+### Example 2: Advanced Usage
 
+```bash
+grep -E 'username|password' /path/to/file
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Credential Dumping]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Credential Access]]
 
-- [[Grep Search Files for Keywords]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Enumeration]]
-- [[File System]]
+- Monitor command-line executions in logs
+- Detect unusual file access patterns
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/download.py]]
+
+## References
+
+- GNU grep documentation

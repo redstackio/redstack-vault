@@ -1,69 +1,111 @@
 ---
-id: 20519e34-b6f3-4ce8-81ec-ee4a45bbdfaa
-name: Ruby
-type: tool
-verified: true
-created_at: '2020-03-03T22:10:24.884830+00:00'
-updated_at: '2023-05-30T19:52:49.886515+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-- '[[WinRM.rb Open a Shell Connection to the Target]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+url: 'https://www.ruby-lang.org/'
 tags:
-- '[[language]]'
+  - scripting
+  - payload
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: Programming language used for scripting payload generation in exploits.
+id: 3352759c-d2db-4f78-9d6a-fe50cfa45c1e
+created_at: '2025-12-11T03:48:06.025Z'
+updated_at: '2025-12-11T03:48:06.025Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Ruby
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin. 
+Ruby is a dynamic programming language commonly used for scripting in security contexts, such as generating payloads for vulnerabilities like deserialization exploits.
 
 ## Description
 
-# Description
+In offensive security, Ruby is used to create custom scripts for payload generation, exploiting libraries like Sawyer in applications such as GitLab.
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin.
+## Features
 
+- Feature 1: Dynamic typing for rapid development
+- Feature 2: Gem ecosystem for extensions
+- Feature 3: Scripting for automation
 
+## Installation
 
-# Example
+### Requirements
 
+- OS with package manager
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_b47d8829-bbd4-43fe-81e9-50d04f76df8e}}
+```bash
+apt install ruby
+```
 
+## Basic Usage
 
+```bash
+ruby --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-v` | Verbose mode |
+| `-e` | Execute inline code |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ruby script.rb
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ruby -r gem script.rb
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Command-Line Interface]]
 
-- Linux
-- Mac OSx
-- Windows
+### Tactics
 
-## Commands (1)
+- [[Execution]]
 
-- [[ruby Execute TTY Shell]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[language]]
+- Monitor for ruby process executions with suspicious scripts
+- Log gem installations related to exploits
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[Python]]
+
+## References
+
+- https://www.ruby-lang.org/en/documentation/

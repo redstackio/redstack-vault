@@ -1,71 +1,100 @@
 ---
-id: 2f6b92d2-0bcc-4770-9e43-36172f701612
-name: sudo
-type: tool
-verified: true
-created_at: '2020-02-28T02:56:35.309492+00:00'
-updated_at: '2023-05-30T19:51:51.199938+00:00'
-commands:
-- '[[Find List All Files with Setuid Permissions Set]]'
-- '[[Perl Spawn a Root Shell Using Sudo]]'
-- '[[cmd-cde9bd25]]'
-- '[[find Search for Files with SUID Rights]]'
-- '[[systemctl Link a Service Unit File]]'
-platforms:
-- Linux
+url: 'https://www.sudo.ws/'
 tags:
-- '[[administrator]]'
-- '[[privileges]]'
+  - privilege-escalation
+type: tool
+platforms:
+  - Linux
+  - macOS
+description: Execute commands with elevated privileges
+id: 57996d83-b257-4c95-a7ec-b28c61cef543
+created_at: '2025-12-11T03:47:39.390Z'
+updated_at: '2025-12-11T03:47:39.390Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # sudo
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to giv
+sudo allows running commands as another user, often root, used in exploits for changing file permissions.
 
 ## Description
 
-# Description
+Essential for administrative tasks in testing environments, like chown in GitLab exploit setups.
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to give a user root privileges, this introduces a massive security risk and is considered a bad practice. Administrators may set specific commands to be whitelisted instead of all (such as docker), but this is often not sufficient, as many programs running with sudo privileges would allow attackers to escalate to root.
+## Features
+- User switching
+- Password caching
+- Configuration via sudoers
 
+## Installation
 
+### Requirements
+- Standard on Unix-like systems
 
-# Example
+### Install Commands
 
+```bash
+sudo apt install sudo
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_cde9bd25-24c4-4f03-8766-af251aed3a82}}
+```bash
+sudo --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-u` | Specify user |
+| `-g` | Specify group |
 
-# Installation
+## Examples
 
-## Install on Debian/Ubuntu
+### Example 1: Basic Usage
 
+```bash
+sudo chown root file
+```
 
+### Example 2: Advanced Usage
 
+```bash
+sudo -u git chown git:git file
+```
 
+## MITRE ATT&CK Mapping
 
+### Techniques
+- [[Abuse Elevation Control Mechanism]]
 
+### Tactics
+- [[Privilege Escalation]]
 
+## Detection
 
+- Audit sudo logs
+- Privilege change monitoring
 
-## Platforms
+## Related Procedures
 
-- Linux
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-## Commands (2)
+## Related Tools
+- #su
+- #pkexec
 
-- [[sudo -l]]
-- [[description]]
-
-## Tags
-
-- [[administrator]]
-- [[privileges]]
-
-
+## References
+- https://www.sudo.ws/man.html

@@ -1,69 +1,111 @@
 ---
-id: c678776a-c660-48d1-a56a-55b2d1f5d9cc
-name: Docker
-type: tool
-verified: true
-created_at: '2020-02-12T23:50:36.366144+00:00'
-updated_at: '2023-05-30T01:04:55.193127+00:00'
-commands:
-- '[[Check Group Membership of a User]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[dnsvalidator update dns servers (DOCKER)]]'
-platforms:
-- Linux
+url: null
 tags:
-- '[[Docker]]'
-- '[[Hypervisors]]'
+  - containerization
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: Containerization platform for running isolated environments.
+id: 81c6af11-a6cb-4d93-a75d-46058bb85ed6
+created_at: '2025-12-11T03:47:47.765Z'
+updated_at: '2025-12-11T03:47:47.765Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Docker
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containe
+Docker is used to run and manage containerized Kibana environments for testing and exploitation of vulnerabilities like the Kibana reporting RCE.
 
 ## Description
 
-# Description
+It allows pulling and running specific images, such as Kibana 7.12.0, in interactive mode to access internal binaries like headless_shell.
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containers share the kernel of the host operating system, making them more lightweight than traditional virtual machines. Containers are extremely versatile, as they can be built with specific very software requirements, making them not only excellent development environments, but also reliable environments for production applications and services.
+## Features
 
+- Container isolation: Run applications in sandboxed environments
+- Image management: Pull from repositories like docker.elastic.co
+- Interactive shells: For direct access to container filesystems
 
+## Installation
 
-# Example
+### Requirements
 
+- Supported OS
+- Internet access
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_074c76c5-56de-49ac-b522-4c7621c8a549}}
+```bash
+# Follow official Docker installation guide for your platform
+```
 
+## Basic Usage
 
+```bash
+docker --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `--rm` | Remove container after exit |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+docker run --rm -it docker.elastic.co/kibana/kibana:7.12.0 bash
+```
 
+### Example 2: Advanced Usage
 
+```bash
+docker pull docker.elastic.co/kibana/kibana:7.12.0
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Exploit Public-Facing Application]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Initial Access]]
 
-- [[Docker Mount a Host's Root Directory in a Container]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Docker]]
-- [[Hypervisors]]
+- Monitor Docker daemon logs for unauthorized pulls
+- Network monitoring for repository access
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/headless_shell]]
+
+## References
+
+- Official Docker documentation

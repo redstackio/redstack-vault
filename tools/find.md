@@ -1,87 +1,104 @@
 ---
-id: 1eaf0072-48c3-4b71-a42b-9336cc054641
-name: find
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:29.215711+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[Find Files by Name and Execute a Command]]'
-- '[[Find Files by Name]]'
-- '[[Find List All Files with Setuid Permissions Set]]'
-- '[[Fnd and Display All Nmap Scripts]]'
-- '[[Gobuster Command to Find Existent Directories]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[NSE hostmap-crtsh find subdomains by cert]]'
-- '[[Nmap Command to Find Directories From Robots.txt File]]'
-- '[[Nmap Command to Find Response Headers]]'
-- '[[Nmap Command to Find Trace Method]]'
-- '[[Nmap Enumerate HTTP with Vuln Scripts]]'
-- '[[Nmap Port Scan with Vuln Scripts]]'
-- '[[Search for Files Modified Within 60 Minutes]]'
-- '[[Sherlock Import Module and Enumerate Vulnerabilities]]'
-- '[[cmd-015c5798]]'
-- '[[cmd-90e9e6c8]]'
-- '[[find Search for Files with SUID Rights]]'
-- '[[find Search for Files with Wildcards]]'
-- '[[find Search for Multiple Files by Name]]'
-- '[[find Search for Writable Files by User]]'
-platforms:
-- Linux
+url: ''
 tags:
-- '[[Enumeration]]'
-- '[[File System]]'
+  - search
+  - filesystem
+type: tool
+platforms:
+  - Linux
+  - macOS
+description: File search utility
+id: 012c8f80-3837-4756-ac99-2c0f69e6be96
+created_at: '2025-12-11T03:47:39.613Z'
+updated_at: '2025-12-11T03:47:39.613Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # find
+
+**Status**: Unverified
 
 ## Overview
 
-Find is a standard Linux/Unix utility used for recursively searching a file system for files and folders, based on user-specified criteria. Find includes many options for restricting search results, including by name, type, permissions, owner, group, timestamps (MAC), and more. It is extremely usef
+find searches for files in a directory hierarchy.
 
 ## Description
 
-# Description
+Used for locating files like authorized_keys during verification.
 
-Find is a standard Linux/Unix utility used for recursively searching a file system for files and folders, based on user-specified criteria. Find includes many options for restricting search results, including by name, type, permissions, owner, group, timestamps (MAC), and more. It is extremely useful when enumerating a file system for vulnerabilities, as it can quickly identify files with SUID permissions, weak or incorrect permissions, and other attributes which make files and folders stand out. 
- 
- Note: Using find to search files and folders which the user lacks permissions to list will generate permission errors, and cause clutter in search results. For this reason, stderr is often piped into /dev/null.
+## Features
 
+- Feature 1: Name-based search
+- Feature 2: Type filtering
+- Feature 3: Permission checks
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on Unix-like systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_90e9e6c8-c80e-480d-a9f4-1ad2d14e7772}}
+```bash
+# Built-in
+```
 
+## Basic Usage
 
+```bash
+find --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-name` | Search by name |
+| `-type` | File type |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+find . -name '*.txt'
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[File and Directory Discovery]]
 
+### Tactics
 
-## Platforms
+- [[Discovery]]
 
-- Linux
+## Detection
 
-## Commands (2)
+Indicators and methods for detecting this tool's usage:
 
-- [[find $DIRECTORY -perm -4000 -ls 2>/dev/null]]
-- [[find Search for Files with SUID Rights]]
+- Command history logs
 
-## Tags
+## Related Procedures
 
-- [[Enumeration]]
-- [[File System]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- #locate
+- #grep
+
+## References
+
+- Man page: find(1)

@@ -1,65 +1,112 @@
 ---
-id: 43901596-eca4-48cd-a9b0-74291476b952
-name: tar
+id: d981e694-6c3e-41c0-ad96-6773b98908f8
 type: tool
-verified: true
-created_at: '2020-02-27T22:04:18.356559+00:00'
-updated_at: '2023-05-30T19:47:35.650015+00:00'
-commands:
-- '[[tar Archive a Folder with gzip]]'
-- '[[tar Bypass restricted shell checkpoint]]'
+verified: false
+created_at: '2025-12-11T03:48:05.881Z'
+updated_at: '2025-12-11T03:48:05.881Z'
 platforms:
-- Windows
+  - Linux
 tags:
-- '[[archive]]'
+  - archive
+url: ''
+description: Archiving utility for creating tarballs
+validated: true
+submitted: true
 ---
 
 # tar
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Tar is an archiving program designed to store multiple files in a single file, and to manipulate such archives. Tar also supports a number of compression schemes, including gzip, bzip2, xz, lzma, lzip, and lzop. 
+tar is a standard utility for creating and extracting tape archives, often used in exploits to package malicious payloads including symlinks.
 
 ## Description
 
-# Description
+In security testing, tar is used to create gzipped archives containing symlinks for exploitation of extraction vulnerabilities, as in GitLab import flaws.
 
-Tar is an archiving program designed to store multiple files in a single file, and to manipulate such archives. Tar also supports a number of compression schemes, including gzip, bzip2, xz, lzma, lzip, and lzop.
+## Features
 
+- Feature 1: Create archives with c
+- Feature 2: Gzip compression with z
+- Feature 3: Verbose output with v
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux or Unix-like system
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_b74fd06b-08d3-4c47-8214-32e1f5163ee2}}
+```bash
+# Built-in on most systems
+```
 
+## Basic Usage
 
+```bash
+tar --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `c` | Create archive |
+| `z` | Gzip |
+| `v` | Verbose |
+| `f` | File |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+tar cvf archive.tar dir
+```
 
+### Example 2: Advanced Usage
 
+```bash
+tar cvzf archive.tar.gz dir
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Exploit Public-Facing Application]]
 
-- Windows
+### Tactics
 
-## Commands (1)
+- [[Initial Access]]
 
-- [[tar Archive a Folder with gzip]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[archive]]
+- Scan archives for symlinks
+- Monitor tar operations in pipelines
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- #mkdir
+- #ln
+
+## References
+
+- man tar
