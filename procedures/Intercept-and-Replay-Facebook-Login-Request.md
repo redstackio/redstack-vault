@@ -77,7 +77,7 @@ Launch Burp Suite and set it as the proxy for the iOS device. Initiate the Faceb
 ```bash
 POST /api/auth/facebook HTTP/1.1
 Host: reverb.com
-{"fb_token":"EAAJ8Of8DF2IBAL5wChKjuRHSV2VEWpm7eCz2IMqqJy1lJJq8ooyQuKHcOXn6aZCZAIrCtClbrZBdUGhC3FbvncNYk1E0k7AOktEhDjUPwHPOh3x29JURSGIGPBlZCj5WlBHhHzI5KYAPbuXKiZBGTkKZABZATh9JjTqEDhRubYSEiTmhjeytx5moFH9naZB6XjZBRUMkmcbucFD9Vf8IoFZAD1LGngi6j5pXFGcTFPfBEudAZDZD"}
+{"fb_token":"EAAJ8Of8D..."}
 ```
 
 > Execute this in Burp's Repeater to replay the request. Expected output is a successful authentication response.
