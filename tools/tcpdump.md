@@ -1,68 +1,111 @@
 ---
-id: 519d3441-dc7b-4729-9a47-c2bd7d304874
-name: tcpdump
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:40.229526+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[tcpdump Intercept Packets on Loopback Interface]]'
-platforms:
-- Linux
+url: ''
 tags:
-- '[[data exposure]]'
-- '[[Network]]'
+  - network-analysis
+type: tool
+platforms:
+  - Linux
+  - Windows
+description: >-
+  Command-line packet analyzer mentioned as alternative for capturing network
+  traffic.
+id: 8009cbab-1269-4946-afb0-0fcd07e542a3
+created_at: '2025-12-13T09:01:21.736Z'
+updated_at: '2025-12-13T09:01:21.736Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # tcpdump
+
+**Status**: Unverified
 
 ## Overview
 
-Tcpdump prints out a description of the contents of packets on a network interface that match the boolean expression; the description is preceded by a time stamp, printed, by default, as hours,minutes, seconds, and fractions of a second since midnight.  It can also be run with the -w flag, which ca
+tcpdump is a command-line tool for capturing and analyzing network packets, alternative to Wireshark for traffic verification.
 
 ## Description
 
-# Description
+Used to capture HTTP requests and confirm conflicting headers in smuggling tests.
 
-Tcpdump prints out a description of the contents of packets on a network interface that match the boolean expression; the description is preceded by a time stamp, printed, by default, as hours,minutes, seconds, and fractions of a second since midnight.  It can also be run with the -w flag, which causes it to save the packet data to a file for later analysis, and/or with the -r flag, which causes it to read from a saved packet file rather than to read packets from a network interface.
+## Features
 
+- Feature 1: Packet dumping
+- Feature 2: Filtering expressions
+- Feature 3: Output to files
 
+## Installation
 
-Tcpdump is a priceless tool when it comes to penetration testing, as attackers can use it to monitor network traffic reaching a system and potentially derive sensitive information from the packet dumps.
+### Requirements
 
+- libpcap
 
+### Install Commands
 
-# Example
+```bash
+# On Ubuntu: sudo apt install tcpdump
+```
 
+## Basic Usage
 
+```bash
+tcpdump --help
+```
 
-{{EMBEDDED_COMMAND_49050e1d-dc03-4106-91df-bdf554795820}}
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-i` | Interface |
+| `-w` | Write to file |
 
+## Examples
 
-# Installation
+### Example 1: Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+tcpdump -i eth0
+```
 
+### Example 2: Advanced Usage
 
+```bash
+tcpdump -i eth0 tcp port 80 -w capture.pcap
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Network Sniffing]]
 
+### Tactics
 
+- [[Discovery]]
 
-## Platforms
+## Detection
 
-- Linux
+Indicators and methods for detecting this tool's usage:
 
-## Commands (1)
+- Detection method 1: tcpdump processes
+- Detection method 2: Packet capture files
 
-- [[tcpdump Intercept Packets on Loopback Interface]]
+## Related Procedures
 
-## Tags
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-- [[data exposure]]
-- [[Network]]
+## Related Tools
 
+- [[tools/Wireshark]]
 
+## References
+
+- Official documentation: https://www.tcpdump.org/manpages/tcpdump.1.html

@@ -1,76 +1,117 @@
 ---
-id: 49abdcd0-2678-4552-9891-9d30feef3f45
-name: grep
-type: tool
-verified: true
-created_at: '2020-02-11T00:58:14.555909+00:00'
-updated_at: '2023-05-30T01:10:08.873532+00:00'
-commands:
-- '[[Find Files by Name and Execute a Command]]'
-- '[[Get-ChildItem Grep Files Recursively for a String]]'
-- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
-- '[[Grep Search Files for Keywords]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[Recursive Search for Text in All Files]]'
-- '[[Recursive Search for Text in Files with Regex]]'
-- '[[Search Raw Data for Human Readable Strings]]'
-- '[[Search for Text in a File (Case Insensitive)]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort massdns output for ips]]'
-platforms:
-- Linux
+url: 'https://www.gnu.org/software/grep/'
 tags:
-- '[[Enumeration]]'
-- '[[File System]]'
+  - text-processing
+  - verification
+type: tool
+platforms:
+  - Linux
+  - macOS
+  - Windows
+description: >-
+  Command-line utility for searching plain-text data sets for lines matching a
+  regular expression, used for filtering command outputs.
+id: b6b33874-4c46-459d-bc62-9e5df8dc7f21
+created_at: '2025-12-13T09:00:34.685Z'
+updated_at: '2025-12-13T09:00:34.685Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # grep
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Gr
+grep is a standard Unix tool for pattern matching in text, commonly used in security workflows to filter and verify specific strings in command outputs, such as checking for poisoned ports in responses.
 
 ## Description
 
-# Description
+grep searches input for matches to a pattern and prints matching lines, making it essential for automating verification in exploit chains like cache poisoning.
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Grep also supports regex and wildcards, and has extensive features handling formatting, output, and metrics.
+## Features
 
+- Feature 1: Regular expression matching
+- Feature 2: Output filtering
+- Feature 3: Piping integration
 
+## Installation
 
-# Example
+### Requirements
 
+- Included in most Unix distributions
+- For Windows: Available via Git Bash or Cygwin
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_0db9e66b-66a6-404a-9eb0-ab25b367fb03}}
+```bash
+# On Debian/Ubuntu
+sudo apt install grep
+```
 
+## Basic Usage
 
+```bash
+grep --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-i, --ignore-case` | Ignore case distinctions |
+| `-r, --recursive` | Read all files under each directory |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+echo "test:1337" | grep ":1337"
+```
 
+### Example 2: Advanced Usage
 
+```bash
+curl example.com | grep "poisoned"
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Network Denial of Service]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Impact]]
 
-- [[Grep Search Files for Keywords]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Enumeration]]
-- [[File System]]
+- Detection method 1: Monitor shell command history
+- Detection method 2: Look for piped outputs in processes
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/awk]]
+- [[tools/sed]]
+
+## References
+
+- Official documentation: https://www.gnu.org/software/grep/manual/
+- Related resources: Man pages

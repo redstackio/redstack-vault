@@ -1,66 +1,97 @@
 ---
-id: 4a9502e7-7245-46f4-ba08-494ffb960646
-name: xxd
-type: tool
-verified: true
-created_at: '2020-02-19T21:46:31.103903+00:00'
-updated_at: '2023-05-30T19:49:31.668254+00:00'
-commands:
-- '[[xxd Convert Hex Dump to Binary]]'
-platforms:
-- Linux
+url: null
 tags:
-- '[[convert]]'
-- '[[data]]'
+  - hex-dump
+  - payload-verification
+type: tool
+platforms:
+  - Linux
+description: A hex dumping utility for viewing binary file contents.
+id: 1af7275a-777c-4092-aa4d-a09ffdb27b07
+created_at: '2025-12-13T09:01:21.817Z'
+updated_at: '2025-12-13T09:01:21.817Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # xxd
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
-
-xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. 
+xxd is a command-line tool that creates a hex dump of a given file or standard input, commonly used in security testing to inspect binary payloads for exploits.
 
 ## Description
+This tool is useful for verifying the structure of crafted binary data, such as AJP payloads in request smuggling attacks, by displaying hexadecimal and ASCII representations.
 
-# Description
+## Features
+- Hexadecimal dumping
+- ASCII side-by-side view
+- Reverse dumping capability
 
-xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.
+## Installation
 
+### Requirements
+- Linux system (typically pre-installed on many distributions)
 
+### Install Commands
 
-# Example
+```bash
+sudo apt install vim-common  # If not installed
+```
 
+## Basic Usage
 
+```bash
+xxd --help
+```
 
-{{EMBEDDED_COMMAND_72d514b3-35d8-4732-ab46-b9105b060e12}}
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-p` | Plain hex output |
 
+## Examples
 
-# Installation
+### Example 1: Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+xxd data2
+```
 
+### Example 2: Advanced Usage
 
+```bash
+xxd -p data2
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
+- [[Exploit Public-Facing Application]]
 
+### Tactics
+- [[Initial Access]]
 
+## Detection
+Indicators and methods for detecting this tool's usage:
+- Command execution logs showing xxd usage
+- File access patterns for binary files
 
+## Related Procedures
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-## Platforms
+## Related Tools
 
-- Linux
-
-## Commands (1)
-
-- [[xxd Convert Hex Dump to Binary]]
-
-## Tags
-
-- [[convert]]
-- [[data]]
-
-
+## References
+- Man page: xxd(1)

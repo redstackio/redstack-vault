@@ -1,62 +1,100 @@
 ---
-id: 05ebd866-cc9e-4d05-80ba-c885e4c0e679
-name: npm
-type: tool
-verified: true
-created_at: '2020-03-03T02:00:06.731825+00:00'
-updated_at: '2023-05-30T19:51:01.126706+00:00'
-commands:
-- '[[npm Install a Package with Preinstall Scripts]]'
-platforms:
-- BSD
-- Linux
-- Mac OSx
-- Windows
+url: null
 tags:
-- '[[package manager]]'
+  - package-manager
+type: tool
+platforms:
+  - Linux
+description: Package manager for Node.js to install dependencies.
+id: 1400f611-77ec-4a10-b1ff-c4a8a2bdf563
+created_at: '2025-12-13T09:01:22.055Z'
+updated_at: '2025-12-13T09:01:22.056Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # npm
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-npm is the package manager for the NOde JavaScript platform. It putsmodules in place so that node can find them, and manages dependency conflicts intelligently. 
+npm is the default package manager for Node.js, used to install and manage packages like Express.
 
 ## Description
 
-# Description
+Facilitates dependency installation for Node.js projects.
 
-npm is the package manager for the NOde JavaScript platform. It putsmodules in place so that node can find them, and manages dependency conflicts intelligently.
+## Features
+
+- Install packages
+- Manage versions
+- Scripts execution
+
+## Installation
+
+### Requirements
+
+- Node.js
+
+### Install Commands
+
+```bash
+# Comes with Node.js
+```
+
+## Basic Usage
+
+```bash
+npm install package
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `install` | Install package |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+npm install express
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
 
 
 
-# Example
+### Tactics
 
 
 
-{{EMBEDDED_COMMAND_117268c7-a771-473c-8253-ec2e6a64997e}}
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Monitor npm install commands
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/Node-js]]
 
-## Platforms
+## References
 
-- BSD
-- Linux
-- Mac OSx
-- Windows
-
-## Commands (1)
-
-- [[npm Install a Package with Preinstall Scripts]]
-
-## Tags
-
-- [[package manager]]
-
-
+- npm documentation

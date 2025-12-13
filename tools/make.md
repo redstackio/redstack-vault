@@ -1,72 +1,100 @@
 ---
-id: 6461a9ff-fd66-4a07-8536-16eea9f811c0
-name: make
-type: tool
-verified: true
-created_at: '2020-02-27T20:25:07.916749+00:00'
-updated_at: '2023-05-30T19:50:22.128974+00:00'
-commands:
-- '[[Uniscan Command to Scan the Application]]'
-- '[[make Compile an Application with a Makefile]]'
-- '[[rbash Escape using make to launch bash]]'
-platforms:
-- Linux
+url: null
 tags:
-- '[[Build]]'
+  - build
+type: tool
+platforms:
+  - Linux
+description: Build automation tool to compile software from source.
+id: 551213aa-59b3-4b81-925d-2ccd98d6f41d
+created_at: '2025-12-13T09:01:22.035Z'
+updated_at: '2025-12-13T09:01:22.035Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # make
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-The GNU make utility is used to automatically determine which pieces of a large program need to be recompiled, and issue the appropriate commands to recompile them. To prepare to use make, you must write a Makefile that describes the relationship among files in the program, and the states of comman
+make is a build automation tool that controls the generation of executables from source code.
 
 ## Description
 
-# Description
+Used to compile HAProxy with TARGET=linux2628.
 
-The GNU make utility is used to automatically determine which pieces of a large program need to be recompiled, and issue the appropriate commands to recompile them. To prepare to use make, you must write a Makefile that describes the relationship among files in the program, and the states of commands for updating each file.
+## Features
 
+- Dependency tracking
+- Parallel builds
+- Makefile support
 
+## Installation
 
-Basic Makefile which compiles a single .c file:
-
-
-
-{{EMBEDDED_CODE_7aac1771-0261-4151-9df6-c1f5c7a61fb1}}
-
-
-
-
-
-{{EMBEDDED_COMMAND_6a811acc-e73f-46f3-a77b-4d0ab2584a83}}
-
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-
-
-
-
-
-
-
-
-## Platforms
+### Requirements
 
 - Linux
 
-## Commands (1)
+### Install Commands
 
-- [[make Compile an Application with a Makefile]]
+```bash
+apt install make
+```
 
-## Tags
+## Basic Usage
 
-- [[Build]]
+```bash
+make
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `TARGET` | Build target |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+make TARGET=linux2628
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
 
 
+
+### Tactics
+
+
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Monitor compilation commands
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+
+
+## References
+
+- make documentation

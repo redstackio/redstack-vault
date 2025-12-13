@@ -1,79 +1,113 @@
 ---
-id: 7e7f4297-8a04-4c6d-a583-d872b6addbb4
-name: Netcat
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:40.581707+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Create a Netcat Listener]]'
-- '[[Netcat Command]]'
-- '[[Netcat Download a File to a Listener]]'
-- '[[Netcat Download a File with a Listener]]'
-- '[[Netcat Upload a File to a Listener]]'
-- '[[Netcat Upload a File with a Listener]]'
-- '[[Netcat windows in listening mode on port 80]]'
-- '[[Netcat windows reverse shell is observed]]'
-platforms:
-- Linux
-- Windows
+url: 'https://nmap.org/ncat/'
 tags:
-- '[[Exfiltration]]'
-- '[[Network]]'
-- '[[Service Attacks]]'
+  - network
+  - exploitation
+type: tool
+platforms:
+  - Linux
+  - macOS
+description: >-
+  Networking utility for reading/writing across network connections, useful for
+  raw HTTP requests.
+id: 0d679ef1-1fa8-4baf-bb12-46e3d40871e6
+created_at: '2025-12-13T09:01:22.508Z'
+updated_at: '2025-12-13T09:01:22.508Z'
+verified: false
+validated: true
+submitted: true
 ---
+# netcat
 
-# Netcat
+**Status**: Unverified
 
 ## Overview
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-ric
+Netcat (nc) is a networking tool for creating TCP/UDP connections, often used in security for sending raw data and exploiting network vulnerabilities.
 
 ## Description
 
-# Description
+It allows low-level control over network packets, making it ideal for crafting custom HTTP requests in exploits like request smuggling.
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and investigation tool, since it can produce almost any kind of connection its user could need and has a number of built-in capabilities.
+## Features
 
-Netcat is most commonly used in penetration testing to connect to and receive connections from remote servers, often with a command prompt or Bash terminal session. Netcat is often set to either listen on a system and catch reverse shells, or connect to a remote system which is listening with a bind shell.
+- Feature 1: TCP/UDP client/server
+- Feature 2: Raw data transmission
+- Feature 3: Port scanning capabilities
 
-There are multiple versions of Netcat with slightly different features. The main difference between them is the OpenBSD version does not support the "-e" argument, which executes a program and connects the stdin/stdout/stderr to a network socket.
+## Installation
 
+### Requirements
 
+- Available on most Unix systems
 
-# Example
+### Install Commands
 
+```bash
+# On Debian/Ubuntu
+sudo apt install netcat
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_e9aff3c0-e1ef-4e0e-9494-1ee946a32778}}
+```bash
+nc --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-v` | Verbose mode |
+| `-l` | Listen mode |
 
-# Installation
+## Examples
 
-## Install on Debian/Ubuntu
+### Example 1: Basic Usage
 
+```bash
+nc target.com 80
+```
 
+### Example 2: Advanced Usage
 
-Note: Depending on the package manager and sources, Netcat may need to be installed using the name "nc" , "ncat" , or "netcat". 
+```bash
+echo 'GET / HTTP/1.1\r\nHost: target.com\r\n\r\n' | nc target.com 80
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Exploit Public-Facing Application]]
 
-## Platforms
+### Tactics
 
-- Linux
-- Windows
+- [[Execution]]
 
-## Commands (1)
+## Detection
 
-- [[Netcat Connect to a Remote Server]]
+Indicators and methods for detecting this tool's usage:
 
-## Tags
+- Detection method 1: Monitor for nc processes in logs
+- Detection method 2: Detect raw HTTP traffic anomalies
 
-- [[Exfiltration]]
-- [[Network]]
-- [[Service Attacks]]
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
+
+- [[tools/curl]]
+
+## References
+
+- Official documentation: https://nmap.org/ncat/guide.html

@@ -1,43 +1,89 @@
 ---
-id: 0875b4fe-a762-4c91-a2fa-9be0672e7181
-name: CAT
+url: ''
+tags:
+  - shell
 type: tool
+platforms:
+  - Linux
+description: Concatenates and outputs files.
+id: 761e7a9b-4d46-464a-8bc6-a25d659ec4fc
+created_at: '2025-12-13T09:01:22.290Z'
+updated_at: '2025-12-13T09:01:22.290Z'
 verified: false
-created_at: '2019-08-28T21:17:30.767231+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Bash Download a File from a Listener]]'
-- '[[Bash Upload a File to a Listener]]'
-- '[[Concatenate Two Files into a New File]]'
-- '[[PHP Command Execution with Base64 Encoded Payload]]'
-- '[[Print a Files Contents]]'
-- '[[cmd-be3fbbae]]'
-- '[[masscan portscan list of ips]]'
-- '[[npm Install a Package with Preinstall Scripts]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort amass results into domain file]]'
-- '[[sort amass results into ip file]]'
-- '[[sort and tail # of results]]'
-- '[[sort massdns output for ips]]'
-- '[[sort massdns output for online hosts]]'
+validated: true
+submitted: true
 ---
+# Cat
 
-# CAT
+**Status**: Unverified
 
 ## Overview
 
-Perl script which scans cisco routers for common vulnerabilities. cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo 
+Cat is used to append files or pipe contents, common in payload assembly and delivery.
 
 ## Description
 
-Perl script which scans cisco routers for common vulnerabilities.
+Versatile for combining files or sending data to other tools like curl.
 
+## Features
 
+- File concatenation
+- Piping
 
-cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo
+## Installation
 
+Built-in.
 
+## Basic Usage
 
+```bash
+cat --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| (none) | N/A |
 
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+cat file.txt >> target.txt
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Exploit Public-Facing Application]]
+
+### Tactics
+
+- [[Execution]]
+
+## Detection
+
+- Monitor file operations
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/head]]
+
+## References
+
+- Man page cat

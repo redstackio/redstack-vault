@@ -1,65 +1,101 @@
 ---
-id: 43901596-eca4-48cd-a9b0-74291476b952
-name: tar
-type: tool
-verified: true
-created_at: '2020-02-27T22:04:18.356559+00:00'
-updated_at: '2023-05-30T19:47:35.650015+00:00'
-commands:
-- '[[tar Archive a Folder with gzip]]'
-- '[[tar Bypass restricted shell checkpoint]]'
-platforms:
-- Windows
+url: null
 tags:
-- '[[archive]]'
+  - archive
+type: tool
+platforms:
+  - Linux
+description: Tool to extract and create tar archives.
+id: 3f0427d0-94e2-44d8-b3c5-a3eb64d575e7
+created_at: '2025-12-13T09:01:22.040Z'
+updated_at: '2025-12-13T09:01:22.040Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # tar
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Tar is an archiving program designed to store multiple files in a single file, and to manipulate such archives. Tar also supports a number of compression schemes, including gzip, bzip2, xz, lzma, lzip, and lzop. 
+tar is a utility for archiving files, often used with compression like gzip.
 
 ## Description
 
-# Description
+Used to extract HAProxy tarball.
 
-Tar is an archiving program designed to store multiple files in a single file, and to manipulate such archives. Tar also supports a number of compression schemes, including gzip, bzip2, xz, lzma, lzip, and lzop.
+## Features
+
+- Create archives
+- Extract files
+- Compression support
+
+## Installation
+
+### Requirements
+
+- Standard on Linux
+
+### Install Commands
+
+```bash
+# Built-in
+```
+
+## Basic Usage
+
+```bash
+tar xvf file.tar
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `x` | Extract |
+| `z` | Gzip |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+tar zxvf file.tar.gz
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
 
 
 
-# Example
+### Tactics
 
 
 
-{{EMBEDDED_COMMAND_b74fd06b-08d3-4c47-8214-32e1f5163ee2}}
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Monitor archive operations
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
 
 
 
-# Installation
+## References
 
-## Install on Debian/Ubuntu
-
-
-
-
-
-
-
-
-
-## Platforms
-
-- Windows
-
-## Commands (1)
-
-- [[tar Archive a Folder with gzip]]
-
-## Tags
-
-- [[archive]]
-
-
+- tar man page

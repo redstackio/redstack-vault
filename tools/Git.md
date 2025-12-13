@@ -1,74 +1,103 @@
 ---
-id: 6d3beade-3d0b-400f-b6e6-6aaa3664c1dd
-name: Git
-type: tool
-verified: true
-created_at: '2020-02-20T04:34:09.669877+00:00'
-updated_at: '2023-05-30T19:49:44.196122+00:00'
-commands:
-- '[[Git Download and Install nps_payload]]'
-- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
-- '[[Git List a Git Repository''s Commit Messages]]'
-- '[[Uniscan Command to Scan the Application]]'
-- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+url: ''
 tags:
-- '[[backup]]'
-- '[[File System]]'
+  - version-control
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: Version control system for cloning repositories.
+id: 69f31dc9-ecda-4722-bb92-8b23a86a58a9
+created_at: '2025-12-13T09:01:22.321Z'
+updated_at: '2025-12-13T09:01:22.321Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Git
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. Through Git's version control, users can track modifications, test changes, roll back updates, etc., all of which is tracked and logged. Direct
+Git is a distributed version control system used to clone and manage code repositories, essential for setting up exploit environments.
 
 ## Description
 
-# Description
+In offensive security, Git is commonly used to obtain proof-of-concept code or setups from GitHub for vulnerability reproduction.
 
-Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. Through Git's version control, users can track modifications, test changes, roll back updates, etc., all of which is tracked and logged. Directories under Git control (aka a Git repo) will have a ".git" subdirectory, which contains all relevant version control information for tracking some or all of the files and folders in the current directory. Git repos will often disclose unintended data in the logs and past commits, which may include old versions and source code, passwords, encryption keys, etc.
+## Features
 
+- Clone repositories
+- Manage branches
+- Track changes
 
+## Installation
 
-# Example
+### Requirements
 
+- Internet access
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_e8bad82f-9c87-414b-b192-8d7148f4ec39}}
+```bash
+sudo apt install git  # On Debian-based systems
+```
 
+## Basic Usage
 
+```bash
+git --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+git clone https://github.com/example/repo.git
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Exploit Public-Facing Application]]
 
+### Tactics
 
-## Platforms
+- [[Initial Access]]
 
-- Linux
-- Mac OSx
-- Windows
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[Git List a Git Repository's Commit History]]
+- Monitor command-line executions for git clone
+- Check network traffic to GitHub
 
-## Tags
+## Related Procedures
 
-- [[backup]]
-- [[File System]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/docker-compose]]
+
+## References
+
+- https://git-scm.com/

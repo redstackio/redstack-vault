@@ -1,69 +1,109 @@
 ---
-id: 20519e34-b6f3-4ce8-81ec-ee4a45bbdfaa
-name: Ruby
-type: tool
-verified: true
-created_at: '2020-03-03T22:10:24.884830+00:00'
-updated_at: '2023-05-30T19:52:49.886515+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-- '[[WinRM.rb Open a Shell Connection to the Target]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+url: null
 tags:
-- '[[language]]'
+  - programming
+  - scripting
+type: tool
+platforms:
+  - Linux
+description: Programming language used to script attacker servers.
+id: d7ca8c18-b0b8-4463-ae92-7e6b03497e51
+created_at: '2025-12-13T09:00:27.270Z'
+updated_at: '2025-12-13T09:00:27.270Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Ruby
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin. 
+Ruby is a dynamic programming language used for scripting web servers in offensive security, particularly with frameworks like Sinatra for exploit delivery.
 
 ## Description
 
-# Description
+In this context, Ruby scripts the attacker server, binding to 0.0.0.0 and defining routes for XXE payloads.
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin.
+## Features
 
+- Feature 1: Easy syntax
+- Feature 2: Gem package management
+- Feature 3: Web framework support
 
+## Installation
 
-# Example
+### Requirements
 
+- OS package manager
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_b47d8829-bbd4-43fe-81e9-50d04f76df8e}}
+```bash
+apt install ruby
+```
 
+## Basic Usage
 
+```bash
+ruby -v
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-r` | Require library |
+| `-e` | Execute code |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ruby script.rb
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ruby -rsinatra server.rb
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Command-Line Interface]]
 
-- Linux
-- Mac OSx
-- Windows
+### Tactics
 
-## Commands (1)
+- [[Execution]]
 
-- [[ruby Execute TTY Shell]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[language]]
+- Detection method 1: Monitor ruby processes
+- Detection method 2: Check for gem installations
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/Sinatra]]
+
+## References
+
+- Official documentation: https://ruby-lang.org

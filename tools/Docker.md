@@ -1,69 +1,114 @@
 ---
-id: c678776a-c660-48d1-a56a-55b2d1f5d9cc
-name: Docker
-type: tool
-verified: true
-created_at: '2020-02-12T23:50:36.366144+00:00'
-updated_at: '2023-05-30T01:04:55.193127+00:00'
-commands:
-- '[[Check Group Membership of a User]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[dnsvalidator update dns servers (DOCKER)]]'
-platforms:
-- Linux
+url: 'https://www.docker.com'
 tags:
-- '[[Docker]]'
-- '[[Hypervisors]]'
+  - containerization
+  - setup
+type: tool
+platforms:
+  - Linux
+  - Windows
+  - macOS
+description: >-
+  Containerization platform for running and managing applications in isolated
+  environments.
+id: e428e90d-0029-4de6-8376-38db1445fe6d
+created_at: '2025-12-13T09:01:22.391Z'
+updated_at: '2025-12-13T09:01:22.391Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Docker
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containe
+Docker is a platform for developing, shipping, and running applications inside containers, commonly used in security testing to create reproducible environments for vulnerabilities like the Tomcat request smuggling.
 
 ## Description
 
-# Description
+Docker enables isolation of applications, making it ideal for setting up vulnerable services without affecting the host system. In this context, it's used to deploy and manage Tomcat instances.
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containers share the kernel of the host operating system, making them more lightweight than traditional virtual machines. Containers are extremely versatile, as they can be built with specific very software requirements, making them not only excellent development environments, but also reliable environments for production applications and services.
+## Features
 
+- Container management: Run, stop, and exec into containers
+- Port mapping: Expose container ports to host
+- Image pulling: From repositories like Docker Hub
 
+## Installation
 
-# Example
+### Requirements
 
+- Supported OS (Linux preferred)
+- Internet access for pulling images
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_074c76c5-56de-49ac-b522-4c7621c8a549}}
+```bash
+# For Ubuntu: sudo apt install docker.io
+```
 
+## Basic Usage
 
+```bash
+docker --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-d` | Detached mode |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+docker run -d tomcat:10.1.13
+```
 
+### Example 2: Advanced Usage
 
+```bash
+docker exec -it container_name /bin/sh
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Exploit Public-Facing Application]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Initial Access]]
 
-- [[Docker Mount a Host's Root Directory in a Container]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Docker]]
-- [[Hypervisors]]
+- Monitor Docker daemon logs
+- Check for unexpected container deployments
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/Kubernetes]]
+
+## References
+
+- https://docs.docker.com

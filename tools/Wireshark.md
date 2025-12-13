@@ -1,88 +1,111 @@
 ---
-id: a9a453f7-8d8e-4ee8-b0df-5859a61a3fac
-name: Wireshark
-type: tool
-verified: false
-created_at: '2019-08-28T21:17:41.872382+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+url: ''
 tags:
-- '[[Enumeration]]'
-- '[[Network]]'
-commands:
-- '[[Tshark Extract Hex and ASCII Dump from a Pcap]]'
+  - network-analysis
+type: tool
+platforms:
+  - Linux
+  - Windows
+description: >-
+  Network protocol analyzer to capture and verify HTTP traffic showing
+  conflicting headers.
+id: e982e0a7-2c45-45f0-a45b-94b562d8bfc3
+created_at: '2025-12-13T09:01:21.746Z'
+updated_at: '2025-12-13T09:01:21.746Z'
+verified: false
+validated: true
+submitted: true
 ---
-
 # Wireshark
+
+**Status**: Unverified
 
 ## Overview
 
-Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of net
+Wireshark is a network protocol analyzer used to capture and inspect packet-level data, ideal for verifying vulnerabilities in HTTP traffic.
 
 ## Description
 
-# Description
+In security operations, it's used to analyze requests for anomalies like conflicting headers in HTTP smuggling tests.
 
+## Features
 
+- Feature 1: Packet capturing and filtering
+- Feature 2: Protocol dissection
+- Feature 3: Exportable captures
 
-Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of networking experts across the globe. It is the continuation of a project that started in 1998. Wireshark has a rich feature set which includes the following:
+## Installation
 
+### Requirements
 
+- libpcap on Linux
 
-- Deep inspection of hundreds of protocols, with more being added all the time
+### Install Commands
 
-- Live capture and offline analysis
+```bash
+# On Ubuntu: sudo apt install wireshark
+```
 
-- Standard three-pane packet browser
+## Basic Usage
 
-- Multi-platform: Runs on Windows, Linux, OS X, Solaris, FreeBSD, NetBSD, and many others
+```bash
+wireshark
+```
 
-- Captured network data can be browsed via a GUI, or via the TTY-mode TShark utility
+### Common Options
 
-- The most powerful display filters in the industry
+| Option | Description |
+|--------|-------------|
+| `-i` | Interface to capture | 
+| `-f` | Capture filter |
 
-- Rich VoIP analysis
+## Examples
 
-- Capture files compressed with gzip can be decompressed on the fly
+### Example 1: Basic Usage
 
-- Live data can be read from Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, and others (depending on your platform)
+```bash
+tshark -i eth0 -f "tcp port 80"
+```
 
-- Coloring rules can be applied to the packet list for quick, intuitive analysis
+### Example 2: Advanced Usage
 
-- Output can be exported to XML, PostScript®, CSV, or plain text
+```bash
+wireshark -r capture.pcap
+```
 
-- Decryption support for many protocols, including IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2
+## MITRE ATT&CK Mapping
 
-- Read/write many different capture file formats: tcpdump (libpcap), Pcap NG, Catapult DCT2000, Cisco Secure IDS iplog, Microsoft Network Monitor, Network * General Sniffer® (compressed and uncompressed), Sniffer® Pro, and NetXray®, Network Instruments Observer, NetScreen snoop, Novell LANalyzer, RADCOM WAN/LAN Analyzer, Shomiti/Finisar Surveyor, Tektronix K12xx, Visual Networks Visual UpTime, WildPackets EtherPeek/TokenPeek/AiroPeek, and many others
+This tool is commonly associated with:
 
-Wireshark includes capture filters which limits the data being recorded. See [Wireshark's Capture Filters documentation](https://wiki.wireshark.org/CaptureFilters) for more info.
+### Techniques
 
+- [[Network Sniffing]]
 
+### Tactics
 
+- [[Discovery]]
 
+## Detection
 
-# Installation
+Indicators and methods for detecting this tool's usage:
 
-## Install on Debian/Ubuntu
+- Detection method 1: Promiscuous mode on interfaces
+- Detection method 2: Running processes named wireshark
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/tcpdump]]
 
-## Install on Windows
+## References
 
-Download the appropriate build of Wireshark: [Download from Wireshark.org](https://www.wireshark.org/download.html)
-
-
-
-
-
-
-
-
-
-## Tags
-
-- [[Enumeration]]
-- [[Network]]
-
-
+- Official documentation: https://www.wireshark.org/docs/
