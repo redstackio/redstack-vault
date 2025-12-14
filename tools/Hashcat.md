@@ -1,124 +1,115 @@
 ---
-id: d4648b01-02f8-4dad-b0b9-3e3da8f509e2
-name: Hashcat
+id: tool-hashcat
+url: 'https://hashcat.net/hashcat/'
+tags:
+  - cracking
+  - brute-force
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:39.946056+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Hashcat Dictionary Attack a SHA-512 Hash]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[Hashcat Generate a Wordlist Using a Mask]]'
-- '[[Hashcat Mutate a Wordlist Using Rules]]'
-- '[[Mutate a Wordlist by Appending a Digits]]'
-- '[[Mutate a Wordlist with Alphanumeric and Special Characters]]'
-- '[[hashcat Brute Force Password Hashes]]'
-- '[[hashcat Brute Force a LUKS v1 Hash]]'
-- '[[hashcat Brute Force a sha-512 crypt password]]'
-- '[[hashcat Dictionary Attack Against MD5 Hashes]]'
-- '[[hashcat Mutate a Password Using Mask Attack]]'
 platforms:
-- Linux
-- Windows
-tags:
-- '[[Brute Force]]'
-- '[[Cryptography]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:42.721Z'
+validated: true
+submitted: true
 ---
-
 # Hashcat
+
+**Status**: Unverified
 
 ## Overview
 
-Hashcat is a "password recovery tool", which attempts an offline  brute force attack against hashed passwords using a wordlist of potential guesses. Hashcat supports a large number of hashed password formats, but unlike John the Ripper, it does not automatically detect the type. The hash format mus
+Hashcat is an advanced password recovery tool used for offline cracking of hashes, ideal for exploiting weak entropy in generated passwords like those in Rocket.Chat's E2EE implementation.
 
 ## Description
 
-# Description
+Hashcat supports over 300 hash types, including PBKDF2 used in mobile app encryption, with GPU acceleration for high-speed brute-force, dictionary, and mask attacks. In offensive security, it's used to test password strength and recover credentials from extracted data, particularly effective against biased generation reducing search space.
 
-Hashcat is a "password recovery tool", which attempts an offline  brute force attack against hashed passwords using a wordlist of potential guesses. Hashcat supports a large number of hashed password formats, but unlike John the Ripper, it does not automatically detect the type. The hash format must be identified by analyzing the hash's prefix and finding the corresponding mode via their [example hashes webpage](https://hashcat.net/wiki/doku.php?id=example_hashes), or by running Hashcat with the "--example-hashes" argument and reviewing the results.
+## Features
 
+- Feature 1: Multi-GPU support for parallel cracking
+- Feature 2: Custom masks and rules for optimized attacks on known biases
+- Feature 3: Benchmarking to estimate crack time
 
+## Installation
 
-Hashcat supports both GPU and CPU brute forcing, though GPU is heavily favored as it tends to be much faster. Hashcat also supports the ability to mutate wordlists using rules to create variations of an existing list. For example, a common rule would be to replace characters with digits that look similar, aka "leetspeak" (password becomes p@$$w0rd), or to append dates to the password list to find common passwords with birthdays appended.
+### Requirements
 
+- NVIDIA/AMD GPU with CUDA/ROCm drivers
+- Compatible OS (Linux preferred for performance)
 
+### Install Commands
 
-# Example
+```bash
+# On Ubuntu/Debian
+git clone https://github.com/hashcat/hashcat.git
+cd hashcat
+make
+sudo make install
+```
 
+## Basic Usage
 
+```bash
+hashcat --help
+```
 
-{{EMBEDDED_COMMAND_d0a77568-8751-435e-a7e7-102256247007}}
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-m` | Specify hash mode |
+| `-a` | Attack mode (0=dict, 3=mask) |
+| `-w` | Workload profile (3=high) |
 
+## Examples
 
-# Installation
+### Example 1: Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+hashcat -m 0 example.md5 wordlist.txt
+```
 
+### Example 2: Advanced Usage
 
+```bash
+hashcat -m 1000 -a 3 hash.txt mask.hcmask -O
+```
 
+(Uses pre-defined mask file for efficiency.)
 
+## MITRE ATT&CK Mapping
 
-## Install with Nvidia Drivers on on Debian/Ubuntu
+This tool is commonly associated with:
 
-1. Make sure the host OS is updated
-
-
-
-
-
-2. Disable the "nvidia-nouveau" driver and reboot.
-
-
-
-3. Prepare the environment with build tools
-
-
-
-4. Download the latest driver for your GPU from Nvidia: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx)
-
-5. Install the driver
-
-
-
-6. Download the Hashcat source: [https://hashcat.net/hashcat/](https://hashcat.net/hashcat/)
-
-7. Extract the files
-
-
-
-8. Enter the hashcat directory then build and install Hashcat
-
-
-
-
-
-## Install on Windows
-
-1. Download the Hashcat binaries: [https://hashcat.net/hashcat/](https://hashcat.net/hashcat/)
-
-2. Extract the archive to disk
-
-3. Enter the Hashcat folder and execute either hashcat32.exe or hashcat64.exe
-
-
-
-
-
-
-
-## Platforms
-
-- Linux
-- Windows
-
-## Commands (1)
-
-- [[hashcat Brute Force Password Hashes]]
-
-## Tags
+### Techniques
 
 - [[Brute Force]]
-- [[Cryptography]]
 
+### Tactics
 
+- [[Credential Access]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- High GPU utilization during cracking sessions
+- Process monitoring for hashcat.exe on endpoints
+- Network logs if rules/wordlists are downloaded
+
+## Related Procedures
+
+- [[procedures/Brute-Force-E2EE-Password]]
+
+## Related Tools
+
+- [[John the Ripper]]
+- [[Hydra]]
+
+## References
+
+- Official documentation: https://hashcat.net/wiki/
+- Related resources: OWASP Password Storage Cheat Sheet

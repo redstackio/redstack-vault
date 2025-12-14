@@ -1,77 +1,112 @@
 ---
-id: 156d964a-4325-4497-b50b-b54afc59b463
-name: WPScan
+id: tool-wpscan
+url: 'https://wpscan.com/'
+tags:
+  - wordpress
+  - scanner
+  - bruteforce
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:33.558181+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[WPScan Enumerate WordPress Plugins, Users, Themes and TimThumb]]'
 platforms:
-- Web
-tags:
-- '[[Enumeration]]'
-- '[[Web Applications]]'
+  - Linux
+  - Web
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:36.637Z'
+validated: true
+submitted: true
 ---
-
 # WPScan
+
+**Status**: Unverified
 
 ## Overview
 
-WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and content to identify potential security issues. WPScan is especially adept at finding valid WordPress usernames and brute forcing passwords, as well as enumerating plugins and reporting on their versions and potential v
+WPScan is a Ruby-based vulnerability scanner for WordPress, primarily used for enumerating users, detecting plugins/themes vulnerabilities, and brute forcing logins in penetration testing.
 
 ## Description
 
-# Description
+It identifies exposures like username enumeration via response analysis and supports password attacks. Common in offensive security for auditing WP sites.
 
-WPScan is a WordPress vulnerability scanner, which aims to enumerate modules and content to identify potential security issues. WPScan is especially adept at finding valid WordPress usernames and brute forcing passwords, as well as enumerating plugins and reporting on their versions and potential vulnerabilities.
+## Features
 
+- Feature 1: User enumeration without auth
+- Feature 2: Vulnerability database integration
+- Feature 3: Brute force via login or XML-RPC
 
+## Installation
 
-# Example
+### Requirements
 
+- Ruby 2.7+ and Bundler
+- Git
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_11bef415-9d50-4ee3-8500-1221d0793739}}
+```bash
+sudo gem install wpscan
+```
 
+## Basic Usage
 
+```bash
+wpscan --url https://example.com --help
+```
 
-# Installation
+### Common Options
 
-## Requirements
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help |
+| `--enumerate u` | Enumerate users |
+| `--api-token` | Use WPScan API |
 
-- Ruby >= 2.3
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+wpscan --url https://nextcloud.com --enumerate u
+```
 
-## Install on Debian/Ubuntu
+### Example 2: Advanced Usage
 
+```bash
+wpscan --url https://nextcloud.com -U frank -P wordlist.txt
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Account Discovery]] Account Discovery
+- [[Brute Force]] Brute Force
 
+### Tactics
 
+- [[Discovery]] Discovery
+- [[Initial Access]] Initial Access
 
+## Detection
 
-## Platforms
+Indicators and methods for detecting this tool's usage:
 
-- Web
+- User-Agent: "WPScan"
+- High volume of /wp-login.php requests
+- XML-RPC method calls
 
-## Services
+## Related Procedures
 
-- 80
-- http
-- https
-- https
+- [[procedures/Enumerate-WordPress-Usernames-with-WPScan]]
+- [[procedures/Brute-Force-WordPress-Admin-Login-with-WPScan]]
 
-## Commands (1)
+## Related Tools
 
-- [[WPScan Enumerate WordPress Plugins, Users, Themes and TimThumb]]
+- [[Nikto]]
+- [[Dirbuster]]
 
-## Tags
+## References
 
-- [[Enumeration]]
-- [[Web Applications]]
-
-
+- Official documentation: https://github.com/wpscanteam/wpscan
+- Related resources: WordPress security guides

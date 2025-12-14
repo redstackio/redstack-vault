@@ -1,76 +1,109 @@
 ---
-id: e9f58849-7a50-46bd-a586-98f0a94a432e
-name: Wget
+id: tool-3
+url: null
+tags:
+  - http
+  - download
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:38.508705+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Crawl a Web App Recursively]]'
-- '[[Wget Download Recursively from FTP]]'
-- '[[wget Download a File from a Web Server]]'
 platforms:
-- Linux
-- Windows
-tags:
-- '[[Network]]'
-- '[[Web Applications]]'
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:18.467Z'
+validated: true
+submitted: true
 ---
+# wget
 
-# Wget
+**Status**: Unverified
 
 ## Overview
 
-Wget is a non-interactive network file transfer tool with support for HTTP, HTTPS, and FTP protocols. Wget is  mainly used to download files from websites, and including options such as spidering, specifying cookies and header information, request encoding, proxies, and more. 
+GNU wget is a command-line tool for downloading files from HTTP/HTTPS, used here to query GCP metadata without curl.
 
 ## Description
 
-# Description
+In cloud attacks, wget fetches instance metadata tokens via the internal metadata server, requiring the Metadata-Flavor header for auth.
 
-Wget is a non-interactive network file transfer tool with support for HTTP, HTTPS, and FTP protocols. Wget is  mainly used to download files from websites, and including options such as spidering, specifying cookies and header information, request encoding, proxies, and more.
+## Features
 
+- Feature 1: Non-interactive downloads
+- Feature 2: Header support for auth
+- Feature 3: Output to file or stdout
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard in most Linux distros
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_0fee6e18-062c-4e13-983b-fdbb1a4a6f54}}
+```bash
+# Ubuntu
+apt install wget
+# Or already present in Alpine
+```
 
+## Basic Usage
 
+```bash
+wget --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `--header` | Custom headers |
+| `-O` | Output file |
+| `-q` | Quiet mode |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+wget http://example.com/file.txt
+```
 
+### Example 2: Advanced Usage
 
+```bash
+wget --header 'Auth: token' http://internal/endpoint -O output
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Remote File Copy]] Ingress Tool Transfer
+- [[Cloud Instance Metadata API]] Cloud Instance Metadata API
 
-- Linux
-- Windows
+### Tactics
 
-## Services
+- [[Command and Control]] Command and Control
 
-- ftp
-- http
-- http
-- https
-- https
+## Detection
 
-## Commands (1)
+- Network logs for metadata.google.internal requests
+- Process monitoring for wget with internal IPs
+- Pod logs showing wget executions
 
-- [[wget Download a File from a Web Server]]
+## Related Procedures
 
-## Tags
+- [[procedures/Retrieve-GCP-Metadata-Token-and-Bucket-Name]]
 
-- [[Network]]
-- [[Web Applications]]
+## Related Tools
 
+- [[tools/curl]]
+- [[tools/gcloud]]
 
+## References
+
+- Man page: wget(1)
+- GNU docs

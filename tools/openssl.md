@@ -1,81 +1,122 @@
 ---
-id: a8dd4df5-7a0d-44fa-bf6a-2e2e23db3ceb
-name: openssl
+url: 'https://www.openssl.org/'
+tags:
+  - tls
+  - crypto
+  - testing
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:34.827011+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Generate AES256 RSA keypair]]'
-- '[[Generate Public Key from Private]]'
-- '[[Getcap List All Files with Capabilities Set]]'
-- '[[Nmap Command to Find Response Headers]]'
-- '[[Nmap Port Scan with Vuln Scripts]]'
-- '[[Nmap Scan a Web Server for the HeartBleed Vulnerability]]'
-- '[[Nmap Scan for Heartbleed Vulnerability]]'
-- '[[OpenSSL Compare the Modulus of a CRT and Private Key]]'
-- '[[OpenSSL Generate a PKCS12 with a Private Key and CRT]]'
-- '[[OpenSSL Generate a Private Key]]'
-- '[[OpenSSL Generate a SHA512-crypt hash]]'
-- '[[OpenSSL Sign a CSR with a CA Key]]'
-- '[[OpenSSL View RSA Key Information]]'
-- '[[Sfuzz Command to Fuzz the Web Application]]'
-- '[[Uniscan Command to Scan the Application]]'
-- '[[Wfuzz recursive directory brute force]]'
-- '[[cmd-78a34c7c]]'
-- '[[gpp-decrypt Extract Password from a GPP Encrypted String]]'
-- '[[openssl Generate a MD5 Hash]]'
-- '[[openssl Generate a SHA512 Hash]]'
-- '[[openssl Remove Passphrase from RSA Key]]'
-- '[[openssl View Available Hash Options]]'
-tags:
-- '[[Cryptography]]'
-- '[[data encryption]]'
-- '[[Network]]'
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:31.089Z'
+id: 0caf99b7-f0e8-42b0-bf57-7ee491fd2403
+validated: true
+submitted: true
 ---
+# OpenSSL
 
-# openssl
+**Status**: Unverified
 
 ## Overview
 
-OpenSSL is a cryptography toolkit which implements SSL/TLS network protocols and the related cryptography standards required by them. It is backed by the OpenSSL library, which is required by most Linux systems to handle cryptography in Linux/Unix, and required by most modern systems. OpenSSL inclu
+OpenSSL is a robust toolkit for TLS/SSL operations, commonly used in security testing for handshakes, certificate validation, and session management.
 
 ## Description
 
-# Description
+OpenSSL supports TLS 1.3, client authentication, session resumption, and custom SNI handling, making it ideal for exploiting protocol misconfigurations like NGINX virtual host session sharing.
 
-OpenSSL is a cryptography toolkit which implements SSL/TLS network protocols and the related cryptography standards required by them. It is backed by the OpenSSL library, which is required by most Linux systems to handle cryptography in Linux/Unix, and required by most modern systems. OpenSSL includes a number of modules for various tasks, including generating public/private keys and certificates, connecting to terminals using SSL, verifying signatures, encrypting/decrypting files, and much more. 
+## Features
 
+- Feature 1: TLS client/server simulation with s_client/s_server
+- Feature 2: Session ticket handling and resumption
+- Feature 3: Certificate and key management
 
+## Installation
 
-# Example
+### Requirements
 
+- C compiler (gcc/clang)
+- Perl
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_f7b1ef50-6175-4456-9805-c6104b6b9138}}
+```bash
+# On Ubuntu/Debian
+apt update && apt install openssl
 
+# Or from source
+wget https://www.openssl.org/source/openssl-3.0.0.tar.gz
+# Extract and compile
+./config && make && make install
+```
 
+## Basic Usage
 
-# Installation
+```bash
+openssl s_client --help
+```
 
-## Install on Debian/Ubuntu
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-connect` | Specify host:port |
+| `-tls1_3` | Use TLS 1.3 |
+| `-cert` | Client certificate |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+openssl s_client -connect example.com:443
+```
 
+### Example 2: Advanced Usage
 
+```bash
+openssl s_client -connect example.com:443 -tls1_3 -servername example.com -cert client.crt
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-## Commands (1)
+### Techniques
 
-- [[openssl Generate a SHA512 Hash]]
+- [[Exploit Public-Facing Application]]
+- [[Valid Accounts]]
 
-## Tags
+### Tactics
 
-- [[Cryptography]]
-- [[data encryption]]
-- [[Network]]
+- [[Initial Access]]
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
+
+- Network traffic with OpenSSL user-agent or debug output
+- Unusual TLS handshakes in server logs
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[Related Tool 1]]
+- [[Related Tool 2]]
+
+## References
+
+- Official documentation: https://www.openssl.org/docs/
+- Related resources: https://wiki.openssl.org/

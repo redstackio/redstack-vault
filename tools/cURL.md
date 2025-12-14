@@ -1,71 +1,118 @@
 ---
-id: a331c1ff-0db6-454c-9f76-1aa67ec48d5e
-name: cURL
-type: tool
-verified: true
-created_at: '2020-02-14T23:56:13.171261+00:00'
-updated_at: '2023-05-30T19:56:10.869468+00:00'
-commands:
-- '[[curl Exploit a ShellShock Vulnerability]]'
-platforms:
-- Web
+id: t2u3v4w5-x6y7-8901-rstu-vw8901234567
+url: 'https://curl.se/'
+name: curl
 tags:
-- '[[Web Applications]]'
+  - http
+  - testing
+  - cli
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:33:24.170Z'
+validated: true
+submitted: true
 ---
+# curl
 
-# cURL
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extr
+cURL is a command-line tool for transferring data with URLs, widely used for API testing and simulating HTTP requests in security assessments like SSRF exploitation.
 
 ## Description
 
-# Description
+In offensive ops, cURL sends custom HTTP requests to test web vulnerabilities, including POST payloads for SSRF via manipulated URLs to internal endpoints.
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extremely useful in both single use cases and scripts.
+## Features
 
+- Feature 1: Supports all HTTP methods and headers
+- Feature 2: JSON data sending with -d
+- Feature 3: Cookie and session handling
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on most Unix-like systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3efa41e4-90cf-4cd4-afc5-6dbd9c1dbe5a}}
+```bash
+# On Ubuntu: sudo apt install curl
+# On macOS: brew install curl
+```
 
+## Basic Usage
 
+```bash
+curl --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-X` | Specify HTTP method |
+| `-H` | Add headers |
+| `-d` | POST data |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+curl https://target.com
+```
 
+### Example 2: Advanced Usage
 
+```bash
+curl -X POST https://target.com/api -H 'Content-Type: json' -d '{"key":"value"}'
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Remote File Copy]]
+- [[Exploit Public-Facing Application]]
 
-- Web
+### Tactics
 
-## Services
+- [[Execution]]
+- [[Collection]]
 
-- http
-- http
-- https
-- https
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[curl Make a POST Request with JSON Data]]
+- cURL User-Agent in access logs
+- High volume of POST requests from single IP
 
-## Tags
+## Related Procedures
 
-- [[Web Applications]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/Burp-Suite]]
+- [[tools/wget]]
+
+## References
+
+- Official documentation: https://curl.se/docs/manpage.html
+- Related resources: HTTP protocol specs

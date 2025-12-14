@@ -1,48 +1,113 @@
 ---
-id: dbff2720-cc08-4d90-9a81-6f643eabe7a8
-name: mitmproxy
+url: 'https://mitmproxy.org/'
+tags:
+  - proxy
+  - interception
+  - mobile
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:25.118596+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:01.779Z'
+id: 836068fb-7424-4b5e-aa4c-cdfeccd903c3
+validated: true
+submitted: true
 ---
-
 # mitmproxy
+
+**Status**: Unverified
 
 ## Overview
 
-mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console interface that allows traffic flows to be inspected and edited on the fly. Also shipped is mitmdump, the command-line version of mitmproxy, with the same functionality but without the frills. Think tcpdump for HTTP.Feat
+mitmproxy is an interactive HTTPS proxy for capturing and inspecting traffic, ideal for extracting tokens from mobile app sessions in security testing.
 
 ## Description
 
-mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console interface that allows traffic flows to be inspected and edited on the fly. Also shipped is mitmdump, the command-line version of mitmproxy, with the same functionality but without the frills. Think tcpdump for HTTP.Features:
+This tool allows decryption of TLS traffic, filtering requests, and scripting modifications. In offensive ops, it's used to intercept API calls from apps like Shopify Mobile to steal auth tokens for reuse.
 
+## Features
 
+- Feature 1: Interactive console for live traffic viewing
+- Feature 2: Python scripting for automation
+- Feature 3: CA certificate generation for HTTPS interception
 
-intercept and modify HTTP traffic on the fly
+## Installation
 
+### Requirements
 
+- Python 3.7+
+- pip
 
-save HTTP conversations for later replay and analysis
+### Install Commands
 
+```bash
+pip install mitmproxy
+```
 
+## Basic Usage
 
-replay both HTTP clients and servers
+```bash
+mitmproxy --mode transparent
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-p 8080` | Listen on port 8080 |
+| `--set confdir=~/.mitmproxy` | Set config directory |
 
-make scripted changes to HTTP traffic using Python
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+mitmproxy -p 8080
+```
+Configure device proxy to host:8080 and browse to capture traffic.
 
-SSL interception certs generated on the fly
+### Example 2: Advanced Usage
 
+```bash
+mitmdump -s script.py -p 8080
+```
+Run with a script to auto-extract headers.
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Unsecured Credentials]]
+- [[Network Sniffing]]
 
+### Tactics
 
+- [[Initial Access]]
+- [[Exfiltration]]
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Unusual CA certificates on endpoints
+- Proxy traffic patterns in network logs
+- Anomalous user-agent in intercepted requests
+
+## Related Procedures
+
+- [[procedures/Capture-Access-Token-from-Mobile-Session]]
+
+## Related Tools
+
+- [[Burp Suite]]
+- [[Wireshark]]
+
+## References
+
+- Official documentation: https://docs.mitmproxy.org/
+- Related resources: OWASP Mobile Testing Guide

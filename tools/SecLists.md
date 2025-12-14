@@ -1,49 +1,87 @@
 ---
-id: 32fd0d92-e28d-4c58-aeff-ceefcd7ed4c0
-name: SecLists
+url: 'https://github.com/danielmiessler/SecLists'
+tags:
+  - wordlists
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:36.957869+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-tags:
-- '[[Brute Force]]'
-- '[[Enumeration]]'
-commands:
-- '[[Gobuster Directory Brute Force with Extensions]]'
-- '[[Hashcat Dictionary Attack a SHA-512 Hash]]'
-- '[[John the Ripper Dictionary Attack Against MD5 Hashes]]'
-- '[[John the Ripper Dictionary Attack a SHA-512 Hash]]'
-- '[[build dns subdomain wordlist with sed]]'
-- '[[hashcat Dictionary Attack Against MD5 Hashes]]'
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:05.903Z'
+id: ed6a8f7f-f8ba-44f3-b753-474597a049e7
+validated: true
+submitted: true
 ---
-
 # SecLists
+
+**Status**: Unverified
 
 ## Overview
 
-SecLists is the security tester’s companion. It’s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more. The goal is to enable a security t
+Collection of wordlists for security testing and fuzzing.
 
 ## Description
 
-# Description
+Provides payloads for directory enumeration, API fuzzing, etc., used throughout the attack for common.txt.
 
-SecLists is the security tester’s companion. It’s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more. The goal is to enable a security tester to pull this repo onto a new testing box and have access to every type of list that may be needed.SecLists Homepage | SecLists GitHub | Kali SecLists Repo
+## Features
 
+- Feature 1: Categorized lists
+- Feature 2: Web content discovery
+- Feature 3: Regularly updated
 
+## Installation
 
-# Installation
+### Requirements
 
-## Clone the GitHub Repository
+- Git
 
+### Install Commands
 
+```bash
+git clone https://github.com/danielmiessler/SecLists.git
+```
 
+## Basic Usage
 
+Use as -w path/to/SecLists/...
 
+### Common Options
 
+N/A (wordlist collection)
 
-## Tags
+## Examples
 
-- [[Brute Force]]
-- [[Enumeration]]
+### Example 1: Basic Usage
 
+```bash
+ffuf -w SecLists/Discovery/Web-Content/common.txt -u target/FUZZ
+```
 
+## MITRE ATT&CK Mapping
+
+### Techniques
+
+- [[Active Scanning]]
+
+### Tactics
+
+- [[Reconnaissance]]
+
+## Detection
+
+- Usage inferred from fuzzing traffic
+
+## Related Procedures
+
+Multiple fuzzing steps
+
+## Related Tools
+
+- [[tools/dirb]]
+
+## References
+
+- GitHub repo

@@ -1,64 +1,110 @@
 ---
-id: 12a2d74b-89dc-47a0-a0a7-d55584d00d72
-name: xmllint
-type: tool
-verified: true
-created_at: '2020-03-04T05:11:09.826589+00:00'
-updated_at: '2023-05-30T01:10:27.461288+00:00'
-commands:
-- '[[xmllint Beautify XML]]'
-platforms:
-- Linux
+id: tool-xmllint
+url: 'https://xmlsoft.org/xmllint.html'
 tags:
-- '[[formatting]]'
+  - xml-parsing
+  - vulnerability-testing
+  - dos
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:37.396Z'
+configuration: '--valid for DTD validation'
+validated: true
+submitted: true
 ---
-
 # xmllint
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Parses one or more XML files, or reads input from stdin, and prints the results with various output options. 
+xmllint is a command-line tool from the libxml2 library for parsing, validating, and querying XML documents, often used in security testing to trigger vulnerabilities in XML handling, such as DoS via compressed inputs.
 
 ## Description
 
-# Description
+In offensive operations, xmllint simulates application behavior to exploit libxml2 flaws, like LZMA decompression issues, by processing malicious files and observing crashes from resource exhaustion.
 
-Parses one or more XML files, or reads input from stdin, and prints the results with various output options.
+## Features
 
+- Feature 1: XML validation against DTDs or schemas.
+- Feature 2: Support for compressed formats like LZMA via liblzma.
+- Feature 3: Debugging output and error reporting with stack traces.
 
+## Installation
 
-# Example
+### Requirements
 
+- libxml2 and liblzma development packages.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_0155d266-ec39-48c1-a6ab-3b3f6c3db8bf}}
+```bash
+# Ubuntu/Debian
+sudo apt install libxml2-utils
+# Or compile from source
+./configure --with-lzma && make && make install
+```
 
+## Basic Usage
 
+```bash
+xmllint --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `--valid` | Validate against DTD |
+| `--debug` | Enable debug output |
+| `--noout` | Suppress document output |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+xmllint --valid malicious.xml
+```
 
+### Example 2: Advanced Usage
 
+```bash
+./xmllint --valid --debug test000
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Endpoint Denial of Service]] Endpoint Denial of Service
+- [[OS Exhaustion Flood]] OS Exhaustion Floods
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Impact]] Impact
 
-- [[xmllint Beautify XML]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[formatting]]
+- Monitor for xmllint processes handling unexpected files.
+- Alert on memory spikes correlated with XML parsing.
 
+## Related Procedures
 
+- [[procedures/Trigger-libxml2-DoS-with-xmllint]]
+
+## Related Tools
+
+- [[xmlstarlet]]
+- [[libxml2]]
+
+## References
+
+- Official documentation: https://xmlsoft.org/xmllint.html

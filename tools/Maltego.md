@@ -1,22 +1,100 @@
 ---
-id: 43fe19d3-6e4b-46b7-bae6-ee57251dd9bf
-name: Maltego
+id: tool-maltego-927413
+url: 'https://www.maltego.com'
+tags:
+  - osint
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:31.522936+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:27:35.576Z'
+validated: true
+submitted: true
 ---
-
 # Maltego
+
+**Status**: Unverified
 
 ## Overview
 
-Is a unique platform developed to deliver a clear threat picture to the environment that an organization owns and operates. ​ 
+Maltego is an OSINT tool for link analysis and recon, used to compare Zomato subdomain results.
 
 ## Description
 
-Is a unique platform developed to deliver a clear threat picture to the environment that an organization owns and operates. ​
+Visualizes relationships for threat intel and recon.
 
+## Features
 
+- Feature 1: Entity transforms
+- Feature 2: Graph visualization
+- Feature 3: Data integration
 
+## Installation
 
+### Requirements
+
+- Java
+
+### Install Commands
+
+```bash
+# Download installer from site
+```
+
+## Basic Usage
+
+```bash
+# GUI application
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| Transforms | Run queries |
+| Export | Save graphs |
+
+## Examples
+
+### Example 1: Basic Usage
+
+Create graph, add domain, run To Subdomain transform.
+
+### Example 2: Advanced Usage
+
+Integrate with API for deep OSINT.
+
+## MITRE ATT&CK Mapping
+
+### Techniques
+
+- [[Gather Victim Host Information]]
+
+### Tactics
+
+- [[Reconnaissance]]
+
+## Detection
+
+- Tool signatures in network
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[Related Tool: Aquatone]]
+
+## References
+
+- Maltego docs

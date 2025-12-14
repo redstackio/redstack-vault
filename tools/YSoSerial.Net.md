@@ -1,80 +1,111 @@
 ---
-id: fc299fae-e5eb-46c1-a402-f5a0573a25cd
-name: YSoSerial.Net
-type: tool
-verified: true
-created_at: '2020-03-06T07:21:51.887229+00:00'
-updated_at: '2023-05-30T19:55:57.747597+00:00'
-commands:
-- '[[YSoSerial Generate a .NET Deserialization Payload]]'
-platforms:
-- Windows
+id: uuid-placeholder-t1
+url: 'https://github.com/pwntester/ysoserial.net'
 tags:
-- '[[deserialization]]'
+  - deserialization
+  - payload
+type: tool
+verified: false
+platforms:
+  - Windows
+  - .NET
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:54.185Z'
+validated: true
+submitted: true
 ---
+# ysoserial.net
 
-# YSoSerial.Net
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-A collection of utilities and property-orientated program "gadget chains" discovered in common .NET libraries that can, under the right conditions, exploit .NET applications performing unsafe deserialization of objects.  The main driver program takes a user-specified command and wraps it in the use
+ysoserial.net is a .NET serialization payload generator for exploiting deserialization vulnerabilities, including DNN-specific chains.
 
 ## Description
 
-# Description
+It creates gadgets for various formatters like ObjectStateFormatter, targeting classes for RCE or file ops in apps like DNN. Used in offensive security for vuln validation.
 
-A collection of utilities and property-orientated program "gadget chains" discovered in common .NET libraries that can, under the right conditions, exploit .NET applications performing unsafe deserialization of objects.  The main driver program takes a user-specified command and wraps it in the user-specified gadget chain, then serializes these objects to stdout. When an application with the required gadgets on the classpath unsafely deserializes this data, the chain will automatically be invoked and cause the command to be executed on the application host.
+## Features
 
+- Feature 1: Multiple gadget chains (e.g., FileSystemUtils)
+- Feature 2: Custom command execution
+- Feature 3: DNN plugin support
 
+## Installation
 
-# Example
+### Requirements
 
+- .NET Framework 4.0+
+- Windows or Mono
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_f6a8fff3-7ed3-4bb8-8cc7-a0461130d796}}
+```bash
+# Clone repo
+git clone https://github.com/pwntester/ysoserial.net.git
+cd ysoserial.net
+# Build
+msbuild ysoserial.sln
+```
 
+## Basic Usage
 
+```bash
+ysoserial.exe -h
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-p` | Payload type |
+| `-g` | Gadget chain |
+| `-f` | Formatter |
 
-# Instructions
+## Examples
 
-## Build from Source (Windows)
+### Example 1: Basic Usage
 
-YSoSerial.Net can be compiled with Microsoft Visual Studio Community 2019 with ".NET desktop development" installed.
+```bash
+ysoserial.exe -p WindowsIdentity -g TypeConfuseDelegate
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ysoserial.exe -p DNNPersonalization -c "calc.exe"
+```
 
-1. Clone the repository
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-2. Open "ysoserial.sln" with Visual Studio
-3. Set the "Solutions Configuration" to "Release"
-4. Select "Build" > "Rebuild Solution"
+- [[Exploitation of Remote Services]]
+- [[Command-Line Interface]]
 
+### Tactics
 
+- [[Execution]]
 
-The compiled .exe can be found in <YSoSerialDirectory>\ysoserial\bin\Release\ysoserial.exe
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Network traffic with serialized payloads
+- Process creation of ysoserial.exe
 
+## Related Procedures
 
+- [[procedures/Inject-Crafted-Deserialization-Payload-for-File-Write]]
 
+## Related Tools
 
+- [[Metasploit]]
 
-## Platforms
+## References
 
-- Windows
-
-## Commands (1)
-
-- [[YSoSerial Generate a .NET Deserialization Payload]]
-
-## Tags
-
-- [[deserialization]]
-
-
+- GitHub repo
+- .NET deserialization guides

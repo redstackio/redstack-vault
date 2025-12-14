@@ -1,66 +1,105 @@
 ---
-id: 4a9502e7-7245-46f4-ba08-494ffb960646
-name: xxd
-type: tool
-verified: true
-created_at: '2020-02-19T21:46:31.103903+00:00'
-updated_at: '2023-05-30T19:49:31.668254+00:00'
-commands:
-- '[[xxd Convert Hex Dump to Binary]]'
-platforms:
-- Linux
+id: tool-xxd
+url: 'https://linux.die.net/man/1/xxd'
 tags:
-- '[[convert]]'
-- '[[data]]'
+  - hex
+  - conversion
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Unix
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:48.455Z'
+validated: true
+submitted: true
 ---
-
 # xxd
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. 
+xxd is a hexadecimal dump and hex editor utility for creating or reversing hexdumps, useful in security testing for crafting binary payloads from hex strings, such as malformed protocol frames.
 
 ## Description
 
-# Description
+Part of the vim package, xxd converts between hex text and binary data, essential for preparing exploits like HTTP/2 payloads without custom encoders. In attacks, it's piped to send binary over netcat.
 
-xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.
+## Features
+
+- Feature 1: Reversible hexdump creation
+- Feature 2: Plain style for easy scripting
+- Feature 3: Binary output for direct network transmission
+
+## Installation
+
+### Requirements
+
+- Standard Unix-like system
+
+### Install Commands
+
+```bash
+# Usually pre-installed; if not
+apt install vim-common  # Includes xxd
+```
+
+## Basic Usage
+
+```bash
+xxd -r -p hex_input > binary_output
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-r` | Reverse (hex to binary) |
+| `-p` | Plain hexdump style (no offsets) |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+echo '48656c6c6f' | xxd -r -p  # Outputs 'Hello'
+```
+
+### Example 2: Advanced Usage
+
+```bash
+cat payload.hex | xxd -r -p | nc target 80
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Remote File Copy]] Ingress Tool Transfer
+
+### Tactics
+
+- [[Execution]] Execution
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Process calls in scripts sending binary data
+- Hex strings in memory or logs
+
+## Related Procedures
 
 
+## Related Tools
 
-# Example
+- [[Related Tool 1|tools/hexdump]]
+- [[Related Tool 2|tools/xxd alternatives like python binascii]]
 
+## References
 
-
-{{EMBEDDED_COMMAND_72d514b3-35d8-4732-ab46-b9105b060e12}}
-
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-
-
-
-
-
-
-
-
-## Platforms
-
-- Linux
-
-## Commands (1)
-
-- [[xxd Convert Hex Dump to Binary]]
-
-## Tags
-
-- [[convert]]
-- [[data]]
-
-
+- Official documentation: man xxd
+- Related resources: Vim wiki on xxd
