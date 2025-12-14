@@ -1,71 +1,103 @@
 ---
-id: 2f6b92d2-0bcc-4770-9e43-36172f701612
-name: sudo
-type: tool
-verified: true
-created_at: '2020-02-28T02:56:35.309492+00:00'
-updated_at: '2023-05-30T19:51:51.199938+00:00'
-commands:
-- '[[Find List All Files with Setuid Permissions Set]]'
-- '[[Perl Spawn a Root Shell Using Sudo]]'
-- '[[cmd-cde9bd25]]'
-- '[[find Search for Files with SUID Rights]]'
-- '[[systemctl Link a Service Unit File]]'
-platforms:
-- Linux
+url: 'https://www.sudo.ws/'
 tags:
-- '[[administrator]]'
-- '[[privileges]]'
+  - privilege
+  - user
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:29:56.930Z'
+id: 75ac49b6-13b9-497d-83c9-11412b5425d3
+validated: true
+submitted: true
 ---
-
 # sudo
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to giv
+Sudo allows users to run commands as another user, here used to switch to the 'git' user for exploiting writable log permissions.
 
 ## Description
 
-# Description
+Provides controlled privilege escalation for administrative tasks, but misconfigurations can enable lateral movement to system users like 'git' in GitLab.
 
-sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. Policies are set via "/etc/sudoers" and files in "/etc/sudoers.d/". These files typically require root privileges to read , write, and modify. While sudo can be configured to give a user root privileges, this introduces a massive security risk and is considered a bad practice. Administrators may set specific commands to be whitelisted instead of all (such as docker), but this is often not sufficient, as many programs running with sudo privileges would allow attackers to escalate to root.
+## Features
 
+- Feature 1: User specification with -u
+- Feature 2: Logging of commands
+- Feature 3: Timeout and policy enforcement
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on Linux
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_cde9bd25-24c4-4f03-8766-af251aed3a82}}
+```bash
+apt-get install sudo
+```
 
+## Basic Usage
 
+```bash
+sudo --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| -u | Run as specified user |
+| -i | Interactive shell |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+sudo -u git /bin/bash
+```
 
+### Example 2: Advanced Usage
 
+```bash
+sudo -u git whoami
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Valid Accounts]] Valid Accounts
 
-- Linux
+### Tactics
 
-## Commands (2)
+- [[Privilege Escalation]] Privilege Escalation
 
-- [[sudo -l]]
-- [[description]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[administrator]]
-- [[privileges]]
+- Sudo logs (/var/log/auth.log) showing switches to 'git'
+- Unusual user impersonations
+- Audit sudoers for over-permissions
 
+## Related Procedures
 
+- [[procedures/Prepare-Environment-as-Git-User]]
+
+## Related Tools
+
+- [[tools/su]]
+
+## References
+
+- Official site: https://www.sudo.ws/

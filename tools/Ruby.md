@@ -1,69 +1,114 @@
 ---
-id: 20519e34-b6f3-4ce8-81ec-ee4a45bbdfaa
-name: Ruby
-type: tool
-verified: true
-created_at: '2020-03-03T22:10:24.884830+00:00'
-updated_at: '2023-05-30T19:52:49.886515+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-- '[[WinRM.rb Open a Shell Connection to the Target]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+id: tool-ruby
+url: 'https://www.ruby-lang.org/'
 tags:
-- '[[language]]'
+  - programming
+  - server
+  - web
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:19.583Z'
+configuration: Version 2.5.5
+validated: true
+submitted: true
 ---
-
 # Ruby
 
-**Status**: ✓ Verified
+**Status**: Verified
 
 ## Overview
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin. 
+Ruby is a dynamic programming language used for web development, including running servers like WEBrick. In security testing, it's used to set up vulnerable environments for reproducing issues like ReDoS in standard libraries.
 
 ## Description
 
-# Description
+Ruby includes WEBrick as a standard HTTP server module. Version 2.5.5 is vulnerable to the described ReDoS. It's scripted for custom server configs in exploit reproduction.
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin.
+## Features
 
+- Feature 1: Dynamic scripting for HTTP servers
+- Feature 2: Built-in auth modules like DigestAuth
+- Feature 3: Easy local testing without external deps
 
+## Installation
 
-# Example
+### Requirements
 
+- Compatible OS
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_b47d8829-bbd4-43fe-81e9-50d04f76df8e}}
+```bash
+# Using rbenv or rvm for version management
+rbenv install 2.5.5
+rbenv global 2.5.5
 
+# Or system package
+sudo apt install ruby2.5
+```
 
+## Basic Usage
 
-# Installation
+```bash
+ruby --help
+```
 
-## Install on Debian/Ubuntu
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-e` | Execute code snippet |
+| `-r` | Require library |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ruby -e 'puts "Hello Ruby"'
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ruby server.rb  # Run WEBrick script
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-## Platforms
+### Techniques
 
-- Linux
-- Mac OSx
-- Windows
+- [[Python]]
+- [[Exploit Public-Facing Application]]
 
-## Commands (1)
+### Tactics
 
-- [[ruby Execute TTY Shell]]
+- [[Execution]]
+- [[Impact]]
 
-## Tags
+## Detection
 
-- [[language]]
+Indicators and methods for detecting this tool's usage:
 
+- Process monitoring for ruby/webrick processes
+- Network binds on non-standard ports like 8000
+- Script analysis for auth configs
 
+## Related Procedures
+
+- [[procedures/Configure-Vulnerable-WEBrick-Server-with-Digest-Auth]]
+
+## Related Tools
+
+- [[tools/WEBrick]]
+
+## References
+
+- Official documentation: https://www.ruby-lang.org/en/documentation/

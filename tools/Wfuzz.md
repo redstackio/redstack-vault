@@ -1,86 +1,118 @@
 ---
-id: 89a9dbe5-dc2a-46e2-91c1-68a3ec8a5e56
-name: Wfuzz
+id: tool-uuid-1
+url: 'https://github.com/xmendez/wfuzz'
+tags:
+  - fuzzing
+  - brute-force
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:17.782157+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Wfuzz Brute Force DNS with the Host Parameter]]'
-- '[[Wfuzz Directory Brute Force with Burp Proxy]]'
-- '[[Wfuzz Directory Brute Force]]'
-- '[[Wfuzz directory brute force with extensions]]'
-- '[[Wfuzz recursive directory brute force]]'
-- '[[wfuzz Brute Force a HTTP POST Form]]'
 platforms:
-- Web
-tags:
-- '[[Enumeration]]'
-- '[[Web Applications]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:59.225Z'
+validated: true
+submitted: true
 ---
-
 # Wfuzz
+
+**Status**: Unverified
 
 ## Overview
 
-Wfuzz is a web application assessment tool, which sends crafted HTTP requests to enumerate various application components such as parameters, authentication, forms, directories, files, headers, and more. By supplying Wfuzz with a wordlist and specifying a parameter for fuzz with the "FUZZ" keyword,
+Wfuzz is a web application fuzzer written in Python, primarily used for brute forcing web directories, parameters, and authentication credentials with customizable wordlists in security testing scenarios.
 
 ## Description
 
-# Description
+Wfuzz excels at discovering hidden resources and exploiting input fields by injecting payloads from dictionaries. In offensive security, it's commonly used for authentication brute forcing, such as targeting Basic Auth headers in WordPress admin panels. Features include multi-threading, response filtering, and payload encoding, making it ideal for rapid vulnerability assessment without server-side protections.
 
-Wfuzz is a web application assessment tool, which sends crafted HTTP requests to enumerate various application components such as parameters, authentication, forms, directories, files, headers, and more. By supplying Wfuzz with a wordlist and specifying a parameter for fuzz with the "FUZZ" keyword, Wfuzz will brute force the parameter, and display the results. 
+## Features
 
+- Feature 1: Payload injection via FUZZ placeholder in URLs, headers, or POST data
+- Feature 2: Response analysis with filters for status codes, sizes, and words
+- Feature 3: Support for multiple encodings and recursive fuzzing
 
+## Installation
 
-Unlike other fuzzers, Wfuzz does not automatically hide status codes, leaving it up to the user to specify them. Users can choose which codes to suppress  such as 404, 403, 301, etc. Other handy filters can be applied, based on the size of the page returned, number of lines, or number of words.
+### Requirements
 
+- Python 2.7 or 3.x
+- pip package manager
 
+### Install Commands
 
-# Example
+```bash
+# Via pip
+pip install wfuzz
 
+# Or from GitHub
+git clone https://github.com/xmendez/wfuzz.git
+cd wfuzz
+python setup.py install
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_d0ad3758-1ef3-4e3a-9f22-863e103d38a8}}
+```bash
+wfuzz --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-v, --verbose` | Verbose output |
+| `-c` | Colored output |
+| `-t` | Number of threads |
 
-# Installation
+## Examples
 
-## Install with pip
+### Example 1: Basic Usage
 
+```bash
+wfuzz -w wordlist.txt -u https://target.com/FUZZ
+```
 
+### Example 2: Advanced Usage
 
+```bash
+wfuzz -c -w passwords.txt -u https://target.com/wp-admin -d "Authorization: Basic admin:FUZZ" --hc 404
+```
 
+> Brute forces passwords, hiding 404 responses.
 
-## Install from Source
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Brute Force]]
+- [[Exploit Public-Facing Application]]
 
+### Tactics
 
+- [[Initial Access]]
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Detection method 1: High volume of similar requests from one IP with varying payloads
+- Detection method 2: User-Agent strings containing 'wfuzz' or Python identifiers in logs
 
-## Platforms
+## Related Procedures
 
-- Web
+- [[procedures/Brute-Force-WordPress-Admin-Credentials]]
 
-## Services
+## Related Tools
 
-- http
-- http
-- https
-- https
+- [[tools/Burp-Intruder]]
+- [[tools/Hydra]]
 
-## Commands (1)
+## References
 
-- [[Wfuzz Directory Brute Force]]
-
-## Tags
-
-- [[Enumeration]]
-- [[Web Applications]]
-
-
+- Official documentation: https://wfuzz.readthedocs.io/
+- Related resources: SecLists for wordlists

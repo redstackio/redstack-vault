@@ -1,70 +1,99 @@
 ---
-id: 4e98a7c7-e41a-4081-a5d9-4b5cd0f67e01
-name: gem
-type: tool
-verified: true
-created_at: '2020-03-03T22:46:27.932947+00:00'
-updated_at: '2023-05-30T19:56:22.665521+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-platforms:
-- BSD
-- Linux
-- Mac OSx
-- Windows
+id: tool-002
+url: 'https://rubygems.org/'
 tags:
-- '[[package manager]]'
+  - package-manager
+  - ruby
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2024-01-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:36.625Z'
+validated: true
+submitted: true
 ---
-
 # gem
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provides a standard package format for the distribution of Ruby programs and libraries, and uses a large public repository to manage and distribute content. Gem can query this repository much like other package managers, usi
+Gem is Ruby's package manager, used to install libraries like nokogiri for exploit scripts in security operations.
 
 ## Description
 
-# Description
+It fetches and installs Ruby gems, enabling dependencies for tools like Drupalgeddon2. Common in pentesting for Ruby-based exploits.
 
-Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provides a standard package format for the distribution of Ruby programs and libraries, and uses a large public repository to manage and distribute content. Gem can query this repository much like other package managers, using it to install or remove programs, install dependencies, and update existing software.
+## Features
 
+- Feature 1: Install from remote repositories
+- Feature 2: Dependency resolution
+- Feature 3: Version management
 
+## Installation
 
-# Example
+### Requirements
 
+- Ruby installed
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_55e115e3-5241-41fc-a608-7f193189896a}}
+```bash
+# Included with Ruby
+```
 
+## Basic Usage
 
+```bash
+gem --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| install | Install a gem |
+| list | List installed gems |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+gem install nokogiri
+```
 
+### Example 2: Advanced Usage
 
+```bash
+gem install nokogiri --no-ri --no-rdoc
+```
 
+## MITRE ATT&CK Mapping
 
+### Techniques
 
+- [[Video Capture]]
 
-## Platforms
+### Tactics
 
-- BSD
-- Linux
-- Mac OSx
-- Windows
+- [[Execution]]
 
-## Commands (1)
+## Detection
 
-- [[Ruby Install WinRM Dependencies]]
+- Monitor gem install traffic to rubygems.org
 
-## Tags
+## Related Procedures
 
-- [[package manager]]
+- [[procedures/Download-and-Setup-Drupalgeddon2-Exploit]]
 
+## Related Tools
 
+- [[Related Tool: pip]]
+
+## References
+
+- https://guides.rubygems.org/

@@ -1,74 +1,109 @@
 ---
-id: fdef8438-49e5-4441-a74f-928238ac854c
-name: sqlmap
+url: ''
+tags:
+  - sqli
+  - automated-exploit
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:19.220959+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[SQLMap Dump a SQL Database By Exploiting a SQL Injection]]'
 platforms:
-- Web
-tags:
-- '[[Brute Force]]'
-- '[[Network]]'
-- '[[Service Attacks]]'
-- '[[SQL]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:35.209Z'
+id: 3efd8ca0-86dc-460b-95d0-08d13cd003d1
+validated: true
+submitted: true
 ---
-
 # sqlmap
+
+**Status**: Unverified
 
 ## Overview
 
-sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features and a broad range of switches lasting from database fingerprinting, over d
+SQLMap is an open-source automated tool for detecting and exploiting SQL injection flaws, supporting various techniques like error-based, union-based, and time-based for database takeover.
 
 ## Description
 
-# Description
+It excels in web app pentests by analyzing HTTP requests, injecting payloads, and extracting data from backends like MySQL. For Revive Adserver, it targets the 'keyword' parameter to dump databases, tables, and execute commands.
 
-sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features and a broad range of switches lasting from database fingerprinting, over data fetching from the database, to accessing the underlying file system and executing commands on the operating system via out-of-band connections.
+## Features
 
+- Feature 1: Support for multiple injection techniques (error, blind, time-based)
+- Feature 2: Database enumeration and data dumping
+- Feature 3: HTTP request file loading with authentication handling
 
+## Installation
 
-# Example
+### Requirements
 
+- Python 3+
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3281f239-fa6d-4285-a224-21f67fba90a8}}
+```bash
+# Git clone and install
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+cd sqlmap-dev
+python sqlmap.py --help
+```
 
+## Basic Usage
 
+```bash
+sqlmap -u "http://target.com/vuln.php?id=1" --dbs
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-r` | Load request from file |
+| `--dbs` | Enumerate databases |
+| `--batch` | Non-interactive mode |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+sqlmap -r testsql.txt --dbs
+```
 
+### Example 2: Advanced Usage
 
+```bash
+sqlmap -r testsql.txt --dbs --tables --dump
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Exploit Public-Facing Application]]
 
-- Web
+### Tactics
 
-## Services
+- [[Collection]]
 
-- ms-sql
-- mysql
-- postgres
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[SQLMap Dump a SQL Database By Exploiting a SQL Injection]]
+- Suspicious SQL payloads in app logs
+- Unusual database query delays
+- Network requests with encoded payloads
 
-## Tags
+## Related Procedures
 
-- [[Brute Force]]
-- [[Network]]
-- [[Service Attacks]]
-- [[SQL]]
+- [[procedures/Exploit-SQL-Injection-with-SQLMap]]
 
+## Related Tools
 
+- [[tools/Burp-Suite]]
+
+## References
+
+- Official GitHub: https://github.com/sqlmapproject/sqlmap

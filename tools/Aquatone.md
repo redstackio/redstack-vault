@@ -1,73 +1,102 @@
 ---
-id: aab43a86-ce08-4157-84b8-307cae61ff6b
-name: Aquatone
+id: tool-aquatone-927413
+url: 'https://github.com/michenriksen/aquatone'
+tags:
+  - subdomain
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:37.738701+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Take Screenshots of a List of URLs]]'
 platforms:
-- Web
-tags:
-- '[[Enumeration]]'
-- '[[Web Applications]]'
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:27:35.580Z'
+validated: true
+submitted: true
 ---
-
 # Aquatone
+
+**Status**: Unverified
 
 ## Overview
 
-Aquatone is a tool for visual inspection of websites across a large amount of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface. 
+Aquatone enumerates subdomains and takes screenshots, revealing hidden Zomato domains.
 
 ## Description
 
-# Description
+Go-based tool for fast subdomain discovery and visual recon.
 
-Aquatone is a tool for visual inspection of websites across a large amount of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface.
+## Features
 
+- Feature 1: Passive/active enum
+- Feature 2: Screenshot automation
+- Feature 3: Takeover detection
 
+## Installation
 
-# Example
+### Requirements
 
+- Go 1.8+
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_783a7a2a-44e3-4431-a8e9-65971e931a21}}
+```bash
+go get github.com/michenriksen/aquatone
+```
 
+## Basic Usage
 
+```bash
+aquatone-discover --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `--domain` | Target |
+| `--threads` | Concurrency |
 
-1. Download and extract the latest precompiled release here: https://github.com/michenriksen/aquatone/releases
+## Examples
 
-2. Copy the "aquatone" binary to "/usr/local/bin",  or create a symlink to link it there.
+### Example 1: Basic Usage
 
+```bash
+aquatone-discover --domain zomato.com
+```
 
+### Example 2: Advanced Usage
 
-Note: Aquatone recommends using the Chromium browser, which can be installed via most package managers.
+```bash
+aquatone-discover --domain zomato.com --threads 50
+```
 
+## MITRE ATT&CK Mapping
 
+### Techniques
 
-## Platforms
+- [[Gather Victim Host Information]]
 
-- Web
+### Tactics
 
-## Services
+- [[Reconnaissance]]
 
-- http
-- http
-- https
-- https
+## Detection
 
-## Commands (1)
+- DNS query bursts
 
-- [[Take Screenshots of a List of URLs]]
+## Related Procedures
 
-## Tags
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-- [[Enumeration]]
-- [[Web Applications]]
+## Related Tools
 
+- [[Related Tool: Maltego]]
 
+## References
+
+- GitHub repo

