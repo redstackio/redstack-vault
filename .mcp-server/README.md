@@ -61,6 +61,35 @@ Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_deskt
 }
 ```
 
+### Claude Code (CLI)
+
+Claude Code uses stdio transport instead of SSE. Two setup options:
+
+**Option 1: Auto-configuration (Recommended)**
+```bash
+# Just open Claude Code in the redstack-vault directory
+# The .mcp.json file will auto-configure the server
+# You'll be prompted to approve it on first use
+```
+
+**Option 2: Manual setup (User-scoped)**
+```bash
+# From the redstack-vault directory
+claude mcp add --transport stdio --scope user redstack-vault \
+  -- "$(pwd)/.mcp-server/start-stdio.sh"
+```
+
+**Usage:**
+```bash
+# In any Claude Code session, use /mcp to check server status
+/mcp
+
+# The same 10 tools are available automatically
+# Example: "Show me all mimikatz commands"
+```
+
+**Logs:** Activity is logged to `.mcp-server/mcp-server-stdio.log`
+
 ### Other MCP Clients
 
 Any MCP-compatible client can connect via:
@@ -147,16 +176,18 @@ VAULT_PATH=/custom/path ./start.sh
 
 ```
 output/
-├── .mcp-server/          # MCP server (this directory)
-│   ├── start.sh          # Start script
-│   ├── mcp_server.py     # Core vault interface
-│   ├── mcp_server_sse.py # SSE transport server
-│   ├── .venv/            # Python virtual env (auto-created)
-│   └── README.md         # This file
-├── procedures/           # TTP procedures
-├── commands/             # Executable commands
-├── attack-chains/        # Multi-step attack chains
-└── techniques/           # MITRE ATT&CK techniques
+├── .mcp-server/            # MCP server (this directory)
+│   ├── start.sh            # Start script (SSE transport)
+│   ├── start-stdio.sh      # Start script (stdio transport for Claude Code)
+│   ├── mcp_server.py       # Core vault interface
+│   ├── mcp_server_sse.py   # SSE transport server
+│   ├── mcp_server_stdio.py # stdio transport server
+│   ├── .venv/              # Python virtual env (auto-created)
+│   └── README.md           # This file
+├── procedures/             # TTP procedures
+├── commands/               # Executable commands
+├── attack-chains/          # Multi-step attack chains
+└── techniques/             # MITRE ATT&CK techniques
 ```
 
 ## 🐛 Troubleshooting
