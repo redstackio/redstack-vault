@@ -1,88 +1,126 @@
 ---
-id: a9a453f7-8d8e-4ee8-b0df-5859a61a3fac
+id: 123e4567-e89b-12d3-a456-426614174009
 name: Wireshark
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:41.872382+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:39:09.766Z'
+platforms:
+  - Linux
+  - macOS
+  - Windows
 tags:
-- '[[Enumeration]]'
-- '[[Network]]'
-commands:
-- '[[Tshark Extract Hex and ASCII Dump from a Pcap]]'
+  - network-analysis
+  - packet-capture
+url: 'https://www.wireshark.org/'
+validated: true
+submitted: true
 ---
 
 # Wireshark
 
+**Status**: Unverified
+
 ## Overview
 
-Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of net
+Wireshark is a free, open-source packet analyzer used for capturing and inspecting network traffic, ideal for verifying SSRF by observing server-side connections.
 
 ## Description
 
-# Description
+Wireshark supports deep inspection of protocols like HTTP, allowing filters for POST requests and timing analysis. In SSRF scenarios, it captures client requests and infers server behavior from responses and any leaked traffic.
 
+## Features
 
+- Feature 1: Live packet capture and offline analysis
+- Feature 2: Rich display filters (e.g., http.request.method == "POST")
+- Feature 3: Export to formats like .pcap for sharing (e.g., http.7z)
 
-Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of networking experts across the globe. It is the continuation of a project that started in 1998. Wireshark has a rich feature set which includes the following:
+## Installation
 
+### Requirements
 
+- Standard user privileges
+- Network interface access
 
-- Deep inspection of hundreds of protocols, with more being added all the time
+### Install Commands
 
-- Live capture and offline analysis
+```bash
+# Ubuntu/Debian
+sudo apt update && sudo apt install wireshark
 
-- Standard three-pane packet browser
+# macOS (via Homebrew)
+brew install --cask wireshark
 
-- Multi-platform: Runs on Windows, Linux, OS X, Solaris, FreeBSD, NetBSD, and many others
+# Windows: Download from official site
+```
 
-- Captured network data can be browsed via a GUI, or via the TTY-mode TShark utility
+## Basic Usage
 
-- The most powerful display filters in the industry
+```bash
+tshark -i eth0 -f "tcp port 80" -w capture.pcap
+```
 
-- Rich VoIP analysis
+### Common Options
 
-- Capture files compressed with gzip can be decompressed on the fly
+| Option | Description |
+|--------|-------------|
+| `-i <interface>` | Capture on specific interface |
+| `-f <filter>` | Capture filter (BPF) |
+| `-w <file>` | Write to file |
 
-- Live data can be read from Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, and others (depending on your platform)
+## Examples
 
-- Coloring rules can be applied to the packet list for quick, intuitive analysis
+### Example 1: Basic Usage
 
-- Output can be exported to XML, PostScript®, CSV, or plain text
+```bash
+wireshark -i lo -k -w ssrf_capture.pcap
+```
+Start GUI capture on loopback.
 
-- Decryption support for many protocols, including IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2
+### Example 2: Advanced Usage
 
-- Read/write many different capture file formats: tcpdump (libpcap), Pcap NG, Catapult DCT2000, Cisco Secure IDS iplog, Microsoft Network Monitor, Network * General Sniffer® (compressed and uncompressed), Sniffer® Pro, and NetXray®, Network Instruments Observer, NetScreen snoop, Novell LANalyzer, RADCOM WAN/LAN Analyzer, Shomiti/Finisar Surveyor, Tektronix K12xx, Visual Networks Visual UpTime, WildPackets EtherPeek/TokenPeek/AiroPeek, and many others
+```bash
+tshark -i eth0 -f "host test-4925.myshopify.com" -Y "http contains 'image[src]'" -w analysis.pcap
+```
+CLI capture and display filter for SSRF requests.
 
-Wireshark includes capture filters which limits the data being recorded. See [Wireshark's Capture Filters documentation](https://wiki.wireshark.org/CaptureFilters) for more info.
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Active Scanning]] Active Scanning
+- [[Network Sniffing]] Network Sniffing
 
+### Tactics
 
-# Installation
+- [[Reconnaissance]] Reconnaissance
 
-## Install on Debian/Ubuntu
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Process names: wireshark.exe, tshark
+- High network I/O on analysis machines
+- .pcap files in temp directories
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-## Install on Windows
+## Related Tools
 
-Download the appropriate build of Wireshark: [Download from Wireshark.org](https://www.wireshark.org/download.html)
+- [[tcpdump]]
+- [[Burp Suite]]
 
+## References
 
-
-
-
-
-
-
-
-## Tags
-
-- [[Enumeration]]
-- [[Network]]
-
-
+- Official documentation: https://www.wireshark.org/docs/
+- Related resources: Wireshark User's Guide

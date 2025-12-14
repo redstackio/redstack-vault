@@ -1,67 +1,104 @@
 ---
-id: a93b7715-48a8-4b30-8e43-e0183cac847b
-name: GCC
-type: tool
-verified: true
-created_at: '2020-02-15T00:51:20.966969+00:00'
-updated_at: '2023-05-30T19:49:18.315065+00:00'
-commands:
-- '[[gcc Build a Program with pthread and libcrypt]]'
-- '[[gcc Compile C Code Binary]]'
-- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
-- '[[make Compile an Application with a Makefile]]'
-platforms:
-- Linux
+id: tool-gcc-001
+url: 'https://gcc.gnu.org/'
 tags:
-- '[[Build]]'
+  - compile
+  - build
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:08:55.506Z'
+validated: true
+submitted: true
 ---
+# gcc
 
-# GCC
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-The GNU project C and C++ compiler (GCC) is used to invoke the processing, compilation, assembly and linking of software when building it from C/C++ source code. While GCC can be invoked from the command line, it is often used in conjunction with a "Makefile", which specifies the options required t
+GCC (GNU Compiler Collection) is used to compile C code for testing libcurl's URL parsing behavior in this vulnerability demonstration.
 
 ## Description
 
-# Description
+Essential for building custom test programs linking libraries like libcurl; supports C standards and optimizations for security research prototypes.
 
-The GNU project C and C++ compiler (GCC) is used to invoke the processing, compilation, assembly and linking of software when building it from C/C++ source code. While GCC can be invoked from the command line, it is often used in conjunction with a "Makefile", which specifies the options required to build more complex programs. GCC can also be used to build libraries and kernel modules, and can cross-compile for other systems and architectures, assuming the proper supporting packages are installed.
+## Features
+
+- Feature 1: Multi-language support (C, C++).
+- Feature 2: Library linking and debugging flags.
+- Feature 3: Cross-compilation capabilities.
+
+## Installation
+
+### Requirements
+
+- Standard repos.
+
+### Install Commands
+
+```bash
+# Ubuntu
+apt install gcc
+```
+
+## Basic Usage
+
+```bash
+gcc --help
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-o` | Output file name |
+| `-l` | Link library |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+gcc source.c -o output
+```
+
+### Example 2: Advanced Usage
+
+```bash
+gcc parserbatch.c -o parserbatch -lcurl
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Command-Line Interface]]
+
+### Tactics
+
+- [[Execution]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Compilation artifacts in temp dirs.
+- GCC process monitoring.
+
+## Related Procedures
 
 
+## Related Tools
 
-# Example
+- [[tools/libcurl]]
 
+## References
 
-
-{{EMBEDDED_COMMAND_725d499e-30f5-4584-92fa-65ebb36f4ca3}}
-
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-
-
-
-
-
-
-
-
-## Platforms
-
-- Linux
-
-## Commands (1)
-
-- [[gcc Compile C Code Binary]]
-
-## Tags
-
-- [[Build]]
-
-
+- Official documentation: https://gcc.gnu.org/onlinedocs/

@@ -1,69 +1,107 @@
 ---
-id: c678776a-c660-48d1-a56a-55b2d1f5d9cc
-name: Docker
-type: tool
-verified: true
-created_at: '2020-02-12T23:50:36.366144+00:00'
-updated_at: '2023-05-30T01:04:55.193127+00:00'
-commands:
-- '[[Check Group Membership of a User]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[dnsvalidator update dns servers (DOCKER)]]'
-platforms:
-- Linux
+id: tool-docker-001
+url: 'https://www.docker.com/'
 tags:
-- '[[Docker]]'
-- '[[Hypervisors]]'
+  - containerization
+  - setup
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T05:32:10.464Z'
+validated: true
+submitted: true
 ---
-
 # Docker
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containe
+Docker is a platform for developing, shipping, and running applications in containers. In security testing, it is used to deploy vulnerable services with resource limits to reproduce exploits like OOM DoS.
 
 ## Description
 
-# Description
+Docker allows isolation of applications in containers, enabling easy setup of environments like Mattermost with memory caps (e.g., 4GB) to observe crashes from resource exhaustion attacks.
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containers share the kernel of the host operating system, making them more lightweight than traditional virtual machines. Containers are extremely versatile, as they can be built with specific very software requirements, making them not only excellent development environments, but also reliable environments for production applications and services.
+## Features
 
+- Feature 1: Containerization for reproducible environments
+- Feature 2: Resource limiting (CPU, memory) via flags like -m
+- Feature 3: Port publishing for network access
 
+## Installation
 
-# Example
+### Requirements
 
+- Supported OS (Linux, Windows, macOS)
+- Sufficient host resources
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_074c76c5-56de-49ac-b522-4c7621c8a549}}
+```bash
+# On Ubuntu
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
+## Basic Usage
 
+```bash
+docker --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `--version` | Display version info |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+docker run hello-world
+```
 
+### Example 2: Advanced Usage
 
+```bash
+docker run --name test -d --memory=4g nginx
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Windows Command Shell]] Unix Shell (for container management)
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Execution]] Execution
 
-- [[Docker Mount a Host's Root Directory in a Container]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Docker]]
-- [[Hypervisors]]
+- Detection method 1: Monitor for docker processes and container creations
+- Detection method 2: Log network binds on non-standard ports like 8065
 
+## Related Procedures
 
+- [[procedures/Setup-Mattermost-Docker-Environment]]
+
+## Related Tools
+
+- [[tools/Go]]
+
+## References
+
+- Official documentation: https://docs.docker.com/

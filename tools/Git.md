@@ -1,74 +1,117 @@
 ---
-id: 6d3beade-3d0b-400f-b6e6-6aaa3664c1dd
-name: Git
-type: tool
-verified: true
-created_at: '2020-02-20T04:34:09.669877+00:00'
-updated_at: '2023-05-30T19:49:44.196122+00:00'
-commands:
-- '[[Git Download and Install nps_payload]]'
-- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
-- '[[Git List a Git Repository''s Commit Messages]]'
-- '[[Uniscan Command to Scan the Application]]'
-- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+id: tool-uuid-1
+url: 'https://git-scm.com/'
 tags:
-- '[[backup]]'
-- '[[File System]]'
+  - version-control
+  - git
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T03:47:23.301Z'
+validated: true
+submitted: true
+---
 ---
 
-# Git
+# git
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. Through Git's version control, users can track modifications, test changes, roll back updates, etc., all of which is tracked and logged. Direct
+Git is a distributed version control system used for cloning, committing, and pushing repository changes, critical for setting up and exploiting git-based vulnerabilities like submodule URL abuse in GitLab.
 
 ## Description
 
-# Description
+In offensive security, Git facilitates repository manipulation, such as adding submodules and injecting payloads into configuration files like .gitmodules. It supports SSH/HTTPS remotes and is essential for workflows involving GitLab or GitHub exploits.
 
-Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. Through Git's version control, users can track modifications, test changes, roll back updates, etc., all of which is tracked and logged. Directories under Git control (aka a Git repo) will have a ".git" subdirectory, which contains all relevant version control information for tracking some or all of the files and folders in the current directory. Git repos will often disclose unintended data in the logs and past commits, which may include old versions and source code, passwords, encryption keys, etc.
+## Features
 
+- Feature 1: Distributed version control with branching
+- Feature 2: Submodule support for nested repositories
+- Feature 3: SSH integration for authenticated pushes
 
+## Installation
 
-# Example
+### Requirements
 
+- POSIX-compliant OS or Windows with Git Bash
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_e8bad82f-9c87-414b-b192-8d7148f4ec39}}
+```bash
+# Linux (Ubuntu)
+apt update && apt install git
 
+# macOS
+brew install git
 
+# Windows
+# Download from https://git-scm.com/download/win
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+git --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `-v, --version` | Display version |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+git clone https://example.com/repo
+```
 
+### Example 2: Advanced Usage
 
+```bash
+git submodule add remote/path subdir
+```
 
+## MITRE ATT&CK Mapping
 
-## Platforms
+This tool is commonly associated with:
 
-- Linux
-- Mac OSx
-- Windows
+### Techniques
 
-## Commands (1)
+- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
-- [[Git List a Git Repository's Commit History]]
+### Tactics
 
-## Tags
+- [[Execution]]
 
-- [[backup]]
-- [[File System]]
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Monitor git process executions in logs
+- Track SSH connections to git hosts
+- Scan for .gitmodules with suspicious URLs
+
+## Related Procedures
+
+- [[procedures/Initialize-GitLab-Project-and-Wiki-Repositories]]
+- [[procedures/Add-Wiki-as-Relative-Git-Submodule]]
+
+## Related Tools
+
+- [[tools/gitlab-cli]]
+
+## References
+
+- Official documentation: https://git-scm.com/doc
+- GitLab security: https://docs.gitlab.com/ee/user/project/modules.html

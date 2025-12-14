@@ -1,70 +1,103 @@
 ---
-id: 4e98a7c7-e41a-4081-a5d9-4b5cd0f67e01
-name: gem
-type: tool
-verified: true
-created_at: '2020-03-03T22:46:27.932947+00:00'
-updated_at: '2023-05-30T19:56:22.665521+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-platforms:
-- BSD
-- Linux
-- Mac OSx
-- Windows
+id: tool-uuid-1
+url: 'https://guides.rubygems.org/'
 tags:
-- '[[package manager]]'
+  - rubygems
+  - cli
+type: tool
+verified: false
+platforms:
+  - Ruby
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T03:15:46.985Z'
+validated: true
+submitted: true
 ---
-
 # gem
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provides a standard package format for the distribution of Ruby programs and libraries, and uses a large public repository to manage and distribute content. Gem can query this repository much like other package managers, usi
+The RubyGems CLI tool is the primary interface for managing Ruby libraries (gems), including building, installing, and serving them locally. In security testing, it's used to craft and deploy malicious gems exploiting vulnerabilities like stored XSS in the built-in server.
 
 ## Description
 
-# Description
+RubyGems provides commands for gem lifecycle management. Key for attacks: 'gem build' packages metadata, 'gem install' deploys it, and 'gem server' exposes a vulnerable web UI that renders unsanitized homepage links. Commonly used in Ruby environments for dependency management but exploitable for payload storage and delivery.
 
-Gem is a frontend to RubyGems, the Ruby language package manager. RubyGems provides a standard package format for the distribution of Ruby programs and libraries, and uses a large public repository to manage and distribute content. Gem can query this repository much like other package managers, using it to install or remove programs, install dependencies, and update existing software.
+## Features
+
+- Feature 1: Gem building from Gemspec files with metadata embedding
+- Feature 2: Local installation and registry management
+- Feature 3: Built-in HTTP server for browsing installed gems
+
+## Installation
+
+### Requirements
+
+- Ruby 2.0+ installed
+
+### Install Commands
+
+```bash
+# Typically bundled with Ruby
+ruby -v  # Verify Ruby
+```
+
+## Basic Usage
+
+```bash
+gem --help
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help message |
+| -v, --version | Display version |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+gem list
+```
+
+### Example 2: Advanced Usage
+
+```bash
+gem server -p 8080
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[JavaScript]]
+
+### Tactics
+
+- [[Execution]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Process monitoring for 'gem' executions
+- Network logs for local port 8808 binds
+- File system scans for unusual .gem files
+
+## Related Procedures
 
 
-
-# Example
-
+## Related Tools
 
 
-{{EMBEDDED_COMMAND_55e115e3-5241-41fc-a608-7f193189896a}}
+## References
 
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-
-
-
-
-
-
-
-
-## Platforms
-
-- BSD
-- Linux
-- Mac OSx
-- Windows
-
-## Commands (1)
-
-- [[Ruby Install WinRM Dependencies]]
-
-## Tags
-
-- [[package manager]]
-
-
+- Official documentation: https://guides.rubygems.org/
+- Related resources: RubyGems.org

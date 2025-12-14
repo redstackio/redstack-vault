@@ -1,76 +1,105 @@
 ---
-id: 49abdcd0-2678-4552-9891-9d30feef3f45
-name: grep
-type: tool
-verified: true
-created_at: '2020-02-11T00:58:14.555909+00:00'
-updated_at: '2023-05-30T01:10:08.873532+00:00'
-commands:
-- '[[Find Files by Name and Execute a Command]]'
-- '[[Get-ChildItem Grep Files Recursively for a String]]'
-- '[[Git List a Git Repository''s Commit History for Lost Commits]]'
-- '[[Grep Search Files for Keywords]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[Recursive Search for Text in All Files]]'
-- '[[Recursive Search for Text in Files with Regex]]'
-- '[[Search Raw Data for Human Readable Strings]]'
-- '[[Search for Text in a File (Case Insensitive)]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort massdns output for ips]]'
-platforms:
-- Linux
+id: tool-grep-001
+url: null
 tags:
-- '[[Enumeration]]'
-- '[[File System]]'
+  - search
+  - static-analysis
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T03:16:25.522Z'
+validated: true
+submitted: true
 ---
-
 # grep
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Gr
+Grep is a command-line utility for searching text patterns in files, ideal for locating vulnerable code snippets in source code.
 
 ## Description
 
-# Description
+Used in security testing to find functions like 'strcpy' or 'glob_url' in curl source, aiding XSS vulnerability discovery.
 
-Grep is a flexible pattern matching tool commonly found on Linux/Unix distributions, which searches plain-text in files (or stdin), and reports on matches. Grep also supports recursive searches and wildcard matches, making it extremely useful for enumerating file systems for interesting strings. Grep also supports regex and wildcards, and has extensive features handling formatting, output, and metrics.
+## Features
 
+- Feature 1: Recursive directory searching
+- Feature 2: Line number output for precise location
+- Feature 3: Pattern matching with regex support
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on Unix-like systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_0db9e66b-66a6-404a-9eb0-ab25b367fb03}}
+```bash
+# Pre-installed on Linux
+```
 
+## Basic Usage
 
+```bash
+grep --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-r, --recursive` | Recursive search |
+| `-n` | Show line numbers |
+| `-i` | Ignore case |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+grep -rn "glob_url" src/
+```
 
+### Example 2: Advanced Usage
 
+```bash
+grep -rnw "strcpy" src/ | grep url
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Hardware]] Gather Victim Host Information: Software
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Discovery]] Discovery
 
-- [[Grep Search Files for Keywords]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Enumeration]]
-- [[File System]]
+- Process listings showing grep on source dirs
+- Log entries for file access patterns
 
+## Related Procedures
 
+- [[procedures/Static-Code-Analysis-for-Vulnerable-URL-Handling]]
+
+## Related Tools
+
+- [[tools/git]]
+- [[tools/curl]]
+
+## References
+
+- Man page: `man grep`

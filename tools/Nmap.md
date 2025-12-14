@@ -1,110 +1,121 @@
 ---
-id: 9a3eedfa-cae9-424a-8e8d-e5396e800013
-name: Nmap
+id: tool-nmap
+url: 'https://nmap.org/'
+tags:
+  - scanning
+  - port-scan
+  - recon
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:29.759969+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Create a Netcat Listener]]'
-- '[[Fnd and Display All Nmap Scripts]]'
-- '[[NSE hostmap-crtsh find subdomains by cert]]'
-- '[[Netcat Download a File with a Listener]]'
-- '[[Netcat Upload a File with a Listener]]'
-- '[[Netcat windows reverse shell is observed]]'
-- '[[Nmap Aggressive Scan with Version and OS Detection]]'
-- '[[Nmap Command to Enumerate Directories]]'
-- '[[Nmap Command to Find Directories From Robots.txt File]]'
-- '[[Nmap Command to Find Response Headers]]'
-- '[[Nmap Command to Find Trace Method]]'
-- '[[Nmap Command to Identify SSL Certificate Details]]'
-- '[[Nmap Command to Identify SSL/TLS Ciphers Using ssl-enum-ciphers Script]]'
-- '[[Nmap Enumerate HTTP with Vuln Scripts]]'
-- '[[Nmap Enumerate SMB with Unsafe Vuln Scripts]]'
-- '[[Nmap Enumerate SMTP Server for Valid Commands]]'
-- '[[Nmap Enumerate SMTP Server with Scripts]]'
-- '[[Nmap Enumerate SMTP with Unsafe Vuln Scripts]]'
-- '[[Nmap FIN Scan with Service Enumeration]]'
-- '[[Nmap Full Port Scan with Service Enumeration]]'
-- '[[Nmap HTTP Methods Script]]'
-- '[[Nmap Interactive Mode]]'
-- '[[Nmap LDAP Enumeration with Scripts]]'
-- '[[Nmap Ping Sweep]]'
-- '[[Nmap Port Scan with Banner Enumeration]]'
-- '[[Nmap Port Scan with Vuln Scripts]]'
-- '[[Nmap Query LDAP for Root DSE Object Information]]'
-- '[[Nmap Scan a Web Server for the HeartBleed Vulnerability]]'
-- '[[Nmap Scan for Heartbleed Vulnerability]]'
-- '[[Nmap Scan with Service Enumeration]]'
-- '[[Nmap Service Scan of All TCP Ports]]'
-- '[[Nmap Service Scan of UDP ports]]'
-- '[[Nmap Service Scan of a Single Port]]'
-- '[[Nmap Service Scan with Default Scripts]]'
-- '[[Nmap Service Scan with Log File Output]]'
-- '[[Nmap Service Scan with No Host Discovery]]'
-- '[[Nmap Service Scan with OS Detection]]'
-- '[[Nmap UDP Scan with Service Enumeration]]'
-- '[[ncat reverse shell output]]'
-- '[[ncat windows on listening mode on port 9999]]'
-- '[[nmap top 50 ports]]'
 platforms:
-- Linux
-- Windows
-tags:
-- '[[Enumeration]]'
-- '[[Network]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:39:02.202Z'
+validated: true
+submitted: true
 ---
+# nmap
 
-# Nmap
+**Status**: Verified
 
 ## Overview
 
-Nmap is a network discovery and security auditing tool, used to enumerate networks for services and their capabilities by sending crafted packets and analyzing the results. Nmap also includes a powerful scripting engine, which can be used to query services for information, scan for vulnerabilities,
+Nmap (Network Mapper) is a free and open-source tool for network discovery and security auditing. In this context, it's used as a reference for the top 50 common TCP ports to guide SSRF-based scanning, helping prioritize tests for services like HTTP (80), SMB (445), and RDP (3389).
 
 ## Description
 
-# Description
+Nmap supports port scanning, service detection, and vulnerability scanning across hosts. For SSRF exploitation, attackers reference its --top-ports 50 output locally to select likely open ports on the target infrastructure, then replicate via URL parameters in requests. It's essential for reconnaissance in web exploitation scenarios where direct scanning is impossible.
 
-Nmap is a network discovery and security auditing tool, used to enumerate networks for services and their capabilities by sending crafted packets and analyzing the results. Nmap also includes a powerful scripting engine, which can be used to query services for information, scan for vulnerabilities, and in some cases exploit them.
+## Features
 
+- Feature 1: Port scanning with customizable top ports (e.g., --top-ports 50)
+- Feature 2: Service version detection (-sV) for identifying protocols
+- Feature 3: Scriptable scans with NSE for advanced recon
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard Unix-like system or Windows with Npcap
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_fc2e0c0c-7263-4709-90ce-ee6fc08cbede}}
+```bash
+# On Ubuntu/Debian
+sudo apt update && sudo apt install nmap
 
+# On macOS with Homebrew
+brew install nmap
 
+# On Windows: Download from nmap.org
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+nmap --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Show help message |
+| `--top-ports 50` | Scan top 50 common ports |
+| `-p-` | Scan all 65535 ports |
+| `-sV` | Detect service versions |
 
+## Examples
 
+### Example 1: Basic Usage
 
-## Install on Windows
+```bash
+nmap --top-ports 50 localhost
+```
 
-Download and install Nmap: [Nmap Official Site](https://nmap.org/download.html)
+> Scans localhost top 50 ports, outputting open ones like 80/tcp open http.
 
+### Example 2: Advanced Usage
 
+```bash
+nmap -sV --top-ports 50 127.0.0.1
+```
 
+> Adds version detection for open ports.
 
+## MITRE ATT&CK Mapping
 
-## Platforms
+This tool is commonly associated with:
 
-- Linux
-- Windows
+### Techniques
 
-## Commands (1)
+- [[Active Scanning]] Active Scanning
+- [[Network Service Scanning]] Network Service Scanning
 
-- [[Nmap Port Scan with Banner Enumeration]]
+### Tactics
 
-## Tags
+- [[Reconnaissance]] Reconnaissance
 
-- [[Enumeration]]
-- [[Network]]
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Network logs showing SYN scans on common ports
+- Process monitoring for nmap executable
+- IDS alerts on port scan patterns
+
+## Related Procedures
+
+- [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+
+## Related Tools
+
+- [[tools/masscan]]
+- [[tools/zmap]]
+
+## References
+
+- Official documentation: https://nmap.org/book/man.html
+- Related resources: HackerOne Report #16571

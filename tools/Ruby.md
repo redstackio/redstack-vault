@@ -1,69 +1,103 @@
 ---
-id: 20519e34-b6f3-4ce8-81ec-ee4a45bbdfaa
-name: Ruby
-type: tool
-verified: true
-created_at: '2020-03-03T22:10:24.884830+00:00'
-updated_at: '2023-05-30T19:52:49.886515+00:00'
-commands:
-- '[[Ruby Install WinRM Dependencies]]'
-- '[[WinRM.rb Open a Shell Connection to the Target]]'
-platforms:
-- Linux
-- Mac OSx
-- Windows
+id: tool-uuid-5
+url: 'https://ruby-lang.org'
 tags:
-- '[[language]]'
+  - scripting
+  - poc
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:08:48.606Z'
+configuration: null
+validated: true
+submitted: true
 ---
+# ruby
 
-# Ruby
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin. 
+Runs PoC scripts to demonstrate SSRF bypass in GitLab using Resolv and Socket libraries.
 
 ## Description
 
-# Description
+Core scripting language for GitLab backend; used here for local testing of vulnerability mechanics.
 
-Ruby is a popular interpreted scripting language for quick and easy object-orientated programming. The "ruby" command itself can run scripts by supplying a .rb file as an argument or read from stdin.
+## Features
 
+- Feature 1: Standard libraries like Resolv and Socket
+- Feature 2: Script execution for automation
+- Feature 3: Version-specific behaviors (e.g., 2.3.x)
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux environment
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_b47d8829-bbd4-43fe-81e9-50d04f76df8e}}
+```bash
+sudo apt install ruby-full
+```
 
+## Basic Usage
 
+```bash
+ruby script.rb
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| -e | Execute string |
+| -r | Require file |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ruby -e 'require "resolv"; puts Resolv.getaddress("0177.1")'
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ruby poc.rb  # Custom PoC script
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Python]] Python Interpreter (Ruby equivalent)
 
-- Linux
-- Mac OSx
-- Windows
+### Tactics
 
-## Commands (1)
+- [[Execution]] Execution
 
-- [[ruby Execute TTY Shell]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[language]]
+- Ruby process spawning with Resolv calls
+- Script executions in web app contexts
 
+## Related Procedures
 
+- [[procedures/Import-Repository-with-Octal-Localhost-IP-for-SSRF]]
+
+## Related Tools
+
+- [[tools/irb]]
+
+## References
+
+- Ruby documentation

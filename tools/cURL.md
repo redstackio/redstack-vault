@@ -1,71 +1,107 @@
 ---
-id: a331c1ff-0db6-454c-9f76-1aa67ec48d5e
-name: cURL
-type: tool
-verified: true
-created_at: '2020-02-14T23:56:13.171261+00:00'
-updated_at: '2023-05-30T19:56:10.869468+00:00'
-commands:
-- '[[curl Exploit a ShellShock Vulnerability]]'
-platforms:
-- Web
+id: tool-curl
+url: 'https://curl.se/'
 tags:
-- '[[Web Applications]]'
+  - web
+  - http
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T05:32:24.024Z'
+validated: true
+submitted: true
 ---
+# curl
 
-# cURL
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extr
+Curl is a versatile command-line tool for transferring data with URLs, commonly used in security testing to probe web endpoints and verify service status.
 
 ## Description
 
-# Description
+For subdomain takeover verification, curl checks HTTP responses from abandoned services like Zendesk subdomains to confirm unclaimed status through headers or redirects.
 
-cURL is a command line tool used to transfer data to and from a server using one of the supported protocols (HTTP, HTTPS, FTP, SCP, SFTP, TFTP, DICT, TELNET, LDAP, or FILE). cURL is extremely versatile with extensive features allowing users to customize almost all aspects of a query, making it extremely useful in both single use cases and scripts.
+## Features
 
+- Feature 1: Support for HTTP, HTTPS, and various protocols
+- Feature 2: Custom headers, methods (GET, HEAD, POST)
+- Feature 3: Output control and following redirects
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on most systems
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3efa41e4-90cf-4cd4-afc5-6dbd9c1dbe5a}}
+```bash
+# On Ubuntu: sudo apt install curl
+# On macOS: Already installed
+```
 
+## Basic Usage
 
+```bash
+curl https://example.com
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-I` | HEAD request |
+| `-L` | Follow redirects |
+| `-v` | Verbose output |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+curl -I https://support.easycontactnow.com
+```
 
+### Example 2: Advanced Usage
 
+```bash
+curl -I -L -v https://support.easycontactnow.com
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Active Scanning]] Active Scanning
 
-- Web
+### Tactics
 
-## Services
+- [[Reconnaissance]] Reconnaissance
 
-- http
-- http
-- https
-- https
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[curl Make a POST Request with JSON Data]]
+- User-Agent strings in logs matching curl defaults
+- HEAD requests to sensitive endpoints
 
-## Tags
+## Related Procedures
 
-- [[Web Applications]]
+- [[procedures/Verify-Service-Abandonment-for-Takeover]]
 
+## Related Tools
 
+- [[tools/wget]]
+- [[tools/httpie]]
+
+## References
+
+- Official documentation: https://curl.se/docs/manpage.html
