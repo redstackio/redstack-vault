@@ -1,9 +1,9 @@
 ---
+id: proc-uuid-2
 tags:
   - xss
   - graphql
-  - shopify
-  - handshake
+  - publish
 type: procedure
 tools: []
 tactics:
@@ -16,12 +16,11 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:25.597Z'
+updated_at: '2025-12-14T17:25:53.008Z'
 skill_level: intermediate
 impact_level: medium
 detection_risk: low
 sub_techniques: []
-id: 272a577b-2177-4d7a-a7ed-08b99bbbdde3
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -32,51 +31,53 @@ mitre_techniques:
 
 ## Summary
 
-This procedure publishes a product containing a stored XSS payload from the Shopify store to the Handshake portal, utilizing the productUpdate GraphQL query to sync the unsanitized description.
+This procedure publishes a product containing the stored XSS payload from the Shopify admin to the Handshake portal, triggering the productUpdate GraphQL query to propagate the unsanitized description.
 
 ## Description
 
-After injecting the payload, this step involves accessing the Handshake portal (integrated with Shopify) to select pricing and category details for the product. Publishing triggers a GraphQL mutation (productUpdate) that updates the product data and syncs it to the Handshake ecosystem. Due to insufficient sanitization in the plugin, the malicious HTML is preserved and propagated, setting the stage for execution when viewed on the internal Handshake site.
+The Handshake portal integrates with Shopify via GraphQL mutations. Publishing a product updates its details, including the description, without escaping HTML/JS, allowing the payload to reach the internal Handshake site where it can be rendered and executed.
 
 ## Requirements
 
-1. Authentication to the Handshake portal
-2. Product with injected payload set to Active in Shopify
-3. Basic understanding of GraphQL mutations (handled via UI)
+1. Product with malicious description already created in Shopify
+2. Access to the Handshake portal (merchant privileges)
+3. Product eligible for publishing (e.g., active status)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Validate and sanitize GraphQL inputs server-side before processing
-- Log all productUpdate queries for anomalous payloads
-- Implement rate limiting on product publishing actions
+- Sanitize inputs in GraphQL resolvers for productUpdate
+- Log and audit all product publications for anomalous content
+- Use schema validation to reject HTML tags in description fields
 
 ## Objectives
 
-1. Sync the malicious product to the Handshake catalog
-2. Propagate the unsanitized description via GraphQL
-3. Make the payload available for rendering on shared domains
+1. Trigger GraphQL update to sync the malicious description
+2. Expose the payload on the shared Handshake domain
+3. Set up conditions for XSS execution on product views
 
 ## Instructions
 
 ### Step 1: Access Handshake Portal
 
-**Context**: Log in to the Handshake integration within Shopify to manage product syncing.
+**Context**: Log into the Handshake integration within Shopify or directly via the portal.
 
-Navigate to the Handshake portal from the Shopify apps section.
+Navigate to the Handshake section in your Shopify admin or visit the Handshake dashboard.
 
-### Step 2: Configure Product Details
+### Step 2: Select and Configure Product
 
-**Context**: Assign necessary metadata to the product to enable publishing.
+**Context**: Choose the product with the payload and set publishing parameters to initiate the update.
 
-Select the target product, set a price, and choose a category.
+Search for the test product, select a price list and category, then click "Publish" or "Sync".
 
-### Step 3: Publish the Product
+> This action invokes the productUpdate GraphQL query, updating the description field on the backend.
 
-**Context**: Initiate the sync process, which invokes the productUpdate GraphQL query.
+### Step 3: Confirm Publication
 
-Click the Publish button to update and sync the product to Handshake.
+**Context**: Verify the product is now listed in Handshake without errors.
+
+Check the Handshake product listings; the description should be synced, including the hidden payload.
 
 ## MITRE ATT&CK Mapping
 
@@ -99,6 +100,6 @@ Click the Publish button to update and sync the product to Handshake.
 
 ## Tags
 
-- xss
-- graphql
-- publishing
+- [[xss]]
+- [[graphql]]
+- [[publish]]

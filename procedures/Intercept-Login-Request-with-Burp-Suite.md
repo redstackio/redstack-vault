@@ -1,86 +1,93 @@
 ---
-id: proc-intercept-burp-001
 tags:
-  - recon
-  - web-proxy
-  - request-interception
+  - burp-suite
+  - intercept
+  - asp-net
 type: procedure
 tools:
   - '[[tools/Burp-Suite]]'
 tactics:
   - '[[Initial Access]]'
-commands: []
+commands:
+  - '[[commands/curl-simulate-login]]'
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-updated_at: '2025-12-14T03:46:20.160Z'
-skill_level: beginner
-impact_level: low
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:33:12.215Z'
+skill_level: intermediate
+impact_level: medium
 detection_risk: low
 sub_techniques: []
+id: 30476055-a846-40c4-93b2-d9af4a4ce1a5
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
 # Intercept-Login-Request-with-Burp-Suite
 
 ## Summary
 
-This procedure captures HTTP login requests using Burp Suite to analyze form parameters for potential vulnerabilities like SQL injection.
+This procedure uses Burp Suite to simulate a failed login attempt with the victim's email, intercepting the response to extract valid ASP.NET state values like __VIEWSTATE and __EVENTVALIDATION for use in password reset requests.
 
 ## Description
 
-In web penetration testing, intercepting requests from a login form allows inspection of how user input is handled by the backend. For the Sony endpoint, this revealed unsanitized inputs in the login query, setting the stage for SQL injection testing. The target is a public-facing web application, and success depends on proxy configuration.
+ASP.NET applications rely on __VIEWSTATE and __EVENTVALIDATION for form integrity, which are generated per session or page load. By attempting a login with a random password, an attacker can obtain fresh tokens without alerting the user. This is done via proxy interception in Burp Suite, targeting the /Login.aspx endpoint. The attack assumes no rate limiting on login attempts and works in unauthenticated contexts.
 
 ## Requirements
 
-1. Burp Suite installed and running
-2. Browser configured to use Burp as proxy (e.g., 127.0.0.1:8080)
-3. Access to the target login endpoint
+1. Burp Suite installed and configured as a proxy (e.g., browser traffic routed through 127.0.0.1:8080)
+2. Victim's email address
+3. Random password for failed login simulation
+4. Target URL accessible
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor proxy traffic anomalies in web application firewalls (WAF)
-- Use HTTPS with HSTS to complicate interception
-- Log all login attempts for unusual patterns
+- Enforce rate limiting on login attempts per IP/email
+- Invalidate __VIEWSTATE after failed logins or short TTL
+- Log and alert on repeated failed logins from the same IP
+- Use CSRF tokens separate from ViewState
 
 ## Objectives
 
-1. Capture the exact HTTP POST request to the login form
-2. Identify injectable parameters like username or password
-3. Prepare the request for further vulnerability testing
+1. Simulate login to trigger page state generation
+2. Intercept and extract __VIEWSTATE and __EVENTVALIDATION
+3. Avoid actual authentication to remain stealthy
 
 ## Instructions
 
 ### Step 1: Configure Burp Proxy
 
-**Context**: Set up Burp Suite to intercept traffic from your browser.
+**Context**: Set up interception to capture requests and responses.
 
-Launch Burp Suite and ensure the Proxy tab is active with Intercept on. Configure your browser's proxy settings to route through Burp (default: 127.0.0.1:8080). Install Burp's CA certificate if using HTTPS.
+**Command** ([[commands/curl-simulate-login]]):
+```bash
+curl -x 127.0.0.1:8080 -X POST https://example.mil/Login.aspx \
+  -d "txtUserName=victim@example.com&txtPassword=random123&btnLogin=Login" \
+  -v -c cookies.txt
+```
 
-### Step 2: Submit Login Form
+> Route through Burp proxy. In Burp, enable Intercept on Proxy tab. Expected output: Paused request in Burp for modification if needed, then response with HTML containing state values.
 
-**Context**: Trigger the login request to capture it.
+### Step 2: Extract State Tokens
 
-Navigate to the target login page (e.g., Sony's web endpoint) and submit a test login with dummy credentials. In Burp's Proxy > Intercept tab, the request will pause for inspection.
+**Context**: From the intercepted response, copy __VIEWSTATE and __EVENTVALIDATION.
 
-**Expected Output**: HTTP POST request details, including headers, body with parameters like username=admin&password=test.
+**Command** ([[commands/curl-simulate-login]]):
+```bash
+# After interception, inspect response in Burp or save to file
+grep -oP '__VIEWSTATE="\K[^"]*' response.html
+grep -oP '__EVENTVALIDATION="\K[^"]*' response.html
+```
 
-### Step 3: Forward and Save Request
-
-**Context**: Analyze and save the request for SQLMap.
-
-Review the request in Burp, then forward it to the server. Right-click the request in the Proxy history and select "Save item" to export as request.txt for later use.
-
-**Expected Output**: Saved request file ready for injection testing.
+> Use grep on the saved response to extract tokens. Expected output: Base64-encoded strings for each token.
 
 ## MITRE ATT&CK Mapping
 
@@ -90,13 +97,14 @@ Review the request in Burp, then forward it to the server. Right-click the reque
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/curl-simulate-login]]
 
 ## Tools Used
 
@@ -104,5 +112,5 @@ Review the request in Burp, then forward it to the server. Right-click the reque
 
 ## Tags
 
-- [[recon]]
-- [[web-proxy]]
+- [[tools/Burp-Suite]]
+- [[intercept]]

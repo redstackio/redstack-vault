@@ -1,33 +1,26 @@
 ---
 tags:
-  - blind-injection
   - token-leak
+  - blind-injection
 type: procedure
 tools:
-  - '[[tools/Python3]]'
-  - '[[tools/requests]]'
-  - '[[tools/post_auth_nosqli.py]]'
+  - '[[tools/post-auth-nosqli-py]]'
 tactics:
-  - '[[Discovery]]'
-commands:
-  - '[[commands/python3-post-auth-nosqli]]'
+  - '[[Collection]]'
+commands: []
 verified: false
 platforms:
   - Web
-  - Linux
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:14.825Z'
-skill_level: intermediate
-impact_level: high
-detection_risk: medium
+updated_at: '2025-12-14T17:32:20.447Z'
 sub_techniques: []
-id: ac01b912-8e1b-4030-9a62-cc8fdb68461a
+id: 7f862de9-e0c5-4e46-8e03-4f4deef091bd
 validated: true
 mitre_tactics:
-  - '[[Discovery]]'
+  - '[[Collection]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
 ---
@@ -35,70 +28,68 @@ mitre_techniques:
 
 ## Summary
 
-This procedure extracts the admin's password reset token character by character using blind NoSQL injection on the token field.
+This procedure blindly extracts the admin's password reset token using character-by-character $where oracles targeting the services.password.reset.token field.
 
 ## Description
 
-Targeted $where queries like {"$where":"this._id == 'adminId' && /^A/.test(this.services.password.reset.token)"} are sent to users.list, using response oracles to build the token. Requires prior reset request and admin ID. This enables direct password change without further auth.
+Post-reset, the token is stored in MongoDB. Payloads like {"$where":"this.roles.includes('admin') && /^A/.test(this.services.password.reset.token)"} allow inference of each character via response oracles, enabling full reconstruction for takeover.
 
 ## Requirements
 
-1. Generated reset token from previous step
-2. Admin user ID
-3. Blind injection script
+1. Fresh reset token in DB
+2. Admin role filter
+3. Automation script for efficiency
 
 ## Defense
 
-Defensive measures and detection strategies:
-
-- Sanitize queries to prevent field access via $where
-- Store tokens encrypted or in separate collections
-- Detect iterative queries on specific fields
-- Use query parsing to block conditional JavaScript
+- Sanitize all query inputs
+- Use secure random tokens with short TTL
+- Audit DB for injection attempts
 
 ## Objectives
 
-1. Obtain usable reset token
-2. Enable password reset
-3. Advance to account takeover
+1. Reconstruct full reset token
+2. Enable password change
+3. Achieve account control
 
 ## Instructions
 
-### Step 1: Perform Token Leakage
+### Step 1: Detect Token Length
 
-**Context**: Iterate over token characters with tailored queries.
+**Context**: Optional: Guess length first.
 
-**Command** ([[commands/python3-post-auth-nosqli]]):
-```bash
-python3 post_auth_nosqli.py -u attacker -p attacker 'http://localhost:3000'
-```
+**Instructions**: Use string.length tests in $where.
 
-> Script builds token via oracle responses. Expected output: Full token string, e.g., a 40-char hash.
+> Expected: Length inferred (e.g., 32 chars).
+
+### Step 2: Enumerate Characters
+
+**Context**: Guess each position.
+
+**Instructions**: For each pos, test a-zA-Z0-9 with regex ^[pos]/.test(token.substr(0,pos+1)).
+
+> Expected: Full token like 'abc123...'. 
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Discovery]]
+- [[Collection]] Collection
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/python3-post-auth-nosqli]]
 
 ## Tools Used
 
-- [[tools/Python3]]
-- [[tools/requests]]
-- [[tools/post_auth_nosqli.py]]
+- [[tools/post-auth-nosqli-py]]
 
 ## Tags
 
-- blind-injection
-- token-leak
+- reset-token-leak

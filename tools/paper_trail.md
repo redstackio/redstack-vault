@@ -1,82 +1,89 @@
 ---
+id: f6g7h8i9-j0k1-2345-fghi-678901234567
 url: 'https://github.com/paper-trail-gem/paper_trail'
 tags:
-  - ruby
-  - rails
   - versioning
+  - deserialization
 type: tool
 verified: false
 platforms:
   - Linux
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:25.909Z'
-id: c6911aa1-c9e0-4493-85de-772063fe6d28
+  - Ruby on Rails
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:29:56.581Z'
 validated: true
 submitted: true
 ---
+---
+
 # paper_trail
 
 **Status**: Unverified
 
 ## Overview
 
-Paper Trail is a Ruby gem for versioning changes to Rails model records, storing snapshots in an audit table like user_versions. In this context, it's a vulnerable component where the reify method deserializes YAML from the object attribute, enabling RCE if untrusted data is persisted.
+Paper Trail is a Ruby gem for versioning Rails models by storing snapshots of changes in a database table (e.g., user_versions). It is commonly used for audit trails but vulnerable to YAML deserialization attacks in its reify method when handling untrusted data.
 
 ## Description
 
-Paper Trail tracks create/update/destroy events by serializing model state to YAML in a versions table. The reify method reconstructs objects from these snapshots via YAML.load, which is unsafe for attacker-controlled input. Commonly used in Rails apps for audit trails; vulnerable versions allow deserialization gadgets leading to code execution.
+The gem serializes model states as YAML in the object column. The reify method deserializes this YAML to reconstruct objects, allowing gadget chains for code execution if malicious YAML is inserted. This tool is integral to the attack as the target for payload persistence and trigger.
 
 ## Features
 
-- Feature 1: Automatic versioning of model changes
-- Feature 2: YAML serialization of object state
-- Feature 3: Reify method for snapshot reconstruction
+- Feature 1: Automatic versioning of model changes with whodunit tracking
+- Feature 2: Reify method to restore historical states from YAML snapshots
+- Feature 3: Integration with ActiveRecord for easy setup in Rails apps
 
 ## Installation
 
 ### Requirements
 
-- Ruby 2.0+
-- Rails 4.0+
-- PostgreSQL or compatible DB
+- Ruby 2.7+ and Rails 5+
+- PostgreSQL or compatible database
 
 ### Install Commands
 
 ```bash
-gem install paper_trail
-```
+# Add to Gemfile
+gem 'paper_trail'
 
-Add to Gemfile: gem 'paper_trail'
+# Install
+bundle install
+```
 
 ## Basic Usage
 
-```ruby
-class User < ActiveRecord::Base
-  has_paper_trail
-end
+```bash
+gem 'paper_trail'
+rails generate paper_trail:migration
+rails db:migrate
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-v, --version` | Show version |
-| `--help` | Show help |
+| `--help` | Show gem documentation |
+| `-v` | Verbose installation output |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
+In a Rails model:
 ```ruby
-user = User.create(name: 'Test')
-version = user.versions.last
-reconstructed = version.reify  # Vulnerable if YAML tainted
+class User < ApplicationRecord
+  has_paper_trail
+end
 ```
 
 ### Example 2: Advanced Usage
 
-Configure safe YAML: PaperTrail.config.serializer = YAML
-But default is unsafe.
+Trigger reify:
+```ruby
+version = UserVersion.find_by(email: 'test')
+version.reify
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -84,6 +91,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
+- [[Exploitation for Client Execution]]
 - [[Command-Line Interface]]
 
 ### Tactics
@@ -94,9 +102,9 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for YAML deserialization errors in logs
-- Scan for paper_trail versions < 12.0 without safe YAML
-- Alert on anomalous reify calls with user-supplied data
+- Monitor database for anomalous INSERTs into *_versions tables
+- Log deserialization calls and scan for unsafe YAML gadgets
+- Use gem auditing tools like bundler-audit for known vulnerabilities
 
 ## Related Procedures
 
@@ -104,9 +112,11 @@ Indicators and methods for detecting this tool's usage:
 ## Related Tools
 
 - [[ActiveRecord]]
-- [[YAML Ruby]]
+- [[Psych YAML Parser]]
 
 ## References
 
 - Official documentation: https://github.com/paper-trail-gem/paper_trail
-- Related resources: Ruby YAML deserialization advisories
+- Related resources: Ruby YAML deserialization exploits
+
+---

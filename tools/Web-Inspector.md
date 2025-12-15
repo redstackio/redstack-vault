@@ -1,15 +1,15 @@
 ---
-url: 'https://developer.mozilla.org/en-US/docs/Web/API/Console'
+url: 'https://developer.chrome.com/docs/devtools/'
 tags:
-  - browser
-  - devtools
+  - browser-devtools
+  - inspection
 type: tool
 verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:25.793Z'
-id: a354adc2-9dfe-4045-a969-ce7b0552983b
+updated_at: '2025-12-14T17:31:30.831Z'
+id: 53f3d2c8-837a-406b-8617-ddaaeaaee8c0
 validated: true
 submitted: true
 ---
@@ -19,51 +19,52 @@ submitted: true
 
 ## Overview
 
-Web Inspector (browser developer tools) enables interactive JavaScript execution and inspection of web applications, ideal for testing Meteor.js methods in Rocket.Chat.
+Web Inspector (or Browser DevTools) is a built-in browser toolset for inspecting, debugging, and modifying web applications, used in security testing to analyze network requests and execute JavaScript for PoC exploits.
 
 ## Description
 
-Built into browsers like Chrome (DevTools) and Firefox (Inspector), it provides a console for running code, network monitoring, and DOM inspection. In offensive security, it's used for client-side exploit testing, such as injecting into Meteor calls without external tools.
+In Rocket.Chat exploitation, it monitors /api/v1/login requests, allowing inspection of unsanitized loginToken parameters and execution of fetch for injection payloads. Available in Chrome, Firefox, Safari for web-based offensive operations.
 
 ## Features
 
-- Feature 1: Console for JS execution and error logging.
-- Feature 2: Network tab to monitor requests/responses.
-- Feature 3: Sources tab for debugging scripts.
+- Feature 1: Network tab for capturing HTTP requests
+- Feature 2: Console for JavaScript execution (e.g., fetch API)
+- Feature 3: Storage inspection for tokens
 
 ## Installation
 
 ### Requirements
 
-- Modern web browser (Chrome, Firefox, Safari, Edge).
+- Modern web browser
 
 ### Install Commands
 
-No installation; built-in. Access via F12 or right-click > Inspect.
+```bash
+# No installation needed; access via F12 or right-click Inspect
+```
 
 ## Basic Usage
 
-```javascript
-// In console
-console.log('Test');
+```bash
+tool-name --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| F12 | Open inspector |
-| Ctrl+Shift+I | Toggle dev tools |
+| Network Tab | Monitor requests |
+| Console | Execute JS |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open console and run `Meteor.call('method', 'arg');`.
+Open DevTools (F12) and go to Network tab.
 
 ### Example 2: Advanced Usage
 
-Monitor network: Load page, filter by XHR to see Meteor requests.
+In Console: fetch('/api/login', {method:'POST', body: JSON.stringify({loginToken: {$exists:false}})})
 
 ## MITRE ATT&CK Mapping
 
@@ -71,27 +72,34 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser user-agent anomalies.
-- Console API calls in logs.
+- Browser logs or CSP violations from console access
+- Extended dev tools sessions on sensitive pages
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[Burp Suite]]
-- [[Postman]]
+- [[tools/curl]]
+- [[tools/fetch]]
 
 ## References
 
-- MDN Web Docs: Console API
+- Official documentation: https://developer.mozilla.org/en-US/docs/Tools

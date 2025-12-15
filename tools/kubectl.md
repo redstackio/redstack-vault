@@ -1,5 +1,4 @@
 ---
-id: tool-kubectl-001
 url: 'https://kubernetes.io/docs/reference/kubectl/'
 tags:
   - kubernetes
@@ -8,10 +7,11 @@ type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
   - Windows
-created_at: '2024-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.669Z'
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:38.906Z'
+id: c25cafe9-973c-481e-8289-6f1c79dfb5bf
 validated: true
 submitted: true
 ---
@@ -21,29 +21,31 @@ submitted: true
 
 ## Overview
 
-Kubectl is the Kubernetes command-line tool for interacting with clusters, used to create resources, proxy, and manage webhooks in this SSRF attack.
+kubectl is the command-line tool for interacting with Kubernetes clusters, used to deploy malicious pods and manage deployments for SSRF hijacking.
 
 ## Description
 
-Essential for deploying malicious configurations and triggering exploits. Supports YAML applies, proxy for debug, and resource creation.
+Facilitates applying YAML manifests, scaling deployments, and logging in Kubernetes, essential for exploiting aggregated API servers like metrics-server.
 
 ## Features
 
-- Feature 1: Declarative resource management
-- Feature 2: Proxy and port-forwarding
-- Feature 3: Logging and debugging commands
+- Feature 1: Resource creation and management
+- Feature 2: Namespace operations
+- Feature 3: Log and exec access
 
 ## Installation
 
 ### Requirements
 
-- Go 1.16+ or binary download
+- Kubernetes cluster access
+- KUBECONFIG env set
 
 ### Install Commands
 
 ```bash
+# On Linux
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install kubectl /usr/local/bin/
+chmod +x kubectl
 ```
 
 ## Basic Usage
@@ -56,22 +58,21 @@ kubectl --help
 
 | Option | Description |
 |--------|-------------|
-| `-f, --filename` | YAML/JSON file |
-| `--dry-run` | Simulate apply |
+| -n | Namespace |
+| -f | Filename |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-kubectl get pods
+kubectl apply -f go-redirect.yaml
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-kubectl create -f webhook.yaml
-kubectl proxy &
+kubectl get pods -n kube-system
 ```
 
 ## MITRE ATT&CK Mapping
@@ -80,25 +81,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Windows Command Shell]] Windows Command Shell (analogous for k8s)
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Initial Access]]
 
 ## Detection
 
-- Audit kubectl commands in cluster logs
-- RBAC restrictions on sensitive operations
+Indicators and methods for detecting this tool's usage:
+
+- kubectl processes in audits
+- Unauthorized applies in kube-system
 
 ## Related Procedures
 
-- [[procedures/Create-Malicious-Admission-Webhook]]
+- [[procedures/Deploy-Malicious-Pod-to-Hijack-Metrics-Server]]
 
 ## Related Tools
 
-- [[tools/minikube]]
-- [[tools/helm]]
+- [[tools/Docker]]
 
 ## References
 

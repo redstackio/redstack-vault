@@ -1,76 +1,97 @@
 ---
-id: proc-claim-aws-cloudfront
-tags:
-  - subdomain-takeover
-  - aws
+id: 123e4567-e89b-12d3-a456-426614174002
+name: Claim-Unclaimed-AWS-CloudFront-Distribution
 type: procedure
-tools:
-  - '[[tools/AWS-CloudFront-Console]]'
-tactics:
-  - '[[Initial Access]]'
-commands: []
 verified: false
-platforms:
-  - AWS
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:52.887Z'
+tactics:
+  - '[[Initial Access]]'
 techniques:
-  - '[[T1078.004]]'
-updated_at: '2025-12-14T04:39:01.856Z'
+  - '[[Exploit Public-Facing Application]]'
 sub_techniques: []
+tags:
+  - subdomain-takeover
+  - aws-cloudfront
+commands: []
+platforms:
+  - AWS
+tools: []
+skill_level: intermediate
+impact_level: high
+detection_risk: medium
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[T1078.004]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
-# Claim Unclaimed AWS CloudFront Distribution
+
+# Claim-Unclaimed-AWS-CloudFront-Distribution
 
 ## Summary
 
-This procedure claims control of a subdomain by creating an AWS CloudFront distribution and assigning the dangling hostname, allowing the attacker to serve arbitrary content on the legitimate-looking subdomain.
+This procedure involves creating an AWS CloudFront distribution and associating it with a dangling subdomain's CNAME to gain control over the legitimate domain, allowing hosting of arbitrary content as if it were official.
 
 ## Description
 
-Following DNS discovery, the attacker logs into AWS, creates a distribution linked to a controlled origin, and adds saostatic.uber.com as an alternate domain name. This hijacks traffic to the subdomain, enabling phishing or further attacks. Propagation takes minutes, after which custom pages like subdomaintakeoverbyarneswinnen.html are accessible.
+Following discovery of an unclaimed CloudFront hostname via DNS lookup, the attacker logs into AWS, creates a new distribution pointing to a controlled origin (e.g., an EC2 instance or S3 bucket), and adds the target subdomain (saostatic.uber.com) as an alternate domain name. Once propagated, the subdomain resolves to the attacker's content. This targets cloud-reliant web apps; prerequisites include an AWS account. Outcomes: Full subdomain control for phishing or malware distribution.
 
 ## Requirements
 
 1. Valid AWS account with CloudFront permissions
-2. Controlled origin server (e.g., S3 bucket)
-3. Identified dangling CNAME from prior recon
+2. Identified unclaimed CloudFront CNAME from recon
+3. Controlled origin server ready
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor AWS for unauthorized distribution creations using CloudTrail
-- Delete unused DNS records and claim all cloud resources
-- Enable MFA and least-privilege IAM policies for AWS consoles
+- Monitor AWS for unauthorized distribution creations linked to owned domains
+- Use AWS Config rules to alert on new CloudFront associations
+- Regularly scan for dangling DNS records with tools like dnsrecon
 
 ## Objectives
 
-1. Gain control over the subdomain
-2. Serve malicious content with subdomain authority
-3. Prepare for downstream exploits like phishing
+1. Associate attacker-controlled distribution with victim subdomain
+2. Achieve resolution hijacking
+3. Enable content serving on legitimate domain
 
 ## Instructions
 
-### Step 1: Create CloudFront Distribution
+### Step 1: Create New CloudFront Distribution
 
-**Context**: Set up a new distribution in the AWS console to host attacker content.
+**Context**: Set up the distribution in AWS Console or CLI to prepare for CNAME association.
 
-**Instructions**: Navigate to CloudFront dashboard, create distribution, select custom origin (attacker server), configure behaviors for HTTP/HTTPS, and enable.
+**Command** (AWS CLI example):
+```bash
+aws cloudfront create-distribution --distribution-config file://config.json
+```
 
-> No CLI command; web console action. Expected: Distribution ID generated.
+> The config.json specifies origin domain (e.g., attacker-server.com), default cache behavior, and enables HTTPS. Expected: Distribution ID returned, status 'InProgress'.
 
-### Step 2: Assign Alternate Domain Name
+### Step 2: Add Alternate Domain Name
 
-**Context**: Link the distribution to the target subdomain to claim it.
+**Context**: Link the victim subdomain to the distribution.
 
-**Instructions**: In distribution settings, add saostatic.uber.com under Alternate Domain Names (CNAMEs). Update if needed and deploy.
+**Command** (AWS Console):
+```bash
+# In Console: Edit Distribution > Alternate Domain Names > Add saostatic.uber.com
+```
 
-> Success: Subdomain resolves to attacker content after propagation (test with curl or browser).
+> Validate domain ownership if required (not always for unclaimed). Wait for deployment (5-15 min). Test by curling the subdomain.
+
+### Step 3: Verify Control
+
+**Context**: Confirm takeover by accessing the subdomain.
+
+**Command** (Test):
+```bash
+curl -I https://saostatic.uber.com
+```
+
+> Expected: 200 OK from attacker origin, not CloudFront error.
 
 ## MITRE ATT&CK Mapping
 
@@ -80,19 +101,21 @@ Defensive measures and detection strategies:
 
 ### Techniques
 
-- [[T1078.004]] Valid Accounts: Cloud Accounts
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Sub-Techniques
 
+- None
 
 ## Commands Used
 
+- None specific
 
 ## Tools Used
 
-- [[tools/AWS-CloudFront-Console]]
+- AWS CLI/Console
 
 ## Tags
 
-- subdomain-takeover
-- aws
+- [[subdomain-takeover]]
+- [[aws-cloudfront]]

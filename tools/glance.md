@@ -1,16 +1,16 @@
 ---
-id: tool-uuid-2
 url: 'https://www.npmjs.com/package/glance'
 tags:
   - http-server
-  - static-files
+  - vulnerable
 type: tool
 verified: false
 platforms:
   - Node.js
   - Web
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:46.945Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:16.648Z'
+id: b40eb669-7f08-49ef-ac5f-4ea07928b2da
 validated: true
 submitted: true
 ---
@@ -20,23 +20,24 @@ submitted: true
 
 ## Overview
 
-Glance is a lightweight Node.js HTTP server for serving static files, vulnerable to Stored XSS due to unsanitized file names in directory listings.
+Glance is a Node.js module for serving static files over HTTP, vulnerable to path traversal due to missing sanitization.
 
 ## Description
 
-It generates simple HTML listings but fails to escape file names, allowing JavaScript injection. Used in testing for demonstrating web vulnerabilities in Node.js apps.
+Glance starts a simple HTTP server on port 8080, serving directories without path validation, allowing arbitrary file reads in security testing.
 
 ## Features
 
-- Feature 1: Disposable static file serving
-- Feature 2: Directory listing generation
-- Feature 3: Verbose logging support
+- Feature 1: Static file serving
+- Feature 2: Verbose logging
+- Feature 3: Directory specification
 
 ## Installation
 
 ### Requirements
 
-- Node.js and npm
+- Node.js
+- npm
 
 ### Install Commands
 
@@ -54,7 +55,7 @@ glance --help
 
 | Option | Description |
 |--------|-------------|
-| `--dir` | Root directory |
+| `--dir` | Serve directory |
 | `--verbose` | Detailed logs |
 
 ## Examples
@@ -62,13 +63,13 @@ glance --help
 ### Example 1: Basic Usage
 
 ```bash
-./node_modules/glance/bin/glance.js --dir ./
+./bin/glance.js --dir ./public
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-./node_modules/glance/bin/glance.js --verbose --dir ./
+./bin/glance.js --verbose --dir ./node_modules/
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,7 +78,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
@@ -87,16 +88,16 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Port 3000 listening with Node.js process
-- Logs showing Glance startup
+- Port 8080 listening with Node.js process
+- Logs showing traversal attempts
 
 ## Related Procedures
 
-- [[procedures/Run-Glance-Server]]
+- [[procedures/Start-Glance-Static-File-Server]]
 
 ## Related Tools
 
-- [[tools/npm]]
+- [[tools/nodejs]]
 
 ## References
 

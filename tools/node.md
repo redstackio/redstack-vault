@@ -2,14 +2,13 @@
 url: 'https://nodejs.org/'
 tags:
   - runtime
-  - javascript
 type: tool
 verified: false
 platforms:
   - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:36.907Z'
-id: c2f4d526-3092-41ad-8dc5-a6617f5f24e0
+updated_at: '2025-12-14T17:31:18.996Z'
+id: 4d9fd84d-044f-4e09-aaaf-6b51e9455848
 validated: true
 submitted: true
 ---
@@ -19,23 +18,23 @@ submitted: true
 
 ## Overview
 
-Node.js is a JavaScript runtime built on Chrome's V8 engine, used to execute server-side scripts like the webpack-bundle-analyzer binary in this local XSS attack.
+Node.js is a JavaScript runtime environment used to execute server-side scripts, such as running Express apps in vulnerability PoCs.
 
 ## Description
 
-Node enables running JS outside browsers, ideal for build tools and analyzers. In security testing, it's used to launch vulnerable applications for exploitation demonstration.
+Node enables asynchronous I/O for web servers and integrates with npm for package management, crucial for testing Node.js module flaws like improper auth.
 
 ## Features
 
-- Feature 1: Asynchronous I/O for efficient execution
-- Feature 2: Module system for package integration
-- Feature 3: REPL for interactive debugging
+- Feature 1: Event-driven non-blocking I/O
+- Feature 2: JavaScript execution
+- Feature 3: Module integration
 
 ## Installation
 
 ### Requirements
 
-- Supported OS (Linux, macOS, Windows)
+- OS support (Linux, Windows, macOS)
 
 ### Install Commands
 
@@ -55,21 +54,21 @@ node --help
 
 | Option | Description |
 |--------|-------------|
-| `-v, --version` | Print Node.js version |
-| `-e` | Evaluate script |
+| -v | Version |
+| --inspect | Debug mode |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-node script.js
+node index.js
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-node ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js poc.json
+node --inspect index.js
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,22 +77,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- node process in ps aux
-- Port listening on 8888
+- node executable running
+- Process listening on ports like 3000
 
 ## Related Procedures
 
-- [[procedures/Run-Analyzer-on-Malicious-JSON]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 

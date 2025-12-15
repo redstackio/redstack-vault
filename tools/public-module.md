@@ -1,17 +1,16 @@
 ---
-id: tool-uuid-2
+id: tool-uuid-3
 url: 'https://www.npmjs.com/package/public'
 tags:
-  - web-server
-  - static-hosting
+  - static-server
   - vulnerable
 type: tool
 verified: false
 platforms:
-  - Node.js
+  - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.865Z'
-description: Vulnerable static file hosting server for Node.js with directory indexing
+updated_at: '2025-12-14T17:26:11.771Z'
+configuration: 'Version 0.1.2, run via bin/public with base dir and port'
 validated: true
 submitted: true
 ---
@@ -21,17 +20,17 @@ submitted: true
 
 ## Overview
 
-The 'public' module is a lightweight Node.js static file server that supports directory listings, vulnerable to stored XSS in version 0.1.3 due to unsanitized filename output.
+The 'public' Node.js module is a lightweight static file hosting server with directory index support, vulnerable to path traversal in version 0.1.2.
 
 ## Description
 
-It serves files and generates HTML indexes like Apache. Used in testing for XSS exploits via filenames. Features include port binding and dir serving; vuln at bin/public line 106.
+It serves files via HTTP without sanitizing paths, allowing '../' traversal to read arbitrary files. Used in testing to demonstrate supply chain vulnerabilities in npm packages.
 
 ## Features
 
-- Feature 1: Directory indexing for file browsing
-- Feature 2: Simple CLI binary for quick serving
-- Feature 3: Supports custom ports and paths
+- Feature 1: Simple static file serving
+- Feature 2: Directory indexing
+- Feature 3: Command-line binary for easy startup
 
 ## Installation
 
@@ -42,34 +41,34 @@ It serves files and generates HTML indexes like Apache. Used in testing for XSS 
 ### Install Commands
 
 ```bash
-npm install public@0.1.3
+npm install public
 ```
 
 ## Basic Usage
 
 ```bash
-./node_modules/public/bin/public
+./node_modules/public/bin/public ./ 8080
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| <dir> | Directory to serve | 
-| <port> | Port to bind | 
+| Base dir | Directory to serve | Required |
+| Port | Listening port | Required |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-./node_modules/public/bin/public ./ 8000
+./node_modules/public/bin/public ./ 8080
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-./node_modules/public/bin/public /var/www 8080
+./node_modules/public/bin/public /var/www 3000
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,29 +77,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Port listening on non-standard ports like 8000
-- Process named 'public' or node with public.js
-- HTML responses with unsanitized <li><a> tags
+- Process monitoring for 'public' binary
+- Port scans for unexpected HTTP servers
 
 ## Related Procedures
 
-- [[procedures/Run-Public-Server]]
+- [[procedures/Run-Vulnerable-Public-Server]]
 
 ## Related Tools
 
-- [[tools/npm]]
+- [[tools/express]]
 
 ## References
 
-- Official documentation: https://www.npmjs.com/package/public
-- Related resources: HackerOne report #316346
+- npm page: https://www.npmjs.com/package/public
+- HackerOne report: https://hackerone.com/reports/312918

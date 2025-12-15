@@ -1,16 +1,16 @@
 ---
-id: tool-requests
-url: 'https://requests.readthedocs.io/'
+url: 'https://requests.readthedocs.io'
 tags:
-  - http
-  - library
+  - http-client
 type: tool
 verified: false
 platforms:
   - Linux
-  - Web
+  - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:19.844Z'
+updated_at: '2025-12-14T17:32:20.389Z'
+id: 8a360914-de6f-48e0-8a50-2dfcf144c2cc
 validated: true
 submitted: true
 ---
@@ -20,23 +20,23 @@ submitted: true
 
 ## Overview
 
-The requests library is a Python HTTP client used for making API requests to Rocket.Chat endpoints during the exploitation phases, such as sending injection payloads and reset requests.
+Python HTTP library for sending API requests to Rocket.Chat endpoints during exploitation.
 
 ## Description
 
-It simplifies sending POST/GET with headers, JSON, and handling responses, crucial for the unauthenticated method calls and authenticated webhook creation in this attack.
+Used in the script for POST/GET to /api/v1/users.list with JSON payloads containing injection operators.
 
 ## Features
 
-- Feature 1: Simple API for HTTP methods
-- Feature 2: Automatic JSON encoding/decoding
-- Feature 3: Session management for auth
+- Feature 1: Simple API for sessions and auth
+- Feature 2: JSON encoding/decoding
+- Feature 3: Response handling for blind inference
 
 ## Installation
 
 ### Requirements
 
-- Python3
+- Python 3
 
 ### Install Commands
 
@@ -47,15 +47,12 @@ pip3 install requests
 ## Basic Usage
 
 ```bash
-python3 -c "import requests; r = requests.post('url'); print(r.json())"
+python3 -c "import requests; print(requests.get('http://example.com'))"
 ```
 
 ### Common Options
 
-| Option | Description |
-|--------|-------------|
-| session | Persistent connections |
-| headers | Custom headers dict |
+N/A (library)
 
 ## Examples
 
@@ -63,24 +60,14 @@ python3 -c "import requests; r = requests.post('url'); print(r.json())"
 
 ```python
 import requests
-r = requests.post('http://target/api', json=payload)
-```
-
-### Example 2: Advanced Usage
-
-```python
-with requests.Session() as s:
-    s.headers.update({'X-Auth-Token': 'tok'})
-    r = s.post('url', json=data)
+r = requests.post(url, json=payload)
 ```
 
 ## MITRE ATT&CK Mapping
 
-This tool is commonly associated with:
-
 ### Techniques
 
-- [[Web Protocols]]
+- [[Web Protocols]] Web Protocols
 
 ### Tactics
 
@@ -88,15 +75,11 @@ This tool is commonly associated with:
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- Python processes with high outbound HTTP traffic
-- User-Agent strings indicating requests library
-- API endpoint access patterns
+- Outbound HTTP to internal APIs with suspicious payloads
 
 ## Related Procedures
 
-- [[procedures/Leak-Password-Reset-Token-via-Blind-NoSQL-Injection]]
+- [[procedures/Leak-Admin-Email-via-Blind-Injection]]
 
 ## Related Tools
 
@@ -104,4 +87,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: https://requests.readthedocs.io/
+- Requests documentation

@@ -1,14 +1,14 @@
 ---
 tags:
   - xss
-  - verification
-  - exfiltration
+  - execution
 type: procedure
 tools:
   - '[[tools/Burp-Suite]]'
 tactics:
   - '[[Collection]]'
-commands: []
+commands:
+  - '[[commands/monitor-xss-execution]]'
 verified: false
 platforms:
   - Web
@@ -16,12 +16,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:52:39.067Z'
+updated_at: '2025-12-14T17:30:07.332Z'
 skill_level: intermediate
 impact_level: high
-detection_risk: medium
+detection_risk: high
 sub_techniques: []
-id: 53e972a9-1329-4983-b5e0-6883844292b9
+id: 996849c0-77ef-4ff2-9395-51c589af4e46
 validated: true
 mitre_tactics:
   - '[[Collection]]'
@@ -32,53 +32,57 @@ mitre_techniques:
 
 ## Summary
 
-This procedure monitors the admin browser for XSS payload execution, confirming arbitrary JavaScript runs, external script loading via XMLHttpRequest, and potential data access.
+This procedure monitors the admin page for XSS payload execution, confirming JavaScript runs via external XHR and enables data collection in the admin context.
 
 ## Description
 
-After triggering, the payload executes in the admin's session, loading code from //ks.xss.ht and eval-ing it. This bypasses CSP's unsafe-inline allowance by using event listeners on XHR. In the attack, this could lead to AJAX requests stealing user info. Observe via dev tools or Burp for network activity. Expected outcome: Confirmed JS execution and exfiltration capability.
+Upon rendering, the payload executes, using XHR to fetch and eval JS from //ks.xss.ht, bypassing CSP. This allows AJAX requests for stealing private info (e.g., session data). Prerequisites: Loaded admin page. Expected outcome: Confirmed execution with network activity.
 
 ## Requirements
 
-1. Access to admin browser session (simulated)
-2. Burp Suite for network monitoring
-3. Hosted script on external domain
+1. Browser dev tools or Burp proxy active
+2. Attacker domain with verification JS (e.g., alert or callback)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Block or log XHR to external domains in CSP
-- Use browser security extensions or WAF on admin panel
-- Monitor for eval() usage or anomalous network calls from admin sessions
+- Block external XHR in CSP (strict-src)
+- Monitor admin browser for unexpected network calls
+- Implement client-side XSS auditors
+- Alert on eval() usage in scripts
 
 ## Objectives
 
-1. Verify script execution and CSP bypass
-2. Confirm external code load
-3. Demonstrate impact like data access
+1. Verify script execution on page load
+2. Confirm CSP bypass and external load
+3. Demonstrate potential data exfiltration
 
 ## Instructions
 
-### Step 1: Monitor Browser Console
+### Step 1: Load Page and Monitor Network
 
-**Context**: Open dev tools in the admin browser to watch for JS errors or logs from the payload.
+**Context**: Open the admin page in a browser with dev tools.
 
-**Command** (Browser-based):
+**Command** ([[commands/monitor-xss-execution]]):
+```bash
+# Use browser dev tools; or proxy logs in Burp
+tail -f /path/to/burp/logs | grep 'ks.xss.ht'
+```
 
-> In console: Monitor for 'load' event or eval execution.
+> Monitors for requests. Expected output: GET request to //ks.xss.ht.
 
-> Expected output: No errors; potential alert or log from external script.
+### Step 2: Check Console for Execution
 
-### Step 2: Inspect Network Traffic
+**Context**: Look for eval or errors indicating success.
 
-**Context**: Use Burp or dev tools to capture XHR requests confirming external load.
+**Command** ([[commands/monitor-xss-execution]]):
+```bash
+# Browser console check
+console.log('XSS executed if this appears via payload')
+```
 
-**Command** (Burp-integrated):
-
-> In Burp Proxy > HTTP history, filter for ks.xss.ht.
-
-> Expected output: GET request to //ks.xss.ht with 200 status, response evaluated.
+> If payload includes logging, see output. Expected output: No errors; successful eval.
 
 ## MITRE ATT&CK Mapping
 
@@ -95,6 +99,7 @@ Defensive measures and detection strategies:
 
 ## Commands Used
 
+- [[commands/monitor-xss-execution]]
 
 ## Tools Used
 
@@ -102,5 +107,5 @@ Defensive measures and detection strategies:
 
 ## Tags
 
-- [[xss]]
-- [[verification]]
+- xss
+- execution

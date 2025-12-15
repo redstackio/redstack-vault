@@ -1,6 +1,5 @@
 ---
-id: cmd-001-curl-listing
-data: 'curl -s http://target.example.com/ | grep -E ''<a href="[^/]*?/?">'''
+data: 'curl -i https://try.nextcloud.com/assets/'
 tags:
   - reconnaissance
   - web
@@ -11,8 +10,9 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.532Z'
+id: 13b7ae48-0f00-4094-ab5d-7d95ee9eef0e
+created_at: '2025-12-14T17:26:17.407Z'
+updated_at: '2025-12-14T17:26:17.407Z'
 verified: false
 validated: true
 submitted: true
@@ -22,49 +22,40 @@ submitted: true
 ## Command
 
 ```bash
-curl -s http://target.example.com/ | grep -E '<a href="[^/]*?/?">'
+curl -i https://try.nextcloud.com/assets/
 ```
 
 ## Description
 
-This command uses curl to fetch the HTTP response from a target directory URL and pipes it to grep to extract HTML links, revealing directory listings if enabled. It is used during web reconnaissance to enumerate exposed files and subdirectories without authentication.
+This command uses curl to fetch the HTTP response (including headers) for a target directory URL, checking for enabled directory listing. It is useful for reconnaissance on web servers to detect exposed file structures without a browser.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-s` | Silent mode: Suppress progress meter and error messages | Yes |
-| `http://target.example.com/` | The target URL (e.g., root or subdirectory path) | Yes |
-| `grep -E '<a href="[^/]*?/?">'` | Regular expression to match anchor tags for links (directories end with /) | Yes |
+| `-i` | Include response headers in output | Yes |
+| `URL` | The target directory path (e.g., https://example.com/assets/) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -s http://irc.parrotsec.org/ | grep -E '<a href="[^/]*?/?">'
+curl -i https://try.nextcloud.com/assets/
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -s -A "Mozilla/5.0" http://irc.parrotsec.org/caine/ | grep -E '<a href="[^/]*?/?">' | awk -F'">' '{print $2}' | sed 's/<\/a>//'
+curl -i -s https://try.nextcloud.com/css/ | grep -E "<a href|Server:"
 ```
 
-This adds a user-agent header to mimic a browser and cleans up output to show just directory names.
+This silent (-s) version pipes output to grep for filtering links and server headers.
 
 ## Expected Output
 
-Successful execution returns lines like:
-
-`<a href="caine/">caine/</a> 2023-09-15 12:00`
-
-`<a href="direct/">direct/</a> 2023-08-20 10:30`
-
-`<a href="parrot/">parrot/</a> 2023-07-10 14:45`
-
-Indicating enumerated directories with timestamps. If no listing, output may be empty or show a 403/404 error.
+A successful run returns HTTP/1.1 200 OK, headers like Server: Apache/2.4.41 (Ubuntu), Content-Type: text/html, and body with directory listing HTML (e.g., file names in <pre> tags). If disabled, expect 403 Forbidden or 404 Not Found.
 
 ## Related
 
-- [[Related Procedure|procedures/Exploit-Directory-Listing-for-Enumeration]]
+- [[Related Procedure|procedures/Access-Exposed-Directories-via-Listing]]

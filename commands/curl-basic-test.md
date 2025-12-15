@@ -1,19 +1,15 @@
 ---
-id: cmd-uuid-101
-data: 'curl -v "https://resizer.line-apps.com/form?url=$EXTERNAL_URL"'
+data: 'curl "http://target:3000/file?path=test.txt"'
 tags:
-  - recon
-  - web
-  - test
+  - testing
 type: command
 output: null
 executor: bash
 platforms:
-  - Linux
-  - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:09.213Z'
+updated_at: '2025-12-14T17:26:21.783Z'
+id: 7f9e1f42-5d81-4c49-bd39-0cbbd4377e4a
 verified: false
 validated: true
 submitted: true
@@ -23,39 +19,31 @@ submitted: true
 ## Command
 
 ```bash
-curl -v "https://resizer.line-apps.com/form?url=$EXTERNAL_URL"
+curl "http://target:3000/file?path=test.txt"
 ```
 
 ## Description
 
-This command tests the resizer service endpoint with a benign external URL to verify functionality and HTTP acceptance before SSRF exploitation.
+Tests a basic file request to a Node.js server to verify path handling before attempting traversal.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-v` | Verbose mode for detailed output | Yes |
-| `url=` | External test URL (e.g., http://httpbin.org/get) | Yes |
-| `$EXTERNAL_URL` | Placeholder for public URL | Yes |
+| URL | Endpoint with benign path | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -v "https://resizer.line-apps.com/form?url=http://httpbin.org/get"
-```
-
-### Advanced Usage
-
-```bash
-curl -v "https://resizer.line-apps.com/form?url=https://example.com/image.jpg"
+curl "http://localhost:3000/file?path=test.txt"
 ```
 
 ## Expected Output
 
-HTTP response with 200 status, echoed request details, or processed image confirmation.
+Returns contents of intended_dir/test.txt or 404.
 
 ## Related
 
-- [[Related Procedure|procedures/Identify-Resizer-SSRF-Endpoint]]
+- [[Related Procedure: Setup-Vulnerable-Node.js-Path-Join-App]]

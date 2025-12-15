@@ -1,111 +1,105 @@
 ---
+id: proc-clone-wiki-repo
 tags:
   - git
   - clone
-  - gitlab
-  - wiki
 type: procedure
 tools:
-  - '[[tools/Git]]'
+  - '[[tools/git]]'
 tactics:
   - '[[Initial Access]]'
 commands:
-  - '[[commands/git-clone-gitlab-wiki]]'
+  - '[[commands/git-clone-wiki-repo]]'
 verified: false
 platforms:
-  - Web
+  - Linux
 submitted: true
+created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Standard Application Layer Protocol]]'
+updated_at: '2025-12-14T17:24:15.056Z'
+skill_level: beginner
+impact_level: low
+detection_risk: low
 sub_techniques: []
-id: c65cb923-e85f-4480-a91e-74b29275c61d
-created_at: '2025-12-13T23:52:55.066Z'
-updated_at: '2025-12-13T23:52:55.066Z'
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Standard Application Layer Protocol]]'
 ---
----
-
-# Clone GitLab Wiki Repository
+# Clone-GitLab-Wiki-Repository
 
 ## Summary
 
-This procedure clones a GitLab project's wiki repository locally, providing the foundation for subsequent modifications in an attack chain targeting stored XSS via commit metadata.
+This procedure clones the GitLab wiki repository locally to allow modification and addition of exploit files.
 
 ## Description
 
-In the context of exploiting GitLab's wiki rendering vulnerability, cloning the wiki repo allows an attacker with push access to prepare malicious changes. The wiki is stored as a separate Git repository (e.g., project.wiki.git), and cloning via SSH ensures authenticated access. This step requires GitLab project membership and configured SSH keys.
+GitLab wikis are Git repos with .wiki.git suffix. Cloning provides a local working copy for adding the malicious .rmd file before pushing changes back.
 
 ## Requirements
 
-1. Git installed on local machine
-2. SSH key added to GitLab account for git@gl.local access
-3. Target project path (e.g., root/test)
+1. Git installed locally
+2. SSH or HTTPS access to GitLab
+3. Wiki repo URL from project settings
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Restrict wiki push access to trusted users via GitLab project permissions
-- Monitor Git clone/push logs for anomalous activity from low-privilege accounts
+- Monitor git clone activity from internal networks
+- Enforce MFA for git access
 
 ## Objectives
 
-1. Gain local access to wiki files for editing
-2. Prepare environment for injecting malicious Git config
-3. Enable commit-based payload storage
+1. Obtain local editable copy of wiki
+2. Prepare for file injection
 
 ## Instructions
 
-### Step 1: Execute Clone Command
+### Step 1: Obtain Clone URL
 
-**Context**: Clone the target wiki repository using SSH URL to authenticate and download the repo.
+**Context**: Get the repository clone command from GitLab UI.
 
-**Command** ([[commands/git-clone-gitlab-wiki]]):
+No command; in Project > Wiki > Clone repository button.
+
+> Copy SSH URL like git@gitlab.example.com:root/proj1.wiki.git.
+
+### Step 2: Execute Clone
+
+**Context**: Clone the repo to local machine.
+
+**Command** ([[commands/git-clone-wiki-repo]]):
+
 ```bash
-git clone git@gl.local:root/test.wiki.git
+git clone git@gitlab.example.com:root/proj1.wiki.git
 ```
 
-> This command creates a local directory 'test.wiki' with the repo contents. Expected output includes progress messages and completion without authentication errors.
-
-### Step 2: Navigate to Directory
-
-**Context**: Change into the cloned repo to perform further operations.
-
-**Command** (cd):
-```bash
-cd test.wiki
-```
-
-> Verifies access; use `ls` to confirm Markdown files like home.md are present.
+> Clones the wiki repo; expected output: Cloning into 'proj1.wiki'...
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Initial Access]] Initial Access
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Standard Application Layer Protocol]] Application Layer Protocol (Git)
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/git-clone-gitlab-wiki]]
+- [[commands/git-clone-wiki-repo]]
 
 ## Tools Used
 
-- [[tools/Git]]
+- [[tools/git]]
 
 ## Tags
 
-- [[tools/Git]]
-- [[clone]]
-- [[gitlab]]
-- [[wiki]]
+- git
+- clone

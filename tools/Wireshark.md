@@ -1,88 +1,84 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174009
-name: Wireshark
+id: tool-001
+url: 'https://www.wireshark.org/'
+tags:
+  - network-capture
+  - traffic-analysis
 type: tool
 verified: false
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:09.766Z'
 platforms:
   - Linux
-  - macOS
   - Windows
-tags:
-  - network-analysis
-  - packet-capture
-url: 'https://www.wireshark.org/'
+  - macOS
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:52.426Z'
 validated: true
 submitted: true
 ---
-
 # Wireshark
 
 **Status**: Unverified
 
 ## Overview
 
-Wireshark is a free, open-source packet analyzer used for capturing and inspecting network traffic, ideal for verifying SSRF by observing server-side connections.
+Wireshark is a free, open-source network protocol analyzer used for capturing and inspecting network traffic in detail, ideal for demonstrating MITM vulnerabilities like token exposure in HTTP requests during security testing.
 
 ## Description
 
-Wireshark supports deep inspection of protocols like HTTP, allowing filters for POST requests and timing analysis. In SSRF scenarios, it captures client requests and infers server behavior from responses and any leaked traffic.
+Wireshark allows deep packet inspection, filtering by protocols (e.g., HTTP), and analysis of request/response flows. In offensive security, it's commonly used to capture unencrypted data in transit, such as security tokens in password reset links, to validate interception risks without actual MITM deployment.
 
 ## Features
 
-- Feature 1: Live packet capture and offline analysis
-- Feature 2: Rich display filters (e.g., http.request.method == "POST")
-- Feature 3: Export to formats like .pcap for sharing (e.g., http.7z)
+- Feature 1: Real-time packet capture and display filtering
+- Feature 2: Protocol dissection for HTTP, TCP/IP, etc.
+- Feature 3: Exportable captures for further analysis
 
 ## Installation
 
 ### Requirements
 
-- Standard user privileges
-- Network interface access
+- Compatible OS (Linux, Windows, macOS)
+- Administrative privileges for interface access
 
 ### Install Commands
 
 ```bash
-# Ubuntu/Debian
+# On Ubuntu/Debian
 sudo apt update && sudo apt install wireshark
 
-# macOS (via Homebrew)
+# On macOS with Homebrew
 brew install --cask wireshark
-
-# Windows: Download from official site
 ```
 
 ## Basic Usage
 
 ```bash
-tshark -i eth0 -f "tcp port 80" -w capture.pcap
+wireshark &
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-i <interface>` | Capture on specific interface |
-| `-f <filter>` | Capture filter (BPF) |
-| `-w <file>` | Write to file |
+| `-i <interface>` | Capture on specific network interface |
+| `-k` | Start capture immediately |
+| `-w <file>` | Write capture to file |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-wireshark -i lo -k -w ssrf_capture.pcap
+wireshark -i eth0 -k -w capture.pcap
 ```
-Start GUI capture on loopback.
 
 ### Example 2: Advanced Usage
 
+Filter for HTTP traffic during link access:
+
 ```bash
-tshark -i eth0 -f "host test-4925.myshopify.com" -Y "http contains 'image[src]'" -w analysis.pcap
+wireshark -i lo -f "http" -w http_capture.pcap
 ```
-CLI capture and display filter for SSRF requests.
 
 ## MITRE ATT&CK Mapping
 
@@ -90,35 +86,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Active Scanning]] Active Scanning
-- [[Network Sniffing]] Network Sniffing
+- [[Adversary-in-the-Middle]]
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Defense Evasion]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process names: wireshark.exe, tshark
-- High network I/O on analysis machines
-- .pcap files in temp directories
+- Unusual packet capture processes on endpoints
+- High network I/O from analysis tools
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
+- [[procedures/Intercept-Token-via-Network-Traffic-Capture]]
 
 ## Related Tools
 
 - [[tcpdump]]
-- [[Burp Suite]]
+- [[tshark]]
 
 ## References
 

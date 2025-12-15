@@ -1,17 +1,20 @@
 ---
-id: cmd-uuid-aws-s3-cp
-data: 'aws s3 cp phishing.html s3://dangling-subdomain.mozaws.net/ --acl public-read'
+id: cmd-uuid-002
+data: 'aws s3 cp s3://bucket-name/object.txt .'
 tags:
   - aws
-  - hosting
+  - cloud
+  - exfiltration
 type: command
-output: 'upload: phishing.html to s3://dangling-subdomain.mozaws.net/phishing.html'
+output: null
 executor: bash
 platforms:
+  - AWS
   - Linux
   - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:51:26.437Z'
+updated_at: '2025-12-14T17:32:29.053Z'
 verified: false
 validated: true
 submitted: true
@@ -21,39 +24,44 @@ submitted: true
 ## Command
 
 ```bash
-aws s3 cp phishing.html s3://dangling-subdomain.mozaws.net/ --acl public-read
+aws s3 cp s3://bucket-name/object.txt .
 ```
 
 ## Description
 
-Uploads files to an S3 bucket for hosting on a taken-over subdomain.
+Copies objects from an S3 bucket to local storage, enabling data exfiltration using compromised AWS credentials.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `phishing.html` | Local file to upload | Yes |
-| `s3://...` | Destination bucket | Yes |
-| `--acl public-read` | Sets public access | No |
+| `s3://bucket-name/object.txt` | Source S3 path | Yes |
+| `.` | Destination local path | Yes |
+| `--recursive` | Copy entire bucket | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-aws s3 cp phishing.html s3://dangling-subdomain.mozaws.net/ --acl public-read
+aws s3 cp s3://mybucket/file.txt .
 ```
 
 ### Advanced Usage
 
 ```bash
-aws s3 sync ./content/ s3://dangling-subdomain.mozaws.net/ --acl public-read
+aws s3 cp s3://mybucket/ . --recursive
 ```
 
 ## Expected Output
 
-Confirmation of upload, e.g., 'upload: phishing.html to s3://dangling-subdomain.mozaws.net/phishing.html'.
+Progress indicator and confirmation, e.g.,
+
+```
+copy: s3://mybucket/file.txt to ./file.txt
+```
 
 ## Related
 
-- [[procedures/Host-Arbitrary-Content-on-Taken-Over-Subdomain]]
+- [[commands/aws-s3-ls]]
+- [[procedures/Access-AWS-Resources-with-Stolen-Credentials]]

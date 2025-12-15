@@ -1,17 +1,16 @@
 ---
-id: tool-trurl-001
+id: tool-trurl
 url: 'https://github.com/curl/trurl'
 tags:
   - url
   - parse
-  - manipulate
+  - cli
 type: tool
 verified: false
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.510Z'
-configuration: Latest version (post-v0.8)
+updated_at: '2025-12-14T17:29:36.025Z'
 validated: true
 submitted: true
 ---
@@ -21,31 +20,30 @@ submitted: true
 
 ## Overview
 
-trurl is a command-line tool built on libcurl's CURLU API for parsing, modifying, and extracting URL components; used here to demonstrate host/zone separation in IPv6 URLs.
+trurl is a command-line tool frontend to libcurl's CURLU API for URL parsing and manipulation, used here to test and demonstrate extraction of IPv6 zone IDs.
 
 ## Description
 
-Ideal for security testing URL handling; extracts fields like {host} and {zoneid}, showing libcurl's stripping behavior. Older versions (<v0.8) had issues, so use latest for accurate IPv6 support.
+Facilitates testing libcurl behaviors like separating {host} and {zoneid} in URLs. Ideal for verifying the zone omission flaw in a CLI context without full app integration.
 
 ## Features
 
-- Feature 1: URL templating and variable extraction.
-- Feature 2: Supports percent-decoding and IPv6 literals.
-- Feature 3: Non-interactive parsing for scripts.
+- Feature 1: Template-based output for URL components
+- Feature 2: Supports percent-encoded elements
+- Feature 3: IPv6 literal handling
 
 ## Installation
 
 ### Requirements
 
-- libcurl and build tools.
+- libcurl development files
 
 ### Install Commands
 
 ```bash
-# From source
+# Build from source
 git clone https://github.com/curl/trurl.git
-cd trurl
-make
+cd trurl && make
 ```
 
 ## Basic Usage
@@ -59,7 +57,7 @@ trurl --help
 | Option | Description |
 |--------|-------------|
 | `--get` | Output using template |
-| `-s` | Set base URL |
+| `-s` | Set URL source |
 
 ## Examples
 
@@ -81,21 +79,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Discovery]]
+- [[Collection]] Collection
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process lists showing trurl executions.
-- URL manipulation logs.
+- Process name 'trurl' in logs
+- URL parsing patterns in command history
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
@@ -104,3 +109,4 @@ Indicators and methods for detecting this tool's usage:
 ## References
 
 - Official documentation: https://github.com/curl/trurl
+- Related resources: libcurl docs

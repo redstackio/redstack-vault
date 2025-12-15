@@ -1,17 +1,17 @@
 ---
-id: uuid-ssl-server-py
-url: ''
+url: null
 tags:
-  - https-server
   - ssl
+  - hosting
 type: tool
-verified: false
 platforms:
   - Linux
-  - Windows
   - macOS
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:21.047Z'
+description: Simple Python script for local SSL web server
+id: d997bb24-3d5c-4040-8d06-70e7022527d1
+created_at: '2025-12-14T17:29:36.432Z'
+updated_at: '2025-12-14T17:29:36.432Z'
+verified: false
 validated: true
 submitted: true
 ---
@@ -21,43 +21,42 @@ submitted: true
 
 ## Overview
 
-Custom Python script for running a simple local HTTPS server on port 443, used in web exploit scenarios requiring secure hosting of malicious pages, such as postMessage XSS attacks.
+ssl_server.py is a lightweight Python script that runs a local HTTPS server with a self-signed certificate, ideal for testing web exploits requiring secure contexts like postMessage.
 
 ## Description
 
-ssl_server.py leverages Python's http.server and ssl modules to create an HTTPS server with a self-signed certificate, ideal for simulating controlled domains in browser-based attacks without external hosting. It's lightweight and requires no additional dependencies beyond Python 3 stdlib.
+It uses Python's http.server and ssl modules to serve files on port 443. Commonly used in security testing to host malicious pages on lookalike domains without needing full web server setup.
 
 ## Features
 
-- Feature 1: Binds to port 443 for standard HTTPS
-- Feature 2: Serves static files like HTML exploits from current directory
-- Feature 3: Self-signed cert generation for quick setup
+- Feature 1: Self-signed certificate generation
+- Feature 2: Binds to low ports with sudo
+- Feature 3: Serves static files like HTML exploits
 
 ## Installation
 
 ### Requirements
 
-- Python 3.6+
-- No external packages needed
+- Python 3
 
 ### Install Commands
 
 ```bash
-# Download or create the script manually
-curl -O https://example.com/ssl_server.py  # Or from report source
+# Download the script manually
+curl -O https://raw.githubusercontent.com/.../ssl_server.py  # Assuming source
 ```
 
 ## Basic Usage
 
 ```bash
-tool-name --help  # Not applicable; run directly
+sudo python3 ssl_server.py
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| None (script-based) | N/A |
+| None (script-based) | Runs default server |
 
 ## Examples
 
@@ -66,10 +65,11 @@ tool-name --help  # Not applicable; run directly
 ```bash
 sudo python3 ssl_server.py
 ```
+Access https://localhost
 
 ### Example 2: Advanced Usage
 
-Serve specific directory: Modify script to set document root.
+Serve specific directory: Modify script or use --directory flag if extended.
 
 ## MITRE ATT&CK Mapping
 
@@ -87,16 +87,15 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Python process listening on TCP 443
-- Self-signed cert warnings in browser logs
+- Network logs showing local HTTPS on port 443
+- Process monitoring for python3 with ssl
 
 ## Related Procedures
 
-- [[procedures/Start-Local-SSL-Server]]
 
 ## Related Tools
 
-- Python's built-in http.server
+- [[Related Tool 1]]
 
 ## References
 

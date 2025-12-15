@@ -1,9 +1,8 @@
 ---
-id: cmd-curl-fetch-headers
-data: 'curl -I https://doc.owncloud.org/'
+data: 'curl -I https://www.periscope.tv/'
 tags:
-  - reconnaissance
-  - web
+  - recon
+  - headers
 type: command
 output: null
 executor: bash
@@ -11,8 +10,9 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:26.925Z'
+created_at: '2023-10-05T00:00:00Z'
+updated_at: '2025-12-14T17:28:12.574Z'
+id: a90de195-941b-4284-845e-8a8670101d5d
 verified: false
 validated: true
 submitted: true
@@ -22,42 +22,43 @@ submitted: true
 ## Command
 
 ```bash
-curl -I https://doc.owncloud.org/
+curl -I https://www.periscope.tv/
 ```
 
 ## Description
 
-This command uses curl to perform a HEAD request, fetching only the HTTP response headers from the target URL without the body content. It is ideal for quick reconnaissance of server configurations, security headers, and potential vulnerabilities like missing X-XSS-Protection.
+This command uses curl to perform a HEAD request on the target URL, retrieving only the HTTP response headers without downloading the body. It is useful for reconnaissance to inspect security headers like X-Frame-Options during vulnerability assessment.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-I, --head` | Fetch headers only (HEAD method) | Yes |
-| `URL` | Target endpoint (e.g., https://doc.owncloud.org/) | Yes |
+| `-I, --head` | Fetch headers only | Yes |
+| `URL` | Target URL to inspect | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -I https://doc.owncloud.org/
+curl -I https://www.periscope.tv/
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -s -I https://doc.owncloud.org/ | grep -i security
+curl -I -H "User-Agent: Mozilla/5.0" https://www.periscope.tv/
 ```
 
 ## Expected Output
 
-HTTP/2 200 
-server: nginx
-content-type: text/html; charset=UTF-8
-date: Mon, 01 Oct 2023 12:00:00 GMT
-(No X-XSS-Protection line indicates absence.)
+HTTP/1.1 200 OK
+Server: nginx
+X-Frame-Options: ALLOW-FROM https://twitter.com/
+... (other headers)
+
+Successful run shows status 200 and the vulnerable header value.
 
 ## Related
 
-- [[Related Procedure|procedures/Inspect-HTTP-Response-Headers]]
+- [[Related Procedure: Inspect-HTTP-Response-Headers-for-X-Frame-Options]]

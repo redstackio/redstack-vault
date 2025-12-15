@@ -1,17 +1,15 @@
 ---
-id: tool-gcc-001
 url: 'https://gcc.gnu.org/'
 tags:
-  - compile
-  - build
+  - compiler
+  - c
 type: tool
 verified: false
 platforms:
   - Linux
-  - Windows
-  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.506Z'
+updated_at: '2025-12-14T17:29:56.933Z'
+id: 71090631-fce7-41fc-a92d-4fa3f1c4f399
 validated: true
 submitted: true
 ---
@@ -21,29 +19,28 @@ submitted: true
 
 ## Overview
 
-GCC (GNU Compiler Collection) is used to compile C code for testing libcurl's URL parsing behavior in this vulnerability demonstration.
+GCC (GNU Compiler Collection) is used to compile the logrotten C source into an executable for the privilege escalation exploit.
 
 ## Description
 
-Essential for building custom test programs linking libraries like libcurl; supports C standards and optimizations for security research prototypes.
+Compiles C programs on Unix-like systems, essential for building custom exploits from source in environments without pre-built binaries.
 
 ## Features
 
-- Feature 1: Multi-language support (C, C++).
-- Feature 2: Library linking and debugging flags.
-- Feature 3: Cross-compilation capabilities.
+- Feature 1: C/C++ compilation
+- Feature 2: Optimization flags
+- Feature 3: Linking libraries
 
 ## Installation
 
 ### Requirements
 
-- Standard repos.
+- build-essential package
 
 ### Install Commands
 
 ```bash
-# Ubuntu
-apt install gcc
+apt-get install build-essential
 ```
 
 ## Basic Usage
@@ -56,21 +53,21 @@ gcc --help
 
 | Option | Description |
 |--------|-------------|
-| `-o` | Output file name |
-| `-l` | Link library |
+| -o | Output file name |
+| -Wall | Enable warnings |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-gcc source.c -o output
+gcc -o logrotten logrotten.c
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-gcc parserbatch.c -o parserbatch -lcurl
+gcc -O2 -o logrotten logrotten.c
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,26 +76,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[Remote File Copy]] Ingress Tool Transfer (via compilation)
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Compilation artifacts in temp dirs.
-- GCC process monitoring.
+- gcc process spawning in /tmp/
+- New executables created post-clone
+- Compilation errors in logs
 
 ## Related Procedures
 
+- [[procedures/Compile-and-Execute-Logrotten-Exploit]]
 
 ## Related Tools
 
-- [[tools/libcurl]]
+- [[tools/git]]
+- [[tools/clang]]
 
 ## References
 
-- Official documentation: https://gcc.gnu.org/onlinedocs/
+- Official site: https://gcc.gnu.org/

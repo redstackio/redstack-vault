@@ -1,18 +1,18 @@
 ---
 id: cmd-curl-basic-get
-data: 'curl -X GET https://target/xmlrpc.php'
+data: 'curl "https://target.com/search?q=$1" -v'
 tags:
+  - web
   - recon
-  - http
 type: command
-output: XML-RPC server accepts POST requests only.
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:46.005Z'
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:28.612Z'
 verified: false
 validated: true
 submitted: true
@@ -22,39 +22,38 @@ submitted: true
 ## Command
 
 ```bash
-curl -X GET https://target/xmlrpc.php
+curl "https://target.com/search?q=$1" -v
 ```
 
 ## Description
 
-This command performs a basic GET request to probe the xmlrpc.php endpoint, confirming its presence and POST-only behavior in WordPress setups.
+Sends a basic GET request to the search endpoint with a query parameter to observe normal behavior or fetch pages.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X GET` | Specifies the HTTP method as GET | Yes |
-| `https://target/xmlrpc.php` | Target URL to query | Yes |
+| `$1` | Search query value (e.g., 'test') | Yes |
+| `-v` | Verbose output for headers | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X GET https://example.com/xmlrpc.php
+curl "https://target.com/search?q=test" -v
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X GET -v https://target/xmlrpc.php
+curl "https://target.com/search?q=test" -v -H "User-Agent: Mozilla/5.0"
 ```
 
 ## Expected Output
 
-HTTP response with body: "XML-RPC server accepts POST requests only." indicating the endpoint is active.
+HTTP response with status 200, HTML body containing search results, and verbose headers showing request details.
 
 ## Related
 
-- [[commands/curl-xml-post]]
-- [[procedures/Confirm-xmlrpc-Endpoint]]
+- [[Related Procedure]]

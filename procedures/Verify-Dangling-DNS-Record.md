@@ -1,87 +1,87 @@
 ---
+id: c3d4e5f6-g7h8-9012-cdef-345678901234
+name: Verify-Dangling-DNS-Record
 tags:
-  - dns
-  - verification
-  - takeover
+  - dns-verification
+  - dangling-record
+  - cname
 type: procedure
 tools:
-  - '[[tools/Subjack]]'
+  - '[[tools/Dig]]'
 tactics:
   - '[[Reconnaissance]]'
 commands:
-  - '[[commands/dig-dns-lookup]]'
+  - '[[commands/dig-cname-query]]'
+  - '[[commands/curl-heroku-check]]'
 verified: false
 platforms:
+  - Linux
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 techniques:
-  - '[[Gather Victim Host Information]]'
-updated_at: '2025-12-14T05:32:23.237Z'
-skill_level: intermediate
-impact_level: medium
-detection_risk: low
+  - '[[Scanning IP Blocks]]'
+updated_at: '2025-12-14T17:30:18.254Z'
 sub_techniques: []
-id: ba65f6da-6713-4047-a6c3-36ebd38de9ed
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
 mitre_techniques:
-  - '[[Gather Victim Host Information]]'
+  - '[[Scanning IP Blocks]]'
 ---
-# Verify Dangling DNS Record
+# Verify-Dangling-DNS-Record
 
 ## Summary
 
-This procedure checks DNS records of enumerated subdomains for pointers to decommissioned third-party services, verifying takeover potential as in the blog.owox.com vulnerability.
+This procedure queries DNS to confirm if a subdomain has a dangling CNAME record pointing to an unclaimed cloud resource, such as a deleted Heroku application, enabling takeover potential.
 
 ## Description
 
-After enumeration, inspect CNAME or other DNS records to identify dangling pointers (e.g., to unused AWS S3 buckets or Heroku apps). Tools like dig query records, and specialized scanners check if the service is claimable. In the OWOX case, the record allowed claiming the subdomain for impersonation. Prerequisites include enumerated subdomain list; outcomes include confirmation of exploitable misconfigurations.
+Dangling records occur when a service is deleted but DNS isn't updated. In the Uber case, 'dangling.uber.com' pointed to 'deleted-app.herokuapp.com'. This step uses DNS tools to verify resolvability and service status, requiring only public DNS access.
 
 ## Requirements
 
-1. List of subdomains from prior enumeration
-2. Access to DNS resolution tools
-3. Knowledge of common third-party services (e.g., GitHub Pages, Heroku)
+1. Identified subdomain from enumeration
+2. DNS resolver access (e.g., dig installed)
+3. Optional: curl for HTTP probing
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Regularly audit and cleanup unused DNS records
-- Implement monitoring for DNS changes via tools like DNSSec
-- Use subdomain management tools to track third-party integrations
+- Automate DNS audits with scripts checking CNAME targets
+- Monitor for unresolved cloud endpoints using SIEM rules
+- Enforce TTL reductions on dynamic DNS records
 
 ## Objectives
 
-1. Query DNS for misconfigured records
-2. Confirm service is decommissioned and claimable
-3. Prioritize high-impact subdomains like 'blog'
+1. Resolve the subdomain's CNAME target
+2. Confirm the target service is deleted or claimable
+3. Validate takeover feasibility
 
 ## Instructions
 
-### Step 1: DNS Record Lookup
+### Step 1: Query DNS CNAME
 
-**Context**: Resolve the CNAME or A record for the subdomain to identify the pointing service.
+**Context**: Use dig to fetch the CNAME record for the subdomain.
 
-**Command** ([[commands/dig-dns-lookup]]):
+**Command** ([[commands/dig-cname-query]]):
 ```bash
- dig CNAME blog.owox.com
+dig example.uber.com CNAME
 ```
 
-> This queries the CNAME record. Expected output: Points to a service like 'decommissioned.herokuapp.com' if dangling.
+> Returns the CNAME if present, e.g., 'example.uber.com. 3600 IN CNAME dangling-app.herokuapp.com.'. Expected: Confirmation of cloud pointer.
 
-### Step 2: Takeover Vulnerability Scan
+### Step 2: Probe Service Availability
 
-**Context**: Use a scanner to check if the pointed service allows claiming.
+**Context**: Check if the CNAME target responds, indicating deletion.
 
-**Command** (Subjack usage):
+**Command** ([[commands/curl-heroku-check]]):
 ```bash
-subjack -w live-subdomains.txt -t 100 -timeout 30 -o takeovers.json -ssl
+curl -I https://dangling-app.herokuapp.com
 ```
 
-> This tests against known takeover fingerprints. Expected output: JSON with vulnerable subdomains.
+> If deleted, expect 404 or Heroku's 'no such app' page. Expected: Error response confirming availability for claim.
 
 ## MITRE ATT&CK Mapping
 
@@ -91,20 +91,21 @@ subjack -w live-subdomains.txt -t 100 -timeout 30 -o takeovers.json -ssl
 
 ### Techniques
 
-- [[Gather Victim Host Information]] Gather Victim Host Information
+- [[Scanning IP Blocks]] Scanning IP Blocks
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/dig-dns-lookup]]
+- [[commands/dig-cname-query]]
+- [[commands/curl-heroku-check]]
 
 ## Tools Used
 
-- [[tools/Subjack]]
+- [[tools/Dig]]
 
 ## Tags
 
-- [[DNS]]
-- [[verification]]
+- [[dns-verification]]
+- [[dangling-record]]

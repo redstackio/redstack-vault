@@ -1,9 +1,10 @@
 ---
-id: cmd-curl-test-redirect
-data: 'curl -v "https://shop.starbucks.de/?param=>cofee" 2>&1 | grep Location'
+id: c3d4e5f6-g7h8-9012-cdef-345678901234
+data: 'curl -I -L "https://inventory.upserve.com/http://google.com/"'
 tags:
-  - web-testing
+  - web
   - redirect
+  - test
 type: command
 output: null
 executor: bash
@@ -11,8 +12,8 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:23.388Z'
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:24:34.994Z'
 verified: false
 validated: true
 submitted: true
@@ -22,39 +23,43 @@ submitted: true
 ## Command
 
 ```bash
-curl -v "https://shop.starbucks.de/?param=>cofee" 2>&1 | grep Location
+curl -I -L "https://inventory.upserve.com/http://google.com/"
 ```
 
 ## Description
 
-Sends a GET request with a malformed parameter to test for open redirect behavior, extracting the redirect Location from verbose output.
+This command tests for open redirect vulnerabilities by sending a HEAD request with follow-redirects to a crafted URL, revealing if the server processes arbitrary paths as redirect targets.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-v` | Verbose mode to show headers | Yes |
-| URL | Target URL with malformed param | Yes |
-| `2>&1 | grep Location` | Pipe to filter redirect header | Yes |
+| `-I` | Fetch headers only | Yes |
+| `-L` | Follow HTTP 3xx redirects | Yes |
+| URL | Target URL with injected redirect path | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -v "https://example.com/?test=>malformed" 2>&1 | grep Location
+curl -I -L "https://inventory.upserve.com/http://google.com/"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -v -L "https://target/?param=>cofee" 2>&1 | grep -E 'Location|HTTP'
+curl -I -L -v "https://inventory.upserve.com/http://evil-site.com/" > redirect_test.log
 ```
+
+> Adds verbose output (-v) and logs to file for analysis.
 
 ## Expected Output
 
-Lines like: `< Location: https://unexpected-redirect.com`
+HTTP/1.1 302 Found
+Location: http://google.com/
+... (indicating successful redirect to the injected URL)
 
 ## Related
 
-- [[Related Procedure]]
+- [[Related Procedure: Test-Open-Redirect-in-Upserve-Login]]

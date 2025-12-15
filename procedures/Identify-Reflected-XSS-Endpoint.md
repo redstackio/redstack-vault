@@ -1,83 +1,80 @@
 ---
+id: proc-uuid-1-1149144
 tags:
   - xss
   - recon
-  - web
+  - web-vuln
 type: procedure
-tools: []
+tools:
+  - '[[tools/Burp-Suite-Professional]]'
 tactics:
   - '[[Initial Access]]'
-commands:
-  - '[[commands/curl-xss-test]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-updated_at: '2025-12-14T00:11:15.798Z'
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:28:12.531Z'
+skill_level: intermediate
+impact_level: medium
+detection_risk: low
 sub_techniques: []
-id: fdb443e4-f431-4406-83f3-b1ac4ee534df
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
-# Identify Reflected XSS Endpoint
+# Identify-Reflected-XSS-Endpoint
 
 ## Summary
 
-This procedure involves reconnaissance to identify parameters in a web application's endpoint, such as the Ambassador Manage page on m.tiktok.com, that reflect user input without sanitization, setting the stage for XSS exploitation.
+This procedure involves reconnaissance to identify web endpoints vulnerable to reflected XSS by testing URL parameters that fetch and render external content without proper sanitization, allowing arbitrary JavaScript injection.
 
 ## Description
 
-In a reflected XSS attack, user-supplied input is immediately rendered back in the response without proper encoding, allowing attackers to inject scripts. Target the m.tiktok.com path's Ambassador Manage endpoint, where insufficient input sanitization enables script injection. Prerequisites include access to the web app and tools for request inspection. Expected outcomes: Confirmation of a vulnerable reflection point, enabling payload crafting.
+In this attack scenario, the target is a web application endpoint that accepts a 'url' parameter, fetches content from it using XMLHttpRequest, and renders the response inline without escaping HTML or JavaScript. This leads to reflected XSS when the path or query includes malicious payloads. The procedure requires proxying traffic to inspect parameters and testing with benign URLs to confirm behavior. Prerequisites include access to a web proxy and knowledge of the target's API endpoints.
 
 ## Requirements
 
-1. Web browser with developer tools or proxy like Burp Suite
-2. Network access to the target endpoint (m.tiktok.com)
-3. Basic knowledge of HTML and JavaScript payloads
+1. Web proxy tool like Burp Suite for intercepting and modifying requests
+2. Knowledge of the target's authenticated endpoints
+3. Attacker-controlled domain for testing fetches (optional for initial ID)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement content security policy (CSP) to restrict script execution
-- Use output encoding (e.g., HTML entity encoding) on all user inputs
-- Monitor for anomalous requests with script tags via WAF logs
+- Implement Content Security Policy (CSP) to block inline scripts
+- Sanitize and escape all user-supplied content before rendering
+- Use HTTPOnly and Secure flags on session cookies to mitigate theft
 
 ## Objectives
 
-1. Locate unsanitized input reflection in the endpoint
-2. Verify potential for script execution
-3. Prepare for payload delivery
+1. Locate endpoints accepting unsanitized URL parameters
+2. Confirm server fetches and renders external content
+3. Prepare for payload injection
 
 ## Instructions
 
-### Step 1: Inspect Endpoint Requests
+### Step 1: Intercept and Inspect Requests
 
-**Context**: Access the Ambassador Manage endpoint and capture requests to identify input parameters.
+**Context**: Use a proxy to capture traffic and identify parameters that trigger content fetching.
 
-**Command** ([[commands/curl-xss-test]]):
-```bash
-curl -X GET "https://m.tiktok.com/ambassador/manage?param=test" -v
-```
+No specific command; configure [[tools/Burp-Suite-Professional]] to proxy browser traffic to the target site https://█████/████.
 
-> This sends a basic request to the endpoint, displaying verbose output to inspect how 'test' is reflected in the response body. Look for direct insertion into HTML.
+Observe GET requests with 'url' parameter and note if responses include fetched content.
 
-### Step 2: Test for Reflection
+### Step 2: Test with Benign URL
 
-**Context**: Inject a simple payload to check if it executes or appears unsanitized.
+**Context**: Supply a safe external URL to verify rendering without sanitization.
 
-**Command** ([[commands/curl-xss-payload]]):
-```bash
-curl -X GET "https://m.tiktok.com/ambassador/manage?search=<script>alert('test')</script>" -v
-```
+Send a request to https://█████/████&url=http://example.com using the proxy.
 
-> If the payload reflects without encoding (e.g., as raw HTML), it confirms vulnerability. In a browser, this would trigger an alert.
+**Expected Output**: Response body includes raw HTML from example.com, confirming vulnerability.
 
 ## MITRE ATT&CK Mapping
 
@@ -87,18 +84,17 @@ curl -X GET "https://m.tiktok.com/ambassador/manage?search=<script>alert('test')
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/curl-xss-test]]
-- [[commands/curl-xss-payload]]
 
 ## Tools Used
 
+- [[tools/Burp-Suite-Professional]]
 
 ## Tags
 

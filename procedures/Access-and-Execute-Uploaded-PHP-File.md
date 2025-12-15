@@ -1,8 +1,8 @@
 ---
-id: proc-uuid-2
 tags:
   - rce
   - php-execution
+  - webshell
 type: procedure
 tools: []
 tactics:
@@ -11,81 +11,86 @@ commands: []
 verified: false
 platforms:
   - Web
-  - PHP
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
+  - '[[Command-Line Interface]]'
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:23:27.902Z'
+sub_techniques:
   - '[[Python]]'
-updated_at: '2025-12-14T05:32:10.190Z'
-skill_level: intermediate
-impact_level: high
-detection_risk: high
-sub_techniques: []
+id: 939df041-a505-45f4-a7b8-bba4b9c3cce7
 validated: true
 mitre_tactics:
   - '[[Execution]]'
 mitre_techniques:
-  - '[[Python]]'
+  - '[[Command-Line Interface]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
 # Access-and-Execute-Uploaded-PHP-File
 
 ## Summary
 
-This procedure accesses the URL of the previously uploaded PHP file to trigger server-side execution, achieving remote code execution and demonstrating server compromise through output of sensitive configuration data.
+This procedure triggers remote code execution by directly accessing the uploaded PHP file in the browser, exploiting its server-side interpretation.
 
 ## Description
 
-Once a malicious PHP file is uploaded to the vulnerable directory on apps.owncloud.com, directly accessing its URL causes the web server to interpret and execute it as PHP code. This results in RCE, allowing attackers to run arbitrary commands, read databases, or exfiltrate data. The initial test uses phpinfo() to verify execution without causing further damage.
+Since the file is stored in a web-accessible directory and the server processes .php extensions, navigating to the URL causes the PHP code to run. This can execute system commands, leading to server compromise, data exfiltration, or defacement.
 
 ## Requirements
 
-1. Successful completion of the upload procedure
-2. Knowledge of the uploaded file's path (e.g., CONTENT/content-pre1/)
-3. Web browser to access the direct URL
+1. Copied full URL to uploaded file
+2. Web browser
+3. Payload designed for GET parameters if needed
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Disable PHP execution in upload directories using .htaccess rules (e.g., RemoveHandler .php)
-- Implement web application firewalls (WAF) to block direct access to uploaded files
-- Log and alert on HTTP requests to .php files in user-upload directories
-- Use content security policies (CSP) and sandboxing for served files
+- Block execution of uploaded files via .htaccess or server config
+- Validate and quarantine uploads
+- WAF rules to detect direct access to upload paths
 
 ## Objectives
 
-1. Trigger execution of uploaded code on the server
-2. Observe output to confirm RCE capability
-3. Identify potential for further exploitation like database access
+1. Invoke PHP interpreter on malicious script
+2. Achieve code execution on server
+3. Observe RCE output for confirmation
 
 ## Instructions
 
-### Step 1: Construct Access URL
+### Step 1: Paste URL in Browser
 
-**Context**: Build the direct link to the uploaded file based on the known directory structure.
+**Context**: Direct navigation to trigger execution.
 
-Use the format: https://apps.owncloud.com/CONTENT/content-pre1/[filename], where [filename] is "171172-1.php5".
+Enter the copied URL into the address bar.
 
-### Step 2: Access the URL
+### Step 2: Append Parameters if Required
 
-**Context**: Load the URL in a browser to execute the PHP code server-side.
+**Context**: Pass arguments to the payload.
 
-Open https://apps.owncloud.com/CONTENT/content-pre1/171172-1.php5 in a web browser.
+For a system command shell, add ?cmd=ls or similar to the URL.
 
-> Expected output: Detailed PHP configuration page from phpinfo(), indicating successful execution and server compromise.
+### Step 3: Observe Execution
+
+**Context**: Verify RCE by checking response.
+
+Press enter; look for output like directory listing or error if payload fails.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
 
 ### Techniques
 
-- [[Python]] PHP
+- [[Command-Line Interface]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
+- [[Python]]
 
 ## Commands Used
 
@@ -95,5 +100,5 @@ Open https://apps.owncloud.com/CONTENT/content-pre1/171172-1.php5 in a web brows
 
 ## Tags
 
-- [[rce]]
-- [[php-execution]]
+- rce
+- php-execution

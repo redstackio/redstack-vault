@@ -1,15 +1,16 @@
 ---
-url: null
+id: tool-simplescreenrecorder
+url: 'https://www.maartenbaert.be/simplescreenrecorder/'
 tags:
+  - screen-recording
   - poc
-  - recording
 type: tool
 verified: false
 platforms:
   - Linux
+  - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:51:10.475Z'
-id: 0bc5fab2-5253-446d-b558-c140677d6294
+updated_at: '2025-12-14T17:28:05.016Z'
 validated: true
 submitted: true
 ---
@@ -19,28 +20,31 @@ submitted: true
 
 ## Overview
 
-SimpleScreenRecorder is a lightweight screen recording tool for Linux, ideal for capturing proof-of-concept videos in security demonstrations, such as showing subdomain resolution changes.
+SimpleScreenRecorder is a lightweight screen recording tool primarily used on Linux to capture video demonstrations, ideal for creating proof-of-concept (PoC) videos in security testing, such as recording clickjacking exploits.
 
 ## Description
 
-Used to record browser interactions and DNS verifications during attacks, providing visual evidence of exploits like subdomain takeovers without complex setup.
+It supports recording desktop sessions, specific windows, or areas, with options for audio, frame rates, and codecs. In offensive security, it's used to document attacks like UI redressing by capturing user interactions in real-time, providing visual evidence of vulnerabilities without complex setups.
 
 ## Features
 
-- Feature 1: Easy area selection for recording
-- Feature 2: Audio and video capture
-- Feature 3: Export to common formats for POCs
+- Feature 1: Area/window selection for targeted recording
+- Feature 2: Pause/resume functionality for step-by-step captures
+- Feature 3: Export to common formats like MP4 for easy sharing
 
 ## Installation
 
 ### Requirements
 
-- Linux OS (Ubuntu, etc.)
+- Linux distribution (e.g., Ubuntu)
+- Qt libraries
 
 ### Install Commands
 
 ```bash
-sudo apt update && sudo apt install simplescreenrecorder
+# On Ubuntu/Debian
+sudo apt update
+sudo apt install simplescreenrecorder
 ```
 
 ## Basic Usage
@@ -53,8 +57,8 @@ simplescreenrecorder
 
 | Option | Description |
 |--------|-------------|
-| `--start-recording` | Begin recording immediately |
-| `-g` | Show GUI |
+| No CLI options; GUI-based | Launch the application |
+| --help | Show basic help |
 
 ## Examples
 
@@ -63,14 +67,11 @@ simplescreenrecorder
 ```bash
 simplescreenrecorder
 ```
-Select area and record browser visit to subdomain.
+Select area, start recording, perform actions, then stop and save.
 
 ### Example 2: Advanced Usage
 
-```bash
-simplescreenrecorder --start-recording
-```
-Capture DNS command execution and site load.
+Launch via GUI, choose 'Record a fixed rectangle', set dimensions to match browser window, include audio if narrating the PoC.
 
 ## MITRE ATT&CK Mapping
 
@@ -78,27 +79,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]]
+- [[Drive-by Compromise]]
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process: simplescreenrecorder running
-- File artifacts: .srec recordings
+- Process monitoring for 'simplescreenrecorder' on Linux systems
+- Unusual video file creation in temp directories during testing
 
 ## Related Procedures
 
-- [[procedures/Verify-Subdomain-Takeover]]
 
 ## Related Tools
 
-- [[tools/obs-studio]]
+- [[Related Tool 1|OBS Studio]]
+- [[Related Tool 2|Kazam]]
 
 ## References
 
-- GitHub: https://github.com/MaartenBaert/ssr
+- Official documentation: https://www.maartenbaert.be/simplescreenrecorder/
+- Related resources: Linux screen recording guides

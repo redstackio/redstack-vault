@@ -1,16 +1,16 @@
 ---
-id: tool-echo-001
-url: null
+id: tool-echo-2023
+url: 'https://www.gnu.org/software/coreutils/echo'
 tags:
-  - shell-builtin
   - output
 type: tool
 verified: false
 platforms:
   - Linux
+  - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.540Z'
+updated_at: '2025-12-14T17:23:32.844Z'
 validated: true
 submitted: true
 ---
@@ -20,29 +20,27 @@ submitted: true
 
 ## Overview
 
-echo is a shell built-in command for outputting text or data, often used with escapes to generate binary files like images in testing scenarios.
+Echo prints arguments to standard output, used here to generate the exploit payload with hex escapes for CRLF.
 
 ## Description
 
-As a core shell utility, echo interprets backslashes for hex/escape sequences, making it suitable for creating minimal files in security testing without additional tools.
+Built-in shell command for crafting strings, including binary data via -e and \x escapes.
 
 ## Features
 
-- Feature 1: Basic text output
-- Feature 2: Escape interpretation with -e
-- Feature 3: Redirection to files for binary generation
+- Feature 1: Variable expansion
+- Feature 2: Escape sequences
+- Feature 3: No trailing newline with -n
 
 ## Installation
 
 ### Requirements
 
-- Available in all POSIX-compliant shells (bash, zsh, etc.)
+- Core shell utility
 
 ### Install Commands
 
-```bash
-# No installation needed; part of shell
-```
+Pre-installed.
 
 ## Basic Usage
 
@@ -54,21 +52,21 @@ echo --help
 
 | Option | Description |
 |--------|-------------|
-| `-e` | Enable backslash escapes |
-| `-n` | No trailing newline |
+| `-e` | Enable escapes |
+| `-n` | No newline |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-echo "Hello World"
+echo "hello"
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-echo -e "\x48\x65\x6c\x6c\x6f" > file.bin
+echo -en "GET / HTTP/1.1\r\nHost: longstring:\r\n\r\n"
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +75,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Unix Shell]]
+- [[Unix Shell]] Unix Shell
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Shell history showing echo with hex escapes
-- File creation events for binary outputs
-- Minimal process footprint; hard to detect standalone
+- Rarely monitored; look for piped outputs in exploits
 
 ## Related Procedures
 
+- [[procedures/Trigger-Squid-Host-Header-Buffer-Overflow]]
 
 ## Related Tools
 
-- [[printf]]
+- [[tools/printf]]
 
 ## References
 
-- Bash manual: man echo
+- Man page: echo(1)

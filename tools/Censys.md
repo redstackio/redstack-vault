@@ -1,15 +1,15 @@
 ---
+id: t1b2c3d4-e5f6-7890-abcd-ef1234567897
 url: 'https://censys.io'
 tags:
-  - recon
+  - reconnaissance
   - certificates
 type: tool
 verified: false
 platforms:
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:38:49.717Z'
-id: 9a1f6754-f638-4c91-8ddf-7b5d2a888d5f
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:23:32.677Z'
 validated: true
 submitted: true
 ---
@@ -19,50 +19,51 @@ submitted: true
 
 ## Overview
 
-Censys is a search engine for internet-connected devices and certificates, used in security testing for passive reconnaissance of domains, IPs, and ownership via SSL/TLS data.
+Censys is an internet-wide search engine for discovering hosts, services, and certificates, commonly used in security testing for passive reconnaissance of exposed infrastructure.
 
 ## Description
 
-Censys indexes global internet scan data, allowing queries for certificates to confirm domain ownership, such as linking fastly.sc-cdn.net to Snapchat. It's ideal for non-intrusive recon in subdomain takeover scenarios.
+Censys indexes global internet data from protocols like HTTPS, providing searchable insights into certificates, IPs, and services. In offensive operations, it's used to find misconfigurations like self-signed certs on production servers, as in identifying IRCCloud's nginx at 54.153.101.52.
 
 ## Features
 
-- Feature 1: Certificate and host searching
-- Feature 2: Historical data access
-- Feature 3: API for automated queries
+- Feature 1: Certificate search by subject, issuer, or tags
+- Feature 2: Host discovery via IP and port scanning data
+- Feature 3: Exportable results for further analysis
 
 ## Installation
 
 ### Requirements
 
-- Web browser or API key
+- Web browser
+- Free or paid account for API access
 
 ### Install Commands
 
-No installation; web-based.
+No installation; web-based at https://censys.io.
 
 ## Basic Usage
 
 ```bash
-# Web: Visit https://censys.io and search
+# Web interface: Search in Certificates or Hosts section
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Search Query | e.g., 'fastly.sc-cdn.net' |
-| Filters | Certificate subjects, dates |
+| Search Query | e.g., "IRCCloud" in certificates |
+| Filters | By IP, port, protocol |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Search: https://censys.io/certificates?q=fastly.sc-cdn.net
+Search "IRCCloud" in certificates to find associated IPs.
 
 ### Example 2: Advanced Usage
 
-API: curl 'https://search.censys.io/api/v2/certificates/search?q=parsed.names:fastly.sc-cdn.net' -H 'Authorization: Basic [API_KEY]'
+Filter for self-signed certs: Query + "self-signed: true".
 
 ## MITRE ATT&CK Mapping
 
@@ -70,7 +71,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: Domains
+- [[Gather Victim Host Information]] Gather Victim Host Information
 
 ### Tactics
 
@@ -80,19 +81,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- API key usage in logs
-- Query patterns in network traffic
+- API query logs if monitored
+- Unusual traffic to censys.io from security tools
 
 ## Related Procedures
 
-- [[procedures/Confirm-Domain-Ownership-with-Censys]]
+- [[procedures/Search-for-IRCCloud-Related-Certificates-Using-Censys]]
 
 ## Related Tools
 
 - [[Shodan]]
-- [[crt.sh]]
+- [[ZoomEye]]
 
 ## References
 
 - Official documentation: https://docs.censys.io
-- Related resources: Certificate Transparency Logs
+- Related resources: Certificate Transparency explorations

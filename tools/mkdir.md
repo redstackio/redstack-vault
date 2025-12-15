@@ -1,18 +1,19 @@
 ---
-id: tool-uuid-3
-url: null
-tags:
-  - filesystem
+id: 123e4567-e89b-12d3-a456-426614174016
+name: mkdir
 type: tool
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:20.148Z'
 platforms:
   - Linux
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:26.322Z'
+  - Windows (via Git Bash)
+tags:
+  - directory-creation
+url: null
 validated: true
 submitted: true
----
 ---
 
 # mkdir
@@ -21,29 +22,28 @@ submitted: true
 
 ## Overview
 
-Mkdir is a Unix command to create directories, essential for structuring attack artifacts like maliciously named folders in XSS exploits.
+mkdir is a Unix command to create directories, essential for setting up isolated environments in security testing and exploitation workflows.
 
 ## Description
 
-Used here to create directories with embedded JS payloads, exploiting name rendering in web servers.
+Used to prepare test directories before running vulnerable tools, ensuring operations are contained and verifiable.
 
 ## Features
 
-- Feature 1: Create single or nested directories
-- Feature 2: Set permissions
-- Feature 3: Verbose output option
+- Feature 1: Create single or multiple directories
+- Feature 2: Parent directory creation with -p
+- Feature 3: Permission setting with -m
 
 ## Installation
 
 ### Requirements
 
-- Standard Unix tool
+- Standard on Unix-like systems
 
 ### Install Commands
 
 ```bash
 # Pre-installed
-mkdir --help
 ```
 
 ## Basic Usage
@@ -56,21 +56,21 @@ mkdir --help
 
 | Option | Description |
 |--------|-------------|
-| `-p` | Create parents, no error if exists |
-| `-v` | Verbose |
+| -p | Create parents as needed |
+| -m | Set permissions |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-mkdir dir
+mkdir tests
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-mkdir -p '><payload>'
+mkdir -p tests/subdir
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,7 +79,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Unix Shell]]
 
 ### Tactics
 
@@ -89,17 +89,23 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Log mkdir with anomalous names
-- EDR alerts on dir creations
+- Log directory creation events
+- Alert on unusual directory names in sensitive paths
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/touch]]
+- [[Related Tool: mktemp]]
 
 ## References
 
 - Man page: man mkdir
-

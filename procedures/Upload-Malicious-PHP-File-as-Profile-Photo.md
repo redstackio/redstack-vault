@@ -1,5 +1,4 @@
 ---
-id: c3d4e5f6-g7h8-9012-cdef-345678901234
 tags:
   - file-upload
   - rce
@@ -12,68 +11,68 @@ commands: []
 verified: false
 platforms:
   - Web
-  - PHP
 submitted: true
-created_at: '2023-10-01T12:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Remote File Copy]]'
-updated_at: '2025-12-14T05:32:10.296Z'
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:23:27.926Z'
 sub_techniques: []
+id: a4895e18-5d52-42c2-8278-cc0338792140
 validated: true
 mitre_tactics:
   - '[[Execution]]'
 mitre_techniques:
-  - '[[Remote File Copy]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
 # Upload-Malicious-PHP-File-as-Profile-Photo
 
 ## Summary
 
-This procedure exploits the lack of file type validation in the profile photo upload feature on the MTN Careers website to upload a malicious PHP file, which is stored in a web-accessible directory without sanitization.
+This procedure exploits the lack of file type validation in the profile photo upload to place a malicious PHP script on the server, enabling subsequent code execution.
 
 ## Description
 
-Once authenticated, the profile update section includes a file upload field for profile photos with no restrictions on file extensions or MIME types. Attackers can upload a PHP file containing executable code (e.g., a webshell like `<?php system($_GET['cmd']); ?>`) disguised as an image. The file is saved directly to /en/user/images/users/ with a timestamped name, making it immediately executable via the web server. This leads to potential RCE, server compromise, or site defacement.
+The MTN Careers site's upload feature accepts any file type without checking extensions or content, storing files in a web-accessible directory. A simple PHP webshell (e.g., <?php phpinfo(); ?> or system command executor) can be uploaded, leading to RCE when accessed.
 
 ## Requirements
 
-1. Active authenticated session from prior registration/login
-2. Prepared malicious PHP file (e.g., payload.php)
-3. Access to the profile update page on https://careers.mtn.cm/
+1. Authenticated session
+2. Malicious PHP file prepared (e.g., shell.php with executable code)
+3. Access to profile upload form
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Validate and sanitize uploaded files by checking MIME types, extensions, and scanning for executable content
-- Store uploads outside the web root or rename with safe extensions (e.g., .jpg)
-- Implement web application firewall (WAF) rules to block suspicious uploads and monitor file access logs for anomalous patterns
+- Validate and sanitize file types/mime on upload (e.g., allow only images)
+- Store uploads outside web root or rename with safe extensions
+- Scan uploads for malicious content using AV or static analysis
 
 ## Objectives
 
-1. Bypass file upload restrictions to place executable code on the server
-2. Ensure the file is stored in an executable directory
-3. Prepare for direct access to trigger execution
+1. Bypass upload restrictions
+2. Place executable file on server
+3. Confirm storage in accessible location
 
 ## Instructions
 
 ### Step 1: Prepare Malicious File
 
-**Context**: Create a simple PHP payload to test or exploit RCE.
+**Context**: Create a PHP payload for execution.
 
-Use a text editor to create payload.php with content like `<?php echo 'RCE Success'; system($_GET['cmd']); ?>`. Save it locally.
+Use a text editor to make a file like shell.php: <?php system($_GET['cmd']); ?>
 
-### Step 2: Navigate to Profile Update
+### Step 2: Select and Upload File
 
-**Context**: Access the upload interface within the authenticated profile section.
+**Context**: Submit the file via the profile photo input.
 
-Log in if needed, then go to the profile editing area and locate the 'Upload Profile Photo' or similar field.
+In the upload section, choose the PHP file and click 'Upload' or 'Save'.
 
-### Step 3: Upload the File
+### Step 3: Verify Upload Success
 
-**Context**: Submit the malicious file through the upload form without triggering any validation errors.
+**Context**: Check for acceptance without errors.
 
-Select the payload.php file in the upload dialog and submit. Observe for success indicators like 'Upload complete' without rejection.
+Look for success message; the file is now stored server-side.
 
 ## MITRE ATT&CK Mapping
 
@@ -83,7 +82,7 @@ Select the payload.php file in the upload dialog and submit. Observe for success
 
 ### Techniques
 
-- [[Remote File Copy]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
@@ -96,6 +95,5 @@ Select the payload.php file in the upload dialog and submit. Observe for success
 
 ## Tags
 
-- [[file-upload]]
-- [[rce]]
-- [[php]]
+- file-upload
+- rce

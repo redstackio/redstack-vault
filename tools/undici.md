@@ -1,78 +1,82 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174005
-name: undici
-type: tool
-verified: false
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.219Z'
-platforms:
-  - Node.js
+id: tool-uuid-1
+url: 'https://github.com/nodejs/undici'
 tags:
   - http-client
-  - ssrf
-url: 'https://github.com/nodejs/undici'
+  - node-js
+type: tool
+verified: false
+platforms:
+  - Node.js
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:26.598Z'
 validated: true
 submitted: true
 ---
-
 # undici
 
 **Status**: Unverified
 
 ## Overview
 
-Undici is an HTTP/1.1 client library for Node.js, designed for making efficient HTTP requests. It is commonly used in server-side applications but is vulnerable to SSRF in versions <= 5.8.1 when handling user-controlled pathname inputs.
+Undici is a fast and lightweight HTTP/1.1 client library for Node.js, designed as an alternative to the built-in http/https modules, with support for modern features like async/await and connection pooling. Commonly used in security testing to demonstrate client-side vulnerabilities such as header handling flaws during redirects.
 
 ## Description
 
-Undici provides a fast, standards-compliant HTTP client with features like connection pooling and pipelining. In offensive security, it can be exploited via SSRF if pathname accepts absolute or protocol-relative URLs, allowing attackers to force requests to internal resources. Patched in version 5.8.2 by adding validation.
+Undici provides a standards-compliant HTTP client with features like automatic redirects (configurable via maxRedirections), origin enforcement, and custom headers. In offensive security, it's used to replicate real-world client behaviors in PoCs for issues like the Proxy-Authorization header leakage on cross-origin redirects (vulnerable up to v6.7.0). Alternatives include the native fetch() API or got library.
 
 ## Features
 
-- Feature 1: Efficient HTTP/1.1 implementation with multiplexing
-- Feature 2: Promise-based API for async requests
-- Feature 3: Support for custom origins and pathnames in request options
+- Feature 1: Async request handling with Promise-based API
+- Feature 2: Configurable redirect following and header management
+- Feature 3: Connection pooling for efficient multiple requests
 
 ## Installation
 
 ### Requirements
 
-- Node.js >= 12
+- Node.js 14+
 - npm or yarn
 
 ### Install Commands
 
 ```bash
-npm install undici@5.8.1
+npm install undici
 ```
 
 ## Basic Usage
 
-```javascript
-const undici = require("undici");
-undici.request("http://example.com");
+```bash
+node -e "const {request} = require('undici'); request('http://example.com').then(console.log);"
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| origin | Base URL for the request |
-| pathname | Path component; vulnerable if user-controlled |
-| method | HTTP method (default: GET) |
+| `maxRedirections` | Number of redirects to follow (default: 0) |
+| `headers` | Object of request headers |
+| `origin` | Enforce request origin for security
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```javascript
-undici.request({ origin: "http://example.com", pathname: "/api" });
+const { request } = require('undici');
+request('http://example.com');
 ```
 
-### Example 2: Advanced Usage (Vulnerable Demo)
+### Example 2: Advanced Usage
 
 ```javascript
-undici.request({ origin: "http://example.com", pathname: "//127.0.0.1" });
+request({
+  origin: 'http://localhost/',
+  pathname: '/',
+  method: 'GET',
+  headers: { 'Proxy-Authorization': 'secret' },
+  maxRedirections: 1
+});
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,19 +85,21 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[JavaScript]] JavaScript
+- [[Unsecured Credentials]] Unsecured Credentials
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Execution]] Execution
+- [[Collection]] Collection
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for undici imports in code
-- Detect requests to internal IPs from app servers
-- Version checks for <= 5.8.1
+- Presence of undici in package.json or node_modules
+- Network logs showing HTTP requests from Node.js with undici User-Agent
+- Anomalous header patterns in proxy logs
 
 ## Related Procedures
 
@@ -107,10 +113,10 @@ LIMIT 10
 
 ## Related Tools
 
-- [[Related Tool 1]]
-- [[Related Tool 2]]
+- [[fetch API]]
+- [[axios]]
 
 ## References
 
-- Official documentation: https://github.com/nodejs/undici
-- CVE-2022-35949: https://hackerone.com/reports/1663788
+- Official documentation: https://undici.nodejs.org/
+- Vulnerability report: https://hackerone.com/reports/2451113

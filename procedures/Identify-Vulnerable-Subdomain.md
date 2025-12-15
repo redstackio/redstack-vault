@@ -1,109 +1,100 @@
 ---
+id: proc-uuid-1
 tags:
-  - subdomain-takeover
   - reconnaissance
-  - dns
+  - subdomain-enumeration
+  - shopify
+  - aws
 type: procedure
 tools: []
 tactics:
   - '[[Reconnaissance]]'
-commands:
-  - '[[commands/dig-cname-lookup]]'
+commands: []
 verified: false
 platforms:
-  - DNS
+  - Web
+  - Cloud (AWS)
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Hardware]]'
-updated_at: '2025-12-14T04:38:49.366Z'
+  - '[[Gather Victim Host Information]]'
+updated_at: '2025-12-14T17:31:19.054Z'
 skill_level: intermediate
-impact_level: medium
+impact_level: low
 detection_risk: low
 sub_techniques: []
-id: 522cbc40-0ca2-4086-a49a-3e8a26013cf8
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
 mitre_techniques:
-  - '[[Hardware]]'
+  - '[[Gather Victim Host Information]]'
 ---
 # Identify-Vulnerable-Subdomain
 
 ## Summary
 
-This procedure involves reconnaissance to identify subdomains of a target that are configured in DNS but appear inactive or vulnerable to takeover, such as those with dangling records pointing to unused third-party services.
+This procedure involves locating a vulnerable subdomain, such as vpnify-data.ec2.shopify.io, that hosts a monitoring or VPN server with integrated Google OAuth authentication, setting the stage for exploitation.
 
 ## Description
 
-In a subdomain takeover attack, the first step is to enumerate and assess subdomains for misconfigurations. Attackers scan for subdomains like demo.greenhouse.io that resolve but lead to non-existent resources on external platforms. This procedure focuses on manual or tool-assisted identification, checking for signs like 404 errors or service-specific inactive states, setting the stage for DNS verification and exploitation.
+In the context of Shopify's infrastructure, attackers can identify subdomains through public exposure or follow-up on prior reports (e.g., #143482). The target is an AWS EC2 instance running a VPN/monitoring service. Successful identification reveals a login flow vulnerable to authentication bypass. Prerequisites include basic web reconnaissance skills and access to public internet. Expected outcome is confirmation of the subdomain's existence and its authentication mechanism.
 
 ## Requirements
 
-1. Internet access for public DNS queries
-2. Basic knowledge of domain enumeration techniques
-3. Access to DNS resolution tools
+1. Internet access to query public domains.
+2. Knowledge of target organization (e.g., Shopify subdomains).
+3. Web browser for manual verification.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Regularly audit DNS records for dangling CNAMEs using automated scanners
-- Implement subdomain monitoring tools to alert on inactive configurations
-- Remove unused subdomains promptly
+- Implement subdomain monitoring tools like DNS logs to detect unusual queries.
+- Use certificate transparency logs to track new subdomains.
+- Restrict public exposure of internal service subdomains via DNS policies.
 
 ## Objectives
 
-1. Discover potential takeover targets
-2. Flag inactive subdomains for further investigation
-3. Build a list of vulnerable assets
+1. Discover hidden or misconfigured subdomains.
+2. Verify presence of authentication interfaces.
+3. Prepare for targeted exploitation.
 
 ## Instructions
 
-### Step 1: Enumerate Subdomains
+### Step 1: Search for Target Subdomains
 
-**Context**: Start by listing all subdomains associated with the target domain to identify candidates.
+**Context**: Use manual or automated methods to find AWS-hosted subdomains related to VPN or monitoring services.
 
-**Command** ([[commands/subfinder-enumerate]]):
-```bash
-subfinder -d greenhouse.io -o subdomains.txt
-```
+Focus on patterns like *.ec2.shopify.io. For Shopify, identify vpnify-data.ec2.shopify.io based on prior similar issues.
 
-> This command uses Subfinder to passively enumerate subdomains. Expected output: A file subdomains.txt with entries like demo.greenhouse.io. Manually review for inactive ones by attempting HTTP requests or noting configurations.
+### Step 2: Verify Login Interface
 
-### Step 2: Initial Inactivity Check
+**Context**: Access the subdomain and inspect for Google OAuth integration.
 
-**Context**: Probe identified subdomains for signs of vulnerability, such as no response or error pages.
+Navigate to https://vpnify-data.ec2.shopify.io/ in a browser. Look for a login page with Google sign-in options, confirming the OAuth flow without domain restrictions.
 
-**Command** ([[commands/httpx-probe]]):
-```bash
-cat subdomains.txt | httpx -silent -o inactive.txt
-```
-
-> Filter for subdomains that resolve but show errors (e.g., 404 or service-specific messages). Expected output: List of potentially vulnerable subdomains.
+**Expected Output**: Page loads with Google login button; no immediate errors.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Reconnaissance]]
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: DNS
+- [[Gather Victim Host Information]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/subfinder-enumerate]]
-- [[commands/httpx-probe]]
 
 ## Tools Used
 
 
 ## Tags
 
+- [[Reconnaissance]]
 - [[subdomain-enumeration]]
-- [[dns-recon]]

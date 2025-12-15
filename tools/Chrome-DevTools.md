@@ -1,18 +1,18 @@
 ---
-id: tool-chrome-devtools
+id: tool-chrome-devtools-001
 url: 'https://developer.chrome.com/docs/devtools/'
 tags:
-  - browser
   - debugging
-  - network-inspection
+  - javascript-modification
 type: tool
 verified: false
 platforms:
+  - Web
   - Linux
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.631Z'
+updated_at: '2025-12-14T17:30:46.908Z'
 validated: true
 submitted: true
 ---
@@ -22,17 +22,17 @@ submitted: true
 
 ## Overview
 
-Chrome DevTools is a built-in suite in Google Chrome for debugging web pages, used here to inspect network requests and DOM changes demonstrating the XSS exploit impact.
+Chrome DevTools is a built-in browser suite for debugging, inspecting, and modifying web applications, commonly used in security testing to tamper with client-side logic like JavaScript enforcement.
 
 ## Description
 
-DevTools provides tabs for Elements, Network, and Console to examine <base> tag insertions and cross-origin fetches, essential for verifying protocol-relative URL behavior in real-time.
+DevTools provides tabs for Elements, Console, Sources, Network, etc., enabling real-time code inspection and modification. In offensive security, it's used to bypass client-side checks, such as altering variables in webpack bundles for exploits like spectator bypass in Hubs.
 
 ## Features
 
-- Feature 1: Network tab for request monitoring
-- Feature 2: Elements inspector for DOM analysis
-- Feature 3: Console for JS execution testing
+- Feature 1: Sources tab for editing JS files in real-time
+- Feature 2: Console for executing arbitrary JavaScript
+- Feature 3: Network tab for intercepting WebSocket traffic
 
 ## Installation
 
@@ -42,28 +42,34 @@ DevTools provides tabs for Elements, Network, and Console to examine <base> tag 
 
 ### Install Commands
 
-No installation needed; press F12 or Ctrl+Shift+I in Chrome.
+```bash
+# No installation needed; access via F12 or Ctrl+Shift+I
+```
 
 ## Basic Usage
 
-Open DevTools and select tabs as needed.
+```bash
+tool-name --help
+```
+
+Open DevTools with F12.
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Network tab | Monitor HTTP requests |
-| Elements tab | Inspect HTML/JS |
+| F12 | Open DevTools |
+| Ctrl+Shift+I | Toggle inspector |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Load manipulated URL, open Network tab, reload to see requests to assessmentbase.
+Press F12, go to Sources, find JS file, edit and reload.
 
 ### Example 2: Advanced Usage
 
-In Elements tab, search for 'base' tag to confirm href attribute.
+Set breakpoint in message-dispatch.js, modify 'entered' variable to true.
 
 ## MITRE ATT&CK Mapping
 
@@ -72,6 +78,7 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
@@ -81,17 +88,18 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser debugging sessions (minimal footprint)
-- Console errors from failed requests
+- Anomalous browser traffic or JS errors in logs
+- Client-side modifications visible in minified source diffs
 
 ## Related Procedures
 
+- [[procedures/Bypass-Room-Entry-as-Spectator]]
 
 ## Related Tools
 
-- [[tools/Burp-Suite]]
+- [[Burp Suite]]
 
 ## References
 
 - Official documentation: https://developer.chrome.com/docs/devtools/
-- Related resources: MDN Web Docs
+- Related resources: Web security testing guides

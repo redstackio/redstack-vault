@@ -1,17 +1,15 @@
 ---
 url: 'https://bundler.io/'
 tags:
-  - dependency
-  - gem
-  - manager
+  - dependencies
 type: tool
 verified: false
 platforms:
   - Linux
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:43.888Z'
-id: 8305fb80-867a-4f9e-8391-7d6e552c4036
+updated_at: '2025-12-14T17:26:27.310Z'
+id: 8b671d79-12ac-46a6-8328-9920f3854bd6
 validated: true
 submitted: true
 ---
@@ -21,23 +19,23 @@ submitted: true
 
 ## Overview
 
-Bundler is a gem dependency manager for Ruby projects, used to install Rails dependencies and execute commands securely in the PoC environment.
+Bundler manages Ruby gem dependencies, used to install the vulnerable actionpack-page_caching gem.
 
 ## Description
 
-It resolves and installs gems from Gemfile, preventing version conflicts. In security contexts, it's used to set up vulnerable app dependencies for exploitation demos.
+Reads Gemfile to resolve and install gems securely.
 
 ## Features
 
-- Feature 1: Lockfile for reproducible environments
-- Feature 2: Exec for safe command running
-- Feature 3: Group-based dependency management
+- Feature 1: Dependency resolution
+- Feature 2: Lockfile for reproducibility
+- Feature 3: Group-specific installs
 
 ## Installation
 
 ### Requirements
 
-- RubyGems
+- Ruby
 
 ### Install Commands
 
@@ -49,15 +47,14 @@ gem install bundler
 
 ```bash
 bundle --help
-bundle install
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| exec | Run command in bundle context |
 | install | Install gems |
+| update | Update gems |
 
 ## Examples
 
@@ -70,7 +67,7 @@ bundle install
 ### Example 2: Advanced Usage
 
 ```bash
-bundle exec rails s
+bundle install --without development
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,27 +76,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Gemfile and Gemfile.lock files
-- bundle process execution
+- Gemfile.lock changes
 
 ## Related Procedures
 
+- [[procedures/Prepare-Rails-Environment-with-Vulnerable-Gem]]
 
 ## Related Tools
 
 - [[tools/rails]]
-- [[tools/ruby]]
 
 ## References
 
-- Official documentation: https://bundler.io/guides/index.html
+- Docs: https://bundler.io/man/bundle-install.1.html

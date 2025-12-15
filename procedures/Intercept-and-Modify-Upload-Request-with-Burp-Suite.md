@@ -1,9 +1,8 @@
 ---
-id: proc-002
 tags:
-  - intercept
-  - modification
   - burp-suite
+  - http-intercept
+  - mime-modification
 type: procedure
 tools:
   - '[[tools/Burp-Suite]]'
@@ -17,8 +16,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T05:32:22.962Z'
+updated_at: '2025-12-14T17:25:59.813Z'
+skill_level: intermediate
+impact_level: medium
+detection_risk: medium
 sub_techniques: []
+id: eb243460-b142-430c-9030-fb7bad353b97
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -29,49 +32,56 @@ mitre_techniques:
 
 ## Summary
 
-This procedure uses Burp Suite to intercept an HTTP file upload request during resume submission, allowing modification to bypass type restrictions and prepare for webshell injection.
+This procedure uses Burp Suite to capture and alter the Content-Type header of Reddit's image upload request, changing it from image/png to image/svg+xml to disguise the upcoming corrupted file.
 
 ## Description
 
-With an authenticated session, submit a benign file (e.g., .jpg) via the upload form while proxying through Burp Suite. Capture the multipart/form-data POST request, then modify it in Repeater to alter the filename and content. This targets the weak validation in the ASP.NET upload handler on ecjobs.starbucks.com.cn.
+Targeting Reddit's media upload endpoint, this step intercepts the POST request for the second image. The modification exploits the lack of server-side content validation, allowing a mismatched MIME type to pass. This leads to improper processing and storage of a 'None' URL. Requires Burp Suite running as a proxy; expected outcome is a modified request ready for content replacement, without immediate detection.
 
 ## Requirements
 
-1. Burp Suite configured as browser proxy
-2. Authenticated session from prior login
-3. Test file ready for upload
+1. Burp Suite Professional or Community edition installed and running
+2. Browser proxy configured (e.g., FoxyProxy extension pointing to 127.0.0.1:8080)
+3. Ongoing media post session from prior procedure
+4. Knowledge of HTTP headers and request structure
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Validate file types server-side using MIME detection, not just extensions
-- Log and alert on modified or proxied requests with unusual headers
-- Use WAF rules to block common Burp Suite signatures
+- Enforce strict MIME type validation on server-side using libraries like file-type.js
+- Log and alert on proxy-detected MIME changes in upload traffic
+- Use WAF rules to block anomalous Content-Type switches in file uploads
 
 ## Objectives
 
-1. Capture upload request
-2. Enable payload modification
-3. Bypass client-side checks
+1. Capture the upload request without disrupting the session
+2. Modify the MIME type to enable SVG processing path
+3. Prepare for content injection while maintaining request integrity
 
 ## Instructions
 
-### Step 1: Configure Proxy and Submit Test Upload
+### Step 1: Configure and Intercept
 
-**Context**: Set up interception to capture the request.
+**Context**: Set up interception to capture the second image upload.
 
-Configure browser to use Burp proxy (default 127.0.0.1:8080), then submit a .jpg file via the resume upload form.
+No command; Burp UI:
 
-> Intercepted request shows Content-Type: multipart/form-data with filename=avatar.jpg and file contents.
+- In Burp, go to Proxy > Intercept tab and ensure 'Intercept is on'.
+- Trigger the second PNG upload in Reddit UI.
 
-### Step 2: Modify Request in Burp Repeater
+> Expected: Request appears in Burp with headers like Content-Type: image/png.
 
-**Context**: Alter the request to include space after extension for bypass.
+### Step 2: Locate and Edit Content-Type
 
-In Burp Repeater, change filename to shell.asp<space> and update the file body if needed. Preserve headers and cookies.
+**Context**: Identify the MIME header for modification.
 
-> Modified request ready for forwarding; validation bypasses due to space ignoring the .asp extension check.
+No command; edit in Burp:
+
+- In the intercepted request, find the 'Content-Type: image/png' header.
+- Right-click and select 'Edit header' or manually change to 'Content-Type: image/svg+xml'.
+
+> Expected: Header updated; request body still contains PNG binary.
 
 ## MITRE ATT&CK Mapping
 
@@ -95,5 +105,6 @@ In Burp Repeater, change filename to shell.asp<space> and update the file body i
 
 ## Tags
 
-- [[intercept]]
-- [[modification]]
+- burp-suite
+- http-intercept
+- mime-modification

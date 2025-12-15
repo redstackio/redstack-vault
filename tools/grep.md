@@ -1,16 +1,17 @@
 ---
-id: tool-grep-001
-url: null
+url: 'https://www.gnu.org/software/grep/'
 tags:
-  - search
-  - static-analysis
+  - text-processing
+  - filtering
 type: tool
 verified: false
 platforms:
   - Linux
   - macOS
-created_at: '2024-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:25.522Z'
+  - Windows (via Git Bash)
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:12.163Z'
+id: 1407f748-52ea-4a79-83e7-5836299b18f5
 validated: true
 submitted: true
 ---
@@ -20,28 +21,32 @@ submitted: true
 
 ## Overview
 
-Grep is a command-line utility for searching text patterns in files, ideal for locating vulnerable code snippets in source code.
+Grep is a command-line utility for searching plain-text data sets for lines matching a regular expression, commonly used in security testing to filter logs, responses, or outputs for specific patterns like error messages during reconnaissance or exploitation.
 
 ## Description
 
-Used in security testing to find functions like 'strcpy' or 'glob_url' in curl source, aiding XSS vulnerability discovery.
+In offensive security, grep excels at parsing HTTP response logs from tools like Burp or curl to identify indicators such as error strings, success codes, or leaked information. It's lightweight, fast, and integrates into scripts for automated analysis, such as filtering invalid usernames from brute-force outputs in authentication attacks.
 
 ## Features
 
-- Feature 1: Recursive directory searching
-- Feature 2: Line number output for precise location
-- Feature 3: Pattern matching with regex support
+- Feature 1: Pattern matching with regex support for precise filtering
+- Feature 2: Output control (e.g., invert match with -v to show non-matches)
+- Feature 3: Recursive search (-r) for directories of log files
 
 ## Installation
 
 ### Requirements
 
-- Standard on Unix-like systems
+- Standard Unix-like environment
 
 ### Install Commands
 
 ```bash
-# Pre-installed on Linux
+# On Debian/Ubuntu
+apt install grep
+
+# On macOS (pre-installed)
+brew install grep  # For GNU version
 ```
 
 ## Basic Usage
@@ -54,22 +59,22 @@ grep --help
 
 | Option | Description |
 |--------|-------------|
-| `-r, --recursive` | Recursive search |
-| `-n` | Show line numbers |
-| `-i` | Ignore case |
+| -i, --ignore-case | Ignore case distinctions
+| -v, --invert-match | Select non-matching lines
+| -n, --line-number | Prefix each line with its number
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-grep -rn "glob_url" src/
+grep "error" log.txt
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-grep -rnw "strcpy" src/ | grep url
+grep -v "Username does not exist" responses.log > valids.txt
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,7 +83,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: Software
+- [[Account Discovery]] Account Discovery (for log filtering)
 
 ### Tactics
 
@@ -88,18 +93,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Process listings showing grep on source dirs
-- Log entries for file access patterns
+- Process monitoring for grep executions on sensitive logs
+- Audit unusual file reads in security contexts
 
 ## Related Procedures
 
-- [[procedures/Static-Code-Analysis-for-Vulnerable-URL-Handling]]
+- [[procedures/Enumerate-Valid-Usernames-via-Error-Messages]]
 
 ## Related Tools
 
-- [[tools/git]]
-- [[tools/curl]]
+- [[awk]]
+- [[sed]]
 
 ## References
 
-- Man page: `man grep`
+- Official documentation: https://www.gnu.org/software/grep/manual/
+- Related resources: Unix man pages

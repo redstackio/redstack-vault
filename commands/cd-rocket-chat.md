@@ -8,8 +8,8 @@ executor: bash
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:14.798Z'
-id: 1de6a347-0a47-4564-b15d-0de7e95f3916
+updated_at: '2025-12-14T17:32:20.415Z'
+id: 28565dcb-7ae6-49d0-876f-0cf38f9b1823
 verified: false
 validated: true
 submitted: true
@@ -24,7 +24,7 @@ cd Rocket.Chat
 
 ## Description
 
-Changes into the cloned Rocket.Chat directory for further setup.
+Changes to the cloned Rocket.Chat directory for further setup.
 
 ## Parameters
 
@@ -40,8 +40,8 @@ cd Rocket.Chat
 
 ## Expected Output
 
-Shell prompt updates to Rocket.Chat directory.
+Current directory: /path/to/Rocket.Chat
 
 ## Related
 
-- [[commands/clone-rocket-chat-repo]]
+- [[commands/git-clone-rocket-chat]]

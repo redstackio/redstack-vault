@@ -1,17 +1,17 @@
 ---
-data: node index.js
+id: cmd-uuid-1
+data: node server.js
 tags:
-  - run
+  - setup
   - server
 type: command
+output: Server listening on port 3000
 executor: bash
 platforms:
   - Linux
-  - macOS
-  - Windows
-id: e376963f-ccb2-4dd6-a96e-74112e4808fd
-created_at: '2025-12-13T23:56:19.641Z'
-updated_at: '2025-12-13T23:56:19.641Z'
+  - Node.js
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:30.672Z'
 verified: false
 validated: true
 submitted: true
@@ -21,38 +21,37 @@ submitted: true
 ## Command
 
 ```bash
-node index.js
+node server.js
 ```
 
 ## Description
 
-Executes a Node.js script (index.js) to start an Express server, hosting the malicious iframe page and payload for XSS exploitation.
+Executes a Node.js script to start an HTTP/2 server for vulnerability testing. Use this to initialize the target environment.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `index.js` | Entry point script file | Yes |
+| `server.js` | Path to the server script file | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-node index.js
+node server.js
 ```
 
 ### Advanced Usage
 
 ```bash
-node index.js --port=3000
+node --max-old-space-size=4096 server.js
 ```
 
 ## Expected Output
 
-Starts server and logs "Server running on port 5000". Listens for incoming requests.
+Server startup message like "Server running at http://localhost:3000/" and HTTP/2 enabled confirmation.
 
 ## Related
 
-- [[commands/npm-install-express]]
-- [[procedures/Set-Up-Malicious-Express-Server-for-XSS]]
+- [[procedures/Start-Node-js-HTTP2-Server]]

@@ -1,18 +1,17 @@
 ---
+id: cmd-uuid-9012
 data: ruby -v
 tags:
-  - setup
-  - version
+  - version-check
+  - ruby
 type: command
-output: 'ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin22]'
+output: 'ruby 2.3.8p459 (2018-10-18 revision 63647) [x86_64-linux]'
 executor: bash
 platforms:
-  - Linux
-  - macOS
-  - Windows
+  - Software
+  - Ruby
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:43.918Z'
-id: f6ceb3b1-826e-4c06-af20-b70386bd8863
+updated_at: '2025-12-14T17:26:36.906Z'
 verified: false
 validated: true
 submitted: true
@@ -27,13 +26,13 @@ ruby -v
 
 ## Description
 
-Displays the installed Ruby interpreter version to verify compatibility before setting up a Rails PoC.
+This command checks the installed Ruby version to identify if it's vulnerable (2.3.x or 2.2.x) to the libYAML DoS issue.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| -v | Version flag | Yes |
+| `-v` | Displays the Ruby version | Yes |
 
 ## Examples
 
@@ -45,12 +44,12 @@ ruby -v
 
 ### Advanced Usage
 
-N/A
+Not applicable; simple flag command.
 
 ## Expected Output
 
-ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin22]
+Version string like "ruby 2.3.8p459 (2018-10-18 revision 63647) [x86_64-linux]", indicating vulnerable branch if 2.3.x or 2.2.x.
 
 ## Related
 
-- [[commands/rails-new-poc]]
+- [[Related Procedure|procedures/Exploit-libYAML-DoS-in-Ruby-2-3-x-and-2-2-x]]

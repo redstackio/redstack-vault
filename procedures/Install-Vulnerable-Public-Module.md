@@ -1,9 +1,9 @@
 ---
 id: proc-uuid-1
 tags:
-  - nodejs
+  - path-traversal
+  - node-js
   - installation
-  - vulnerable-module
 type: procedure
 tools:
   - '[[tools/npm]]'
@@ -13,13 +13,13 @@ commands:
   - '[[commands/npm-install-public]]'
 verified: false
 platforms:
-  - Node.js
+  - Linux
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:16:02.888Z'
-skill_level: beginner
+updated_at: '2025-12-14T17:26:11.813Z'
+skill_level: intermediate
 impact_level: low
 detection_risk: low
 sub_techniques: []
@@ -33,45 +33,44 @@ mitre_techniques:
 
 ## Summary
 
-This procedure installs the vulnerable 'public' Node.js module (version 0.1.3) using npm, setting up the environment for reproducing the stored XSS vulnerability in directory listings.
+This procedure installs the vulnerable 'public' Node.js module version 0.1.2 from the npm registry, setting up the environment for exploiting a path traversal vulnerability in static file serving.
 
 ## Description
 
-The 'public' module is a static file server for Node.js that enables directory indexing similar to Apache. In version 0.1.3, it fails to sanitize filenames, allowing XSS injection. This step obtains the module locally or globally, placing it in node_modules for execution. Prerequisites include Node.js and npm installed on the system. Expected outcome: Module ready for server launch, enabling the full exploit chain.
+The 'public' module is a simple static file server for Node.js, but version 0.1.2 fails to sanitize pathnames, allowing traversal attacks. This step uses npm to download and install it locally, creating the node_modules directory with the vulnerable binary script. It requires Node.js and npm installed on a Linux system, and assumes local execution privileges. Successful installation enables the subsequent server launch and exploitation, leading to arbitrary file reads on the host.
 
 ## Requirements
 
-1. Node.js runtime installed (v8+ recommended)
-2. npm package manager available
-3. Write access to the current directory for node_modules
-4. Internet access to npm registry
+1. Linux environment with Node.js v8.9.4 LTS and npm 5.6.0 installed
+2. Internet access to the npm registry
+3. Local write permissions in the working directory
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Use package vulnerability scanners like npm audit or Snyk to detect outdated modules
-- Pin dependencies to secure versions in package.json
+- Use package vulnerability scanners like npm audit before installation
+- Pin dependencies to patched versions (upgrade beyond 0.1.2 if available)
 - Monitor npm install logs for suspicious package names
 
 ## Objectives
 
-1. Acquire the vulnerable module for local exploitation testing
-2. Prepare environment for file creation and server execution
-3. Enable reproduction of the XSS in a controlled setup
+1. Download and install the 'public' module to prepare the vulnerable server
+2. Verify the module's binary is accessible for execution
+3. Set up the node_modules structure without errors
 
 ## Instructions
 
 ### Step 1: Install the Module
 
-**Context**: Use npm to fetch and install the 'public' package, which will be used to serve files with the XSS flaw.
+**Context**: Fetch the vulnerable package using npm to create the exploitable binary.
 
 **Command** ([[commands/npm-install-public]]):
 ```bash
 npm install public
 ```
 
-> This command downloads version 0.1.3 (vulnerable) by default if not specified, outputs installation progress, and creates node_modules/public with the bin/public executable. Verify with ls node_modules/public.
+> This command queries the npm registry, downloads version 0.1.2 (default latest vulnerable), and installs it into node_modules/public. Expected output includes package resolution logs and a summary like 'added 1 package'.
 
 ## MITRE ATT&CK Mapping
 
@@ -96,5 +95,5 @@ npm install public
 
 ## Tags
 
-- nodejs
-- installation
+- path-traversal
+- node-js

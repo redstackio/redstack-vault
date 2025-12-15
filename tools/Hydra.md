@@ -1,127 +1,119 @@
 ---
-id: 28764ef9-f6e1-4ec8-9c50-2344cd77ffcc
-name: Hydra
+id: tool-hydra-001
+url: 'https://github.com/vanhauser-thc/thc-hydra'
+tags:
+  - brute-force
+  - password-cracking
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:21.173096+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Hydra Brute Force a HTTP POST Login Form]]'
-- '[[Hydra Dictionary Brute Force Remote Desktop Protocol (RDP)]]'
-- '[[Hydra Dictionary Brute Force SSH]]'
-- '[[cmd-6b223b97]]'
 platforms:
-- Linux
-- Web
-- Windows
-tags:
-- '[[Brute Force]]'
-- '[[Network]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:30.721Z'
+validated: true
+submitted: true
 ---
-
 # Hydra
+
+**Status**: Unverified
 
 ## Overview
 
-Hydra is an online login brute forcing tool which attempts to identify valid credentials to services exposed over the network using username and password lists. Hydra has extensive support for a large number of services, as well the ability to easily add modules into the engine. Hydra also includes
+Hydra is a parallelized login cracker supporting numerous protocols, ideal for brute-forcing web services like HTTP Basic Auth or forms, commonly used in penetration testing to exploit weak credentials on endpoints without rate limits.
 
 ## Description
 
-# Description
+THC-Hydra performs high-speed dictionary attacks against login pages, including WebDAV over HTTP/HTTPS. It supports modules for various auth types and can handle SSL, making it suitable for targeting Nextcloud's vulnerable WebDAV interface. In offensive security, it's used to automate credential guessing where defenses are absent, but ethical use requires authorization.
 
-Hydra is an online login brute forcing tool which attempts to identify valid credentials to services exposed over the network using username and password lists. Hydra has extensive support for a large number of services, as well the ability to easily add modules into the engine. Hydra also includes support for parallel connections, and is one of the faster online brute forcing tools available to the public.
+## Features
 
+- Feature 1: Supports over 50 protocols including HTTP, HTTPS, and form-based auth
+- Feature 2: Multi-threaded for fast parallel attempts
+- Feature 3: Verbose output and session resumption for long-running attacks
 
+## Installation
 
-Supported Services:
+### Requirements
 
+- Kali Linux or similar distro (pre-installed on Kali)
+- libssl-dev, libssh-dev for compilation
 
+### Install Commands
 
-{{EMBEDDED_CODE_56f146be-a252-470b-b6b9-c8b8daa07646}}
+```bash
+# On Ubuntu/Debian
+sudo apt update && sudo apt install hydra
 
+# Or from source
+git clone https://github.com/vanhauser-thc/thc-hydra.git
+cd thc-hydra
+./configure
+make
+sudo make install
+```
 
+## Basic Usage
 
-# Example
+```bash
+hydra -h
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-l username` | Single login name | 
+| `-L file` | Login names file | 
+| `-p password` | Single password | 
+| `-P file` | Passwords file | 
+| `-t tasks` | Number of parallel tasks | 
+| `-V` | Verbose mode | 
 
-{{EMBEDDED_COMMAND_6b223b97-82e4-4174-81c0-834f2d727f96}}
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+hydra -l admin -p password target.com http-get /
+```
 
-# Installation
+### Example 2: Advanced Usage
 
-## Install on Debian/Ubuntu
+```bash
+hydra -L users.txt -P pass.txt -t 10 target.com https-post-form "/login:username=^USER^&password=^PASS^:Invalid" -V
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-
-
-
-
-
-
-## Platforms
-
-- Linux
-- Web
-- Windows
-
-## Services
-
-- ftp
-- http
-- http
-- https
-- https
-- icq
-- imap
-- irc
-- ldap
-- ms-sql
-- ms-sql
-- mysql
-- ncp
-- nntp
-- oracle
-- pcanywhere
-- pop3
-- postgres
-- radmin
-- rdp
-- redis
-- rexec
-- rlogin
-- rpcap
-- rsh
-- rtsp
-- s7-300
-- sapr3
-- sip
-- sip
-- smb
-- smtp
-- smtp
-- snmp
-- socks5
-- ssh
-- ssh
-- svn
-- teamspeak
-- telnet
-- vmauthd
-- vnc
-- xmpp
-- xmpp
-
-## Commands (2)
-
-- [[hydra -L $_USERNAME_LIST -P $_PASSWORD_LIST $_TARG]]
-- [[Hydra Brute Force a HTTP POST Login Form]]
-
-## Tags
+### Techniques
 
 - [[Brute Force]]
-- [[Network]]
 
+### Tactics
 
+- [[Credential Access]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Detection method 1: High volume of failed HTTP 401 requests from a single IP in server logs
+- Detection method 2: Network IDS alerts on rapid auth attempts (e.g., Snort rules for Hydra signatures)
+
+## Related Procedures
+
+- [[procedures/Exploit-WebDAV-Authentication-Bypass]]
+
+## Related Tools
+
+- [[Medusa]]
+- [[Ncrack]]
+
+## References
+
+- Official documentation: https://github.com/vanhauser-thc/thc-hydra
+- Related resources: OWASP Brute Force Attack page

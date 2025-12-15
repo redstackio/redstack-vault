@@ -1,9 +1,9 @@
 ---
-id: cmd-uuid-probe
-data: 'curl -X GET https://target-navy-system.com/upload'
+id: cmd-uuid-3
+data: 'curl ''https://███.edu/install.php?step=1'''
 tags:
-  - recon
-  - http
+  - web-recon
+  - probe
 type: command
 output: null
 executor: bash
@@ -12,7 +12,7 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.354Z'
+updated_at: '2025-12-14T17:25:13.354Z'
 verified: false
 validated: true
 submitted: true
@@ -22,38 +22,37 @@ submitted: true
 ## Command
 
 ```bash
-curl -X GET https://target-navy-system.com/upload
+curl 'https://███.edu/install.php?step=1'
 ```
 
 ## Description
 
-Probes an HTTP endpoint to check accessibility and response, useful for verifying exposed upload tools without authentication.
+This command probes a specific web endpoint with query parameters to check for accessibility and response details, useful for identifying misconfigured installation scripts.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X GET` | Specifies the HTTP method | Yes |
-| `https://target-navy-system.com/upload` | Target URL | Yes |
+| URL with params | Full endpoint including ?step=1 | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X GET https://target-navy-system.com/upload
+curl 'https://example.com/install.php?step=1'
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X OPTIONS https://target-navy-system.com/upload -v
+curl -v 'https://example.com/install.php?step=1' -H 'User-Agent: Mozilla/5.0'
 ```
 
 ## Expected Output
 
-HTTP 200 response with upload form HTML or JSON details indicating no restrictions.
+HTTP response body, potentially including forms or error messages indicating database interaction.
 
 ## Related
 
-- [[Related Procedure|procedures/Access-Exposed-File-Upload-Endpoint]]
+- [[Related Procedure: Identify-Installation-Endpoint-for-Database-Manipulation]]

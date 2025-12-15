@@ -1,16 +1,16 @@
 ---
-data: git push origin master
+id: cmd-uuid-placeholder-003
+data: git push origin exploit-branch
 tags:
   - git
   - push
 type: command
-output: 'Push successful, updates remote'
+output: null
 executor: bash
 platforms:
-  - Linux
+  - Git
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:44.349Z'
-id: d14a50cf-ea21-4f8e-8378-5259628799d1
+updated_at: '2025-12-14T17:33:12.142Z'
 verified: false
 validated: true
 submitted: true
@@ -20,41 +20,40 @@ submitted: true
 ## Command
 
 ```bash
-git push origin master
+git push origin exploit-branch
 ```
 
 ## Description
 
-Pushes local branch commits to the remote GitLab repository.
+Pushes the local 'exploit-branch' to the remote origin repository, making it available for Pull Request creation in the GitHub Enterprise Server exploit.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `master` | Branch to push | Yes |
-| `origin` | Remote repository name | Yes |
+| `remote` | Remote name (e.g., origin) | Yes |
+| `branch` | Branch to push (e.g., exploit-branch) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-git push origin master
+git push origin exploit-branch
 ```
 
 ### Advanced Usage
 
-Push specific branch:
-
 ```bash
-git push origin "<img/src='x'/onerror=alert(document.domain)>"
+git push origin exploit-branch --force
 ```
 
 ## Expected Output
 
-'To http://gitlab.example.com/project.git
- * [new branch]      master -> master'
+To github.com:user/repo.git
+ * [new branch]      exploit-branch -> exploit-branch
+Branch 'exploit-branch' set up to track remote branch 'exploit-branch' from 'origin'.
 
 ## Related
 
-- [[Related Procedure|procedures/Create-Malicious-Branch-with-XSS-Payload]]
+- [[Related Procedure|procedures/Exploit-Git-Reference-Ambiguity-for-Commit-Smuggling]]

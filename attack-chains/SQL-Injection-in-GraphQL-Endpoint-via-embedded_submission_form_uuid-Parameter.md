@@ -1,49 +1,50 @@
 ---
 tags:
-  - sql-injection
+  - sqli
   - graphql
   - postgresql
   - rails
+  - web
 type: attack_chain
 tools:
-  - '[[tools/Curl-for-HTTP-Requests]]'
+  - '[[tools/curl]]'
+  - '[[tools/time]]'
 tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
   - '[[Collection]]'
 verified: false
 platforms:
   - Web
-  - PostgreSQL
 submitted: true
 complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Discover-SQL-Syntax-Error-in-Backend-Logs]]'
-  - '[[procedures/Identify-SQL-Injection-Root-Cause-in-GraphQL-Handling]]'
-  - '[[procedures/Reproduce-SQL-Injection-with-Malicious-Payload]]'
-  - '[[procedures/Verify-Injection-Using-Timing-Attacks-with-pg_sleep]]'
-  - '[[procedures/Investigate-Logs-for-Potential-Exploitation]]'
+  - '[[procedures/Monitor-Backend-Logs-for-Errors]]'
+  - '[[procedures/Analyze-Code-for-SQL-Injection-Root-Cause]]'
+  - '[[procedures/Reproduce-SQL-Injection-Locally]]'
+  - '[[procedures/Verify-SQL-Injection-on-Production]]'
+  - '[[procedures/Analyze-Logs-for-Exploitation-Evidence]]'
 step_count: 5
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:15:09.965Z'
+updated_at: '2025-12-14T17:26:00.335Z'
 description: >-
-  Multi-stage attack chain demonstrating discovery and exploitation of SQL
+  Multi-stage vulnerability discovery and exploitation chain demonstrating SQL
   injection in HackerOne's GraphQL endpoint, allowing arbitrary SQL execution in
-  PostgreSQL schemas.
+  PostgreSQL secure schemas.
 skill_level: intermediate
 impact_level: high
-id: 74754ec8-b57c-4db4-9100-c2579d468463
+id: df785bda-ab74-42b1-9634-9f0d3e61af0e
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
   - '[[Collection]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
 ---
 # SQL Injection in GraphQL Endpoint via embedded_submission_form_uuid Parameter
 
-Multi-stage attack chain demonstrating a complete attack workflow for discovering and exploiting a SQL injection vulnerability in the GraphQL endpoint of a Ruby on Rails application using PostgreSQL.
+Multi-stage attack chain demonstrating the discovery, reproduction, and verification of a SQL injection vulnerability in HackerOne's /graphql endpoint, enabling arbitrary SQL execution against PostgreSQL databases with public and secure schemas.
 
 ## Chain Metrics Dashboard
 
@@ -51,7 +52,7 @@ Multi-stage attack chain demonstrating a complete attack workflow for discoverin
 |--------|-------|
 | Chain Status | Unverified |
 | Total Steps | 5 |
-| Execution Time | ~5 minutes |
+| Execution Time | ~10 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
 | Impact Level | High |
@@ -60,10 +61,10 @@ Multi-stage attack chain demonstrating a complete attack workflow for discoverin
 
 ```mermaid
 graph LR
-    A[Log Discovery] --> B[Root Cause Analysis]
-    B --> C[Payload Reproduction]
-    C --> D[Timing Verification]
-    D --> E[Exploitation Investigation]
+    A[Log Monitoring] --> B[Root Cause Analysis]
+    B --> C[Local Reproduction]
+    C --> D[Production Verification]
+    D --> E[Exploitation Log Analysis]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -76,107 +77,105 @@ graph LR
 
 ### Required Tools
 
-- [[tools/Curl-for-HTTP-Requests]]
+- [[tools/curl]]
+- [[tools/time]]
 
 ### Target Environment
 
-- Web platform with Ruby on Rails and GraphQL
-- PostgreSQL database with public and secure schemas
-- Access to backend logs (for discovery and investigation)
-- Ports: 8080 (local), 443 (production HTTPS)
+- Web platform with Ruby on Rails, GraphQL, PostgreSQL, nginx, and Unicorn
+- Access to backend logs (nginx and Rails)
+- Local development environment mirroring production (e.g., localhost:8080)
 
 ### Initial Access Requirements
 
-- Network access to the /graphql endpoint
-- Ability to monitor backend logs (internal access for discovery)
-- No credentials required for public-facing exploitation
+- Internal access to backend logs and code
+- Network access to production /graphql endpoint
+- No prior credentials needed beyond standard user access
 
 ## Detailed Attack Procedures
 
-### Step 1: Log Discovery
-procedure: [[procedures/Discover-SQL-Syntax-Error-in-Backend-Logs]]
+### Step 1: Monitor Backend Logs for Errors
+procedure: [[procedures/Monitor-Backend-Logs-for-Errors]]
 
-**Objective**: Identify potential SQL injection points by observing syntax errors in backend logs.
+**Objective**: Identify potential SQL syntax errors indicating injection vulnerabilities.
 
-**Instructions**: Monitor the application's backend logs for PostgreSQL exceptions indicating unsanitized input.
+**Instructions**: Review backend logs for PG::SyntaxError exceptions, which signal unescaped SQL interpolation.
 
-**Expected Output**: PG::SyntaxError exception logged on November 6th, 2018, pointing to issues in GraphQL parameter handling.
-
-**Success Indicators**:
-- Exception observed in logs
-- Indications of SQL syntax issues related to parameters
-
-### Step 2: Root Cause Analysis
-procedure: [[procedures/Identify-SQL-Injection-Root-Cause-in-GraphQL-Handling]]
-
-**Objective**: Analyze the code to pinpoint the unsanitized parameter causing the injection.
-
-**Instructions**: Review the Ruby on Rails code where the `embedded_submission_form_uuid` parameter is interpolated into PostgreSQL SET SESSION statements without sanitization.
-
-**Expected Output**: Confirmation that GraphQL parameters are directly used in schema-switching queries, allowing injection.
+**Expected Output**: Log entries showing syntax errors from malformed queries.
 
 **Success Indicators**:
-- Identification of vulnerable code path
-- Understanding of schema switching mechanism
+- PG::SyntaxError observed in logs
+- Timestamps correlating to user requests
 
-### Step 3: Payload Reproduction
-procedure: [[procedures/Reproduce-SQL-Injection-with-Malicious-Payload]]
+### Step 2: Analyze Code for SQL Injection Root Cause
+procedure: [[procedures/Analyze-Code-for-SQL-Injection-Root-Cause]]
 
-**Objective**: Craft and send a malicious payload to confirm SQL injection execution.
+**Objective**: Pinpoint the vulnerable parameter and query construction.
 
-**Instructions**: Use [[commands/curl-local-sql-injection-reproduce]] for local testing, then [[commands/curl-prod-sql-injection-reproduce]] for production confirmation. Observe response delays.
+**Instructions**: Examine GraphQL parameter handling in Rails code, focusing on unsanitized interpolation into SET SESSION queries.
+
+**Expected Output**: Identification of embedded_submission_form_uuid as the injection point.
+
+**Success Indicators**:
+- Code commit linked to vulnerability introduction
+- Confirmation of direct SQL interpolation without escaping
+
+### Step 3: Reproduce SQL Injection Locally
+procedure: [[procedures/Reproduce-SQL-Injection-Locally]]
+
+**Objective**: Validate the vulnerability in a controlled environment.
+
+**Instructions**: Use [[commands/curl-local-sqli-repro]] to send a crafted POST request to the local GraphQL endpoint:
 
 ```bash
 curl -X POST http://localhost:8080/graphql?embedded_submission_form_uuid=1%27%3BSELECT%201%3BSELECT%20pg_sleep%2830%29%3B--%27
 ```
 
-```bash
-curl -X POST https://hackerone.com/graphql?embedded_submission_form_uuid=1%27%3BSELECT%201%3BSELECT%20pg_sleep%2830%29%3B--%27
-```
-
-**Expected Output**: Response delay of approximately 30 seconds, confirming SQL execution.
+**Expected Output**: Delayed response (30 seconds) confirming SQL execution.
 
 **Success Indicators**:
-- Delayed response indicating pg_sleep execution
-- No immediate errors, but confirmed injection
+- Response delay matches pg_sleep duration
+- No immediate syntax error
 
-### Step 4: Timing Verification
-procedure: [[procedures/Verify-Injection-Using-Timing-Attacks-with-pg_sleep]]
+### Step 4: Verify SQL Injection on Production
+procedure: [[procedures/Verify-SQL-Injection-on-Production]]
 
-**Objective**: Validate the injection by measuring response times with varying sleep durations.
+**Objective**: Confirm exploitability in the live environment with time-based blind injection.
 
-**Instructions**: Execute timed requests using [[commands/time-curl-1s-sleep]], [[commands/time-curl-5s-sleep]], [[commands/time-curl-10s-sleep]], and [[commands/time-curl-30s-sleep]] to correlate delays with payload.
+**Instructions**: Execute timed curl requests using [[commands/time-curl-prod-30s]] for varying delays:
 
 ```bash
-time curl -X POST https://hackerone.com/graphql?embedded_submission_form_uuid=1%27%3BSELECT%201%3BSELECT%20pg_sleep%281%29%3B--%27
+(time curl -X POST https://hackerone.com/graphql?embedded_submission_form_uuid=1%27%3BSELECT%201%3BSELECT%20pg_sleep%2830%29%3B--%27)
 ```
 
-**Expected Output**: Response times matching sleep durations (e.g., ~1.631s for 1s sleep, ~10.557s for 10s sleep) with empty JSON response {}.
+Follow with shorter delays using [[commands/time-curl-prod-5s]] and [[commands/time-curl-prod-1s]] to measure response times.
+
+**Expected Output**: Response times correlating to pg_sleep values (e.g., ~30s for 30s sleep).
 
 **Success Indicators**:
-- Consistent delays across multiple tests
-- Empty responses without syntax errors
+- Measured delays (e.g., 30.123s for pg_sleep(30))
+- Empty JSON response {}
 
-### Step 5: Exploitation Investigation
-procedure: [[procedures/Investigate-Logs-for-Potential-Exploitation]]
+### Step 5: Analyze Logs for Exploitation Evidence
+procedure: [[procedures/Analyze-Logs-for-Exploitation-Evidence]]
 
-**Objective**: Check for signs of prior exploitation or abuse of the vulnerability.
+**Objective**: Check historical logs for signs of prior exploitation.
 
-**Instructions**: Query access and Rails logs using regular expressions to filter requests with suspicious parameters (e.g., single quotes in embedded_submission_form_uuid).
+**Instructions**: Query nginx and Rails logs using regex patterns for suspicious parameters containing single quotes or pg_sleep indicators.
 
-**Expected Output**: Log entries analyzed, confirming no exploitation occurred, but highlighting potential for information extraction from secure schemas.
+**Expected Output**: Filtered log entries showing request patterns and status codes.
 
 **Success Indicators**:
-- No evidence of abuse (e.g., non-200 responses or pg_sleep in wild)
-- Assessment of high confidentiality risk
+- No evidence of exploitation (e.g., 104 nginx matches, all 200 status)
+- Aggregated Rails logs confirming no abuse
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Discovered SQL injection via log analysis
-2. Reproduced and verified arbitrary SQL execution in PostgreSQL context
-3. Assessed impact on schema switching and data confidentiality without actual exploitation
+1. Discovered SQL injection via log monitoring on November 6th, 2018
+2. Reproduced arbitrary SQL execution, including schema switching and data extraction potential
+3. Verified no prior exploitation through comprehensive log analysis
 
 ## Technique & Tactic Coverage
 
@@ -186,9 +185,8 @@ procedure: [[procedures/Investigate-Logs-for-Potential-Exploitation]]
 
 ### MITRE ATT&CK Tactics
 
-- [[Initial Access]]
+- [[Execution]]
 - [[Collection]]
 
 ---
-
 *Last updated: 2023-10-01T00:00:00Z*

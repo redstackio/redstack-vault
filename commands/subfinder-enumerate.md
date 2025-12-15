@@ -1,17 +1,16 @@
 ---
-id: cmd-subfinder-enum
-data: subfinder -d easycontactnow.com -all -o subdomains.txt
+id: f6g7h8i9-j0k1-2345-fghi-678901234567
+data: subfinder -d $DOMAIN -all -o $OUTPUT
 tags:
   - recon
   - dns
 type: command
-output: A file subdomains.txt listing discovered subdomains.
+output: null
 executor: bash
 platforms:
   - Linux
-  - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:24.056Z'
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:30:18.226Z'
 verified: false
 validated: true
 submitted: true
@@ -21,39 +20,40 @@ submitted: true
 ## Command
 
 ```bash
-subfinder -d easycontactnow.com -all -o subdomains.txt
+subfinder -d uber.com -all -o subdomains.txt
 ```
 
 ## Description
 
-This command uses the subfinder tool to perform comprehensive subdomain enumeration on a target domain, pulling from passive sources to identify potential attack surfaces like support.easycontactnow.com.
+Enumerates subdomains of a target domain using passive and active sources, ideal for identifying takeover candidates in reconnaissance phases.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-d` | Target domain | Yes |
+| `-d, --domain` | Target domain to enumerate | Yes |
 | `-all` | Use all available sources | No |
-| `-o` | Output file | Yes |
+| `-o, --output` | Output file for results | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-subfinder -d example.com -o subs.txt
+subfinder -d uber.com -o subdomains.txt
 ```
 
 ### Advanced Usage
 
 ```bash
-subfinder -d easycontactnow.com -all -t 50 -o subdomains.txt
+subfinder -d uber.com -all -silent -o subdomains.txt
 ```
 
 ## Expected Output
 
-A text file with one subdomain per line, e.g., support.easycontactnow.com.
+A text file listing discovered subdomains, one per line, e.g., 'api.uber.com\nwww.uber.com'.
 
 ## Related
 
-- [[Related Procedure: Enumerate-Subdomains-and-Identify-Dangling-CNAME]]
+- [[commands/dig-cname-query]]
+- [[procedures/Enumerate-Subdomains-for-Takeover]]

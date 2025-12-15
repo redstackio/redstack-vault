@@ -1,10 +1,13 @@
 ---
-id: cmd-curl-open-redirect-test
-data: 'curl -X GET "https://app.smule.com/redirect?url=TARGET_URL" -v'
+id: d4e5f6g7-h8i9-0123-defg-456789012345
+data: >-
+  curl -L -v
+  "http://target.com/www/admin/account-switch.php?return_url=http://127.0.0.1:12345/test"
+  --cookie "session=your_session_cookie"
 tags:
-  - web
+  - web-testing
   - redirect
-  - test
+  - curl
 type: command
 output: null
 executor: bash
@@ -12,8 +15,8 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2024-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:53:38.327Z'
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:28:20.504Z'
 verified: false
 validated: true
 submitted: true
@@ -23,39 +26,40 @@ submitted: true
 ## Command
 
 ```bash
-curl -X GET "https://app.smule.com/redirect?url=TARGET_URL" -v
+curl -L -v "http://target.com/www/admin/account-switch.php?return_url=http://127.0.0.1:12345/test" --cookie "session=your_session_cookie"
 ```
 
 ## Description
 
-This command tests for open redirect vulnerabilities by sending a GET request to a redirect endpoint with a user-supplied URL, using verbose output to inspect headers like Location for successful redirects.
+This command tests for open redirect vulnerabilities by sending an authenticated request to a crafted URL and following the redirect to verify if arbitrary domains are allowed. Use it in web vulnerability assessments targeting redirect endpoints.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X GET` | Specifies HTTP GET method | Yes |
-| `url=TARGET_URL` | The redirect parameter with target URL (e.g., //evil.com) | Yes |
-| `-v` | Verbose mode to show headers | Yes |
+| `-L` | Follow redirects | Yes |
+| `-v` | Verbose output to show headers | Yes |
+| `--cookie` | Provide session cookie for authentication | Yes |
+| URL | Target endpoint with malicious return_url | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X GET "https://app.smule.com/redirect?url=https://example.com" -v
+curl -L -v "http://target.com/vuln?redirect=http://evil.com" --cookie "session=abc123"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X GET "https://app.smule.com/redirect?url=%2F%2Fphishingsite.com" -v
+curl -L -v -H "User-Agent: Mozilla/5.0" "http://target.com/admin/account-switch.php?return_url=http://127.0.0.1:12345/test" --cookie-jar cookies.txt
 ```
 
 ## Expected Output
 
-Verbose output showing HTTP/1.1 302 Found and Location: https://phishingsite.com indicating successful redirect.
+Verbose output showing HTTP 302 status, Location header pointing to the arbitrary URL (e.g., http://127.0.0.1:12345/test), and final GET to the redirected site. Success if redirect occurs without domain checks.
 
 ## Related
 
-- [[Related Procedure: Bypass-Open-Redirect-for-Phishing]]
+- [[Related Procedure: Exploit-Open-Redirect-in-Account-Switch]]

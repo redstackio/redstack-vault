@@ -1,21 +1,21 @@
 ---
-id: proc-765679-account-setup
+id: proc-uuid-1
 tags:
   - account-creation
-  - initial-access
+  - setup
 type: procedure
-tools:
-  - '[[tools/Notepad]]'
+tools: []
 tactics:
   - '[[Initial Access]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Valid Accounts]]'
-updated_at: '2025-12-13T23:52:49.714Z'
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:27:43.200Z'
 skill_level: beginner
 impact_level: low
 detection_risk: low
@@ -24,55 +24,50 @@ validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Valid Accounts]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
 # Create-Attacker-and-Victim-Accounts
 
 ## Summary
 
-This procedure sets up two test accounts in the Outpost application to simulate an attacker-victim scenario for exploiting the stored XSS vulnerability.
+This procedure sets up two TaxJar accounts to simulate an attacker-victim scenario for testing CSRF in the CSV import feature.
 
 ## Description
 
-In the context of testing the Outpost Inbox file upload, create an attacker account for uploading payloads and a victim account for receiving and interacting with them. This establishes the necessary environment without requiring existing access, using simple email-based registration. Expected outcomes include verified accounts ready for authentication and payload delivery.
+In the context of exploiting CSRF on app.taxjar.com, creating separate accounts allows isolation of the attack: the attacker uploads a malicious CSV, while the victim is tricked into importing it. This requires no special privileges, just standard registration. Expected outcome is two functional accounts for the full attack chain.
 
 ## Requirements
 
-1. Access to email services for verification (e.g., seq@seq.teamoutpost.com and seq1@seq1.teamoutpost.com)
-2. Web browser for registration
-3. No prior Outpost access needed
+1. Internet access to app.taxjar.com
+2. Valid email addresses for registration
+3. No prior TaxJar access needed
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor for bulk account creations from suspicious IPs
-- Implement CAPTCHA on registration to prevent automation
-- Rate-limit sign-ups to detect abuse
+- Monitor for unusual account creations from the same IP
+- Implement CAPTCHA on registration to deter bulk setups
 
 ## Objectives
 
-1. Establish controlled attacker access
-2. Prepare victim profile for payload testing
-3. Validate account functionality for Inbox interactions
+1. Establish isolated attacker environment
+2. Prepare victim profile for testing
+3. Ensure accounts are authenticated independently
 
 ## Instructions
 
 ### Step 1: Register Attacker Account
 
-**Context**: Navigate to the Outpost registration page and create the attacker's account.
+**Context**: Create the primary account for uploading the malicious CSV.
 
-No specific command; use the web interface at https://app.outpost.co/sign-up, enter email seq@seq.teamoutpost.com, set a password, and complete verification.
-
-> Successful registration redirects to login or dashboard; check email for confirmation.
+Navigate to https://app.taxjar.com/signup and complete registration with an email and password. Verify email if required and log in.
 
 ### Step 2: Register Victim Account
 
-**Context**: Repeat for the victim to simulate a target user.
+**Context**: Set up a separate account to receive the unauthorized import.
 
-Use the web interface to register seq1@seq1.teamoutpost.com with a password and verify via email.
-
-> Account ready; no alerts or errors during creation.
+Repeat the registration process with a different email (e.g., for user Alex). Log in to confirm access to the dashboard and CSV import feature.
 
 ## MITRE ATT&CK Mapping
 
@@ -82,7 +77,7 @@ Use the web interface to register seq1@seq1.teamoutpost.com with a password and 
 
 ### Techniques
 
-- [[Valid Accounts]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
@@ -92,9 +87,8 @@ Use the web interface to register seq1@seq1.teamoutpost.com with a password and 
 
 ## Tools Used
 
-- [[tools/Notepad]]
 
 ## Tags
 
-- [[account-creation]]
-- [[initial-access]]
+- [[account-setup]]
+- [[taxjar]]

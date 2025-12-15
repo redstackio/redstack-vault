@@ -1,18 +1,16 @@
 ---
-data: cd poc-webpack-bundle-analyzer/
+data: cd poc/
 tags:
-  - navigation
-  - shell
+  - setup
 type: command
-output: Directory change confirmation
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
-  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:36.932Z'
-id: a812bf87-521a-45e2-8707-2755f77c4e43
+updated_at: '2025-12-14T17:31:19.034Z'
+id: 4fbe84c6-f3e8-4432-ba39-5da14a83846a
 verified: false
 validated: true
 submitted: true
@@ -22,38 +20,37 @@ submitted: true
 ## Command
 
 ```bash
-cd poc-webpack-bundle-analyzer/
+cd poc/
 ```
 
 ## Description
 
-Changes the current working directory to the cloned POC project root for further setup.
+Changes the current working directory to 'poc/' to prepare for npm initialization and dependency installation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `poc-webpack-bundle-analyzer/` | Directory name | Yes |
+| poc/ | Target directory path | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-cd poc-webpack-bundle-analyzer/
+cd poc/
 ```
 
 ### Advanced Usage
 
 ```bash
-cd /path/to/poc-webpack-bundle-analyzer/
+cd poc/ && ls
 ```
 
 ## Expected Output
 
-Shell prompt updates to reflect new directory (e.g., user@host:~/poc-webpack-bundle-analyzer$).
+Changes directory silently; prompt updates to show /poc.
 
 ## Related
 
-- [[commands/git-clone-poc]]
-- [[procedures/Reproduce-with-Git-Clone-and-Build]]
+- [[commands/mkdir-poc-directory]]

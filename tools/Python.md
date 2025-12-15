@@ -1,17 +1,18 @@
 ---
-id: tool-uuid-003
+id: tool-python
 url: 'https://www.python.org/'
 tags:
-  - programming-language
   - scripting
+  - automation
+  - poc
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
   - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.492Z'
+updated_at: '2025-12-14T17:32:48.413Z'
 validated: true
 submitted: true
 ---
@@ -21,63 +22,63 @@ submitted: true
 
 ## Overview
 
-Python is a versatile programming language used for scripting and running web frameworks like Flask in security PoCs.
+Python is a high-level programming language used for scripting, automation, and developing proof-of-concept exploits in security testing, such as HTTP request automation for API vulnerabilities.
 
 ## Description
 
-Serves as the runtime for the Flask server in this SSRF test, enabling quick setup of test environments.
+In this context, Python runs a custom poc.py script leveraging the requests library to interact with the Flink API, sending crafted parameters for RCE. It's ideal for rapid prototyping of web exploits due to its simplicity and extensive libraries.
 
 ## Features
 
-- Feature 1: Extensive standard library
-- Feature 2: Easy scripting for automation
-- Feature 3: Cross-platform compatibility
+- Feature 1: Rich standard library including http.client and requests for API calls
+- Feature 2: Cross-platform scripting for PoC development
+- Feature 3: Easy integration with gadgets like JavaScript loaders
 
 ## Installation
 
 ### Requirements
 
-- OS package support
+- OS with package manager
 
 ### Install Commands
 
 ```bash
-# Linux
-apt install python3
+# On Linux
+apt install python3 python3-pip
+pip3 install requests
 
-# macOS
+# On macOS
 brew install python
-
-# Windows
-# Download from python.org
 ```
 
 ## Basic Usage
 
 ```bash
-python --help
+python3 --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-c` | Execute code from command line |
-| `-m` | Run library module |
+| `-h, --help` | Show help message |
+| `-V` | Version info |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-python -c "print('Hello')"
+python3 script.py
 ```
+(Run a PoC script.)
 
 ### Example 2: Advanced Usage
 
 ```bash
-python server.py
+python3 -m requests.get https://target/api
 ```
+(Direct module use for HTTP.)
 
 ## MITRE ATT&CK Mapping
 
@@ -95,16 +96,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- python.exe processes
-- Script executions in logs
+- Monitor for python3 processes spawning HTTP connections to internal APIs
+- Log anomalous script executions with requests library
+- Behavioral analysis for PoC-like file runs
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[tools/curl]]
+- [[Related Tool: curl]]
+- [[Related Tool: requests library]]
 
 ## References
 
-- Official documentation: https://docs.python.org/3/
+- Official documentation: https://www.python.org/
+- Related resources: PyPI requests

@@ -1,5 +1,5 @@
 ---
-id: tool-aquatone
+id: tool-aquatone-927413
 url: 'https://github.com/michenriksen/aquatone'
 tags:
   - subdomain
@@ -8,7 +8,7 @@ verified: false
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:32.191Z'
+updated_at: '2025-12-14T17:27:35.580Z'
 validated: true
 submitted: true
 ---
@@ -18,24 +18,23 @@ submitted: true
 
 ## Overview
 
-Subdomain discovery and screenshotting tool for visual recon.
+Aquatone enumerates subdomains and takes screenshots, revealing hidden Zomato domains.
 
 ## Description
 
-Enumerates hidden domains for Zomato, providing screenshots to confirm existence.
+Go-based tool for fast subdomain discovery and visual recon.
 
 ## Features
 
-- Subdomain brute-force
-- Port scanning
-- Screenshot capture
-- Reporting
+- Feature 1: Passive/active enum
+- Feature 2: Screenshot automation
+- Feature 3: Takeover detection
 
 ## Installation
 
 ### Requirements
 
-- Go, Chrome
+- Go 1.8+
 
 ### Install Commands
 
@@ -46,15 +45,15 @@ go get github.com/michenriksen/aquatone
 ## Basic Usage
 
 ```bash
-aquatone --help
+aquatone-discover --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| --domain | Target domain |
-| --ports | Ports to scan |
+| `--domain` | Target |
+| `--threads` | Concurrency |
 
 ## Examples
 
@@ -67,31 +66,36 @@ aquatone-discover --domain zomato.com
 ### Example 2: Advanced Usage
 
 ```bash
-aquatone-takeover --domain zomato.com
+aquatone-discover --domain zomato.com --threads 50
 ```
 
 ## MITRE ATT&CK Mapping
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: Domains
+- [[Gather Victim Host Information]]
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Reconnaissance]]
 
 ## Detection
 
-- High volume HTTP requests
-- Screenshot-like user agents
+- DNS query bursts
 
 ## Related Procedures
 
-- [[procedures/Subdomain-Enumeration-with-Aquatone]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/Maltego]]
+- [[Related Tool: Maltego]]
 
 ## References
 

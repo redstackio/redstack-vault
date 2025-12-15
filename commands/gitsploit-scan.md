@@ -1,15 +1,15 @@
 ---
-id: cmd-gitsploit-scan
-data: gitsploit -u zomato -l 10
+id: cmd-gitsploit-927413
+data: gitsploit search zomato --exploit
 tags:
   - vuln-scan
 type: command
-output: 'Vulnerabilities: XSS (critical), IDOR (high)'
+output: 'Found 10 vulnerabilities: XSS (critical), DLL Hijacking (high)...'
 executor: bash
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:32.227Z'
+updated_at: '2025-12-14T17:27:35.606Z'
 verified: false
 validated: true
 submitted: true
@@ -19,32 +19,38 @@ submitted: true
 ## Command
 
 ```bash
-gitsploit -u zomato -l 10
+gitsploit search zomato --exploit
 ```
 
 ## Description
 
-Scans GitHub for vulns in repos.
+Searches GitHub for Zomato vulns using gitSploit.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| -u | Username/org | Yes |
-| -l | Limit results | No |
+| `search zomato` | Query term | Yes |
+| `--exploit` | Include exploit info | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-gitsploit -u zomato -l 10
+gitsploit search keyword
+```
+
+### Advanced Usage
+
+```bash
+gitsploit search zomato --type xss
 ```
 
 ## Expected Output
 
-List of 10 vulns.
+Vulns listed with severity.
 
 ## Related
 
-- [[commands/git-clone-review]]
+- [[Related Procedure: Vulnerability-Scanning-in-GitHub-with-gitSploit]]

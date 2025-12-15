@@ -1,17 +1,15 @@
 ---
+id: tool-uuid-2
 url: 'http://www.graphicsmagick.org/'
 tags:
   - image-processing
+  - rce-enabler
 type: tool
+verified: false
 platforms:
   - Linux
-description: >-
-  Image processing library used server-side in Shopify for handling uploads,
-  vulnerable to SSRF in SVG parsing.
-id: 28f7e2d5-707a-491c-afb2-1e0300157c65
-created_at: '2025-12-14T03:46:14.337Z'
-updated_at: '2025-12-14T03:46:14.337Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:14.780Z'
 validated: true
 submitted: true
 ---
@@ -21,59 +19,62 @@ submitted: true
 
 ## Overview
 
-GraphicsMagick is a robust image processing tool for formats like SVG, PNG, TIFF; exploited here for SSRF via external fetches in SVG before validation.
+GraphicsMagick is an alternative to ImageMagick for server-side image processing, capable of invoking Ghostscript for PostScript files, which can lead to RCE vulnerabilities when handling unvalidated uploads like disguised EPS files.
 
 ## Description
 
-Used in Shopify for upload conversion; processes <image> tags, enabling HTTP/FTP requests. Version 1.4 snapshot-20160531 leaks paths in TIFF comments.
+Forked from ImageMagick, it offers similar functionality for web app image conversion. In security contexts, outdated versions chained with vulnerable Ghostscript enable exploitation of file upload flaws, as seen in Basecamp's profile image processing.
 
 ## Features
 
-- Feature 1: Multi-format support including SVG with external resources
-- Feature 2: Conversion and validation
-- Feature 3: Metadata embedding
+- Feature 1: Fork of ImageMagick with performance optimizations
+- Feature 2: Handles PostScript via external calls to Ghostscript
+- Feature 3: Configurable modules; disable PS support to mitigate risks
 
 ## Installation
 
 ### Requirements
 
-- Linux environment
+- Linux/Unix environment
+- Build dependencies (e.g., freetype, jpeg)
 
 ### Install Commands
 
 ```bash
-# Ubuntu/Debian
-apt-get install graphicsmagick
+# On Ubuntu/Debian
+apt update && apt install graphicsmagick
+
+# From source
+wget http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.40/GraphicsMagick-1.3.40.tar.gz
+# Configure without Ghostscript if securing: ./configure --without-gs
 ```
 
 ## Basic Usage
 
 ```bash
-gm convert input.png output.tiff
+gm convert input.gif output.png
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-comment` | Add comment to image |
-| `-size` | Set dimensions |
+| `-h` | Show help |
+| `-debug all` | Enable debug logging for subprocess calls |
 
 ## Examples
 
-### Example 1: Basic Conversion
+### Example 1: Basic Usage
 
 ```bash
-gm convert svgfile.svg output.png
+gm convert rce.gif thumbnail.jpg  # May invoke gs on PS content
 ```
 
-### Example 2: Advanced with External Fetch
+### Example 2: Advanced Usage
 
 ```bash
-gm convert -size 100x100 svg_with_xlink.svg test.png
+gm convert -resize 200x200 rce.gif output.jpg
 ```
-
-> Fetches external if not sandboxed.
 
 ## MITRE ATT&CK Mapping
 
@@ -81,27 +82,31 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Exploit Public-Facing Application]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor gm processes with external network activity
-- Log temp file creations in /tmp/gm*
+- Process monitoring: gm invoking gs
+- Audit uploads processed by GraphicsMagick with PS headers
+- Check for unpatched versions vulnerable to chained exploits
 
 ## Related Procedures
 
+- [[procedures/Upload-Malicious-PostScript-as-Profile-Image]]
 
 ## Related Tools
 
-- [[ImageMagick]]
+- [[tools/ImageMagick]]
+- [[tools/Ghostscript]]
 
 ## References
 
-- Official documentation: http://www.graphicsmagick.org/
-- SSRF exploits in image libs
+- Official documentation: http://www.graphicsmagick.org/security.html
+- Related CVEs: Chained with Ghostscript vulns

@@ -1,10 +1,8 @@
 ---
-id: drupal7-sqli-rce-chain-001
 tags:
-  - sql-injection
+  - sqli
   - drupal
   - rce
-  - pre-auth
   - php
   - web
 type: attack_chain
@@ -12,6 +10,7 @@ tools: []
 tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
+  - '[[Privilege Escalation]]'
 verified: false
 platforms:
   - Web
@@ -20,40 +19,43 @@ submitted: true
 complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Analyze-Drupal-Database-Query-Preparation-for-IN-Statements]]'
-  - '[[procedures/Craft-SQL-Injection-Payload-Using-Associative-Arrays]]'
-  - '[[procedures/Exploit-SQL-Injection-to-Insert-Arbitrary-Database-Data]]'
-  - '[[procedures/Achieve-RCE-via-Manipulated-Admin-Session]]'
-step_count: 4
+  - '[[procedures/Analyze-Drupal-expandArguments-Function]]'
+  - '[[procedures/Craft-Malicious-Array-for-SQL-Injection]]'
+  - '[[procedures/Exploit-SQL-Injection-for-Database-Operations]]'
+  - '[[procedures/Manipulate-Sessions-via-SQL-Injection]]'
+  - '[[procedures/Achieve-RCE-via-Admin-Session]]'
+step_count: 5
 techniques:
   - '[[Exploit Public-Facing Application]]'
   - '[[Command-Line Interface]]'
-updated_at: '2025-12-14T03:46:20.036Z'
+updated_at: '2025-12-14T17:31:30.681Z'
 description: >-
   A multi-stage attack exploiting a SQL injection vulnerability in Drupal 7's
-  database API to achieve unauthenticated remote code execution via session
-  manipulation.
+  database abstraction layer to achieve arbitrary SQL execution, session
+  manipulation, and remote code execution without authentication.
 skill_level: intermediate
 impact_level: high
+id: a06ea1d9-fbf6-4676-acd2-19bc5b56e581
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
+  - '[[Privilege Escalation]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
   - '[[Command-Line Interface]]'
 ---
 # Drupal 7 Pre-Authentication SQL Injection to Remote Code Execution
 
-Multi-stage attack chain demonstrating a complete attack workflow exploiting a vulnerability in Drupal 7 versions prior to 7.32.
+Multi-stage attack chain demonstrating exploitation of a SQL injection vulnerability in Drupal 7 versions prior to 7.32, leading to arbitrary SQL execution, admin session hijacking, and remote code execution.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 4 |
-| Execution Time | ~5 minutes |
+| Total Steps | 5 |
+| Execution Time | ~10 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
 | Impact Level | High |
@@ -62,146 +64,111 @@ Multi-stage attack chain demonstrating a complete attack workflow exploiting a v
 
 ```mermaid
 graph LR
-    A[Analyze Query Preparation] --> B[Craft Injection Payload]
-    B --> C[Insert Malicious Data]
-    C --> D[Execute RCE via Session]
+    A[Analyze Vulnerability] --> B[Craft Injection Payload]
+    B --> C[Execute SQL Operations]
+    C --> D[Manipulate Sessions]
+    D --> E[Achieve RCE]
 
     style A fill:#e74c3c
     style B fill:#f39c12
-    style C fill:#3498db
-    style D fill:#27ae60
+    style C fill:#f39c12
+    style D fill:#3498db
+    style E fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
 
 ### Required Tools
 
-- None (manual analysis and payload crafting via web requests)
+- Browser or curl for HTTP requests
+- Knowledge of Drupal 7 structure
 
 ### Target Environment
 
-- Drupal 7.x prior to 7.32
-- PHP with PDO-enabled database (e.g., MySQL)
-- Web server exposing Drupal site
+- Drupal 7 < 7.32
+- Web platform with PHP and MySQL/PostgreSQL
+- Exposed Drupal site without authentication
 
 ### Initial Access Requirements
 
-- Network access to the unauthenticated Drupal endpoint (e.g., user registration or search forms using db_query with IN clauses)
-- No credentials required (pre-authentication)
-- Prior access: None, public-facing application
+- Network access to the Drupal site
+- No credentials needed (pre-auth)
+- Ability to send crafted HTTP requests
 
 ## Detailed Attack Procedures
 
-### Step 1: Analyze Drupal Database Query Preparation
-procedure: [[procedures/Analyze-Drupal-Database-Query-Preparation-for-IN-Statements]]
+### Step 1: Analyze Vulnerability
+procedure: [[procedures/Analyze-Drupal-expandArguments-Function]]
 
-**Objective**: Identify flaws in Drupal's expandArguments function for handling IN clauses with associative arrays.
+**Objective**: Identify the SQL injection flaw in Drupal's database abstraction layer by reviewing the expandArguments function.
 
-**Instructions**: Review Drupal's database API source code, focusing on the expandArguments function in includes/database/database.inc. Examine how it iterates over arrays assuming integer or no keys, but mishandles string keys like 'test) -- ' which create invalid placeholders.
+**Instructions**: Examine the source code of Drupal 7's includes/database/database.inc, focusing on the expandArguments function. Look for the foreach loop that iterates over array keys to generate placeholders for IN clauses, noting the assumption of integer keys.
 
-For example, inspect a query like:
-
-```php
-$names = array('user1', 'user2');
-db_query('SELECT * FROM {users} WHERE name IN (:names)', array(':names' => $names));
-```
-
-This expands correctly, but test with associative arrays to reveal the injection point.
-
-**Expected Output**: Understanding that non-integer keys lead to malformed SQL like 'IN (:name_test) -- , :name_test )'.
+**Expected Output**: Understanding that non-integer keys (e.g., strings with SQL payloads) can inject code by altering the SQL structure.
 
 **Success Indicators**:
-- Confirmed mishandling of associative arrays in expandArguments
-- Identified vulnerable db_query calls in pre-auth endpoints
+- Confirmed vulnerability in expandArguments handling of array keys
+- Identified potential injection points in db_query calls with IN clauses
 
-### Step 2: Craft SQL Injection Payload
-procedure: [[procedures/Craft-SQL-Injection-Payload-Using-Associative-Arrays]]
+### Step 2: Craft Malicious Array
+procedure: [[procedures/Craft-Malicious-Array-for-SQL-Injection]]
 
-**Objective**: Create a payload that injects arbitrary SQL by leveraging string keys with SQL comments to bypass prepared statements.
+**Objective**: Create a malicious array structure to exploit the non-integer key handling in prepared statements.
 
-**Instructions**: Construct an associative array for the IN clause parameter, using a key like 'test) -- ' to terminate the clause prematurely. Target a vulnerable endpoint, such as a search or registration form that uses db_query with IN.
+**Instructions**: Construct an array like array(':name' => array('test) -- ' => 'user1', 'test' => 'user2')) to be passed to a db_query IN clause. This results in malformed SQL such as 'SELECT * FROM users WHERE name IN (:name_test) -- , :name_test )', injecting a comment to bypass the query.
 
-Example payload in a POST request to a vulnerable form:
-
-```http
-POST /search HTTP/1.1
-Host: target.com
-Content-Type: application/x-www-form-urlencoded
-
-q=inject&names[]=test) -- &names[user2]=dummy
-```
-
-In PHP terms, this mimics:
-
-```php
-$params = array(':name' => array('test) -- ' => 'user1', 'test' => 'user2'));
-db_query('SELECT * FROM {users} WHERE name IN (:name)', $params);
-```
-
-Resulting in injectable SQL: 'SELECT * FROM users WHERE name IN (:name_test) -- , :name_test )' where the comment bypasses the rest.
-
-**Expected Output**: Server processes the query with injected SQL, allowing arbitrary code insertion.
+**Expected Output**: Payload that alters the generated SQL, allowing injection without authentication via a crafted HTTP request to a vulnerable endpoint (e.g., user search or filter form).
 
 **Success Indicators**:
-- Query executes without syntax errors but with injection
-- Database logs show malformed placeholders
+- Payload generates invalid placeholders leading to SQL injection
+- Test request returns unexpected database results or errors indicating injection success
 
-### Step 3: Exploit SQL Injection to Insert Data
-procedure: [[procedures/Exploit-SQL-Injection-to-Insert-Arbitrary-Database-Data]]
+### Step 3: Exploit for Database Operations
+procedure: [[procedures/Exploit-SQL-Injection-for-Database-Operations]]
 
-**Objective**: Use the injection to insert malicious data into the sessions table, creating an admin session.
+**Objective**: Use the SQL injection to perform arbitrary database actions like insert, update, delete, dump, or drop pre-authentication.
 
-**Instructions**: Extend the payload to inject an INSERT statement targeting the sessions table. Assign UserID 1 (admin) to a new session SID via a pre-auth endpoint.
+**Instructions**: Send the crafted payload via HTTP POST/GET to a Drupal endpoint using db_query with IN (e.g., a search form). Leverage PDO's multi-query support to chain operations, such as dumping user tables or inserting records.
 
-Example injected SQL payload:
-
-```sql
-); INSERT INTO sessions (sid, ssid, uid, hostname, timestamp, session) VALUES ('malicious_sid', '0', 1, 'attacker_ip', UNIX_TIMESTAMP(), 'admin_session_data') --
-```
-
-Deliver via the crafted array in a web request to the vulnerable form, ensuring the injection closes the original query and appends the INSERT.
-
-**Expected Output**: New admin session record in the database, verifiable by querying the sessions table.
+**Expected Output**: Successful execution of arbitrary SQL, e.g., SELECT * FROM users revealing data, or INSERT statements modifying the database.
 
 **Success Indicators**:
-- Admin session inserted successfully
-- No authentication errors on subsequent requests using the SID
+- Database data retrieved or modified without auth
+- No authentication errors; query executes as intended
 
-### Step 4: Achieve Remote Code Execution
-procedure: [[procedures/Achieve-RCE-via-Manipulated-Admin-Session]]
+### Step 4: Manipulate Sessions
+procedure: [[procedures/Manipulate-Sessions-via-SQL-Injection]]
 
-**Objective**: Impersonate the admin user with the forged session to trigger PHP code execution through Drupal's callback features.
+**Objective**: Inject SQL to create or modify a session record granting admin privileges (User ID 1).
 
-**Instructions**: Use the malicious SID in a cookie to access admin-only functionality. Trigger RCE by exploiting Drupal's menu callbacks or form handlers that allow PHP execution, such as injecting code into a module callback.
+**Instructions**: Using the injection, execute an INSERT into the sessions table: INSERT INTO sessions (sid, ssid, uid, hostname, timestamp, session) VALUES ('fake_sid', '', 1, 'attacker_ip', UNIX_TIMESTAMP(), 'admin_session_data'). Follow with a session cookie set to the fake_sid to impersonate admin.
 
-Set cookie:
-
-```http
-Cookie: SESSmalicious_sid=admin_session_data
-```
-
-Then request an admin endpoint that executes user-supplied callbacks, e.g., a form with PHP eval via injected data. A second request can clean up the session to avoid traces.
-
-Example RCE payload in callback:
-
-```php
-eval(base64_decode('cGhwaW5mby8vdmFyL2xvZy9hcGNoZS5sb2c='));
-```
-
-**Expected Output**: Arbitrary PHP code runs on the server, e.g., writing to logs or executing system commands.
+**Expected Output**: Valid admin session established, allowing access to privileged Drupal areas.
 
 **Success Indicators**:
-- Code executes (e.g., file written or command output)
+- Session cookie accepted as admin user
+- Access to /admin pages without login
+
+### Step 5: Achieve Remote Code Execution
+procedure: [[procedures/Achieve-RCE-via-Admin-Session]]
+
+**Objective**: Leverage the admin session and Drupal's PHP callback features to execute arbitrary code.
+
+**Instructions**: With admin access, upload or trigger a module/callback that executes PHP code, e.g., via a form with file upload or serialized object deserialization. Use a second request to run code like system('id') and clean up the session.
+
+**Expected Output**: Arbitrary PHP code execution on the server, e.g., command output or file creation.
+
+**Success Indicators**:
+- Server commands executed successfully
 - Session cleanup prevents detection
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Pre-auth SQL injection via flawed array handling in Drupal's DB API
-2. Arbitrary database manipulation to forge admin sessions
-3. Unauthenticated RCE through session impersonation and PHP callbacks
-4. Stealthy execution with cleanup to evade detection
+1. Pre-auth SQL injection via array key manipulation
+2. Arbitrary database control leading to session hijacking
+3. Full RCE through Drupal's admin features and PHP callbacks
 
 ## Technique & Tactic Coverage
 
@@ -214,6 +181,7 @@ eval(base64_decode('cGhwaW5mby8vdmFyL2xvZy9hcGNoZS5sb2c='));
 
 - [[Initial Access]]
 - [[Execution]]
+- [[Privilege Escalation]]
 
 ---
 *Last updated: 2023-10-01T00:00:00Z*

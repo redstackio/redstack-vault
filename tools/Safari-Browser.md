@@ -1,17 +1,17 @@
 ---
+id: tool-safari-browser
 url: 'https://www.apple.com/safari/'
 tags:
   - browser
-  - web
-  - testing
+  - trigger
+  - user-agent
 type: tool
 verified: false
 platforms:
   - macOS
   - iOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:13.145Z'
-id: 06522524-493c-4a40-84ad-c63c7bbf8789
+updated_at: '2025-12-14T17:29:28.854Z'
 validated: true
 submitted: true
 ---
@@ -21,57 +21,53 @@ submitted: true
 
 ## Overview
 
-Safari is Apple's web browser for macOS and iOS, used here to demonstrate and reproduce the self-XSS vulnerability in Shopify's Timeline by rendering unsanitized javascript: URLs as clickable links.
+Safari is Apple's web browser, used here to trigger browser-specific vulnerabilities like the Nextcloud user_oidc XSS due to its unique user agent string that matches the flawed Safari detection logic.
 
 ## Description
 
-Safari's handling of pasted content in web apps like Shopify allows javascript: protocols to execute without blocking, making it ideal for testing client-side vulnerabilities. It supports macOS and iOS environments, with specific reproduction on iOS 13.4.1. In offensive security, it's used for verifying browser-specific XSS behaviors.
+Safari's user agent (containing /Safari/ but not /Chrome/) activates a workaround in Nextcloud's LoginController.php, leading to unescaped HTML insertion. In security testing, it's essential for reproducing client-side flaws, inspecting payloads via developer tools, and observing CSP interactions. No special config needed beyond default settings.
 
 ## Features
 
-- Feature 1: Native support for WebKit rendering engine, which processes URLs in posts
-- Feature 2: Clipboard integration for easy pasting of malicious links
-- Feature 3: JavaScript execution in page context without additional extensions
+- Feature 1: Built-in Web Inspector for debugging JS and HTML
+- Feature 2: Strict adherence to web standards, exposing UA-specific bugs
+- Feature 3: Integration with macOS for seamless local testing
 
 ## Installation
 
 ### Requirements
 
 - macOS or iOS device
-- Apple ID for App Store access (pre-installed on Apple devices)
 
 ### Install Commands
 
-Safari is pre-installed; update via System Preferences > Software Update on macOS or App Store on iOS.
-
 ```bash
-# No installation command needed; use software update
+# Pre-installed on macOS; update via Software Update
 softwareupdate --install --all
 ```
 
 ## Basic Usage
 
 ```bash
-# Launch Safari (no CLI for basic use; GUI browser)
-open -a Safari
+# Launch from terminal
+/Applications/Safari.app/Contents/MacOS/Safari
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | GUI-based; use Developer Tools (Cmd+Option+I) for inspection |
-| N/A | Enable Web Inspector for debugging JS execution |
+| N/A | GUI-based; use Cmd+Option+I for inspector |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open Safari, navigate to Shopify, and paste javascript: URLs into Timeline.
+Navigate to http://localhost:8081/login in Safari to trigger the flow.
 
 ### Example 2: Advanced Usage
 
-Use Safari's Developer Tools to inspect rendered links and confirm JS execution context.
+Use Web Inspector: Right-click > Inspect Element to view injected HTML.
 
 ## MITRE ATT&CK Mapping
 
@@ -89,19 +85,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser user-agent strings identifying Safari in logs
-- Anomalous JS alerts or executions in web app monitoring
+- Detection method 1: Server logs showing Safari UA strings (/Safari/)
+- Detection method 2: Browser fingerprinting via JavaScript to identify Safari
 
 ## Related Procedures
 
-- [[procedures/Trigger-Self-XSS-in-Shopify-Timeline]]
+- [[procedures/Trigger-Stored-XSS-via-Safari-Login]]
 
 ## Related Tools
 
-- [[tools/Chrome-Browser]]
-- [[tools/Firefox-Browser]]
+- [[Related Tool 1|Chrome]]
+- [[Related Tool 2|Firefox]]
 
 ## References
 
 - Official documentation: https://developer.apple.com/safari/
-- Related resources: WebKit security advisories
+- Related resources: User agent strings reference

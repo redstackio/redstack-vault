@@ -1,93 +1,104 @@
 ---
-id: proc-github-explore-zomato
+id: proc-github-exploration-927413
 tags:
-  - osint
-  - github-recon
+  - github
+  - code-review
 type: procedure
 tools: []
 tactics:
-  - '[[Reconnaissance]]'
-commands: []
+  - '[[Discovery]]'
+commands:
+  - '[[commands/git-clone-analyze]]'
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Search Open Websites-Domains]]'
-updated_at: '2025-12-14T03:46:32.261Z'
+  - '[[Hardware]]'
+updated_at: '2025-12-14T17:27:35.656Z'
+skill_level: intermediate
+impact_level: medium
+detection_risk: low
 sub_techniques: []
 validated: true
 mitre_tactics:
-  - '[[Reconnaissance]]'
+  - '[[Discovery]]'
 mitre_techniques:
-  - '[[Search Open Websites-Domains]]'
+  - '[[Hardware]]'
 ---
 # GitHub-Repository-Exploration-for-Vulnerabilities
 
 ## Summary
 
-Manually explore public GitHub repositories associated with Zomato to identify potential vulnerabilities in code.
+Manual exploration of public GitHub repositories related to Zomato to identify exposed code, configs, or vulnerabilities like public disclosures.
 
 ## Description
 
-Search for Zomato repos on GitHub and review commits, configs, and code for leaks or flaws like hardcoded secrets or insecure practices.
+Searching GitHub for Zomato repos allows analysis for sensitive info or code flaws. In this report, it contributes to finding ~10 vulns, including public disclosures that could lead to internal insights.
 
 ## Requirements
 
-1. GitHub account (optional)
-2. Web browser
-3. Knowledge of common vuln patterns
+1. Git installed
+2. Access to GitHub search
+3. Basic code review skills
 
 ## Defense
 
-- Scrub repos before making public
-- Use .gitignore for secrets
+Defensive measures and detection strategies:
+
+- Scrub repos before public release
+- Use private repos for sensitive code
 
 ## Objectives
 
-1. Locate relevant repositories
-2. Analyze for vulns
+1. Identify relevant public repos
+2. Analyze for leaks or vulns
 3. Document findings
 
 ## Instructions
 
-### Step 1: Search Repos
+### Step 1: Search and Clone Repo
 
-**Context**: Query GitHub for 'zomato' organization or user.
+**Context**: Find and download Zomato-related repos.
 
-Browse https://github.com/search?q=zomato&type=repositories.
-
-### Step 2: Review Code
-
-**Context**: Clone and inspect if needed.
-
+**Command** ([[commands/git-clone-analyze]]):
 ```bash
-git clone https://github.com/zomato/repo.git
+git clone https://github.com/zomato/example-repo.git
+cd example-repo
 ```
 
-> Look for XSS patterns, etc.
+> Clones the repo; review files for secrets or insecure code (e.g., hardcoded creds).
+
+### Step 2: Manual Analysis
+
+**Context**: Inspect code for vulns.
+
+Use grep or IDE to search for keywords like 'password' or 'api_key'.
+
+> Expected: Exposed info or vuln patterns.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Discovery]] Discovery
 
 ### Techniques
 
-- [[Search Open Websites-Domains]] Search Open Websites and Services
+- [[Hardware]] Gather Victim Host Information: Software
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/git-clone-analyze]]
 
 ## Tools Used
 
 
 ## Tags
 
-- [[osint]]
-- [[github-recon]]
+- [[github]]
+- [[code-review]]

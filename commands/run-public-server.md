@@ -1,16 +1,16 @@
 ---
 id: cmd-uuid-2
-data: ./node_modules/public/bin/public ./ 8000
+data: ./node_modules/public/bin/public ./ 8080
 tags:
   - server
-  - nodejs
+  - node-js
 type: command
-output: 'Public.js server running with [path] on port 8000'
+output: Public.js server running with './' on port 8080
 executor: bash
 platforms:
-  - Node.js
+  - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.871Z'
+updated_at: '2025-12-14T17:26:11.786Z'
 verified: false
 validated: true
 submitted: true
@@ -20,27 +20,26 @@ submitted: true
 ## Command
 
 ```bash
-./node_modules/public/bin/public ./ 8000
+./node_modules/public/bin/public ./ 8080
 ```
 
 ## Description
 
-Launches the 'public' module's binary to serve the current directory (./) on port 8000 with directory indexing, exposing the XSS vulnerability.
+Launches the vulnerable static file server from the 'public' module, serving the current directory on port 8080.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| ./ | Directory to serve (current) | Yes |
-| 8000 | Port to bind to | Yes |
-| -p (optional) | Specify port alternative | No |
+| `./` | Base directory to serve | Yes |
+| `8080` | Port to bind to | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-./node_modules/public/bin/public ./ 8000
+./node_modules/public/bin/public ./ 8080
 ```
 
 ### Advanced Usage
@@ -51,9 +50,8 @@ Launches the 'public' module's binary to serve the current directory (./) on por
 
 ## Expected Output
 
-Public.js server running with ./ on port 8000. Server listens until interrupted.
+Server startup confirmation: 'Public.js server running with './' on port 8080'. The process remains running to handle requests.
 
 ## Related
 
-- [[commands/npm-install-public]]
-- [[procedures/Run-Public-Server]]
+- [[Related Procedure|procedures/Run-Vulnerable-Public-Server]]

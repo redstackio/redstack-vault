@@ -1,81 +1,85 @@
 ---
-url: 'https://aws.amazon.com/cli/'
+id: tool-001
+url: 'https://docs.aws.amazon.com/cli/'
 tags:
   - aws
+  - cli
   - cloud
 type: tool
+verified: false
 platforms:
   - Linux
   - macOS
   - Windows
-description: >-
-  Command Line Interface for AWS services, used for managing S3 buckets and
-  uploads.
-id: 0c9cd3f6-8f9e-4745-97d1-a03403fa4a09
-created_at: '2025-12-14T05:32:24.257Z'
-updated_at: '2025-12-14T05:32:24.257Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:34.415Z'
 validated: true
 submitted: true
 ---
-# aws-cli
+# AWS-CLI
 
 **Status**: Unverified
 
 ## Overview
 
-AWS CLI is the official tool for interacting with AWS services from the command line, commonly used in security testing for resource creation, configuration, and exploitation in cloud environments like S3 subdomain takeovers.
+The AWS Command Line Interface (CLI) is a unified tool for managing AWS services, including Cognito for user pool interactions like attribute retrieval and updates in security testing.
 
 ## Description
 
-It provides full access to S3 operations such as bucket management (mb/rm), file uploads (cp/sync), and policy setting. In offensive security, it's key for claiming dangling resources and deploying payloads.
+AWS CLI allows programmatic access to AWS APIs without SDKs, ideal for exploiting cloud misconfigurations. In this attack, it's used for Cognito endpoints to manipulate user emails without verification.
 
 ## Features
 
-- Feature 1: S3 bucket creation and deletion
-- Feature 2: File upload with ACL control
-- Feature 3: Website hosting configuration
+- Feature 1: Direct API calls to services like cognito-idp
+- Feature 2: Token-based authentication for temporary access
+- Feature 3: JSON output for parsing in scripts
 
 ## Installation
 
 ### Requirements
 
-- Python 3.6+
-- AWS credentials configured
+- Python 3.6+ or standalone installer
+- AWS account (not needed for token auth here)
 
 ### Install Commands
 
 ```bash
-# Installation command
+# Via pip
 pip install awscli
+
+# Or download from AWS
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 ```
 
 ## Basic Usage
 
 ```bash
-aws --help
+aws --version
+aws cognito-idp help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--region` | Specify AWS region |
-| `--profile` | Use specific credential profile |
+| `-h, --help` | Show help |
+| `--region` | Specify region |
+| `--output json` | JSON format |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-aws s3 ls
+aws cognito-idp list-user-pools --region us-east-1
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-aws s3 mb s3://test-bucket --region us-east-1
+aws cognito-idp get-user --region us-east-1 --access-token <token>
 ```
 
 ## MITRE ATT&CK Mapping
@@ -84,35 +88,32 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Create Account]]
+- [[T1078.004]] Cloud Accounts
+- [[Account Manipulation]] Account Manipulation
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Initial Access]] Initial Access
+- [[Persistence]] Persistence
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- CloudTrail logs showing S3 API calls from unknown IPs
-- Unusual bucket creations in specific regions
+- Monitor AWS CloudTrail for cognito-idp API calls from CLI user agents
+- Detect unusual get-user or update-user-attributes from non-standard IPs
+- Alert on token usage in CLI commands
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
+- [[procedures/Retrieve-Cognito-User-Attributes]]
+- [[procedures/Update-Cognito-Email-to-Case-Variant]]
 
 ## Related Tools
 
-- [[Related Tool 1]]
-- [[Related Tool 2]]
+- [[tools/Burp-Suite]]
 
 ## References
 
 - Official documentation: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html
-- Related resources: AWS Security Best Practices
+- Cognito CLI reference: https://docs.aws.amazon.com/cli/latest/reference/cognito-idp/

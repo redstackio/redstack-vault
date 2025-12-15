@@ -1,17 +1,18 @@
 ---
-id: tool-burp-intruder
 url: 'https://portswigger.net/burp/documentation/desktop/tools/intruder'
 tags:
   - fuzzing
-  - scanning
+  - dos
+  - web
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
   - macOS
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:09.867Z'
+created_at: '2024-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:32:01.878Z'
+id: 98a258e7-4bcd-4b4d-977f-93eb3310fbad
 validated: true
 submitted: true
 ---
@@ -21,50 +22,52 @@ submitted: true
 
 ## Overview
 
-Burp Intruder is a module within Burp Suite for automated customized attacks, ideal for fuzzing parameters like ports in Blind SSRF scenarios to detect open services via response analysis.
+Burp Intruder is a module within Burp Suite for automated customized attacks against web applications, commonly used to exploit vulnerabilities like rate limit bypasses by replaying requests en masse.
 
 ## Description
 
-It allows setting payload positions in requests, generating wordlists (e.g., ports 1-65535), and analyzing results based on metrics like response time. For SSRF port scanning, it exploits timing differences without visible output.
+It allows sending HTTP requests repeatedly with variations, ideal for brute-force, fuzzing, or DoS simulations. In rate limit exploits, it replays form POSTs without limits to spam or overload servers.
 
 ## Features
 
-- Feature 1: Payload generation and insertion for brute-force testing.
-- Feature 2: Response analysis by length, time, or custom rules.
-- Feature 3: Attack types like Sniper for single-position fuzzing.
+- Feature 1: Multiple attack types (Sniper, Battering Ram, etc.)
+- Feature 2: Payload generation and threading control
+- Feature 3: Response analysis for success metrics
 
 ## Installation
 
 ### Requirements
 
-- Burp Suite Community or Professional edition.
+- Burp Suite Community or Professional
+- Java 8+
 
 ### Install Commands
 
 ```bash
-# Included in Burp Suite; launch via GUI
+# Included in Burp Suite; launch Burp and access via GUI
+java -jar burpsuite_community.jar
 ```
 
 ## Basic Usage
 
-In Burp, right-click request > Send to Intruder.
+In Burp GUI: Intercept > Send to Intruder > Configure > Start Attack.
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Sniper | Single payload position |
-| Cluster bomb | Multiple positions |
+| Threads | Number of concurrent requests |
+| Payloads | Data for insertion positions |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Set §sievePort§ position, add numbers payload, start attack.
+Replay a POST 100 times: Set no positions, iterations=100, start attack.
 
 ### Example 2: Advanced Usage
 
-Configure grep-extract for timings; sort by response received.
+Fuzz email field: Mark §email§ position, load wordlist, launch Sniper attack.
 
 ## MITRE ATT&CK Mapping
 
@@ -72,27 +75,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Network Service Scanning]] Network Service Scanning
+- [[Network Denial of Service]] Network Denial of Service
 
 ### Tactics
 
-- [[Discovery]] Discovery
+- [[Impact]] Impact
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Rapid successive requests to the same endpoint with varying parameters.
-- Server-side logs showing connection timeouts from fuzzing.
+- Rapid successive requests from single IP
+- Consistent payload patterns in logs
 
 ## Related Procedures
 
-- [[procedures/Fuzz-Ports-with-Burp-Intruder-for-Blind-Scanning]]
 
 ## Related Tools
 
 - [[tools/Burp-Suite]]
+- [[tools/ffuf]]
 
 ## References
 
 - Official documentation: https://portswigger.net/burp/documentation/desktop/tools/intruder
+- Related resources: PortSwigger Academy labs

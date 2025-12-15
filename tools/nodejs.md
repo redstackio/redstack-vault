@@ -5,10 +5,10 @@ tags:
 type: tool
 verified: false
 platforms:
-  - Linux
+  - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.232Z'
-id: 6349050e-3459-4744-8314-5f2c0d1c6177
+updated_at: '2025-12-14T17:26:16.637Z'
+id: 3100b7e9-e812-46e3-ae04-7a32912a4b41
 validated: true
 submitted: true
 ---
@@ -18,28 +18,28 @@ submitted: true
 
 ## Overview
 
-Node.js is a JavaScript runtime built on Chrome's V8 engine, used to execute server-side scripts like http-file-server for demonstrating web vulnerabilities such as stored XSS.
+Node.js is a JavaScript runtime for server-side execution, used to run the Glance module and host the vulnerable server.
 
 ## Description
 
-Node.js enables non-blocking I/O for scalable network applications. In security contexts, it's used to run vulnerable modules or custom exploits targeting web apps.
+Node.js enables non-blocking I/O for scalable applications, including HTTP servers like Glance. In security contexts, it's used to deploy and test vulnerable Node modules.
 
 ## Features
 
 - Feature 1: Event-driven architecture
-- Feature 2: npm integration
-- Feature 3: Module system for packages
+- Feature 2: Module support via npm
+- Feature 3: Built-in HTTP server
 
 ## Installation
 
 ### Requirements
 
-- Linux distribution with package manager
+- Compatible OS
 
 ### Install Commands
 
 ```bash
-# Ubuntu/Debian
+# Download from nodejs.org or use package manager
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
@@ -54,8 +54,8 @@ node --help
 
 | Option | Description |
 |--------|-------------|
-| `-v, --version` | Show version |
-| `-e` | Execute string |
+| `-v` | Version |
+| `--version` | Node version |
 
 ## Examples
 
@@ -68,7 +68,7 @@ node script.js
 ### Example 2: Advanced Usage
 
 ```bash
-node /path/to/http-file-server.js
+node --version
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,7 +77,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
@@ -87,19 +87,12 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- node process listening on ports
-- JavaScript file executions
-- High CPU from V8
+- Process named 'node' running
+- Port bindings on non-standard ports
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
+- [[procedures/Start-Glance-Static-File-Server]]
 
 ## Related Tools
 
@@ -107,4 +100,4 @@ LIMIT 10
 
 ## References
 
-- Official documentation: https://nodejs.org/en/docs/
+- Official site: https://nodejs.org/

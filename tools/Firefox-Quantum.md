@@ -1,9 +1,10 @@
 ---
+id: tool-firefox-quantum
 url: 'https://www.mozilla.org/en-US/firefox/new/'
 tags:
   - browser
+  - web
   - testing
-  - xss
 type: tool
 verified: false
 platforms:
@@ -11,8 +12,8 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:55:06.122Z'
-id: 661ecd1a-5502-405d-a6bb-361493a42ffe
+updated_at: '2025-12-14T17:25:29.143Z'
+configuration: Version 59.0.2
 validated: true
 submitted: true
 ---
@@ -22,68 +23,56 @@ submitted: true
 
 ## Overview
 
-Firefox Quantum (version 67.0) is a web browser used for testing web vulnerabilities like XSS, providing developer tools for inspecting elements, viewing source, and simulating user interactions.
+Firefox Quantum is a web browser used for navigating and testing web applications, configurable as a client for proxy tools like Burp Suite in security assessments.
 
 ## Description
 
-As an open-source browser from Mozilla, Firefox Quantum excels in security testing due to its robust dev tools, including Inspector for HTML manipulation, Console for JS debugging, and Network tab for request analysis. In this attack, it's used to deliver URLs, inspect reflected payloads, and trigger key events without additional extensions.
+As an open-source browser, Firefox supports extensions for developer tools and proxy configuration, making it ideal for manual testing of web vulnerabilities. Version 59.0.2 was used in this scenario for accessing Steam Community pages and proxying traffic.
 
 ## Features
 
-- Feature 1: Built-in Developer Tools for real-time HTML/JS inspection
-- Feature 2: Cross-platform support with consistent keyboard shortcut behavior
-- Feature 3: Secure rendering engine resistant to common exploits during testing
+- Feature 1: Built-in Developer Tools for inspecting elements and network
+- Feature 2: Proxy settings for integration with security tools
+- Feature 3: Extension support for additional testing capabilities
 
 ## Installation
 
 ### Requirements
 
-- Modern OS (Linux, Windows, macOS)
-- Internet connection for download
+- Standard OS with graphical interface
 
 ### Install Commands
 
 ```bash
-# On Linux (Ubuntu/Debian)
+# On Ubuntu
 sudo apt update && sudo apt install firefox
-
-# On macOS (via Homebrew)
-brew install --cask firefox
-
-# On Windows: Download from official site
+# Or download from Mozilla
 ```
 
 ## Basic Usage
 
 ```bash
-firefox https://example.com
+firefox https://steamcommunity.com
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `-P, --ProfileManager` | Open Profile Manager for isolated testing sessions |
-| `-no-remote` | Run a new instance without connecting to existing |
+| `-P` | Open profile manager |
+| `--no-remote` | Allow multiple instances |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-firefox https://www.starbucks.co.uk/malicious-path
+firefox --proxy-server=127.0.0.1:8080 https://steamcommunity.com
 ```
-
-Open the browser and navigate to the target URL for payload delivery.
 
 ### Example 2: Advanced Usage
 
-```bash
-firefox -P -no-remote
-```
-
-Launch a new profile for clean testing environment, then use dev tools (F12) to inspect.
+Launch with proxy for Burp: Set manual proxy in Preferences > Network Settings to HTTP 127.0.0.1:8080.
 
 ## MITRE ATT&CK Mapping
 
@@ -91,19 +80,18 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing Firefox User-Agent in suspicious requests
-- Browser process monitoring for firefox.exe or firefox-bin
-- Dev tools usage patterns in web app logs
+- User-Agent strings in logs
+- Proxy configuration anomalies
 
 ## Related Procedures
 
@@ -111,9 +99,9 @@ Indicators and methods for detecting this tool's usage:
 ## Related Tools
 
 - [[tools/Chrome]]
-- [[tools/Burp-Suite]]
+- [[tools/Safari]]
 
 ## References
 
-- Official documentation: https://developer.mozilla.org/en-US/docs/Tools
-- Related resources: Mozilla Security Blog
+- Official documentation: https://support.mozilla.org/en-US/products/firefox
+- Related resources: Mozilla Developer Network

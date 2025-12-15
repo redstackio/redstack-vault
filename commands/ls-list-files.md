@@ -1,15 +1,19 @@
 ---
-data: ls
+id: cmd-ls-001
+data: ls -alh
 tags:
-  - verification
+  - file-listing
 type: command
-output: null
+output: |-
+  total 2.0M
+  -rw-r--r-- 1 user user 990K Oct 1 lorem-1MB
+  -rw-r--r-- 1 user user 2.1K nginx.conf
+  -rw-r--r-- 1 user user 8.6K validator.yaml
 executor: bash
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:53.391Z'
-id: 47d2719e-6ee8-44bd-a14c-db5c00e27a85
+updated_at: '2025-12-14T17:32:01.392Z'
 verified: false
 validated: true
 submitted: true
@@ -19,38 +23,39 @@ submitted: true
 ## Command
 
 ```bash
-ls
+ls -alh
 ```
 
 ## Description
 
-Lists files in the current directory to verify malicious file creation.
+Lists directory contents in long format with human-readable sizes, including hidden files, to verify payload file size.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| None | Standard ls with no flags | No |
+| `-a` | Include hidden files | No |
+| `-l` | Long format | No |
+| `-h` | Human-readable sizes | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-ls
+ls -alh
 ```
 
 ### Advanced Usage
 
 ```bash
-ls -la
-``` (for detailed view)
+ls -alh /path/to/dir
+```
 
 ## Expected Output
 
-Displays filenames, including the malicious one: ""><object src=1 onerror="javascript:alert(1);">Controlling what is documented here
+Detailed file listing with sizes, permissions, and dates.
 
 ## Related
 
-- [[commands/touch-malicious-filename]]
-- [[procedures/Verify-Malicious-File-Creation]]
+- [[Related Command: head-display-file-content]]

@@ -2,20 +2,17 @@
 url: 'https://portswigger.net/burp'
 tags:
   - proxy
-  - web-testing
-  - tampering
+  - intercept
+  - web
 type: tool
+verified: false
 platforms:
   - Linux
   - Windows
   - macOS
-description: >-
-  Professional web vulnerability scanner and proxy for intercepting, modifying,
-  and replaying HTTP/S traffic.
-id: 863c4b36-5d81-47b3-ac82-4047226fc772
-created_at: '2025-12-14T05:32:10.170Z'
-updated_at: '2025-12-14T05:32:10.170Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:22.943Z'
+id: 683a8404-90a5-4c71-a674-fbbf3155594e
 validated: true
 submitted: true
 ---
@@ -25,45 +22,44 @@ submitted: true
 
 ## Overview
 
-Burp Suite Pro is a comprehensive toolkit for web application security testing, primarily used for manual and automated exploration of web vulnerabilities like parameter tampering, file upload bypasses, and request manipulation. In offensive security, it's essential for intercepting traffic in scenarios like this LISTSERV exploit to modify uploads.
+Burp Suite Pro is a comprehensive web vulnerability scanner and proxy tool used for intercepting, modifying, and replaying HTTP requests in security testing, particularly for identifying and exploiting web application flaws like race conditions.
 
 ## Description
 
-Burp Suite Pro includes modules like Proxy (for interception), Repeater (for manual tampering), Intruder (for fuzzing), and Scanner (for automated vuln detection). It excels in handling complex payloads like multipart/form-data for file uploads, allowing precise edits to parameters and bodies without breaking protocols. Commonly used in pentests to simulate attacks on web apps like CGI scripts.
+Burp Suite Pro provides features like Proxy, Intruder, Repeater, and extensions support (e.g., Turbo Intruder). In offensive security, it's used to capture traffic, manipulate parameters, and automate attacks on web apps. For this exploit, it's essential for intercepting the redemption POST request.
 
 ## Features
 
-- Feature 1: Real-time HTTP/S proxy with breakpoint interception for request/response modification
-- Feature 2: Repeater tool for iterative testing of tampered requests
-- Feature 3: Support for encoding/decoding binary data in payloads, ideal for file appends
+- Feature 1: Traffic interception and modification via Proxy
+- Feature 2: Extension ecosystem for advanced automation like Turbo Intruder
+- Feature 3: Session handling and CSRF token management
 
 ## Installation
 
 ### Requirements
 
-- Java 11+ runtime
-- 4GB+ RAM for Pro features
+- Java 8+ runtime
+- License for Pro version
 
 ### Install Commands
 
 ```bash
-# Download from official site (requires license)
-wget https://portswigger.net/burp/releases/download?product=pro&type=Linux -O burpsuite_pro.jar
+# Download from official site and run installer
 java -jar burpsuite_pro.jar
 ```
 
 ## Basic Usage
 
 ```bash
-java -jar burpsuite_pro.jar
+burpsuite
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--no-update` | Skip auto-updates |
+| -h, --help | Show help message |
+| --session | Load saved session |
 
 ## Examples
 
@@ -73,11 +69,7 @@ Launch Burp and configure browser proxy to 127.0.0.1:8080 for interception.
 
 ### Example 2: Advanced Usage
 
-In Proxy > Options, enable invisible proxying. Intercept a POST, send to Repeater, modify params, and send.
-
-```bash
-# No CLI for advanced; GUI-based
-```
+Intercept request: Enable Intercept in Proxy > Intercept tab, then submit form in browser.
 
 ## MITRE ATT&CK Mapping
 
@@ -86,29 +78,26 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Remote File Copy]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual user agents (Burp defaults to 'BurpSuite')
+- Unusual User-Agent strings in logs (e.g., Burp's default)
 - High volume of repeated requests from single IP
-- Proxy-like delays in traffic patterns
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[Related Tool 1]]
-- [[Related Tool 2]]
+- [[tools/Turbo-Intruder]]
 
 ## References
 
 - Official documentation: https://portswigger.net/burp/documentation
-- Related resources: OWASP Testing Guide
+- Related resources: PortSwigger Web Security Academy

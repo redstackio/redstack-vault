@@ -1,20 +1,17 @@
 ---
+id: tool-libreoffice
 url: 'https://www.libreoffice.org/'
 tags:
-  - office
-  - processing
-  - vulnerable
+  - spreadsheet
+  - testing
 type: tool
+verified: false
 platforms:
   - Linux
-  - Cloud (AWS)
-description: >-
-  Open-source office suite used for document processing, vulnerable to LFI in
-  file conversion via CVE-2019-17400 when integrated with unoconv.
-id: cd9b9db1-be33-41e3-966c-5caa888ee9ae
-created_at: '2025-12-14T03:46:14.536Z'
-updated_at: '2025-12-14T03:46:14.536Z'
-verified: false
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:28.277Z'
 validated: true
 submitted: true
 ---
@@ -24,59 +21,59 @@ submitted: true
 
 ## Overview
 
-LibreOffice is an open-source office productivity suite commonly used for creating and processing documents, spreadsheets, and presentations. In security contexts, it is exploited in file preview pipelines, such as Slack's thumbnail generation, where vulnerabilities allow LFI during conversion with tools like unoconv.
+LibreOffice is an open-source office suite used here as spreadsheet software to test and execute CSV injection payloads, particularly for verifying formula execution with single-quote formatting.
 
 ## Description
 
-LibreOffice handles Office formats (e.g., .docx, .xlsx) and integrates with libraries like unoconv for automated conversions. CVE-2019-17400 enables crafted files to access local files, making it a vector for credential theft in cloud environments. It is typically deployed server-side for batch processing in web apps.
+LibreOffice Calc handles CSV imports and evaluates formulas, making it ideal for demonstrating client-side vulnerabilities in exported files. It supports various payload formats and is cross-platform for testing on different environments.
 
 ## Features
 
-- Feature 1: Supports OLE and macro execution in documents
-- Feature 2: Command-line interface for headless conversions
-- Feature 3: Integration with unoconv for format transformations
+- Feature 1: CSV import with automatic formula calculation
+- Feature 2: Support for single-quote prefixed formulas to bypass certain parsers
+- Feature 3: Cross-platform compatibility for Linux, Windows, macOS
 
 ## Installation
 
 ### Requirements
 
-- Linux-based system (common in AWS containers)
-- Dependencies: Java runtime for some features
+- Compatible OS (Linux, Windows, macOS)
+- Internet for download
 
 ### Install Commands
 
 ```bash
 # On Ubuntu/Debian
-sudo apt update
-sudo apt install libreoffice
+sudo apt update && sudo apt install libreoffice
+
+# On Windows/macOS: Download from official site
 ```
 
 ## Basic Usage
 
 ```bash
-libreoffice --headless --convert-to pdf input.docx --outdir /output
+libreoffice --calc malicious.csv
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `--headless` | Run without GUI for server use |
-| `--convert-to` | Specify output format |
-| `--outdir` | Output directory |
+| --calc | Open in Calc (spreadsheet) mode |
+| --headless | Run without GUI for automation |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-libreoffice --headless --convert-to png input.docx --outdir thumbnails
+libreoffice malicious.csv
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-libreoffice --headless --convert-to thumbnail input.xlsx --outdir /tmp
+libreoffice --headless --convert-to csv:"Calc CSV (CSV) (*.csv)" input.csv
 ```
 
 ## MITRE ATT&CK Mapping
@@ -85,30 +82,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[T1203.001]]
-- [[File and Directory Discovery]]
+- [[Exploitation for Client Execution]] Exploitation for Client Execution
 
 ### Tactics
 
-- [[Execution]]
-- [[Discovery]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor processes for libreoffice --headless in containers
-- Scan for CVE-2019-17400 exploit patterns in input files
-- Log file access during conversions
+- Monitor for LibreOffice processes handling untrusted CSVs
+- Log formula executions in Calc
+- Alert on unexpected application launches post-CSV open
 
 ## Related Procedures
 
+- [[procedures/CSV-Injection-in-Student-Data-Export-via-Name-Field]]
+- [[procedures/Bypassing-Double-Quote-Escaping-in-CSV-Export]]
 
 ## Related Tools
 
-- [[tools/unoconv]]
+- [[tools/Microsoft-Excel]]
 
 ## References
 
-- Official documentation: https://www.libreoffice.org/
-- CVE-2019-17400 details: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17400
+- Official documentation: https://www.libreoffice.org/get-help/documentation/
+- CSV handling guide: https://help.libreoffice.org/latest/en-US/text/scalc/guide/csv_import.html

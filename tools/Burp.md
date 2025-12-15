@@ -1,20 +1,18 @@
 ---
-url: null
+url: 'https://portswigger.net/burp/'
 tags:
   - proxy
-  - interception
+  - intercept
+  - web-testing
 type: tool
+verified: false
 platforms:
   - Linux
   - Windows
   - macOS
-description: >-
-  Web vulnerability scanner and proxy for intercepting and modifying HTTP
-  requests.
-id: 67d8693e-2516-42cd-b619-92b03120ba4e
-created_at: '2025-12-13T23:56:20.333Z'
-updated_at: '2025-12-13T23:56:20.333Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:26.728Z'
+id: e4b6fde1-e2ae-4f0a-8f1b-8ab10ad81d0f
 validated: true
 submitted: true
 ---
@@ -24,34 +22,37 @@ submitted: true
 
 ## Overview
 
-Burp Suite is a comprehensive platform for web application security testing, used for intercepting requests, identifying vulnerabilities like XSS, and token interception.
+Burp Suite is a comprehensive toolkit for web application security testing, primarily used for intercepting, inspecting, and modifying HTTP/S traffic to identify vulnerabilities like open redirects.
 
 ## Description
 
-Includes proxy, scanner, repeater, and intruder tools for manual and automated testing of web apps.
+Burp Suite, developed by PortSwigger, includes modules like Proxy, Repeater, and Intruder for manual and automated web pentesting. In this scenario, its Proxy tool captures and tampers with POST requests during file uploads, enabling exploitation of unvalidated parameters in applications like Greenhouse.io. It's widely used in offensive security for traffic manipulation without requiring code changes.
 
 ## Features
 
-- Request interception and modification
-- Vulnerability scanning
-- Payload injection and testing
+- Feature 1: HTTP proxy for intercepting requests and responses
+- Feature 2: Request editor for modifying parameters like URLs
+- Feature 3: CA certificate generation for HTTPS interception
 
 ## Installation
 
 ### Requirements
 
-- Java Runtime Environment
+- Java 11 or later
+- 4GB RAM recommended
 
 ### Install Commands
 
 ```bash
-# Download from official site and run
+# Download from https://portswigger.net/burp/releases/download
+# For community edition (free)
+java -jar burpsuite_community_v2023.x.x.jar
 ```
 
 ## Basic Usage
 
 ```bash
-burp --help
+java -jar burpsuite_community_v2023.x.x.jar
 ```
 
 ### Common Options
@@ -59,21 +60,24 @@ burp --help
 | Option | Description |
 |--------|-------------|
 | `-h, --help` | Show help message |
-| `-v, --verbose` | Verbose output |
+| `--no-update-check` | Disable update checks |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
+Launch Burp and configure proxy:
+
 ```bash
-burp
+java -jar burpsuite_community.jar
 ```
+Then in Proxy > Options, set listener to 127.0.0.1:8080.
 
 ### Example 2: Advanced Usage
 
-```bash
-burp --project-file project.burp
-```
+Intercept and modify a request:
+
+Set browser proxy, submit form, edit in Intercept tab, forward.
 
 ## MITRE ATT&CK Mapping
 
@@ -81,35 +85,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
 - [[Exploit Public-Facing Application]]
+- [[T1566.002]]
 
 ### Tactics
 
-- [[Execution]]
-- [[Discovery]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual proxy traffic
-- Modified User-Agent headers
+- Unusual proxy traffic on port 8080
+- Presence of Burp CA certificate in browser trust store
+- Anomalous request modifications in server logs
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/CyberChef]]
+- [[ZAP]]
+- [[Wireshark]]
 
 ## References
 
-- https://portswigger.net/burp
+- Official documentation: https://portswigger.net/burp/documentation
+- Related resources: OWASP Testing Guide

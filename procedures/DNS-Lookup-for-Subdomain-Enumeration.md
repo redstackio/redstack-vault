@@ -1,107 +1,95 @@
 ---
-id: proc-dns-lookup-subdomain
+id: proc-dns-lookup-ubnt
 tags:
   - dns
   - reconnaissance
-  - subdomain-enumeration
+  - cname
 type: procedure
 tools:
-  - '[[tools/host]]'
+  - '[[tools/nslookup]]'
 tactics:
   - '[[Reconnaissance]]'
 commands:
-  - '[[commands/host-dns-lookup]]'
+  - '[[commands/nslookup-dns-query-for-cname]]'
 verified: false
 platforms:
-  - DNS
+  - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Hardware]]'
-updated_at: '2025-12-14T04:51:26.577Z'
-skill_level: beginner
-impact_level: low
-detection_risk: low
+  - '[[Gather Victim Org Information]]'
+updated_at: '2025-12-14T17:31:43.071Z'
 sub_techniques: []
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
 mitre_techniques:
-  - '[[Hardware]]'
+  - '[[Gather Victim Org Information]]'
 ---
 # DNS-Lookup-for-Subdomain-Enumeration
 
 ## Summary
 
-This procedure uses DNS lookup tools to enumerate subdomains and identify CNAME records pointing to third-party services, revealing potential subdomain takeover vulnerabilities like dangling DNS entries.
+This procedure uses DNS queries to enumerate subdomain configurations, identifying CNAME records that point to cloud services like AWS Cloudfront, which may indicate takeover vulnerabilities.
 
 ## Description
 
-In the context of reconnaissance against web applications, perform a DNS query on target subdomains to resolve their records. This uncovers aliases to services such as Hubspot, where expired accounts leave subdomains vulnerable to takeover. The procedure targets environments with public DNS exposure and is a foundational step in attack chains exploiting misconfigurations in DNS propagation and third-party integrations.
+In the context of subdomain takeover attacks, perform a DNS lookup on target subdomains to reveal CNAME chains. For ping.ubnt.com, this uncovers a dangling pointer to an unclaimed Cloudfront distribution, setting the stage for exploitation. Prerequisites include public DNS access; no authentication needed.
 
 ## Requirements
 
-1. Command-line access to a system with DNS resolution capabilities (e.g., Linux terminal)
-2. Network connectivity to public DNS servers (port 53 UDP/TCP)
-3. Target subdomain like blog.greenhouse.io
+1. Access to a DNS resolver like Google Public DNS (8.8.8.8)
+2. Target subdomain name (e.g., ping.ubnt.com)
+3. Command-line tools like nslookup
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Regularly audit DNS records for dangling CNAMEs using automated tools like dnsdumpster or internal scripts
-- Implement DNS monitoring with services like Cloudflare or Route 53 to alert on unresolved or expired third-party pointers
-- Enforce removal of DNS entries upon service cancellation in third-party platforms
+- Monitor DNS records for dangling CNAMEs using tools like DNSdumpster or internal audits
+- Implement automated alerts for unclaimed cloud resources via AWS Config
 
 ## Objectives
 
-1. Discover CNAME aliases pointing to external services
-2. Identify potential takeover targets via inactive resolutions
-3. Gather evidence for vulnerability reporting
+1. Identify CNAME chains pointing to cloud providers
+2. Detect potential takeover vectors
+3. Gather evidence for vulnerability verification
 
 ## Instructions
 
-### Step 1: Execute DNS Lookup
+### Step 1: Query DNS for CNAME
 
-**Context**: Query the target subdomain to reveal its DNS resolution chain, including any CNAME aliases to services like Hubspot's Akamai edge.
+**Context**: Resolve the target subdomain to expose its DNS record chain.
 
-**Command** ([[commands/host-dns-lookup]]):
+**Command** ([[commands/nslookup-dns-query-for-cname]]):
 ```bash
-host blog.greenhouse.io
+nslookup ping.ubnt.com 8.8.8.8
 ```
 
-> This command performs a DNS lookup using the system's resolver, outputting the hostname's IP addresses and any aliases. Expected output includes CNAME chains like "blog.greenhouse.io is an alias for san.secure001.hubspot.com.edgekey.net", indicating a Hubspot integration.
-
-### Step 2: Analyze Output for Vulnerabilities
-
-**Context**: Review the resolution to check for third-party service pointers without active content, signaling expired accounts.
-
-**Command** (No specific command; manual analysis):
-
-> Parse the output for Akamai or service-specific domains. If the subdomain resolves but serves no content, it confirms claimability.
+> This command queries Google's DNS server for ping.ubnt.com, outputting the CNAME chain and IP. Expected: Non-authoritative answer with CNAMEs to dl.ubnt.com and d2cnv2pop2xy4v.cloudfront.net.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Reconnaissance]] Reconnaissance
 
 ### Techniques
 
-- [[Hardware]]
+- [[Gather Victim Org Information]] Gather Victim Host Information
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/host-dns-lookup]]
+- [[commands/nslookup-dns-query-for-cname]]
 
 ## Tools Used
 
-- [[tools/host]]
+- [[tools/nslookup]]
 
 ## Tags
 
-- [[DNS]]
-- [[Reconnaissance]]
+- dns
+- reconnaissance

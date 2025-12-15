@@ -1,9 +1,8 @@
 ---
-id: proc-shopify-inject-xss-001
+id: proc-002
 tags:
-  - xss
-  - injection
-  - payload
+  - xss-injection
+  - payload-testing
 type: procedure
 tools: []
 tactics:
@@ -13,13 +12,10 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2024-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:46:37.789Z'
-skill_level: intermediate
-impact_level: high
-detection_risk: medium
+updated_at: '2025-12-14T17:27:15.888Z'
 sub_techniques: []
 validated: true
 mitre_tactics:
@@ -27,58 +23,53 @@ mitre_tactics:
 mitre_techniques:
   - '[[JavaScript]]'
 ---
-# Inject-XSS-Payload-in-First-Name-Field
+# Inject XSS Payload in First Name Field
 
 ## Summary
 
-This procedure exploits the input validation flaw in Shopify's first name field by injecting a crafted HTML payload that includes an <html> tag with JavaScript, bypassing filters for a stored XSS.
+This procedure tests for self-XSS by manually injecting a JavaScript payload into the 'first_name' form field, exploiting insufficient sanitization to allow script execution upon reflection.
 
 ## Description
 
-The vulnerability stems from rejecting most HTML but allowing <html>, combined with unsanitized output in the <title> tag on the thank you page. The payload `'</title></head><html onmouseover=alert(2)>` closes the title/head and injects executable HTML/JS. This stores the payload for later execution on .myshopify.com domains.
+The attack targets the 'first_name' parameter in the web form, where inputs are not properly escaped. By entering a payload that breaks out of string context and injects a script tag, the procedure confirms vulnerability. This is performed manually in the browser, with outcomes visible on form submission.
 
 ## Requirements
 
-1. Checkout form at customer details stage
-2. Knowledge of the bypass payload
-3. Web browser developer tools for testing
+1. Access to the loaded form page from the previous procedure
+2. Browser allowing direct input manipulation
+3. Knowledge of basic XSS payloads
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize all outputs, especially in <title> tags, using HTML entity encoding
-- Reject or strip all HTML tags in input validation, including <html>
-- Implement Content Security Policy (CSP) to block inline JS execution
-- Scan for XSS payloads in logs and inputs
+- Sanitize and encode all user inputs (e.g., using HTML entity encoding)
+- Implement Content Security Policy (CSP) to block inline scripts
+- Log and alert on suspicious input patterns in form fields
 
 ## Objectives
 
-1. Bypass HTML tag filters
-2. Store malicious payload in order data
-3. Enable JS execution on thank you page
+1. Insert executable JavaScript without rejection
+2. Break out of input context for reflection
+3. Set up for self-XSS confirmation
 
 ## Instructions
 
-### Step 1: Locate First Name Field
+### Step 1: Locate Input Field
 
-**Context**: Target the vulnerable input.
+**Context**: Focus on the vulnerable 'first_name' field.
 
-Return to the first name input on the checkout form.
+Click into the 'First Name' input box on the form.
+
+> Ensure no auto-complete or validation interferes.
 
 ### Step 2: Enter Payload
 
-**Context**: Craft and inject the bypass.
+**Context**: Inject the self-XSS payload to test execution.
 
-Type `'</title></head><html onmouseover=alert(2)>` into the first name field.
+Type or paste `test"; <script>alert(document.cookie)</script>` into the field.
 
-### Step 3: Submit Field
-
-**Context**: Test acceptance.
-
-Tab out or click continue; observe if the input is accepted without stripping.
-
-**Expected Output**: Payload stored and form proceeds.
+> The payload uses a semicolon to close any string and injects a script tag; observe if it's accepted verbatim.
 
 ## MITRE ATT&CK Mapping
 
@@ -101,6 +92,5 @@ Tab out or click continue; observe if the input is accepted without stripping.
 
 ## Tags
 
-- xss
-- stored-xss
-- payload-injection
+- [[xss-injection]]
+- [[payload-testing]]

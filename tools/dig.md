@@ -1,17 +1,17 @@
 ---
-url: 'https://linux.die.net/man/1/dig'
+id: tool-001
+url: 'https://www.dnsstuff.com/dig-command'
 tags:
   - dns
-  - reconnaissance
+  - recon
 type: tool
 verified: false
 platforms:
   - Linux
   - macOS
-  - Windows (via Cygwin)
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:31.344Z'
-id: 2bfacb0a-df80-4862-aa14-f609259f4a4e
+updated_at: '2025-12-14T17:29:57.306Z'
 validated: true
 submitted: true
 ---
@@ -21,24 +21,23 @@ submitted: true
 
 ## Overview
 
-Dig (Domain Information Groper) is a flexible command-line tool for querying DNS nameservers, commonly used in security testing to enumerate domain records, identify misconfigurations like dangling CNAMEs, and map attack surfaces.
+Dig (Domain Information Groper) is a flexible command-line DNS lookup tool used for querying DNS records, tracing delegations, and debugging name resolution. In security testing, it's commonly used for reconnaissance to map domains, subdomains, and infrastructure like CDNs.
 
 ## Description
 
-Dig sends DNS queries to specified servers and displays responses in a human-readable format. In offensive security, it's essential for reconnaissance, such as checking for subdomain takeovers by resolving CNAMEs to unclaimed PaaS/IaaS resources like AWS CloudFront.
+Dig sends DNS queries to specified servers and displays detailed responses, including headers, questions, and answers. It's part of the BIND suite and excels at revealing CNAME chains, NS records, and IP mappings, essential for identifying hidden backends in attacks like CDN bypasses.
 
 ## Features
 
-- Feature 1: Supports multiple query types (A, CNAME, NS, MX)
-- Feature 2: Customizable output with +short, +trace, +cmd flags
-- Feature 3: Queries any DNS server, including root servers for authoritative info
+- Feature 1: Supports multiple query types (A, CNAME, MX, etc.)
+- Feature 2: Tracing (+trace) for full resolution path
+- Feature 3: Short mode (+short) for concise output
 
 ## Installation
 
 ### Requirements
 
-- Standard on most Unix-like systems
-- For Windows: Install via BIND tools or Cygwin
+- Standard Unix-like system or Windows with BIND tools
 
 ### Install Commands
 
@@ -48,35 +47,36 @@ sudo apt update && sudo apt install dnsutils
 
 # On macOS (via Homebrew)
 brew install bind
+
+# On Windows: Download from ISC BIND
 ```
 
 ## Basic Usage
 
 ```bash
-dig --help
+dig example.com
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `+short` | Abbreviated answers only |
-| `+trace` | Trace full DNS path |
-| `+cmd` | Include command in output |
+| +short | Brief answer only |
+| +trace | Show full delegation chain |
+| @server | Query specific DNS server |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-dig cloudfront.ubnt.com
+dig A example.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-dig +short +cmd cloudfront.ubnt.com A
+dig +trace A example.com
 ```
 
 ## MITRE ATT&CK Mapping
@@ -85,7 +85,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: Identify Business Systems
+- [[Hardware]] DNS
 
 ### Tactics
 
@@ -95,13 +95,12 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing DNS queries to target domains from unusual IPs
-- Process monitoring for dig.exe or dig binary execution
-- SIEM alerts on high-volume DNS reconnaissance patterns
+- Network logs showing high-volume DNS queries from a single source
+- Query patterns targeting internal or sensitive domains
 
 ## Related Procedures
 
-- [[procedures/Detect-Dangling-CNAME-with-DNS-Lookup]]
+- [[procedures/DNS-Lookup-to-Identify-Origin-IP-Behind-Akamai]]
 
 ## Related Tools
 
@@ -110,5 +109,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: https://bind9.readthedocs.io/en/v9_16_21/utilities.html#dig
-- Related resources: DNS reconnaissance guides on OWASP
+- Official documentation: https://linux.die.net/man/1/dig

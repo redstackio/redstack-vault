@@ -1,5 +1,5 @@
 ---
-id: uuid-placeholder-3456
+id: f6g7h8i9-j0k1-2345-fghi-678901234567
 data: wpscan --update
 tags:
   - maintenance
@@ -11,8 +11,8 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:25.477Z'
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:27:49.752Z'
 verified: false
 validated: true
 submitted: true
@@ -27,13 +27,13 @@ wpscan --update
 
 ## Description
 
-This command updates the WPscan vulnerability database to ensure scans use the latest known issues, essential before running vulnerability enumerations on WordPress sites.
+Updates the WPScan vulnerability database to ensure scans use the latest known issues.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `--update` | Fetches and applies the latest vulnerability data from WPscan repositories | Yes |
+| `--update` | Trigger database update | Yes |
 
 ## Examples
 
@@ -45,13 +45,12 @@ wpscan --update
 
 ### Advanced Usage
 
-No advanced flags needed; run periodically.
+N/A
 
 ## Expected Output
 
-Console output confirming the update, e.g., 'Database updated successfully. New vulnerabilities: 50'. Errors if network issues or outdated Ruby.
+'[+] WPScan database updated successfully' or progress bars showing download completion.
 
 ## Related
 
-- [[commands/wpscan-enumerate-vulnerabilities]]
-- [[procedures/Scan-WordPress-Site-for-Vulnerabilities-using-WPscan]]
+- [[Related Procedure: Scan-WordPress-Site-for-Vulnerabilities-Using-WPScan]]

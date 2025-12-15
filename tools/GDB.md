@@ -1,47 +1,46 @@
 ---
-id: tool-gdb
+id: tool-uuid-1
+url: 'https://www.gnu.org/software/gdb/'
+tags:
+  - debug
+  - gdb
 type: tool
 verified: false
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.855Z'
 platforms:
   - Linux
-tags:
-  - debugging
-  - reverse-engineering
-url: 'https://www.gnu.org/software/gdb/'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:19.169Z'
 validated: true
 submitted: true
 ---
-
 # GDB
 
 **Status**: Unverified
 
 ## Overview
 
-GNU Debugger (GDB) is a powerful tool for debugging programs, used here to attach to Apache processes and inspect memory structures like the response brigade during PHP vulnerability exploitation.
+GNU Debugger (GDB) is a powerful tool for debugging programs, attaching to processes, and inspecting crashes like the Squid heap overflow.
 
 ## Description
 
-GDB allows breakpoints, variable inspection, and memory dumping in running processes, essential for verifying root causes in server-side bugs like brigade bucket mishandling leading to XSS.
+GDB allows attaching to running processes, printing backtraces, and examining variables during exploitation analysis. In this context, it's used to capture SIGABRT details and confirm decodedLen overflow.
 
 ## Features
 
-- Feature 1: Process attachment and live debugging
-- Feature 2: Memory address printing and structure examination
-- Feature 3: Scripting for automated analysis
+- Feature 1: Process attachment and control
+- Feature 2: Backtrace and variable printing
+- Feature 3: Breakpoint setting and stepping
 
 ## Installation
 
 ### Requirements
 
-- GCC and build essentials on Linux
+- Linux with development tools
 
 ### Install Commands
 
 ```bash
-# On Debian/Ubuntu
+# On Ubuntu/Debian
 apt install gdb
 
 # On CentOS/RHEL
@@ -58,22 +57,22 @@ gdb --help
 
 | Option | Description |
 |--------|-------------|
-| -p | Attach to process by PID |
-| -q | Quiet mode |
-| -batch | Non-interactive mode |
+| -q, --quiet | Suppress welcome messages |
+| -p PID | Attach to process |
+| -ex "cmd" | Execute command on startup |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-gdb -p $(pgrep httpd)
+gdb ./squid
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-gdb httpd core.dump
+gdb -q -p 1234 -ex "bt"
 ```
 
 ## MITRE ATT&CK Mapping
@@ -82,28 +81,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process attachments to httpd via ptrace
-- GDB binaries running on production servers
+- Process named 'gdb' attaching to targets
+- ptrace system calls in logs
+- GDB in running processes
 
 ## Related Procedures
 
-- [[procedures/Observe-and-Verify-Reflected-XSS-in-Response]]
+- [[procedures/Verify-ASAN-Linkage-and-Monitor-Crash-with-GDB]]
 
 ## Related Tools
 
-- [[tools/Netcat]]
+- [[tools/AddressSanitizer]]
 
 ## References
 
-- Official documentation: https://www.gnu.org/software/gdb/
-- Related resources: GDB manual
+- Official documentation: https://www.gnu.org/software/gdb/documentation/

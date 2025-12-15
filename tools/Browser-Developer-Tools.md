@@ -1,16 +1,19 @@
 ---
-id: tool-browser-dev-tools
+id: tool-uuid-1
 url: >-
   https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools
 tags:
-  - browser
-  - devtools
+  - debugging
+  - manipulation
 type: tool
 verified: false
 platforms:
   - Web
+  - Linux
+  - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.427Z'
+updated_at: '2025-12-14T17:33:12.234Z'
 validated: true
 submitted: true
 ---
@@ -20,49 +23,52 @@ submitted: true
 
 ## Overview
 
-Browser Developer Tools are built-in features in modern web browsers (e.g., Chrome, Firefox) used for inspecting, debugging, and modifying web page elements, commonly in security testing to bypass client-side controls.
+Browser Developer Tools are built-in features in modern web browsers (Chrome, Firefox, Edge) used for inspecting, debugging, and manipulating web pages, commonly in security testing to bypass client-side controls like disabled forms.
 
 ## Description
 
-These tools allow real-time DOM manipulation, network inspection, and console execution, essential for web vulnerability exploitation like SSRF via HTML edits. In offensive security, they facilitate client-side bypasses without external software.
+These tools provide consoles for JavaScript execution, network inspection for request interception, and element editing for DOM manipulation. In offensive security, they enable quick tests for client-side vulnerabilities, such as enabling hidden or disabled UI elements, without external software. Key use cases: Form bypasses, cookie extraction, and JavaScript injection.
 
 ## Features
 
-- Feature 1: DOM inspector for editing HTML attributes
-- Feature 2: Network tab for monitoring requests
-- Feature 3: Console for JavaScript execution
+- Feature 1: Elements panel for HTML/CSS editing (e.g., remove 'disabled' attributes)
+- Feature 2: Network tab for capturing HTTP requests/cookies
+- Feature 3: Console for running JavaScript to automate changes
 
 ## Installation
 
 ### Requirements
 
-- Modern web browser (Chrome 12+, Firefox 52+, etc.)
+- Modern web browser (Chrome 50+, Firefox 50+, etc.)
 
 ### Install Commands
 
-No installation needed; enable via F12 key or menu.
+No installation needed; access via F12 or right-click > Inspect.
 
 ## Basic Usage
 
-Press F12 to open tools.
+```bash
+# No CLI; browser-based
+# Open: Press F12 or Ctrl+Shift+I
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Elements Tab | Inspect and edit HTML/CSS |
-| Console | Run JavaScript |
-| Network | View requests |
+| Elements Tab | Edit DOM in real-time |
+| Network Tab | Intercept and replay requests |
+| Console | Execute JS commands |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open DevTools and inspect an element.
+Open dev tools (F12), go to Elements, find <input disabled>, right-click > Edit as HTML, remove 'disabled'.
 
 ### Example 2: Advanced Usage
 
-Edit an input's type: In Elements, double-click type="file" and change to type="url".
+In Console: document.querySelector('#loginButton').removeAttribute('disabled');
 
 ## MITRE ATT&CK Mapping
 
@@ -70,21 +76,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[JavaScript]] JavaScript
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Execution]] Execution
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser extensions or user-agent anomalies
-- Unusual DOM changes in client-side logs
+- Monitor for rapid DOM changes via client-side logging
+- Detect unusual JS execution patterns in web logs
+- Use CSP to restrict dev tools access (limited effectiveness)
 
 ## Related Procedures
 
+- [[procedures/Bypass-milConnect-Login-Form-Restrictions]]
+- [[procedures/Intercept-myPay-Session-Cookies]]
 
 ## Related Tools
 

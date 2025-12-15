@@ -1,9 +1,9 @@
 ---
-id: tool-hex-editor-001
-url: ''
+id: tool-hex-editor
+url: 'https://hexed.it/'
 tags:
-  - binary-edit
-  - file-modification
+  - binary-editing
+  - payload-crafting
 type: tool
 verified: false
 platforms:
@@ -11,7 +11,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:09.396Z'
+updated_at: '2025-12-14T17:23:41.372Z'
 validated: true
 submitted: true
 ---
@@ -21,59 +21,61 @@ submitted: true
 
 ## Overview
 
-A hex editor is a tool for viewing and editing the hexadecimal representation of binary files, used here to modify embedded URLs in AVI files without corrupting structure.
+A hex editor is a tool for viewing and editing binary files at the hexadecimal level, essential for crafting malicious payloads like modified Swapnote message files.
 
 ## Description
 
-Commonly used in exploit development to craft malicious files; examples include HxD (Windows), hexedit (Linux), or bless (macOS). Allows precise byte-level changes for embedding HLS URLs in GAB2 chunks.
+Tools like HxD or online hex editors allow precise byte-level modifications to embed exploit data, such as oversized sizes in TLRF chunks for heap overflows.
 
 ## Features
 
-- Feature 1: Binary search and replace for strings like HTTP URLs
-- Feature 2: Offset navigation to locate subtitle chunks
-- Feature 3: File validation to ensure edits don't break AVI format
+- Feature 1: Byte-wise editing with offset navigation
+- Feature 2: Search/replace for patterns
+- Feature 3: Export/import for binary files
 
 ## Installation
 
 ### Requirements
 
-- Standard OS package manager
+- Standard desktop environment
 
 ### Install Commands
 
 ```bash
-# Linux (hexedit)
-sudo apt install hexedit
+# For HxD on Windows (use Chocolatey)
+choco install hxd
 
-# Windows: Download HxD from mh-nexus.de
+# For bless on Linux
+sudo apt install bless
 ```
 
 ## Basic Usage
 
 ```bash
-hexedit http_q.avi
+hex-editor file.plt
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Search | Find string in binary |
-| Edit | Overwrite bytes |
-| Save | Write changes to file |
+| `-o, --offset` | Jump to specific offset |
+| `-s, --search` | Search for byte patterns |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-hexedit modified.avi
-```
-Search for 'http://example.com', replace with attacker URL.
+Open Swapnote .plt and edit at offset 0x70C.
 
 ### Example 2: Advanced Usage
 
-Use GUI like HxD: Open file, go to offset, edit URL, save.
+```bash
+# Using xxd for quick edits (Linux)
+xxd -p file.plt > file.hex
+# Edit hex file
+xxd -r -p file.hex > modified.plt
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -85,24 +87,24 @@ This tool is commonly associated with:
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- File modification timestamps on crafted binaries
-- Anomalous hex patterns in uploaded media
+- File modification timestamps on binaries
+- Anomalous hex patterns in payloads
 
 ## Related Procedures
 
-- [[procedures/Craft-Malicious-AVI-for-SSRF]]
-- [[procedures/Execute-Local-File-Disclosure-via-AVI]]
 
 ## Related Tools
 
-- [[tools/gen_avi.py]]
+- [[xxd]]
+- [[HxD]]
 
 ## References
 
-- HxD: https://mh-nexus.de/en/hxd/
+- Official documentation: Varies by tool
+- Related resources: Binary editing tutorials

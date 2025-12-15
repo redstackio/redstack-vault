@@ -1,15 +1,16 @@
 ---
-id: tool-uuid-3
+id: tool-ping-927413
 url: 'https://www.man7.org/linux/man-pages/man8/ping.8.html'
 tags:
-  - network-test
-  - resolution
+  - network
 type: tool
 verified: false
 platforms:
   - Linux
+  - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:48.629Z'
+updated_at: '2025-12-14T17:27:35.599Z'
 validated: true
 submitted: true
 ---
@@ -19,56 +20,55 @@ submitted: true
 
 ## Overview
 
-Used with ltrace to trigger IP resolution for tracing OS behavior in malformed IP tests.
+Ping is a network utility for testing reachability and resolving domains to IPs, used in initial Zomato recon.
 
 ## Description
 
-Standard network utility to send ICMP echoes, here used to invoke inet_aton for alternative IP formats.
+Sends ICMP echoes to check host availability and gather basic network info. Essential for starting scans.
 
 ## Features
 
-- Feature 1: Resolves hostnames/IPs at OS level
-- Feature 2: Counts and timeouts for testing
-- Feature 3: Verbose output for debugging
+- Feature 1: IP resolution
+- Feature 2: Latency measurement
+- Feature 3: Packet loss detection
 
 ## Installation
 
 ### Requirements
 
-- Standard on Linux
+- Standard on most OS
 
 ### Install Commands
 
 ```bash
 # Usually pre-installed
-sudo apt install iputils-ping
 ```
 
 ## Basic Usage
 
 ```bash
-ping host
+ping --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -c | Count of pings |
-| -i | Interval |
+| `-c` | Count of pings |
+| `-i` | Interval |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-ping 127.0.0.1
+ping zomato.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-ping -c 1 0x7f.1
+ping -c 4 zomato.com
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +77,33 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[System Network Configuration Discovery]] System Network Configuration Discovery
+- [[Gather Victim Host Information]]
 
 ### Tactics
 
-- [[Discovery]] Discovery
+- [[Reconnaissance]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs for ICMP to internal IPs
-- Combined with tracing tools
+- High ICMP traffic
+- Log anomalous pings
 
 ## Related Procedures
 
-- [[procedures/Bypass-SSRF-Filters-with-Hex-and-Decimal-IPs]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/ltrace]]
+- [[Related Tool: nmap]]
 
 ## References
 
-- ping man page
+- Official man page

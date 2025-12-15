@@ -1,23 +1,24 @@
 ---
-id: 00000000-0000-0000-0000-000000000002
-name: Authenticate-to-Nextcloud-Instance
-type: procedure
-verified: false
-submitted: true
-created_at: '2023-12-14T00:00:00Z'
-updated_at: '2025-12-14T04:08:48.777Z'
-tactics:
-  - '[[Initial Access]]'
-techniques:
-  - '[[Valid Accounts]]'
+id: proc-001
 tags:
   - authentication
   - nextcloud
+  - login
+type: procedure
+tools: []
+tactics:
+  - '[[Initial Access]]'
+commands:
+  - '[[commands/curl-nextcloud-login]]'
+verified: false
 platforms:
   - Web
-tools: []
-commands: []
-skill_level: basic
+submitted: true
+created_at: '2023-10-01T00:00:00Z'
+techniques:
+  - '[[Valid Accounts]]'
+updated_at: '2025-12-14T17:26:12.106Z'
+skill_level: beginner
 impact_level: low
 detection_risk: low
 sub_techniques: []
@@ -27,36 +28,35 @@ mitre_tactics:
 mitre_techniques:
   - '[[Valid Accounts]]'
 ---
-
 # Authenticate-to-Nextcloud-Instance
 
 ## Summary
 
-This procedure establishes an authenticated session to a Nextcloud instance using admin or privileged user credentials, enabling access to features like the Calendar app for subsequent exploitation.
+This procedure establishes authenticated access to a Nextcloud instance, enabling subsequent API queries. It simulates user login via the web installer or direct HTTP authentication, required for accessing protected OCS endpoints.
 
 ## Description
 
-In the context of SSRF exploitation, authentication is required as the vulnerability affects authenticated users who can interact with the Calendar and DAV apps. The process involves logging in via the web interface or API, obtaining a session that allows creating calendar events with malicious WebCal URLs. This step is prerequisite for triggering server-side jobs that perform the SSRF fetch.
+In the context of exploiting the Nextcloud path disclosure vulnerability, authentication is necessary as the `/ocs/v1.php/cloud/user` endpoint requires a valid session. This can be done via the web interface post-installation or programmatically using HTTP clients. The target is a fresh or existing Nextcloud installation running on a PHP web server. Expected outcome is a valid session cookie or basic auth token for API calls.
 
 ## Requirements
 
-1. Valid Nextcloud admin or privileged user credentials (username and password)
-2. Network access to the Nextcloud web interface (e.g., http://target/nextcloud)
-3. Web browser or API client (e.g., curl for testing)
+1. Network access to the Nextcloud login endpoint (typically HTTPS port 443)
+2. Valid username and password (e.g., admin account created during installation)
+3. HTTP client like curl or a web browser
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Enforce multi-factor authentication (MFA) for admin accounts
-- Monitor login attempts and failed authentications via Nextcloud logs
-- Use IP whitelisting or VPN for admin access
+- Enforce multi-factor authentication (MFA) for all users
+- Monitor login attempts and API access logs for anomalous patterns
+- Use web application firewalls (WAF) to rate-limit authentication requests
 
 ## Objectives
 
-1. Obtain a valid session token for authenticated API calls
-2. Verify access to Calendar app features
-3. Prepare for event creation without triggering alerts
+1. Obtain a valid session for authenticated API access
+2. Verify user privileges on the instance
+3. Prepare for reconnaissance queries without triggering alerts
 
 ## Instructions
 
@@ -64,43 +64,47 @@ Defensive measures and detection strategies:
 
 **Context**: Navigate to the Nextcloud login page to initiate authentication.
 
-**Command** (Manual Browser Access):
-
-Open a web browser and visit the Nextcloud URL, e.g., `http://192.168.0.105/nextcloud`.
-
-> Enter username (e.g., admin) and password. Upon success, the dashboard loads with calendar access.
-
-### Step 2: Verify Authenticated Session
-
-**Context**: Confirm the session allows Calendar interactions.
-
-**Command** (API Test with curl):
+**Command** ([[commands/curl-nextcloud-login]]):
 ```bash
-curl -u admin:"[password]" -X GET "http://192.168.0.105/nextcloud/remote.php/dav/calendars/admin/"
+curl -c cookies.txt -d "user=admin&password=adminpass" https://nextcloud.example.com/login
 ```
 
-> Returns 200 OK with calendar listings if authenticated successfully.
+> This command sends a POST request to the login endpoint, saving the session cookie to `cookies.txt`. Expected output is a redirect (HTTP 302) to the dashboard if successful.
+
+### Step 2: Verify Authentication
+
+**Context**: Confirm the session is active by accessing a protected resource.
+
+**Command** ([[commands/curl-nextcloud-dashboard]]):
+```bash
+curl -b cookies.txt https://nextcloud.example.com/index.php/apps/files/
+```
+
+> This retrieves the dashboard or files app page. Expected output is HTML content indicating successful login, such as user menu elements.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Initial Access]] Initial Access
 
 ### Techniques
 
-- [[Valid Accounts]]
+- [[Valid Accounts]] Valid Accounts
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/curl-nextcloud-login]]
+- [[commands/curl-nextcloud-dashboard]]
 
 ## Tools Used
 
 
 ## Tags
 
-- authentication
-- nextcloud
+- [[authentication]]
+- [[nextcloud]]
+- [[login]]

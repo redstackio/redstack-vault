@@ -1,5 +1,4 @@
 ---
-id: a1b2c3d4-e5f6-7890-abcd-ef1234567890
 tags:
   - unrestricted-file-upload
   - rce
@@ -13,132 +12,179 @@ tactics:
 verified: false
 platforms:
   - Web
-  - PHP
 submitted: true
-created_at: '2023-10-01T12:00:00Z'
+complexity: low
+created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Register-and-Login-to-MTN-Careers]]'
+  - '[[procedures/Register-New-User-Account-on-MTN-Careers]]'
+  - '[[procedures/Login-and-Access-Profile-Update-on-MTN-Careers]]'
   - '[[procedures/Upload-Malicious-PHP-File-as-Profile-Photo]]'
-  - '[[procedures/Retrieve-and-Execute-Uploaded-File]]'
-step_count: 3
+  - '[[procedures/Extract-Uploaded-File-URL-from-Page-Source]]'
+  - '[[procedures/Copy-Uploaded-File-Path]]'
+  - '[[procedures/Access-and-Execute-Uploaded-PHP-File]]'
+step_count: 6
 techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[Remote File Copy]]'
-updated_at: '2025-12-14T05:32:10.302Z'
+updated_at: '2025-12-14T17:23:27.958Z'
 description: >-
-  A multi-stage attack exploiting an unvalidated file upload vulnerability on
-  the MTN Group careers website to achieve remote code execution by uploading
-  and executing a malicious PHP file.
+  Multi-stage attack exploiting improper input validation in the profile picture
+  upload feature on the MTN Group careers website, allowing arbitrary PHP file
+  uploads leading to remote code execution.
+skill_level: beginner
+impact_level: high
+id: 8dcb959a-84a0-4381-b70d-8de4f6b06706
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
-  - '[[Remote File Copy]]'
 ---
 # Remote Code Execution via Unrestricted File Upload on MTN Careers Website
 
-Multi-stage attack chain demonstrating a complete attack workflow exploiting an unvalidated file upload on the MTN Group careers website to upload and execute malicious PHP code, resulting in remote code execution (RCE).
+Multi-stage attack chain demonstrating exploitation of an unrestricted file upload vulnerability in the profile picture feature on https://careers.mtn.cm/, enabling remote code execution through PHP file uploads.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 3 |
-| Execution Time | ~10 minutes |
-| Skill Level | Intermediate |
-| Complexity | Medium |
+| Total Steps | 6 |
+| Execution Time | ~5 minutes |
+| Skill Level | Beginner |
+| Complexity | Low |
 | Impact Level | High |
 
 ## Attack Flow Visualization
 
 ```mermaid
 graph LR
-    A[Initial Access: Register and Login] --> B[Execution: Upload Malicious File]
-    B --> C[Persistence/Execution: Retrieve and Execute File]
-    C --> D[Objective: RCE and Server Compromise]
+    A[Initial Access: Register Account] --> B[Authentication: Login and Profile Access]
+    B --> C[Execution: Upload Malicious File]
+    C --> D[Discovery: Extract File Path]
+    D --> E[Execution: Access and Run PHP]
+    E --> F[Objective: RCE Achieved]
 
     style A fill:#e74c3c
     style B fill:#f39c12
     style C fill:#3498db
-    style D fill:#27ae60
+    style D fill:#9b59b6
+    style E fill:#e67e22
+    style F fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
 
 ### Required Tools
 
-- Web browser (e.g., Chrome or Firefox with developer tools)
+- Web browser (e.g., Chrome, Firefox)
+- Text editor for creating PHP payload
 
 ### Target Environment
 
 - Web platform
 - PHP-based web application
-- Accessible registration and profile update features on https://careers.mtn.cm/
+- Publicly accessible website: https://careers.mtn.cm/
 
 ### Initial Access Requirements
 
-- Internet access to the target website
-- No prior credentials needed (registration is open)
-- Basic knowledge of web interactions and HTML inspection
+- Internet access
+- No prior credentials needed (starts with registration)
+- No special network position required
 
 ## Detailed Attack Procedures
 
-### Step 1: Initial Access
-procedure: [[procedures/Register-and-Login-to-MTN-Careers]]
+### Step 1: Register New User Account
+procedure: [[procedures/Register-New-User-Account-on-MTN-Careers]]
 
-**Objective**: Gain authenticated access to the profile update section of the MTN Careers website.
+**Objective**: Create a new account to gain access to the profile update feature.
 
-**Instructions**: Follow the procedure to create an account and log in, navigating to the user profile area.
+**Instructions**: Navigate to the registration page and provide required details such as name, email, and password.
 
-**Expected Output**: Successful login with access to profile editing features.
+**Expected Output**: Confirmation of account creation and option to login.
 
 **Success Indicators**:
-- Account creation confirmation
-- Profile update page loaded
+- Registration success message
+- Ability to proceed to login
 
-### Step 2: Execution
+### Step 2: Login and Access Profile Update
+procedure: [[procedures/Login-and-Access-Profile-Update-on-MTN-Careers]]
+
+**Objective**: Authenticate and navigate to the section where profile photo can be updated.
+
+**Instructions**: Enter credentials on the login page, then locate and click on the profile update or edit section.
+
+**Expected Output**: Logged-in dashboard with profile editing options visible.
+
+**Success Indicators**:
+- Successful login
+- Profile photo upload field available
+
+### Step 3: Upload Malicious PHP File as Profile Photo
 procedure: [[procedures/Upload-Malicious-PHP-File-as-Profile-Photo]]
 
-**Objective**: Upload a malicious PHP file disguised as a profile photo to a web-accessible directory.
+**Objective**: Exploit the lack of file validation to upload a PHP script that can execute code on the server.
 
-**Instructions**: Prepare a simple PHP payload file (e.g., payload.php with `<?php system($_GET['cmd']); ?>`) and upload it via the profile photo field.
+**Instructions**: In the profile photo upload area, select a crafted PHP file (e.g., containing <?php system($_GET['cmd']); ?>) and submit the upload form.
 
-**Expected Output**: Upload success message or updated profile without errors.
-
-**Success Indicators**:
-- File upload completes without rejection
-- Profile photo appears updated (though it may not display correctly)
-
-### Step 3: Privilege Escalation
-procedure: [[procedures/Retrieve-and-Execute-Uploaded-File]]
-
-**Objective**: Extract the direct path to the uploaded file from the page source and access it to trigger code execution.
-
-**Instructions**: Inspect the HTML source after upload to find the file path, then navigate to it in the browser to execute the PHP code.
-
-**Expected Output**: Execution of the PHP payload, such as command output if a system command is invoked.
+**Expected Output**: Upload success message, with the file stored in a web-accessible directory.
 
 **Success Indicators**:
-- Direct file path found in HTML (e.g., /en/user/images/users/-13-04-2021-20-15-16-payload.php)
-- Browser loads the file and executes the code (e.g., PHP info or command result displayed)
+- File upload accepted without error
+- Profile photo updated (though it may not display correctly)
+
+### Step 4: Extract Uploaded File URL from Page Source
+procedure: [[procedures/Extract-Uploaded-File-URL-from-Page-Source]]
+
+**Objective**: Identify the server path where the uploaded file is stored to enable direct access.
+
+**Instructions**: Right-click on the page after upload, select 'View Page Source', and search for the image or file reference to find the full URL path.
+
+**Expected Output**: URL like https://careers.mtn.cm/uploads/malicious.php visible in the HTML source.
+
+**Success Indicators**:
+- Full URL path to uploaded file found in source code
+- Path confirms web-accessible location
+
+### Step 5: Copy Uploaded File Path
+procedure: [[procedures/Copy-Uploaded-File-Path]]
+
+**Objective**: Prepare the exact URL for execution by copying it accurately.
+
+**Instructions**: Highlight and copy the complete URL from the page source, ensuring no truncation or errors.
+
+**Expected Output**: Copied URL ready for browser input.
+
+**Success Indicators**:
+- URL copied to clipboard
+- No missing characters in the path
+
+### Step 6: Access and Execute Uploaded PHP File
+procedure: [[procedures/Access-and-Execute-Uploaded-PHP-File]]
+
+**Objective**: Trigger remote code execution by directly accessing the uploaded PHP file via the browser.
+
+**Instructions**: Paste the copied URL into the browser address bar and press enter; append parameters if the payload requires them (e.g., ?cmd=whoami).
+
+**Expected Output**: PHP code executes, displaying output such as command results or server compromise indicators.
+
+**Success Indicators**:
+- Server processes the PHP file
+- Malicious code runs, confirming RCE
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Authenticated access to vulnerable upload feature
-2. Successful upload of executable PHP file without validation
-3. Remote code execution confirming server compromise potential
+1. Successful account registration and login to access upload feature
+2. Upload of arbitrary PHP file without validation
+3. Extraction and direct execution of uploaded script for RCE
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Remote File Copy]]
 
 ### MITRE ATT&CK Tactics
 
@@ -146,4 +192,4 @@ procedure: [[procedures/Retrieve-and-Execute-Uploaded-File]]
 - [[Execution]]
 
 ---
-*Last updated: 2023-10-01T12:00:00Z*
+*Last updated: 2023-10-01T00:00:00Z*

@@ -1,8 +1,7 @@
 ---
-id: b2c3d4e5-f6g7-8901-bcde-f23456789012
 tags:
-  - web
   - initial-access
+  - web-app
 type: procedure
 tools: []
 tactics:
@@ -13,63 +12,75 @@ platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
-techniques: []
-updated_at: '2025-12-14T05:32:10.063Z'
+techniques:
+  - '[[Valid Accounts]]'
+updated_at: '2025-12-14T17:26:12.081Z'
+skill_level: beginner
+impact_level: low
+detection_risk: low
 sub_techniques: []
+id: 4683b215-db6d-4eac-9d45-e7327973008f
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
+mitre_techniques:
+  - '[[Valid Accounts]]'
 ---
 # Create-Instacart-Store-List
 
 ## Summary
 
-This procedure outlines the steps to create a new store list in the Instacart web application, providing access to the vulnerable background image upload feature.
+This procedure outlines the steps to create a new shopping list associated with a specific store in the Instacart web application, setting the stage for testing image upload features.
 
 ## Description
 
-In the context of exploiting the image upload path disclosure vulnerability, creating a store list is the initial step to reach the upload interface. This requires a standard user account and involves navigating the web UI to set up a list for stores, which then exposes the background customization options. The procedure assumes legitimate access and focuses on manual interaction without automation.
+In the context of vulnerability assessment, creating a store list provides access to customization options, including background image uploads. This is a prerequisite for triggering the image manipulation process in Instacart's Ruby on Rails backend. The procedure assumes a standard user account and targets the web interface, with no special privileges required. Expected outcome is a functional list ready for further interaction.
 
 ## Requirements
 
 1. Valid Instacart user account with login credentials
-2. Web browser with JavaScript enabled
-3. Internet access to instacart.com
+2. Web browser with JavaScript enabled for the Instacart app
+3. Internet access to app.instacart.com
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor for unusual store list creation patterns from new or suspicious accounts
-- Implement rate limiting on list creation endpoints
+- Rate limiting on list creation to prevent abuse
+- CAPTCHA on frequent account actions
+- Logging of user sessions for anomalous list creation patterns
 
 ## Objectives
 
-1. Gain access to the store list editing interface
-2. Prepare for background image upload
-3. Enable subsequent exploitation steps
+1. Gain access to list customization interface
+2. Associate list with a store for targeted feature testing
+3. Prepare environment for upload vulnerability exploitation
 
 ## Instructions
 
 ### Step 1: Log In to Instacart
 
-**Context**: Authenticate to access user-specific features.
+**Context**: Authenticate to access personal features like lists.
 
-Navigate to https://www.instacart.com and enter credentials to log in.
+Navigate to app.instacart.com and enter credentials to log in.
 
-### Step 2: Navigate to Store Lists
+> Successful login redirects to the dashboard.
 
-**Context**: Locate the section for managing store lists.
+### Step 2: Navigate to Lists
 
-From the dashboard, go to the 'Lists' or 'Shopping Lists' area and select 'Create New List' for stores.
+**Context**: Access the lists management section.
 
-### Step 3: Create and Save the List
+Click on the 'Lists' tab in the navigation menu.
 
-**Context**: Finalize the list creation to unlock editing options.
+> Displays existing lists or option to create new.
 
-Enter a name for the list (e.g., 'Test Store List') and save it.
+### Step 3: Create New List
 
-**Expected Output**: Confirmation message and redirect to the list view.
+**Context**: Initiate list creation and link to a store.
+
+Select 'Create List', enter a name, choose a store from the dropdown, and save.
+
+> List is created and editable, with customization options available.
 
 ## MITRE ATT&CK Mapping
 
@@ -79,6 +90,7 @@ Enter a name for the list (e.g., 'Test Store List') and save it.
 
 ### Techniques
 
+- [[Valid Accounts]]
 
 ### Sub-Techniques
 
@@ -91,5 +103,5 @@ Enter a name for the list (e.g., 'Test Store List') and save it.
 
 ## Tags
 
-- web
-- initial-access
+- [[web]]
+- [[initial-access]]

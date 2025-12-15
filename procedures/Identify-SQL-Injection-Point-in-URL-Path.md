@@ -1,4 +1,5 @@
 ---
+id: proc-uuid-001
 tags:
   - sqli
   - injection-point
@@ -8,7 +9,7 @@ tools: []
 tactics:
   - '[[Initial Access]]'
 commands:
-  - '[[commands/curl-send-request]]'
+  - '[[commands/curl-http-request]]'
 verified: false
 platforms:
   - Web
@@ -16,9 +17,11 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:26.357Z'
+updated_at: '2025-12-14T17:26:22.299Z'
+skill_level: intermediate
+impact_level: high
+detection_risk: low
 sub_techniques: []
-id: fa73aae8-2f6f-44ea-a770-5115567389ab
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
@@ -29,55 +32,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure identifies a SQL injection vulnerability in the URL path processing of a web application by injecting a single quote to disrupt SQL syntax and observe error responses.
+This procedure identifies a SQL injection vulnerability in URL path processing by inserting a single quote immediately after the leading slash, observing server response anomalies on targets like www.ibm.com.
 
 ## Description
 
-In the context of www.ibm.com, the URL path after the leading slash is directly incorporated into SQL queries without proper sanitization. Injecting a single quote (') immediately after the slash causes a SQL syntax error, confirming the vulnerability. This step is foundational for blind SQLi exploitation where no direct error messages are returned.
+In vulnerable web applications, URL paths are directly concatenated into SQL queries without sanitization, allowing injection via special characters like single quotes. This step focuses on pinpointing the injection point in any path, leading to syntax errors that reveal the vulnerability. It applies to public-facing sites with dynamic path handling and SQL backends, enabling further blind exploitation.
 
 ## Requirements
 
-1. Access to a tool like curl or a browser for sending HTTP requests
-2. Internet connectivity to reach the target (www.ibm.com)
-3. Basic understanding of HTTP requests and SQL syntax
+1. Public access to the target website (e.g., www.ibm.com)
+2. Browser or HTTP client like curl for request crafting
+3. Basic knowledge of URL structure and SQL syntax
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement URL path sanitization and parameterized queries
-- Use web application firewalls (WAF) to block anomalous path injections
-- Monitor server logs for 500 errors correlated with path manipulations
+- Use parameterized queries or prepared statements in backend code
+- Implement web application firewalls (WAF) to block anomalous path inputs
+- Log and monitor URL access for single quotes or SQL keywords
 
 ## Objectives
 
-1. Confirm SQL injection vulnerability in URL path
-2. Establish the exact injection point (after leading slash)
-3. Prepare for response-based exploitation
+1. Confirm injectable point in URL path
+2. Validate without disrupting site functionality
+3. Prepare for advanced payload testing
 
 ## Instructions
 
-### Step 1: Send Basic Injection Payload
+### Step 1: Craft Basic Injection Test
 
-**Context**: Test the injection point by appending a single quote to the URL path to break SQL syntax.
+**Context**: Insert a single quote after the leading slash to break SQL syntax in path processing.
 
-**Command** ([[commands/curl-send-request]]):
+**Command** ([[commands/curl-http-request]]):
 ```bash
-curl -i "https://www.ibm.com/'"
+curl -i "https://www.ibm.com/'/some/existing/path"
 ```
 
-> This sends a GET request to the malformed URL. A successful injection triggers a 500 error due to unclosed SQL string.
+> This sends a request to a modified path like /'/some/existing/path. Expected output: A 500 error or unexpected response differing from normal /some/existing/path (200 OK), indicating unescaped quote injection into SQL.
 
-### Step 2: Validate Normal vs. Injected Response
+### Step 2: Validate Response Anomaly
 
-**Context**: Compare with a normal request to confirm the error is injection-induced.
+**Context**: Compare against a clean request to isolate injection effects.
 
-**Command** ([[commands/curl-send-request]]):
+**Command** ([[commands/curl-http-request]]):
 ```bash
-curl -i "https://www.ibm.com/"
+curl -i "https://www.ibm.com/some/existing/path"
 ```
 
-> Normal requests return a 200 OK with page content; injected ones return 500, indicating vulnerability.
+> Normal response should be a standard page load. Any deviation (e.g., error page) confirms the injection point.
 
 ## MITRE ATT&CK Mapping
 
@@ -94,7 +97,7 @@ curl -i "https://www.ibm.com/"
 
 ## Commands Used
 
-- [[commands/curl-send-request]]
+- [[commands/curl-http-request]]
 
 ## Tools Used
 

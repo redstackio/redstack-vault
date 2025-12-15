@@ -1,51 +1,51 @@
 ---
-id: cmd-open-password-window
-data: 'window.open("https://imgur.com/account/settings/password ","_blank")'
+id: cmd-window-open-settings
+data: 'window.open("https://imgur.com/account/settings/password","_blank")'
 tags:
-  - window-open
-  - settings-access
+  - window
+  - settings
 type: command
-output: New window with settings page
+output: null
 executor: javascript
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:13.016Z'
+updated_at: '2025-12-14T17:33:06.798Z'
 verified: false
 validated: true
 submitted: true
 ---
-# Window Open Password Settings
+# window-open-password-settings
 
 ## Command
 
 ```javascript
-window.open("https://imgur.com/account/settings/password ","_blank")
+window.open("https://imgur.com/account/settings/password","_blank")
 ```
 
 ## Description
 
-Opens Imgur password settings in new tab for form access.
+Opens a new blank window to the Imgur password settings page for form access.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| url | Settings URL | Yes |
-| target | _blank | Yes |
+| url | "https://imgur.com/account/settings/password" | Yes |
+| target | "_blank" | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```javascript
-// From XSS
+window.open("https://imgur.com/account/settings/password","_blank")
 ```
 
 ## Expected Output
 
-New tab loads page.
+New window loads the password change form.
 
 ## Related
 
-- [[Related Procedure: Perform Account Takeover]]
+- [[procedures/Perform-Account-Takeover-via-Form-Manipulation]]

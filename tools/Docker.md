@@ -1,17 +1,17 @@
 ---
-id: tool-docker-001
-url: 'https://www.docker.com/'
+url: 'https://docker.io/weinong/go-redirect'
 tags:
-  - containerization
-  - setup
+  - container
+  - build
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
   - macOS
-created_at: '2023-10-01T12:00:00Z'
-updated_at: '2025-12-14T05:32:10.464Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:38.917Z'
+id: bf0739d7-aba0-4b18-98b1-c2e314adaf96
 validated: true
 submitted: true
 ---
@@ -21,31 +21,31 @@ submitted: true
 
 ## Overview
 
-Docker is a platform for developing, shipping, and running applications in containers. In security testing, it is used to deploy vulnerable services with resource limits to reproduce exploits like OOM DoS.
+Docker is a platform for developing, shipping, and running applications in containers, used here to build the malicious go-redirect image for Kubernetes SSRF exploitation.
 
 ## Description
 
-Docker allows isolation of applications in containers, enabling easy setup of environments like Mattermost with memory caps (e.g., 4GB) to observe crashes from resource exhaustion attacks.
+Enables containerization of the Go redirection server, allowing deployment as a pod to hijack metrics-server. Common in offensive ops for creating custom payloads.
 
 ## Features
 
-- Feature 1: Containerization for reproducible environments
-- Feature 2: Resource limiting (CPU, memory) via flags like -m
-- Feature 3: Port publishing for network access
+- Feature 1: Image building from source
+- Feature 2: Container runtime for testing
+- Feature 3: Registry push for Kubernetes pulls
 
 ## Installation
 
 ### Requirements
 
-- Supported OS (Linux, Windows, macOS)
-- Sufficient host resources
+- Linux kernel with cgroups
+- 2GB+ RAM
 
 ### Install Commands
 
 ```bash
 # On Ubuntu
 curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sh get-docker.sh
 ```
 
 ## Basic Usage
@@ -58,21 +58,21 @@ docker --help
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--version` | Display version info |
+| -t | Tag image |
+| -f | Dockerfile path |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-docker run hello-world
+docker build -t weinong/go-redirect .
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-docker run --name test -d --memory=4g nginx
+docker run -p 8080:8080 weinong/go-redirect
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,27 +81,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Windows Command Shell]] Unix Shell (for container management)
+- [[Python]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Detection method 1: Monitor for docker processes and container creations
-- Detection method 2: Log network binds on non-standard ports like 8065
+- Docker daemon processes
+- Image pulls from untrusted registries
 
 ## Related Procedures
 
-- [[procedures/Setup-Mattermost-Docker-Environment]]
+- [[procedures/Build-Malicious-Redirection-Server]]
 
 ## Related Tools
 
-- [[tools/Go]]
+- [[tools/kubectl]]
 
 ## References
 
-- Official documentation: https://docs.docker.com/
+- Official documentation: https://docs.docker.com

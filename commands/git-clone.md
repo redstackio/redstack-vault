@@ -1,9 +1,10 @@
 ---
 id: cmd-git-clone-001
-data: 'git clone #{ content_tag(:span, default_url_to_repo, class: ''js-clone'') }'
+data: 'git clone https://github.com/target/repo.git'
 tags:
   - git
   - clone
+  - recon
 type: command
 output: null
 executor: bash
@@ -12,7 +13,7 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:55:06.918Z'
+updated_at: '2025-12-14T17:32:38.877Z'
 verified: false
 validated: true
 submitted: true
@@ -22,39 +23,38 @@ submitted: true
 ## Command
 
 ```bash
-git clone #{ content_tag(:span, default_url_to_repo, class: 'js-clone') }
+git clone https://github.com/target/repo.git
 ```
 
 ## Description
 
-Clones a Git repository from a URL. In GitLab's vulnerable setup display, the URL is wrapped in HAML content_tag, but adjacent injections from branch names can pollute the execution context with JS.
+Clones a public GitHub repository to a local directory, allowing access to all files and commit history for secret scanning.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `url` | The repository URL to clone | Yes |
-| `#{ content_tag(:span, default_url_to_repo, class: 'js-clone') }` | HAML interpolation for URL with class; potential vector if combined with XSS | Yes |
+| `https://github.com/target/repo.git` | URL of the repository to clone | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-git clone https://gitlab.com/user/repo.git
+git clone https://github.com/mozilla/example-repo.git
 ```
 
 ### Advanced Usage
 
 ```bash
-git clone #{ content_tag(:span, default_url_to_repo, class: 'js-clone') }  # As in GitLab template
+git clone --depth 1 https://github.com/target/repo.git  # Shallow clone for recent history only
 ```
 
 ## Expected Output
 
-Clones repo into a new directory; progress shown.
+Cloning into 'repo'...\nremote: Enumerating objects: 100, done.\n... (progress indicators)\nResolving deltas: 100% (50/50), done.
 
 ## Related
 
-- [[commands/cd-project-path]]
-- [[procedures/Create-Blank-Project-to-Host-XSS-Payload]]
+- [[commands/trufflehog-scan]]
+- [[procedures/Discover-Leaked-API-Tokens-in-Public-GitHub-Repositories]]

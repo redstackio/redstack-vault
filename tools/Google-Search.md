@@ -1,72 +1,73 @@
 ---
-id: tool-uuid-1
 url: 'https://www.google.com'
 tags:
   - recon
+  - dorking
 type: tool
-verified: false
 platforms:
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:38.790Z'
+description: Web search engine used for dorking to discover leaked sensitive information.
+id: fe4e7560-23c0-4e13-af24-43ef9a1bb1e0
+created_at: '2025-12-14T17:33:24.365Z'
+updated_at: '2025-12-14T17:33:24.365Z'
+verified: false
 validated: true
 submitted: true
 ---
-# Google-Search
+# Google Search
 
 **Status**: Unverified
 
 ## Overview
 
-Google Search is a web search engine used for reconnaissance to discover public URLs and endpoints on target domains during security assessments.
+Google Search is a powerful tool for reconnaissance in security testing, particularly through advanced operators (dorking) to uncover misconfigurations like indexed sensitive URLs.
 
 ## Description
 
-In offensive security, it's employed to scrape site-specific pages via dorks, identifying forms and parameters vulnerable to injection without direct scanning tools.
+It indexes vast web content, allowing queries to find domain-specific leaks. In offensive ops, it's used for passive recon to identify exposed tokens, configs, or endpoints without direct interaction.
 
 ## Features
 
-- Feature 1: Advanced query operators like 'site:' and 'inurl:'
-- Feature 2: Large index of public web content
-- Feature 3: Free and accessible via browser or CLI tools like googler
+- Advanced search operators (site:, inurl:, filetype:)
+- Real-time indexing of public web pages
+- Cache and snippet previews for quick validation
 
 ## Installation
 
 ### Requirements
 
+- Web browser
 - Internet connection
 
 ### Install Commands
 
-```bash
-# For CLI: pip install googler
-```
+No installation needed; access via browser.
 
 ## Basic Usage
 
-```bash
-googler 'site:data.gov'
+```
+[query]
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-n` | Number of results |
-| `--json` | Output in JSON |
+| site:domain.com | Limit to specific site |
+| inurl:keyword | Search URLs containing keyword |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-googler 'site:data.gov' -n 100
+```
+site:sorare.com
 ```
 
 ### Example 2: Advanced Usage
 
-```bash
-googler 'site:data.gov inurl:issue' --json > results.json
+```
+site:sorare.com inurl:token
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,23 +80,22 @@ This tool is commonly associated with:
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Discovery]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual volume of search queries from IP.
-- Log patterns matching dork strings.
+- Search logs showing dork-like queries
+- Anomalous traffic to search engines from security tools
 
 ## Related Procedures
 
-- [[procedures/Gather-and-Explore-URLs-from-Google-Search]]
 
 ## Related Tools
 
-- [[Shodan]]
+- [[tools/Web-Browser]]
 
 ## References
 
-- Official documentation: https://www.google.com/search/howsearchworks/
+- Google Advanced Search documentation

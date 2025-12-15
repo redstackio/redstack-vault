@@ -1,20 +1,19 @@
 ---
+id: cmd-uuid-1
 data: >-
-  curl -X POST https://api.example.com/upload-image -H "Content-Type:
-  multipart/form-data"
+  curl -X GET "https://api.line.me/v2/timeline/hidden_friends" -H "Accept:
+  application/json" -v
 tags:
-  - api
-  - probe
+  - api-probe
+  - recon
 type: command
 output: null
 executor: bash
 platforms:
-  - Linux
-  - macOS
-  - Windows
+  - Web
+  - Mobile API
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.149Z'
-id: 2c3b1457-10d9-4d06-b28a-997e877ec57b
+updated_at: '2025-12-14T17:32:20.932Z'
 verified: false
 validated: true
 submitted: true
@@ -24,38 +23,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST https://api.example.com/upload-image -H "Content-Type: multipart/form-data"
+curl -X GET "https://api.line.me/v2/timeline/hidden_friends" -H "Accept: application/json" -v
 ```
 
 ## Description
 
-This command probes a legacy API upload endpoint to check accessibility and expected response format without sending a file, helping identify validation weaknesses.
+This command probes the LINE Timeline API endpoint to check for access control issues, using verbose mode to inspect headers and responses.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies the HTTP method as POST | Yes |
-| `https://api.example.com/upload-image` | The target API endpoint URL | Yes |
-| `-H "Content-Type: multipart/form-data"` | Sets the content type for form uploads | Yes |
+| `-X GET` | Specifies HTTP method | Yes |
+| `"https://api.line.me/v2/timeline/hidden_friends"` | Target endpoint URL | Yes |
+| `-H "Accept: application/json"` | Requests JSON response | Yes |
+| `-v` | Verbose output for debugging | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST https://api.example.com/upload-image -H "Content-Type: multipart/form-data"
+curl -X GET "https://api.line.me/v2/timeline/hidden_friends" -H "Accept: application/json"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -v -X POST https://api.example.com/upload-image -H "Content-Type: multipart/form-data"
+curl -X GET "https://api.line.me/v2/timeline/hidden_friends?user_id=TEST_ID" -H "Accept: application/json" -v
 ```
 
 ## Expected Output
 
-HTTP response code (e.g., 400 Bad Request) with details on required parameters like 'file', or 200 if the endpoint accepts empty requests, indicating no strict validation.
+HTTP/1.1 200 OK followed by JSON body like {"status": "ok"}, indicating successful unauthenticated access.
 
 ## Related
 

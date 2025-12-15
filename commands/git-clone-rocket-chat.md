@@ -1,24 +1,20 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174005
-name: git-clone-rocket-chat
-type: command
-executor: bash
 data: 'git clone git@github.com:RocketChat/Rocket.Chat.git'
-output: null
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.422Z'
-platforms:
-  - Linux
-  - macOS
-  - Windows
 tags:
   - setup
-  - git
+  - clone
+type: command
+output: Cloning into 'Rocket.Chat'...
+executor: bash
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:20.418Z'
+id: 9dda0899-5473-4546-9ce9-aa11905431c3
 verified: false
 validated: true
 submitted: true
 ---
-
 # git-clone-rocket-chat
 
 ## Command
@@ -29,13 +25,13 @@ git clone git@github.com:RocketChat/Rocket.Chat.git
 
 ## Description
 
-Clones the official Rocket.Chat repository from GitHub to set up the source for the vulnerable version. Used in environment preparation for vulnerability reproduction.
+Clones the Rocket.Chat repository for setting up a vulnerable local instance.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| git@github.com:RocketChat/Rocket.Chat.git | Repository URL via SSH | Yes |
+| git@github.com:RocketChat/Rocket.Chat.git | Repo URL | Yes |
 
 ## Examples
 
@@ -45,19 +41,10 @@ Clones the official Rocket.Chat repository from GitHub to set up the source for 
 git clone git@github.com:RocketChat/Rocket.Chat.git
 ```
 
-### Advanced Usage
-
-```bash
-git clone https://github.com/RocketChat/Rocket.Chat.git  # HTTPS alternative
-```
-
 ## Expected Output
 
-Cloning into 'Rocket.Chat'...
-remote: Enumerating objects: ..., done.
-... (progress until completion)
+Local copy created in Rocket.Chat directory.
 
 ## Related
 
-- [[commands/git-checkout-rocket-chat-3-12-1]]
-- [[procedures/Setup-Rocket-Chat-Vulnerable-Instance]]
+- [[commands/cd-rocket-chat]]

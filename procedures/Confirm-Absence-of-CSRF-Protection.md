@@ -1,84 +1,88 @@
 ---
+id: proc-1147949-csrf-confirm
 tags:
   - csrf
-  - web-security
+  - web
+  - anti-csrf
 type: procedure
 tools:
-  - '[[tools/Firefox]]'
+  - '[[tools/Burp-Suite]]'
 tactics:
   - '[[Initial Access]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Drive-by Compromise]]'
-updated_at: '2025-12-14T03:47:18.579Z'
+  - '[[Steal Web Session Cookie]]'
+updated_at: '2025-12-14T17:27:35.749Z'
+skill_level: intermediate
+impact_level: medium
+detection_risk: low
 sub_techniques: []
-id: 636ea5dd-1650-4296-8598-f0b3e757a67d
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Drive-by Compromise]]'
+  - '[[Steal Web Session Cookie]]'
 ---
-# Confirm Absence of CSRF Protection
+# Confirm-Absence-of-CSRF-Protection
 
 ## Summary
 
-This procedure verifies the lack of CSRF tokens in a POST endpoint, enabling cross-origin form submissions that can escalate self-XSS to victim-targeted attacks.
+This procedure verifies the lack of Cross-Site Request Forgery (CSRF) protections on a POST endpoint, allowing unauthorized cross-origin form submissions that can be chained with other vulnerabilities like XSS.
 
 ## Description
 
-The /index.php endpoint in Joomla processes POST requests without validating CSRF tokens, allowing external sites to submit forms on behalf of users. This is critical for chaining with XSS. Target: Web apps with AJAX endpoints. Outcome: Successful unauthorized submission from another origin.
+The target POST endpoint at /██████ on https://██████████ does not include CSRF tokens, origin header checks, or same-site cookie attributes, making it vulnerable to forgery from external sites. This confirmation step involves inspecting requests and testing cross-origin submissions to ensure attackers can force authenticated users to perform actions without consent, such as submitting malicious payloads.
 
 ## Requirements
 
-1. Target endpoint accessible via HTTP POST.
-2. Ability to craft requests from a different origin (e.g., local file).
-3. Browser for cross-origin testing.
+1. Burp Suite for request inspection and modification.
+2. Access to the target web application.
+3. A test environment simulating cross-origin requests.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Enforce CSRF tokens in all state-changing POST requests.
-- Use SameSite cookies and CORS policies to restrict origins.
-- Log and alert on cross-origin requests.
+- Implement CSRF tokens in all state-changing POST requests.
+- Enforce SameSite=Strict or Lax on session cookies.
+- Log and alert on requests missing CSRF tokens or from unexpected origins.
 
 ## Objectives
 
-1. Test for token requirement in legitimate requests.
-2. Attempt cross-origin submission.
-3. Confirm processing without authentication barriers.
+1. Inspect for absence of anti-CSRF mechanisms.
+2. Test successful cross-site request execution.
+3. Evaluate risk for chaining with input vulnerabilities.
 
 ## Instructions
 
-### Step 1: Inspect Legitimate Form
+### Step 1: Inspect Request Headers and Parameters
 
-**Context**: Check the original form for token fields.
+**Context**: Analyze the legitimate POST request for CSRF-related elements.
 
-Load the registration page in [[tools/Firefox]] and inspect the HTML source for hidden CSRF inputs.
+Use Burp Suite to capture the request and check for parameters like a CSRF token or headers like Origin and Referer.
 
-### Step 2: Test Cross-Origin POST
+**Expected Output**: No CSRF token present; standard headers only.
 
-**Context**: Submit from an external context without token.
+### Step 2: Test Cross-Origin Submission
 
-Create a simple HTML file with a form targeting /index.php and submit. Example:
+**Context**: Simulate a request from an external domain to confirm acceptance.
 
-```html
-<form action="https://target/index.php" method="POST">
-  <input type="hidden" name="task" value="azrul_ajax">
-  <input type="hidden" name="option" value="community">
-  <input type="hidden" name="func" value="register,ajaxCheckEmail">
-  <input type="hidden" name="arg2" value='["test","email@example.com"]'>
-  <input type="submit">
-</form>
-<script>document.forms[0].submit();</script>
-```
+Modify the request in Burp Suite to originate from a different domain (e.g., via a local HTML page) and submit to the endpoint without any token.
 
-> Save and open in browser. Expected: Request processes without errors.
+**Expected Output**: Server processes the request successfully, indicating no protection.
+
+### Step 3: Document Findings
+
+**Context**: Note the implications for exploitation.
+
+Record that the endpoint is susceptible to CSRF, enabling attacks like forced XSS injection.
+
+**Expected Output**: Confirmation report of vulnerability.
 
 ## MITRE ATT&CK Mapping
 
@@ -88,7 +92,7 @@ Create a simple HTML file with a form targeting /index.php and submit. Example:
 
 ### Techniques
 
-- [[Drive-by Compromise]]
+- [[Steal Web Session Cookie]]
 
 ### Sub-Techniques
 
@@ -98,8 +102,10 @@ Create a simple HTML file with a form targeting /index.php and submit. Example:
 
 ## Tools Used
 
-- [[tools/Firefox]]
+- [[tools/Burp-Suite]]
 
 ## Tags
 
 - csrf
+- cross-site-request-forgery
+- web-security

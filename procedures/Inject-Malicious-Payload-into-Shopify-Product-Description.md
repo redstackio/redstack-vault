@@ -1,4 +1,5 @@
 ---
+id: proc-uuid-1
 tags:
   - xss
   - injection
@@ -15,12 +16,11 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:25.602Z'
+updated_at: '2025-12-14T17:25:53.012Z'
 skill_level: intermediate
 impact_level: medium
 detection_risk: low
 sub_techniques: []
-id: e43eee55-b1c3-4e88-97e7-bcea632a76b3
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -31,57 +31,59 @@ mitre_techniques:
 
 ## Summary
 
-This procedure injects a malicious HTML payload into a Shopify product's description field in HTML mode, storing cross-site scripting code that can later be rendered unsanitized.
+This procedure injects a malicious HTML/JavaScript payload into a Shopify product's description field using the admin interface, storing it for later execution in a stored XSS attack.
 
 ## Description
 
-In the context of exploiting a stored XSS vulnerability in Shopify's Handshake plugin, this step involves creating or editing a product in the Shopify admin panel. By switching to HTML editing mode, an attacker can directly insert raw HTML/JavaScript, such as an image tag with an onerror handler. The product is then set to Active status, persisting the payload in the backend database. This sets up the vulnerability for the subsequent publishing step via GraphQL, where the lack of sanitization allows execution on viewing pages.
+In the context of Shopify's Handshake plugin, the product description field lacks proper sanitization when updated. An attacker with merchant access can enable HTML mode and insert executable code, such as an image tag with an onerror handler, which will be persisted and rendered unsafely on the Handshake portal. This sets up the stored XSS for propagation via GraphQL.
 
 ## Requirements
 
-1. Access to Shopify admin panel with product creation/editing permissions
-2. Web browser for UI interaction
-3. Knowledge of basic HTML/JavaScript payloads
+1. Authenticated access to Shopify admin panel
+2. Handshake plugin installed and configured in the store
+3. Basic knowledge of HTML/JavaScript payloads
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Enable content security policy (CSP) to restrict inline script execution
-- Sanitize all user-supplied HTML inputs using libraries like DOMPurify
-- Monitor product description fields for suspicious tags like <img> with onerror
+- Implement client-side and server-side HTML sanitization in product editors (e.g., using libraries like DOMPurify)
+- Monitor GraphQL queries for suspicious payloads in productUpdate mutations
+- Enable Content Security Policy (CSP) on rendering pages to block inline scripts
 
 ## Objectives
 
-1. Store malicious JavaScript in the product description
-2. Prepare the product for syncing without triggering immediate errors
-3. Enable arbitrary code execution upon rendering
+1. Store malicious script in product description without triggering errors
+2. Prepare payload for propagation to shared domain
+3. Enable execution on viewer browsers for impact
 
 ## Instructions
 
-### Step 1: Access Product Editor
+### Step 1: Access Product Creation
 
-**Context**: Log in to the Shopify admin and navigate to the product creation or editing interface to access the description field.
+**Context**: Log into the Shopify admin and navigate to product management to create a new entry.
 
-Navigate to Products > Add product (or edit an existing one) in the Shopify dashboard.
+Go to the Shopify admin dashboard, select "Products" > "Add product".
 
-### Step 2: Switch to HTML Mode and Inject Payload
+### Step 2: Enable HTML Mode and Inject Payload
 
-**Context**: Enable raw HTML editing to bypass any visual editor sanitization and insert the XSS payload.
+**Context**: Switch to HTML editing mode to bypass rich text restrictions and insert the raw payload.
 
-Click the < > button to toggle HTML mode in the description editor. Insert the following payload:
+In the product description field, click the "< >" button to enable HTML mode. Insert the following payload:
 
 ```html
 <img src=x onerror=prompt(document.domain)>
 ```
 
-Save the changes.
+Set the product title (e.g., "Test Product"), status to "Active", and save the product.
 
-### Step 3: Set Product Status
+> This payload uses an invalid image source to trigger the onerror event, executing JavaScript to prompt the current domain.
 
-**Context**: Activate the product to make it eligible for publishing and rendering.
+### Step 3: Verify Storage
 
-Set the product status to Active and save the product.
+**Context**: Confirm the payload is stored without alteration.
+
+Edit the product again and check that the HTML mode shows the exact payload intact.
 
 ## MITRE ATT&CK Mapping
 
@@ -104,6 +106,6 @@ Set the product status to Active and save the product.
 
 ## Tags
 
-- xss
-- shopify
-- injection
+- [[xss]]
+- [[injection]]
+- [[shopify]]

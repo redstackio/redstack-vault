@@ -1,78 +1,84 @@
 ---
-id: tool-uuid-3
-url: 'https://www.mozilla.org/en-US/firefox/new/'
-tags:
-  - browser
-  - web
-  - testing
+id: tool-firefox
 type: tool
+name: Firefox
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:12.087Z'
 platforms:
   - Linux
   - Windows
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.248Z'
+tags:
+  - browser
+  - web-access
+url: 'https://www.mozilla.org/en-US/firefox/new/'
 validated: true
 submitted: true
 ---
+
 # Firefox
 
 **Status**: Unverified
 
 ## Overview
 
-Firefox is an open-source web browser used for accessing target sites, crafting URLs, and simulating victim interactions in web vulnerability testing like SSRF exploitation.
+Firefox is an open-source web browser used for accessing and interacting with web applications during security testing, often configured with proxies like Burp Suite for traffic manipulation.
 
 ## Description
 
-In security assessments, Firefox's developer tools aid in inspecting payloads and triggers. Version 80.0.1 was used here for compatibility with the exploit scenario, supporting JavaScript execution and network monitoring.
+As a standard browser, Firefox supports extensions for developer tools and proxy configuration, making it ideal for navigating to vulnerable endpoints like forgot password pages and submitting forms while routing traffic through interception tools.
 
 ## Features
 
-- Feature 1: Developer Tools for network inspection and console logging
-- Feature 2: Extensions like Firebug for advanced debugging
-- Feature 3: Cross-platform support with privacy-focused modes
+- Feature 1: Built-in developer tools for inspecting requests
+- Feature 2: Easy proxy configuration via network settings
+- Feature 3: Extension support for security testing (e.g., FoxyProxy)
 
 ## Installation
 
 ### Requirements
 
-- Modern OS with GUI
+- Modern OS with graphical interface
 
 ### Install Commands
 
 ```bash
-# On Ubuntu
+# On Ubuntu/Debian
 sudo apt update && sudo apt install firefox
-# Download from official site for other OS
+
+# Or download from official site
 ```
 
 ## Basic Usage
 
 ```bash
-firefox https://example.com
+firefox https://target.com
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `--private-window` | Open in private mode |
-| `--headless` | Run without GUI (for automation) |
+| `--proxy-server=host:port` | Set proxy for traffic routing |
+| `-private` | Open private window |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
+Launch and visit target:
+
 ```bash
-firefox https://www.█████████
+firefox http://██████/█████
 ```
 
 ### Example 2: Advanced Usage
 
+With proxy for Burp:
+
 ```bash
-firefox --private-window "malicious-url-here"
+firefox --proxy-server=127.0.0.1:8080 http://target.com
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,30 +87,35 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser user-agent strings in logs (e.g., Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0)
-- Access patterns to vulnerable URLs
+- User-Agent: Mozilla/5.0 (compatible with Firefox)
+- Proxy-related network anomalies
 
 ## Related Procedures
 
-- [[procedures/Craft-and-Inject-SSRF-Payload-into-Login-URL]]
-- [[procedures/Trigger-SSRF-Exploit-from-Victim-Device]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[Related Tool: Chrome]]
-- [[Related Tool: Burp Suite Proxy]]
+- [[tools/Chrome]]
+- [[tools/Safari]]
 
 ## References
 
 - Official documentation: https://support.mozilla.org/en-US/products/firefox
-- Related resources: MDN Web Docs for JS fetch API
+- Related resources: Mozilla Developer Network

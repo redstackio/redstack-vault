@@ -2,7 +2,6 @@
 tags:
   - xss
   - payload-craft
-  - phpbb
 type: procedure
 tools: []
 tactics:
@@ -12,75 +11,82 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:55:06.101Z'
+skill_level: intermediate
+impact_level: high
+detection_risk: low
 sub_techniques: []
-id: 6b68cfca-032a-49a9-9403-a8d85c9a4ec5
+id: 22e91df3-5c35-49ec-af21-b5223c948bf6
+created_at: '2025-12-14T17:26:55.707Z'
+updated_at: '2025-12-14T17:26:55.707Z'
 validated: true
 mitre_tactics:
   - '[[Execution]]'
 mitre_techniques:
   - '[[JavaScript]]'
 ---
----
-
 # Prepare-Malicious-Emoji-Payload-for-XSS
 
 ## Summary
 
-This procedure crafts a malicious emoji pak file content that injects unsanitized XSS payloads into the SMILEY_IMG field during import, enabling stored XSS execution.
+This procedure creates a malicious emoji payload exploiting the lack of sanitization in phpBB's SMILEY_IMG field during import, allowing injection of XSS scripts like onmouseover alerts.
 
 ## Description
 
-phpBB's emoji import lacks HTML entity encoding, allowing direct injection of JavaScript into smiley images. The payload is formatted as CSV-like lines for the pak file, exploiting the storage and display mechanism to affect all users viewing posts or admin sections.
+The emoji import parses files without HTML-escaping the SMILEY_IMG field, enabling stored XSS. The payload is crafted in the expected code block format for import, such as '"onmouseover=alert() ><script>alert()</script>"', which will be output unsanitized in forum posts and admin pages, affecting all viewers.
 
 ## Requirements
 
-1. Knowledge of XSS payloads
+1. Knowledge of phpBB emoji import format
 2. Text editor for payload creation
-3. Target phpBB version vulnerable to unsanitized imports
+3. Target for testing import
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize imported emoji data with htmlspecialchars()
-- Validate emoji file formats strictly
-- Scan for script tags in uploads
+- Sanitize SMILEY_IMG with HTML entity encoding before storage and output
+- Validate imported emoji files against strict whitelists
+- Scan uploads for script tags or event handlers
 
 ## Objectives
 
-1. Create injectable XSS in emoji format
-2. Ensure compatibility with pak import
+1. Inject executable JavaScript into emoji data
+2. Ensure payload survives import regex checks
 3. Enable persistent execution on display
 
 ## Instructions
 
-### Step 1: Design Payload
+### Step 1: Design XSS Payload
 
-**Context**: Build the XSS string targeting onmouseover or inline script.
+**Context**: Create script that triggers on interaction, e.g., mouseover.
 
-Use payload: '"onmouseover=alert() ><script>alert()</script>", "17", "18", "1", "POC", ":POC:",'
+**Command** (Manual Creation):
 
-### Step 2: Validate Format
+Write: '"onmouseover=alert() ><script>alert()</script>"' as SMILEY_IMG value in emoji format.
 
-**Context**: Ensure it matches pak file structure (code, width, height, remote, disc, emoticon).
+> Expected output: String ready for embedding in temp file.
 
-Test parsing manually to confirm injection points.
+### Step 2: Format for Import
 
-> Expected output: Valid emoji line with embedded XSS.
+**Context**: Structure as expected by phpBB import parser.
+
+**Command** (Manual):
+
+Place in code block: code:SMILEY_IMG="payload" ...
+
+> Expected output: File content that mimics valid emoji pack.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Sub-Techniques
 
@@ -93,7 +99,5 @@ Test parsing manually to confirm injection points.
 
 ## Tags
 
-- xss
-- payload-craft
-- phpbb
-
+- [[xss]]
+- [[payload-craft]]

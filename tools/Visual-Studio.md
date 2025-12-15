@@ -1,75 +1,72 @@
 ---
-id: t1b2c3d4-e5f6-7890-abcd-ef1234567897
-url: 'https://visualstudio.microsoft.com'
+id: tool-visual-studio
+url: null
 tags:
   - ide
-  - asp-net
-  - development
+  - compilation
 type: tool
 verified: false
 platforms:
   - Windows
-created_at: '2023-10-01T12:00:00Z'
-updated_at: '2025-12-14T04:38:49.783Z'
-configuration: Azure SDK installed for Cloud Services packaging
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:33.094Z'
 validated: true
 submitted: true
 ---
-# Visual Studio
+# Visual-Studio
 
 **Status**: Unverified
 
 ## Overview
 
-Visual Studio is a full-featured IDE for developing .NET applications, including ASP.NET web apps, and is used in security testing to create and package deployments for Azure Cloud Services in takeover scenarios.
+Visual Studio is Microsoft's IDE for developing .NET applications, used here to compile C# DLLs for deserialization gadgets in security testing against Telerik UI vulnerabilities.
 
 ## Description
 
-It supports building Azure-specific packages (.cspkg) for deployment. Attackers use it to craft PoC apps that demonstrate control, such as simple pages for subdomain hijacks.
+Essential for building Windows-compatible payloads, it provides the compiler (csc.exe) and runtime for creating executable DLLs that exploit .NET deserialization flaws, enabling RCE in ASP.NET environments.
 
 ## Features
 
-- Feature 1: Project templates for ASP.NET
-- Feature 2: Publish wizard for Azure integration
-- Feature 3: Debugging and packaging tools
+- Feature 1: C# compilation to DLL/EXE
+- Feature 2: .NET Framework support
+- Feature 3: Developer Command Prompt for scripting
 
 ## Installation
 
 ### Requirements
 
 - Windows OS
-- .NET Framework
 
 ### Install Commands
 
+Download from Microsoft; install Community edition for free.
+
 ```bash
-# Download from official site; run installer
-# Post-install: Install Azure SDK via Extensions > Manage Extensions > Search 'Azure'
+# No CLI install; GUI installer
 ```
 
 ## Basic Usage
 
-```bash
-# Launch VS, create project
-vs
-```
+Open Developer Command Prompt and use csc or msbuild.
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Publish | Deploy to Azure |
-| Build | Package app |
+| csc.exe | C# compiler |
+| /target:library | Build as DLL |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-New Project > ASP.NET > Build > Publish to Azure.
+```batch
+csc /target:library /out:sleep.dll sleep.cs
+```
 
 ### Example 2: Advanced Usage
 
-Add Azure Cloud Service template > Configure endpoints > Generate .cspkg.
+Integrate with build_dll.bat.
 
 ## MITRE ATT&CK Mapping
 
@@ -77,34 +74,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Windows Command Shell]]
+- [[Command-Line Interface]] Command and Scripting Interpreter
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Compiled binaries with Azure metadata
-- Deployment logs in Azure showing VS-originated packages
+- VS processes on attacker machines
+- Compiled binaries with VS signatures
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/Azure-Portal]]
+- [[tools/build_dll.bat]]
 
 ## References
 
-- Official documentation: https://docs.microsoft.com/visualstudio/
-- Azure deployment guides
+- Microsoft Docs

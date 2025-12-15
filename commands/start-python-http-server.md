@@ -1,19 +1,18 @@
 ---
-id: cmd-python-http-server-001
-data: python3 -m http.server 4444
+data: python3 -m http.server
 tags:
-  - listener
   - http-server
+  - hosting
 type: command
-output: |-
-  Serving HTTP on 0.0.0.0 port 4444 (http://0.0.0.0:4444/) ...
-  127.0.0.1 - - [timestamp] "GET / HTTP/1.1" 200 -
+output: 'Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...'
 executor: bash
 platforms:
   - Linux
   - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.101Z'
+updated_at: '2025-12-14T17:25:53.224Z'
+id: debe94ae-e426-4a05-aa19-f904bed69c04
 verified: false
 validated: true
 submitted: true
@@ -23,38 +22,40 @@ submitted: true
 ## Command
 
 ```bash
-python3 -m http.server 4444
+python3 -m http.server
 ```
 
 ## Description
 
-Starts a basic HTTP server using Python's http.server module on the specified port (4444), useful for SSRF POCs to log incoming requests from vulnerable applications.
+This command starts a basic static HTTP server using Python's built-in http.server module, serving files from the current directory on port 8000. It is commonly used in security testing to host PoC files locally and avoid CORS issues in browsers.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-m http.server` | Module to run the HTTP server | Yes |
-| `4444` | Port to listen on | Yes |
+| `-m` | Runs the specified module as a script (http.server) | Yes |
+| `http.server` | The module to execute for HTTP serving | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-python3 -m http.server 4444
+python3 -m http.server
 ```
 
 ### Advanced Usage
 
 ```bash
-python3 -m http.server 4444 --bind 0.0.0.0
+python3 -m http.server 8080
 ```
+
+> Specifies a custom port (default is 8000).
 
 ## Expected Output
 
-Server startup message followed by request logs, e.g., IP, timestamp, method, path, status code. For SSRF, expect external IP hits on /info/refs paths.
+The server prints a message confirming it's running and listening on all interfaces, then waits for requests. It serves any files in the current directory, such as HTML PoCs.
 
 ## Related
 
-- [[Related Procedure|procedures/Setup-HTTP-Listener-for-SSRF-POC]]
+- [[Related Procedure|procedures/Start-Local-HTTP-Server-for-PoC-Hosting]]

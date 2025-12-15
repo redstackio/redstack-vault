@@ -8,68 +8,71 @@ verified: false
 platforms:
   - Linux
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:55:06.062Z'
-id: 8e74cffd-4e4a-475f-aa8a-0ab6aa7f95ee
+  - macOS
+  - Web
+description: >-
+  Web browser for sending HTTP requests, inspecting elements, and exploiting
+  race conditions via manual or scripted interactions.
+id: a54602e6-7039-4ae9-ab70-5305c03da0dd
+created_at: '2025-12-14T17:26:49.080Z'
+updated_at: '2025-12-14T17:26:49.080Z'
 validated: true
 submitted: true
 ---
----
-
 # Browser-Chrome
 
 **Status**: Unverified
 
 ## Overview
 
-Google Chrome browser for sending HTTP requests, inspecting traffic, and simulating user interactions in phpBB exploitation, including multi-tab racing.
+Google Chrome is a web browser used for interacting with web applications, sending requests, and testing vulnerabilities like race conditions in phpBB by spamming forms or inspecting responses.
 
 ## Description
 
-Used to authenticate, upload files, and trigger XSS. Developer tools allow request crafting and inspection for precise timing in race conditions.
+Chrome's dev tools enable network inspection, form manipulation, and concurrent tab-based requests, crucial for racing uploads and imports in XSS chaining.
 
 ## Features
 
-- Feature 1: DevTools for network inspection
-- Feature 2: Multi-tab for concurrent requests
-- Feature 3: JavaScript console for payload testing
+- Feature 1: DevTools for request crafting and monitoring
+- Feature 2: Extensions for automation (e.g., Postman)
+- Feature 3: Console for JavaScript execution testing
 
 ## Installation
 
 ### Requirements
 
-- Modern OS
+- Internet access
 
 ### Install Commands
 
 ```bash
-# Download from official site
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+# Download from official site or use package manager
+sudo apt install google-chrome-stable  # Linux
 ```
 
 ## Basic Usage
 
 ```bash
-google-chrome
+# Launch and navigate to target
+google-chrome https://target.com
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| --user-data-dir | Custom profile |
-| --disable-web-security | For testing |
+| --user-data-dir | Custom profile directory |
+| --disable-web-security | For CORS testing (use cautiously) |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Launch and navigate to phpBB.
+Navigate to phpBB admin and use dev tools to modify POST data.
 
 ### Example 2: Advanced Usage
 
-Open dev tools (F12) to copy requests as curl.
+Open multiple tabs to spam uploads concurrently.
 
 ## MITRE ATT&CK Mapping
 
@@ -77,27 +80,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
-- [[Collection]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- User-Agent strings in logs
-- DevTools patterns
+- User-Agent strings in logs: Chrome/...
+- High request volume from single IP
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[Firefox]]
+- [[tools/Firefox]]
 
 ## References
 
-- Chrome DevTools docs
-
+- Official documentation: https://www.google.com/chrome/

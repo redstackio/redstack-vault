@@ -1,9 +1,9 @@
 ---
-id: tool-uuid-002
+id: tool-uuid-1
 url: 'https://flask.palletsprojects.com/'
 tags:
   - web-framework
-  - testing
+  - python
 type: tool
 verified: false
 platforms:
@@ -11,7 +11,7 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.495Z'
+updated_at: '2025-12-14T17:30:18.734Z'
 validated: true
 submitted: true
 ---
@@ -21,17 +21,17 @@ submitted: true
 
 ## Overview
 
-Flask is a lightweight Python web framework for building simple HTTP servers, ideal for PoC environments in security testing.
+Flask is a lightweight Python web framework used here to host the PoC server for malicious pages in the clickjacking attack, enabling quick setup of static HTML with JavaScript for redirects and popups.
 
 ## Description
 
-Used here to quickly set up a listener server for verifying SSRF requests, with minimal routing to respond to root paths.
+In offensive security, Flask is ideal for rapid prototyping of malicious web servers, serving HTML/CSS/JS files that implement attacks like clickjacking. It handles routing for / and /attack, allowing easy integration of OAuth parameters.
 
 ## Features
 
-- Feature 1: Simple routing for endpoints
-- Feature 2: Threaded operation for handling requests
-- Feature 3: Built-in development server
+- Feature 1: Simple routing for static files
+- Feature 2: Built-in development server
+- Feature 3: Easy Python scripting for dynamic content
 
 ## Installation
 
@@ -48,33 +48,31 @@ pip install flask
 ## Basic Usage
 
 ```bash
-flask --help
+python main.py
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `host` | Bind address |
-| `port` | Listening port |
-| `threaded` | Enable threading |
+| None specific; configure in code | Run server |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```python
-app = Flask(__name__)
-@app.route('/')
-def hello():
-    return 'Hello'
-app.run()
+Create main.py with app = Flask(__name__); @app.route('/') def index(): return open('index.html').read(); if __name__ == '__main__': app.run()
+
+```bash
+python main.py
 ```
 
 ### Example 2: Advanced Usage
 
-```python
-app.run(host='0.0.0.0', port=80, threaded=True)
+Add routes for /attack similarly.
+
+```bash
+python main.py
 ```
 
 ## MITRE ATT&CK Mapping
@@ -83,25 +81,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]]
+- [[Drive-by Compromise]] Drive-by Compromise
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Python processes with flask module loaded
-- Local port 80 bindings
+- Network traffic to localhost:5000
+- Process monitoring for python main.py
+- Web logs showing Flask signatures
 
 ## Related Procedures
 
+- [[procedures/Setup-Malicious-Clickjacking-Server]]
 
 ## Related Tools
 
-- [[tools/Django]]
+- [[Related Tool: Requests (Python)]]
 
 ## References
 

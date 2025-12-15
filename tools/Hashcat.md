@@ -1,10 +1,9 @@
 ---
-id: tool-uuid-2
+id: tool-hashcat
 url: 'https://hashcat.net/hashcat/'
-name: Hashcat
 tags:
   - cracking
-  - password
+  - brute-force
 type: tool
 verified: false
 platforms:
@@ -12,7 +11,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:09.050Z'
+updated_at: '2025-12-14T17:24:42.721Z'
 validated: true
 submitted: true
 ---
@@ -22,30 +21,33 @@ submitted: true
 
 ## Overview
 
-Hashcat is an advanced password recovery utility supporting over 300 hash types, used for offline cracking of captured credentials like NTLMv2 hashes from SMB auth.
+Hashcat is an advanced password recovery tool used for offline cracking of hashes, ideal for exploiting weak entropy in generated passwords like those in Rocket.Chat's E2EE implementation.
 
 ## Description
 
-In security testing, Hashcat accelerates cracking with GPU support, essential for processing NTLMv2 hashes obtained via SSRF and SMB listeners to recover domain passwords.
+Hashcat supports over 300 hash types, including PBKDF2 used in mobile app encryption, with GPU acceleration for high-speed brute-force, dictionary, and mask attacks. In offensive security, it's used to test password strength and recover credentials from extracted data, particularly effective against biased generation reducing search space.
 
 ## Features
 
-- Feature 1: Multi-GPU acceleration
-- Feature 2: Support for NTLMv1/v2, Kerberos, etc.
-- Feature 3: Rule-based and hybrid attacks
+- Feature 1: Multi-GPU support for parallel cracking
+- Feature 2: Custom masks and rules for optimized attacks on known biases
+- Feature 3: Benchmarking to estimate crack time
 
 ## Installation
 
 ### Requirements
 
-- OpenCL or CUDA drivers for GPU
-- Compatible OS
+- NVIDIA/AMD GPU with CUDA/ROCm drivers
+- Compatible OS (Linux preferred for performance)
 
 ### Install Commands
 
 ```bash
-# On Kali Linux
-apt install hashcat
+# On Ubuntu/Debian
+git clone https://github.com/hashcat/hashcat.git
+cd hashcat
+make
+sudo make install
 ```
 
 ## Basic Usage
@@ -58,23 +60,25 @@ hashcat --help
 
 | Option | Description |
 |--------|-------------|
-| `-m` | Hash mode |
-| `-a` | Attack mode |
-| `-O` | Optimized kernels |
+| `-m` | Specify hash mode |
+| `-a` | Attack mode (0=dict, 3=mask) |
+| `-w` | Workload profile (3=high) |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-hashcat -m 5600 hashes.txt wordlist.txt
+hashcat -m 0 example.md5 wordlist.txt
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-hashcat -m 5600 -a 0 hashes.txt rockyou.txt -r rules/best64.rule
+hashcat -m 1000 -a 3 hash.txt mask.hcmask -O
 ```
+
+(Uses pre-defined mask file for efficiency.)
 
 ## MITRE ATT&CK Mapping
 
@@ -82,29 +86,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Unsecured Credentials]] Unsecured Credentials
+- [[Brute Force]]
 
 ### Tactics
 
-- [[Credential Access]] Credential Access
+- [[Credential Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- High GPU utilization during cracking
-- Process monitoring for hashcat.exe
-- File access to hash dumps and wordlists
+- High GPU utilization during cracking sessions
+- Process monitoring for hashcat.exe on endpoints
+- Network logs if rules/wordlists are downloaded
 
 ## Related Procedures
 
-- [[procedures/Analyze-Captured-NTLMv2-Hashes]]
+- [[procedures/Brute-Force-E2EE-Password]]
 
 ## Related Tools
 
 - [[John the Ripper]]
+- [[Hydra]]
 
 ## References
 
-- Official site: https://hashcat.net/hashcat/
-- Wiki: https://hashcat.net/wiki/
+- Official documentation: https://hashcat.net/wiki/
+- Related resources: OWASP Password Storage Cheat Sheet

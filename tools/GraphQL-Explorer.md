@@ -1,71 +1,75 @@
 ---
-url: 'https://localhost/-/graphql-explorer'
+url: 'http://gitlab.example.vm/-/graphql-explorer'
 tags:
   - graphql
-  - api
   - testing
 type: tool
 verified: false
 platforms:
   - Web
+  - GitLab
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:56:03.627Z'
-id: ae9a1abf-f598-492e-80a6-780a5d22bfe6
+updated_at: '2025-12-14T17:29:20.401Z'
+id: 077bb235-201a-4f2f-846e-ec189fad35fd
 validated: true
 submitted: true
 ---
-# GraphQL Explorer
+# GraphQL-Explorer
 
 **Status**: Unverified
 
 ## Overview
 
-GraphQL Explorer is GitLab's built-in web interface for testing and executing GraphQL queries and mutations, ideal for API-based attacks like injecting payloads into custom resources.
+GitLab's built-in web interface for exploring, testing, and executing GraphQL queries and mutations, ideal for vulnerability assessment in API endpoints.
 
 ## Description
 
-It allows authenticated users to explore schemas, write queries, and send mutations interactively. In security contexts, it's used to test API vulnerabilities, such as unvalidated inputs in custom emoji creation, without needing external tools.
+The GraphQL Explorer provides an interactive playground for GitLab's GraphQL API, allowing authenticated users to craft and send requests. In offensive security, it's used to test mutations like deleteAnnotation for exploits such as type confusion. Supports introspection and real-time execution.
 
 ## Features
 
-- Feature 1: Schema introspection and documentation
-- Feature 2: Real-time query execution with authentication
+- Feature 1: Interactive query builder with schema introspection
+- Feature 2: Authentication integration for role-based testing
 - Feature 3: Response formatting and error handling
 
 ## Installation
 
 ### Requirements
 
-- GitLab instance with GraphQL API enabled
-- Browser access
+- GitLab instance access
+- Authenticated browser session
 
 ### Install Commands
 
-```bash
-# Built-in; access via browser at /-/graphql-explorer
-```
+No installation needed; access via browser at /-/graphql-explorer.
 
 ## Basic Usage
 
 ```bash
-# No CLI; open in browser
+# Open in browser
+open http://gitlab.example.vm/-/graphql-explorer
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Headers | Add auth tokens manually |
+| Query Editor | Input GraphQL syntax |
+| Execute Button | Run the query/mutation |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Paste mutation and click 'Run query'.
+Enter a simple query and execute to fetch projects.
 
 ### Example 2: Advanced Usage
 
-Include variables for dynamic payloads.
+Craft mutation for exploitation:
+
+```graphql
+mutation { deleteAnnotation(input: {id: "gid://GitLab/Project/123"}) { clientMutationId } }
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -73,27 +77,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Privilege Escalation]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- API logs showing explorer access
-- High volume of mutation requests
+- Browser access logs to /graphql-explorer
+- Anomalous GraphQL mutation volumes
 
 ## Related Procedures
 
-- [[procedures/Create-Malicious-Custom-Emoji-via-GraphQL]]
 
 ## Related Tools
 
-- [[tools/Web-Browser]]
+- [[tools/IRB]]
 
 ## References
 
-- GitLab GraphQL API docs
+- GitLab GraphQL Documentation

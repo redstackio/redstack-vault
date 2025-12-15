@@ -1,9 +1,7 @@
 ---
-id: tool-uuid-1
 url: 'https://github.com/projectdiscovery/subfinder'
 tags:
-  - recon
-  - subdomain-enum
+  - reconnaissance
 type: tool
 verified: false
 platforms:
@@ -11,27 +9,28 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:31.217Z'
+updated_at: '2025-12-14T17:33:05.925Z'
+id: 1756278c-c9e2-45cc-a3d3-a9917ea515e5
 validated: true
 submitted: true
 ---
-# Subfinder
+# subfinder
 
 **Status**: Unverified
 
 ## Overview
 
-Subfinder is a fast passive subdomain discovery tool that leverages multiple sources like APIs and search engines for comprehensive enumeration without direct DNS queries.
+Fast passive subdomain enumeration tool using OSINT sources.
 
 ## Description
 
-Ideal for offensive security, Subfinder collects subdomains from passive intelligence sources, aiding in identifying misconfigurations like dangling DNS records in cloud environments such as AWS.
+Subfinder performs subdomain discovery without direct DNS queries, ideal for stealthy recon in attack chains.
 
 ## Features
 
-- Feature 1: Passive enumeration from 30+ sources
-- Feature 2: High-speed concurrent querying
-- Feature 3: Output filtering and deduplication
+- Feature 1: Multiple passive sources
+- Feature 2: Silent mode
+- Feature 3: Output to file
 
 ## Installation
 
@@ -55,31 +54,28 @@ subfinder -d example.com
 
 | Option | Description |
 |--------|-------------|
-| `-d` | Domain to enumerate |
-| `-o` | Output file |
-| `-v` | Verbose mode |
+| `-d` | Domain |
+| `-o` | Output |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-subfinder -d 8x8.com -o subs.txt
+subfinder -d bountypay.h1ctf.com -o subs.txt
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-subfinder -d 8x8.com -all -o subs.txt -v
+subfinder -d target -all -o allsubs.txt
 ```
 
 ## MITRE ATT&CK Mapping
 
-This tool is commonly associated with:
-
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: DNS
+- [[Active Scanning]] Active Scanning
 
 ### Tactics
 
@@ -87,20 +83,17 @@ This tool is commonly associated with:
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- Network traffic to passive sources like crt.sh
-- DNS query spikes from enumeration
+- Network traffic to known OSINT APIs
+- DNS query patterns
 
 ## Related Procedures
 
-- [[procedures/Identify-Dangling-DNS-Records-for-Subdomain-Takeover]]
+- [[procedures/Enumerate-Subdomains-and-Expose-Git-Repository]]
 
 ## Related Tools
 
-- [[Amass]]
-- [[Sublist3r]]
+- [[tools/amass]]
 
 ## References
 
-- Official GitHub repository
+- Official GitHub repo

@@ -1,16 +1,16 @@
 ---
-id: uuid-rails-console
-data: gitlab-rails console
+id: cmd-gitlab-rails-console
+data: sudo gitlab-rails console
 tags:
-  - rails
-  - console
+  - gitlab
+  - admin
 type: command
-output: 'Rails console prompt (irb(main):001:0>)'
+output: Interactive Ruby console prompt
 executor: bash
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:24.483Z'
+updated_at: '2025-12-14T17:24:14.597Z'
 verified: false
 validated: true
 submitted: true
@@ -20,38 +20,37 @@ submitted: true
 ## Command
 
 ```bash
-gitlab-rails console
+sudo gitlab-rails console
 ```
 
 ## Description
 
-Starts an interactive Rails console session within GitLab for executing Ruby code, managing features, and querying the database.
+Opens the GitLab Rails console for executing Ruby code, such as enabling feature flags, in an interactive session on the GitLab server.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
+| sudo | Run with elevated privileges | Yes |
+| gitlab-rails | GitLab Rails executable | Yes |
+| console | Starts interactive IRB session | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-gitlab-rails console
+sudo gitlab-rails console
 ```
 
 ### Advanced Usage
 
-Run non-interactively:
-
-```bash
-gitlab-rails console -e production
-```
+Run directly after for flag enable: `sudo gitlab-rails console -e production` (if needed).
 
 ## Expected Output
 
-IRB prompt like irb(main):001:0> for entering Ruby commands.
+Interactive prompt like `>> ` for Ruby commands; type `exit` to quit.
 
 ## Related
 
-- [[Related Procedure: Enable-Vue-Issuables-List-Feature-Flag]]
+- [[commands/feature-enable-bulk-import]]

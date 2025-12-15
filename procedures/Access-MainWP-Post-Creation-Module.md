@@ -1,9 +1,8 @@
 ---
-id: proc-mainwp-access-001
 tags:
   - access
   - wordpress
-  - admin-dashboard
+  - admin
 type: procedure
 tools: []
 tactics:
@@ -15,59 +14,63 @@ platforms:
   - WordPress
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
-techniques: []
-updated_at: '2025-12-13T23:52:50.009Z'
+techniques:
+  - '[[Valid Accounts]]'
+updated_at: '2025-12-14T17:28:36.324Z'
 sub_techniques: []
+id: 8cf956a3-7152-4c26-b8be-0d924e905017
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
+mitre_techniques:
+  - '[[Valid Accounts]]'
 ---
 # Access-MainWP-Post-Creation-Module
 
 ## Summary
 
-This procedure outlines how to log in and navigate to the post creation module in the MainWP WordPress plugin's admin dashboard, setting the stage for vulnerability testing in the 'Create Category' feature.
+This procedure outlines logging into the MainWP WordPress plugin admin dashboard and navigating to the post creation module to access the 'Create Category' feature, setting the stage for XSS testing.
 
 ## Description
 
-In a WordPress environment managed by the MainWP plugin, administrators access a centralized dashboard to handle multi-site content. This procedure assumes valid credentials and focuses on reaching the post creation interface where categories are created. It is a prerequisite for exploiting input vulnerabilities like reflected XSS, ensuring the attacker has the necessary UI access without authentication bypass.
+In the context of exploiting vulnerabilities in the MainWP plugin, which manages multiple WordPress sites from a central dashboard, this step requires authenticated access to the admin interface. The post creation module allows admins to draft posts and manage categories across child sites. Poor input handling in this module can lead to reflected XSS. Prerequisites include a WordPress installation with MainWP active and valid admin credentials. Expected outcome is visibility of the category creation form.
 
 ## Requirements
 
-1. Valid admin credentials for the MainWP dashboard
-2. Web browser with access to the target site's admin URL (e.g., /wp-admin/)
-3. MainWP plugin installed and active on the WordPress instance
+1. Valid admin login credentials for the target WordPress site
+2. Active MainWP plugin installation
+3. Web browser with developer tools enabled
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement role-based access controls to limit dashboard access
-- Monitor admin login attempts for anomalies using WordPress security plugins like Wordfence
+- Implement role-based access controls to limit admin dashboard access
+- Monitor login attempts and unusual navigation patterns in WordPress logs
 
 ## Objectives
 
-1. Gain entry to the MainWP admin interface
+1. Gain authenticated access to the MainWP interface
 2. Locate the post creation and category management features
-3. Prepare for payload injection without triggering session timeouts
+3. Prepare for payload injection without triggering alerts
 
 ## Instructions
 
-### Step 1: Log In to MainWP Dashboard
+### Step 1: Log In to WordPress Admin
 
-**Context**: Authenticate to access the admin controls.
+**Context**: Authenticate to the dashboard to reach MainWP features.
 
-**Instructions**: Open a web browser and navigate to the MainWP dashboard URL. Enter admin username and password, then submit the login form.
+Open a web browser and navigate to the WordPress admin URL (e.g., https://target.com/wp-admin). Enter admin credentials and submit the login form.
 
-> Upon successful login, the dashboard homepage loads, confirming access.
+> Upon successful login, the WordPress admin dashboard loads.
 
-### Step 2: Navigate to Post Creation Module
+### Step 2: Navigate to MainWP Post Creation
 
-**Context**: Reach the specific feature containing the vulnerable 'Create Category' option.
+**Context**: Access the specific module containing the vulnerable category field.
 
-**Instructions**: From the left sidebar menu, select 'Posts' or 'Content Management', then choose 'Add New' or the category creation submenu.
+In the left sidebar, click on 'MainWP' > 'Posts' or the post management section. Select 'Add New' or the creation interface, then find the 'Create Category' option.
 
-> The post creation interface appears, including the 'Create Category' field.
+> The form for creating a new category appears, including the Name field.
 
 ## MITRE ATT&CK Mapping
 
@@ -77,6 +80,7 @@ Defensive measures and detection strategies:
 
 ### Techniques
 
+- [[Valid Accounts]]
 
 ### Sub-Techniques
 
@@ -89,6 +93,6 @@ Defensive measures and detection strategies:
 
 ## Tags
 
-- [[access]]
-- [[wordpress]]
-- [[admin-dashboard]]
+- access
+- wordpress
+- admin

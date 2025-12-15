@@ -1,9 +1,8 @@
 ---
-id: tool-nmap
+id: tool-uuid-001
 url: 'https://nmap.org/'
 tags:
   - scanning
-  - port-scan
   - recon
 type: tool
 verified: false
@@ -11,45 +10,44 @@ platforms:
   - Linux
   - Windows
   - macOS
+  - Network
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:02.202Z'
+updated_at: '2025-12-14T17:31:52.653Z'
 validated: true
 submitted: true
 ---
 # nmap
 
-**Status**: Verified
+**Status**: Unverified
 
 ## Overview
 
-Nmap (Network Mapper) is a free and open-source tool for network discovery and security auditing. In this context, it's used as a reference for the top 50 common TCP ports to guide SSRF-based scanning, helping prioritize tests for services like HTTP (80), SMB (445), and RDP (3389).
+Nmap is a network scanning tool used for host discovery, port scanning, and service enumeration in security testing.
 
 ## Description
 
-Nmap supports port scanning, service detection, and vulnerability scanning across hosts. For SSRF exploitation, attackers reference its --top-ports 50 output locally to select likely open ports on the target infrastructure, then replicate via URL parameters in requests. It's essential for reconnaissance in web exploitation scenarios where direct scanning is impossible.
+Nmap supports advanced scripting via NSE for detailed service interrogation, such as SMB security checks. Commonly used in offensive operations for initial reconnaissance.
 
 ## Features
 
-- Feature 1: Port scanning with customizable top ports (e.g., --top-ports 50)
-- Feature 2: Service version detection (-sV) for identifying protocols
-- Feature 3: Scriptable scans with NSE for advanced recon
+- Feature 1: Port scanning with version detection
+- Feature 2: Scriptable vulnerability scanning
+- Feature 3: Output in multiple formats (XML, grepable)
 
 ## Installation
 
 ### Requirements
 
-- Standard Unix-like system or Windows with Npcap
+- Linux/Windows/macOS with network privileges
 
 ### Install Commands
 
 ```bash
 # On Ubuntu/Debian
-sudo apt update && sudo apt install nmap
+apt update && apt install nmap
 
 # On macOS with Homebrew
 brew install nmap
-
-# On Windows: Download from nmap.org
 ```
 
 ## Basic Usage
@@ -62,28 +60,23 @@ nmap --help
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--top-ports 50` | Scan top 50 common ports |
-| `-p-` | Scan all 65535 ports |
-| `-sV` | Detect service versions |
+| `-p` | Specify ports |
+| `--script` | Run NSE scripts |
+| `-oN` | Normal output to file |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-nmap --top-ports 50 localhost
+nmap -p 445 192.168.1.1
 ```
-
-> Scans localhost top 50 ports, outputting open ones like 80/tcp open http.
 
 ### Example 2: Advanced Usage
 
 ```bash
-nmap -sV --top-ports 50 127.0.0.1
+nmap -p 445 --script smb-security-mode 192.168.1.0/24
 ```
-
-> Adds version detection for open ports.
 
 ## MITRE ATT&CK Mapping
 
@@ -92,7 +85,6 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[Active Scanning]] Active Scanning
-- [[Network Service Scanning]] Network Service Scanning
 
 ### Tactics
 
@@ -102,20 +94,17 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing SYN scans on common ports
-- Process monitoring for nmap executable
-- IDS alerts on port scan patterns
+- Network logs showing SYN scans on port 445
+- IDS alerts for NSE script execution
 
 ## Related Procedures
 
-- [[procedures/Exploit-SSRF-in-RelateIQ-Registration-for-Port-Scanning]]
+- [[procedures/Discover-Exposed-SMB-Servers]]
 
 ## Related Tools
 
-- [[tools/masscan]]
-- [[tools/zmap]]
+- [[tools/smbclient]]
 
 ## References
 
 - Official documentation: https://nmap.org/book/man.html
-- Related resources: HackerOne Report #16571

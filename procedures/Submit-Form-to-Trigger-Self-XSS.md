@@ -1,8 +1,8 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174003
+id: proc-003
 tags:
-  - xss
-  - execution
+  - form-submission
+  - self-xss-trigger
 type: procedure
 tools: []
 tactics:
@@ -12,13 +12,10 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2024-01-01T00:00:00Z'
+created_at: '2024-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:52:39.134Z'
-skill_level: beginner
-impact_level: low
-detection_risk: low
+updated_at: '2025-12-14T17:27:15.886Z'
 sub_techniques: []
 validated: true
 mitre_tactics:
@@ -26,45 +23,53 @@ mitre_tactics:
 mitre_techniques:
   - '[[JavaScript]]'
 ---
-# Submit-Form-to-Trigger-Self-XSS
+# Submit Form to Trigger Self-XSS
 
 ## Summary
 
-This procedure submits the workspace creation form, causing the injected payload to be rendered and execute JavaScript in the user's browser session.
+This procedure completes and submits the form to reflect the injected XSS payload, triggering self-XSS execution in the attacker's own browser and confirming the vulnerability.
 
 ## Description
 
-Upon form submission, the server or client-side rendering processes the unsanitized workspace name, inserting the payload into the DOM. The onerror handler on the invalid <img> tag fires, executing alert(document.cookie) and displaying session cookies. As a self-XSS, this only affects the attacker but highlights the vulnerability for potential phishing or self-inflicted harm.
+After injecting the payload, the form is filled with valid data for other fields and submitted via POST to https://██████████/. The lack of sanitization causes the payload to execute on the response page, demonstrating self-XSS. This step validates the issue before chaining with CSRF.
 
 ## Requirements
 
-1. Payload successfully injected in prior step
-2. Form ready for submission (other fields optional)
-3. Active browser session
+1. Payload already injected in 'first_name' field
+2. Knowledge of required form fields
+3. Active authenticated session
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Escape all user inputs before rendering in HTML
-- Deploy WAF rules to detect common XSS payloads in form data
-- Monitor for JavaScript errors or alerts in client logs
+- Validate all form fields server-side before processing
+- Use anti-automation measures like CAPTCHA on submissions
+- Monitor for anomalous POST requests to form endpoints
 
 ## Objectives
 
-1. Trigger payload execution via form processing
-2. Confirm XSS by observing alert with cookies
-3. Assess impact on session data
+1. Successfully submit the tampered form
+2. Trigger payload reflection and execution
+3. Capture evidence of self-XSS
 
 ## Instructions
 
-### Step 1: Submit the Form
+### Step 1: Fill Other Fields
 
-**Context**: Interact with the submit button to process the form and render the input.
+**Context**: Provide benign data to ensure submission succeeds.
 
-No command required; click the 'Create Workspace' or equivalent submit button.
+Enter placeholder values in fields like middle_name ('test'), last_name ('test'), and any others required.
 
-> An alert should immediately appear showing the contents of document.cookie, proving successful self-XSS execution.
+> Avoid payloads in non-vulnerable fields to isolate the issue.
+
+### Step 2: Submit the Form
+
+**Context**: Initiate the POST request to reflect the input.
+
+Click the submit button to send the form data to https://██████████/.
+
+> Watch the network tab in developer tools for the POST request containing the payload.
 
 ## MITRE ATT&CK Mapping
 
@@ -87,5 +92,5 @@ No command required; click the 'Create Workspace' or equivalent submit button.
 
 ## Tags
 
-- [[xss]]
-- [[Execution]]
+- [[form-submission]]
+- [[self-xss-trigger]]

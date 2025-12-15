@@ -1,43 +1,99 @@
 ---
-id: 0875b4fe-a762-4c91-a2fa-9be0672e7181
-name: CAT
+url: ''
+tags:
+  - inspection
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:30.767231+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Bash Download a File from a Listener]]'
-- '[[Bash Upload a File to a Listener]]'
-- '[[Concatenate Two Files into a New File]]'
-- '[[PHP Command Execution with Base64 Encoded Payload]]'
-- '[[Print a Files Contents]]'
-- '[[cmd-be3fbbae]]'
-- '[[masscan portscan list of ips]]'
-- '[[npm Install a Package with Preinstall Scripts]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort amass results into domain file]]'
-- '[[sort amass results into ip file]]'
-- '[[sort and tail # of results]]'
-- '[[sort massdns output for ips]]'
-- '[[sort massdns output for online hosts]]'
+platforms:
+  - Linux
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:27.329Z'
+id: 0b310116-afdd-4c7b-a687-c9928ec9c953
+validated: true
+submitted: true
 ---
+# cat
 
-# CAT
+**Status**: Unverified
 
 ## Overview
 
-Perl script which scans cisco routers for common vulnerabilities. cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo 
+cat concatenates and displays file contents, used to inspect cached, overwritten, or template files post-exploit.
 
 ## Description
 
-Perl script which scans cisco routers for common vulnerabilities.
+Simple tool for viewing text files; no editing. Key for verifying exploit success by reading file contents.
 
+## Features
 
+- Feature 1: Multiple files at once
+- Feature 2: Number lines (-n)
+- Feature 3: End-of-line show (-e)
 
-cisco-auditing-tool Homepage | Kali cisco-auditing-tool Repo
+## Installation
 
+### Requirements
 
+- Built-in
 
+### Install Commands
 
+N/A
 
+## Basic Usage
 
+```bash
+cat --help
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| -n | Number lines |
+| -e | Show ends |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```bash
+cat public/books/1.html
+```
+
+### Example 2: Advanced Usage
+
+```bash
+cat -n README.md
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[File and Directory Discovery]]
+
+### Tactics
+
+- [[Discovery]]
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Audit logs for file reads
+
+## Related Procedures
+
+- [[procedures/Exploit-Directory-Traversal-for-Arbitrary-File-Writing]]
+
+## Related Tools
+
+- [[tools/type]] (alternative)
+
+## References
+
+- Man page: man cat

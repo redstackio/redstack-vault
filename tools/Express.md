@@ -1,5 +1,4 @@
 ---
-id: tool-express
 url: 'https://expressjs.com/'
 tags:
   - web-framework
@@ -9,69 +8,71 @@ platforms:
   - Node.js
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:20.468Z'
+updated_at: '2025-12-14T17:28:36.562Z'
+id: 8d2d6830-ff19-4755-847c-5461a3896931
 validated: true
 submitted: true
 ---
-# express
+# Express
 
 **Status**: Unverified
 
 ## Overview
 
-Express is a minimal Node.js web framework for building servers and APIs, used here to create a vulnerable endpoint that renders unsanitized metascraper output for XSS.
+Express.js is a minimal and flexible Node.js web application framework providing a robust set of features for web and mobile applications. In this context, it's used to build the POC server integrating the vulnerable ipControl middleware.
 
 ## Description
 
-It handles routing and middleware, making it easy to serve dynamic HTML. In exploits, it demonstrates how scraped data leads to injection.
+Express handles routing, middleware, and HTTP requests. The vulnerability arises when paired with untrusted modules like expressjs-ip-control for access controls.
 
 ## Features
 
-- Feature 1: Routing and middleware
-- Feature 2: Template engine integration
-- Feature 3: Error handling
+- Feature 1: Middleware support for request processing
+- Feature 2: Routing for endpoints
+- Feature 3: Trust proxy configuration for headers
 
 ## Installation
 
 ### Requirements
 
-- Node.js
+- Node.js and npm
 
 ### Install Commands
 
 ```bash
-npm install express
+npm i express
 ```
 
 ## Basic Usage
 
 ```bash
+# In a JS file
 const express = require('express');
 const app = express();
-app.get('/', (req, res) => res.send('Hello'));
 app.listen(3000);
+node app.js
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| app.use() | Add middleware |
-| app.get() | Define route |
-| app.listen() | Start server |
+| N/A | Framework-level; use app.set() |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-app.get('/scrap', async (req, res) => { /* scrape and send */ });
+# Setup simple server
+npm i express
+node server.js
 ```
 
 ### Example 2: Advanced Usage
 
-```bash
-app.use(express.json());
+```javascript
+app.use(ipControl(whitelist));
 ```
 
 ## MITRE ATT&CK Mapping
@@ -80,22 +81,23 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Express server processes
-- Routes in code
-- Port 8888 bindings
+- Process name: node with Express requires
+- Port listening patterns (e.g., 3000)
+- Logs showing Express startup
 
 ## Related Procedures
 
+- [[procedures/Create-POC-Express-Application]]
 
 ## Related Tools
 
@@ -103,4 +105,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- https://expressjs.com/
+- Official documentation: https://expressjs.com/en/starter/hello-world.html

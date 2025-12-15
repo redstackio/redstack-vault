@@ -1,8 +1,8 @@
 ---
-id: c3d4e5f6-g7h8-9012-cdef-345678901234
 tags:
   - navigation
-  - web
+  - shopify
+  - admin-settings
 type: procedure
 tools: []
 tactics:
@@ -12,70 +12,68 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T12:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[JavaScript]]'
-updated_at: '2025-12-13T23:55:06.324Z'
-skill_level: beginner
+  - '[[Valid Accounts]]'
+updated_at: '2025-12-14T17:25:29.822Z'
+skill_level: basic
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: 0fb26202-24d4-4662-bc86-9a33612a9a66
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[JavaScript]]'
+  - '[[Valid Accounts]]'
 ---
 # Navigate-to-Account-Settings
 
 ## Summary
 
-This procedure moves from the MoPub dashboard to the account settings page, exposing vulnerable input fields for XSS injection.
+This procedure guides the attacker to the Shopify admin account settings page, where session management options are available for exploitation.
 
 ## Description
 
-Following authentication, this step targets the account settings interface in MoPub, where fields like currency and company information lack proper sanitization. The attack scenario involves an authenticated user accessing these fields to prepare for payload injection. Expected outcomes include loading the editable form without restrictions.
+After authentication, the attacker must reach the specific admin page that triggers the vulnerable session expiration endpoint. This involves standard UI navigation within the authenticated session, positioning the attacker to interact with the IDOR-prone feature.
 
 ## Requirements
 
-1. Active authenticated session in MoPub
-2. Web browser
-3. No additional privileges needed
+1. Active Shopify admin session
+2. Web browser with the session cookies intact
+3. Knowledge of the account settings URL structure (/admin/settings/account)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Log and monitor navigation to sensitive pages like account settings
-- Rate-limit access to configuration pages
+- Rate-limit navigation to sensitive admin pages
+- Log all accesses to account settings endpoints
+- Implement role-based access control (RBAC) to restrict settings access
 
 ## Objectives
 
 1. Load the account settings interface
-2. Identify vulnerable input fields
-3. Enable payload injection
+2. Expose session expiration functionality
+3. Set up for request interception
 
 ## Instructions
 
-### Step 1: Access Account Menu
+### Step 1: From Dashboard, Select Settings
 
-**Context**: From the dashboard, locate the menu for account management.
+**Context**: Use the admin menu to access account-related configurations.
 
-Click on the user profile or account icon in the top navigation bar.
+No command; click 'Settings' in the left sidebar, then 'Account' under the General section.
 
-**Expected Output**: Dropdown or menu with 'Account Settings' option appears.
+> Expected output: Page loads at /admin/settings/account with form elements for account details.
 
-### Step 2: Select Settings
+### Step 2: Confirm Page Load
 
-**Context**: Direct the browser to the settings page.
+**Context**: Verify the presence of session management options.
 
-Click 'Account Settings' to navigate.
+Inspect the page for 'Expire all sessions' or similar buttons.
 
-**Expected Output**: Page loads with input fields for currency, company info, etc.
-
-**Success Indicators**:
-- Fields are editable
-- Page URL includes /account/settings or similar
+> Success shows interactive elements for session control.
 
 ## MITRE ATT&CK Mapping
 
@@ -85,7 +83,7 @@ Click 'Account Settings' to navigate.
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Valid Accounts]]
 
 ### Sub-Techniques
 
@@ -98,5 +96,6 @@ Click 'Account Settings' to navigate.
 
 ## Tags
 
-- web-navigation
-- settings-access
+- [[navigation]]
+- [[shopify]]
+- [[admin-settings]]

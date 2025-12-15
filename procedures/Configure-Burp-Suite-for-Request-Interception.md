@@ -1,88 +1,99 @@
 ---
-id: proc-burp-config-intercept-001
 tags:
-  - xss
-  - web
+  - burp-suite
   - interception
+  - web
 type: procedure
 tools:
   - '[[tools/Burp-Suite]]'
 tactics:
-  - '[[Initial Access]]'
+  - '[[Discovery]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:37.272Z'
+  - '[[Gather Victim Host Information]]'
+updated_at: '2025-12-14T17:25:18.311Z'
 skill_level: intermediate
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: 03165482-6d0a-4c97-9a6f-f2b1e680a8c8
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Discovery]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Gather Victim Host Information]]'
 ---
-# Configure Burp Suite for Request Interception
+# Configure-Burp-Suite-for-Request-Interception
 
 ## Summary
 
-This procedure sets up Burp Suite to act as a proxy and intercept HTTP requests from the browser, enabling inspection and modification for vulnerability testing such as XSS exploitation.
+This procedure sets up Burp Suite to proxy and intercept HTTP requests from a target web application, enabling inspection and modification for vulnerability discovery, such as identifying error tracking integrations.
 
 ## Description
 
-Burp Suite is configured in the browser's proxy settings to capture outgoing traffic. The Proxy tab's Intercept feature is enabled to pause requests for manual review. This is a foundational step for man-in-the-middle style testing on web applications like the Nextcloud about page, where URL parameters are reflected unsanitized.
+In scenarios involving web application testing, intercepting traffic is essential to analyze requests and responses. This procedure focuses on configuring Burp Suite's proxy to capture application traffic, particularly useful for spotting misconfigurations like exposed Sentry endpoints. Prerequisites include a running Burp Suite instance and browser proxy configuration. Expected outcomes include full visibility into request flows, facilitating further exploitation steps.
 
 ## Requirements
 
-1. Burp Suite installed and running
-2. Browser configured to use Burp proxy (e.g., localhost:8080)
-3. Target URL accessible (https://nextcloud.com/about/)
+1. Burp Suite Professional or Community edition installed
+2. Target web application accessible via browser
+3. Browser (e.g., Firefox or Chrome) configured to use Burp proxy at 127.0.0.1:8080
+4. No special credentials; assumes public access to the application
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor for unusual proxy traffic or certificate pinning to detect interception tools
-- Implement Content Security Policy (CSP) to mitigate XSS risks
+- Monitor proxy traffic anomalies using network IDS like Snort
+- Enforce certificate pinning in applications to block unauthorized proxies
+- Log all intercepted requests server-side for anomaly detection
 
 ## Objectives
 
-1. Establish interception capability for HTTP requests
-2. Prepare for payload injection in subsequent steps
-3. Ensure all traffic routes through Burp without errors
+1. Establish proxy interception for all application traffic
+2. Capture initial requests to baseline normal behavior
+3. Prepare for request modification in subsequent steps
 
 ## Instructions
 
-### Step 1: Launch and Configure Proxy
+### Step 1: Launch and Configure Burp Proxy
 
-**Context**: Start Burp Suite and enable the proxy listener to capture browser traffic.
+**Context**: Start Burp Suite and enable the proxy listener to route browser traffic through it.
 
-No specific command; use the Burp Suite GUI: Navigate to Proxy > Options, ensure listener on 127.0.0.1:8080 is running.
+Open Burp Suite, navigate to the Proxy tab, and ensure the Intercept is on. In Options > Proxy Listeners, confirm 127.0.0.1:8080 is running. No command needed; this is GUI-based.
 
-> Configure browser proxy settings to point to 127.0.0.1:8080. Expected output: Traffic icon in Burp shows incoming requests.
+> Burp will now intercept requests; turn off intercept for passive monitoring if needed.
 
-### Step 2: Enable Active Intercept
+### Step 2: Route Browser Traffic
 
-**Context**: Turn on interception to pause requests for editing.
+**Context**: Configure the browser to send requests via Burp proxy.
 
-No specific command; in Proxy > Intercept tab, click 'Intercept is on'.
+In browser settings, set HTTP proxy to 127.0.0.1:8080. Install Burp's CA certificate to handle HTTPS. Navigate to the target application to generate traffic.
 
-> Expected output: Button changes to 'Intercept is on', ready to capture the next request.
+> Requests appear in Proxy > HTTP history; toggle Intercept to capture specific ones.
+
+### Step 3: Intercept Initial Request
+
+**Context**: Capture a live request to verify setup.
+
+With Intercept on, perform an action in the application (e.g., trigger an error). The request pauses in Burp for inspection.
+
+> Successful interception shows full request details, including headers and body.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Discovery]]
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Gather Victim Host Information]]
 
 ### Sub-Techniques
 
@@ -96,6 +107,6 @@ No specific command; in Proxy > Intercept tab, click 'Intercept is on'.
 
 ## Tags
 
-- [[xss]]
-- [[web]]
+- [[tools/Burp-Suite]]
 - [[interception]]
+- [[proxy]]

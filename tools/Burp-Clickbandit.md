@@ -1,18 +1,16 @@
 ---
-url: 'https://github.com/PortSwigger/clickbandit'
+id: tool-uuid-001
+url: >-
+  https://portswigger.net/burp/documentation/desktop/testing-workflow/clickbandit
 tags:
   - clickjacking
-  - web-testing
+  - poc-generation
 type: tool
+verified: false
 platforms:
   - Web
-description: >-
-  Burp Suite extension for creating clickjacking proof-of-concepts by
-  manipulating iframes and overlays.
-id: c0a1da3a-50ed-4d08-ad70-83ea143a1845
-created_at: '2025-12-13T23:52:55.741Z'
-updated_at: '2025-12-13T23:52:55.741Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:31.723Z'
 validated: true
 submitted: true
 ---
@@ -22,30 +20,31 @@ submitted: true
 
 ## Overview
 
-Burp Clickbandit is a Burp Suite extension designed for security testers to build interactive clickjacking demonstrations. It allows embedding target pages in iframes and adding customizable overlays to simulate user interactions, ideal for exploiting frameable sites like dev.twitter.com without X-Frame-Options.
+Burp Clickbandit is a Burp Suite extension for generating clickjacking proof-of-concept HTML pages, used to demonstrate UI redress attacks by overlaying iframes with invisible elements.
 
 ## Description
 
-The tool integrates with Burp Suite to generate HTML PoCs that load vulnerable pages in iframes. Users can define overlay elements (visible or invisible) positioned over specific coordinates, binding clicks to underlying elements. This is commonly used in web pentesting to demonstrate UI redressing attacks chained with XSS or other client-side vulns.
+It automates creation of malicious HTML that embeds target sites in iframes and positions overlays to capture clicks on sensitive elements. Ideal for testing missing X-Frame-Options in web apps like dev.twitter.com. Features include customizable overlay text, positioning, and exportable PoCs.
 
 ## Features
 
-- Feature 1: Iframe embedding with adjustable size and position
-- Feature 2: Overlay creation for click hijacking (transparent or styled)
-- Feature 3: Exportable HTML PoCs for sharing or hosting
+- Feature 1: Automatic iframe embedding with target URL
+- Feature 2: Overlay configuration for deceptive UI (e.g., fake buttons)
+- Feature 3: Preview and export of HTML PoC files
 
 ## Installation
 
 ### Requirements
 
-- Burp Suite Professional or Community Edition
-- Java 8 or higher
+- Burp Suite Professional or Community
+- Java 8+
 
 ### Install Commands
 
 ```bash
-# Download from PortSwigger BApp Store or GitHub
-# In Burp: Extender > BApp Store > Search 'Clickbandit' > Install
+# Download from PortSwigger BApp Store within Burp Suite
+# Or manually: wget https://portswigger.net/bappstore/.../clickbandit.jar
+# Load in Burp: Extender > Extensions > Add > JAR file
 ```
 
 ## Basic Usage
@@ -54,31 +53,33 @@ The tool integrates with Burp Suite to generate HTML PoCs that load vulnerable p
 tool-name --help
 ```
 
+In Burp: Go to Clickbandit tab, enter target URL, configure overlay, generate PoC.
+
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `-v, --verbose` | Verbose output |
+| Target URL | URL to iframe |
+| Overlay Text | Text for fake button |
+| Position | X/Y coordinates for overlay |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-In Burp, launch Clickbandit from the Extender tab, input the target URL (e.g., XSS page), and generate a basic iframe PoC.
+Enter XSS URL in Clickbandit, set overlay to "Click to Continue", generate HTML.
 
 ### Example 2: Advanced Usage
 
-Configure overlays: Set iframe src to vulnerable URL, add div with position (x:100, y:200) and opacity 0, then export the HTML.
-
-```html
-<iframe src="https://dev.twitter.com//x:1/:///%01javascript:alert(document.cookie)/"></iframe>
-<div style="position:absolute; top:200px; left:100px; width:100px; height:20px; opacity:0;" onclick="clickUnderlying()"></div>
+```bash
+# Within Burp UI: Set multiple overlays for complex deception
 ```
+
+Host generated HTML on local server and test in browser.
 
 ## Expected Output
 
-Generated HTML file that, when opened, shows the embedded page with clickable overlays triggering actions on the target.
+HTML file with <iframe> and <div> overlay; loads target and tricks clicks.
 
 ## MITRE ATT&CK Mapping
 
@@ -86,18 +87,19 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Drive-by Compromise]]
+- [[Steal Web Session Cookie]]
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Collection]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network traffic to Burp proxy during PoC generation
-- Unusual iframe requests from localhost or testing domains
+- Unusual HTML with nested iframes and absolute-positioned divs
+- Traffic to Burp proxy during PoC generation
+- Anomalous click patterns in web logs
 
 ## Related Procedures
 
@@ -105,8 +107,9 @@ Indicators and methods for detecting this tool's usage:
 ## Related Tools
 
 - [[Burp-Suite]]
+- [[BeEF]]
 
 ## References
 
-- Official documentation: https://portswigger.net/bappstore/clickbandit
-- Related resources: OWASP Clickjacking Guide
+- Official documentation: https://portswigger.net/burp/documentation/desktop/testing-workflow/clickbandit
+- Related resources: OWASP Clickjacking Defense Cheat Sheet

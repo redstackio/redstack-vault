@@ -1,15 +1,17 @@
 ---
-data: 'gitlab-rake gitlab:env:info'
+id: uuid-gitlab-env
+data: 'sudo gitlab-rake gitlab:env:info'
 tags:
-  - info
-  - env
+  - gitlab
+  - environment
 type: command
+output: null
 executor: bash
 platforms:
   - Linux
-id: fd54550a-104e-4dd8-b0f7-5c3574482d1f
-created_at: '2025-12-14T03:46:09.460Z'
-updated_at: '2025-12-14T03:46:09.460Z'
+  - GitLab
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:25:53.126Z'
 verified: false
 validated: true
 submitted: true
@@ -19,35 +21,31 @@ submitted: true
 ## Command
 
 ```bash
-gitlab-rake gitlab:env:info
+sudo gitlab-rake gitlab:env:info
 ```
 
 ## Description
 
-Outputs GitLab environment details for vulnerability reproduction, including versions and config.
+Rake task to gather GitLab environment details including versions and configuration for vulnerability reproduction reports.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| gitlab:env:info | Rake task name | Yes |
+| None | Runs default info collection | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-gitlab-rake gitlab:env:info
+sudo gitlab-rake gitlab:env:info
 ```
-
-### Advanced Usage
-
-Run in GitLab Rails console if needed.
 
 ## Expected Output
 
-Details like System: Ubuntu 18.04, Ruby Version: 2.5.3p105, GitLab Version: 11.9.8-ee, DB: PostgreSQL 9.6.11.
+System information: OS (Ubuntu 16.04), Ruby (2.6.5), GitLab (12.10.0-ee), PostgreSQL (11.7), etc.
 
 ## Related
 
-- [[procedures/Trigger-Web-Hook-Tests-with-Wfuzz]]
+- [[procedures/Verify-Repository-Deletion]]

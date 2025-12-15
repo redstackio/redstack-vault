@@ -1,28 +1,27 @@
 ---
-id: proc-uuid-1
+id: b2c3d4e5-f6g7-8901-bcde-f23456789012
+name: Enumerate-Subdomains-for-Takeover
 tags:
   - subdomain-enumeration
+  - reconnaissance
   - dns
-  - recon
 type: procedure
 tools:
-  - '[[tools/subfinder]]'
+  - '[[tools/Subfinder]]'
 tactics:
   - '[[Reconnaissance]]'
 commands:
   - '[[commands/subfinder-enumerate]]'
-  - '[[commands/dig-cname-lookup]]'
+  - '[[commands/grep-heroku-pattern]]'
 verified: false
 platforms:
+  - Linux
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 techniques:
   - '[[Active Scanning]]'
-updated_at: '2025-12-14T05:32:23.786Z'
-skill_level: intermediate
-impact_level: low
-detection_risk: low
+updated_at: '2025-12-14T17:30:18.258Z'
 sub_techniques: []
 validated: true
 mitre_tactics:
@@ -34,55 +33,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure uses passive and active scanning to enumerate subdomains of a target domain, identifying those with DNS records pointing to cloud services vulnerable to takeover, such as unclaimed AWS S3 buckets.
+This procedure uses passive and active DNS enumeration to identify subdomains of a target domain that may point to third-party cloud services, focusing on those vulnerable to takeover such as dangling Heroku records.
 
 ## Description
 
-In a subdomain takeover attack, attackers first discover subdomains via enumeration tools that query public sources and perform DNS brute-forcing. The focus is on detecting dangling CNAME records to external services like AWS S3. This step reveals potential entry points without direct interaction with the target, minimizing detection. Expected outcomes include a list of subdomains and their DNS resolutions, highlighting takeover candidates.
+In the context of subdomain takeover attacks, enumeration reveals misconfigurations where DNS records point to deleted cloud apps. For Uber, this uncovered a subdomain like 'dangling.uber.com' CNAME to a deleted Heroku app. Prerequisites include a Linux environment with DNS tools installed and public access to the target's DNS.
 
 ## Requirements
 
-1. Network access to public DNS resolvers
-2. Installation of subdomain enumeration tools like subfinder
-3. Target domain name (e.g., bimedb.com)
+1. Network access to perform DNS queries
+2. Installed tools like Subfinder and grep
+3. Target domain resolved publicly
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor DNS changes and subdomain registrations via tools like DNS logging in AWS Route 53
-- Use services like SecurityTrails or DNSDumpster alerts for new subdomains
-- Regularly audit CNAME records to ensure they point to owned resources
+- Regularly audit DNS records for dangling CNAMEs using tools like dnsrecon
+- Implement DNS monitoring with services like Cloudflare or Route 53 alerts
+- Use subdomain takeover scanners like subjack in CI/CD pipelines
 
 ## Objectives
 
 1. Discover all subdomains associated with the target
-2. Identify DNS records pointing to cloud providers
-3. Flag potential takeover vulnerabilities
+2. Identify cloud-provider specific subdomains (e.g., Heroku, AWS S3)
+3. Flag potential takeover candidates for further verification
 
 ## Instructions
 
 ### Step 1: Run Subdomain Enumeration
 
-**Context**: Use subfinder to gather subdomains from passive sources like Certificate Transparency logs and search engines.
+**Context**: Use Subfinder to gather subdomains from multiple sources including passive DNS databases.
 
 **Command** ([[commands/subfinder-enumerate]]):
 ```bash
-subfinder -d bimedb.com -o subdomains.txt
+subfinder -d uber.com -all -o subdomains.txt
 ```
 
-> This command queries multiple data sources and outputs a list of subdomains to subdomains.txt. Expected output: a file with lines like "ws.bimedb.com".
+> This command queries APIs and passive sources to output a list of subdomains to subdomains.txt. Expected output: A file with entries like 'api.uber.com', 'dangling.uber.com'.
 
-### Step 2: Check DNS Records for CNAMEs
+### Step 2: Filter for Cloud Patterns
 
-**Context**: For each subdomain, query DNS to find CNAME records that may point to claimable resources.
+**Context**: Grep the results for known cloud provider patterns to narrow down takeover risks.
 
-**Command** ([[commands/dig-cname-lookup]]):
+**Command** ([[commands/grep-heroku-pattern]]):
 ```bash
-dig ws.bimedb.com +short
+grep -i heroku subdomains.txt > heroku_subs.txt
 ```
 
-> This performs a quick DNS lookup. Expected output: CNAME to an S3 endpoint like "ws-bimedb-com.s3.amazonaws.com" if vulnerable.
+> Filters for Heroku-related subdomains. Expected output: A focused list like 'dangling.uber.com' if vulnerable.
 
 ## MITRE ATT&CK Mapping
 
@@ -96,18 +95,17 @@ dig ws.bimedb.com +short
 
 ### Sub-Techniques
 
-- None
 
 ## Commands Used
 
 - [[commands/subfinder-enumerate]]
-- [[commands/dig-cname-lookup]]
+- [[commands/grep-heroku-pattern]]
 
 ## Tools Used
 
-- [[tools/subfinder]]
+- [[tools/Subfinder]]
 
 ## Tags
 
 - [[subdomain-enumeration]]
-- [[dns-recon]]
+- [[Reconnaissance]]

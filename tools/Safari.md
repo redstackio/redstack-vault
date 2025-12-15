@@ -1,15 +1,16 @@
 ---
-id: uuid-7
 url: 'https://www.apple.com/safari/'
 tags:
   - browser
-  - safari
+  - testing
 type: tool
 verified: false
 platforms:
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T00:11:09.324Z'
+  - iOS
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:22.205Z'
+id: 6cc32e25-2155-494e-abeb-eb719de109db
 validated: true
 submitted: true
 ---
@@ -19,47 +20,50 @@ submitted: true
 
 ## Overview
 
-Safari is Apple's web browser for macOS and iOS, used here to trigger browser-specific vulnerabilities like the Nextcloud user_oidc XSS due to user agent detection and meta refresh handling.
+Safari is Apple's default web browser, used here for testing and reproducing web vulnerabilities like reflected XSS by loading malicious URLs.
 
 ## Description
 
-In security testing, Safari is essential for reproducing browser-conditional exploits. Its unique user agent string causes Nextcloud to apply a vulnerable workaround, injecting unencoded payloads into HTML.
+Safari supports modern web standards including JavaScript execution, making it suitable for verifying XSS payloads in a real browser environment. In offensive security, it's used to simulate victim interactions on macOS or iOS devices.
 
 ## Features
 
-- Feature 1: Strict adherence to web standards
-- Feature 2: Built-in developer tools for inspection
-- Feature 3: User agent that triggers app-specific logic
+- Feature 1: Built-in developer tools for inspecting HTML and console output.
+- Feature 2: Intelligent Tracking Prevention to simulate privacy-focused browsing.
+- Feature 3: Seamless integration with macOS for quick URL testing.
 
 ## Installation
 
 ### Requirements
 
-- macOS device
+- macOS or iOS device.
 
 ### Install Commands
 
-Pre-installed on macOS; update via App Store.
+Pre-installed on Apple devices; update via App Store.
 
 ## Basic Usage
 
 ```bash
-open -a Safari http://localhost:8081/login
+# No CLI; launch via GUI and enter URL in address bar
 ```
 
 ### Common Options
 
-N/A (GUI browser)
+| Option | Description |
+|--------|-------------|
+| Cmd+Option+I | Open Developer Tools |
+| Cmd+R | Reload page |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open Safari and navigate to http://localhost:8081/login to trigger the flow.
+Launch Safari and navigate to a URL to test XSS.
 
 ### Example 2: Advanced Usage
 
-Use Web Inspector (Cmd+Opt+I) to inspect the meta refresh response and confirm payload injection.
+Use Developer Tools: Cmd+Option+I, then reload to observe payload execution.
 
 ## MITRE ATT&CK Mapping
 
@@ -77,18 +81,17 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- User agent strings in server logs identifying Safari
-- Traffic from macOS IPs
+- Browser user-agent strings in logs identifying Safari.
+- No specific detection as it's a standard browser.
 
 ## Related Procedures
 
-- [[procedures/Trigger-XSS-via-Safari-Login]]
 
 ## Related Tools
 
-- [[Chrome]]
+- [[tools/Chrome]]
+- [[tools/Firefox]]
 
 ## References
 
 - Official documentation: https://developer.apple.com/safari/
-- Related resources: WebKit security advisories

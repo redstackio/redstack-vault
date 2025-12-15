@@ -1,63 +1,105 @@
 ---
-id: c6862a48-95f9-478c-89bb-babd04047ed7
-name: SSLyze
+url: 'https://github.com/iSECPartners/sslyze'
+tags:
+  - ssl-analysis
+  - recon
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:33.834607+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[SSLyze Enumerate a Web Server''s SSL/TLS Certificate]]'
-tags:
-- '[[Cryptography]]'
-- '[[Web Applications]]'
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:11.022Z'
+id: 685c2781-2c95-4dbf-b2de-e9d0000be1da
+validated: true
+submitted: true
 ---
+# sslyze
 
-# SSLyze
+**Status**: Unverified
 
 ## Overview
 
-SSLyze is a Python library and a CLI tool that can analyze the SSL configuration of a server by connecting to it. It isdesigned to be fast and comprehensive, and should help organizations and testers identify mis-configurations affectingtheir SSL/TLS servers. 
+Python tool for analyzing SSL/TLS configs, ciphers, certs, and vulns like Heartbleed.
 
 ## Description
 
-# Description
+Scans SMTP with STARTTLS on apps.owncloud.com:587, confirming anonymous ciphers and self-signed certs.
 
-SSLyze is a Python library and a CLI tool that can analyze the SSL configuration of a server by connecting to it. It isdesigned to be fast and comprehensive, and should help organizations and testers identify mis-configurations affectingtheir SSL/TLS servers.
+## Features
 
+- Feature 1: Cipher suite listing
+- Feature 2: Cert validation
+- Feature 3: Protocol downgrade tests
 
+## Installation
 
-# Example
+### Requirements
 
+- Python 3+
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_45e56af6-807a-44a9-85bd-20b2bb3b3eb1}}
+```bash
+pip install sslyze
+```
 
+## Basic Usage
 
+```bash
+sslyze --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| --regular | Standard scan |
+| --starttls | Protocol (smtp) |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+sslyze --regular target:443
+```
 
+### Example 2: Advanced Usage
 
+```bash
+sslyze --regular target:587 --starttls=smtp
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Services
+- [[Hardware]]
 
-- https
-- https
+### Tactics
 
-## Commands (1)
+- [[Reconnaissance]]
 
-- [[SSLyze Enumerate a Web Server's SSL/TLS Certificate]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Cryptography]]
-- [[Web Applications]]
+- Multiple TLS connection attempts
+- Python process with sslyze args
 
+## Related Procedures
 
+- [[procedures/Analyze-SMTP-Cipher-Suites-with-Sslyze]]
+
+## Related Tools
+
+- [[tools/testssl-sh]]
+
+## References
+
+- GitHub: https://github.com/iSECPartners/sslyze
+- Docs: https://sslyze.readthedocs.io

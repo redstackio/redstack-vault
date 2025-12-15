@@ -1,16 +1,17 @@
 ---
-data: npm install -g http-file-server
+id: cmd-npm-install-http
+data: npm install -g http-file-server@0.2.6
 tags:
   - installation
-  - nodejs
+  - npm
 type: command
-output: Installation logs and success message
+output: Installation logs and confirmation of successful install
 executor: bash
 platforms:
+  - Node.js
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:31.253Z'
-id: b7733909-eb97-44ae-a25a-ebc9d17f2f55
+updated_at: '2025-12-14T17:26:12.575Z'
 verified: false
 validated: true
 submitted: true
@@ -20,39 +21,39 @@ submitted: true
 ## Command
 
 ```bash
-npm install -g http-file-server
+npm install -g http-file-server@0.2.6
 ```
 
 ## Description
 
-Installs the http-file-server Node.js module globally via npm, allowing the 'http-file-server' CLI tool to be executed from any directory for vulnerability testing.
+Installs the http-file-server module version 0.2.6 globally using npm, preparing a vulnerable Node.js file server for path traversal testing.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-g` | Installs the package globally | Yes |
+| `-g` | Installs the package globally, making it available system-wide | Yes |
+| `http-file-server@0.2.6` | Specifies the exact vulnerable version to install | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-npm install -g http-file-server
+npm install -g http-file-server@0.2.6
 ```
 
 ### Advanced Usage
 
 ```bash
-npm install -g http-file-server@0.2.6
+npm install -g http-file-server@0.2.6 --registry https://registry.npmjs.org/
 ```
 
 ## Expected Output
 
-npm WARN deprecated ... (warnings)
-+ http-file-server@0.2.6
-added 1 package in 2s
+Progress bars for downloading dependencies, followed by "added X packages" and confirmation that http-file-server@0.2.6 is installed. No errors in logs.
 
 ## Related
 
-- [[Related Procedure|procedures/Install-http-file-server-Module]]
+- [[commands/start-http-file-server-with-tmp-root]]
+- [[procedures/Install-Vulnerable-http-file-server]]

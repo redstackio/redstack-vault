@@ -1,26 +1,35 @@
 ---
-id: proc-rails-setup-001
 tags:
   - rails
   - setup
   - vulnerable-app
 type: procedure
-tools: []
+tools:
+  - '[[tools/Ruby]]'
+  - '[[tools/Rails]]'
+  - '[[tools/Bundler]]'
 tactics:
   - '[[Initial Access]]'
-commands: []
+commands:
+  - '[[commands/ruby-version-check]]'
+  - '[[commands/rails-new-app]]'
+  - '[[commands/rails-activestorage-install]]'
+  - '[[commands/rails-db-migrate]]'
+  - '[[commands/rails-server-start]]'
 verified: false
 platforms:
+  - Linux
   - Web
 submitted: true
-created_at: '2024-10-01T00:00:00Z'
+created_at: '2024-01-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:38.008Z'
+updated_at: '2025-12-14T17:26:22.400Z'
 skill_level: intermediate
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: da2484a6-7251-4670-ab41-6eaa9f244a4b
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
@@ -31,61 +40,90 @@ mitre_techniques:
 
 ## Summary
 
-This procedure sets up a vulnerable Ruby on Rails application with a controller action that uses redirect_to on user-supplied input, enabling testing of the control character injection vulnerability leading to XSS.
+This procedure sets up a Ruby on Rails 7.1.3 application configured with ActiveStorage using the Disk service in production mode, creating a vulnerable environment for path traversal exploitation.
 
 ## Description
 
-In a Rails environment, create a controller with an action that redirects to a user-provided URL using allow_other_host: true. This exposes the redirect_to function to potential manipulation. The setup mimics a common open redirect pattern vulnerable in Rails 7.0.4.3. Prerequisites include Ruby and Rails installed; run in a development environment to avoid production impact. Expected outcome: A running app with /vuln endpoint that redirects normally for benign inputs.
+The setup involves verifying Ruby compatibility, generating a minimal Rails app, installing ActiveStorage, migrating the database with SQLite, configuring the production environment to use JSON serialization for messages (to avoid Marshal issues), and starting the server. This replicates the vulnerable configuration where signed tokens can be crafted if secret_key_base is known, allowing path traversal in the 'key' parameter of Disk service blobs.
 
 ## Requirements
 
-1. Ruby 3.0+ and Rails 7.0.4.3 installed
-2. Local development machine with bundler and Puma server
-3. No network restrictions for localhost access on port 3000
+1. Ruby 3.2.3 installed on a Linux/macOS system
+2. Rails 7.1.3 gem available via Bundler
+3. Local development environment with write access to directories
+4. No internet required beyond initial gem installation
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Validate and sanitize redirect URLs to remove control characters before passing to redirect_to
-- Use Rails' built-in URL validation or custom filters to block javascript: schemes
-- Monitor server logs for suspicious redirect parameters containing %01-%1F characters
+- Use path normalization and validation in ActiveStorage to reject '../' sequences
+- Rotate secret_key_base regularly and avoid exposing it
+- Monitor file system access logs for unexpected reads/writes outside storage dirs
+- Enable Rails security features like strong parameters for blob keys
 
 ## Objectives
 
-1. Establish a testable vulnerable endpoint for redirect exploitation
-2. Verify normal redirect behavior before injection
-3. Prepare environment for payload delivery
+1. Establish a running vulnerable Rails app for testing
+2. Ensure ActiveStorage Disk service is active in production
+3. Prepare environment for token generation and exploitation
 
 ## Instructions
 
-### Step 1: Create Rails Application and Controller
+### Step 1: Verify Ruby Version
 
-**Context**: Initialize a new Rails app and add the vulnerable controller action.
+**Context**: Confirm Ruby version compatibility for Rails 7.1.
 
-**Command** (Rails Generator):
+**Command** ([[commands/ruby-version-check]]):
 ```bash
-rails new vuln_app --skip-bundle && cd vuln_app
+ruby -v
 ```
 
-> Creates a basic Rails app. Then edit app/controllers/application_controller.rb to add:
-> ```ruby
-def vuln
-  redirect_to params[:redirect_url], allow_other_host: true
-end
-```
-> And config/routes.rb: `get '/vuln' => 'application#vuln'`. Run `bundle install`.
+> Displays the installed Ruby version. Expected: ruby 3.2.3 or similar.
 
-### Step 2: Start the Server
+### Step 2: Create New Rails App
 
-**Context**: Launch the Puma development server to host the vulnerable endpoint.
+**Context**: Generate a minimal app skipping unnecessary components.
 
-**Command** (Rails Server):
+**Command** ([[commands/rails-new-app]]):
 ```bash
-rails server -p 3000
+rails new disk_traversal_7_1 -G -M -C -A -J -T
 ```
 
-> Starts the server on localhost:3000. Test with a clean request: `curl -v http://localhost:3000/vuln?redirect_url=https://example.com` to confirm 302 with Location header.
+> Creates the app directory with flags to skip Git, minitest, CoffeeScript, Action Mailer, Spring, and tests.
+
+### Step 3: Install ActiveStorage
+
+**Context**: Add ActiveStorage migrations and configurations.
+
+**Command** ([[commands/rails-activestorage-install]]):
+```bash
+bin/rails active_storage:install
+```
+
+> Generates necessary files for Disk service setup.
+
+### Step 4: Migrate Database
+
+**Context**: Apply schema changes for ActiveStorage tables using SQLite in production.
+
+**Command** ([[commands/rails-db-migrate]]):
+```bash
+RAILS_ENV=production bin/rails db:migrate
+```
+
+> Runs migrations; defaults to SQLite if not specified otherwise.
+
+### Step 5: Configure and Start Server
+
+**Context**: Edit config/production.rb to set config.active_support.message_serializer = :json, then launch server.
+
+**Command** ([[commands/rails-server-start]]):
+```bash
+RAILS_ENV=production bundle exec rails s
+```
+
+> Starts server on port 3000; ensure config change is made manually before running.
 
 ## MITRE ATT&CK Mapping
 
@@ -99,15 +137,20 @@ rails server -p 3000
 
 ### Sub-Techniques
 
-- None
 
 ## Commands Used
 
-- None (uses Rails CLI commands)
+- [[commands/ruby-version-check]]
+- [[commands/rails-new-app]]
+- [[commands/rails-activestorage-install]]
+- [[commands/rails-db-migrate]]
+- [[commands/rails-server-start]]
 
 ## Tools Used
 
-- None
+- [[tools/Ruby]]
+- [[tools/Rails]]
+- [[tools/Bundler]]
 
 ## Tags
 

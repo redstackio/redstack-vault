@@ -1,17 +1,19 @@
 ---
-id: cmd-uuid-1
-data: subfinder -d example.com -o subdomains.txt
+data: subfinder -d bountypay.h1ctf.com -o subdomains.txt
 tags:
-  - recon
-  - dns
+  - reconnaissance
 type: command
-output: null
+output: >-
+  List of subdomains: app.bountypay.h1ctf.com, www.bountypay.h1ctf.com,
+  bountypay.h1ctf.com, software.bountypay.h1ctf.com, staff.bountypay.h1ctf.com,
+  api.bountypay.h1ctf.com
 executor: bash
 platforms:
   - Linux
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:31.222Z'
+updated_at: '2025-12-14T17:33:06.020Z'
+id: cf7b1450-f103-4b09-bebc-63114e0a5759
 verified: false
 validated: true
 submitted: true
@@ -21,38 +23,38 @@ submitted: true
 ## Command
 
 ```bash
-subfinder -d example.com -o subdomains.txt
+subfinder -d bountypay.h1ctf.com -o subdomains.txt
 ```
 
 ## Description
 
-This command uses Subfinder to enumerate subdomains of a target domain via passive sources like certificate transparency logs and search engines, useful for identifying potential attack surfaces in reconnaissance.
+Enumerates subdomains of the target domain using passive sources for initial reconnaissance.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-d` | Target domain to enumerate | Yes |
-| `-o` | Output file for subdomains | No (defaults to stdout) |
+| `-d` | Domain to enumerate | Yes |
+| `-o` | Output file | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-subfinder -d 8x8.com -o subdomains.txt
+subfinder -d bountypay.h1ctf.com -o subdomains.txt
 ```
 
 ### Advanced Usage
 
 ```bash
-subfinder -d 8x8.com -all -o subdomains.txt
+subfinder -d bountypay.h1ctf.com -all -o subdomains.txt
 ```
 
 ## Expected Output
 
-A text file listing discovered subdomains, e.g., staging.8x8.com, api.8x8.com.
+List of discovered subdomains saved to file.
 
 ## Related
 
-- [[Related Procedure: Identify Dangling DNS Records for Subdomain Takeover]]
+- [[tools/subfinder]]

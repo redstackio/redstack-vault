@@ -1,17 +1,16 @@
 ---
-data: rdoc --all
+id: cmd-uuid-001
+data: rdoc
 tags:
+  - rce
   - documentation
-  - xss
-  - rdoc
 type: command
 output: null
 executor: bash
 platforms:
   - Ruby
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:12.927Z'
-id: 8d220964-6f54-450f-835f-197fd231383a
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:07.893Z'
 verified: false
 validated: true
 submitted: true
@@ -21,41 +20,40 @@ submitted: true
 ## Command
 
 ```bash
-rdoc --all
+rdoc
 ```
 
 ## Description
 
-This command generates HTML documentation from Ruby source files using RDoc, processing comments into formatted output. In vulnerable versions, it enables stored XSS by failing to escape HTML in paragraph text.
+Generates documentation for Ruby code by parsing source files and configuration, including the .rdoc_options file as YAML. In vulnerable versions, this triggers unsafe deserialization leading to RCE when processing untrusted inputs.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `--all` | Processes all Ruby files in the current directory and subdirectories | Yes |
+| None (default) | Generates docs for current directory | No |
+| --all | Include all files | No |
+| -o DIR | Output directory | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-rdoc --all
+rdoc
 ```
-
-Generates docs for all .rb files.
 
 ### Advanced Usage
 
 ```bash
-rdoc --all --output doc --main example.rb
+rdoc --all -o ./docs
 ```
-
-Specifies output dir and main file.
 
 ## Expected Output
 
-Creates a 'doc' directory with HTML files, e.g., 'doc/example.html' containing unescaped content like `<p>x\[<script>alert(1);</script>\]</p>` if payload injected.
+Documentation files in the current or specified directory, with logs like 'Generating RDoc...' Potential RCE indicators include unexpected system commands or errors during parsing.
 
 ## Related
 
-- [[procedures/Exploit-Stored-XSS-in-RDoc]]
+- [[commands/gem-update-rdoc]]
+- [[procedures/Exploit-RDoc-YAML-Deserialization-for-RCE]]

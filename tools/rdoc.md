@@ -1,16 +1,19 @@
 ---
-url: 'https://github.com/ruby/rdoc'
+url: 'https://ruby.github.io/rdoc/'
 tags:
-  - documentation
-  - xss
   - ruby
+  - documentation
+  - rce
 type: tool
-verified: false
 platforms:
   - Ruby
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:12.924Z'
-id: 862eac1d-795a-49d2-9987-e9cb9e4356ab
+description: >-
+  Ruby Documentation generator vulnerable to deserialization RCE via
+  .rdoc_options and cache files
+id: b6f460f1-20e3-4741-b5a2-4ba3b061c8ce
+created_at: '2025-12-14T17:23:42.403Z'
+updated_at: '2025-12-14T17:23:42.403Z'
+verified: false
 validated: true
 submitted: true
 ---
@@ -20,28 +23,28 @@ submitted: true
 
 ## Overview
 
-RDoc is Ruby's standard documentation generator, converting source code comments into HTML, RI, or other formats. It's vulnerable to stored XSS in versions before 4.0.1 due to improper HTML escaping in paragraph handling, allowing script injection in generated docs.
+RDoc is Ruby's standard tool for generating documentation from source code, but vulnerable versions expose deserialization flaws leading to RCE when processing untrusted inputs.
 
 ## Description
 
-RDoc scans Ruby files for special comments (e.g., =begin blocks) and formats them into documentation. The tool is invoked via command line and outputs static HTML viewable in browsers, where XSS can execute JS for attacks like session theft. Commonly used in Ruby projects for auto-generating API docs.
+RDoc parses `.rdoc_options` with unsafe YAML and loads caches with Marshal, allowing gadget chain exploits for arbitrary code execution. Used in development workflows for repo documentation.
 
 ## Features
 
-- Feature 1: Parses Ruby comments into structured HTML with headings, paragraphs, and code blocks
-- Feature 2: Supports multiple output formats (HTML, RI, JSON)
-- Feature 3: Customizable via templates and flags for styling and content inclusion
+- Feature 1: YAML-based option loading
+- Feature 2: Marshal cache serialization
+- Feature 3: Integration with Ruby gems
 
 ## Installation
 
 ### Requirements
 
-- Ruby 1.8+ installed
+- Ruby 2.x or 3.x
 
 ### Install Commands
 
 ```bash
-# Typically bundled with Ruby; install via gem if needed
+# Via RubyGems
 gem install rdoc
 ```
 
@@ -55,27 +58,22 @@ rdoc --help
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `--all` | Process all files |
-| `--output DIR` | Specify output directory |
+| `-v, --version` | Show version |
+| `--op DIR` | Output directory |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-rdoc example.rb
+rdoc
 ```
-
-Generates docs for a single file.
 
 ### Example 2: Advanced Usage
 
 ```bash
-rdoc --all --output ./docs
+rdoc --op docs/
 ```
-
-Processes all files to a custom dir.
 
 ## MITRE ATT&CK Mapping
 
@@ -83,7 +81,8 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploitation for Client Execution]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
@@ -93,18 +92,24 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Presence of 'doc' directories with HTML files containing <script> tags
-- Log entries for 'rdoc' executions in build pipelines
-- Anomalous JS alerts when viewing generated docs
+- Monitor rdoc process spawns with untrusted inputs
+- Log deserialization errors in Ruby traces
 
 ## Related Procedures
 
-- [[procedures/Exploit-Stored-XSS-in-RDoc]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
+- [[tools/psych]]
 
 ## References
 
 - Official documentation: https://ruby.github.io/rdoc/
-- CVE-2013-0256 details: https://hackerone.com/reports/1977168
+- HackerOne Report: https://hackerone.com/reports/1187477

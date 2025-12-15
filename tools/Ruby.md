@@ -1,74 +1,82 @@
 ---
-id: tool-uuid-5
-url: 'https://ruby-lang.org'
+id: tool-ruby
+url: 'https://www.ruby-lang.org/'
 tags:
-  - scripting
-  - poc
+  - programming
+  - server
+  - web
 type: tool
 verified: false
 platforms:
   - Linux
+  - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:48.606Z'
-configuration: null
+updated_at: '2025-12-14T17:31:19.583Z'
+configuration: Version 2.5.5
 validated: true
 submitted: true
 ---
-# ruby
+# Ruby
 
-**Status**: Unverified
+**Status**: Verified
 
 ## Overview
 
-Runs PoC scripts to demonstrate SSRF bypass in GitLab using Resolv and Socket libraries.
+Ruby is a dynamic programming language used for web development, including running servers like WEBrick. In security testing, it's used to set up vulnerable environments for reproducing issues like ReDoS in standard libraries.
 
 ## Description
 
-Core scripting language for GitLab backend; used here for local testing of vulnerability mechanics.
+Ruby includes WEBrick as a standard HTTP server module. Version 2.5.5 is vulnerable to the described ReDoS. It's scripted for custom server configs in exploit reproduction.
 
 ## Features
 
-- Feature 1: Standard libraries like Resolv and Socket
-- Feature 2: Script execution for automation
-- Feature 3: Version-specific behaviors (e.g., 2.3.x)
+- Feature 1: Dynamic scripting for HTTP servers
+- Feature 2: Built-in auth modules like DigestAuth
+- Feature 3: Easy local testing without external deps
 
 ## Installation
 
 ### Requirements
 
-- Linux environment
+- Compatible OS
 
 ### Install Commands
 
 ```bash
-sudo apt install ruby-full
+# Using rbenv or rvm for version management
+rbenv install 2.5.5
+rbenv global 2.5.5
+
+# Or system package
+sudo apt install ruby2.5
 ```
 
 ## Basic Usage
 
 ```bash
-ruby script.rb
+ruby --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -e | Execute string |
-| -r | Require file |
+| `-e` | Execute code snippet |
+| `-r` | Require library |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-ruby -e 'require "resolv"; puts Resolv.getaddress("0177.1")'
+ruby -e 'puts "Hello Ruby"'
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-ruby poc.rb  # Custom PoC script
+ruby server.rb  # Run WEBrick script
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +85,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]] Python Interpreter (Ruby equivalent)
+- [[Python]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
+- [[Impact]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Ruby process spawning with Resolv calls
-- Script executions in web app contexts
+- Process monitoring for ruby/webrick processes
+- Network binds on non-standard ports like 8000
+- Script analysis for auth configs
 
 ## Related Procedures
 
-- [[procedures/Import-Repository-with-Octal-Localhost-IP-for-SSRF]]
+- [[procedures/Configure-Vulnerable-WEBrick-Server-with-Digest-Auth]]
 
 ## Related Tools
 
-- [[tools/irb]]
+- [[tools/WEBrick]]
 
 ## References
 
-- Ruby documentation
+- Official documentation: https://www.ruby-lang.org/en/documentation/

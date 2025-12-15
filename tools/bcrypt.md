@@ -1,15 +1,16 @@
 ---
-url: 'https://pypi.org/project/bcrypt/'
+url: 'https://pypi.org/project/bcrypt'
 tags:
   - hashing
 type: tool
 verified: false
 platforms:
   - Linux
-  - Python
+  - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:14.753Z'
-id: 830f09cf-119f-46f8-a579-8429bb4b10be
+updated_at: '2025-12-14T17:32:20.384Z'
+id: 839eeffa-a870-4f88-a774-c428534f7ce4
 validated: true
 submitted: true
 ---
@@ -19,23 +20,23 @@ submitted: true
 
 ## Overview
 
-Python library for bcrypt password hashing, used if verifying or generating hashes in the exploit.
+Python library for bcrypt password hashing and verification, used if leaked hashes need processing.
 
 ## Description
 
-Provides secure hashing for password-related operations, potentially for crafting valid resets or verifications.
+In the exploit, aids in handling any password-related operations post-leakage, though primarily for verification.
 
 ## Features
 
-- Feature 1: Secure PBKDF
+- Feature 1: Secure hashing
 - Feature 2: Salt generation
-- Feature 3: Hash verification
+- Feature 3: Compatibility with Node.js bcrypt
 
 ## Installation
 
 ### Requirements
 
-- Python3, libffi
+- Python 3, libffi
 
 ### Install Commands
 
@@ -46,12 +47,12 @@ pip3 install bcrypt
 ## Basic Usage
 
 ```bash
-python3 -c "import bcrypt; print('Installed')"
+python3 -c "import bcrypt; print(bcrypt.hashpw(b'pass', bcrypt.gensalt()))"
 ```
 
 ### Common Options
 
-N/A (library)
+N/A
 
 ## Examples
 
@@ -59,14 +60,14 @@ N/A (library)
 
 ```python
 import bcrypt
-hashed = bcrypt.hashpw('pass'.encode(), bcrypt.gensalt())
+hashed = bcrypt.hashpw(password, bcrypt.gensalt())
 ```
 
 ## MITRE ATT&CK Mapping
 
 ### Techniques
 
-- [[Unsecured Credentials]]
+- [[Credentials In Files]] Password Policy Discovery (adapted)
 
 ### Tactics
 
@@ -74,11 +75,10 @@ hashed = bcrypt.hashpw('pass'.encode(), bcrypt.gensalt())
 
 ## Detection
 
-- Rarely detected; monitor imports in scripts
+- Rarely indicative alone
 
 ## Related Procedures
 
-- [[procedures/Reset-Admin-Password-Using-Leaked-Token]]
 
 ## Related Tools
 
@@ -86,4 +86,4 @@ hashed = bcrypt.hashpw('pass'.encode(), bcrypt.gensalt())
 
 ## References
 
-- https://pypi.org/project/bcrypt/
+- PyPI bcrypt

@@ -1,9 +1,9 @@
 ---
-id: proc-reddit-xss-trigger-001
+id: proc-uber-xss-trigger-interaction
 tags:
-  - xss-execution
-  - event-handler
-  - client-side
+  - xss
+  - user-interaction
+  - oauth
 type: procedure
 tools: []
 tactics:
@@ -16,8 +16,8 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-13T23:56:19.891Z'
-skill_level: beginner
+updated_at: '2025-12-14T17:24:35.190Z'
+skill_level: intermediate
 impact_level: high
 detection_risk: medium
 sub_techniques: []
@@ -31,58 +31,50 @@ mitre_techniques:
 
 ## Summary
 
-This procedure triggers the execution of an injected JavaScript payload in a reflected XSS attack by performing a user interaction that activates the embedded HTML event handler on Reddit's sh.reddit.com page.
+This procedure induces a user to visit the malicious OAuth URL and interact with the consent buttons, triggering a server-side redirect to the javascript: URI and executing the XSS payload in the browser context.
 
 ## Description
 
-After the malicious URL is loaded, the onmouseover event handler is present in the DOM, typically on comment elements like 'see more' links. Scrolling to the bottom of the page and hovering over such an element executes the payload (e.g., alert(document.domain)), running arbitrary JavaScript in the victim's browser. This can lead to stealing cookies, keystrokes, or redirecting to phishing sites. The technique relies on social engineering to induce the hover action and is effective against unsanitized web APIs.
+Upon visiting the crafted URL, the Uber endpoint displays an authorization consent page. Clicking Allow or Deny causes the server to issue a 302 redirect via Location header to the unvalidated redirect_uri. In browsers like Opera Mini or Firefox with 302 handling disabled, this executes the embedded JS, such as alerting document.domain, enabling theft of session cookies or page manipulation for account hijacking.
 
 ## Requirements
 
-1. The page must have loaded the injected payload from the previous step
-2. Victim must scroll to the relevant page section
-3. Standard mouse input capability in the browser
+1. Crafted malicious URL from prior procedure
+2. Target user access to vulnerable browser
+3. Social engineering to get user to visit and click
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Strip or encode HTML attributes in API responses
-- Implement client-side validation to prevent event handler execution
-- Log and alert on unexpected JavaScript errors or popups in browser consoles
-- Educate users on avoiding suspicious links and hovering over unknown elements
+- Implement JS execution safeguards in redirect handling (e.g., open in new tab or validate URI before redirect)
+- Log and alert on consent interactions with suspicious redirect_uris
+- Educate users on phishing links in OAuth flows
+- Browser-level: Enable strict redirect policies
 
 ## Objectives
 
-1. Activate the onmouseover event to execute JavaScript
-2. Demonstrate arbitrary code execution in the browser context
-3. Enable further attacks like data exfiltration
+1. Initiate OAuth flow to reach consent stage
+2. Trigger redirect on button click
+3. Execute JS payload for proof-of-concept or exploitation
 
 ## Instructions
 
-### Step 1: Load the Injected Page
+### Step 1: Distribute and Visit URL
 
-**Context**: Ensure the page with the reflected payload is fully rendered.
+**Context**: Lure the user to the malicious URL to start the OAuth process.
 
-Navigate to the crafted URL from the injection procedure.
+Send the URL via email, link, or messaging. User visits https://login.uber.com/oauth/authorize?... in their browser.
 
-Wait for the comments to load.
+> Expected: Uber consent page loads, prompting for Allow/Deny.
 
-### Step 2: Scroll to Trigger Element
+### Step 2: Interact to Trigger Redirect
 
-**Context**: Position the cursor over the vulnerable element.
+**Context**: Simulate or observe user clicking the button to fire the redirect.
 
-Scroll down to the end of the comments section where 'see more' options appear.
+Click Allow or Deny on the consent page.
 
-### Step 3: Perform Hover Interaction
-
-**Context**: Trigger the event handler to execute the payload.
-
-Move the mouse cursor over the 'see more' link.
-
-> This activates onmouseover=alert(document.domain), popping an alert with the domain name.
-
-**Expected Output**: Alert dialog displays 'sh.reddit.com' or similar.
+> Expected: Server responds with Location: javascript://... header; browser executes alert(document.domain) in vulnerable setups.
 
 ## MITRE ATT&CK Mapping
 
@@ -106,5 +98,5 @@ Move the mouse cursor over the 'see more' link.
 ## Tags
 
 - [[xss]]
-- [[Execution]]
-- [[browser]]
+- [[user-interaction]]
+- [[oauth]]

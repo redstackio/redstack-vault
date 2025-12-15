@@ -1,8 +1,6 @@
 ---
-id: tool-nano-revive
-url: null
+url: ''
 tags:
-  - editor
   - text-editor
 type: tool
 verified: false
@@ -10,7 +8,8 @@ platforms:
   - Linux
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:04.905Z'
+updated_at: '2025-12-14T17:30:35.213Z'
+id: 0b4c942b-aa17-4e28-b088-5b71a76a364b
 validated: true
 submitted: true
 ---
@@ -20,29 +19,29 @@ submitted: true
 
 ## Overview
 
-Nano is a simple, user-friendly command-line text editor for creating and editing files, such as saving captured HTTP requests for security testing.
+Nano is a simple, user-friendly command-line text editor for Unix-like systems, commonly used in security testing to quickly edit and save files like exported HTTP requests.
 
 ## Description
 
-In offensive security workflows, nano is used to quickly edit and save files like testsql.txt containing Burp-exported requests for sqlmap input. It's lightweight and ideal for Unix-like environments during penetration testing.
+It's lightweight and ideal for creating or modifying small files during pentests, such as saving Burp Suite requests for SQLMap. No advanced features, but perfect for ad-hoc edits in offensive workflows.
 
 ## Features
 
-- Feature 1: Simple keyboard shortcuts for editing (Ctrl+O save, Ctrl+X exit)
-- Feature 2: Syntax highlighting for various file types
-- Feature 3: Search and replace functionality
+- Feature 1: Syntax highlighting for common formats
+- Feature 2: Search and replace functionality
+- Feature 3: Easy save/exit shortcuts
 
 ## Installation
 
 ### Requirements
 
-- Standard on most Linux distros; no additional deps
+- Standard on most Linux distros
 
 ### Install Commands
 
 ```bash
 # On Ubuntu/Debian
-sudo apt update && sudo apt install nano
+sudo apt install nano
 ```
 
 ## Basic Usage
@@ -55,8 +54,8 @@ nano filename.txt
 
 | Option | Description |
 |--------|-------------|
-| -w | Disable word wrapping |
-| -B | Backup original file |
+| `-w` | Disable word wrapping |
+| `-l` | Show line numbers |
 
 ## Examples
 
@@ -65,6 +64,7 @@ nano filename.txt
 ```bash
 nano testsql.txt
 ```
+Paste content and save with Ctrl+O.
 
 ### Example 2: Advanced Usage
 
@@ -78,24 +78,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
+- [[Collection]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- File modification timestamps in logs
-- Process monitoring for nano executions in security contexts
+- Process monitoring for nano executions
+- File modification timestamps
 
 ## Related Procedures
 
-- [[procedures/Save-Captured-Request-for-Exploitation]]
+- [[procedures/Save-Burp-Request-to-File-with-Nano]]
 
 ## Related Tools
 
-- [[Related Tool: vim]]
+- [[tools/Burp-Suite]]
 
 ## References
 

@@ -1,5 +1,4 @@
 ---
-id: proc-access-shopify-settings
 tags:
   - shopify
   - admin-access
@@ -8,19 +7,20 @@ tools: []
 tactics:
   - '[[Initial Access]]'
 commands: []
-verified: false
 platforms:
   - Web
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Valid Accounts]]'
-updated_at: '2025-12-13T23:52:43.984Z'
 skill_level: beginner
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: e056ed7a-805f-414d-9ffb-cceb5c0a0acb
+created_at: '2025-12-14T17:30:18.198Z'
+updated_at: '2025-12-14T17:30:18.198Z'
+verified: false
 validated: true
+submitted: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
@@ -30,48 +30,52 @@ mitre_techniques:
 
 ## Summary
 
-This procedure outlines navigating to the Shopify admin settings general page to access editable store address fields, requiring only basic Settings permissions.
+This procedure outlines how to log in and navigate to the Shopify admin settings page to access the store address configuration, serving as the entry point for injecting payloads in subsequent steps.
 
 ## Description
 
-In a Shopify environment, the admin panel allows users with limited permissions to modify store details. This step targets the General settings to reach the vulnerable address field. It assumes valid credentials and focuses on legitimate navigation to avoid detection.
+In a Shopify environment, admin access is required to modify store settings. This step involves using valid credentials to reach the general settings where the vulnerable address field is located. It assumes the attacker has obtained admin privileges, either legitimately or via prior compromise. The procedure targets https://*.myshopify.com/admin/settings/general and sets up for stored XSS exploitation.
 
 ## Requirements
 
-1. Valid Shopify account with Settings permissions
-2. Web browser with internet access
-3. No additional tools needed
+1. Valid Shopify admin credentials for the target store.
+2. Web browser with internet access.
+3. No additional tools needed.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement role-based access controls to limit settings modifications
-- Monitor admin panel access logs for unusual navigation patterns
+- Implement multi-factor authentication (MFA) for admin logins.
+- Monitor admin login attempts from unusual IPs.
 
 ## Objectives
 
-1. Reach the store address configuration page
-2. Verify editable fields are accessible
-3. Prepare for payload injection without triggering alerts
+1. Gain access to the admin dashboard.
+2. Navigate to store settings.
+3. Prepare for payload injection.
 
 ## Instructions
 
-### Step 1: Log In to Shopify Admin
+### Step 1: Log In to Admin Dashboard
 
-**Context**: Authenticate to gain access to the admin interface.
+**Context**: Use credentials to authenticate and access the admin interface.
 
-Log in using provided credentials at https://*.myshopify.com/admin.
+**Command** (Manual Browser Action):
 
-> Expected: Dashboard loads successfully.
+Open https://*.myshopify.com/admin and enter username/password.
+
+> Successful login redirects to the dashboard. Expected output: Admin homepage loads.
 
 ### Step 2: Navigate to General Settings
 
-**Context**: Direct access to the page containing the vulnerable field.
+**Context**: Access the specific page for store address configuration.
 
-Append `/settings/general` to the admin URL or click Settings > General.
+**Command** (Manual Browser Action):
 
-> Expected: Page displays store information fields, including address inputs.
+Click Settings > General or directly visit https://*.myshopify.com/admin/settings/general.
+
+> Expected output: Page loads with store details form, including address fields.
 
 ## MITRE ATT&CK Mapping
 

@@ -1,10 +1,10 @@
 ---
-id: tool-libcurl-001
+id: tool-libcurl
 url: 'https://curl.se/libcurl/'
 tags:
   - library
   - http
-  - url-parse
+  - url-parsing
 type: tool
 verified: false
 platforms:
@@ -12,8 +12,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.513Z'
-configuration: Version 7.68.0-1ubuntu2.24 on Ubuntu 20.04
+updated_at: '2025-12-14T17:29:36.037Z'
 validated: true
 submitted: true
 ---
@@ -23,28 +22,28 @@ submitted: true
 
 ## Overview
 
-libcurl is a client-side URL transfer library providing robust HTTP request capabilities; central to this vulnerability due to inconsistent IPv6 zone ID parsing.
+libcurl is a client-side URL transfer library for C/C++ applications; affected versions omit IPv6 zone IDs during parsing, leading to SSRF and bypass in URL-fetching apps.
 
 ## Description
 
-Used in applications for URL validation and fetching, libcurl strips zone identifiers from IPv6 literals (e.g., [fe80::1%eth0] becomes [fe80::1]), enabling SSRF by default interface routing. Tested via custom C code; alternatives like Go net/url handle correctly.
+Provides APIs like CURLU for URL manipulation (curl_url_set/get for CURLUPART_HOST/ZONEID). Alternatives include Rust URL parser, Go net/url, Python urllib/urllib3, which preserve zones. Used in web apps for HTTP requests.
 
 ## Features
 
-- Feature 1: Multi-protocol support including HTTP/HTTPS.
-- Feature 2: URL parsing via CURLU API.
-- Feature 3: Interface binding for connections.
+- Feature 1: Multi-protocol support including HTTP over IPv6
+- Feature 2: URL parsing and component extraction
+- Feature 3: Easy integration in C applications
 
 ## Installation
 
 ### Requirements
 
-- C compiler and development headers.
+- Development headers
 
 ### Install Commands
 
 ```bash
-# Ubuntu
+# On Ubuntu
 apt install libcurl4-openssl-dev
 ```
 
@@ -53,31 +52,30 @@ apt install libcurl4-openssl-dev
 ```bash
 # In C code
 #include <curl/curl.h>
-CURL *curl = curl_easy_init();
+CURLU *url = curl_url();
+curl_url_set(url, CURLUPART_URL, "http://[fe80::1%eth0]/", 0);
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `CURLUPART_HOST` | Hostname parsing |
-| `CURLOPT_URL` | Set URL for request |
+| `CURLUPART_HOST` | Hostname part |
+| `CURLUPART_ZONEID` | Zone ID part |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```c
-curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-curl_easy_perform(curl);
+curl_url_get(url, CURLUPART_HOST, &host, 0);
 ```
 
 ### Example 2: Advanced Usage
 
-```c
-// Parse IPv6 URL
-CURLU *uh = curl_url();
-curl_url_set(uh, CURLUPART_URL, "http://[fe80::1%eth0]/", 0);
+```bash
+# Compile with -lcurl
+gcc test.c -o test -lcurl
 ```
 
 ## MITRE ATT&CK Mapping
@@ -86,21 +84,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Cloud Instance Metadata API]] Unsecured Web Services
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Collection]] Collection
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Static analysis for libcurl-linked binaries.
-- Runtime monitoring of parsing anomalies.
+- Static analysis for libcurl linking in binaries
+- Runtime monitoring for CURLU API calls
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
@@ -109,4 +115,5 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: https://curl.se/libcurl/c/libcurl-tutorial.html
+- Official documentation: https://curl.se/libcurl/c/
+- HackerOne: https://hackerone.com/reports/2814750

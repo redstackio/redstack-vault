@@ -1,9 +1,9 @@
 ---
-id: p1b2c3d4-e5f6-7890-abcd-ef1234567893
 tags:
   - xss
-  - execution
-  - admin-compromise
+  - trigger
+  - admin-exploit
+  - wordpress
 type: procedure
 tactics:
   - '[[Execution]]'
@@ -13,14 +13,14 @@ platforms:
   - Web
   - WordPress
 submitted: true
-created_at: '2023-10-01T12:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:08.118Z'
+updated_at: '2025-12-14T17:28:51.819Z'
 skill_level: intermediate
 impact_level: high
-detection_risk: medium
 sub_techniques: []
+id: 8a77179b-815c-49d6-8612-1ffdc737b6b3
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -31,57 +31,51 @@ mitre_techniques:
 
 ## Summary
 
-This procedure triggers the stored XSS payload by accessing the SupportFlow admin ticket list, where messages are rendered unescaped, leading to JavaScript execution in the admin's browser context.
+This procedure triggers the stored XSS payload by viewing the admin tickets table, executing JavaScript in the privileged admin browser context for potential session hijacking or data exfiltration.
 
 ## Description
 
-The vulnerability stems from `class-supportflow-admin.php` line 1175, where ticket messages are output without `esc_html()` in the admin table at `/wp-admin/edit.php?post_type=sf_ticket`. As an admin or editor views the list, the payload executes, potentially enabling session hijacking or data exfiltration. This step requires admin access and assumes the payload is already stored. Impact includes arbitrary code execution with admin privileges (CVSS 4.8).
+Once the payload is stored, accessing the admin tickets list at `/wp-admin/edit.php?post_type=sf_ticket` causes the plugin's `class-supportflow-admin.php` (line 1175) to output the message without escaping, rendering the `<script>` tag and executing it. This occurs in the Same-Origin Policy context of the admin area, allowing access to admin cookies, DOM manipulation, or redirects to phishing sites.
 
 ## Requirements
 
-1. Admin or editor role on the WordPress site
-2. Stored XSS payload in a ticket from prior steps
-3. Browser session as the target admin
+1. Admin access to the WordPress dashboard
+2. Previously injected ticket with XSS payload
+3. Vulnerable SupportFlow version without patches
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Apply output escaping like `esc_html()` in admin table rendering
-- Patch the plugin to fix unescaped outputs
-- Monitor admin access logs for anomalous JavaScript alerts or errors
+- Patch the plugin or apply custom escaping to table outputs
+- Implement XSS auditors or browser extensions for admins
+- Monitor admin access logs for anomalous JS execution
 
 ## Objectives
 
-1. Execute stored JavaScript in high-privilege context
-2. Achieve arbitrary code execution for further compromise
-3. Demonstrate impact on admin session security
+1. Execute the stored payload in admin browser
+2. Achieve code execution for theft or escalation
+3. Validate vulnerability exploitation
 
 ## Instructions
 
 ### Step 1: Log In as Admin
 
-**Context**: Gain access to the WordPress admin dashboard with appropriate roles.
+**Context**: Ensure privileged access to the dashboard.
 
-Log in at `/wp-login.php` using admin credentials.
+Navigate to `/wp-login.php` and authenticate with admin credentials.
 
-> Ensure the session is active and no CSP blocks JavaScript.
+### Step 2: Access Tickets List
 
-### Step 2: Navigate to Ticket List
+**Context**: Load the page where the unescaped output occurs.
 
-**Context**: Access the vulnerable admin page to render the ticket table.
-
-Go to `/wp-admin/edit.php?post_type=sf_ticket`.
-
-> The table displays tickets, including unescaped messages from the database.
+Go to `/wp-admin/edit.php?post_type=sf_ticket` to view the table of tickets.
 
 ### Step 3: Observe Execution
 
-**Context**: View the page to trigger the payload in the message column.
+**Context**: Confirm the payload triggers without user interaction beyond page load.
 
-Locate the injected ticket; the payload should execute immediately upon rendering.
-
-> Expect an alert('XSS') or custom effects; inspect console for errors if it fails.
+The message column renders the script, popping an alert or sending data to an attacker server. Check browser console for execution confirmation.
 
 ## MITRE ATT&CK Mapping
 
@@ -104,6 +98,7 @@ Locate the injected ticket; the payload should execute immediately upon renderin
 
 ## Tags
 
-- stored-xss
-- admin-trigger
-- javascript-execution
+- xss
+- trigger
+- admin-exploit
+- wordpress

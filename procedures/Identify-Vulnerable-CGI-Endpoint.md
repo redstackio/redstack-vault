@@ -1,104 +1,111 @@
 ---
 tags:
-  - recon
-  - web
+  - reconnaissance
+  - web-endpoint
   - cgi
 type: procedure
-tools: []
+tools:
+  - '[[tools/curl]]'
 tactics:
-  - '[[Initial Access]]'
-commands: []
+  - '[[Discovery]]'
+commands:
+  - '[[commands/curl-directory-traversal-test]]'
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-updated_at: '2025-12-13T23:52:39.002Z'
+  - '[[File and Directory Discovery]]'
+updated_at: '2025-12-14T17:26:05.668Z'
+skill_level: intermediate
+impact_level: low
+detection_risk: low
 sub_techniques: []
-id: e323df7a-d169-4bb0-af2f-1f6cd37f7cba
+id: 7792c5be-76eb-42ee-951f-b356bc8fb1a6
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Discovery]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
+  - '[[File and Directory Discovery]]'
 ---
-# Identify Vulnerable CGI Endpoint
+# Identify-Vulnerable-CGI-Endpoint
 
 ## Summary
 
-This procedure locates the /cgi-bin/PasswordCreate.pl script, which handles password creation forms with vulnerable email parameters in GET and POST methods.
+This procedure involves manually inspecting a web application to locate CGI script endpoints that accept directory listing parameters, such as the DIR parameter in a DoD web app's display_directory CGI script, setting the stage for path traversal exploitation.
 
 ## Description
 
-In web applications using CGI scripts, endpoints like PasswordCreate.pl often process user inputs without proper validation. This step involves discovering the script through common paths or fuzzing, confirming it accepts email parameters that are reflected or executed server-side. The target environment is a web server running Perl CGI, typically on Linux, with no authentication for the form.
+In this attack scenario, the target is a public-facing web application on a Linux server running CGI scripts. By browsing multiple pages, attackers identify hidden or referenced endpoints like /aerosol-bin/███████/display_directory_████_t.cgi that process user-supplied directory paths without validation. This reconnaissance step reveals the attack surface for subsequent traversal tests, potentially exposing the entire server filesystem. Prerequisites include direct HTTP access to the site; no authentication is needed.
 
 ## Requirements
 
-1. Network access to the target web server
-2. Tools like curl or browser for probing
-3. Knowledge of common CGI paths (/cgi-bin/)
+1. Web browser or command-line tool like curl for probing
+2. Knowledge of the target domain and basic web navigation
+3. Network connectivity to the public-facing web server
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Restrict access to /cgi-bin/ directories
-- Log all requests to CGI scripts for anomaly detection
-- Use WAF to block suspicious path traversals
+- Implement web application firewalls (WAF) to monitor for unusual endpoint access patterns
+- Log all CGI script invocations and parameter values for anomaly detection
+- Restrict CGI execution to sanitized inputs only
 
 ## Objectives
 
-1. Confirm the existence of the vulnerable endpoint
-2. Identify input parameters (email in GET/POST)
-3. Establish baseline response behavior
+1. Locate exploitable CGI endpoints accepting directory parameters
+2. Confirm parameter usage across application pages
+3. Prepare for traversal testing without alerting defenses
 
 ## Instructions
 
-### Step 1: Probe for CGI Directory
+### Step 1: Browse Application Pages
 
-**Context**: Check if /cgi-bin/ is accessible and list potential scripts.
+**Context**: Navigate the target web application to find references to the vulnerable CGI script.
 
-**Command** (Manual GET Request):
+**Command** ([[commands/curl-directory-traversal-test]]):
 ```bash
-curl http://target/cgi-bin/
+curl "https://target.gov/" | grep -i "display_directory"
 ```
 
-> This lists available CGI scripts; look for PasswordCreate.pl.
+> This command fetches the homepage and greps for script references. Expected output includes paths like /aerosol-bin/███████/display_directory_████_t.cgi. Manually visit linked pages to confirm DIR parameter presence.
 
-### Step 2: Test Endpoint Functionality
+### Step 2: Verify Endpoint Accessibility
 
-**Context**: Send a benign request to confirm email parameter handling.
+**Context**: Test the identified endpoint with a benign directory to ensure it responds.
 
-**Command** (Simple GET):
+**Command** ([[commands/curl-directory-traversal-test]]):
 ```bash
-curl "http://target/cgi-bin/PasswordCreate.pl?email=test@example.com&ibm-submit=Submit"
+curl "https://target.gov/aerosol-bin/███████/display_directory_████_t.cgi?DIR=./"
 ```
 
-> Expected output: Form response or error reflecting the email.
+> This lists the current directory if functional. Expected output: A safe directory listing within the web root, confirming the endpoint is active.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Discovery]]
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[File and Directory Discovery]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
+- [[commands/curl-directory-traversal-test]]
 
 ## Tools Used
 
+- [[tools/curl]]
 
 ## Tags
 
-- [[recon]]
+- [[Reconnaissance]]
 - [[web]]
 - [[cgi]]

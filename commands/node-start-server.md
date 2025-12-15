@@ -1,16 +1,16 @@
 ---
 data: node server.js
 tags:
-  - server-start
-  - node-js
+  - launch
+  - server
 type: command
 output: null
 executor: bash
 platforms:
   - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:13.959Z'
-id: ec314718-32ae-4ff8-a982-39bb71e01660
+updated_at: '2025-12-14T17:23:54.761Z'
+id: 2c959554-e297-49b0-a487-3aec5e93a19d
 verified: false
 validated: true
 submitted: true
@@ -25,13 +25,13 @@ node server.js
 
 ## Description
 
-Executes the Node.js script to launch the tianma-static server.
+Executes the vulnerable Fastify server script using the Node.js runtime, starting the web server on port 3000.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `server.js` | Script file | Yes |
+| server.js | Path to the server script | Yes |
 
 ## Examples
 
@@ -44,13 +44,13 @@ node server.js
 ### Advanced Usage
 
 ```bash
-node --max-old-space-size=4096 server.js
+node --inspect server.js
 ```
 
 ## Expected Output
 
-Server starts, outputs listening message; accessible at http://localhost:3000.
+Server listening on http://localhost:3000; logs indicate successful startup.
 
 ## Related
 
-- [[commands/create-server-script]]
+- [[Related Procedure: Launch-and-Exploit-Fastify-Server-for-RCE]]

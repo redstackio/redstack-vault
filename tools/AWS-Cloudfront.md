@@ -1,52 +1,46 @@
 ---
-id: tool-uuid-001
-url: 'https://aws.amazon.com/cloudfront/'
+id: tool-aws-cloudfront
+url: 'https://aws.amazon.com/cloudfront/custom-ssl-domains/'
 tags:
-  - cloud
   - cdn
-  - exploit
+  - takeover
 type: tool
 verified: false
 platforms:
   - AWS
   - Cloud
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:38:39.993Z'
+updated_at: '2025-12-14T17:31:43.033Z'
 validated: true
 submitted: true
 ---
-# AWS CloudFront
+# AWS-Cloudfront
 
 **Status**: Unverified
 
 ## Overview
 
-AWS CloudFront is a content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency. In security testing, it's commonly used to exploit subdomain takeovers via dangling CNAME records, allowing attackers to host arbitrary content on victim domains.
+Amazon's CDN service for distributing content, exploited here by creating distributions to claim dangling hostnames for traffic hijacking.
 
 ## Description
 
-CloudFront enables edge caching and distribution from origins like S3. For offensive security, attackers create distributions with alternate domain names matching vulnerable subdomains, claiming control without owning the domain. Features include global edge locations, HTTPS support, and integration with AWS services. In takeover scenarios, it's abused due to lax validation on CNAMEs.
+Cloudfront allows adding custom CNAMEs to distributions, enabling subdomain takeovers when originals are unclaimed.
 
 ## Features
 
-- Feature 1: Alternate Domain Names (CNAMEs) for custom subdomains
-- Feature 2: Integration with S3/EC2 origins for hosting PoC content
-- Feature 3: Automatic HTTPS with ACM certificates (though not required for basic takeovers)
+- Feature 1: Global edge locations
+- Feature 2: Custom domain support
+- Feature 3: HTTPS with ACM
 
 ## Installation
 
 ### Requirements
 
-- AWS account with IAM permissions for CloudFront
-- AWS CLI installed for automation (optional)
+- AWS account
 
 ### Install Commands
 
-```bash
-# Install AWS CLI
-pip install awscli
-aws configure
-```
+Web console or AWS CLI: pip install awscli
 
 ## Basic Usage
 
@@ -58,21 +52,17 @@ aws cloudfront create-distribution --distribution-config file://config.json
 
 | Option | Description |
 |--------|-------------|
-| `--distribution-config` | JSON file defining distribution settings |
-| `--profile` | AWS profile for credentials |
-| `--region` | AWS region (CloudFront is global) |
+| --aliases | Add CNAMEs |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Create a distribution via console or CLI for a simple S3 origin.
+Create via console: New Distribution > Origin Domain > CNAMEs
 
 ### Example 2: Advanced Usage
 
-```bash
-aws cloudfront create-distribution --distribution-config '{"Origins": {"Quantity":1,"Items":[{"Id":"S3-origin","DomainName":"bucket.s3.amazonaws.com","CustomOriginConfig":{"HTTPPort":80}}]}, "Aliases": {"Quantity":1,"Items":["rider.uber.com"]}}'
-```
+CLI for scripting takeovers
 
 ## MITRE ATT&CK Mapping
 
@@ -80,29 +70,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[T1133.003]] Cloud Services
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for new CloudFront distributions with external CNAMEs via AWS CloudTrail
-- Scan DNS for dangling records pointing to cloudfront.net
-- Alert on anomalous traffic to subdomains from CloudFront edge locations
+- New distributions with external CNAMEs
+- AWS CloudTrail logs
 
 ## Related Procedures
 
+- [[procedures/Create-AWS-Cloudfront-Distribution-for-Takeover]]
 
 ## Related Tools
 
-- [[AWS-S3]]
-- [[AWS-CLI]]
 
 ## References
 
-- Official documentation: https://docs.aws.amazon.com/cloudfront/
-- Related resources: https://hackerone.com/reports/175070
+- AWS docs

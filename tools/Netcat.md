@@ -1,9 +1,10 @@
 ---
-id: tool-netcat-001
+id: tool-netcat
 url: 'https://nc110.sourceforge.net/'
 tags:
   - network
-  - utility
+  - shell
+  - listener
 type: tool
 verified: false
 platforms:
@@ -11,9 +12,10 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:10.535Z'
+updated_at: '2025-12-14T17:32:57.507Z'
 validated: true
 submitted: true
+---
 ---
 # netcat
 
@@ -21,23 +23,23 @@ submitted: true
 
 ## Overview
 
-Netcat (nc) is a versatile networking utility for reading/writing data across TCP/UDP connections, commonly used in security testing to create listeners for verifying exploits like SSRF.
+Netcat (nc) is a versatile networking utility for reading/writing data across TCP/UDP, commonly used in security testing for reverse shells and port scanning.
 
 ## Description
 
-Netcat enables port scanning, file transfer, and simple servers/clients. In offensive security, it's ideal for setting up quick listeners to confirm server requests without complex setups. Supports IPv4/IPv6 and basic scripting.
+In offensive operations, netcat excels at creating listeners for reverse shells, transferring files, or simple port forwarding. Here, it's used to catch shells from RCE exploits in environments like LGTM sandboxes.
 
 ## Features
 
-- Feature 1: TCP/UDP listening and connecting
-- Feature 2: Data piping for banners or payloads
-- Feature 3: Port scanning capabilities
+- Feature 1: TCP/UDP support for connections
+- Feature 2: Shell execution over network (-e flag)
+- Feature 3: Verbose logging and port binding
 
 ## Installation
 
 ### Requirements
 
-- Standard Unix-like system or Windows with nc.exe
+- Standard Unix-like system
 
 ### Install Commands
 
@@ -45,8 +47,8 @@ Netcat enables port scanning, file transfer, and simple servers/clients. In offe
 # On Debian/Ubuntu
 apt install netcat
 
-# On macOS (built-in or brew install netcat)
-brew install netcat
+# On Alpine
+apk add netcat-openbsd
 ```
 
 ## Basic Usage
@@ -61,23 +63,21 @@ nc --help
 |--------|-------------|
 | `-l` | Listen mode |
 | `-p` | Specify port |
-| `-v` | Verbose output |
+| `-v` | Verbose |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-nc -l 81
+nc -vlp 4444
 ```
-Listen on port 81 for connections.
 
 ### Example 2: Advanced Usage
 
 ```bash
-nc -l -p 81 -v
+nc -l -p 4444 -k  # Persistent listener
 ```
-Verbose listener on port 81.
 
 ## MITRE ATT&CK Mapping
 
@@ -85,32 +85,33 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Network Service Scanning]] Network Service Scanning
-- [[Encrypted Channel]] Encrypted Channel
+- [[Unix Shell]] Unix Shell
+- [[Protocol Tunneling]] Protocol Tunneling
 
 ### Tactics
 
-- [[Discovery]] Discovery
-- [[Command and Control]] Command and Control
+- [[Execution]] Execution
+- [[Lateral Movement]] Lateral Movement
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing ephemeral port listening
-- Unusual inbound connections on non-standard ports
-- Process monitoring for nc.exe or nc binary
+- Network logs showing nc processes on high ports
+- IDS signatures for netcat traffic patterns
+- Process monitoring for nc binaries
 
 ## Related Procedures
 
-- [[procedures/Exploit-XXE-for-SSRF-via-External-Resource-Fetch]]
 
 ## Related Tools
 
-- [[Related Tool 1|socat]]
-- [[Related Tool 2|tcpdump]]
+- [[tools/SSH]]
+- [[tools/socat]]
 
 ## References
 
 - Official documentation: https://nc110.sourceforge.net/
-- Related resources: man nc
+- Related resources: Man pages for nc
+
+---

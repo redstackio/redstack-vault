@@ -1,14 +1,15 @@
 ---
+id: tool-uuid-1
 url: 'https://notepad-plus-plus.org/'
 tags:
   - editor
+  - text
 type: tool
 verified: false
 platforms:
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:18.560Z'
-id: ae8fd5f0-da65-4abd-ad76-9e6ae12d1f15
+updated_at: '2025-12-14T17:27:42.458Z'
 validated: true
 submitted: true
 ---
@@ -18,54 +19,52 @@ submitted: true
 
 ## Overview
 
-Notepad++ is a free, open-source text editor for Windows, commonly used in security testing for crafting PoC files like malicious HTML for XSS/CSRF demos.
+Notepad++ is a free, open-source text editor for Windows, commonly used in security testing for editing scripts, PoCs, and configuration files due to its syntax highlighting and plugin support.
 
 ## Description
 
-It supports syntax highlighting for HTML/JS, URL encoding, and easy saving of test files. In offensive ops, it's ideal for quick edits without complex IDE overhead.
+Notepad++ supports multiple languages with features like auto-completion, macros, and regex search/replace, making it ideal for crafting HTML PoCs or payloads in offensive operations. In this context, it's used to build and save the CSRF HTML file with embedded XSS.
 
 ## Features
 
-- Syntax highlighting for web languages.
-- Plugins for encoding/decoding (e.g., URL encode payloads).
-- Multi-tab editing for iterative PoC development.
+- Feature 1: Syntax highlighting for HTML, JS, PHP.
+- Feature 2: Multi-document tab interface.
+- Feature 3: Plugin ecosystem for advanced editing.
 
 ## Installation
 
 ### Requirements
 
-- Windows OS.
+- Windows OS (7 or later).
 
 ### Install Commands
 
 ```bash
-# Download from official site; no CLI install needed
-# Run installer as admin
+# Download from official site or use winget
+winget install Notepad++.Notepad++
 ```
 
 ## Basic Usage
 
 ```bash
-# Launch via GUI; open file > edit > save
-notepad++.exe poc.html
+tool-name --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Plugins > MIME Tools > URL Encode | Encode payloads for arg2 |
-| View > Show Symbol > Show All Characters | Verify encoding |
+| N/A | GUI-based; no CLI options for basic use |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open Notepad++, paste HTML form, encode arg2 payload, save as poc.html.
+Open Notepad++ and create a new file for HTML PoC editing.
 
 ### Example 2: Advanced Usage
 
-Use Plugins > HashTools to generate obfuscated JS if needed.
+Use Find & Replace with regex to encode payloads.
 
 ## MITRE ATT&CK Mapping
 
@@ -83,18 +82,18 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- File modifications with timestamps matching PoC creation.
-- Presence of notepad++.exe in process lists during testing.
+- Process monitoring for notepad++.exe in security contexts.
+- File creation logs for .html PoCs.
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[tools/VS-Code]]
 - [[tools/Vim]]
+- [[tools/VS-Code]]
 
 ## References
 
 - Official documentation: https://notepad-plus-plus.org/doc/
-- Related resources: Security PoC guides on GitHub
+- Related resources: Security PoC guides.

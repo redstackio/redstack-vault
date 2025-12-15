@@ -1,16 +1,15 @@
 ---
-url: ''
+url: 'https://developer.mozilla.org/en-US/docs/Web/API/Console'
 tags:
   - debugging
-  - console
-  - csp-analysis
+  - injection
 type: tool
 verified: false
 platforms:
   - Web
-id: 201b7791-c625-4cbd-8d1b-14e4f0e60234
-created_at: '2025-12-13T23:56:03.560Z'
-updated_at: '2025-12-13T23:56:03.560Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:17.936Z'
+id: 0611d57b-3e0f-4c12-8b50-e9b74558e13a
 validated: true
 submitted: true
 ---
@@ -20,48 +19,56 @@ submitted: true
 
 ## Overview
 
-The Browser Developer Console is a built-in web debugging tool for inspecting errors, logs, and security violations like CSP blocks during XSS testing.
+The Browser Developer Console is a built-in debugging tool in modern web browsers (Chrome, Firefox, etc.) used for inspecting, debugging, and injecting JavaScript code during security testing, such as CSP bypass demonstrations.
 
 ## Description
 
-Available in browsers like Chrome and Firefox, the console tab displays runtime errors, including CSP refusals for script execution. In security testing, it's essential for verifying failed exploits, such as javascript: URI blocks in Stripe. No installation needed; accessed via F12 or right-click inspect.
+This tool provides real-time interaction with the Document Object Model (DOM), allowing execution of JavaScript payloads to manipulate page elements, test policies like CSP, and simulate attacks like dynamic resource loading or redirects. It's essential for client-side web vulnerability assessment without external dependencies.
 
 ## Features
 
-- Feature 1: Real-time logging of JavaScript errors and CSP violations
-- Feature 2: Filtering for security policy messages
-- Feature 3: Network and console inspection for payload analysis
+- Feature 1: JavaScript execution and error logging.
+- Feature 2: DOM inspection and manipulation.
+- Feature 3: Network request monitoring for policy violations.
 
 ## Installation
 
 ### Requirements
 
-- Modern web browser (Chrome, Firefox, Edge)
+- Modern web browser (no installation needed; built-in).
 
 ### Install Commands
 
-Built-in; no installation.
+N/A; access via F12 or right-click > Inspect.
 
 ## Basic Usage
 
-Press F12 to open dev tools, select Console.
+```javascript
+console.log('Test');
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Filter | Search for 'CSP' or 'refused' |
-| Clear | Reset console logs |
+| F12 | Open devtools |
+| Console tab | Switch to JS execution panel |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open console and trigger link; view errors.
+Execute simple log:
+```javascript
+console.log(document.cookie);
+```
 
 ### Example 2: Advanced Usage
 
-Filter console for 'Content-Security-Policy' after XSS attempt.
+Inject payload for testing:
+```javascript
+document.createElement('img');
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -69,27 +76,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Software Discovery]]
+- [[JavaScript]]
 
 ### Tactics
 
-- [[Discovery]]
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Not applicable as it's a standard browser feature
-- Detect via user agent or session logs if automated
+- Client-side logs of console API calls.
+- Anomalous JS execution patterns in browser telemetry.
 
 ## Related Procedures
 
+- [[procedures/Inject-Dynamic-Image-for-CSP-Bypass]]
+- [[procedures/Exfiltrate-Session-via-Open-Redirect]]
 
 ## Related Tools
 
-- [[tools/Custom-Links-App]]
+- [[Burp Suite]]
+- [[Browser Extensions like Tampermonkey]]
 
 ## References
 
-- Chrome DevTools: https://developer.chrome.com/docs/devtools/
-- Firefox Developer Tools: https://developer.mozilla.org/en-US/docs/Tools
+- MDN Web Docs: Console API

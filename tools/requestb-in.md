@@ -1,68 +1,78 @@
 ---
-id: tool-uuid-001
-url: 'https://requestb.in'
+url: 'http://requestb.in'
 tags:
-  - request-logging
-  - ssrf-testing
+  - webhook-tester
+  - request-capture
 type: tool
 verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:14.274Z'
+updated_at: '2025-12-14T17:32:11.014Z'
+id: d1a22a7b-5e9e-4a04-b69a-eb42335c7bf8
 validated: true
 submitted: true
 ---
-# requestb.in
+# requestb-in
 
 **Status**: Unverified
 
 ## Overview
 
-requestb.in is a free service for creating endpoints to inspect and log incoming HTTP requests, ideal for confirming blind SSRF vulnerabilities by capturing server-initiated traffic.
+requestb.in is a web service for creating unique endpoints to capture and inspect incoming HTTP requests, useful for verifying webhook deliveries in security testing.
 
 ## Description
 
-Users generate a unique URL (e.g., https://requestb.in/15rxmgv1) to receive GET/POST requests, viewing headers, body, and IP origin. Commonly used in web security testing for out-of-band validation without custom servers.
+It generates a temporary URL (e.g., http://requestb.in/17m30us1) that logs all POST/GET requests, headers, and payloads, ideal for confirming exfiltration in webhook-based attacks without setting up a full server.
 
 ## Features
 
-- Feature 1: Instant endpoint creation with unique URLs
-- Feature 2: Real-time request inspection including raw data
-- Feature 3: Support for multiple requests per bin with timestamps
+- Feature 1: Instant endpoint creation with request history
+- Feature 2: View raw payloads, headers, and query params
+- Feature 3: Shareable bins for collaborative inspection
 
 ## Installation
 
 ### Requirements
 
-- Web browser
+- Web browser access
 
 ### Install Commands
 
-No installation; access via https://requestb.in
+```bash
+# No installation needed; access via browser
+# Create a bin at http://requestb.in
+```
 
 ## Basic Usage
 
 ```bash
-# No CLI; use browser to create bin
-curl -X GET https://requestb.in  # Visit site
+# N/A - Web-based
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Web-based only |
+| N/A | Generate bin ID via site |
+| Inspect | View requests on bin page |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Visit https://requestb.in, create bin, use URL in payload, inspect requests.
+1. Visit http://requestb.in
+2. Create a new request bin
+3. Use the URL in webhook address
+4. Refresh page to see incoming requests
 
 ### Example 2: Advanced Usage
 
-Integrate with scripts to poll for new requests.
+```bash
+# Simulate sending to bin
+curl -X POST http://requestb.in/abc123 -d '{"test":"data"}'
+# Then inspect at http://requestb.in/abc123
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -70,27 +80,38 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Active Scanning]] Active Scanning: Scanning IP Blocks
+- [[Network Sniffing]] Network Sniffing
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Reconnaissance]] Reconnaissance
+- [[Collection]] Collection
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Outbound requests to requestb.in domains
-- Unusual GET requests from application servers to dynamic bins
+- Outbound traffic to requestb.in domains from internal systems
+- Unusual HTTP POSTs to temporary-looking URLs
+- Log analysis for requestbin.io subdomains
 
 ## Related Procedures
 
-- [[procedures/Inject-Absolute-URL-in-SVG-Fill-for-Blind-SSRF-Discovery]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/netcat]]
+- [[tools/ngrok]]
+- [[tools/Webhook.site]]
 
 ## References
 
-- Official site: https://requestb.in
+- Official documentation: http://requestb.in/docs
+- Related resources: Webhook testing tutorials

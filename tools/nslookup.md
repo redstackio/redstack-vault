@@ -1,48 +1,55 @@
 ---
-url: 'https://man7.org/linux/man-pages/man1/nslookup.1.html'
-tags:
-  - dns
-  - recon
+id: 123e4567-e89b-12d3-a456-426614174007
+name: nslookup
 type: tool
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:52.854Z'
 platforms:
   - Linux
   - Windows
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:23.439Z'
-id: a671680d-644c-4855-8f4a-f3a2f26052c7
+tags:
+  - dns
+  - recon
+url: 'https://man7.org/linux/man-pages/man1/nslookup.1.html'
 validated: true
 submitted: true
 ---
+
 # nslookup
 
 **Status**: Unverified
 
 ## Overview
 
-nslookup is a command-line tool for querying DNS servers to resolve hostnames, retrieve records like CNAME, A, and MX, commonly used in security testing for reconnaissance and identifying misconfigurations.
+nslookup is a command-line tool for querying DNS servers to obtain domain name or IP address mappings, commonly used in security testing for reconnaissance, such as identifying subdomain takeovers via CNAME checks.
 
 ## Description
 
-nslookup allows users to interact with DNS to obtain detailed resolution information, making it ideal for detecting subdomain takeovers by revealing dangling CNAMEs pointing to unused services. It's built into most operating systems and supports interactive and non-interactive modes for offensive security operations like mapping attack surfaces.
+Built into most OSes, nslookup allows interactive or one-shot queries for records like A, CNAME, MX. In offensive security, it's used to probe for misconfigurations like dangling DNS entries pointing to claimable cloud services. Features include server specification, query type filtering, and timeout options.
 
 ## Features
 
-- Feature 1: Query specific record types (e.g., CNAME, A)
-- Feature 2: Interactive mode for multiple queries
-- Feature 3: Server specification for authoritative responses
+- Feature 1: Query specific record types (e.g., CNAME for takeovers)
+- Feature 2: Use custom DNS resolvers to bypass caching
+- Feature 3: Interactive mode for multiple queries
 
 ## Installation
 
 ### Requirements
 
-- Standard on Linux, Windows, macOS (no installation needed)
+- Standard on Unix-like systems; available via package managers on others
 
 ### Install Commands
 
 ```bash
-# On Linux if missing: sudo apt install dnsutils
+# On Ubuntu/Debian
+sudo apt install dnsutils
+
+# On Windows: Built-in
+
+# On macOS: Built-in
 ```
 
 ## Basic Usage
@@ -55,21 +62,22 @@ nslookup --help
 
 | Option | Description |
 |--------|-------------|
-| -type= | Specify record type (e.g., CNAME) |
-| -server= | Use specific DNS server |
+| -type= | Specify query type (e.g., CNAME) |
+| server= | Use specific DNS server |
+| -debug | Enable debug output |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-nslookup engineering.zomato.com
+nslookup saostatic.uber.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-nslookup -type=CNAME engineering.zomato.com
+nslookup saostatic.uber.com 8.8.8.8 -type=CNAME
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,27 +86,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]]
+- [[Hardware]] Gather Victim Host Information: Domains
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Reconnaissance]] Reconnaissance
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing DNS queries to unusual subdomains
-- Command-line audit logs with nslookup executions
+- Network logs showing DNS queries to public resolvers from unusual sources
+- High volume of nslookup processes in endpoint logs
 
 ## Related Procedures
 
-- [[procedures/Detect-Subdomain-Takeover-via-DNS-Lookup]]
+- [[procedures/Perform-DNS-Lookup-for-Subdomain-Takeover-Discovery]]
 
 ## Related Tools
 
-- [[dig]]
-- [[host]]
+- [[tools/dig]]
+- [[tools/host]]
 
 ## References
 

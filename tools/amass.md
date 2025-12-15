@@ -1,138 +1,99 @@
 ---
-id: dc8a43c5-14d6-49b1-a2db-8957b7604e35
-name: amass
-type: tool
-verified: true
-created_at: '2020-06-29T16:46:00.895094+00:00'
-updated_at: '2023-05-30T01:09:16.934789+00:00'
-commands:
-- '[[amass db list previous scans]]'
-- '[[amass enumerate company properties]]'
-- '[[amass enumerate domain passively]]'
-- '[[amass enumerate domains and ip by ASN]]'
-- '[[amass enumerate domains by ASN]]'
-- '[[amass enumerate domains from cidr ip range]]'
-- '[[amass visualize assets using d3 from a previous scan]]'
-- '[[sort amass results into IPv4 file]]'
-- '[[sort amass results into domain file]]'
-- '[[sort amass results into ip file]]'
+url: 'https://github.com/OWASP/Amass'
 tags:
-- '[[Brute Force]]'
-- '[[dns]]'
-- '[[Enumeration]]'
-- '[[OSINT]]'
+  - recon
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:58.178Z'
+id: 678a2acb-be2c-4b1f-bb0c-f7c99d8640b7
+validated: true
+submitted: true
 ---
+# Amass
 
-# amass
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-The OWASP Amass Project has developed a tool to help information security professionals perform network mapping of attack surfaces and perform external asset discovery using open source information gathering and active reconnaissance techniques. amass has 5 subcommands used to enumerate information
+Amass is a tool for network mapping, external asset discovery, and reconnaissance using open-source intelligence.
 
 ## Description
 
-## Description
+It performs subdomain enumeration, DNS resolution, and more, ideal for initial attack surface discovery in web pentests.
 
-The OWASP Amass Project has developed a tool to help information security professionals perform network mapping of attack surfaces and perform external asset discovery using open source information gathering and active reconnaissance techniques.
+## Features
 
-
-
-amass has 5 subcommands used to enumerate information
-
-- intel - discover target properties and information
-
-- enum - enumerate dns and network information
-
-- viz - visualize the enumerated results
-
-- track - differentiate results between enumerations
-
-- db - work with the graph database
-
-
-
-These subcommands can be used together to create automated scripts.
-
-
-
-## Example
-
-
-
-{{EMBEDDED_COMMAND_ed440e9d-f373-4cee-abfd-dbb36948de91}}
-
-
-
-## Notes
-
-amass enum has a -passive flag that will not actively validate the DNS information. There are a few reasons to do this, one is if the nameservers are run by the organization and could be monitoring a DNS brute force lookup. Although this is most likely very common to any server on the public internet, you may not want to alert specific organizations they are being enumerated or about to be attacked.
-
-Another reason is the -passive flag can bring up cached information for domains that are not currently active any more, this information can tip you off on "services that used to be running" or perhaps services that have been migrated to a different framework. For example elk.domain.com is expired but splunk.domain.com is active. It would be safe to assume they transitioned stacks, and residual information or backups might exist.
-
-
-
-
-
-{{EMBEDDED_COMMAND_9dbc5701-85d0-4084-97e4-27ebb9db88bb}}
-
-
-
-
+- Feature 1: Passive and active enumeration modes
+- Feature 2: Integration with multiple data sources
+- Feature 3: Output in various formats
 
 ## Installation
 
+### Requirements
 
+- Go 1.16+
 
+### Install Commands
 
+```bash
+go install -v github.com/owasp-amass/amass/v4/...@master
+```
 
-# Usage
+## Basic Usage
 
-## Intel
+```bash
+amass enum -h
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help |
+| --passive | Passive mode |
 
+## Examples
 
+### Example 1: Basic Usage
 
-## Enum
+```bash
+amass enum --passive -d example.com
+```
 
+### Example 2: Advanced Usage
 
+```bash
+amass enum --passive -d example.com -o output.txt
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-## Viz
+### Techniques
 
-## 
+- [[Gather Victim Host Information]] Gather Victim Host Information
 
+### Tactics
 
+- [[Reconnaissance]] Reconnaissance
 
-## DB
+## Detection
 
+- Monitor DNS query patterns
+- Log tool signatures in network traffic
 
+## Related Procedures
 
+- [[procedures/Reconnaissance-and-Exposed-Git-Discovery]]
 
+## Related Tools
 
-## DNS
+- [[tools/Subfinder]]
 
-## 
+## References
 
-
-
-## Services
-
-- dns
-
-## Commands (2)
-
-- [[amass enumerate domain passively]]
-- [[amass enumerate domains by ASN]]
-
-## Tags
-
-- [[Brute Force]]
-- [[dns]]
-- [[Enumeration]]
-- [[OSINT]]
-
-
+- Official GitHub repo

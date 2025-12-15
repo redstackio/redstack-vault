@@ -1,108 +1,98 @@
 ---
-id: 123e4567-e89b-12d3-a456-426614174004
-name: Achieve-RCE-via-Admin-Webhook
-type: procedure
-verified: false
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.423Z'
-tactics:
-  - '[[Execution]]'
-  - '[[Lateral Movement]]'
-techniques:
-  - '[[PowerShell]]'
-  - '[[Execution through API]]'
-sub_techniques: []
+id: proc-rce-webhook
 tags:
   - rce
   - webhook
   - privilege-escalation
+type: procedure
+tools: []
+tactics:
+  - '[[Execution]]'
+commands: []
+verified: false
 platforms:
   - Web
-commands: []
-tools: []
-skill_level: advanced
-impact_level: critical
-detection_risk: high
+  - Linux
+submitted: true
+created_at: '2023-10-01T00:00:00Z'
+techniques:
+  - '[[Command-Line Interface]]'
+  - '[[Remote File Copy]]'
+updated_at: '2025-12-14T17:31:18.942Z'
+sub_techniques: []
 validated: true
 mitre_tactics:
   - '[[Execution]]'
-  - '[[Lateral Movement]]'
 mitre_techniques:
-  - '[[PowerShell]]'
-  - '[[Execution through API]]'
+  - '[[Command-Line Interface]]'
+  - '[[Remote File Copy]]'
+---
 ---
 
 # Achieve-RCE-via-Admin-Webhook
 
 ## Summary
 
-This procedure uses stolen admin privileges to create an incoming webhook in Rocket.Chat configured with a malicious script, enabling remote code execution on the server without additional boundaries.
+This procedure leverages the stolen admin session from XSS to create an incoming webhook integration, enabling remote code execution on the server without additional boundaries.
 
 ## Description
 
-With admin access from XSS, navigate to integrations and set up an incoming webhook that executes arbitrary scripts (e.g., via Meteor's server-side execution or shell commands). Triggering the webhook allows full control, including database exposure and system compromise.
+Admin privileges allow setting up integrations that run scripts on incoming HTTP requests. Post-XSS, the attacker can configure a webhook to execute arbitrary commands, impacting CIA triad by allowing database manipulation and credential exposure.
 
 ## Requirements
 
-1. Admin session from XSS
-2. Access to administration panel
-3. Knowledge of webhook scripting for RCE payloads
+1. Admin session hijacked via XSS
+2. Access to admin panel
+3. Knowledge of target scripts for execution
 
 ## Defense
 
 Defensive measures and detection strategies:
 
 - Restrict webhook creation to audited scripts only
-- Implement sandboxing for webhook executions
-- Log and alert on new webhook creations by admins
+- Implement webhook authentication and rate limiting
+- Monitor server logs for unauthorized executions
 
 ## Objectives
 
-1. Execute server-side code
-2. Gain shell or command access
-3. Expose connected systems
+1. Gain server-side execution capabilities
+2. Exfiltrate or modify data remotely
+3. Achieve full compromise
 
 ## Instructions
 
 ### Step 1: Access Admin Panel
 
-**Context**: Use stolen session to reach integrations.
+**Context**: Use hijacked session to reach settings.
 
-**Command** (No CLI; use UI):
-Go to Administration > Integrations > New Incoming Webhook.
+**Instructions**: Navigate to Administration > Integrations as admin.
 
-> Expected output: Webhook creation form loads.
+### Step 2: Create Incoming Webhook
 
-### Step 2: Configure Malicious Webhook
+**Context**: Configure a malicious integration.
 
-**Context**: Set up payload for RCE.
+**Instructions**: Select Incoming type, enable script execution, and define a payload that runs system commands (e.g., via child_process in Node.js).
 
-**Command** (No CLI; use UI):
-Define webhook with script (e.g., exec('ls') or Meteor.call for commands), enable, and save.
+**Expected Output**: Webhook URL generated.
 
-> Expected output: Webhook active with token.
+### Step 3: Trigger RCE
 
-### Step 3: Trigger Webhook
+**Context**: Send requests to execute code.
 
-**Context**: Invoke for execution.
+**Instructions**: POST to the webhook URL with command payload; observe server response.
 
-**Command** (No CLI; use curl or POST):
-Send POST request to webhook URL with trigger payload.
-
-> Expected output: Server executes script, e.g., command output or file changes.
+**Expected Output**: Command output in response, confirming RCE.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
 - [[Execution]]
-- [[Lateral Movement]]
 
 ### Techniques
 
-- [[PowerShell]]
-- [[Execution through API]]
+- [[Command-Line Interface]]
+- [[Remote File Copy]]
 
 ### Sub-Techniques
 
@@ -115,6 +105,7 @@ Send POST request to webhook URL with trigger payload.
 
 ## Tags
 
-- [[rce]]
-- [[webhook]]
-- [[privilege-escalation]]
+- rce
+- webhook
+- privilege-escalation
+

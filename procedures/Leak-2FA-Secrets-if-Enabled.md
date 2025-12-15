@@ -4,101 +4,95 @@ tags:
   - secret-leak
 type: procedure
 tools:
-  - '[[tools/Python3]]'
-  - '[[tools/requests]]'
-  - '[[tools/post_auth_nosqli.py]]'
+  - '[[tools/post-auth-nosqli-py]]'
 tactics:
-  - '[[Discovery]]'
-commands:
-  - '[[commands/python3-post-auth-nosqli]]'
+  - '[[Credential Access]]'
+commands: []
 verified: false
 platforms:
   - Web
-  - Linux
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:14.824Z'
-skill_level: advanced
-impact_level: high
-detection_risk: medium
+  - '[[Unsecured Credentials]]'
+updated_at: '2025-12-14T17:32:20.443Z'
 sub_techniques: []
-id: 36bde74b-b4b0-4358-a033-a802bddfbe8e
+id: ab378788-fb98-4363-9406-28e8bb95ca1a
 validated: true
 mitre_tactics:
-  - '[[Discovery]]'
+  - '[[Credential Access]]'
 mitre_techniques:
   - '[[Exploit Public-Facing Application]]'
+  - '[[Unsecured Credentials]]'
 ---
 # Leak-2FA-Secrets-if-Enabled
 
 ## Summary
 
-This procedure checks for and leaks 2FA secrets (TOTP or email tokens) from the admin user document if multi-factor authentication is enabled.
+This procedure checks for and leaks 2FA configuration data, such as TOTP secrets or email token hashes, using blind injection to bypass multi-factor authentication during takeover.
 
 ## Description
 
-If 2FA is active, blind injection targets fields like this.services.totp.secret or email 2FA hashes using similar $where conditionals. It first probes for 2FA presence, then extracts if found. Requires admin targeting from prior steps. Outcome: Bypasses for 2FA during reset.
+If 2FA is enabled on the admin account, fields like services.totp.secret are targeted with $where oracles. Similar blind techniques extract base32 secrets or hashes, allowing code generation for TOTP or hash cracking.
 
 ## Requirements
 
-1. Admin user document access via injection
-2. Knowledge of 2FA field structures
-3. Script supporting conditional checks
+1. Admin user with 2FA active
+2. Knowledge of 2FA field names in schema
+3. Tools for TOTP simulation if secret leaked
 
 ## Defense
 
-Defensive measures and detection strategies:
-
-- Never store 2FA secrets in plaintext; use secure vaults
-- Detect queries accessing auth-related fields
-- Enforce 2FA on all sensitive actions
-- Rotate secrets periodically
+- Encrypt 2FA secrets in DB
+- Rotate secrets on suspicious activity
+- Detect injection targeting auth fields
 
 ## Objectives
 
-1. Identify and leak 2FA data
-2. Remove 2FA barrier for takeover
-3. Ensure complete credential compromise
+1. Identify 2FA presence
+2. Extract secrets for bypass
+3. Complete credential access
 
 ## Instructions
 
-### Step 1: Probe and Leak 2FA Data
+### Step 1: Probe for 2FA Fields
 
-**Context**: Use $where to test and extract 2FA fields if present.
+**Context**: Test if services.totp exists.
 
-**Command** ([[commands/python3-post-auth-nosqli]]):
-```bash
-python3 post_auth_nosqli.py -u attacker -p attacker 'http://localhost:3000'
-```
+**Instructions**: $where: this.roles.includes('admin') && this.services.totp != null
 
-> Script checks for 2FA and leaks secrets. Expected output: TOTP secret or hash if enabled, or confirmation of absence.
+> Expected: Confirmation if 2FA enabled.
+
+### Step 2: Leak Secret
+
+**Context**: Enumerate secret characters.
+
+**Instructions**: Similar to token: /^A/.test(this.services.totp.secret)
+
+> Expected: Base32 secret leaked, usable for TOTP codes.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Discovery]]
+- [[Credential Access]] Credential Access
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Unsecured Credentials]] Unsecured Credentials
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/python3-post-auth-nosqli]]
 
 ## Tools Used
 
-- [[tools/Python3]]
-- [[tools/requests]]
-- [[tools/post_auth_nosqli.py]]
+- [[tools/post-auth-nosqli-py]]
 
 ## Tags
 
-- 2fa-bypass
-- secret-leak
+- 2fa-leak

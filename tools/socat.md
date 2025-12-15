@@ -1,16 +1,15 @@
 ---
-url: ''
+url: 'http://www.dest-unreach.org/socat/'
 tags:
   - networking
-  - proxy
+  - relay
 type: tool
+verified: false
 platforms:
   - Linux
-description: Multi-purpose relay for bidirectional data transfer between endpoints
-id: 72cbb2cb-548f-4fec-a8e3-bb319dee61b0
-created_at: '2025-12-14T04:08:47.988Z'
-updated_at: '2025-12-14T04:08:47.988Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:36.633Z'
+id: 54731ffc-8484-4f75-bb34-6357a2264e98
 validated: true
 submitted: true
 ---
@@ -20,28 +19,33 @@ submitted: true
 
 ## Overview
 
-Socat (socket cat) extends nc for complex relaying, used here to forward Docker port to external malicious server.
+Socat is a multipurpose relay tool for Linux/Unix systems, used here to create a simple TCP server simulating a malicious MQTT endpoint for vulnerability testing.
 
 ## Description
 
-Supports TCP listening/forwarding with options like reuseaddr for port binding after kill.
+Socat (SOcket CAT) establishes bidirectional data streams between endpoints like files, TCP sockets, and more. In offensive security, it's commonly used for port forwarding, protocol simulation, and crafting network interactions to exploit client-side flaws like the curl MQTT DoS.
 
 ## Features
 
-- Feature 1: Address type relaying
-- Feature 2: Forking for multiple connections
-- Feature 3: Error redirection
+- Feature 1: Supports unidirectional (-u) and bidirectional data relay
+- Feature 2: Address types for files, TCP/UDP, pipes, and more
+- Feature 3: Forking for concurrent connections and address reuse
 
 ## Installation
 
 ### Requirements
 
-- Build essentials
+- Linux/Unix system
+- Standard package manager
 
 ### Install Commands
 
 ```bash
+# On Debian/Ubuntu
 apt install socat
+
+# On Red Hat/CentOS
+yum install socat
 ```
 
 ## Basic Usage
@@ -54,21 +58,23 @@ socat --help
 
 | Option | Description |
 |--------|-------------|
-| tcp-listen | Listen on TCP |
-| reuseaddr | Reuse address |
-| fork | Handle multiple clients |
+| `-u` | Unidirectional data transfer |
+| `-d -d` | Increase debug verbosity |
+| `fork` | Handle multiple connections |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-socat tcp-listen:2376,reuseaddr,fork tcp:1.2.3.4:1111
+socat TCP-LISTEN:8080 TCP:remote:80
 ```
 
 ### Example 2: Advanced Usage
 
-Add 2> /log for errors.
+```bash
+socat -u FILE:input.txt TCP-LISTEN:12345,reuseaddr,fork
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -76,25 +82,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[DLL Search Order Hijacking]]
+- [[Endpoint Denial of Service]]
 
 ### Tactics
 
-- [[Lateral Movement]]
+- [[Impact]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Socat processes binding to privileged ports
+- Network logs showing socat processes binding unusual ports
+- Process lists with socat forking on high ports
 
 ## Related Procedures
 
+- [[procedures/Set-Up-Malicious-MQTT-Server-with-socat]]
 
 ## Related Tools
 
-- [[tools/nc]]
+- [[tools/nc-netcat]]
+- [[tools/curl]]
 
 ## References
 
-- Socat homepage
+- Official documentation: http://www.dest-unreach.org/socat/doc/socat.html

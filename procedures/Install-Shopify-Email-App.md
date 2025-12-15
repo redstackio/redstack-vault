@@ -1,27 +1,26 @@
 ---
-id: proc-install-email-app
 tags:
   - shopify
   - app-install
-  - email-app
 type: procedure
 tools: []
 tactics:
   - '[[Initial Access]]'
 commands: []
-verified: false
 platforms:
   - Web
-submitted: true
-created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-13T23:52:43.974Z'
 skill_level: beginner
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: 0cb6c91a-575c-42f6-bcce-30f368155cac
+created_at: '2025-12-14T17:30:18.190Z'
+updated_at: '2025-12-14T17:30:18.190Z'
+verified: false
 validated: true
+submitted: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
@@ -31,57 +30,52 @@ mitre_techniques:
 
 ## Summary
 
-This procedure installs the official Shopify Email App from the app store to enable access to email template editing, which is necessary to trigger the stored XSS payload.
+This procedure installs the official Shopify Email App, which retrieves store configuration data including the injected XSS payload from admin settings, propagating the vulnerability.
 
 ## Description
 
-The Shopify Email App integrates with the store to manage email templates that render store details, including the vulnerable address field. Installation requires store owner permissions but can be done post-payload injection to chain the exploit.
+The Email App pulls store address details during installation or initialization, incorporating the unsanitized apartment field into its templates. This step requires the payload to be already injected and targets users with app installation privileges.
 
 ## Requirements
 
-1. Shopify store admin access
-2. Ability to install apps from the Shopify App Store
-3. Internet connection for app download
+1. Shopify admin access.
+2. Internet connectivity to access the app store.
+3. Target store without the app pre-installed.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Review and approve all app installations manually
-- Monitor for apps that access store settings or templates
-- Use app permission scoping to limit data access
+- Review app permissions before installation.
+- Audit store data syncs post-install.
 
 ## Objectives
 
-1. Add the Email App to the store ecosystem
-2. Gain access to template editors without suspicion
-3. Set up for payload triggering
+1. Integrate the app with store data.
+2. Ensure payload is fetched.
+3. Prepare for template rendering.
 
 ## Instructions
 
-### Step 1: Navigate to App Store
+### Step 1: Access App Store
 
-**Context**: Locate the official Email App.
+**Context**: Navigate to the Shopify app store within the admin.
 
-From the Shopify admin, click Apps > Shopify App Store and search for "Shopify Email".
+**Command** (Manual Browser Action):
 
-> Expected: App listing appears with install option.
+Click Apps > Shopify App Store.
 
-### Step 2: Install the App
+> Expected output: App store page loads.
 
-**Context**: Authorize and deploy the app.
+### Step 2: Install Email App
 
-Click Install app and follow prompts to grant permissions.
+**Context**: Search and install the app to trigger data pull.
 
-> Expected: Installation success; app added to sidebar.
+**Command** (Manual Browser Action):
 
-### Step 3: Verify Installation
+Search for "Shopify Email", click Install, and confirm.
 
-**Context**: Confirm functionality.
-
-Open the app from the admin sidebar.
-
-> Expected: Dashboard loads with template options.
+> Expected output: App installs; store address data, including payload, is retrieved.
 
 ## MITRE ATT&CK Mapping
 

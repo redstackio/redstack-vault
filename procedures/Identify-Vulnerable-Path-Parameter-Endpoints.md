@@ -1,12 +1,13 @@
 ---
 tags:
-  - recon
-  - web
-  - parameter-discovery
+  - reconnaissance
+  - web-vuln
+  - parameter-testing
 type: procedure
-tools: []
+tools:
+  - '[[tools/Burp-Suite]]'
 tactics:
-  - '[[Initial Access]]'
+  - '[[Reconnaissance]]'
 commands: []
 verified: false
 platforms:
@@ -14,88 +15,84 @@ platforms:
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-updated_at: '2025-12-13T23:52:33.811Z'
+  - '[[Vulnerability Scanning]]'
+updated_at: '2025-12-14T17:24:31.463Z'
 sub_techniques: []
-id: 0420bb83-6e03-40c6-92b9-b4a7071e2207
+id: 2256f9ea-3df2-4cf4-9ac2-abcb1289e20b
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Reconnaissance]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
+  - '[[Vulnerability Scanning]]'
 ---
 # Identify Vulnerable Path Parameter Endpoints
 
 ## Summary
 
-This procedure involves scouting Shopify support pages to identify endpoints using the 'path' parameter, which is intended for internal routing but lacks robust validation, setting the stage for open redirect and XSS exploits.
+This procedure involves testing multiple endpoints in the Shopify Locksmith app to identify pages where the 'path' parameter is vulnerable to manipulation, setting the stage for open redirect and XSS exploits.
 
 ## Description
 
-In the context of supporthiring.shopify.com, the /apps/locksmith/resource/pages/ endpoints process a 'path' parameter for navigation. By examining these pages, attackers can confirm the parameter's presence and test for validation weaknesses. This reconnaissance step is crucial before attempting bypasses, as it reveals the attack surface without triggering defenses. Expected outcomes include mapping vulnerable URLs for subsequent exploitation, with no authentication required due to public access.
+In the context of supporthiring.shopify.com, the Locksmith app exposes various resource pages under /apps/locksmith/resource/pages/. By appending ?path= to these URLs and observing responses, attackers can confirm if the parameter is processed without strict validation, enabling further exploitation for redirects or script injection. This reconnaissance step is crucial for targeting affected Shopify sites and requires only public access.
 
 ## Requirements
 
-1. Access to a web browser for manual navigation.
-2. Knowledge of URL structure in web applications.
-3. Target website publicly accessible (supporthiring.shopify.com).
+1. Public access to the target Shopify domain (e.g., supporthiring.shopify.com).
+2. Browser or proxy tool for URL testing.
+3. Basic understanding of web parameters and HTTP responses.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement parameter logging to monitor unusual 'path' values.
-- Use Web Application Firewalls (WAF) to flag reconnaissance patterns on admin-like endpoints.
-- Regular vulnerability scanning of parameter handling in routing logic.
+- Implement parameter validation to reject or sanitize 'path' inputs.
+- Monitor for unusual URL patterns in access logs, such as repeated ?path= tests.
 
 ## Objectives
 
-1. Locate and document endpoints with exposed 'path' parameters.
-2. Assess initial input acceptance for bypass potential.
-3. Prepare list of targets for exploitation testing.
+1. Locate endpoints accepting the 'path' parameter.
+2. Confirm lack of initial protections.
+3. Prepare for payload injection.
 
 ## Instructions
 
-### Step 1: Navigate to Suspected Endpoints
+### Step 1: Enumerate Target Pages
 
-**Context**: Start by accessing known pages under the vulnerable directory to inspect for the 'path' parameter.
+**Context**: Identify candidate URLs by navigating to Locksmith app resource pages.
 
-Visit URLs like https://supporthiring.shopify.com/apps/locksmith/resource/pages/gauntlet-challenge and check the address bar or page source for 'path=' in query strings.
+Construct and load URLs like http://supporthiring.shopify.com/apps/locksmith/resource/pages/gauntlet-challenge?path= in a browser or using a proxy.
 
-> Manual browser navigation; no command required. Expected output: Visible 'path' parameter in URL.
+> Inspect the page source or network tab for reflection of the parameter.
 
-### Step 2: Test Basic Input
+### Step 2: Test Parameter Acceptance
 
-**Context**: Append a simple test value to confirm parameter processing.
+**Context**: Verify if the parameter influences page behavior without errors.
 
-Modify the URL to include ?path=test and observe if the page attempts to route or reflects the input.
+Append empty or benign values to ?path= and observe for redirects, errors, or reflections.
 
-> Expected output: Page loads without error, indicating acceptance of arbitrary input.
+> Successful test shows the parameter is parsed, e.g., no 400 errors.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Reconnaissance]]
 
 ### Techniques
 
-- [[Active Scanning]] Active Scanning
+- [[Vulnerability Scanning]]
 
 ### Sub-Techniques
 
-- None
 
 ## Commands Used
 
-- None
 
 ## Tools Used
 
-- None
+- [[tools/Burp-Suite]]
 
 ## Tags
 
-- [[recon]]
-- [[web]]
-- [[parameter-discovery]]
+- [[Reconnaissance]]
+- [[web-vuln]]

@@ -1,13 +1,15 @@
 ---
 tags:
-  - subdomain-enumeration
   - reconnaissance
-  - dns
+  - subdomain-enumeration
 type: procedure
-tools: []
+tools:
+  - '[[tools/Burp-Suite]]'
+  - '[[tools/Turbo-Intruder]]'
 tactics:
   - '[[Reconnaissance]]'
-commands: []
+commands:
+  - '[[commands/turbo-intruder-subdomain-enum]]'
 verified: false
 platforms:
   - Web
@@ -15,12 +17,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Gather Victim Host Information]]'
-updated_at: '2025-12-14T04:39:02.025Z'
+updated_at: '2025-12-14T17:32:58.011Z'
 skill_level: intermediate
 impact_level: low
 detection_risk: low
 sub_techniques: []
-id: e9d32c80-371f-48cf-a616-e16a32fc75b6
+id: a6b26776-8df3-42e3-a36b-5c1216371c1d
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
@@ -31,55 +33,48 @@ mitre_techniques:
 
 ## Summary
 
-This procedure discovers subdomains associated with a target domain like starbucks.com using passive and active DNS enumeration techniques, identifying potential attack surfaces such as datacafe-cert.starbucks.com.
+This procedure uses high-speed fuzzing to discover subdomains of a target domain, identifying potential entry points like app.bountypay.h1ctf.com for further exploitation.
 
 ## Description
 
-In a subdomain takeover attack, the first step is to map the target's DNS footprint. This involves querying public DNS resolvers and using wordlists or brute-forcing to uncover hidden subdomains. The goal is to find subdomains that may have misconfigurations, like dangling CNAMEs. This procedure assumes access to standard DNS tools and focuses on efficiency to avoid rate-limiting.
+In web attack scenarios, subdomain enumeration reveals hidden services. Here, Turbo Intruder within Burp Suite scans *.bountypay.h1ctf.com using a common domain wordlist, confirming live hosts via HTTP responses. Prerequisites include Burp Suite setup and a wordlist like those from SecLists.
 
 ## Requirements
 
-1. Internet access for DNS queries
-2. DNS resolution tools installed (e.g., dig or online services)
-3. Target domain name (e.g., starbucks.com)
+1. Burp Suite Professional with Turbo Intruder extension
+2. Wordlist of common subdomains (e.g., app, admin, api)
+3. Network access to target domain
 
 ## Defense
 
-Defensive measures and detection strategies:
-
-- Monitor DNS logs for unusual enumeration queries
-- Use DNS security extensions (DNSSEC) to validate records
-- Regularly audit subdomain registrations
+Defensive measures: Implement DNS rate limiting, monitor for anomalous queries; Detection: Log high-volume subdomain probes.
 
 ## Objectives
 
-1. Compile a comprehensive list of subdomains
-2. Identify active and potentially vulnerable ones
-3. Prepare for further DNS analysis
+1. Identify live subdomains
+2. Expand attack surface
+3. Expected outcome: List of accessible subdomains
 
 ## Instructions
 
-### Step 1: Passive Subdomain Discovery
+### Step 1: Configure Turbo Intruder
 
-**Context**: Use certificate transparency logs or public databases to passively gather subdomains without direct queries to the target.
+**Context**: Set up the fuzzer for subdomain discovery.
 
-**Command** (Manual or tool-based query):
-
-No specific command; use services like crt.sh or SecurityTrails API to search for *.starbucks.com.
-
-> This yields subdomains like datacafe-cert.starbucks.com without alerting the target.
-
-### Step 2: Active Brute-Force Enumeration
-
-**Context**: Brute-force common subdomain names against the target to uncover more entries.
-
-**Command** (Using a tool like dnsrecon):
-
+**Command** ([[commands/turbo-intruder-subdomain-enum]]):
 ```bash
-dnsrecon -d starbucks.com -t brt -D /path/to/wordlist.txt
+# In Burp Suite Turbo Intruder: Payloads from wordlist, request: GET / HTTP/1.1\nHost: §s.bountypay.h1ctf.com
 ```
 
-> Outputs discovered subdomains; filter for unique entries.
+> This sends requests to potential subdomains, checking for 200 OK responses. Expected output: Live subdomains logged.
+
+### Step 2: Analyze Results
+
+**Context**: Filter valid responses.
+
+No specific command; review Burp logs for successful connections.
+
+> Expected output: Confirmed subdomains like app.bountypay.h1ctf.com.
 
 ## MITRE ATT&CK Mapping
 
@@ -97,13 +92,14 @@ dnsrecon -d starbucks.com -t brt -D /path/to/wordlist.txt
 
 ## Commands Used
 
-- None specific
+- [[commands/turbo-intruder-subdomain-enum]]
 
 ## Tools Used
 
-- None specific
+- [[tools/Burp-Suite]]
+- [[tools/Turbo-Intruder]]
 
 ## Tags
 
-- [[subdomain-enumeration]]
-- [[Reconnaissance]]
+- reconnaissance
+- subdomain-enumeration

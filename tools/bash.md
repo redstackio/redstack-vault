@@ -1,15 +1,16 @@
 ---
-id: tool-uuid-4
-url: null
+id: tool-bash-001
+url: 'https://www.gnu.org/software/bash/'
 tags:
-  - shell
+  - scripting
+  - concurrency
 type: tool
 verified: false
 platforms:
   - Linux
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:31.005Z'
+updated_at: '2025-12-14T17:32:38.721Z'
 validated: true
 submitted: true
 ---
@@ -19,29 +20,28 @@ submitted: true
 
 ## Overview
 
-Bash is the GNU Bourne-Again Shell, a command-line interpreter for executing scripts and commands on Unix-like systems.
+Bash is a Unix shell and scripting language used to automate tasks, including launching concurrent processes for race condition exploits in security testing.
 
 ## Description
 
-Used as the execution environment for commands like touch and npm in this attack, handling shell escaping for malicious filenames.
+Enables scripting with loops, background jobs (&), and command chaining. Key for OAuth races by running multiple curls simultaneously.
 
 ## Features
 
-- Feature 1: Interactive shell
-- Feature 2: Script execution
-- Feature 3: Variable expansion and quoting
+- Feature 1: Background execution (&).
+- Feature 2: Scripting loops for repetition.
+- Feature 3: Integration with tools like curl.
 
 ## Installation
 
 ### Requirements
 
-- Linux/macOS
+- Default on Linux/macOS.
 
 ### Install Commands
 
 ```bash
-# Pre-installed
-sudo apt install bash  # On Debian
+# Usually pre-installed
 ```
 
 ## Basic Usage
@@ -55,20 +55,23 @@ bash --help
 | Option | Description |
 |--------|-------------|
 | -c | Execute command string |
-| -i | Interactive mode |
+| -x | Debug mode |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-bash -c 'touch file.txt'
+for i in {1..20}; do curl ... & done
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-bash -c "touch '\"><svg onload=alert(3);>'"
+#!/bin/bash
+command1 &
+command2 &
+wait
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +80,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Unix Shell]]
+- [[Command-Line Interface]] Command and Scripting Interpreter
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process monitoring for bash with suspicious args
-- Command history analysis
+- Process lists showing bash scripts with high child processes.
+- Logs of concurrent HTTP requests from same host.
 
 ## Related Procedures
 
-- [[procedures/Create-Malicious-Filename-for-XSS]]
+- [[procedures/Exploit-Access-Token-Race-Condition]]
 
 ## Related Tools
 
-- [[tools/touch]]
+- [[tools/curl]]
 
 ## References
 
-- https://www.gnu.org/software/bash/
+- Official documentation: https://www.gnu.org/software/bash/manual/bash.html

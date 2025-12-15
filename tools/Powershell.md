@@ -1,19 +1,15 @@
 ---
+id: tool-powershell-001
 url: 'https://learn.microsoft.com/en-us/powershell/'
 tags:
   - scripting
   - automation
-  - dos
 type: tool
+verified: false
 platforms:
   - Windows
-description: >-
-  Scripting environment for automating HTTP requests and TCP communications in
-  Windows.
-id: 6f215576-088d-43d0-9674-c4c264d2349e
-created_at: '2025-12-14T05:32:10.000Z'
-updated_at: '2025-12-14T05:32:10.000Z'
-verified: false
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:10.940Z'
 validated: true
 submitted: true
 ---
@@ -23,58 +19,55 @@ submitted: true
 
 ## Overview
 
-PowerShell is a task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. In security testing, it's used for scripting network interactions, like raw HTTP POSTs for exploitation demos.
+PowerShell is a cross-platform task automation and configuration management framework from Microsoft, used here for scripting raw TCP/HTTP requests to automate file uploads in security testing.
 
 ## Description
 
-PowerShell excels in .NET integration, allowing custom functions for TCP sockets (e.g., Send-NetworkData) to bypass higher-level APIs. Here, it's configured for looping file uploads to embedded devices, simulating DoS attacks without external tools.
+It excels in network operations, allowing custom functions like Send-NetworkData for socket-based HTTP sends. In offensive security, it's common for automating exploits, DoS simulations, and payload delivery on Windows environments.
 
 ## Features
 
-- Feature 1: Built-in .NET classes for TCPClient and Stream handling
-- Feature 2: Pipeline support for sending multi-line data like HTTP requests
-- Feature 3: Loop constructs for automation (e.g., 20,000 iterations)
+- Feature 1: Built-in .NET integration for TCP sockets and streams
+- Feature 2: Looping and variable handling for bulk operations
+- Feature 3: Encoding support for HTTP payloads
 
 ## Installation
 
 ### Requirements
 
-- Windows OS (native) or PowerShell Core for cross-platform
+- Windows 7+ or PowerShell Core on Linux/macOS
 
 ### Install Commands
 
 ```bash
-# On Windows, pre-installed; for Linux/macOS:
+# On Windows, pre-installed; for Core:
 winget install --id Microsoft.PowerShell --source winget
 ```
 
 ## Basic Usage
 
 ```powershell
-Get-Help Send-NetworkData
+Get-Help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -Verbose | Enable verbose output |
-| -Debug | Debug mode for troubleshooting |
+| -Verbose | Detailed output |
+| -ErrorAction | Handle errors |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```powershell
-"Hello" | Send-NetworkData -Computer 127.0.0.1 -Port 80
+Test-NetConnection -ComputerName target -Port 80
 ```
 
 ### Example 2: Advanced Usage
 
-```powershell
-# Define function then use in loop for uploads
-for ($i=1; $i -le 10; $i++) { ... | Send-NetworkData ... }
-```
+Custom script for HTTP requests as in the DoS procedure.
 
 ## MITRE ATT&CK Mapping
 
@@ -82,33 +75,31 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[PowerShell]]
-- [[Remote File Copy]]
+- [[PowerShell]] PowerShell
+- [[Remote File Copy]] Ingress Tool Transfer
 
 ### Tactics
 
-- [[Execution]]
-- [[Impact]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for PowerShell.exe spawning with network connections to port 80
-- Log script blocks containing TCPClient or loops with high iterations
-- Detect rapid outbound HTTP POSTs from PowerShell processes
+- Process monitoring for powershell.exe with network connections
+- Log anomalous TCP sends to port 80
+- Script block logging in Windows Event Logs
 
 ## Related Procedures
 
-- [[procedures/test-unauthenticated-file-upload-to-login-cgi]]
-- [[procedures/upload-multiple-files-to-exhaust-disk-space]]
+- [[procedures/Repeat-Uploads-for-Disk-Exhaustion]]
 
 ## Related Tools
 
-- [[tools/curl]]
-- [[tools/netcat]]
+- [[cmd.exe]]
+- [[Python]]
 
 ## References
 
 - Official documentation: https://learn.microsoft.com/en-us/powershell/
-- Related resources: PowerShell for Pentesters
+- Related resources: PowerShell for Pentesters guides

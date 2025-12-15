@@ -1,20 +1,16 @@
 ---
-data: node app.js
+data: node index.js
 tags:
-  - node.js
-  - execution
+  - run
+  - server
 type: command
-output: >-
-  For normal run: fetchById success [ RowDataPacket { username: 'noob',
-  password: 'noob' } ]; For malicious: fetchById success [ RowDataPacket {
-  username: 'admin', password: 'admin' }, RowDataPacket { username: 'user',
-  password: 'user' }, RowDataPacket { username: 'noob', password: 'noob' } ]
+output: null
 executor: bash
 platforms:
   - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:15.053Z'
-id: b4dcf707-45cb-40b5-8409-61514d5e02fd
+updated_at: '2025-12-14T17:31:19.016Z'
+id: 9f97009e-d3f7-4b32-830c-f7ceb53792d1
 verified: false
 validated: true
 submitted: true
@@ -24,33 +20,37 @@ submitted: true
 ## Command
 
 ```bash
-node app.js
+node index.js
 ```
 
 ## Description
 
-Executes the Node.js app.js script to run query-mysql fetchById, either normally or with injection.
+Executes the Node.js script index.js to start the Express server for the vulnerable app.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| node | Runtime | Yes |
-| app.js | Script file | Yes |
+| index.js | Script file | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-node app.js
+node index.js
+```
+
+### Advanced Usage
+
+```bash
+node --inspect index.js
 ```
 
 ## Expected Output
 
-Console logs query results based on fetchById inputs.
+"Example app listening on port 3000!"; server runs until stopped.
 
 ## Related
 
-- [[Related Procedure|procedures/Demonstrate-Normal-Data-Fetch]]
-- [[Related Procedure|procedures/Exploit-SQL-Injection-with-Malicious-Input]]
+- [[commands/curl-send-jwt-token-jti1]]

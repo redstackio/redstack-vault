@@ -1,77 +1,78 @@
 ---
-id: proc-rocket-password-reset
 tags:
   - password-reset
-  - initial-access
+  - phishing
 type: procedure
-tools:
-  - '[[tools/Python3]]'
-  - '[[tools/requests]]'
+tools: []
 tactics:
   - '[[Initial Access]]'
-commands:
-  - '[[commands/curl-password-reset-request]]'
+commands: []
 verified: false
 platforms:
   - Web
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:46:19.930Z'
-skill_level: beginner
+  - '[[T1566.002]]'
+updated_at: '2025-12-14T17:33:12.493Z'
+skill_level: intermediate
 impact_level: low
 detection_risk: low
 sub_techniques: []
+id: b1d3b080-a180-4f2f-ae37-a6cef93fffcb
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[T1566.002]]'
 ---
 # Request-Password-Reset-for-Target-User
 
 ## Summary
 
-This procedure initiates a password reset request for a target user in Rocket.Chat using their email address, generating a reset token in the MongoDB database that can be targeted for subsequent injection attacks.
+This procedure initiates the password reset flow on the target website to obtain a reset link containing a vulnerable modifiable parameter, setting the stage for redirection exploitation.
 
 ## Description
 
-In the context of exploiting Rocket.Chat, this step requires knowing the target's email and uses the unauthenticated /api/v1/users.forgotPassword endpoint to trigger an email (which may not be sent if email is disabled) and store a temporary reset token. This sets up the blind NoSQL injection in the next phase. Prerequisites include network access to the instance and the Python requests library for API calls.
+In the context of the Mars website, the password reset functionality emails a link with a path parameter that specifies the post-reset page. This procedure triggers that email, allowing subsequent modification. It requires knowledge of the victim's username or email and assumes the site has no rate limiting on resets. Expected outcome is receipt of the email with the link.
 
 ## Requirements
 
-1. Target Rocket.Chat URL and port (default 3000)
-2. Target user's email address
-3. HTTP client like Python requests or curl
-4. No authentication needed
+1. Access to the target's password reset page (publicly accessible)
+2. Knowledge of victim's email or username
+3. Ability to receive or intercept the reset email (e.g., if victim is controlled or email forwarded)
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Enable email notifications and monitor for suspicious reset requests
-- Implement rate limiting on forgot password endpoints
-- Log all pre-auth API calls for anomaly detection
+- Implement rate limiting on password reset requests per IP/email
+- Monitor for unusual reset volumes
+- Use CAPTCHA on reset forms to prevent automation
 
 ## Objectives
 
-1. Generate a database-stored reset token for the target
-2. Prepare for token extraction via injection
-3. Maintain unauthenticated access throughout
+1. Obtain the initial reset link with token and path parameter
+2. Confirm the vulnerability exists by inspecting the link structure
+3. Prepare for link modification
 
 ## Instructions
 
-### Step 1: Send Password Reset Request
+### Step 1: Access Reset Page
 
-**Context**: Use an HTTP POST to the forgotPassword endpoint with the target's email to create the token.
+**Context**: Navigate to the password reset endpoint to begin the process.
 
-**Command** ([[commands/curl-password-reset-request]]):
-```bash
-curl -X POST 'http://target:3000/api/v1/users.forgotPassword' -H 'Content-Type: application/json' -d '{"user":{"email":"target@example.com"}}'
-```
+Visit the Mars website's forgot password page, typically at `/forgot-password` or similar, and enter the target's email or username.
 
-> This sends the request; expect a JSON success response like {"success": true}. The token is now in MongoDB, queryable via getPasswordPolicy.
+> Upon submission, the site processes the request and sends an email.
+
+### Step 2: Retrieve Reset Email
+
+**Context**: Obtain the emailed link for analysis.
+
+Check the email inbox associated with the target account. The link will resemble `https://mars.com/reset?token=abc123&path=/reset-complete`.
+
+> Success is confirmed if the email arrives within seconds to minutes, containing the clickable link.
 
 ## MITRE ATT&CK Mapping
 
@@ -81,21 +82,18 @@ curl -X POST 'http://target:3000/api/v1/users.forgotPassword' -H 'Content-Type: 
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[T1566.002]]
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/curl-password-reset-request]]
 
 ## Tools Used
 
-- [[tools/Python3]]
-- [[tools/requests]]
 
 ## Tags
 
-- password-reset
-- initial-access
+- [[password-reset]]
+- [[Phishing]]

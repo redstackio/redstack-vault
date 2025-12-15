@@ -1,100 +1,114 @@
 ---
-url: null
+url: 'https://www.microsoft.com/edge'
 tags:
   - browser
   - testing
-  - xss
 type: tool
+verified: false
 platforms:
   - Windows
-description: >-
-  Web browser used for testing and exploiting DOM XSS vulnerabilities where URL
-  encoding is not applied.
-id: 1c390cb4-7c49-4886-a8fc-1c974d00d09f
-created_at: '2025-12-13T23:56:20.483Z'
-updated_at: '2025-12-13T23:56:20.483Z'
-verified: false
+  - macOS
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:29:44.662Z'
+id: 5cd1e804-e549-4a9d-8dda-b039b42fbe89
 validated: true
 submitted: true
 ---
-# Microsoft Edge
+# Microsoft-Edge
 
 **Status**: Unverified
 
 ## Overview
 
-Microsoft Edge is a web browser that, in legacy modes, can be used for security testing similar to IE, particularly for XSS exploits where URL encoding is absent.
+Microsoft Edge is a web browser developed by Microsoft, commonly used for security testing and vulnerability reproduction due to its support for incognito mode, developer tools, and certificate handling.
 
 ## Description
 
-Edge is employed to verify vulnerabilities in scenarios where modern encoding prevents exploits, allowing injection testing on Windows platforms.
+Edge provides a Chromium-based engine for rendering web content, making it suitable for testing web vulnerabilities like authentication bypasses. In this context, it was used in incognito mode (Version 131.0.2903.6) to navigate DoD sites and handle certificate prompts without storing session data.
 
 ## Features
-- Compatibility with legacy behaviors
-- Developer tools for DOM inspection
-- Integration with Windows security features
+
+- Feature 1: Incognito mode for private browsing and testing
+- Feature 2: Built-in developer tools for inspecting network requests and responses
+- Feature 3: Certificate management for handling authentication prompts
 
 ## Installation
 
 ### Requirements
-- Windows 10 or later
+
+- Windows, macOS, or Linux operating system
+- Internet connection for download
 
 ### Install Commands
 
-Pre-installed on Windows; update via Settings.
+```bash
+# Download and install via official site or package manager (e.g., on Ubuntu)
+sudo apt update && sudo apt install microsoft-edge-stable
+```
 
 ## Basic Usage
 
 ```bash
-# Launch via Windows Run: msedge https://target.com
+# Launch in incognito mode (via command line or GUI)
+msedge --incognito
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `--inprivate` | InPrivate browsing |
-| `--headless` | Headless mode |
+| `--incognito` | Open in private browsing mode |
+| `--user-data-dir=/path` | Specify profile directory |
+| `--disable-web-security` | Disable security features for testing (use cautiously) |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open Edge and load the POC URL.
+Launch Edge and navigate to a site:
+
+```bash
+msedge https://example.com
+```
 
 ### Example 2: Advanced Usage
 
-Use DevTools to monitor script execution.
+Launch in incognito for testing:
+
+```bash
+msedge --incognito https://████/
+```
 
 ## MITRE ATT&CK Mapping
 
 This tool is commonly associated with:
 
 ### Techniques
-- [[JavaScript]]
+
+- [[Exploit Public-Facing Application]]
+- [[Valid Accounts]]
 
 ### Tactics
-- [[Execution]]
+
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
-- Track Edge launches with anomalous URLs
-- Analyze browser logs for injection attempts
+
+- Network logs showing Edge user-agent strings in anomalous access patterns
+- Browser process monitoring for incognito sessions accessing sensitive sites
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
-- [[tools/Internet-Explorer]]
-- [[tools/Chrome]]
+
+- [[tools/Google-Chrome]]
+- [[tools/Brave-Browser]]
 
 ## References
-- Microsoft Edge documentation
+
+- Official documentation: https://docs.microsoft.com/en-us/deployedge/
+- Related resources: Chromium project docs

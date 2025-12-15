@@ -1,61 +1,68 @@
 ---
-id: cmd-uuid-004
-name: curl-fetch-file
+id: curl-fetch-file
+data: 'curl -s https://target.com/.dockerignore'
+tags:
+  - reconnaissance
+  - web
 type: command
-executor: bash
-data: 'curl -I https://target.com/files/xss.zip'
 output: null
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:47:12.810Z'
+executor: bash
 platforms:
   - Linux
-tags:
-  - fetch
-  - headers
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:25:13.494Z'
 verified: false
 validated: true
 submitted: true
 ---
-
 # curl-fetch-file
 
 ## Command
 
 ```bash
-curl -I https://target.com/files/xss.zip
+curl -s https://target.com/.dockerignore
 ```
 
 ## Description
 
-Fetches HTTP headers for a remote file to check MIME types and security headers.
+This command uses curl to silently fetch the contents of a potentially exposed .dockerignore file from a target web server, useful for reconnaissance in information disclosure scenarios where configuration files are publicly accessible.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| -I | HEAD request only | Yes |
-| URL | File URL | Yes |
+| `-s` | Silent mode: Suppress progress meter and error messages | Yes |
+| `https://target.com/.dockerignore` | URL of the file to fetch (replace with actual target) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -I https://example.com/file
+curl -s https://example.com/.dockerignore
 ```
 
 ### Advanced Usage
 
-Verbose: ```bash
-curl -v -I https://target.com/files/xss.zip
+```bash
+curl -s -o exposed_file.txt https://target.com/.dockerignore
 ```
+
+> Saves output to a file for offline analysis.
 
 ## Expected Output
 
-HTTP/1.1 200 OK
-Content-Type: application/zip
-(No nosniff header).
+If successful, raw text content of the .dockerignore file, such as:
+```
+# Docker ignore file
+node_modules
+.env
+*.log
+```
+A 404 or 403 indicates the file is not exposed or protected.
 
 ## Related
 
-- [[commands/curl-upload-file]]
+- [[Related Procedure|procedures/Discover-Exposed-Dockerignore-File]]

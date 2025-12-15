@@ -1,9 +1,8 @@
 ---
-id: tool-2
-url: ''
+url: null
 tags:
-  - outbound-detection
-  - ssrf-testing
+  - oob
+  - detection
 type: tool
 verified: false
 platforms:
@@ -11,7 +10,8 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:09.948Z'
+updated_at: '2025-12-14T17:33:34.481Z'
+id: 5a9e272d-d9aa-4ae3-afd3-2e43de07aca2
 validated: true
 submitted: true
 ---
@@ -21,54 +21,52 @@ submitted: true
 
 ## Overview
 
-Burp Collaborator is a server-side component of Burp Suite that detects out-of-band interactions, such as DNS resolutions or HTTP requests, to confirm vulnerabilities like SSRF.
+Burp Collaborator is an OOB interaction tool integrated with Burp Suite to detect external callbacks like DNS/HTTP requests from exploited vulnerabilities.
 
 ## Description
 
-It generates unique domains for payloads; when a server interacts with them (e.g., via SSRF), Collaborator logs the activity. Used here to confirm Nextcloud's outbound connections to external hosts.
+It generates unique domains/URLs for payloads, polling for interactions to confirm exploits like redirects in smuggling attacks, capturing headers with stolen cookies.
 
 ## Features
 
-- Feature 1: DNS and HTTP interaction polling
-- Feature 2: Unique domain generation
+- Feature 1: HTTP and DNS polling
+- Feature 2: Detailed interaction logs
 - Feature 3: Integration with Burp payloads
 
 ## Installation
 
 ### Requirements
 
-- Burp Suite Professional
-- Network access for polling
+- Burp Suite installed
 
 ### Install Commands
 
 ```bash
-# Included in Burp Suite; access via Burp menu: Burp > Burp Collaborator client
+# Launched from Burp GUI: Burp > Burp Collaborator Client
 ```
 
 ## Basic Usage
 
 ```bash
-# In Burp, generate Collaborator payload and poll
-# No CLI; GUI-based
+# GUI-based, poll via client interface
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Poll Now | Manual poll for interactions |
-| Copy to Clipboard | Get domain for payload |
+| Poll now | Manual check for interactions |
+| Copy URL | Generate payload URL |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Generate domain, insert into imapHost, send request, poll for DNS hit.
+Launch client and copy URL for smuggling payload.
 
 ### Example 2: Advanced Usage
 
-Monitor TCP connections on custom ports.
+Poll after exploit to capture request with cookies.
 
 ## MITRE ATT&CK Mapping
 
@@ -76,22 +74,21 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Network Service Scanning]] Network Service Scanning
+- [[Steal Web Session Cookie]]
 
 ### Tactics
 
-- [[Discovery]] Discovery
+- [[Collection]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Queries to collaborator.burp.net domains
-- Unusual DNS lookups from application servers
+- Queries to collaborator-like domains
+- Unexpected outbound HTTP from servers
 
 ## Related Procedures
 
-- [[procedures/Confirm-SSRF-with-External-Server]]
 
 ## Related Tools
 
@@ -99,4 +96,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Burp Documentation: https://portswigger.net/burp/documentation/desktop/collaborator
+- PortSwigger documentation

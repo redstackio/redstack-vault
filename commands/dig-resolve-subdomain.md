@@ -1,60 +1,59 @@
 ---
-data: dig +short sales.mixmax.com
-tags:
-  - dns
-  - recon
+id: b38b9020-b51a-4d42-956a-ba374edb4ab4
+name: dig-resolve-subdomain
 type: command
-output: null
 executor: bash
+data: dig 27.prd.vine.co
+output: null
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:06.343Z'
 platforms:
   - Linux
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:23.879Z'
-id: 33469c51-1990-4678-9df4-49d74e252fa5
+tags:
+  - dns
+  - recon
 verified: false
 validated: true
 submitted: true
 ---
+
 # dig-resolve-subdomain
 
 ## Command
 
 ```bash
-dig +short sales.mixmax.com
+dig 27.prd.vine.co
 ```
 
 ## Description
 
-This command uses the dig utility to perform a quick DNS lookup on a subdomain, returning only the IP address for fast identification of hosting providers.
+This command performs a DNS lookup to resolve the A record for the specified subdomain, useful for identifying IP addresses in reconnaissance.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `+short` | Limits output to essential records (IPs) | Yes |
-| `sales.mixmax.com` | The subdomain to resolve | Yes |
+| `27.prd.vine.co` | The subdomain to resolve | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-dig +short sales.mixmax.com
+dig 27.prd.vine.co
 ```
 
 ### Advanced Usage
 
 ```bash
-dig sales.mixmax.com ANY
+dig +short 27.prd.vine.co
 ```
-(For full records including CNAME)
 
 ## Expected Output
 
-A single line with the resolved IP, e.g., '151.101.16.229', indicating the hosting endpoint.
+DNS response with QUESTION SECTION, ANSWER SECTION showing IP (e.g., 3.14.159.XX), and authority info. Look for AWS-owned IPs.
 
 ## Related
 
-- [[nslookup-query]]
-- [[procedures/Discover-Dangling-Subdomain-DNS-Record]]
+- [[Related Procedure]]

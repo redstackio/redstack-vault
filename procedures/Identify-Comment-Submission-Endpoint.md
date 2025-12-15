@@ -1,6 +1,6 @@
 ---
-id: proc-identify-endpoint-2024
 tags:
+  - csrf
   - recon
   - web
 type: procedure
@@ -12,64 +12,65 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2024-10-01T00:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-updated_at: '2025-12-14T03:15:05.441Z'
+  - '[[Exploit Public-Facing Application]]'
+updated_at: '2025-12-14T17:27:22.496Z'
 sub_techniques: []
+id: e5054b32-a056-4157-a1ba-3e1af8dc1901
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
+  - '[[Exploit Public-Facing Application]]'
 ---
-# Identify-Comment-Submission-Endpoint
+# Identify Comment Submission Endpoint
 
 ## Summary
 
-This procedure involves observing network traffic to identify the comment submission endpoint and its JSON payload structure on intensedebate.com, setting the stage for parameter testing.
+This procedure involves inspecting a target blog's comment functionality to identify the submission endpoint and capture necessary form parameters, setting the stage for CSRF exploitation.
 
 ## Description
 
-In the attack scenario, users submit comments via a web interface, triggering GET requests to /js/commentAction/ with a JSON payload. By inspecting these requests using browser dev tools or a proxy, attackers can map parameters like acctid, src, and blogpostid for subsequent injection tests. This is a reconnaissance step in web application testing, applicable to PHP-based sites with MySQL backends.
+In a web application like blogs.starbucks.com, comment submission typically uses POST requests with form data. By using browser tools, attackers can uncover the exact endpoint URL and fields such as __VIEWSTATE (common in ASP.NET), tbComment, and submit coordinates. This reconnaissance is crucial for crafting accurate CSRF payloads. The target environment is a public-facing web app; prerequisites include access to the site and basic web inspection skills. Expected outcome: Full details for mimicking the request in a PoC.
 
 ## Requirements
 
-1. Access to a browser with developer tools (e.g., Firefox)
-2. Ability to interact with the comment form on intensedebate.com
-3. Optional: Proxy tool like Burp Suite for request capture
+1. Web browser with developer tools (e.g., Chrome)
+2. Access to the target blog article
+3. Basic knowledge of HTTP requests
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement web application firewall (WAF) to log unusual request patterns
-- Use client-side monitoring to detect dev tools usage
-- Rate-limit comment submissions to hinder reconnaissance
+- Implement CSRF tokens in all state-changing forms
+- Monitor for anomalous comment submissions from legitimate users
+- Use web application firewalls to detect cross-origin POSTs
 
 ## Objectives
 
-1. Locate the /js/commentAction/ endpoint
-2. Document JSON payload parameters
-3. Prepare for vulnerability testing
+1. Locate the POST endpoint for comments
+2. Capture form field values for replication
+3. Validate request structure for exploitation
 
 ## Instructions
 
-### Step 1: Submit a Normal Comment
+### Step 1: Navigate and Inspect Form
 
-**Context**: Trigger a legitimate comment submission to capture the baseline request.
+**Context**: Load the target blog page and prepare to capture the submission request.
 
-Navigate to a blog post on intensedebate.com and submit a test comment. Open browser dev tools (Network tab) to inspect the request.
+Open the blog article in a browser, e.g., https://blogs.starbucks.com/blogs/customer/archive/2016/05/06/starbucks-doubleshot-174-energy-coffee-makes-a-flavorful-foray-into-the-realm-of-spiced-coffee.aspx. Open developer tools (F12), go to the Network tab, and attempt to submit a test comment.
 
-**Expected Output**: GET request to /js/commentAction/?data={JSON payload}.
+**Expected Output**: Captured POST request in Network tab showing endpoint and form data.
 
-### Step 2: Analyze Payload Structure
+### Step 2: Analyze Request Details
 
-**Context**: Extract and understand the parameters in the JSON.
+**Context**: Extract key parameters from the captured request.
 
-Look for keys like "acctid", "src", "blogpostid". Note the structure for modification.
+Review the POST request: Note the URL, Content-Type: application/x-www-form-urlencoded, and body with fields like __VIEWSTATE=[value], tbComment=[text], and submit button coordinates.
 
-**Expected Output**: Clear mapping of injectable fields.
+**Expected Output**: List of required form fields and their sample values.
 
 ## MITRE ATT&CK Mapping
 
@@ -79,7 +80,7 @@ Look for keys like "acctid", "src", "blogpostid". Note the structure for modific
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[Exploit Public-Facing Application]]
 
 ### Sub-Techniques
 
@@ -92,5 +93,6 @@ Look for keys like "acctid", "src", "blogpostid". Note the structure for modific
 
 ## Tags
 
-- recon
-- web
+- [[csrf]]
+- [[web]]
+- [[recon]]

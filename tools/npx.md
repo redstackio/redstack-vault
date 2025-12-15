@@ -1,47 +1,49 @@
 ---
+id: tool-003
 url: 'https://www.npmjs.com/package/npx'
 tags:
-  - package-manager
-  - execution
+  - executor
 type: tool
 verified: false
 platforms:
+  - Linux
   - Node.js
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:15.117Z'
-id: 02de2751-5368-468c-be9f-2d61121798e7
+updated_at: '2025-12-14T17:26:11.490Z'
 validated: true
 submitted: true
 ---
+---
+
 # npx
 
 **Status**: Unverified
 
 ## Overview
 
-npx is a tool for executing npm packages directly without global installation, commonly used in security testing to quickly set up environments like TypeORM projects.
+NPX executes Node.js packages without global installation, used here to run Sapper CLI and degit for setting up the vulnerable environment.
 
 ## Description
 
-It launches CLI tools from npm packages, ideal for one-off setups in offensive security workflows. In this case, it's used to initialize TypeORM without cluttering the global namespace.
+In security testing, NPX allows on-the-fly execution of tools like Sapper dev/build or degit clones, avoiding permanent installs while preparing exploits.
 
 ## Features
 
-- Feature 1: Executes packages on-the-fly
-- Feature 2: Caches executions for efficiency
-- Feature 3: Supports version pinning
+- Feature 1: Temporary package execution
+- Feature 2: Automatic download if missing
+- Feature 3: Integration with NPM ecosystem
 
 ## Installation
 
 ### Requirements
 
-- Node.js and npm installed
+- Node.js and NPM
 
 ### Install Commands
 
 ```bash
-# Typically bundled with npm 5.2.0+
-npm install -g npm
+# Bundled with NPM 5.2+
+npm -v  # Check
 ```
 
 ## Basic Usage
@@ -54,21 +56,21 @@ npx --help
 
 | Option | Description |
 |--------|-------------|
-| `-p` | Specify package version |
-| `--yes` | Auto-confirm prompts |
+| `-h, --help` | Help |
+| `--yes` | Skip prompts |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-npx typeorm init --name Test
+npx sapper dev
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-npx -p typeorm@0.2.14 init --database mysql
+npx degit repo target
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +79,35 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor process spawns of 'npx' in logs
-- Network calls to npm registry
+- NPX processes
+- Temporary cache in ~/.npm/_npx
 
 ## Related Procedures
 
-- [[procedures/Initialize-TypeORM-Project]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/npm]]
+- [[Related Tool: npm]]
 
 ## References
 
 - Official documentation: https://www.npmjs.com/package/npx
+
+---

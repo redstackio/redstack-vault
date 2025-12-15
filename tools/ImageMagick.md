@@ -1,16 +1,17 @@
 ---
-url: 'https://imagemagick.org/'
+url: 'https://imagemagick.org/script/command-line-options.php'
 tags:
   - image-processing
-  - rce
+  - cli
 type: tool
-verified: false
 platforms:
   - Linux
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.334Z'
-id: 7e632f69-5c48-48ab-83c9-76c3c8cbc243
+description: Image processing library used for transformations in the exploit chain.
+id: be7b6820-f294-4064-b76d-52fb90dbaa11
+created_at: '2025-12-14T17:28:28.316Z'
+updated_at: '2025-12-14T17:28:28.316Z'
+verified: false
 validated: true
 submitted: true
 ---
@@ -20,57 +21,57 @@ submitted: true
 
 ## Overview
 
-ImageMagick is an open-source software suite for creating, editing, and processing bitmap images, commonly used in web applications for handling uploads like profile pictures. In this context, it's exploited for RCE via MVG parsing and vulnerable delegates.
+ImageMagick is a software suite for image manipulation, commonly used in web apps for resizing and processing. In this context, it's exploited via CLI injections in convert commands.
 
 ## Description
 
-ImageMagick supports various formats including vector graphics like MVG, and uses delegate files (delegates.xml) to handle external protocols such as HTTPS via curl. Vulnerable configurations allow command injection when parsing malicious inputs, enabling arbitrary execution on the server.
+Provides command-line tools like convert for batch image operations. Vulnerable when arguments are user-controlled, allowing file writes and SSRF.
 
 ## Features
 
-- Feature 1: Multi-format image conversion and manipulation
-- Feature 2: Delegate system for external tools (e.g., curl for URLs)
-- Feature 3: MVG support for vector graphics, parsable from ASCII
+- Feature 1: Supports resize, rotate, and metadata setting
+- Feature 2: CLI options for input/output paths
+- Feature 3: Integration with wrappers like MiniMagick
 
 ## Installation
 
 ### Requirements
 
-- Linux/Unix system
-- Development libraries (e.g., libpng, libjpeg)
+- Linux or compatible OS
 
 ### Install Commands
 
 ```bash
-# On Ubuntu/Debian
-apt update && apt install imagemagick
+# Ubuntu/Debian
+apt-get install imagemagick
 ```
 
 ## Basic Usage
 
 ```bash
-convert input.jpg output.png
+convert --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `-verbose` | Verbose output |
+| -h, --help | Show help |
+| -resize | Resize image |
+| -write | Write intermediate file |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-convert x.gif thumbnail.jpg
+convert input.jpg -resize 100x100 output.png
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-convert -size 640x480 xc:white -draw "image over 0 0 0 0 https://example.com/image.png" output.png
+convert input.jpg -auto-orient -write /tmp/out.jpg output.png
 ```
 
 ## MITRE ATT&CK Mapping
@@ -80,7 +81,7 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Unix Shell]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
@@ -90,9 +91,8 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor ImageMagick processes spawning curl or bash
-- Log file accesses to delegates.xml
-- Alert on unexpected outbound connections from convert utility
+- Monitor convert command logs for unusual arguments
+- Policy restrictions in /etc/ImageMagick/policy.xml
 
 ## Related Procedures
 
@@ -106,10 +106,9 @@ LIMIT 10
 
 ## Related Tools
 
-- [[Related Tool 1]]
-- [[Related Tool 2]]
+- [[tools/MiniMagick]]
+- [[tools/ImageProcessing]]
 
 ## References
 
-- Official documentation: https://imagemagick.org/script/
-- Related resources: CVE details for ImageMagick vulnerabilities
+- Official documentation

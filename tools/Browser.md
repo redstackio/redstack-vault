@@ -1,15 +1,18 @@
 ---
 url: ''
 tags:
-  - web-access
-  - header-inspection
+  - web
+  - poc
 type: tool
-verified: false
 platforms:
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:38:39.514Z'
-id: bdbb0c46-aeb3-4c98-81c1-62523d74d492
+description: >-
+  Standard web browser used to access and execute web-based exploits like CORS
+  PoCs.
+id: a97c223b-04c1-4c6e-afad-684f9c0f4566
+created_at: '2025-12-14T17:28:44.957Z'
+updated_at: '2025-12-14T17:28:44.957Z'
+verified: false
 validated: true
 submitted: true
 ---
@@ -19,48 +22,61 @@ submitted: true
 
 ## Overview
 
-A web browser like Chrome or Firefox is used for accessing URLs, inspecting responses, and verifying content during reconnaissance and exploitation.
+A standard web browser (e.g., Chrome, Firefox) serves as the primary tool for loading HTML/JavaScript PoCs to test and exploit web vulnerabilities like CORS misconfigurations, enabling cross-origin requests and data exfiltration in security assessments.
 
 ## Description
 
-Browsers enable manual probing of subdomains, header inspection for service identification, and execution of JavaScript payloads. In this attack, it's essential for visiting the subdomain and triggering alerts.
+Browsers enforce the same-origin policy but allow cross-origin requests when servers permit via CORS headers. In offensive security, they are used to simulate attacker scenarios by hosting local PoC files that fetch sensitive data from targets, as seen in enumerating WordPress user APIs.
 
 ## Features
 
-- Feature 1: Developer tools for header and network inspection
-- Feature 2: JavaScript execution for POC testing
-- Feature 3: Screenshot capture for evidence
+- Feature 1: JavaScript execution for dynamic requests (XMLHttpRequest, Fetch API)
+- Feature 2: Developer tools for inspecting network requests and CORS headers
+- Feature 3: Local file loading for PoC testing without a server
 
 ## Installation
 
 ### Requirements
 
-- Standard OS (Windows, Linux, macOS)
+- Operating system with graphical interface (Windows, macOS, Linux)
 
 ### Install Commands
 
-Browsers are pre-installed or downloadable from official sites.
+```bash
+# Typically pre-installed; download from official sites
+# e.g., For Chrome: wget https://dl.google.com/chrome/installer
+```
 
 ## Basic Usage
 
-Open browser and navigate to URL.
+```bash
+# Open HTML PoC file
+google-chrome poc.html
+# Or Firefox: firefox poc.html
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| F12 | Open dev tools |
-| Ctrl+Shift+I | Inspect elements |
+| --disable-web-security | Disables CORS for testing (use cautiously) |
+| --user-data-dir=/tmp/chrome | Isolated profile for security testing |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Navigate to http://developer.openapi.starbucks.com/ to view response.
+```bash
+firefox poc.html
+```
+Load the file and observe the alert with fetched data.
 
 ### Example 2: Advanced Usage
 
-Use dev tools to check 'Server' header for 'Mashery Proxy'.
+```bash
+google-chrome --disable-web-security --user-data-dir=/tmp/test poc.html
+```
+Bypasses CORS for local testing if needed.
 
 ## MITRE ATT&CK Mapping
 
@@ -68,28 +84,36 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Hardware]]
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
+- [[T1087.002]]
 
 ### Tactics
 
-- [[Reconnaissance]]
-- [[Execution]]
+- [[Discovery]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network logs showing HTTP requests to target
-- Browser history or cache artifacts
+- Browser network logs showing cross-origin requests to sensitive endpoints
+- Unusual JavaScript execution patterns in access logs
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/Mashery-Dashboard]]
+- [[Burp Suite]]
+- [[Postman]]
 
 ## References
 
-- Browser documentation (e.g., Chrome DevTools)
+- Official browser documentation
+- MDN Web Docs on CORS

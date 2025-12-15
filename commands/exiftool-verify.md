@@ -1,16 +1,18 @@
 ---
-id: cmd-exiftool-verify
-data: exiftool -ver
+data: exiftool -GPS* image.jpg
 tags:
-  - verification
+  - exif
+  - metadata
 type: command
-output: '12.50'
+output: null
 executor: bash
 platforms:
   - Linux
+  - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.390Z'
+updated_at: '2025-12-14T17:25:34.393Z'
+id: 446f7f0f-3e9c-426f-81e4-050ba2d70f60
 verified: false
 validated: true
 submitted: true
@@ -20,32 +22,40 @@ submitted: true
 ## Command
 
 ```bash
-exiftool -ver
+exiftool -GPS* image.jpg
 ```
 
 ## Description
 
-Checks the installed version of exiftool to ensure it's available for metadata operations.
+This command uses exiftool to display only GPS-related EXIF tags from a JPEG image, verifying the presence of geolocation metadata before upload testing.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-ver` | Displays the version number | Yes |
+| `-GPS*` | Filters output to GPS tags only | Yes |
+| `image.jpg` | Path to the target image file | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-exiftool -ver
+exiftool -GPS* gps_sample.jpg
+```
+
+### Advanced Usage
+
+```bash
+exiftool -GPS:all -csv gps_sample.jpg > gps_data.csv
 ```
 
 ## Expected Output
 
-Version string, e.g., "12.50" - confirms tool is installed and functional.
+GPS Latitude : 37 deg 46' 29.64" N
+GPS Longitude: 122 deg 25' 9.98" W
+GPS Altitude : 10.5 m
 
 ## Related
 
-- [[procedures/Prepare-Malicious-Image-with-PHP-Shell]]
-- [[commands/exiftool-embed-php]]
+- [[Related Procedure: Prepare-Images-with-EXIF-Data]]

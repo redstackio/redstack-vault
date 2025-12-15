@@ -1,14 +1,14 @@
 ---
-id: tool-gitsploit
+id: tool-gitsploit-927413
 url: 'https://github.com/arthaudtz/gitsploit'
 tags:
-  - github-vuln
+  - github
 type: tool
 verified: false
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:32.181Z'
+updated_at: '2025-12-14T17:27:35.561Z'
 validated: true
 submitted: true
 ---
@@ -18,81 +18,83 @@ submitted: true
 
 ## Overview
 
-Framework to exploit GitHub for finding vulnerabilities in public code repos.
+gitSploit finds and exploits GitHub repo vulns, scanning Zomato for 10 issues.
 
 ## Description
 
-Scans Zomato repos for patterns like XSS, IDOR, revealing ~10 issues.
+Ruby framework for GitHub vuln hunting.
 
 ## Features
 
-- GitHub API searches
-- Vuln pattern matching
-- Report generation
+- Feature 1: Pattern matching
+- Feature 2: Exploit modules
+- Feature 3: Repo search
 
 ## Installation
 
 ### Requirements
 
-- Python 3
+- Ruby
 
 ### Install Commands
 
 ```bash
-git clone https://github.com/arthaudtz/gitsploit.git
-cd gitsploit
-pip install -r requirements.txt
+gem install gitsploit
 ```
 
 ## Basic Usage
 
 ```bash
-python gitsploit.py --help
+gitsploit --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -u | User/org |
-| -l | Limit |
+| `search` | Query repos |
+| `--exploit` | Show exploits |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-python gitsploit.py -u zomato
+gitsploit search zomato
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-python gitsploit.py -u zomato -l 10 --type xss
+gitsploit search zomato --type xss
 ```
 
 ## MITRE ATT&CK Mapping
 
 ### Techniques
 
-- [[Search Open Websites-Domains]] Search Open Websites and Services
+- [[Hardware]]
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Discovery]]
 
 ## Detection
 
-- GitHub API rate limits
-- Search query logs
+- GitHub API abuse
 
 ## Related Procedures
 
-- [[procedures/Vulnerability-Discovery-with-gitSploit-on-GitHub]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/truffleHog]]
 
 ## References
 

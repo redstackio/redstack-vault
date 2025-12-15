@@ -1,89 +1,87 @@
 ---
+id: proc-uuid-3
 tags:
-  - burp
   - intercept
-  - http
+  - proxy
+  - burp-suite
+  - web
 type: procedure
 tools:
   - '[[tools/Burp-Suite]]'
 tactics:
-  - '[[Initial Access]]'
-commands: []
+  - '[[Discovery]]'
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2024-01-01T00:00:00Z'
 techniques:
-  - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T05:32:10.240Z'
-skill_level: intermediate
-impact_level: medium
-detection_risk: medium
+  - '[[Gather Victim Host Information]]'
+updated_at: '2025-12-14T17:28:51.876Z'
 sub_techniques: []
-id: f9d0c992-3828-4f6f-b7e0-31d52b36b5b5
 validated: true
 mitre_tactics:
-  - '[[Initial Access]]'
+  - '[[Discovery]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Gather Victim Host Information]]'
 ---
 # Intercept-Upload-Request-with-Burp-Suite
 
 ## Summary
 
-This procedure uses Burp Suite to capture the HTTP POST request generated during a profile image upload, allowing inspection of parameters like 'personId' for subsequent manipulation in the IDOR exploit.
+This procedure uses Burp Suite to capture the HTTP POST request from the Nextcloud theming upload, allowing inspection of vulnerable parameters like 'key'.
 
 ## Description
 
-Burp Suite acts as a man-in-the-middle proxy to intercept traffic from the browser to the server. In this DoD web app scenario, triggering an image upload sends a request containing the 'personId', which can be examined for IDOR flaws. Prerequisites include proxy configuration; outcomes include a paused request ready for editing.
+Burp Suite acts as a man-in-the-middle proxy to intercept web traffic. During the upload initiation, the tool captures the request, revealing the 'key' parameter that controls the filename. This is essential for the subsequent modification step and works on any web-based Nextcloud setup. The interception provides visibility into the request structure, including headers, form data, and the uploaded file.
 
 ## Requirements
 
 1. Burp Suite installed and running
-2. Browser proxy set to Burp (e.g., 127.0.0.1:8080)
-3. Authenticated session from previous access
+2. Browser configured to use Burp as proxy (e.g., 127.0.0.1:8080)
+3. Upload initiated from theming page
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Use HTTPS with certificate pinning to detect proxy interception
-- Log and alert on proxy-like traffic anomalies or unusual request timings
+- Enforce certificate pinning to prevent proxy interception
+- Monitor network traffic for proxy-like anomalies
+- Use endpoint detection to identify proxy tool signatures
 
 ## Objectives
 
-1. Capture the upload request
-2. Identify vulnerable parameters
-3. Prepare for parameter tampering
+1. Capture the full upload request
+2. Inspect parameters for vulnerabilities
+3. Prepare for modification without alerting the server
 
 ## Instructions
 
-### Step 1: Configure Proxy and Trigger Upload
+### Step 1: Configure Proxy
 
-**Context**: Set up interception and perform the upload to capture the request.
+**Context**: Set up Burp to intercept traffic from the browser.
 
-In Burp Suite, enable Intercept in the Proxy tab. Then, in the browser, select and upload an image.
+No specific command; in Burp, go to Proxy > Options and ensure intercept is on for the target scope (e.g., localhost).
 
-> The request will pause in Burp. Expected output: HTTP POST request displayed, including multipart/form-data with 'personId'.
+> Install Burp's CA certificate in the browser to handle HTTPS.
 
-### Step 2: Inspect Request
+### Step 2: Trigger and Intercept
 
-**Context**: Review the captured request for key parameters.
+**Context**: Perform the upload to catch the request.
 
-Examine the request body in Burp's Inspector.
+No specific command; from the theming page, upload the file while Burp is intercepting.
 
-> Look for 'personId={your_id}'. Expected output: Confirmation of parameter presence and value.
+> Request appears in Burp's Proxy > Intercept tab, showing POST /settings/admin/theming with 'key' in the body.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Discovery]] Discovery
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[Gather Victim Host Information]] Gather Victim Host Information
 
 ### Sub-Techniques
 
@@ -97,6 +95,7 @@ Examine the request body in Burp's Inspector.
 
 ## Tags
 
-- [[burp]]
 - [[intercept]]
-- [[http]]
+- [[proxy]]
+- [[tools/Burp-Suite]]
+- [[web]]

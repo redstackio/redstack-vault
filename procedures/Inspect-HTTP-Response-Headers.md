@@ -1,11 +1,12 @@
 ---
-id: proc-inspect-http-headers
+id: proc-uuid-2
 tags:
-  - reconnaissance
-  - web
-  - headers
+  - information-disclosure
+  - header-inspection
+  - nginx
 type: procedure
-tools: []
+tools:
+  - '[[tools/curl]]'
 tactics:
   - '[[Reconnaissance]]'
 commands:
@@ -17,11 +18,12 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Gather Victim Host Information]]'
-updated_at: '2025-12-14T03:15:26.937Z'
+updated_at: '2025-12-14T17:24:55.984Z'
 skill_level: beginner
 impact_level: low
 detection_risk: low
-sub_techniques: []
+sub_techniques:
+  - '[[Software]]'
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
@@ -32,68 +34,69 @@ mitre_techniques:
 
 ## Summary
 
-This procedure retrieves and examines HTTP response headers from a target web server to identify security configurations, such as the presence of protective headers. It is commonly used in reconnaissance to uncover misconfigurations that could enable attacks like reflected XSS.
+This procedure focuses on examining HTTP response headers from a web server to detect information disclosures, such as server software versions. It is essential for reconnaissance, as exposed details like nginx versions can guide targeted vulnerability exploitation.
 
 ## Description
 
-In web security assessments, inspecting HTTP headers reveals server details and security settings. The X-XSS-Protection header, for instance, instructs browsers to enable or block reflective XSS attempts. Absence of this header, as seen on https://doc.owncloud.org/, leaves sites vulnerable to script injection without browser intervention. This procedure targets public web endpoints and requires no authentication, making it suitable for initial vulnerability scouting on platforms like ownCloud documentation sites hosted on Nginx, Apache, or IIS.
+Following access to an endpoint like jenkins.brew.sh/login, the response headers are parsed for the 'Server' field. Default nginx configurations include the full version (e.g., nginx/1.18.0), which attackers can use to search for CVEs. This low-effort technique reveals the tech stack without further interaction.
 
 ## Requirements
 
-1. Network access to the target URL (e.g., https://doc.owncloud.org/)
-2. curl installed or browser with developer tools
-3. Basic command-line knowledge
+1. Prior HTTP response from the target endpoint
+2. Ability to parse text output (e.g., grep for headers)
+3. Knowledge of common header fields like 'Server'
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Implement web application firewalls (WAF) to monitor header inspection requests
-- Log unusual curl or dev tools traffic patterns
-- Enforce security headers via server configuration (e.g., add X-XSS-Protection: 1; mode=block in Nginx/Apache)
+- Use 'server_tokens off;' in nginx.conf to minimize or remove version info
+- Deploy header inspection tools like ModSecurity to strip sensitive headers
+- Monitor logs for tools like curl or frequent header-only requests
 
 ## Objectives
 
-1. Retrieve all HTTP response headers from the target
-2. Identify potential security weaknesses in header configuration
-3. Document findings for further exploitation assessment
+1. Extract the 'Server' header value
+2. Identify the software and version for vulnerability assessment
+3. Document the disclosure for reporting or further research
 
 ## Instructions
 
-### Step 1: Fetch Headers Using curl
+### Step 1: Fetch and Filter Headers
 
-**Context**: Use curl to send a HEAD request and capture response headers without downloading the full body, focusing on metadata like security headers.
+**Context**: Retrieve headers and isolate the Server line to quickly spot disclosures.
 
 **Command** ([[commands/curl-fetch-headers]]):
 ```bash
-curl -I https://doc.owncloud.org/
+curl -I https://jenkins.brew.sh/login | grep -i server
 ```
 
-> This command outputs headers such as HTTP/1.1 200 OK, Server: nginx, Content-Type: text/html, etc. Look for security-related headers; absence indicates misconfiguration.
+> The -I fetches headers, grep filters for 'Server'. Expected output: 'Server: nginx/1.x.x', confirming disclosure.
 
-### Step 2: Analyze Output for Security Headers
+### Step 2: Analyze for Version Details
 
-**Context**: Manually or scripturally review the headers for key security entries like X-XSS-Protection, Content-Security-Policy, or Strict-Transport-Security.
+**Context**: If using browser dev tools, open Network tab, reload the page, and inspect the response headers manually.
 
-**Command** ([[commands/curl-fetch-headers]] with grep):
+**Command** ([[commands/curl-fetch-headers]]):
 ```bash
-curl -s -I https://doc.owncloud.org/ | grep -i xss
+curl -I https://jenkins.brew.sh/login > headers.txt && cat headers.txt
 ```
 
-> Expected output: Empty if missing. Success confirms vulnerability to XSS without browser blocking.
+> Save to file for review. Look for unredacted version info; success if version is explicit (not just 'nginx').
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Reconnaissance]]
 
 ### Techniques
 
-- [[Gather Victim Host Information]] Gather Victim Host Information
+- [[Gather Victim Host Information]]
 
 ### Sub-Techniques
 
+- [[Software]]
 
 ## Commands Used
 
@@ -101,9 +104,10 @@ curl -s -I https://doc.owncloud.org/ | grep -i xss
 
 ## Tools Used
 
+- [[tools/curl]]
 
 ## Tags
 
-- reconnaissance
-- web
-- headers
+- [[information-disclosure]]
+- [[headers]]
+- [[Reconnaissance]]

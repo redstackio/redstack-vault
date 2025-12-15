@@ -1,17 +1,19 @@
 ---
-id: tool-uuid-foxy-proxy
+id: tool-foxy-proxy-001
 url: 'https://getfoxyproxy.org/'
 tags:
   - proxy
-  - browser-extension
+  - browser
+  - traffic-routing
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
   - macOS
+  - Browser Extension
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:48.135Z'
+updated_at: '2025-12-14T17:33:06.623Z'
 validated: true
 submitted: true
 ---
@@ -21,54 +23,55 @@ submitted: true
 
 ## Overview
 
-FoxyProxy is a browser extension that simplifies switching between proxies, commonly used to route web traffic through tools like Burp Suite for security testing and interception.
+Foxy Proxy is a browser extension for managing proxy configurations, commonly used to route traffic through tools like Burp Suite for secure testing of web applications.
 
 ## Description
 
-It allows quick toggling of proxy configurations without manual browser settings changes. In web vuln exploitation, it's paired with Burp to capture application requests, enabling payload modification for SSRF testing without disrupting normal browsing.
+It simplifies switching proxies in Firefox or Chrome, ensuring all browser requests (e.g., profile updates) are captured by Burp without manual PAC file setup. Ideal for intermittent interception during IDOR testing.
 
 ## Features
 
-- Feature 1: Pattern-based proxy switching
-- Feature 2: Integration with Burp, ZAP, etc.
-- Feature 3: Whitelisting/blacklisting for selective routing
+- Feature 1: Easy toggle between proxy modes (e.g., Burp on 127.0.0.1:8080)
+- Feature 2: Pattern-based routing for specific domains
+- Feature 3: Integration with Burp for seamless traffic capture
 
 ## Installation
 
 ### Requirements
 
-- Firefox or Chrome browser
+- Compatible browser (Firefox/Chrome)
 
 ### Install Commands
 
+No CLI; install via browser store:
+
 ```bash
-# Install via browser extension store; no CLI needed
-# For Firefox: https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+# For Firefox: Search 'FoxyProxy' in add-ons
+# Enable and add proxy: 127.0.0.1:8080
 ```
 
 ## Basic Usage
 
 ```bash
-# In extension: Add pattern for target domain, set proxy to 127.0.0.1:8080 (Burp)
+# In browser: Toggle FoxyProxy to 'Use proxies: Burp'
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Enable | Activate proxy for current session |
-| Use patterns | Route specific URLs via proxy |
-| Disable | Revert to direct connection |
+| `Enable` | Activate proxy for session |
+| `Patterns` | Route specific URLs (e.g., target.com/*) |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Configure proxy for `https://target.com/*` to localhost:8080; enable to route all target traffic through Burp.
+Install extension, add proxy to localhost:8080, enable before profile update.
 
 ### Example 2: Advanced Usage
 
-Set up multiple proxies: One for Burp interception, another for direct access to avoid loops.
+Set pattern for https://target.com/EditUserProfile/* to route through Burp only.
 
 ## MITRE ATT&CK Mapping
 
@@ -76,29 +79,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Protocol Tunneling]] Protocol Tunneling (for proxy chaining)
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Defense Evasion]] Defense Evasion
+- [[Discovery]] Discovery
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
 - Extension presence in browser profiles
-- Proxy headers or delays in requests
-- Inconsistent User-Agent with proxy use
+- Proxy headers or delays in request logs
 
 ## Related Procedures
 
+- [[procedures/Intercept-and-Analyze-Profile-Update-Request]]
+- [[procedures/Enumerate-Victims-User-ID]]
 
 ## Related Tools
 
 - [[tools/Burp-Suite]]
-- [[tools/Proxy-SwitchyOmega]]
+- [[tools/Charles-Proxy]]
 
 ## References
 
 - Official documentation: https://getfoxyproxy.org/help/
-- Related resources: Browser extension repositories
+- Related resources: Browser proxy guides

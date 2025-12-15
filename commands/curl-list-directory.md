@@ -1,25 +1,18 @@
 ---
-id: cmd-curl-list-directory
-data: 'curl -s http://www.mtn.co.sz/wp-content/uploads/ | html2text -nobs'
+data: 'curl https://sdrc.starbucks.com/attachments/ -v'
 tags:
   - recon
-  - web
-  - directory-listing
+  - disclosure
 type: command
-output: |
-  Index of /wp-content/uploads/
-  Name                    Last modified      Size  Description
-  <hr>
-  2019/                   01-Jan-2019 00:00    -
-  2020/                   01-Jan-2020 00:00    -
-  image.jpg               15-Mar-2020 10:30   2.5M
+output: null
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:10.068Z'
+id: cd65492a-7a44-4bcc-9778-72a324d1188b
+created_at: '2025-12-14T17:25:18.331Z'
+updated_at: '2025-12-14T17:25:18.331Z'
 verified: false
 validated: true
 submitted: true
@@ -29,42 +22,39 @@ submitted: true
 ## Command
 
 ```bash
-curl -s http://www.mtn.co.sz/wp-content/uploads/ | html2text -nobs
+curl https://sdrc.starbucks.com/attachments/ -v
 ```
 
 ## Description
 
-This command uses curl to silently fetch the contents of a web directory with enabled listing and pipes the HTML output to html2text for a clean, readable text representation of the file and folder list. It is useful for enumerating exposed directories in reconnaissance phases without needing a graphical browser.
+This command uses curl to access and list contents of an unsecured web directory, useful for identifying exposed files in information disclosure scenarios.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-s` | Silent mode, suppresses progress meter | Yes |
-| `URL` | Target directory URL (e.g., http://target.com/wp-content/uploads/) | Yes |
-| `html2text -nobs` | Converts HTML to text, ignoring body tags and styles | Yes (if piping) |
+| `URL` | Target directory path | Yes |
+| `-v` | Verbose mode for headers and status | No |
+| `-o filename` | Output file for downloads | No |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -s http://target.com/wp-content/uploads/ | html2text -nobs
+curl https://sdrc.starbucks.com/attachments/ -v
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -s -L http://target.com/wp-content/uploads/2020/ | html2text -nobs > listing.txt
+curl https://sdrc.starbucks.com/attachments/sensitive.pdf -o downloaded.pdf
 ```
-
-This follows redirects (-L) and saves the output to a file.
 
 ## Expected Output
 
-A text-based index listing directories and files with names, last modified dates, sizes, and descriptions, indicating successful directory browsing (e.g., no error like 403 Forbidden).
+Directory index HTML or plain text listing files (e.g., Index of /attachments/ with file names), with HTTP 200 status and no auth challenge.
 
 ## Related
 
-- [[commands/curl-download-file]]
-- [[procedures/Access-WordPress-Uploads-Directory-Listing]]
+- [[Related Procedure: Exploit-Unsecured-Attachment-Directory-for-Information-Disclosure]]

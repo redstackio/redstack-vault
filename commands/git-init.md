@@ -1,18 +1,16 @@
 ---
+id: cmd-git-init
 data: git init
 tags:
   - git
   - initialization
 type: command
-output: Initializes empty Git repository in /path/to/mywallboard/.git/
+output: Initialized empty Git repository in /path/to/dir/.git/
 executor: bash
 platforms:
   - Linux
-  - macOS
-  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:30.347Z'
-id: 5deb740e-3fe6-491f-9f01-c7bda6938119
+updated_at: '2025-12-14T17:23:19.782Z'
 verified: false
 validated: true
 submitted: true
@@ -27,12 +25,13 @@ git init
 
 ## Description
 
-Initializes a new Git repository in the current directory, preparing it for version control and submodule additions.
+Initializes a new Git repository in the current directory, creating a .git subdirectory. Used here to set up a valid Git context for the git-lib module to avoid operational errors during exploitation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
+| `init` | Command to create an empty repository | Yes |
 
 ## Examples
 
@@ -42,17 +41,20 @@ Initializes a new Git repository in the current directory, preparing it for vers
 git init
 ```
 
+Creates the repo in the current folder.
+
 ### Advanced Usage
 
 ```bash
-git init --bare
+git init my-repo
 ```
+
+Initializes in a named directory (not used here).
 
 ## Expected Output
 
-'Initialized empty Git repository in .git/' message.
+Initialized empty Git repository in /current/dir/.git/
 
 ## Related
 
-- [[commands/git-submodule-add-atlassian]]
-- [[procedures/Integrate-Atlassian-Package]]
+- [[Related Procedure|procedures/Exploit-git-lib-RCE-via-Command-Injection]]

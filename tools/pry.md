@@ -1,35 +1,37 @@
 ---
-id: tool-uuid-1
+id: tool-pry-001
 url: 'https://pry.github.io/'
 tags:
+  - repl
   - debugging
-  - interactive
 type: tool
 verified: false
 platforms:
   - Ruby
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:39:18.706Z'
+updated_at: '2025-12-14T17:32:20.258Z'
 validated: true
 submitted: true
 ---
+---
+
 # pry
 
 **Status**: Unverified
 
 ## Overview
 
-Pry is an interactive Ruby shell and runtime debugger, ideal for testing SDK behavior, simulating session setups, and stepping through code during security assessments like SSRF exploitation in the Shopify API.
+Pry is an interactive Ruby REPL for runtime inspection, debugging, and testing code like the Shopify API SDK in a live environment.
 
 ## Description
 
-Pry enhances irb with features like syntax highlighting, command history, and pry-remote for debugging. In offensive security, it's used to load gems, inspect methods, and execute payloads interactively without full scripts.
+Pry provides powerful features for stepping through code, setting breakpoints, and executing commands interactively, ideal for testing SDK methods like Session.setup without a full script.
 
 ## Features
 
-- Feature 1: Interactive REPL with tab completion
-- Feature 2: Breakpoint debugging with pry-byebug integration
-- Feature 3: Custom commands for repetitive tasks
+- Feature 1: Interactive shell with syntax highlighting
+- Feature 2: Runtime code evaluation and inspection
+- Feature 3: Gem loading and object exploration
 
 ## Installation
 
@@ -53,8 +55,8 @@ pry
 
 | Option | Description |
 |--------|-------------|
-| -r file | Require file on startup |
-| --simple-prompt | Minimal prompt |
+| -r | Require file on startup |
+| --simple-prompt | Simplified prompt |
 
 ## Examples
 
@@ -67,7 +69,7 @@ pry -r 'shopify_api'
 ### Example 2: Advanced Usage
 
 ```bash
-pry --gem  # List installed gems
+pry --repl-historydir ~/.pry_history
 ```
 
 ## MITRE ATT&CK Mapping
@@ -76,7 +78,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[Python]]
 
 ### Tactics
 
@@ -86,13 +88,11 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Process: ruby/pry processes
-- Network: No direct network, but used in exploits
+- Process monitoring for 'pry' executable
+- Ruby gem logs showing pry installation
 
 ## Related Procedures
 
-- [[procedures/Analyze-Shopify-API-SDK-for-Input-Validation-Flaws]]
-- [[procedures/Exploit-Port-Parameter-for-Arbitrary-Host-Injection]]
 
 ## Related Tools
 
@@ -101,3 +101,6 @@ Indicators and methods for detecting this tool's usage:
 ## References
 
 - Official documentation: https://pry.github.io/
+- Ruby debugging resources
+
+---

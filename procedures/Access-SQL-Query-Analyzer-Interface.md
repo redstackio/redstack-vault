@@ -1,7 +1,8 @@
 ---
+id: b2c3d4e5-f6g7-8901-bcde-f23456789012
 tags:
   - access
-  - web
+  - internal-tool
 type: procedure
 tools: []
 tactics:
@@ -11,68 +12,69 @@ verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 techniques:
   - '[[Valid Accounts]]'
-updated_at: '2025-12-14T03:46:25.936Z'
-skill_level: intermediate
-impact_level: low
-detection_risk: low
+updated_at: '2025-12-14T17:29:56.607Z'
 sub_techniques: []
-id: 82fedb6f-5b71-4a3d-bbd4-b59a62adc7e0
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
   - '[[Valid Accounts]]'
 ---
+---
+
 # Access-SQL-Query-Analyzer-Interface
 
 ## Summary
 
-This procedure outlines accessing the internal SQL Query Analyzer interface in HackerOne's application, requiring authenticated engineer privileges, to set up for subsequent SQL injection exploitation.
+This procedure accesses the internal SQL Query Analyzer feature in a Ruby on Rails application, allowing authenticated users to run EXPLAIN ANALYZE queries on a PostgreSQL database, setting up for subsequent injection attacks.
 
 ## Description
 
-The SQL Query Analyzer is an internal feature allowing engineers to run EXPLAIN ANALYZE queries on the database. It wraps user input in a transaction for safety, but this can be bypassed. Access is via a web interface on localhost:8080, assuming internal network or local setup. Successful access positions the attacker to input raw SQL without immediate execution risks.
+The SQL Query Analyzer is an authenticated interface for engineers to analyze SQL queries. It wraps user input in a transaction for safety but directly interpolates raw SQL, making it vulnerable to injection. This step requires valid credentials and navigates to the endpoint to select the database.
 
 ## Requirements
 
-1. Authenticated session as an internal engineer
-2. Access to http://localhost:8080 or equivalent internal URL
-3. Web browser
+1. Authenticated engineer account with access to /support endpoints
+2. Network access to the application server (e.g., localhost:8080)
+3. Web browser or curl for HTTP requests
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Restrict access to SQL tools to minimal privileged users
-- Monitor access logs for SQL Query Analyzer usage
-- Implement IP whitelisting for internal tools
+- Implement role-based access control (RBAC) to limit analyzer access
+- Log all access to internal tools and monitor for unusual query patterns
+- Use web application firewalls (WAF) to detect anomalous requests
 
 ## Objectives
 
-1. Gain interface access for query submission
-2. Verify 'public' database connection availability
-3. Prepare for payload injection without alerting
+1. Load the query analyzer interface
+2. Select the target database connection
+3. Prepare for SQL input without triggering alerts
 
 ## Instructions
 
 ### Step 1: Authenticate and Navigate
 
-**Context**: Log in to the HackerOne internal dashboard to reach the support tools section.
+**Context**: Log in and access the support tools section to reach the analyzer.
 
-No specific command; use browser to visit http://localhost:8080/support/sql_query_analyzer.
+**Command** (using curl for simulation):
+```bash
+curl -u <username>:<password> http://localhost:8080/support/sql_query_analyzer
+```
 
-> Ensure session is active; page should load with query input fields and database selector.
+> This authenticates and loads the page. In a browser, navigate directly after login.
 
-### Step 2: Select Connection
+### Step 2: Select Database
 
-**Context**: Choose the target database to ensure the injection targets the correct schema.
+**Context**: Choose the 'public' PostgreSQL connection to target the vulnerable database.
 
-Select 'public' from the database connection dropdown.
+No command needed; use the interface dropdown to select 'public'.
 
-> Interface ready for raw_sql input; no output yet.
+> Expected: Interface ready for SQL input.
 
 ## MITRE ATT&CK Mapping
 
@@ -95,5 +97,7 @@ Select 'public' from the database connection dropdown.
 
 ## Tags
 
-- access
-- web
+- [[access]]
+- [[internal-tool]]
+
+---

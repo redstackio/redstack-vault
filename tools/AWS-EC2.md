@@ -1,89 +1,110 @@
 ---
-url: 'https://aws.amazon.com/marketplace/pp/prodview-dq4sxno5vuy7m'
+id: tool-885539-aws-ec2
+url: 'https://aws.amazon.com/ec2'
 tags:
-  - vm
-  - testing
+  - cloud
+  - deployment
+  - scaling
 type: tool
 verified: false
 platforms:
   - Cloud
-  - Windows
-id: 3efc55bd-417b-4b06-a3ce-a1e8d0048c3a
-created_at: '2025-12-13T23:55:06.732Z'
-updated_at: '2025-12-13T23:55:06.732Z'
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:00.339Z'
 validated: true
 submitted: true
 ---
-# AWS-EC2
+# AWS EC2
 
 **Status**: Unverified
 
 ## Overview
 
-AWS EC2 for hosting Windows Server 2022 instances to test RCE exploits.
+Amazon EC2 (Elastic Compute Cloud) provides scalable virtual servers in the AWS cloud, used for deploying PoC scripts and running resource-intensive tasks like brute-forcing.
 
 ## Description
 
-Cloud VMs for reproducing V8/ROP exploits on specific OS builds without local hardware.
+For security testing, EC2 instances host scripts (e.g., Ruby for timing attacks) to avoid local resource limits and IP blocking. Launch t2.micro or larger, install dependencies, and run remotely via SSH. Ideal for evading detection by distributing load.
 
 ## Features
 
-- Feature 1: On-demand Windows instances
-- Feature 2: Remote access
-- Feature 3: Snapshotting
+- Feature 1: On-demand instance scaling.
+- Feature 2: AMI support for quick setups.
+- Feature 3: Security groups for network control.
 
 ## Installation
 
 ### Requirements
 
-- AWS account
+- AWS account.
+- SSH client.
 
 ### Install Commands
 
-N/A; launch via console.
+```bash
+# Launch via AWS CLI
+echo 'run-instances --image-id ami-0abcdef1234567890 --count 1 --instance-type t2.micro' | aws ec2
+ssh -i key.pem ec2-user@ip ruby twileak.rb
+```
 
 ## Basic Usage
 
 ```bash
-aws ec2 run-instances --image-id ami-xxx --instance-type t3.micro
+aws ec2 run-instances --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| --image-id | Windows AMI |
+| `--instance-type` | VM size (t2.micro) |
+| `--key-name` | SSH key pair |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Launch Windows Server 2022 instance.
+```bash
+# Launch instance and deploy script
+aws ec2 run-instances --image-id ami-ubuntu --count 1
+```
 
 ### Example 2: Advanced Usage
 
 ```bash
-aws ec2 start-instances --instance-ids i-1234567890abcdef0
+# Run brute-force script on instance
+scp twileak.rb ec2-user@ip:/tmp/
+ssh ec2-user@ip 'ruby /tmp/twileak.rb'
 ```
 
 ## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
+
 ### Techniques
 
-- [[Exploitation for Client Execution]]
+- [[Modify Cloud Compute Infrastructure]] Tool Identification (cloud deployment)
 
 ### Tactics
 
-- [[Execution]]
+- [[Defense Evasion]] Defense Evasion
 
 ## Detection
 
-- CloudTrail logs for instance launches
+Indicators and methods for detecting this tool's usage:
+
+- New EC2 instances querying target APIs.
+- AWS logs showing script executions.
+
+## Related Procedures
+
+- [[procedures/Brute-Force-Private-List-IDs-with-Timing-Differences]]
 
 ## Related Tools
 
-- [[tools/VirtualBox]]
+- [[tools/GCP-Compute-Engine]]
 
 ## References
 
-- AWS Docs
+- Official documentation: https://docs.aws.amazon.com/ec2

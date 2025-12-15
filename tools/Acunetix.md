@@ -1,18 +1,16 @@
 ---
-id: tool-acunetix
 url: 'https://www.acunetix.com/'
 tags:
-  - scanning
-  - web
-  - xss
+  - scanner
+  - web-vuln
 type: tool
 verified: false
 platforms:
   - Linux
   - Windows
-  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:30.476Z'
+updated_at: '2025-12-14T17:27:22.878Z'
+id: 06774483-806c-4188-ae40-0d97dca237a8
 validated: true
 submitted: true
 ---
@@ -22,30 +20,32 @@ submitted: true
 
 ## Overview
 
-Acunetix is an automated web vulnerability scanner designed for discovering issues like XSS, SQLi, and CSRF in web applications and APIs. It's commonly used in penetration testing to identify flaws like the content-sniffing XSS in Khan Academy.
+Acunetix is an automated web vulnerability scanner designed to detect issues like CSRF, XSS, and SQL injection by crawling sites, analyzing forms, and testing headers.
 
 ## Description
 
-Acunetix performs dynamic application security testing (DAST) by crawling sites, injecting payloads into forms and parameters, and analyzing responses for vulnerabilities. For XSS, it tests reflection and execution across contexts, including API endpoints. In offensive operations, it's used for initial recon and vuln confirmation before manual exploitation.
+It performs black-box scanning on web applications, identifying missing protections in forms such as the Automattic contact form. Features include form analysis, header inspection, and PoC generation for vulnerabilities. Commonly used in penetration testing for quick vuln discovery.
 
 ## Features
 
-- Feature 1: Advanced crawler for JavaScript-heavy sites and APIs
-- Feature 2: Built-in payload library for XSS, including obfuscated variants
-- Feature 3: Integration with CI/CD for automated scanning and reporting
+- Feature 1: Automated crawling and form enumeration
+- Feature 2: CSRF detection via token absence checks
+- Feature 3: Tech stack fingerprinting (e.g., nginx, WordPress)
 
 ## Installation
 
 ### Requirements
 
-- Supported OS: Windows, Linux, macOS
-- .NET Framework (Windows) or Mono (Linux)
+- Supported OS: Linux/Windows
+- Java runtime for some components
 
 ### Install Commands
 
 ```bash
-# Download from official site and run installer
-# For Linux: wget https://www.acunetix.com/... && sudo dpkg -i acunetix.deb
+# Download and install via official installer
+wget https://www.acunetix.com/download/acunetix_latest.sh
+chmod +x acunetix_latest.sh
+./acunetix_latest.sh
 ```
 
 ## Basic Usage
@@ -60,20 +60,20 @@ acunetix --help
 |--------|-------------|
 | `-h, --help` | Show help message |
 | `-t, --target` | Specify target URL |
-| `-p, --profile` | Select scan profile (e.g., XSS-focused) |
+| `-c, --config` | Load scan configuration |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-acunetix -t https://www.khanacademy.org -p standard
+acunetix -t http://automattic.com/contact/ -o report.html
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-acunetix -t https://www.khanacademy.org/api/internal -p high-risk --modules xss,api
+acunetix -t http://automattic.com -c csrf-check.conf --enable-form-analysis
 ```
 
 ## MITRE ATT&CK Mapping
@@ -82,31 +82,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[Drive-by Compromise]]
 - [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network traffic with Acunetix user-agent strings
-- High volume of requests with varying payloads to the same endpoints
-- Log entries for scan-like probing patterns
+- Network traffic to Acunetix servers for updates
+- Process names like acunetix_wvs.exe
+- Scan logs in /var/log/acunetix
 
 ## Related Procedures
 
-- [[procedures/Scan-for-XSS-Vulnerabilities-with-Acunetix]]
 
 ## Related Tools
 
-- [[Burp Suite]]
-- [[OWASP ZAP]]
+- [[tools/Burp-Suite-Professional]]
 
 ## References
 
 - Official documentation: https://www.acunetix.com/support/docs/
-- Related resources: HackerOne reports on XSS discoveries
+- Related resources: OWASP CSRF Guide

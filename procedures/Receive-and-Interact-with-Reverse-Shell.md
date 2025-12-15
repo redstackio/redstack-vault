@@ -1,92 +1,97 @@
 ---
-id: receive-reverse-shell-001
+id: proc-receive-reverse-shell-001
 tags:
   - reverse-shell
-  - post-exploitation
-  - rce
+  - interactive-shell
+  - jenkins
 type: procedure
+tools:
+  - '[[tools/nc]]'
 tactics:
-  - '[[Execution]]'
+  - '[[Lateral Movement]]'
 commands: []
 verified: false
 platforms:
   - Linux
-  - Java
 submitted: true
 created_at: '2023-10-01T00:00:00Z'
 techniques:
+  - '[[Web Protocols]]'
   - '[[Unix Shell]]'
-updated_at: '2025-12-14T03:46:09.293Z'
+updated_at: '2025-12-14T17:24:08.281Z'
 skill_level: intermediate
 impact_level: high
 detection_risk: high
 sub_techniques: []
 validated: true
 mitre_tactics:
-  - '[[Execution]]'
+  - '[[Lateral Movement]]'
 mitre_techniques:
+  - '[[Web Protocols]]'
   - '[[Unix Shell]]'
 ---
 # Receive-and-Interact-with-Reverse-Shell
 
 ## Summary
 
-This procedure handles the reception and interaction with the reverse shell spawned by the loaded JVM agent on the Kafka Connect server, enabling full control for further exploitation.
+This procedure handles the incoming reverse shell connection via netcat, allowing interactive commands on the target host as the jenkins user for exploration and exploitation.
 
 ## Description
 
-Upon successful agent load via Jolokia, the embedded payload executes system commands to connect back to the netcat listener on the VPS port 4446, providing a bind shell. This grants access to the JVM process context on the target, allowing file access, process enumeration, and persistence.
+Once the listener is set and the target connects, the attacker gains a raw TCP shell. This enables running Linux commands, file transfers, or privilege escalation. Assumes prior setup of listener and reverse payload execution on a Jenkins-hosted Linux server.
 
 ## Requirements
 
-1. Active netcat listener from prior step
-2. VPS with stable connection to target
-3. Knowledge of target environment (e.g., Java/Kafka paths)
+1. Active netcat listener on attacker's host
+2. Successful reverse shell initiation from target
+3. Basic Linux command knowledge
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Monitor JVM processes for unauthorized agent loads (e.g., via jcmd or logs)
-- Implement application whitelisting to block unsigned JAR execution
-- Network segmentation to prevent outbound connections from Connect servers
-- Alert on unexpected TCP connections to external high ports
+- Deploy EDR tools to detect shell spawns and outbound connections
+- Log all process creations on Jenkins hosts
+- Use anomaly detection for jenkins user activities
 
 ## Objectives
 
-1. Confirm reverse shell establishment
-2. Execute post-exploitation commands on target
-3. Maintain access for data exfiltration or lateral movement
+1. Confirm shell access and user context
+2. Perform post-exploitation tasks
+3. Maintain access if needed
 
 ## Instructions
 
-### Step 1: Monitor Netcat for Connection
+### Step 1: Accept Connection
 
-**Context**: Observe the listener for the incoming shell from the exploited agent.
+**Context**: Monitor the nc output for the incoming connection from the target.
 
-No specific command; interact directly in the netcat terminal.
+No command; the connection auto-establishes, showing target IP and a shell prompt.
 
-> Expected output: Connection message followed by target shell prompt (e.g., "$" or "#"). Test with basic commands like `whoami` or `id` to verify access.
+> Output: "Connection from target_ip 12345 received!" followed by bash prompt.
 
 ### Step 2: Interact with Shell
 
-**Context**: Use the shell for reconnaissance and actions.
+**Context**: Run commands to verify access and explore the system.
 
-**Command** (Example Unix Shell):
+Example commands in the shell:
 ```bash
-whoami; uname -a; pwd
+whoami
+id
+ls /home/jenkins
 ```
 
-> Run commands to gather info. Expected output: User (likely kafka-connect), kernel details, current directory (e.g., /opt/kafka).
+> 'whoami' should return 'jenkins'; use for navigation, e.g., 'cat /etc/passwd' or upload tools.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Lateral Movement]] Lateral Movement
 
 ### Techniques
 
+- [[Web Protocols]] Web Protocols
 - [[Unix Shell]] Unix Shell
 
 ### Sub-Techniques
@@ -97,10 +102,9 @@ whoami; uname -a; pwd
 
 ## Tools Used
 
-- [[tools/Netcat]]
+- [[tools/nc]]
 
 ## Tags
 
 - reverse-shell
-- post-exploitation
-- rce
+- shell-access

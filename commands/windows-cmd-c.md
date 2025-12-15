@@ -1,5 +1,5 @@
 ---
-data: 'cmd /c {szCMD}'
+data: cmd /c <command>
 tags:
   - execution
   - rce
@@ -9,8 +9,8 @@ executor: cmd
 platforms:
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.300Z'
-id: d09c7c94-602d-4e74-8de5-6a37559a55f4
+updated_at: '2025-12-14T17:23:41.431Z'
+id: 50e7ccbd-d73e-4210-9483-77f4a8b3b53b
 verified: false
 validated: true
 submitted: true
@@ -20,19 +20,19 @@ submitted: true
 ## Command
 
 ```cmd
-cmd /c {szCMD}
+cmd /c <command>
 ```
 
 ## Description
 
-Runs an arbitrary command in the Windows command prompt and captures its output, used within the ASP shell's getCommandOutput function where {szCMD} is user input from the 'cmd' request parameter.
+The 'cmd /c' runs a command in the Windows command interpreter and terminates after execution, capturing output. In the ASP shell, it's used to execute user-provided commands like 'dir' for RCE demonstration.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
 | /c | Carries out the command and terminates | Yes |
-| {szCMD} | The command to execute (e.g., 'dir') | Yes |
+| <command> | The command to execute (e.g., dir) | Yes |
 
 ## Examples
 
@@ -45,14 +45,13 @@ cmd /c dir
 ### Advanced Usage
 
 ```cmd
-cmd /c whoami
+cmd /c whoami /all
 ```
 
 ## Expected Output
 
-Stdout from the specified command, e.g., for 'dir', a listing of files and directories.
+Results of the inner command, such as directory contents or user info, piped back to the shell output.
 
 ## Related
 
 - [[commands/windows-dir]]
-- [[procedures/Execute-Commands-via-Uploaded-ASPShell]]

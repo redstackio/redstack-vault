@@ -1,9 +1,10 @@
 ---
+id: tool-nodejs
 url: 'https://nodejs.org/'
 tags:
   - runtime
   - javascript
-  - server
+  - filesystem
 type: tool
 verified: false
 platforms:
@@ -11,9 +12,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:46.799Z'
-configuration: Version 8.11.1
-id: 9f1cb873-7114-4da5-8f65-294df7697177
+updated_at: '2025-12-14T17:26:22.627Z'
 validated: true
 submitted: true
 ---
@@ -23,30 +22,35 @@ submitted: true
 
 ## Overview
 
-Node.js is a JavaScript runtime built on Chrome's V8 engine, enabling server-side execution of JS code. In security contexts, it's used to host vulnerable applications, like those parsing files with exceljs for XSS demos.
+Node.js is a JavaScript runtime built on Chrome's V8 engine, used for server-side scripting and vulnerable to path traversal in its fs module when handling Uint8Array paths in version 20.
 
 ## Description
 
-Node.js supports modules, HTTP servers, and file I/O, making it ideal for web apps. For attacks, it runs scripts that expose unescaped content, simulating production environments vulnerable to client-side exploits.
+Node.js enables execution of JavaScript outside browsers, including filesystem operations via the node:fs module. In vulnerable versions, fs functions like readFileSync fail to normalize Uint8Array paths, allowing traversal attacks to bypass permissions and access arbitrary files.
 
 ## Features
 
-- Feature 1: Asynchronous, event-driven I/O for scalable servers
-- Feature 2: npm integration for easy dependency management
-- Feature 3: Built-in modules like http and fs for app development
+- Feature 1: Asynchronous I/O for non-blocking operations
+- Feature 2: Built-in fs module for file system interactions
+- Feature 3: Experimental permission system for sandboxing
 
 ## Installation
 
 ### Requirements
 
-- Compatible OS (Linux/Windows/macOS)
+- Supported OS (Linux, Windows, macOS)
+- Internet access for download
 
 ### Install Commands
 
 ```bash
-# Download from nodejs.org or use package manager
-curl -fsSL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+# Using package manager (Ubuntu/Debian)
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
+# Or download from official site
+wget https://nodejs.org/dist/v20.0.0/node-v20.0.0-linux-x64.tar.xz
+tar -xJf node-v20.0.0-linux-x64.tar.xz
 ```
 
 ## Basic Usage
@@ -59,22 +63,22 @@ node --help
 
 | Option | Description |
 |--------|-------------|
-| `-v, --version` | Display version |
-| `--inspect` | Enable debugging |
-| `-e` | Execute string directly |
+| `-p, --print` | Evaluate and print expression |
+| `--experimental-permission` | Enable permission system |
+| `--allow-fs-read` | Specify allowed read directories |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-node app.js
+node -p 'console.log("Hello Node")'
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-node -e "console.log('Hello')"
+node --experimental-permission --allow-fs-read=/tmp/ -p 'fs.readFileSync("/tmp/test.txt")'
 ```
 
 ## MITRE ATT&CK Mapping
@@ -83,27 +87,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[File and Directory Discovery]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Discovery]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Detection method 1: Process monitoring for node.exe
-- Detection method 2: Network logs for HTTP servers on non-standard ports like 8080
+- Process monitoring for 'node' executable with experimental flags
+- Audit logs showing fs access outside permitted paths
+- Network traces if combined with remote exploitation
 
 ## Related Procedures
 
+- [[procedures/Exploit-Node-js-fs-Path-Traversal-via-Uint8Array]]
 
 ## Related Tools
 
-- [[tools/npm]]
-- [[tools/exceljs]]
+- [[tools/TextEncoder]] (built-in API)
 
 ## References
 
 - Official documentation: https://nodejs.org/en/docs/
+- Vulnerability report: https://hackerone.com/reports/2256167

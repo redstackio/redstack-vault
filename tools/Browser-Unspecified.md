@@ -1,15 +1,16 @@
 ---
 id: tool-browser-unspecified
 url: ''
+name: Browser-Unspecified
 tags:
   - browser
-  - web-testing
+  - testing
 type: tool
 verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T00:11:09.815Z'
+updated_at: '2025-12-14T17:28:12.774Z'
 validated: true
 submitted: true
 ---
@@ -19,48 +20,52 @@ submitted: true
 
 ## Overview
 
-A standard web browser (e.g., Chrome, Firefox) used for manual testing of web vulnerabilities like XSS by visiting URLs, inspecting elements, and interacting with pages.
+A generic web browser used to load and interact with HTML proof-of-concepts for reproducing web vulnerabilities like clickjacking, allowing demonstration of iframe embedding and user deception.
 
 ## Description
 
-Browsers enable direct interaction with web applications, allowing developers and testers to craft and execute payloads, view page source, and trigger client-side code. In offensive security, it's essential for demonstrating drive-by exploits without specialized tools.
+Browsers such as Chrome or Firefox are essential for testing client-side exploits. In this context, it loads local HTML files containing iframes to frame exchangemarketplace.com, ignoring the deprecated X-Frame-Options, and facilitates overlay-based click simulation for unauthorized actions.
 
 ## Features
 
-- Feature 1: Developer tools for inspecting HTML/JS
-- Feature 2: URL bar for direct payload input
-- Feature 3: Console for JS execution and debugging
+- Feature 1: Renders HTML/JS for PoC execution
+- Feature 2: Supports session persistence across tabs for logged-in testing
+- Feature 3: Developer tools for inspecting frame behavior
 
 ## Installation
 
 ### Requirements
 
-- Modern OS (Windows, Linux, macOS)
+- Standard OS installation
 
 ### Install Commands
 
-Browsers are typically pre-installed or downloadable from official sites (e.g., google.com/chrome).
+```bash
+# Typically pre-installed; download from official sites if needed
+```
 
 ## Basic Usage
 
-Open the browser and navigate to a URL via address bar.
+```bash
+# Open file via browser UI: File > Open > clickjacking-poc.html
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| F12 | Open developer tools |
-| Ctrl+Shift+I | Inspect element |
+| DevTools (F12) | Inspect elements and network requests |
+| Incognito Mode | Test without extensions interfering |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Visit a target URL to load and inspect.
+Load `clickjacking-poc.html` and observe iframe loading.
 
 ### Example 2: Advanced Usage
 
-Paste crafted URL with payload and press Enter to load.
+Login to target in one tab, then load PoC in another to test session hijacking via clicks.
 
 ## MITRE ATT&CK Mapping
 
@@ -68,29 +73,33 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
 - [[Drive-by Compromise]]
 
 ### Tactics
 
-- [[Execution]]
-- [[Collection]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser user-agent strings in logs
-- Anomalous JS execution in client-side monitoring
+- Anomalous local HTML file loads in browser history
+- Network logs showing requests to framed domains from unexpected referrers
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
 - [[Burp Suite]]
-- [[OWASP ZAP]]
 
 ## References
 
-- Browser documentation (e.g., developer.chrome.com)
+- Browser documentation (e.g., Chrome DevTools)

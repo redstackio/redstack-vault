@@ -1,8 +1,10 @@
 ---
-data: 'curl -v https://example.com'
+id: cmd-uuid-001
+data: 'curl -i "https://target.com/payload"'
 tags:
   - http
-  - verification
+  - testing
+  - web
 type: command
 output: null
 executor: bash
@@ -11,49 +13,48 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:51:26.710Z'
-id: cd682982-5bec-4774-b191-5648d8bf8cf8
+updated_at: '2025-12-14T17:26:22.290Z'
 verified: false
 validated: true
 submitted: true
 ---
-# curl HTTP Request
+# curl-http-request
 
 ## Command
 
 ```bash
-curl -v https://example.com
+curl -i "https://target.com/payload"
 ```
 
 ## Description
 
-Curl sends HTTP requests to verify web content, useful for checking if a subdomain serves expected (or arbitrary) content post-takeover.
+Sends an HTTP request to a target URL with verbose headers (-i) to test web responses, commonly used for injection payload delivery and response observation in web vulnerability testing.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-v` | Verbose output including headers | No |
-| `URL` | Target URL to fetch | Yes |
+| `-i` | Include response headers in output | Yes |
+| URL | Target endpoint with payload | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl https://███████.target.com
+curl -i "https://www.ibm.com/'/path"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -v -H "User-Agent: Mozilla/5.0" https://███████.target.com
+curl -i --max-redirs 1 "https://www.ibm.com/'AND1=1--/path"
 ```
 
 ## Expected Output
 
-HTML or content from the page, e.g., "<html>Takeover successful</html>" if verified.
+HTTP status code, headers, and body; e.g., 500 Internal Server Error for failed injections or 302 redirects for successful ones.
 
 ## Related
 
-- [[Related Procedure: Verify Subdomain Takeover]]
+- [[Related Procedure]]

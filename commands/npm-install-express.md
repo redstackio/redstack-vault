@@ -2,16 +2,15 @@
 data: npm i express
 tags:
   - install
-  - dependencies
+  - npm
 type: command
+output: null
 executor: bash
 platforms:
-  - Linux
-  - macOS
-  - Windows
-id: e95f6409-d959-482a-b183-d75a3f35909d
-created_at: '2025-12-13T23:56:19.643Z'
-updated_at: '2025-12-13T23:56:19.643Z'
+  - Node.js
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:19.030Z'
+id: e3c601d0-0cb1-4493-86b3-fd237fb3d93f
 verified: false
 validated: true
 submitted: true
@@ -26,14 +25,14 @@ npm i express
 
 ## Description
 
-Installs the Express web framework as a project dependency, enabling simple HTTP server creation for serving malicious pages and scripts in XSS attacks.
+Installs the Express web framework as a dependency for building the test application.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `i` | Alias for install | Yes |
-| `express` | Package name to install | Yes |
+| i | Install shorthand | Yes |
+| express | Package name | Yes |
 
 ## Examples
 
@@ -46,14 +45,13 @@ npm i express
 ### Advanced Usage
 
 ```bash
-npm i express --save-dev
+npm i express@4.18.0
 ```
 
 ## Expected Output
 
-Downloads Express to node_modules, updates package.json dependencies. Output: "added 50 packages" or similar.
+Installs express and updates package.json/ node_modules; progress bars shown.
 
 ## Related
 
-- [[commands/npm-init-project]]
-- [[procedures/Set-Up-Malicious-Express-Server-for-XSS]]
+- [[commands/npm-install-sequelize]]

@@ -5,12 +5,12 @@ tags:
   - installation
   - npm
 type: command
-output: 'Installation logs, places module in node_modules/public'
+output: Installation logs and confirmation of package installation in node_modules
 executor: bash
 platforms:
-  - Node.js
+  - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:02.873Z'
+updated_at: '2025-12-14T17:26:11.788Z'
 verified: false
 validated: true
 submitted: true
@@ -25,14 +25,13 @@ npm install public
 
 ## Description
 
-Installs the 'public' Node.js module from the npm registry, used for setting up the vulnerable static file server in XSS exploitation scenarios.
+Installs the 'public' Node.js module from the npm registry, downloading version 0.1.2 which contains the path traversal vulnerability.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| public | Package name to install (vulnerable v0.1.3 by default) | Yes |
-| -g (optional) | Install globally instead of locally | No |
+| `public` | Package name to install | Yes |
 
 ## Examples
 
@@ -45,14 +44,13 @@ npm install public
 ### Advanced Usage
 
 ```bash
-npm install public@0.1.3
+npm install public@0.1.2
 ```
 
 ## Expected Output
 
-npm WARN deprecated ... (warnings), then added 1 package in X s, with node_modules/public created containing bin/public.
+Package resolution and installation logs, ending with 'added 1 package in X ms', and creation of node_modules/public directory.
 
 ## Related
 
-- [[commands/run-public-server]]
-- [[procedures/Install-Vulnerable-Public-Module]]
+- [[Related Procedure|procedures/Install-Vulnerable-Public-Module]]

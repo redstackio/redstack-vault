@@ -1,14 +1,15 @@
 ---
-id: tool-003
+id: tool-uuid-2
 url: null
 tags:
-  - file-utility
+  - file-utils
 type: tool
 verified: false
 platforms:
+  - Linux
   - macOS
-created_at: '2024-01-01T12:00:00Z'
-updated_at: '2025-12-14T03:16:02.736Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:27.066Z'
 validated: true
 submitted: true
 ---
@@ -18,29 +19,28 @@ submitted: true
 
 ## Overview
 
-touch is a standard Unix command-line utility for creating empty files or updating timestamps, used here to create files with malicious names for XSS payloads.
+touch is a standard Unix command for creating empty files or updating timestamps, used here to create trigger files for vulnerability exploitation.
 
 ## Description
 
-In security contexts, touch allows rapid creation of files with special characters, enabling injection attacks like filename-based XSS in vulnerable servers.
+Part of coreutils, touch creates new files without content or modifies access/modification times. In security contexts, it's for setting up test artifacts like fake HTML files to trigger server behaviors.
 
 ## Features
 
-- Feature 1: Create new empty files
-- Feature 2: Update access/modification times
-- Feature 3: Handle special characters with quoting
+- Feature 1: Create empty files
+- Feature 2: Update timestamps
+- Feature 3: Batch operations with wildcards
 
 ## Installation
 
 ### Requirements
 
-- Unix-like OS (pre-installed on macOS)
+- Unix-like OS
 
 ### Install Commands
 
 ```bash
-# Already available; check with
-touch --help
+# Pre-installed on Linux/macOS
 ```
 
 ## Basic Usage
@@ -67,7 +67,7 @@ touch file.txt
 ### Example 2: Advanced Usage
 
 ```bash
-touch 'malicious"><script>alert(1)</script>'
+touch -t 202301010000 file.txt
 ```
 
 ## MITRE ATT&CK Mapping
@@ -76,26 +76,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Audit logs for file creations with anomalous names
-- Filesystem monitoring for suspicious filenames
+- File system audits for new empty files
+- Command history logs
 
 ## Related Procedures
 
-- [[procedures/Create-Malicious-Filename-for-XSS]]
+- [[procedures/Create-Trigger-HTML-File]]
 
 ## Related Tools
 
-- [[New-Item]]
+- [[cat]]
+- [[echo]]
 
 ## References
 

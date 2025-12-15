@@ -1,78 +1,72 @@
 ---
-url: ''
-tags:
-  - devtools
-  - debugging
-  - web
+id: tool-browser-devtools-001
+name: Browser-DevTools
 type: tool
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:48.267Z'
 platforms:
   - Web
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:37.536Z'
-id: deb5978d-8455-448b-bb97-2c090e6f1790
+tags:
+  - debugging
+  - testing
+url: >-
+  https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools
 validated: true
 submitted: true
 ---
-# Browser DevTools
+
+# Browser-DevTools
 
 **Status**: Unverified
 
 ## Overview
 
-Browser Developer Tools (DevTools) are built-in features in modern browsers for inspecting, debugging, and injecting code into web pages, essential for reproducing XSS vulnerabilities like the one on Reddit.
+Browser Developer Tools (DevTools) are built-in features in modern browsers like Chrome, Firefox, and Edge, used for debugging, inspecting, and manipulating web applications during security testing, such as simulating network responses for XSS validation.
 
 ## Description
 
-DevTools include tabs for Elements, Console, Network, and Sources, allowing real-time DOM manipulation and JavaScript execution. In security testing, the Console tab is used to inject payloads directly, while Inspector helps identify reflection points. It's ideal for manual, low-overhead exploitation without additional software.
+DevTools provide tabs for Elements (DOM inspection), Console (JS execution), Network (request monitoring), and more. In offensive security, they're essential for overriding responses, injecting payloads, and verifying exploits like DOM-based XSS without full infrastructure changes.
 
 ## Features
 
-- Feature 1: Console for JS execution and logging
-- Feature 2: Element inspector for DOM analysis
-- Feature 3: Network monitoring for request/response inspection
+- Feature 1: Network tab for intercepting and overriding HTTP responses
+- Feature 2: Console for running JS commands like fetch uploads
+- Feature 3: Elements tab for live DOM editing and script injection testing
 
 ## Installation
 
 ### Requirements
 
-- Compatible web browser (e.g., Chrome 1+, Firefox 1+)
+- Modern web browser (Chrome, Firefox, Edge)
 
 ### Install Commands
 
-```bash
-# Built-in; enable via F12 or menu
-```
+No installation needed; access via F12 or right-click > Inspect.
 
 ## Basic Usage
 
 ```bash
-# Open in browser
-F12
+# N/A - Browser UI
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Console tab | Execute JS commands |
-| Elements tab | Modify HTML/CSS |
+| F12 | Open DevTools |
+| Ctrl+Shift+I | Toggle inspector |
+| Network > Disable cache | Prevent caching during tests |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```javascript
-# In Console: Test payload
-alert('test');
-```
+Open DevTools (F12), go to Network tab, check 'Disable cache', reload page to fetch fresh assets.
 
 ### Example 2: Advanced Usage
 
-```javascript
-# Inject and observe
-eval('ale'+'rt(0)');
-```
+In Sources tab, enable 'Override content', map URL to local malicious file, then load page to simulate injection.
 
 ## MITRE ATT&CK Mapping
 
@@ -81,6 +75,7 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[JavaScript]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
@@ -90,17 +85,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Client-side anti-debugging scripts
-- Anomalous JS execution patterns in logs
+- Browser extensions or user-agent anomalies (rare, as it's native)
+- Console logs from debugging sessions
+- Network traces showing overridden responses
 
 ## Related Procedures
 
-- [[Inject Reddit XSS Payload]]
 
 ## Related Tools
 
-- [[Web Browser]]
+- [[Burp Suite]]
+- [[Postman]]
 
 ## References
 
-- MDN Web Docs on DevTools
+- Official documentation: https://developer.chrome.com/docs/devtools/
+- Related resources: MDN Web Docs

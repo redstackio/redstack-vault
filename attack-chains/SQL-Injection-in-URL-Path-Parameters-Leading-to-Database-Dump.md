@@ -1,10 +1,9 @@
 ---
-id: ac-sqli-url-path-dump-001
 tags:
   - sqli
   - web
-  - database-exploitation
-  - data-dump
+  - database-dump
+  - sqlmap
 type: attack_chain
 tools:
   - '[[tools/SQLmap]]'
@@ -15,22 +14,20 @@ verified: false
 platforms:
   - Web
 submitted: true
-complexity: medium
 created_at: '2023-10-01T00:00:00Z'
 procedures:
-  - '[[procedures/Access-Target-Web-Endpoint]]'
-  - '[[procedures/Test-SQL-Injection-in-URL-Parameters]]'
+  - '[[procedures/Access-Insurance-Registration-URL]]'
+  - '[[procedures/Test-SQL-Injection-with-Single-Quote]]'
   - '[[procedures/Exploit-SQL-Injection-with-SQLmap]]'
 step_count: 3
 techniques:
   - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-14T03:15:05.306Z'
+updated_at: '2025-12-14T17:26:27.855Z'
 description: >-
   Multi-stage attack exploiting SQL injection in URL path parameters of a web
-  application to dump sensitive database contents including user IDs,
-  organization details, and documents.
-skill_level: intermediate
-impact_level: high
+  application to test for vulnerability and dump the entire backend database,
+  exposing sensitive user data.
+id: ac5616b5-123c-40cc-8b6f-898931f96b19
 validated: true
 mitre_tactics:
   - '[[Initial Access]]'
@@ -40,7 +37,7 @@ mitre_techniques:
 ---
 # SQL Injection in URL Path Parameters Leading to Database Dump
 
-Multi-stage attack chain demonstrating exploitation of an SQL injection vulnerability in URL path parameters of the web application at https://corporate.admyntec.co.za/, resulting in unauthorized access to the backend database and sensitive user data.
+Multi-stage attack chain demonstrating exploitation of an SQL injection vulnerability in the URL path parameters of the https://corporate.admyntec.co.za/ insurance registration application, allowing an attacker to dump sensitive database contents including user IDs, organization details, and documents.
 
 ## Chain Metrics Dashboard
 
@@ -48,7 +45,7 @@ Multi-stage attack chain demonstrating exploitation of an SQL injection vulnerab
 |--------|-------|
 | Chain Status | Unverified |
 | Total Steps | 3 |
-| Execution Time | ~15 minutes |
+| Execution Time | ~10 minutes |
 | Skill Level | Intermediate |
 | Complexity | Medium |
 | Impact Level | High |
@@ -57,14 +54,14 @@ Multi-stage attack chain demonstrating exploitation of an SQL injection vulnerab
 
 ```mermaid
 graph LR
-    A[Access Endpoint] --> B[Test Injection] --> C[Exploit and Dump]
-    A:::initial
-    B:::execution
-    C:::collection
+    A[Access URL] --> B[Test Injection]
+    B --> C[Exploit and Dump]
+    C --> D[Data Exfiltration]
 
-    classDef initial fill:#e74c3c
-    classDef execution fill:#f39c12
-    classDef collection fill:#27ae60
+    style A fill:#e74c3c
+    style B fill:#f39c12
+    style C fill:#3498db
+    style D fill:#27ae60
 ```
 
 ## Prerequisites & Requirements
@@ -75,64 +72,64 @@ graph LR
 
 ### Target Environment
 
-- Web application with backend SQL database
-- Accessible URL endpoints with path parameters (e.g., customerId)
-- No authentication required for initial access
+- Web application platform
+- Backend SQL database (e.g., MySQL or similar)
+- Access to the insurance registration flow URL
 
 ### Initial Access Requirements
 
-- Direct network access to the target web application
-- No prior credentials needed
-- Browser or command-line tool for URL manipulation
+- Valid session or public access to the registration endpoint
+- No authentication required for the vulnerable URL
+- Network access to https://corporate.admyntec.co.za/
 
 ## Detailed Attack Procedures
 
-### Step 1: Access Target Web Endpoint
-procedure: [[procedures/Access-Target-Web-Endpoint]]
+### Step 1: Access Generated URL
+procedure: [[procedures/Access-Insurance-Registration-URL]]
 
-**Objective**: Navigate to a legitimate application endpoint to identify potential injection points in URL path parameters.
+**Objective**: Obtain the vulnerable URL generated during the insurance registration process to identify the path parameters for injection.
 
-**Instructions**: Open a web browser and access a generated URL from the customer registration or insurance process, such as https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562/contactPersonId/0. Observe the page rendering normally to confirm the endpoint is active.
+**Instructions**: Navigate to the insurance registration flow and proceed to the step where the URL for displaying details is generated. The URL follows the pattern: https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/{userId}/customerId/{customerId}/contactPersonId/{contactPersonId}.
 
-**Expected Output**: Insurance details page loads without errors, displaying user-specific information.
-
-**Success Indicators**:
-- Page loads successfully
-- URL parameters like customerId are visible and modifiable
-
-### Step 2: Test SQL Injection in URL Parameters
-procedure: [[procedures/Test-SQL-Injection-in-URL-Parameters]]
-
-**Objective**: Introduce a single quote into the URL parameter to detect SQL injection by observing query breakage.
-
-**Instructions**: Modify the URL by appending a single quote (') to the customerId parameter, e.g., https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562'/contactPersonId/0. Reload the page and check for backend errors indicating unsanitized input.
-
-**Expected Output**: Database error message or blank page, confirming the injection point (e.g., SQL syntax error due to unclosed quote).
+**Expected Output**: A page displaying insurance details with ID parameters in the URL.
 
 **Success Indicators**:
-- Error response from server (e.g., MySQL syntax error)
-- No normal page rendering
+- URL loaded successfully without errors
+- Path parameters like userId, customerId visible in the browser address bar
 
-### Step 3: Exploit SQL Injection with SQLmap
+### Step 2: Test SQL Injection
+procedure: [[procedures/Test-SQL-Injection-with-Single-Quote]]
+
+**Objective**: Introduce a single quote into a path parameter to break the SQL query and confirm the injection vulnerability.
+
+**Instructions**: Modify the customerId parameter in the URL by appending a single quote ('). For example, change https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562/contactPersonId/0 to https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562'/contactPersonId/0 and reload the page.
+
+**Expected Output**: A backend SQL error message, such as a syntax error or database exception, indicating the query was malformed.
+
+**Success Indicators**:
+- Error page or message revealing SQL syntax issues
+- No normal page load, confirming injection point
+
+### Step 3: Exploit and Dump Database
 procedure: [[procedures/Exploit-SQL-Injection-with-SQLmap]]
 
-**Objective**: Automate exploitation to dump the entire backend database, extracting sensitive data like ID numbers, organization details, and documents.
+**Objective**: Use an automated tool to exploit the confirmed SQL injection and enumerate/dump the database contents.
 
-**Instructions**: Launch SQLmap with the vulnerable URL, marking the customerId as the injection point using an asterisk (*), e.g., https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562*/contactPersonId/0. Run the tool to detect and exploit the vulnerability, dumping tables.
+**Instructions**: Launch SQLmap with the vulnerable URL, marking the customerId parameter as the injection point using an asterisk (*). Run SQLmap to detect the DBMS, enumerate tables, and dump sensitive data like user information and documents.
 
-**Expected Output**: SQLmap outputs database schema, tables, and dumped data including user records.
+**Expected Output**: SQLmap output showing database structure, table dumps, and downloaded files containing sensitive data.
 
 **Success Indicators**:
 - SQLmap confirms injectable parameter
-- Successful dump of database contents to local files
+- Successful dump of tables with user IDs, organizations, and documents
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Identified SQL injection in URL path parameters without authentication
-2. Confirmed vulnerability through manual testing with single quote
-3. Dumped sensitive database via automated exploitation, enabling data exfiltration
+1. Confirmed SQL injection in URL path parameters without authentication.
+2. Exploited vulnerability to access the entire backend database.
+3. Exfiltrated sensitive information including ID numbers and uploaded documents.
 
 ## Technique & Tactic Coverage
 

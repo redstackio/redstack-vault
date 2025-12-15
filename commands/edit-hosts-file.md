@@ -1,16 +1,19 @@
 ---
-data: echo "IP fake-site.com" | sudo tee -a /etc/hosts
+id: cmd-uuid-001
+data: |
+  |
+    notepad %WINDIR%\sysnative\drivers\etc\hosts
+    # Add line: 93.184.216.34 www.google.com
 tags:
-  - network
-  - dns
+  - mitm
+  - dns-redirect
 type: command
-executor: bash
+output: Hosts file updated; subsequent resolutions point to specified IP.
+executor: cmd
 platforms:
-  - Linux
-  - macOS
-id: edbd846f-11dd-462b-a332-1fdde56a5116
-created_at: '2025-12-14T03:15:26.527Z'
-updated_at: '2025-12-14T03:15:26.527Z'
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:12.452Z'
 verified: false
 validated: true
 submitted: true
@@ -19,40 +22,46 @@ submitted: true
 
 ## Command
 
-```bash
-echo "11.22.33.44 fake-site.com" | sudo tee -a /etc/hosts
+```cmd
+notepad %WINDIR%\sysnative\drivers\etc\hosts
+# Manually add: 93.184.216.34 www.google.com
 ```
 
 ## Description
 
-Appends a DNS override entry to the local hosts file, mapping an IP to a custom domain for local resolution manipulation in attacks like cache poisoning.
+Edits the Windows hosts file to override DNS resolution for a domain, simulating MitM by pointing it to an alternate IP. Run as administrator to modify the protected file.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| IP | Target IP address to map | Yes |
-| fake-site.com | Fake domain name | Yes |
+| File Path | %WINDIR%\sysnative\drivers\etc\hosts (system hosts file) | Yes |
+| Line Added | IP domain mapping (e.g., 93.184.216.34 www.google.com) | Yes |
 
 ## Examples
 
 ### Basic Usage
 
-```bash
-echo "192.168.1.1 attacker.com" | sudo tee -a /etc/hosts
+```cmd
+notepad %WINDIR%\sysnative\drivers\etc\hosts
 ```
+
+Open and append the redirection line.
 
 ### Advanced Usage
 
-```bash
-echo "11.22.33.44 fake-site.com www.fake-site.com" | sudo tee -a /etc/hosts
+```cmd
+# After edit, flush DNS:
+ipconfig /flushdns
+ping www.google.com
 ```
+
+Verifies the change takes effect.
 
 ## Expected Output
 
-No stdout; the file is updated silently. Verify with `cat /etc/hosts` showing the new line.
+File opens in Notepad; after save, ping tests confirm redirection to the new IP (e.g., 93.184.216.34).
 
 ## Related
 
-- [[commands/cat-hosts]]
-- [[procedures/Override-Hosts-File-for-Fake-Domain-Mapping]]
+- [[Related Procedure|procedures/Simulate-MitM-via-Hosts-File-Modification]]

@@ -1,36 +1,37 @@
 ---
-id: tool-esprima
-url: null
-tags:
-  - parser
-  - javascript
+id: l2m3n4o5-p6q7-8901-lmno-234567890123
+name: esprima
 type: tool
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:24.304Z'
 platforms:
   - Node.js
-  - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:08.415Z'
+tags:
+  - parser
+  - ast
+url: ''
 validated: true
 submitted: true
 ---
+
 # esprima
 
 **Status**: Unverified
 
 ## Overview
 
-Esprima is a JavaScript parser that generates ASTs, used internally by notevil for safe code evaluation.
+esprima is a JavaScript parser library that generates Abstract Syntax Trees (AST) from code, used internally by tools like notevil for safe evaluation and vulnerability analysis.
 
 ## Description
 
-It parses JS source into an abstract syntax tree, enabling notevil to inspect and restrict nodes. Vulnerabilities arise when the sandbox fails to block reconstructed constructors.
+In security testing, esprima helps identify exploitable patterns in JS code, such as those enabling sandbox escapes. It's lightweight and supports ECMAScript standards, making it ideal for static analysis in offensive ops.
 
 ## Features
 
-- Feature 1: High-performance parsing
-- Feature 2: AST generation
-- Feature 3: ECMAScript compliance
+- Feature 1: High-performance AST generation
+- Feature 2: Error-tolerant parsing
+- Feature 3: Integration with walkers for code transformation
 
 ## Installation
 
@@ -46,27 +47,28 @@ npm install esprima
 
 ## Basic Usage
 
-```javascript
-require('esprima');
+```bash
+node -e "console.log(require('esprima').parseScript('code'))"
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| parse(code) | Parse to AST |
+| --loc | Include line/column info in AST |
+| --range | Add character ranges |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```javascript
-var ast = esprima.parseScript('var x = 1;');
+var ast = require('esprima').parseScript('var x = 1;');
 ```
 
 ### Example 2: Advanced Usage
 
-Integrate with sandbox tools.
+Parse with options: esprima.parseScript(code, {loc: true})
 
 ## MITRE ATT&CK Mapping
 
@@ -74,20 +76,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- AST parsing in eval contexts
+- Presence in node_modules/esprima
+- AST parsing logs in app output
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
@@ -95,4 +105,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- esprima.org
+- Official esprima documentation

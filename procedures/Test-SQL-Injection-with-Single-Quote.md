@@ -1,28 +1,23 @@
 ---
+id: proc-002
 tags:
   - sqli
-  - injection-test
-  - error-trigger
+  - testing
 type: procedure
 tools: []
 tactics:
   - '[[Initial Access]]'
-commands:
-  - '[[commands/curl-test-single-quote-sqli]]'
+commands: []
+verified: false
 platforms:
   - Web
+submitted: true
+created_at: '2023-10-01T00:00:00Z'
 techniques:
   - '[[Exploit Public-Facing Application]]'
-skill_level: intermediate
-impact_level: medium
-detection_risk: low
+updated_at: '2025-12-14T17:26:27.849Z'
 sub_techniques: []
-id: bd10fcb4-7ad3-4f3a-bf7c-090cde880b2b
-created_at: '2025-12-14T03:46:20.274Z'
-updated_at: '2025-12-14T03:46:20.274Z'
-verified: false
 validated: true
-submitted: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
@@ -32,44 +27,53 @@ mitre_techniques:
 
 ## Summary
 
-This procedure tests for SQL injection vulnerabilities by injecting a single quote into a GET parameter, causing a syntax error in the backend query to reveal potential exploitation points.
+This procedure tests for SQL injection vulnerability by appending a single quote to a URL path parameter, causing a backend query error that confirms the lack of sanitization.
 
 ## Description
 
-In the context of the Khan Academy web application, this targets the language parameter in the /translations/videos endpoint. Appending a single quote disrupts the SQL query, leading to a 500 error if inputs are unsanitized. This confirms the vulnerability before advancing to exploitation, applicable to web apps using dynamic SQL construction without parameterization.
+Targeting the customerId parameter in the application's URL, this manual test introduces a single quote (') to terminate the SQL string prematurely, leading to a syntax error if the parameter is unsanitized. This is a classic first step in SQLi assessment, applicable to web apps where IDs are concatenated directly into queries. Success indicates potential for further exploitation to dump data.
 
 ## Requirements
 
-1. Access to the target web endpoint (e.g., https://www.khanacademy.org/translations/videos)
-2. Tool for HTTP requests like curl or a browser
-3. Basic understanding of URL encoding
+1. Vulnerable URL from previous access step
+2. Web browser for URL manipulation
+3. Basic understanding of SQL syntax errors
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Use prepared statements or parameterized queries in backend code
-- Implement web application firewalls (WAF) to block quote injections
-- Log and monitor for 500 errors correlated with anomalous parameters
+- Enforce input validation to reject special characters in path parameters
+- Log and alert on SQL error messages exposed to users
+- Use web application firewalls (WAF) to detect injection patterns
 
 ## Objectives
 
-1. Confirm SQL injection susceptibility in the language parameter
-2. Trigger a database error to validate unsanitized input
-3. Establish foundation for boolean-based exploitation
+1. Confirm SQL injection point in customerId parameter
+2. Observe error response for vulnerability validation
+3. Identify the injection vector for exploitation
 
 ## Instructions
 
-### Step 1: Inject Single Quote
+### Step 1: Modify URL Parameter
 
-**Context**: Append a single quote to the language code to break the SQL query syntax.
+**Context**: Append a single quote to the customerId to break the query.
 
-**Command** ([[commands/curl-test-single-quote-sqli]]):
+Manually edit the URL in the browser.
+
 ```bash
-curl -s "https://www.khanacademy.org/translations/videos/en'_youtube_stats.csv"
+# No command; browser-based: Change customerId/732562 to customerId/732562'
 ```
 
-> This sends a GET request with the malformed URL. A successful test returns a 500 error, indicating the quote reached the database query.
+> Full URL example: https://corporate.admyntec.co.za/customerInsurance/newCustomerStep8/userId/868878/customerId/732562'/contactPersonId/0. Expected output: SQL error page, e.g., "You have an error in your SQL syntax".
+
+### Step 2: Analyze Error Response
+
+**Context**: Verify the error indicates injection success.
+
+Inspect the page source or error message for database-specific details.
+
+> Look for phrases like "near '''" or stack traces revealing query structure.
 
 ## MITRE ATT&CK Mapping
 
@@ -86,13 +90,11 @@ curl -s "https://www.khanacademy.org/translations/videos/en'_youtube_stats.csv"
 
 ## Commands Used
 
-- [[commands/curl-test-single-quote-sqli]]
 
 ## Tools Used
 
 
 ## Tags
 
-- [[sqli]]
-- [[web]]
-- [[injection-test]]
+- sqli
+- testing

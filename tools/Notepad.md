@@ -1,14 +1,16 @@
 ---
 id: tool-notepad
-url: 'https://en.wikipedia.org/wiki/Notepad_(text_editor)'
+url: null
+name: Notepad
 tags:
   - text-editor
+  - basic
 type: tool
 verified: false
 platforms:
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-13T23:52:49.696Z'
+updated_at: '2025-12-14T17:28:05.326Z'
 validated: true
 submitted: true
 ---
@@ -18,47 +20,53 @@ submitted: true
 
 ## Overview
 
-Notepad is a basic text editor included with Windows, used here to craft and verify the content of malicious SVG files containing XSS payloads.
+Notepad is a basic text editor included with Windows operating systems, used here for creating simple HTML proof-of-concept files in security testing scenarios like demonstrating web vulnerabilities.
 
 ## Description
 
-Notepad allows simple editing of plain text files, ideal for creating SVG XML with embedded JavaScript without advanced features. In offensive security, it's used for quick payload authoring before uploading to web applications.
+Notepad provides plain text editing capabilities without advanced features, making it suitable for quick scripting or HTML prototyping in offensive security operations, such as building clickjacking PoCs. It lacks syntax highlighting but ensures clean, unformatted output for web files.
 
 ## Features
 
-- Feature 1: Plain text editing for XML/SVG payloads
-- Feature 2: Save with custom extensions (e.g., .png for disguise)
-- Feature 3: View file contents to verify onload attributes
+- Feature 1: Plain text editing for HTML, scripts, and configs
+- Feature 2: Simple save-as functionality with file extensions
+- Feature 3: Lightweight and always available on Windows
 
 ## Installation
 
 ### Requirements
 
-- Windows OS
+- Windows OS (pre-installed)
 
 ### Install Commands
 
-Pre-installed on Windows; no installation needed.
+No installation required; accessible via Start menu or Run (notepad.exe).
 
 ## Basic Usage
 
-Open via Start menu or run `notepad.exe`.
+```bash
+notepad
+```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Basic editor; no CLI flags |
+| N/A | Notepad has no CLI options; GUI-based |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open Notepad, paste SVG payload, save as Payload.png.
+Open Notepad and paste HTML code, then save as .html.
 
 ### Example 2: Advanced Usage
 
-Edit and compare multiple payload variants for testing.
+Use via command line to open a file:
+
+```bash
+notepad clickjacking-poc.html
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -66,7 +74,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
@@ -76,8 +84,8 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- File creation events for .svg or disguised images
-- Process monitoring for notepad.exe during payload crafting
+- File creation events in Windows logs for .html or .txt files with suspicious content
+- Process monitoring for notepad.exe in security testing contexts
 
 ## Related Procedures
 
@@ -89,5 +97,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- Official documentation: Windows built-in
-- Related resources: SVG XSS payloads on OWASP
+- Microsoft Documentation: Notepad

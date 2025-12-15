@@ -2,15 +2,15 @@
 data: dir
 tags:
   - recon
-  - directory-listing
+  - file-system
 type: command
-output: Directory listing output
+output: Directory listing of files and folders
 executor: cmd
 platforms:
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.313Z'
-id: ac44ea93-07b3-48dc-84de-226e7d9b4cd3
+updated_at: '2025-12-14T17:23:41.442Z'
+id: 9f619b28-5f59-4c37-99f7-dedf2510e4bd
 verified: false
 validated: true
 submitted: true
@@ -25,13 +25,13 @@ dir
 
 ## Description
 
-Lists the contents of the current directory on a Windows server, used here to demonstrate RCE via an uploaded ASP shell by verifying file presence and server environment.
+The 'dir' command lists the contents of the current directory on Windows, including files, folders, sizes, and dates. Used here via the ASP shell to demonstrate RCE by showing server file structure.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| None | No parameters; lists current directory | No |
+| None | Lists current directory | No |
 
 ## Examples
 
@@ -41,17 +41,16 @@ Lists the contents of the current directory on a Windows server, used here to de
 dir
 ```
 
-### Advanced Usage
+### With Path
 
 ```cmd
-dir /s
+dir C:\Windows
 ```
 
 ## Expected Output
 
-Directory listing including file names, sizes, and dates, e.g., ' Volume in drive C is ... Directory of C:\savefiles ... poc.asp ...'
+Directory listing including volume info, file names, sizes, and last modified dates, e.g., ' Volume in drive C is OS ... Directory of C:\\savefiles ... poc.asp ...'
 
 ## Related
 
 - [[commands/windows-cmd-c]]
-- [[procedures/Execute-Commands-via-Uploaded-ASPShell]]

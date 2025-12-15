@@ -2,9 +2,9 @@
 id: tool-chrome-devtools-001
 url: 'https://developer.chrome.com/docs/devtools/'
 tags:
+  - web
   - debugging
   - inspection
-  - web-security
 type: tool
 verified: false
 platforms:
@@ -13,7 +13,7 @@ platforms:
   - Windows
   - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:30.965Z'
+updated_at: '2025-12-14T17:32:01.690Z'
 validated: true
 submitted: true
 ---
@@ -23,51 +23,51 @@ submitted: true
 
 ## Overview
 
-Chrome Developer Tools is a built-in suite in Google Chrome for inspecting, debugging, and modifying web pages, commonly used in security testing for cookie manipulation, network monitoring, and script execution observation.
+Chrome Developer Tools is a built-in suite in Google Chrome for inspecting, debugging, and manipulating web pages, commonly used in security testing to analyze network traffic, replay requests, and identify vulnerabilities like unprotected APIs.
 
 ## Description
 
-DevTools provides tabs like Elements, Console, Sources, and Network for real-time analysis. In offensive security, it's essential for tampering with client-side storage (e.g., cookies, localStorage) and tracing payload reflections in responses. Features include breakpoint setting, DOM editing, and resource overriding.
+DevTools provides panels for Elements, Console, Sources, Network, and more, enabling real-time inspection of HTTP requests/responses, JavaScript execution, and DOM manipulation. In offensive security, it's essential for capturing and replaying XHR/Fetch requests to exploit web APIs, such as spamming endpoints without rate limits.
 
 ## Features
 
-- Feature 1: Cookie editing and URL decoding for injection testing
-- Feature 2: Network tab for capturing API requests/responses
-- Feature 3: Console for executing and debugging JavaScript payloads
+- Feature 1: Network panel for capturing and filtering HTTP requests (XHR, Fetch)
+- Feature 2: Replay functionality to resend requests manually or via console scripts
+- Feature 3: Console for executing JavaScript to automate loops (e.g., repeated API calls)
 
 ## Installation
 
 ### Requirements
 
-- Google Chrome browser installed
+- Google Chrome browser (version 100+ recommended)
 
 ### Install Commands
 
-No installation needed; access via F12 or right-click > Inspect.
+No installation needed; built into Chrome. Update via `chrome://settings/help`.
 
 ## Basic Usage
 
 ```bash
-# No CLI; browser-based
+# Launch Chrome and open DevTools with F12 or Ctrl+Shift+I
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| F12 | Open DevTools |
-| Ctrl+Shift+I | Toggle inspector |
-| Network tab | Monitor requests |
+| F12 | Open/close DevTools |
+| Ctrl+Shift+I | Toggle device emulation |
+| Network tab | Inspect traffic |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Open DevTools (F12), go to Application > Cookies, edit a cookie value.
+Open DevTools, go to Network, reload page to see requests.
 
 ### Example 2: Advanced Usage
 
-In Console, paste and run: document.cookie = 'location=%7B%22city%22%3A%22%3Cscript%3Ealert(1)%3C/script%3E%22%7D';
+Capture POST request, right-click > Replay XHR to resend; or in Console: `fetch('/api/endpoint', {method: 'POST', body: JSON.stringify(data)}).then(r => console.log(r.status));` in a loop.
 
 ## MITRE ATT&CK Mapping
 
@@ -75,29 +75,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
+- [[Exploit Public-Facing Application]]
 - [[JavaScript]]
-- [[Gather Victim Host Information]]
 
 ### Tactics
 
 - [[Execution]]
-- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser process anomalies (e.g., high CPU during inspection)
-- Network logs showing repeated requests from devtools
+- Unusual browser traffic patterns (e.g., repeated identical requests from one session)
+- User-Agent strings indicating Chrome with DevTools open (via proxy logs)
+- JavaScript errors or console logs in server-side if mishandled
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[tools/Web-Browser-Chrome]]
+- [[Burp Suite]]
+- [[Wireshark]]
 
 ## References
 
 - Official documentation: https://developer.chrome.com/docs/devtools/
-- Related resources: MDN Web Docs on Cookies
+- Related resources: MDN Web Docs on Fetch API

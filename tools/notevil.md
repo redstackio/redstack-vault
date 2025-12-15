@@ -1,43 +1,44 @@
 ---
-id: tool-notevil
-url: 'https://www.npmjs.com/package/notevil'
+id: k1l2m3n4-o5p6-7890-klmn-123456789012
+name: notevil
+type: tool
+verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:23:24.314Z'
+platforms:
+  - Node.js
 tags:
   - sandbox
   - javascript
-type: tool
-verified: false
-platforms:
-  - Node.js
-  - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:08.418Z'
-configuration: Version 1.3.2
+url: 'https://www.npmjs.com/package/notevil'
 validated: true
 submitted: true
 ---
+
 # notevil
 
 **Status**: Unverified
 
 ## Overview
 
-notevil is a Node.js module providing a safe alternative to eval() by parsing JavaScript with esprima and restricting dangerous AST nodes, vulnerable in v1.3.2 to sandbox escape.
+notevil is a Node.js module for safe JavaScript evaluation, using esprima to parse code into an AST and restrict access to dangerous globals, commonly used in scenarios requiring user input execution like form validation.
 
 ## Description
 
-It evaluates code in a sandboxed context, but flaws allow prototype manipulation for arbitrary execution. Used in apps like react-schema-form for form condition evaluation.
+It wraps the evaluation context to block access to constructors like Function or process, but version 1.3.2 is vulnerable to sandbox escape via prototype descriptor manipulation. In offensive security, it's exploited for RCE in Node.js apps or XSS in browser deps. Features include AST walking to rename/omit globals.
 
 ## Features
 
-- Feature 1: AST-based safe evaluation
-- Feature 2: Blacklist of dangerous globals
-- Feature 3: Browser and Node.js support
+- Feature 1: esprima-based AST parsing for safe code analysis
+- Feature 2: Global object wrapping to prevent escapes
+- Feature 3: Support for limited expressions in safe contexts
 
 ## Installation
 
 ### Requirements
 
-- Node.js
+- Node.js v10+
+- npm
 
 ### Install Commands
 
@@ -55,19 +56,22 @@ require('notevil');
 
 | Option | Description |
 |--------|-------------|
-| safeEval(code) | Evaluate sandboxed code |
+| -h, --help | Show usage (if CLI wrapper used) |
+| -v, --version | Display version |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```javascript
-var result = safeEval('1+1');
+var safeEval = require('notevil'); safeEval('1+1');
 ```
 
 ### Example 2: Advanced Usage
 
-Pass malicious payload for escape.
+```javascript
+safeEval('malicious code'); // Exploitable in v1.3.2
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -75,21 +79,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Dependency scans showing v1.3.2
-- Logs of safeEval calls
+- Monitor npm installs for notevil@1.3.2
+- Scan for safeEval calls in source code
+- Detect anomalous util.log in safe contexts
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
@@ -97,4 +109,5 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- npm: https://www.npmjs.com/package/notevil
+- https://www.npmjs.com/package/notevil
+- HackerOne Report #809012

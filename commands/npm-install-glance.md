@@ -1,16 +1,15 @@
 ---
-id: cmd-uuid-1
 data: npm install glance
 tags:
   - installation
-  - npm
 type: command
-output: null
+output: Installation logs and confirmation of package installation in node_modules
 executor: bash
 platforms:
   - Node.js
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:46.954Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:16.665Z'
+id: bb0a7997-e4c8-49e6-9d86-df9bc5a395cc
 verified: false
 validated: true
 submitted: true
@@ -25,7 +24,7 @@ npm install glance
 
 ## Description
 
-Installs the Glance Node.js package using npm, setting up the vulnerable module for static file serving and XSS exploitation.
+Installs the Glance Node.js module from the npm registry, setting up the vulnerable static file server for testing path traversal.
 
 ## Parameters
 
@@ -49,9 +48,8 @@ npm install glance --save
 
 ## Expected Output
 
-Installation logs, e.g., "added 5 packages from 3 contributors and audited 1 package in 2s", with glance in node_modules.
+Logs showing download and installation, e.g., "added 1 package", with Glance in node_modules.
 
 ## Related
 
-- [[commands/run-glance-server]]
-- [[procedures/Install-Glance-Node-Module]]
+- [[procedures/Install-Vulnerable-Glance-Module]]

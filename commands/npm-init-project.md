@@ -2,16 +2,15 @@
 data: npm init -y
 tags:
   - setup
-  - node-js
+  - npm
 type: command
+output: null
 executor: bash
 platforms:
-  - Linux
-  - macOS
-  - Windows
-id: bb61e4bb-c37f-48e8-a34f-015e44f36cea
-created_at: '2025-12-13T23:56:19.652Z'
-updated_at: '2025-12-13T23:56:19.652Z'
+  - Node.js
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:19.032Z'
+id: f69ad7f3-8db2-4b67-bb2e-0b47849eb240
 verified: false
 validated: true
 submitted: true
@@ -26,13 +25,13 @@ npm init -y
 
 ## Description
 
-Initializes a new Node.js project with default settings, creating a package.json file without interactive prompts. Used in attack setups to prepare for dependency installation like Express for hosting malicious content.
+Initializes a new npm project by creating a package.json file with default values, enabling dependency management for the PoC.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-y` | Accepts all defaults without prompting | Yes |
+| -y | Auto-yes flag to skip prompts | Yes |
 
 ## Examples
 
@@ -45,14 +44,13 @@ npm init -y
 ### Advanced Usage
 
 ```bash
-npm init -y --scope=@attacker
+npm init -y --scope=@test
 ```
 
 ## Expected Output
 
-Creates package.json with basic configuration, e.g., {"name":"xss-server","version":"1.0.0",...}. May warn about missing fields like README.
+Generates package.json; outputs "Wrote to /path/package.json".
 
 ## Related
 
 - [[commands/npm-install-express]]
-- [[procedures/Set-Up-Malicious-Express-Server-for-XSS]]

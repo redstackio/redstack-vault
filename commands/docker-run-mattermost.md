@@ -1,5 +1,5 @@
 ---
-id: cmd-docker-mattermost-001
+id: cmd-docker-run-mattermost
 data: >-
   docker run --name mattermost-preview -d --publish 8065:8065
   mattermost/mattermost-preview -m=4G
@@ -7,12 +7,14 @@ tags:
   - setup
   - docker
 type: command
-output: 'Container ID and running status; server accessible at http://localhost:8065'
+output: >-
+  Container ID and running status; Mattermost server accessible at
+  http://localhost:8065
 executor: bash
 platforms:
   - Linux
-created_at: '2023-10-01T12:00:00Z'
-updated_at: '2025-12-14T05:32:10.467Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:20.345Z'
 verified: false
 validated: true
 submitted: true
@@ -27,17 +29,16 @@ docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermos
 
 ## Description
 
-This command starts a Mattermost preview server in a detached Docker container with a 4GB memory limit, publishing port 8065 for access. It is used to set up a vulnerable environment for DoS testing.
+Starts a Docker container with the Mattermost preview image in detached mode, mapping port 8065, and limiting memory to 4GB for vulnerability reproduction.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `--name mattermost-preview` | Specifies the container name | Yes |
-| `-d` | Runs in detached (background) mode | Yes |
-| `--publish 8065:8065` | Maps host port 8065 to container port 8065 | Yes |
-| `-m=4G` | Sets memory limit to 4GB | Yes |
-| `mattermost/mattermost-preview` | The Docker image to use | Yes |
+| `--name mattermost-preview` | Names the container | Yes |
+| `-d` | Detached mode | Yes |
+| `--publish 8065:8065` | Port mapping | Yes |
+| `-m=4G` | Memory limit | Yes |
 
 ## Examples
 
@@ -49,14 +50,12 @@ docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermos
 
 ### Advanced Usage
 
-```bash
-docker run --name mattermost-preview -d --publish 8065:8065 --memory=4g --cpus=2 mattermost/mattermost-preview
-```
+Add volume for persistence: `docker run ... -v /path/to/data:/mattermost/data`
 
 ## Expected Output
 
-A long hexadecimal container ID is printed, followed by confirmation of the container running. Use `docker ps` to verify status.
+Container ID printed, e.g., "abc123def456"; use `docker ps` to confirm running.
 
 ## Related
 
-- [[procedures/Setup-Mattermost-Docker-Environment]]
+- [[procedures/Set-Up-Mattermost-Docker-Environment]]

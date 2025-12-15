@@ -1,8 +1,8 @@
 ---
-data: 'curl -L http://blog.gnipcentral.com/'
+data: 'curl -i https://cortex-ingest.shopifycloud.com/'
 tags:
-  - web
-  - verification
+  - recon
+  - http
 type: command
 output: null
 executor: bash
@@ -10,9 +10,9 @@ platforms:
   - Linux
   - macOS
   - Windows
-id: 45cc9e73-eb4f-450e-b566-14b8ca33220f
-created_at: '2025-12-14T04:51:26.387Z'
-updated_at: '2025-12-14T04:51:26.387Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:48.356Z'
+id: 95c9a886-9602-4e09-8ab8-c3719734b6f0
 verified: false
 validated: true
 submitted: true
@@ -22,38 +22,41 @@ submitted: true
 ## Command
 
 ```bash
-curl -L http://blog.gnipcentral.com/
+curl -i https://cortex-ingest.shopifycloud.com/
 ```
 
 ## Description
 
-Fetches the content from a URL, following redirects to verify subdomain takeover.
+Accesses the root URL of the target Cortex server to check for exposed interface, including headers for status and content type.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-L` | Follow redirects | Yes |
-| `http://blog.gnipcentral.com/` | Target URL | Yes |
+| `-i` | Include response headers | Yes |
+| `https://...` | Target URL | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl -L http://blog.gnipcentral.com/
+curl -i https://cortex-ingest.shopifycloud.com/
 ```
 
 ### Advanced Usage
 
 ```bash
-curl -L -v http://blog.gnipcentral.com/
+curl -i -v https://cortex-ingest.shopifycloud.com/  # Verbose output
 ```
 
 ## Expected Output
 
-HTML content from the S3 bucket, e.g., <h1>POC Takeover</h1>, after redirect.
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+[HTML or API response showing Cortex interface]
 
 ## Related
 
-- [[Related Procedure: Verify-Subdomain-Takeover-with-POC]]
+- [[Related Procedure]]

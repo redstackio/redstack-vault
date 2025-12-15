@@ -1,5 +1,5 @@
 ---
-id: tool-maltego
+id: tool-maltego-927413
 url: 'https://www.maltego.com'
 tags:
   - osint
@@ -8,8 +8,9 @@ verified: false
 platforms:
   - Linux
   - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:32.187Z'
+updated_at: '2025-12-14T17:27:35.576Z'
 validated: true
 submitted: true
 ---
@@ -19,18 +20,17 @@ submitted: true
 
 ## Overview
 
-OSINT and link analysis tool for graphing relationships and recon.
+Maltego is an OSINT tool for link analysis and recon, used to compare Zomato subdomain results.
 
 ## Description
 
-Compares subdomain results from Aquatone, providing deeper entity links for Zomato recon.
+Visualizes relationships for threat intel and recon.
 
 ## Features
 
-- Entity transforms
-- Graph visualization
-- Data mining
-- Export options
+- Feature 1: Entity transforms
+- Feature 2: Graph visualization
+- Feature 3: Data integration
 
 ## Installation
 
@@ -41,57 +41,60 @@ Compares subdomain results from Aquatone, providing deeper entity links for Zoma
 ### Install Commands
 
 ```bash
-# Download from site
-wget https://www.maltego.com/downloads/maltego_desktop_linux.sh
-chmod +x maltego_desktop_linux.sh
-./maltego_desktop_linux.sh
+# Download installer from site
 ```
 
 ## Basic Usage
 
 ```bash
-# GUI, launch maltego
+# GUI application
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Transforms | Run entity expansions |
+| Transforms | Run queries |
+| Export | Save graphs |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Create graph, add Domain entity, run To Subdomain transform.
+Create graph, add domain, run To Subdomain transform.
 
 ### Example 2: Advanced Usage
 
-Import CSV of subdomains, apply DNS transforms.
+Integrate with API for deep OSINT.
 
 ## MITRE ATT&CK Mapping
 
 ### Techniques
 
-- [[Search Open Websites-Domains]] Search Open Websites and Services
+- [[Gather Victim Host Information]]
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Reconnaissance]]
 
 ## Detection
 
-- API query patterns to transforms
-- Unusual graph queries
+- Tool signatures in network
 
 ## Related Procedures
 
-- [[procedures/Subdomain-Comparison-with-Maltego]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/Aquatone]]
+- [[Related Tool: Aquatone]]
 
 ## References
 
-- Official site
+- Maltego docs

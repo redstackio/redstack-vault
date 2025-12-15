@@ -1,17 +1,14 @@
 ---
-id: tool-pip-001
-url: 'https://pip.pypa.io/en/stable/'
+url: 'https://pip.pypa.io/'
 tags:
-  - python
   - package-manager
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
-  - Windows
-created_at: '2024-10-01T00:00:00Z'
-updated_at: '2025-12-14T04:08:55.667Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:30.533Z'
+id: 3a404f18-4400-4987-b07f-16bfb23243d9
 validated: true
 submitted: true
 ---
@@ -21,29 +18,29 @@ submitted: true
 
 ## Overview
 
-Pip is the Python package installer, used here to install Flask for the attacker-controlled webhook redirect server.
+Pip is Python's package installer, used here to install dependencies like requests for the exploit.
 
 ## Description
 
-Standard tool for managing Python dependencies in PoC environments, enabling quick setup of web servers for SSRF.
+Manages Python libraries for security scripts, enabling HTTP and other functionalities without manual implementation.
 
 ## Features
 
 - Feature 1: Install from PyPI
-- Feature 2: Virtual environment support
-- Feature 3: Dependency resolution
+- Feature 2: Dependency resolution
+- Feature 3: Virtual env support
 
 ## Installation
 
 ### Requirements
 
-- Python 3.6+
+- Python3 installed
 
 ### Install Commands
 
 ```bash
-# Usually bundled with Python
-python -m ensurepip --upgrade
+# Self-install if needed
+python3 -m ensurepip
 ```
 
 ## Basic Usage
@@ -56,21 +53,21 @@ pip --help
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help |
-| `--upgrade` | Upgrade package |
+| -h, --help | Help |
+| --upgrade | Upgrade package |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-pip install Flask
+pip install requests
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-pip install Flask==1.1.2 --user
+pip install requests --user
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,25 +76,24 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Remote File Copy]] Ingress Tool Transfer
+- [[Remote File Copy]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
 
 ## Detection
 
-- Monitor pip installs for suspicious packages
-- Restrict in air-gapped environments
+Indicators and methods for detecting this tool's usage:
+
+- Pip install logs
+- New packages in site-packages
 
 ## Related Procedures
 
-- [[procedures/Setup-Attacker-Controlled-Redirect-Server]]
-
 ## Related Tools
 
-- [[tools/Flask]]
-- [[tools/poetry]]
+- [[tools/Python3]]
 
 ## References
 

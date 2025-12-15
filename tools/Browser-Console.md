@@ -1,46 +1,45 @@
 ---
-url: ''
+id: tool-uuid-002
+url: null
 tags:
   - debugging
-  - xss
+  - execution
 type: tool
+verified: false
 platforms:
   - Web
-description: Built-in developer tool for executing JavaScript and inspecting web pages.
-id: b047e900-3bac-49f2-9024-8595ec9d170d
-created_at: '2025-12-13T23:56:20.408Z'
-updated_at: '2025-12-13T23:56:20.408Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:27:50.073Z'
 validated: true
 submitted: true
 ---
-# Browser Console
+# Browser-Console
 
 **Status**: Unverified
 
 ## Overview
 
-The browser console is a developer tool integrated into web browsers for running JavaScript, inspecting DOM, and testing exploits like XSS.
+Built-in browser developer tool for executing JS and inspecting page behavior, ideal for real-time timing logs in attacks.
 
 ## Description
 
-It allows direct manipulation of page content, execution of scripts, and verification of vulnerabilities in real-time on live sites.
+Accessed via F12 or right-click inspect, allows running commands like performance queries to capture and log data during webpage loads.
 
 ## Features
 
-- JavaScript execution
-- DOM inspection
-- Network monitoring
+- Feature 1: JS execution
+- Feature 2: Log inspection
+- Feature 3: Resource monitoring
 
 ## Installation
 
 ### Requirements
 
-- Modern web browser (Chrome, Firefox, etc.)
+- Any modern browser
 
 ### Install Commands
 
-No installation needed; access via F12 or right-click > Inspect.
+N/A
 
 ## Basic Usage
 
@@ -52,56 +51,40 @@ console.log('test');
 
 | Option | Description |
 |--------|-------------|
-| `console.log` | Output messages |
-| `document` | DOM manipulation |
+| console.log | Output to console |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```javascript
-alert('test');
-```
+Open console and run function.
 
 ### Example 2: Advanced Usage
 
-```javascript
-document.write(document.body.innerHTML.replace(/\\\\//g,'/'));
-```
+performance.getEntriesByType('resource')
 
 ## MITRE ATT&CK Mapping
 
-This tool is commonly associated with:
-
 ### Techniques
 
-- [[JavaScript]]
+- [[JavaScript]] JavaScript
 
 ### Tactics
 
-- [[Execution]]
+- [[Execution]] Execution
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- Unusual console activity in logs
-- Script executions on sensitive domains
+- CSP to restrict console access
+- Monitor for dev tools usage
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/Internet-Explorer]]
+- [[tools/Resource-Timing-API]]
 
 ## References
 
-- Browser developer documentation
+- Browser dev docs

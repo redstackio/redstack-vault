@@ -1,19 +1,17 @@
 ---
-data: 'git clone https://github.com/inkz/poc-webpack-bundle-analyzer.git'
+id: cmd-uuid-1
+data: 'git clone https://github.com/l00ph0le/CVE-2019-0604.git'
 tags:
-  - clone
-  - git
   - poc
+  - clone
 type: command
-output: Clones the repository into a local directory
+output: null
 executor: bash
 platforms:
-  - Linux
-  - macOS
   - Windows
+  - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:16:36.936Z'
-id: 88d1984b-44b1-438c-bc42-b57dfcf63120
+updated_at: '2025-12-14T17:23:32.042Z'
 verified: false
 validated: true
 submitted: true
@@ -23,40 +21,37 @@ submitted: true
 ## Command
 
 ```bash
-git clone https://github.com/inkz/poc-webpack-bundle-analyzer.git
+git clone https://github.com/l00ph0le/CVE-2019-0604.git
 ```
 
 ## Description
 
-Clones the POC repository demonstrating XSS in webpack-bundle-analyzer via controlled third-party module structure.
+Clones the GitHub repository containing the PoC for CVE-2019-0604, including the XAML template and encoder source, to prepare for SharePoint RCE exploitation.
 
 ## Parameters
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `https://github.com/inkz/poc-webpack-bundle-analyzer.git` | Repository URL | Yes |
+| URL | Repository URL | Yes |
 
 ## Examples
 
 ### Basic Usage
 
 ```bash
-git clone https://github.com/inkz/poc-webpack-bundle-analyzer.git
+git clone https://github.com/l00ph0le/CVE-2019-0604.git
 ```
 
 ### Advanced Usage
 
 ```bash
-git clone https://github.com/inkz/poc-webpack-bundle-analyzer.git poc-dir
+git clone https://github.com/l00ph0le/CVE-2019-0604.git CVE-2019-0604-PoC
 ```
 
 ## Expected Output
 
-Cloning into 'poc-webpack-bundle-analyzer'...
-remote: Enumerating objects: X, done.
-...
+Cloning into 'CVE-2019-0604'... remote: Enumerating objects... Receiving objects: 100% (X/X), done. Directory populated with PoC files.
 
 ## Related
 
-- [[commands/cd-poc-directory]]
-- [[procedures/Reproduce-with-Git-Clone-and-Build]]
+- [[procedures/Prepare-SharePoint-CVE-2019-0604-PoC]]
