@@ -1,17 +1,17 @@
 ---
+id: tool-metamod-001
 url: 'https://www.sourcemm.net/'
 tags:
-  - modding
+  - mod
+  - loader
   - csgo
 type: tool
+verified: false
 platforms:
   - Windows
-  - Linux
-description: Meta plugin loader for Source engine servers
-id: 711f034f-05da-4758-ad18-767d346d545b
-created_at: '2025-12-14T00:11:25.195Z'
-updated_at: '2025-12-14T00:11:25.195Z'
-verified: false
+  - Game
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:14.799Z'
 validated: true
 submitted: true
 ---
@@ -21,47 +21,64 @@ submitted: true
 
 ## Overview
 
-Required base for SourceMod, enabling mod loading on CS:GO servers.
+Metamod is a plugin loader for Source engine games like CS:GO, required to run frameworks like SourceMod for extending server capabilities with custom mods.
 
 ## Description
 
-Loads extensions like SourceMod for advanced server modifications in exploits.
+It acts as a base layer to inject DLLs and load plugins, essential for SourceMod's operation in delivering custom kick payloads via API calls in exploitation scenarios.
 
 ## Features
 
-- Plugin loading
-- API extensions
+- Feature 1: DLL injection for mod support
+- Feature 2: Configuration via metamod.vdf
+- Feature 3: Compatibility with Source games
 
 ## Installation
 
 ### Requirements
 
-- Dedicated server
+- CS:GO dedicated server
 
 ### Install Commands
 
 ```bash
-# Download and configure
+# Download from sourcemm.net, extract to csgo/addons/metamod
+# Edit gameinfo.txt to include +host_thread_mode 2
 ```
 
 ## Basic Usage
 
 ```bash
-meta list
+# Server starts with metamod loaded automatically
+meta version
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `meta` | Command prefix |
+| meta load | Load a plugin |
+| meta unload | Unload a plugin |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-meta load addons/sourcemod
+# In server console
+meta list
+```
+
+### Example 2: Advanced Usage
+
+Configure for SourceMod:
+
+```bash
+# In metamod.vdf
+"Plugins"
+{
+	"addons/sourcemod/mm_sourcemod_core" "1"
+}
 ```
 
 ## MITRE ATT&CK Mapping
@@ -70,32 +87,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[External Remote Services]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Server mod logs
+- Presence of addons/metamod folder
+- meta commands in logs
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/sourcemod]]
+- [[tools/SourceMod]]
 
 ## References
 
-- SourceMM Website
+- https://www.sourcemm.net/

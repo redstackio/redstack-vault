@@ -1,8 +1,7 @@
 ---
-id: tool-webhook-001
+id: tool-webhook-site-001
 url: 'https://webhook.site'
 tags:
-  - webhook
   - monitoring
   - ssrf
 type: tool
@@ -10,27 +9,27 @@ verified: false
 platforms:
   - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:14.668Z'
+updated_at: '2025-12-14T17:32:48.374Z'
 validated: true
 submitted: true
 ---
-# webhook-site
+# Webhook.site
 
 **Status**: Unverified
 
 ## Overview
 
-Webhook.site is a free online service for generating unique URLs to capture and inspect incoming HTTP requests, commonly used in security testing to confirm server-side interactions like SSRF exploits.
+Webhook.site is a free online service for generating temporary HTTP endpoints to capture and inspect incoming requests, commonly used in security testing to verify SSRF, CSRF, or webhook behaviors without setting up local servers.
 
 ## Description
 
-It provides temporary endpoints that log all details of requests (headers, body, IP), making it ideal for verifying if a target server (e.g., Lichess) fetches a controlled URL during exploitation. No installation needed; works via browser.
+It provides a unique URL upon page load, allowing real-time viewing of request headers, body, and metadata. Ideal for confirming if a target server makes outbound requests during exploits like SSRF in Lichess API testing. No installation needed; browser-based.
 
 ## Features
 
-- Feature 1: Instant unique URL generation
-- Feature 2: Real-time request logging with full headers/payload
-- Feature 3: Export logs for analysis; supports GET/POST
+- Feature 1: Instant unique URL generation for request capture
+- Feature 2: Real-time dashboard for headers, JSON, and raw data inspection
+- Feature 3: Export logs and one-time or multi-use modes
 
 ## Installation
 
@@ -46,25 +45,24 @@ No installation; access via https://webhook.site
 ## Basic Usage
 
 ```bash
-# No CLI; use browser to generate URL, then curl to test
-curl https://webhook.site/unique-id -v
+# No CLI; use browser to visit site and copy URL
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Browser-based; refresh page for new logs |
+| N/A | Browser-based; refresh dashboard for updates |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Visit webhook.site, copy URL, send request: curl https://your-webhook-url -v. Check site for logs.
+Visit https://webhook.site, copy the URL, inject into SSRF payload, and monitor the page for incoming requests.
 
 ### Example 2: Advanced Usage
 
-Integrate in scripts: Use the URL in SSRF payload and monitor for hits.
+Use the URL in curl: `curl "https://target.com?callback=https://webhook.site/unique-id"`; view details on site.
 
 ## MITRE ATT&CK Mapping
 
@@ -72,18 +70,18 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Vulnerability Scanning]]
+- [[Active Scanning]] Active Scanning
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Reconnaissance]] Reconnaissance
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Outbound requests to webhook.site domains from servers
-- Unusual HTTP traffic to temporary/debug endpoints
+- Outbound DNS queries to webhook.site
+- Unusual HTTP traffic to temporary webhook domains
 
 ## Related Procedures
 
@@ -96,4 +94,4 @@ Indicators and methods for detecting this tool's usage:
 ## References
 
 - Official site: https://webhook.site
-- Documentation: Built-in help on site
+- Documentation: Built-in help on the platform

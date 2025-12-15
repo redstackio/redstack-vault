@@ -1,44 +1,43 @@
 ---
-id: tool-uuid-2
-url: 'https://requests.readthedocs.io/'
+id: tool-uuid-001
+url: 'https://requests.readthedocs.io/en/latest/'
 tags:
   - http-client
-  - python
   - automation
 type: tool
 verified: false
 platforms:
   - Linux
-  - Windows
   - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:09.326Z'
+updated_at: '2025-12-14T17:33:06.379Z'
 validated: true
 submitted: true
 ---
-# python-requests
+# Python-Requests
 
 **Status**: Unverified
 
 ## Overview
 
-Requests is a Python HTTP library for sending HTTP requests extremely easily, used in security testing for automating web interactions, including SSRF payload delivery and response timing analysis for port scanning.
+Requests is a Python library for making HTTP requests, commonly used in security testing for automating API interactions, fuzzing, and exploit delivery like blind injection payloads.
 
 ## Description
 
-In exploits, it's used in scripts like exp.py to send GET requests with gopher payloads to vulnerable endpoints, handling timeouts to detect open ports. Simpler than urllib, supports sessions, headers, and JSON. Ideal for Python-based automation in web app pentesting.
+It simplifies sending GET/POST requests with parameters, headers, and handling responses, ideal for scripting NoSQL injection tests against web endpoints like FlintCMS's /admin/verify.
 
 ## Features
 
-- Feature 1: Simple API for GET/POST with params
-- Feature 2: Timeout and exception handling
-- Feature 3: Custom headers and proxies
+- Feature 1: Simple syntax for params and JSON payloads
+- Feature 2: Session management for stateful interactions
+- Feature 3: Response parsing for status, redirects, and content
 
 ## Installation
 
 ### Requirements
 
-- Python 3.x
+- Python 2.7 or 3.x
 
 ### Install Commands
 
@@ -49,31 +48,33 @@ pip install requests
 ## Basic Usage
 
 ```bash
-python -c "import requests; print(requests.__version__)"
+python -c "import requests; r = requests.get('http://example.com'); print(r.status_code)"
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| timeout= | Set request timeout |
-| headers= | Custom headers dict |
-| params= | Query parameters |
+| `params=` | Dictionary for query parameters |
+| `allow_redirects=False` | Disable following redirects |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
+```python
 import requests
-r = requests.get('https://example.com')
-print(r.status_code)
+r = requests.get('http://localhost:4000/admin/verify', params={'t': 'test'})
+print(r.url)
 ```
 
 ### Example 2: Advanced Usage
 
-```bash
-r = requests.get('https://target.com/endpoint/gopher://127.0.0.1:25/', timeout=5)
+```python
+payload = {'t': {'$regex': '^a'}}
+r = requests.get('http://localhost:4000/admin/verify', params=payload)
+if 'sp/' in r.url:
+    print('Match!')
 ```
 
 ## MITRE ATT&CK Mapping
@@ -82,30 +83,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
-- [[Network Service Scanning]] Network Service Scanning
+- [[Exploit Public-Facing Application]]
+- [[Python]]
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
-- [[Discovery]] Discovery
+- [[Execution]]
+- [[Collection]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Python process with requests module importing.
-- HTTP logs showing scripted request patterns (e.g., rapid gopher URLs).
+- Network logs showing rapid sequential requests to verify endpoints
+- User-Agent strings indicating Python/requests
 
 ## Related Procedures
 
 
 ## Related Tools
 
+- [[Related Tool: Burp Suite]]
 - [[Related Tool: curl]]
-- [[Related Tool: httpx]]
 
 ## References
 
 - Official documentation: https://requests.readthedocs.io/
-- Related resources: PyPI requests

@@ -1,52 +1,54 @@
 ---
-url: ''
+url: 'https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/'
 tags:
-  - debugger
-  - rop
+  - debugging
+  - reverse-engineering
+  - crash-analysis
 type: tool
 verified: false
 platforms:
   - Windows
-id: fa9b7fb5-a16c-4031-b943-87ae872a347b
-created_at: '2025-12-13T23:55:06.733Z'
-updated_at: '2025-12-13T23:55:06.733Z'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:08.810Z'
+id: b90330ec-0039-4820-86c9-fbdf70d2765f
 validated: true
 submitted: true
 ---
-# Windbg
+# WinDBG
 
 **Status**: Unverified
 
 ## Overview
 
-Microsoft debugging tool for finding ROP offsets and verifying exploits on Windows.
+WinDBG is a powerful Windows debugger from Microsoft, used for analyzing crashes, memory dumps, and kernel/user-mode debugging. In security testing, it's commonly employed to reproduce vulnerabilities like buffer overflows in applications such as CS:GO by attaching to processes and inspecting exceptions.
 
 ## Description
 
-Kernel/user-mode debugger used to inspect memory, symbols, and offsets like kernel32!WinExec for ROP chains in V8 exploits.
+WinDbg supports live process attachment, symbol loading for executables like csgo.exe, and commands for stack tracing, memory inspection, and extension analysis. For offensive security, it aids in exploit development by confirming overflow conditions and identifying control flow hijacks. It's integrated with the Windows SDK and excels in handling Source Engine crashes.
 
 ## Features
 
-- Feature 1: Symbol loading
-- Feature 2: Memory inspection
-- Feature 3: Breakpoint setting
+- Feature 1: Live kernel and user-mode debugging with process attachment
+- Feature 2: Extension support (e.g., !analyze for automated crash diagnosis)
+- Feature 3: Symbol server integration for accurate stack traces
 
 ## Installation
 
 ### Requirements
 
-- Windows SDK
+- Windows 10/11
+- Administrative privileges
 
 ### Install Commands
 
-```bash
-# Download from MSDN
-choco install windbg
+```cmd
+# Download and install Windows SDK from Microsoft, selecting Debugging Tools
+# Or use standalone: winget install Microsoft.WinDbg
 ```
 
 ## Basic Usage
 
-```bash
+```cmd
 windbg.exe
 ```
 
@@ -54,23 +56,27 @@ windbg.exe
 
 | Option | Description |
 |--------|-------------|
-| -k | Kernel mode |
+| -k | Kernel debugging mode |
+| -p <pid> | Attach to specific process ID |
+| -z <file> | Open dump file |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```bash
-windbg -z exploit.exe
+```cmd
+windbg -p <csgo_pid>
 ```
 
 ### Example 2: Advanced Usage
 
-```bash
-!symfix; .reload /f; x kernel32!WinExec
+```cmd
+windbg -p <pid> -srcpath "C:\Symbols"
 ```
 
 ## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
 
 ### Techniques
 
@@ -82,15 +88,21 @@ windbg -z exploit.exe
 
 ## Detection
 
-- Detect debugger attachments via anti-debug
+Indicators and methods for detecting this tool's usage:
+
+- Process monitoring for windbg.exe execution
+- Event logs showing debugger attachments (Event ID 4688)
+- Anti-debugging heuristics in protected applications
 
 ## Related Procedures
 
-- [[procedures/Adjust-ROP-Chain-for-Target-OS]]
 
 ## Related Tools
 
+- [[Related Tool 1]]
+- [[Related Tool 2]]
 
 ## References
 
-- Microsoft Docs
+- Official documentation: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
+- Related resources: WinDbg Preview on Microsoft Store

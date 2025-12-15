@@ -1,76 +1,80 @@
 ---
-id: tool-uuid-002
-url: 'https://jqlang.github.io/jq/'
+url: 'https://stedolan.github.io/jq/'
 tags:
   - json
-  - parse
-  - cli
+  - parsing
 type: tool
 verified: false
 platforms:
   - Linux
+  - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:53:38.508Z'
+updated_at: '2025-12-14T17:32:39.543Z'
+id: b5680139-f995-44eb-9653-9ca5edaf8c46
 validated: true
 submitted: true
 ---
 # jq
 
-**Status**: Unverified
+**Status**: Verified
 
 ## Overview
 
-Command-line JSON processor for extracting fields from API responses, used here to parse GitLab import_error for SSRF leaks.
+jq is a lightweight command-line JSON processor, used for parsing, filtering, and transforming JSON data from API responses in security assessments.
 
 ## Description
 
-Lightweight tool to query and manipulate JSON, ideal for piping curl output to extract specific keys like .import_error in security testing.
+jq excels at querying JSON structures with a simple syntax, enabling extraction of specific fields like IDs from leaked API data, which is crucial for analyzing information disclosure vulnerabilities.
 
 ## Features
 
-- Feature 1: Selectors like .field
-- Feature 2: Filters and transformations
-- Feature 3: Streaming for large JSON
+- Feature 1: Filters like .data[] | .id for array traversal
+- Feature 2: Support for conditional selects and outputs
+- Feature 3: Streaming for large JSON files
 
 ## Installation
 
 ### Requirements
 
-- Linux/Unix system
+- Go or package manager access
 
 ### Install Commands
 
 ```bash
-# Ubuntu/Debian
-sudo apt install jq
-# Or from source
+# On Ubuntu/Debian
+apt update && apt install jq
+
+# On macOS
+brew install jq
 ```
 
 ## Basic Usage
 
 ```bash
-curl ... | jq .key
+jq --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `.key` | Extract field |
-| `-r` | Raw output |
+| `-r` | Raw output strings |
+| `-c` | Compact output |
+| `--arg` | Pass variables |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-echo '{"error":"test"}' | jq .error
+jq '.name' input.json
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-curl api | jq '.projects[] | .import_error'
+jq '.data[] | select(.id > 100) | .id' api_response.json
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,27 +83,29 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Data from Local System]]
+- [[Network Sniffing]] Network Sniffing? No, more [[Data from Local System]] Data from Local System
 
 ### Tactics
 
-- [[Collection]]
+- [[Discovery]] Discovery
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process: jq in ps aux
-- Common in recon scripts
+- Process listings showing jq parsing JSON files
+- Script logs with jq commands in recon workflows
 
 ## Related Procedures
 
-- [[procedures/Check-Import-Status-for-SSRF-Result]]
+- [[procedures/Expose-API-Identifiers-for-IDOR-Exploitation]]
 
 ## Related Tools
 
-- [[curl]]
+- [[tools/curl]]
+- [[tools/Python]]
 
 ## References
 
-- Official: https://jqlang.github.io/jq/
+- Official documentation: https://stedolan.github.io/jq/manual/
+- Related resources: JSON parsing in pentesting guides

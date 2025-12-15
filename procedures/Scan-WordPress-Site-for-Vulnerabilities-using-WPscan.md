@@ -1,28 +1,25 @@
 ---
-id: uuid-placeholder-5678
-name: Scan-WordPress-Site-for-Vulnerabilities-using-WPscan
+id: b2c3d4e5-f6g7-8901-bcde-f23456789012
 tags:
+  - vulnerability-scanning
   - wordpress
-  - scanning
   - csrf
   - xss
 type: procedure
 tools:
-  - '[[tools/WPscan]]'
+  - '[[tools/WPScan]]'
 tactics:
   - '[[Reconnaissance]]'
-  - '[[Initial Access]]'
 commands:
   - '[[commands/wpscan-enumerate-vulnerabilities]]'
 verified: false
 platforms:
   - Web
 submitted: true
-created_at: '2023-10-01T00:00:00Z'
+created_at: '2023-10-01T12:00:00Z'
 techniques:
-  - '[[Active Scanning]]'
-  - '[[Exploit Public-Facing Application]]'
-updated_at: '2025-12-13T23:52:25.497Z'
+  - '[[Vulnerability Scanning]]'
+updated_at: '2025-12-14T17:27:49.773Z'
 skill_level: beginner
 impact_level: medium
 detection_risk: low
@@ -30,94 +27,88 @@ sub_techniques: []
 validated: true
 mitre_tactics:
   - '[[Reconnaissance]]'
-  - '[[Initial Access]]'
 mitre_techniques:
-  - '[[Active Scanning]]'
-  - '[[Exploit Public-Facing Application]]'
+  - '[[Vulnerability Scanning]]'
 ---
-# Scan-WordPress-Site-for-Vulnerabilities-using-WPscan
+# Scan-WordPress-Site-for-Vulnerabilities-Using-WPScan
 
 ## Summary
 
-This procedure uses WPscan to scan a WordPress site for known vulnerabilities, focusing on outdated core installations and plugins that can lead to CSRF and XSS attacks, allowing attackers to perform unauthorized actions or inject scripts on behalf of users.
+This procedure uses WPScan to scan a WordPress site for known vulnerabilities, focusing on outdated core and plugins that expose CSRF and XSS risks, as identified on sites like www.uberxgermany.com.
 
 ## Description
 
-In this attack scenario, an outdated WordPress installation at www.uberxgermany.com was targeted. WPscan identifies vulnerabilities stemming from unpatched plugins and core versions, such as those enabling CSRF to trick users into unintended actions and XSS to execute malicious JavaScript in victims' browsers. The procedure requires only public access to the site and runs non-intrusively to enumerate vulnerabilities without exploitation. Expected outcomes include a detailed report of vulnerable components, enabling further assessment of risks like session hijacking or data theft.
+WPScan is a black-box vulnerability scanner for WordPress that checks for outdated versions of the core, themes, and plugins against a database of known vulnerabilities. In this scenario, it detects unpatched plugins leading to CSRF (allowing unauthorized actions via forged requests) and XSS (enabling script injection for data theft or manipulation). The procedure assumes external access to a public-facing WordPress site and requires no authentication. Expected outcomes include a list of vulnerable components and their potential impacts, such as session hijacking or admin actions without consent.
 
 ## Requirements
 
-1. WPscan tool installed (Ruby-based, requires Ruby 2.7+ and bundler)
-2. Network access to the target WordPress site over HTTP/HTTPS
-3. Basic knowledge of command-line tools; no authentication needed for enumeration
+1. Network access to the target WordPress site (e.g., internet connectivity).
+2. Installed WPScan tool with an active API token for full vulnerability database access.
+3. Basic command-line knowledge for executing scans.
 
 ## Defense
 
 Defensive measures and detection strategies:
 
-- Regularly update WordPress core and plugins to apply security patches
-- Implement Content Security Policy (CSP) headers to mitigate XSS
-- Use anti-CSRF tokens in forms and monitor for anomalous requests via WAF logs
-- Scan logs for WPscan signatures (e.g., user-agent strings) to detect reconnaissance
+- Regularly update WordPress core, themes, and plugins to patch known vulnerabilities.
+- Implement web application firewalls (WAF) to detect and block scanning attempts like WPScan user-agent strings.
+- Monitor server logs for unusual HTTP requests from scanning tools, such as repeated enumeration endpoints (/wp-content/plugins/).
 
 ## Objectives
 
-1. Enumerate vulnerable plugins and core versions in the WordPress installation
-2. Identify specific risks like CSRF for unauthorized actions and XSS for script injection
-3. Generate a report for assessing exploitation potential
+1. Identify outdated plugins and core versions with CSRF and XSS flaws.
+2. Assess potential attack vectors for unauthorized actions or script execution.
+3. Generate a report for remediation without performing active exploitation.
 
 ## Instructions
 
-### Step 1: Install and Update WPscan
+### Step 1: Update and Configure WPScan
 
-**Context**: Ensure the tool is ready for use by installing dependencies and updating the vulnerability database.
+**Context**: Ensure WPScan is up-to-date and configured with an API token to access the latest vulnerability database.
 
 **Command** ([[commands/wpscan-update]]):
 ```bash
-gem install wpscan
 wpscan --update
 ```
 
-> This installs WPscan via RubyGems and updates its vulnerability database. Expected output includes confirmation of installation and update completion.
+> This updates the local database. Then add your API token if needed: `wpscan --api-token YOUR_TOKEN`. Expected output: Confirmation of update completion.
 
 ### Step 2: Enumerate Vulnerabilities
 
-**Context**: Run a targeted scan on the WordPress site to detect outdated components and associated CSRF/XSS issues.
+**Context**: Run the scan against the target URL to detect vulnerable plugins and core issues related to CSRF and XSS.
 
 **Command** ([[commands/wpscan-enumerate-vulnerabilities]]):
 ```bash
 wpscan --url https://www.uberxgermany.com --enumerate vp
 ```
 
-> The --url flag specifies the target, and --enumerate vp scans for vulnerable plugins (vp). Expected output is a console report listing outdated plugins, core version, and vulnerability details, such as CSRF in unpatched forms or XSS in plugin handlers.
+> The `--enumerate vp` flag focuses on vulnerable plugins. Expected output: A detailed report listing outdated plugins, vulnerability types (e.g., CSRF in form handling, XSS in output encoding), and severity ratings.
 
 ## MITRE ATT&CK Mapping
 
 ### Tactics
 
 - [[Reconnaissance]] Reconnaissance
-- [[Initial Access]] Initial Access
 
 ### Techniques
 
-- [[Active Scanning]] Active Scanning
-- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Vulnerability Scanning]] Vulnerability Scanning
 
 ### Sub-Techniques
 
 
 ## Commands Used
 
-- [[commands/wpscan-update]]
 - [[commands/wpscan-enumerate-vulnerabilities]]
+- [[commands/wpscan-update]]
 
 ## Tools Used
 
-- [[tools/WPscan]]
+- [[tools/WPScan]]
 
 ## Tags
 
-- wordpress
-- scanning
-- csrf
-- xss
+- [[vulnerability-scanning]]
+- [[wordpress]]
+- [[csrf]]
+- [[xss]]

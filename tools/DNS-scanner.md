@@ -1,6 +1,6 @@
 ---
-id: tool-dns-scanner
-url: 'https://github.com/fwaeytens/dnsrecon'
+id: tool-dns-scanner-927413
+url: null
 tags:
   - dns
 type: tool
@@ -8,92 +8,95 @@ verified: false
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T03:46:32.194Z'
+updated_at: '2025-12-14T17:27:35.585Z'
 validated: true
 submitted: true
 ---
-# DNS-scanner
+# DNS-Scanner
 
 **Status**: Unverified
 
 ## Overview
 
-Tool for enumerating DNS records and subdomains during recon.
+Generic DNS enumeration tool for discovering subdomains, used alongside Burp for Zomato.
 
 ## Description
 
-Scans for DNS issues on targets like Zomato, complementing web testing.
+Tools like dnsenum or fierce for DNS recon to find hidden domains.
 
 ## Features
 
-- Zone transfer attempts
-- Subdomain brute-force
-- Record enumeration
+- Feature 1: Zone transfer attempts
+- Feature 2: Brute-force subdomains
+- Feature 3: Record enumeration
 
 ## Installation
 
 ### Requirements
 
-- Python
+- Perl/Python
 
 ### Install Commands
 
 ```bash
-git clone https://github.com/darkoperator/dnsrecon
-cd dnsrecon
-pip install -r requirements.txt
+apt install dnsenum
 ```
 
 ## Basic Usage
 
 ```bash
-dnsrecon --help
+dnsenum --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -d | Domain |
-| -t | Type (brt for brute) |
+| `--enum` | Enumerate |
+| `-f` | Wordlist |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-dnsrecon -d zomato.com
+dnsenum zomato.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-dnsrecon -d zomato.com -t brt -D /path/to/wordlist.txt
+dnsenum -f /path/to/wordlist.txt zomato.com
 ```
 
 ## MITRE ATT&CK Mapping
 
 ### Techniques
 
-- [[Hardware]] Gather Victim Host Information: Domains
+- [[Gather Victim Host Information]]
 
 ### Tactics
 
-- [[Reconnaissance]] Reconnaissance
+- [[Reconnaissance]]
 
 ## Detection
 
-- DNS query logs
-- Rate limiting on resolvers
+- Excessive DNS queries
 
 ## Related Procedures
 
-- [[procedures/Web-Application-Testing-with-Burp-Suite-and-DNS-Scanner]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/Aquatone]]
+- [[Related Tool: subfinder]]
 
 ## References
 
-- GitHub repo
+- Tool-specific docs

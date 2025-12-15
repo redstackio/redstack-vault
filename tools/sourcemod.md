@@ -1,18 +1,17 @@
 ---
+id: tool-sourcemod-001
 url: 'https://wiki.alliedmods.net/Installing_sourcemod'
 tags:
-  - modding
+  - mod
+  - server
   - csgo
-  - plugin
 type: tool
+verified: false
 platforms:
   - Windows
-  - Linux
-description: Server modification framework for Source engine games
-id: 6d109ecc-f5fc-48db-a0a9-36503555d57f
-created_at: '2025-12-14T00:11:25.197Z'
-updated_at: '2025-12-14T00:11:25.197Z'
-verified: false
+  - Game
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:14.809Z'
 validated: true
 submitted: true
 ---
@@ -22,49 +21,61 @@ submitted: true
 
 ## Overview
 
-Extends Source engine servers with scripting and plugins, used here for custom kick commands in CS:GO exploits.
+SourceMod is a server-side mod framework for Source engine games like CS:GO, used to extend functionality with plugins for custom commands, event hooks, and actions like kicking players with payloads.
 
 ## Description
 
-Enables creation of plugins like testkick.smx for delivering XSS payloads without limits.
+It provides SourcePawn scripting for plugins, enabling attackers to implement custom kick logic without message limits, facilitating XSS payload delivery in UI popups for RCE.
 
 ## Features
 
-- Plugin system
-- Scripting API
-- Event hooking
+- Feature 1: Plugin API for event hooking (e.g., player_spawn)
+- Feature 2: Custom console commands (e.g., sm_testkick)
+- Feature 3: KickClient function for arbitrary messages
 
 ## Installation
 
 ### Requirements
 
-- Metamod
-- Dedicated server
+- Metamod installed
+- CS:GO dedicated server
 
 ### Install Commands
 
 ```bash
-# Download and extract to addons/sourcemod
+# Download and extract to csgo/addons/sourcemod
+# Configure plugins.cfg to load .smx files
 ```
 
 ## Basic Usage
 
 ```bash
-sm plugins list
+# In server console
+sm plugins load testkick
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `sm` | Admin command prefix |
+| sm_reload | Reload plugins |
+| sm plugins list | List loaded plugins |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-sm_kick
+sm_kick #1 "message"
+```
+
+### Example 2: Advanced Usage
+
+Develop plugin and load:
+
+```bash
+# Compile SourcePawn to .smx, place in plugins/
+sm plugins load autokick
 ```
 
 ## MITRE ATT&CK Mapping
@@ -73,33 +84,26 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[External Remote Services]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Plugin installation logs
-- Custom command execution
+- Check addons/sourcemod/plugins for .smx files
+- Monitor sm_ prefixed console commands
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/metamod]]
+- [[tools/Metamod]]
 
 ## References
 
-- AlliedMods Wiki
+- https://wiki.alliedmods.net/Installing_sourcemod

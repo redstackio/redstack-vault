@@ -1,17 +1,19 @@
 ---
-id: t2j3k4l5-m6n7-8903-jklm-0123456789
+id: k1l2m3n4-o5p6-7890-klmn-123456789012
 url: 'https://devcenter.heroku.com/articles/heroku-cli'
+name: Heroku-CLI
 tags:
   - cloud
   - deployment
+  - heroku
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
   - Windows
+  - macOS
 created_at: '2023-10-01T12:00:00Z'
-updated_at: '2025-12-14T04:51:10.609Z'
+updated_at: '2025-12-14T17:30:18.208Z'
 validated: true
 submitted: true
 ---
@@ -21,29 +23,30 @@ submitted: true
 
 ## Overview
 
-Heroku CLI is the official command-line tool for interacting with Heroku cloud platform, used for deploying apps and managing resources.
+Heroku CLI is the official command-line interface for managing Heroku Platform as a Service (PaaS) applications, enabling creation, deployment, and scaling of apps in the cloud.
 
 ## Description
 
-In offensive security, it's used to deploy content to taken-over Heroku apps linked to dangling DNS records. Supports Git-based deployments and app configuration.
+In security contexts, it's used to claim and deploy to dangling app names for subdomain takeovers. It handles authentication, Git-based deployments, and configuration, making it essential for cloud exploitation scenarios.
 
 ## Features
 
-- Feature 1: Git integration for pushes
-- Feature 2: App management (scale, logs)
-- Feature 3: Plugin ecosystem
+- Feature 1: App creation and management
+- Feature 2: Git integration for deployments
+- Feature 3: Plugin support for extended functionality
 
 ## Installation
 
 ### Requirements
 
-- Node.js or direct installer
+- Node.js or direct binary download
 
 ### Install Commands
 
 ```bash
-# Linux/macOS
+# For macOS/Linux
 curl https://cli-assets.heroku.com/install.sh | sh
+# For Windows: Download from heroku.com
 ```
 
 ## Basic Usage
@@ -56,23 +59,22 @@ heroku --help
 
 | Option | Description |
 |--------|-------------|
-| `login` | Authenticate |
-| `git:remote` | Add Git remote |
-| `ps:scale` | Scale dynos |
+| `-h, --help` | Show help message |
+| `-v, --version` | Display version |
+| `--app` | Target specific app |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-heroku create app-name
+heroku create myapp
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-heroku git:remote -a app-name
-git push heroku main
+heroku apps:info --app myapp
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,27 +83,35 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Remote File Copy]] Ingress Tool Transfer
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- CLI authentication to Heroku from suspicious IPs
-- New app creations matching domain names
+- Detection method 1: Heroku API logs showing unauthorized app creations
+- Detection method 2: CLI authentication attempts in auth logs
 
 ## Related Procedures
 
-- [[procedures/Host-Arbitrary-Content-on-Taken-Over-Subdomain]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[Git]]
+- [[tools/AWS-CLI]]
+- [[tools/Terraform]]
 
 ## References
 
-- Heroku Dev Center
+- Official documentation: https://devcenter.heroku.com/articles/heroku-cli
+- Related resources: Heroku Dev Center

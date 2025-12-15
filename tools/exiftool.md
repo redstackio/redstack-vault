@@ -1,17 +1,17 @@
 ---
-id: tool-exiftool
 url: 'https://exiftool.org/'
 tags:
+  - exif
   - metadata
-  - image-manipulation
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
   - Windows
+  - macOS
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.379Z'
+updated_at: '2025-12-14T17:25:34.386Z'
+id: 53c84062-aac2-4449-a964-9c2831e163bf
 validated: true
 submitted: true
 ---
@@ -21,32 +21,36 @@ submitted: true
 
 ## Overview
 
-ExifTool is a command-line application for reading, writing, and manipulating metadata in image, audio, and video files, commonly used in security testing to embed payloads in non-executable formats.
+ExifTool is a command-line application for reading, writing, and manipulating metadata in image files, commonly used in security testing to verify or extract EXIF data like GPS coordinates.
 
 ## Description
 
-It supports over 20,000 tags across numerous file types, allowing precise metadata injection like PHP code in EXIF for file upload exploits. Ideal for creating stealthy webshells in images.
+ExifTool supports a wide range of file formats, including JPEG, and can selectively read tags (e.g., GPS) or remove them. In offensive security, it's used to prepare test images or analyze leaked metadata from vulnerable uploads.
 
 ## Features
 
-- Feature 1: Read/write EXIF, IPTC, XMP metadata
-- Feature 2: Batch processing of multiple files
-- Feature 3: Conditional tag editing and validation
+- Feature 1: Read specific tags like GPS without full dump
+- Feature 2: Edit or delete metadata for evasion testing
+- Feature 3: Batch processing for multiple images
 
 ## Installation
 
 ### Requirements
 
-- Perl (usually pre-installed on Linux/macOS)
+- Perl interpreter (included in most systems)
 
 ### Install Commands
 
 ```bash
-# On Ubuntu/Debian
-sudo apt install libimage-exiftool-perl
-
-# On macOS with Homebrew
-brew install exiftool
+# On Linux/macOS
+sudo apt install libimage-exiftool-perl  # Debian/Ubuntu
+# Or download from official site
+wget https://exiftool.org/ExifTool-12.70.tar.gz
+tar -xzf ExifTool-12.70.tar.gz
+cd ExifTool-12.70
+perl Makefile.PL
+make test
+make install
 ```
 
 ## Basic Usage
@@ -61,20 +65,20 @@ exiftool --help
 |--------|-------------|
 | `-h, --help` | Show help message |
 | `-v, --verbose` | Verbose output |
-| `-overwrite_original` | Overwrite original file without backup |
+| `-GPS*` | Filter to GPS tags |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-exiftool -DocumentName 'test' image.jpg
+exiftool image.jpg
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-exiftool -phpinfo -b image.png > metadata.txt
+exiftool -GPS:all image.jpg
 ```
 
 ## MITRE ATT&CK Mapping
@@ -83,27 +87,30 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]]
-- [[Remote File Copy]]
+- [[Gather Victim Host Information]]
+- [[Data from Information Repositories]]
 
 ### Tactics
 
-- [[Execution]]
+- [[Discovery]]
+- [[Collection]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process monitoring for exiftool executions
-- File integrity checks on images for anomalous metadata
-- Log anomalous metadata writes in forensics
+- Process name 'exiftool' in task lists
+- File access logs showing metadata reads on images
+- Network downloads of exiftool binaries
 
 ## Related Procedures
 
+- [[procedures/Prepare-Images-with-EXIF-Data]]
+- [[procedures/Extract-EXIF-Metadata-from-Image]]
 
 ## Related Tools
 
-- [[tools/metagoofil]]
+- [[tools/exif-regex-info]]
 
 ## References
 
