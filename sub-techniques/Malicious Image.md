@@ -10,7 +10,7 @@ parent_technique: '[[User Execution|T1204 - User Execution]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[LFI to RCE via uploaded file]]'
+- '[[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]'
 ---
 
 # Malicious Image
@@ -41,4 +41,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[LFI to RCE via uploaded file]]
+- [[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]

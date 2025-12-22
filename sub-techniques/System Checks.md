@@ -12,7 +12,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Filter Bypass using Null Byte Injection]]'
+- '[[Null-Byte-Injection-for-Filter-Bypass-in-XSS]]'
 ---
 
 # System Checks
@@ -50,4 +50,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Filter Bypass using Null Byte Injection]]
+- [[Null-Byte-Injection-for-Filter-Bypass-in-XSS]]

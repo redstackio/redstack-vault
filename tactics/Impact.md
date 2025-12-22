@@ -26,31 +26,31 @@ techniques:
 - '[[System Shutdown/Reboot|T1529 - System Shutdown/Reboot]]'
 - '[[Transmitted Data Manipulation|T1493 - Transmitted Data Manipulation]]'
 procedures:
-- '[[Abusing Backup Operators Group for Sensitive File Access]]'
-- '[[Abusing coredumps and core_pattern in Docker containers]]'
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
+- '[[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]'
+- '[[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
 - '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
   User Rights]]'
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
-- '[[Active Directory Account Enumeration using CrackMapExec]]'
-- '[[Active Directory User Enumeration]]'
-- '[[AWS Delete EBS Volumes]]'
-- '[[AWS Delete File from S3 Bucket]]'
-- '[[Billion Laugh Attack to Perform Denial of Service using XML External Entity]]'
-- '[[Copying EC2 Instances using AMI Image in AWS]]'
-- '[[Docker Security Assessment]]'
-- '[[Exploiting .NET BinaryFormatter Deserialization]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
+- '[[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]'
+- '[[Active-Directory-User-Enumeration]]'
+- '[[aws-delete-ebs-volumes]]'
+- '[[Delete-Objects-from-AWS-S3-Bucket]]'
+- '[[Billion-Laugh-Attack-via-XXE-for-DoS]]'
+- '[[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]'
+- '[[Docker-Security-Assessment]]'
+- '[[Exploit-DotNET-BinaryFormatter-Deserialization]]'
 - '[[HTTP/2 Request Smuggling]]'
-- '[[Jinja2 Config Information Extraction]]'
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
-- '[[Linux - Docker Privilege Escalation]]'
-- '[[Race Condition Turbo Intruder Attack]]'
-- '[[SQL Injection WAF Bypass]]'
-- '[[SSRF for AWS Metadata and User Data Commands]]'
-- '[[SSRF URL for Google Cloud Instances - Add SSH Key]]'
-- '[[Subdomain CSRF Attack]]'
-- '[[Subdomain CSRF Attack]]'
-- '[[XML Billion Laughs Attack with Delayed Interpretation]]'
+- '[[Jinja2-Config-Information-Extraction]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
+- '[[Linux-Docker-Privilege-Escalation]]'
+- '[[Exploit-Race-Condition-with-Turbo-Intruder]]'
+- '[[SQL-Injection-WAF-Bypass-Using-Version-Checks]]'
+- '[[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]'
+- '[[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]'
+- '[[Subdomain-CSRF-Attack]]'
+- '[[Subdomain-CSRF-Attack]]'
+- '[[XML-Billion-Laughs-Delayed-Interpretation-DoS]]'
 ---
 
 # Impact
@@ -60,6 +60,8 @@ procedures:
 ## Description
 
 The Impact tactic represents techniques whose primary objective directly reduces the availability or integrity of a system, service, or network; including manipulation of data to impact a business or operational process. These techniques may represent an adversary's end goal, or provide cover for a breach of confidentiality.
+
+
 
 ## Techniques
 
@@ -88,25 +90,27 @@ This tactic includes 18 techniques:
 
 There are 24 procedures implementing this tactic:
 
-- [[Abusing Backup Operators Group for Sensitive File Access]]
-- [[Abusing coredumps and core_pattern in Docker containers]]
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
-- [[Abusing Shadow Copies for Privilege Escalation]]
-- [[Active Directory Account Enumeration using CrackMapExec]]
-- [[Active Directory User Enumeration]]
-- [[AWS Delete EBS Volumes]]
-- [[AWS Delete File from S3 Bucket]]
-- [[Billion Laugh Attack to Perform Denial of Service using XML External Entity]]
-- [[Copying EC2 Instances using AMI Image in AWS]]
-- [[Docker Security Assessment]]
-- [[Exploiting .NET BinaryFormatter Deserialization]]
+- [[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]
+- [[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Abusing-Group-Policy-Objects-with-StandIn-to-Manage-Local-Administrators-and-User-Rights]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]
+- [[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]
+- [[Active-Directory-User-Enumeration]]
+- [[aws-delete-ebs-volumes]]
+- [[Delete-Objects-from-AWS-S3-Bucket]]
+- [[Billion-Laugh-Attack-via-XXE-for-DoS]]
+- [[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]
+- [[Docker-Security-Assessment]]
+- [[Exploit-DotNET-BinaryFormatter-Deserialization]]
 - [[HTTP/2 Request Smuggling]]
-- [[Jinja2 Config Information Extraction]]
-- [[Lessjs Server Side Template Injection via Inline Import]]
-- [[Linux - Docker Privilege Escalation]]
-- [[Race Condition Turbo Intruder Attack]]
-- [[SQL Injection WAF Bypass]]
-- [[SSRF for AWS Metadata and User Data Commands]]
+- [[Jinja2-Config-Information-Extraction]]
+- [[Exploit-Lessjs-SSTI-via-Inline-Import]]
+- [[Linux-Docker-Privilege-Escalation]]
+- [[Exploit-Race-Condition-with-Turbo-Intruder]]
+- [[SQL-Injection-WAF-Bypass-Using-Version-Checks]]
+- [[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]
 
 *...and 4 more*
+
+

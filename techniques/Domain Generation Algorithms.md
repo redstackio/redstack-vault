@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[AdminCount Abuse]]'
-- '[[Azure Reconnaissance]]'
-- '[[Golden Certificate Domain Persistence]]'
+- '[[AdminCount-Abuse]]'
+- '[[Azure-Reconnaissance]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
 ---
 
 # Domain Generation Algorithms
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Adversaries may make use of Domain Generation Algorithms (DGAs) to dynamically identify a destination for command and control traffic rather than relying on a list of static IP addresses or domains. This has the advantage of making it much harder for defenders block, track, or take over the command and control channel, as there potentially could be thousands of domains that malware can check for instructions.[1][2][3]DGAs can take the form of apparently random or "gibberish" strings (ex: istgmxdejdnxuyla.ru) when they construct domain names by generating each letter. Alternatively, some DGAs employ whole words as the unit by concatenating words together instead of letters (ex: cityjulydish.net). Many DGAs are time-based, generating a different domain for each time period (hourly, daily, monthly, etc). Others incorporate a seed value as well to make predicting future domains more difficult for defenders.[1][2][4][5]Adversaries may use DGAs for the purpose of Fallback Channels. When contact is lost with the primary command and control server malware may employ a DGA as a means to reestablishing command and control.[4][6][7]
+
+
 
 # Detection
 
@@ -74,6 +76,8 @@ This technique may be difficult to mitigate since the domains can be registered 
 
 ## Related Procedures (3)
 
-- [[AdminCount Abuse]]
-- [[Azure Reconnaissance]]
-- [[Golden Certificate Domain Persistence]]
+- [[AdminCount-Abuse]]
+- [[Azure-Reconnaissance]]
+- [[Golden-Certificate-Domain-Persistence]]
+
+

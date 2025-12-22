@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Exotic Payloads for Bypassing Filters in JavaScript]]'
-- '[[WAF Bypass using Chrome Auditor XSS Attack Vector]]'
+- '[[Exotic-Payloads-for-Bypassing-Filters-in-JavaScript]]'
+- '[[WAF-Bypass-Using-Chrome-Auditor-XSS-Attack-Vector]]'
 ---
 
 # Uncommonly Used Port
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may conduct C2 communications over a non-standard port to bypass proxies and firewalls that have been improperly configured.
+
+
 
 # Detection
 
@@ -117,5 +119,7 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (2)
 
-- [[Exotic Payloads for Bypassing Filters in JavaScript]]
-- [[WAF Bypass using Chrome Auditor XSS Attack Vector]]
+- [[Exotic-Payloads-for-Bypassing-Filters-in-JavaScript]]
+- [[WAF-Bypass-Using-Chrome-Auditor-XSS-Attack-Vector]]
+
+

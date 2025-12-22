@@ -10,7 +10,7 @@ parent_technique: '[[Create Account|T1136 - Create Account]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
 ---
 
 # Domain Account
@@ -41,4 +41,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Filter Bypass using UTF-7 Encoding for XSS Injection]]
+- [[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]

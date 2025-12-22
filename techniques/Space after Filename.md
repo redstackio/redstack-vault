@@ -19,6 +19,8 @@ tactics:
 
 Adversaries can hide a program's true filetype by changing the extension of a file. With certain file types (specifically this does not work with .app extensions), appending a space to the end of a filename will change how the file is processed by the operating system. For example, if there is a Mach-O executable file called evil.bin, when it is double clicked by a user, it will launch Terminal.app and execute. If this file is renamed to evil.txt, then when double clicked by a user, it will launch with the default text editing application (not executing the binary). However, if the file is renamed to "evil.txt " (note the space at the end), then when double clicked by a user, the true file type is determined by the OS and handled appropriately and the binary will be executed [1]. Adversaries can use this feature to trick users into double clicking benign-looking files of any format and ultimately executing something malicious.
 
+
+
 # Detection
 
 It's not common for spaces to be at the end of filenames, so this is something that can easily be checked with file monitoring. From the user's perspective though, this is very hard to notice from within the Finder.app or on the command-line in Terminal.app. Processes executed from binaries containing non-standard extensions in the filename are suspicious.
@@ -41,3 +43,5 @@ Prevent files from having a trailing space after the extension.
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Execution|TA0002 - Execution]]
+
+

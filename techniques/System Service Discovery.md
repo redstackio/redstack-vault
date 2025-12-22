@@ -9,19 +9,19 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[AWS API Gateway Version Enumeration]]'
-- '[[AWS REST API Enumeration]]'
-- '[[AWS S3 Bucket Listing Exploitation]]'
-- '[[Brute Force an SNMP Community String]]'
-- '[[CL.TE Request Smuggling]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Kubernetes API Address Enumeration via kubelet]]'
-- '[[Monitor Processes and Commands]]'
-- '[[MYSQL Time Based Injection using SLEEP in a subselect]]'
+- '[[Enumerate-AWS-API-Gateway-Stages]]'
+- '[[AWS-REST-API-Enumeration]]'
+- '[[List-Contents-of-Misconfigured-AWS-S3-Bucket]]'
+- '[[Brute-Force-SNMP-Community-String]]'
+- '[[Perform-CL.TE-HTTP-Request-Smuggling]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Kubernetes-API-Enumeration-via-Kubelet]]'
+- '[[Monitor-System-Processes-and-Commands-with-Pspy]]'
+- '[[mysql-time-based-blind-injection-using-sleep-subselect]]'
 ---
 
 # System Service Discovery
@@ -31,6 +31,8 @@ procedures:
 ## Description
 
 Adversaries may try to get information about registered services. Commands that may obtain information about services using operating system utilities are "sc," "tasklist /svc" using Tasklist, and "net start" using Net, but adversaries may also use other tools as well.
+
+
 
 # Detection
 
@@ -124,16 +126,21 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (13)
 
-- [[AWS API Gateway Version Enumeration]]
-- [[AWS REST API Enumeration]]
-- [[AWS S3 Bucket Listing Exploitation]]
-- [[Brute Force an SNMP Community String]]
-- [[CL.TE Request Smuggling]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (SharpUp)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
-- [[Kubernetes API Address Enumeration via kubelet]]
-- [[Monitor Processes and Commands]]
-- [[MYSQL Time Based Injection using SLEEP in a subselect]]
+- [[Enumerate-AWS-API-Gateway-Stages]]
+- [[AWS-REST-API-Enumeration]]
+- [[List-Contents-of-Misconfigured-AWS-S3-Bucket]]
+- [[Brute-Force-SNMP-Community-String]]
+- [[Perform-CL.TE-HTTP-Request-Smuggling]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+- [[Kubernetes-API-Enumeration-via-Kubelet]]
+- [[Monitor-System-Processes-and-Commands-with-Pspy]]
+- [[mysql-time-based-blind-injection-using-sleep-subselect]]
+
+
+sleep-subselect]]
+
+

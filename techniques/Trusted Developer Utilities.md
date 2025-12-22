@@ -10,10 +10,10 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Msbuild Preprocessing Execution]]'
-- '[[MSBuild Shellcode Execution]]'
+- '[[Execute-Payload-via-MSBuild-Preprocessing]]'
+- '[[msbuild-shellcode-execution]]'
 - '[[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]'
-- '[[Windows AppLocker Whitelist Bypass (MSBuild.exe)]]'
+- '[[Windows-AppLocker-Whitelist-Bypass-Using-MSBuild]]'
 ---
 
 # Trusted Developer Utilities
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 There are many utilities used for software development related tasks that can be used to execute code in various forms to assist in development, debugging, and reverse engineering. These utilities may often be signed with legitimate certificates that allow them to execute on a system and proxy execution of malicious code through a trusted process that effectively bypasses application whitelisting defensive solutions.MSBuildMSBuild.exe (Microsoft Build Engine) is a software build platform used by Visual Studio. It takes XML formatted project files that define requirements for building various platforms and configurations. [1] Adversaries can use MSBuild to proxy execution of code through a trusted Windows utility. The inline task capability of MSBuild that was introduced in .NET version 4 allows for C# code to be inserted into the XML project file. [1] Inline Tasks MSBuild will compile and execute the inline task. MSBuild.exe is a signed Microsoft binary, so when it is used this way it can execute arbitrary code and bypass application whitelisting defenses that are configured to allow MSBuild.exe execution. [2]DNXThe .NET Execution Environment (DNX), dnx.exe, is a software development kit packaged with Visual Studio Enterprise. It was retired in favor of .NET Core CLI in 2016. [3] DNX is not present on standard builds of Windows and may only be present on developer workstations using older versions of .NET Core and ASP.NET Core 1.0. The dnx.exe executable is signed by Microsoft. An adversary can use dnx.exe to proxy execution of arbitrary code to bypass application whitelist policies that do not account for DNX. [4]RCSIThe rcsi.exe utility is a non-interactive command-line interface for C# that is similar to csi.exe. It was provided within an early version of the Roslyn .NET Compiler Platform but has since been deprecated for an integrated solution. [5] The rcsi.exe binary is signed by Microsoft. [6]C# .csx script files can be written and executed with rcsi.exe at the command-line. An adversary can use rcsi.exe to proxy execution of arbitrary code to bypass application whitelisting policies that do not account for execution of rcsi.exe. [6]WinDbg/CDBWinDbg is a Microsoft Windows kernel and user-mode debugging utility. The Microsoft Console Debugger (CDB) cdb.exe is also user-mode debugger. Both utilities are included in Windows software development kits and can be used as standalone tools. [7] They are commonly used in software development and reverse engineering and may not be found on typical Windows systems. Both WinDbg.exe and cdb.exe binaries are signed by Microsoft.An adversary can use WinDbg.exe and cdb.exe to proxy execution of arbitrary code to bypass application whitelist policies that do not account for execution of those utilities. [8]It is likely possible to use other debuggers for similar purposes, such as the kernel-mode debugger kd.exe, which is also signed by Microsoft.TrackerThe file tracker utility, tracker.exe, is included with the .NET framework as part of MSBuild. It is used for logging calls to the Windows file system. [9]An adversary can use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions. [10]
+
+
 
 # Detection
 
@@ -83,7 +85,9 @@ Use application whitelisting configured to block execution of MSBuild.exe, dnx.e
 
 ## Related Procedures (4)
 
-- [[Msbuild Preprocessing Execution]]
-- [[MSBuild Shellcode Execution]]
+- [[Execute-Payload-via-MSBuild-Preprocessing]]
+- [[msbuild-shellcode-execution]]
 - [[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]
-- [[Windows AppLocker Whitelist Bypass (MSBuild.exe)]]
+- [[Windows-AppLocker-Whitelist-Bypass-Using-MSBuild]]
+
+

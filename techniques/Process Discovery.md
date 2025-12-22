@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Detection of .NET Serialization Attacks]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[List Running Processes]]'
+- '[[Detect-.NET-Serialization-Attacks]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[list-running-processes]]'
 ---
 
 # Process Discovery
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to get information about running processes on a system. Information obtained could be used to gain an understanding of common software running on systems within the network.WindowsAn example command that would obtain details on processes is "tasklist" using the Tasklist utility.Mac and LinuxIn Mac and Linux, this is accomplished with the ps command.
+
+
 
 # Detection
 
@@ -287,9 +289,11 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (6)
 
-- [[Detection of .NET Serialization Attacks]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
-- [[List Running Processes]]
+- [[Detect-.NET-Serialization-Attacks]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+- [[list-running-processes]]
+
+

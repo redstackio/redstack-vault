@@ -22,6 +22,10 @@ For operations incorporating social engineering, the utilization of an online pe
 
 Establishing accounts can also include the creation of accounts with email providers, which may be directly leveraged for [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Phishing](https://attack.mitre.org/techniques/T1566).(Citation: Mandiant APT1)
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
+
+

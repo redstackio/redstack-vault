@@ -11,10 +11,10 @@ parent_technique: '[[Remote Service Session Hijacking|T1563 - Remote Service Ses
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[Subdomain Enumeration and Takeover using Hostile Subdomain Bruteforcer]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[Subdomain-Enumeration-and-Takeover-using-Hostile-Subdomain-Bruteforcer]]'
 ---
 
 # RDP Hijacking
@@ -45,7 +45,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[DCOM Shell Command Execution via MMC Application Class]]
-- [[RDP Session Takeover with Mimikatz]]
-- [[RDP Session Takeover with Mimikatz]]
-- [[Subdomain Enumeration and Takeover using Hostile Subdomain Bruteforcer]]
+- [[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]
+- [[RDP-Session-Takeover-with-Mimikatz]]
+- [[RDP-Session-Takeover-with-Mimikatz]]
+- [[Subdomain-Enumeration-and-Takeover-using-Hostile-Subdomain-Bruteforcer]]

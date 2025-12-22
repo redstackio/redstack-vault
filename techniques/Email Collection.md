@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[MSSQL Server Password Retrieval and Cracking]]'
-- '[[SAML Injection for Authentication Bypass and Signature Stripping with Admin NameID]]'
+- '[[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[MSSQL-Server-Password-Hash-Extraction-and-Cracking]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-Signature-Stripping-with-Admin-NameID]]'
 ---
 
 # Email Collection
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Adversaries may target user email to collect sensitive information from a target.Files containing email data can be acquired from a user's system, such as Outlook storage or cache files .pst and .ost.Adversaries may leverage a user's credentials and interact directly with the Exchange server to acquire information from within a network.Some adversaries may acquire user credentials and access externally facing webmail applications, such as Outlook Web Access.
+
+
 
 # Detection
 
@@ -101,7 +103,9 @@ Use of two
 
 ## Related Procedures (4)
 
-- [[Creating and Importing a CLR Assembly for MSSQL Server]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[MSSQL Server Password Retrieval and Cracking]]
-- [[SAML Injection for Authentication Bypass and Signature Stripping with Admin NameID]]
+- [[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[MSSQL-Server-Password-Hash-Extraction-and-Cracking]]
+- [[SAML-Injection-for-Authentication-Bypass-and-Signature-Stripping-with-Admin-NameID]]
+
+

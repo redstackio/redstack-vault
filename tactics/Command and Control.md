@@ -37,105 +37,105 @@ techniques:
 - '[[Web Service|T1102 - Web Service]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]'
-- '[[AdminCount Abuse]]'
-- '[[Awk Interactive Reverse Shell]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS Secrets Manager Credential Exfiltration]]'
-- '[[Azure AD Administrative Unit Management]]'
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[Azure Reconnaissance]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Backdoored Docker Image Creation]]'
-- '[[Bash UDP Reverse Shell]]'
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[BITSAdmin Download and Execute]]'
-- '[[Browse an FTP Site with an Interactive Session]]'
-- '[[Bypassing filters using Curl with Verbose Output]]'
-- '[[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]'
-- '[[Cobalt Strike Lateral Movement via Beacon Remote Exploits and Executes]]'
-- '[[Cobalt Strike Malleable C2 Profile Checking]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[Cobalt Strike VPN & Pivots]]'
-- '[[Copy file from HTTP to remote host WinRS + BitsAdmin]]'
-- '[[Copy file to remote machine with xcopy (LOL)]]'
-- '[[Creating Files with Zero-Width Spaces]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[Cross-Site WebSocket Hijacking (CSWSH) Attack]]'
-- '[[DB2 Injection - Select Nth Char Extraction]]'
-- '[[DB2 Injection - Time Delay]]'
-- '[[DNS Beacon Payload with Cobalt Strike]]'
-- '[[DNS Rebinding Exploitation]]'
-- '[[DNS Rebinding Protection Bypass via CNAME]]'
-- '[[Double URL encoded Directory Traversal]]'
-- '[[Dynamic Port Forwarding with an SSH SOCKS Proxy]]'
-- '[[Embed a File In an Image Using Steghide]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]'
-- '[[Exotic Payloads for Bypassing Email Filters]]'
-- '[[Exotic Payloads for Bypassing Filters in JavaScript]]'
-- '[[Extract a Hidden File In an Image Using Steghide]]'
-- '[[Filter Bypass using Alternate Redirects]]'
-- '[[Filter Bypass using Katakana Library]]'
-- '[[Git Index File Recovery]]'
-- '[[Git Source Code Leakage]]'
-- '[[GitTools Insecure Source Code Management]]'
-- '[[Golang Reverse Shell Cheat Sheet]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[Groovy Java Reverse Shell]]'
-- '[[Image-Based .htaccess Upload]]'
-- '[[Insecure File Upload Exploit via Picture Compression]]'
-- '[[Insecure Source Code Management with Bazaar using rip-bzr.pl]]'
-- '[[Java Reverse Shell Cheat Sheet]]'
-- '[[Java Reverse Shell Payload - War]]'
-- '[[JavaScript Alert WAF Bypass]]'
+- '[[AdminCount-Abuse]]'
+- '[[Awk-Interactive-Reverse-Shell]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-Secrets-Manager-Credential-Exfiltration]]'
+- '[[Azure-AD-Administrative-Unit-Management]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[Azure-Reconnaissance]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[Create-Backdoored-Docker-Image]]'
+- '[[Establish-Bash-UDP-Reverse-Shell]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[BITSAdmin-Download-and-Execute-Payload]]'
+- '[[Browse-FTP-Site-with-Interactive-Session]]'
+- '[[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]'
+- '[[chisel-port-forwarding-and-socks-proxy-network-pivoting]]'
+- '[[Cobalt-Strike-Lateral-Movement-via-Beacon-Remote-Exploits-and-Executes]]'
+- '[[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]'
+- '[[Copy-File-to-Remote-Windows-Host-Using-WinRS-and-BitsAdmin]]'
+- '[[Copy-File-to-Remote-Windows-Machine-via-Xcopy]]'
+- '[[Creating-Files-with-Zero-Width-Spaces]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[Perform-Cross-Site-WebSocket-Hijacking]]'
+- '[[DB2-SQL-Injection-Select-Nth-Character-Extraction]]'
+- '[[DB2-Time-Based-Blind-SQL-Injection]]'
+- '[[configure-dns-for-cobalt-strike-dns-beacon]]'
+- '[[Test-Service-for-DNS-Rebinding-Vulnerability]]'
+- '[[DNS-Rebinding-Protection-Bypass-via-CNAME]]'
+- '[[Exploit-Directory-Traversal-with-Double-URL-Encoding]]'
+- '[[dynamic-port-forwarding-with-ssh-socks-proxy]]'
+- '[[Embed-File-in-Image-Using-Steghide]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]'
+- '[[Bypass-Email-Filters-with-Exotic-XSS-Payloads]]'
+- '[[Exotic-Payloads-for-Bypassing-Filters-in-JavaScript]]'
+- '[[extract-hidden-file-from-image-with-steghide]]'
+- '[[XSS-Filter-Bypass-via-Alternate-Redirect-Methods]]'
+- '[[Filter-Bypass-Using-Katakana-Library-for-XSS]]'
+- '[[Git-Index-File-Recovery]]'
+- '[[Recover-Git-Repository-from-Exposed-Dot-Git-Directory]]'
+- '[[Exploit-Insecure-Git-Repository-with-GitTools]]'
+- '[[Establish-Golang-Reverse-Shell]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[Establish-Groovy-Java-Reverse-Shell]]'
+- '[[Image-Based-htaccess-Upload-Bypass]]'
+- '[[Insecure-File-Upload-Exploit-via-Picture-Compression]]'
+- '[[Extract-Source-Code-from-Bazaar-Repository-using-rip-bzr]]'
+- '[[Establish-Java-Reverse-Shell]]'
+- '[[Generate-Java-Reverse-Shell-WAR-Payload]]'
+- '[[JavaScript-Alert-WAF-Bypass]]'
 - '[[Jetty RCE via Insecure XML File Upload]]'
-- '[[Lan Turtle AutoSSH]]'
-- '[[LFI to RCE via Apache and Nginx Log Files]]'
-- '[[Linked Database Query Execution]]'
-- '[[Linux APT Backdoor Persistence]]'
-- '[[Linux Crontab Reverse Shell Persistence]]'
-- '[[Linux Privilege Escalation via SSH Key]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[Linux Staged Reverse TCP Meterpreter Shell]]'
-- '[[Lua Reverse Shell Cheat Sheet]]'
-- '[[Malicious HLS playlist inside an AVI video]]'
-- '[[Metasploit Network Pivoting with Meterpreter Port Forwarding and Routing]]'
-- '[[Metasploit Reverse Shell Handler]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[Meterpreter SOCKS Proxy]]'
-- '[[Mshta Remote HTA Execution]]'
-- '[[MSSQL Out of Band DNS Exfiltration]]'
-- '[[MSSQL Time Based SQL Injection]]'
-- '[[Multi-Platform Reverse Shell Payload]]'
+- '[[Setup-Lan-Turtle-for-AutoSSH-Reverse-Connection]]'
+- '[[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]'
+- '[[Execute-Queries-via-Linked-SQL-Servers]]'
+- '[[Establish-Persistence-via-Linux-APT-Backdoor]]'
+- '[[Linux-Crontab-Reverse-Shell-Persistence]]'
+- '[[Linux-Privilege-Escalation-via-SSH-Key]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[Linux-Staged-Reverse-TCP-Meterpreter-Shell]]'
+- '[[Implement-Lua-Reverse-Shell]]'
+- '[[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]'
+- '[[Meterpreter-Network-Pivoting-via-Port-Forwarding-and-Routing]]'
+- '[[Setup-Metasploit-Reverse-Shell-Handler]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[Setup-Meterpreter-SOCKS-Proxy]]'
+- '[[Mshta-Remote-HTA-Execution]]'
+- '[[mssql-out-of-band-dns-exfiltration]]'
+- '[[MSSQL-Time-Based-SQL-Injection]]'
+- '[[generate-multi-platform-reverse-shell-payloads]]'
 - '[[MYSQL Dumpfile PHP Shell Creation]]'
-- '[[MYSQL Error Based - UpdateXML function Data Extraction]]'
-- '[[MYSQL Injection Out-of-Band Data Exfiltration]]'
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
-- '[[MYSQL Union Based Injection to Extract Data from Users Table]]'
-- '[[Ncat Reverse Shell]]'
-- '[[Netcat OpenBSD Bind Shell]]'
-- '[[Netcat Reverse Shell Cheat Sheet]]'
-- '[[Netcat Traditional Bind Shell]]'
-- '[[Network Pivoting with Proxychains]]'
-- '[[Network Pivoting with sshuttle]]'
-- '[[ngrok Port Forwarding]]'
-- '[[Octal IP Format Server-Side Request Forgery]]'
-- '[[OpenSSL Reverse Shell]]'
-- '[[Open URL Redirection Exploitation]]'
-- '[[Oracle SQL Injection Time-Based Attack]]'
-- '[[Out Of Band XPATH Injection]]'
-- '[[Pass-the-Golden-Ticket Attack using Meterpreter]]'
-- '[[Perl Reverse Shell Cheat Sheet]]'
-- '[[PHP Bind Shell]]'
-- '[[PHP Deserialization POP Chain Attack]]'
-- '[[PHP Juggling Type and Magic Hashes for Hashing an Empty Array]]'
-- '[[PHP Reverse Shell]]'
-- '[[Polyglot Command Injection for DNS Data Exfiltration]]'
-- '[[PostgreSQL Time Based Table Dump]]'
-- '[[Powershell Reverse Shell Cheat Sheet]]'
-- '[[PrintNightmare WebDAV Attack]]'
+- '[[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]'
+- '[[MySQL-Injection-Out-of-Band-Data-Exfiltration]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
+- '[[MySQL-Union-Based-Injection-to-Extract-Users-Table-Data]]'
+- '[[Establish-Reverse-Shell-with-Ncat]]'
+- '[[Create-Bind-Shell-with-Netcat-OpenBSD]]'
+- '[[Establish-Reverse-Shell-with-Netcat]]'
+- '[[Netcat-Traditional-Bind-Shell]]'
+- '[[Network-Pivoting-with-Proxychains]]'
+- '[[network-pivoting-with-sshuttle]]'
+- '[[Setup-Ngrok-Port-Forwarding-Tunnel]]'
+- '[[Octal-IP-Format-SSRF-Bypass]]'
+- '[[openssl-reverse-shell]]'
+- '[[Open-URL-Redirection-Exploitation]]'
+- '[[Oracle-SQL-Injection-Time-Based-Attack]]'
+- '[[Out-of-Band-XPath-Injection]]'
+- '[[pass-the-golden-ticket-attack-using-meterpreter]]'
+- '[[Establish-Reverse-Shell-Using-Perl]]'
+- '[[Establish-PHP-Bind-Shell]]'
+- '[[Exploit-PHP-Deserialization-with-POP-Chain]]'
+- '[[Demonstrate-PHP-Type-Juggling-with-Empty-Array-Hashing]]'
+- '[[Establish-PHP-Reverse-Shell]]'
+- '[[Polyglot-Command-Injection-for-DNS-Data-Exfiltration]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
+- '[[Establish-PowerShell-Reverse-Shell]]'
+- '[[PrintNightmare-WebDAV-Attack]]'
 ---
 
 # Command and Control
@@ -145,6 +145,8 @@ procedures:
 ## Description
 
 The command and control tactic represents how adversaries communicate with systems under their control within a target network. There are many ways an adversary can establish command and control with various levels of covertness, depending on system configuration and network topology. Due to the wide degree of variation available to the adversary at the network level, only the most common factors were used to describe the differences in command and control. There are still a great many specific techniques within the documented methods, largely due to how easy it is to define new protocols and use existing, legitimate protocols and network services for communication. The resulting breakdown should help convey the concept that detecting intrusion through command and control protocols without prior knowledge is a difficult proposition over the long term. Adversaries' main constraints in network-level defense avoidance are testing and deployment of tools to rapidly change their protocols, awareness of existing defensive technologies, and access to legitimate Web services that, when used appropriately, make their tools difficult to distinguish from benign traffic.
+
+
 
 ## Techniques
 
@@ -182,24 +184,26 @@ This tactic includes 26 techniques:
 There are 100 procedures implementing this tactic:
 
 - [[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]
-- [[AdminCount Abuse]]
-- [[Awk Interactive Reverse Shell]]
-- [[AWS IAM Policy Version Retrieval]]
-- [[AWS Secrets Manager Credential Exfiltration]]
-- [[Azure AD Administrative Unit Management]]
-- [[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]
-- [[Azure Reconnaissance]]
-- [[Azure SSRF for VM Metadata Service]]
-- [[Backdoored Docker Image Creation]]
-- [[Bash UDP Reverse Shell]]
-- [[Basic Directory Traversal Exploitation]]
-- [[BITSAdmin Download and Execute]]
-- [[Browse an FTP Site with an Interactive Session]]
-- [[Bypassing filters using Curl with Verbose Output]]
-- [[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]
-- [[Cobalt Strike Lateral Movement via Beacon Remote Exploits and Executes]]
-- [[Cobalt Strike Malleable C2 Profile Checking]]
-- [[Cobalt Strike Team Server Installation and Execution]]
-- [[Cobalt Strike VPN & Pivots]]
+- [[AdminCount-Abuse]]
+- [[Awk-Interactive-Reverse-Shell]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[AWS-Secrets-Manager-Credential-Exfiltration]]
+- [[Azure-AD-Administrative-Unit-Management]]
+- [[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]
+- [[Azure-Reconnaissance]]
+- [[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]
+- [[Create-Backdoored-Docker-Image]]
+- [[Establish-Bash-UDP-Reverse-Shell]]
+- [[Basic-Directory-Traversal-Exploitation]]
+- [[BITSAdmin-Download-and-Execute-Payload]]
+- [[Browse-FTP-Site-with-Interactive-Session]]
+- [[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]
+- [[chisel-port-forwarding-and-socks-proxy-network-pivoting]]
+- [[Cobalt-Strike-Lateral-Movement-via-Beacon-Remote-Exploits-and-Executes]]
+- [[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]
+- [[Cobalt-Strike-Team-Server-Installation-and-Execution]]
+- [[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]
 
 *...and 80 more*
+
+

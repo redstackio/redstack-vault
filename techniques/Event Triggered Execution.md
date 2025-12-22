@@ -8,24 +8,24 @@ created_at: '2023-04-06T00:31:26.777905+00:00'
 updated_at: '2023-04-06T03:56:30.024945+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
-- '[[AWS Lambda Function Policy Enumeration]]'
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[LAPS Password Expiration Time Persistence]]'
-- '[[Linux - Docker Privilege Escalation]]'
-- '[[Linux Password Looting via Recently Modified Files]]'
-- '[[Linux Privilege Escalation via Capabilities Edit]]'
-- '[[Linux - TMUX Session Hijacking]]'
-- '[[Patching amsi.dll AmsiScanBuffer to bypass AMSI by rasta-mouse]]'
-- '[[PrinterNightmare Privilege Escalation]]'
-- '[[Printer Spooler Service Elevation of Privilege]]'
-- '[[Windows Privilege Escalation using PowerUp, PrivescCheck, and WES-NG]]'
-- '[[Windows - Privilege Escalation via Universal Printer Driver]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
+- '[[aws-lambda-function-policy-enumeration]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[Set-LAPS-Password-Expiration-Time-for-Persistence]]'
+- '[[Linux-Docker-Privilege-Escalation]]'
+- '[[Linux-Password-Looting-via-Recently-Modified-Files]]'
+- '[[Linux-Privilege-Escalation-via-Capabilities-Edit]]'
+- '[[Linux-TMUX-Session-Hijacking]]'
+- '[[Patch-AmsiScanBuffer-in-Memory-to-Bypass-AMSI]]'
+- '[[PrinterNightmare-Privilege-Escalation]]'
+- '[[Printer-Spooler-Service-Elevation-of-Privilege]]'
+- '[[windows-privilege-escalation-using-powerup-privesccheck-and-wes-ng]]'
+- '[[windows-privilege-escalation-via-universal-printer-driver]]'
 ---
 
 # Event Triggered Execution
@@ -40,26 +40,30 @@ Adversaries may abuse these mechanisms as a means of maintaining persistent acce
 
 Since the execution can be proxied by an account with higher permissions, such as SYSTEM or service accounts, an adversary may be able to abuse these triggered execution mechanisms to escalate their privileges. 
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (16)
 
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
-- [[Abusing Shadow Copies for Privilege Escalation]]
-- [[AWS Lambda Function Policy Enumeration]]
-- [[Cobalt Strike Elevate Kit with Beacon Command Elevators]]
-- [[Dart Reverse PowerShell Shell]]
-- [[DCOM Shell Command Execution via MMC Application Class]]
-- [[LAPS Password Expiration Time Persistence]]
-- [[Linux - Docker Privilege Escalation]]
-- [[Linux Password Looting via Recently Modified Files]]
-- [[Linux Privilege Escalation via Capabilities Edit]]
-- [[Linux - TMUX Session Hijacking]]
-- [[Patching amsi.dll AmsiScanBuffer to bypass AMSI by rasta-mouse]]
-- [[PrinterNightmare Privilege Escalation]]
-- [[Printer Spooler Service Elevation of Privilege]]
-- [[Windows Privilege Escalation using PowerUp, PrivescCheck, and WES-NG]]
-- [[Windows - Privilege Escalation via Universal Printer Driver]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]
+- [[aws-lambda-function-policy-enumeration]]
+- [[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]
+- [[Dart-Reverse-PowerShell-Shell]]
+- [[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]
+- [[Set-LAPS-Password-Expiration-Time-for-Persistence]]
+- [[Linux-Docker-Privilege-Escalation]]
+- [[Linux-Password-Looting-via-Recently-Modified-Files]]
+- [[Linux-Privilege-Escalation-via-Capabilities-Edit]]
+- [[Linux-TMUX-Session-Hijacking]]
+- [[Patch-AmsiScanBuffer-in-Memory-to-Bypass-AMSI]]
+- [[PrinterNightmare-Privilege-Escalation]]
+- [[Printer-Spooler-Service-Elevation-of-Privilege]]
+- [[windows-privilege-escalation-using-powerup-privesccheck-and-wes-ng]]
+- [[windows-privilege-escalation-via-universal-printer-driver]]
+
+

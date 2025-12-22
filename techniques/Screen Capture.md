@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Linux - Privilege Escalation: Looting for Old Passwords]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[XSS Cookie and Access Token Grabber]]'
+- '[[Linux-Privilege-Escalation-Looting-for-Old-Passwords]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[Exploit-XSS-to-Steal-Cookies-and-Access-Tokens]]'
 ---
 
 # Screen Capture
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to take screen captures of the desktop to gather information over the course of an operation. Screen capturing functionality may be included as a feature of a remote access tool used in post-compromise operations.MacOn OSX, the native command screencapture is used to capture screenshots.LinuxOn Linux, there is the native command xwd. [1]
+
+
 
 # Detection
 
@@ -230,6 +232,8 @@ Blocking software based on screen capture functionality may be difficult, and th
 
 ## Related Procedures (3)
 
-- [[Linux - Privilege Escalation: Looting for Old Passwords]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[XSS Cookie and Access Token Grabber]]
+- [[Linux-Privilege-Escalation-Looting-for-Old-Passwords]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[Exploit-XSS-to-Steal-Cookies-and-Access-Tokens]]
+
+

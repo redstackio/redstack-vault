@@ -11,12 +11,12 @@ tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
 - '[[Disable LLMNR and NetBIOS over TCP/IP]]'
-- '[[Domain Trust Enumeration]]'
-- '[[MSSQL Linked Database Crawler]]'
-- '[[Network Packet Recording with Meterpreter]]'
-- '[[Network Trace Capture]]'
-- '[[Passive Network Traffic Fingerprinting]]'
-- '[[Sniff Unencrypted LDAP Queries via the Loopback]]'
+- '[[Domain-Trust-Enumeration]]'
+- '[[MSSQL-Linked-Database-Crawler]]'
+- '[[Capture-Network-Packets-with-Meterpreter]]'
+- '[[Network-Trace-Capture]]'
+- '[[Passive-Network-Traffic-Fingerprinting]]'
+- '[[Sniff-Unencrypted-LDAP-Queries-via-Loopback]]'
 ---
 
 # Network Sniffing
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.Data captured via this technique may include user credentials, especially those sent over an insecure, unencrypted protocol. Techniques for name service resolution poisoning, such as LLMNR/NBT-NS Poisoning and Relay, can also be used to capture credentials to websites, proxies, and internal systems by redirecting traffic to an adversary.Network sniffing may also reveal configuration details, such as running services, version numbers, and other network characteristics (ex: IP addressing, hostnames, VLAN IDs) necessary for follow-on Lateral Movement and/or Defense Evasion activities.
+
+
 
 # Detection
 
@@ -83,9 +85,11 @@ Identify and block potentia
 ## Related Procedures (7)
 
 - [[Disable LLMNR and NetBIOS over TCP/IP]]
-- [[Domain Trust Enumeration]]
-- [[MSSQL Linked Database Crawler]]
-- [[Network Packet Recording with Meterpreter]]
-- [[Network Trace Capture]]
-- [[Passive Network Traffic Fingerprinting]]
-- [[Sniff Unencrypted LDAP Queries via the Loopback]]
+- [[Domain-Trust-Enumeration]]
+- [[MSSQL-Linked-Database-Crawler]]
+- [[Capture-Network-Packets-with-Meterpreter]]
+- [[Network-Trace-Capture]]
+- [[Passive-Network-Traffic-Fingerprinting]]
+- [[Sniff-Unencrypted-LDAP-Queries-via-Loopback]]
+
+

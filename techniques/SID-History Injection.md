@@ -7,7 +7,7 @@ mitre_url: null
 created_at: '2019-08-28T21:17:41.193882+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # SID-History Injection
@@ -17,6 +17,8 @@ tactics:
 ## Description
 
 The Windows security identifier (SID) is a unique value that identifies a user or group account. SIDs are used by Windows security in both security descriptors and access tokens. [1] An account can hold additional SIDs in the SID-History Active Directory attribute [2], allowing inter-operable account migration between domains (e.g., all values in SID-History are included in access tokens).Adversaries may use this mechanism for privilege escalation. With Domain Administrator (or equivalent) rights, harvested or well-known SID values [3] may be inserted into SID-History to enable impersonation of arbitrary users/groups such as Enterprise Administrators. This manipulation may result in elevated access to local resources and/or access to otherwise inaccessible domains via lateral movement techniques such as Remote Services, Windows Admin Shares, or Windows Remote Management.
+
+
 
 # Detection
 
@@ -72,4 +74,6 @@ Consider applying SID Filtering to interforest trusts, such as forest trusts and
 
 ## Tactics
 
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

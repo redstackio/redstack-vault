@@ -18,6 +18,8 @@ tactics:
 
 Adversaries may corrupt or wipe the disk data structures on hard drive necessary to boot systems; targeting specific critical systems as well as a large number of systems in a network to interrupt availability to system and network resources. Adversaries may attempt to render the system unable to boot by overwriting critical data located in structures such as the master boot record (MBR) or partition table.[1][2][3][4][5] The data contained in disk structures may include the initial executable code for loading an operating system or the location of the file system partitions on disk. If this information is not present, the computer will not be able to load an operating system during the boot process, leaving the computer unavailable. Disk Structure Wipe may be performed in isolation, or along with Disk Content Wipe if all sectors of a disk are wiped.To maximize impact on the target organization, malware designed for destroying disk structures may have worm-like features to propagate across a network by leveraging other techniques like Valid Accounts, Credential Dumping, and Windows Admin Shares.[1][2][3][4]
 
+
+
 # Detection
 
 Look for attempts to read/write to sensitive locations like the master boot record and the disk partition table. Monitor for unusual kernel driver installation activity.
@@ -65,3 +67,5 @@ Identify potentially malicious software and audit and/or block it by using white
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
+
+

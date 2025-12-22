@@ -9,14 +9,14 @@ updated_at: '2023-04-06T03:56:25.846335+00:00'
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Active Directory Recon - Using AD Module]]'
-- '[[Active Directory Recon with PowerView]]'
-- '[[Azure O365 Email Enumeration]]'
-- '[[Azure Reconnaissance]]'
-- '[[Network Discovery - Spyse Reverse IP Lookup]]'
-- '[[Passive Recon and Information Gathering]]'
-- '[[Subdomain Enumeration and Takeover using SubOver]]'
-- '[[Subdomain Enumeration with Knockpy and EyeWitness]]'
+- '[[active-directory-recon-using-ad-module]]'
+- '[[Active-Directory-Recon-with-PowerView]]'
+- '[[Enumerate-Valid-Emails-in-Azure-O365-Tenant]]'
+- '[[Azure-Reconnaissance]]'
+- '[[Spyse-Reverse-IP-Lookup-for-Domain-Discovery]]'
+- '[[passive-reconnaissance-information-gathering]]'
+- '[[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]'
+- '[[Subdomain-Enumeration-with-Knockpy-and-EyeWitness]]'
 ---
 
 # Active Scanning
@@ -29,17 +29,21 @@ Adversaries may execute active reconnaissance scans to gather information that c
 
 Adversaries may perform different forms of active scanning depending on what information they seek to gather. These scans can also be performed in various ways, including using native features of network protocols such as ICMP.(Citation: Botnet Scan)(Citation: OWASP Fingerprinting) Information from these scans may reveal opportunities for other forms of reconnaissance (ex: [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593) or [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)), establishing operational resources (ex: [Develop Capabilities](https://attack.mitre.org/techniques/T1587) or [Obtain Capabilities](https://attack.mitre.org/techniques/T1588)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190)).
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
 
 ## Related Procedures (8)
 
-- [[Active Directory Recon - Using AD Module]]
-- [[Active Directory Recon with PowerView]]
-- [[Azure O365 Email Enumeration]]
-- [[Azure Reconnaissance]]
-- [[Network Discovery - Spyse Reverse IP Lookup]]
-- [[Passive Recon and Information Gathering]]
-- [[Subdomain Enumeration and Takeover using SubOver]]
-- [[Subdomain Enumeration with Knockpy and EyeWitness]]
+- [[active-directory-recon-using-ad-module]]
+- [[Active-Directory-Recon-with-PowerView]]
+- [[Enumerate-Valid-Emails-in-Azure-O365-Tenant]]
+- [[Azure-Reconnaissance]]
+- [[Spyse-Reverse-IP-Lookup-for-Domain-Discovery]]
+- [[passive-reconnaissance-information-gathering]]
+- [[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]
+- [[Subdomain-Enumeration-with-Knockpy-and-EyeWitness]]
+
+

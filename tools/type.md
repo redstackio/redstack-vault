@@ -1,52 +1,20 @@
 ---
 id: baa40410-bcc0-4d39-b4e2-b7bc33989932
-name: type
 type: tool
 verified: true
 created_at: '2020-03-04T21:21:14.431050+00:00'
 updated_at: '2023-05-30T19:54:58.208059+00:00'
-commands:
-- '[[7z Decompress a Password Protected Zip Archive]]'
-- '[[Bitsadmin Download File from a Remote Web Server]]'
-- '[[Determine File Type]]'
-- '[[DotDotPwn Command to Perform Directory Traversal Fuzzing]]'
-- '[[Embed an Alternate Data Stream into a File]]'
-- '[[Encrypt a Password with Cisco Type 7]]'
-- '[[Exploit Heartbleed to Read Protected Memory]]'
-- '[[Export AppLocker Rules in XML]]'
-- '[[Hashcat Dictionary Attack a SHA-512 Hash]]'
-- '[[Hashcat Find Hash Mode from Example Hashes]]'
-- '[[Heartbleed Dump Vulnerable Memory of a Server]]'
-- '[[Launch an Interactive FTP Session]]'
-- '[[Mimikatz Extract Windows Saved Credentials from Vault]]'
-- '[[Netcat Command]]'
-- '[[Nmap Aggressive Scan with Version and OS Detection]]'
-- '[[Nmap Command to Find Response Headers]]'
-- '[[Nmap Command to Identify SSL Certificate Details]]'
-- '[[Nmap Enumerate SMTP with Unsafe Vuln Scripts]]'
-- '[[Nmap Service Scan with Default Scripts]]'
-- '[[Nmap Service Scan with OS Detection]]'
-- '[[Recursive Search for Text in All Files]]'
-- '[[Sfuzz Command to Fuzz the Web Application]]'
-- '[[Start a Windows Service]]'
-- '[[Stop and Disable Windows Defender]]'
-- '[[Wget Download Recursively from FTP]]'
-- '[[YSoSerial Generate a .NET Deserialization Payload]]'
-- '[[aws ec2 describe AMI image with filters]]'
-- '[[ciscot7.py Decrypt a Cisco Type 7 Password]]'
-- '[[find Search for Writable Files by User]]'
-- '[[hashcat Brute Force Password Hashes]]'
-- '[[hashcat Brute Force a sha-512 crypt password]]'
-- '[[hashcat Dictionary Attack Against MD5 Hashes]]'
-- '[[rpcclient Query an RPC Server''s Information]]'
-- '[[slow read DoS]]'
-- '[[systeminfo Display a Systems Configuration Information]]'
-- '[[tcpdump Intercept Packets on Loopback Interface]]'
-- '[[xmllint Beautify XML]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[Enumeration]]'
+  - Enumeration
+  - Obfuscation
+  - File-System
+commands:
+  - '[[commands/type-embed-content-into-alternate-data-stream]]'
+url: >-
+  https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/type
+validated: true
 ---
 
 # type
@@ -55,44 +23,92 @@ tags:
 
 ## Overview
 
-type is a Windows command shell tool used to display the contents of a file. While type does not exist in PowerShell, PowerShell recognizes type as an alias for Get-Content, serving the same purpose. 
+type is a built-in Windows Command Prompt utility used to display the contents of text files at the command line. In PowerShell, 'type' is an alias for the Get-Content cmdlet, providing the same functionality. It is commonly used for quick file viewing during security assessments, scripting, and data manipulation tasks like redirecting content to alternate data streams for obfuscation.
 
 ## Description
 
-# Description
+type reads and outputs the contents of specified files without opening them in an editor. It supports redirection and piping, making it versatile for tasks such as embedding data into NTFS alternate data streams (ADS) to hide payloads or sensitive information without altering the host file's visible properties. This is particularly useful in Windows environments for evasion techniques during penetration testing or red team operations.
 
-type is a Windows command shell tool used to display the contents of a file. While type does not exist in PowerShell, PowerShell recognizes type as an alias for Get-Content, serving the same purpose.
+## Features
 
+- Displays file contents directly in the console
+- Supports wildcard patterns for multiple files
+- Integrates with redirection operators (> , >>) for output manipulation
+- PowerShell alias for seamless use in modern shells
+- No external dependencies; native to Windows
 
+## Installation
 
-# Example
+### Requirements
 
+- Windows operating system (XP or later)
+- Command Prompt or PowerShell access
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_ab7d6336-9462-43fe-b6ad-d1756d133b2b}}
+No installation required; type is pre-installed on all modern Windows releases.
 
+## Basic Usage
 
+```cmd
+type filename.txt
+```
 
-# Installation
+### Common Options
 
-type is installed with all modern Windows releases
+| Option | Description |
+|--------|-------------|
+| No options needed for basic display | Outputs file content to console |
+| Combined with > | Redirects output to another file or stream |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Display the contents of a text file:
 
+```cmd
+type C:\path\to\file.txt
+```
 
+### Example 2: Advanced Usage
 
+Embed content into an alternate data stream (see related command for details):
 
-## Platforms
+```cmd
+type secret.txt > normal.txt:hidden
+```
 
-- Windows
+## MITRE ATT&CK Mapping
 
-## Commands (1)
+This tool is commonly associated with:
 
-- [[Embed an Alternate Data Stream into a File]]
+### Techniques
 
-## Tags
+- [[NTFS File Attributes]] Hidden Files and Directories (for ADS usage)
+- [[Obfuscated Files or Information]] Obfuscated Files or Information
 
-- [[Enumeration]]
+### Tactics
 
+- [[Defense Evasion]] Defense Evasion
 
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Monitor Command Prompt or PowerShell logs for 'type' invocations with redirection to ADS (e.g., via Event ID 4688 in Windows Security logs)
+- Use tools like Sysinternals Streams to detect ADS presence on files
+- File system auditing for unusual stream attachments
+
+## Related Procedures
+
+- [[procedures/Embed-Alternate-Data-Stream-in-File]]
+
+## Related Tools
+
+- [[Get-Content]] (PowerShell equivalent)
+- [[tools/dir]] (for listing ADS with /R flag)
+
+## References
+
+- Official Microsoft documentation: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/type

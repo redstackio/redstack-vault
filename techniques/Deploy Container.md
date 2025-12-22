@@ -10,8 +10,8 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Docker Security Assessment]]'
-- '[[Server-Side Request Forgery for Docker Containers and Images Enumeration]]'
+- '[[Docker-Security-Assessment]]'
+- '[[SSRF-to-Enumerate-Docker-Containers-and-Images]]'
 ---
 
 # Deploy Container
@@ -24,6 +24,8 @@ Adversaries may deploy a container into an environment to facilitate execution o
 
 Containers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
@@ -31,5 +33,7 @@ Containers can be deployed by various means, such as via Docker's <code>create</
 
 ## Related Procedures (2)
 
-- [[Docker Security Assessment]]
-- [[Server-Side Request Forgery for Docker Containers and Images Enumeration]]
+- [[Docker-Security-Assessment]]
+- [[SSRF-to-Enumerate-Docker-Containers-and-Images]]
+
+

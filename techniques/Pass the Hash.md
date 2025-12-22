@@ -9,29 +9,29 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Active Directory Man-in-the-Middle and Password Cracking]]'
-- '[[AD CS Relay Attack with Rubeus and PetitPotam]]'
-- '[[Add Domain Admin to RODC Password Replication Group Procedure]]'
-- '[[Browse SMB Share (NTLM)]]'
-- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
+- '[[Active-Directory-MitM-and-Password-Cracking]]'
+- '[[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]'
+- '[[Add-Domain-Admin-to-RODC-Password-Replication-Group]]'
+- '[[browse-smb-share-using-ntlm-hash]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]'
 - '[[Disable LLMNR and NetBIOS over TCP/IP]]'
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
-- '[[Execute Commands with an Active Directory Machine Account]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
+- '[[Execute-Commands-with-an-Active-Directory-Machine-Account]]'
 - '[[Net-NTLMv1/NTLMv1 Hash Capture and Crack]]'
 - '[[Net-NTLMv2/NTLMv2 Hash Capture and Cracking]]'
-- '[[NTLM Relay Attack against Active Directory Certificate Services]]'
-- '[[OverPass-the-Hash with Impacket]]'
-- '[[OverPass-the-Hash with Rubeus]]'
-- '[[Pass-the-Hash Active Directory Attack]]'
-- '[[Pass the Hash with Meterpreter]]'
-- '[[Pass The Hash with Mimikatz]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[Skeleton Key Password Injection]]'
-- '[[Windows Credentials Impacket Commands]]'
-- '[[Windows - Impacket Psexec Remote Command Execution]]'
-- '[[Windows SSH with Kerberos Authentication]]'
-- '[[Windows - Using Impacket and PSExec with Credentials]]'
-- '[[Workstation Takeover with RBCD]]'
+- '[[NTLM-Relay-Attack-against-Active-Directory-Certificate-Services]]'
+- '[[OverPass-the-Hash-with-Impacket]]'
+- '[[OverPass-the-Hash-with-Rubeus]]'
+- '[[Pass-the-Hash-Active-Directory-Attack]]'
+- '[[Pass-the-Hash-to-Obtain-Meterpreter-Session]]'
+- '[[Pass-The-Hash-with-Mimikatz]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[Skeleton-Key-Password-Injection-with-Mimikatz]]'
+- '[[Remote-Command-Execution-with-Impacket-Using-Credentials]]'
+- '[[Windows-Impacket-Psexec-Remote-Command-Execution]]'
+- '[[Windows-SSH-with-Kerberos-Authentication]]'
+- '[[windows-impacket-psexec-remote-execution-with-credentials]]'
+- '[[Workstation-Takeover-with-RBCD]]'
 ---
 
 # Pass the Hash
@@ -41,6 +41,8 @@ procedures:
 ## Description
 
 Pass the hash (PtH) is a method of authenticating as a user without having access to the user's cleartext password. This method bypasses standard authentication steps that require a cleartext password, moving directly into the portion of the authentication that uses the password hash. In this technique, valid password hashes for the account being used are captured using a Credential Access technique. Captured hashes are used with PtH to authenticate as that user. Once authenticated, PtH may be used to perform actions on local or remote systems. Windows 7 and higher with KB2871997 require valid domain user credentials or RID 500 administrator hashes. [1]
+
+
 
 # Detection
 
@@ -90,25 +92,27 @@ Monitor systems and domain logs for unusual credential logon activity. Prevent a
 
 ## Related Procedures (23)
 
-- [[Active Directory Man-in-the-Middle and Password Cracking]]
-- [[AD CS Relay Attack with Rubeus and PetitPotam]]
-- [[Add Domain Admin to RODC Password Replication Group Procedure]]
-- [[Browse SMB Share (NTLM)]]
-- [[Connect to WinRM from a Linux System (Pass-the-Hash)]]
+- [[Active-Directory-MitM-and-Password-Cracking]]
+- [[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]
+- [[Add-Domain-Admin-to-RODC-Password-Replication-Group]]
+- [[browse-smb-share-using-ntlm-hash]]
+- [[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]
 - [[Disable LLMNR and NetBIOS over TCP/IP]]
-- [[Drop the MIC - Resource Based Constrained Delegation Attack]]
-- [[Execute Commands with an Active Directory Machine Account]]
+- [[resource-based-constrained-delegation-via-printerbug]]
+- [[Execute-Commands-with-an-Active-Directory-Machine-Account]]
 - [[Net-NTLMv1/NTLMv1 Hash Capture and Crack]]
 - [[Net-NTLMv2/NTLMv2 Hash Capture and Cracking]]
-- [[NTLM Relay Attack against Active Directory Certificate Services]]
-- [[OverPass-the-Hash with Impacket]]
-- [[OverPass-the-Hash with Rubeus]]
-- [[Pass-the-Hash Active Directory Attack]]
-- [[Pass the Hash with Meterpreter]]
-- [[Pass The Hash with Mimikatz]]
-- [[samAccountName Spoofing Attack]]
-- [[Skeleton Key Password Injection]]
-- [[Windows Credentials Impacket Commands]]
-- [[Windows - Impacket Psexec Remote Command Execution]]
+- [[NTLM-Relay-Attack-against-Active-Directory-Certificate-Services]]
+- [[OverPass-the-Hash-with-Impacket]]
+- [[OverPass-the-Hash-with-Rubeus]]
+- [[Pass-the-Hash-Active-Directory-Attack]]
+- [[Pass-the-Hash-to-Obtain-Meterpreter-Session]]
+- [[Pass-The-Hash-with-Mimikatz]]
+- [[Sam-Account-Name-Spoofing-for-User-Impersonation]]
+- [[Skeleton-Key-Password-Injection-with-Mimikatz]]
+- [[Remote-Command-Execution-with-Impacket-Using-Credentials]]
+- [[Windows-Impacket-Psexec-Remote-Command-Execution]]
 
 *...and 3 more*
+
+

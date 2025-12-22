@@ -9,7 +9,7 @@ updated_at: '2023-04-06T00:31:26.203068+00:00'
 parent_technique: '[[Group Policy Modification|T1484 - Group Policy Modification]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Group Policy Modification
@@ -39,4 +39,4 @@ For example, publicly available scripts such as <code>New-GPOImmediateTask</code
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

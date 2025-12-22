@@ -9,14 +9,14 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Windows - Privileged File Write via UsoDLLLoader]]'
-- '[[Windows Privilege Escalation - Unquoted Service Paths]]'
-- '[[Windows Unquoted Service Path Enumeration Vulnerability]]'
-- '[[Windows - Unquoted Service Path Privilege Escalation]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Windows-Privileged-File-Write-via-UsoDLLLoader]]'
+- '[[Windows-Privilege-Escalation-Unquoted-Service-Paths]]'
+- '[[Enumerate-Windows-Unquoted-Service-Paths]]'
+- '[[Windows-Unquoted-Service-Path-Privilege-Escalation]]'
 ---
 
 # DLL Search Order Hijacking
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Windows systems use a common method to look for required DLLs to load into a program. [1] Adversaries may take advantage of the Windows DLL search order and programs that ambiguously specify DLLs to gain privilege escalation and persistence. Adversaries may perform DLL preloading, also called binary planting attacks, [2] by placing a malicious DLL with the same name as an ambiguously specified DLL in a location that Windows searches before the legitimate DLL. Often this location is the current working directory of the program. Remote DLL preloading attacks occur when a program sets its current directory to a remote location such as a Web share before loading a DLL. [3] Adversaries may use this behavior to cause the program to load a malicious DLL. Adversaries may also directly modify the way a program loads DLLs by replacing an existing DLL or modifying a .manifest or .local redirection file, directory, or junction to cause the program to load a different DLL to maintain persistence or privilege escalation. [4] [5] [6]If a search order-vulnerable program is configured to run at a higher privilege level, then the adversary-controlled DLL that is loaded will also be executed at the higher level. In this case, the technique could be used for privilege escalation from user to administrator or SYSTEM or from administrator to SYSTEM, depending on the program.Programs that fall victim to path hijacking may appear to behave normally because malicious DLLs may be configured to also load the legitimate DLLs they were meant to replace.
+
+
 
 # Detection
 
@@ -103,13 +105,15 @@ Enable Safe DLL Search Mode to f
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (6)
 
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[Enumerate Windows for Privilege Escalation (PowerUp)]]
-- [[Windows - Privileged File Write via UsoDLLLoader]]
-- [[Windows Privilege Escalation - Unquoted Service Paths]]
-- [[Windows Unquoted Service Path Enumeration Vulnerability]]
-- [[Windows - Unquoted Service Path Privilege Escalation]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]
+- [[Windows-Privileged-File-Write-via-UsoDLLLoader]]
+- [[Windows-Privilege-Escalation-Unquoted-Service-Paths]]
+- [[Enumerate-Windows-Unquoted-Service-Paths]]
+- [[Windows-Unquoted-Service-Path-Privilege-Escalation]]
+
+

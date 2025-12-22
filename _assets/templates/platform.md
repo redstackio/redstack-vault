@@ -51,7 +51,7 @@ LIMIT 10
 ```dataview
 TABLE name as "Procedure", verified as "Verified"
 FROM "procedures"
-WHERE contains(platforms, this.platform) AND contains(tactics, [[Privilege Escalation]])
+WHERE contains(platforms, this.platform) AND contains(tactics, [[Privilege-Escalation-via-Direct-URL-Access]])
 SORT name ASC
 LIMIT 10
 ```

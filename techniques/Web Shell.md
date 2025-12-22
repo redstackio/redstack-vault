@@ -8,14 +8,14 @@ created_at: '2019-08-28T21:17:26.294425+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Add and Execute Code on a WordPress Site (Authenticated)]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[HTAccess and PHP Shell Upload]]'
-- '[[Insecure File Upload Exploit via Picture Compression]]'
-- '[[Upgrade from a Website RCE to Reverse Shell (Linux)]]'
-- '[[Upload Insecure Configuration Files]]'
+- '[[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[HTAccess-and-PHP-Shell-Upload]]'
+- '[[Insecure-File-Upload-Exploit-via-Picture-Compression]]'
+- '[[Upgrade-Web-RCE-to-Reverse-Shell-on-Linux]]'
+- '[[Upload-Malicious-Package-Manager-Configurations-for-RCE]]'
 ---
 
 # Web Shell
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 A Web shell is a Web script that is placed on an openly accessible Web server to allow an adversary to use the Web server as a gateway into a network. A Web shell may provide a set of functions to execute or a command-line interface on the system that hosts the Web server. In addition to a server-side script, a Web shell may have a client interface program that is used to talk to the Web server (see, for example, China Chopper Web shell client). [1]Web shells may serve as Redundant Access or as a persistence mechanism in case an adversary's primary access methods are detected and removed.
+
+
 
 # Detection
 
@@ -73,13 +75,15 @@ Ensure that externally facing Web servers are patched regularly to prevent adver
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (6)
 
-- [[Add and Execute Code on a WordPress Site (Authenticated)]]
-- [[AWS EC2 Instance Connect with SSH Key Push]]
-- [[HTAccess and PHP Shell Upload]]
-- [[Insecure File Upload Exploit via Picture Compression]]
-- [[Upgrade from a Website RCE to Reverse Shell (Linux)]]
-- [[Upload Insecure Configuration Files]]
+- [[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]
+- [[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]
+- [[HTAccess-and-PHP-Shell-Upload]]
+- [[Insecure-File-Upload-Exploit-via-Picture-Compression]]
+- [[Upgrade-Web-RCE-to-Reverse-Shell-on-Linux]]
+- [[Upload-Malicious-Package-Manager-Configurations-for-RCE]]
+
+

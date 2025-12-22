@@ -6,12 +6,15 @@ verified: true
 created_at: '2020-02-26T02:54:02.531712+00:00'
 updated_at: '2023-05-30T19:50:34.900284+00:00'
 commands:
-- '[[Httprint Scan a Web Server for Known Signatures]]'
+  - '[[commands/httprint-scan-web-server-signatures]]'
 platforms:
-- Web
+  - Linux
+  - Web
 tags:
-- '[[Enumeration]]'
-- '[[Web Applications]]'
+  - Enumeration
+  - Web Applications
+url: 'http://net-square.com/httprint/'
+validated: true
 ---
 
 # httprint
@@ -20,54 +23,123 @@ tags:
 
 ## Overview
 
-httprint relies on web server characteristics to accurately identify web servers, despite the fact that they may have been obfuscated by changing the server banner strings, or by plug-ins such as mod_security or servermask. httprint can also be used to detect web enabled devices which do not have a
+httprint is a web server fingerprinting tool that identifies web servers and web-enabled devices by analyzing HTTP response characteristics, such as headers, error pages, and other behavioral traits. It is particularly useful for detecting obfuscated servers where banner strings have been altered by plugins like mod_security or servermask, or for devices without standard banners like routers, switches, and access points.
 
 ## Description
 
-# Description
+httprint performs signature-based fingerprinting by sending crafted HTTP requests and matching responses against a database of known server signatures. This allows for accurate identification even in environments where traditional methods like checking the Server header fail. It supports both HTTP and HTTPS and can fingerprint a wide range of servers, including Apache, IIS, and embedded devices. Common use cases include reconnaissance during penetration testing, verifying server configurations, and identifying potential misconfigurations or hidden services.
 
-httprint relies on web server characteristics to accurately identify web servers, despite the fact that they may have been obfuscated by changing the server banner strings, or by plug-ins such as mod_security or servermask. httprint can also be used to detect web enabled devices which do not have a server banner string, such as wireless access points, routers, switches, cable modems, etc.
+## Features
 
+- Signature-based fingerprinting using HTTP response analysis
+- Support for obfuscated servers and non-standard devices
+- Confidence scoring for match accuracy
+- HTTPS support with proxy integration
+- Customizable request plugins for advanced probing
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux environment (tested on Debian-based distributions like Kali Linux)
+- Perl (for some plugins, though core is C-based)
+- Root privileges not required, but network access is needed
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_af24c80f-2db9-49c0-b4b0-e0d005f8c23d}}
+On Kali Linux, httprint is available in the repositories:
 
+```bash
+sudo apt update
+sudo apt install httprint
+```
 
+For Ubuntu/Debian without Kali repos:
 
-# Installation
+```bash
+# Download from official source or compile
+wget http://net-square.com/httprint/httprint.tar.gz
+# Extract and follow manual installation instructions from readme
+```
 
-## Install on Debian/Ubuntu
+Manual compilation (if source is available):
 
+```bash
+# Assuming source tarball is downloaded
+tar -xzf httprint-source.tar.gz
+cd httprint
+make
+sudo make install
+```
 
+Signatures database is typically installed to /usr/share/httprint/signatures.txt.
 
+## Basic Usage
 
+```bash
+httprint --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -h | Specify the target host (e.g., -h http://example.com) |
+| -s | Path to signatures file (e.g., -s signatures.txt) |
+| -P | Use proxy for requests |
+| -u | Update signatures database |
+| -p | Specify port (default 80) |
 
+## Examples
 
+### Example 1: Basic Usage
 
-## Platforms
+Scan a web server for signatures:
 
-- Web
+```bash
+httprint -h http://10.10.10.10 -s /usr/share/httprint/signatures.txt
+```
 
-## Services
+### Example 2: Advanced Usage
 
-- http
-- http
-- https
-- https
+Scan via proxy and custom port:
 
-## Commands (1)
+```bash
+httprint -h http://example.com:8080 -s signatures.txt -P 127.0.0.1:8080
+```
 
-- [[Httprint Scan a Web Server for Known Signatures]]
+## MITRE ATT&CK Mapping
 
-## Tags
+This tool is commonly associated with:
 
-- [[Enumeration]]
-- [[Web Applications]]
+### Techniques
 
+- [[Active Scanning]] Active Scanning
+- [[Gather Victim Host Information]] Gather Victim Host Information
 
+### Tactics
+
+- [[Reconnaissance]] Reconnaissance
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Unusual HTTP requests with specific patterns (e.g., multiple HEAD/GET variations)
+- Network logs showing probes to common paths like /server-status or error pages
+- Process monitoring for httprint executable
+- IDS/IPS rules for fingerprinting signatures
+
+## Related Procedures
+
+- [[procedures/web-server-fingerprinting]]
+
+## Related Tools
+
+- [[tools/Nmap]]
+- [[tools/WhatWeb]]
+
+## References
+
+- Official website: http://net-square.com/httprint/
+- GitHub mirrors or archives for updated signatures

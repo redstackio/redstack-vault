@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Bashrc Backdoor Persistence]]'
-- '[[Windows ODBC Driver Registration via Odbcconf]]'
-- '[[Windows Unquoted Service Path Enumeration Vulnerability]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[Windows-ODBC-Driver-Registration-via-Odbcconf]]'
+- '[[Enumerate-Windows-Unquoted-Service-Paths]]'
 ---
 
 # Masquerading
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Masquerading occurs when the name or location of an executable, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. Several different variations of this technique have been observed.One variant is for an executable to be placed in a commonly trusted directory or given the name of a legitimate, trusted program. Alternatively, the filename given may be a close approximation of legitimate programs or something innocuous. An example of this is when a common system utility or program is moved and renamed to avoid detection based on its usage.[1] This is done to bypass tools that trust executables by relying on file name or path, as well as to deceive defenders and system administrators into thinking a file is benign by associating the name with something that is thought to be legitimate.A third variant uses the right-to-left override (RTLO or RLO) character (U+202E) as a means of tricking a user into executing what they think is a benign file type but is actually executable code. RTLO is a non-printing character that causes the text that follows it to be displayed in reverse.[2] For example, a Windows screensaver file named March 25 \u202Excod.scr will display as March 25 rcs.docx. A JavaScript file named photo_high_re\u202Egnp.js will be displayed as photo_high_resj.png. A common use of this technique is with spearphishing attachments since it can trick both end users and defenders if they are not aware of how their tools display and render the RTLO character. Use of the RTLO character has been seen in many targeted intrusion attempts and criminal activity.[3][4] RTLO can be used in the Windows Registry as well, where regedit.exe displays the reversed characters but the command line tool reg.exe does not by default. WindowsIn another variation of this technique, an adversary may use a renamed copy of a legitimate utility, such as rundll32.exe. [5] An alternative case occurs when a legitimate utility is moved to a different directory and also renamed to avoid detections based on system utilities executing from non-standard paths. [6]An example of abuse of trusted locations in Windows would be the C:\Windows\System32 directory. Examples of trusted binary names that can be given to malicious binares include "explorer.exe" and "svchost.exe".LinuxAnother variation of this technique includes malicious binaries changing the name of their running process to that of a trusted or benign process, after they have been launched as opposed to before. [7]An example of abuse of trusted locations in Linux  would be the /bin directory. Examples of trusted binary names that can be given to malicious binares include "rsyncd" and "dbus-inotifier". [8]  [9]
+
+
 
 # Detection
 
@@ -202,6 +204,8 @@ When creating security rules, avoid exclusions based on file name or file path. 
 
 ## Related Procedures (3)
 
-- [[Bashrc Backdoor Persistence]]
-- [[Windows ODBC Driver Registration via Odbcconf]]
-- [[Windows Unquoted Service Path Enumeration Vulnerability]]
+- [[Implement-Sudo-Backdoor-via-Bashrc-Alias]]
+- [[Windows-ODBC-Driver-Registration-via-Odbcconf]]
+- [[Enumerate-Windows-Unquoted-Service-Paths]]
+
+

@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[Abusing Backup Operators Group for Sensitive File Access]]'
-- '[[Abusing coredumps and core_pattern in Docker containers]]'
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
-- '[[Copying EC2 Instances using AMI Image in AWS]]'
+- '[[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]'
+- '[[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
+- '[[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]'
 ---
 
 # Inhibit System Recovery
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Adversaries may delete or remove built-in operating system data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.[1][2] Operating systems may contain features that can help fix corrupted systems, such as a backup catalog, volume shadow copies, and automatic repair features. Adversaries may disable or delete system recovery features to augment the effects of Data Destruction and Data Encrypted for Impact.[1][2]A number of native Windows utilities have been used by adversaries to disable or delete system recovery features:vssadmin.exe can be used to delete all volume shadow copies on a system - vssadmin.exe delete shadows /all /quietWindows Management Instrumentation can be used to delete volume shadow copies - wmic shadowcopy deletewbadmin.exe can be used to delete the Windows Backup Catalog - wbadmin.exe delete catalog -quietbcdedit.exe can be used to disable automatic Windows recovery features by modifying boot configuration data - bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no
+
+
 
 # Detection
 
@@ -73,7 +75,9 @@ Consider implementing IT disaster recovery plans that contain procedures for tak
 
 ## Related Procedures (4)
 
-- [[Abusing Backup Operators Group for Sensitive File Access]]
-- [[Abusing coredumps and core_pattern in Docker containers]]
-- [[Abusing Shadow Copies for Privilege Escalation]]
-- [[Copying EC2 Instances using AMI Image in AWS]]
+- [[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]
+- [[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]
+- [[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]
+
+

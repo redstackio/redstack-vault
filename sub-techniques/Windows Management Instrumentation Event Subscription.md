@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:26.565452+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Windows Privilege Escalation using PowerUp, PrivescCheck, and WES-NG]]'
+- '[[windows-privilege-escalation-using-powerup-privesccheck-and-wes-ng]]'
 ---
 
 # Windows Management Instrumentation Event Subscription
@@ -39,10 +39,10 @@ WMI subscription execution is proxied by the WMI Provider Host process (WmiPrvSe
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Windows Privilege Escalation using PowerUp, PrivescCheck, and WES-NG]]
+- [[windows-privilege-escalation-using-powerup-privesccheck-and-wes-ng]]

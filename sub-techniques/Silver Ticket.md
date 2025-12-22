@@ -11,13 +11,13 @@ parent_technique: '[[Steal or Forge Kerberos Tickets|T1558 - Steal or Forge Kerb
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]'
+- '[[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]'
 - '[[CCACHE Ticket Reuse from /tmp]]'
-- '[[HTML GET CSRF Payload with User Interaction]]'
-- '[[HTML GET CSRF Payload with User Interaction]]'
-- '[[Kerberos Constrained Delegation - Impersonation on Resource]]'
-- '[[Kerberos Unconstrained Delegation with SpoolService Abuse]]'
-- '[[OAuth Token Theft via Redirect URI]]'
+- '[[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]'
+- '[[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]'
+- '[[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]'
+- '[[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]'
+- '[[OAuth-Token-Theft-via-Redirect-URI]]'
 ---
 
 # Silver Ticket
@@ -52,10 +52,10 @@ This sub-technique is used in the following tactics:
 
 There are 7 procedures using this sub-technique:
 
-- [[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]
+- [[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]
 - [[CCACHE Ticket Reuse from /tmp]]
-- [[HTML GET CSRF Payload with User Interaction]]
-- [[HTML GET CSRF Payload with User Interaction]]
-- [[Kerberos Constrained Delegation - Impersonation on Resource]]
-- [[Kerberos Unconstrained Delegation with SpoolService Abuse]]
-- [[OAuth Token Theft via Redirect URI]]
+- [[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]
+- [[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]
+- [[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]
+- [[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]
+- [[OAuth-Token-Theft-via-Redirect-URI]]

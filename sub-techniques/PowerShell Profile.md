@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:25.529528+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
 ---
 
 # PowerShell Profile
@@ -41,10 +41,10 @@ An adversary may also be able to escalate privileges if a script in a PowerShell
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Abusing Shadow Copies for Privilege Escalation]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]

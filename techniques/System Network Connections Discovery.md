@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[AWS CloudFront List Distributions]]'
-- '[[SSL MITM Network Discovery with OpenSSL]]'
+- '[[List-AWS-CloudFront-Distributions]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
 ---
 
 # System Network Connections Discovery
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. WindowsUtilities and commands that acquire this information include netstat, "net use," and "net session" with Net.Mac and LinuxIn Mac and Linux, netstat and lsof can be used to list current connections. who -a and w can be used to show which users are currently logged in, similar to "net session".
+
+
 
 # Detection
 
@@ -125,5 +127,7 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (2)
 
-- [[AWS CloudFront List Distributions]]
-- [[SSL MITM Network Discovery with OpenSSL]]
+- [[List-AWS-CloudFront-Distributions]]
+- [[SSL-MITM-Network-Discovery-with-OpenSSL]]
+
+

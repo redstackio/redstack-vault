@@ -1,75 +1,108 @@
 ---
-id: 169be0b7-8777-49bf-9294-3b168befc5bc
-name: smbclient
+id: tool-uuid-002
+url: 'https://www.samba.org/samba/docs/current/man-html/smbclient.1.html'
+tags:
+  - access
+  - smb
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:32.203892+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[cmd-99e435c6]]'
-- '[[smbclient Connect to an SMB Share (Autenticated)]]'
-- '[[smbclient Connect to an SMB Share (NTLM)]]'
-- '[[smbclient Download All Files Recursively From SMB]]'
 platforms:
-- Linux
-- Windows
-tags:
-- '[[File System]]'
-- '[[Network]]'
+  - Linux
+  - SMB
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:52.636Z'
+validated: true
+submitted: true
 ---
-
 # smbclient
+
+**Status**: Unverified
 
 ## Overview
 
-Smbclient is used to connect to SMB/CIFS shares, providing an interface with which users can query and interact with SMB/CIFS services. Common uses include share enumeration, file/directory enumeration, file upload and download, and more. Not only can smbclient authenticate with a username and pass
+Smbclient is a command-line tool for interacting with SMB/CIFS servers, allowing file access and enumeration.
 
 ## Description
 
-# Description
+Part of the Samba suite, it emulates a Windows client for connecting to shares, useful for testing access controls in offensive security.
 
-Smbclient is used to connect to SMB/CIFS shares, providing an interface with which users can query and interact with SMB/CIFS services. Common uses include share enumeration, file/directory enumeration, file upload and download, and more. Not only can smbclient authenticate with a username and password, it also supports authentication using a Windows NT hash, allowing users to authenticate with uncracked password hashes assuming the target system supports it.
+## Features
 
+- Feature 1: Anonymous share access
+- Feature 2: File upload/download
+- Feature 3: Interactive shell for navigation
 
+## Installation
 
-# Example
+### Requirements
 
+- Samba package
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_99e435c6-a634-4987-8df9-b7a5eb242c8e}}
+```bash
+# On Ubuntu/Debian
+apt update && apt install smbclient
 
+# On macOS with Homebrew
+brew install samba
+```
 
+## Basic Usage
 
-# Installation
+```bash
+smbclient --help
+```
 
-## Install on Debian/Ubuntu
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-L` | List shares |
+| `-N` | No password |
+| `-U` | Specify user |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+smbclient -L //target-ip -N
+```
 
+### Example 2: Advanced Usage
 
+```bash
+smbclient //target-ip/share -N -c 'get file.txt'
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-## Platforms
+### Techniques
 
-- Linux
-- Windows
+- [[External Remote Services]] External Remote Services
 
-## Services
+### Tactics
 
-- netbios-ss
-- smb
+- [[Initial Access]] Initial Access
 
-## Commands (2)
+## Detection
 
-- [[smbclient -U '' -N -L $_TARGET_IP]]
-- [[smbclient List SMB Shares]]
+Indicators and methods for detecting this tool's usage:
 
-## Tags
+- SMB logs showing null session connections
+- File access events without credentials
 
-- [[File System]]
-- [[Network]]
+## Related Procedures
 
+- [[procedures/Access-SMB-Shares-Without-Authentication]]
 
+## Related Tools
+
+- [[tools/nmap]]
+
+## References
+
+- Official documentation: https://www.samba.org/samba/docs/

@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[Kubernetes etcd API Enumeration]]'
-- '[[Meterpreter File Transfer]]'
+- '[[Kubernetes-Etcd-API-Enumeration]]'
+- '[[Meterpreter-File-Transfer]]'
 ---
 
 # Data Compressed
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration in order to make it portable and minimize the amount of data sent over the network. The compression is done separately from the exfiltration channel and is performed using a custom program or algorithm, or a more common compression library or utility such as 7zip, RAR, ZIP, or zlib.
+
+
 
 # Detection
 
@@ -145,5 +147,7 @@ Identify unnecessary system utilities, third-party tools, or potentially malicio
 
 ## Related Procedures (2)
 
-- [[Kubernetes etcd API Enumeration]]
-- [[Meterpreter File Transfer]]
+- [[Kubernetes-Etcd-API-Enumeration]]
+- [[Meterpreter-File-Transfer]]
+
+

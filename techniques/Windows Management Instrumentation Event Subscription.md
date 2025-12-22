@@ -20,6 +20,8 @@ procedures:
 
 Windows Management Instrumentation (WMI) can be used to install event filters, providers, consumers, and bindings that execute code when a defined event occurs. Adversaries may use the capabilities of WMI to subscribe to an event and execute arbitrary code when that event occurs, providing persistence on a system. Adversaries may attempt to evade detection of this technique by compiling WMI scripts. [1] Examples of events that may be subscribed to are the wall clock time or the computer's uptime. [2] Several threat groups have reportedly used this technique to maintain persistence. [3]
 
+
+
 # Detection
 
 Monitor WMI event subscription entries, comparing current WMI event subscriptions to known good subscriptions for each host. Tools such as Sysinternals Autoruns may also be used to detect WMI changes that could be attempts at persistence. [11]
@@ -63,3 +65,5 @@ Disabling WMI services may cause system instability and should be evaluated to a
 ## Related Procedures (1)
 
 - [[Windows 10+ Binary Replacement via HID.dll]]
+
+

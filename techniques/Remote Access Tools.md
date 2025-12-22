@@ -9,28 +9,28 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Awk Interactive Reverse Shell]]'
-- '[[Cobalt Strike VPN & Pivots]]'
-- '[[Cross-Site WebSocket Hijacking (CSWSH) Attack]]'
-- '[[DNS Rebinding Exploitation]]'
-- '[[Golang Reverse Shell Cheat Sheet]]'
-- '[[Insecure Source Code Management with Bazaar using rip-bzr.pl]]'
-- '[[Java Reverse Shell Cheat Sheet]]'
-- '[[Java Reverse Shell Payload - War]]'
-- '[[Lan Turtle AutoSSH]]'
-- '[[Linux Privilege Escalation via SSH Key]]'
-- '[[Lua Reverse Shell Cheat Sheet]]'
-- '[[Metasploit Reverse Shell Handler]]'
-- '[[PHP Deserialization POP Chain Attack]]'
-- '[[PHP Reverse Shell]]'
-- '[[Powershell Reverse Shell Cheat Sheet]]'
-- '[[Session Management with Metasploit]]'
-- '[[SMB Beacon Payload with Command Line Interactions]]'
-- '[[Socat Reverse Shell Cheat Sheet]]'
+- '[[Awk-Interactive-Reverse-Shell]]'
+- '[[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]'
+- '[[Perform-Cross-Site-WebSocket-Hijacking]]'
+- '[[Test-Service-for-DNS-Rebinding-Vulnerability]]'
+- '[[Establish-Golang-Reverse-Shell]]'
+- '[[Extract-Source-Code-from-Bazaar-Repository-using-rip-bzr]]'
+- '[[Establish-Java-Reverse-Shell]]'
+- '[[Generate-Java-Reverse-Shell-WAR-Payload]]'
+- '[[Setup-Lan-Turtle-for-AutoSSH-Reverse-Connection]]'
+- '[[Linux-Privilege-Escalation-via-SSH-Key]]'
+- '[[Implement-Lua-Reverse-Shell]]'
+- '[[Setup-Metasploit-Reverse-Shell-Handler]]'
+- '[[Exploit-PHP-Deserialization-with-POP-Chain]]'
+- '[[Establish-PHP-Reverse-Shell]]'
+- '[[Establish-PowerShell-Reverse-Shell]]'
+- '[[Session-Management-with-Metasploit]]'
+- '[[Establish-and-Interact-with-SMB-Beacon-Payload]]'
+- '[[Establish-Reverse-Shell-Using-Socat]]'
 - '[[Springboot-Actuator Remote Code Execution via /env]]'
-- '[[SSH Beacon Payload with Cobalt Strike]]'
-- '[[Telnet Reverse Shell]]'
-- '[[Windows Reverse Shell]]'
+- '[[Deploy-SSH-Beacon-via-Cobalt-Strike]]'
+- '[[Telnet-Reverse-Shell]]'
+- '[[Establish-Windows-Reverse-Shell-with-ConPtyShell]]'
 - '[[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]'
 ---
 
@@ -41,6 +41,8 @@ procedures:
 ## Description
 
 An adversary may use legitimate desktop support and remote access software, such as Team Viewer, Go2Assist, LogMein, AmmyyAdmin, etc, to establish an interactive command and control channel to target systems within networks. These services are commonly used as legitimate technical support software, and may be whitelisted within a target environment. Remote access tools like VNC, Ammy, and Teamviewer are used frequently when compared with other legitimate software commonly used by adversaries. [1]Remote access tools may be established and used post-compromise as alternate communications channel for Redundant Access or as a way to establish an interactive remote desktop session with the target system. They may also be used as a component of malware to establish a reverse connection or back-connect to a service or adversary controlled system.Admin tools such as TeamViewer have been used by several groups targeting institutions in countries of interest to the Russian state and criminal campaigns. [2] [3]
+
+
 
 # Detection
 
@@ -92,25 +94,27 @@ Network intrusion detection and prevention systems that use network signatures m
 
 ## Related Procedures (23)
 
-- [[Awk Interactive Reverse Shell]]
-- [[Cobalt Strike VPN & Pivots]]
-- [[Cross-Site WebSocket Hijacking (CSWSH) Attack]]
-- [[DNS Rebinding Exploitation]]
-- [[Golang Reverse Shell Cheat Sheet]]
-- [[Insecure Source Code Management with Bazaar using rip-bzr.pl]]
-- [[Java Reverse Shell Cheat Sheet]]
-- [[Java Reverse Shell Payload - War]]
-- [[Lan Turtle AutoSSH]]
-- [[Linux Privilege Escalation via SSH Key]]
-- [[Lua Reverse Shell Cheat Sheet]]
-- [[Metasploit Reverse Shell Handler]]
-- [[PHP Deserialization POP Chain Attack]]
-- [[PHP Reverse Shell]]
-- [[Powershell Reverse Shell Cheat Sheet]]
-- [[Session Management with Metasploit]]
-- [[SMB Beacon Payload with Command Line Interactions]]
-- [[Socat Reverse Shell Cheat Sheet]]
+- [[Awk-Interactive-Reverse-Shell]]
+- [[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]
+- [[Perform-Cross-Site-WebSocket-Hijacking]]
+- [[Test-Service-for-DNS-Rebinding-Vulnerability]]
+- [[Establish-Golang-Reverse-Shell]]
+- [[Extract-Source-Code-from-Bazaar-Repository-using-rip-bzr]]
+- [[Establish-Java-Reverse-Shell]]
+- [[Generate-Java-Reverse-Shell-WAR-Payload]]
+- [[Setup-Lan-Turtle-for-AutoSSH-Reverse-Connection]]
+- [[Linux-Privilege-Escalation-via-SSH-Key]]
+- [[Implement-Lua-Reverse-Shell]]
+- [[Setup-Metasploit-Reverse-Shell-Handler]]
+- [[Exploit-PHP-Deserialization-with-POP-Chain]]
+- [[Establish-PHP-Reverse-Shell]]
+- [[Establish-PowerShell-Reverse-Shell]]
+- [[Session-Management-with-Metasploit]]
+- [[Establish-and-Interact-with-SMB-Beacon-Payload]]
+- [[Establish-Reverse-Shell-Using-Socat]]
 - [[Springboot-Actuator Remote Code Execution via /env]]
-- [[SSH Beacon Payload with Cobalt Strike]]
+- [[Deploy-SSH-Beacon-via-Cobalt-Strike]]
 
 *...and 3 more*
+
+

@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:31.671023+00:00'
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[OAuth Misconfiguration and CSRF Vulnerability]]'
+- '[[Exploit-OAuth-CSRF-Vulnerability]]'
 ---
 
 # Phishing for Information
@@ -24,10 +24,14 @@ All forms of phishing are electronically delivered social engineering. Phishing 
 
 Adversaries may also try to obtain information directly through the exchange of emails, instant messages, or other electronic conversation means.(Citation: ThreatPost Social Media Phishing)(Citation: TrendMictro Phishing)(Citation: PCMag FakeLogin)(Citation: Sophos Attachment)(Citation: GitHub Phishery) Phishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)) and/or sending multiple, seemingly urgent messages.
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
 
 ## Related Procedures (1)
 
-- [[OAuth Misconfiguration and CSRF Vulnerability]]
+- [[Exploit-OAuth-CSRF-Vulnerability]]
+
+

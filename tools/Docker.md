@@ -1,69 +1,107 @@
 ---
-id: c678776a-c660-48d1-a56a-55b2d1f5d9cc
-name: Docker
-type: tool
-verified: true
-created_at: '2020-02-12T23:50:36.366144+00:00'
-updated_at: '2023-05-30T01:04:55.193127+00:00'
-commands:
-- '[[Check Group Membership of a User]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[dnsvalidator update dns servers (DOCKER)]]'
-platforms:
-- Linux
+url: 'https://docker.io/weinong/go-redirect'
 tags:
-- '[[Docker]]'
-- '[[Hypervisors]]'
+  - container
+  - build
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:38.917Z'
+id: bf0739d7-aba0-4b18-98b1-c2e314adaf96
+validated: true
+submitted: true
 ---
-
 # Docker
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containe
+Docker is a platform for developing, shipping, and running applications in containers, used here to build the malicious go-redirect image for Kubernetes SSRF exploitation.
 
 ## Description
 
-# Description
+Enables containerization of the Go redirection server, allowing deployment as a pod to hijack metrics-server. Common in offensive ops for creating custom payloads.
 
-Docker is a set of platform as a service (PaaS) that use OS-level virtualization to deliver software packages called containers. Using containers isolates services, allowing administrators to control inter-container communication and add a layer of security when properly configured. Docker containers share the kernel of the host operating system, making them more lightweight than traditional virtual machines. Containers are extremely versatile, as they can be built with specific very software requirements, making them not only excellent development environments, but also reliable environments for production applications and services.
+## Features
 
+- Feature 1: Image building from source
+- Feature 2: Container runtime for testing
+- Feature 3: Registry push for Kubernetes pulls
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux kernel with cgroups
+- 2GB+ RAM
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_074c76c5-56de-49ac-b522-4c7621c8a549}}
+```bash
+# On Ubuntu
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
 
+## Basic Usage
 
+```bash
+docker --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| -t | Tag image |
+| -f | Dockerfile path |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+docker build -t weinong/go-redirect .
+```
 
+### Example 2: Advanced Usage
 
+```bash
+docker run -p 8080:8080 weinong/go-redirect
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Python]]
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Execution]]
 
-- [[Docker Mount a Host's Root Directory in a Container]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Docker]]
-- [[Hypervisors]]
+- Docker daemon processes
+- Image pulls from untrusted registries
 
+## Related Procedures
 
+- [[procedures/Build-Malicious-Redirection-Server]]
+
+## Related Tools
+
+- [[tools/kubectl]]
+
+## References
+
+- Official documentation: https://docs.docker.com

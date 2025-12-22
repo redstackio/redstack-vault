@@ -13,7 +13,7 @@ tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
 - '[[Extracting Service Principal Keys from /etc/krb5.keytab]]'
-- '[[SAML Injection for Authentication Bypass]]'
+- '[[SAML-Injection-for-Authentication-Bypass]]'
 ---
 
 # Web Session Cookie
@@ -50,4 +50,4 @@ This sub-technique is used in the following tactics:
 There are 2 procedures using this sub-technique:
 
 - [[Extracting Service Principal Keys from /etc/krb5.keytab]]
-- [[SAML Injection for Authentication Bypass]]
+- [[SAML-Injection-for-Authentication-Bypass]]

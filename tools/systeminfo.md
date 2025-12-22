@@ -1,17 +1,20 @@
 ---
-id: 29dbc6a7-79cb-4a8e-b401-9dccd8935f38
-name: systeminfo
 type: tool
+description: >-
+  Built-in Windows command for displaying detailed system configuration
+  information, including OS details, hardware, security patches, and network
+  settings.
+url: >-
+  https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo
 verified: true
-created_at: '2020-03-04T05:55:24.874073+00:00'
-updated_at: '2023-05-30T19:49:06.263959+00:00'
-commands:
-- '[[systeminfo Display a Systems Configuration Information]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[Enumeration]]'
-- '[[Operating Systems]]'
+  - Enumeration
+  - Operating Systems
+commands:
+  - '[[commands/systeminfo-display-system-configuration]]'
+validated: true
 ---
 
 # systeminfo
@@ -20,45 +23,98 @@ tags:
 
 ## Overview
 
-Display detailed configuration information of the local system, including OS configuration, security information, hardware properties, hotfixes, and more. 
+systeminfo is a built-in Windows command-line utility that provides detailed configuration information about the local computer. It is commonly used in security testing for system enumeration, revealing OS version, installed hotfixes, hardware specifications, and security settings. This tool is essential for initial reconnaissance in Windows environments to assess patch levels and identify potential vulnerabilities.
 
 ## Description
 
-# Description
+The systeminfo command queries the Windows operating system for a wide range of configuration data, outputting it in a structured text format. It covers categories such as boot device, system manufacturer, total physical memory, domain details, and a list of installed hotfixes (KB numbers). In offensive security operations, it helps attackers map the target's environment, determine exploit compatibility, and gather intelligence for privilege escalation or lateral movement. No external installation is required as it is native to all Windows versions from XP onward.
 
-Display detailed configuration information of the local system, including OS configuration, security information, hardware properties, hotfixes, and more.
+## Features
 
+- **OS and Hardware Enumeration**: Displays OS name, version, build number, processor type, and memory details.
+- **Patch and Hotfix Listing**: Provides a complete list of installed updates, useful for identifying unpatched vulnerabilities.
+- **Network and Security Info**: Includes domain/workgroup status, logon server, and security policy settings.
+- **Hotfix Tracking**: Dedicated section for KB updates, aiding in vulnerability assessment.
+- **No Arguments Needed**: Runs comprehensively by default, with options for output redirection.
 
+## Installation
 
-# Example
+### Requirements
 
+- Windows operating system (XP or later).
+- Command Prompt or PowerShell access.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_05cd0db7-d0ad-48b5-ae31-ee9a9a07ede4}}
+systeminfo is pre-installed on all Windows systems. No installation is required.
 
+To verify availability:
 
+```command_prompt
+systeminfo /?
+```
 
-# Installation
+## Basic Usage
 
-systeminfo is installed with all versions of Windows.
+```command_prompt
+systeminfo
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| /? | Show help message |
+| > filename.txt | Redirect output to a file (no built-in flag, use shell redirection) |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Run the command to display all system information:
 
+```command_prompt
+systeminfo
+```
 
-## Platforms
+### Example 2: Advanced Usage
 
-- Windows
+Save output to a file for offline analysis:
 
-## Commands (1)
+```command_prompt
+systeminfo > systeminfo_output.txt
+```
 
-- [[systeminfo Display a Systems Configuration Information]]
+## MITRE ATT&CK Mapping
 
-## Tags
+This tool is commonly associated with:
 
-- [[Enumeration]]
-- [[Operating Systems]]
+### Techniques
 
+- [[System Information Discovery]] System Information Discovery
 
+### Tactics
+
+- [[Discovery]] Discovery
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Command-line logging showing 'systeminfo.exe' execution.
+- File creation or network transfer of output files containing system details.
+- Process monitoring for cmd.exe or powershell.exe spawning systeminfo.
+- EDR alerts on enumeration behaviors in user or system contexts.
+
+## Related Procedures
+
+- Procedures using systeminfo for Windows enumeration and patch assessment.
+
+## Related Tools
+
+- [[tools/wmic]] (alternative for WMI-based queries)
+- [[tools/Powershell]] (for Get-ComputerInfo cmdlet)
+
+## References
+
+- Official Microsoft Documentation: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo

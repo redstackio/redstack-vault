@@ -18,6 +18,8 @@ tactics:
 
 During the boot process, macOS executes source /etc/rc.common, which is a shell script containing various utility functions. This file also defines routines for processing command-line arguments and for gathering system settings, and is thus recommended to include in the start of Startup Item Scripts [1]. In macOS and OS X, this is now a deprecated technique in favor of launch agents and launch daemons, but is currently still used.Adversaries can use the rc.common file as a way to hide code for persistence that will execute on each reboot as the root user [2].
 
+
+
 # Detection
 
 The /etc/rc.common file can be monitored to detect changes from the company policy. Monitor process execution resulting from the rc.common script for unusual or unknown applications or behavior.
@@ -41,3 +43,5 @@ Limit privileges of user accounts so only authorized users can edit the rc.commo
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

@@ -18,6 +18,8 @@ tactics:
 
 An adversary may attempt to block indicators or events typically captured by sensors from being gathered and analyzed. This could include modifying sensor settings stored in configuration files and/or Registry keys to disable or maliciously redirect event telemetry. [1]In the case of network-based reporting of indicators, an adversary may block traffic associated with reporting to prevent central analysis. This may be accomplished by many means, such as stopping a local process responsible for forwarding telemetry and/or creating a host-based firewall rule to block traffic to specific hosts responsible for aggregating events, such as security information and event management (SIEM) products.
 
+
+
 # Detection
 
 Detect lack of reported activity from a host sensor. Different methods of blocking may cause different disruptions in reporting. Systems may suddenly stop reporting all data or only certain kinds of data.
@@ -41,3 +43,5 @@ Ensure event tracers/forwarders (Citation: Microsoft ETW May 2018), firewall pol
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

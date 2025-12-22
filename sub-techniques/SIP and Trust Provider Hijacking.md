@@ -10,9 +10,9 @@ parent_technique: '[[Subvert Trust Controls|T1553 - Subvert Trust Controls]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[Kubernetes Pentest with BishopFox BadPods]]'
-- '[[Open URL Redirection Filter Bypass]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[Deploy-BadPods-for-Kubernetes-Security-Testing]]'
+- '[[Bypass-Open-URL-Redirection-Filters]]'
 ---
 
 # SIP and Trust Provider Hijacking
@@ -52,6 +52,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[AWS API Gateway Resource Enumeration]]
-- [[Kubernetes Pentest with BishopFox BadPods]]
-- [[Open URL Redirection Filter Bypass]]
+- [[aws-api-gateway-resource-enumeration]]
+- [[Deploy-BadPods-for-Kubernetes-Security-Testing]]
+- [[Bypass-Open-URL-Redirection-Filters]]

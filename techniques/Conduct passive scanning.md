@@ -18,11 +18,15 @@ tactics:
 
 Passive scanning is the act of looking at existing network traffic in order to identify information about the communications system. [1] [2]
 
+
+
 # Detection
 
 **Detectable by Common Defenses (Yes/No/Partial): **No
 
 **Explanation: **Generates no network traffic that would enable detection.
+
+
 
 # Difficulty for the Adversary
 
@@ -30,12 +34,20 @@ Passive scanning is the act of looking at existing network traffic in order to i
 
 **Explanation: **Easy to do but it requires a vantage point conducive to accessing this data.
 
+
+
 # References
 
 1. Jamal Raiyn. (2014). A survey of Cyber Attack Detection Strategies. Retrieved March 5, 2017.
 
 1. H. P. Sanghvi and M. S. Dahiya. (2013, February). Cyber Reconnaissance: An Alarm before Cyber Attack. Retrieved March 5, 2017.
 
+
+
+
+
 ## Tactics
 
 - [[Technical Information Gathering|TA0015 - Technical Information Gathering]]
+
+

@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Plist Modification
@@ -19,6 +19,8 @@ tactics:
 ## Description
 
 Property list (plist) files contain all of the information that macOS and OS X uses to configure applications and services. These files are UTF-8 encoded and formatted like XML documents via a series of keys surrounded by < >. They detail when programs should execute, file paths to the executables, program arguments, required OS permissions, and many others. plists are located in certain locations depending on their purpose such as /Library/Preferences (which execute with elevated privileges) and ~/Library/Preferences (which execute with a user's privileges). Adversaries can modify these plist files to point to their own code, can use them to execute their code in the context of another user, bypass whitelisting procedures, or even use them as a persistence mechanism. [1]
+
+
 
 # Detection
 
@@ -42,4 +44,6 @@ Prevent plist files from being modified by users by making them read-only.
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

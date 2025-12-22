@@ -1,16 +1,20 @@
 ---
-id: 218c588c-1e25-4063-ac3b-dc6b1125e7eb
-name: Steghide
 type: tool
+description: >-
+  Steganography tool for embedding data into images and audio files with
+  encryption.
+url: 'http://steghide.sourceforge.net/'
 verified: true
-created_at: '2020-02-14T20:25:42.487538+00:00'
-updated_at: '2023-05-30T01:07:07.563017+00:00'
-commands:
-- '[[Steghide Embed a File in an Image]]'
-- '[[Steghide Extract a Hidden File in an Image]]'
+platforms:
+  - Linux
+  - Windows
+  - macOS
 tags:
-- '[[Obfuscation]]'
-- '[[Steganography]]'
+  - Obfuscation
+  - Steganography
+commands:
+  - '[[commands/steghide-embed-file-in-image]]'
+validated: true
 ---
 
 # Steghide
@@ -19,43 +23,108 @@ tags:
 
 ## Overview
 
-Steghide is a steganography program which allows users to covertly hide data (embedded file) in various image and audio file formats (cover file). Steghide does not modify color frequencies of the image, making hidden data resilient to first-order statistical tests. By default, Steghide uses AES en
+Steghide is a steganography tool that enables users to hide data within various image and audio file formats without altering the file's perceptible appearance. It is commonly used in offensive security for covert data exfiltration, embedding payloads, or obfuscating sensitive information during red team operations.
 
 ## Description
 
-# Description
+Steghide conceals an embedded file (payload) inside a cover file (e.g., JPEG, BMP, WAV, AU) using steganographic techniques that preserve color frequencies, making detection resistant to basic statistical analysis. By default, it employs AES (Rijndael-128) encryption, but supports other algorithms like rijndael-192, rijndael-256, and more. The tool prompts for a passphrase to secure the hidden data, ensuring the output file remains visually identical to the original cover.
 
-Steghide is a steganography program which allows users to covertly hide data (embedded file) in various image and audio file formats (cover file). Steghide does not modify color frequencies of the image, making hidden data resilient to first-order statistical tests. By default, Steghide uses AES encryption when hiding files, although it includes many other common algorithms. Steghide supports hiding data in JPEG, BMP, WAV, and AU files.
+## Features
 
+- Supports embedding and extraction in JPEG, BMP, WAV, and AU formats
+- Encryption with multiple algorithms (AES default)
+- Passphrase protection for hidden data
+- No alteration to file size or visual quality
+- Command-line interface for automation
 
+## Installation
 
-# Example
+### Requirements
 
+- GCC compiler and development libraries (for building from source)
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_6b52c8a8-28b4-4008-8932-d353b94d7d11}}
+```bash
+# On Debian/Ubuntu/Kali
+sudo apt update
+sudo apt install steghide
 
+# On macOS (using Homebrew)
+brew install steghide
 
+# On Windows (via Cygwin or build from source)
+# Download source from official site and compile with MinGW
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+steghide --help
+```
 
+View available options and supported formats.
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -h, --help | Display help message |
+| -v, --version | Show version information |
+| -e, --encrypt | Specify encryption algorithm (e.g., rijndael-128) |
+| -p, --passphrase | Provide passphrase non-interactively |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Embed a file into an image:
 
+```bash
+steghide embed -ef secret.txt -cf image.jpg
+```
 
+Enter passphrase when prompted.
 
-## Commands (1)
+### Example 2: Advanced Usage
 
-- [[Steghide Embed a File in an Image]]
+Extract hidden data from a file:
 
-## Tags
+```bash
+steghide extract -sf image.jpg
+```
 
-- [[Obfuscation]]
-- [[Steganography]]
+Enter the passphrase to retrieve the embedded file.
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Obfuscated Files or Information]] Obfuscated Files or Information
+
+### Tactics
+
+- [[Defense Evasion]] Defense Evasion
+
+## Detection
+
+- Monitor for unusual file modifications in media directories
+- Analyze file entropy or statistical anomalies in images/audio
+- Detect command-line executions of steghide in process logs
+- Network exfiltration patterns for seemingly benign media files
+
+## Related Procedures
+
+No related procedures documented yet.
+
+## Related Tools
+
+- [[tools/OpenStego]]
+- [[tools/Stegsolve]]
+
+## References
+
+- Official website: http://steghide.sourceforge.net/
+- SourceForge repository: https://sourceforge.net/projects/steghide/

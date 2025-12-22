@@ -9,21 +9,21 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory SCCM Loot Inventory and Download]]'
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[AWS SSRF Credential Access via Lambda Function]]'
-- '[[Cloud Instance SSRF]]'
-- '[[List NFS Shares]]'
-- '[[List SMB Shares]]'
-- '[[Mount a Windows CIFS Share]]'
-- '[[Open Shares Enumeration]]'
-- '[[SSRF Filter Bypass using IP Address Retrieval]]'
-- '[[SSRF for Cloud Instances with Packet Metadata Userdata]]'
-- '[[SSRF through File Integration as an Image or Text]]'
-- '[[SSRF via XXE Injection]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[AWS-SSRF-Credential-Access-via-Lambda-Function]]'
+- '[[Exploit-SSRF-for-AWS-Cloud-Instance-Metadata-Access]]'
+- '[[List-NFS-Shares]]'
+- '[[list-smb-shares-null-session]]'
+- '[[Mount-Windows-CIFS-Share]]'
+- '[[Open-Shares-Enumeration]]'
+- '[[SSRF-Filter-Bypass-Using-IP-Resolution]]'
+- '[[Exploit-SSRF-to-Retrieve-Packet-Cloud-Userdata]]'
+- '[[SSRF-via-Injected-HTML-File-as-Image-or-Text]]'
+- '[[SSRF-via-XXE-Injection]]'
 - '[[Windows Local DTD and Side Channel Leak to Disclose HTTP Response/File Contents]]'
-- '[[Windows - Network Enumeration for Privilege Escalation]]'
-- '[[XXE Injection via SVG Image]]'
+- '[[windows-network-enumeration-for-privilege-escalation]]'
+- '[[XXE-Injection-via-SVG-Image]]'
 ---
 
 # Network Share Discovery
@@ -33,6 +33,8 @@ procedures:
 ## Description
 
 Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. WindowsFile sharing over a Windows network occurs over the SMB protocol. [1] [2]Net can be used to query a remote system for available shared drives using the net view \remotesystem command. It can also be used to query shared drives on the local system using net share.Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement.MacOn Mac, locally mounted shares can be viewed with the df -aH command.
+
+
 
 # Detection
 
@@ -102,18 +104,20 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (15)
 
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[Automated Password Extraction from SYSVOL and Group Policy Preferences]]
-- [[AWS SSRF Credential Access via Lambda Function]]
-- [[Cloud Instance SSRF]]
-- [[List NFS Shares]]
-- [[List SMB Shares]]
-- [[Mount a Windows CIFS Share]]
-- [[Open Shares Enumeration]]
-- [[SSRF Filter Bypass using IP Address Retrieval]]
-- [[SSRF for Cloud Instances with Packet Metadata Userdata]]
-- [[SSRF through File Integration as an Image or Text]]
-- [[SSRF via XXE Injection]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]
+- [[AWS-SSRF-Credential-Access-via-Lambda-Function]]
+- [[Exploit-SSRF-for-AWS-Cloud-Instance-Metadata-Access]]
+- [[List-NFS-Shares]]
+- [[list-smb-shares-null-session]]
+- [[Mount-Windows-CIFS-Share]]
+- [[Open-Shares-Enumeration]]
+- [[SSRF-Filter-Bypass-Using-IP-Resolution]]
+- [[Exploit-SSRF-to-Retrieve-Packet-Cloud-Userdata]]
+- [[SSRF-via-Injected-HTML-File-as-Image-or-Text]]
+- [[SSRF-via-XXE-Injection]]
 - [[Windows Local DTD and Side Channel Leak to Disclose HTTP Response/File Contents]]
-- [[Windows - Network Enumeration for Privilege Escalation]]
-- [[XXE Injection via SVG Image]]
+- [[windows-network-enumeration-for-privilege-escalation]]
+- [[XXE-Injection-via-SVG-Image]]
+
+

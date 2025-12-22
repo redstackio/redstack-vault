@@ -9,12 +9,12 @@ updated_at: '2023-04-06T03:56:16.249788+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[ObjectDataProvider JSON.NET Deserialization RCE]]'
-- '[[Type Confusion with LosFormatter and Calc.exe Execution]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[ObjectDataProvider-JSON.NET-Deserialization-RCE]]'
+- '[[Exploit-LosFormatter-Type-Confusion-for-Arbitrary-Code-Execution]]'
 ---
 
 # Server Software Component
@@ -25,15 +25,19 @@ procedures:
 
 Adversaries may abuse legitimate extensible development features of servers to establish persistent access to systems. Enterprise server applications may include features that allow developers to write and install software or scripts to extend the functionality of the main application. Adversaries may install malicious components to extend and abuse server applications.(Citation: volexity_0day_sophos_FW)
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
 
 ## Related Procedures (6)
 
-- [[Cobalt Strike Team Server Installation and Execution]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[ObjectDataProvider JSON.NET Deserialization RCE]]
-- [[Type Confusion with LosFormatter and Calc.exe Execution]]
+- [[Cobalt-Strike-Team-Server-Installation-and-Execution]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[ObjectDataProvider-JSON.NET-Deserialization-RCE]]
+- [[Exploit-LosFormatter-Type-Confusion-for-Arbitrary-Code-Execution]]
+
+

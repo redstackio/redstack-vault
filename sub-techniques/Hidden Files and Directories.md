@@ -10,12 +10,12 @@ parent_technique: '[[Hide Artifacts|T1564 - Hide Artifacts]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Linux - Backdoor MOTD Persistence]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Linux - Text Hiding and Payload Creation]]'
-- '[[Malicious HLS playlist inside an AVI video]]'
-- '[[Windows - Mimikatz Hidden Persistence]]'
-- '[[Windows - Simple User File Hidden Persistence]]'
+- '[[Linux-MOTD-Backdoor-for-Persistence]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]'
+- '[[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]'
+- '[[Hide-Mimikatz-Executable-for-Persistence]]'
+- '[[windows-hide-file-for-persistence]]'
 ---
 
 # Hidden Files and Directories
@@ -50,9 +50,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[Linux - Backdoor MOTD Persistence]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Linux - Text Hiding and Payload Creation]]
-- [[Malicious HLS playlist inside an AVI video]]
-- [[Windows - Mimikatz Hidden Persistence]]
-- [[Windows - Simple User File Hidden Persistence]]
+- [[Linux-MOTD-Backdoor-for-Persistence]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]
+- [[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]
+- [[Hide-Mimikatz-Executable-for-Persistence]]
+- [[windows-hide-file-for-persistence]]

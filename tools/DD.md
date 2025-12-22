@@ -1,60 +1,105 @@
 ---
-id: 0123d5ec-283e-4a60-a0b8-967da7ab4484
-name: DD
-type: tool
-verified: true
-created_at: '2020-02-19T05:16:42.561874+00:00'
-updated_at: '2023-05-30T01:10:45.068990+00:00'
-commands:
-- '[[OpenSSL View RSA Key Information]]'
-- '[[Test Command]]'
-- '[[dd Extract a LUKS v1 Hash]]'
+url: 'https://www.gnu.org/software/coreutils/dd'
 tags:
-- '[[File System]]'
-- '[[Linux]]'
+  - data-copy
+  - dos
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2024-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:26:56.575Z'
+id: 21298b1e-1451-4525-a543-ff81bec8e81c
+validated: true
+submitted: true
 ---
+# dd
 
-# DD
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-DD is a standard Linux file system utility, used to convert and copy various types of files. DD can read from and write to special device files that Unix type systems view as normal files to backup boot sectors of hard drives, obtain certain amounts of random data, convert data with different text 
+dd is a Unix utility for low-level copying and conversion of data, commonly used in attacks to generate and write large files for resource exhaustion.
 
 ## Description
 
-# Description
+Copies input to output with optional conversions, ideal for filling files with zeros from /dev/zero to consume disk space in container environments.
 
-DD is a standard Linux file system utility, used to convert and copy various types of files. DD can read from and write to special device files that Unix type systems view as normal files to backup boot sectors of hard drives, obtain certain amounts of random data, convert data with different text encodings while being copied, and can even write ISO files to a usb stick.
+## Features
 
+- Feature 1: Block-based I/O control
+- Feature 2: Infinite input from devices
+- Feature 3: Status reporting
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on Linux (coreutils)
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_f789edc9-afd1-4a21-8fc4-8e70e587b65d}}
+```bash
+# Usually pre-installed
+sudo apt update && sudo apt install coreutils
+```
 
+## Basic Usage
 
+```bash
+dd --help
+```
 
-# Installation
+### Common Options
 
-DD is installed by default on Linux systems.
+| Option | Description |
+|--------|-------------|
+| if= | Input file | 
+| of= | Output file |
+| bs= | Block size |
+| count= | Block count |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+dd if=/dev/zero of=testfile count=10 bs=1M
+```
 
+### Example 2: Advanced Usage
 
+```bash
+dd if=/dev/zero of=/etc/hosts count=1000000 bs=10M
+```
 
+## MITRE ATT&CK Mapping
 
-## Commands (1)
+This tool is commonly associated with:
 
-- [[dd Clone entire linux parition over ssh]]
+### Techniques
 
-## Tags
+- [[OS Exhaustion Flood]]
 
-- [[File System]]
-- [[Linux]]
+### Tactics
 
+- [[Impact]]
 
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- High disk I/O from dd processes
+- Sudden file size increases in /etc
+
+## Related Procedures
+
+- [[procedures/Overwrite-Etc-Hosts-with-Dd]]
+
+## Related Tools
+
+- [[tools/fallocate]]
+
+## References
+
+- Man page: man dd

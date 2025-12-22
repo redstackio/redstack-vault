@@ -8,7 +8,7 @@ created_at: '2023-04-06T00:31:26.627672+00:00'
 updated_at: '2023-04-06T00:31:27.850023+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Parent PID Spoofing
@@ -23,7 +23,11 @@ Adversaries may abuse these mechanisms to evade defenses, such as those blocking
 
 Explicitly assigning the PPID may also enable [Privilege Escalation](https://attack.mitre.org/tactics/TA0004) (given appropriate access rights to the parent process). For example, an adversary in a privileged user context (i.e. administrator) may spawn a new process and assign the parent as a process running as SYSTEM (such as <code>lsass.exe</code>), causing the new process to be elevated via the inherited access token.(Citation: XPNSec PPID Nov 2017)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

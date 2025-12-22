@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[NoSQL Injection via SSJI Exploit]]'
+- '[[NoSQL-Injection-via-SSJI-Exploit]]'
 ---
 
 # Automated Collection
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Once established within a system or network, an adversary may use automated techniques for collecting internal data. Methods for performing this technique could include use of Scripting to search for and copy information fitting set criteria such as file type, location, or name at specific time intervals. This functionality could also be built into remote access tools. This technique may incorporate use of other techniques such as File and Directory Discovery and Remote File Copy to identify and move files.
+
+
 
 # Detection
 
@@ -92,4 +94,6 @@ Encryption and off-system storage of sensitive information may be one way to mit
 
 ## Related Procedures (1)
 
-- [[NoSQL Injection via SSJI Exploit]]
+- [[NoSQL-Injection-via-SSJI-Exploit]]
+
+

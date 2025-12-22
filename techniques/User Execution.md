@@ -9,24 +9,24 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Certutil Download and Execute]]'
-- '[[Create a .LNK with a Custom Payload]]'
-- '[[Custom DL and Execution via Malicious Macro Generator]]'
-- '[[Hibernate Query Language Injection with $-quoted strings]]'
-- '[[LFI to RCE via uploaded file]]'
-- '[[Local DTD Injection in Citrix XenMobile Server]]'
-- '[[MYSQL UDF Command Execution via lib_mysqludf_sys.so]]'
-- '[[Office Macro-Based Malware]]'
+- '[[Certutil-Download-and-Execute]]'
+- '[[Create-LNK-File-with-Custom-PowerShell-Payload]]'
+- '[[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]'
+- '[[Hibernate-Query-Language-Injection-with-Dollar-Quoted-Strings]]'
+- '[[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]'
+- '[[Local-DTD-Injection-in-Citrix-XenMobile-Server]]'
+- '[[MySQL-UDF-Command-Execution-via-lib_mysqludf_sys.so]]'
+- '[[Create-Office-Macro-Malware-with-BadAssMacros]]'
 - '[[SCF and URL File Attack Against Writable Share via Windows Search Connectors
   Files]]'
 - '[[Tabnabbing Attack with Invalid Noopener Attribute Value and Target Attribute
   Value Contains Command]]'
-- '[[VBA Shell Execute Comment]]'
+- '[[Execute-Shell-Command-via-VBA-Comment-Metadata]]'
 - '[[Windows - Cscript / Wscript JScript Payload Execution]]'
-- '[[Windows Defender Application Control Enforcement Mode]]'
-- '[[XSS in Files and Markdown]]'
-- '[[XSS in SVG Triangle with JavaScript Alert]]'
-- '[[ZipSlip Directory Traversal with File Overwrite]]'
+- '[[Check-WDAC-Enforcement-Mode]]'
+- '[[XSS-Injection-via-Files-and-Markdown]]'
+- '[[Inject-XSS-via-SVG-File-with-JavaScript-Alert]]'
+- '[[ZipSlip-Directory-Traversal-with-File-Overwrite]]'
 ---
 
 # User Execution
@@ -36,6 +36,8 @@ procedures:
 ## Description
 
 An adversary may rely upon specific actions by a user in order to gain execution. This may be direct code execution, such as when a user opens a malicious executable delivered via Spearphishing Attachment with the icon and apparent extension of a document file. It also may lead to other execution techniques, such as when a user clicks on a link delivered via Spearphishing Link that leads to exploitation of a browser or application vulnerability via Exploitation for Client Execution. While User Execution frequently occurs shortly after Initial Access it may occur at other phases of an intrusion, such as when an adversary places a file in a shared directory or on a user's desktop hoping that a user will click on it.
+
+
 
 # Detection
 
@@ -167,19 +169,21 @@ Use user training as a way to bring awareness to common phishing and spearphishi
 
 ## Related Procedures (16)
 
-- [[Certutil Download and Execute]]
-- [[Create a .LNK with a Custom Payload]]
-- [[Custom DL and Execution via Malicious Macro Generator]]
-- [[Hibernate Query Language Injection with $-quoted strings]]
-- [[LFI to RCE via uploaded file]]
-- [[Local DTD Injection in Citrix XenMobile Server]]
-- [[MYSQL UDF Command Execution via lib_mysqludf_sys.so]]
-- [[Office Macro-Based Malware]]
-- [[SCF and URL File Attack Against Writable Share via Windows Search Connectors Files]]
+- [[Certutil-Download-and-Execute]]
+- [[Create-LNK-File-with-Custom-PowerShell-Payload]]
+- [[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]
+- [[Hibernate-Query-Language-Injection-with-Dollar-Quoted-Strings]]
+- [[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]
+- [[Local-DTD-Injection-in-Citrix-XenMobile-Server]]
+- [[MySQL-UDF-Command-Execution-via-lib_mysqludf_sys.so]]
+- [[Create-Office-Macro-Malware-with-BadAssMacros]]
+- [[SCF-and-URL-File-Attack-Against-Writable-Share-via-Windows-Search-Connectors-Files]]
 - [[Tabnabbing Attack with Invalid Noopener Attribute Value and Target Attribute Value Contains Command]]
-- [[VBA Shell Execute Comment]]
+- [[Execute-Shell-Command-via-VBA-Comment-Metadata]]
 - [[Windows - Cscript / Wscript JScript Payload Execution]]
-- [[Windows Defender Application Control Enforcement Mode]]
-- [[XSS in Files and Markdown]]
-- [[XSS in SVG Triangle with JavaScript Alert]]
-- [[ZipSlip Directory Traversal with File Overwrite]]
+- [[Check-WDAC-Enforcement-Mode]]
+- [[XSS-Injection-via-Files-and-Markdown]]
+- [[Inject-XSS-via-SVG-File-with-JavaScript-Alert]]
+- [[ZipSlip-Directory-Traversal-with-File-Overwrite]]
+
+

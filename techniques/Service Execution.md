@@ -9,20 +9,20 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[DC PrintSpooler Service Check and ntlmrelayx with printerbug.py]]'
-- '[[Escalate from an Administrator Session to SYSTEM (Windows)]]'
-- '[[Pass the Hash with Meterpreter]]'
-- '[[Perl Bind Shell]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[Exploit-ZeroLogon-and-PrinterBug-for-DC-System-Access]]'
+- '[[Escalate-Administrator-to-SYSTEM-Windows]]'
+- '[[Pass-the-Hash-to-Obtain-Meterpreter-Session]]'
+- '[[Create-Perl-Bind-Shell]]'
 - '[[PrintNightmare - Exploiting CVE to gain SYSTEM shell on DC via Anonymous SMB
   Server]]'
-- '[[PrintNightmare WebDAV Attack]]'
-- '[[UsoSvc Service Account Remote Command Execution]]'
-- '[[Windows - Elevated Services Backdoor Persistence]]'
-- '[[Windows Privilege Escalation - Processes and Tasks Enumeration]]'
-- '[[Windows - Restore Service Account Privileges via Impersonation]]'
-- '[[Windows Service Persistence with Calculator]]'
-- '[[Windows - Using Impacket and PSExec with Credentials]]'
+- '[[PrintNightmare-WebDAV-Attack]]'
+- '[[usosvc-service-account-remote-command-execution]]'
+- '[[windows-elevated-services-backdoor-persistence]]'
+- '[[windows-processes-and-tasks-enumeration-for-privilege-escalation]]'
+- '[[Windows-Restore-Service-Account-Privileges-via-Impersonation]]'
+- '[[Create-Windows-Service-for-Persistence]]'
+- '[[windows-impacket-psexec-remote-execution-with-credentials]]'
 ---
 
 # Service Execution
@@ -32,6 +32,8 @@ procedures:
 ## Description
 
 Adversaries may execute a binary, command, or script via a method that interacts with Windows services, such as the Service Control Manager. This can be done by either creating a new service or modifying an existing service. This technique is the execution used in conjunction with New Service and Modify Existing Service during service persistence or privilege escalation.
+
+
 
 # Detection
 
@@ -119,16 +121,18 @@ Ensure that permissions disallow services that run at a higher permissions level
 
 ## Related Procedures (13)
 
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[DC PrintSpooler Service Check and ntlmrelayx with printerbug.py]]
-- [[Escalate from an Administrator Session to SYSTEM (Windows)]]
-- [[Pass the Hash with Meterpreter]]
-- [[Perl Bind Shell]]
-- [[PrintNightmare - Exploiting CVE to gain SYSTEM shell on DC via Anonymous SMB Server]]
-- [[PrintNightmare WebDAV Attack]]
-- [[UsoSvc Service Account Remote Command Execution]]
-- [[Windows - Elevated Services Backdoor Persistence]]
-- [[Windows Privilege Escalation - Processes and Tasks Enumeration]]
-- [[Windows - Restore Service Account Privileges via Impersonation]]
-- [[Windows Service Persistence with Calculator]]
-- [[Windows - Using Impacket and PSExec with Credentials]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Exploit-ZeroLogon-and-PrinterBug-for-DC-System-Access]]
+- [[Escalate-Administrator-to-SYSTEM-Windows]]
+- [[Pass-the-Hash-to-Obtain-Meterpreter-Session]]
+- [[Create-Perl-Bind-Shell]]
+- [[Exploit-PrintNightmare-for-DC-SYSTEM-Shell-via-Anonymous-SMB]]
+- [[PrintNightmare-WebDAV-Attack]]
+- [[usosvc-service-account-remote-command-execution]]
+- [[windows-elevated-services-backdoor-persistence]]
+- [[windows-processes-and-tasks-enumeration-for-privilege-escalation]]
+- [[Windows-Restore-Service-Account-Privileges-via-Impersonation]]
+- [[Create-Windows-Service-for-Persistence]]
+- [[windows-impacket-psexec-remote-execution-with-credentials]]
+
+

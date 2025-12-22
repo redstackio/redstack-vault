@@ -20,6 +20,10 @@ Adversaries may wipe or corrupt raw disk data on specific systems or in large nu
 
 To maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware used for wiping disks may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Novetta Blockbuster Destructive Malware)
 
+
+
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
+
+

@@ -1,80 +1,114 @@
 ---
-id: 3eb05ebf-280e-40e1-8d9d-e8a6e09e4ba4
-name: Gobuster
+id: tool-gobuster
+url: 'https://github.com/OJ/gobuster'
+tags:
+  - recon
+  - bruteforce
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:36.051053+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Gobuster Command to Find Existent Directories]]'
-- '[[Gobuster Directory Brute Force with Burp proxy]]'
-- '[[Gobuster Directory Brute Force with Extensions]]'
-- '[[Gobuster Directory Brute Force]]'
 platforms:
-- Web
-tags:
-- '[[Brute Force]]'
-- '[[Web Applications]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:07.534Z'
+validated: true
+submitted: true
 ---
-
 # Gobuster
+
+**Status**: Unverified
 
 ## Overview
 
-Gobuster is a web application directory, vhost, and DNS server brute forcing tool, which uses wordlists to enumerate services. Gobuster contains three modules: dir: this module performs traditional web application brute force attacks to enumerate files and folders. vhost: this module uses the "Host
+Gobuster is a command-line tool for bruteforcing URIs (directories and files) on web servers, commonly used in penetration testing to discover hidden endpoints like unprotected admin directories.
 
 ## Description
 
-# Description
+Gobuster performs directory and file enumeration by sending HTTP requests against a target URL using a wordlist. It's fast, customizable, and supports extensions, making it ideal for identifying misconfigurations in web applications such as the DoD vuln where admin paths lack protection.
 
-Gobuster is a web application directory, vhost, and DNS server brute forcing tool, which uses wordlists to enumerate services. Gobuster contains three modules:
+## Features
 
+- Feature 1: Directory and file bruteforcing with wordlists
+- Feature 2: Support for multiple extensions (e.g., php, html)
+- Feature 3: Threading for speed and proxy integration
 
+## Installation
 
-- dir: this module performs traditional web application brute force attacks to enumerate files and folders.
+### Requirements
 
-- vhost: this module uses the "Host" value in the HTTP header to enumerate websites in cases where a web application uses virtual hosts to serve different sites.
+- Go 1.11 or higher
+- Git
 
-- dns: this module enumerates DNS subdomains by directly querying DNS servers, unlike the vhosts module which uses the HTTP headers. All requests are sent to the host system's configured DNS server, so system settings should be updated if the requests must be sent to a specific server (common when enumerating non-public domain servers).
+### Install Commands
 
-# Example
+```bash
+# Install via Go
+GO111MODULE=on go install github.com/OJ/gobuster/v3@latest
 
+# Or via package manager (e.g., Kali Linux)
+apt update && apt install gobuster
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_21cc125b-0be7-4d96-9228-eb144900a21f}}
+```bash
+gobuster dir --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-u, --url` | Target URL |
+| `-w, --wordlist` | Path to wordlist |
+| `-x, --extensions` | File extensions to append |
+| `-t, --threads` | Number of threads |
 
-# Installation
+## Examples
 
-## Install on Debian/Ubuntu
+### Example 1: Basic Usage
 
+```bash
+gobuster dir -u https://target.com -w /usr/share/wordlists/dirb/common.txt
+```
 
+### Example 2: Advanced Usage
 
+```bash
+gobuster dir -u https://target-dod-app.com/ -w directory-list-2.3-medium.txt -x php,html -t 50 --no-error
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[File and Directory Discovery]] File and Directory Discovery
 
+### Tactics
 
-## Platforms
+- [[Reconnaissance]] Reconnaissance
 
-- Web
+## Detection
 
-## Services
+Indicators and methods for detecting this tool's usage:
 
-- http
-- http
-- https
-- https
+- High volume of 404/403 responses from web server logs
+- Unusual user-agent strings or rapid requests to /admin paths
+- Network traffic spikes to common wordlist paths
 
-## Commands (1)
+## Related Procedures
 
-- [[Gobuster Directory Brute Force]]
+- [[procedures/Directory-Bruteforcing-for-Unprotected-Endpoints]]
 
-## Tags
+## Related Tools
 
-- [[Brute Force]]
-- [[Web Applications]]
+- [[DirBuster]]
+- [[ffuf]]
 
+## References
 
+- Official GitHub: https://github.com/OJ/gobuster
+- OWASP Testing Guide

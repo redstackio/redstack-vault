@@ -10,7 +10,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Blind XPATH Injection]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
 ---
 
 # Web Session Cookie
@@ -25,6 +25,8 @@ Authentication cookies are commonly used in web applications, including cloud-ba
 
 There have been examples of malware targeting session cookies to bypass multi-factor authentication systems.(Citation: Unit 42 Mac Crypto Cookies January 2019) 
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
@@ -32,4 +34,6 @@ There have been examples of malware targeting session cookies to bypass multi-fa
 
 ## Related Procedures (1)
 
-- [[Blind XPATH Injection]]
+- [[Perform-Blind-XPath-Injection-for-Data-Extraction]]
+
+

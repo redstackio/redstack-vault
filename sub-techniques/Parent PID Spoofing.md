@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:26.581463+00:00'
 parent_technique: '[[Access Token Manipulation|T1134 - Access Token Manipulation]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[SAML Injection with XML Signature Wrapping Attack]]'
+- '[[SAML-Injection-with-XML-Signature-Wrapping]]'
 ---
 
 # Parent PID Spoofing
@@ -39,10 +39,10 @@ Explicitly assigning the PPID may also enable elevated privileges given appropri
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[SAML Injection with XML Signature Wrapping Attack]]
+- [[SAML-Injection-with-XML-Signature-Wrapping]]

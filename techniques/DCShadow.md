@@ -9,13 +9,13 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Brute Force Login with MongoDB Query Injection]]'
-- '[[Checksum Validation Exploitation for Active Directory]]'
-- '[[NoSQL Injection: Extract User Data]]'
+- '[[Brute-Force-Login-via-MongoDB-Query-Injection]]'
+- '[[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]'
+- '[[NoSQL-Injection-Extract-User-Data-MongoDB]]'
 - '[[PrintNightmare - Exploiting CVE to gain SYSTEM shell on DC via Anonymous SMB
   Server]]'
-- '[[Server Side Template Injection with Twig Template Rendering]]'
-- '[[Twig Template Remote Code Execution]]'
+- '[[Exploit-SSTI-in-Twig-Templates-for-RCE]]'
+- '[[Exploit-Twig-SSTI-for-Remote-Code-Execution]]'
 ---
 
 # DCShadow
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 DCShadow is a method of manipulating Active Directory (AD) data, including objects and schemas, by registering (or reusing an inactive registration) and simulating the behavior of a Domain Controller (DC). [1] [2] Once registered, a rogue DC may be able to inject and replicate changes into AD infrastructure for any domain object, including credentials and keys.Registering a rogue DC involves creating a new server and nTDSDSA objects in the Configuration partition of the AD schema, which requires Administrator privileges (either Domain or local to the DC) or the KRBTGT hash. [3]This technique may bypass system logging and security monitors such as security information and event management (SIEM) products (since actions taken on a rogue DC may not be reported to these sensors). [1] The technique may also be used to alter and delete replication and other associated metadata to obstruct forensic analysis. Adversaries may also utilize this technique to perform SID-History Injection and/or manipulate AD objects (such as accounts, access control lists, schemas) to establish backdoors for Persistence. [1] [2]
+
+
 
 # Detection
 
@@ -66,9 +68,11 @@ This type of attack technique cannot be easily mitigated with preventive control
 
 ## Related Procedures (6)
 
-- [[Brute Force Login with MongoDB Query Injection]]
-- [[Checksum Validation Exploitation for Active Directory]]
-- [[NoSQL Injection: Extract User Data]]
-- [[PrintNightmare - Exploiting CVE to gain SYSTEM shell on DC via Anonymous SMB Server]]
-- [[Server Side Template Injection with Twig Template Rendering]]
-- [[Twig Template Remote Code Execution]]
+- [[Brute-Force-Login-via-MongoDB-Query-Injection]]
+- [[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]
+- [[NoSQL-Injection-Extract-User-Data-MongoDB]]
+- [[Exploit-PrintNightmare-for-DC-SYSTEM-Shell-via-Anonymous-SMB]]
+- [[Exploit-SSTI-in-Twig-Templates-for-RCE]]
+- [[Exploit-Twig-SSTI-for-Remote-Code-Execution]]
+
+

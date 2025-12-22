@@ -10,7 +10,7 @@ parent_technique: '[[Inter-Process Communication|T1559 - Inter-Process Communica
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[JWT Key ID (kid) Claim Misuse]]'
+- '[[JWT-Key-ID-kid-Claim-Misuse]]'
 ---
 
 # Dynamic Data Exchange
@@ -45,4 +45,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[JWT Key ID (kid) Claim Misuse]]
+- [[JWT-Key-ID-kid-Claim-Misuse]]

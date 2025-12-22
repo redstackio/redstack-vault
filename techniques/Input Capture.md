@@ -10,7 +10,7 @@ tactics:
 - '[[Collection|TA0009 - Collection]]'
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Linked Database Table Enumeration]]'
+- '[[Enumerate-Tables-in-Linked-MSSQL-Database]]'
 ---
 
 # Input Capture
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries can use methods of capturing user input for obtaining credentials for Valid Accounts and information Collection that include keylogging and user input field interception.Keylogging is the most prevalent type of input capture, with many different ways of intercepting keystrokes, [1] but other methods exist to target information for specific purposes, such as performing a UAC prompt or wrapping the Windows default credential provider. [2]Keylogging is likely to be used to acquire credentials for new access opportunities when Credential Dumping efforts are not effective, and may require an adversary to remain passive on a system for a period of time before an opportunity arises.Adversaries may also install code on externally facing portals, such as a VPN login page, to capture and transmit credentials of users who attempt to log into the service. This variation on input capture may be conducted post-compromise using legitimate administrative access as a backup measure to maintain network access through External Remote Services and Valid Accounts or as part of the initial compromise by exploitation of the externally facing web service. [3]
+
+
 
 # Detection
 
@@ -254,4 +256,6 @@ Identify and block potentially malicious software that may be used to acquire cr
 
 ## Related Procedures (1)
 
-- [[Linked Database Table Enumeration]]
+- [[Enumerate-Tables-in-Linked-MSSQL-Database]]
+
+

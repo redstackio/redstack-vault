@@ -8,7 +8,7 @@ created_at: '2023-04-06T00:31:26.999220+00:00'
 updated_at: '2023-04-06T00:31:27.876378+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Emond
@@ -21,7 +21,11 @@ Adversaries may use Event Monitor Daemon (emond) to establish persistence by sch
 
 Adversaries may abuse this service by writing a rule to execute commands when a defined event occurs, such as system start up or user authentication.(Citation: xorrior emond Jan 2018)(Citation: magnusviri emond Apr 2016)(Citation: sentinelone macos persist Jun 2019) Adversaries may also be able to escalate privileges from administrator to root as the emond service is executed with root privileges by the [Launch Daemon](https://attack.mitre.org/techniques/T1160) service.
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

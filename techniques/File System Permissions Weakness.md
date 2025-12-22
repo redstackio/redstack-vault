@@ -8,17 +8,17 @@ created_at: '2019-08-28T21:17:47.494281+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
 - '[[Change Password in a Writable /etc/passwd]]'
-- '[[Docker Privilege Escalation Using Docker Group]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
+- '[[Enumerate-and-Analyze-SSL-TLS-Certificate]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[enumerate-windows-missing-patches-hotfixes-sherlock]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
 ---
 
 # File System Permissions Weakness
@@ -28,6 +28,8 @@ procedures:
 ## Description
 
 Processes may automatically execute specific binaries as part of their functionality or to perform other actions. If the permissions on the file system directory containing a target binary, or permissions on the binary itself, are improperly set, then the target binary may be overwritten with another binary using user-level permissions and executed by the original process. If the original process and thread are running under a higher permissions level, then the replaced binary will also execute under higher-level permissions, which could include SYSTEM.Adversaries may use this technique to replace legitimate binaries with malicious ones as a means of executing code at a higher permissions level. If the executing process is set to run at a specific time or during a certain event (e.g., system bootup) then this technique can also be used for persistence.ServicesManipulation of Windows service binaries is one variation of this technique. Adversaries may replace a legitimate service executable with their own executable to gain persistence and/or privilege escalation to the account context the service is set to execute under (local/domain account, SYSTEM, LocalService, or NetworkService). Once the service is started, either directly by the user (if appropriate access is available) or through some other means, such as a system restart if the service starts on bootup, the replaced executable will run instead of the original service executable.Executable InstallersAnother variation of this technique can be performed by taking advantage of a weakness that is common in executable, self-extracting installers. During the installation process, it is common for installers to use a subdirectory within the %TEMP% directory to unpack binaries such as DLLs, EXEs, or other payloads. When installers create subdirectories and files they often do not set appropriate permissions to restrict write access, which allows for execution of untrusted code placed in the subdirectories or overwriting of binaries used in the installation process. This behavior is related to and may take advantage of DLL Search Order Hijacking. Some installers may also require elevated privileges that will result in privilege escalation when executing adversary controlled code. This behavior is related to Bypass User Account Control. Several examples of this weakness in existing common installers have been reported to software vendors. [1] [2]
+
+
 
 # Detection
 
@@ -66,16 +68,18 @@ Use auditing tools capable of detecting file system permissions abuse opportunit
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (9)
 
 - [[Change Password in a Writable /etc/passwd]]
-- [[Docker Privilege Escalation Using Docker Group]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (PowerUp)]]
-- [[Enumerate Windows for Privilege Escalation (SharpUp)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
+- [[Enumerate-and-Analyze-SSL-TLS-Certificate]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[enumerate-windows-missing-patches-hotfixes-sherlock]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+
+

@@ -24,6 +24,10 @@ A variation on this behavior takes advantage of differences in functionality acr
 
 An example of adversary use of unused AWS regions is to mine cryptocurrency through [Resource Hijacking](https://attack.mitre.org/techniques/T1496), which can cost organizations substantial amounts of money over time depending on the processing power used.(Citation: CloudSploit - Unused AWS Regions)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

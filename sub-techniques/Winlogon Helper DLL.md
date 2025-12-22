@@ -10,7 +10,7 @@ parent_technique: '[[Boot or Logon Autostart Execution|T1547 - Boot or Logon Aut
   Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Winlogon Helper DLL
@@ -42,4 +42,4 @@ Adversaries may take advantage of these features to repeatedly execute malicious
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

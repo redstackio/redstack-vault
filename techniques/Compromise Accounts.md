@@ -24,6 +24,10 @@ Personas may exist on a single site or across multiple sites (ex: Facebook, Link
 
 Adversaries may directly leverage compromised email accounts for [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Phishing](https://attack.mitre.org/techniques/T1566).
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
+
+

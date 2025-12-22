@@ -11,14 +11,14 @@ parent_technique: '[[Standard Application Layer Protocol|T1071 - Standard Applic
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[DNS Beacon Payload with Cobalt Strike]]'
-- '[[Golang Reverse Shell Cheat Sheet]]'
-- '[[PHP Bind Shell]]'
-- '[[Python Bind Shell]]'
-- '[[Python Reverse Shell Cheat Sheet]]'
-- '[[SSH Tunneling and SOCKS Proxy]]'
-- '[[Windows Staged Reverse TCP Meterpreter Shell]]'
-- '[[XXE File Retrieval via XInclude Attack]]'
+- '[[configure-dns-for-cobalt-strike-dns-beacon]]'
+- '[[Establish-Golang-Reverse-Shell]]'
+- '[[Establish-PHP-Bind-Shell]]'
+- '[[Python-Bind-Shell]]'
+- '[[Establish-Python-Reverse-Shell]]'
+- '[[SSH-Tunneling-for-SOCKS-Proxy]]'
+- '[[Generate-Windows-Staged-Reverse-TCP-Meterpreter-Payload]]'
+- '[[XXE-File-Retrieval-via-XInclude-Attack]]'
 ---
 
 # Web Protocols
@@ -49,11 +49,11 @@ This sub-technique is used in the following tactics:
 
 There are 8 procedures using this sub-technique:
 
-- [[DNS Beacon Payload with Cobalt Strike]]
-- [[Golang Reverse Shell Cheat Sheet]]
-- [[PHP Bind Shell]]
-- [[Python Bind Shell]]
-- [[Python Reverse Shell Cheat Sheet]]
-- [[SSH Tunneling and SOCKS Proxy]]
-- [[Windows Staged Reverse TCP Meterpreter Shell]]
-- [[XXE File Retrieval via XInclude Attack]]
+- [[configure-dns-for-cobalt-strike-dns-beacon]]
+- [[Establish-Golang-Reverse-Shell]]
+- [[Establish-PHP-Bind-Shell]]
+- [[Python-Bind-Shell]]
+- [[Establish-Python-Reverse-Shell]]
+- [[SSH-Tunneling-for-SOCKS-Proxy]]
+- [[Generate-Windows-Staged-Reverse-TCP-Meterpreter-Payload]]
+- [[XXE-File-Retrieval-via-XInclude-Attack]]

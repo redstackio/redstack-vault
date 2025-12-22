@@ -12,12 +12,12 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[GitLeak Secrets Harvesting]]'
-- '[[Insecure Docker Registry Pentest]]'
-- '[[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]'
-- '[[NTLM Reflection SMB Relay Attack]]'
-- '[[Shadow Credentials for Windows Hello]]'
-- '[[Web Sockets Authentication Exploitation]]'
+- '[[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]'
+- '[[Insecure-Docker-Registry-Pentest]]'
+- '[[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]'
+- '[[ntlm-reflection-smb-relay-attack]]'
+- '[[Shadow-Credentials-for-Windows-Hello]]'
+- '[[Web-Sockets-Authentication-Exploitation]]'
 ---
 
 # Domain Controller Authentication
@@ -52,9 +52,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[GitLeak Secrets Harvesting]]
-- [[Insecure Docker Registry Pentest]]
-- [[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]
-- [[NTLM Reflection SMB Relay Attack]]
-- [[Shadow Credentials for Windows Hello]]
-- [[Web Sockets Authentication Exploitation]]
+- [[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]
+- [[Insecure-Docker-Registry-Pentest]]
+- [[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]
+- [[ntlm-reflection-smb-relay-attack]]
+- [[Shadow-Credentials-for-Windows-Hello]]
+- [[Web-Sockets-Authentication-Exploitation]]

@@ -10,10 +10,10 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Filter Bypass using Null Byte Injection]]'
-- '[[Freemarker Sandbox Bypass Remote Code Execution]]'
-- '[[Linux APT Backdoor Persistence]]'
-- '[[Web Cache Deception - Methodology 2: Un-keyed Input Cache Poisoning]]'
+- '[[Null-Byte-Injection-for-Filter-Bypass-in-XSS]]'
+- '[[Freemarker-Sandbox-Bypass-for-RCE]]'
+- '[[Establish-Persistence-via-Linux-APT-Backdoor]]'
+- '[[Web-Cache-Deception-Unkeyed-Input-Cache-Poisoning]]'
 ---
 
 # Virtualization/Sandbox Evasion
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Adversaries may check for the presence of a virtual machine environment (VME) or sandbox to avoid potential detection of tools and activities. If the adversary detects a VME, they may alter their malware to conceal the core functions of the implant or disengage from the victim. They may also search for VME artifacts before dropping secondary or additional payloads. Adversaries may use several methods including Security Software Discovery to accomplish Virtualization/Sandbox Evasion by searching for security monitoring tools (e.g., Sysinternals, Wireshark, etc.) to help determine if it is an analysis environment. Additional methods include use of sleep timers or loops within malware code to avoid operating within a temporary sandboxes. [1]Virtual Machine Environment Artifacts DiscoveryAdversaries may use utilities such as Windows Management Instrumentation, PowerShell, Systeminfo, and the Query Registry to obtain system information and search for VME artifacts. Adversaries may search for VME artifacts in memory, processes, file system, and/or the Registry. Adversaries may use Scripting to combine these checks into one script and then have the program exit if it determines the system to be a virtual environment. Also, in applications like VMWare, adversaries can use a special I/O port to send commands and receive output. Adversaries may also check the drive size. For example, this can be done using the Win32 DeviceIOControl function. Example VME Artifacts in the Registry[2]HKLM\SOFTWARE\Oracle\VirtualBox Guest AdditionsHKLM\HARDWARE\Description\System\"SystemBiosVersion";"VMWARE"HKLM\HARDWARE\ACPI\DSDT\BOX_Example VME files and DLLs on the system[2]WINDOWS\system32\drivers\vmmouse.sys WINDOWS\system32\vboxhook.dllWindows\system32\vboxdisp.dllCommon checks may enumerate services running that are unique to these applications, installed programs on the system, manufacturer/product fields for strings relating to virtual machine applications, and VME-specific hardware/processor instructions.[2]User Activity DiscoveryAdversaries may search for user activity on the host (e.g., browser history, cache, bookmarks, number of files in the home directories, etc.) for reassurance of an authentic environment. They might detect this type of information via user interaction and digital signatures. They may have malware check the speed and frequency of mouse clicks to determine if it’s a sandboxed environment.[3] Other methods may rely on specific user interaction with the system before the malicious code is activated. Examples include waiting for a document to close before activating a macro [4] and waiting for a user to double click on an embedded image to activate [5].Virtual Hardware Fingerprinting DiscoveryAdversaries may check the fan and temperature of the system to gather evidence that can be indicative a virtual environment. An adversary may perform a CPU check using a WMI query $q = "Select * from Win32_Fan" Get-WmiObject -Query $q. If the results of the WMI query return more than zero elements, this might tell them that the machine is a physical one. [6]
+
+
 
 # Detection
 
@@ -93,7 +95,9 @@ Mitigation of this technique with preventative controls may impact the adversary
 
 ## Related Procedures (4)
 
-- [[Filter Bypass using Null Byte Injection]]
-- [[Freemarker Sandbox Bypass Remote Code Execution]]
-- [[Linux APT Backdoor Persistence]]
-- [[Web Cache Deception - Methodology 2: Un-keyed Input Cache Poisoning]]
+- [[Null-Byte-Injection-for-Filter-Bypass-in-XSS]]
+- [[Freemarker-Sandbox-Bypass-for-RCE]]
+- [[Establish-Persistence-via-Linux-APT-Backdoor]]
+- [[Web-Cache-Deception-Unkeyed-Input-Cache-Poisoning]]
+
+

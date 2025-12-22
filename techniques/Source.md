@@ -20,6 +20,8 @@ procedures:
 
 The source command loads functions into the current shell or executes files in the current context. This built-in command can be run in two different ways source /path/to/filename [arguments] or . /path/to/filename [arguments]. Take note of the space after the ".". Without a space, a new shell is created that runs the program instead of running the program within the current context. This is often used to make certain features or functions available to a shell or to update a specific shell's environment. Adversaries can abuse this functionality to execute programs. The file executed with this technique does not need to be marked executable beforehand.
 
+
+
 # Detection
 
 Monitor for command shell execution of source and subsequent processes that are started as a result of being executed by a source command. Adversaries must also drop a file to disk in order to execute it with source, and these files can also detected by file monitoring.
@@ -41,3 +43,5 @@ Due to potential legitimate uses of source commands, it's may be difficult to mi
 ## Related Procedures (1)
 
 - [[Reflected XSS Attack Prevention]]
+
+

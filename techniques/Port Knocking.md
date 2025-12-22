@@ -11,7 +11,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[DB2 Injection - Time Delay]]'
+- '[[DB2-Time-Based-Blind-SQL-Injection]]'
 ---
 
 # Port Knocking
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Port Knocking is a well-established method used by both defenders and adversaries to hide open ports from access. To enable a port, an adversary sends a series of packets with certain characteristics before the port will be opened. Usually this series of packets consists of attempted connections to a predefined sequence of closed ports, but can involve unusual flags, specific strings or other unique characteristics. After the sequence is completed, opening a port is often accomplished by the host based firewall, but could also be implemented by custom software. This technique has been observed to both for the dynamic opening of a listening port as well as the initiating of a connection to a listening server on a different system.The observation of the signal packets to trigger the communication can be conducted through different methods. One means, originally implemented by Cd00r [1], is to use the libpcap libraries to sniff for the packets in question. Another method leverages raw sockets, which enables the malware to use ports that are already open for use by other programs.
+
+
 
 # Detection
 
@@ -50,4 +52,6 @@ Mitigation of some variants of this technique could be achieved through the use 
 
 ## Related Procedures (1)
 
-- [[DB2 Injection - Time Delay]]
+- [[DB2-Time-Based-Blind-SQL-Injection]]
+
+

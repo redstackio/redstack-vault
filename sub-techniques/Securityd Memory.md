@@ -11,9 +11,9 @@ parent_technique: '[[Credentials from Password Stores|T1555 - Credentials from P
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Stealing Chrome Cookies and Credentials with Mimikatz]]'
-- '[[Windows DPAPI Credential Retrieval with Mimikatz]]'
-- '[[Windows DPAPI Credential Theft]]'
+- '[[Steal-Chrome-Cookies-and-Credentials-with-Mimikatz]]'
+- '[[Windows-DPAPI-Credential-Retrieval-with-Mimikatz]]'
+- '[[Windows-DPAPI-Credential-Theft]]'
 ---
 
 # Securityd Memory
@@ -44,6 +44,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[Stealing Chrome Cookies and Credentials with Mimikatz]]
-- [[Windows DPAPI Credential Retrieval with Mimikatz]]
-- [[Windows DPAPI Credential Theft]]
+- [[Steal-Chrome-Cookies-and-Credentials-with-Mimikatz]]
+- [[Windows-DPAPI-Credential-Retrieval-with-Mimikatz]]
+- [[Windows-DPAPI-Credential-Theft]]

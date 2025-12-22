@@ -12,13 +12,13 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
 - '[[Kerberos Clock Synchronization Attack]]'
-- '[[Kerberos Constrained Delegation - Impersonation on Resource]]'
-- '[[Pass-the-Golden-Ticket Attack using Meterpreter]]'
-- '[[PrivExchange Attack with NTLM Relay]]'
+- '[[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]'
+- '[[pass-the-golden-ticket-attack-using-meterpreter]]'
+- '[[PrivExchange-Attack-with-NTLM-Relay]]'
 ---
 
 # Pass the Ticket
@@ -56,10 +56,10 @@ This sub-technique is used in the following tactics:
 
 There are 7 procedures using this sub-technique:
 
-- [[IIS Machine Key Cookie Decryption and Encryption]]
-- [[IIS Machine Key Cookie Decryption and Encryption]]
-- [[IIS Machine Key Cookie Decryption and Encryption]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
 - [[Kerberos Clock Synchronization Attack]]
-- [[Kerberos Constrained Delegation - Impersonation on Resource]]
-- [[Pass-the-Golden-Ticket Attack using Meterpreter]]
-- [[PrivExchange Attack with NTLM Relay]]
+- [[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]
+- [[pass-the-golden-ticket-attack-using-meterpreter]]
+- [[PrivExchange-Attack-with-NTLM-Relay]]

@@ -10,7 +10,7 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Hidden Input XSS Attack]]'
+- '[[Hidden-Input-XSS-Attack]]'
 ---
 
 # JavaScript
@@ -45,4 +45,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Hidden Input XSS Attack]]
+- [[Hidden-Input-XSS-Attack]]

@@ -10,12 +10,12 @@ parent_technique: '[[Remote Services|T1021 - Remote Services]]'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[AWS SSM Command Execution - EC2 Shell Script]]'
-- '[[Copying EC2 Instances using AMI Image in AWS]]'
-- '[[Network Pivoting with sshuttle]]'
-- '[[Ruby Bind Shell]]'
-- '[[Windows - PowerShell Remoting Protocol with PSSESSION]]'
-- '[[Windows - SMBExec with Impacket for Command Execution]]'
+- '[[aws-ssm-command-execution-ec2-shell-script]]'
+- '[[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]'
+- '[[network-pivoting-with-sshuttle]]'
+- '[[Ruby-Bind-Shell]]'
+- '[[windows-powershell-remoting-with-pssession]]'
+- '[[windows-smbexec-impacket-remote-command-execution]]'
 ---
 
 # Windows Remote Management
@@ -48,9 +48,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[AWS SSM Command Execution - EC2 Shell Script]]
-- [[Copying EC2 Instances using AMI Image in AWS]]
-- [[Network Pivoting with sshuttle]]
-- [[Ruby Bind Shell]]
-- [[Windows - PowerShell Remoting Protocol with PSSESSION]]
-- [[Windows - SMBExec with Impacket for Command Execution]]
+- [[aws-ssm-command-execution-ec2-shell-script]]
+- [[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]
+- [[network-pivoting-with-sshuttle]]
+- [[Ruby-Bind-Shell]]
+- [[windows-powershell-remoting-with-pssession]]
+- [[windows-smbexec-impacket-remote-command-execution]]

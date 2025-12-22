@@ -11,7 +11,7 @@ parent_technique: '[[Credentials from Password Stores|T1555 - Credentials from P
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[HTTP Request Smuggling Detection and Exploitation]]'
+- '[[http-request-smuggling-detection-and-exploitation]]'
 ---
 
 # Keychain
@@ -44,4 +44,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[HTTP Request Smuggling Detection and Exploitation]]
+- [[http-request-smuggling-detection-and-exploitation]]

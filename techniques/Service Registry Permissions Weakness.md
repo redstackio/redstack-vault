@@ -8,16 +8,16 @@ created_at: '2019-08-28T21:17:38.138485+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[Windows - Elevated Services Backdoor Persistence]]'
-- '[[Windows Local Service Permissions Escalation]]'
-- '[[Windows Service Persistence with Calculator]]'
-- '[[Windows XP SP1 - UPnP Host Exploit]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[windows-elevated-services-backdoor-persistence]]'
+- '[[Windows-Local-Service-Permissions-Escalation]]'
+- '[[Create-Windows-Service-for-Persistence]]'
+- '[[Exploit-UPnP-Host-Service-for-Privilege-Escalation-on-Windows-XP-SP1]]'
 ---
 
 # Service Registry Permissions Weakness
@@ -27,6 +27,8 @@ procedures:
 ## Description
 
 Windows stores local service configuration information in the Registry under HKLM\SYSTEM\CurrentControlSet\Services. The information stored under a service's Registry keys can be manipulated to modify a service's execution parameters through tools such as the service controller, sc.exe, PowerShell, or Reg. Access to Registry keys is controlled through Access Control Lists and permissions. [1]If the permissions for users and groups are not properly set and allow access to the Registry keys for a service, then adversaries can change the service binPath/ImagePath to point to a different executable under their control. When the service starts or is restarted, then the adversary-controlled program will execute, allowing the adversary to gain persistence and/or privilege escalation to the account context the service is set to execute under (local/domain account, SYSTEM, LocalService, or NetworkService).Adversaries may also alter Registry keys associated with service failure parameters (such as FailureCommand) that may be executed in an elevated context anytime the service fails or is intentionally corrupted. [2]
+
+
 
 # Detection
 
@@ -65,15 +67,17 @@ Identify and block potentially malicious software that may be executed through s
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (8)
 
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[Windows - Elevated Services Backdoor Persistence]]
-- [[Windows Local Service Permissions Escalation]]
-- [[Windows Service Persistence with Calculator]]
-- [[Windows XP SP1 - UPnP Host Exploit]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[windows-elevated-services-backdoor-persistence]]
+- [[Windows-Local-Service-Permissions-Escalation]]
+- [[Create-Windows-Service-for-Persistence]]
+- [[Exploit-UPnP-Host-Service-for-Privilege-Escalation-on-Windows-XP-SP1]]
+
+

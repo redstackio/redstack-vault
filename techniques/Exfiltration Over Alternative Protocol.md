@@ -9,35 +9,35 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[AWS KMS Decrypt Exfiltration]]'
-- '[[AWS S3 Download by Authenticated User]]'
-- '[[AWS S3 Secret Text Retrieval - Public Access Data Exfiltration]]'
-- '[[AWS S3 Time-Based URL Exfiltration]]'
-- '[[AWS Secrets Manager Credential Exfiltration]]'
-- '[[Azure Storage Blob Download]]'
-- '[[Blind XSS Data Exfiltration]]'
-- '[[Blind XXE Data Exfiltration via OOB Attack]]'
-- '[[Blind XXE Out-of-Band Data Exfiltration]]'
-- '[[Cobalt Strike VPN & Pivots]]'
-- '[[Create a Windows SMB Share with PowerShell]]'
-- '[[DNS Data Exfiltration with Command Injection]]'
-- '[[Download all files from Amazon S3 Bucket]]'
-- '[[Download all files from Amazon S3 Bucket]]'
-- '[[Download Files and Folders Recursively from FTP]]'
-- '[[Exfiltrate Data Using Ping]]'
-- '[[File Retrieval via XXE Injection]]'
-- '[[IAM-Based Authentication Data Exfiltration via RDS]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[Mercurial Source Code Extraction with rip-hg.pl]]'
-- '[[Mount a Windows SMB Share with PowerShell (Authenticated)]]'
-- '[[MSSQL Out of Band DNS Exfiltration]]'
-- '[[MSSQL UNC Path Out-of-Band Data Retrieval]]'
-- '[[MYSQL Injection Out-of-Band Data Exfiltration]]'
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
-- '[[Portforwarding with Meterpreter]]'
-- '[[RDS Password-based Authentication Data Exfiltration]]'
-- '[[Remote File Read via Jinja2 Server-Side Template Injection]]'
-- '[[XXE Injection in SOAP Messages]]'
+- '[[AWS-KMS-Decrypt-Exfiltration]]'
+- '[[AWS-S3-Download-by-Authenticated-User]]'
+- '[[aws-s3-secret-text-retrieval-public-access-data-exfiltration]]'
+- '[[Generate-AWS-S3-Pre-Signed-URL-for-Exfiltration]]'
+- '[[AWS-Secrets-Manager-Credential-Exfiltration]]'
+- '[[Download-Azure-Storage-Blob]]'
+- '[[Blind-XSS-Data-Exfiltration]]'
+- '[[Blind-XXE-Data-Exfiltration-via-OOB-Attack]]'
+- '[[Blind-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]'
+- '[[Create-Windows-SMB-Share-with-PowerShell]]'
+- '[[DNS-Data-Exfiltration-via-Command-Injection]]'
+- '[[Download-All-Files-from-Misconfigured-S3-Bucket]]'
+- '[[Download-All-Files-from-Misconfigured-S3-Bucket]]'
+- '[[Download-Files-Recursively-from-FTP]]'
+- '[[Exfiltrate-Data-Using-Ping]]'
+- '[[File-Retrieval-via-XXE-Injection]]'
+- '[[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[mercurial-source-code-extraction-with-rip-hg-pl]]'
+- '[[Mount-Windows-SMB-Share-with-PowerShell-Authenticated]]'
+- '[[mssql-out-of-band-dns-exfiltration]]'
+- '[[MSSQL-UNC-Path-Out-of-Band-Data-Retrieval]]'
+- '[[MySQL-Injection-Out-of-Band-Data-Exfiltration]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
+- '[[Meterpreter-Port-Forwarding-Setup]]'
+- '[[Exfiltrate-Data-from-AWS-RDS-via-Password-Authentication]]'
+- '[[Remote-File-Read-via-Jinja2-SSTI]]'
+- '[[XXE-Injection-in-SOAP-Messages]]'
 ---
 
 # Exfiltration Over Alternative Protocol
@@ -47,6 +47,8 @@ procedures:
 ## Description
 
 Data exfiltration is performed with a different protocol from the main command and control protocol or channel. The data is likely to be sent to an alternate network location from the main command and control server. Alternate protocols include FTP, SMTP, HTTP/S, DNS, or some other network protocol. Different channels could include Internet Web services such as cloud storage.
+
+
 
 # Detection
 
@@ -106,25 +108,27 @@ Follow best practices for network firewall configurations to allow only necessar
 
 ## Related Procedures (29)
 
-- [[AWS KMS Decrypt Exfiltration]]
-- [[AWS S3 Download by Authenticated User]]
-- [[AWS S3 Secret Text Retrieval - Public Access Data Exfiltration]]
-- [[AWS S3 Time-Based URL Exfiltration]]
-- [[AWS Secrets Manager Credential Exfiltration]]
-- [[Azure Storage Blob Download]]
-- [[Blind XSS Data Exfiltration]]
-- [[Blind XXE Data Exfiltration via OOB Attack]]
-- [[Blind XXE Out-of-Band Data Exfiltration]]
-- [[Cobalt Strike VPN & Pivots]]
-- [[Create a Windows SMB Share with PowerShell]]
-- [[DNS Data Exfiltration with Command Injection]]
-- [[Download all files from Amazon S3 Bucket]]
-- [[Download all files from Amazon S3 Bucket]]
-- [[Download Files and Folders Recursively from FTP]]
-- [[Exfiltrate Data Using Ping]]
-- [[File Retrieval via XXE Injection]]
-- [[IAM-Based Authentication Data Exfiltration via RDS]]
-- [[IAM-Based Authentication for RDS MySQL Database]]
-- [[Mercurial Source Code Extraction with rip-hg.pl]]
+- [[AWS-KMS-Decrypt-Exfiltration]]
+- [[AWS-S3-Download-by-Authenticated-User]]
+- [[aws-s3-secret-text-retrieval-public-access-data-exfiltration]]
+- [[Generate-AWS-S3-Pre-Signed-URL-for-Exfiltration]]
+- [[AWS-Secrets-Manager-Credential-Exfiltration]]
+- [[Download-Azure-Storage-Blob]]
+- [[Blind-XSS-Data-Exfiltration]]
+- [[Blind-XXE-Data-Exfiltration-via-OOB-Attack]]
+- [[Blind-XXE-Out-of-Band-Data-Exfiltration]]
+- [[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]
+- [[Create-Windows-SMB-Share-with-PowerShell]]
+- [[DNS-Data-Exfiltration-via-Command-Injection]]
+- [[Download-All-Files-from-Misconfigured-S3-Bucket]]
+- [[Download-All-Files-from-Misconfigured-S3-Bucket]]
+- [[Download-Files-Recursively-from-FTP]]
+- [[Exfiltrate-Data-Using-Ping]]
+- [[File-Retrieval-via-XXE-Injection]]
+- [[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]
+- [[IAM-Authentication-for-RDS-MySQL-Database]]
+- [[mercurial-source-code-extraction-with-rip-hg-pl]]
 
 *...and 9 more*
+
+

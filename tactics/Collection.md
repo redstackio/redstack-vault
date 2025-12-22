@@ -25,79 +25,79 @@ techniques:
 - '[[Screen Capture|T1113 - Screen Capture]]'
 - '[[Video Capture|T1125 - Video Capture]]'
 procedures:
-- '[[Active Directory SCCM Loot Inventory and Download]]'
-- '[[AWS API Key Enumeration]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS Fargate Container Credentials Theft]]'
-- '[[AWS IAM Policy Information Gathering]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS S3 Bucket Data Exfiltration]]'
-- '[[AWS S3 Bucket Data Exfiltration]]'
-- '[[AWS S3 Bucket Listing Exploitation]]'
-- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
-- '[[BigQuery SQL Injection Attack]]'
-- '[[Browse an SMB Share]]'
-- '[[Cloud Instance Rancher Metadata Retrieval via SSRF]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
-- '[[DirtyCow Kernel Exploit for Linux Privilege Escalation]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-Fargate-Container-Credentials-Theft]]'
+- '[[AWS-IAM-Policy-Information-Gathering]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]'
+- '[[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]'
+- '[[List-Contents-of-Misconfigured-AWS-S3-Bucket]]'
+- '[[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]'
+- '[[BigQuery-Boolean-Based-SQL-Injection]]'
+- '[[browse-smb-share-interactive]]'
+- '[[Cloud-Instance-Rancher-Metadata-Retrieval-via-SSRF]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]'
+- '[[dirtycow-linux-privilege-escalation]]'
 - '[[Dump a Process''s Memory (PowerShell)]]'
-- '[[EBS Snapshot Creation]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Enumerate a MS Access .mdb Database and Tables]]'
+- '[[Create-EBS-Snapshot-for-Data-Exfiltration]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[Enumerate-Tables-and-Contents-in-MS-Access-MDB-File]]'
 - '[[Enumerate Local Users'' PowerShell History]]'
-- '[[Extract E-mails and Attachments from MS .PST Files]]'
-- '[[Extracting Database Information using MySQL Union Based Injection]]'
-- '[[Find Interesting Strings in a Raw Memory Dump]]'
-- '[[Git Repository Dumping with GoGitDumper]]'
-- '[[Git Secrets Harvesting with Yar]]'
-- '[[Google BigQuery SQL Injection Detection]]'
-- '[[GraphQL Data Extraction]]'
-- '[[Jinja2 Server Side Template Injection - Dump All Used Classes]]'
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
-- '[[LFI to RCE via Mail Log File Inclusion]]'
-- '[[LFI to RCE via SSH Log File Inclusion]]'
-- '[[Linked Database Table Enumeration]]'
-- '[[Linux - Privilege Escalation: Looting for Old Passwords]]'
+- '[[Extract-Emails-and-Attachments-from-PST-Files]]'
+- '[[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]'
+- '[[brute-force-smb-usernames-and-passwords]]'
+- '[[Dump-Git-Repository-with-GoGitDumper]]'
+- '[[Git-Secrets-Harvesting-with-Yar]]'
+- '[[SQL-Injection-in-Google-BigQuery-for-Data-Exfiltration]]'
+- '[[GraphQL-Introspection-for-Data-Extraction]]'
+- '[[Jinja2-SSTI-Dump-All-Used-Classes]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
+- '[[LFI-to-RCE-via-Mail-Log-File-Inclusion]]'
+- '[[LFI-to-RCE-via-SSH-Log-File-Inclusion]]'
+- '[[Enumerate-Tables-in-Linked-MSSQL-Database]]'
+- '[[Linux-Privilege-Escalation-Looting-for-Old-Passwords]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[Mounting EBS Volume to EC2 Linux Instance]]'
-- '[[MSSQL Server - Identify Sensitive Information - Get Tables and Column Details]]'
-- '[[MSSQL Server Password Retrieval and Cracking]]'
-- '[[Netdoc SSRF via URL Scheme]]'
-- '[[Network Discovery Responder]]'
-- '[[NoSQL Injection via SSJI Exploit]]'
-- '[[Open URL Redirection via Injection Parameters]]'
-- '[[Oracle SQL List Tables and Columns]]'
-- '[[Password Looting from SharePoint and SMB Shares]]'
-- '[[Recursively Download Files From an SMB Share]]'
-- '[[SAML Injection Authentication Bypass]]'
-- '[[SAML Injection for Authentication Bypass and Signature Stripping with Admin NameID]]'
-- '[[Search SMB by Filename and Download Matches]]'
-- '[[Server-Side Request Forgery on Cloud Instances and HP Helion]]'
-- '[[SMB and HTTP Relay Attack]]'
-- '[[Snapshot Enumeration]]'
-- '[[SQLmap MySQL Database Dump]]'
-- '[[SSL MITM Network Discovery with OpenSSL]]'
-- '[[SSRF Attack on Alibaba Cloud Instances]]'
-- '[[SSRF Exploiting URL Parser Bypass]]'
-- '[[SSRF URL for Google Cloud Instances - Add SSH Key]]'
-- '[[SSRF URL for Oracle Cloud Instances via AWS Instance Metadata and User Data]]'
-- '[[Tabnabbing Link Format Hunting]]'
-- '[[Unzip an AES Encrypted Zip Archive (Linux)]]'
-- '[[Web Enumeration and Backup File Discovery]]'
-- '[[XML External Entity Injection to Disclose HTTP Response]]'
-- '[[XML External Entity WAF Bypass via Character Encoding]]'
-- '[[XML External Entity (XXE) Injection using Various Tools]]'
-- '[[XSLT Injection for File Read and SSRF]]'
-- '[[XSS Cookie and Access Token Grabber]]'
-- '[[XXE in DTD File Contents Extractor]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[Mount-EBS-Volume-to-EC2-Linux-Instance]]'
+- '[[mssql-identify-sensitive-information-get-tables-and-column-details]]'
+- '[[MSSQL-Server-Password-Hash-Extraction-and-Cracking]]'
+- '[[Netdoc-SSRF-via-URL-Scheme]]'
+- '[[LLMNR-NBT-NS-Poisoning-with-Responder]]'
+- '[[NoSQL-Injection-via-SSJI-Exploit]]'
+- '[[Open-URL-Redirection-via-Injection-Parameters]]'
+- '[[Oracle-SQL-List-Tables-and-Columns]]'
+- '[[Password-Looting-from-SharePoint-and-SMB-Shares]]'
+- '[[Recursively-Download-Files-From-SMB-Share]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-Signature-Stripping-with-Admin-NameID]]'
+- '[[search-and-download-smb-files-by-name]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
+- '[[Perform-NTLM-Relay-Attack-with-Responder-and-Impacket]]'
+- '[[Enumerate-AWS-EBS-Snapshots]]'
+- '[[Dump-MySQL-Database-Using-SQLmap]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
+- '[[Exploit-SSRF-to-Access-Alibaba-Cloud-Instance-Metadata]]'
+- '[[SSRF-Exploiting-URL-Parser-Bypass]]'
+- '[[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
+- '[[Hunt-for-Tabnabbing-Enabling-Links]]'
+- '[[Extract-AES-Encrypted-Zip-Archive-on-Linux]]'
+- '[[Web-Enumeration-and-Backup-File-Discovery]]'
+- '[[XXE-Injection-to-Disclose-HTTP-Response]]'
+- '[[xml-external-entity-waf-bypass-via-character-encoding]]'
+- '[[Exploit-XXE-Vulnerability-Using-Multiple-Tools]]'
+- '[[XSLT-Injection-for-File-Read-and-SSRF]]'
+- '[[Exploit-XSS-to-Steal-Cookies-and-Access-Tokens]]'
+- '[[Exploit-XXE-in-DTD-to-Exfiltrate-File-Contents]]'
 ---
 
 # Collection
@@ -107,6 +107,8 @@ procedures:
 ## Description
 
 Collection consists of techniques used to identify and gather information, such as sensitive files, from a target network prior to exfiltration. This category also covers locations on a system or network where the adversary may look for information to exfiltrate.
+
+
 
 ## Techniques
 
@@ -134,25 +136,27 @@ This tactic includes 17 techniques:
 
 There are 73 procedures implementing this tactic:
 
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[AWS API Key Enumeration]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS Fargate Container Credentials Theft]]
-- [[AWS IAM Policy Information Gathering]]
-- [[AWS KMS Key Listing]]
-- [[AWS Managed Policy Version Enumeration]]
-- [[AWS Managed Policy Version Enumeration]]
-- [[AWS S3 Bucket Data Exfiltration]]
-- [[AWS S3 Bucket Data Exfiltration]]
-- [[AWS S3 Bucket Listing Exploitation]]
-- [[AWS Userdata Retrieval via Instance Metadata Service]]
-- [[BigQuery SQL Injection Attack]]
-- [[Browse an SMB Share]]
-- [[Cloud Instance Rancher Metadata Retrieval via SSRF]]
-- [[Cloud Security Assessment and Auditing]]
-- [[Creating and Importing a CLR Assembly for MSSQL Server]]
-- [[DirtyCow Kernel Exploit for Linux Privilege Escalation]]
-- [[Dump a Process's Memory (PowerShell)]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[AWS-API-Key-Enumeration]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[AWS-Fargate-Container-Credentials-Theft]]
+- [[AWS-IAM-Policy-Information-Gathering]]
+- [[Describe-AWS-KMS-Key]]
+- [[Enumerate-AWS-IAM-Managed-Policy-Versions]]
+- [[Enumerate-AWS-IAM-Managed-Policy-Versions]]
+- [[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]
+- [[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]
+- [[List-Contents-of-Misconfigured-AWS-S3-Bucket]]
+- [[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]
+- [[BigQuery-Boolean-Based-SQL-Injection]]
+- [[browse-smb-share-interactive]]
+- [[Cloud-Instance-Rancher-Metadata-Retrieval-via-SSRF]]
+- [[aws-cloud-security-assessment-and-auditing]]
+- [[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]
+- [[dirtycow-linux-privilege-escalation]]
+- [[spawn-interactive-shell-with-winrm]]
 
 *...and 53 more*
+
+

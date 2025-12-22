@@ -18,6 +18,8 @@ tactics:
 
 Netsh.exe (also referred to as Netshell) is a command-line scripting utility used to interact with the network configuration of a system. It contains functionality to add helper DLLs for extending functionality of the utility. [1] The paths to registered netsh.exe helper DLLs are entered into the Windows Registry at HKLM\SOFTWARE\Microsoft\Netsh.Adversaries can use netsh.exe with helper DLLs to proxy execution of arbitrary code in a persistent manner when netsh.exe is executed automatically with another Persistence technique or if other persistent software is present on the system that executes netsh.exe as part of its normal functionality. Examples include some VPN software that invoke netsh.exe. [2]Proof of concept code exists to load Cobalt Strike's payload using netsh.exe helper DLLs. [3]
 
+
+
 # Detection
 
 It is likely unusual for netsh.exe to have any child processes in most environments. Monitor process executions and investigate any child processes spawned by netsh.exe for malicious behavior. Monitor the HKLM\SOFTWARE\Microsoft\Netsh registry key for any new or suspicious entries that do not correlate with known system files or benign software. [2]
@@ -47,3 +49,5 @@ Identify and block potentially malicious software that may persist in this manne
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

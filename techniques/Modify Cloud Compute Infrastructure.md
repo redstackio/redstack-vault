@@ -9,13 +9,13 @@ updated_at: '2023-04-06T03:56:28.341639+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Abusing coredumps and core_pattern in Docker containers]]'
-- '[[EBS Volume Attachment]]'
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
-- '[[Kubernetes RBAC Pod Exec Privilege Escalation]]'
-- '[[Mounted Docker Socket Pentest]]'
-- '[[Mounting Elastic Block Store Volume to a Directory]]'
-- '[[Windows Subsystem for Linux Persistence]]'
+- '[[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]'
+- '[[Attach-EBS-Volume-to-EC2-Instance]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
+- '[[Kubernetes-RBAC-Pod-Exec-Privilege-Escalation]]'
+- '[[Escape-Container-Using-Mounted-Docker-Socket]]'
+- '[[Mount-EBS-Volume-to-Directory-for-Persistence]]'
+- '[[Install-and-Persist-via-WSL-with-Kali-Linux]]'
 ---
 
 # Modify Cloud Compute Infrastructure
@@ -28,16 +28,20 @@ An adversary may attempt to modify a cloud account's compute service infrastruct
 
 Permissions gained from the modification of infrastructure components may bypass restrictions that prevent access to existing infrastructure. Modifying infrastructure components may also allow an adversary to evade detection and remove evidence of their presence.(Citation: Mandiant M-Trends 2020)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (7)
 
-- [[Abusing coredumps and core_pattern in Docker containers]]
-- [[EBS Volume Attachment]]
-- [[Kerberos Unconstrained Delegation via SpoolService Abuse]]
-- [[Kubernetes RBAC Pod Exec Privilege Escalation]]
-- [[Mounted Docker Socket Pentest]]
-- [[Mounting Elastic Block Store Volume to a Directory]]
-- [[Windows Subsystem for Linux Persistence]]
+- [[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]
+- [[Attach-EBS-Volume-to-EC2-Instance]]
+- [[abuse-kerberos-unconstrained-delegation-via-spoolservice]]
+- [[Kubernetes-RBAC-Pod-Exec-Privilege-Escalation]]
+- [[Escape-Container-Using-Mounted-Docker-Socket]]
+- [[Mount-EBS-Volume-to-Directory-for-Persistence]]
+- [[Install-and-Persist-via-WSL-with-Kali-Linux]]
+
+

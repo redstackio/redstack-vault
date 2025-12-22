@@ -9,30 +9,30 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory Credential Dumping via Vssadmin]]'
-- '[[AWS Metadata Credential Theft]]'
-- '[[Azure Access Tokens and Service Principal Secrets in Azure CLI and PowerShell]]'
-- '[[Dumping Active Directory Credentials via NTDS.dit File]]'
-- '[[Dumping AD Domain Credentials using Esentutl.exe]]'
-- '[[Enumerate a Git Repository for Secrets]]'
-- '[[Github API Key Leakage]]'
-- '[[Github API Key Leakage]]'
-- '[[Github API Key Leakage]]'
-- '[[Linux - Password Looting from Files]]'
-- '[[Linux - Privilege Escalation: Looting for Old Passwords]]'
-- '[[RODC Key List Extraction and Golden Ticket Creation]]'
-- '[[Server Side Template Injection - Django Templates - Admin Credentials Leak]]'
-- '[[Twitter Bearer Token Leak Exploitation]]'
-- '[[Twitter Bearer Token Leak Exploitation]]'
-- '[[Twitter Bearer Token Leak Exploitation]]'
-- '[[Windows - Creating a PSCredential Object with a Secure Password]]'
-- '[[Windows Credentials Decryption using Powershell Secure String]]'
-- '[[Windows Elevation of Privilege - Looting WiFi Passwords]]'
-- '[[Windows - EoP Looting for Passwords]]'
-- '[[Windows - Guest Credential Default Password]]'
-- '[[Windows Privilege Escalation - Looting LAPS Settings]]'
-- '[[Windows - Sticky Notes Password Extraction]]'
-- '[[Windows Unattend Password Extraction]]'
+- '[[Active-Directory-Credential-Dumping-via-Vssadmin]]'
+- '[[Retrieve-AWS-EC2-Instance-Credentials-via-Metadata-Service]]'
+- '[[Extract-Azure-Access-Tokens-and-Service-Principal-Secrets-from-CLI-and-PowerShell]]'
+- '[[Dump-NTDS-dit-for-AD-Credential-Extraction]]'
+- '[[Dump-NTDS-DIT-Using-Esentutl]]'
+- '[[Enumerate-Git-Repository-for-Secrets]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[Linux-Password-Looting-from-Files]]'
+- '[[Linux-Privilege-Escalation-Looting-for-Old-Passwords]]'
+- '[[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]'
+- '[[Exploit-Django-SSTI-for-Admin-Credential-Leak]]'
+- '[[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]'
+- '[[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]'
+- '[[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]'
+- '[[Create-PSCredential-Object-with-Secure-Password]]'
+- '[[Windows-Credentials-Decryption-using-PowerShell-Secure-String]]'
+- '[[Windows-Elevation-of-Privilege-Looting-WiFi-Passwords]]'
+- '[[Windows-EoP-Looting-for-Passwords]]'
+- '[[Authenticate-with-Windows-Guest-Default-Credentials]]'
+- '[[windows-privilege-escalation-looting-laps-settings]]'
+- '[[windows-sticky-notes-password-extraction]]'
+- '[[windows-unattend-password-extraction]]'
 ---
 
 # Credentials in Files
@@ -42,6 +42,8 @@ procedures:
 ## Description
 
 Adversaries may search local file systems and remote file shares for files containing passwords. These can be files created by users to store their own credentials, shared credential stores for a group of individuals, configuration files containing passwords for a system or service, or source code/binary files containing embedded passwords.It is possible to extract passwords from backups or saved virtual machines through Credential Dumping. [1] Passwords may also be obtained from Group Policy Preferences stored on the Windows Domain Controller. [2]
+
+
 
 # Detection
 
@@ -121,25 +123,27 @@ Establish an organizational policy that prohibits password storage in files. Ens
 
 ## Related Procedures (24)
 
-- [[Active Directory Credential Dumping via Vssadmin]]
-- [[AWS Metadata Credential Theft]]
-- [[Azure Access Tokens and Service Principal Secrets in Azure CLI and PowerShell]]
-- [[Dumping Active Directory Credentials via NTDS.dit File]]
-- [[Dumping AD Domain Credentials using Esentutl.exe]]
-- [[Enumerate a Git Repository for Secrets]]
-- [[Github API Key Leakage]]
-- [[Github API Key Leakage]]
-- [[Github API Key Leakage]]
-- [[Linux - Password Looting from Files]]
-- [[Linux - Privilege Escalation: Looting for Old Passwords]]
-- [[RODC Key List Extraction and Golden Ticket Creation]]
-- [[Server Side Template Injection - Django Templates - Admin Credentials Leak]]
-- [[Twitter Bearer Token Leak Exploitation]]
-- [[Twitter Bearer Token Leak Exploitation]]
-- [[Twitter Bearer Token Leak Exploitation]]
-- [[Windows - Creating a PSCredential Object with a Secure Password]]
-- [[Windows Credentials Decryption using Powershell Secure String]]
-- [[Windows Elevation of Privilege - Looting WiFi Passwords]]
-- [[Windows - EoP Looting for Passwords]]
+- [[Active-Directory-Credential-Dumping-via-Vssadmin]]
+- [[Retrieve-AWS-EC2-Instance-Credentials-via-Metadata-Service]]
+- [[Extract-Azure-Access-Tokens-and-Service-Principal-Secrets-from-CLI-and-PowerShell]]
+- [[Dump-NTDS-dit-for-AD-Credential-Extraction]]
+- [[Dump-NTDS-DIT-Using-Esentutl]]
+- [[Enumerate-Git-Repository-for-Secrets]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[Linux-Password-Looting-from-Files]]
+- [[Linux-Privilege-Escalation-Looting-for-Old-Passwords]]
+- [[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]
+- [[Exploit-Django-SSTI-for-Admin-Credential-Leak]]
+- [[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]
+- [[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]
+- [[Exploit-Leaked-Twitter-Bearer-Token-for-API-Access]]
+- [[Create-PSCredential-Object-with-Secure-Password]]
+- [[Windows-Credentials-Decryption-using-PowerShell-Secure-String]]
+- [[Windows-Elevation-of-Privilege-Looting-WiFi-Passwords]]
+- [[Windows-EoP-Looting-for-Passwords]]
 
 *...and 4 more*
+
+

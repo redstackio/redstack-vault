@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Logon Scripts
@@ -19,6 +19,8 @@ tactics:
 ## Description
 
 WindowsWindows allows logon scripts to be run whenever a specific user or group of users log into a system. [1] The scripts can be used to perform administrative functions, which may often execute other programs or send information to an internal logging server.If adversaries can access these scripts, they may insert additional code into the logon script to execute their tools when a user logs in. This code can allow them to maintain persistence on a single system, if it is a local script, or to move laterally within a network, if the script is stored on a central server and pushed to many systems. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary.MacMac allows login and logoff hooks to be run as root whenever a specific user logs into or out of a system. A login hook tells Mac OS X to execute a certain script when a user logs in, but unlike startup items, a login hook executes as root [2]. There can only be one login hook at a time though. If adversaries can access these scripts, they can insert additional code to the script to execute their tools when a user logs in.
+
+
 
 # Detection
 
@@ -60,4 +62,6 @@ Restrict write access to logon scripts to specific administrators. Prevent acces
 
 - [[Lateral Movement|TA0008 - Lateral Movement]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

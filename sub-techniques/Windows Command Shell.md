@@ -10,48 +10,48 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[ASP Razor Server Side Template Injection with C# Command Execution]]'
-- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
-- '[[Basic Command Injection Exploitation]]'
-- '[[Basic LFI Filter Bypass]]'
-- '[[Basic LFI via UTF-8 encoding]]'
-- '[[Basic RFI with Double Encoding]]'
-- '[[Cloudflare XSS Bypass via Common WAF and HTML Injection]]'
-- '[[Command Injection Filter Bypass with $() and variable expansion]]'
-- '[[Command Injection Filter Bypass with Backslash and Slash]]'
-- '[[Command Injection - Filter Bypass with Backslash Newline]]'
-- '[[Command Injection with $@]]'
-- '[[Command Injection with $() Filter Bypass]]'
-- '[[Command Injection with Double Quote Bypass]]'
-- '[[Command Injection with Filter Bypass using Single Quote]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]'
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
-- '[[Hidden Input XSS Attack]]'
-- '[[Jinjava Command Execution]]'
+- '[[asp-razor-server-side-template-injection-with-csharp-command-execution]]'
+- '[[Bypass-Angular-DomSanitizer-for-XSS-Injection]]'
+- '[[Basic-Command-Injection-Exploitation]]'
+- '[[Basic-LFI-Filter-Bypass-Using-Directory-Traversal]]'
+- '[[Basic-LFI-via-UTF-8-Encoding]]'
+- '[[Basic-RFI-with-Double-Encoding]]'
+- '[[Cloudflare-XSS-Bypass-via-Common-WAF-and-HTML-Injection]]'
+- '[[Command-Injection-Filter-Bypass-Using-Variable-Expansion]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-and-Slash]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-Newline]]'
+- '[[Command-Injection-Bypass-Using-$@-Syntax]]'
+- '[[Command-Injection-with-Subshell-Filter-Bypass]]'
+- '[[Command-Injection-with-Double-Quote-Bypass]]'
+- '[[Command-Injection-with-Filter-Bypass-using-Single-Quote]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
+- '[[Hidden-Input-XSS-Attack]]'
+- '[[Jinjava-SSTI-Command-Execution]]'
 - '[[LFI/RFI using php://filter wrapper]]'
 - '[[LFI to RCE via /proc/self/environ]]'
-- '[[Linux Bash Command Injection with Filter Bypass]]'
-- '[[Malicious Macro-enabled Excel Documents with Macrome]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[MultiBrowser RPO Attack and XSS Injection Prevention]]'
-- '[[MYSQL Injection - Write Shell using Outfile Method]]'
-- '[[Polyglot Command Injection for DNS Data Exfiltration]]'
-- '[[Python Reverse Shell Cheat Sheet]]'
-- '[[Reflective Assembly Loading with Powershell]]'
+- '[[Linux-Bash-Command-Injection-with-Filter-Bypass]]'
+- '[[Create-Malicious-Macro-Enabled-Excel-Documents-with-Macrome]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[Exploit-RPO-for-Stored-XSS-via-CSS-Injection-in-IE]]'
+- '[[MySQL-Injection-Write-Shell-Using-Outfile-Method]]'
+- '[[Polyglot-Command-Injection-for-DNS-Data-Exfiltration]]'
+- '[[Establish-Python-Reverse-Shell]]'
+- '[[Reflective-Assembly-Loading-with-PowerShell]]'
 - '[[Server-Side Request Forgery to Cross-Site Scripting (SSRF to XSS) via Out-of-Band
   Output]]'
 - '[[Server Side Template Injection - Django Templates - Leaking app''s Secret Key
   - Retrieve Signer Key]]'
 - '[[Server Side Template Injection - Ruby - Retrieve /etc/passwd]]'
-- '[[Twig Debugging Injection]]'
-- '[[WAF Bypass using Chrome Auditor XSS Attack Vector]]'
+- '[[Twig-Debugging-Injection-for-Arbitrary-Code-Execution]]'
+- '[[WAF-Bypass-Using-Chrome-Auditor-XSS-Attack-Vector]]'
 - '[[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]'
 ---
 
@@ -85,25 +85,25 @@ This sub-technique is used in the following tactics:
 
 There are 41 procedures using this sub-technique:
 
-- [[ASP Razor Server Side Template Injection with C# Command Execution]]
-- [[Automatic Sanitization Bypass in Angular and AngularJS]]
-- [[Basic Command Injection Exploitation]]
-- [[Basic LFI Filter Bypass]]
-- [[Basic LFI via UTF-8 encoding]]
-- [[Basic RFI with Double Encoding]]
-- [[Cloudflare XSS Bypass via Common WAF and HTML Injection]]
-- [[Command Injection Filter Bypass with $() and variable expansion]]
-- [[Command Injection Filter Bypass with Backslash and Slash]]
-- [[Command Injection - Filter Bypass with Backslash Newline]]
-- [[Command Injection with $@]]
-- [[Command Injection with $() Filter Bypass]]
-- [[Command Injection with Double Quote Bypass]]
-- [[Command Injection with Filter Bypass using Single Quote]]
-- [[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]
-- [[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]
-- [[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]
-- [[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]
-- [[CVE-2021-44228 Log4Shell Remote Command Execution]]
-- [[CVE-2021-44228 Log4Shell Remote Command Execution]]
+- [[asp-razor-server-side-template-injection-with-csharp-command-execution]]
+- [[Bypass-Angular-DomSanitizer-for-XSS-Injection]]
+- [[Basic-Command-Injection-Exploitation]]
+- [[Basic-LFI-Filter-Bypass-Using-Directory-Traversal]]
+- [[Basic-LFI-via-UTF-8-Encoding]]
+- [[Basic-RFI-with-Double-Encoding]]
+- [[Cloudflare-XSS-Bypass-via-Common-WAF-and-HTML-Injection]]
+- [[Command-Injection-Filter-Bypass-Using-Variable-Expansion]]
+- [[Command-Injection-Filter-Bypass-with-Backslash-and-Slash]]
+- [[Command-Injection-Filter-Bypass-with-Backslash-Newline]]
+- [[Command-Injection-Bypass-Using-$@-Syntax]]
+- [[Command-Injection-with-Subshell-Filter-Bypass]]
+- [[Command-Injection-with-Double-Quote-Bypass]]
+- [[Command-Injection-with-Filter-Bypass-using-Single-Quote]]
+- [[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]
+- [[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]
+- [[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]
+- [[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]
+- [[Exploit-Log4Shell-for-Remote-Command-Execution]]
+- [[Exploit-Log4Shell-for-Remote-Command-Execution]]
 
 *...and 21 more*

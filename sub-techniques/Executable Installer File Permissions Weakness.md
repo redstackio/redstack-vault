@@ -10,9 +10,9 @@ parent_technique: '[[Hijack Execution Flow|T1574 - Hijack Execution Flow]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Linux - Privilege Escalation via Shared Library RPATH Hijacking]]'
+- '[[Linux-Privilege-Escalation-via-Shared-Library-RPATH-Hijacking]]'
 ---
 
 # Executable Installer File Permissions Weakness
@@ -41,10 +41,10 @@ This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Linux - Privilege Escalation via Shared Library RPATH Hijacking]]
+- [[Linux-Privilege-Escalation-via-Shared-Library-RPATH-Hijacking]]

@@ -18,6 +18,8 @@ tactics:
 
 Windows Transactional NTFS (TxF) was introduced in Vista as a method to perform safe file operations. [1] To ensure data integrity, TxF enables only one transacted handle to write to a file at a given time. Until the write handle transaction is terminated, all other handles are isolated from the writer and may only read the committed version of the file that existed at the time the handle was opened. [2] To avoid corruption, TxF performs an automatic rollback if the system or application fails during a write transaction. [3]Although deprecated, the TxF application programming interface (API) is still enabled as of Windows 10. [4]Adversaries may leverage TxF to a perform a file-less variation of Process Injection called Process Doppelgänging. Similar to Process Hollowing, Process Doppelgänging involves replacing the memory of a legitimate process, enabling the veiled execution of malicious code that may evade defenses and detection. Process Doppelgänging's use of TxF also avoids the use of highly-monitored API functions such as NtUnmapViewOfSection, VirtualProtectEx, and SetThreadContext. [4]Process Doppelgänging is implemented in 4 steps [4]:Transact – Create a TxF transaction using a legitimate executable then overwrite the file with malicious code. These changes will be isolated and only visible within the context of the transaction.Load – Create a shared section of memory and load the malicious executable.Rollback – Undo changes to original executable, effectively removing malicious code from the file system.Animate – Create a process from the tainted section of memory and initiate execution.
 
+
+
 # Detection
 
 Monitor and analyze calls to CreateTranscation, CreateFileTransacted, RollbackTransaction, and other rarely used functions indicative of TxF activity. Process Doppelgänging also invokes an outdated and undocumented implementation of the Windows process loader via calls to NtCreateProcessEx and NtCreateThreadEx as well as API calls used to modify memory within another process, such as WriteProcessMemory. [4] [12]
@@ -67,3 +69,5 @@ This type of attack technique cannot be easily mitigated with preventive control
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

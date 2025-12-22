@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[Race Condition Turbo Intruder Attack]]'
-- '[[SQL Injection WAF Bypass]]'
+- '[[Exploit-Race-Condition-with-Turbo-Intruder]]'
+- '[[SQL-Injection-WAF-Bypass-Using-Version-Checks]]'
 ---
 
 # Resource Hijacking
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may leverage the resources of co-opted systems in order to solve resource intensive problems which may impact system and/or hosted service availability. One common purpose for Resource Hijacking is to validate transactions of cryptocurrency networks and earn virtual currency. Adversaries may consume enough system resources to negatively impact and/or cause affected machines to become unresponsive.[1] Servers and cloud-based systems are common targets because of the high potential for available resources, but user endpoint systems may also be compromised and used for Resource Hijacking and cryptocurrency mining.
+
+
 
 # Detection
 
@@ -53,5 +55,7 @@ Identify potentially malicious software and audit and/or block it by using white
 
 ## Related Procedures (2)
 
-- [[Race Condition Turbo Intruder Attack]]
-- [[SQL Injection WAF Bypass]]
+- [[Exploit-Race-Condition-with-Turbo-Intruder]]
+- [[SQL-Injection-WAF-Bypass-Using-Version-Checks]]
+
+

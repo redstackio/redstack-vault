@@ -9,27 +9,27 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Man-in-the-Middle and Password Cracking]]'
-- '[[Active Directory Trust Ticket Forgery with Mimikatz]]'
-- '[[AD CS Relay Attack with Rubeus and PetitPotam]]'
-- '[[Azure AD Connect - Silver Ticket Attack]]'
-- '[[Azure Pass The PRT with Mimikatz]]'
-- '[[Create a Golden Ticket and Launch a Windows Shell (Windows)]]'
-- '[[Create a Golden Ticket and Launch a Windows SYSTEM Shell (Linux)]]'
-- '[[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]'
-- '[[Establishing and Enumerating PAM Trust between lab.local and bastion.local]]'
-- '[[Forest to Forest Compromise - Trust Ticket TGS Retrieval and LDAP Authentication]]'
-- '[[Forest Trust Ticket Dumping]]'
-- '[[GMSA Password Forging]]'
-- '[[Golden Ticket Creation via Kerberos Purge]]'
-- '[[Golden Ticket Generation with Mimikatz]]'
-- '[[Golden Ticket Kerberos Attack on Linux]]'
-- '[[NTLM Relay Attack against Active Directory Certificate Services]]'
-- '[[Pass-The-Certificate Attack]]'
-- '[[Pass-the-Ticket Sapphire Tickets Attack]]'
-- '[[Pass-the-Ticket Silver Ticket Creation]]'
-- '[[WebDAV Relay Attack]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Active-Directory-MitM-and-Password-Cracking]]'
+- '[[Forge-AD-Trust-Ticket-with-Mimikatz]]'
+- '[[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]'
+- '[[Azure-AD-Connect-Silver-Ticket-Attack]]'
+- '[[Azure-Pass-The-PRT-with-Mimikatz]]'
+- '[[Create-Golden-Ticket-and-Launch-Windows-Shell]]'
+- '[[Create-Golden-Ticket-and-Launch-Windows-SYSTEM-Shell-from-Linux]]'
+- '[[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]'
+- '[[Establish-and-Enumerate-PAM-Trust-Between-Domains]]'
+- '[[forest-to-forest-compromise-trust-ticket-tgs-retrieval-and-ldap-authentication]]'
+- '[[Forest-Trust-Ticket-Dumping]]'
+- '[[Forge-GMSA-Password-for-Domain-Access]]'
+- '[[Golden-Ticket-Creation-via-Kerberos-Purge]]'
+- '[[Golden-Ticket-Generation-with-Mimikatz]]'
+- '[[Forge-and-Use-Golden-Ticket-on-Linux]]'
+- '[[NTLM-Relay-Attack-against-Active-Directory-Certificate-Services]]'
+- '[[Pass-The-Certificate-Attack]]'
+- '[[Pass-the-Ticket-Using-Sapphire-Tickets]]'
+- '[[Create-Kerberos-Silver-Ticket]]'
+- '[[WebDAV-Relay-Attack]]'
 ---
 
 # Pass the Ticket
@@ -39,6 +39,8 @@ procedures:
 ## Description
 
 Pass the ticket (PtT) is a method of authenticating to a system using Kerberos tickets without having access to an account's password. Kerberos authentication can be used as the first step to lateral movement to a remote system.In this technique, valid Kerberos tickets for Valid Accounts are captured by Credential Dumping. A user's service tickets or ticket granting ticket (TGT) may be obtained, depending on the level of access. A service ticket allows for access to a particular resource, whereas a TGT can be used to request service tickets from the Ticket Granting Service (TGS) to access any resource the user has privileges to access. [1] [2]Silver Tickets can be obtained for services that use Kerberos as an authentication mechanism and are used to generate tickets to access that particular resource and the system that hosts the resource (e.g., SharePoint). [1]Golden Tickets can be obtained for the domain using the Key Distribution Service account KRBTGT account NTLM hash, which enables generation of TGTs for any account in Active Directory. [3]
+
+
 
 # Detection
 
@@ -104,25 +106,27 @@ Monitor domains for unusual credential logons. Limit credential overlap across s
 
 ## Related Procedures (21)
 
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Man-in-the-Middle and Password Cracking]]
-- [[Active Directory Trust Ticket Forgery with Mimikatz]]
-- [[AD CS Relay Attack with Rubeus and PetitPotam]]
-- [[Azure AD Connect - Silver Ticket Attack]]
-- [[Azure Pass The PRT with Mimikatz]]
-- [[Create a Golden Ticket and Launch a Windows Shell (Windows)]]
-- [[Create a Golden Ticket and Launch a Windows SYSTEM Shell (Linux)]]
-- [[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]
-- [[Establishing and Enumerating PAM Trust between lab.local and bastion.local]]
-- [[Forest to Forest Compromise - Trust Ticket TGS Retrieval and LDAP Authentication]]
-- [[Forest Trust Ticket Dumping]]
-- [[GMSA Password Forging]]
-- [[Golden Ticket Creation via Kerberos Purge]]
-- [[Golden Ticket Generation with Mimikatz]]
-- [[Golden Ticket Kerberos Attack on Linux]]
-- [[NTLM Relay Attack against Active Directory Certificate Services]]
-- [[Pass-The-Certificate Attack]]
-- [[Pass-the-Ticket Sapphire Tickets Attack]]
-- [[Pass-the-Ticket Silver Ticket Creation]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Active-Directory-MitM-and-Password-Cracking]]
+- [[Forge-AD-Trust-Ticket-with-Mimikatz]]
+- [[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]
+- [[Azure-AD-Connect-Silver-Ticket-Attack]]
+- [[Azure-Pass-The-PRT-with-Mimikatz]]
+- [[Create-Golden-Ticket-and-Launch-Windows-Shell]]
+- [[Create-Golden-Ticket-and-Launch-Windows-SYSTEM-Shell-from-Linux]]
+- [[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]
+- [[Establish-and-Enumerate-PAM-Trust-Between-Domains]]
+- [[forest-to-forest-compromise-trust-ticket-tgs-retrieval-and-ldap-authentication]]
+- [[Forest-Trust-Ticket-Dumping]]
+- [[Forge-GMSA-Password-for-Domain-Access]]
+- [[Golden-Ticket-Creation-via-Kerberos-Purge]]
+- [[Golden-Ticket-Generation-with-Mimikatz]]
+- [[Forge-and-Use-Golden-Ticket-on-Linux]]
+- [[NTLM-Relay-Attack-against-Active-Directory-Certificate-Services]]
+- [[Pass-The-Certificate-Attack]]
+- [[Pass-the-Ticket-Using-Sapphire-Tickets]]
+- [[Create-Kerberos-Silver-Ticket]]
 
 *...and 1 more*
+
+

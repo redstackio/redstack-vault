@@ -11,25 +11,25 @@ parent_technique: '[[Steal or Forge Kerberos Tickets|T1558 - Steal or Forge Kerb
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]'
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[CCACHE Ticket Reuse from Keyring with Tickey]]'
-- '[[CCACHE Ticket Reuse from Keytab]]'
+- '[[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[extract-ccache-tickets-from-linux-keyring-with-tickey]]'
+- '[[Extract-and-Reuse-Kerberos-Tickets-from-Keytab]]'
 - '[[CCACHE Ticket Reuse from /tmp]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[Golden Ticket Creation via Kerberos Purge]]'
-- '[[Kerberos Bronze Bit Attack]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[Golden-Ticket-Creation-via-Kerberos-Purge]]'
+- '[[Kerberos-Bronze-Bit-Attack]]'
 - '[[Kerberos Bronze Bit Attack Procedure]]'
 - '[[Kerberos Clock Synchronization Attack]]'
 - '[[Kerberos Clock Synchronization Attack]]'
-- '[[Kerberos Constrained Delegation - Impersonation on Resource]]'
-- '[[Kerberos S4U2self Privilege Escalation]]'
-- '[[NTLM Reflection SMB Relay Attack]]'
-- '[[OAuth Token Theft via Redirect URI]]'
-- '[[Pass-the-Ticket with Silver Tickets]]'
-- '[[RODC Key List Extraction and Golden Ticket Creation]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[User Certificate and TGT Persistence via Domain Request]]'
+- '[[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]'
+- '[[Kerberos-S4U2Self-Privilege-Escalation]]'
+- '[[ntlm-reflection-smb-relay-attack]]'
+- '[[OAuth-Token-Theft-via-Redirect-URI]]'
+- '[[Pass-the-Ticket-with-Silver-Tickets]]'
+- '[[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[Request-User-Certificate-and-TGT-for-Domain-Persistence]]'
 ---
 
 # Kerberoasting
@@ -66,22 +66,22 @@ This sub-technique is used in the following tactics:
 
 There are 19 procedures using this sub-technique:
 
-- [[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[CCACHE Ticket Reuse from Keyring with Tickey]]
-- [[CCACHE Ticket Reuse from Keytab]]
+- [[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[extract-ccache-tickets-from-linux-keyring-with-tickey]]
+- [[Extract-and-Reuse-Kerberos-Tickets-from-Keytab]]
 - [[CCACHE Ticket Reuse from /tmp]]
-- [[Golden Certificate Domain Persistence]]
-- [[Golden Ticket Creation via Kerberos Purge]]
-- [[Kerberos Bronze Bit Attack]]
+- [[Golden-Certificate-Domain-Persistence]]
+- [[Golden-Ticket-Creation-via-Kerberos-Purge]]
+- [[Kerberos-Bronze-Bit-Attack]]
 - [[Kerberos Bronze Bit Attack Procedure]]
 - [[Kerberos Clock Synchronization Attack]]
 - [[Kerberos Clock Synchronization Attack]]
-- [[Kerberos Constrained Delegation - Impersonation on Resource]]
-- [[Kerberos S4U2self Privilege Escalation]]
-- [[NTLM Reflection SMB Relay Attack]]
-- [[OAuth Token Theft via Redirect URI]]
-- [[Pass-the-Ticket with Silver Tickets]]
-- [[RODC Key List Extraction and Golden Ticket Creation]]
-- [[samAccountName Spoofing Attack]]
-- [[User Certificate and TGT Persistence via Domain Request]]
+- [[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]
+- [[Kerberos-S4U2Self-Privilege-Escalation]]
+- [[ntlm-reflection-smb-relay-attack]]
+- [[OAuth-Token-Theft-via-Redirect-URI]]
+- [[Pass-the-Ticket-with-Silver-Tickets]]
+- [[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]
+- [[Sam-Account-Name-Spoofing-for-User-Impersonation]]
+- [[Request-User-Certificate-and-TGT-for-Domain-Persistence]]

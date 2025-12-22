@@ -10,9 +10,9 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]'
-- '[[DB2 Injection - Select Nth Char Extraction]]'
-- '[[Identify Encrypted Databases via MSSQL Server]]'
-- '[[Patching AmsiScanBuffer to Bypass AMSI Scanning]]'
+- '[[DB2-SQL-Injection-Select-Nth-Character-Extraction]]'
+- '[[Identify-and-Decrypt-Encrypted-MSSQL-Databases]]'
+- '[[Patch-AmsiScanBuffer-to-Bypass-AMSI]]'
 ---
 
 # Modify Registry
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Adversaries may interact with the Windows Registry to hide configuration information within Registry keys, remove information as part of cleaning up, or as part of other techniques to aid in Persistence and Execution.Access to specific areas of the Registry depends on account permissions, some requiring administrator-level access. The built-in Windows command-line utility Reg may be used for local or remote Registry modification. [1] Other tools may also be used, such as a remote access tool, which may contain functionality to interact with the Registry through the Windows API (see examples).Registry modifications may also include actions to hide keys, such as prepending key names with a null character, which will cause an error and/or be ignored when read via Reg or other utilities using the Win32 API. [2] Adversaries may abuse these pseudo-hidden keys to conceal payloads/commands used to establish Persistence. [3] [4]The Registry of a remote system may be modified to aid in execution of files as part of Lateral Movement. It requires the remote Registry service to be running on the target system. [5] Often Valid Accounts are required, along with access to the remote system's Windows Admin Shares for RPC communication.
+
+
 
 # Detection
 
@@ -176,6 +178,8 @@ Misconfiguration of permissions in the Registry may lead to opportunities for an
 ## Related Procedures (4)
 
 - [[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]
-- [[DB2 Injection - Select Nth Char Extraction]]
-- [[Identify Encrypted Databases via MSSQL Server]]
-- [[Patching AmsiScanBuffer to Bypass AMSI Scanning]]
+- [[DB2-SQL-Injection-Select-Nth-Character-Extraction]]
+- [[Identify-and-Decrypt-Encrypted-MSSQL-Databases]]
+- [[Patch-AmsiScanBuffer-to-Bypass-AMSI]]
+
+

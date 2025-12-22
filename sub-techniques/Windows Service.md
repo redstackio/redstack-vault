@@ -10,15 +10,15 @@ parent_technique: '[[Create or Modify System Process|T1543 - Create or Modify Sy
   Process]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Bashrc Backdoor Persistence]]'
-- '[[IIS Raid Backdoor Persistence]]'
-- '[[Linux - Backdooring User Startup File]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Windows Simple User Startup Persistence]]'
-- '[[Windows Subsystem for Linux Persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[IIS-Raid-Backdoor-Persistence]]'
+- '[[Linux-Backdoor-User-Autostart-File]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[Windows-User-Startup-Folder-Persistence]]'
+- '[[Install-and-Persist-via-WSL-with-Kali-Linux]]'
 ---
 
 # Windows Service
@@ -48,16 +48,16 @@ Services may be created with administrator privileges but are executed under SYS
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 7 procedures using this sub-technique:
 
-- [[AWS SSH Persistence with Authorized Keys]]
-- [[Bashrc Backdoor Persistence]]
-- [[IIS Raid Backdoor Persistence]]
-- [[Linux - Backdooring User Startup File]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Windows Simple User Startup Persistence]]
-- [[Windows Subsystem for Linux Persistence]]
+- [[aws-ssh-persistence-via-authorized-keys]]
+- [[Implement-Sudo-Backdoor-via-Bashrc-Alias]]
+- [[IIS-Raid-Backdoor-Persistence]]
+- [[Linux-Backdoor-User-Autostart-File]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[Windows-User-Startup-Folder-Persistence]]
+- [[Install-and-Persist-via-WSL-with-Kali-Linux]]

@@ -10,9 +10,9 @@ parent_technique: '[[Abuse Elevation Control Mechanism|T1548 - Abuse Elevation C
   Mechanism]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Linux - Privilege Escalation via SUDO Injection]]'
+- '[[Linux-Privilege-Escalation-via-SUDO-Injection]]'
 ---
 
 # Setuid and Setgid
@@ -42,10 +42,10 @@ Alternatively, adversaries may choose to find and target vulnerable binaries wit
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Linux - Privilege Escalation via SUDO Injection]]
+- [[Linux-Privilege-Escalation-via-SUDO-Injection]]

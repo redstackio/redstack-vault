@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:11.677565+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[AWS IAM Policy Information Gathering]]'
+- '[[AWS-IAM-Policy-Information-Gathering]]'
 ---
 
 # Archive Collected Data
@@ -22,10 +22,14 @@ An adversary may compress and/or encrypt data that is collected prior to exfiltr
 
 Both compression and encryption are done prior to exfiltration, and can be performed using a utility, 3rd party library, or custom method.
 
+
+
 ## Tactics
 
 - [[Collection|TA0009 - Collection]]
 
 ## Related Procedures (1)
 
-- [[AWS IAM Policy Information Gathering]]
+- [[AWS-IAM-Policy-Information-Gathering]]
+
+

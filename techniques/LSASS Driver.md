@@ -10,7 +10,7 @@ tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[PHP Object Injection for Arbitrary Code Execution]]'
+- '[[Exploit-PHP-Object-Injection-for-Arbitrary-Code-Execution]]'
 ---
 
 # LSASS Driver
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 The Windows security subsystem is a set of components that manage and enforce the security policy for a computer or domain. The Local Security Authority (LSA) is the main component responsible for local security policy and user authentication. The LSA includes multiple dynamic link libraries (DLLs) associated with various other security functions, all of which run in the context of the LSA Subsystem Service (LSASS) lsass.exe process. [1]Adversaries may target lsass.exe drivers to obtain execution and/or persistence. By either replacing or adding illegitimate drivers (e.g., DLL Side-Loading or DLL Search Order Hijacking), an adversary can achieve arbitrary code execution triggered by continuous LSA operations.
+
+
 
 # Detection
 
@@ -68,4 +70,6 @@ On Windows 8.1 and Server 2012 R2, enable LSA Protection by setting the Registry
 
 ## Related Procedures (1)
 
-- [[PHP Object Injection for Arbitrary Code Execution]]
+- [[Exploit-PHP-Object-Injection-for-Arbitrary-Code-Execution]]
+
+

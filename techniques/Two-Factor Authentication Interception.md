@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[2FA Bypass via Response Manipulation]]'
-- '[[2FA Bypass with Array of OTPs]]'
-- '[[Dictionary Hash Cracking with Hashcat]]'
-- '[[GraphQL SQL Injection Exploitation]]'
+- '[[2FA-Bypass-via-Response-Manipulation]]'
+- '[[Bypass-2FA-with-OTP-Array]]'
+- '[[Dictionary-Hash-Cracking-with-Hashcat]]'
+- '[[GraphQL-SQL-Injection-Exploitation]]'
 ---
 
 # Two-Factor Authentication Interception
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Use of two- or multifactor authentication is recommended and provides a higher level of security than user names and passwords alone, but organizations should be aware of techniques that could be used to intercept and bypass these security mechanisms. Adversaries may target authentication mechanisms, such as smart cards, to gain access to systems, services, and network resources.If a smart card is used for two-factor authentication (2FA), then a keylogger will need to be used to obtain the password associated with a smart card during normal use. With both an inserted card and access to the smart card password, an adversary can connect to a network resource using the infected system to proxy the authentication with the inserted hardware token. [1]Adversaries may also employ a keylogger to similarly target other hardware tokens, such as RSA SecurID. Capturing token input (including a user's personal identification code) may provide temporary access (i.e. replay the one-time passcode until the next value rollover) as well as possibly enabling adversaries to reliably predict future authentication values (given access to both the algorithm and any seed values used to generate appended temporary codes). [2]Other methods of 2FA may be intercepted and used by an adversary to authenticate. It is common for one-time codes to be sent via out-of-band communications (email, SMS). If the device and/or service is not secured, then it may be vulnerable to interception. Although primarily focused on by cyber criminals, these authentication mechanisms have been targeted by advanced actors. [3]
+
+
 
 # Detection
 
@@ -67,7 +69,9 @@ Identify and block potentially malicious software that may be used to intercept 
 
 ## Related Procedures (4)
 
-- [[2FA Bypass via Response Manipulation]]
-- [[2FA Bypass with Array of OTPs]]
-- [[Dictionary Hash Cracking with Hashcat]]
-- [[GraphQL SQL Injection Exploitation]]
+- [[2FA-Bypass-via-Response-Manipulation]]
+- [[Bypass-2FA-with-OTP-Array]]
+- [[Dictionary-Hash-Cracking-with-Hashcat]]
+- [[GraphQL-SQL-Injection-Exploitation]]
+
+

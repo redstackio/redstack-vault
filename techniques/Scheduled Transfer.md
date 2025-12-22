@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[Local DTD Injection in Citrix XenMobile Server]]'
-- '[[Node Deserialization Exploit using Funcster]]'
-- '[[Python Pickle Deserialization]]'
-- '[[YAML Deserialization in Ruby]]'
-- '[[YAML Deserialization via SnakeYAML]]'
+- '[[Local-DTD-Injection-in-Citrix-XenMobile-Server]]'
+- '[[Node-Deserialization-Exploit-using-Funcster]]'
+- '[[Exploit-Python-Pickle-Deserialization-for-RCE]]'
+- '[[Exploit-YAML-Deserialization-in-Ruby-for-RCE]]'
+- '[[Exploit-YAML-Deserialization-with-SnakeYAML]]'
 ---
 
 # Scheduled Transfer
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Data exfiltration may be performed only at certain times of day or at certain intervals. This could be done to blend traffic patterns with normal activity or availability.When scheduled exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as Exfiltration Over Command and Control Channel and Exfiltration Over Alternative Protocol.
+
+
 
 # Detection
 
@@ -60,8 +62,10 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (5)
 
-- [[Local DTD Injection in Citrix XenMobile Server]]
-- [[Node Deserialization Exploit using Funcster]]
-- [[Python Pickle Deserialization]]
-- [[YAML Deserialization in Ruby]]
-- [[YAML Deserialization via SnakeYAML]]
+- [[Local-DTD-Injection-in-Citrix-XenMobile-Server]]
+- [[Node-Deserialization-Exploit-using-Funcster]]
+- [[Exploit-Python-Pickle-Deserialization-for-RCE]]
+- [[Exploit-YAML-Deserialization-in-Ruby-for-RCE]]
+- [[Exploit-YAML-Deserialization-with-SnakeYAML]]
+
+

@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[Cassandra Login Bypass via SQL Injection]]'
-- '[[DB2 Privilege Escalation]]'
-- '[[MSSQL Credential Theft]]'
-- '[[MSSQL Trusted Links Exploitation]]'
-- '[[Redis SSRF Exploitation with Webshell and Reverse Shell]]'
-- '[[SCF and URL File Attack Against Writeable Share]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Enumerate-DB2-User-Privileges]]'
+- '[[MSSQL-Credential-Theft-via-SQL-Injection]]'
+- '[[Exploit-MSSQL-Trusted-Linked-Servers]]'
+- '[[Redis-SSRF-Exploitation-for-Webshell-and-Reverse-Shell]]'
+- '[[SCF-URL-File-Attack-Against-Writable-Share]]'
 ---
 
 # Trusted Relationship
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Adversaries may breach or otherwise leverage organizations who have access to intended victims. Access through trusted third party relationship exploits an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network.Organizations often grant elevated access to second or third-party external providers in order to allow them to manage internal systems. Some examples of these relationships include IT services contractors, managed security providers, infrastructure contractors (e.g. HVAC, elevators, physical security). The third-party provider's access may be intended to be limited to the infrastructure being maintained, but may exist on the same network as the rest of the enterprise. As such, Valid Accounts used by the other party for access to internal network systems may be compromised and used.
+
+
 
 # Detection
 
@@ -51,9 +53,11 @@ Network segmentation can be used to isolate infrastructure components that do no
 
 ## Related Procedures (6)
 
-- [[Cassandra Login Bypass via SQL Injection]]
-- [[DB2 Privilege Escalation]]
-- [[MSSQL Credential Theft]]
-- [[MSSQL Trusted Links Exploitation]]
-- [[Redis SSRF Exploitation with Webshell and Reverse Shell]]
-- [[SCF and URL File Attack Against Writeable Share]]
+- [[Cassandra-Login-Bypass-via-SQL-Injection]]
+- [[Enumerate-DB2-User-Privileges]]
+- [[MSSQL-Credential-Theft-via-SQL-Injection]]
+- [[Exploit-MSSQL-Trusted-Linked-Servers]]
+- [[Redis-SSRF-Exploitation-for-Webshell-and-Reverse-Shell]]
+- [[SCF-URL-File-Attack-Against-Writable-Share]]
+
+

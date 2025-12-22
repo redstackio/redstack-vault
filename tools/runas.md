@@ -6,7 +6,7 @@ verified: true
 created_at: '2020-03-05T23:59:33.972759+00:00'
 updated_at: '2023-05-30T19:52:25.370728+00:00'
 commands:
-- '[[runas.exe Execute a Command using Saved Credentials]]'
+- '[[runas-execute-command-with-saved-credentials]]'
 platforms:
 - Windows
 tags:
@@ -54,7 +54,7 @@ runas has been installed with all versions of Windows since Vista
 
 ## Commands (1)
 
-- [[runas.exe Execute a Command using Saved Credentials]]
+- [[runas-execute-command-with-saved-credentials]]
 
 ## Tags
 

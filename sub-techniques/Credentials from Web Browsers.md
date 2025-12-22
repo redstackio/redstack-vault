@@ -11,15 +11,15 @@ parent_technique: '[[Credentials from Password Stores|T1555 - Credentials from P
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[Credential Harvesting from DynamoDB]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[Scan-DynamoDB-Table-for-Credentials]]'
 - '[[Extracting Service Principal Keys from /etc/krb5.keytab]]'
-- '[[HTTP Request Smuggling Detection and Exploitation]]'
-- '[[Insecure Source Code Management with Bazaar using bzr_dumper]]'
-- '[[Linux Password Looting]]'
-- '[[Shadow Credentials for Windows Hello]]'
-- '[[Windows DPAPI Credential Retrieval with Mimikatz]]'
-- '[[Windows - Retail Credential Theft]]'
+- '[[http-request-smuggling-detection-and-exploitation]]'
+- '[[Extract-Source-Code-from-Insecure-Bazaar-Repository]]'
+- '[[Linux-Password-Looting]]'
+- '[[Shadow-Credentials-for-Windows-Hello]]'
+- '[[Windows-DPAPI-Credential-Retrieval-with-Mimikatz]]'
+- '[[windows-retail-credential-theft]]'
 ---
 
 # Credentials from Web Browsers
@@ -56,12 +56,12 @@ This sub-technique is used in the following tactics:
 
 There are 9 procedures using this sub-technique:
 
-- [[Automated Password Extraction from SYSVOL and Group Policy Preferences]]
-- [[Credential Harvesting from DynamoDB]]
+- [[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]
+- [[Scan-DynamoDB-Table-for-Credentials]]
 - [[Extracting Service Principal Keys from /etc/krb5.keytab]]
-- [[HTTP Request Smuggling Detection and Exploitation]]
-- [[Insecure Source Code Management with Bazaar using bzr_dumper]]
-- [[Linux Password Looting]]
-- [[Shadow Credentials for Windows Hello]]
-- [[Windows DPAPI Credential Retrieval with Mimikatz]]
-- [[Windows - Retail Credential Theft]]
+- [[http-request-smuggling-detection-and-exploitation]]
+- [[Extract-Source-Code-from-Insecure-Bazaar-Repository]]
+- [[Linux-Password-Looting]]
+- [[Shadow-Credentials-for-Windows-Hello]]
+- [[Windows-DPAPI-Credential-Retrieval-with-Mimikatz]]
+- [[windows-retail-credential-theft]]

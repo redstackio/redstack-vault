@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
 ---
 
 # Clipboard Data
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Adversaries may collect data stored in the Windows clipboard from users copying information within or between applications. WindowsApplications can access clipboard data by using the Windows API. [1] MacOSX provides a native command, pbpaste, to grab clipboard contents  [2].
+
+
 
 # Detection
 
@@ -98,4 +100,6 @@ Instead of blocking software based on clipboard capture behavior, identify poten
 
 ## Related Procedures (1)
 
-- [[Linux Privilege Escalation - Writable Files Escalation]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+
+

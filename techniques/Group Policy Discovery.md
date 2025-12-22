@@ -20,6 +20,10 @@ Adversaries may gather information on Group Policy settings to identify paths fo
 
 Adversaries may use commands such as <code>gpresult</code> or various publicly available PowerShell functions, such as <code>Get-DomainGPO</code> and <code>Get-DomainGPOLocalGroup</code>, to gather information on Group Policy settings.(Citation: Microsoft gpresult)(Citation: Github PowerShell Empire) Adversaries may use this information to shape follow-on behaviors, including determining potential attack paths within the target network as well as opportunities to manipulate Group Policy settings (i.e. [Domain Policy Modification](https://attack.mitre.org/techniques/T1484)) for their benefit.
 
+
+
 ## Tactics
 
 - [[Discovery|TA0007 - Discovery]]
+
+

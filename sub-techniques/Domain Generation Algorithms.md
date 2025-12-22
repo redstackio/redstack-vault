@@ -10,9 +10,9 @@ parent_technique: '[[Dynamic Resolution|T1568 - Dynamic Resolution]]'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[DNS Beacon Payload with Cobalt Strike]]'
-- '[[DNS Rebinding Protection Bypass via CNAME]]'
-- '[[Git Index File Recovery]]'
+- '[[configure-dns-for-cobalt-strike-dns-beacon]]'
+- '[[DNS-Rebinding-Protection-Bypass-via-CNAME]]'
+- '[[Git-Index-File-Recovery]]'
 ---
 
 # Domain Generation Algorithms
@@ -45,6 +45,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[DNS Beacon Payload with Cobalt Strike]]
-- [[DNS Rebinding Protection Bypass via CNAME]]
-- [[Git Index File Recovery]]
+- [[configure-dns-for-cobalt-strike-dns-beacon]]
+- [[DNS-Rebinding-Protection-Bypass-via-CNAME]]
+- [[Git-Index-File-Recovery]]

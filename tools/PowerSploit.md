@@ -1,164 +1,162 @@
 ---
 id: f2063482-207f-4a17-aa4f-c4b6f723177b
-name: PowerSploit
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:33.769050+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[Active Directory]]'
-- '[[hacking]]'
-- '[[persistence]]'
-- '[[powershell]]'
+  - Active Directory
+  - hacking
+  - persistence
+  - powershell
+url: 'https://github.com/PowerShellMafia/PowerSploit'
+validated: true
 ---
 
 # PowerSploit
 
+**Status**: Unverified
+
 ## Overview
 
-A collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. ​PowerSploit is made up  of the following modules and scripts: 
+PowerSploit is a collection of Microsoft PowerShell modules designed to assist penetration testers and red teamers across all phases of an assessment, from reconnaissance and execution to persistence, privilege escalation, and exfiltration. It provides offensive security capabilities without requiring compilation or external dependencies beyond PowerShell itself.
 
 ## Description
 
-# Description
+PowerSploit consists of several modules and scripts that enable advanced post-exploitation techniques on Windows environments. It is particularly useful in Active Directory domains for enumeration, credential dumping, and maintaining access. The framework is modular, allowing selective loading of components like PowerView for domain reconnaissance or Mimikatz integration for credential extraction. Use it in controlled environments only, as it can trigger antivirus and EDR detections.
 
+## Features
 
+- **Execution**: Code injection and remote command execution capabilities.
+- **Script Modification**: Obfuscation and encoding tools for payloads.
+- **Persistence**: Mechanisms to establish long-term access via registry, services, or SSPs.
+- **Antivirus Bypass**: Signature detection and evasion techniques.
+- **Exfiltration**: Credential dumping, keylogging, screenshot capture, and file copying.
+- **Mayhem**: Destructive functions for proof-of-concept attacks (use with extreme caution).
+- **Privilege Escalation**: Automated checks for common privesc vectors via PowerUp.
+- **Reconnaissance**: Network scanning, HTTP probing, DNS enumeration, and domain analysis via PowerView.
 
-A collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. ​PowerSploit is made up  of the following modules and scripts:
+## Installation
 
+### Requirements
 
+- Windows system with PowerShell 2.0 or later.
+- Git (optional, for cloning).
+- Administrative privileges for module installation in system directories.
 
-## Execution
+### Install Commands
 
-- Invoke-DllInjection - Injects a Dll into the process ID of your choosing.
+```powershell
+# Clone the repository from GitHub (dev branch recommended for latest features)
+git clone https://github.com/PowerShellMafia/PowerSploit.git -b dev
 
-- Invoke-ReflectivePEInjection - Reflectively loads a Windows PE file (DLL/EXE) in to the powershell process, or reflectively injects a DLL in to a remote process.
+# Copy the PowerSploit folder to the PowerShell modules directory
+# Default location: $env:PSModulePath (e.g., C:\Windows\System32\WindowsPowerShell\v1.0\Modules)
+Copy-Item -Path .\PowerSploit -Destination "$env:ProgramFiles\WindowsPowerShell\Modules\" -Recurse
 
-- Invoke-Shellcode - Injects shellcode into the process ID of your choosing or within PowerShell locally.
+# Alternative: Load directly without installation
+Import-Module .\PowerSploit\PowerSploit.psm1
+```
 
-- Invoke-WmiCommand - Executes a PowerShell ScriptBlock on a target computer and returns its formatted output using WMI as a C2 channel.
+For user-level installation (non-admin):
 
+```powershell
+# Copy to user modules path
+Copy-Item -Path .\PowerSploit -Destination "$env:USERPROFILE\Documents\WindowsPowerShell\Modules\" -Recurse
+```
 
+## Basic Usage
 
-## ScriptModification
+```powershell
+# Import the module
+Import-Module PowerSploit
 
-- Out-EncodedCommand - Compresses, Base-64 encodes, and generates command-line output for a PowerShell payload script.
+# List available commands
+Get-Command -Module PowerSploit
 
-- Out-CompressedDll - Compresses, Base-64 encodes, and outputs generated code to load a managed dll in memory.
+# Example: Retrieve GPP passwords
+Get-GPPPassword
+```
 
-- Out-EncryptedScript - Encrypts text files/scripts.
+### Common Options
 
-- Remove-Comments - Strips comments and extra whitespace from a script.
+PowerSploit functions have module-specific options; use `Get-Help <FunctionName> -Full` for details.
 
+| Option | Description |
+|--------|-------------|
+| `-Verbose` | Enable verbose output for debugging |
+| `-Debug` | Enable debug mode |
+| `-Force` | Suppress prompts and force execution |
 
+## Examples
 
-## Persistence
+### Example 1: Basic Usage (Reconnaissance)
 
-- New-UserPersistenceOption - Configure user-level persistence options for the Add-Persistence function.
+```powershell
+# Enumerate domain users with PowerView
+Get-NetDomainController
+```
 
-- New-ElevatedPersistenceOption - Configure elevated persistence options for the Add-Persistence function.
+### Example 2: Advanced Usage (Exfiltration)
 
-- Add-Persistence - Add persistence capabilities to a script.
+```powershell
+# Dump credentials using integrated Mimikatz
+Invoke-Mimikatz -Command '"sekurlsa::logonpasswords"'
+```
 
-- Install-SSP - Installs a security support provider (SSP) dll.
+## MITRE ATT&CK Mapping
 
-- Get-SecurityPackages - Enumerates all loaded security packages (SSPs).
+This tool is commonly associated with:
 
+### Techniques
 
+- [[PowerShell]] PowerShell
+- [[Boot or Logon Autostart Execution]] Boot or Logon Autostart Execution
+- [[Credential Dumping]] OS Credential Dumping
+- [[Windows Remote Management]] Windows Command Shell
+- [[Windows Management Instrumentation]] Windows Management Instrumentation
+- [[T1087.002]] Domain Account
+- [[Hijack Execution Flow]] Hijack Execution Flow
 
-## AntivirusBypass
+### Tactics
 
-- Find-AVSignature - Locates single Byte AV signatures utilizing the same method as DSplit from "class101".
+- [[Execution]] Execution
+- [[Persistence]] Persistence
+- [[Discovery]] Discovery
+- [[Lateral Movement]] Lateral Movement
+- [[Command and Control]] Command and Control
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
-## Exfiltration
+- PowerShell Script Block Logging capturing module imports or function calls.
+- Event ID 400 (PowerShell engine start) with unusual module loads.
+- File creation in modules directory or temporary execution of .ps1 files.
+- Network connections from PowerShell processes (e.g., WMI or SMB).
+- Antivirus signatures for known PowerSploit hashes or strings like "Invoke-Mimikatz".
+- Process injection detections via ETW or Sysmon (Event ID 8).
 
-- Invoke-TokenManipulation - Lists available logon tokens. Creates processes with other users logon tokens, and impersonates logon tokens in the current thread.
+## Related Procedures
 
-- Invoke-CredentialInjection - Create logons with clear-text credentials without triggering a suspicious Event ID 4648 (Explicit Credential Logon).
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-- Invoke-NinjaCopy - Copies a file from an NTFS partitioned volume by reading the raw volume and parsing the NTFS structures.
+## Related Tools
 
-- Invoke-Mimikatz - Reflectively loads Mimikatz 2.0 in memory using PowerShell. Can be used to dump credentials without writing anything to disk. Can be used for any functionality provided with Mimikatz.
+- [[tools/Mimikatz]]
+- [[tools/PowerView]]
+- [[tools/Empire]]
 
-- Get-Keystrokes - Logs keys pressed, time and the active window.
+## References
 
-- Get-GPPPassword - Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences.
-
-- Get-GPPAutologon - Retrieves autologon username and password from registry.xml if pushed through Group Policy Preferences.
-
-- Get-TimedScreenshot - A function that takes screenshots at a regular interval and saves them to a folder.
-
-- New-VolumeShadowCopy - Creates a new volume shadow copy.
-
-- Get-VolumeShadowCopy - Lists the device paths of all local volume shadow copies.
-
-- Mount-VolumeShadowCopy - Munts a volume shadow copy.
-
-- Remove-VolumeShadowCopy - Deletes a volume shadow copy.
-
-- Get-VaultCredential - Displays Windows vault credential objects including cleartext web credentials.
-
-- Out-Minidump - Generates a full-memory minidump of a process.
-
-- Get-MicrophoneAudio - Records audio from system microphone and saves to disk
-
-
-
-## Mayhem
-
-- Set-MasterBootRecord - Proof of concept code that overwrites the master boot record with the message of your choice.
-
-- Set-CriticalProcess - Causes your machine to blue screen upon exiting PowerShell.
-
-
-
-## Privesc
-
-- PowerUp - Clearing house of common privilege escalation checks, along with some weaponization vectors.
-
-
-
-## Recon
-
-- Invoke-Portscan - Does a simple port scan using regular sockets, based (pretty) loosely on nmap.
-
-- Get-HttpStatus - Returns the HTTP Status Codes and full URL for specified paths when provided with a dictionary file.
-
-- Invoke-ReverseDnsLookup - Scans an IP address range for DNS PTR records.
-
-- PowerView - PowerView is series of functions that performs network and Windows domain enumeration and exploitation.
-
-
-
-# Installation
-
-## Clone from GitHub (Windows)
-
-PowerSploit with all modules can be loaded on a Windows system by cloning the git repository and copying it to the PowerShell modules directory
-
-
-
-1. Clone the dev branch from GitHub
-
-2. Copy the entire PowerSploit folder to the system's PowerShell modules directory (often C:\windows\system32\WindowsPowerShell\v1.0\Modules)
-
-3. PowerSploit can now be imported as any other module with "Invoke-Module Powersploit"
-
-
-
-## Platforms
-
-- Windows
-
-## Tags
-
-- [[Active Directory]]
-- [[hacking]]
-- [[persistence]]
-- [[powershell]]
-
-
+- Official GitHub Repository: https://github.com/PowerShellMafia/PowerSploit
+- PowerShell Logging Documentation: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging
+- MITRE ATT&CK for PowerShell: https://attack.mitre.org/techniques/T1059/001/

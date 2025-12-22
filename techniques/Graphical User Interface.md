@@ -18,6 +18,8 @@ tactics:
 
 The Graphical User Interfaces (GUI) is a common way to interact with an operating system. Adversaries may use a system's GUI during an operation, commonly through a remote interactive session such as Remote Desktop Protocol, instead of through a Command-Line Interface, to search for information and execute files via mouse double-click events, the Windows Run command [1], or other potentially difficult to monitor interactions.
 
+
+
 # Detection
 
 Detection of execution through the GUI will likely lead to significant false positives. Other factors should be considered to detect misuse of services that can lead to adversaries gaining access to systems through interactive remote sessions. 
@@ -55,3 +57,5 @@ Identify unnecessary system utilities, third-party tools, or potentially malicio
 ## Tactics
 
 - [[Execution|TA0002 - Execution]]
+
+

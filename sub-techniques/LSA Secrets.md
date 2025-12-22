@@ -42,4 +42,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Dumping AD Domain Credentials using Windows Domain Hashdump, Invoke-NinjaCopy, and CrackMapExec]]
+- [[Dump-AD-Domain-Credentials-with-Hashdump-NinjaCopy-and-CME]]

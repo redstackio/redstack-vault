@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:08.483662+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[DNS Reconnaissance with ADIDNS Search Commands]]'
+- '[[dns-reconnaissance-using-standin-adidns-queries]]'
 ---
 
 # Network Boundary Bridging
@@ -24,10 +24,14 @@ Devices such as routers and firewalls can be used to create boundaries between t
 
 When an adversary takes control of such a boundary device, they can bypass its policy enforcement to pass normally prohibited traffic across the trust boundary between the two separated networks without hinderance.  By achieving sufficient rights on the device, an adversary can reconfigure the device to allow the traffic they want, allowing them to then further achieve goals such as command and control via [Multi-hop Proxy](https://attack.mitre.org/techniques/T1090/003) or exfiltration of data via [Traffic Duplication](https://attack.mitre.org/techniques/T1020/001). Adversaries may also target internal devices responsible for network segmentation and abuse these in conjunction with [Internal Proxy](https://attack.mitre.org/techniques/T1090/001) to achieve the same goals.(Citation: Kaspersky ThreatNeedle Feb 2021)  In the cases where a border device separates two separate organizations, the adversary can also facilitate lateral movement into new victim environments.
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (1)
 
-- [[DNS Reconnaissance with ADIDNS Search Commands]]
+- [[dns-reconnaissance-using-standin-adidns-queries]]
+
+

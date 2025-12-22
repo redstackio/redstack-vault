@@ -18,6 +18,8 @@ tactics:
 
 Adversaries may modify visual content available internally or externally to an enterprise network. Reasons for Defacement include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. InternalAn adversary may deface systems internal to an organization in an attempt to intimidate or mislead users. This may take the form of modifications to internal websites, or directly to user systems with the replacement of the desktop wallpaper.[1] Disturbing or offensive images may be used as a part of Defacement in order to cause user discomfort, or to pressure compliance with accompanying messages. While internally defacing systems exposes an adversary's presence, it often takes place after other intrusion goals have been accomplished.[2]ExternalWebsites are a common victim of defacement; often targeted by adversary and hacktivist groups in order to push a political message or spread propaganda.[3][4][5] Defacement may be used as a catalyst to trigger events, or as a response to actions taken by an organization or government. Similarly, website defacement may also be used as setup, or a precursor, for future attacks such as Drive-by Compromise.[6]
 
+
+
 # Detection
 
 Monitor internal and external websites for unplanned content changes. Monitor application logs for abnormal behavior that may indicate attempted or successful exploitation. Use deep packet inspection to look for artifacts of common exploit traffic, such as SQL injection. Web Application Firewalls may detect improper inputs attempting exploitation.
@@ -49,3 +51,5 @@ Implementing best practices for websites such as defending against [Exploit Publ
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
+
+

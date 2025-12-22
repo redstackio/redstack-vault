@@ -18,6 +18,8 @@ tactics:
 
 Browser extensions or plugins are small programs that can add functionality and customize aspects of internet browsers. They can be installed directly or through a browser's app store. Extensions generally have access and permissions to everything that the browser can access. [1] [2]Malicious extensions can be installed into a browser through malicious app store downloads masquerading as legitimate extensions, through social engineering, or by an adversary that has already compromised a system. Security can be limited on browser app stores so may not be difficult for malicious extensions to defeat automated scanners and be uploaded. [3] Once the extension is installed, it can browse to websites in the background, [4] [5] steal all information that a user enters into a browser, to include credentials, [6] [7] and be used as an installer for a RAT for persistence. There have been instances of botnets using a persistent backdoor through malicious Chrome extensions. [8] There have also been similar examples of extensions being used for command & control  [9].
 
+
+
 # Detection
 
 Inventory and monitor browser extension installations that deviate from normal, expected, and benign extensions. Process and network monitoring can be used to detect browsers communicating with a C2 server. However, this may prove to be a difficult way of initially detecting a malicious extension depending on the nature and volume of the traffic it generates.
@@ -67,3 +69,5 @@ Browser extensions for some browsers can be controlled
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

@@ -10,12 +10,12 @@ tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
-- '[[Execute a Command on a Remote System with WinRM]]'
-- '[[Image-Based .htaccess Upload]]'
-- '[[Remote access to Windows Machine (credentials)]]'
-- '[[Spawn an Interactive Shell with WinRM (Linux)]]'
-- '[[Spawn an Interactive Shell with WinRM (Windows)]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]'
+- '[[execute-command-on-remote-system-with-winrm]]'
+- '[[Image-Based-htaccess-Upload-Bypass]]'
+- '[[Remote-Access-to-Windows-Machine-Using-Credentials]]'
+- '[[dump-process-memory-using-powershell]]'
+- '[[Spawn-Interactive-Shell-with-WinRM-on-Windows]]'
 ---
 
 # Windows Remote Management
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 Windows Remote Management (WinRM) is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services). [1] It may be called with the winrm command or by any number of programs such as PowerShell. [2]
+
+
 
 # Detection
 
@@ -57,9 +59,11 @@ Disable the WinRM service. If the service is necessary, lock down critical encla
 
 ## Related Procedures (6)
 
-- [[Connect to WinRM from a Linux System (Pass-the-Hash)]]
-- [[Execute a Command on a Remote System with WinRM]]
-- [[Image-Based .htaccess Upload]]
-- [[Remote access to Windows Machine (credentials)]]
-- [[Spawn an Interactive Shell with WinRM (Linux)]]
-- [[Spawn an Interactive Shell with WinRM (Windows)]]
+- [[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]
+- [[execute-command-on-remote-system-with-winrm]]
+- [[Image-Based-htaccess-Upload-Bypass]]
+- [[Remote-Access-to-Windows-Machine-Using-Credentials]]
+- [[dump-process-memory-using-powershell]]
+- [[Spawn-Interactive-Shell-with-WinRM-on-Windows]]
+
+

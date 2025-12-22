@@ -9,20 +9,20 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[AWS Fargate Container Credentials Theft]]'
-- '[[DirtyCow Kernel Exploit for Linux Privilege Escalation]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Git Secrets Harvesting with Yar]]'
-- '[[GraphQL Data Extraction]]'
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
+- '[[AWS-Fargate-Container-Credentials-Theft]]'
+- '[[dirtycow-linux-privilege-escalation]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[Git-Secrets-Harvesting-with-Yar]]'
+- '[[GraphQL-Introspection-for-Data-Extraction]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[Netdoc SSRF via URL Scheme]]'
-- '[[Open URL Redirection via Injection Parameters]]'
-- '[[SQLmap MySQL Database Dump]]'
-- '[[SSRF Attack on Alibaba Cloud Instances]]'
-- '[[SSRF Exploiting URL Parser Bypass]]'
-- '[[Tabnabbing Link Format Hunting]]'
-- '[[XSLT Injection for File Read and SSRF]]'
+- '[[Netdoc-SSRF-via-URL-Scheme]]'
+- '[[Open-URL-Redirection-via-Injection-Parameters]]'
+- '[[Dump-MySQL-Database-Using-SQLmap]]'
+- '[[Exploit-SSRF-to-Access-Alibaba-Cloud-Instance-Metadata]]'
+- '[[SSRF-Exploiting-URL-Parser-Bypass]]'
+- '[[Hunt-for-Tabnabbing-Enabling-Links]]'
+- '[[XSLT-Injection-for-File-Read-and-SSRF]]'
 ---
 
 # Data from Information Repositories
@@ -32,6 +32,8 @@ procedures:
 ## Description
 
 Adversaries may leverage information repositories to mine valuable information. Information repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information.The following is a brief list of example information that may hold potential value to an adversary and may also be found on an information repository:Policies, procedures, and standardsPhysical / logical network diagramsSystem architecture diagramsTechnical system documentationTesting / development credentialsWork / project schedulesSource code snippetsLinks to network shares and other internal resourcesSpecific common information repositories include:Microsoft SharePointFound in many enterprise networks and often used to store and share significant amounts of documentation.Atlassian ConfluenceOften found in development environments alongside Atlassian JIRA, Confluence is generally used to store development-related documentation.
+
+
 
 # Detection
 
@@ -68,17 +70,19 @@ To mitigate adversary access to information repositories for collection:
 
 ## Related Procedures (14)
 
-- [[AWS Fargate Container Credentials Theft]]
-- [[DirtyCow Kernel Exploit for Linux Privilege Escalation]]
-- [[Enclosed Alphanumeric Server-Side Request Forgery]]
-- [[Git Secrets Harvesting with Yar]]
-- [[GraphQL Data Extraction]]
-- [[Lessjs Server Side Template Injection via Inline Import]]
+- [[AWS-Fargate-Container-Credentials-Theft]]
+- [[dirtycow-linux-privilege-escalation]]
+- [[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]
+- [[Git-Secrets-Harvesting-with-Yar]]
+- [[GraphQL-Introspection-for-Data-Extraction]]
+- [[Exploit-Lessjs-SSTI-via-Inline-Import]]
 - [[Linux - Privilege Escalation via Writable /etc/passwd]]
-- [[Netdoc SSRF via URL Scheme]]
-- [[Open URL Redirection via Injection Parameters]]
-- [[SQLmap MySQL Database Dump]]
-- [[SSRF Attack on Alibaba Cloud Instances]]
-- [[SSRF Exploiting URL Parser Bypass]]
-- [[Tabnabbing Link Format Hunting]]
-- [[XSLT Injection for File Read and SSRF]]
+- [[Netdoc-SSRF-via-URL-Scheme]]
+- [[Open-URL-Redirection-via-Injection-Parameters]]
+- [[Dump-MySQL-Database-Using-SQLmap]]
+- [[Exploit-SSRF-to-Access-Alibaba-Cloud-Instance-Metadata]]
+- [[SSRF-Exploiting-URL-Parser-Bypass]]
+- [[Hunt-for-Tabnabbing-Enabling-Links]]
+- [[XSLT-Injection-for-File-Read-and-SSRF]]
+
+

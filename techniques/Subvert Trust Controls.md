@@ -9,22 +9,22 @@ updated_at: '2023-04-06T03:56:42.267030+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS Lambda Function Enumeration]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CSRF AutoSubmit HTML POST]]'
-- '[[CSRF AutoSubmit HTML POST]]'
-- '[[Kubernetes Pentest with BishopFox BadPods]]'
-- '[[Kubernetes Service Account Token Theft]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Mutated XSS with HTML Tag Recreation and DOMPurify Bypass]]'
-- '[[Open URL Redirection Filter Bypass]]'
-- '[[PHP Juggling Type and Magic Hashes]]'
-- '[[Subdomain Enumeration and Takeover with tko-subs]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[AWS-Lambda-Function-Enumeration]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[CSRF-Attack-via-Auto-Submitting-HTML-Form]]'
+- '[[CSRF-Attack-via-Auto-Submitting-HTML-Form]]'
+- '[[Deploy-BadPods-for-Kubernetes-Security-Testing]]'
+- '[[Kubernetes-Service-Account-Token-Theft]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Mutated-XSS-with-HTML-Tag-Recreation-and-DOMPurify-Bypass]]'
+- '[[Bypass-Open-URL-Redirection-Filters]]'
+- '[[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]'
+- '[[Subdomain-Enumeration-and-Takeover-with-tko-subs]]'
 ---
 
 # Subvert Trust Controls
@@ -37,25 +37,29 @@ Adversaries may undermine security controls that will either warn users of untru
 
 Adversaries may attempt to subvert these trust mechanisms. The method adversaries use will depend on the specific mechanism they seek to subvert. Adversaries may conduct [File and Directory Permissions Modification](https://attack.mitre.org/techniques/T1222) or [Modify Registry](https://attack.mitre.org/techniques/T1112) in support of subverting these controls.(Citation: SpectorOps Subverting Trust Sept 2017) Adversaries may also create or steal code signing certificates to acquire trust on target systems.(Citation: Securelist Digital Certificates)(Citation: Symantec Digital Certificates) 
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (16)
 
-- [[AWS API Gateway Resource Enumeration]]
-- [[AWS Lambda Function Enumeration]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[CSRF AutoSubmit HTML POST]]
-- [[CSRF AutoSubmit HTML POST]]
-- [[Kubernetes Pentest with BishopFox BadPods]]
-- [[Kubernetes Service Account Token Theft]]
-- [[Log4Shell Scanning Procedure]]
-- [[Log4Shell Scanning Procedure]]
-- [[Log4Shell Scanning Procedure]]
-- [[Mutated XSS with HTML Tag Recreation and DOMPurify Bypass]]
-- [[Open URL Redirection Filter Bypass]]
-- [[PHP Juggling Type and Magic Hashes]]
-- [[Subdomain Enumeration and Takeover with tko-subs]]
+- [[aws-api-gateway-resource-enumeration]]
+- [[AWS-Lambda-Function-Enumeration]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[CSRF-Attack-via-Auto-Submitting-HTML-Form]]
+- [[CSRF-Attack-via-Auto-Submitting-HTML-Form]]
+- [[Deploy-BadPods-for-Kubernetes-Security-Testing]]
+- [[Kubernetes-Service-Account-Token-Theft]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Mutated-XSS-with-HTML-Tag-Recreation-and-DOMPurify-Bypass]]
+- [[Bypass-Open-URL-Redirection-Filters]]
+- [[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]
+- [[Subdomain-Enumeration-and-Takeover-with-tko-subs]]
+
+

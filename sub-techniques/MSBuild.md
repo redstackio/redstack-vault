@@ -11,7 +11,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Msbuild Preprocessing Execution]]'
+- '[[Execute-Payload-via-MSBuild-Preprocessing]]'
 ---
 
 # MSBuild
@@ -43,4 +43,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Msbuild Preprocessing Execution]]
+- [[Execute-Payload-via-MSBuild-Preprocessing]]

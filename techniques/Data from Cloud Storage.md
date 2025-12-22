@@ -9,25 +9,25 @@ updated_at: '2023-04-06T03:56:38.806818+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[AWS API Key Enumeration]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS S3 Bucket Data Exfiltration]]'
-- '[[AWS S3 Bucket Data Exfiltration]]'
-- '[[AWS S3 Bucket Listing Exploitation]]'
-- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
-- '[[Cloud Instance Rancher Metadata Retrieval via SSRF]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[Google BigQuery SQL Injection Detection]]'
-- '[[Mounting EBS Volume to EC2 Linux Instance]]'
-- '[[Server-Side Request Forgery on Cloud Instances and HP Helion]]'
-- '[[Snapshot Enumeration]]'
-- '[[SSRF URL for Google Cloud Instances - Add SSH Key]]'
-- '[[SSRF URL for Oracle Cloud Instances via AWS Instance Metadata and User Data]]'
-- '[[Web Enumeration and Backup File Discovery]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]'
+- '[[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]'
+- '[[List-Contents-of-Misconfigured-AWS-S3-Bucket]]'
+- '[[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]'
+- '[[Cloud-Instance-Rancher-Metadata-Retrieval-via-SSRF]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[SQL-Injection-in-Google-BigQuery-for-Data-Exfiltration]]'
+- '[[Mount-EBS-Volume-to-EC2-Linux-Instance]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
+- '[[Enumerate-AWS-EBS-Snapshots]]'
+- '[[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
+- '[[Web-Enumeration-and-Backup-File-Discovery]]'
 ---
 
 # Data from Cloud Storage
@@ -48,28 +48,32 @@ This open access may expose various types of sensitive data, such as credit card
 
 Adversaries may also obtain then abuse leaked credentials from source repositories, logs, or other means as a way to gain access to cloud storage objects.
 
+
+
 ## Tactics
 
 - [[Collection|TA0009 - Collection]]
 
 ## Related Procedures (19)
 
-- [[AWS API Key Enumeration]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS KMS Key Listing]]
-- [[AWS Managed Policy Version Enumeration]]
-- [[AWS Managed Policy Version Enumeration]]
-- [[AWS S3 Bucket Data Exfiltration]]
-- [[AWS S3 Bucket Data Exfiltration]]
-- [[AWS S3 Bucket Listing Exploitation]]
-- [[AWS Userdata Retrieval via Instance Metadata Service]]
-- [[Cloud Instance Rancher Metadata Retrieval via SSRF]]
-- [[Cloud Security Assessment and Auditing]]
-- [[Google BigQuery SQL Injection Detection]]
-- [[Mounting EBS Volume to EC2 Linux Instance]]
-- [[Server-Side Request Forgery on Cloud Instances and HP Helion]]
-- [[Snapshot Enumeration]]
-- [[SSRF URL for Google Cloud Instances - Add SSH Key]]
-- [[SSRF URL for Oracle Cloud Instances via AWS Instance Metadata and User Data]]
-- [[Web Enumeration and Backup File Discovery]]
+- [[AWS-API-Key-Enumeration]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[Describe-AWS-KMS-Key]]
+- [[Enumerate-AWS-IAM-Managed-Policy-Versions]]
+- [[Enumerate-AWS-IAM-Managed-Policy-Versions]]
+- [[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]
+- [[Exfiltrate-AWS-S3-Data-via-EC2-SSRF]]
+- [[List-Contents-of-Misconfigured-AWS-S3-Bucket]]
+- [[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]
+- [[Cloud-Instance-Rancher-Metadata-Retrieval-via-SSRF]]
+- [[aws-cloud-security-assessment-and-auditing]]
+- [[SQL-Injection-in-Google-BigQuery-for-Data-Exfiltration]]
+- [[Mount-EBS-Volume-to-EC2-Linux-Instance]]
+- [[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]
+- [[Enumerate-AWS-EBS-Snapshots]]
+- [[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]
+- [[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]
+- [[Web-Enumeration-and-Backup-File-Discovery]]
+
+

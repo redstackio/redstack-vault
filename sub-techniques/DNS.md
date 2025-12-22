@@ -11,7 +11,7 @@ parent_technique: '[[Gather Victim Network Information|T1590 - Gather Victim Net
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Subdomain Enumeration with Subbrute]]'
+- '[[Subdomain-Enumeration-Using-Subbrute]]'
 ---
 
 # DNS
@@ -42,4 +42,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Subdomain Enumeration with Subbrute]]
+- [[Subdomain-Enumeration-Using-Subbrute]]

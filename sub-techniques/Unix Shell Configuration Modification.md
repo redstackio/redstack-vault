@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:26.783395+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Patching amsi.dll AmsiScanBuffer to bypass AMSI by rasta-mouse]]'
+- '[[Patch-AmsiScanBuffer-in-Memory-to-Bypass-AMSI]]'
 ---
 
 # Unix Shell Configuration Modification
@@ -39,10 +39,10 @@ For macOS, the functionality of this technique is similar but may leverage zsh, 
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Patching amsi.dll AmsiScanBuffer to bypass AMSI by rasta-mouse]]
+- [[Patch-AmsiScanBuffer-in-Memory-to-Bypass-AMSI]]

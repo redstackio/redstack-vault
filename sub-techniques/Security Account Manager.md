@@ -10,11 +10,11 @@ parent_technique: '[[Credential Dumping|T1003 - Credential Dumping]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[Azure AD Connect - Password Extraction via AD Sync Account DCSync]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[azure-ad-connect-password-extraction-via-ad-sync-dcsync]]'
 - '[[Dumping AD Domain Credentials using Windows Domain Hashdump, Invoke-NinjaCopy,
   and CrackMapExec]]'
-- '[[NTDS Reversible Encryption Dumping]]'
+- '[[NTDS-Reversible-Encryption-Dumping]]'
 ---
 
 # Security Account Manager
@@ -63,7 +63,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[Automated Password Extraction from SYSVOL and Group Policy Preferences]]
-- [[Azure AD Connect - Password Extraction via AD Sync Account DCSync]]
-- [[Dumping AD Domain Credentials using Windows Domain Hashdump, Invoke-NinjaCopy, and CrackMapExec]]
-- [[NTDS Reversible Encryption Dumping]]
+- [[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]
+- [[azure-ad-connect-password-extraction-via-ad-sync-dcsync]]
+- [[Dump-AD-Domain-Credentials-with-Hashdump-NinjaCopy-and-CME]]
+- [[NTDS-Reversible-Encryption-Dumping]]

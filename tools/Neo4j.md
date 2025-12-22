@@ -5,13 +5,14 @@ type: tool
 verified: true
 created_at: '2020-03-12T21:04:39.211694+00:00'
 updated_at: '2023-05-30T01:07:27.396827+00:00'
-commands:
-- '[[Launch a Neo4j Instance]]'
 platforms:
-- Linux
-- Windows
+  - Linux
+  - Windows
 tags:
-- '[[database]]'
+  - database
+  - graph-database
+url: 'https://neo4j.com/'
+validated: true
 ---
 
 # Neo4j
@@ -20,67 +21,119 @@ tags:
 
 ## Overview
 
-High performance graph store with all of the features expected of a mature and robust database. Neo4j works with a flexible network structure of nodes and relationships rather than static tables, but maintains the benefits of enterprise-quality databases. 
+Neo4j is a high-performance graph database that stores data using nodes and relationships instead of traditional tables. It is widely used in security operations for modeling complex relationships, such as attack paths in MITRE ATT&CK frameworks, threat intelligence analysis, and network mapping during red team engagements.
 
 ## Description
 
-# Description
+Neo4j provides robust features for querying graph data with Cypher, its declarative query language. In offensive security, it can be used to visualize and analyze reconnaissance data, privilege escalation chains, or lateral movement patterns. It supports ACID transactions, high availability clustering, and integrates with tools like BloodHound for Active Directory graph analysis.
 
-High performance graph store with all of the features expected of a mature and robust database. Neo4j works with a flexible network structure of nodes and relationships rather than static tables, but maintains the benefits of enterprise-quality databases.
+## Features
 
+- Graph storage with native nodes and relationships for efficient traversal
+- Cypher query language for complex pattern matching
+- Bolt protocol for high-speed data access
+- Web-based browser interface for visualization
+- Plugins and extensions for security-specific use cases (e.g., ATT&CK navigator integration)
 
+## Installation
 
-# Installation
+### Requirements
 
-## Install on Windows
+- Java SE 11 or later (Neo4j requires a compatible JDK)
+- At least 2GB RAM for basic operations
+- Administrative privileges for installation
 
-1. Neo4j requires Java SE 11. [Downlaod Java SE 11 here](https://www.oracle.com/java/technologies/javase-downloads.html)
+### Install Commands
 
+#### Linux (Ubuntu/Kali)
 
+```bash
+sudo apt update
+sudo apt install neo4j
+sudo systemctl start neo4j
+```
 
-Note: Oracle requires users sign-up before downloading the Java installer. Alternatively users can avoid the sign-up requirement by downloading and extracting Java 11.0.2 manually. [Download the Java 11.0.2 archive here](https://jdk.java.net/archive/). When manually installing Java, users must add the "JAVA_HOME" System Variable to their Windows Environment Variables, with the Value set to the base directory where Java was copied.
+Alternatively, download the tarball from the official site and extract:
 
+```bash
+wget https://neo4j.com/download/community-edition
+# Extract and set JAVA_HOME
+export JAVA_HOME=/path/to/java
+bin/neo4j start
+```
 
+#### Windows
 
+1. Download and install Java SE 11 from [Oracle](https://www.oracle.com/java/technologies/javase-downloads.html) or use the archive from [JDK Archive](https://jdk.java.net/archive/) to avoid sign-up. Set JAVA_HOME environment variable to the Java installation directory.
 
+2. Download Neo4j Community Edition from [Neo4j Download Center](https://neo4j.com/download-center/#community).
 
-![e0839cab-d485-4bcb-8efc-2227ede2059e.png](_assets/images/data.redstack.io/Mark/e0839cab-d485-4bcb-8efc-2227ede2059e.png)
+3. Extract the archive to a directory (e.g., C:\neo4j).
 
+## Basic Usage
 
+After installation, launch Neo4j in console mode to run it in the foreground. Access the web interface at http://localhost:7474.
 
-2. After preparing Java, download Neo4j: [Download Neo4j Community Edition here](https://neo4j.com/download-center/#community)
-3. Neo4j can be run by executing either neo4j.bat or neo4j.ps1, both found in "<Neo4j Extracted Dir>/bin", with the "console" argument.
+Default credentials: neo4j/neo4j (change on first login).
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `console` | Run Neo4j in foreground console mode |
+| `start` | Start Neo4j as a background service |
+| `stop` | Stop the running Neo4j instance |
+| `status` | Check the status of the Neo4j service |
 
-{{EMBEDDED_COMMAND_175bfe2e-780f-4071-abe5-df3af65c86a8}}
+## Examples
 
+### Example 1: Launch on Windows
 
+Navigate to the bin directory and run:
 
-4. After launching Neo4j, use a web browser to navigate to: http://localhost:7474 
+See [[commands/neo4j-launch-windows-console]] for details.
 
+### Example 2: Launch on Linux
 
+```bash
+cd /usr/share/neo4j/bin
+./neo4j console
+```
 
-![51f9c858-e4dd-420c-9f23-d14937468fd5.png](_assets/images/data.redstack.io/Mark/51f9c858-e4dd-420c-9f23-d14937468fd5.png)
+See [[commands/neo4j-launch-linux-console]] for details.
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-5. Use the default credentials of  "neo4j:neo4j" to log in, then change the password to complete the setup.
+### Techniques
 
+- [[Active Scanning]] Active Scanning (for graph-based reconnaissance modeling)
+- [[System Information Discovery]] System Information Discovery (for mapping relationships)
 
+### Tactics
 
-## Platforms
+- [[Impact]] Impact (data analysis in post-exploitation)
+- [[Discovery]] Discovery (relationship discovery in networks)
 
-- Linux
-- Windows
+## Detection
 
-## Commands (2)
+- Monitor for Java processes spawning neo4j.jar or bin/neo4j executables
+- Network traffic on ports 7474 (HTTP) or 7687 (Bolt)
+- Logins to localhost:7474 from security tools
+- Unusual graph queries in Cypher logs for sensitive data patterns
 
-- [[Launch a Neo4j Instance]]
-- [[Launch a Neo4j Instance]]
+## Related Procedures
 
-## Tags
+No related procedures documented yet.
 
-- [[database]]
+## Related Tools
 
+- [[tools/BloodHound]] (Active Directory graph analysis)
+- [[Graphistry]] (graph visualization)
 
+## References
+
+- Official Documentation: https://neo4j.com/docs/
+- Cypher Manual: https://neo4j.com/docs/cypher-manual/current/
+- Security Use Cases: https://neo4j.com/use-cases/security-intelligence/

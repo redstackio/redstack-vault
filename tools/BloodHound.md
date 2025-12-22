@@ -2,120 +2,173 @@
 id: fb24053b-d88e-4c4f-8ec8-5d9f915afe94
 name: BloodHound
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:25.510542+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[BloodHound.py Enumerate Active Directory]]'
 platforms:
-- Windows
+  - Windows
+  - Linux
 tags:
-- '[[Active Directory]]'
-- '[[Enumeration]]'
-- '[[Network]]'
+  - Active Directory
+  - Enumeration
+  - Network
+commands:
+  - '[[commands/neo4j-launch-console]]'
+url: 'https://github.com/BloodHoundAD/BloodHound'
+validated: true
 ---
 
 # BloodHound
 
+**Status**: Unverified
+
 ## Overview
 
-Uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. The data itself is collected via a BloodHound ingesto
+BloodHound is a tool that uses graph theory to reveal hidden and unintended relationships within an Active Directory environment. It helps identify complex attack paths that are difficult to detect manually, making it invaluable for red teaming, penetration testing, and security assessments of AD domains.
 
 ## Description
 
-# Description
+BloodHound collects data from Active Directory using ingestor tools (like SharpHound or AzureHound), which output JSON files in a ZIP archive. This data is then imported into BloodHound's Neo4j database for visualization and analysis. Users can query the graph to find shortest paths to high-value targets, such as domain admins, and identify misconfigurations like vulnerable ACLs (Access Control Entries).
 
-Uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. The data itself is collected via a BloodHound ingestor that outputs a .zip, which is then imported into BloodHound for analysis.
+Key vulnerable ACEs identified by BloodHound include:
+- ForceChangePassword: Allows changing a user's password.
+- AddMembers: Permits adding users to groups.
+- GenericAll: Grants full control over the target.
+- GenericWrite: Allows updating non-protected attributes.
+- WriteOwner: Enables changing the owner of an object.
+- WriteDACL: Allows modifying the Discretionary Access Control List.
+- AllExtendedRights: Permits extended AD rights actions.
 
+BloodHound visualizes these relationships, allowing right-click interactions to view detailed attack information and mitigations.
 
+## Features
 
-Vulnerable ACE which BloodHound will identity:
+- Graph-based visualization of AD objects and relationships.
+- Pathfinding algorithms to identify attack routes to privileged accounts.
+- Support for custom queries using Cypher language.
+- Integration with ingestor collectors for on-premises and cloud AD (Azure AD).
+- Exportable reports and screenshots for documentation.
 
-- ForceChangePassword - Ability to change the target user's password
+## Installation
 
-- AddMembers - Ability to add users 
+### Requirements
 
-- GenericAll - Full control over the target. Change user passwords, add users or groups, etc
+- Java SE 11 or later.
+- Neo4j Community Edition (version 4.x or 5.x compatible).
+- For data collection: Ingestor tools like SharpHound (Windows) or BloodHound.py (Python-based).
 
-- GenericWrite - Ability to update non-protected target values, such as the "scriptPath"
+### Install Commands
 
-- WriteOwner - Ability to update the owner of a target
+#### On Kali Linux / Ubuntu
 
-- WriteDACL - Ability to write a new ACE to the target's DACL
+1. Install Java:
+```bash
+sudo apt update
+sudo apt install openjdk-11-jdk
+```
 
-- AllExtendRights - Ability to perform any action associated with extended Active Directory rights
+2. Download and install Neo4j:
+```bash
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
+echo 'deb http://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
+sudo apt update
+sudo apt install neo4j
+sudo systemctl start neo4j
+```
 
+3. Download BloodHound:
+```bash
+# Download from GitHub releases
+wget https://github.com/BloodHoundAD/BloodHound/releases/download/v4-3/BloodHound-linux-x64.zip
+unzip BloodHound-linux-x64.zip
+```
 
+#### On Windows
 
-![fda85663-1cd3-447a-bfcd-b31112c01385.png](_assets/images/data.redstack.io/Mark/fda85663-1cd3-447a-bfcd-b31112c01385.png)
+1. Download and install Java SE 11 from [Oracle](https://www.oracle.com/java/technologies/javase-downloads.html) or extract from [JDK archive](https://jdk.java.net/archive/) and set JAVA_HOME environment variable to the Java base directory.
 
-Right click on each link to view detailed information, including potential attacks and mitigation.
+2. Download Neo4j Community Edition from [Neo4j Download Center](https://neo4j.com/download-center/#community) and extract to a directory (e.g., C:\neo4j).
 
+3. Download the latest BloodHound release from [GitHub](https://github.com/BloodHoundAD/BloodHound/releases) (BloodHound-win32-x64.zip) and extract.
 
+## Basic Usage
 
-# Installation
+1. Start Neo4j (see related command below).
+2. Access Neo4j browser at http://localhost:7474, login with default neo4j/neo4j, and change the password.
+3. Launch BloodHound.exe (Windows) or run the Linux binary.
+4. Connect to Neo4j using the credentials.
+5. Upload a ZIP file generated by an ingestor (e.g., SharpHound.exe --CollectionMethods All).
+6. Run queries like 'Shortest Paths to Domain Admins from [Current User]' to analyze paths.
 
-## Install on Windows
+### Common Options
 
-1. BloodHound requires Java SE 11, which can be downloaded and installed here: [https://www.oracle.com/java/technologies/javase-downloads.html](https://www.oracle.com/java/technologies/javase-downloads.html)
+BloodHound itself is GUI-based, but ingestor options vary:
 
+| Option | Description |
+|--------|-------------|
+| --CollectionMethods | Specifies data collection methods (e.g., All, Group, ACL). |
+| --ZipFileName | Output ZIP filename. |
+| --LoopTimeout | Timeout for collection loops. |
 
+## Examples
 
-Note: Oracle requires users sign-up before downloading the Java installer. Alternatively users can avoid the sign-up requirement by downloading and extracting Java 11.0.2 manually from here: [https://jdk.java.net/archive/](https://jdk.java.net/archive/) . When manually installing Java, users must add the "JAVA_HOME" System Variable to their Windows Environment Variables, with the Value set to the base directory where Java was copied.
+### Example 1: Basic Usage
 
+Launch Neo4j and import data:
 
+1. Use [[commands/neo4j-launch-console]] to start the database.
+2. In BloodHound GUI, click 'Upload Data' and select the ingestor ZIP.
+3. Query: Find paths to high-value targets.
 
-![9ce1a2a7-bd88-4c09-9eeb-336723874803.png](_assets/images/data.redstack.io/Mark/9ce1a2a7-bd88-4c09-9eeb-336723874803.png)
+### Example 2: Advanced Usage
 
-2. After preparing Java, download Neo4j Community Edition here: [https://neo4j.com/download-center/#community](https://neo4j.com/download-center/#community)
-3. Neo4j can be run by executing either neo4j.bat or neo4j.ps1, both found in "<Neo4j Extracted Dir>/bin", with the "console" argument.
+Collect data on a domain:
+```powershell
+# Using SharpHound (separate tool)
+SharpHound.exe --Domain yourdomain.com --CollectionMethods All --ZipFileName output.zip
+```
+Then import output.zip into BloodHound.
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-{{EMBEDDED_COMMAND_175bfe2e-780f-4071-abe5-df3af65c86a8}}
+### Techniques
 
-4. After launching Neo4j, use a web browser to navigate to: [http://localhost:7474](http://localhost:7474/)
-5. The default password must be changed. Log in using credentials "neo4j:neo4j", then change the password to complete the setup
+- [[Account Discovery]] Account Discovery
+- [[Permission Groups Discovery]] Permission Groups Discovery
+- [[T1087.002]] Domain Groups
 
+### Tactics
 
+- [[Discovery]] Discovery
 
-![1881184a-0f85-498a-ae5c-da429e4d0137.png](_assets/images/data.redstack.io/Mark/1881184a-0f85-498a-ae5c-da429e4d0137.png)
+## Detection
 
-6. Download and extract the latest pre-compiled "BloodHound-win32-x64.zip" here:  [https://github.com/BloodHoundAD/BloodHound/releases](https://github.com/BloodHoundAD/BloodHound/releases)
-7. Navigate to the BloodHound folder and double click on "BloodHound.exe" to execute it
+Indicators and methods for detecting this tool's usage:
 
-8. Log in with the user "neo4j" and the new password
+- Network connections to localhost:7474 (Neo4j) or unusual AD queries.
+- Presence of BloodHound.exe or ingestor binaries like SharpHound.
+- Event logs showing LDAP queries for group memberships or ACLs (Event ID 4662).
+- File creation of JSON ZIP archives with AD data.
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-![a8d2d1fd-08f9-4ab4-9756-fad213197a80.png](_assets/images/data.redstack.io/Mark/a8d2d1fd-08f9-4ab4-9756-fad213197a80.png)
+## Related Tools
 
-9. To begin analyzing data, select "Upload Data" icon near the top right to import a archive generated by a BloodHound ingestor
+- [[tools/SharpHound]]
+- [[tools/Neo4j]]
 
+## References
 
-
-![3a5ec282-4e50-4574-990f-6ef6393dbeea.png](_assets/images/data.redstack.io/Mark/3a5ec282-4e50-4574-990f-6ef6393dbeea.png)
-
-
-
-## Platforms
-
-- Windows
-
-## Services
-
-- ldap
-- netbios-ss
-- smb
-
-## Commands (1)
-
-- [[Launch a Neo4j Instance]]
-
-## Tags
-
-- [[Active Directory]]
-- [[Enumeration]]
-- [[Network]]
-
-
+- Official GitHub: https://github.com/BloodHoundAD/BloodHound
+- Neo4j Documentation: https://neo4j.com/docs/
+- BloodHound Usage Guide: https://bloodhound.readthedocs.io/en/latest/

@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Bypassing Quotes in Script Tag for XSS Injection]]'
-- '[[Filter Bypass with Incomplete HTML Tag for XSS Attacks]]'
+- '[[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]'
+- '[[Bypass-XSS-Filter-with-Incomplete-HTML-Tag]]'
 ---
 
 # Bootkit
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 A bootkit is a malware variant that modifies the boot sectors of a hard drive, including the Master Boot Record (MBR) and Volume Boot Record (VBR). [1]Adversaries may use bootkits to persist on systems at a layer below the operating system, which may make it difficult to perform full remediation unless an organization suspects one was used and can act accordingly.Master Boot RecordThe MBR is the section of disk that is first loaded after completing hardware initialization by the BIOS. It is the location of the boot loader. An adversary who has raw access to the boot drive may overwrite this area, diverting execution during startup from the normal boot loader to adversary code. [2]Volume Boot RecordThe MBR passes control of the boot process to the VBR. Similar to the case of MBR, an adversary who has raw access to the boot drive may overwrite the VBR to divert execution during startup to adversary code.
+
+
 
 # Detection
 
@@ -61,5 +63,7 @@ Ensure proper permissions are in place to help prevent adversary access to privi
 
 ## Related Procedures (2)
 
-- [[Bypassing Quotes in Script Tag for XSS Injection]]
-- [[Filter Bypass with Incomplete HTML Tag for XSS Attacks]]
+- [[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]
+- [[Bypass-XSS-Filter-with-Incomplete-HTML-Tag]]
+
+

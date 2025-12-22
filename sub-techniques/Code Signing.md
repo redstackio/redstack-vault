@@ -10,18 +10,18 @@ parent_technique: '[[Subvert Trust Controls|T1553 - Subvert Trust Controls]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS Lambda Function Enumeration]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[Kubernetes Pentest with BishopFox BadPods]]'
-- '[[Kubernetes Service Account Token Theft]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Log4Shell Scanning Procedure]]'
-- '[[Open URL Redirection Filter Bypass]]'
-- '[[PHP Juggling Type and Magic Hashes]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[AWS-Lambda-Function-Enumeration]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[Deploy-BadPods-for-Kubernetes-Security-Testing]]'
+- '[[Kubernetes-Service-Account-Token-Theft]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Scan-for-Log4Shell-Vulnerability]]'
+- '[[Bypass-Open-URL-Redirection-Filters]]'
+- '[[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]'
 ---
 
 # Code Signing
@@ -54,15 +54,15 @@ This sub-technique is used in the following tactics:
 
 There are 12 procedures using this sub-technique:
 
-- [[AWS API Gateway Resource Enumeration]]
-- [[AWS Lambda Function Enumeration]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[CRLF Injection and Cookie Stealing]]
-- [[Kubernetes Pentest with BishopFox BadPods]]
-- [[Kubernetes Service Account Token Theft]]
-- [[Log4Shell Scanning Procedure]]
-- [[Log4Shell Scanning Procedure]]
-- [[Log4Shell Scanning Procedure]]
-- [[Open URL Redirection Filter Bypass]]
-- [[PHP Juggling Type and Magic Hashes]]
+- [[aws-api-gateway-resource-enumeration]]
+- [[AWS-Lambda-Function-Enumeration]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[crlf-injection-for-cookie-stealing]]
+- [[Deploy-BadPods-for-Kubernetes-Security-Testing]]
+- [[Kubernetes-Service-Account-Token-Theft]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Scan-for-Log4Shell-Vulnerability]]
+- [[Bypass-Open-URL-Redirection-Filters]]
+- [[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]

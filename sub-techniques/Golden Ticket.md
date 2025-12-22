@@ -11,14 +11,14 @@ parent_technique: '[[Steal or Forge Kerberos Tickets|T1558 - Steal or Forge Kerb
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[CCACHE Ticket Reuse from Keyring with Tickey]]'
-- '[[Golden Ticket Attack with Mimikatz]]'
-- '[[HTML GET CSRF Payload with User Interaction]]'
-- '[[HTML GET CSRF Payload with User Interaction]]'
-- '[[Kerberos Bronze Bit Attack]]'
-- '[[NTLM Reflection SMB Relay Attack]]'
-- '[[Pass-the-Golden-Ticket Attack using Meterpreter]]'
-- '[[RODC Key List Extraction and Golden Ticket Creation]]'
+- '[[extract-ccache-tickets-from-linux-keyring-with-tickey]]'
+- '[[Golden-Ticket-Attack-with-Mimikatz]]'
+- '[[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]'
+- '[[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]'
+- '[[Kerberos-Bronze-Bit-Attack]]'
+- '[[ntlm-reflection-smb-relay-attack]]'
+- '[[pass-the-golden-ticket-attack-using-meterpreter]]'
+- '[[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]'
 ---
 
 # Golden Ticket
@@ -51,11 +51,11 @@ This sub-technique is used in the following tactics:
 
 There are 8 procedures using this sub-technique:
 
-- [[CCACHE Ticket Reuse from Keyring with Tickey]]
-- [[Golden Ticket Attack with Mimikatz]]
-- [[HTML GET CSRF Payload with User Interaction]]
-- [[HTML GET CSRF Payload with User Interaction]]
-- [[Kerberos Bronze Bit Attack]]
-- [[NTLM Reflection SMB Relay Attack]]
-- [[Pass-the-Golden-Ticket Attack using Meterpreter]]
-- [[RODC Key List Extraction and Golden Ticket Creation]]
+- [[extract-ccache-tickets-from-linux-keyring-with-tickey]]
+- [[Golden-Ticket-Attack-with-Mimikatz]]
+- [[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]
+- [[Craft-HTML-GET-CSRF-Payload-with-User-Interaction]]
+- [[Kerberos-Bronze-Bit-Attack]]
+- [[ntlm-reflection-smb-relay-attack]]
+- [[pass-the-golden-ticket-attack-using-meterpreter]]
+- [[RODC-Key-List-Extraction-and-Golden-Ticket-Creation]]

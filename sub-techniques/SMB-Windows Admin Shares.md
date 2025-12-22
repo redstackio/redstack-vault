@@ -10,21 +10,21 @@ parent_technique: '[[Remote Services|T1021 - Remote Services]]'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[DCOM Lateral Movement]]'
-- '[[DCOM Office Remote Code Execution]]'
-- '[[DCOM ShellBrowserWindow Calculator Execution]]'
-- '[[DCOM ShellExecute Calculator Execution]]'
-- '[[Go Application Proxification with Graftcp]]'
-- '[[Inter-User Messaging]]'
-- '[[Linked Database Column Extraction]]'
-- '[[Linux Reverse Shell Persistence with Ncat]]'
-- '[[Network Pivoting with plink Port Forwarding]]'
-- '[[Ruby Bind Shell]]'
-- '[[Subversion Source Code Disclosure]]'
-- '[[WebDAV Relay Attack]]'
-- '[[Windows - Impacket Psexec Remote Command Execution]]'
-- '[[Windows Remote Share Connection]]'
-- '[[Windows - SMBExec with Impacket for Command Execution]]'
+- '[[dcom-lateral-movement]]'
+- '[[DCOM-Office-Remote-Code-Execution]]'
+- '[[dcom-shellbrowserwindow-calculator-execution]]'
+- '[[dcom-shellexecute-calculator-execution]]'
+- '[[Proxify-Go-Application-with-Graftcp]]'
+- '[[Inter-User-Messaging]]'
+- '[[Extract-Data-from-Linked-SQL-Server-Database]]'
+- '[[linux-reverse-shell-persistence-via-ncat-systemd]]'
+- '[[Network-Pivoting-with-Plink-Port-Forwarding]]'
+- '[[Ruby-Bind-Shell]]'
+- '[[Subversion-Source-Code-Disclosure]]'
+- '[[WebDAV-Relay-Attack]]'
+- '[[Windows-Impacket-Psexec-Remote-Command-Execution]]'
+- '[[Connect-to-Windows-Remote-Share]]'
+- '[[windows-smbexec-impacket-remote-command-execution]]'
 ---
 
 # SMB/Windows Admin Shares
@@ -59,18 +59,18 @@ This sub-technique is used in the following tactics:
 
 There are 15 procedures using this sub-technique:
 
-- [[DCOM Lateral Movement]]
-- [[DCOM Office Remote Code Execution]]
-- [[DCOM ShellBrowserWindow Calculator Execution]]
-- [[DCOM ShellExecute Calculator Execution]]
-- [[Go Application Proxification with Graftcp]]
-- [[Inter-User Messaging]]
-- [[Linked Database Column Extraction]]
-- [[Linux Reverse Shell Persistence with Ncat]]
-- [[Network Pivoting with plink Port Forwarding]]
-- [[Ruby Bind Shell]]
-- [[Subversion Source Code Disclosure]]
-- [[WebDAV Relay Attack]]
-- [[Windows - Impacket Psexec Remote Command Execution]]
-- [[Windows Remote Share Connection]]
-- [[Windows - SMBExec with Impacket for Command Execution]]
+- [[dcom-lateral-movement]]
+- [[DCOM-Office-Remote-Code-Execution]]
+- [[dcom-shellbrowserwindow-calculator-execution]]
+- [[dcom-shellexecute-calculator-execution]]
+- [[Proxify-Go-Application-with-Graftcp]]
+- [[Inter-User-Messaging]]
+- [[Extract-Data-from-Linked-SQL-Server-Database]]
+- [[linux-reverse-shell-persistence-via-ncat-systemd]]
+- [[Network-Pivoting-with-Plink-Port-Forwarding]]
+- [[Ruby-Bind-Shell]]
+- [[Subversion-Source-Code-Disclosure]]
+- [[WebDAV-Relay-Attack]]
+- [[Windows-Impacket-Psexec-Remote-Command-Execution]]
+- [[Connect-to-Windows-Remote-Share]]
+- [[windows-smbexec-impacket-remote-command-execution]]

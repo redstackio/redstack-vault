@@ -9,28 +9,28 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]'
-- '[[Cobalt Strike Malleable C2 Profile Checking]]'
-- '[[Dynamic Port Forwarding with an SSH SOCKS Proxy]]'
-- '[[Filter Bypass using Alternate Redirects]]'
-- '[[LFI to RCE via Apache and Nginx Log Files]]'
-- '[[Metasploit Network Pivoting with Meterpreter Port Forwarding and Routing]]'
-- '[[Meterpreter SOCKS Proxy]]'
-- '[[Network Pivoting with Proxychains]]'
-- '[[Network Pivoting with sshuttle]]'
-- '[[ngrok Port Forwarding]]'
-- '[[RDS Routing Tables Destination and Target Rules]]'
-- '[[Remote Port Forwarding Over HTTP Proxy]]'
-- '[[Remote Port Forwarding with Reverse SSH Tunneling]]'
-- '[[Reverse Socks Proxy Pivoting]]'
-- '[[Rpivot - Network Pivoting Techniques]]'
-- '[[Server-Side Request Forgery via Bypassing Filters with HTTPS]]'
-- '[[SQL Injection WAF Bypass using MySQL Specific Commands]]'
-- '[[SSH Local Port Forwarding]]'
-- '[[SSH Port Forwarding with an Isolated Host]]'
-- '[[SSH Tunneling and SOCKS Proxy]]'
-- '[[Web SOCKS Pivoting with Pivotnacci]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[chisel-port-forwarding-and-socks-proxy-network-pivoting]]'
+- '[[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]'
+- '[[dynamic-port-forwarding-with-ssh-socks-proxy]]'
+- '[[XSS-Filter-Bypass-via-Alternate-Redirect-Methods]]'
+- '[[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]'
+- '[[Meterpreter-Network-Pivoting-via-Port-Forwarding-and-Routing]]'
+- '[[Setup-Meterpreter-SOCKS-Proxy]]'
+- '[[Network-Pivoting-with-Proxychains]]'
+- '[[network-pivoting-with-sshuttle]]'
+- '[[Setup-Ngrok-Port-Forwarding-Tunnel]]'
+- '[[Modify-AWS-VPC-Route-Tables-for-RDS-Traffic-Redirection]]'
+- '[[Remote-Port-Forwarding-Using-Chisel]]'
+- '[[Establish-Reverse-SSH-Tunnel-for-Remote-Port-Forwarding]]'
+- '[[Reverse-SOCKS-Proxy-Pivoting]]'
+- '[[Rpivot-Network-Pivoting]]'
+- '[[Server-Side-Request-Forgery-via-Bypassing-Filters-with-HTTPS]]'
+- '[[sql-injection-waf-bypass-using-mysql-specific-commands]]'
+- '[[SSH-Local-Port-Forwarding]]'
+- '[[SSH-Port-Forwarding-with-an-Isolated-Host]]'
+- '[[SSH-Tunneling-for-SOCKS-Proxy]]'
+- '[[Web-SOCKS-Pivoting-with-Pivotnacci]]'
 ---
 
 # Connection Proxy
@@ -40,6 +40,8 @@ procedures:
 ## Description
 
 A connection proxy is used to direct network traffic between systems or act as an intermediary for network communications. Many tools exist that enable traffic redirection through proxies or port redirection, including HTRAN, ZXProxy, and ZXPortMap. [1]The definition of a proxy can also be expanded out to encompass trust relationships between networks in peer-to-peer, mesh, or trusted connections between networks consisting of hosts or systems that regularly communicate with each other.The network may be within a single organization or across organizations with trust relationships. Adversaries could use these types of relationships to manage command and control communications, to reduce the number of simultaneous outbound network connections, to provide resiliency in the face of connection loss, or to ride over existing trusted communications paths between victims to avoid suspicion.
+
+
 
 # Detection
 
@@ -139,25 +141,27 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (22)
 
-- [[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]
-- [[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]
-- [[Cobalt Strike Malleable C2 Profile Checking]]
-- [[Dynamic Port Forwarding with an SSH SOCKS Proxy]]
-- [[Filter Bypass using Alternate Redirects]]
-- [[LFI to RCE via Apache and Nginx Log Files]]
-- [[Metasploit Network Pivoting with Meterpreter Port Forwarding and Routing]]
-- [[Meterpreter SOCKS Proxy]]
-- [[Network Pivoting with Proxychains]]
-- [[Network Pivoting with sshuttle]]
-- [[ngrok Port Forwarding]]
-- [[RDS Routing Tables Destination and Target Rules]]
-- [[Remote Port Forwarding Over HTTP Proxy]]
-- [[Remote Port Forwarding with Reverse SSH Tunneling]]
-- [[Reverse Socks Proxy Pivoting]]
-- [[Rpivot - Network Pivoting Techniques]]
-- [[Server-Side Request Forgery via Bypassing Filters with HTTPS]]
-- [[SQL Injection WAF Bypass using MySQL Specific Commands]]
-- [[SSH Local Port Forwarding]]
-- [[SSH Port Forwarding with an Isolated Host]]
+- [[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]
+- [[chisel-port-forwarding-and-socks-proxy-network-pivoting]]
+- [[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]
+- [[dynamic-port-forwarding-with-ssh-socks-proxy]]
+- [[XSS-Filter-Bypass-via-Alternate-Redirect-Methods]]
+- [[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]
+- [[Meterpreter-Network-Pivoting-via-Port-Forwarding-and-Routing]]
+- [[Setup-Meterpreter-SOCKS-Proxy]]
+- [[Network-Pivoting-with-Proxychains]]
+- [[network-pivoting-with-sshuttle]]
+- [[Setup-Ngrok-Port-Forwarding-Tunnel]]
+- [[Modify-AWS-VPC-Route-Tables-for-RDS-Traffic-Redirection]]
+- [[Remote-Port-Forwarding-Using-Chisel]]
+- [[Establish-Reverse-SSH-Tunnel-for-Remote-Port-Forwarding]]
+- [[Reverse-SOCKS-Proxy-Pivoting]]
+- [[Rpivot-Network-Pivoting]]
+- [[Server-Side-Request-Forgery-via-Bypassing-Filters-with-HTTPS]]
+- [[sql-injection-waf-bypass-using-mysql-specific-commands]]
+- [[SSH-Local-Port-Forwarding]]
+- [[SSH-Port-Forwarding-with-an-Isolated-Host]]
 
 *...and 2 more*
+
+

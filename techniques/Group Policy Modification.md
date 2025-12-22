@@ -8,18 +8,18 @@ created_at: '2019-08-28T21:17:42.189555+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
 - '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
   User Rights]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[AdminCount Abuse]]'
-- '[[Cloudflare XSS Bypass via SVG Onload Alert]]'
-- '[[Domain Takeover via Certifried CVE-2022-26923]]'
-- '[[Exploit Group Policy Objects with Write Access]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[GPO Abuse with PowerGPOAbuse]]'
+- '[[AdminCount-Abuse]]'
+- '[[Cloudflare-XSS-Bypass-via-SVG-Onload-Alert]]'
+- '[[Domain-Takeover-via-Certifried-CVE-2022-26923]]'
+- '[[Exploit-Group-Policy-Objects-with-Write-Access]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[GPO-Abuse-with-PowerGPOAbuse]]'
 - '[[Windows Defender Application Control Device Guard Configuration]]'
 ---
 
@@ -30,6 +30,8 @@ procedures:
 ## Description
 
 Adversaries may modify Group Policy Objects (GPOs) to subvert the intended discretionary access controls for a domain, usually with the intention of escalating privileges on the domain. Group policy allows for centralized management of user and computer settings in Active Directory (AD). GPOs are containers for group policy settings made up of files stored within a predicable network path \<DOMAIN>\SYSVOL\<DOMAIN>\Policies\.[1][2] Like other objects in AD, GPOs have access controls associated with them. By default all user accounts in the domain have permission to read GPOs. It is possible to delegate GPO access control permissions, e.g. write access, to specific users or groups in the domain.Malicious GPO modifications can be used to implement Scheduled Task, Disabling Security Tools, Remote File Copy, Create Account, Service Execution and more.[2][3][4][5][6] Since GPOs can control so many user and machine settings in the AD environment, there are a great number of potential attacks that can stem from this GPO abuse.[3] Publicly available scripts such as New-GPOImmediateTask can be leveraged to automate the creation of a malicious Scheduled Task by modifying GPO settings, in this case modifying <GPO_PATH>\Machine\Preferences\ScheduledTasks\ScheduledTasks.xml.[3][4] In some cases an adversary might modify specific user rights like SeEnableDelegationPrivilege, set in <GPO_PATH>\MACHINE\Microsoft\Windows NT\SecEdit\GptTmpl.inf, to achieve a subtle AD backdoor with complete control of the domain because the user account under the adversary's control would then be able to modify GPOs.[7]
+
+
 
 # Detection
 
@@ -76,17 +78,19 @@ Consider implementing WMI and security filtering to further tailor
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (10)
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
-- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
+- [[Abusing-Group-Policy-Objects-with-StandIn-to-Manage-Local-Administrators-and-User-Rights]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[AdminCount Abuse]]
-- [[Cloudflare XSS Bypass via SVG Onload Alert]]
-- [[Domain Takeover via Certifried CVE-2022-26923]]
-- [[Exploit Group Policy Objects with Write Access]]
-- [[Golden Certificate Domain Persistence]]
-- [[GPO Abuse with PowerGPOAbuse]]
+- [[AdminCount-Abuse]]
+- [[Cloudflare-XSS-Bypass-via-SVG-Onload-Alert]]
+- [[Domain-Takeover-via-Certifried-CVE-2022-26923]]
+- [[Exploit-Group-Policy-Objects-with-Write-Access]]
+- [[Golden-Certificate-Domain-Persistence]]
+- [[GPO-Abuse-with-PowerGPOAbuse]]
 - [[Windows Defender Application Control Device Guard Configuration]]
+
+

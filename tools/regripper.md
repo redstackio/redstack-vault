@@ -1,24 +1,146 @@
 ---
 id: 837d921c-c0de-41cb-9d85-bfd0d03f3470
-name: regripper
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:39.481617+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+updated_at: '2023-10-01T00:00:00+00:00'
+platforms:
+  - Linux
+  - Windows
+tags:
+  - forensics
+  - registry
+  - analysis
+  - incident-response
+url: 'https://github.com/keydet89/RegRipper3.0'
+commands:
+  - '[[commands/rip-parse-all-plugins]]'
+  - '[[commands/rip-parse-system-profile]]'
+  - '[[commands/rip-run-single-plugin]]'
+validated: true
 ---
 
 # regripper
 
+**Status**: Unverified
+
 ## Overview
 
-RegRipper is an open source tool, written in Perl, for extracting/parsing information (keys, values, data) from the Registry and presenting it for analysis.RegRipper consists of two basic tools, both of which provide similar capability. The RegRipper GUI allows the analyst to select a hive to parse
+RegRipper is an open-source Perl-based tool designed for extracting, parsing, and analyzing data from Windows Registry hives. It is primarily used in digital forensics, incident response, and security assessments to uncover system artifacts, user activity, malware persistence, and configuration details. The tool operates via a command-line interface (CLI) called 'rip' or a graphical user interface (GUI), making it accessible for both automated scripting and interactive analysis.
 
 ## Description
 
-RegRipper is an open source tool, written in Perl, for extracting/parsing information (keys, values, data) from the Registry and presenting it for analysis.RegRipper consists of two basic tools, both of which provide similar capability. The RegRipper GUI allows the analyst to select a hive to parse, an output file for the results, and a profile (list of plugins) to run against the hive. When the analyst launches the tool against the hive, the results go to the file that the analyst designated. If the analyst chooses to parse the System hive, they might also choose to send the results to system.txt. The GUI tool will also create a log of it’s activity in the same directory as the output file, using the same file name but using the .log extension (i.e., if the output is written to system.txt, the log will be written to system.log).RegRipper also includes a command line (CLI) tool called rip. Rip can be pointed against to a hive and can run either a profile (a list of plugins) or an individual plugin against that hive, with the results being sent to STDOUT. Rip can be included in batch files, using the redirection operators to send the output to a file. Rip does not write a log of it’s activity.RegRipper is similar to tools such as Nessus, in that the application itself is simply an engine that runs plugins. The plugins are individual Perl scripts that each perform a specific function. Plugins can locate specific keys, and list all subkeys, as well as values and data, or they can locate specific values. Plugins are extremely valuable in the sense that they can be written to parse data in a manner that is useful to individual analysts.Note: Plugins also serve as a means of retaining corporate knowledge, in that an analyst finds something, creates a plugin, and adds that plugin to a repository that other analysts can access. When the plugin is shared, this has the effect of being a force multiplier, in that all analysts know have access to the knowledge and experience of one analyst. In addition, plugins remain long after analysts leave an organization, allowing for retention of knowledge.
+RegRipper functions as an engine that executes modular plugins—individual Perl scripts that target specific registry keys, values, and data structures. These plugins can enumerate subkeys, extract timestamps, and correlate information relevant to investigations, such as recent file access, network connections, or installed software. The CLI version ('rip') allows for batch processing and integration into scripts, while the GUI provides a user-friendly interface for selecting hives, profiles (collections of plugins), and output files. Plugins promote knowledge sharing among analysts by encapsulating reusable parsing logic, enabling rapid analysis of common forensic artifacts without manual registry navigation.
 
+## Features
 
+- **Modular Plugin System**: Over 400 plugins for parsing various hives (SYSTEM, SOFTWARE, NTUSER.DAT, etc.), covering topics like services, USB history, and event logs.
+- **CLI and GUI Support**: Command-line for automation; GUI for interactive selection of hives and profiles.
+- **Profile Management**: Predefined profiles (e.g., 'all', 'system') group related plugins for efficient targeted analysis.
+- **Output Formatting**: Results are structured for easy reading, with timestamps and data in plain text; supports logging in GUI mode.
+- **Extensibility**: Users can create custom plugins to parse novel artifacts or retain organizational knowledge.
 
+## Installation
 
+### Requirements
 
+- Perl 5.10 or later (ActivePerl on Windows, standard Perl on Linux).
+- Access to Windows Registry hive files (extracted from disk images or memory dumps using tools like FTK Imager).
 
+### Install Commands
+
+```bash
+# Clone the repository (Linux/macOS/Windows with Git)
+git clone https://github.com/keydet89/RegRipper3.0.git
+cd RegRipper3.0
+
+# On Kali Linux or Ubuntu (Perl is pre-installed)
+# No additional packages needed; run directly with perl
+
+# On Windows
+# Download ZIP from GitHub, extract, and ensure Perl is in PATH
+# Or use: perl rip.pl --help
+```
+
+For portable use, download the latest release ZIP from the GitHub repository and extract to a working directory.
+
+## Basic Usage
+
+```bash
+perl rip.pl --help
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| -r <file> | Specify the registry hive file to parse |
+| -p <profile> | Use a specific profile (e.g., 'all', 'system', 'software') |
+| -g | Launch the GUI version |
+| -d <dir> | Output directory for results |
+| --help | Display help and available plugins |
+
+## Examples
+
+### Example 1: Basic Usage
+
+Parse the SYSTEM hive with all plugins and redirect output:
+
+```bash
+perl rip.pl -r SYSTEM -p all > system_analysis.txt
+```
+
+### Example 2: Advanced Usage
+
+Run a single plugin on a user hive:
+
+```bash
+perl rip.pl -r NTUSER.DAT recentdocs
+```
+
+Launch GUI for interactive parsing:
+
+```bash
+perl rr.exe
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Query Registry]] Query Registry (for extracting persistence, discovery, and defense evasion indicators from registry artifacts)
+- [[Credential Dumping]] OS Credential Dumping (plugins can parse credential-related keys like SAM or LSA)
+
+### Tactics
+
+- [[Discovery]] Discovery (uncovering system and user information)
+- [[Persistence]] Persistence (identifying registry-based persistence mechanisms)
+
+## Detection
+
+- Monitor for Perl script execution (e.g., process creation of perl.exe or rip.pl) on forensic workstations.
+- Network indicators: Downloads from GitHub repository or unusual file extractions in analysis environments.
+- File system: Presence of RegRipper directories, .pl files, or output .txt files with parsed registry data.
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/volatility]] (memory forensics complementing registry analysis)
+- [[tools/Autopsy]] (full digital forensics suite integrating registry parsing)
+
+## References
+
+- Official GitHub: https://github.com/keydet89/RegRipper3.0
+- Harlan Carvey's Blog: https://www.windows-ir.com/
+- SANS Forensics Resources: https://www.sans.org/tools/regripper/

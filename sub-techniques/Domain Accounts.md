@@ -11,9 +11,9 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Initial Access|TA0001 - Initial Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[AWS SSH Persistence with Authorized Keys]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
 ---
 
 # Domain Accounts
@@ -41,10 +41,10 @@ This sub-technique is used in the following tactics:
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Initial Access|TA0001 - Initial Access]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[AWS SSH Persistence with Authorized Keys]]
+- [[aws-ssh-persistence-via-authorized-keys]]

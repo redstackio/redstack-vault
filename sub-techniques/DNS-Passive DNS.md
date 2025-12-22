@@ -11,8 +11,8 @@ parent_technique: '[[Search Open Technical Databases|T1596 - Search Open Technic
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Subdomain Enumeration using Subfinder]]'
-- '[[Subdomain Enumeration with Aquatone Scan]]'
+- '[[Subdomain-Enumeration-with-Subfinder]]'
+- '[[Subdomain-Enumeration-and-Scan-with-Aquatone]]'
 ---
 
 # DNS/Passive DNS
@@ -45,5 +45,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Subdomain Enumeration using Subfinder]]
-- [[Subdomain Enumeration with Aquatone Scan]]
+- [[Subdomain-Enumeration-with-Subfinder]]
+- [[Subdomain-Enumeration-and-Scan-with-Aquatone]]

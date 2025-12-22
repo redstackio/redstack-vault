@@ -12,7 +12,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[PrivExchange Attack with NTLM Relay]]'
+- '[[PrivExchange-Attack-with-NTLM-Relay]]'
 ---
 
 # Pass the Hash
@@ -46,4 +46,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[PrivExchange Attack with NTLM Relay]]
+- [[PrivExchange-Attack-with-NTLM-Relay]]

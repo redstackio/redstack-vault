@@ -10,8 +10,8 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Basic LFI with Path Truncation]]'
-- '[[Java Reverse Shell]]'
+- '[[Basic-LFI-with-Path-Truncation]]'
+- '[[Establish-Java-Reverse-Shell]]'
 ---
 
 # AppleScript
@@ -46,5 +46,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Basic LFI with Path Truncation]]
-- [[Java Reverse Shell]]
+- [[Basic-LFI-with-Path-Truncation]]
+- [[Establish-Java-Reverse-Shell]]

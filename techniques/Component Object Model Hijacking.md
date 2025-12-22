@@ -10,7 +10,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[POP Gadget .NET Serialization]]'
+- '[[Exploit-DotNET-Serialization-with-POP-Gadgets]]'
 ---
 
 # Component Object Model Hijacking
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 The Component Object Model (COM) is a system within Windows to enable interaction between software components through the operating system. [1] Adversaries can use this system to insert malicious code that can be executed in place of legitimate software through hijacking the COM references and relationships as a means for persistence. Hijacking a COM object requires a change in the Windows Registry to replace a reference to a legitimate system component which may cause that component to not work when executed. When that system component is executed through normal system operation the adversary's code will be executed instead. [2] An adversary is likely to hijack objects that are used frequently enough to maintain a consistent level of persistence, but are unlikely to break noticeable functionality within the system as to avoid system instability that could lead to detection.
+
+
 
 # Detection
 
@@ -72,4 +74,6 @@ Direct mitigation of this technique may not be recommended for a particular envi
 
 ## Related Procedures (1)
 
-- [[POP Gadget .NET Serialization]]
+- [[Exploit-DotNET-Serialization-with-POP-Gadgets]]
+
+

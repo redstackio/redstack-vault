@@ -9,10 +9,10 @@ updated_at: '2023-04-06T00:31:26.961093+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
 ---
 
 # Screensaver
@@ -45,11 +45,11 @@ Adversaries can use screensaver settings to maintain persistence by setting the 
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 2 procedures using this sub-technique:
 
-- [[Dart Reverse PowerShell Shell]]
-- [[DCOM Shell Command Execution via MMC Application Class]]
+- [[Dart-Reverse-PowerShell-Shell]]
+- [[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]

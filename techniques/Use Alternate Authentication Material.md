@@ -10,21 +10,21 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Docker API Port Scanning and Container Management]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
 - '[[Extracting Service Principal Keys from /etc/krb5.keytab]]'
-- '[[Golden Ticket Attack with Mimikatz]]'
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
-- '[[IIS Machine Key Cookie Decryption and Encryption]]'
-- '[[Incapsula WAF Bypass via Common Cross-Site Scripting (XSS) Attack]]'
+- '[[Golden-Ticket-Attack-with-Mimikatz]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
+- '[[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]'
+- '[[Incapsula-WAF-Bypass-via-XSS-Attack]]'
 - '[[Jetty RCE via Insecure XML File Upload]]'
 - '[[Kerberos Clock Synchronization Attack]]'
-- '[[Kerberos Constrained Delegation - Impersonation on Resource]]'
-- '[[Pass-the-Golden-Ticket Attack using Meterpreter]]'
-- '[[PrivExchange Attack with NTLM Relay]]'
-- '[[SAML Injection for Authentication Bypass]]'
-- '[[SMB and NTLM Relay Attack against SMB Signing Disabled and IPv6]]'
+- '[[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]'
+- '[[pass-the-golden-ticket-attack-using-meterpreter]]'
+- '[[PrivExchange-Attack-with-NTLM-Relay]]'
+- '[[SAML-Injection-for-Authentication-Bypass]]'
+- '[[SMB-NTLM-Relay-Attack-via-IPv6-with-Disabled-Signing]]'
 ---
 
 # Use Alternate Authentication Material
@@ -39,6 +39,9 @@ Authentication processes generally require a valid identity (e.g., username) alo
 
 Caching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through [Credential Access](https://attack.mitre.org/tactics/TA0006) techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.
 
+
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
@@ -46,18 +49,20 @@ Caching alternate authentication material allows the system to verify an identit
 
 ## Related Procedures (15)
 
-- [[Azure Pass the Certificate: AD Cert Request and RCE]]
-- [[Docker API Port Scanning and Container Management]]
+- [[azure-pass-the-certificate-ad-cert-request-and-rce]]
+- [[Exploit-Open-Docker-API-for-Container-Management]]
 - [[Extracting Service Principal Keys from /etc/krb5.keytab]]
-- [[Golden Ticket Attack with Mimikatz]]
-- [[IIS Machine Key Cookie Decryption and Encryption]]
-- [[IIS Machine Key Cookie Decryption and Encryption]]
-- [[IIS Machine Key Cookie Decryption and Encryption]]
-- [[Incapsula WAF Bypass via Common Cross-Site Scripting (XSS) Attack]]
+- [[Golden-Ticket-Attack-with-Mimikatz]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
+- [[IIS-Machine-Key-Cookie-Decryption-and-Encryption]]
+- [[Incapsula-WAF-Bypass-via-XSS-Attack]]
 - [[Jetty RCE via Insecure XML File Upload]]
 - [[Kerberos Clock Synchronization Attack]]
-- [[Kerberos Constrained Delegation - Impersonation on Resource]]
-- [[Pass-the-Golden-Ticket Attack using Meterpreter]]
-- [[PrivExchange Attack with NTLM Relay]]
-- [[SAML Injection for Authentication Bypass]]
-- [[SMB and NTLM Relay Attack against SMB Signing Disabled and IPv6]]
+- [[Kerberos-Constrained-Delegation-Impersonation-on-Resource]]
+- [[pass-the-golden-ticket-attack-using-meterpreter]]
+- [[PrivExchange-Attack-with-NTLM-Relay]]
+- [[SAML-Injection-for-Authentication-Bypass]]
+- [[SMB-NTLM-Relay-Attack-via-IPv6-with-Disabled-Signing]]
+
+

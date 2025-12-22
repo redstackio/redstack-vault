@@ -10,20 +10,20 @@ parent_technique: '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Configuration]]'
-- '[[AWS IAM Access Key Enumeration]]'
-- '[[AWS Secrets Manager - Describe Secret]]'
-- '[[Credential Harvesting from DynamoDB]]'
-- '[[Extracting Network Credentials using Powershell]]'
-- '[[Gitrob Secret Harvesting]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Windows Privilege Escalation - Powershell History Looting]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[AWS-CLI-Configuration]]'
+- '[[AWS-IAM-Access-Key-Enumeration]]'
+- '[[Describe-AWS-Secrets-Manager-Secret]]'
+- '[[Scan-DynamoDB-Table-for-Credentials]]'
+- '[[Extract-Credentials-from-SecureString-PowerShell]]'
+- '[[Gitrob-Secret-Harvesting]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Windows-Privilege-Escalation-via-Powershell-History-Looting]]'
 ---
 
 # Credentials In Files
@@ -56,17 +56,17 @@ This sub-technique is used in the following tactics:
 
 There are 14 procedures using this sub-technique:
 
-- [[AWS API Gateway Stage Enumeration]]
-- [[AWS CLI Configuration]]
-- [[AWS IAM Access Key Enumeration]]
-- [[AWS Secrets Manager - Describe Secret]]
-- [[Credential Harvesting from DynamoDB]]
-- [[Extracting Network Credentials using Powershell]]
-- [[Gitrob Secret Harvesting]]
-- [[Twilio API Key Leakage]]
-- [[Twilio API Key Leakage]]
-- [[Twilio API Key Leakage]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Windows Privilege Escalation - Powershell History Looting]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[AWS-CLI-Configuration]]
+- [[AWS-IAM-Access-Key-Enumeration]]
+- [[Describe-AWS-Secrets-Manager-Secret]]
+- [[Scan-DynamoDB-Table-for-Credentials]]
+- [[Extract-Credentials-from-SecureString-PowerShell]]
+- [[Gitrob-Secret-Harvesting]]
+- [[Exploit-Leaked-Twilio-API-Credentials]]
+- [[Exploit-Leaked-Twilio-API-Credentials]]
+- [[Exploit-Leaked-Twilio-API-Credentials]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Windows-Privilege-Escalation-via-Powershell-History-Looting]]

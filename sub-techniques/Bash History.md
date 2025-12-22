@@ -10,10 +10,10 @@ parent_technique: '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AWS CLI Configuration]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
+- '[[AWS-CLI-Configuration]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
 ---
 
 # Bash History
@@ -42,7 +42,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[AWS CLI Configuration]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
+- [[AWS-CLI-Configuration]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]

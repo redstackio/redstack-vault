@@ -8,11 +8,11 @@ created_at: '2019-08-28T21:17:22.167404+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Create and Run a Windows Service as SYSTEM (Administrator)]]'
-- '[[IIS Raid Backdoor Persistence]]'
-- '[[MSSQL Injection to Grant DBA Access]]'
+- '[[Create-and-Run-Windows-Service-as-SYSTEM-Administrator]]'
+- '[[IIS-Raid-Backdoor-Persistence]]'
+- '[[MSSQL-Injection-to-Grant-DBA-Access]]'
 ---
 
 # New Service
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 When operating systems boot up, they can start programs or applications called services that perform background system functions. [1] A service's configuration information, including the file path to the service's executable, is stored in the Windows Registry. Adversaries may install a new service that can be configured to execute at startup by using utilities to interact with services or by directly modifying the Registry. The service name may be disguised by using a name from a related operating system or benign software with Masquerading. Services may be created with administrator privileges but are executed under SYSTEM privileges, so an adversary may also use a service to escalate privileges from administrator to SYSTEM. Adversaries may also directly start services through Service Execution.
+
+
 
 # Detection
 
@@ -202,10 +204,12 @@ Identify and block unnecessary system utilities or potentially malicious softwar
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (3)
 
-- [[Create and Run a Windows Service as SYSTEM (Administrator)]]
-- [[IIS Raid Backdoor Persistence]]
-- [[MSSQL Injection to Grant DBA Access]]
+- [[Create-and-Run-Windows-Service-as-SYSTEM-Administrator]]
+- [[IIS-Raid-Backdoor-Persistence]]
+- [[MSSQL-Injection-to-Grant-DBA-Access]]
+
+

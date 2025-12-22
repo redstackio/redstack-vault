@@ -18,6 +18,8 @@ tactics:
 
 Private cryptographic keys and certificates are used for authentication, encryption/decryption, and digital signatures. [1]Adversaries may gather private keys from compromised systems for use in authenticating to Remote Services like SSH or for use in decrypting other collected files such as email. Common key and certificate file extensions include: .key, .pgp, .gpg, .ppk., .p12, .pem, .pfx, .cer, .p7b, .asc. Adversaries may also look in common key directories, such as ~/.ssh for SSH keys on * nix-based systems or C:\Users(username).ssh\ on Windows.Private keys should require a password or passphrase for operation, so an adversary may also use Input Capture for keylogging or attempt to Brute Force the passphrase off-line.Adversary tools have been discovered that search compromised systems for file extensions relating to cryptographic keys and certificates. [2] [3]
 
+
+
 # Detection
 
 Monitor access to files and directories related to cryptographic keys and certificates as a means for potentially detecting access patterns that may indicate collection and exfiltration activity. Collect authentication logs and look for potentially abnormal activity that may indicate improper use of keys or certificates for remote authentication.
@@ -49,3 +51,5 @@ Use strong passphrases for private keys to make cracking difficult. When possibl
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
+
+

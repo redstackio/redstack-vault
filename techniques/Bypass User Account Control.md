@@ -8,18 +8,18 @@ created_at: '2019-08-28T21:17:28.796851+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Active Directory Certificate Services ESC9 Attack]]'
-- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
-- '[[Linux - Privilege Escalation via Capabilities]]'
-- '[[Local Administrator to NT SYSTEM Privilege Escalation]]'
-- '[[Meterpreter Get System]]'
-- '[[Misconfigured Certificate Templates]]'
-- '[[Pass-The-Certificate Attack]]'
-- '[[Reflection Method with WMF5 Autologging Bypass]]'
-- '[[Windows Privilege Escalation - Powershell History Looting]]'
-- '[[Windows Startup Elevated Persistence via User Startup Folder]]'
+- '[[Active-Directory-Certificate-Services-ESC9-Attack]]'
+- '[[Enumerate-Installed-Antivirus-Products-Windows]]'
+- '[[Linux-Privilege-Escalation-via-Capabilities]]'
+- '[[Local-Administrator-to-NT-SYSTEM-Privilege-Escalation]]'
+- '[[meterpreter-getsystem-privilege-escalation]]'
+- '[[Abuse-Misconfigured-Certificate-Templates-for-Privilege-Escalation]]'
+- '[[Pass-The-Certificate-Attack]]'
+- '[[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]'
+- '[[Windows-Privilege-Escalation-via-Powershell-History-Looting]]'
+- '[[Windows-Startup-Elevated-Persistence-via-User-Startup-Folder]]'
 ---
 
 # Bypass User Account Control
@@ -29,6 +29,8 @@ procedures:
 ## Description
 
 Windows User Account Control (UAC) allows a program to elevate its privileges to perform a task under administrator-level permissions by prompting the user for confirmation. The impact to the user ranges from denying the operation under high enforcement to allowing the user to perform the action if they are in the local administrators group and click through the prompt or allowing them to enter an administrator password to complete the action. [1]If the UAC protection level of a computer is set to anything but the highest level, certain Windows programs are allowed to elevate privileges or execute some elevated COM objects without prompting the user through the UAC notification box. [2] [3] An example of this is use of rundll32.exe to load a specifically crafted DLL which loads an auto-elevated COM object and performs a file operation in a protected directory which would typically require elevated access. Malicious software may also be injected into a trusted process to gain elevated privileges without prompting a user. [4] Adversaries can use these techniques to elevate privileges to administrator if the target process is unprotected.Many methods have been discovered to bypass UAC. The Github readme page for UACMe contains an extensive list of methods [5] that have been discovered and implemented within UACMe, but may not be a comprehensive list of bypasses. Additional bypass methods are regularly discovered and some used in the wild, such as:eventvwr.exe can auto-elevate and execute a specified binary or script. [6] [7]Another bypass is possible through some Lateral Movement techniques if credentials for an account with administrator privileges are known, since UAC is a single system security mechanism, and the privilege or integrity of a process running on one system will be unknown on lateral systems and default to high integrity. [8]
+
+
 
 # Detection
 
@@ -125,17 +127,19 @@ Remove users from the local administrator group on systems. Although UAC bypass 
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (10)
 
-- [[Active Directory Certificate Services ESC9 Attack]]
-- [[Antivirus Enumeration - Windows Privilege Escalation]]
-- [[Linux - Privilege Escalation via Capabilities]]
-- [[Local Administrator to NT SYSTEM Privilege Escalation]]
-- [[Meterpreter Get System]]
-- [[Misconfigured Certificate Templates]]
-- [[Pass-The-Certificate Attack]]
-- [[Reflection Method with WMF5 Autologging Bypass]]
-- [[Windows Privilege Escalation - Powershell History Looting]]
-- [[Windows Startup Elevated Persistence via User Startup Folder]]
+- [[Active-Directory-Certificate-Services-ESC9-Attack]]
+- [[Enumerate-Installed-Antivirus-Products-Windows]]
+- [[Linux-Privilege-Escalation-via-Capabilities]]
+- [[Local-Administrator-to-NT-SYSTEM-Privilege-Escalation]]
+- [[meterpreter-getsystem-privilege-escalation]]
+- [[Abuse-Misconfigured-Certificate-Templates-for-Privilege-Escalation]]
+- [[Pass-The-Certificate-Attack]]
+- [[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]
+- [[Windows-Privilege-Escalation-via-Powershell-History-Looting]]
+- [[Windows-Startup-Elevated-Persistence-via-User-Startup-Folder]]
+
+

@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:26.617646+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
 ---
 
 # Emond
@@ -39,10 +39,10 @@ Adversaries may abuse this service by writing a rule to execute commands when a 
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]

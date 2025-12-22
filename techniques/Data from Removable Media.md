@@ -18,6 +18,8 @@ tactics:
 
 Sensitive data can be collected from any removable media (optical disk drive, USB memory, etc.) connected to the compromised system prior to Exfiltration.Adversaries may search connected removable media on computers they have compromised to find files of interest. Interactive command shells may be in use, and common functionality within cmd may be used to gather information. Some adversaries may also use Automated Collection on removable media.
 
+
+
 # Detection
 
 Monitor processes and command-line arguments for actions that could be taken to collect files from a system's connected removable media. Remote access tools with built-in features may interact directly with the Windows API to gather data. Data may also be acquired through Windows system management tools such as Windows Management Instrumentation and PowerShell.
@@ -69,3 +71,5 @@ Identify unnecessary system utilities or potentially malicious software that may
 ## Tactics
 
 - [[Collection|TA0009 - Collection]]
+
+

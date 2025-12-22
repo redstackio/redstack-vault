@@ -11,15 +11,15 @@ parent_technique: '[[Steal or Forge Kerberos Tickets|T1558 - Steal or Forge Kerb
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[CCACHE Ticket Reuse from Keytab]]'
-- '[[Kerberos AS-REP Roasting Attack]]'
-- '[[Kerberos Bronze Bit Attack]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Extract-and-Reuse-Kerberos-Tickets-from-Keytab]]'
+- '[[Kerberos-AS-REP-Roasting-Attack]]'
+- '[[Kerberos-Bronze-Bit-Attack]]'
 - '[[Kerberos Bronze Bit Attack Procedure]]'
-- '[[Kerberos S4U2self Privilege Escalation]]'
-- '[[Kerberos Unconstrained Delegation with SpoolService Abuse]]'
-- '[[Kerberos Unconstrained Delegation with SpoolService Abuse]]'
-- '[[User Certificate and TGT Persistence via Domain Request]]'
+- '[[Kerberos-S4U2Self-Privilege-Escalation]]'
+- '[[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]'
+- '[[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]'
+- '[[Request-User-Certificate-and-TGT-for-Domain-Persistence]]'
 ---
 
 # AS-REP Roasting
@@ -58,12 +58,12 @@ This sub-technique is used in the following tactics:
 
 There are 9 procedures using this sub-technique:
 
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[CCACHE Ticket Reuse from Keytab]]
-- [[Kerberos AS-REP Roasting Attack]]
-- [[Kerberos Bronze Bit Attack]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Extract-and-Reuse-Kerberos-Tickets-from-Keytab]]
+- [[Kerberos-AS-REP-Roasting-Attack]]
+- [[Kerberos-Bronze-Bit-Attack]]
 - [[Kerberos Bronze Bit Attack Procedure]]
-- [[Kerberos S4U2self Privilege Escalation]]
-- [[Kerberos Unconstrained Delegation with SpoolService Abuse]]
-- [[Kerberos Unconstrained Delegation with SpoolService Abuse]]
-- [[User Certificate and TGT Persistence via Domain Request]]
+- [[Kerberos-S4U2Self-Privilege-Escalation]]
+- [[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]
+- [[Kerberos-Unconstrained-Delegation-with-SpoolService-Abuse]]
+- [[Request-User-Certificate-and-TGT-for-Domain-Persistence]]

@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[AdminSDHolder Group Rights Abuse]]'
-- '[[CSRF JSON GET Request]]'
-- '[[CSRF JSON GET Request]]'
-- '[[MSSQL List Tables]]'
-- '[[XSS Cookie and Access Token Grabber]]'
+- '[[Abuse-AdminSDHolder-for-Privilege-Escalation]]'
+- '[[Perform-CSRF-Attack-via-JSON-GET-Request]]'
+- '[[Perform-CSRF-Attack-via-JSON-GET-Request]]'
+- '[[MSSQL-List-Tables]]'
+- '[[Exploit-XSS-to-Steal-Cookies-and-Access-Tokens]]'
 - '[[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]'
 ---
 
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Computer accessories, computers, or networking hardware may be introduced into a system as a vector to gain execution. While public references of usage by APT groups are scarce, many penetration testers leverage hardware additions for initial access. Commercial and open source products are leveraged with capabilities such as passive network tapping [1], man-in-the middle encryption breaking [2], keystroke injection [3], kernel memory reading via DMA [4], adding new wireless access to an existing network [5], and others.
+
+
 
 # Detection
 
@@ -63,9 +65,11 @@ Block
 
 ## Related Procedures (6)
 
-- [[AdminSDHolder Group Rights Abuse]]
-- [[CSRF JSON GET Request]]
-- [[CSRF JSON GET Request]]
-- [[MSSQL List Tables]]
-- [[XSS Cookie and Access Token Grabber]]
+- [[Abuse-AdminSDHolder-for-Privilege-Escalation]]
+- [[Perform-CSRF-Attack-via-JSON-GET-Request]]
+- [[Perform-CSRF-Attack-via-JSON-GET-Request]]
+- [[MSSQL-List-Tables]]
+- [[Exploit-XSS-to-Steal-Cookies-and-Access-Tokens]]
 - [[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]
+
+

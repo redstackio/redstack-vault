@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Enumerate MSSQL Server Agent Jobs]]'
-- '[[Enumerate MSSQL Server Logins]]'
-- '[[Linux Privilege Escalation Enumeration]]'
-- '[[SAMAccountName Spoofing via SMB Credential Enumeration]]'
+- '[[Enumerate-MSSQL-Server-Agent-Jobs]]'
+- '[[Enumerate-MSSQL-Server-Logins]]'
+- '[[Linux-Privilege-Escalation-Enumeration]]'
+- '[[SMB-Credential-Enumeration-for-SAMAccountName-Spoofing]]'
 ---
 
 # Browser Bookmark Discovery
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Adversaries may enumerate browser bookmarks to learn more about compromised hosts. Browser bookmarks may reveal personal information about users (ex: banking sites, interests, social media, etc.) as well as details about internal network resources such as servers, tools/dashboards, or other related infrastructure.Browser bookmarks may also highlight additional targets after an adversary has access to valid credentials, especially Credentials in Files associated with logins cached by a browser.Specific storage locations vary based on platform and/or application, but browser bookmarks are typically stored in local files/databases.
+
+
 
 # Detection
 
@@ -61,7 +63,9 @@ File system activity is a common part of an operating system, so it is unlikely 
 
 ## Related Procedures (4)
 
-- [[Enumerate MSSQL Server Agent Jobs]]
-- [[Enumerate MSSQL Server Logins]]
-- [[Linux Privilege Escalation Enumeration]]
-- [[SAMAccountName Spoofing via SMB Credential Enumeration]]
+- [[Enumerate-MSSQL-Server-Agent-Jobs]]
+- [[Enumerate-MSSQL-Server-Logins]]
+- [[Linux-Privilege-Escalation-Enumeration]]
+- [[SMB-Credential-Enumeration-for-SAMAccountName-Spoofing]]
+
+

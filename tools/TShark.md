@@ -1,68 +1,141 @@
 ---
-id: ab822a16-15e7-42f1-8a28-e8495ac3c5b1
-name: TShark
 type: tool
-verified: false
-created_at: '2019-08-28T21:17:37.372434+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Tshark Extract Hex and ASCII Dump from a Pcap]]'
+verified: true
+description: >-
+  TShark is a command-line network protocol analyzer that captures live packet
+  data or reads from saved capture files, providing detailed summaries of
+  network traffic similar to Wireshark but optimized for terminal use.
+url: 'https://www.wireshark.org/docs/man-pages/tshark.html'
 platforms:
-- Linux
+  - Linux
 tags:
-- '[[Enumeration]]'
-- '[[Network]]'
+  - enumeration
+  - network
+commands:
+  - '[[commands/tshark-read-pcap-hex-ascii-dump]]'
+validated: true
 ---
 
 # TShark
 
+**Status**: Unverified
+
 ## Overview
 
-TShark is a network protocol analyzer which captures packet data from a live network, or reads packets from a previously saved capture file. While it's similar to tcpdump, TShark has focuses more on summarizing traffic details for a high level view. TShark also includes the same capture filters fou
+TShark is the command-line version of Wireshark, a powerful network protocol analyzer used in security testing for capturing and analyzing network traffic. It excels at dissecting packets from live interfaces or PCAP files, making it ideal for reconnaissance, traffic analysis, and identifying unencrypted data in protocols like LDAP or HTTP during red team engagements.
 
 ## Description
 
-# Description
+TShark allows users to capture packets in real-time or offline from capture files, applying filters to focus on specific traffic types. Unlike tcpdump, which provides raw captures, TShark offers protocol dissection and human-readable summaries. It supports the same capture and display filters as Wireshark, enabling precise targeting of traffic such as specific ports, protocols, or IP ranges. Common use cases in offensive security include sniffing for credentials in clear-text protocols, analyzing application-layer data, and extracting artifacts from PCAPs for post-exploitation forensics.
 
-TShark is a network protocol analyzer which captures packet data from a live network, or reads packets from a previously saved capture file. While it's similar to tcpdump, TShark has focuses more on summarizing traffic details for a high level view. TShark also includes the same capture filters found in tcpdump and Wireshark, allowing users to limit results to specific traffic in which they're interested. 
+## Features
 
+- Feature 1: Real-time packet capture from network interfaces with BPF filters.
+- Feature 2: Offline analysis of PCAP files with protocol decoding for hundreds of protocols.
+- Feature 3: Hex and ASCII dumps for low-level packet inspection.
+- Feature 4: Output formatting options including JSON, PDML, or text summaries.
+- Feature 5: Integration with Wireshark filters for display and capture control.
 
+## Installation
 
-See Wireshark's helpful guide to capture filters for more details: [https://wiki.wireshark.org/CaptureFilters](https://wiki.wireshark.org/CaptureFilters)
+### Requirements
 
+- Root or sudo access for live captures (due to raw socket needs).
+- libpcap library (usually installed by default on Linux).
 
+### Install Commands
 
-# Example
+```bash
+# On Kali Linux (pre-installed)
+sudo apt update && sudo apt install tshark
 
+# On Ubuntu/Debian
+sudo apt update && sudo apt install tshark
 
+# On macOS (via Homebrew)
+brew install wireshark
 
-{{EMBEDDED_COMMAND_daa4a37e-09cc-46d4-96df-2a7e927fd083}}
+# On Windows
+Download from https://www.wireshark.org/download.html and install the Wireshark suite (includes TShark)
+```
 
+## Basic Usage
 
+```bash
+tshark --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-i <interface>` | Capture from specific interface (e.g., eth0) |
+| `-r <file>` | Read packets from capture file |
+| `-w <file>` | Write packets to capture file |
+| `-f <filter>` | Capture filter (BPF syntax) |
+| `-Y <filter>` | Display filter (Wireshark syntax) |
+| `-x` | Add hex/ASCII dump of packet bytes |
+| `-V` | Verbose packet dissection |
+| `-c <count>` | Stop after capturing N packets |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Capture 10 packets on interface eth0:
 
+```bash
+tshark -i eth0 -c 10
+```
 
+### Example 2: Advanced Usage
 
+Read a PCAP file and filter for HTTP traffic with hex dump:
 
+```bash
+tshark -r capture.pcap -Y "http" -x
+```
 
+## MITRE ATT&CK Mapping
 
-## Platforms
+This tool is commonly associated with:
 
-- Linux
+### Techniques
 
-## Commands (1)
+- [[Network Sniffing]] Network Sniffing
+- [[Standard Application Layer Protocol]] Application Layer Protocol
 
-- [[Tshark Extract Hex and ASCII Dump from a Pcap]]
+### Tactics
 
-## Tags
+- [[Discovery]] Discovery
+- [[Command and Control]] Command and Control
 
-- [[Enumeration]]
-- [[Network]]
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Detection method 1: Process monitoring for tshark.exe or tshark binary execution, especially with raw socket privileges.
+- Detection method 2: Network anomalies from promiscuous mode on interfaces (e.g., via ethtool or ifconfig).
+- Detection method 3: File system artifacts like temporary PCAP files in /tmp or user directories.
+- Detection method 4: Sysmon Event ID 1 for process creation with command-line arguments containing -i or -r flags.
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/Wireshark]]
+- [[tools/tcpdump]]
+
+## References
+
+- Official documentation: https://www.wireshark.org/docs/man-pages/tshark.html
+- Capture filters guide: https://wiki.wireshark.org/CaptureFilters
+- Display filters reference: https://www.wireshark.org/docs/man-pages/tshark.html#dfref

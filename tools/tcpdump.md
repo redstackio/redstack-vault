@@ -1,68 +1,108 @@
 ---
-id: 519d3441-dc7b-4729-9a47-c2bd7d304874
-name: tcpdump
+url: 'https://www.tcpdump.org/'
+tags:
+  - packet-capture
+  - network-analysis
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:40.229526+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[tcpdump Intercept Packets on Loopback Interface]]'
 platforms:
-- Linux
-tags:
-- '[[data exposure]]'
-- '[[Network]]'
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:28:20.373Z'
+id: e1094db6-de1d-4ddc-a1be-5bc5bc3a015f
+validated: true
+submitted: true
 ---
-
 # tcpdump
+
+**Status**: Unverified
 
 ## Overview
 
-Tcpdump prints out a description of the contents of packets on a network interface that match the boolean expression; the description is preceded by a time stamp, printed, by default, as hours,minutes, seconds, and fractions of a second since midnight.  It can also be run with the -w flag, which ca
+tcpdump is a command-line packet analyzer that captures and displays network traffic, essential for reverse-engineering protocols like MySQL's LOAD DATA LOCAL INFILE.
 
 ## Description
 
-# Description
+It allows filtering and dumping packets to pcap files for later analysis with tools like Wireshark. In this context, it's used to capture MySQL traffic on port 3306 to identify the FB packet.
 
-Tcpdump prints out a description of the contents of packets on a network interface that match the boolean expression; the description is preceded by a time stamp, printed, by default, as hours,minutes, seconds, and fractions of a second since midnight.  It can also be run with the -w flag, which causes it to save the packet data to a file for later analysis, and/or with the -r flag, which causes it to read from a saved packet file rather than to read packets from a network interface.
+## Features
 
+- Feature 1: Real-time packet capture and filtering (e.g., by port or host)
+- Feature 2: Output to pcap for offline analysis
+- Feature 3: Hex and ASCII decoding of payloads
 
+## Installation
 
-Tcpdump is a priceless tool when it comes to penetration testing, as attackers can use it to monitor network traffic reaching a system and potentially derive sensitive information from the packet dumps.
+### Requirements
 
+- Linux/Unix system
 
+### Install Commands
 
-# Example
+```bash
+# On Debian/Ubuntu
+sudo apt update && sudo apt install tcpdump
 
+# On CentOS/RHEL
+sudo yum install tcpdump
+```
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_49050e1d-dc03-4106-91df-bdf554795820}}
+```bash
+tcpdump --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -i | Specify interface (e.g., -i lo)
+| -w | Write to file (e.g., -w capture.pcap)
+| -X | Hex and ASCII output
 
-# Installation
+## Examples
 
-## Install on Debian/Ubuntu
+### Example 1: Basic Usage
 
+```bash
+tcpdump -i lo port 3306
+```
 
+### Example 2: Advanced Usage
 
+```bash
+tcpdump -i lo -w mysql.pcap port 3306 -c 100
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Network Sniffing]]
 
+### Tactics
 
-## Platforms
+- [[Discovery]]
 
-- Linux
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[tcpdump Intercept Packets on Loopback Interface]]
+- Process monitoring for tcpdump executions
+- High network I/O on analysis interfaces
 
-## Tags
+## Related Procedures
 
-- [[data exposure]]
-- [[Network]]
+- [[procedures/Analyze-MySQL-LOAD-DATA-LOCAL-INFILE-Protocol-with-tcpdump]]
+- [[procedures/Capture-and-Analyze-FB-Packet-in-MySQL-Traffic]]
 
+## Related Tools
 
+- [[tools/wireshark]]
+
+## References
+
+- Official documentation: https://www.tcpdump.org/manpages/tcpdump.1.html

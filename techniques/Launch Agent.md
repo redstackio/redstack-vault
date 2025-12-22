@@ -18,6 +18,8 @@ tactics:
 
 Per Apple’s developer documentation, when a user logs in, a per-user launchd process is started which loads the parameters for each launch-on-demand user agent from the property list (plist) files found in /System/Library/LaunchAgents, /Library/LaunchAgents, and $HOME/Library/LaunchAgents [1] [2] [3]. These launch agents have property list files which point to the executables that will be launched [4].Adversaries may install a new launch agent that can be configured to execute at login by using launchd or launchctl to load a plist into the appropriate directories  [5]  [6]. The agent name may be disguised by using a name from a related operating system or benign software. Launch Agents are created with user level privileges and are executed with the privileges of the user when they log in [7] [8]. They can be set up to execute when a specific user logs in (in the specific user’s directory structure) or when any user logs in (which requires administrator privileges).
 
+
+
 # Detection
 
 Monitor Launch Agent creation through additional plist files and utilities such as Objective-See’s  KnockKnock application. Launch Agents also require files on disk for persistence which can also be monitored via other file monitoring applications.
@@ -61,3 +63,5 @@ Restrict user's abilities to create Launch Agents with group policy.
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

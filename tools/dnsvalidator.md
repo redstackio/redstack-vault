@@ -1,20 +1,18 @@
 ---
-id: 31fc572e-4d64-4876-9e1b-c86b23252fe6
-name: dnsvalidator
 type: tool
 verified: true
-created_at: '2020-06-30T02:34:45.191181+00:00'
-updated_at: '2023-05-30T19:48:29.836176+00:00'
-commands:
-- '[[dnsvalidator update dns servers (DOCKER)]]'
-- '[[dnsvalidator update dns servers]]'
 platforms:
-- Linux
-- Mac OSx
-- Windows
+  - Linux
+  - macOS
+  - Windows
 tags:
-- '[[dns]]'
-- '[[Enumeration]]'
+  - '[[dns]]'
+  - '[[Enumeration]]'
+url: 'https://github.com/vortexau/dnsvalidator'
+description: >-
+  A tool for fetching and validating lists of IPv4 DNS resolvers to ensure
+  reliability and accuracy in DNS-based operations.
+validated: true
 ---
 
 # dnsvalidator
@@ -23,66 +21,87 @@ tags:
 
 ## Overview
 
-Dnsvalidator uses this tool to maintain a list of IPv4 DNS servers by verifying them against baseline servers and ensuring accurate responses. You can use this tool in conjunction with other dns enumeration tools like amass. 
+Dnsvalidator is a utility designed to fetch a list of public IPv4 DNS servers and validate them against known baseline servers (such as 1.1.1.1, 8.8.8.8, and 9.9.9.9) to ensure they provide accurate and timely responses. It is particularly useful in reconnaissance phases for maintaining a high-quality list of DNS resolvers, which can be used with tools like Amass for subdomain enumeration, zone transfers, or other DNS querying tasks. By filtering out unreliable or slow resolvers, it improves the efficiency of DNS enumeration workflows.
+
+Category: Reconnaissance
 
 ## Description
 
-# Description
+The tool performs multithreaded validation by sending test queries to candidate DNS servers and comparing responses to baselines. It supports input from text files or URLs containing IP lists and outputs a cleaned list of validated resolvers. This helps avoid issues like rate limiting or inconsistent results during large-scale DNS operations. Dnsvalidator is written in Go, making it cross-platform, and can be run natively or via Docker for isolated execution.
 
-Dnsvalidator uses this tool to maintain a list of IPv4 DNS servers by verifying them against baseline servers and ensuring accurate responses.
+## Features
 
-
-
-You can use this tool in conjunction with other dns enumeration tools like amass.
-
-
-
-## Example
-
-
-
-{{EMBEDDED_COMMAND_2a348104-5b4e-4c74-a8ae-005d4285c876}}
-
-
+- Multithreaded validation for fast processing of large resolver lists
+- Baseline comparison using trusted DNS servers
+- Support for custom timeouts and thread counts
+- Output to file for easy integration with other tools
+- Docker support for containerized environments
 
 ## Installation
 
+### Requirements
 
+- Go 1.13 or later (for native installation)
+- Docker (for containerized usage)
 
-Docker Usage:
+### Install Commands
 
+#### Native Installation (Kali/Ubuntu/macOS/Windows with Go)
 
+```bash
+# Install via Go
+GO111MODULE=on go install github.com/vortexau/dnsvalidator@latest
 
-{{EMBEDDED_COMMAND_8b07685e-9f19-4168-9801-e334c5822830}}
+# Or clone and build
+mkdir -p $GOPATH/src/github.com/vortexau
+cd $GOPATH/src/github.com/vortexau
+git clone https://github.com/vortexau/dnsvalidator.git
+dnsvalidator/go build -o dnsvalidator
+sudo mv dnsvalidator /usr/local/bin/
+```
 
+#### Docker
 
+Dnsvalidator has an official Docker image available on Docker Hub. Pull and use directly:
 
+```bash
+docker pull codingo/dnsvalidator
+```
 
+## Basic Usage
 
-## Usage
+```bash
+dnsvalidator --help
+```
 
-## 
+This displays all available options, including input sources (-tL for URL/text list), threading (-threads), output (-o), and timeout (--timeout).
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -tL | Specify URL or file path to a list of DNS server IPs (one per line) |
+| -threads | Set number of concurrent validation threads (default: 50, range: 1-200) |
+| -o | Output file for validated resolvers |
+| --timeout | DNS query timeout in seconds (default: 2) |
+| -v | Verbose logging for detailed output |
 
-## Platforms
+## Examples
 
-- Linux
-- Mac OSx
-- Windows
+### Example 1: Native Fetch and Validate
 
-## Services
+Use [[commands/dnsvalidator-fetch-and-validate-resolvers]] to fetch from a public list and validate with 50 threads.
 
-- dns
+### Example 2: Docker-Based Validation
 
-## Commands (2)
+Use [[commands/dnsvalidator-docker-fetch-and-validate-resolvers]] to run in a container with mounted output.
 
-- [[dnsvalidator update dns servers]]
-- [[dnsvalidator update dns servers (DOCKER)]]
+## Related Commands
 
-## Tags
+- [[commands/dnsvalidator-fetch-and-validate-resolvers]]
+- [[commands/dnsvalidator-docker-fetch-and-validate-resolvers]]
 
-- [[dns]]
-- [[Enumeration]]
+## References
 
-
+- Official GitHub: https://github.com/vortexau/dnsvalidator
+- Public DNS List Source: https://public-dns.info/

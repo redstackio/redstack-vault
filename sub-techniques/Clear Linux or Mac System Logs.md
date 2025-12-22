@@ -10,7 +10,7 @@ parent_technique: '[[Indicator Removal on Host|T1070 - Indicator Removal on Host
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Windows - Clear Event Logs for Anti-Virus Evasion]]'
+- '[[Clear-Windows-Event-Logs-for-Evasion]]'
 ---
 
 # Clear Linux or Mac System Logs
@@ -47,4 +47,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Windows - Clear Event Logs for Anti-Virus Evasion]]
+- [[Clear-Windows-Event-Logs-for-Evasion]]

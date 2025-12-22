@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[SVG Alert WAF Bypass]]'
+- '[[SVG-Alert-WAF-Bypass]]'
 ---
 
 # Multilayer Encryption
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 An adversary performs C2 communications using multiple layers of encryption, typically (but not exclusively) tunneling a custom encryption scheme within a protocol encryption scheme such as HTTPS or SMTPS.
+
+
 
 # Detection
 
@@ -62,4 +64,6 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (1)
 
-- [[SVG Alert WAF Bypass]]
+- [[SVG-Alert-WAF-Bypass]]
+
+

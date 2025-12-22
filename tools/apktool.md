@@ -1,40 +1,94 @@
 ---
-id: da9da394-f8c8-453c-a07f-0148623985f1
-name: apktool
+url: 'https://ibotpeaches.github.io/Apktool/'
+tags:
+  - reverse-engineering
+  - android
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:21.683922+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:33:05.888Z'
+id: d93040e5-e7be-4914-8d8e-22206c96de8f
+validated: true
+submitted: true
 ---
+# Apktool
 
-# apktool
+**Status**: Unverified
+
+**Status**: Unverified
 
 ## Overview
 
-It is a tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some  modifications; it makes possible to debug smali code step by step. Also it  makes working with app easier because of project-like files st
+Tool for reverse engineering Android APK files, unpacking resources and manifest.
 
 ## Description
 
-It is a tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some  modifications; it makes possible to debug smali code step by step. Also it  makes working with app easier because of project-like files structure and  automation of some repetitive tasks like building apk, etc. It is NOT intended  for piracy and other non-legal uses. It could be used for localizing, adding  some features or support for custom platforms and other GOOD purposes. Just try  to be fair with authors of an app, that you use and probably like.Features:
+Used to examine the manifest for deep link intents in BountyPay.apk.
 
+## Features
 
+- Feature 1: Smali disassembly
+- Feature 2: Resource decoding
+- Feature 3: Repackaging
 
-decoding resources to nearly original form (including resources.arsc, XMLs and 9.png files) and rebuilding them
+## Installation
 
+### Requirements
 
+- Java
 
-smali debugging: SmaliDebugging
+### Install Commands
 
+```bash
+wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.7.0.jar
+```
 
+## Basic Usage
 
-helping with some repetitive tasks
+```bash
+java -jar apktool.jar d app.apk
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| d | Decode |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+apktool d BountyPay.apk
+```
 
+## MITRE ATT&CK Mapping
 
+### Techniques
 
+- [[Unsecured Credentials]]
 
+### Tactics
 
+- [[Collection]]
+
+## Detection
+
+- Decompiled files on disk
+
+## Related Procedures
+
+- APK reverse engineering
+
+## Related Tools
+
+- [[tools/jadx]]
+
+## References
+
+- Official site

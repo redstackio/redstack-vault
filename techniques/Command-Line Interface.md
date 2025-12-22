@@ -9,106 +9,106 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
-- '[[Advanced XSS in Angular and AngularJS]]'
-- '[[Akamai WAF Bypass via Prompt User Input]]'
-- '[[Argument Injection - Find Files]]'
-- '[[ASP Razor Server Side Template Injection with C# Command Execution]]'
-- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
-- '[[Azure VM RunCommand Execution]]'
-- '[[Backgrounding Long Running Commands]]'
-- '[[Bash TCP Reverse Shell Connection]]'
-- '[[Basic Command Injection Exploitation]]'
-- '[[Basic LFI Filter Bypass]]'
-- '[[Basic LFI via UTF-8 encoding]]'
-- '[[Basic LFI with Path Truncation]]'
-- '[[Basic RFI with Double Encoding]]'
-- '[[Bypassing XSS Filters using UTF BOM Character]]'
-- '[[Cloudflare XSS Bypass via Common WAF and HTML Injection]]'
-- '[[Command Execution via xp_cmdshell - MSSQL Server]]'
-- '[[Command Injection - Chaining Commands]]'
-- '[[Command Injection Filter Bypass with $() and variable expansion]]'
-- '[[Command Injection Filter Bypass with Backslash and Slash]]'
-- '[[Command Injection - Filter Bypass with Backslash Newline]]'
-- '[[Command Injection Filter Bypass with PowerShell]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
+- '[[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]'
+- '[[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]'
+- '[[Argument-Injection-via-Find-Command]]'
+- '[[asp-razor-server-side-template-injection-with-csharp-command-execution]]'
+- '[[Bypass-Angular-DomSanitizer-for-XSS-Injection]]'
+- '[[azure-vm-runcommand-execution]]'
+- '[[Background-Long-Running-Commands]]'
+- '[[Establish-Bash-TCP-Reverse-Shell]]'
+- '[[Basic-Command-Injection-Exploitation]]'
+- '[[Basic-LFI-Filter-Bypass-Using-Directory-Traversal]]'
+- '[[Basic-LFI-via-UTF-8-Encoding]]'
+- '[[Basic-LFI-with-Path-Truncation]]'
+- '[[Basic-RFI-with-Double-Encoding]]'
+- '[[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]'
+- '[[Cloudflare-XSS-Bypass-via-Common-WAF-and-HTML-Injection]]'
+- '[[Command-Execution-via-xp-cmdshell-MSSQL-Server]]'
+- '[[Command-Injection-Chaining-Commands]]'
+- '[[Command-Injection-Filter-Bypass-Using-Variable-Expansion]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-and-Slash]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-Newline]]'
+- '[[Command-Injection-Filter-Bypass-with-PowerShell]]'
 - '[[Command Injection - Reading /etc/passwd]]'
-- '[[Command Injection - Time Based Data Exfiltration]]'
-- '[[Command Injection via Curl Arguments]]'
-- '[[Command Injection with $@]]'
-- '[[Command Injection with $() Filter Bypass]]'
-- '[[Command Injection with Double Quote Bypass]]'
-- '[[Command Injection with Filter Bypass using Line Return]]'
-- '[[Command Injection with Filter Bypass using Single Quote]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[C Reverse Shell]]'
-- '[[Cross Site Scripting Alert Bypass using Alternate Function]]'
-- '[[CSP Bypass via XSS Injection]]'
-- '[[CSV Injection - Exploit]]'
-- '[[CURL Argument Injection]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[ECMAScript6 Filter Bypass Script Injection]]'
-- '[[Execution of xp_cmdshell on Linked Database]]'
-- '[[Exotic Payloads for Bypassing Filters in JavaScript]]'
-- '[[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]'
-- '[[FFmpeg HLS Playlist Injection]]'
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
+- '[[Time-Based-Data-Exfiltration-via-Command-Injection]]'
+- '[[Command-Injection-via-Curl-Arguments]]'
+- '[[Command-Injection-Bypass-Using-$@-Syntax]]'
+- '[[Command-Injection-with-Subshell-Filter-Bypass]]'
+- '[[Command-Injection-with-Double-Quote-Bypass]]'
+- '[[Command-Injection-with-Line-Return-Bypass]]'
+- '[[Command-Injection-with-Filter-Bypass-using-Single-Quote]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Establish-C-Reverse-Shell]]'
+- '[[Bypass-XSS-Alert-Filter-Using-Alternate-Functions]]'
+- '[[CSP-Bypass-via-XSS-Injection]]'
+- '[[Exploit-CSV-Injection-for-Command-Execution]]'
+- '[[Curl-Argument-Injection-for-Arbitrary-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[ecmascript6-filter-bypass-script-injection]]'
+- '[[Enable-and-Execute-xp_cmdshell-on-Linked-Database]]'
+- '[[Exotic-Payloads-for-Bypassing-Filters-in-JavaScript]]'
+- '[[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]'
+- '[[FFmpeg-HLS-Playlist-Injection]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
 - '[[Gitlab/Github CI Command Execution]]'
-- '[[Groovy Server Side Template Injection with Command Execution]]'
-- '[[Hex-encoded Path Traversal]]'
-- '[[Hidden Input XSS Attack]]'
-- '[[HTML5 Tag Based Cross Site Scripting]]'
-- '[[Java Reverse Shell]]'
-- '[[Java Reverse Shell Thread]]'
-- '[[Java RMI Server RCE using Metasploit]]'
-- '[[Jinja2 Config Information Extraction]]'
-- '[[Jinja2 Server Side Template Injection with os.popen().read()]]'
-- '[[Jinja2 Server Side Template Injection with Remote Code Execution]]'
-- '[[Jinja2 SSTI Remote Code Execution via subprocess.Popen]]'
-- '[[Jinja2 SSTI with Popen Remote Code Execution]]'
-- '[[Jinja2 Template Injection - Server Side Template Injection]]'
-- '[[Jinjava Command Execution]]'
-- '[[Lessjs Command Execution via Server Side Template Injection]]'
+- '[[Groovy-Server-Side-Template-Injection-for-Command-Execution]]'
+- '[[Hex-Encoded-Path-Traversal-Bypass]]'
+- '[[Hidden-Input-XSS-Attack]]'
+- '[[HTML5-Tag-Based-Cross-Site-Scripting]]'
+- '[[Establish-Java-Reverse-Shell]]'
+- '[[Establish-Java-Reverse-Shell-Using-Thread]]'
+- '[[Java-RMI-Server-RCE-using-Metasploit]]'
+- '[[Jinja2-Config-Information-Extraction]]'
+- '[[Jinja2-Server-Side-Template-Injection-with-os-popen-read]]'
+- '[[Jinja2-SSTI-to-RCE-via-Flask-Hook]]'
+- '[[Jinja2-SSTI-Remote-Code-Execution-via-subprocess-Popen]]'
+- '[[Exploit-Jinja2-SSTI-with-Popen-for-RCE]]'
+- '[[Exploit-Jinja2-Server-Side-Template-Injection]]'
+- '[[Jinjava-SSTI-Command-Execution]]'
+- '[[Lessjs-Command-Execution-via-SSTI]]'
 - '[[LFI/RFI using php://filter wrapper]]'
-- '[[LFI to RCE via Apache and Nginx Log Files]]'
+- '[[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]'
 - '[[LFI to RCE via /proc/self/environ]]'
-- '[[LFI to RCE via Upload Race]]'
-- '[[Linux Bash Command Injection with Filter Bypass]]'
-- '[[Linux Staged Reverse TCP Meterpreter Shell]]'
-- '[[Log4Shell Exploitation via Docker]]'
-- '[[Log4Shell Exploitation via Docker]]'
-- '[[Log4Shell Exploitation via Docker]]'
-- '[[Macro Delivery of Meterpreter Shellcode]]'
-- '[[Mako Server Side Template Injection to Retrieve User ID]]'
-- '[[Malicious Macro-enabled Excel Documents with Macrome]]'
-- '[[Metasploit Reverse Shell Handler]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[MSSQL CLR Assembly Command Execution]]'
-- '[[MSSQL Command Execution via xp_cmdshell]]'
-- '[[MSSQL OLE Automation Command Execution]]'
-- '[[MSSQL Server Command Execution via xp_cmdshell with Invoke-SQLOSCmd]]'
-- '[[MSSQL Server External Script Execution]]'
-- '[[MultiBrowser RPO Attack and XSS Injection Prevention]]'
-- '[[MYSQL Injection - Write Shell using Outfile Method]]'
-- '[[MYSQL Time-Based Injection via Conditional Statements]]'
-- '[[Netcat OpenBSD Bind Shell]]'
-- '[[Netcat Reverse Shell Cheat Sheet]]'
-- '[[Netcat Traditional Bind Shell]]'
-- '[[NodeJS Reverse Shell Cheat Sheet]]'
-- '[[Office Word Macro Payload Delivery with Metasploit]]'
-- '[[Oracle Java Class OS Command Execution]]'
-- '[[Perl Bind Shell]]'
+- '[[LFI-to-RCE-via-Upload-Race-Condition]]'
+- '[[Linux-Bash-Command-Injection-with-Filter-Bypass]]'
+- '[[Linux-Staged-Reverse-TCP-Meterpreter-Shell]]'
+- '[[Log4Shell-Exploitation-via-Docker]]'
+- '[[Log4Shell-Exploitation-via-Docker]]'
+- '[[Log4Shell-Exploitation-via-Docker]]'
+- '[[Macro-Delivery-of-Meterpreter-Shellcode]]'
+- '[[Mako-SSTI-to-Retrieve-Current-User-ID]]'
+- '[[Create-Malicious-Macro-Enabled-Excel-Documents-with-Macrome]]'
+- '[[Setup-Metasploit-Reverse-Shell-Handler]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[mssql-clr-assembly-command-execution]]'
+- '[[MSSQL-Command-Execution-via-xp-cmdshell]]'
+- '[[MSSQL-OLE-Automation-Command-Execution]]'
+- '[[mssql-command-execution-via-xp-cmdshell-with-invoke-sqloscmd]]'
+- '[[Enable-and-Execute-External-Scripts-in-MSSQL]]'
+- '[[Exploit-RPO-for-Stored-XSS-via-CSS-Injection-in-IE]]'
+- '[[MySQL-Injection-Write-Shell-Using-Outfile-Method]]'
+- '[[MySQL-Time-Based-Blind-Injection-Using-Conditionals]]'
+- '[[Create-Bind-Shell-with-Netcat-OpenBSD]]'
+- '[[Establish-Reverse-Shell-with-Netcat]]'
+- '[[Netcat-Traditional-Bind-Shell]]'
+- '[[Establish-NodeJS-Reverse-Shell]]'
+- '[[Office-Word-Macro-Payload-Delivery-with-Metasploit]]'
+- '[[Oracle-Java-Class-OS-Command-Execution]]'
+- '[[Create-Perl-Bind-Shell]]'
 - '[[PHP Filter LFI/RFI]]'
-- '[[Polyglot Command Injection for DNS Data Exfiltration]]'
-- '[[PostgreSQL Command Execution using libc.so.6]]'
-- '[[PostgreSQL XML Data Exfiltration]]'
-- '[[Python Reverse Shell Cheat Sheet]]'
-- '[[Reflective Assembly Loading with Powershell]]'
+- '[[Polyglot-Command-Injection-for-DNS-Data-Exfiltration]]'
+- '[[PostgreSQL-Command-Execution-via-libc-system]]'
+- '[[PostgreSQL-XML-Data-Exfiltration]]'
+- '[[Establish-Python-Reverse-Shell]]'
+- '[[Reflective-Assembly-Loading-with-PowerShell]]'
 ---
 
 # Command-Line Interface
@@ -118,6 +118,8 @@ procedures:
 ## Description
 
 Command-line interfaces provide a way of interacting with computer systems and is a common feature across many types of operating system platforms. [1] One example command-line interface on Windows systems is cmd, which can be used to perform a number of tasks including execution of other software. Command-line interfaces can be interacted with locally or remotely via a remote desktop application, reverse shell session, etc. Commands that are executed run with the current permission level of the command-line interface process unless the command includes process invocation that changes permissions context for that execution (e.g. Scheduled Task).Adversaries may use command-line interfaces to interact with systems and execute other software during the course of an operation.
+
+
 
 # Detection
 
@@ -443,25 +445,27 @@ Audit and/or block command-line interpreters by using whitelisting (Citation: Be
 
 ## Related Procedures (100)
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
-- [[Advanced XSS in Angular and AngularJS]]
-- [[Akamai WAF Bypass via Prompt User Input]]
-- [[Argument Injection - Find Files]]
-- [[ASP Razor Server Side Template Injection with C# Command Execution]]
-- [[Automatic Sanitization Bypass in Angular and AngularJS]]
-- [[Azure VM RunCommand Execution]]
-- [[Backgrounding Long Running Commands]]
-- [[Bash TCP Reverse Shell Connection]]
-- [[Basic Command Injection Exploitation]]
-- [[Basic LFI Filter Bypass]]
-- [[Basic LFI via UTF-8 encoding]]
-- [[Basic LFI with Path Truncation]]
-- [[Basic RFI with Double Encoding]]
-- [[Bypassing XSS Filters using UTF BOM Character]]
-- [[Cloudflare XSS Bypass via Common WAF and HTML Injection]]
-- [[Command Execution via xp_cmdshell - MSSQL Server]]
-- [[Command Injection - Chaining Commands]]
-- [[Command Injection Filter Bypass with $() and variable expansion]]
-- [[Command Injection Filter Bypass with Backslash and Slash]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
+- [[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]
+- [[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]
+- [[Argument-Injection-via-Find-Command]]
+- [[asp-razor-server-side-template-injection-with-csharp-command-execution]]
+- [[Bypass-Angular-DomSanitizer-for-XSS-Injection]]
+- [[azure-vm-runcommand-execution]]
+- [[Background-Long-Running-Commands]]
+- [[Establish-Bash-TCP-Reverse-Shell]]
+- [[Basic-Command-Injection-Exploitation]]
+- [[Basic-LFI-Filter-Bypass-Using-Directory-Traversal]]
+- [[Basic-LFI-via-UTF-8-Encoding]]
+- [[Basic-LFI-with-Path-Truncation]]
+- [[Basic-RFI-with-Double-Encoding]]
+- [[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]
+- [[Cloudflare-XSS-Bypass-via-Common-WAF-and-HTML-Injection]]
+- [[Command-Execution-via-xp-cmdshell-MSSQL-Server]]
+- [[Command-Injection-Chaining-Commands]]
+- [[Command-Injection-Filter-Bypass-Using-Variable-Expansion]]
+- [[Command-Injection-Filter-Bypass-with-Backslash-and-Slash]]
 
 *...and 80 more*
+
+

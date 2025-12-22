@@ -18,6 +18,8 @@ tactics:
 
 When programs are executed that need additional privileges than are present in the current user context, it is common for the operating system to prompt the user for proper credentials to authorize the elevated privileges for the task (ex: Bypass User Account Control).Adversaries may mimic this functionality to prompt users for credentials with a seemingly legitimate prompt for a number of reasons that mimic normal usage, such as a fake installer requiring additional access or a fake malware removal suite.[1] This type of prompt can be used to collect credentials via various languages such as AppleScript[2][3] and PowerShell[2][4].
 
+
+
 # Detection
 
 Monitor process execution for unusual programs as well as malicious instances of Scripting that could be used to prompt users for credentials.
@@ -55,3 +57,5 @@ This technique exploits users' tendencies to always supply credentials when prom
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
+
+

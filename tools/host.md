@@ -1,127 +1,112 @@
 ---
-id: 50a7d5f7-5c64-4055-a74d-2473854313bb
-name: host
-type: tool
-verified: true
-created_at: '2020-02-27T01:01:14.724125+00:00'
-updated_at: '2023-05-30T19:52:13.762732+00:00'
-commands:
-- '[[Brute Force SNMP Community String]]'
-- '[[DNSRecon Brute Force DNS Subdomains]]'
-- '[[Docker Mount a Host''s Root Directory in a Container]]'
-- '[[Hydra Brute Force a HTTP POST Login Form]]'
-- '[[Hydra Dictionary Brute Force Remote Desktop Protocol (RDP)]]'
-- '[[Hydra Dictionary Brute Force SSH]]'
-- '[[Keytool Extract Owner Information from SSL Certificate]]'
-- '[[LinEnum.sh Thorough File System Scan]]'
-- '[[Metasploit Search Remote Host''s Files and Directories Recursively]]'
-- '[[NSE hostmap-crtsh find subdomains by cert]]'
-- '[[Netcat Command]]'
-- '[[Nmap Aggressive Scan with Version and OS Detection]]'
-- '[[Nmap Command to Find Directories From Robots.txt File]]'
-- '[[Nmap Command to Find Response Headers]]'
-- '[[Nmap Command to Find Trace Method]]'
-- '[[Nmap Command to Identify SSL Certificate Details]]'
-- '[[Nmap Command to Identify SSL/TLS Ciphers Using ssl-enum-ciphers Script]]'
-- '[[Nmap Enumerate HTTP with Vuln Scripts]]'
-- '[[Nmap Enumerate SMB with Unsafe Vuln Scripts]]'
-- '[[Nmap Enumerate SMTP Server for Valid Commands]]'
-- '[[Nmap Enumerate SMTP Server with Scripts]]'
-- '[[Nmap Enumerate SMTP with Unsafe Vuln Scripts]]'
-- '[[Nmap FIN Scan with Service Enumeration]]'
-- '[[Nmap Full Port Scan with Service Enumeration]]'
-- '[[Nmap LDAP Enumeration with Scripts]]'
-- '[[Nmap Ping Sweep]]'
-- '[[Nmap Port Scan with Banner Enumeration]]'
-- '[[Nmap Port Scan with Vuln Scripts]]'
-- '[[Nmap Query LDAP for Root DSE Object Information]]'
-- '[[Nmap Scan a Web Server for the HeartBleed Vulnerability]]'
-- '[[Nmap Scan for Heartbleed Vulnerability]]'
-- '[[Nmap Scan with Service Enumeration]]'
-- '[[Nmap Service Scan of All TCP Ports]]'
-- '[[Nmap Service Scan of UDP ports]]'
-- '[[Nmap Service Scan of a Single Port]]'
-- '[[Nmap Service Scan with Default Scripts]]'
-- '[[Nmap Service Scan with Log File Output]]'
-- '[[Nmap Service Scan with No Host Discovery]]'
-- '[[Nmap Service Scan with OS Detection]]'
-- '[[Nmap UDP Scan with Service Enumeration]]'
-- '[[Perl Spawn a Root Shell Using Sudo]]'
-- '[[SSH with SSH-Agent Hijack]]'
-- '[[Scan a Linux Filesystem for Vulnerabilities (LinEnum)]]'
-- '[[Uniscan Command to Scan the Application]]'
-- '[[Wfuzz Brute Force DNS with the Host Parameter]]'
-- '[[Whatweb Identify a Web Server''s Technology]]'
-- '[[host Attempt a DNS Zone Transfer and List All Records]]'
-- '[[host Attempt a DNS Zone Transfer]]'
-- '[[host Query a DNS Server for A, AAAA, and MX Records]]'
-- '[[host Query a DNS Server for Mail Servers]]'
-- '[[host Query a DNS Server for Name Servers]]'
-- '[[masscan portscan list of ips]]'
-- '[[ps List All Running Processes]]'
-- '[[pspy Monitor Processes and Commands]]'
-- '[[rpcclient Query an RPC Server for SMB Shares]]'
-- '[[rpcclient Query an RPC Server for a User''s Information]]'
-- '[[rpcclient Query an RPC Server''s Information]]'
-- '[[setspn List AD Accounts with SPN Set]]'
-- '[[snmp-check Enumerate SNMP Server]]'
-- '[[snmpwalk Enumerate SNMP Server]]'
-- '[[sort amass results into domain file]]'
-- '[[ssh Connect with a Private Key]]'
-- '[[systeminfo Display a Systems Configuration Information]]'
-- '[[xprobe2 Fingerprint a Target''s OS]]'
+id: tool-host
+url: 'https://linux.die.net/man/1/host'
 tags:
-- '[[data exposure]]'
-- '[[Network]]'
+  - dns
+  - recon
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+  - Windows (with BIND tools)
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T05:32:24.147Z'
+validated: true
+submitted: true
 ---
-
 # host
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-host is a simple utility for performing DNS lookups. It can also make custom queries, zone transfers, mail/nx lookups, and more. 
+'host' is a standard command-line DNS lookup utility for querying domain resolution, including A records, CNAME aliases, and MX records. It is commonly used in security testing for reconnaissance, verifying subdomain configurations, and identifying takeover vulnerabilities through dangling records.
 
 ## Description
 
-# Description
+The host tool sends DNS queries to resolve names and retrieve record details, supporting options for specific record types and verbose output. In offensive security, it helps trace misconfigurations like unused CNAMEs pointing to claimable services (e.g., AWS S3, WordPress.com). It is lightweight, built into most Unix-like systems, and ideal for quick checks without additional setup.
 
-host is a simple utility for performing DNS lookups. It can also make custom queries, zone transfers, mail/nx lookups, and more.
+## Features
 
+- Feature 1: Basic DNS resolution for IPs and aliases
+- Feature 2: Support for querying specific record types (A, CNAME, NS)
+- Feature 3: Short and long output formats for concise or detailed results
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on Linux/macOS; for Windows, install BIND tools or use Cygwin
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_151f2192-b29a-461a-bea9-a7dc29e5931f}}
+```bash
+# On Ubuntu/Debian
+sudo apt update && sudo apt install dnsutils
 
+# On macOS (if missing)
+brew install bind
+```
 
+## Basic Usage
 
-# Installation
+```bash
+host --help
+```
 
-## Install on Debian/Ubuntu
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help message |
+| -v, --verbose | Enable verbose output |
+| -t type | Query specific record type (e.g., CNAME) |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+host code.wordpress.net
+```
 
+### Example 2: Advanced Usage
 
+```bash
+host -t CNAME code.wordpress.net
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-## Services
+### Techniques
 
-- dns
+- [[Hardware]] Gather Victim Host Information: Domains
 
-## Commands (1)
+### Tactics
 
-- [[host Attempt a DNS Zone Transfer]]
+- [[Reconnaissance]] Reconnaissance
 
-## Tags
+## Detection
 
-- [[data exposure]]
-- [[Network]]
+Indicators and methods for detecting this tool's usage:
 
+- Network logs showing DNS queries from unusual IPs
+- Command-line audit logs with 'host' executions
+- Monitor for repeated queries to target domains
 
+## Related Procedures
+
+- [[procedures/Detect-and-Confirm-Subdomain-Takeover]]
+
+## Related Tools
+
+- [[dig]]
+- [[nslookup]]
+
+## References
+
+- Official documentation: https://linux.die.net/man/1/host
+- Related resources: DNS reconnaissance guides in OWASP testing methodology

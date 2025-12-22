@@ -18,6 +18,8 @@ tactics:
 
 Winlogon.exe is a Windows component responsible for actions at logon/logoff as well as the secure attention sequence (SAS) triggered by Ctrl-Alt-Delete. Registry entries in HKLM\Software[Wow6432Node]Microsoft\Windows NT\CurrentVersion\Winlogon\ and HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ are used to manage additional helper programs and functionalities that support Winlogon. [1] Malicious modifications to these Registry keys may cause Winlogon to load and execute malicious DLLs and/or executables. Specifically, the following subkeys have been known to be possibly vulnerable to abuse: [1]Winlogon\Notify - points to notification package DLLs that handle Winlogon eventsWinlogon\Userinit - points to userinit.exe, the user initialization program executed when a user logs onWinlogon\Shell - points to explorer.exe, the system shell executed when a user logs onAdversaries may take advantage of these features to repeatedly execute malicious code and establish Persistence.
 
+
+
 # Detection
 
 Monitor for changes to Registry entries associated with Winlogon that do not correlate with known software, patch cycles, etc. Tools such as Sysinternals Autoruns may also be used to detect system changes that could be attempts at persistence, including listing current Winlogon helper values. [11]  New DLLs written to System32 that do not correlate with known good software or patching may also be suspicious.
@@ -63,3 +65,5 @@ Identify and block potentially malicious software that may be executed through t
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

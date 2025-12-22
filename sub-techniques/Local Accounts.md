@@ -11,7 +11,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Initial Access|TA0001 - Initial Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Local Accounts
@@ -39,4 +39,4 @@ This sub-technique is used in the following tactics:
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Initial Access|TA0001 - Initial Access]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

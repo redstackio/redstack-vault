@@ -9,28 +9,28 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Active Directory SCCM Loot Inventory and Download]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
 - '[[Dump a Process''s Memory (PowerShell)]]'
-- '[[EBS Snapshot Creation]]'
-- '[[Enumerate a MS Access .mdb Database and Tables]]'
+- '[[Create-EBS-Snapshot-for-Data-Exfiltration]]'
+- '[[Enumerate-Tables-and-Contents-in-MS-Access-MDB-File]]'
 - '[[Enumerate Local Users'' PowerShell History]]'
-- '[[Extract E-mails and Attachments from MS .PST Files]]'
-- '[[Extracting Database Information using MySQL Union Based Injection]]'
-- '[[Find Interesting Strings in a Raw Memory Dump]]'
-- '[[Git Repository Dumping with GoGitDumper]]'
-- '[[Jinja2 Server Side Template Injection - Dump All Used Classes]]'
+- '[[Extract-Emails-and-Attachments-from-PST-Files]]'
+- '[[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]'
+- '[[brute-force-smb-usernames-and-passwords]]'
+- '[[Dump-Git-Repository-with-GoGitDumper]]'
+- '[[Jinja2-SSTI-Dump-All-Used-Classes]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[Log4Shell Environment Variables Exfiltration]]'
-- '[[MSSQL Server - Identify Sensitive Information - Get Tables and Column Details]]'
-- '[[Oracle SQL List Tables and Columns]]'
-- '[[Password Looting from SharePoint and SMB Shares]]'
-- '[[Unzip an AES Encrypted Zip Archive (Linux)]]'
-- '[[XML External Entity Injection to Disclose HTTP Response]]'
-- '[[XML External Entity WAF Bypass via Character Encoding]]'
-- '[[XML External Entity (XXE) Injection using Various Tools]]'
-- '[[XXE in DTD File Contents Extractor]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[Exfiltrate-Environment-Variables-via-Log4Shell]]'
+- '[[mssql-identify-sensitive-information-get-tables-and-column-details]]'
+- '[[Oracle-SQL-List-Tables-and-Columns]]'
+- '[[Password-Looting-from-SharePoint-and-SMB-Shares]]'
+- '[[Extract-AES-Encrypted-Zip-Archive-on-Linux]]'
+- '[[XXE-Injection-to-Disclose-HTTP-Response]]'
+- '[[xml-external-entity-waf-bypass-via-character-encoding]]'
+- '[[Exploit-XXE-Vulnerability-Using-Multiple-Tools]]'
+- '[[Exploit-XXE-in-DTD-to-Exfiltrate-File-Contents]]'
 ---
 
 # Data from Local System
@@ -40,6 +40,8 @@ procedures:
 ## Description
 
 Sensitive data can be collected from local system sources, such as the file system or databases of information residing on the system prior to Exfiltration.Adversaries will often search the file system on computers they have compromised to find files of interest. They may do this using a Command-Line Interface, such as cmd, which has functionality to interact with the file system to gather information. Some adversaries may also use Automated Collection on the local system.
+
+
 
 # Detection
 
@@ -173,25 +175,27 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (22)
 
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[Dump a Process's Memory (PowerShell)]]
-- [[EBS Snapshot Creation]]
-- [[Enumerate a MS Access .mdb Database and Tables]]
-- [[Enumerate Local Users' PowerShell History]]
-- [[Extract E-mails and Attachments from MS .PST Files]]
-- [[Extracting Database Information using MySQL Union Based Injection]]
-- [[Find Interesting Strings in a Raw Memory Dump]]
-- [[Git Repository Dumping with GoGitDumper]]
-- [[Jinja2 Server Side Template Injection - Dump All Used Classes]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[spawn-interactive-shell-with-winrm]]
+- [[Create-EBS-Snapshot-for-Data-Exfiltration]]
+- [[Enumerate-Tables-and-Contents-in-MS-Access-MDB-File]]
+- [[Enumerate-Local-Users-PowerShell-History]]
+- [[Extract-Emails-and-Attachments-from-PST-Files]]
+- [[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]
+- [[brute-force-smb-usernames-and-passwords]]
+- [[Dump-Git-Repository-with-GoGitDumper]]
+- [[Jinja2-SSTI-Dump-All-Used-Classes]]
 - [[Linux - Privilege Escalation via Writable /etc/passwd]]
-- [[Log4Shell Environment Variables Exfiltration]]
-- [[Log4Shell Environment Variables Exfiltration]]
-- [[Log4Shell Environment Variables Exfiltration]]
-- [[MSSQL Server - Identify Sensitive Information - Get Tables and Column Details]]
-- [[Oracle SQL List Tables and Columns]]
-- [[Password Looting from SharePoint and SMB Shares]]
-- [[Unzip an AES Encrypted Zip Archive (Linux)]]
-- [[XML External Entity Injection to Disclose HTTP Response]]
-- [[XML External Entity WAF Bypass via Character Encoding]]
+- [[Exfiltrate-Environment-Variables-via-Log4Shell]]
+- [[Exfiltrate-Environment-Variables-via-Log4Shell]]
+- [[Exfiltrate-Environment-Variables-via-Log4Shell]]
+- [[mssql-identify-sensitive-information-get-tables-and-column-details]]
+- [[Oracle-SQL-List-Tables-and-Columns]]
+- [[Password-Looting-from-SharePoint-and-SMB-Shares]]
+- [[Extract-AES-Encrypted-Zip-Archive-on-Linux]]
+- [[XXE-Injection-to-Disclose-HTTP-Response]]
+- [[xml-external-entity-waf-bypass-via-character-encoding]]
 
 *...and 2 more*
+
+

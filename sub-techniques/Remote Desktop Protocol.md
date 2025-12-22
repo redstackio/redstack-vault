@@ -10,11 +10,11 @@ parent_technique: '[[Remote Services|T1021 - Remote Services]]'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Go Application Proxification with Graftcp]]'
-- '[[Inter-User Messaging]]'
-- '[[Network Pivoting with plink Port Forwarding]]'
-- '[[Ruby Bind Shell]]'
-- '[[SSH Beacon Payload with Cobalt Strike]]'
+- '[[Proxify-Go-Application-with-Graftcp]]'
+- '[[Inter-User-Messaging]]'
+- '[[Network-Pivoting-with-Plink-Port-Forwarding]]'
+- '[[Ruby-Bind-Shell]]'
+- '[[Deploy-SSH-Beacon-via-Cobalt-Strike]]'
 ---
 
 # Remote Desktop Protocol
@@ -49,8 +49,8 @@ This sub-technique is used in the following tactics:
 
 There are 5 procedures using this sub-technique:
 
-- [[Go Application Proxification with Graftcp]]
-- [[Inter-User Messaging]]
-- [[Network Pivoting with plink Port Forwarding]]
-- [[Ruby Bind Shell]]
-- [[SSH Beacon Payload with Cobalt Strike]]
+- [[Proxify-Go-Application-with-Graftcp]]
+- [[Inter-User-Messaging]]
+- [[Network-Pivoting-with-Plink-Port-Forwarding]]
+- [[Ruby-Bind-Shell]]
+- [[Deploy-SSH-Beacon-via-Cobalt-Strike]]

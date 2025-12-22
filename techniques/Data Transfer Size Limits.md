@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[EBS Volume Attachment]]'
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
+- '[[Attach-EBS-Volume-to-EC2-Instance]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
 - '[[Windows Local DTD and Side Channel Leak to Disclose HTTP Response/File Contents]]'
 ---
 
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 An adversary may exfiltrate data in fixed size chunks instead of whole files or limit packet sizes below certain thresholds. This approach may be used to avoid triggering network data transfer threshold alerts.
+
+
 
 # Detection
 
@@ -54,6 +56,8 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (3)
 
-- [[EBS Volume Attachment]]
-- [[MYSQL Injection with Out of Band DNS Exfiltration]]
+- [[Attach-EBS-Volume-to-EC2-Instance]]
+- [[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]
 - [[Windows Local DTD and Side Channel Leak to Disclose HTTP Response/File Contents]]
+
+

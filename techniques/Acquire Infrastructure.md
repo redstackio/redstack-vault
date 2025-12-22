@@ -9,9 +9,9 @@ updated_at: '2023-04-06T03:56:25.846335+00:00'
 tactics:
 - '[[Resource Development|TA0042 - Resource Development]]'
 procedures:
-- '[[RDS Enumeration - Listing Subnets by VPC-id]]'
-- '[[SSL Certificate Discovery with Spyse and Microsoft]]'
-- '[[Subdomain Enumeration and Takeover using SubOver]]'
+- '[[Enumerate-AWS-Subnets-by-VPC-ID]]'
+- '[[SSL-Certificate-Discovery-using-Spyse]]'
+- '[[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]'
 ---
 
 # Acquire Infrastructure
@@ -24,12 +24,16 @@ Adversaries may buy, lease, or rent infrastructure that can be used during targe
 
 Use of these infrastructure solutions allows an adversary to stage, launch, and execute an operation. Solutions may help adversary operations blend in with traffic that is seen as normal, such as contact to third-party web services. Depending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
 
 ## Related Procedures (3)
 
-- [[RDS Enumeration - Listing Subnets by VPC-id]]
-- [[SSL Certificate Discovery with Spyse and Microsoft]]
-- [[Subdomain Enumeration and Takeover using SubOver]]
+- [[Enumerate-AWS-Subnets-by-VPC-ID]]
+- [[SSL-Certificate-Discovery-using-Spyse]]
+- [[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]
+
+

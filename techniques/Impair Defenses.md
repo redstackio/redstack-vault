@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:27.660180+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Disable Script Logging and Clear Signatures]]'
-- '[[Windows - Disable Antivirus and Security (Elastic Agent and Cortex XDR)]]'
+- '[[Disable-PowerShell-Script-Logging-and-Clear-Signatures]]'
+- '[[disable-elastic-agent-and-cortex-xdr-on-windows]]'
 ---
 
 # Impair Defenses
@@ -23,11 +23,15 @@ Adversaries may maliciously modify components of a victim environment in order t
 
 Adversaries could also target event aggregation and analysis mechanisms, or otherwise disrupt these procedures by altering other system components.
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (2)
 
-- [[Disable Script Logging and Clear Signatures]]
-- [[Windows - Disable Antivirus and Security (Elastic Agent and Cortex XDR)]]
+- [[Disable-PowerShell-Script-Logging-and-Clear-Signatures]]
+- [[disable-elastic-agent-and-cortex-xdr-on-windows]]
+
+

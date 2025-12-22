@@ -9,10 +9,10 @@ updated_at: '2023-04-06T03:56:27.404447+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[Subdomain Enumeration and Takeover using Hostile Subdomain Bruteforcer]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[Subdomain-Enumeration-and-Takeover-using-Hostile-Subdomain-Bruteforcer]]'
 ---
 
 # Remote Service Session Hijacking
@@ -25,13 +25,17 @@ Adversaries may take control of preexisting sessions with remote services to mov
 
 Adversaries may commandeer these sessions to carry out actions on remote systems. [Remote Service Session Hijacking](https://attack.mitre.org/techniques/T1563) differs from use of [Remote Services](https://attack.mitre.org/techniques/T1021) because it hijacks an existing session rather than creating a new session using [Valid Accounts](https://attack.mitre.org/techniques/T1078).(Citation: RDP Hijacking Medium)(Citation: Breach Post-mortem SSH Hijack)
 
+
+
 ## Tactics
 
 - [[Lateral Movement|TA0008 - Lateral Movement]]
 
 ## Related Procedures (4)
 
-- [[DCOM Shell Command Execution via MMC Application Class]]
-- [[RDP Session Takeover with Mimikatz]]
-- [[RDP Session Takeover with Mimikatz]]
-- [[Subdomain Enumeration and Takeover using Hostile Subdomain Bruteforcer]]
+- [[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]
+- [[RDP-Session-Takeover-with-Mimikatz]]
+- [[RDP-Session-Takeover-with-Mimikatz]]
+- [[Subdomain-Enumeration-and-Takeover-using-Hostile-Subdomain-Bruteforcer]]
+
+

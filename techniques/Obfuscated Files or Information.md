@@ -9,54 +9,54 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Advanced XSS in Angular and AngularJS]]'
-- '[[AWS Lambda Function Policy Listing]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[Azure Graph API Refresh Token]]'
-- '[[Backgrounding Long Running Commands]]'
-- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
-- '[[Bypassing Quotes in Script Tag for XSS Injection]]'
-- '[[Cloudflare XSS Prompt Bypass]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[Compiling C Code with Cobalt Strike Beacon Object Files]]'
-- '[[Enumerate MSSQL Server Permissions]]'
-- '[[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]'
-- '[[Exotic Payloads for Bypassing Email Filters]]'
-- '[[Exotic Payloads for Bypassing Space Filter]]'
-- '[[Exotic Payloads for Bypassing Word Blacklist and Code Evaluation]]'
-- '[[Export Azure Resource Group Deployment Template]]'
-- '[[FFmpeg HLS Playlist Injection]]'
-- '[[Filter Bypass using Katakana Library]]'
-- '[[Filter Bypass with Exotic Payloads for Cross Site Scripting]]'
-- '[[Filter Bypass with Incomplete HTML Tag for XSS Attacks]]'
+- '[[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]'
+- '[[List-AWS-Lambda-Function-Policy]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]'
+- '[[Background-Long-Running-Commands]]'
+- '[[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]'
+- '[[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]'
+- '[[Bypass-Cloudflare-XSS-Protection-with-Obfuscated-Prompt-Payloads]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[Compile-C-Code-for-Cobalt-Strike-Beacon-Object-Files]]'
+- '[[Enumerate-MSSQL-Server-Permissions]]'
+- '[[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]'
+- '[[Bypass-Email-Filters-with-Exotic-XSS-Payloads]]'
+- '[[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]'
+- '[[Bypass-JavaScript-Word-Blacklist-with-Exotic-Payloads]]'
+- '[[Export-Azure-Resource-Group-Deployment-Template]]'
+- '[[FFmpeg-HLS-Playlist-Injection]]'
+- '[[Filter-Bypass-Using-Katakana-Library-for-XSS]]'
+- '[[Filter-Bypass-with-Exotic-Payloads-for-XSS]]'
+- '[[Bypass-XSS-Filter-with-Incomplete-HTML-Tag]]'
 - '[[GUID / UUID Version Identification]]'
-- '[[Hex-encoded Path Traversal]]'
-- '[[Identify Encrypted Databases via MSSQL Server]]'
-- '[[Image-Based .htaccess Upload]]'
-- '[[JSFuck Obfuscation for Cross Site Scripting]]'
-- '[[JWT Token Creation]]'
-- '[[Linux - Text Hiding and Payload Creation]]'
-- '[[Load DLL using sp_addextendedproc]]'
-- '[[PHP Deserialization - Code Execution]]'
-- '[[PHP Juggling Type and Magic Hashes for Hashing an Empty Array]]'
+- '[[Hex-Encoded-Path-Traversal-Bypass]]'
+- '[[Identify-and-Decrypt-Encrypted-MSSQL-Databases]]'
+- '[[Image-Based-htaccess-Upload-Bypass]]'
+- '[[JSFuck-Obfuscation-for-XSS-Payloads]]'
+- '[[Forge-Custom-JWT-Token-for-Auth-Bypass]]'
+- '[[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]'
+- '[[Load-DLL-Using-sp_addextendedproc]]'
+- '[[PHP-Deserialization-Code-Execution]]'
+- '[[Demonstrate-PHP-Type-Juggling-with-Empty-Array-Hashing]]'
 - '[[Predictable PRNG SSH Key Escalation]]'
-- '[[Rundll32 Download and Execute via WebDAV and Remote Script Execution]]'
-- '[[Server Side Template Injection with Groovy HTTP Request]]'
-- '[[SQL Injection with Union-Based Technique and Obfuscation by DBMS]]'
-- '[[SVG Alert WAF Bypass]]'
-- '[[Unicode Character Injection for XSS Filter Bypass]]'
-- '[[VBA-AMSI Bypass]]'
-- '[[VBA Obfuscation in Git Repositories]]'
-- '[[VBA Purging with OfficePurge command]]'
+- '[[Rundll32-Download-and-Execute-via-WebDAV-or-Remote-Script]]'
+- '[[Server-Side-Template-Injection-via-Groovy-HTTP-Request]]'
+- '[[Union-Based-SQL-Injection-with-DBMS-Obfuscation]]'
+- '[[SVG-Alert-WAF-Bypass]]'
+- '[[Unicode-Character-Injection-for-XSS-Filter-Bypass]]'
+- '[[VBA-AMSI-Bypass-via-Memory-Patching]]'
+- '[[Obfuscate-VBA-Macros-Using-vba-obfuscator]]'
+- '[[VBA-Purging-with-OfficePurge]]'
 - '[[Windows 10+ Binary Replacement via HID.dll]]'
-- '[[Windows - Impacket Psexec Remote Command Execution]]'
-- '[[Windows Meterpreter Shell using Reverse TCP]]'
-- '[[Windows - Mimikatz Hidden Persistence]]'
-- '[[Windows Staged Reverse TCP Meterpreter Shell]]'
-- '[[XLSM - Hot Manchego VBA Macro Generation]]'
-- '[[XML External Entity WAF Bypass via Character Encoding]]'
-- '[[XSLT Injection - Remote Code Execution with PHP wrapper]]'
+- '[[Windows-Impacket-Psexec-Remote-Command-Execution]]'
+- '[[Generate-Windows-Meterpreter-Reverse-TCP-Payload]]'
+- '[[Hide-Mimikatz-Executable-for-Persistence]]'
+- '[[Generate-Windows-Staged-Reverse-TCP-Meterpreter-Payload]]'
+- '[[Generate-Obfuscated-VBA-Macro-Using-Hot-Manchego]]'
+- '[[xml-external-entity-waf-bypass-via-character-encoding]]'
+- '[[xslt-injection-for-php-remote-code-execution]]'
 ---
 
 # Obfuscated Files or Information
@@ -66,6 +66,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit. This is common behavior that can be used across different platforms and the network to evade defenses.Payloads may be compressed, archived, or encrypted in order to avoid detection. These payloads may be used during Initial Access or later to mitigate detection. Sometimes a user's action may be required to open and Deobfuscate/Decode Files or Information for User Execution. The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. [1] Adversaries may also used compressed or archived scripts, such as Javascript.Portions of files can also be encoded to hide the plain-text strings that would otherwise help defenders with discovery. [2] Payloads may also be split into separate, seemingly benign files that only reveal malicious functionality when reassembled. [3]Adversaries may also obfuscate commands executed from payloads or directly via a Command-Line Interface. Environment variables, aliases, characters, and other platform/language specific semantics can be used to evade signature based detections and whitelisting mechanisms. [4] [5] [6]Another example of obfuscation is through the use of steganography, a technique of hiding messages or code in images, audio tracks, video clips, or text files. One of the first known and reported adversaries that used steganography activity surrounding Invoke-PSImage. The Duqu malware encrypted the gathered information from a victim's system and hid it into an image followed by exfiltrating the image to a C2 server. [7] By the end of 2017, an adversary group used Invoke-PSImage to hide PowerShell commands in an image file (png) and execute the code on a victim's system. In this particular case the PowerShell code downloaded another obfuscated script to gather intelligence from the victim's machine and communicate it back to the adversary. [8]
+
+
 
 # Detection
 
@@ -423,25 +425,27 @@ Mit
 
 ## Related Procedures (48)
 
-- [[Advanced XSS in Angular and AngularJS]]
-- [[AWS Lambda Function Policy Listing]]
-- [[AWS S3 Bucket Configuration]]
-- [[AWS S3 Bucket Configuration]]
-- [[Azure Graph API Refresh Token]]
-- [[Backgrounding Long Running Commands]]
-- [[Bypassing Constrained Language Mode using Powershell DLL Runner]]
-- [[Bypassing Quotes in Script Tag for XSS Injection]]
-- [[Cloudflare XSS Prompt Bypass]]
-- [[Cobalt Strike Team Server Installation and Execution]]
-- [[Compiling C Code with Cobalt Strike Beacon Object Files]]
-- [[Enumerate MSSQL Server Permissions]]
-- [[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]
-- [[Exotic Payloads for Bypassing Email Filters]]
-- [[Exotic Payloads for Bypassing Space Filter]]
-- [[Exotic Payloads for Bypassing Word Blacklist and Code Evaluation]]
-- [[Export Azure Resource Group Deployment Template]]
-- [[FFmpeg HLS Playlist Injection]]
-- [[Filter Bypass using Katakana Library]]
-- [[Filter Bypass with Exotic Payloads for Cross Site Scripting]]
+- [[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]
+- [[List-AWS-Lambda-Function-Policy]]
+- [[Configure-AWS-CLI-for-S3-Access]]
+- [[Configure-AWS-CLI-for-S3-Access]]
+- [[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]
+- [[Background-Long-Running-Commands]]
+- [[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]
+- [[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]
+- [[Bypass-Cloudflare-XSS-Protection-with-Obfuscated-Prompt-Payloads]]
+- [[Cobalt-Strike-Team-Server-Installation-and-Execution]]
+- [[Compile-C-Code-for-Cobalt-Strike-Beacon-Object-Files]]
+- [[Enumerate-MSSQL-Server-Permissions]]
+- [[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]
+- [[Bypass-Email-Filters-with-Exotic-XSS-Payloads]]
+- [[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]
+- [[Bypass-JavaScript-Word-Blacklist-with-Exotic-Payloads]]
+- [[Export-Azure-Resource-Group-Deployment-Template]]
+- [[FFmpeg-HLS-Playlist-Injection]]
+- [[Filter-Bypass-Using-Katakana-Library-for-XSS]]
+- [[Filter-Bypass-with-Exotic-Payloads-for-XSS]]
 
 *...and 28 more*
+
+

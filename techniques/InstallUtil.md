@@ -10,7 +10,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
 ---
 
 # InstallUtil
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 InstallUtil is a command-line utility that allows for installation and uninstallation of resources by executing specific installer components specified in .NET binaries. [1] InstallUtil is located in the .NET directories on a Windows system: C:\Windows\Microsoft.NET\Framework\v\InstallUtil.exe and C:\Windows\Microsoft.NET\Framework64\v\InstallUtil.exe. InstallUtil.exe is digitally signed by Microsoft.Adversaries may use InstallUtil to proxy execution of code through a trusted Windows utility. InstallUtil may also be used to bypass process whitelisting through use of attributes within the binary that execute the class decorated with the attribute [System.ComponentModel.RunInstaller(true)]. [2]
+
+
 
 # Detection
 
@@ -46,4 +48,6 @@ InstallUtil may not be necessary within a given environment. Use application whi
 
 ## Related Procedures (1)
 
-- [[Linux Privilege Escalation - Writable Files Escalation]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+
+

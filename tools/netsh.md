@@ -1,21 +1,16 @@
 ---
-id: 6769fef8-6b8e-478c-9337-f4db3092eba2
-name: netsh
 type: tool
 verified: true
-created_at: '2020-03-04T22:22:18.016963+00:00'
-updated_at: '2023-05-30T19:58:38.843982+00:00'
-commands:
-- '[[Allow a Port Through Windows Firewall (Windows 2008 and Earlier)]]'
-- '[[Allow a Port Through Windows Firewall (Windows 7+)]]'
-- '[[Allow an Application Through Windows Firewall (Windows 7+)]]'
-- '[[Disable Windows Firewall (Windows 7+)]]'
-- '[[Windows Firewall Disable Firewall (Windows 2008 and Earlier)]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[firewall]]'
-- '[[Network]]'
+  - firewall
+  - Network
+commands:
+  - '[[commands/netsh-disable-legacy-firewall]]'
+url: >-
+  https://learn.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh-contexts
+validated: true
 ---
 
 # netsh
@@ -24,45 +19,101 @@ tags:
 
 ## Overview
 
-Netsh is a command-line script utility which displays and modifies the network configuration of a computer. In addition to network configuration, netsh can be used to modify the firewall settings, adding exceptions or completely disabling it. 
+Netsh is a command-line utility built into Windows operating systems for viewing and modifying network configuration settings. It is commonly used in security testing for tasks like configuring interfaces, managing IP settings, and especially for firewall operations such as adding exceptions or disabling protections to facilitate network access during engagements.
 
 ## Description
 
-# Description
+Netsh provides a scripting interface to automate network tasks and is particularly useful in post-exploitation scenarios for evading defenses by altering firewall rules. It supports various contexts like 'interface', 'ip', 'firewall' (legacy), and 'advfirewall' (modern). In offensive security, it's often employed to disable or weaken Windows Firewall to allow inbound/outbound traffic for tools like reverse shells or data exfiltration.
 
-Netsh is a command-line script utility which displays and modifies the network configuration of a computer. In addition to network configuration, netsh can be used to modify the firewall settings, adding exceptions or completely disabling it.
+## Features
 
+- Network interface configuration (IP, DNS, etc.)
+- Firewall rule management (legacy and advanced)
+- Wireless profile handling
+- Interface state control (enable/disable adapters)
+- Scripting support for batch operations
 
+## Installation
 
-# Example
+### Requirements
 
+- Windows XP or later (built-in on all versions)
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_61fa83d1-4a14-4449-98de-afe1d1b20e45}}
+Netsh is pre-installed on all modern Windows releases. No additional installation required.
 
+To verify availability:
 
+```command_prompt
+netsh /?
+```
 
-# Installation
+## Basic Usage
 
-Netsh is installed with all modern Windows releases
+```command_prompt
+netsh
+```
 
+This enters the netsh interactive mode. Use `netsh context` to list available contexts.
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `/a` | Saves changes to all profiles |
+| `/c` | Specifies context (e.g., `/c firewall`) |
+| `/?` | Shows help for the current context |
+| `dump` | Exports current configuration |
 
+## Examples
 
+### Example 1: Basic Usage
 
+View current firewall state (legacy context):
 
-## Platforms
+```command_prompt
+netsh firewall show opmode
+```
 
-- Windows
+### Example 2: Advanced Usage
 
-## Commands (1)
+Switch to advanced firewall context and show rules:
 
-- [[Windows Firewall Disable Firewall (Windows 2008 and Earlier)]]
+```command_prompt
+netsh advfirewall firewall show rule name=all
+```
 
-## Tags
+## MITRE ATT&CK Mapping
 
-- [[firewall]]
-- [[Network]]
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Disable or Modify Tools]] Impair Defenses: Disable or Modify Tools (Windows Firewall)
+
+### Tactics
+
+- [[Defense Evasion]] Defense Evasion
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Command-line logging showing 'netsh firewall' or 'netsh advfirewall' executions
+- Event ID 5038 in Windows Security log (firewall state changes)
+- Unexpected firewall rule additions or disables via Sysmon process creation events
+- Network traffic anomalies following netsh execution
+
+## Related Procedures
+
+- [[procedures/Disable-Windows-Firewall]]
+
+## Related Tools
+
+- [[PowerShell]] (for scripting netsh commands)
+- [[cmd.exe]] (native command prompt executor)
+
+## References
+
+- Official Microsoft Documentation: https://learn.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh-overview

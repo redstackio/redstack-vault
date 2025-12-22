@@ -1,59 +1,110 @@
 ---
-id: d13a4db1-5b05-4f4e-b375-f1711eb25225
-name: DNSRecon
+id: tool-001
+url: 'https://github.com/darkoperator/dnsrecon'
+tags:
+  - recon
+  - dns
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:34.987018+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[DNSRecon Brute Force DNS Subdomains]]'
-- '[[DNSRecon DNS Zone Transfer]]'
-tags:
-- '[[Enumeration]]'
+platforms:
+  - Linux
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T05:32:31.192Z'
+validated: true
+submitted: true
 ---
+# dnsrecon
 
-# DNSRecon
+**Status**: Unverified
+
+**Status**: Unverified
 
 ## Overview
 
-DNSRecon is a Python script used for DNS enumeration. It can check for zone transfers, enumerate domain records, perform SRV record enumeration, TLD expansion, brute force subdomains, check cache, enumerate common mDNS records on the local network, and enumerate subdomains using Google. 
+Dnsrecon is a DNS enumeration tool for security testing, used to discover subdomains, perform zone transfers, and identify misconfigurations like dangling records.
 
 ## Description
 
-# Description
+It supports brute-force, reverse lookups, and service discovery, ideal for finding takeover candidates in cloud environments like AWS.
 
-DNSRecon is a Python script used for DNS enumeration. It can check for zone transfers, enumerate domain records, perform SRV record enumeration, TLD expansion, brute force subdomains, check cache, enumerate common mDNS records on the local network, and enumerate subdomains using Google.
+## Features
 
+- Feature 1: Subdomain brute-forcing with custom wordlists
+- Feature 2: DNS record enumeration (A, CNAME, MX, etc.)
+- Feature 3: Output in multiple formats (JSON, XML)
 
+## Installation
 
-# Example
+### Requirements
 
-{{EMBEDDED_COMMAND_86aa5503-6bb7-4536-84c2-edb089b20150}}
+- Python 3
+- Kali Linux or similar
 
+### Install Commands
 
+```bash
+git clone https://github.com/darkoperator/dnsrecon.git
+cd dnsrecon
+pip install -r requirements.txt
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+dnsrecon --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-d` | Target domain |
+| `-t` | Test type (brt for brute) |
+| `-D` | Dictionary file |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+dnsrecon -d 8x8.com -t brt
+```
 
+### Example 2: Advanced Usage
 
+```bash
+dnsrecon -d 8x8.com -t brt -D /usr/share/wordlists/subdomains.txt -j output.json
+```
 
+## MITRE ATT&CK Mapping
 
-## Services
+This tool is commonly associated with:
 
-- dns
+### Techniques
 
-## Commands (1)
+- [[Software]] Gather Victim Host Information: DNS
 
-- [[DNSRecon DNS Zone Transfer]]
+### Tactics
 
-## Tags
+- [[Reconnaissance]] Reconnaissance
 
-- [[Enumeration]]
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Unusual DNS query volumes from a single IP
+- Brute-force patterns in DNS logs
+
+## Related Procedures
+
+- [[procedures/Discover-Dangling-DNS-Records]]
+
+## Related Tools
+
+- [[tools/subfinder]]
+- [[tools/amass]]
+
+## References
+
+- Official GitHub repository

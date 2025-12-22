@@ -10,10 +10,10 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[CSV Injection - Exploit]]'
-- '[[Mako Server Side Template Injection to Retrieve User ID]]'
-- '[[MYSQL Injection - Write Shell using Outfile Method]]'
-- '[[Reflective Assembly Loading with Powershell]]'
+- '[[Exploit-CSV-Injection-for-Command-Execution]]'
+- '[[Mako-SSTI-to-Retrieve-Current-User-ID]]'
+- '[[MySQL-Injection-Write-Shell-Using-Outfile-Method]]'
+- '[[Reflective-Assembly-Loading-with-PowerShell]]'
 ---
 
 # Unix Shell
@@ -46,7 +46,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[CSV Injection - Exploit]]
-- [[Mako Server Side Template Injection to Retrieve User ID]]
-- [[MYSQL Injection - Write Shell using Outfile Method]]
-- [[Reflective Assembly Loading with Powershell]]
+- [[Exploit-CSV-Injection-for-Command-Execution]]
+- [[Mako-SSTI-to-Retrieve-Current-User-ID]]
+- [[MySQL-Injection-Write-Shell-Using-Outfile-Method]]
+- [[Reflective-Assembly-Loading-with-PowerShell]]

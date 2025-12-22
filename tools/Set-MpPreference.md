@@ -1,19 +1,19 @@
 ---
 id: 37020e3e-e7f1-4af4-a65d-8c2704a7f363
-name: Set-MpPreference
 type: tool
 verified: true
 created_at: '2020-03-04T05:39:38.734754+00:00'
 updated_at: '2023-05-30T19:57:25.636401+00:00'
 commands:
-- '[[Disable Defender]]'
-- '[[cmd-72405142]]'
+  - '[[commands/set-mp-preference-disable-realtime-monitoring]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[administrator]]'
-- '[[defender]]'
-- '[[Defense Bypass]]'
+  - administrator
+  - defender
+  - Defense Bypass
+url: 'https://docs.microsoft.com/en-us/powershell/module/defender/set-mppreference'
+validated: true
 ---
 
 # Set-MpPreference
@@ -22,47 +22,97 @@ tags:
 
 ## Overview
 
-Set-MpPreference is a PowerShell cmdlet used to configure the Windows Defender scans and updates. It can be used to turn on/off real-time monitoring, add/remove file/folder exclusions, processes, and default actions. 
+Set-MpPreference is a PowerShell cmdlet used to configure Windows Defender preferences, including scans, updates, real-time protection, exclusions for files, folders, and processes, and default actions for threats. It is commonly used in security testing to modify antivirus behaviors for evasion purposes.
 
 ## Description
 
-# Description
+Set-MpPreference allows administrators to customize Windows Defender settings programmatically. Key capabilities include enabling/disabling real-time monitoring, adding exclusions to bypass scanning of specific paths or processes, and configuring scan schedules. In offensive security, it is often employed to weaken defenses post-compromise, such as disabling real-time protection to allow malware execution without detection.
 
-Set-MpPreference is a PowerShell cmdlet used to configure the Windows Defender scans and updates. It can be used to turn on/off real-time monitoring, add/remove file/folder exclusions, processes, and default actions.
+## Features
 
+- Feature 1: Toggle real-time protection on/off
+- Feature 2: Add exclusions for files, folders, processes, and IP addresses
+- Feature 3: Configure default actions for low/medium/high severity threats
+- Feature 4: Manage update and scan preferences
 
+## Installation
 
-# Example
+### Requirements
 
+- Windows 10 or later with Windows Defender enabled
+- PowerShell 5.1 or higher (pre-installed on modern Windows)
+- Administrator privileges
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_72405142-2fb5-4abf-bbc5-f105ccf398be}}
+Set-MpPreference is installed by default with Windows Defender and PowerShell. No additional installation is required.
 
+```powershell
+# Verify availability
+Get-Command Set-MpPreference
+```
 
+## Basic Usage
 
-# Installation
+```powershell
+Get-Help Set-MpPreference -Full
+```
 
-Set-MpPreferences is installed by default with modern PowerShell versions.
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -DisableRealtimeMonitoring | Enable/disable real-time protection |
+| -ExclusionPath | Add file/folder paths to exclusion list |
+| -ExclusionProcess | Add process names to exclusion list |
+| -MAPSReporting | Configure cloud protection reporting |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Disable real-time monitoring:
 
+```powershell
+Set-MpPreference -DisableRealtimeMonitoring $true
+```
 
+### Example 2: Advanced Usage
 
-## Platforms
+Add an exclusion for a folder and disable behavior monitoring:
 
-- Windows
+```powershell
+Set-MpPreference -ExclusionPath "C:\Temp" -DisableBehaviorMonitoring $true
+```
 
-## Commands (2)
+## MITRE ATT&CK Mapping
 
-- [[Set-MpPreference -DisableRealtimeMonitoring $true]]
-- [[powershell disable av]]
+This tool is commonly associated with:
 
-## Tags
+### Techniques
 
-- [[administrator]]
-- [[defender]]
-- [[Defense Bypass]]
+- [[Disable or Modify Tools]] Disable or Modify Tools
 
+### Tactics
 
+- [[Defense Evasion]] Defense Evasion
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Detection method 1: Monitor PowerShell execution logs for Set-MpPreference invocations
+- Detection method 2: Audit changes in Windows Defender preferences via Event ID 5007 in Microsoft-Windows-Windows Defender/Operational
+- Detection method 3: Baseline Defender settings and alert on unauthorized modifications
+
+## Related Procedures
+
+- [[procedures/disable-windows-defender]]
+
+## Related Tools
+
+- [[tools/Powershell]]
+
+## References
+
+- Official documentation: https://docs.microsoft.com/en-us/powershell/module/defender/set-mppreference

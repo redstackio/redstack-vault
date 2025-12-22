@@ -9,7 +9,7 @@ updated_at: '2023-04-06T00:31:26.524386+00:00'
 parent_technique: '[[Access Token Manipulation|T1134 - Access Token Manipulation]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Token Impersonation/Theft
@@ -35,4 +35,4 @@ An adversary may do this when they have a specific, existing process they want t
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

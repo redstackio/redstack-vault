@@ -10,8 +10,8 @@ parent_technique: '[[Permission Groups Discovery|T1069 - Permission Groups Disco
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory ACL Scanning for User]]'
-- '[[AWS IAM User Inline Policies Enumeration]]'
+- '[[Active-Directory-ACL-Scanning-for-User]]'
+- '[[AWS-IAM-User-Inline-Policies-Enumeration]]'
 ---
 
 # Domain Groups
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Active Directory ACL Scanning for User]]
-- [[AWS IAM User Inline Policies Enumeration]]
+- [[Active-Directory-ACL-Scanning-for-User]]
+- [[AWS-IAM-User-Inline-Policies-Enumeration]]

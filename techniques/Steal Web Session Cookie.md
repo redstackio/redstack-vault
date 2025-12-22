@@ -9,12 +9,12 @@ updated_at: '2023-04-06T03:56:41.707478+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AWS IAM User Enumeration and Credential Checking]]'
-- '[[Azure AD Connect - Silver Ticket Attack]]'
-- '[[Azure Graph API Refresh Token]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[TE Header Obfuscation]]'
-- '[[UI Redressing with Fake Login Form Injection]]'
+- '[[AWS-IAM-User-Enumeration-and-Credential-Checking]]'
+- '[[Azure-AD-Connect-Silver-Ticket-Attack]]'
+- '[[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[Obfuscate-TE-Header-for-HTTP-Request-Smuggling]]'
+- '[[UI-Redressing-with-Fake-Login-Form-Injection]]'
 ---
 
 # Steal Web Session Cookie
@@ -31,15 +31,19 @@ There are several examples of malware targeting cookies from web browsers on the
 
 After an adversary acquires a valid cookie, they can then perform a [Web Session Cookie](https://attack.mitre.org/techniques/T1550/004) technique to login to the corresponding web application.
 
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
 
 ## Related Procedures (6)
 
-- [[AWS IAM User Enumeration and Credential Checking]]
-- [[Azure AD Connect - Silver Ticket Attack]]
-- [[Azure Graph API Refresh Token]]
-- [[Cloud Security Assessment and Auditing]]
-- [[TE Header Obfuscation]]
-- [[UI Redressing with Fake Login Form Injection]]
+- [[AWS-IAM-User-Enumeration-and-Credential-Checking]]
+- [[Azure-AD-Connect-Silver-Ticket-Attack]]
+- [[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]
+- [[aws-cloud-security-assessment-and-auditing]]
+- [[Obfuscate-TE-Header-for-HTTP-Request-Smuggling]]
+- [[UI-Redressing-with-Fake-Login-Form-Injection]]
+
+

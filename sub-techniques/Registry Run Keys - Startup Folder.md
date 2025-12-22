@@ -10,14 +10,14 @@ parent_technique: '[[Boot or Logon Autostart Execution|T1547 - Boot or Logon Aut
   Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]'
-- '[[Linux Reverse Shell Persistence with Ncat]]'
-- '[[Linux - SSH Key Predictable PRNG Privilege Escalation]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Windows Simple User Startup Persistence]]'
-- '[[Windows VM Persistence with VirtualBox and VHD]]'
+- '[[linux-privilege-escalation-via-ld_preload-and-nopasswd]]'
+- '[[linux-reverse-shell-persistence-via-ncat-systemd]]'
+- '[[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[Windows-User-Startup-Folder-Persistence]]'
+- '[[Windows-VM-Persistence-with-VirtualBox-and-VHD]]'
 ---
 
 # Registry Run Keys / Startup Folder
@@ -79,15 +79,15 @@ Adversaries can use these configuration locations to execute malware, such as re
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 6 procedures using this sub-technique:
 
-- [[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]
-- [[Linux Reverse Shell Persistence with Ncat]]
-- [[Linux - SSH Key Predictable PRNG Privilege Escalation]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Windows Simple User Startup Persistence]]
-- [[Windows VM Persistence with VirtualBox and VHD]]
+- [[linux-privilege-escalation-via-ld_preload-and-nopasswd]]
+- [[linux-reverse-shell-persistence-via-ncat-systemd]]
+- [[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[Windows-User-Startup-Folder-Persistence]]
+- [[Windows-VM-Persistence-with-VirtualBox-and-VHD]]

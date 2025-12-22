@@ -9,107 +9,107 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory Certificate Services ESC9 Attack]]'
-- '[[Active Directory Credential Dumping via Vssadmin]]'
-- '[[Active Directory Recon using BloodHound and Certipy]]'
-- '[[Add DCSync Rights with WriteDACL Active Directory Permissions]]'
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[AWS EC2 IAM Instance Profile Enumeration]]'
-- '[[AWS ECR Repository Enumeration]]'
-- '[[AWS ECS Task Enumeration]]'
-- '[[AWS Lambda Event Source Mapping Enumeration]]'
-- '[[AWS Lambda Layer Enumeration]]'
-- '[[Azure AD Connect - Password Extraction via AD Sync Account DCSync]]'
-- '[[Azure Key Vault Access and Query with PowerShell]]'
-- '[[Azure Pass The PRT with Mimikatz]]'
-- '[[Azure Retrieving Passwords using Microburst]]'
-- '[[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]'
-- '[[CCACHE Ticket Reuse from SSSD KCM and Android Devices]]'
-- '[[Checksum Validation Exploitation for Active Directory]]'
+- '[[Active-Directory-Certificate-Services-ESC9-Attack]]'
+- '[[Active-Directory-Credential-Dumping-via-Vssadmin]]'
+- '[[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]'
+- '[[Add-DCSync-Rights-via-WriteDACL-Permissions]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[AWS-EC2-IAM-Instance-Profile-Enumeration]]'
+- '[[Enumerate-AWS-ECR-Repositories]]'
+- '[[aws-ecs-task-enumeration]]'
+- '[[AWS-Lambda-Event-Source-Mapping-Enumeration]]'
+- '[[AWS-Lambda-Layer-Enumeration]]'
+- '[[azure-ad-connect-password-extraction-via-ad-sync-dcsync]]'
+- '[[Access-Azure-Key-Vault-Using-Managed-Identity]]'
+- '[[Azure-Pass-The-PRT-with-Mimikatz]]'
+- '[[Retrieve-Azure-Passwords-Using-Microburst]]'
+- '[[Brute-Force-Users-Without-Kerberos-Preauthentication]]'
+- '[[CCACHE-Ticket-Reuse-from-SSSD-KCM-and-Android-Devices]]'
+- '[[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]'
 - '[[CLR Assembly Creation and Execution]]'
-- '[[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]'
-- '[[Credential Harvesting from Task Scheduler using Mimikatz]]'
-- '[[Credential Theft with Mimikatz and DPAPI]]'
-- '[[DC PrintSpooler Service Check and ntlmrelayx with printerbug.py]]'
-- '[[Decrypt a Cisco Type 7 Password]]'
-- '[[Decrypt a Group Policy Preferences (GPP) Password]]'
-- '[[DPAPI Credential Theft with Hekatomb]]'
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
+- '[[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]'
+- '[[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]'
+- '[[Credential-Theft-with-Mimikatz-and-DPAPI]]'
+- '[[Exploit-ZeroLogon-and-PrinterBug-for-DC-System-Access]]'
+- '[[decrypt-cisco-type-7-password]]'
+- '[[decrypt-gpp-password-from-sysvol]]'
+- '[[DPAPI-Credential-Theft-with-Hekatomb]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
 - '[[Dump a Process''s Memory (cmd.exe)]]'
-- '[[Dumping Active Directory Credentials via NTDS.dit File]]'
-- '[[Dumping AD Domain Credentials using Mimikatz sekurlsa]]'
-- '[[Dumping AD Domain Credentials using ndtsutil]]'
-- '[[Dumping AD Domain Credentials using Vshadow]]'
+- '[[Dump-NTDS-dit-for-AD-Credential-Extraction]]'
+- '[[Dumping-AD-Domain-Credentials-using-Mimikatz-sekurlsa]]'
+- '[[Dumping-AD-Domain-Credentials-using-ntdsutil]]'
+- '[[Dump-AD-Domain-Credentials-Using-VSSAdmin]]'
 - '[[Dumping AD Domain Credentials using Windows Domain Hashdump, Invoke-NinjaCopy,
   and CrackMapExec]]'
-- '[[Dumping AD Domain Credentials via NTDS Reversible Encryption]]'
-- '[[Dumping AD Domain Credentials with DiskShadow]]'
-- '[[Dump Kerberos Tickets]]'
-- '[[Dump Local Administrator Hash and Activate Password with DSRM Credentials]]'
-- '[[Dump Secrets from a Remote System]]'
-- '[[Encrypt a Cisco Type 7 Password]]'
-- '[[Enumerate MSSQL Server Permissions]]'
+- '[[Dump-AD-Domain-Credentials-via-NTDS-Reversible-Encryption]]'
+- '[[Dump-AD-Domain-Credentials-with-DiskShadow]]'
+- '[[Dump-Kerberos-Tickets]]'
+- '[[Dump-Local-Administrator-Hash-and-Activate-with-DSRM]]'
+- '[[List-Windows-Autologon-Credentials-from-Registry]]'
+- '[[Encrypt-Cisco-Type-7-Password]]'
+- '[[Enumerate-MSSQL-Server-Permissions]]'
 - '[[Extract Chrome Cookies and Credentials from a User''s Profile with Domain Admin]]'
-- '[[Extracting GMSA Passwords from Active Directory]]'
+- '[[extract-gmsa-passwords-from-active-directory]]'
 - '[[Extract LM/NTLM Hashes from SAM/SYSTEM Hives]]'
-- '[[Forest to Forest Trust Ticket Hash Dump]]'
-- '[[GraphQL Batching Attacks using finishChannelVerificationMutation]]'
-- '[[HiveNightmare Password Looting]]'
-- '[[Identify Encrypted Databases via MSSQL Server]]'
-- '[[Impersonation Credential Check]]'
-- '[[Kerberos Constrained Delegation - Identify Trusted Computers and Delegation Permissions]]'
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
-- '[[Kubernetes RBAC Listing Secrets]]'
-- '[[LAPS Password Reader]]'
-- '[[LAPS Password Retrieval]]'
-- '[[Linux - In Memory Password Extraction]]'
-- '[[List Credentials in Windows Credential Manager Vault]]'
-- '[[List Windows Autologon Logon Credentials]]'
-- '[[Mimikatz DCSync Password Retrieval]]'
-- '[[Mimikatz LSA Protection Bypass]]'
-- '[[Mimikatz Mini Dump Password Extraction]]'
-- '[[Mimikatz RDP Password Extraction]]'
-- '[[MS-EFSRPC Abuse with Unconstrained Delegation and PetitPotam Attack]]'
-- '[[MSSQL List Columns Injection]]'
-- '[[MYSQL Time Based Injection using SLEEP in a subselect]]'
+- '[[Dump-Forest-Trust-Ticket-Hash-Using-DCSync]]'
+- '[[Exploit-GraphQL-Batching-Vulnerability-with-finishChannelVerificationMutation]]'
+- '[[HiveNightmare-SAM-Dump-via-Shadow-Copies]]'
+- '[[Identify-and-Decrypt-Encrypted-MSSQL-Databases]]'
+- '[[mssql-impersonation-credential-check]]'
+- '[[kerberos-constrained-delegation-identify-trusted-computers-and-delegation-permissions]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
+- '[[Kubernetes-RBAC-List-Secrets]]'
+- '[[Check-LAPS-Installation-and-Retrieve-Password]]'
+- '[[Retrieve-LAPS-Password-via-Group-Manipulation]]'
+- '[[Linux-In-Memory-Password-Extraction]]'
+- '[[List-Credentials-in-Windows-Credential-Manager-Vault]]'
+- '[[Analyze-BloodHound-Data-for-AD-Relationships]]'
+- '[[Mimikatz-DCSync-Password-Hash-Dumping]]'
+- '[[Mimikatz-LSA-Protection-Bypass]]'
+- '[[Mimikatz-Mini-Dump-Password-Extraction]]'
+- '[[Mimikatz-RDP-Password-Extraction]]'
+- '[[MS-EFSRPC-Abuse-via-PetitPotam-and-Unconstrained-Delegation]]'
+- '[[List-MSSQL-Table-Columns-via-SQL-Injection]]'
+- '[[mysql-time-based-blind-injection-using-sleep-subselect]]'
 - '[[Net-NTLMv1/NTLMv1 Hash Capture and Crack]]'
 - '[[Net-NTLMv2/NTLMv2 Hash Capture and Cracking]]'
-- '[[NTDS Database Dumping]]'
-- '[[NTDS Hash Extraction]]'
-- '[[NTDS Reversible Encryption Dumping]]'
-- '[[Pass the Hash with Meterpreter]]'
-- '[[Password in AD User Comment Enumeration]]'
-- '[[Password of Pre-Created Computer Account Attack]]'
-- '[[PXE Boot Image Attack - Local Admin Account Hijack]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[RDP Session Takeover with Mimikatz]]'
-- '[[Remote DPAPI Credential Dumping with DonPAPI]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[SAMAccountName Spoofing via SMB Credential Enumeration]]'
-- '[[SCCM Network Access Account Credential Theft]]'
-- '[[Shadow Credential Harvesting]]'
-- '[[Skeleton Key Password Injection]]'
-- '[[SMB Credential Testing with Crackmapexec]]'
-- '[[SQL Server Database Name Retrieval]]'
-- '[[Steal an NTLMv2 Hash with an SCF File and SMB]]'
-- '[[Stealing Chrome Cookies and Credentials with Mimikatz]]'
-- '[[Windows - Creating a PSCredential Object with a Secure Password]]'
-- '[[Windows - Credential Enumeration]]'
-- '[[Windows Credentials Impacket Commands]]'
-- '[[Windows DPAPI Credential Files Enumeration]]'
-- '[[Windows DPAPI Credential Theft]]'
-- '[[Windows - Mimikatz Mini Dump]]'
-- '[[Windows - Mimikatz Password Extraction]]'
-- '[[Windows - Mimikatz Password Extraction]]'
-- '[[Windows - Mimikatz RDP Password Extraction]]'
-- '[[Windows Password and Credential Query via Registry]]'
-- '[[Windows - Privilege Escalation: EoP Looting for Passwords (SessionGopher)]]'
-- '[[Windows - SAM and SYSTEM Hash Extraction]]'
-- '[[Windows Sandbox Credential Access]]'
-- '[[Windows SSH with Kerberos Authentication]]'
-- '[[Windows Unattend Password Extraction]]'
-- '[[Windows - Using Impacket and PSExec with Credentials]]'
+- '[[NTDS-Database-Dumping]]'
+- '[[NTDS-Hash-Extraction]]'
+- '[[NTDS-Reversible-Encryption-Dumping]]'
+- '[[Pass-the-Hash-to-Obtain-Meterpreter-Session]]'
+- '[[Enumerate-Passwords-in-AD-User-Descriptions]]'
+- '[[Password-of-Pre-Created-Computer-Account-Attack]]'
+- '[[pxe-boot-image-attack-local-admin-hijack]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[RDP-Session-Takeover-with-Mimikatz]]'
+- '[[Remote-DPAPI-Credential-Dumping-with-DonPAPI]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[SMB-Credential-Enumeration-for-SAMAccountName-Spoofing]]'
+- '[[SCCM-Network-Access-Account-Credential-Theft]]'
+- '[[Shadow-Credential-Harvesting]]'
+- '[[Skeleton-Key-Password-Injection-with-Mimikatz]]'
+- '[[Test-Credentials-Against-Multiple-Protocols-with-CrackMapExec]]'
+- '[[Retrieve-Current-Database-Name-in-SQL-Server]]'
+- '[[Steal-NTLMv2-Hash-with-SCF-File-and-SMB]]'
+- '[[Steal-Chrome-Cookies-and-Credentials-with-Mimikatz]]'
+- '[[Create-PSCredential-Object-with-Secure-Password]]'
+- '[[windows-credential-enumeration]]'
+- '[[Remote-Command-Execution-with-Impacket-Using-Credentials]]'
+- '[[Windows-DPAPI-Credential-Files-Enumeration]]'
+- '[[Windows-DPAPI-Credential-Theft]]'
+- '[[windows-lsass-mini-dump-for-mimikatz]]'
+- '[[Windows-Mimikatz-Password-Extraction]]'
+- '[[Windows-Mimikatz-Password-Extraction]]'
+- '[[Windows-Mimikatz-RDP-Password-Extraction]]'
+- '[[windows-password-and-credential-query-via-registry]]'
+- '[[Windows-Privilege-Escalation-EoP-Looting-for-Passwords-with-SessionGopher]]'
+- '[[Windows-SAM-and-SYSTEM-Hash-Extraction]]'
+- '[[Access-Windows-Sandbox-with-Default-Credentials]]'
+- '[[Windows-SSH-with-Kerberos-Authentication]]'
+- '[[windows-unattend-password-extraction]]'
+- '[[windows-impacket-psexec-remote-execution-with-credentials]]'
 ---
 
 # Credential Dumping
@@ -119,6 +119,8 @@ procedures:
 ## Description
 
 Credential dumping is the process of obtaining account login and password information, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform Lateral Movement and access restricted information.Several of the tools mentioned in this technique may be used by both adversaries and professional security testers. Additional custom tools likely exist as well.WindowsSAM (Security Accounts Manager)The SAM is a database file that contains local accounts for the host, typically those found with the ‘net user’ command. To enumerate the SAM database, system level access is required. A number of tools can be used to retrieve the SAM file through in-memory techniques:pwdumpx.exe gsecdumpMimikatzsecretsdump.pyAlternatively, the SAM can be extracted from the Registry with Reg:reg save HKLM\sam samreg save HKLM\system systemCreddump7 can then be used to process the SAM database locally to retrieve hashes. [1]Notes:Rid 500 account is the local, in-built administrator.Rid 501 is the guest account.User accounts start with a RID of 1,000+.Cached CredentialsThe DCC2 (Domain Cached Credentials version 2) hash, used by Windows Vista and newer caches credentials when the domain controller is unavailable. The number of default cached credentials varies, and this number can be altered per system. This hash does not allow pass-the-hash style attacks. A number of tools can be used to retrieve the SAM file through in-memory techniques.pwdumpx.exe gsecdumpMimikatzAlternatively, reg.exe can be used to extract from the Registry and Creddump7 used to gather the credentials.Notes:Cached credentials for Windows Vista are derived using PBKDF2.Local Security Authority (LSA) SecretsWith SYSTEM access to a host, the LSA secrets often allows trivial access from a local account to domain-based account credentials. The Registry is used to store the LSA secrets. When services are run under the context of local or domain users, their passwords are stored in the Registry. If auto-logon is enabled, this information will be stored in the Registry as well. A number of tools can be used to retrieve the SAM file through in-memory techniques.pwdumpx.exe gsecdumpMimikatzsecretsdump.pyAlternatively, reg.exe can be used to extract from the Registry and Creddump7 used to gather the credentials.Notes:The passwords extracted by his mechanism are UTF-16 encoded, which means that they are returned in plaintext.Windows 10 adds protections for LSA Secrets described in Mitigation.NTDS from Domain ControllerActive Directory stores information about members of the domain including devices and users to verify credentials and define access rights. The Active Directory domain database is stored in the NTDS.dit file. By default the NTDS file will be located in %SystemRoot%\NTDS\Ntds.dit of a domain controller. [2]The following tools and techniques can be used to enumerate the NTDS file and the contents of the entire Active Directory hashes.Volume Shadow Copysecretsdump.pyUsing the in-built Windows tool, ntdsutil.exeInvoke-NinjaCopyGroup Policy Preference (GPP) FilesGroup Policy Preferences (GPP) are tools that allowed administrators to create domain policies with embedded credentials. These policies, amongst other things, allow administrators to set local accounts.These group policies are stored in SYSVOL on a domain controller, this means that any domain user can view the SYSVOL share and decrypt the password (the AES private key was leaked on-line. [3] [4]The following tools and scripts can be used to gather and decrypt the password file from Group Policy Preference XML files:Metasploit’s post exploitation module: "post/windows/gather/credentials/gpp"Get-GPPPassword [5]gpprefdecrypt.pyNotes:On the SYSVOL share, the following can be used to enumerate potential XML files.dir /s * .xmlService Principal Names (SPNs)See Kerberoasting.Plaintext CredentialsAfter a user logs on to a system, a variety of credentials are generated and stored in the Local Security Authority Subsystem Service (LSASS) process in memory. These credentials can be harvested by a administrative user or SYSTEM.SSPI (Security Support Provider Interface) functions as a common interface to several Security Support Providers (SSPs): A Security Support Provider is a dynamic-link library (DLL) that makes one or more security packages available to applications.The following SSPs can be used to access credentials:Msv: Interactive logons, batch logons, and service logons are done through the MSV authentication package.Wdigest: The Digest Authentication protocol is designed for use with Hypertext Transfer Protocol (HTTP) and Simple Authentication Security Layer (SASL) exchanges. [6]Kerberos: Preferred for mutual client-server domain authentication in Windows 2000 and later.CredSSP:  Provides SSO and Network Level Authentication for Remote Desktop Services. [7] The following tools can be used to enumerate credentials:Windows Credential EditorMimikatzAs well as in-memory techniques, the LSASS process memory can be dumped from the target host and analyzed on a local system.For example, on the target host use procdump:procdump -ma lsass.exe lsass_dumpLocally, mimikatz can be run:sekurlsa::Minidump lsassdump.dmpsekurlsa::logonPasswordsDCSyncDCSync is a variation on credential dumping which can be used to acquire sensitive information from a domain controller. Rather than executing recognizable malicious code, the action works by abusing the domain controller's  application programming interface (API) [8] [9] [10] [11] to simulate the replication process from a remote domain controller. Any members of the Administrators, Domain Admins, Enterprise Admin groups or computer accounts on the domain controller are able to run DCSync to pull password data [12] from Active Directory, which may include current and historical hashes of potentially useful accounts such as KRBTGT and Administrators. The hashes can then in turn be used to create a Golden Ticket for use in Pass the Ticket [13] or change an account's password as noted in Account Manipulation. [14] DCSync functionality has been included in the "lsadump" module in Mimikatz. [15] Lsadump also includes NetSync, which performs DCSync over a legacy replication protocol. [16]LinuxProc filesystemThe /proc filesystem on Linux contains a great deal of information regarding the state of the running operating system. Processes running with root privileges can use this facility to scrape live memory of other running programs. If any of these programs store passwords in clear text or password hashes in memory, these values can then be harvested for either usage or brute force attacks, respectively. This functionality has been implemented in the MimiPenguin, an open source tool inspired by Mimikatz. The tool dumps process memory, then harvests passwords and hashes by looking for text strings and regex patterns for how given applications such as Gnome Keyring, sshd, and Apache use memory to store such authentication artifacts.
+
+
 
 # Detection
 
@@ -411,25 +413,27 @@ Monitor/harden access to LSASS and SAM table with tools that allow process white
 
 ## Related Procedures (100)
 
-- [[Active Directory Certificate Services ESC9 Attack]]
-- [[Active Directory Credential Dumping via Vssadmin]]
-- [[Active Directory Recon using BloodHound and Certipy]]
-- [[Add DCSync Rights with WriteDACL Active Directory Permissions]]
-- [[Automated Password Extraction from SYSVOL and Group Policy Preferences]]
-- [[AWS EC2 IAM Instance Profile Enumeration]]
-- [[AWS ECR Repository Enumeration]]
-- [[AWS ECS Task Enumeration]]
-- [[AWS Lambda Event Source Mapping Enumeration]]
-- [[AWS Lambda Layer Enumeration]]
-- [[Azure AD Connect - Password Extraction via AD Sync Account DCSync]]
-- [[Azure Key Vault Access and Query with PowerShell]]
-- [[Azure Pass The PRT with Mimikatz]]
-- [[Azure Retrieving Passwords using Microburst]]
-- [[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]
-- [[CCACHE Ticket Reuse from SSSD KCM and Android Devices]]
-- [[Checksum Validation Exploitation for Active Directory]]
+- [[Active-Directory-Certificate-Services-ESC9-Attack]]
+- [[Active-Directory-Credential-Dumping-via-Vssadmin]]
+- [[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]
+- [[Add-DCSync-Rights-via-WriteDACL-Permissions]]
+- [[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]
+- [[AWS-EC2-IAM-Instance-Profile-Enumeration]]
+- [[Enumerate-AWS-ECR-Repositories]]
+- [[aws-ecs-task-enumeration]]
+- [[AWS-Lambda-Event-Source-Mapping-Enumeration]]
+- [[AWS-Lambda-Layer-Enumeration]]
+- [[azure-ad-connect-password-extraction-via-ad-sync-dcsync]]
+- [[Access-Azure-Key-Vault-Using-Managed-Identity]]
+- [[Azure-Pass-The-PRT-with-Mimikatz]]
+- [[Retrieve-Azure-Passwords-Using-Microburst]]
+- [[Brute-Force-Users-Without-Kerberos-Preauthentication]]
+- [[CCACHE-Ticket-Reuse-from-SSSD-KCM-and-Android-Devices]]
+- [[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]
 - [[CLR Assembly Creation and Execution]]
-- [[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]
-- [[Credential Harvesting from Task Scheduler using Mimikatz]]
+- [[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]
+- [[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]
 
 *...and 80 more*
+
+

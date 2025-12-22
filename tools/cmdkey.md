@@ -1,17 +1,17 @@
 ---
-id: cfc54db8-e15f-4259-b8ca-d2581ac8a1ae
-name: cmdkey
 type: tool
-verified: true
-created_at: '2020-03-05T01:37:40.961983+00:00'
-updated_at: '2023-05-30T01:06:32.348029+00:00'
-commands:
-- '[[List Stored Windows Credentials (cmdkey.exe)]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[authentication]]'
-- '[[Cryptography]]'
+  - credential-access
+  - enumeration
+  - windows-credentials
+commands:
+  - '[[commands/cmdkey-list-stored-credentials]]'
+url: >-
+  https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey
+verified: true
+validated: true
 ---
 
 # cmdkey
@@ -20,45 +20,96 @@ tags:
 
 ## Overview
 
-cmdkey.exe is used to create, list or delete stored user names, passwords or credentials 
+cmdkey is a built-in Windows command-line utility for managing stored user names, passwords, and other credentials in the Windows Credential Manager. It is commonly used in security testing to enumerate, add, or remove credentials that may enable lateral movement, such as saved RDP or SMB authentication details.
 
 ## Description
 
-# Description
+cmdkey.exe allows operators to interact with the Credential Manager from the command line, which stores credentials for various targets like domain passwords, generic credentials, and Microsoft accounts. In offensive security, it is particularly useful during post-exploitation for discovering reusable credentials without needing GUI access. The tool supports operations on local or remote targets and is available on Windows Vista and later versions.
 
-cmdkey.exe is used to create, list or delete stored user names, passwords or credentials
+## Features
 
+- List stored credentials with details on targets, types, and users
+- Add new credentials for specific targets (e.g., for automated logins)
+- Delete existing credentials to clean up traces
+- Target domain-specific or generic credential stores
 
+## Installation
 
-## Example
+### Requirements
 
+- Windows Vista or later (built-in, no additional requirements)
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_f8d06b8d-844e-4a25-9b71-8c8d5d84d110}}
+No installation required; cmdkey.exe is included in the Windows system directory (C:\Windows\System32).
 
+## Basic Usage
 
+```command_prompt
+cmdkey /?
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `/list` | Display all stored credentials |
+| `/list:TARGET` | List credentials for a specific target |
+| `/add:TARGET` | Add a credential for a target |
+| `/delete:TARGET` | Delete a credential for a target |
+| `/generic` | Specify generic credential type |
+| `/user:USERNAME` | Specify the username |
+| `/pass:PASSWORD` | Specify the password |
 
-## Usage
+## Examples
 
+### Example 1: Basic Usage
 
+```command_prompt
+cmdkey /list
+```
 
-{{EMBEDDED_CODE_f6b3437d-f33f-4697-8bbf-bf5027787070}}
+Lists all stored credentials for the current user.
 
+### Example 2: Advanced Usage
 
+```command_prompt
+cmdkey /list:Domain:target=dc01.corp.local
+```
 
-## Platforms
+Lists credentials specifically for a domain target.
 
-- Windows
+## MITRE ATT&CK Mapping
 
-## Commands (1)
+This tool is commonly associated with:
 
-- [[List Stored Windows Credentials (cmdkey.exe)]]
+### Techniques
 
-## Tags
+- [[Credentials from Password Stores]] Credentials from Password Stores
+- [[Windows Credential Manager]] Windows Credential Manager
 
-- [[authentication]]
-- [[Cryptography]]
+### Tactics
 
+- [[Credential Access]] Credential Access
 
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Monitor command-line executions of cmdkey.exe via Sysmon Event ID 1 (Process Creation) with Image: cmdkey.exe and CommandLine containing /list or /add
+- Audit Windows Security Event ID 4648 for credential use tied to Credential Manager access
+- EDR alerts on credential enumeration patterns in post-exploitation phases
+
+## Related Procedures
+
+No related procedures linked.
+
+## Related Tools
+
+- [[tools/Mimikatz]]
+- [[tools/vaultcmd]]
+
+## References
+
+- [Microsoft Docs: cmdkey](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey)
+- MITRE ATT&CK: T1555

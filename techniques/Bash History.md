@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[DB2 Injection with Comment Filtering]]'
-- '[[NoSQL Injection Password Length Extraction]]'
-- '[[SQLite Schema Extraction]]'
+- '[[DB2-SQL-Injection-Using-Comments]]'
+- '[[NoSQL-Injection-Password-Length-Extraction]]'
+- '[[SQLite-Schema-Extraction-via-Injection]]'
 ---
 
 # Bash History
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Bash keeps track of the commands users type on the command-line with the "history" utility. Once a user logs out, the history is flushed to the user’s .bash_history file. For each user, this file resides at the same location: ~/.bash_history. Typically, this file keeps track of the user’s last 500 commands. Users often type usernames and passwords on the command-line as parameters to programs, which then get saved to this file when they log out. Attackers can abuse this by looking through the file for potential credentials. [1]
+
+
 
 # Detection
 
@@ -46,6 +48,8 @@ There are multiple methods of preventing a user's command history from being flu
 
 ## Related Procedures (3)
 
-- [[DB2 Injection with Comment Filtering]]
-- [[NoSQL Injection Password Length Extraction]]
-- [[SQLite Schema Extraction]]
+- [[DB2-SQL-Injection-Using-Comments]]
+- [[NoSQL-Injection-Password-Length-Extraction]]
+- [[SQLite-Schema-Extraction-via-Injection]]
+
+

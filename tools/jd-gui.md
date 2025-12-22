@@ -1,24 +1,87 @@
 ---
-id: f2892233-a206-4276-9c9a-44a4b285ffd2
-name: jd-gui
+url: 'https://github.com/java-decompiler/jd-gui'
+tags:
+  - decompiler
+  - java
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:25.191949+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+  - macOS
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:58.395Z'
+id: d60bb3b8-4c9d-4f4a-8919-c7bc6850c34e
+validated: true
+submitted: true
 ---
-
 # jd-gui
+
+**Status**: Unverified
 
 ## Overview
 
-JD-GUI is a standalone graphical utility that displays Java source codes of “.class” files. You can browse the reconstructed source code with the JD-GUI for instant access to methods and fields.JD-GUI Homepage | Kali JD-GUI Repo 
+Graphical Java decompiler for viewing bytecode as source code.
 
 ## Description
 
-JD-GUI is a standalone graphical utility that displays Java source codes of “.class” files. You can browse the reconstructed source code with the JD-GUI for instant access to methods and fields.JD-GUI Homepage | Kali JD-GUI Repo
+Used to inspect decompiled JAR from dex2jar for logic in deep links.
 
+## Features
 
+- Feature 1: GUI interface
+- Feature 2: Search and export
 
+## Installation
 
+### Requirements
 
+- Java
 
+### Install Commands
+
+Download JAR from GitHub releases.
+
+```bash
+java -jar jd-gui.jar
+```
+
+## Basic Usage
+
+Open JAR file in GUI.
+
+### Common Options
+
+N/A (GUI)
+
+## Examples
+
+### Example 1: Basic Usage
+
+Load app.jar in jd-gui.
+
+## MITRE ATT&CK Mapping
+
+### Techniques
+
+- [[Unsecured Credentials]]
+
+### Tactics
+
+- [[Collection]]
+
+## Detection
+
+- GUI process
+
+## Related Procedures
+
+- APK RE
+
+## Related Tools
+
+- [[tools/jadx-gui]]
+
+## References
+
+- GitHub

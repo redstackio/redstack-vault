@@ -10,9 +10,9 @@ parent_technique: '[[Subvert Trust Controls|T1553 - Subvert Trust Controls]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Open URL Redirection Filter Bypass]]'
-- '[[PHP Juggling Type and Magic Hashes]]'
-- '[[Subdomain Enumeration and Takeover with tko-subs]]'
+- '[[Bypass-Open-URL-Redirection-Filters]]'
+- '[[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]'
+- '[[Subdomain-Enumeration-and-Takeover-with-tko-subs]]'
 ---
 
 # Install Root Certificate
@@ -49,6 +49,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[Open URL Redirection Filter Bypass]]
-- [[PHP Juggling Type and Magic Hashes]]
-- [[Subdomain Enumeration and Takeover with tko-subs]]
+- [[Bypass-Open-URL-Redirection-Filters]]
+- [[Bypass-PHP-Authentication-with-Type-Juggling-and-Magic-Hashes]]
+- [[Subdomain-Enumeration-and-Takeover-with-tko-subs]]

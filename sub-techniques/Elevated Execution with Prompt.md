@@ -10,10 +10,10 @@ parent_technique: '[[Abuse Elevation Control Mechanism|T1548 - Abuse Elevation C
   Mechanism]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]'
-- '[[Linux - Suid Binary Persistence]]'
+- '[[linux-privilege-escalation-via-ld_preload-and-nopasswd]]'
+- '[[Linux-SUID-Binary-Persistence]]'
 ---
 
 # Elevated Execution with Prompt
@@ -41,11 +41,11 @@ Adversaries may abuse <code>AuthorizationExecuteWithPrivileges</code> to obtain 
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 2 procedures using this sub-technique:
 
-- [[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]
-- [[Linux - Suid Binary Persistence]]
+- [[linux-privilege-escalation-via-ld_preload-and-nopasswd]]
+- [[Linux-SUID-Binary-Persistence]]

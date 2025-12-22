@@ -20,6 +20,8 @@ tactics:
 
 Launchctl controls the macOS launchd process which handles things like launch agents and launch daemons, but can execute other commands or programs itself. Launchctl supports taking subcommands on the command-line, interactively, or even redirected from standard input. By loading or reloading launch agents or launch daemons, adversaries can install persistence or execute changes they made  [1]. Running a command from launchctl is as simple as launchctl submit -l  -- /Path/to/thing/to/execute "arg" "arg" "arg". Loading, unloading, or reloading launch agents or launch daemons can require elevated privileges. Adversaries can abuse this functionality to execute code or even bypass whitelisting if launchctl is an allowed process.
 
+
+
 # Detection
 
 Knock Knock can be used to detect persistent programs such as those installed via launchctl as launch agents or launch daemons. Additionally, every launch agent or launch daemon must have a corresponding plist file on disk somewhere which can be monitored. Monitor process execution from launchctl/launchd for unusual or unknown processes.
@@ -43,3 +45,5 @@ Prevent users from installing their own launch agents or launch daemons and inst
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Execution|TA0002 - Execution]]
 - [[Persistence|TA0003 - Persistence]]
+
+

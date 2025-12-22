@@ -1,20 +1,16 @@
 ---
-id: b8ff8e9d-9485-4651-a2d4-2d2f8680c5ef
-name: MSBuild
 type: tool
 verified: true
-created_at: '2020-03-03T02:41:11.369174+00:00'
-updated_at: '2023-05-30T01:05:33.199877+00:00'
-commands:
-- '[[MSBuild Build Package from XML]]'
-- '[[cmd-b88fb2f0]]'
-- '[[nps payload Execute and Build]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[applocker]]'
-- '[[Build]]'
-- '[[Defense Bypass]]'
+  - applocker
+  - Build
+  - Defense Bypass
+url: 'https://dotnet.microsoft.com/download/dotnet-framework'
+commands:
+  - '[[commands/msbuild-execute-xml-payload]]'
+validated: true
 ---
 
 # MSBuild
@@ -23,53 +19,107 @@ tags:
 
 ## Overview
 
-MSBuild (Microsoft Build Engine) is a platform for building applications. It uses an XML schema to control how the platform processes and builds software (similar to Linux's make). MSBuild is a standalone program, and while Visual Studio uses it to compile software, it does not require Visual Studi
+MSBuild (Microsoft Build Engine) is a platform for building applications. It uses an XML schema to control how the platform processes and builds software (similar to Linux's make). MSBuild is a standalone program that can be used to execute commands and bypass AppLocker restrictions when AppLocker is configured to only run signed binaries, as it is a Microsoft-signed binary.
 
 ## Description
 
-# Description
+MSBuild is often installed alongside .NET Framework and does not require Visual Studio to function. It processes XML project files that can include inline tasks or references to assemblies, allowing for the execution of arbitrary code during the build process. This makes it valuable in red team operations for defense evasion and proxy execution of payloads without triggering application whitelisting controls.
 
-MSBuild (Microsoft Build Engine) is a platform for building applications. It uses an XML schema to control how the platform processes and builds software (similar to Linux's make). MSBuild is a standalone program, and while Visual Studio uses it to compile software, it does not require Visual Studio, and is often installed alongside .NET. Since MSBuild is a Microsoft signed binary, it can be used to execute commands and bypass AppLocker restrictions when AppLocker is configured to only run signed binaries.
+## Features
 
+- XML-based project file processing for build automation
+- Support for inline C# code execution via custom tasks
+- Integration with .NET assemblies for extended functionality
+- Microsoft-signed executable, enabling bypass of strict application controls
+- Verbose logging and diagnostic output for troubleshooting builds
 
+## Installation
 
-# Example
+### Requirements
 
+- Windows operating system (typically included with .NET installations)
+- Administrative privileges for system-wide installation if not present
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_ab82b5cd-9eb5-4bb5-a803-94dd712198a4}}
+MSBuild is installed via .NET Framework, Visual Studio, or Build Tools:
 
+- Download and install .NET Framework from [https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)
+- Install Visual Studio Community from [https://visualstudio.microsoft.com/vs/community/](https://visualstudio.microsoft.com/vs/community/)
+- Download Build Tools for Visual Studio from [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
 
+On modern Windows, it may be available via winget:
 
-# Installation
+```cmd
+winget install Microsoft.VisualStudio.2022.BuildTools
+```
 
-MSBuild can be installed with:
+## Basic Usage
 
+```cmd
+MSBuild.exe /help
+```
 
-- .NET:  [https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)
+### Common Options
 
-- Visual Studio: [https://visualstudio.microsoft.com/vs/community/](https://visualstudio.microsoft.com/vs/community/)
+| Option | Description |
+|--------|-------------|
+| `/help` or `/?` | Show help message and available options |
+| `/v:n` | Set verbosity level (n: quiet, m: minimal, n: normal, d: detailed, diag: diagnostic) |
+| `/t:Build` | Specify the target to build (default is Build) |
+| `/p:Configuration=Release` | Set project properties like configuration |
 
-- Build Tools for Visual Studio: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+## Examples
 
+### Example 1: Basic Usage
 
+Build a simple XML project file:
 
+```cmd
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe project.xml
+```
 
+### Example 2: Advanced Usage
 
+Build with detailed verbosity and custom properties:
 
+```cmd
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /v:d /p:Configuration=Debug project.xml
+```
 
-## Platforms
+## MITRE ATT&CK Mapping
 
-- Windows
+This tool is commonly associated with:
 
-## Commands (1)
+### Techniques
 
-- [[MSBuild Build Package from XML]]
+- [[Signed Binary Proxy Execution]] Signed Binary Proxy Execution
 
-## Tags
+### Tactics
 
-- [[applocker]]
-- [[Build]]
-- [[Defense Bypass]]
+- [[Execution]] Execution
+- [[Defense Evasion]] Defense Evasion
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
+
+- Monitor process creation events for MSBuild.exe spawning child processes like cmd.exe or powershell.exe
+- Analyze command-line arguments for references to unusual or user-created XML files in temporary directories
+- Enable ETW logging for .NET runtime to capture inline code execution
+- Look for MSBuild.exe executions outside of standard development paths or during non-build times
+
+## Related Procedures
+
+- [[procedures/Windows-AppLocker-Whitelist-Bypass-Using-MSBuild]]
+
+## Related Tools
+
+- [[tools/nps-payload]]
+
+## References
+
+- Official .NET Framework downloads: [https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)
+- Visual Studio Community: [https://visualstudio.microsoft.com/vs/community/](https://visualstudio.microsoft.com/vs/community/)
+- Build Tools: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+- MITRE ATT&CK: [T1218 Signed Binary Proxy Execution](https://attack.mitre.org/techniques/T1218/)

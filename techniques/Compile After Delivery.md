@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[C Reverse Shell]]'
+- '[[Establish-C-Reverse-Shell]]'
 ---
 
 # Compile After Delivery
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to make payloads difficult to discover and analyze by delivering files to victims as uncompiled code. Similar to Obfuscated Files or Information, text-based source code files may subvert analysis and scrutiny from protections targeting executables/binaries. These payloads will need to be compiled before execution; typically via native utilities such as csc.exe or GCC/MinGW.[1]Source code payloads may also be encrypted, encoded, and/or embedded within other files, such as those delivered as a Spearphishing Attachment. Payloads may also be delivered in formats unrecognizable and inherently benign to the native OS (ex: EXEs on macOS/Linux) before later being (re)compiled into a proper executable binary with a bundled compiler and execution framework.[2]
+
+
 
 # Detection
 
@@ -58,4 +60,6 @@ This type of technique cannot be easily mitigated with preventive controls or pa
 
 ## Related Procedures (1)
 
-- [[C Reverse Shell]]
+- [[Establish-C-Reverse-Shell]]
+
+

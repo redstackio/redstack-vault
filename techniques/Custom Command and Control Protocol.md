@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Cobalt Strike Malleable C2 Profile Checking]]'
-- '[[Lua Reverse Shell Cheat Sheet]]'
-- '[[Perl Reverse Shell Cheat Sheet]]'
+- '[[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]'
+- '[[Implement-Lua-Reverse-Shell]]'
+- '[[Establish-Reverse-Shell-Using-Perl]]'
 ---
 
 # Custom Command and Control Protocol
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Adversaries may communicate using a custom command and control protocol instead of encapsulating commands/data in an existing Standard Application Layer Protocol. Implementations include mimicking well-known protocols or developing custom protocols (including raw sockets) on top of fundamental protocols provided by TCP/IP/another standard network stack.
+
+
 
 # Detection
 
@@ -128,6 +130,8 @@ Network intrusion detection and preve
 
 ## Related Procedures (3)
 
-- [[Cobalt Strike Malleable C2 Profile Checking]]
-- [[Lua Reverse Shell Cheat Sheet]]
-- [[Perl Reverse Shell Cheat Sheet]]
+- [[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]
+- [[Implement-Lua-Reverse-Shell]]
+- [[Establish-Reverse-Shell-Using-Perl]]
+
+

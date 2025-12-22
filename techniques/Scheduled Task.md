@@ -9,28 +9,28 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Cobalt Strike Persistence Kit]]'
-- '[[Create a Windows Scheduled Task]]'
-- '[[Credential Harvesting from Task Scheduler using Mimikatz]]'
-- '[[Linux Crontab Reverse Shell Persistence]]'
-- '[[Linux Privilege Escalation via Scheduled Tasks]]'
-- '[[MSSQL CLR Assembly Command Execution]]'
-- '[[MSSQL Time Based SQL Injection]]'
-- '[[Office Macro Payload Generation with Unicorn]]'
-- '[[PostgreSQL Time Based Table Dump]]'
-- '[[Scheduled Task Backdoor Creation]]'
-- '[[SQL Agent Job PowerShell Execution]]'
-- '[[VBA Spawning via svchost.exe using Scheduled Task - Kaspersky AV Update Task]]'
-- '[[Windows Persistence with Meterpreter]]'
-- '[[Windows - Privileged DiagHub Exploit]]'
-- '[[Windows Privilege Escalation - Processes and Tasks Enumeration]]'
-- '[[Windows Privilege Escalation via Runas]]'
-- '[[Windows - PsExec with Different User Credentials]]'
-- '[[Windows - Run Programs with Different Permissions using Runas Command]]'
-- '[[Windows - Using Impacket and PSExec with Credentials]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]'
+- '[[Create-Windows-Scheduled-Task-for-Persistence]]'
+- '[[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]'
+- '[[Linux-Crontab-Reverse-Shell-Persistence]]'
+- '[[Linux-Privilege-Escalation-via-Scheduled-Tasks]]'
+- '[[mssql-clr-assembly-command-execution]]'
+- '[[MSSQL-Time-Based-SQL-Injection]]'
+- '[[Generate-Office-Macro-Payload-with-Unicorn]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
+- '[[Create-Scheduled-Task-Backdoor-for-Persistence]]'
+- '[[sql-agent-job-powershell-execution]]'
+- '[[VBA-Macro-to-Create-Scheduled-Task-for-PowerShell-Execution-Masquerading-as-Kaspersky-Update]]'
+- '[[Windows-Persistence-with-Meterpreter]]'
+- '[[Windows-Privileged-DiagHub-Exploit]]'
+- '[[windows-processes-and-tasks-enumeration-for-privilege-escalation]]'
+- '[[windows-privilege-escalation-via-runas]]'
+- '[[Windows-PsExec-with-Different-User-Credentials]]'
+- '[[windows-run-programs-as-different-user-using-runas]]'
+- '[[windows-impacket-psexec-remote-execution-with-credentials]]'
 ---
 
 # Scheduled Task
@@ -40,6 +40,8 @@ procedures:
 ## Description
 
 Utilities such as at and schtasks, along with the Windows Task Scheduler, can be used to schedule programs or scripts to be executed at a date and time. A task can also be scheduled on a remote system, provided the proper authentication is met to use RPC and file and printer sharing is turned on. Scheduling a task on a remote system typically required being a member of the Administrators group on the the remote system. [1]An adversary may use task scheduling to execute programs at system startup or on a scheduled basis for persistence, to conduct remote Execution as part of Lateral Movement, to gain SYSTEM privileges, or to run a process under the context of a specified account.
+
+
 
 # Detection
 
@@ -233,27 +235,29 @@ Limit privileges of user accounts and remediate Privilege Escalation vectors so 
 
 - [[Execution|TA0002 - Execution]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (20)
 
-- [[Azure Automation Account Runbook Persistence]]
-- [[Cobalt Strike Persistence Kit]]
-- [[Create a Windows Scheduled Task]]
-- [[Credential Harvesting from Task Scheduler using Mimikatz]]
-- [[Linux Crontab Reverse Shell Persistence]]
-- [[Linux Privilege Escalation via Scheduled Tasks]]
-- [[MSSQL CLR Assembly Command Execution]]
-- [[MSSQL Time Based SQL Injection]]
-- [[Office Macro Payload Generation with Unicorn]]
-- [[PostgreSQL Time Based Table Dump]]
-- [[Scheduled Task Backdoor Creation]]
-- [[SQL Agent Job PowerShell Execution]]
-- [[VBA Spawning via svchost.exe using Scheduled Task - Kaspersky AV Update Task]]
-- [[Windows Persistence with Meterpreter]]
-- [[Windows - Privileged DiagHub Exploit]]
-- [[Windows Privilege Escalation - Processes and Tasks Enumeration]]
-- [[Windows Privilege Escalation via Runas]]
-- [[Windows - PsExec with Different User Credentials]]
-- [[Windows - Run Programs with Different Permissions using Runas Command]]
-- [[Windows - Using Impacket and PSExec with Credentials]]
+- [[Azure-Automation-Account-Runbook-Persistence]]
+- [[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]
+- [[Create-Windows-Scheduled-Task-for-Persistence]]
+- [[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]
+- [[Linux-Crontab-Reverse-Shell-Persistence]]
+- [[Linux-Privilege-Escalation-via-Scheduled-Tasks]]
+- [[mssql-clr-assembly-command-execution]]
+- [[MSSQL-Time-Based-SQL-Injection]]
+- [[Generate-Office-Macro-Payload-with-Unicorn]]
+- [[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]
+- [[Create-Scheduled-Task-Backdoor-for-Persistence]]
+- [[sql-agent-job-powershell-execution]]
+- [[VBA-Macro-to-Create-Scheduled-Task-for-PowerShell-Execution-Masquerading-as-Kaspersky-Update]]
+- [[Windows-Persistence-with-Meterpreter]]
+- [[Windows-Privileged-DiagHub-Exploit]]
+- [[windows-processes-and-tasks-enumeration-for-privilege-escalation]]
+- [[windows-privilege-escalation-via-runas]]
+- [[Windows-PsExec-with-Different-User-Credentials]]
+- [[windows-run-programs-as-different-user-using-runas]]
+- [[windows-impacket-psexec-remote-execution-with-credentials]]
+
+

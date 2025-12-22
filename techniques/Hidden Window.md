@@ -18,6 +18,8 @@ tactics:
 
 The configurations for how applications run on macOS and OS X are listed in property list (plist) files. One of the tags in these files can be apple.awt.UIElement, which allows for Java applications to prevent the application's icon from appearing in the Dock. A common use for this is when applications run in the system tray, but don't also want to show up in the Dock. However, adversaries can abuse this feature and hide their running window  [1].
 
+
+
 # Detection
 
 Plist files are ASCII text files with a specific format, so they're relatively easy to parse. File monitoring can check for the apple.awt.UIElement or any other suspicious plist tag in plist files and flag them.
@@ -37,3 +39,5 @@ Whitelist programs that are allowed to have this plist tag. All other programs s
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

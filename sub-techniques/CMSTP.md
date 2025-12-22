@@ -11,7 +11,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]'
+- '[[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]'
 ---
 
 # CMSTP
@@ -45,4 +45,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]
+- [[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]

@@ -23,3 +23,5 @@ Technical information gathering consists of the process of identifying critical 
 This tactic includes 1 techniques:
 
 - [[Conduct passive scanning|T1253 - Conduct passive scanning]]
+
+

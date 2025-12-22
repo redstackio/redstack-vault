@@ -10,13 +10,13 @@ tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Bypassing filters using Curl with Verbose Output]]'
-- '[[Java Reverse Shell Cheat Sheet]]'
-- '[[Java Reverse Shell Payload - War]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[MYSQL Injection Out-of-Band Data Exfiltration]]'
-- '[[Open URL Redirection Exploitation]]'
-- '[[PrintNightmare WebDAV Attack]]'
+- '[[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]'
+- '[[Establish-Java-Reverse-Shell]]'
+- '[[Generate-Java-Reverse-Shell-WAR-Payload]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[MySQL-Injection-Out-of-Band-Data-Exfiltration]]'
+- '[[Open-URL-Redirection-Exploitation]]'
+- '[[PrintNightmare-WebDAV-Attack]]'
 ---
 
 # Web Service
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Adversaries may use an existing, legitimate external Web service as a means for relaying commands to a compromised system.These commands may also include pointers to command and control (C2) infrastructure. Adversaries may post content, known as a dead drop resolver, on Web services with embedded (and often obfuscated/encoded) domains or IP addresses. Once infected, victims will reach out to and be redirected by these resolvers.Popular websites and social media acting as a mechanism for C2 may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to a compromise. Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise. Web service providers commonly use SSL/TLS encryption, giving adversaries an added level of protection.Use of Web services may also protect back-end C2 infrastructure from discovery through malware binary analysis while also enabling operational resiliency (since this infrastructure may be dynamically changed).
+
+
 
 # Detection
 
@@ -126,10 +128,12 @@ Network intrusion detect
 
 ## Related Procedures (7)
 
-- [[Bypassing filters using Curl with Verbose Output]]
-- [[Java Reverse Shell Cheat Sheet]]
-- [[Java Reverse Shell Payload - War]]
-- [[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]
-- [[MYSQL Injection Out-of-Band Data Exfiltration]]
-- [[Open URL Redirection Exploitation]]
-- [[PrintNightmare WebDAV Attack]]
+- [[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]
+- [[Establish-Java-Reverse-Shell]]
+- [[Generate-Java-Reverse-Shell-WAR-Payload]]
+- [[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]
+- [[MySQL-Injection-Out-of-Band-Data-Exfiltration]]
+- [[Open-URL-Redirection-Exploitation]]
+- [[PrintNightmare-WebDAV-Attack]]
+
+

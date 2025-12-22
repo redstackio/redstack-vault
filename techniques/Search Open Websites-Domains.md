@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:21.759464+00:00'
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Azure O365 Email Enumeration]]'
-- '[[Passive Recon and Information Gathering]]'
+- '[[Enumerate-Valid-Emails-in-Azure-O365-Tenant]]'
+- '[[passive-reconnaissance-information-gathering]]'
 ---
 
 # Search Open Websites/Domains
@@ -23,11 +23,15 @@ Adversaries may search freely available websites and/or domains for information 
 
 Adversaries may search in different online sites depending on what information they seek to gather. Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)), establishing operational resources (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Phishing](https://attack.mitre.org/techniques/T1566)).
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
 
 ## Related Procedures (2)
 
-- [[Azure O365 Email Enumeration]]
-- [[Passive Recon and Information Gathering]]
+- [[Enumerate-Valid-Emails-in-Azure-O365-Tenant]]
+- [[passive-reconnaissance-information-gathering]]
+
+

@@ -10,79 +10,79 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]'
-- '[[Akamai WAF Bypass via Common XSS Injection Attack]]'
-- '[[Akamai WAF Bypass via Prompt User Input]]'
-- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
-- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Azure Runbook Automation]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Blind XSS Data Exfiltration]]'
-- '[[Blind XSS Hunting with XSS Payloads]]'
-- '[[Bypassing XSS Filters using UTF BOM Character]]'
-- '[[Client Side Template Injection using Blind XSS]]'
-- '[[Cross Site Scripting Alert Bypass using Alternate Function]]'
-- '[[Cross Site Scripting - Alert Parent Location Filter Bypass]]'
+- '[[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]'
+- '[[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]'
+- '[[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]'
+- '[[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]'
+- '[[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[Create-and-Execute-Malicious-Azure-Runbook]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Blind-XSS-Data-Exfiltration]]'
+- '[[Blind-XSS-Detection-Using-External-Payloads]]'
+- '[[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]'
+- '[[Client-Side-Template-Injection-using-Blind-XSS]]'
+- '[[Bypass-XSS-Alert-Filter-Using-Alternate-Functions]]'
+- '[[Cross-Site-Scripting-Alert-Parent-Location-Filter-Bypass]]'
 - '[[Cross Site Scripting - Bypassing cookie blacklist with window.cookieStore.get()
   method]]'
-- '[[Cross Site Scripting - Javascript Keylogger]]'
-- '[[Cross Site Scripting - Single Quote Bypass on MouseDown Event Handler]]'
-- '[[Cross Site Scripting (XSS) using Burp Collaborator to Steal Cookies]]'
-- '[[CSP Bypass via Unsafe Inline Script Injection]]'
-- '[[CSP Bypass via XSS Injection]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[Custom DL and Execution via Malicious Macro Generator]]'
-- '[[Custom Metadata PHP Injection]]'
-- '[[DOCM Download and Execute via PowerShell]]'
+- '[[Cross-Site-Scripting-JavaScript-Keylogger]]'
+- '[[Cross-Site-Scripting-Single-Quote-Bypass-on-MouseDown-Event-Handler]]'
+- '[[XSS-Cookie-Theft-Using-Burp-Collaborator]]'
+- '[[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]'
+- '[[CSP-Bypass-via-XSS-Injection]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]'
+- '[[Inject-PHP-Code-into-Image-Metadata-for-RCE]]'
+- '[[DOCM-Download-and-Execute-via-PowerShell]]'
 - '[[DOM Based XSS Sink Detection]]'
-- '[[Execute .NET Remote Execution with Beacon Post-Exploitation Job]]'
-- '[[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]'
-- '[[Exotic Payloads for Bypassing Word Blacklist and Code Evaluation]]'
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
-- '[[Flash-based Cross-site Scripting in SWF Files]]'
-- '[[Freemarker Code Execution]]'
-- '[[Git Hook Backdoor Persistence]]'
+- '[[Execute-NET-Assembly-via-Cobalt-Strike-Beacon]]'
+- '[[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]'
+- '[[Bypass-JavaScript-Word-Blacklist-with-Exotic-Payloads]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
+- '[[Flash-based-Cross-site-Scripting-in-SWF-Files]]'
+- '[[Freemarker-Server-Side-Template-Injection-for-Code-Execution]]'
+- '[[Git-Hook-Backdoor-Persistence]]'
 - '[[Gitlab/Github CI Command Execution]]'
-- '[[HTML5 Tag Based Cross Site Scripting]]'
-- '[[Identifying and Exploiting XSS Vulnerabilities]]'
-- '[[Image Tragik Exploit]]'
-- '[[Jinja2 Remote Code Execution via SSTI in Evil Config File]]'
-- '[[JSON POST CSRF to Set Admin Role]]'
-- '[[JSON POST CSRF to Set Admin Role]]'
-- '[[LFI to RCE via FindFirstFile]]'
-- '[[Linux - Text Hiding and Payload Creation]]'
-- '[[Macro Delivery of Meterpreter Shellcode]]'
-- '[[Malicious Macro-enabled Excel Documents with Macrome]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[MSSQL Server Python Script Execution]]'
-- '[[MSSQL Server R Command Execution]]'
-- '[[Multi-Platform Reverse Shell Payload]]'
-- '[[Mutated XSS with HTML Tag Recreation and DOMPurify Bypass]]'
-- '[[Office VBA Wscript Execution]]'
-- '[[Office Word Macro Payload Delivery with Metasploit]]'
-- '[[Polyglot XSS Attack using SVG Image Injection]]'
-- '[[Python Reverse Shell Cheat Sheet]]'
-- '[[Reflection Method with WMF5 Autologging Bypass]]'
-- '[[Ruby Reverse Shell Cheat Sheet]]'
+- '[[HTML5-Tag-Based-Cross-Site-Scripting]]'
+- '[[Identify-and-Exploit-XSS-Vulnerabilities]]'
+- '[[ImageTragick-Exploit-for-RCE-via-Crafted-Image-Conversion]]'
+- '[[Jinja2-RCE-via-SSTI-in-Evil-Config-File]]'
+- '[[json-post-csrf-to-set-admin-role]]'
+- '[[json-post-csrf-to-set-admin-role]]'
+- '[[LFI-to-RCE-via-FindFirstFile]]'
+- '[[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]'
+- '[[Macro-Delivery-of-Meterpreter-Shellcode]]'
+- '[[Create-Malicious-Macro-Enabled-Excel-Documents-with-Macrome]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[MSSQL-Execute-Python-and-PowerShell-Scripts]]'
+- '[[MSSQL-Server-R-Command-Execution]]'
+- '[[generate-multi-platform-reverse-shell-payloads]]'
+- '[[Mutated-XSS-with-HTML-Tag-Recreation-and-DOMPurify-Bypass]]'
+- '[[Office-VBA-Wscript-Execution]]'
+- '[[Office-Word-Macro-Payload-Delivery-with-Metasploit]]'
+- '[[Polyglot-XSS-Attack-using-SVG-Image-Injection]]'
+- '[[Establish-Python-Reverse-Shell]]'
+- '[[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]'
+- '[[Establish-Ruby-Reverse-Shell]]'
 - '[[Safe Script Tag Injection via Django Templates]]'
-- '[[Server-Side Request Forgery (SSRF) Exploitation via PDF Files]]'
-- '[[Server Side Template Injection - Mako - OS Information Gathering]]'
-- '[[VBA-AMSI Bypass]]'
-- '[[VBA Purging with OfficePurge command]]'
-- '[[VBA Spawning via svchost.exe using Scheduled Task - Kaspersky AV Update Task]]'
-- '[[WebDAV Batch File Execution via Cmd]]'
-- '[[Windows - PowerShell Constrained Language Mode Check]]'
+- '[[Exploit-SSRF-via-PDF-to-Read-Sensitive-Files]]'
+- '[[Mako-SSTI-OS-Information-Gathering]]'
+- '[[VBA-AMSI-Bypass-via-Memory-Patching]]'
+- '[[VBA-Purging-with-OfficePurge]]'
+- '[[VBA-Macro-to-Create-Scheduled-Task-for-PowerShell-Execution-Masquerading-as-Kaspersky-Update]]'
+- '[[WebDAV-Batch-File-Execution-via-Cmd]]'
+- '[[Check-PowerShell-Constrained-Language-Mode]]'
 - '[[Windows Powershell Script Block Logging]]'
-- '[[XLM Excel 4.0 - PowerShell Execution]]'
-- '[[XSLT Injection with Remote Code Execution]]'
-- '[[XSS in Files and Markdown]]'
-- '[[XSS in Files with XML Payload Injection]]'
-- '[[XSS Injection via JavaScript, Data URI and VBScript]]'
-- '[[XSS in SVG Triangle with JavaScript Alert]]'
-- '[[XSS Payload Injection]]'
-- '[[XSS through PostMessage Button Click]]'
+- '[[Execute-PowerShell-via-XLM-Macro-in-Excel]]'
+- '[[XSLT-Injection-with-Embedded-C-Sharp-Script-for-RCE]]'
+- '[[XSS-Injection-via-Files-and-Markdown]]'
+- '[[XML-Payload-Injection-for-XSS-in-Files]]'
+- '[[xss-injection-via-javascript-data-uri-vbscript]]'
+- '[[Inject-XSS-via-SVG-File-with-JavaScript-Alert]]'
+- '[[XSS-Payload-Injection]]'
+- '[[XSS-via-PostMessage-Button-Click]]'
 ---
 
 # Scripting
@@ -92,6 +92,8 @@ procedures:
 ## Description
 
 Adversaries may use scripts to aid in operations and perform multiple actions that would otherwise be manual. Scripting is useful for speeding up operational tasks and reducing the time required to gain access to critical resources. Some scripting languages may be used to bypass process monitoring mechanisms by directly interacting with the operating system at an API level instead of calling other programs. Common scripting languages for Windows include VBScript and PowerShell but could also be in the form of command-line batch scripts.Scripts can be embedded inside Office documents as macros that can be set to execute when files used in Spearphishing Attachment and other types of spearphishing are opened. Malicious embedded macros are an alternative means of execution than software exploitation through Exploitation for Client Execution, where adversaries will rely on macros being allowed or that the user will accept to activate them.Many popular offensive frameworks exist which use forms of scripting for security testers and adversaries alike. [1] [1],  [2] [2], and PowerSploit [3] are three examples that are popular among penetration testers for exploit and post-compromise operations and include many features for evading defenses. Some adversaries are known to use PowerShell. [4]
+
+
 
 # Detection
 
@@ -328,25 +330,27 @@ Configure Office security settings enable Protected View, to execute within a sa
 
 ## Related Procedures (72)
 
-- [[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]
-- [[Akamai WAF Bypass via Common XSS Injection Attack]]
-- [[Akamai WAF Bypass via Prompt User Input]]
-- [[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]
-- [[AWS Userdata Retrieval via Instance Metadata Service]]
-- [[Azure Automation Account Runbook Persistence]]
-- [[Azure Runbook Automation]]
-- [[Backdooring Git User Configurations]]
-- [[Blind XSS Data Exfiltration]]
-- [[Blind XSS Hunting with XSS Payloads]]
-- [[Bypassing XSS Filters using UTF BOM Character]]
-- [[Client Side Template Injection using Blind XSS]]
-- [[Cross Site Scripting Alert Bypass using Alternate Function]]
-- [[Cross Site Scripting - Alert Parent Location Filter Bypass]]
-- [[Cross Site Scripting - Bypassing cookie blacklist with window.cookieStore.get() method]]
-- [[Cross Site Scripting - Javascript Keylogger]]
-- [[Cross Site Scripting - Single Quote Bypass on MouseDown Event Handler]]
-- [[Cross Site Scripting (XSS) using Burp Collaborator to Steal Cookies]]
-- [[CSP Bypass via Unsafe Inline Script Injection]]
-- [[CSP Bypass via XSS Injection]]
+- [[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]
+- [[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]
+- [[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]
+- [[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]
+- [[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]
+- [[Azure-Automation-Account-Runbook-Persistence]]
+- [[Create-and-Execute-Malicious-Azure-Runbook]]
+- [[Backdoor-Git-User-Configurations-for-Persistence]]
+- [[Blind-XSS-Data-Exfiltration]]
+- [[Blind-XSS-Detection-Using-External-Payloads]]
+- [[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]
+- [[Client-Side-Template-Injection-using-Blind-XSS]]
+- [[Bypass-XSS-Alert-Filter-Using-Alternate-Functions]]
+- [[Cross-Site-Scripting-Alert-Parent-Location-Filter-Bypass]]
+- [[Bypass-Document-Cookie-Blacklist-via-XSS-with-CookieStore-Get]]
+- [[Cross-Site-Scripting-JavaScript-Keylogger]]
+- [[Cross-Site-Scripting-Single-Quote-Bypass-on-MouseDown-Event-Handler]]
+- [[XSS-Cookie-Theft-Using-Burp-Collaborator]]
+- [[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]
+- [[CSP-Bypass-via-XSS-Injection]]
 
 *...and 52 more*
+
+

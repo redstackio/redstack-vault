@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Gopher SMTP Back Connect SSRF]]'
-- '[[Kernel Exploitation - Useradd.exe Compilation]]'
-- '[[Linux - Backdooring a VirtualBox Driver]]'
+- '[[Gopher-Protocol-SSRF-for-SMTP-Back-Connect]]'
+- '[[Compile-Useradd-C-to-Adduser-Exe-for-Kernel-Exploitation]]'
+- '[[Backdoor-VirtualBox-Driver-via-Udev-Rules]]'
 ---
 
 # Kernel Modules and Extensions
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Loadable Kernel Modules (or LKMs) are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system. For example, one type of module is the device driver, which allows the kernel to access hardware connected to the system. [1] When used maliciously, Loadable Kernel Modules (LKMs) can be a type of kernel-mode Rootkit that run with the highest operating system privilege (Ring 0). [2] Adversaries can use loadable kernel modules to covertly persist on a system and evade defenses. Examples have been found in the wild and there are some open source projects. [3] [4] [5] [6]Common features of LKM based rootkits include: hiding itself, selective hiding of files, processes and network activity, as well as log tampering, providing authenticated backdoors and enabling root access to non-privileged users. [7]Kernel extensions, also called kext, are used for macOS to load functionality onto a system similar to LKMs for Linux. They are loaded and unloaded through kextload and kextunload commands. Several examples have been found where this can be used. [8] [9] Examples have been found in the wild. [10]
+
+
 
 # Detection
 
@@ -90,6 +92,8 @@ LKMs and Kernel extensions require root level permiss
 
 ## Related Procedures (3)
 
-- [[Gopher SMTP Back Connect SSRF]]
-- [[Kernel Exploitation - Useradd.exe Compilation]]
-- [[Linux - Backdooring a VirtualBox Driver]]
+- [[Gopher-Protocol-SSRF-for-SMTP-Back-Connect]]
+- [[Compile-Useradd-C-to-Adduser-Exe-for-Kernel-Exploitation]]
+- [[Backdoor-VirtualBox-Driver-via-Udev-Rules]]
+
+

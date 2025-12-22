@@ -9,7 +9,7 @@ updated_at: '2023-04-06T00:31:25.748280+00:00'
 parent_technique: '[[Group Policy Modification|T1484 - Group Policy Modification]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Domain Trust Modification
@@ -35,4 +35,4 @@ Manipulating the domain trusts may allow an adversary to escalate privileges and
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

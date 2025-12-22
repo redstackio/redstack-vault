@@ -9,26 +9,26 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Add a Local Administrator to Windows]]'
-- '[[ASCII Conversion XSS Filter Bypass]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS Shadow Admin Access]]'
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[Blind XXE Out-of-Band Data Exfiltration]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CSP Bypass via Unsafe Inline Script Injection]]'
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
-- '[[Jinja2 Server Side Template Injection with Remote Code Execution]]'
-- '[[Linux - Add Root User Persistence]]'
+- '[[Add-Local-Administrator-to-Windows]]'
+- '[[ASCII-Conversion-XSS-Filter-Bypass]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[AWS-Shadow-Admin-Access]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[Blind-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
+- '[[Jinja2-SSTI-to-RCE-via-Flask-Hook]]'
+- '[[Linux-Add-Root-User-Persistence]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[Local DTD Injection in Citrix XenMobile Server]]'
+- '[[Local-DTD-Injection-in-Citrix-XenMobile-Server]]'
 - '[[Preventing Cross Site Scripting (XSS) in XML and files]]'
-- '[[XSS in Files with XML Payload Injection]]'
-- '[[XXE File Retrieval via Base64 Encoding]]'
-- '[[XXE File Retrieval via XInclude Attack]]'
+- '[[XML-Payload-Injection-for-XSS-in-Files]]'
+- '[[XXE-File-Retrieval-via-Base64-Encoding]]'
+- '[[XXE-File-Retrieval-via-XInclude-Attack]]'
 ---
 
 # Create Account
@@ -38,6 +38,8 @@ procedures:
 ## Description
 
 Adversaries with a sufficient level of access may create a local system or domain account. Such accounts may be used for persistence that do not require persistent remote access tools to be deployed on the system.The net user commands can be used to create a local or domain account.
+
+
 
 # Detection
 
@@ -91,23 +93,25 @@ Adversaries that creat
 
 ## Related Procedures (20)
 
-- [[Add a Local Administrator to Windows]]
-- [[ASCII Conversion XSS Filter Bypass]]
-- [[AWS IAM Access Key Creation]]
-- [[AWS Shadow Admin Access]]
-- [[Basic Directory Traversal Exploitation]]
-- [[Blind XXE Out-of-Band Data Exfiltration]]
-- [[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]
-- [[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]
-- [[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]
-- [[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]
-- [[CSP Bypass via Unsafe Inline Script Injection]]
-- [[Filter Bypass using UTF-7 Encoding for XSS Injection]]
-- [[Jinja2 Server Side Template Injection with Remote Code Execution]]
-- [[Linux - Add Root User Persistence]]
+- [[Add-Local-Administrator-to-Windows]]
+- [[ASCII-Conversion-XSS-Filter-Bypass]]
+- [[aws-iam-create-access-key-for-user]]
+- [[AWS-Shadow-Admin-Access]]
+- [[Basic-Directory-Traversal-Exploitation]]
+- [[Blind-XXE-Out-of-Band-Data-Exfiltration]]
+- [[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]
+- [[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]
+- [[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]
+- [[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]
+- [[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]
+- [[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]
+- [[Jinja2-SSTI-to-RCE-via-Flask-Hook]]
+- [[Linux-Add-Root-User-Persistence]]
 - [[Linux - Privilege Escalation via Writable /etc/passwd]]
-- [[Local DTD Injection in Citrix XenMobile Server]]
+- [[Local-DTD-Injection-in-Citrix-XenMobile-Server]]
 - [[Preventing Cross Site Scripting (XSS) in XML and files]]
-- [[XSS in Files with XML Payload Injection]]
-- [[XXE File Retrieval via Base64 Encoding]]
-- [[XXE File Retrieval via XInclude Attack]]
+- [[XML-Payload-Injection-for-XSS-in-Files]]
+- [[XXE-File-Retrieval-via-Base64-Encoding]]
+- [[XXE-File-Retrieval-via-XInclude-Attack]]
+
+

@@ -10,8 +10,8 @@ techniques:
 - '[[Upload, install, and configure software/tools|T1362 - Upload, install, and configure
   software/tools]]'
 procedures:
-- '[[Provision S3 Website and Upload Payload]]'
-- '[[Terraform Create Kali Linux EC2 Instance]]'
+- '[[Provision-AWS-S3-Website-and-Upload-Payload]]'
+- '[[Terraform-Create-Kali-Linux-EC2-Instance]]'
 - '[[Update /etc/hosts with IP and Hostname]]'
 ---
 
@@ -33,6 +33,8 @@ This tactic includes 1 techniques:
 
 There are 3 procedures implementing this tactic:
 
-- [[Provision S3 Website and Upload Payload]]
-- [[Terraform Create Kali Linux EC2 Instance]]
+- [[Provision-AWS-S3-Website-and-Upload-Payload]]
+- [[Terraform-Create-Kali-Linux-EC2-Instance]]
 - [[Update /etc/hosts with IP and Hostname]]
+
+

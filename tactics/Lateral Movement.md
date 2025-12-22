@@ -31,105 +31,105 @@ techniques:
 - '[[Windows Admin Shares|T1077 - Windows Admin Shares]]'
 - '[[Windows Remote Management|T1028 - Windows Remote Management]]'
 procedures:
-- '[[Account Takeover via Password Reset Feature and IDOR on API Parameters]]'
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Integrated DNS Enumeration]]'
-- '[[Active Directory Man-in-the-Middle and Password Cracking]]'
-- '[[Active Directory Trust Ticket Forgery with Mimikatz]]'
-- '[[AD CS Relay Attack with Rubeus and PetitPotam]]'
-- '[[Add Domain Admin to RODC Password Replication Group Procedure]]'
-- '[[AWS API Enumeration]]'
-- '[[AWS API Gateway Method Enumeration]]'
-- '[[AWS EBS Snapshot Volume Creation]]'
-- '[[AWS EKS Service Account Token Theft]]'
-- '[[AWS Fargate Container Credentials Theft]]'
-- '[[AWS IAM Group Managed Policies Enumeration]]'
-- '[[AWS IAM Inline Policy Enumeration]]'
-- '[[AWS IAM Policy Version Information Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Role Inline Policy Enumeration]]'
-- '[[AWS IAM User Policy Enumeration]]'
-- '[[AWS Lambda Backdoor Persistence]]'
-- '[[AWS Lambda Function Invocation for Privilege Escalation]]'
-- '[[AWS Metadata Credential Theft]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS Shadow Admin - Create AWS Glue Development Endpoint]]'
-- '[[AWS SSM Command Execution - EC2 Shell Script]]'
-- '[[AWS User Policy Enumeration]]'
-- '[[Azure AD Connect - Silver Ticket Attack]]'
-- '[[Azure Generate Shared Access Signature (SAS) URLs for Blob Storage]]'
+- '[[Account-Takeover-via-Password-Reset-and-IDOR-on-API-Parameters]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Active-Directory-Integrated-DNS-Enumeration]]'
+- '[[Active-Directory-MitM-and-Password-Cracking]]'
+- '[[Forge-AD-Trust-Ticket-with-Mimikatz]]'
+- '[[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]'
+- '[[Add-Domain-Admin-to-RODC-Password-Replication-Group]]'
+- '[[Enumerate-AWS-API-Gateway-REST-APIs]]'
+- '[[AWS-API-Gateway-Method-Enumeration]]'
+- '[[AWS-EBS-Snapshot-Volume-Creation]]'
+- '[[AWS-EKS-Service-Account-Token-Theft]]'
+- '[[AWS-Fargate-Container-Credentials-Theft]]'
+- '[[AWS-IAM-Group-Managed-Policies-Enumeration]]'
+- '[[Enumerate-AWS-IAM-Inline-Policies]]'
+- '[[Retrieve-AWS-IAM-Policy-Version-Details]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-IAM-Role-Inline-Policy-Enumeration]]'
+- '[[Enumerate-IAM-User-Attached-Policies]]'
+- '[[aws-lambda-backdoor-persistence]]'
+- '[[AWS-Lambda-Function-Invocation-for-Privilege-Escalation]]'
+- '[[Retrieve-AWS-EC2-Instance-Credentials-via-Metadata-Service]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Create-AWS-Glue-Development-Endpoint]]'
+- '[[aws-ssm-command-execution-ec2-shell-script]]'
+- '[[AWS-User-Policy-Enumeration]]'
+- '[[Azure-AD-Connect-Silver-Ticket-Attack]]'
+- '[[Generate-Azure-Blob-Storage-SAS-URLs]]'
 - '[[Azure - Illicit Consent Grant Prevention]]'
-- '[[Azure Managed Identity Token Retrieval]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Pass The PRT with Mimikatz]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Azure VM RunCommand Execution]]'
-- '[[Azure Web Apps: Remote SSH Connection]]'
-- '[[Bash TCP Reverse Shell Connection]]'
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[BITSAdmin Download and Execute]]'
-- '[[Blind XPATH Injection]]'
-- '[[Browse an FTP Site with an Interactive Session]]'
-- '[[Browse SMB Share (NTLM)]]'
-- '[[Bypassing filters with IPv6 Server Ports]]'
-- '[[Cassandra Login Bypass via SQL Injection]]'
-- '[[Cloudflare Tunnel Exposer Pivoting]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[Connect to Windows using PsExec (Authenticated)]]'
-- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
-- '[[Copy file from HTTP to remote host WinRS + BitsAdmin]]'
-- '[[Copy file to remote machine with xcopy (LOL)]]'
-- '[[Copying EC2 Instances using AMI Image in AWS]]'
-- '[[Create a Golden Ticket and Launch a Windows Shell (Windows)]]'
-- '[[Create a Golden Ticket and Launch a Windows SYSTEM Shell (Linux)]]'
-- '[[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]'
-- '[[Cross-Site Request Forgery with File Upload]]'
-- '[[Cross-Site Request Forgery with File Upload]]'
-- '[[Custom Metadata PHP Injection]]'
-- '[[DB2 Configuration Parameters Retrieval]]'
-- '[[DB2 Current Database Selection]]'
-- '[[DB2 Enumeration]]'
-- '[[DB2 Injection - ASCII Concatenation]]'
-- '[[DB2 Injection - ASCII Value Extraction]]'
+- '[[Retrieve-Access-Tokens-from-Azure-Managed-Identity]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Azure-Pass-The-PRT-with-Mimikatz]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[azure-vm-runcommand-execution]]'
+- '[[azure-web-apps-remote-ssh-connection]]'
+- '[[Establish-Bash-TCP-Reverse-Shell]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[BITSAdmin-Download-and-Execute-Payload]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
+- '[[Browse-FTP-Site-with-Interactive-Session]]'
+- '[[browse-smb-share-using-ntlm-hash]]'
+- '[[Bypass-SSRF-Filters-with-IPv6-Loopback-Addresses]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Cloudflare-Tunnel-Pivoting-for-Lateral-Movement]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[psexec-authenticated-remote-shell]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]'
+- '[[Copy-File-to-Remote-Windows-Host-Using-WinRS-and-BitsAdmin]]'
+- '[[Copy-File-to-Remote-Windows-Machine-via-Xcopy]]'
+- '[[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]'
+- '[[Create-Golden-Ticket-and-Launch-Windows-Shell]]'
+- '[[Create-Golden-Ticket-and-Launch-Windows-SYSTEM-Shell-from-Linux]]'
+- '[[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]'
+- '[[Perform-CSRF-Attack-via-File-Upload]]'
+- '[[Perform-CSRF-Attack-via-File-Upload]]'
+- '[[Inject-PHP-Code-into-Image-Metadata-for-RCE]]'
+- '[[DB2-Configuration-Parameters-Retrieval]]'
+- '[[DB2-Current-Server-Query]]'
+- '[[Enumerate-DB2-Databases-and-Schemas]]'
+- '[[DB2-SQL-Injection-Using-ASCII-Concatenation]]'
+- '[[DB2-SQL-Injection-ASCII-Value-Extraction]]'
 - '[[DB2 Injection - Bitwise AND Operation]]'
-- '[[DB2 Injection - Char to ASCII Conversion]]'
-- '[[DB2 Injection - Find Tables From Column Name]]'
-- '[[DB2 Injection - List Tables]]'
-- '[[DB2 Injection: Retrieval of DB2PATH]]'
-- '[[DB2 Injection with Comment Filtering]]'
-- '[[DB2 Integer Conversion Injection]]'
-- '[[DB2 List DBA Accounts Procedure]]'
-- '[[DB2 Version Information Extraction]]'
-- '[[DBMS Identification via SQL Injection Commands]]'
-- '[[DBMS Magic Functions Injection]]'
-- '[[DCOM DCE RPC Relay using RemotePotato0]]'
-- '[[DCOM Lateral Movement]]'
-- '[[DCOM Office Remote Code Execution]]'
-- '[[DCOM ShellBrowserWindow Calculator Execution]]'
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[DCOM ShellExecute Calculator Execution]]'
-- '[[Disable CloudTrail on Specific Regions]]'
+- '[[DB2-SQL-Injection-Using-ASCII-Function]]'
+- '[[DB2-SQL-Injection-to-Find-Tables-by-Column-Name]]'
+- '[[List-Tables-via-DB2-SQL-Injection]]'
+- '[[Retrieve-DB2PATH-via-SQL-Injection]]'
+- '[[DB2-SQL-Injection-Using-Comments]]'
+- '[[DB2-Integer-Conversion-SQL-Injection]]'
+- '[[DB2-List-DBA-Accounts-via-SQL-Injection]]'
+- '[[Extract-DB2-Database-Version-Information]]'
+- '[[DBMS-Fingerprinting-via-SQL-Injection]]'
+- '[[DBMS-Magic-Functions-Injection]]'
+- '[[DCOM-DCE-RPC-Relay-using-RemotePotato0]]'
+- '[[dcom-lateral-movement]]'
+- '[[DCOM-Office-Remote-Code-Execution]]'
+- '[[dcom-shellbrowserwindow-calculator-execution]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[dcom-shellexecute-calculator-execution]]'
+- '[[Disable-CloudTrail-on-Specific-Regions]]'
 - '[[Disable LLMNR and NetBIOS over TCP/IP]]'
-- '[[Disabling CloudTrail Trail]]'
-- '[[DNS Rebinding Protection Bypass via CNAME]]'
-- '[[DNS Rebinding Server-Side Request Forgery]]'
-- '[[Docker API Port Scanning and Container Management]]'
-- '[[Drop the MIC Relay Attack]]'
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
-- '[[EKS Fargate Profile Enumeration]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Establishing and Enumerating PAM Trust between lab.local and bastion.local]]'
-- '[[Execute a Command on a Remote System with WinRM]]'
-- '[[Execute Commands with an Active Directory Machine Account]]'
-- '[[Execute .NET Remote Execution with Beacon Post-Exploitation Job]]'
-- '[[Exploit a Backdoor in UnrealIRCd 3.2.8]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting PrintNightmare to gain SYSTEM shell on DC]]'
-- '[[Exploiting PrintNightmare to gain SYSTEM shell on Domain Controller]]'
+- '[[Disable-CloudTrail-Logging-via-Trail-Deletion]]'
+- '[[DNS-Rebinding-Protection-Bypass-via-CNAME]]'
+- '[[DNS-Rebinding-for-SSRF-Bypass]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
+- '[[Drop-the-MIC-NTLM-Relay-Attack]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
+- '[[EKS-Fargate-Profile-Enumeration]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[Establish-and-Enumerate-PAM-Trust-Between-Domains]]'
+- '[[execute-command-on-remote-system-with-winrm]]'
+- '[[Execute-Commands-with-an-Active-Directory-Machine-Account]]'
+- '[[Execute-NET-Assembly-via-Cobalt-Strike-Beacon]]'
+- '[[Exploit-Backdoor-in-UnrealIRCd-3.2.8]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Exploit-PrintNightmare-for-SYSTEM-Shell-on-Domain-Controller]]'
+- '[[Exploit-PrintNightmare-for-SYSTEM-Access-on-Domain-Controller]]'
 - '[[Extracting Service Principal Keys from /etc/krb5.keytab]]'
 ---
 
@@ -140,6 +140,8 @@ procedures:
 ## Description
 
 Lateral movement consists of techniques that enable an adversary to access and control remote systems on a network and could, but does not necessarily, include execution of tools on remote systems. The lateral movement techniques could allow an adversary to gather information from a system without needing additional tools, such as a remote access tool.
+
+
 
 ## Techniques
 
@@ -173,25 +175,30 @@ This tactic includes 23 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Account Takeover via Password Reset Feature and IDOR on API Parameters]]
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Integrated DNS Enumeration]]
-- [[Active Directory Man-in-the-Middle and Password Cracking]]
-- [[Active Directory Trust Ticket Forgery with Mimikatz]]
-- [[AD CS Relay Attack with Rubeus and PetitPotam]]
-- [[Add Domain Admin to RODC Password Replication Group Procedure]]
-- [[AWS API Enumeration]]
-- [[AWS API Gateway Method Enumeration]]
-- [[AWS EBS Snapshot Volume Creation]]
-- [[AWS EKS Service Account Token Theft]]
-- [[AWS Fargate Container Credentials Theft]]
-- [[AWS IAM Group Managed Policies Enumeration]]
-- [[AWS IAM Inline Policy Enumeration]]
-- [[AWS IAM Policy Version Information Retrieval]]
-- [[AWS IAM Policy Version Retrieval]]
-- [[AWS IAM Role Inline Policy Enumeration]]
-- [[AWS IAM User Policy Enumeration]]
-- [[AWS Lambda Backdoor Persistence]]
-- [[AWS Lambda Function Invocation for Privilege Escalation]]
+- [[Account-Takeover-via-Password-Reset-and-IDOR-on-API-Parameters]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Active-Directory-Integrated-DNS-Enumeration]]
+- [[Active-Directory-MitM-and-Password-Cracking]]
+- [[Forge-AD-Trust-Ticket-with-Mimikatz]]
+- [[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]
+- [[Add-Domain-Admin-to-RODC-Password-Replication-Group]]
+- [[Enumerate-AWS-API-Gateway-REST-APIs]]
+- [[AWS-API-Gateway-Method-Enumeration]]
+- [[AWS-EBS-Snapshot-Volume-Creation]]
+- [[AWS-EKS-Service-Account-Token-Theft]]
+- [[AWS-Fargate-Container-Credentials-Theft]]
+- [[AWS-IAM-Group-Managed-Policies-Enumeration]]
+- [[Enumerate-AWS-IAM-Inline-Policies]]
+- [[Retrieve-AWS-IAM-Policy-Version-Details]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[AWS-IAM-Role-Inline-Policy-Enumeration]]
+- [[Enumerate-IAM-User-Attached-Policies]]
+- [[aws-lambda-backdoor-persistence]]
+- [[AWS-Lambda-Function-Invocation-for-Privilege-Escalation]]
 
 *...and 80 more*
+
+
+e*
+
+

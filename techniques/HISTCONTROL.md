@@ -18,6 +18,8 @@ tactics:
 
 The HISTCONTROL environment variable keeps track of what should be saved by the history command and eventually into the ~/.bash_history file when a user logs out. This setting can be configured to ignore commands that start with a space by simply setting it to "ignorespace". HISTCONTROL can also be set to ignore duplicate commands by setting it to "ignoredups". In some Linux systems, this is set by default to "ignoreboth" which covers both of the previous examples. This means that " ls" will not be saved, but "ls" would be saved by history. HISTCONTROL does not exist by default on macOS, but can be set by the user and will be respected. Adversaries can use this to operate without leaving traces by simply prepending a space to all of their terminal commands.
 
+
+
 # Detection
 
 Correlating a user session with a distinct lack of new commands in their .bash_history can be a clue to suspicious behavior. Additionally, users checking or changing their HISTCONTROL environment variable is also suspicious.
@@ -37,3 +39,5 @@ Prevent users from changing the <code>HISTCONTROL</code> environment variable (C
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

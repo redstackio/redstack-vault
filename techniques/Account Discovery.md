@@ -9,41 +9,41 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[AWS EKS Cluster Enumeration]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS IAM Group Enumeration]]'
-- '[[AWS IAM List Access Keys]]'
-- '[[AWS IAM User Group Enumeration]]'
-- '[[AWS KMS Key Policy Listing]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS Privilege Escalation via Default Policy Information]]'
-- '[[AWS Secrets Manager Enumeration]]'
-- '[[Azure AD Connect Monitoring Disable and Password Reset]]'
-- '[[Azure AD Enumeration with AzureAD Powershell (Creds)]]'
-- '[[Azure Storage Blob Enumeration]]'
-- '[[Azure Tenant Enumeration with Az PowerShell (Creds)]]'
-- '[[Azure Tenant ID Enumeration]]'
-- '[[Brute Force SMB Users Using RID (Authenticated)]]'
-- '[[DPAPI Credential Theft with Hekatomb]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[GitLab Repository Enumeration and Search]]'
-- '[[Kubernetes RBAC Listing Secrets]]'
+- '[[aws-eks-cluster-enumeration]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-IAM-Group-Enumeration]]'
+- '[[List-AWS-IAM-Access-Keys]]'
+- '[[aws-iam-list-groups-for-user]]'
+- '[[retrieve-aws-kms-key-policy]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[AWS-Privilege-Escalation-via-Creating-Admin-Policy]]'
+- '[[aws-secrets-manager-enumeration]]'
+- '[[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]'
+- '[[azure-ad-enumeration-using-powershell-with-credentials]]'
+- '[[Azure-Storage-Blob-Enumeration]]'
+- '[[azure-tenant-enumeration-with-az-powershell-creds]]'
+- '[[azure-tenant-id-enumeration]]'
+- '[[build-user-list-from-public-webpage]]'
+- '[[DPAPI-Credential-Theft-with-Hekatomb]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[GitLab-Repository-Enumeration-and-Search]]'
+- '[[Kubernetes-RBAC-List-Secrets]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[List All Active Directory Users]]'
-- '[[Password Spraying with BadPwdCount Attribute Enumeration]]'
-- '[[Query LDAP and Enumerate the Base DN (ldapsearch)]]'
-- '[[Query MSSQL Server for Sysadmins]]'
-- '[[RDS VPC Enumeration]]'
-- '[[SID Enumeration and WMI Query for MS14-068 Checksum Validation]]'
-- '[[SQL Server User Information Retrieval]]'
-- '[[Windows - Credential Enumeration]]'
-- '[[Windows User Enumeration and Privilege Escalation]]'
+- '[[enumerate-active-directory-users-authenticated]]'
+- '[[Password-Spraying-with-BadPwdCount-Attribute-Enumeration]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN]]'
+- '[[Query-MSSQL-Server-for-Sysadmins]]'
+- '[[Enumerate-AWS-RDS-VPCs]]'
+- '[[sid-enumeration-and-wmi-query-for-ms14-068-exploitation]]'
+- '[[Query-SQL-Server-Current-User-and-Sysadmin-Status]]'
+- '[[windows-credential-enumeration]]'
+- '[[windows-user-enumeration-and-privilege-check]]'
 ---
 
 # Account Discovery
@@ -53,6 +53,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to get a listing of local system or domain accounts. WindowsExample commands that can acquire this information are net user, net group , and net localgroup  using the Net utility or through use of dsquery. If adversaries attempt to identify the primary user, currently logged in user, or set of users that commonly uses a system, System Owner/User Discovery may apply.MacOn Mac, groups can be enumerated through the groups and id commands. In mac specifically, dscl . list /Groups and dscacheutil -q group can also be used to enumerate groups and users.LinuxOn Linux, local users can be enumerated through the use of the /etc/passwd file which is world readable. In mac, this same file is only used in single-user mode in addition to the /etc/master.passwd file.Also, groups can be enumerated through the groups and id commands.
+
+
 
 # Detection
 
@@ -170,25 +172,27 @@ Prevent administrator accounts from being enumerated when an application is elev
 
 ## Related Procedures (35)
 
-- [[AWS EKS Cluster Enumeration]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS Extract Backup to EC2 Instance]]
-- [[AWS IAM Group Enumeration]]
-- [[AWS IAM List Access Keys]]
-- [[AWS IAM User Group Enumeration]]
-- [[AWS KMS Key Policy Listing]]
-- [[AWS Managed Policy Version Enumeration]]
-- [[AWS Privilege Escalation via Default Policy Information]]
-- [[AWS Secrets Manager Enumeration]]
-- [[Azure AD Connect Monitoring Disable and Password Reset]]
-- [[Azure AD Enumeration with AzureAD Powershell (Creds)]]
-- [[Azure Storage Blob Enumeration]]
-- [[Azure Tenant Enumeration with Az PowerShell (Creds)]]
-- [[Azure Tenant ID Enumeration]]
-- [[Brute Force SMB Users Using RID (Authenticated)]]
-- [[DPAPI Credential Theft with Hekatomb]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
+- [[aws-eks-cluster-enumeration]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[AWS-Extract-EBS-Backup-to-EC2-Instance]]
+- [[AWS-IAM-Group-Enumeration]]
+- [[List-AWS-IAM-Access-Keys]]
+- [[aws-iam-list-groups-for-user]]
+- [[retrieve-aws-kms-key-policy]]
+- [[Enumerate-AWS-IAM-Managed-Policy-Versions]]
+- [[AWS-Privilege-Escalation-via-Creating-Admin-Policy]]
+- [[aws-secrets-manager-enumeration]]
+- [[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]
+- [[azure-ad-enumeration-using-powershell-with-credentials]]
+- [[Azure-Storage-Blob-Enumeration]]
+- [[azure-tenant-enumeration-with-az-powershell-creds]]
+- [[azure-tenant-id-enumeration]]
+- [[build-user-list-from-public-webpage]]
+- [[DPAPI-Credential-Theft-with-Hekatomb]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
 
 *...and 15 more*
+
+

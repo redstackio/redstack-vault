@@ -9,26 +9,26 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[AWS Secrets Manager Credential Exfiltration]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[Double URL encoded Directory Traversal]]'
-- '[[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]'
-- '[[Filter Bypass using Katakana Library]]'
-- '[[JavaScript Alert WAF Bypass]]'
-- '[[Malicious HLS playlist inside an AVI video]]'
-- '[[MSSQL Out of Band DNS Exfiltration]]'
-- '[[Out Of Band XPATH Injection]]'
-- '[[Polyglot Command Injection for DNS Data Exfiltration]]'
-- '[[PostgreSQL Time Based Table Dump]]'
+- '[[AWS-Secrets-Manager-Credential-Exfiltration]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[Exploit-Directory-Traversal-with-Double-URL-Encoding]]'
+- '[[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]'
+- '[[Filter-Bypass-Using-Katakana-Library-for-XSS]]'
+- '[[JavaScript-Alert-WAF-Bypass]]'
+- '[[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]'
+- '[[mssql-out-of-band-dns-exfiltration]]'
+- '[[Out-of-Band-XPath-Injection]]'
+- '[[Polyglot-Command-Injection-for-DNS-Data-Exfiltration]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
 - '[[Reflected XSS Attack Prevention]]'
-- '[[SMB Beacon Payload with Command Line Interactions]]'
-- '[[XXE Denial of Service via YAML Attack]]'
-- '[[XXE File Retrieval with PHP Wrapper]]'
-- '[[XXE in DOCX Files]]'
-- '[[XXE Injection in SOAP Messages]]'
+- '[[Establish-and-Interact-with-SMB-Beacon-Payload]]'
+- '[[XXE-Denial-of-Service-via-YAML-Attack]]'
+- '[[XXE-File-Retrieval-with-PHP-Wrapper]]'
+- '[[Exploit-XXE-in-DOCX-Files]]'
+- '[[XXE-Injection-in-SOAP-Messages]]'
 ---
 
 # Data Encoding
@@ -38,6 +38,8 @@ procedures:
 ## Description
 
 Command and control (C2) information is encoded using a standard data encoding system. Use of data encoding may be to adhere to existing protocol specifications and includes use of ASCII, Unicode, Base64,  MIME, UTF-8, or other binary-to-text and character encoding systems. [1] [2] Some data encoding systems may also result in data compression, such as gzip.
+
+
 
 # Detection
 
@@ -129,23 +131,25 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (20)
 
-- [[AWS Secrets Manager Credential Exfiltration]]
-- [[Cobalt Strike Team Server Installation and Execution]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[Double URL encoded Directory Traversal]]
-- [[Exotic Payloads for Bypassing Dot Filters in XSS Attacks]]
-- [[Filter Bypass using Katakana Library]]
-- [[JavaScript Alert WAF Bypass]]
-- [[Malicious HLS playlist inside an AVI video]]
-- [[MSSQL Out of Band DNS Exfiltration]]
-- [[Out Of Band XPATH Injection]]
-- [[Polyglot Command Injection for DNS Data Exfiltration]]
-- [[PostgreSQL Time Based Table Dump]]
+- [[AWS-Secrets-Manager-Credential-Exfiltration]]
+- [[Cobalt-Strike-Team-Server-Installation-and-Execution]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[Exploit-Directory-Traversal-with-Double-URL-Encoding]]
+- [[XSS-Dot-Filter-Bypass-Using-Exotic-Payloads]]
+- [[Filter-Bypass-Using-Katakana-Library-for-XSS]]
+- [[JavaScript-Alert-WAF-Bypass]]
+- [[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]
+- [[mssql-out-of-band-dns-exfiltration]]
+- [[Out-of-Band-XPath-Injection]]
+- [[Polyglot-Command-Injection-for-DNS-Data-Exfiltration]]
+- [[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]
 - [[Reflected XSS Attack Prevention]]
-- [[SMB Beacon Payload with Command Line Interactions]]
-- [[XXE Denial of Service via YAML Attack]]
-- [[XXE File Retrieval with PHP Wrapper]]
-- [[XXE in DOCX Files]]
-- [[XXE Injection in SOAP Messages]]
+- [[Establish-and-Interact-with-SMB-Beacon-Payload]]
+- [[XXE-Denial-of-Service-via-YAML-Attack]]
+- [[XXE-File-Retrieval-with-PHP-Wrapper]]
+- [[Exploit-XXE-in-DOCX-Files]]
+- [[XXE-Injection-in-SOAP-Messages]]
+
+

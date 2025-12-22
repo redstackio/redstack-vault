@@ -18,6 +18,8 @@ tactics:
 
 Windows shared drive and Windows Admin Shares connections can be removed when no longer needed. Net is an example utility that can be used to remove network share connections with the net use \system\share /delete command. [1]Adversaries may remove share connections that are no longer useful in order to clean up traces of their operation.
 
+
+
 # Detection
 
 Network share connections may be common depending on how an network environment is used. Monitor command-line invocation of net use commands associated with establishing and removing remote shares over SMB, including following best practices for detection of Windows Admin Shares. SMB traffic between systems may also be captured and decoded to look for related network share session and file transfer activity. Windows authentication logs are also useful in determining when authenticated network shares are established and by which account, and can be used to correlate network share activity to other events to investigate potentially malicious activity.
@@ -53,3 +55,5 @@ Identify unnecessary system utilities or potentially malicious software that may
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

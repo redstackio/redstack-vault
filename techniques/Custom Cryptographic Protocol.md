@@ -10,14 +10,14 @@ tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
 - '[[Jetty RCE via Insecure XML File Upload]]'
-- '[[Linked Database Query Execution]]'
-- '[[Linux Staged Reverse TCP Meterpreter Shell]]'
-- '[[Ncat Reverse Shell]]'
-- '[[Netcat Reverse Shell Cheat Sheet]]'
-- '[[Netcat Traditional Bind Shell]]'
-- '[[Pass-the-Golden-Ticket Attack using Meterpreter]]'
-- '[[SID Enumeration and WMI Query for MS14-068 Checksum Validation]]'
-- '[[Stealthy Reverse Shell with Groovy]]'
+- '[[Execute-Queries-via-Linked-SQL-Servers]]'
+- '[[Linux-Staged-Reverse-TCP-Meterpreter-Shell]]'
+- '[[Establish-Reverse-Shell-with-Ncat]]'
+- '[[Establish-Reverse-Shell-with-Netcat]]'
+- '[[Netcat-Traditional-Bind-Shell]]'
+- '[[pass-the-golden-ticket-attack-using-meterpreter]]'
+- '[[sid-enumeration-and-wmi-query-for-ms14-068-exploitation]]'
+- '[[Establish-Stealthy-Reverse-Shell-with-Groovy]]'
 ---
 
 # Custom Cryptographic Protocol
@@ -27,6 +27,8 @@ procedures:
 ## Description
 
 Adversaries may use a custom cryptographic protocol or algorithm to hide command and control traffic. A simple scheme, such as XOR-ing the plaintext with a fixed key, will produce a very weak ciphertext.Custom encryption schemes may vary in sophistication. Analysis and reverse engineering of malware samples may be enough to discover the algorithm and encryption key used.Some adversaries may also attempt to implement their own version of a well-known cryptographic algorithm instead of using a known implementation library, which may lead to unintentional errors. [1]
+
+
 
 # Detection
 
@@ -135,11 +137,13 @@ Network intrusion detection and prevention systems that use network signatures t
 ## Related Procedures (9)
 
 - [[Jetty RCE via Insecure XML File Upload]]
-- [[Linked Database Query Execution]]
-- [[Linux Staged Reverse TCP Meterpreter Shell]]
-- [[Ncat Reverse Shell]]
-- [[Netcat Reverse Shell Cheat Sheet]]
-- [[Netcat Traditional Bind Shell]]
-- [[Pass-the-Golden-Ticket Attack using Meterpreter]]
-- [[SID Enumeration and WMI Query for MS14-068 Checksum Validation]]
-- [[Stealthy Reverse Shell with Groovy]]
+- [[Execute-Queries-via-Linked-SQL-Servers]]
+- [[Linux-Staged-Reverse-TCP-Meterpreter-Shell]]
+- [[Establish-Reverse-Shell-with-Ncat]]
+- [[Establish-Reverse-Shell-with-Netcat]]
+- [[Netcat-Traditional-Bind-Shell]]
+- [[pass-the-golden-ticket-attack-using-meterpreter]]
+- [[sid-enumeration-and-wmi-query-for-ms14-068-exploitation]]
+- [[Establish-Stealthy-Reverse-Shell-with-Groovy]]
+
+

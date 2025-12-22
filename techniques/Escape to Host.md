@@ -7,7 +7,7 @@ mitre_url: null
 created_at: '2023-04-06T00:31:26.048972+00:00'
 updated_at: '2023-04-06T00:31:27.812661+00:00'
 tactics:
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Escape to Host
@@ -24,6 +24,10 @@ Additionally, an adversary may be able to exploit a compromised container with a
 
 Gaining access to the host may provide the adversary with the opportunity to achieve follow-on objectives, such as establishing persistence, moving laterally within the environment, or setting up a command and control channel on the host.
 
+
+
 ## Tactics
 
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

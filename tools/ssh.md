@@ -1,85 +1,115 @@
 ---
-id: 50529e2b-8d28-4e0a-a0c1-9290492584a5
-name: ssh
-type: tool
-verified: true
-created_at: '2020-03-03T00:21:23.718870+00:00'
-updated_at: '2023-05-30T19:45:48.754184+00:00'
-commands:
-- '[[Hydra Dictionary Brute Force SSH]]'
-- '[[Metasploit Upload a File or Directory]]'
-- '[[Nmap FIN Scan with Service Enumeration]]'
-- '[[Nmap Port Scan with Vuln Scripts]]'
-- '[[Nmap Service Scan with Log File Output]]'
-- '[[Nmap Service Scan with OS Detection]]'
-- '[[SSH Local Port Forwarding to a Remote Server]]'
-- '[[SSH Remote Port Forwarding to an Attacker]]'
-- '[[SSH with SSH-Agent Hijack]]'
-- '[[find Search for Files with SUID Rights]]'
-- '[[smbclient Connect to an SMB Share (Autenticated)]]'
-- '[[ssh Connect with a Private Key]]'
-- '[[ssh Lan Turtle Initial Setup]]'
-- '[[ssh2john Extract the Hash from an Encrypted SSH Private Key]]'
-- '[[sshuttle Forward all traffic through SSH Tunnel]]'
-platforms:
-- Linux
+id: tool-ssh
+url: 'https://www.openssh.com/'
 tags:
-- '[[data encryption]]'
-- '[[Network]]'
+  - remote-access
+  - tunnel
+  - protocol
+type: tool
+verified: false
+platforms:
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:57.341Z'
+validated: true
+submitted: true
 ---
+---
+# SSH
 
-# ssh
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-ssh (SSH client) is a program for logging into a remote machine and executing commands on it. Unlike services vulnerable to man-in-the-middle attacks (telnet, ftp), ssh securely encrypts data sent from one host to another, allowing secure communication over an untrusted network. X11 connections and
+SSH (Secure Shell) is a protocol and tool for secure remote login and command execution, widely used for tunneling and port forwarding in security assessments.
 
 ## Description
 
-# Description
+In this context, SSH creates reverse tunnels to expose internal services like Docker Registries from sandboxed environments to external attackers, bypassing network restrictions.
 
-ssh (SSH client) is a program for logging into a remote machine and executing commands on it. Unlike services vulnerable to man-in-the-middle attacks (telnet, ftp), ssh securely encrypts data sent from one host to another, allowing secure communication over an untrusted network. X11 connections and arbitrary TCP ports can also be forwarded over the secure channel.
+## Features
 
+- Feature 1: Encrypted connections
+- Feature 2: Port forwarding (local/remote)
+- Feature 3: Key-based and password authentication
 
+## Installation
 
-# Example
+### Requirements
 
+- OpenSSH package
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_e082f026-1d48-4bf9-86cb-3ee56718cfb2}}
+```bash
+# On Linux
+apt install openssh-client openssh-server
+```
 
+## Basic Usage
 
+```bash
+ssh --help
+```
 
-# Install
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| `-R` | Remote port forward |
+| `-f` | Background |
+| `-N` | No exec |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ssh user@host
+```
 
+### Example 2: Advanced Usage
 
+```bash
+ssh -R 5555:localhost:5000 user@host -f -N
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Protocol Tunneling]] Protocol Tunneling
+- [[Valid Accounts]] Valid Accounts
 
-- Linux
+### Tactics
 
-## Services
+- [[Lateral Movement]] Lateral Movement
 
-- ssh
-- ssh
+## Detection
 
-## Commands (1)
+Indicators and methods for detecting this tool's usage:
 
-- [[ssh Connect with a Private Key]]
+- SSH logs showing forwards from internal IPs
+- Network flows to external SSH servers
+- Auth failures or unusual sessions
 
-## Tags
+## Related Procedures
 
-- [[data encryption]]
-- [[Network]]
+- Feature 1: Key authentication
+- Feature 2: Port forwarding
+- Feature 3: Secure file transfer
 
+## Related Tools
 
+- [[tools/netcat]]
+
+## References
+
+- Official documentation: https://www.openssh.com/manual.html
+- Related resources: RFC 4251
+
+---

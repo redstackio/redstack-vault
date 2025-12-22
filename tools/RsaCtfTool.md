@@ -1,16 +1,18 @@
 ---
-id: 5fd5077f-1b4f-4472-adda-e8f168e932a0
-name: RsaCtfTool
 type: tool
 verified: true
-created_at: '2020-02-27T05:15:52.476710+00:00'
-updated_at: '2023-05-30T19:50:10.375302+00:00'
 commands:
-- '[[RsaCtfTool Dump parameters from a public key]]'
+  - '[[commands/rsa-ctf-tool-dump-parameters-from-public-key]]'
 tags:
-- '[[Brute Force]]'
-- '[[Cryptography]]'
-- '[[known vulnerability]]'
+  - brute-force
+  - cryptography
+  - known-vulnerability
+platforms:
+  - Linux
+  - Windows
+  - macOS
+url: 'https://github.com/RsaCtfTool/RsaCtfTool'
+validated: true
 ---
 
 # RsaCtfTool
@@ -19,91 +21,136 @@ tags:
 
 ## Overview
 
-RsaCtfTool  is used to decipher ciphertext encrypted with weak public keys, and can recover private keys using a number of vulnerabilities in key generation. Attacks: Prime N detection Weak public key factorization Wiener's attack Hastad's attack (Small public exponent attack) Small q (q < 100,000)
+RsaCtfTool is a Python-based toolkit designed for attacking weak RSA keys, particularly in capture-the-flag (CTF) challenges and cryptography assessments. It deciphers ciphertext encrypted with vulnerable public keys and recovers private keys by exploiting various flaws in key generation and implementation.
 
 ## Description
 
-# Description
+RsaCtfTool supports a wide range of RSA cryptanalysis techniques, making it invaluable for offensive security operations involving cryptographic weaknesses. It is typically used in scenarios where attackers identify poorly generated RSA keys on target systems, such as in web applications, SSH keys, or encrypted communications. The tool automates complex mathematical attacks that would otherwise require manual implementation.
 
-RsaCtfTool  is used to decipher ciphertext encrypted with weak public keys, and can recover private keys using a number of vulnerabilities in key generation.
+## Features
 
+- Prime N detection: Identifies if the modulus N is a known prime.
+- Weak public key factorization: Factors keys with weak primes.
+- Wiener's attack: Exploits small private exponents using continued fractions.
+- Hastad's attack: Broadcast attack for small public exponents across multiple ciphertexts.
+- Small q detection: Targets when one prime factor q is very small (< 100,000).
+- Common factor between ciphertext and modulus attack: Finds shared factors.
+- Fermat's factorization: For primes p and q that are close.
+- Gimmicky Primes method: Detects artificially generated weak primes.
+- Past CTF Primes method: Specialized for historical CTF weak primes.
+- Self-Initializing Quadratic Sieve (SIQS) using Yafu: Advanced factorization.
+- Common factor attacks across multiple keys: Batch factorization.
+- Small fractions method: When p/q is close to a small rational fraction.
+- Boneh Durfee Method: For small private exponents (d < n^0.292).
+- Elliptic Curve Method (ECM): Probabilistic factorization.
+- Pollard's p-1: For smooth prime factors.
+- Mersenne primes factorization: Specialized for Mersenne-form primes.
+- Londahl's factorization: For close p and q with optimized sieving.
+- Qi Cheng's unsafe primes factorization: Targets unsafe prime generation.
 
+## Installation
 
-Attacks:
+### Requirements
 
-- Prime N detection
+- Python 3.6+
+- pip
+- Optional: Yafu for SIQS (advanced factorization)
 
-- Weak public key factorization
+### Install Commands
 
-- Wiener's attack
+On Debian/Ubuntu/Kali:
 
-- Hastad's attack (Small public exponent attack)
+```bash
+sudo apt update
+sudo apt install python3 python3-pip git
+pip3 install rsa-ctf-tool
+```
 
-- Small q (q < 100,000)
+Alternatively, install from source:
 
-- Common factor between ciphertext and modulus attack
+```bash
+git clone https://github.com/RsaCtfTool/RsaCtfTool.git
+cd RsaCtfTool
+sudo python3 setup.py install
+```
 
-- Fermat's factorisation for close p and q
+On Windows/macOS: Use pip as above, or install via Git Bash/Anaconda.
 
-- Gimmicky Primes method
+## Basic Usage
 
-- Past CTF Primes method
+```bash
+RsaCtfTool.py --help
+```
 
-- Self-Initializing Quadratic Sieve (SIQS) using Yafu
+This displays all available options, attacks, and usage syntax.
 
-- Common factor attacks across multiple keys
+### Common Options
 
-- Small fractions method when p/q is close to a small fraction
+| Option | Description |
+|--------|-------------|
+| `--publickey` | Path to the public key file (PEM format) |
+| `--private` | Path to private key for decryption testing |
+| `--uncipher` | Ciphertext file to decrypt |
+| `--attack` | Specify attack type (e.g., wiener, fermat) |
+| `--dumpkey` | Dump key parameters (n, e, etc.) |
+| `-h, --help` | Show help message |
+| `-v` | Verbose output |
 
-- Boneh Durfee Method when the private exponent d is too small compared to the modulus (i.e d < n^0.292)
+## Examples
 
-- Elliptic Curve Method
+### Example 1: Basic Usage - Dump Key Parameters
 
-- Pollards p-1 for relatively smooth numbers
+Use the related command [[commands/rsa-ctf-tool-dump-parameters-from-public-key]] to extract modulus (n) and public exponent (e) from a public key.
 
-- Mersenne primes factorization
+### Example 2: Advanced Usage - Wiener Attack
 
-- Londahl's factorisation for close p and q
+```bash
+RsaCtfTool.py --publickey id_rsa.pub --attack wiener --privatekey output.pem
+```
 
-- Qi Cheng's unsafe primes factorization
+This attempts Wiener's attack on the public key and outputs the recovered private key if successful.
 
+### Example 3: Decrypt Ciphertext
 
+```bash
+RsaCtfTool.py --publickey pubkey.pem --uncipher ciphertext.txt --attack factordb
+```
 
-# Example
+Attempts to decrypt the ciphertext using online factorization databases.
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-{{EMBEDDED_COMMAND_04548046-4cd8-47ff-abc2-32ff1dd32fb1}}
+### Techniques
 
+- [[Credentials in Files]] Password Policy Discovery (for credential recovery via crypto breaks)
+- [[Brute Force]] Brute Force (for key cracking attacks)
 
+### Tactics
 
+- [[Persistence]] Persistence (via recovered keys for access)
+- [[Credential Access]] Credential Access
 
+## Detection
 
-# Installation
+Indicators and methods for detecting this tool's usage:
 
-## Install on Debian/Ubuntu
+- Python processes named `RsaCtfTool.py` or `rsa_ctf_tool`.
+- Network connections to factorization services (e.g., factordb.com).
+- File access to .pem or .pub keys with unusual read patterns.
+- High CPU usage from mathematical computations (e.g., factorization).
 
+## Related Procedures
 
+No related procedures currently linked.
 
+## Related Tools
 
+- [[commands/factor]] (built-in factorization utilities)
+- [[tools/Yafu]] (for advanced SIQS)
 
+## References
 
-
-
-
-## Services
-
-- ssh
-- ssh
-
-## Commands (1)
-
-- [[RsaCtfTool Dump parameters from a public key]]
-
-## Tags
-
-- [[Brute Force]]
-- [[Cryptography]]
-- [[known vulnerability]]
-
-
+- Official GitHub: https://github.com/RsaCtfTool/RsaCtfTool
+- RSA Cryptanalysis resources: https://www.cryptologie.net/

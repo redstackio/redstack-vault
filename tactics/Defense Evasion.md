@@ -97,107 +97,107 @@ techniques:
 - '[[Web Session Cookie|T1506 - Web Session Cookie]]'
 - '[[XSL Script Processing|T1220 - XSL Script Processing]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
 - '[[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]'
-- '[[Abusing Backup Operators Group for Sensitive File Access]]'
-- '[[Abusing coredumps and core_pattern in Docker containers]]'
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[Abusing Golden Privileges with Juicy Potato]]'
+- '[[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]'
+- '[[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[Abusing-Golden-Privileges-with-Juicy-Potato]]'
 - '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
   User Rights]]'
-- '[[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]'
+- '[[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Directory Certificate Services Access Control Vulnerabilities]]'
-- '[[Active Directory Certificate Services ESC9 Attack]]'
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]'
-- '[[AdminCount Abuse]]'
-- '[[Admin Site URL Leak via Server Side Template Injection in Django Templates]]'
-- '[[Advanced XSS in Angular and AngularJS]]'
-- '[[Akamai WAF Bypass via Common XSS Injection Attack]]'
-- '[[Akamai WAF Bypass via Prompt User Input]]'
-- '[[Alternative Name Certificate Request]]'
-- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
-- '[[Apache Karaf XXE Out-of-Band Data Exfiltration]]'
-- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
-- '[[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]'
-- '[[ASP.NET Razor Basic Injection with Addition Command]]'
-- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
-- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[AWS EC2 Metadata SSRF]]'
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[AWS EKS Service Account Token Theft]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS IAM Group Managed Policies Enumeration]]'
-- '[[AWS IAM Inline Policy Enumeration]]'
-- '[[AWS IAM Policy Version Information Retrieval]]'
-- '[[AWS IAM Role Inline Policy Enumeration]]'
-- '[[AWS IAM User Policy Attachment]]'
-- '[[AWS IAM User Policy Enumeration]]'
-- '[[AWS Lambda Backdoor Persistence]]'
-- '[[AWS Lambda Function Enumeration]]'
-- '[[AWS Lambda Function Policy Listing]]'
-- '[[AWS Lambda Function Privilege Escalation via IAM Policy Attachment]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS RCE for Credential Access]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS Shadow Admin Access]]'
-- '[[AWS SSH Key Persistence]]'
-- '[[AWS SSH Persistence using Public Key]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
-- '[[AWS User Policy Enumeration]]'
-- '[[Azure AD App Secrets for Service Principal Authentication]]'
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Azure Graph API Refresh Token]]'
+- '[[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]'
+- '[[Active-Directory-Certificate-Services-ESC9-Attack]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]'
+- '[[AdminCount-Abuse]]'
+- '[[Admin-Site-URL-Leak-via-SSTI-in-Django-Templates]]'
+- '[[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]'
+- '[[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]'
+- '[[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]'
+- '[[Request-Alternative-Name-Certificate-via-AD-CS]]'
+- '[[Enumerate-Installed-Antivirus-Products-Windows]]'
+- '[[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]'
+- '[[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]'
+- '[[ASP.NET-Razor-Server-Side-Template-Injection-Basic]]'
+- '[[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]'
+- '[[Bypass-Angular-DomSanitizer-for-XSS-Injection]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[configure-aws-cli-profile-for-persistence]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[AWS-EKS-Service-Account-Token-Theft]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[AWS-IAM-Group-Managed-Policies-Enumeration]]'
+- '[[Enumerate-AWS-IAM-Inline-Policies]]'
+- '[[Retrieve-AWS-IAM-Policy-Version-Details]]'
+- '[[AWS-IAM-Role-Inline-Policy-Enumeration]]'
+- '[[AWS-IAM-Attach-Inline-Policy-to-User]]'
+- '[[Enumerate-IAM-User-Attached-Policies]]'
+- '[[aws-lambda-backdoor-persistence]]'
+- '[[AWS-Lambda-Function-Enumeration]]'
+- '[[List-AWS-Lambda-Function-Policy]]'
+- '[[AWS-Lambda-Function-Privilege-Escalation-via-IAM-Policy-Attachment]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[aws-rce-for-credential-access]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[AWS-Shadow-Admin-Access]]'
+- '[[aws-ssh-key-persistence]]'
+- '[[AWS-SSH-Persistence-using-Public-Key]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]'
+- '[[AWS-User-Policy-Enumeration]]'
+- '[[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]'
 - '[[Azure - Illicit Consent Grant Prevention]]'
-- '[[Azure Managed Identity Token Retrieval]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
-- '[[Azure Runbook Automation]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Backgrounding Long Running Commands]]'
-- '[[Bashrc Backdoor Persistence]]'
-- '[[BITS Job Persistence with Backdoor Command]]'
-- '[[Blind XPATH Injection]]'
-- '[[Blind XSS Data Exfiltration]]'
-- '[[Blind XSS Hunting with XSS Payloads]]'
-- '[[Blind XXE Data Exfiltration with DTD and PHP Filter]]'
-- '[[Brute Force Login with MongoDB Query Injection]]'
-- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
-- '[[Bypassing filters using Curl with Verbose Output]]'
-- '[[Bypassing filters with IPv6 Server Ports]]'
-- '[[Bypassing Quotes in Script Tag for XSS Injection]]'
-- '[[Bypassing XSS Filters using UTF BOM Character]]'
-- '[[Cassandra Login Bypass using Injection]]'
-- '[[Checksum Validation Exploitation for Active Directory]]'
-- '[[Clear Linux Logs to Hide an Attack]]'
-- '[[Clear Windows Event Logs with a Meterpreter Session]]'
-- '[[Client Side Template Injection using Blind XSS]]'
-- '[[Cloudflare XSS Bypass via SVG Onload Alert]]'
-- '[[Cloudflare XSS Prompt Bypass]]'
-- '[[Cloud Instance SSRF]]'
+- '[[Retrieve-Access-Tokens-from-Azure-Managed-Identity]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
+- '[[Create-and-Execute-Malicious-Azure-Runbook]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Background-Long-Running-Commands]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[Establish-Persistence-Using-BITS-Jobs-with-Backdoor-Execution]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
+- '[[Blind-XSS-Data-Exfiltration]]'
+- '[[Blind-XSS-Detection-Using-External-Payloads]]'
+- '[[Blind-XXE-Data-Exfiltration-with-DTD-and-PHP-Filter]]'
+- '[[Brute-Force-Login-via-MongoDB-Query-Injection]]'
+- '[[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]'
+- '[[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]'
+- '[[Bypass-SSRF-Filters-with-IPv6-Loopback-Addresses]]'
+- '[[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]'
+- '[[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]'
+- '[[Clear-Linux-Logs-to-Hide-Attack]]'
+- '[[Clear-Windows-Event-Logs-via-Meterpreter]]'
+- '[[Client-Side-Template-Injection-using-Blind-XSS]]'
+- '[[Cloudflare-XSS-Bypass-via-SVG-Onload-Alert]]'
+- '[[Bypass-Cloudflare-XSS-Protection-with-Obfuscated-Prompt-Payloads]]'
+- '[[Exploit-SSRF-for-AWS-Cloud-Instance-Metadata-Access]]'
 - '[[CLR Assembly Creation and Execution]]'
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[Command Execution via xp_cmdshell - MSSQL Server]]'
-- '[[Compiling C Code with Cobalt Strike Beacon Object Files]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[Command-Execution-via-xp-cmdshell-MSSQL-Server]]'
+- '[[Compile-C-Code-for-Cobalt-Strike-Beacon-Object-Files]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[Connect to an SSH Server with a Private Key]]'
-- '[[Create Windows Credentials Object]]'
-- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
-- '[[C Reverse Shell]]'
-- '[[CRLF Injection and Cookie Stealing]]'
-- '[[CRLF Injection and Cookie Stealing]]'
+- '[[connect-to-ssh-server-with-private-key]]'
+- '[[create-windows-pscredential-object]]'
+- '[[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]'
+- '[[Establish-C-Reverse-Shell]]'
+- '[[crlf-injection-for-cookie-stealing]]'
+- '[[crlf-injection-for-cookie-stealing]]'
 ---
 
 # Defense Evasion
@@ -207,6 +207,8 @@ procedures:
 ## Description
 
 Defense evasion consists of techniques an adversary may use to evade detection or avoid other defenses. Sometimes these actions are the same as or variations of techniques in other categories that have the added benefit of subverting a particular defense or mitigation. Defense evasion may be considered a set of attributes the adversary applies to all other phases of the operation.
+
+
 
 ## Techniques
 
@@ -306,25 +308,27 @@ This tactic includes 89 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
 - [[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]
-- [[Abusing Backup Operators Group for Sensitive File Access]]
-- [[Abusing coredumps and core_pattern in Docker containers]]
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[Abusing Golden Privileges with Juicy Potato]]
-- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
-- [[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]
+- [[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]
+- [[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Abusing-Golden-Privileges-with-Juicy-Potato]]
+- [[Abusing-Group-Policy-Objects-with-StandIn-to-Manage-Local-Administrators-and-User-Rights]]
+- [[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Directory Certificate Services Access Control Vulnerabilities]]
-- [[Active Directory Certificate Services ESC9 Attack]]
-- [[Active Directory Object Owner Hijacking]]
-- [[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]
-- [[AdminCount Abuse]]
-- [[Admin Site URL Leak via Server Side Template Injection in Django Templates]]
-- [[Advanced XSS in Angular and AngularJS]]
-- [[Akamai WAF Bypass via Common XSS Injection Attack]]
-- [[Akamai WAF Bypass via Prompt User Input]]
-- [[Alternative Name Certificate Request]]
-- [[Antivirus Enumeration - Windows Privilege Escalation]]
+- [[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]
+- [[Active-Directory-Certificate-Services-ESC9-Attack]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]
+- [[AdminCount-Abuse]]
+- [[Admin-Site-URL-Leak-via-SSTI-in-Django-Templates]]
+- [[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]
+- [[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]
+- [[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]
+- [[Request-Alternative-Name-Certificate-via-AD-CS]]
+- [[Enumerate-Installed-Antivirus-Products-Windows]]
 
 *...and 80 more*
+
+

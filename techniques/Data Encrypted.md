@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[DNS Data Exfiltration with Command Injection]]'
-- '[[Linux Meterpreter Reverse TCP Shell]]'
-- '[[Meterpreter File Transfer]]'
-- '[[Perl Bind Shell]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[DNS-Data-Exfiltration-via-Command-Injection]]'
+- '[[Establish-Linux-Meterpreter-Reverse-TCP-Shell]]'
+- '[[Meterpreter-File-Transfer]]'
+- '[[Create-Perl-Bind-Shell]]'
 ---
 
 # Data Encrypted
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Data is encrypted before being exfiltrated in order to hide the information that is being exfiltrated from detection or to make the exfiltration less conspicuous upon inspection by a defender. The encryption is performed by a utility, programming library, or custom algorithm on the data itself and is considered separate from any encryption performed by the command and control or file transfer protocol. Common file archive formats that can encrypt files are RAR and zip.Other exfiltration techniques likely apply as well to transfer the information out of the network, such as Exfiltration Over Command and Control Channel and Exfiltration Over Alternative Protocol
+
+
 
 # Detection
 
@@ -142,8 +144,10 @@ Identify unnecessary system utilities, third-party tools, or potentially malicio
 
 ## Related Procedures (5)
 
-- [[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]
-- [[DNS Data Exfiltration with Command Injection]]
-- [[Linux Meterpreter Reverse TCP Shell]]
-- [[Meterpreter File Transfer]]
-- [[Perl Bind Shell]]
+- [[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]
+- [[DNS-Data-Exfiltration-via-Command-Injection]]
+- [[Establish-Linux-Meterpreter-Reverse-TCP-Shell]]
+- [[Meterpreter-File-Transfer]]
+- [[Create-Perl-Bind-Shell]]
+
+

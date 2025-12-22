@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Analyze BloodHound Data for Relationships]]'
-- '[[Discovery of Local MSSQL Server Instances]]'
+- '[[Analyze-BloodHound-Data-for-AD-Relationships]]'
+- '[[Discover-Local-MSSQL-Server-Instances]]'
 - '[[List Domain Users and Groups with MS-RPC/SMB Service]]'
-- '[[List Local Users and Group Membership on Windows]]'
-- '[[List Local Users on Windows]]'
-- '[[Windows User Enumeration and Privilege Escalation]]'
+- '[[Enumerate-Local-Users-and-Groups-on-Windows]]'
+- '[[Basic-Port-Scan-with-Service-Enumeration]]'
+- '[[windows-user-enumeration-and-privilege-check]]'
 ---
 
 # System Owner/User Discovery
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 WindowsAdversaries may attempt to identify the primary user, currently logged in user, set of users that commonly uses a system, or whether a user is actively using the system. They may do this, for example, by retrieving account usernames or by using Credential Dumping. The information may be collected in a number of different ways using other Discovery techniques, because user and username details are prevalent throughout a system and include running process ownership, file/directory ownership, session information, and system logs.MacOn Mac, the currently logged in user can be identified with users,w, and who.LinuxOn Linux, the currently logged in user can be identified with w and who.
+
+
 
 # Detection
 
@@ -221,9 +223,11 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (6)
 
-- [[Analyze BloodHound Data for Relationships]]
-- [[Discovery of Local MSSQL Server Instances]]
+- [[Analyze-BloodHound-Data-for-AD-Relationships]]
+- [[Discover-Local-MSSQL-Server-Instances]]
 - [[List Domain Users and Groups with MS-RPC/SMB Service]]
-- [[List Local Users and Group Membership on Windows]]
-- [[List Local Users on Windows]]
-- [[Windows User Enumeration and Privilege Escalation]]
+- [[Enumerate-Local-Users-and-Groups-on-Windows]]
+- [[Basic-Port-Scan-with-Service-Enumeration]]
+- [[windows-user-enumeration-and-privilege-check]]
+
+

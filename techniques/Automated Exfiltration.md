@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[GitTools Insecure Source Code Management]]'
+- '[[Exploit-Insecure-Git-Repository-with-GitTools]]'
 - '[[.NET Serialization Tools Exploitation]]'
-- '[[Springboot-Actuator Health Monitoring]]'
+- '[[Enumerate-Spring-Boot-Actuator-Health-Endpoint]]'
 ---
 
 # Automated Exfiltration
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Data, such as sensitive documents, may be exfiltrated through the use of automated processing or Scripting after being gathered during Collection. When automated exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as Exfiltration Over Command and Control Channel and Exfiltration Over Alternative Protocol.
+
+
 
 # Detection
 
@@ -62,6 +64,8 @@ Identify unnecessary system utilities, scripts, or potentially malicious softwar
 
 ## Related Procedures (3)
 
-- [[GitTools Insecure Source Code Management]]
+- [[Exploit-Insecure-Git-Repository-with-GitTools]]
 - [[.NET Serialization Tools Exploitation]]
-- [[Springboot-Actuator Health Monitoring]]
+- [[Enumerate-Spring-Boot-Actuator-Health-Endpoint]]
+
+

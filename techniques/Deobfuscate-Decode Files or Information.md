@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[FFmpeg HLS Playlist Injection]]'
+- '[[FFmpeg-HLS-Playlist-Injection]]'
 ---
 
 # Deobfuscate/Decode Files or Information
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Adversaries may use Obfuscated Files or Information to hide artifacts of an intrusion from analysis. They may require separate mechanisms to decode or deobfuscate that information depending on how they intend to use it. Methods for doing that include built-in functionality of malware, Scripting, PowerShell, or by using utilities present on the system.One such example is use of certutil to decode a remote access tool portable executable file that has been hidden inside a certificate file. [1]Another example is using the Windows copy /b command to reassemble binary fragments into a malicious payload. [2]Payloads may be compressed, archived, or encrypted in order to avoid detection.  These payloads may be used with Obfuscated Files or Information during Initial Access or later to mitigate detection. Sometimes a user's action may be required to open it for deobfuscation or decryption as part of User Execution. The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. [3] Adversaries may also used compressed or archived scripts, such as Javascript.
+
+
 
 # Detection
 
@@ -168,4 +170,6 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (1)
 
-- [[FFmpeg HLS Playlist Injection]]
+- [[FFmpeg-HLS-Playlist-Injection]]
+
+

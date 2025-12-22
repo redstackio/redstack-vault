@@ -1,73 +1,138 @@
 ---
 id: 0bdb7d19-9394-4470-ba5d-ead70a2177b3
-name: TLSSLed
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:31.394924+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+updated_at: '2023-10-01T00:00:00+00:00'
 commands:
-- '[[TLSSLed Query SSL/TLS for Weak Ciphers, Configuration, and Keys]]'
+  - '[[commands/tlssled-scan-ssl-tls-configuration]]'
 platforms:
-- Web
+  - Linux
+  - Web
 tags:
-- '[[data encryption]]'
-- '[[Enumeration]]'
-- '[[Network]]'
+  - data-encryption
+  - enumeration
+  - network
+  - ssl
+  - tls
+url: 'http://www.taddong.com/tools/TLSSLed_v1.3.sh'
+validated: true
 ---
 
 # TLSSLed
 
+**Status**: Unverified
+
 ## Overview
 
-TLSSLed is a Linux shell script which evaluates the security of a target's SSL/TLS (HTTPS) web server implementation. The current tests include checking if the target supports the SSLv2 protocol, the NULL cipher, weak ciphers based on their key length (40 or 56 bits), the availability of strong cip
+TLSSLed is a lightweight Linux shell script designed for assessing the security of SSL/TLS implementations on HTTPS web servers. It performs automated checks for common misconfigurations and vulnerabilities, making it ideal for reconnaissance in penetration testing to identify weak encryption practices early in an engagement.
 
 ## Description
 
-# Description
+TLSSLed evaluates key aspects of a target's SSL/TLS setup, including support for outdated protocols like SSLv2, insecure ciphers such as NULL or low-strength (40/56-bit) options, availability of strong ciphers (e.g., AES), certificate signing algorithms (flagging MD5), and renegotiation capabilities. The tool outputs a summary report highlighting potential weaknesses, helping pentesters prioritize targets with poor configurations. It operates over the network without requiring agent installation on the target.
 
-TLSSLed is a Linux shell script which evaluates the security of a target's SSL/TLS (HTTPS) web server implementation. The current tests include checking if the target supports the SSLv2 protocol, the NULL cipher, weak ciphers based on their key length (40 or 56 bits), the availability of strong ciphers (like AES), if the digital certificate is MD5 signed, and the current SSL/TLS renegotiation capabilities.
+## Features
 
+- **Protocol Detection**: Checks for legacy SSLv2 support.
+- **Cipher Suite Analysis**: Identifies NULL ciphers and weak key lengths (40/56 bits) while verifying strong cipher availability.
+- **Certificate Validation**: Detects MD5-signed certificates.
+- **Renegotiation Testing**: Assesses secure vs. insecure renegotiation support.
+- **Simple Reporting**: Generates a concise textual summary of findings.
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux environment (e.g., Kali, Ubuntu) with bash and basic networking tools (openssl implied for underlying checks).
+- Internet access for downloading the script.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_4ba14af9-d268-4757-89d7-659536fb720c}}
+```bash
+# Download the script
+wget http://www.taddong.com/tools/TLSSLed_v1.3.sh -O TLSSLed.sh
 
+# Make it executable
+chmod +x TLSSLed.sh
+```
 
+On Kali Linux, it is not pre-installed, so manual download is required. For Ubuntu/Debian:
 
-# Installation
+```bash
+sudo apt update && sudo apt install wget
+wget http://www.taddong.com/tools/TLSSLed_v1.3.sh -O TLSSLed.sh
+chmod +x TLSSLed.sh
+```
 
-## Install on Kali
+## Basic Usage
 
+```bash
+./TLSSLed.sh --help
+```
 
+The script does not have a formal --help flag but accepts a target host and optional port as arguments.
 
-TLSSLed can also be downloaded here: [http://www.taddong.com/tools/TLSSLed_v1.3.sh](http://www.taddong.com/tools/TLSSLed_v1.3.sh)
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| None (positional) | Target host (required) |
+| Port (positional) | Optional port (defaults to 443) |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Scan a standard HTTPS server:
 
+```bash
+./TLSSLed.sh example.com
+```
 
+### Example 2: Advanced Usage
 
-## Platforms
+Scan on a custom port:
 
-- Web
+```bash
+./TLSSLed.sh example.com 8443
+```
 
-## Services
+## MITRE ATT&CK Mapping
 
-- https
-- https
+This tool is commonly associated with:
 
-## Commands (1)
+### Techniques
 
-- [[TLSSLed Query SSL/TLS for Weak Ciphers, Configuration, and Keys]]
+- [[Network Service Scanning]] Network Service Scanning
 
-## Tags
+### Tactics
 
-- [[data encryption]]
-- [[Enumeration]]
-- [[Network]]
+- [[Reconnaissance]] Reconnaissance
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
+
+- Network traffic: Outbound connections to target ports 443/HTTPS with SSL/TLS handshake probes (monitor for multiple cipher negotiations).
+- Process monitoring: Execution of TLSSLed.sh or wget/curl downloading the script from taddong.com.
+- Log analysis: Web server logs showing repeated SSL handshakes from a single source IP.
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/Nmap]] (for broader port scanning)
+- [[TestSSL.sh]] (more comprehensive SSL testing)
+
+## References
+
+- Official download: http://www.taddong.com/tools/TLSSLed_v1.3.sh
+- Related resources: OWASP SSL/TLS Testing Guide

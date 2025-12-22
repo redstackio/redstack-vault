@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[XML External Entity Injection Detection and Mitigation]]'
+- '[[Detect-and-Mitigate-XXE-Injection]]'
 ---
 
 # Spearphishing Link
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Spearphishing with a link is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of links to download malware contained in email, instead of attaching malicious files to the email itself, to avoid defenses that may inspect email attachments. All forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this case, the malicious emails contain links. Generally, the links will be accompanied by social engineering text and require the user to actively click or copy and paste a URL into a browser, leveraging User Execution. The visited website may compromise the web browser using an exploit, or the user will be prompted to download applications, documents, zip files, or even executables depending on the pretext for the email in the first place. Adversaries may also include links that are intended to interact directly with an email reader, including embedded images intended to exploit the end system directly or verify the receipt of an email (i.e. web bugs/web beacons).
+
+
 
 # Detection
 
@@ -104,4 +106,6 @@ Because this technique involves user interaction on the endpoint, it's difficult
 
 ## Related Procedures (1)
 
-- [[XML External Entity Injection Detection and Mitigation]]
+- [[Detect-and-Mitigate-XXE-Injection]]
+
+

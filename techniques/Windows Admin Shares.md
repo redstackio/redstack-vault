@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Connect to Windows using PsExec (Authenticated)]]'
-- '[[NTLM Relay Attack via Cobalt Strike]]'
-- '[[SMB Relay Attack via Disabled SMB Signing]]'
+- '[[psexec-authenticated-remote-shell]]'
+- '[[NTLM-Relay-Attack-via-Cobalt-Strike]]'
+- '[[SMB-Relay-Attack-via-Disabled-SMB-Signing]]'
 ---
 
 # Windows Admin Shares
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Windows systems have hidden network shares that are accessible only to administrators and provide the ability for remote file copy and other administrative functions. Example network shares include C$, ADMIN$, and IPC$. Adversaries may use this technique in conjunction with administrator-level Valid Accounts to remotely access a networked system over server message block (SMB) [1] to interact with systems using remote procedure calls (RPCs), [2] transfer files, and run transferred binaries through remote Execution. Example execution techniques that rely on authenticated sessions over SMB/RPC are Scheduled Task, Service Execution, and Windows Management Instrumentation. Adversaries can also use NTLM hashes to access administrator shares on systems with Pass the Hash and certain configuration and patch levels. [3]The Net utility can be used to connect to Windows admin shares on remote systems using net use commands with valid credentials. [4]
+
+
 
 # Detection
 
@@ -114,6 +116,8 @@ Do not reuse local administrator account passwords across systems. Ensure passwo
 
 ## Related Procedures (3)
 
-- [[Connect to Windows using PsExec (Authenticated)]]
-- [[NTLM Relay Attack via Cobalt Strike]]
-- [[SMB Relay Attack via Disabled SMB Signing]]
+- [[psexec-authenticated-remote-shell]]
+- [[NTLM-Relay-Attack-via-Cobalt-Strike]]
+- [[SMB-Relay-Attack-via-Disabled-SMB-Signing]]
+
+

@@ -10,7 +10,7 @@ parent_technique: '[[Connection Proxy|T1090 - Connection Proxy]]'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Cobalt Strike Malleable C2 Profile Checking]]'
+- '[[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]'
 ---
 
 # Domain Fronting
@@ -41,4 +41,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Cobalt Strike Malleable C2 Profile Checking]]
+- [[Validate-Cobalt-Strike-Malleable-C2-Profile-Using-c2lint]]

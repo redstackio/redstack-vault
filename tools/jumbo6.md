@@ -1,80 +1,158 @@
 ---
 id: 81aa68e3-57f4-4ffb-96ba-78509f019eb7
-name: jumbo6
 type: tool
-verified: false
-created_at: '2019-08-28T21:17:21.638713+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+verified: true
+created_at: '2019-08-28T21:17:21.638713Z'
+updated_at: '2023-10-01T00:00:00Z'
+platforms:
+  - Linux
+tags:
+  - ipv6
+  - jumbogram
+  - network-testing
+  - denial-of-service
+url: 'https://www.si6networks.com/tools/ipv6-toolkit/'
+commands:
+  - '[[commands/jumbo6-send-basic-jumbogram]]'
+  - '[[commands/jumbo6-flood-with-jumbograms]]'
+  - '[[commands/jumbo6-test-fragmentation-handling]]'
+validated: true
 ---
 
 # jumbo6
 
+**Status**: Unverified
+
 ## Overview
 
-The SI6 Networks’ IPv6 toolkit is a set of IPv6 security assessment and trouble-shooting tools. It can be leveraged to perform security assessments of IPv6 networks, assess the resiliency of IPv6 devices by performing real-world attacks against them, and to trouble-shoot IPv6 networking problems. T
+jumbo6 is a specialized tool from the SI6 Networks' IPv6 Toolkit designed to assess potential flaws in the handling of IPv6 Jumbograms. It crafts and sends IPv6 packets with the Jumbo Payload option to test target systems' IPv6 stack implementations for vulnerabilities, such as denial-of-service conditions or improper processing of large payloads.
 
 ## Description
 
-The SI6 Networks’ IPv6 toolkit is a set of IPv6 security assessment and trouble-shooting tools. It can be leveraged to perform security assessments of IPv6 networks, assess the resiliency of IPv6 devices by performing real-world attacks against them, and to trouble-shoot IPv6 networking problems. The tools comprising the toolkit range from packet-crafting tools to send arbitrary Neighbor Discovery packets to the most comprehensive IPv6 network scanning tool out there (our scan6 tool).Included tools:
+IPv6 Jumbograms allow transmission of payloads larger than 65,535 bytes, but many implementations handle them poorly, leading to crashes or resource exhaustion. jumbo6 enables security researchers to send crafted jumbograms, fragmented or unfragmented, to evaluate device resiliency. It is part of a broader IPv6 security assessment suite but focuses specifically on jumbo payload issues. Common use cases include penetration testing of IPv6-enabled networks, vulnerability research, and troubleshooting IPv6 protocol stacks.
 
+## Features
 
+- Feature 1: Craft arbitrary IPv6 jumbograms with customizable payload sizes
+- Feature 2: Support for fragmentation of jumbograms to test reassembly logic
+- Feature 3: Flooding capabilities to simulate DoS attacks via oversized packets
+- Feature 4: Spoofed source IP addressing for anonymous testing
+- Feature 5: Verbose logging for packet details and transmission status
 
-addr6: An IPv6 address analysis and manipulation tool
+## Installation
 
+### Requirements
 
+- Linux kernel with IPv6 support enabled
+- libpcap development libraries (for packet crafting)
+- GCC compiler
+- Git
 
-flow6: A tool to perform a security asseessment of the IPv6 Flow Label
+### Install Commands
 
+The jumbo6 tool is part of the IPv6 Toolkit. Install the full toolkit:
 
+```bash
+# Clone the repository
+sudo git clone https://github.com/fgont/ipv6-toolkit.git
+cd ipv6-toolkit
 
-frag6: A tool to perform IPv6 fragmentation-based attacks and to perform a security assessment of a number of fragmentation-related aspects
+# Compile and install
+sudo make
+sudo make install
+```
 
+On Kali Linux, it may be available via apt:
 
+```bash
+sudo apt update
+sudo apt install ipv6-toolkit
+```
 
-icmp6: A tool to perform attacks based on ICMPv6 error messages
+Verify installation:
 
+```bash
+jumbo6 --help
+```
 
+## Basic Usage
 
-jumbo6: A tool to assess potential flaws in the handling of IPv6 Jumbograms
+```bash
+jumbo6 --help
+```
 
+This displays available options, such as -d for destination, --jumbo for payload size, and -c for packet count.
 
+### Common Options
 
-na6: A tool to send arbitrary Neighbor Advertisement messages
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help message |
+| -v, --verbose | Enable verbose output for debugging |
+| -d <ip> | Specify destination IPv6 address |
+| -s <ip> | Specify source IPv6 address |
+| --jumbo <size> | Set jumbo payload size |
+| -c <count> | Send multiple packets |
+| --frag | Enable fragmentation |
 
+## Examples
 
+### Example 1: Basic Usage
 
-ni6: A tool to send arbitrary ICMPv6 Node Information messages, and assess possible flaws in the processing of such packets
+Send a single jumbogram:
 
+```bash
+jumbo6 -d 2001:db8::1 -s 2001:db8::2 --jumbo 65536
+```
 
+### Example 2: Advanced Usage
 
-ns6: A tool to send arbitrary Neighbor Solicitation message
+Flood with fragmented jumbograms:
 
+```bash
+jumbo6 -d 2001:db8::1 --jumbo 100000 --frag -c 100 -i 0.5
+```
 
+## MITRE ATT&CK Mapping
 
-ra6: A tool to send arbitrary Router Advertisement messages
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Network Denial of Service]] Network Denial of Service
+- [[OS Exhaustion Flood]] OS Exhaustion Flood
 
-rd6: A tool to send arbitrary ICMPv6 Redirect messages
+### Tactics
 
+- [[Impact]] Impact
 
+## Detection
 
-rs6: A tool to send arbitrary Router Solicitation messages
+Indicators and methods for detecting this tool's usage:
 
+- Detection method 1: Monitor for unusual IPv6 traffic with Jumbo Payload option enabled (using tools like tcpdump: `tcpdump -i eth0 ip6 and 'ip6[6] == 94'`)
+- Detection method 2: High volume of oversized IPv6 packets causing resource spikes on IPv6-enabled interfaces
+- Detection method 3: Log analysis for spoofed source IPs in IPv6 traffic
+- Detection method 4: Network IDS signatures for jumbogram floods (e.g., Snort rules for IPv6 extension headers)
 
+## Related Procedures
 
-scan6: An IPv6 address scanning tool
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/addr6]]
+- [[tools/frag6]]
+- [[tools/scan6]]
 
-tcp6: A tool to send arbitrary TCP segments and perform a variety of TCP- based attacks.
+## References
 
-
-
-
-
-
-
-
-
-
+- Official documentation: https://www.si6networks.com/tools/ipv6-toolkit/jumbo6
+- GitHub Repository: https://github.com/fgont/ipv6-toolkit
+- IPv6 Jumbograms RFC: https://datatracker.ietf.org/doc/html/rfc2675

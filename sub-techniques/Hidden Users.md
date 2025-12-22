@@ -10,7 +10,7 @@ parent_technique: '[[Hide Artifacts|T1564 - Hide Artifacts]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Zip Slip Basic Exploit - Unix Server Shell Upload]]'
+- '[[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]'
 ---
 
 # Hidden Users
@@ -47,4 +47,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Zip Slip Basic Exploit - Unix Server Shell Upload]]
+- [[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]

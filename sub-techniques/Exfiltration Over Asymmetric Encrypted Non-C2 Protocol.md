@@ -11,8 +11,8 @@ parent_technique: '[[Exfiltration Over Alternative Protocol|T1048 - Exfiltration
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[AWS KMS Decrypt Exfiltration]]'
-- '[[IAM-Based Authentication Data Exfiltration via RDS]]'
+- '[[AWS-KMS-Decrypt-Exfiltration]]'
+- '[[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]'
 ---
 
 # Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
@@ -47,5 +47,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[AWS KMS Decrypt Exfiltration]]
-- [[IAM-Based Authentication Data Exfiltration via RDS]]
+- [[AWS-KMS-Decrypt-Exfiltration]]
+- [[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]

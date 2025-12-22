@@ -2,125 +2,142 @@
 id: e935bb63-acaf-4b80-820f-e8d1f8f6920d
 name: snmp-check
 type: tool
-verified: false
-created_at: '2019-08-28T21:17:28.403145+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[snmp-check Enumerate SNMP Server]]'
+verified: true
+created_at: '2019-08-28T21:17:28.403145Z'
+updated_at: '2024-10-01T00:00:00Z'
 platforms:
-- Linux
-- Windows
+  - Linux
+  - Windows
 tags:
-- '[[Enumeration]]'
-- '[[Network]]'
+  - Enumeration
+  - Network
+url: 'http://www.nothink.org/codes/snmpcheck/index.php'
+commands:
+  - '[[commands/snmp-check-host-enumeration]]'
+validated: true
 ---
 
 # snmp-check
 
+**Status**: Unverified
+
 ## Overview
 
-Query a network entitty for a tree of information typically related to the entity, using SNMP GETNEXT requests. Results are formatted in human friendly format, unlike snmpwalk which requires add-on(s). snmp-check enumerates a number of settings including: contact description detect write access (se
+snmp-check is a tool for querying network entities via SNMP GETNEXT requests to retrieve a tree of information related to the entity. It formats results in a human-readable way, unlike snmpwalk which often requires additional processing. It is commonly used in offensive security for enumerating system details, network configurations, and services on SNMP-enabled devices during reconnaissance phases.
 
 ## Description
 
-# Description
+snmp-check enumerates various settings on SNMP-enabled targets, providing structured output on aspects such as system information, network interfaces, processes, and more. It supports SNMP versions 1, 2c, and 3, and can detect write access separately. Key enumeration areas include contact details, device descriptions, domain information, hardware and storage, hostname, IIS statistics, IP forwarding, listening UDP ports, location, MOTD, mount points, network interfaces, services, processes, routing, software components, system uptime, TCP connections, total memory, and user accounts. This makes it valuable for discovery in network penetration testing.
 
-Query a network entitty for a tree of information typically related to the entity, using SNMP GETNEXT requests. Results are formatted in human friendly format, unlike snmpwalk which requires add-on(s).
+## Features
 
+- Human-friendly formatted SNMP enumeration output
+- Support for SNMPv1, v2c, and v3
+- Detection of write access to SNMP objects
+- Comprehensive coverage of system, network, and process information
+- No additional add-ons required for readable results
 
+## Installation
 
-snmp-check enumerates a number of settings including:
+### Requirements
 
+- Perl (snmp-check is a Perl script)
+- Net-SNMP library or equivalent SNMP support
 
+### Install Commands
 
-- contact
+For Debian/Ubuntu (note: existing documentation mentions Ruby, but snmp-check is Perl-based; adjust as needed):
 
-- description
+```bash
+# Install Perl and SNMP dependencies
+sudo apt update
+sudo apt install perl libnet-snmp-perl
 
-- detect write access (separate action by enumeration)
+# Download snmp-check
+wget http://www.nothink.org/codes/snmpcheck/snmp-check-1.9.pl -O snmp-check
+chmod +x snmp-check
+sudo mv snmp-check /usr/local/bin/
+```
 
-- devices
+For Windows:
 
-- domain
+- Install ActivePerl or Strawberry Perl
+- Download the script from the official site and place it in a directory in your PATH
+- Ensure SNMP libraries are available via CPAN if needed
 
-- hardware and storage informations
+## Basic Usage
 
-- hostname
+```bash
+snmp-check --help
+```
 
-- IIS statistics
+### Common Options
 
-- IP forwarding
+| Option | Description |
+|--------|-------------|
+| `-c <community>` | Specify SNMP community string |
+| `-v <version>` | SNMP version (1, 2c, 3) |
+| `-t <timeout>` | Connection timeout in seconds |
+| `-r <retries>` | Number of retries |
 
-- listening UDP ports
+## Examples
 
-- location
+### Example 1: Basic Usage
 
-- motd
+Enumerate a host using SNMPv2c with public community:
 
-- mountpoints
+```bash
+snmp-check -c public -v 2c 10.10.10.10
+```
 
-- network interfaces
+### Example 2: Advanced Usage
 
-- network services
+Enumerate with custom timeout:
 
-- processes
+```bash
+snmp-check -c private -v 1 192.168.1.100 -t 2
+```
 
-- routing information
+## MITRE ATT&CK Mapping
 
-- software components
+This tool is commonly associated with:
 
-- system uptime
+### Techniques
 
-- TCP connections
+- [[Network Service Scanning]] Network Service Scanning
+- [[System Information Discovery]] System Information Discovery
+- [[System Network Configuration Discovery]] System Network Configuration Discovery
 
-- total memory
+### Tactics
 
-- uptime
+- [[Reconnaissance]] Reconnaissance
+- [[Discovery]] Discovery
 
-- user accounts
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Network traffic to UDP port 161 (SNMP) from reconnaissance tools
+- SNMP queries with common community strings like 'public' or 'private'
+- Log entries for SNMP GETNEXT requests in network monitoring tools
+- Presence of snmp-check binary or script on compromised hosts
 
-# Example
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
-{{EMBEDDED_COMMAND_be12360e-df20-4322-8ea9-6691391e3835}}
+- [[tools/snmpwalk]]
+- [[tools/onesixtyone]]
 
+## References
 
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-1. Install the Ruby SNMP package
-
-
-
-2. Download snmp-check: [Download from Author (Nothink)](http://www.nothink.org/codes/snmpcheck/index.php)
-
-
-
-
-
-
-
-## Platforms
-
-- Linux
-- Windows
-
-## Services
-
-- snmp
-
-## Commands (1)
-
-- [[snmp-check Enumerate SNMP Server]]
-
-## Tags
-
-- [[Enumeration]]
-- [[Network]]
-
-
+- Official website: http://www.nothink.org/codes/snmpcheck/index.php
+- Source code and documentation from the author

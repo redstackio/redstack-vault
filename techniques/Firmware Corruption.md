@@ -18,6 +18,8 @@ tactics:
 
 Adversaries may overwrite or corrupt the flash memory contents of system BIOS or other firmware in devices attached to a system in order to render them inoperable or unable to boot.[1] Firmware is software that is loaded and executed from non-volatile memory on hardware devices in order to initialize and manage device functionality. These devices could include the motherboard, hard drive, or video cards.
 
+
+
 # Detection
 
 System firmware manipulation may be detected.[2] Log attempts to read/write to BIOS and compare against known patching behavior.
@@ -39,3 +41,5 @@ Prevent adversary access to privileged accounts or access necessary to perform t
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
+
+

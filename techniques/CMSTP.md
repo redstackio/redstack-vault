@@ -10,12 +10,12 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[AWS RCE for Credential Access]]'
-- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
-- '[[Cassandra Login Bypass using Injection]]'
+- '[[aws-rce-for-credential-access]]'
+- '[[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
 - '[[Gitlab/Github CI Command Execution]]'
-- '[[Race Condition Turbo Intruder Attack]]'
-- '[[Windows AppLocker Whitelist Bypass (cmstp.exe)]]'
+- '[[Exploit-Race-Condition-with-Turbo-Intruder]]'
+- '[[Windows-AppLocker-Whitelist-Bypass-via-cmstp]]'
 ---
 
 # CMSTP
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 The Microsoft Connection Manager Profile Installer (CMSTP.exe) is a command-line program used to install Connection Manager service profiles. [1] CMSTP.exe accepts an installation information file (INF) as a parameter and installs a service profile leveraged for remote access connections.Adversaries may supply CMSTP.exe with INF files infected with malicious commands. [2] Similar to Regsvr32 / "Squiblydoo", CMSTP.exe may be abused to load and execute DLLs [3]  and/or COM scriptlets (SCT) from remote servers. [4] [5] [6] This execution may also bypass AppLocker and other whitelisting defenses since CMSTP.exe is a legitimate, signed Microsoft application.CMSTP.exe can also be abused to Bypass User Account Control and execute arbitrary commands from a malicious INF through an auto-elevated COM interface. [3] [5] [6]
+
+
 
 # Detection
 
@@ -71,9 +73,11 @@ CMSTP.exe may not be necessary within a given environment (unless using it for V
 
 ## Related Procedures (6)
 
-- [[AWS RCE for Credential Access]]
-- [[Bypassing Constrained Language Mode using Powershell DLL Runner]]
-- [[Cassandra Login Bypass using Injection]]
+- [[aws-rce-for-credential-access]]
+- [[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]
+- [[Cassandra-Login-Bypass-via-SQL-Injection]]
 - [[Gitlab/Github CI Command Execution]]
-- [[Race Condition Turbo Intruder Attack]]
-- [[Windows AppLocker Whitelist Bypass (cmstp.exe)]]
+- [[Exploit-Race-Condition-with-Turbo-Intruder]]
+- [[Windows-AppLocker-Whitelist-Bypass-via-cmstp]]
+
+

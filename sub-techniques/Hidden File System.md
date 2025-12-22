@@ -10,8 +10,8 @@ parent_technique: '[[Hide Artifacts|T1564 - Hide Artifacts]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Windows - Elevated RDP Backdoor with Sticky Keys]]'
-- '[[Zip Slip Basic Exploit - Unix Server Shell Upload]]'
+- '[[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]'
+- '[[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]'
 ---
 
 # Hidden File System
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Windows - Elevated RDP Backdoor with Sticky Keys]]
-- [[Zip Slip Basic Exploit - Unix Server Shell Upload]]
+- [[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]
+- [[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]

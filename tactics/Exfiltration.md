@@ -22,57 +22,57 @@ techniques:
 - '[[Scheduled Transfer|T1029 - Scheduled Transfer]]'
 - '[[Transfer Data to Cloud Account|T1537 - Transfer Data to Cloud Account]]'
 procedures:
-- '[[Active Directory SCCM Loot Inventory and Download]]'
-- '[[AWS KMS Decrypt Exfiltration]]'
-- '[[AWS Private Route to Nat Gateway]]'
-- '[[AWS S3 Download by Authenticated User]]'
-- '[[AWS S3 Secret Text Retrieval - Public Access Data Exfiltration]]'
-- '[[AWS S3 Time-Based URL Exfiltration]]'
-- '[[AWS Secrets Manager Credential Exfiltration]]'
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[Azure Storage Blob Download]]'
-- '[[Blind XSS Data Exfiltration]]'
-- '[[Blind XXE Data Exfiltration via OOB Attack]]'
-- '[[Blind XXE Out-of-Band Data Exfiltration]]'
-- '[[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]'
-- '[[Cobalt Strike VPN & Pivots]]'
-- '[[Create a Windows SMB Share with PowerShell]]'
-- '[[DNS Data Exfiltration with Command Injection]]'
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
-- '[[Download all files from Amazon S3 Bucket]]'
-- '[[Download all files from Amazon S3 Bucket]]'
-- '[[Download Files and Folders Recursively from FTP]]'
-- '[[EBS Volume Attachment]]'
-- '[[Exfiltrate Data Using Ping]]'
-- '[[File Retrieval via XXE Injection]]'
-- '[[GitTools Insecure Source Code Management]]'
-- '[[IAM-Based Authentication Data Exfiltration via RDS]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[Kubernetes etcd API Enumeration]]'
-- '[[Linux Meterpreter Reverse TCP Shell]]'
-- '[[Local DTD Injection in Citrix XenMobile Server]]'
-- '[[Mercurial Source Code Extraction with rip-hg.pl]]'
-- '[[Meterpreter File Transfer]]'
-- '[[Mount a Windows SMB Share with PowerShell (Authenticated)]]'
-- '[[MSSQL Out of Band DNS Exfiltration]]'
-- '[[MSSQL UNC Path Out-of-Band Data Retrieval]]'
-- '[[MYSQL Injection Out-of-Band Data Exfiltration]]'
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
+- '[[AWS-KMS-Decrypt-Exfiltration]]'
+- '[[Configure-Private-Subnet-Route-to-NAT-Gateway]]'
+- '[[AWS-S3-Download-by-Authenticated-User]]'
+- '[[aws-s3-secret-text-retrieval-public-access-data-exfiltration]]'
+- '[[Generate-AWS-S3-Pre-Signed-URL-for-Exfiltration]]'
+- '[[AWS-Secrets-Manager-Credential-Exfiltration]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[Download-Azure-Storage-Blob]]'
+- '[[Blind-XSS-Data-Exfiltration]]'
+- '[[Blind-XXE-Data-Exfiltration-via-OOB-Attack]]'
+- '[[Blind-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[chisel-port-forwarding-and-socks-proxy-network-pivoting]]'
+- '[[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]'
+- '[[Create-Windows-SMB-Share-with-PowerShell]]'
+- '[[DNS-Data-Exfiltration-via-Command-Injection]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
+- '[[Download-All-Files-from-Misconfigured-S3-Bucket]]'
+- '[[Download-All-Files-from-Misconfigured-S3-Bucket]]'
+- '[[Download-Files-Recursively-from-FTP]]'
+- '[[Attach-EBS-Volume-to-EC2-Instance]]'
+- '[[Exfiltrate-Data-Using-Ping]]'
+- '[[File-Retrieval-via-XXE-Injection]]'
+- '[[Exploit-Insecure-Git-Repository-with-GitTools]]'
+- '[[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[Kubernetes-Etcd-API-Enumeration]]'
+- '[[Establish-Linux-Meterpreter-Reverse-TCP-Shell]]'
+- '[[Local-DTD-Injection-in-Citrix-XenMobile-Server]]'
+- '[[mercurial-source-code-extraction-with-rip-hg-pl]]'
+- '[[Meterpreter-File-Transfer]]'
+- '[[Mount-Windows-SMB-Share-with-PowerShell-Authenticated]]'
+- '[[mssql-out-of-band-dns-exfiltration]]'
+- '[[MSSQL-UNC-Path-Out-of-Band-Data-Retrieval]]'
+- '[[MySQL-Injection-Out-of-Band-Data-Exfiltration]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
 - '[[.NET Serialization Tools Exploitation]]'
-- '[[Node Deserialization Exploit using Funcster]]'
-- '[[Perl Bind Shell]]'
-- '[[Portforwarding with Meterpreter]]'
-- '[[PostgreSQL Time Based Injection for Database Dump]]'
-- '[[PostgreSQL Time Based Table Dump]]'
-- '[[Python Pickle Deserialization]]'
-- '[[RDS List Instance Details Exfiltration]]'
-- '[[RDS Password-based Authentication Data Exfiltration]]'
-- '[[Remote File Read via Jinja2 Server-Side Template Injection]]'
-- '[[Springboot-Actuator Health Monitoring]]'
+- '[[Node-Deserialization-Exploit-using-Funcster]]'
+- '[[Create-Perl-Bind-Shell]]'
+- '[[Meterpreter-Port-Forwarding-Setup]]'
+- '[[PostgreSQL-Time-Based-Blind-Injection-for-Database-Dump]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
+- '[[Exploit-Python-Pickle-Deserialization-for-RCE]]'
+- '[[List-AWS-RDS-DB-Instances-for-Exfiltration]]'
+- '[[Exfiltrate-Data-from-AWS-RDS-via-Password-Authentication]]'
+- '[[Remote-File-Read-via-Jinja2-SSTI]]'
+- '[[Enumerate-Spring-Boot-Actuator-Health-Endpoint]]'
 - '[[Windows Local DTD and Side Channel Leak to Disclose HTTP Response/File Contents]]'
-- '[[XXE Injection in SOAP Messages]]'
-- '[[YAML Deserialization in Ruby]]'
-- '[[YAML Deserialization via SnakeYAML]]'
+- '[[XXE-Injection-in-SOAP-Messages]]'
+- '[[Exploit-YAML-Deserialization-in-Ruby-for-RCE]]'
+- '[[Exploit-YAML-Deserialization-with-SnakeYAML]]'
 ---
 
 # Exfiltration
@@ -82,6 +82,8 @@ procedures:
 ## Description
 
 Exfiltration refers to techniques and attributes that result or aid in the adversary removing files and information from a target network. This category also covers locations on a system or network where the adversary may look for information to exfiltrate.
+
+
 
 ## Techniques
 
@@ -103,25 +105,27 @@ This tactic includes 11 techniques:
 
 There are 51 procedures implementing this tactic:
 
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[AWS KMS Decrypt Exfiltration]]
-- [[AWS Private Route to Nat Gateway]]
-- [[AWS S3 Download by Authenticated User]]
-- [[AWS S3 Secret Text Retrieval - Public Access Data Exfiltration]]
-- [[AWS S3 Time-Based URL Exfiltration]]
-- [[AWS Secrets Manager Credential Exfiltration]]
-- [[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]
-- [[Azure Storage Blob Download]]
-- [[Blind XSS Data Exfiltration]]
-- [[Blind XXE Data Exfiltration via OOB Attack]]
-- [[Blind XXE Out-of-Band Data Exfiltration]]
-- [[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]
-- [[Cobalt Strike VPN & Pivots]]
-- [[Create a Windows SMB Share with PowerShell]]
-- [[DNS Data Exfiltration with Command Injection]]
-- [[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]
-- [[Download all files from Amazon S3 Bucket]]
-- [[Download all files from Amazon S3 Bucket]]
-- [[Download Files and Folders Recursively from FTP]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[AWS-KMS-Decrypt-Exfiltration]]
+- [[Configure-Private-Subnet-Route-to-NAT-Gateway]]
+- [[AWS-S3-Download-by-Authenticated-User]]
+- [[aws-s3-secret-text-retrieval-public-access-data-exfiltration]]
+- [[Generate-AWS-S3-Pre-Signed-URL-for-Exfiltration]]
+- [[AWS-Secrets-Manager-Credential-Exfiltration]]
+- [[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]
+- [[Download-Azure-Storage-Blob]]
+- [[Blind-XSS-Data-Exfiltration]]
+- [[Blind-XXE-Data-Exfiltration-via-OOB-Attack]]
+- [[Blind-XXE-Out-of-Band-Data-Exfiltration]]
+- [[chisel-port-forwarding-and-socks-proxy-network-pivoting]]
+- [[Establish-VPN-Like-Connection-and-Pivot-Using-Cobalt-Strike]]
+- [[Create-Windows-SMB-Share-with-PowerShell]]
+- [[DNS-Data-Exfiltration-via-Command-Injection]]
+- [[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]
+- [[Download-All-Files-from-Misconfigured-S3-Bucket]]
+- [[Download-All-Files-from-Misconfigured-S3-Bucket]]
+- [[Download-Files-Recursively-from-FTP]]
 
 *...and 31 more*
+
+

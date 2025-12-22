@@ -11,10 +11,10 @@ parent_technique: '[[Search Open Technical Databases|T1596 - Search Open Technic
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Subdomain Enumeration and Takeover with tko-subs]]'
-- '[[Subdomain Enumeration with Aquatone Scan]]'
-- '[[Subdomain Enumeration with Google Dorks]]'
-- '[[Subdomain Enumeration with MassDNS]]'
+- '[[Subdomain-Enumeration-and-Takeover-with-tko-subs]]'
+- '[[Subdomain-Enumeration-and-Scan-with-Aquatone]]'
+- '[[Subdomain-Enumeration-with-Google-Dorks]]'
+- '[[Subdomain-Enumeration-with-MassDNS]]'
 ---
 
 # Digital Certificates
@@ -45,7 +45,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[Subdomain Enumeration and Takeover with tko-subs]]
-- [[Subdomain Enumeration with Aquatone Scan]]
-- [[Subdomain Enumeration with Google Dorks]]
-- [[Subdomain Enumeration with MassDNS]]
+- [[Subdomain-Enumeration-and-Takeover-with-tko-subs]]
+- [[Subdomain-Enumeration-and-Scan-with-Aquatone]]
+- [[Subdomain-Enumeration-with-Google-Dorks]]
+- [[Subdomain-Enumeration-with-MassDNS]]

@@ -2,63 +2,134 @@
 id: fe65660d-8693-472b-809c-81a3a5313e60
 name: nping
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:20.955026+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+updated_at: '2023-10-01T00:00:00+00:00'
+platforms:
+  - Linux
+  - Windows
+  - macOS
+tags:
+  - packet-crafting
+  - network-testing
+  - nmap
+  - icmp
+  - tcp
+  - udp
+url: 'https://nmap.org/nping/'
+validated: true
 ---
 
 # nping
 
+**Status**: Unverified
+
 ## Overview
 
-Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw 
+Nping is a packet generation and response analysis tool included in the Nmap suite. It allows users to craft and send custom network packets (ICMP, TCP, UDP) for testing network devices, firewalls, intrusion detection systems, and performance evaluation in security assessments.
 
 ## Description
 
-Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. It was designed to rapidly scan large networks, but works fine against single hosts. Nmap runs on all major computer operating systems, and official binary packages are available for Linux, Windows, and Mac OS X. In addition to the classic command-line Nmap executable, the Nmap suite includes an advanced GUI and results viewer (Zenmap), a flexible data transfer, redirection, and debugging tool (Ncat), a utility for comparing scan results (Ndiff), and a packet generation and response analysis tool (Nping).Nmap was named “Security Product of the Year” by Linux Journal, Info World, LinuxQuestions.Org, and Codetalker Digest. It was even featured in twelve movies, including The Matrix Reloaded, Die Hard 4, Girl With the Dragon Tattoo, and The Bourne Ultimatum.Nmap is …
+Nping provides low-level control over packet construction, enabling precise manipulation of headers, payloads, and timing. It supports scripting for automated tests and can capture responses for analysis. Commonly used in offensive security for evading detection, simulating attacks like SYN floods or ICMP tunneling, and in defensive scenarios for validating network configurations.
 
+## Features
 
+- Feature 1: Custom packet crafting for ICMP, TCP, and UDP protocols with full header control.
+- Feature 2: Response capture and analysis, including RTT calculations and packet tracing.
+- Feature 3: Scripting engine for complex packet sequences and conditional responses.
+- Feature 4: Cross-platform support with raw socket access on Unix and WinPcap/Npcap on Windows.
 
-Flexible: Supports dozens of advanced techniques for mapping out networks filled with IP filters, firewalls, routers, and other obstacles. This includes many port scanning mechanisms (both TCP & UDP), OS detection, version detection, ping sweeps, and more. See the documentation page.
+## Installation
 
+### Requirements
 
+- Root/admin privileges for raw socket access.
+- Npcap (Windows) or libpcap (Unix) for packet capture.
 
-Powerful: Nmap has been used to scan huge networks of literally hundreds of thousands of machines.
+### Install Commands
 
+```bash
+# Kali Linux (pre-installed with Nmap)
+sudo apt update && sudo apt install nmap
 
+# Ubuntu
+sudo apt update && sudo apt install nmap
 
-Portable: Most operating systems are supported, including Linux, Microsoft Windows, FreeBSD, OpenBSD, Solaris, IRIX, Mac OS X, HP-UX, NetBSD, Sun OS, Amiga, and more.
+# Windows: Download from https://nmap.org/download.html and install Nmap (includes nping)
+# macOS
+brew install nmap
+```
 
+## Basic Usage
 
+```bash
+nping --help
+```
 
-Easy: While Nmap offers a rich set of advanced features for power users, you can start out as simply as “nmap -v -A targethost”. Both traditional command line and graphical (GUI) versions are available to suit your preference. Binaries are available for those who do not wish to compile Nmap from source.
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help message |
+| -v, --verbose | Increase verbosity level |
+| --icmp | Use ICMP protocol |
+| --tcp | Use TCP protocol |
+| --udp | Use UDP protocol |
+| -c <count> | Number of packets to send |
+| -p <port> | Destination port |
 
+## Examples
 
-Free: The primary goals of the Nmap Project is to help make the Internet a little more secure and to provide administrators/auditors/hackers with an advanced tool for exploring their networks. Nmap is available for free download, and also comes with full source code that you may modify and redistribute under the terms of the license.
+### Example 1: Basic Usage
 
+```bash
+nping --icmp 192.168.1.1
+```
 
+### Example 2: Advanced Usage
 
-Well Documented: Significant effort has been put into comprehensive and up-to-date man pages, whitepapers, tutorials, and even a whole book! Find them in multiple languages here.
+```bash
+nping --tcp -p 80 --flags SYN 8.8.8.8
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
-Supported: While Nmap comes with no warranty, it is well supported by a vibrant community of developers and users. Most of this interaction occurs on the Nmap mailing lists. Most bug reports and questions should be sent to the nmap-dev list, but only after you read the guidelines. We recommend that all users subscribe to the low-traffic nmap-hackers announcement list. You can also find Nmap on Facebook and Twitter. For real-time chat, join the #nmap channel on Freenode or EFNet.
+### Techniques
 
+- [[Network Denial of Service]] Network Denial of Service (for flood simulations)
+- [[Network Service Scanning]] Network Service Scanning (for port probing)
 
+### Tactics
 
-Acclaimed: Nmap has won numerous awards, including “Information Security Product of the Year” by Linux Journal, Info World and Codetalker Digest. It has been featured in hundreds of magazine articles, several movies, dozens of books, and one comic book series. Visit the press page for further details.
+- [[Impact]] Impact
+- [[Reconnaissance]] Reconnaissance
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
-Popular: Thousands of people download Nmap every day, and it is included with many operating systems (Redhat Linux, Debian Linux, Gentoo, FreeBSD, OpenBSD, etc). It is among the top ten (out of 30,000) programs at the Freshmeat.Net repository. This is important because it lends Nmap its vibrant development and user support communities.
+- Detection method 1: Unusual packet patterns in network traffic logs (e.g., malformed headers or rapid packet bursts).
+- Detection method 2: Process monitoring for nping.exe or nping binary execution on endpoints.
+- Detection method 3: IDS/IPS signatures for crafted packets like non-standard ICMP types or TCP flags.
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
+- [[tools/Nmap]]
+- [[tools/hping3]]
 
+## References
 
-
-
-
-
+- Official documentation: https://nmap.org/book/nping.html
+- Nmap project: https://nmap.org

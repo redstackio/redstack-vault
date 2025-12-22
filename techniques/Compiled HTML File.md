@@ -19,6 +19,8 @@ tactics:
 
 Compiled HTML files (.chm) are commonly distributed as part of the Microsoft HTML Help system. CHM files are compressed compilations of various content such as HTML documents, images, and scripting/web related programming languages such VBA, JScript, Java, and ActiveX. [1] CHM content is displayed using underlying components of the Internet Explorer browser [2] loaded by the HTML Help executable program (hh.exe). [3]Adversaries may abuse this technology to conceal malicious code. A custom CHM file containing embedded payloads could be delivered to a victim then triggered by User Execution. CHM execution may also bypass application whitelisting on older and/or unpatched systems that do not account for execution of binaries through hh.exe. [4] [5]
 
+
+
 # Detection
 
 Monitor and analyze the execution and arguments of hh.exe. [4] Compare recent invocations of hh.exe with prior history of known good arguments to determine anomalous and potentially adversarial activity (ex: obfuscated and/or malicious commands). Non-standard process execution trees may also indicate suspicious or malicious behavior, such as if hh.exe is the parent process for suspicious processes and activity relating to other adversarial techniques.
@@ -59,3 +61,5 @@ Consider blocking download/transfer and execution of potentially uncommon file t
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Execution|TA0002 - Execution]]
+
+

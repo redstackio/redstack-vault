@@ -10,15 +10,15 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Akamai WAF Bypass via Prompt User Input]]'
-- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
-- '[[CSP Bypass via XSS Injection]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[ObjectDataProvider JSON.NET Deserialization RCE]]'
-- '[[Phar Deserialization Attack]]'
+- '[[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]'
+- '[[Bypass-Angular-DomSanitizer-for-XSS-Injection]]'
+- '[[CSP-Bypass-via-XSS-Injection]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[ObjectDataProvider-JSON.NET-Deserialization-RCE]]'
+- '[[Phar-Deserialization-Attack]]'
 - '[[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]'
-- '[[SAML Injection for Authentication Bypass and Signature Stripping with Admin NameID]]'
-- '[[Windows Download and Execute via Regsvr32]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-Signature-Stripping-with-Admin-NameID]]'
+- '[[Windows-Download-and-Execute-via-Regsvr32]]'
 ---
 
 # Regsvr32
@@ -28,6 +28,8 @@ procedures:
 ## Description
 
 Regsvr32.exe is a command-line program used to register and unregister object linking and embedding controls, including dynamic link libraries (DLLs), on Windows systems. Regsvr32.exe can be used to execute arbitrary binaries. [1]Adversaries may take advantage of this functionality to proxy execution of code to avoid triggering security tools that may not monitor execution of, and modules loaded by, the regsvr32.exe process because of whitelists or false positives from Windows using regsvr32.exe for normal operations. Regsvr32.exe is also a Microsoft signed binary.Regsvr32.exe can also be used to specifically bypass process whitelisting using functionality to load COM scriptlets to execute DLLs under user permissions. Since regsvr32.exe is network and proxy aware, the scripts can be loaded by passing a uniform resource locator (URL) to file on an external Web server as an argument during invocation. This method makes no changes to the Registry as the COM object is not actually registered, only executed. [2] This variation of the technique is often referred to as a "Squiblydoo" attack and has been used in campaigns targeting governments. [3] [4]Regsvr32.exe can also be leveraged to register a COM Object used to establish Persistence via Component Object Model Hijacking. [3]
+
+
 
 # Detection
 
@@ -90,12 +92,14 @@ Microsoft's Enhanced Mitigation Experience Toolkit (EMET) Attack Surface Reducti
 
 ## Related Procedures (9)
 
-- [[Akamai WAF Bypass via Prompt User Input]]
-- [[Automatic Sanitization Bypass in Angular and AngularJS]]
-- [[CSP Bypass via XSS Injection]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[ObjectDataProvider JSON.NET Deserialization RCE]]
-- [[Phar Deserialization Attack]]
+- [[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]
+- [[Bypass-Angular-DomSanitizer-for-XSS-Injection]]
+- [[CSP-Bypass-via-XSS-Injection]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[ObjectDataProvider-JSON.NET-Deserialization-RCE]]
+- [[Phar-Deserialization-Attack]]
 - [[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]
-- [[SAML Injection for Authentication Bypass and Signature Stripping with Admin NameID]]
-- [[Windows Download and Execute via Regsvr32]]
+- [[SAML-Injection-for-Authentication-Bypass-and-Signature-Stripping-with-Admin-NameID]]
+- [[Windows-Download-and-Execute-via-Regsvr32]]
+
+

@@ -10,11 +10,11 @@ parent_technique: '[[Hijack Execution Flow|T1574 - Hijack Execution Flow]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Apache Karaf XXE Out-of-Band Data Exfiltration]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[Blind XPATH Injection]]'
+- '[[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
 ---
 
 # DLL Side-Loading
@@ -41,12 +41,12 @@ This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 3 procedures using this sub-technique:
 
-- [[Apache Karaf XXE Out-of-Band Data Exfiltration]]
-- [[AWS API Gateway Stage Enumeration]]
-- [[Blind XPATH Injection]]
+- [[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[Perform-Blind-XPath-Injection-for-Data-Extraction]]

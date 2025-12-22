@@ -8,9 +8,9 @@ created_at: '2019-08-28T21:17:32.792646+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[SSH Key Persistence]]'
+- '[[SSH-Key-Persistence]]'
 ---
 
 # AppInit DLLs
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Dynamic-link libraries (DLLs) that are specified in the AppInit_DLLs value in the Registry keys HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Windows or HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows are loaded by user32.dll into every process that loads user32.dll. In practice this is nearly every program, since user32.dll is a very common library. [1] Similar to Process Injection, these values can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. [2]The AppInit DLL functionality is disabled in Windows 8 and later versions when secure boot is enabled. [3]
+
+
 
 # Detection
 
@@ -62,8 +64,10 @@ Identify and block potentially malicious software that may be executed through A
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (1)
 
-- [[SSH Key Persistence]]
+- [[SSH-Key-Persistence]]
+
+

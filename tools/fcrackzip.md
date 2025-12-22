@@ -1,71 +1,97 @@
 ---
-id: 26253f70-68de-4a27-b247-d24501173900
-name: fcrackzip
-type: tool
-verified: true
-created_at: '2020-02-19T19:40:55.990419+00:00'
-updated_at: '2023-05-30T19:57:50.509969+00:00'
-commands:
-- '[[fcrackzip Charset Brute Force a Zip File]]'
-- '[[fcrackzip Dictionary Brute Force a Zip File]]'
-platforms:
-- Linux
-- Windows
+id: tool-uuid-5
+url: 'http://oldhome.schmorp.de/marc/fcrackzip.html'
 tags:
-- '[[Brute Force]]'
-- '[[Cryptography]]'
-- '[[password cracking]]'
+  - cracking
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:24:48.574Z'
+validated: true
+submitted: true
 ---
+# Fcrackzip
 
-# fcrackzip
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-Fcrackzip is a simple and easy to use zip password cracker using libzip to speed up the process. Since fcrackzip is relatively slow, when cracking zip files with large lists it is recommended to instead use John the Ripper's zip2john to generate a hash, then crack it with John the Ripper. 
+Fcrackzip brute-forces passwords on ZIP archives using dictionary attacks.
 
 ## Description
 
-# Description
+Optimizes ZIP cracking with unzip verification.
 
-Fcrackzip is a simple and easy to use zip password cracker using libzip to speed up the process. Since fcrackzip is relatively slow, when cracking zip files with large lists it is recommended to instead use John the Ripper's zip2john to generate a hash, then crack it with John the Ripper.
+## Features
 
+- Dictionary mode
+- Unzip check
 
+## Installation
 
-# Example
+### Requirements
 
+- Build tools
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_3ce20c20-0472-4455-9d20-6ad15b039219}}
+```bash
+# Ubuntu
+apt install fcrackzip
+```
 
+## Basic Usage
 
+```bash
+fcrackzip -D -p list.zip file.zip
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| -u | Unzip |
+| -D | Dict |
+| -p | Passlist |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+fcrackzip -u file.zip
+```
 
+### Example 2: Advanced Usage
 
+```bash
+fcrackzip -D -p list file.zip
+```
 
+## MITRE ATT&CK Mapping
 
+### Techniques
 
+- [[Password Guessing]] Password Guessing
 
-## Platforms
+### Tactics
 
-- Linux
-- Windows
+- [[Lateral Movement]] Lateral Movement
 
-## Commands (1)
+## Detection
 
-- [[fcrackzip Dictionary Brute Force a Zip File]]
+- ZIP access attempts
 
-## Tags
+## Related Procedures
 
-- [[Brute Force]]
-- [[Cryptography]]
-- [[password cracking]]
+- [[procedures/Brute-Force-Credentials-and-Manipulate-Base64-Cookie]]
 
+## Related Tools
 
+- [[tools/John-the-Ripper]]
+
+## References
+
+- Source forge

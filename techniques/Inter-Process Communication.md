@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:00.804393+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[JWT Key ID (kid) Claim Misuse]]'
-- '[[Node Deserialization Exploitation using node-serialize]]'
+- '[[JWT-Key-ID-kid-Claim-Misuse]]'
+- '[[Node-Deserialization-RCE-using-node-serialize]]'
 ---
 
 # Inter-Process Communication
@@ -23,11 +23,15 @@ Adversaries may abuse inter-process communication (IPC) mechanisms for local cod
 
 Adversaries may abuse IPC to execute arbitrary code or commands. IPC mechanisms may differ depending on OS, but typically exists in a form accessible through programming languages/libraries or native interfaces such as Windows [Dynamic Data Exchange](https://attack.mitre.org/techniques/T1559/002) or [Component Object Model](https://attack.mitre.org/techniques/T1559/001). Linux environments support several different IPC mechanisms, two of which being sockets and pipes.(Citation: Linux IPC) Higher level execution mediums, such as those of [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059)s, may also leverage underlying IPC mechanisms. Adversaries may also use [Remote Services](https://attack.mitre.org/techniques/T1021) such as [Distributed Component Object Model](https://attack.mitre.org/techniques/T1021/003) to facilitate remote IPC execution.(Citation: Fireeye Hunting COM June 2019)
 
+
+
 ## Tactics
 
 - [[Execution|TA0002 - Execution]]
 
 ## Related Procedures (2)
 
-- [[JWT Key ID (kid) Claim Misuse]]
-- [[Node Deserialization Exploitation using node-serialize]]
+- [[JWT-Key-ID-kid-Claim-Misuse]]
+- [[Node-Deserialization-RCE-using-node-serialize]]
+
+

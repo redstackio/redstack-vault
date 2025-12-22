@@ -9,15 +9,15 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Github API Key Leakage]]'
-- '[[Github API Key Leakage]]'
-- '[[Github API Key Leakage]]'
-- '[[Kerberos Constrained Delegation Exploitation]]'
-- '[[Server-Side Request Forgery (SSRF) Exploitation via PDF Files]]'
-- '[[Windows Credentials Decryption using Powershell Secure String]]'
-- '[[Windows - EoP Looting for Passwords via Key Manager]]'
-- '[[Windows Privilege Escalation - Looting LAPS Settings]]'
-- '[[Windows Vault Credential Theft with Mimikatz]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[Access-GitHub-API-with-Leaked-Client-Credentials]]'
+- '[[kerberos-constrained-delegation-exploitation]]'
+- '[[Exploit-SSRF-via-PDF-to-Read-Sensitive-Files]]'
+- '[[Windows-Credentials-Decryption-using-PowerShell-Secure-String]]'
+- '[[Loot-Passwords-from-Windows-Credential-Manager-for-EoP]]'
+- '[[windows-privilege-escalation-looting-laps-settings]]'
+- '[[Windows-Vault-Credential-Theft-with-Mimikatz]]'
 ---
 
 # Credentials in Registry
@@ -27,6 +27,8 @@ procedures:
 ## Description
 
 The Windows Registry stores configuration information that can be used by the system or other programs. Adversaries may query the Registry looking for credentials and passwords that have been stored for use by other programs or services. Sometimes these credentials are used for automatic logons.Example commands to find Registry keys related to password information: [1]Local Machine Hive: reg query HKLM /f password /t REG_SZ /sCurrent User Hive: reg query HKCU /f password /t REG_SZ /s
+
+
 
 # Detection
 
@@ -52,12 +54,14 @@ Do not store credentials within the Registry. Proactively search for credentials
 
 ## Related Procedures (9)
 
-- [[Github API Key Leakage]]
-- [[Github API Key Leakage]]
-- [[Github API Key Leakage]]
-- [[Kerberos Constrained Delegation Exploitation]]
-- [[Server-Side Request Forgery (SSRF) Exploitation via PDF Files]]
-- [[Windows Credentials Decryption using Powershell Secure String]]
-- [[Windows - EoP Looting for Passwords via Key Manager]]
-- [[Windows Privilege Escalation - Looting LAPS Settings]]
-- [[Windows Vault Credential Theft with Mimikatz]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[Access-GitHub-API-with-Leaked-Client-Credentials]]
+- [[kerberos-constrained-delegation-exploitation]]
+- [[Exploit-SSRF-via-PDF-to-Read-Sensitive-Files]]
+- [[Windows-Credentials-Decryption-using-PowerShell-Secure-String]]
+- [[Loot-Passwords-from-Windows-Credential-Manager-for-EoP]]
+- [[windows-privilege-escalation-looting-laps-settings]]
+- [[Windows-Vault-Credential-Theft-with-Mimikatz]]
+
+

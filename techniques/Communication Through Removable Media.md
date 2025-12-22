@@ -18,6 +18,8 @@ tactics:
 
 Adversaries can perform command and control between compromised hosts on potentially disconnected networks using removable media to transfer commands from system to system. Both systems would need to be compromised, with the likelihood that an Internet-connected system was compromised first and the second through lateral movement by Replication Through Removable Media. Commands and files would be relayed from the disconnected system to the Internet-connected system to which the adversary has direct access.
 
+
+
 # Detection
 
 Monitor file access on removable media. Detect processes that execute when removable media is mounted.
@@ -47,3 +49,5 @@ Disable Autorun if it is unnecessary. (Citation: Microsoft Disable Autorun) Disa
 ## Tactics
 
 - [[Command and Control|TA0011 - Command and Control]]
+
+

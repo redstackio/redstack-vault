@@ -9,14 +9,14 @@ updated_at: '2023-04-06T03:56:41.283641+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[AWS EBS Snapshot Volume Creation]]'
-- '[[AWS Shadow Admin - Create AWS Glue Development Endpoint]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[Disable CloudTrail on Specific Regions]]'
-- '[[Disabling CloudTrail Trail]]'
-- '[[Illicit Consent Grant - User Consent Permissions]]'
-- '[[Mounting EBS Volume to EC2 Linux Instance]]'
-- '[[Web Cache Deception - Methodology 2: Un-keyed Input Cache Poisoning]]'
+- '[[AWS-EBS-Snapshot-Volume-Creation]]'
+- '[[Create-AWS-Glue-Development-Endpoint]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[Disable-CloudTrail-on-Specific-Regions]]'
+- '[[Disable-CloudTrail-Logging-via-Trail-Deletion]]'
+- '[[Check-AzureAD-User-Consent-Permissions]]'
+- '[[Mount-EBS-Volume-to-EC2-Linux-Instance]]'
+- '[[Web-Cache-Deception-Unkeyed-Input-Cache-Poisoning]]'
 ---
 
 # Internal Spearphishing
@@ -31,17 +31,21 @@ Adversaries may leverage [Spearphishing Attachment](https://attack.mitre.org/tec
 
 There have been notable incidents where internal spearphishing has been used. The Eye Pyramid campaign used phishing emails with malicious attachments for lateral movement between victims, compromising nearly 18,000 email accounts in the process.(Citation: Trend Micro When Phishing Starts from the Inside 2017) The Syrian Electronic Army (SEA) compromised email accounts at the Financial Times (FT) to steal additional account credentials. Once FT learned of the campaign and began warning employees of the threat, the SEA sent phishing emails mimicking the Financial Times IT department and were able to compromise even more users.(Citation: THE FINANCIAL TIMES LTD 2019.)
 
+
+
 ## Tactics
 
 - [[Lateral Movement|TA0008 - Lateral Movement]]
 
 ## Related Procedures (8)
 
-- [[AWS EBS Snapshot Volume Creation]]
-- [[AWS Shadow Admin - Create AWS Glue Development Endpoint]]
-- [[Cloud Security Assessment and Auditing]]
-- [[Disable CloudTrail on Specific Regions]]
-- [[Disabling CloudTrail Trail]]
-- [[Illicit Consent Grant - User Consent Permissions]]
-- [[Mounting EBS Volume to EC2 Linux Instance]]
-- [[Web Cache Deception - Methodology 2: Un-keyed Input Cache Poisoning]]
+- [[AWS-EBS-Snapshot-Volume-Creation]]
+- [[Create-AWS-Glue-Development-Endpoint]]
+- [[aws-cloud-security-assessment-and-auditing]]
+- [[Disable-CloudTrail-on-Specific-Regions]]
+- [[Disable-CloudTrail-Logging-via-Trail-Deletion]]
+- [[Check-AzureAD-User-Consent-Permissions]]
+- [[Mount-EBS-Volume-to-EC2-Linux-Instance]]
+- [[Web-Cache-Deception-Unkeyed-Input-Cache-Poisoning]]
+
+

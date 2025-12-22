@@ -10,7 +10,7 @@ parent_technique: '[[Server Software Component|T1505 - Server Software Component
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[ObjectDataProvider JSON.NET Deserialization RCE]]'
+- '[[ObjectDataProvider-JSON.NET-Deserialization-RCE]]'
 ---
 
 # Web Shell
@@ -41,4 +41,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[ObjectDataProvider JSON.NET Deserialization RCE]]
+- [[ObjectDataProvider-JSON.NET-Deserialization-RCE]]

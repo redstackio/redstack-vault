@@ -9,98 +9,98 @@ updated_at: '2023-04-06T03:56:38.806818+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[AWS Account Identity Enumeration]]'
-- '[[AWS Account Identity Enumeration]]'
-- '[[AWS API Gateway Method Information Enumeration]]'
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS API Gateway Resource Listing]]'
-- '[[AWS API Gateway Stage Information Gathering]]'
-- '[[AWS API Key Enumeration]]'
-- '[[AWS API Key Enumeration]]'
-- '[[AWS Cloud - Kubernetes Service Account Secrets Enumeration]]'
-- '[[AWS DynamoDB Table Enumeration]]'
-- '[[AWS EC2 Instance Enumeration]]'
-- '[[AWS EC2 Instance Enumeration]]'
-- '[[AWS ECR Image Enumeration]]'
-- '[[AWS ECR Image Listing]]'
-- '[[AWS ECR Repositories Enumeration]]'
-- '[[AWS ECR Repository Image Enumeration]]'
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[AWS ECS Cluster Enumeration]]'
-- '[[AWS ECS Services Enumeration]]'
-- '[[AWS EKS Cluster Enumeration]]'
-- '[[AWS EKS Cluster Information Gathering]]'
-- '[[AWS EKS Fargate Enumeration]]'
-- '[[AWS EKS Node Group Enumeration]]'
-- '[[AWS EKS Node Group Information Enumeration]]'
-- '[[AWS IAM Group Inline Policies Enumeration]]'
-- '[[AWS IAM Group Managed Policies Enumeration]]'
-- '[[AWS IAM Inline Policy Enumeration]]'
-- '[[AWS IAM Permissions Enumeration]]'
-- '[[AWS IAM Policy Enumeration]]'
-- '[[AWS IAM Policy Information Retrieval]]'
-- '[[AWS IAM Policy Version Enumeration]]'
-- '[[AWS IAM Policy Version Information Gathering]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Role Enumeration]]'
-- '[[AWS IAM Role Enumeration]]'
-- '[[AWS IAM Role Inline Policy Enumeration]]'
-- '[[AWS IAM Role Policies Enumeration]]'
-- '[[AWS IAM Role Policy Enumeration]]'
-- '[[AWS IAM Role Trust Relationship Enumeration]]'
-- '[[AWS IAM User ARN Enumeration]]'
-- '[[AWS IAM User Inline Policies Enumeration]]'
-- '[[AWS IAM User Policy Enumeration]]'
-- '[[AWS Inline Policy Enumeration]]'
-- '[[AWS Instance Profile Enumeration]]'
-- '[[AWS Key Policy Enumeration]]'
-- '[[AWS KMS Key Enumeration]]'
-- '[[AWS KMS Key Policy Enumeration]]'
-- '[[AWS KMS Key Policy Listing]]'
-- '[[AWS Lambda Environment Variable Credential Access]]'
-- '[[AWS Lambda Function Details Enumeration]]'
-- '[[AWS Lambda Function Enumeration]]'
-- '[[AWS Lambda Layer Enumeration]]'
-- '[[AWS Listing Rest APIs]]'
-- '[[AWS Managed Policy Enumeration]]'
-- '[[AWS Managed Policy Version Enumeration]]'
-- '[[AWS Metadata Information Retrieval]]'
-- '[[AWS Privilege Escalation via Attached User Policies]]'
-- '[[AWS S3 ACL Enumeration]]'
-- '[[AWS S3 Bucket ACL Enumeration]]'
-- '[[AWS S3 Bucket Enumeration]]'
-- '[[AWS S3 Bucket Object Enumeration]]'
-- '[[AWS S3 Bucket Policy Enumeration]]'
-- '[[AWS S3 Bucket Public Access Block Enumeration]]'
-- '[[AWS S3 Bucket Scanner]]'
-- '[[AWS Secret Manager Enumeration]]'
-- '[[AWS Secret Resource Policy Enumeration]]'
-- '[[AWS Temporary Credential Information Gathering]]'
-- '[[AWS User Policy Enumeration]]'
-- '[[Azure AD Administrative Unit Management]]'
-- '[[Azure Application Proxy Enumeration]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Storage Blob Enumeration]]'
-- '[[Azure Tenant Enumeration with az-cli]]'
-- '[[Cloud Instance Rancher Metadata Retrieval via SSRF]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[CloudTrail Logs Listing]]'
-- '[[DB2 Schema Enumeration via XML Serialization]]'
-- '[[Docker Security Assessment]]'
-- '[[EBS Snapshot Enumeration]]'
-- '[[EKS Fargate Profile Enumeration]]'
-- '[[Kubernetes Service Account Permissions Enumeration]]'
-- '[[RDS VPC Enumeration]]'
-- '[[RDS VPC Enumeration]]'
-- '[[Server-Side Request Forgery for Docker Containers and Images Enumeration]]'
-- '[[Server-Side Request Forgery on Cloud Instances and HP Helion]]'
-- '[[Springboot-Actuator Insecure Management Interface]]'
-- '[[SSRF for AWS ECS and Cloud Instances]]'
-- '[[SSRF for Cloud Instances]]'
-- '[[SSRF URL for Oracle Cloud Instances via AWS Instance Metadata and User Data]]'
+- '[[AWS-Account-Identity-Enumeration]]'
+- '[[AWS-Account-Identity-Enumeration]]'
+- '[[Enumerate-AWS-API-Gateway-Methods]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[AWS-API-Gateway-Resource-Listing]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[Enumerate-Kubernetes-Service-Account-Secrets-via-Pod-RCE]]'
+- '[[AWS-DynamoDB-Table-Enumeration]]'
+- '[[Enumerate-AWS-EC2-Instances]]'
+- '[[Enumerate-AWS-EC2-Instances]]'
+- '[[Enumerate-AWS-ECR-Images]]'
+- '[[Enumerate-AWS-ECR-Images]]'
+- '[[aws-ecr-repositories-enumeration]]'
+- '[[aws-ecr-repository-image-enumeration]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[Enumerate-AWS-ECS-Clusters]]'
+- '[[aws-ecs-services-enumeration]]'
+- '[[aws-eks-cluster-enumeration]]'
+- '[[AWS-EKS-Cluster-Information-Gathering]]'
+- '[[AWS-EKS-Fargate-Enumeration]]'
+- '[[AWS-EKS-Node-Group-Enumeration]]'
+- '[[Enumerate-AWS-EKS-Node-Group-Information]]'
+- '[[AWS-IAM-Group-Inline-Policies-Enumeration]]'
+- '[[AWS-IAM-Group-Managed-Policies-Enumeration]]'
+- '[[Enumerate-AWS-IAM-Inline-Policies]]'
+- '[[AWS-IAM-Permissions-Enumeration]]'
+- '[[AWS-IAM-Policy-Enumeration]]'
+- '[[AWS-IAM-Policy-Information-Retrieval]]'
+- '[[aws-iam-policy-version-enumeration]]'
+- '[[Gather-AWS-IAM-Policy-Version-Information]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-IAM-Role-Enumeration]]'
+- '[[AWS-IAM-Role-Enumeration]]'
+- '[[AWS-IAM-Role-Inline-Policy-Enumeration]]'
+- '[[List-Attached-Policies-for-AWS-IAM-Role]]'
+- '[[aws-iam-enumerate-attached-role-policies]]'
+- '[[Enumerate-AWS-IAM-Role-Trust-Relationships]]'
+- '[[Enumerate-AWS-IAM-User-ARNS]]'
+- '[[AWS-IAM-User-Inline-Policies-Enumeration]]'
+- '[[Enumerate-IAM-User-Attached-Policies]]'
+- '[[AWS-IAM-Inline-Policy-Enumeration]]'
+- '[[AWS-Instance-Profile-Enumeration]]'
+- '[[aws-kms-enumerate-key-policies]]'
+- '[[AWS-KMS-Key-Enumeration]]'
+- '[[AWS-KMS-Key-Policy-Enumeration]]'
+- '[[retrieve-aws-kms-key-policy]]'
+- '[[AWS-Lambda-Environment-Variable-Credential-Access]]'
+- '[[Enumerate-AWS-Lambda-Function-Details]]'
+- '[[AWS-Lambda-Function-Enumeration]]'
+- '[[AWS-Lambda-Layer-Enumeration]]'
+- '[[List-AWS-API-Gateway-REST-APIs]]'
+- '[[Enumerate-AWS-Managed-IAM-Policies]]'
+- '[[Enumerate-AWS-IAM-Managed-Policy-Versions]]'
+- '[[AWS-Metadata-Information-Retrieval]]'
+- '[[AWS-Privilege-Escalation-via-Attached-User-Policies]]'
+- '[[aws-s3-object-acl-enumeration]]'
+- '[[AWS-S3-Bucket-ACL-Enumeration]]'
+- '[[AWS-S3-Bucket-Enumeration]]'
+- '[[AWS-S3-Bucket-Object-Enumeration]]'
+- '[[Enumerate-AWS-S3-Bucket-Policy]]'
+- '[[Enumerate-AWS-S3-Bucket-Public-Access-Block]]'
+- '[[Scan-AWS-S3-Buckets-for-Misconfigurations]]'
+- '[[Enumerate-AWS-Secrets-Manager-Secrets]]'
+- '[[AWS-Secrets-Manager-Resource-Policy-Enumeration]]'
+- '[[Gather-AWS-Temporary-Credential-Information]]'
+- '[[AWS-User-Policy-Enumeration]]'
+- '[[Azure-AD-Administrative-Unit-Management]]'
+- '[[azure-application-proxy-enumeration]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Azure-Storage-Blob-Enumeration]]'
+- '[[Azure-Tenant-Enumeration-with-Az-CLI]]'
+- '[[Cloud-Instance-Rancher-Metadata-Retrieval-via-SSRF]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[List-AWS-CloudTrail-Trails]]'
+- '[[DB2-Schema-Enumeration-via-XML-Serialization]]'
+- '[[Docker-Security-Assessment]]'
+- '[[Enumerate-EBS-Snapshots]]'
+- '[[EKS-Fargate-Profile-Enumeration]]'
+- '[[Kubernetes-Service-Account-Permissions-Enumeration]]'
+- '[[Enumerate-AWS-RDS-VPCs]]'
+- '[[Enumerate-AWS-RDS-VPCs]]'
+- '[[SSRF-to-Enumerate-Docker-Containers-and-Images]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
+- '[[Exploit-Spring-Boot-Actuator-Insecure-Endpoints]]'
+- '[[Exploit-SSRF-to-Extract-AWS-ECS-Metadata-Credentials]]'
+- '[[Exploit-SSRF-to-Access-Cloud-Metadata]]'
+- '[[Exploit-SSRF-to-Retrieve-AWS-Instance-Metadata]]'
 ---
 
 # Cloud Service Discovery
@@ -115,31 +115,35 @@ Adversaries may attempt to discover information about the services enabled throu
 
 Stormspotter is an open source tool for enumerating and constructing a graph for Azure resources and services, and Pacu is an open source AWS exploitation framework that supports several methods for discovering cloud services.(Citation: Azure - Stormspotter)(Citation: GitHub Pacu)
 
+
+
 ## Tactics
 
 - [[Discovery|TA0007 - Discovery]]
 
 ## Related Procedures (92)
 
-- [[AWS Account Identity Enumeration]]
-- [[AWS Account Identity Enumeration]]
-- [[AWS API Gateway Method Information Enumeration]]
-- [[AWS API Gateway Resource Enumeration]]
-- [[AWS API Gateway Resource Enumeration]]
-- [[AWS API Gateway Resource Listing]]
-- [[AWS API Gateway Stage Information Gathering]]
-- [[AWS API Key Enumeration]]
-- [[AWS API Key Enumeration]]
-- [[AWS Cloud - Kubernetes Service Account Secrets Enumeration]]
-- [[AWS DynamoDB Table Enumeration]]
-- [[AWS EC2 Instance Enumeration]]
-- [[AWS EC2 Instance Enumeration]]
-- [[AWS ECR Image Enumeration]]
-- [[AWS ECR Image Listing]]
-- [[AWS ECR Repositories Enumeration]]
-- [[AWS ECR Repository Image Enumeration]]
-- [[AWS ECR Repository Policy Enumeration]]
-- [[AWS ECS Cluster Enumeration]]
-- [[AWS ECS Services Enumeration]]
+- [[AWS-Account-Identity-Enumeration]]
+- [[AWS-Account-Identity-Enumeration]]
+- [[Enumerate-AWS-API-Gateway-Methods]]
+- [[aws-api-gateway-resource-enumeration]]
+- [[aws-api-gateway-resource-enumeration]]
+- [[AWS-API-Gateway-Resource-Listing]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[AWS-API-Key-Enumeration]]
+- [[AWS-API-Key-Enumeration]]
+- [[Enumerate-Kubernetes-Service-Account-Secrets-via-Pod-RCE]]
+- [[AWS-DynamoDB-Table-Enumeration]]
+- [[Enumerate-AWS-EC2-Instances]]
+- [[Enumerate-AWS-EC2-Instances]]
+- [[Enumerate-AWS-ECR-Images]]
+- [[Enumerate-AWS-ECR-Images]]
+- [[aws-ecr-repositories-enumeration]]
+- [[aws-ecr-repository-image-enumeration]]
+- [[AWS-ECR-Repository-Policy-Enumeration]]
+- [[Enumerate-AWS-ECS-Clusters]]
+- [[aws-ecs-services-enumeration]]
 
 *...and 72 more*
+
+

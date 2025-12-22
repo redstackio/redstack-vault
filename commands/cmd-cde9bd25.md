@@ -7,8 +7,6 @@ data: sudo -l
 output: ''
 created_at: '2023-03-13T19:52:35.078857+00:00'
 updated_at: '2023-03-13T19:52:35.078857+00:00'
-tools:
-- '[[sudo]]'
 ---
 
 # Command cde9bd25

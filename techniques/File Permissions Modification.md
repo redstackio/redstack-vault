@@ -9,16 +9,16 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
-- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
-- '[[Image-Based .htaccess Upload]]'
-- '[[PostgreSQL File Read Procedure]]'
-- '[[PostgreSQL File Write with Reverse Shell Payload]]'
+- '[[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]'
+- '[[configure-aws-cli-profile-for-persistence]]'
+- '[[Image-Based-htaccess-Upload-Bypass]]'
+- '[[Read-Files-via-PostgreSQL-Server-Functions]]'
+- '[[PostgreSQL-File-Write-with-Reverse-Shell-Payload]]'
 - '[[Preventing Cross Site Scripting (XSS) in XML and files]]'
-- '[[Server Side Template Injection - Groovy File Manipulation]]'
-- '[[Windows - Default Writeable Folders Privilege Escalation]]'
-- '[[Windows - Password Looting via Alternate Data Stream]]'
-- '[[Windows - Privileged File Write via UsoDLLLoader]]'
+- '[[Server-Side-Template-Injection-Groovy-File-Manipulation]]'
+- '[[Exploit-Windows-Default-Writable-Folders-for-Privilege-Escalation]]'
+- '[[Loot-Passwords-from-Alternate-Data-Stream]]'
+- '[[Windows-Privileged-File-Write-via-UsoDLLLoader]]'
 ---
 
 # File Permissions Modification
@@ -28,6 +28,8 @@ procedures:
 ## Description
 
 File permissions are commonly managed by discretionary access control lists (DACLs) specified by the file owner. File DACL implementation may vary by platform, but generally explicitly designate which users/groups can perform which actions (ex: read, write, execute, etc.). [1] [2] [3]Adversaries may modify file permissions/attributes to evade intended DACLs. [4] [5] Modifications may include changing specific access rights, which may require taking ownership of a file and/or elevated permissions such as Administrator/root depending on the file's existing permissions to enable malicious activity such as modifying, replacing, or deleting specific files. Specific file modifications may be a required step for many techniques, such as establishing Persistence via Accessibility Features, Logon Scripts, or tainting/hijacking other instrumental binary/configuration files.
+
+
 
 # Detection
 
@@ -81,13 +83,15 @@ This type of technique cannot be easily mitigated with preventive controls since
 
 ## Related Procedures (10)
 
-- [[Application Escape and Breakout via Context Menus and File Search Command]]
-- [[AWS CLI Profile Configuration for Persistence and Backdooring]]
-- [[Image-Based .htaccess Upload]]
-- [[PostgreSQL File Read Procedure]]
-- [[PostgreSQL File Write with Reverse Shell Payload]]
+- [[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]
+- [[configure-aws-cli-profile-for-persistence]]
+- [[Image-Based-htaccess-Upload-Bypass]]
+- [[Read-Files-via-PostgreSQL-Server-Functions]]
+- [[PostgreSQL-File-Write-with-Reverse-Shell-Payload]]
 - [[Preventing Cross Site Scripting (XSS) in XML and files]]
-- [[Server Side Template Injection - Groovy File Manipulation]]
-- [[Windows - Default Writeable Folders Privilege Escalation]]
-- [[Windows - Password Looting via Alternate Data Stream]]
-- [[Windows - Privileged File Write via UsoDLLLoader]]
+- [[Server-Side-Template-Injection-Groovy-File-Manipulation]]
+- [[Exploit-Windows-Default-Writable-Folders-for-Privilege-Escalation]]
+- [[Loot-Passwords-from-Alternate-Data-Stream]]
+- [[Windows-Privileged-File-Write-via-UsoDLLLoader]]
+
+

@@ -10,10 +10,10 @@ tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
-- '[[LFI to RCE via Apache and Nginx Log Files]]'
-- '[[SSH Local Port Forwarding]]'
-- '[[Windows - Restore Service Account Privileges via Impersonation]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
+- '[[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]'
+- '[[SSH-Local-Port-Forwarding]]'
+- '[[Windows-Restore-Service-Account-Privileges-via-Impersonation]]'
 ---
 
 # Replication Through Removable Media
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Adversaries may move onto systems, possibly those on disconnected or air-gapped networks, by copying malware to removable media and taking advantage of Autorun features when the media is inserted into a system and executes. In the case of Lateral Movement, this may occur through modification of executable files stored on removable media or by copying malware and renaming it to look like a legitimate file to trick users into executing it on a separate system. In the case of Initial Access, this may occur through manual manipulation of the media, modification of systems used to initially format the media, or modification to the media's firmware itself.
+
+
 
 # Detection
 
@@ -83,7 +85,9 @@ Identify potenti
 
 ## Related Procedures (4)
 
-- [[Drop the MIC - Resource Based Constrained Delegation Attack]]
-- [[LFI to RCE via Apache and Nginx Log Files]]
-- [[SSH Local Port Forwarding]]
-- [[Windows - Restore Service Account Privileges via Impersonation]]
+- [[resource-based-constrained-delegation-via-printerbug]]
+- [[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]
+- [[SSH-Local-Port-Forwarding]]
+- [[Windows-Restore-Service-Account-Privileges-via-Impersonation]]
+
+

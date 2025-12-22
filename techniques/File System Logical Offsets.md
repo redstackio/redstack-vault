@@ -18,6 +18,8 @@ tactics:
 
 Windows allows programs to have direct access to logical volumes. Programs with direct access may read and write files directly from the drive by analyzing file system data structures. This technique bypasses Windows file access controls as well as file system monitoring tools. [1]Utilities, such as NinjaCopy, exist to perform these actions in PowerShell. [2]
 
+
+
 # Detection
 
 Monitor handle opens on drive volumes that are made by processes to determine when they may directly access logical drives. [2]
@@ -51,3 +53,5 @@ Identify potentially malicious software that may be used to access logical drive
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

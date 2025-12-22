@@ -20,6 +20,10 @@ Adversaries may collect data related to managed devices from configuration repos
 
 Adversaries may target these repositories in order to collect large quantities of sensitive system administration data. Data from configuration repositories may be exposed by various protocols and software and can store a wide variety of data, much of which may align with adversary Discovery objectives.(Citation: US-CERT-TA18-106A)(Citation: US-CERT TA17-156A SNMP Abuse 2017)
 
+
+
 ## Tactics
 
 - [[Collection|TA0009 - Collection]]
+
+

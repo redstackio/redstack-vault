@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:38.418990+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[SSRF for AWS Metadata and User Data Commands]]'
-- '[[SSRF URL for Google Cloud Instances - Add SSH Key]]'
+- '[[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]'
+- '[[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]'
 ---
 
 # Account Access Removal
@@ -25,11 +25,15 @@ In Windows, [Net](https://attack.mitre.org/software/S0039) utility, <code>Set-Lo
 
 Adversaries who use ransomware may first perform this and other Impact behaviors, such as [Data Destruction](https://attack.mitre.org/techniques/T1485) and [Defacement](https://attack.mitre.org/techniques/T1491), before completing the [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486) objective. 
 
+
+
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
 
 ## Related Procedures (2)
 
-- [[SSRF for AWS Metadata and User Data Commands]]
-- [[SSRF URL for Google Cloud Instances - Add SSH Key]]
+- [[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]
+- [[Exploit-SSRF-to-Add-SSH-Key-to-GCP-Instance]]
+
+

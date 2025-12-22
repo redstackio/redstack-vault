@@ -9,18 +9,18 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Enumerate Database Users for a MSSQL Server Database]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate MSSQL Server database roles and user members]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[MSSQL Server Role Enumeration]]'
-- '[[Network Discovery with Nmap]]'
+- '[[Enumerate-MSSQL-Database-Users]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-MSSQL-Database-Roles-and-User-Members]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Enumerate-Current-User-Role-in-MSSQL]]'
+- '[[Network-Host-Discovery-with-Nmap]]'
 - '[[Network Discovery with Nmap Full Scan]]'
-- '[[Oracle SQL List Tables and Columns]]'
-- '[[Windows Defender Firewall Configuration Dump and Blocked Ports Listing]]'
-- '[[Windows - Network Enumeration for Privilege Escalation]]'
+- '[[Oracle-SQL-List-Tables-and-Columns]]'
+- '[[Dump-Windows-Defender-Firewall-Configuration-and-List-Blocked-Ports]]'
+- '[[windows-network-enumeration-for-privilege-escalation]]'
 ---
 
 # System Network Configuration Discovery
@@ -30,6 +30,8 @@ procedures:
 ## Description
 
 Adversaries will likely look for details about the network configuration and settings of systems they access or through information discovery of remote systems. Several operating system administration utilities exist that can be used to gather this information. Examples include Arp, ipconfig/ifconfig, nbtstat, and route.
+
+
 
 # Detection
 
@@ -267,15 +269,17 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (12)
 
-- [[Enumerate Database Users for a MSSQL Server Database]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate MSSQL Server database roles and user members]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
-- [[MSSQL Server Role Enumeration]]
-- [[Network Discovery with Nmap]]
+- [[Enumerate-MSSQL-Database-Users]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-MSSQL-Database-Roles-and-User-Members]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+- [[Enumerate-Current-User-Role-in-MSSQL]]
+- [[Network-Host-Discovery-with-Nmap]]
 - [[Network Discovery with Nmap Full Scan]]
-- [[Oracle SQL List Tables and Columns]]
-- [[Windows Defender Firewall Configuration Dump and Blocked Ports Listing]]
-- [[Windows - Network Enumeration for Privilege Escalation]]
+- [[Oracle-SQL-List-Tables-and-Columns]]
+- [[Dump-Windows-Defender-Firewall-Configuration-and-List-Blocked-Ports]]
+- [[windows-network-enumeration-for-privilege-escalation]]
+
+

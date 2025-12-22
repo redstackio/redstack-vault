@@ -10,7 +10,7 @@ parent_technique: '[[Exfiltration Over Web Service|T1567 - Exfiltration Over Web
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
 ---
 
 # Exfiltration to Code Repository
@@ -43,4 +43,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]
+- [[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]

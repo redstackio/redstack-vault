@@ -10,8 +10,8 @@ parent_technique: '[[Brute Force|T1110 - Brute Force]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[JWT Token Creation and Verification]]'
-- '[[NTLM Hash Cracking with Hashcat]]'
+- '[[Create-and-Verify-JWT-Tokens-for-Forgery]]'
+- '[[Crack-NTLM-Hashes-with-Hashcat]]'
 ---
 
 # Password Cracking
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[JWT Token Creation and Verification]]
-- [[NTLM Hash Cracking with Hashcat]]
+- [[Create-and-Verify-JWT-Tokens-for-Forgery]]
+- [[Crack-NTLM-Hashes-with-Hashcat]]

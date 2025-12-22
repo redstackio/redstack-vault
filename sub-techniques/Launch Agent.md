@@ -10,7 +10,7 @@ parent_technique: '[[Create or Modify System Process|T1543 - Create or Modify Sy
   Process]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Launch Agent
@@ -38,4 +38,4 @@ Adversaries may install a new Launch Agent that executes at login by placing a .
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

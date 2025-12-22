@@ -22,6 +22,10 @@ Adversaries in possession credentials to [Valid Accounts](https://attack.mitre.o
 
 In some cases, adversaries may continuously repeat login attempts in order to bombard users with MFA push notifications, SMS messages, and phone calls, potentially resulting in the user finally accepting the authentication request in response to “MFA fatigue.”(Citation: Russian 2FA Push Annoyance - Cimpanu)(Citation: MFA Fatigue Attacks - PortSwigger)(Citation: Suspected Russian Activity Targeting Government and Business Entities Around the Globe)
 
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
+
+

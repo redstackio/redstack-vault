@@ -18,6 +18,8 @@ tactics:
 
 Adversaries may erase the contents of storage devices on specific systems as well as large numbers of systems in a network to interrupt availability to system and network resources.Adversaries may partially or completely overwrite the contents of a storage device rendering the data irrecoverable through the storage interface.[1][2][3] Instead of wiping specific disk structures or files, adversaries with destructive intent may wipe arbitrary portions of disk content. To wipe disk content, adversaries may acquire direct access to the hard drive in order to overwrite arbitrarily sized portions of disk with random data.[2] Adversaries have been observed leveraging third-party drivers like RawDisk to directly access disk content.[1][2] This behavior is distinct from Data Destruction because sections of the disk erased instead of individual files.To maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware used for wiping disk content may have worm-like features to propagate across a network by leveraging additional techniques like Valid Accounts, Credential Dumping, and Windows Admin Shares.[2]
 
+
+
 # Detection
 
 Look for attempts to read/write to sensitive locations like the partition boot sector or BIOS parameter block/superblock. Monitor for unusual kernel driver installation activity.
@@ -55,3 +57,5 @@ Consider implementing IT disaster recovery plans that contain procedures for tak
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
+
+

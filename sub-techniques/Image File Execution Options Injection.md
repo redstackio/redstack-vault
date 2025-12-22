@@ -9,11 +9,11 @@ updated_at: '2023-04-06T00:31:26.317427+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[LAPS Password Expiration Time Persistence]]'
-- '[[Linux Privilege Escalation via Capabilities Edit]]'
-- '[[Windows - Privilege Escalation via Universal Printer Driver]]'
+- '[[Set-LAPS-Password-Expiration-Time-for-Persistence]]'
+- '[[Linux-Privilege-Escalation-via-Capabilities-Edit]]'
+- '[[windows-privilege-escalation-via-universal-printer-driver]]'
 ---
 
 # Image File Execution Options Injection
@@ -47,12 +47,12 @@ Malware may also use IFEO to [Impair Defenses](https://attack.mitre.org/techniqu
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 3 procedures using this sub-technique:
 
-- [[LAPS Password Expiration Time Persistence]]
-- [[Linux Privilege Escalation via Capabilities Edit]]
-- [[Windows - Privilege Escalation via Universal Printer Driver]]
+- [[Set-LAPS-Password-Expiration-Time-for-Persistence]]
+- [[Linux-Privilege-Escalation-via-Capabilities-Edit]]
+- [[windows-privilege-escalation-via-universal-printer-driver]]

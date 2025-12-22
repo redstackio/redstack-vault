@@ -10,36 +10,36 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Initial Access|TA0001 - Initial Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS SSH Key Persistence]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Azure AD App Secrets for Service Principal Authentication]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[aws-ssh-key-persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[Connect to an SSH Server with a Private Key]]'
-- '[[Create Windows Credentials Object]]'
-- '[[Dynamic Group Membership - Set Secondary Email for Azure AD User]]'
-- '[[Exotic Payloads for Bypassing Space Filter]]'
-- '[[GitHack - Exploiting Insecure Source Code Management]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[JWT Token Creation]]'
-- '[[Linux Privilege Escalation via SSH Key]]'
-- '[[MSSQL Server Impersonation Exploitation]]'
-- '[[Network Pivoting with Gost]]'
-- '[[RDS Lateral Movement via EC2 Route Tables]]'
-- '[[Run a Command as Another User using Saved Credentials]]'
-- '[[Windows - Elevated RDP Backdoor with Sticky Keys]]'
-- '[[Windows - Impersonation Privileges Elevation with Meterpreter]]'
-- '[[Windows - PowerShell Remoting Protocol with PSSESSION]]'
-- '[[Windows - PsExec with Different User Credentials]]'
-- '[[Windows - WMIExec with Impacket]]'
+- '[[connect-to-ssh-server-with-private-key]]'
+- '[[create-windows-pscredential-object]]'
+- '[[Set-Secondary-Email-for-Azure-AD-User]]'
+- '[[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]'
+- '[[GitHack-Exploiting-Insecure-Source-Code-Management]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[Forge-Custom-JWT-Token-for-Auth-Bypass]]'
+- '[[Linux-Privilege-Escalation-via-SSH-Key]]'
+- '[[Exploit-MSSQL-Impersonation-for-Privilege-Escalation]]'
+- '[[Network-Pivoting-with-Gost]]'
+- '[[RDS-Lateral-Movement-via-EC2-Route-Tables]]'
+- '[[Run-a-Command-as-Another-User-using-Saved-Credentials]]'
+- '[[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]'
+- '[[windows-impersonation-privileges-elevation-with-meterpreter]]'
+- '[[windows-powershell-remoting-with-pssession]]'
+- '[[Windows-PsExec-with-Different-User-Credentials]]'
+- '[[remote-command-execution-via-wmi-using-impacket]]'
 ---
 
 # Valid Accounts
@@ -49,6 +49,8 @@ procedures:
 ## Description
 
 Adversaries may steal the credentials of a specific user or service account using Credential Access techniques or capture credentials earlier in their reconnaissance process through social engineering for means of gaining Initial Access. Accounts that an adversary may use can fall into three categories: default, local, and domain accounts. Default accounts are those that are built-into an OS such as Guest or Administrator account on Windows systems or default factory/provider set accounts on other types of systems, software, or devices. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service. [1] Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop. Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.Default accounts are also not limited to Guest and Administrator on client machines, they also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or COTS. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed private keys, or stolen private keys, to legitimately connect to remote environments via Remote Services [2]The overlap of account access, credentials, and permissions across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise. [3]
+
+
 
 # Detection
 
@@ -167,29 +169,31 @@ Take measures to detect or prevent techniques such as [OS Credential Dumping](ht
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Initial Access|TA0001 - Initial Access]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (28)
 
-- [[Active Directory Object Owner Hijacking]]
-- [[AWS Console Access via API Keys]]
-- [[AWS EC2 Instance Connect with SSH Key Push]]
-- [[AWS IAM Access Key Creation]]
-- [[AWS Managed Policies Enumeration]]
-- [[AWS Role Assumption for Persistence]]
-- [[AWS SSH Key Persistence]]
-- [[AWS SSH Persistence with Authorized Keys]]
-- [[Azure AD App Secrets for Service Principal Authentication]]
-- [[Azure Pass the Certificate: AD Cert Request and RCE]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[AWS-Console-Access-via-API-Keys]]
+- [[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]
+- [[aws-iam-create-access-key-for-user]]
+- [[Enumerate-AWS-Managed-Policies-for-IAM-User]]
+- [[Assume-AWS-Role-for-Persistence]]
+- [[aws-ssh-key-persistence]]
+- [[aws-ssh-persistence-via-authorized-keys]]
+- [[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]
+- [[azure-pass-the-certificate-ad-cert-request-and-rce]]
 - [[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]
-- [[Connect to an SSH Server with a Private Key]]
-- [[Create Windows Credentials Object]]
-- [[Dynamic Group Membership - Set Secondary Email for Azure AD User]]
-- [[Exotic Payloads for Bypassing Space Filter]]
-- [[GitHack - Exploiting Insecure Source Code Management]]
-- [[IAM-Based Authentication for RDS MySQL Database]]
-- [[JWT Token Creation]]
-- [[Linux Privilege Escalation via SSH Key]]
-- [[MSSQL Server Impersonation Exploitation]]
+- [[connect-to-ssh-server-with-private-key]]
+- [[create-windows-pscredential-object]]
+- [[Set-Secondary-Email-for-Azure-AD-User]]
+- [[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]
+- [[GitHack-Exploiting-Insecure-Source-Code-Management]]
+- [[IAM-Authentication-for-RDS-MySQL-Database]]
+- [[Forge-Custom-JWT-Token-for-Auth-Bypass]]
+- [[Linux-Privilege-Escalation-via-SSH-Key]]
+- [[Exploit-MSSQL-Impersonation-for-Privilege-Escalation]]
 
 *...and 8 more*
+
+

@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[HTAccess and PHP Shell Upload]]'
-- '[[JavaScript Alert WAF Bypass]]'
-- '[[SQL Injection - Bypassing Space Filter and Selecting All Users]]'
-- '[[SQL Injection WAF Bypass using Case Modification]]'
+- '[[HTAccess-and-PHP-Shell-Upload]]'
+- '[[JavaScript-Alert-WAF-Bypass]]'
+- '[[SQL-Injection-Bypassing-Space-Filter-and-Selecting-All-Users]]'
+- '[[SQL-Injection-WAF-Bypass-using-Case-Modification]]'
 ---
 
 # Security Support Provider
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Windows Security Support Provider (SSP) DLLs are loaded into the Local Security Authority (LSA) process at system start. Once loaded into the LSA, SSP DLLs have access to encrypted and plaintext passwords that are stored in Windows, such as any logged-on user's Domain password or smart card PINs. The SSP configuration is stored in two Registry keys: HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Security Packages and HKLM\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\Security Packages. An adversary may modify these Registry keys to add new SSPs, which will be loaded the next time the system boots, or when the AddSecurityPackage Windows API function is called. [1]
+
+
 
 # Detection
 
@@ -55,7 +57,9 @@ Windows 8.1, Windows Server 2012 R2, and later versions may make LSA run as a Pr
 
 ## Related Procedures (4)
 
-- [[HTAccess and PHP Shell Upload]]
-- [[JavaScript Alert WAF Bypass]]
-- [[SQL Injection - Bypassing Space Filter and Selecting All Users]]
-- [[SQL Injection WAF Bypass using Case Modification]]
+- [[HTAccess-and-PHP-Shell-Upload]]
+- [[JavaScript-Alert-WAF-Bypass]]
+- [[SQL-Injection-Bypassing-Space-Filter-and-Selecting-All-Users]]
+- [[SQL-Injection-WAF-Bypass-using-Case-Modification]]
+
+

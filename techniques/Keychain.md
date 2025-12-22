@@ -18,6 +18,8 @@ tactics:
 
 Keychains are the built-in way for macOS to keep track of users' passwords and credentials for many services and features such as WiFi passwords, websites, secure notes, certificates, and Kerberos. Keychain files are located in ~/Library/Keychains/,/Library/Keychains/, and /Network/Library/Keychains/. [1] The security command-line utility, which is built into macOS by default, provides a useful way to manage these credentials.To manage their credentials, users have to use additional credentials to access their keychain. If an adversary knows the credentials for the login keychain, then they can get access to all the other credentials stored in this vault. [2] By default, the passphrase for the keychain is the user’s logon credentials.
 
+
+
 # Detection
 
 Unlocking the keychain and using passwords from it is a very common process, so there is likely to be a lot of noise in any detection technique. Monitoring of system calls to the keychain can help determine if there is a suspicious process trying to access it.
@@ -45,3 +47,5 @@ The password for the user's login keychain can be changed from the user's login 
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
+
+

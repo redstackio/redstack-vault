@@ -9,71 +9,71 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory Integrated DNS Enumeration]]'
-- '[[AWS Account Identity Check]]'
-- '[[AWS Account ID Retrieval with STS Get Caller Identity]]'
-- '[[AWS API Gateway Information Gathering]]'
-- '[[AWS API Gateway Stage Information Gathering]]'
-- '[[AWS EC2 Metadata SSRF]]'
-- '[[AWS ECR Image Listing]]'
-- '[[AWS ECS Cluster Information Gathering]]'
-- '[[AWS ECS Container Enumeration]]'
-- '[[AWS ECS Service Enumeration]]'
-- '[[AWS ECS Task Information Gathering]]'
-- '[[AWS Managed Policy Version Information Gathering]]'
-- '[[AWS Region Information Gathering]]'
-- '[[Cloud Instance and Kubernetes ETCD Enumeration via SSRF]]'
-- '[[DB2 Injection - List Columns]]'
-- '[[DB2 Injection - System Environment Information Query]]'
-- '[[DB2 User Enumeration]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate MSSQL Databases]]'
-- '[[Enumerate MSSQL Server database roles and user members]]'
-- '[[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Export Azure Resource Group Deployment Template]]'
-- '[[Extracting AWS EC2 Instance User Data]]'
-- '[[Extracting Database Information using MySQL Union Based Injection]]'
+- '[[Active-Directory-Integrated-DNS-Enumeration]]'
+- '[[AWS-Account-Identity-Check]]'
+- '[[AWS-Account-ID-Retrieval-with-STS-Get-Caller-Identity]]'
+- '[[AWS-API-Gateway-Information-Gathering]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]'
+- '[[Enumerate-AWS-ECR-Images]]'
+- '[[aws-ecs-cluster-information-gathering]]'
+- '[[Enumerate-ECS-Container-Instances]]'
+- '[[aws-ecs-service-enumeration]]'
+- '[[AWS-ECS-Task-Information-Gathering]]'
+- '[[aws-iam-managed-policy-version-retrieval]]'
+- '[[aws-region-information-gathering]]'
+- '[[Cloud-Instance-and-Kubernetes-ETCD-Enumeration-via-SSRF]]'
+- '[[DB2-SQL-Injection-to-List-Table-Columns]]'
+- '[[DB2-SQL-Injection-for-System-Information-Discovery]]'
+- '[[DB2-User-Enumeration]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-MSSQL-Databases]]'
+- '[[Enumerate-MSSQL-Database-Roles-and-User-Members]]'
+- '[[enumerate-windows-missing-patches-hotfixes-sherlock]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Export-Azure-Resource-Group-Deployment-Template]]'
+- '[[Extract-AWS-EC2-Instance-User-Data]]'
+- '[[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]'
 - '[[GUID/UUID Enumeration]]'
-- '[[Identify Operating System and Version]]'
-- '[[Identify Sensitive Information in MSSQL Server Columns]]'
-- '[[Identify Trustworthy Databases on MSSQL Server]]'
-- '[[Kubernetes Container Environment Variables Enumeration]]'
-- '[[Kubernetes Container Environment Variables Enumeration]]'
-- '[[List MSSQL Server Tables]]'
-- '[[MSSQL Database Name Enumeration]]'
-- '[[MSSQL Injection - List Permissions]]'
-- '[[MSSQL List Columns Injection]]'
+- '[[Identify-Operating-System-and-Version]]'
+- '[[Identify-Sensitive-Information-in-MSSQL-Server-Columns]]'
+- '[[Identify-Trustworthy-Databases-in-MSSQL]]'
+- '[[Enumerate-Kubernetes-Container-Environment-Variables]]'
+- '[[Enumerate-Kubernetes-Container-Environment-Variables]]'
+- '[[List-MSSQL-Database-Tables]]'
+- '[[MSSQL-Database-Name-Enumeration]]'
+- '[[mssql-injection-list-permissions]]'
+- '[[List-MSSQL-Table-Columns-via-SQL-Injection]]'
 - '[[MSSQL Server - Identify Sensitive Information - Gather Top 5 Entries from a Specific
   Table]]'
-- '[[MSSQL Server - Identify Sensitive Information - Get Tables and Column Details]]'
-- '[[MSSQL Server Role Enumeration]]'
-- '[[MSSQL Server Sensitive Information Dump]]'
-- '[[MSSQL Server Version Query]]'
-- '[[MSSQL Union Based Injection for Database Enumeration]]'
-- '[[Oracle SQL Database Enumeration]]'
-- '[[Oracle SQL Database Name Enumeration]]'
-- '[[Oracle SQL List Tables and Columns]]'
-- '[[Password in AD User Comment Enumeration]]'
+- '[[mssql-identify-sensitive-information-get-tables-and-column-details]]'
+- '[[Enumerate-Current-User-Role-in-MSSQL]]'
+- '[[MSSQL-Server-Sensitive-Information-Dump]]'
+- '[[Query-MSSQL-Server-Version]]'
+- '[[mssql-union-based-injection-for-database-enumeration]]'
+- '[[Oracle-SQL-Database-Enumeration-via-SQL-Injection]]'
+- '[[Oracle-SQL-Database-Name-Enumeration]]'
+- '[[Oracle-SQL-List-Tables-and-Columns]]'
+- '[[Enumerate-Passwords-in-AD-User-Descriptions]]'
 - '[[PHP Filter LFI/RFI]]'
-- '[[PostgreSQL Current User Information Gathering]]'
-- '[[PostgreSQL Database Enumeration]]'
-- '[[PostgreSQL Database Name Enumeration]]'
-- '[[PostgreSQL List Tables Injection]]'
-- '[[Query Linked Database Version]]'
-- '[[RDS Database Proxy Enumeration]]'
-- '[[RDS Enumeration - Listing VPCs in us-west-1 region]]'
-- '[[RDS Instance Enumeration]]'
-- '[[RDS Lateral Movement through EC2 Instances in VPC]]'
-- '[[RDS Security Group Information Gathering]]'
-- '[[SQLite Injection Version Discovery]]'
-- '[[Windows - Disable Antivirus and Security (Elastic Agent and Cortex XDR)]]'
-- '[[Windows - Privilege Escalation via Operating System Information Gathering]]'
-- '[[XML External Entity Injection to Disclose HTTP Response]]'
+- '[[PostgreSQL-Current-User-Information-Gathering]]'
+- '[[PostgreSQL-Database-Enumeration]]'
+- '[[PostgreSQL-Database-Name-Enumeration]]'
+- '[[PostgreSQL-List-Tables-via-SQL-Injection]]'
+- '[[Query-Linked-Database-Version]]'
+- '[[Enumerate-RDS-Database-Proxies]]'
+- '[[enumerate-vpcs-in-aws-us-west-1-region]]'
+- '[[Enumerate-AWS-RDS-Instances]]'
+- '[[rds-lateral-movement-via-ec2-instances-in-vpc]]'
+- '[[Enumerate-RDS-Security-Groups]]'
+- '[[SQLite-Version-Discovery-via-Injection]]'
+- '[[disable-elastic-agent-and-cortex-xdr-on-windows]]'
+- '[[windows-os-information-gathering-for-privilege-escalation]]'
+- '[[XXE-Injection-to-Disclose-HTTP-Response]]'
 ---
 
 # System Information Discovery
@@ -83,6 +83,8 @@ procedures:
 ## Description
 
 An adversary may attempt to get detailed information about the operating system and hardware, including version, patches, hotfixes, service packs, and architecture.WindowsExample commands and utilities that obtain this information include ver, Systeminfo, and dir within cmd for identifying information based on present files and directories.MacOn Mac, the systemsetup command gives a detailed breakdown of the system, but it requires administrative privileges. Additionally, the system_profiler gives a very detailed breakdown of configurations, firewall rules, mounted volumes, hardware, and many other things without needing elevated permissions.
+
+
 
 # Detection
 
@@ -432,25 +434,27 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (64)
 
-- [[Active Directory Integrated DNS Enumeration]]
-- [[AWS Account Identity Check]]
-- [[AWS Account ID Retrieval with STS Get Caller Identity]]
-- [[AWS API Gateway Information Gathering]]
-- [[AWS API Gateway Stage Information Gathering]]
-- [[AWS EC2 Metadata SSRF]]
-- [[AWS ECR Image Listing]]
-- [[AWS ECS Cluster Information Gathering]]
-- [[AWS ECS Container Enumeration]]
-- [[AWS ECS Service Enumeration]]
-- [[AWS ECS Task Information Gathering]]
-- [[AWS Managed Policy Version Information Gathering]]
-- [[AWS Region Information Gathering]]
-- [[Cloud Instance and Kubernetes ETCD Enumeration via SSRF]]
-- [[DB2 Injection - List Columns]]
-- [[DB2 Injection - System Environment Information Query]]
-- [[DB2 User Enumeration]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate MSSQL Databases]]
+- [[Active-Directory-Integrated-DNS-Enumeration]]
+- [[AWS-Account-Identity-Check]]
+- [[AWS-Account-ID-Retrieval-with-STS-Get-Caller-Identity]]
+- [[AWS-API-Gateway-Information-Gathering]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]
+- [[Enumerate-AWS-ECR-Images]]
+- [[aws-ecs-cluster-information-gathering]]
+- [[Enumerate-ECS-Container-Instances]]
+- [[aws-ecs-service-enumeration]]
+- [[AWS-ECS-Task-Information-Gathering]]
+- [[aws-iam-managed-policy-version-retrieval]]
+- [[aws-region-information-gathering]]
+- [[Cloud-Instance-and-Kubernetes-ETCD-Enumeration-via-SSRF]]
+- [[DB2-SQL-Injection-to-List-Table-Columns]]
+- [[DB2-SQL-Injection-for-System-Information-Discovery]]
+- [[DB2-User-Enumeration]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-MSSQL-Databases]]
 
 *...and 44 more*
+
+

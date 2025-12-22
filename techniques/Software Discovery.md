@@ -9,12 +9,12 @@ updated_at: '2023-04-06T03:56:38.978335+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[AMSI Provider Enumeration]]'
-- '[[Detection of .NET Serialization Attacks]]'
-- '[[Discovery of Local MSSQL Server Instances]]'
-- '[[Linux - SSH Key Predictable PRNG Privilege Escalation]]'
-- '[[MSSQL Server Version Query]]'
-- '[[Reflection Method with WMF5 Autologging Bypass]]'
+- '[[Enumerate-AMSI-Providers-via-Registry]]'
+- '[[Detect-.NET-Serialization-Attacks]]'
+- '[[Discover-Local-MSSQL-Server-Instances]]'
+- '[[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]'
+- '[[Query-MSSQL-Server-Version]]'
+- '[[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]'
 - '[[Server Side Template Injection - Expression Language EL Properties Information
   Disclosure]]'
 ---
@@ -29,16 +29,20 @@ Adversaries may attempt to get a listing of software and software versions that 
 
 Adversaries may attempt to enumerate software for a variety of reasons, such as figuring out what security measures are present or if the compromised system has a version of software that is vulnerable to [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).
 
+
+
 ## Tactics
 
 - [[Discovery|TA0007 - Discovery]]
 
 ## Related Procedures (7)
 
-- [[AMSI Provider Enumeration]]
-- [[Detection of .NET Serialization Attacks]]
-- [[Discovery of Local MSSQL Server Instances]]
-- [[Linux - SSH Key Predictable PRNG Privilege Escalation]]
-- [[MSSQL Server Version Query]]
-- [[Reflection Method with WMF5 Autologging Bypass]]
-- [[Server Side Template Injection - Expression Language EL Properties Information Disclosure]]
+- [[Enumerate-AMSI-Providers-via-Registry]]
+- [[Detect-.NET-Serialization-Attacks]]
+- [[Discover-Local-MSSQL-Server-Instances]]
+- [[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]
+- [[Query-MSSQL-Server-Version]]
+- [[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]
+- [[EL-Injection-for-Java-Class-Information-Disclosure]]
+
+

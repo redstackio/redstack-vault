@@ -1,18 +1,18 @@
 ---
-id: ae6bc819-ff7f-4d01-8b57-6e69a0cb3adf
-name: sshuttle
 type: tool
 verified: true
-created_at: '2020-03-07T01:02:20.822852+00:00'
-updated_at: '2023-05-30T19:47:48.455176+00:00'
-commands:
-- '[[sshuttle Forward all traffic through SSH Tunnel]]'
 platforms:
-- Linux
+  - Linux
 tags:
-- '[[data encryption]]'
-- '[[Pivot]]'
-- '[[tunnel]]'
+  - data-encryption
+  - pivot
+  - tunnel
+url: 'https://github.com/sshuttle/sshuttle'
+description: >-
+  sshuttle is a transparent proxy server that forwards over ssh. It enables
+  VPN-like functionality without requiring root access on the remote server,
+  only on the local machine.
+validated: true
 ---
 
 # sshuttle
@@ -21,58 +21,122 @@ tags:
 
 ## Overview
 
-sshuttle creates a VPN connection between a local system and a remote ssh server, as long as the remote server has Python 2.3+ on it. sshuttle requires root permissions on the local machine on which it's being run.
-
-Note: If when trying to create a tunnel to a remote ssh server, sshuttle fails with
+sshuttle is a command-line tool that creates a secure, transparent proxy server to forward network traffic over an SSH connection. It functions like a poor man's VPN, allowing users to route traffic from their local machine through a remote SSH server without needing to install additional software on the remote side (as long as Python 2.3+ is available). Commonly used in penetration testing for pivoting into internal networks, bypassing firewalls, or encrypting traffic.
 
 ## Description
 
-# Description
+sshuttle works by dynamically executing Python code on the remote SSH server to handle traffic forwarding. It intercepts outgoing connections on the local machine and tunnels them via SSH, supporting IPv4 and IPv6. Key advantages include no need for remote root access or VPN setup, making it ideal for quick pivots during red team engagements. It requires sudo privileges locally to bind to low ports or modify routing tables.
 
-sshuttle creates a VPN connection between a local system and a remote ssh server, as long as the remote server has Python 2.3+ on it. sshuttle requires root permissions on the local machine on which it's being run.
+Note: If connecting to a remote SSH server fails with error code 255, exclude the target IP/hostname using the `-x` flag (e.g., `-x $_TARGET_IP`).
 
-Note: If when trying to create a tunnel to a remote ssh server, sshuttle fails with "error code 255", try appending "-x $_TARGET_IP" to the command, where $_TARGET_IP is the same IP/hostname as the target. Specifically excluding the target server seems to resolve the issue.
+## Features
 
+- Transparent proxying: Forwards TCP traffic without modifying applications.
+- DNS forwarding: Optional routing of DNS queries through the tunnel.
+- Subnet targeting: Route specific networks (e.g., 10.0.0.0/8) or all traffic (0/0).
+- No remote installation: Uses remote Python interpreter via SSH.
+- IPv6 support: Handles both IPv4 and IPv6 traffic.
+- Exclude options: Bypass certain IPs or domains from tunneling.
 
+## Installation
 
-# Example
+### Requirements
 
+- Python 3.6+ on the local machine.
+- SSH access to a remote server with Python 2.3+.
+- Root/sudo privileges on the local machine for full routing.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_80bffd2d-b8f4-4dd2-92e6-c89a528aaae1}}
+#### Debian/Ubuntu
 
+```bash
+sudo apt update
+sudo apt install sshuttle
+```
 
+#### Python 3 (pip)
 
-# Installation
+```bash
+pip3 install sshuttle
+```
 
-## Install on Debian/Ubuntu
+#### macOS (Homebrew)
 
+```bash
+brew install sshuttle
+```
 
+## Basic Usage
 
+```bash
+sshuttle --help
+```
 
+Start by connecting to a remote SSH server and specifying the networks to route.
 
-## Install with Python 3
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-r, --remote` | Specify the SSH server (user@host:port). |
+| `NETWORK` | CIDR notation for networks to forward (e.g., 0/0 for all). |
+| `--dns` | Forward DNS queries through the tunnel. |
+| `-x, --exclude` | Exclude IPs/subnets from forwarding. |
+| `-v` | Verbose output for debugging. |
+| `--no-drop-privileges` | Run without dropping root privileges (advanced). |
 
+## Examples
 
+### Example 1: Basic Usage - Forward All Traffic
 
+Route all IPv4 traffic through an SSH server:
 
+```bash
+sudo sshuttle -r user@remote.server.com 0/0
+```
 
+### Example 2: Advanced Usage - Forward Specific Subnet with DNS
 
+Forward a private network and DNS queries, excluding the remote host:
 
+```bash
+sudo sshuttle -r user@remote.server.com --dns -x remote.server.com 10.0.0.0/8
+```
 
-## Platforms
+## MITRE ATT&CK Mapping
 
-- Linux
+This tool is commonly associated with:
 
-## Commands (1)
+### Techniques
 
-- [[sshuttle Forward all traffic through SSH Tunnel]]
+- [[Protocol Tunneling]] Defang Network (Proxy/Tunneling to bypass restrictions).
+- [[Connection Proxy]] Proxy (Using SSH as a proxy for internal access).
 
-## Tags
+### Tactics
 
-- [[data encryption]]
-- [[Pivot]]
-- [[tunnel]]
+- [[Command and Control]] Command and Control.
+- [[Defense Evasion]] Defense Evasion.
 
+## Detection
 
+- Monitor for unusual SSH connections from internal hosts to external servers.
+- Look for processes named 'sshuttle' or Python scripts executing over SSH.
+- Network traffic anomalies: Increased SSH traffic with encapsulated TCP sessions.
+- System logs showing sudo usage for routing changes (e.g., ip route modifications).
+- DNS queries routed unexpectedly through non-standard paths.
+
+## Related Procedures
+
+No related procedures documented yet.
+
+## Related Tools
+
+- [[tools/openssh]] (Base SSH client/server for tunneling).
+- [[tools/Proxychains]] (Alternative proxy chaining tool).
+
+## References
+
+- Official GitHub: https://github.com/sshuttle/sshuttle
+- Documentation: https://sshuttle.readthedocs.io/
+- Man page: `man sshuttle`

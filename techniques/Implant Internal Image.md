@@ -20,6 +20,10 @@ Adversaries may implant cloud or container images with malicious code to establi
 
 A tool has been developed to facilitate planting backdoors in cloud container images.(Citation: Rhino Labs Cloud Backdoor September 2019) If an adversary has access to a compromised AWS instance, and permissions to list the available container images, they may implant a backdoor such as a [Web Shell](https://attack.mitre.org/techniques/T1505/003).(Citation: Rhino Labs Cloud Image Backdoor Technique Sept 2019)
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

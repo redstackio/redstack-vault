@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Linux Timestomping Evasion]]'
+- '[[Linux-Timestomping-Evasion]]'
 ---
 
 # Timestomp
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Timestomping is a technique that modifies the timestamps of a file (the modify, access, create, and change times), often to mimic files that are in the same folder. This is done, for example, on files that have been modified or created by the adversary so that they do not appear conspicuous to forensic investigators or file analysis tools. Timestomping may be used along with file name Masquerading to hide malware and tools. [1]
+
+
 
 # Detection
 
@@ -110,4 +112,6 @@ Mitigation of timestomping specifically is likely difficult. Efforts should be f
 
 ## Related Procedures (1)
 
-- [[Linux Timestomping Evasion]]
+- [[Linux-Timestomping-Evasion]]
+
+

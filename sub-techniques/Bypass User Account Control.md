@@ -10,20 +10,20 @@ parent_technique: '[[Abuse Elevation Control Mechanism|T1548 - Abuse Elevation C
   Mechanism]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]'
-- '[[Abusing Golden Privileges with Juicy Potato]]'
-- '[[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]'
-- '[[Active Directory Certificate Services Access Control Vulnerabilities]]'
-- '[[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]'
-- '[[EFSPotato Privilege Escalation]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[JEA for Limiting PowerShell Usage]]'
-- '[[Linux - Privilege Escalation via Doas]]'
-- '[[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]'
-- '[[PrinterNightmare Privilege Escalation]]'
-- '[[Vulnerable Certificate Authority Access Control]]'
+- '[[Abusing-Golden-Privileges-with-Juicy-Potato]]'
+- '[[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]'
+- '[[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]'
+- '[[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]'
+- '[[efs-potato-privilege-escalation]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[implement-jea-to-limit-powershell-cmdlet-usage]]'
+- '[[Linux-Privilege-Escalation-via-Doas-Misconfiguration]]'
+- '[[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]'
+- '[[PrinterNightmare-Privilege-Escalation]]'
+- '[[Vulnerable-Certificate-Authority-Access-Control]]'
 - '[[Windows - EoP Privileged File Write via DiagHub Standard Collector Service]]'
 ---
 
@@ -56,22 +56,22 @@ Another bypass is possible through some lateral movement techniques if credentia
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 13 procedures using this sub-technique:
 
 - [[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]
-- [[Abusing Golden Privileges with Juicy Potato]]
-- [[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]
-- [[Active Directory Certificate Services Access Control Vulnerabilities]]
-- [[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]
-- [[EFSPotato Privilege Escalation]]
-- [[Golden Certificate Domain Persistence]]
-- [[JEA for Limiting PowerShell Usage]]
-- [[Linux - Privilege Escalation via Doas]]
-- [[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]
-- [[PrinterNightmare Privilege Escalation]]
-- [[Vulnerable Certificate Authority Access Control]]
+- [[Abusing-Golden-Privileges-with-Juicy-Potato]]
+- [[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]
+- [[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]
+- [[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]
+- [[efs-potato-privilege-escalation]]
+- [[Golden-Certificate-Domain-Persistence]]
+- [[implement-jea-to-limit-powershell-cmdlet-usage]]
+- [[Linux-Privilege-Escalation-via-Doas-Misconfiguration]]
+- [[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]
+- [[PrinterNightmare-Privilege-Escalation]]
+- [[Vulnerable-Certificate-Authority-Access-Control]]
 - [[Windows - EoP Privileged File Write via DiagHub Standard Collector Service]]

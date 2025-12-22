@@ -10,8 +10,8 @@ parent_technique: '[[Create Account|T1136 - Create Account]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[XXE File Retrieval via XInclude Attack]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[XXE-File-Retrieval-via-XInclude-Attack]]'
 ---
 
 # Local Account
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Basic Directory Traversal Exploitation]]
-- [[XXE File Retrieval via XInclude Attack]]
+- [[Basic-Directory-Traversal-Exploitation]]
+- [[XXE-File-Retrieval-via-XInclude-Attack]]

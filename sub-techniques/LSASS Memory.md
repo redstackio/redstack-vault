@@ -10,8 +10,8 @@ parent_technique: '[[Credential Dumping|T1003 - Credential Dumping]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Dumping AD Domain Credentials using ndtsutil]]'
-- '[[Windows Sandbox Credential Access]]'
+- '[[Dumping-AD-Domain-Credentials-using-ntdsutil]]'
+- '[[Access-Windows-Sandbox-with-Default-Credentials]]'
 ---
 
 # LSASS Memory
@@ -64,5 +64,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Dumping AD Domain Credentials using ndtsutil]]
-- [[Windows Sandbox Credential Access]]
+- [[Dumping-AD-Domain-Credentials-using-ntdsutil]]
+- [[Access-Windows-Sandbox-with-Default-Credentials]]

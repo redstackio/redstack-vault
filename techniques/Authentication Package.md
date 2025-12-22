@@ -18,6 +18,8 @@ tactics:
 
 Windows Authentication Package DLLs are loaded by the Local Security Authority (LSA) process at system start. They provide support for multiple logon processes and multiple security protocols to the operating system. [1]Adversaries can use the autostart mechanism provided by LSA Authentication Packages for persistence by placing a reference to a binary in the Windows Registry location HKLM\SYSTEM\CurrentControlSet\Control\Lsa\ with the key value of "Authentication Packages"=. The binary will then be executed by the system when the authentication packages are loaded.
 
+
+
 # Detection
 
 Monitor the Registry for changes to the LSA Registry keys. Monitor the LSA process for DLL loads. Windows 8.1 and Windows Server 2012 R2 may generate events when unsigned DLLs try to load into the LSA by setting the Registry key HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe with AuditLevel = 8. [3] [4]
@@ -43,3 +45,5 @@ Windows 8.1, Windows Server 2012 R2, and later versions, may make LSA run as a P
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

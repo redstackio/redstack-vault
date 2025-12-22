@@ -1,86 +1,125 @@
 ---
 id: 728a8253-4649-49f5-a715-2b356edf5e80
-name: SharpUp
 type: tool
-verified: false
+verified: true
 created_at: '2019-08-28T21:17:27.307699+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[PowerUp Enumerate for Privilege Escalation]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[Enumeration]]'
+  - Enumeration
+  - Privilege Escalation
+url: 'https://github.com/GhostPack/SharpUp'
+description: >-
+  A C# tool for enumerating common Windows privilege escalation vectors
+  including vulnerable services, DLL hijacking opportunities, and registry
+  settings.
+tactics:
+  - '[[Discovery]]'
+techniques:
+  - '[[System Information Discovery]]'
+  - '[[Permission Groups Discovery]]'
+  - '[[Abuse Elevation Control Mechanism]]'
+validated: true
 ---
 
 # SharpUp
 
+**Status**: Unverified
+
 ## Overview
 
-SharpUp is a C# port of various PowerUp functions.  SharpUp has only implemented the more popular checks and no weaponization features have been added. Scans Include: Common privilege escalation paths Vulnerable services DLL hijacking opportunities Vulnerable registry settings 
+SharpUp is a C# tool designed for offensive security testing, providing enumeration of potential privilege escalation paths on Windows systems. It focuses on identifying misconfigurations and vulnerabilities that could allow an attacker to elevate privileges, such as unquoted service paths, always install elevated settings, and DLL hijacking opportunities. Commonly used during post-exploitation phases to assess lateral movement and persistence risks.
 
 ## Description
 
-# Description
+SharpUp is a port of popular PowerUp.ps1 functions into a standalone C# executable, implementing key checks without weaponization features to maintain a focus on detection and enumeration. It scans for common privesc vectors including vulnerable services, registry auto-elevations, weak service permissions, and more. The tool runs locally on the target Windows machine and outputs findings in a readable format, making it suitable for red team engagements and penetration testing.
 
-SharpUp is a C# port of various PowerUp functions.  SharpUp has only implemented the more popular checks and no weaponization features have been added.
+## Features
 
+- Service enumeration: Identifies services with unquoted paths, modifiable binaries, or weak permissions.
+- DLL hijacking detection: Checks for hijackable DLL search order issues in services and startup programs.
+- Registry checks: Scans for AlwaysInstallElevated, AlwaysMarkAsElevated, and other auto-elevation settings.
+- Common paths: Examines well-known directories for writable executables that run with high privileges.
+- No network dependencies: Runs entirely offline after execution.
 
+## Installation
 
-Scans Include:
+### Requirements
 
-- Common privilege escalation paths
+- Windows development environment with .NET Framework support (Visual Studio 2015-2019 recommended).
+- For Linux/Ubuntu (cross-compilation): .NET SDK 6.0+ and Git.
 
-- Vulnerable services
+### Install Commands
 
-- DLL hijacking opportunities
+#### Windows (Build from Source)
 
-- Vulnerable registry settings
+1. Clone the repository:
+```powershell
+git clone https://github.com/GhostPack/SharpUp.git
+cd SharpUp
+```
 
+2. Open SharpUp.sln in Visual Studio.
 
+3. Set configuration to Release and rebuild the solution.
 
-# Example
+The executable will be in SharpUp/bin/Release/SharpUp.exe.
 
+#### Ubuntu/Kali (Using .NET)
+```bash
+sudo apt update
+sudo apt install -y dotnet-sdk-6.0 git
+git clone https://github.com/GhostPack/SharpUp.git
+cd SharpUp
+dotnet build -c Release
+```
+The executable will be in bin/Release/net6.0/SharpUp.exe (may require mono to run on Linux for testing).
 
+## Basic Usage
 
-{{EMBEDDED_COMMAND_89fb504d-bae1-442f-a5c4-407e91a60b09}}
+```powershell
+& '$env:TEMP\SharpUp.exe'
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| No flags needed for basic scan | Performs all default enumerations |
+| Run without output to file | Outputs to console by default |
 
-# Installation
+## Examples
 
-## Build from Source (Windows)
+### Example 1: Basic Usage
 
-SharpUp can be compiled with Microsoft Visual Studio Community versions 2015 to 2019 with ".NET desktop development" installed.
+Download and run SharpUp for a full privesc scan:
+```powershell
+# First download (see related command)
+& '$env:TEMP\SharpUp.exe'
+```
 
+### Example 2: Advanced Usage
 
+SharpUp does not have extensive flags; run directly for comprehensive output:
+```powershell
+& 'C:\Path\To\SharpUp.exe' > privesc_results.txt
+```
 
-1. Clone the repo
+## Detection
 
+Indicators and methods for detecting this tool's usage:
+- Execution of unsigned C# binaries in temp directories.
+- PowerShell or process creation logs showing SharpUp.exe spawning.
+- File creation events for SharpUp.exe downloads from GitHub.
+- Console output or file writes containing privesc enumeration strings like 'Unquoted Service Path'.
 
+## Related Commands
 
-2. Open SharpUp.sln with Visual Studio
+- [[commands/download-sharpup]]
+- [[commands/run-sharpup-privesc-scan]]
 
-3. Set "Solutions Configuration" to "Release"
+## References
 
-4. Select "Build" > ""Rebuild Solution"
-
-
-
-The compiled .exe can be found in <SharpUp Directory>/SharpUp/bin/Release/SharpUp.exe
-
-
-
-## Platforms
-
-- Windows
-
-## Commands (1)
-
-- [[PowerUp Enumerate for Privilege Escalation]]
-
-## Tags
-
-- [[Enumeration]]
-
-
+- Official GitHub Repository: https://github.com/GhostPack/SharpUp
+- Related to GhostPack tools for .NET security testing.

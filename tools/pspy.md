@@ -1,16 +1,22 @@
 ---
-id: 3e84d441-35c1-490a-9e65-f1d85eb20f8c
-name: pspy
 type: tool
+description: >-
+  A Linux command-line tool for monitoring process executions without root
+  privileges, ideal for discovering cron jobs, user commands, and system
+  activities during security assessments.
+url: 'https://github.com/DominicBreuker/pspy'
 verified: true
-created_at: '2020-02-19T05:12:02.443450+00:00'
-updated_at: '2023-05-30T19:48:42.355802+00:00'
-commands:
-- '[[pspy Monitor Processes and Commands]]'
 platforms:
-- Linux
+  - Linux
 tags:
-- '[[account monitoring]]'
+  - process-monitoring
+  - discovery
+  - post-exploitation
+  - account-monitoring
+commands:
+  - '[[commands/pspy-download-x86-64-binary]]'
+  - '[[commands/pspy-run-process-monitoring]]'
+validated: true
 ---
 
 # pspy
@@ -19,44 +25,119 @@ tags:
 
 ## Overview
 
-pspy is a Linux command line tool designed to snoop on processes without need for root permissions. It displays commands run by other users, cron jobs, etc. as they execute. 
+pspy is a lightweight Linux command-line tool designed to monitor and snoop on running processes without requiring root permissions. It provides real-time visibility into process creations, including those triggered by cron jobs, other users, or system services, making it valuable for reconnaissance and post-exploitation in red team operations.
 
 ## Description
 
-# Description
+pspy operates by leveraging /proc filesystem monitoring to detect new process executions. It displays detailed information such as timestamps, command lines, PIDs, PPIDs, user IDs, and process hierarchies. This tool is particularly useful for identifying automated tasks (e.g., cron jobs that reveal credentials or perform backups) or lateral movement opportunities without alerting defenders through privileged operations. Supported on 32-bit and 64-bit architectures, with static binaries for easy deployment.
 
-pspy is a Linux command line tool designed to snoop on processes without need for root permissions. It displays commands run by other users, cron jobs, etc. as they execute.
+## Features
 
+- **No Root Required**: Monitors processes using unprivileged access to /proc.
+- **Real-Time Output**: Streams process creation events as they occur.
+- **Filtering Options**: Supports PID following (-pf), interval adjustments (-i), and timestamp inclusion (-t).
+- **Portable Binaries**: Statically compiled, no dependencies needed.
+- **Process Tree Visualization**: Shows parent-child relationships for spawned processes.
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux system with wget or curl for download.
+- No additional dependencies; static binary.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_21962dd1-f2b8-45b5-b2e1-7bc6f4432aad}}
+Use the download command to fetch the binary:
 
+```bash
+[[commands/pspy-download-x86-64-binary]]
+```
 
+For ARM architecture, modify the URL to pspyarm:
 
-# Installation
+```bash
+wget https://github.com/DominicBreuker/pspy/releases/latest/download/pspyarm -O /tmp/pspy
+```
 
-Download the "static version" from the author's GitHub: [https://github.com/DominicBreuker/pspy](https://github.com/DominicBreuker/pspy)
+After download, make executable:
 
+```bash
+chmod +x /tmp/pspy
+```
 
+## Basic Usage
 
+Run the binary to start monitoring:
 
+```bash
+./pspy64
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Display help message and options. |
+| `-p` | Print process details (default behavior). |
+| `-i <seconds>` | Set monitoring interval (default 1 second). |
+| `-t` | Include timestamps in output. |
+| `-pf <PID>` | Follow processes spawned by a specific PID. |
+| `-c` | Clear screen between updates. |
+| `-l` | List all current processes initially. |
 
-## Platforms
+## Examples
 
-- Linux
+### Example 1: Basic Usage
 
-## Commands (1)
+Start monitoring all new processes:
 
-- [[pspy Monitor Processes and Commands]]
+```bash
+[[commands/pspy-run-process-monitoring]]
+```
 
-## Tags
+### Example 2: Advanced Usage
 
-- [[account monitoring]]
+Monitor processes spawned by PID 1 (init/systemd) with timestamps:
 
+```bash
+./pspy64 -pf 1 -t
+```
 
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Process Discovery]] Process Discovery
+- [[Scheduled Task]] Scheduled Task/Job: Scheduled Task
+
+### Tactics
+
+- [[Discovery]] Discovery
+- [[Execution]] Execution
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Presence of pspy binary in temporary directories (e.g., /tmp/pspy).
+- Unusual reads from /proc filesystem by unprivileged processes.
+- Process monitoring patterns in audit logs (e.g., via auditd).
+- Network downloads from GitHub releases matching pspy signatures.
+- YARA rules for the binary or behavioral detection of process enumeration without sudo.
+
+## Related Procedures
+
+No specific procedures linked yet. Consider creating a procedure for "Monitor Scheduled Tasks with pspy" under post-exploitation.
+
+## Related Tools
+
+- [[tools/procmon]] (Windows equivalent for process monitoring)
+- [[tools/sysdig]] (Advanced system call tracing)
+
+## References
+
+- Official GitHub Repository: [https://github.com/DominicBreuker/pspy](https://github.com/DominicBreuker/pspy)
+- Releases Page: [https://github.com/DominicBreuker/pspy/releases](https://github.com/DominicBreuker/pspy/releases)

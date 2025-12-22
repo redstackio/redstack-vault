@@ -9,11 +9,11 @@ updated_at: '2023-04-06T03:56:44.597668+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Azure AD Administrative Unit Management]]'
-- '[[Octal IP Format Server-Side Request Forgery]]'
-- '[[SSRF via URL Scheme File Retrieval]]'
-- '[[uWSGI Configuration Magic Variables Procedure]]'
-- '[[XXE Injection in SOAP Messages]]'
+- '[[Azure-AD-Administrative-Unit-Management]]'
+- '[[Octal-IP-Format-SSRF-Bypass]]'
+- '[[Exploit-SSRF-with-File-URL-Scheme-to-Retrieve-Files]]'
+- '[[Exploit-uWSGI-Magic-Variables-for-Arbitrary-Execution]]'
+- '[[XXE-Injection-in-SOAP-Messages]]'
 ---
 
 # Protocol Tunneling
@@ -30,14 +30,18 @@ There are various means to encapsulate a protocol within another protocol. For e
 
 Adversaries may also leverage [Protocol Tunneling](https://attack.mitre.org/techniques/T1572) in conjunction with [Proxy](https://attack.mitre.org/techniques/T1090) and/or [Protocol Impersonation](https://attack.mitre.org/techniques/T1001/003) to further conceal C2 communications and infrastructure. 
 
+
+
 ## Tactics
 
 - [[Command and Control|TA0011 - Command and Control]]
 
 ## Related Procedures (5)
 
-- [[Azure AD Administrative Unit Management]]
-- [[Octal IP Format Server-Side Request Forgery]]
-- [[SSRF via URL Scheme File Retrieval]]
-- [[uWSGI Configuration Magic Variables Procedure]]
-- [[XXE Injection in SOAP Messages]]
+- [[Azure-AD-Administrative-Unit-Management]]
+- [[Octal-IP-Format-SSRF-Bypass]]
+- [[Exploit-SSRF-with-File-URL-Scheme-to-Retrieve-Files]]
+- [[Exploit-uWSGI-Magic-Variables-for-Arbitrary-Execution]]
+- [[XXE-Injection-in-SOAP-Messages]]
+
+

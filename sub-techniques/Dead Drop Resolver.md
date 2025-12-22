@@ -11,7 +11,7 @@ tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[MYSQL Injection Out-of-Band Data Exfiltration]]'
+- '[[MySQL-Injection-Out-of-Band-Data-Exfiltration]]'
 ---
 
 # Dead Drop Resolver
@@ -45,4 +45,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[MYSQL Injection Out-of-Band Data Exfiltration]]
+- [[MySQL-Injection-Out-of-Band-Data-Exfiltration]]

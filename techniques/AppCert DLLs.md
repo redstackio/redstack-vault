@@ -8,9 +8,9 @@ created_at: '2019-08-28T21:17:38.681665+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[AWS Lambda Role Privilege Escalation]]'
+- '[[aws-lambda-role-privilege-escalation]]'
 ---
 
 # AppCert DLLs
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager are loaded into every process that calls the ubiquitously used application programming interface (API) functions CreateProcess, CreateProcessAsUser, CreateProcessWithLoginW, CreateProcessWithTokenW, or WinExec. [1]Similar to Process Injection, this value can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer.
+
+
 
 # Detection
 
@@ -58,8 +60,10 @@ Identify and block potentially malicious software that may be executed through A
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (1)
 
-- [[AWS Lambda Role Privilege Escalation]]
+- [[aws-lambda-role-privilege-escalation]]
+
+

@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[BigQuery SQL Injection Attack]]'
-- '[[LFI to RCE via Mail Log File Inclusion]]'
-- '[[LFI to RCE via SSH Log File Inclusion]]'
+- '[[BigQuery-Boolean-Based-SQL-Injection]]'
+- '[[LFI-to-RCE-via-Mail-Log-File-Inclusion]]'
+- '[[LFI-to-RCE-via-SSH-Log-File-Inclusion]]'
 ---
 
 # Data Staged
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Collected data is staged in a central location or directory prior to Exfiltration. Data may be kept in separate files or combined into one file through techniques such as Data Compressed or Data Encrypted.Interactive command shells may be used, and common functionality within cmd and bash may be used to copy data into a staging location.
+
+
 
 # Detection
 
@@ -140,6 +142,8 @@ Identify system utilities, remote access or third-party tools, users or potentia
 
 ## Related Procedures (3)
 
-- [[BigQuery SQL Injection Attack]]
-- [[LFI to RCE via Mail Log File Inclusion]]
-- [[LFI to RCE via SSH Log File Inclusion]]
+- [[BigQuery-Boolean-Based-SQL-Injection]]
+- [[LFI-to-RCE-via-Mail-Log-File-Inclusion]]
+- [[LFI-to-RCE-via-SSH-Log-File-Inclusion]]
+
+

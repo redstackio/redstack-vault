@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
 ---
 
 # Service Stop
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment.[1][2] Adversaries may accomplish this by disabling individual services of high importance to an organization, such as MSExchangeIS, which will make Exchange content inaccessible [2]. In some cases, adversaries may stop or disable many or all services to render systems unusable.[1] Services may not allow for modification of their data stores while running. Adversaries may stop services in order to conduct Data Destruction or Data Encrypted for Impact on the data stores of services like Exchange and SQL Server.[3]
+
+
 
 # Detection
 
@@ -56,4 +58,6 @@ Ensure proper process, registry, and file permissions are in place to inhibit ad
 
 ## Related Procedures (1)
 
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+
+

@@ -10,18 +10,18 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
-- '[[ASP Razor Server Side Template Injection with C# Command Execution]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]'
-- '[[Jinja2 Server Side Template Injection with Remote Code Execution]]'
-- '[[Jinjava Command Execution]]'
-- '[[MSSQL Server External Script Execution]]'
-- '[[Reflective Assembly Loading with Powershell]]'
-- '[[Server Side Template Injection with Django Templates using Burp Payload Calculation]]'
-- '[[Session Management with Metasploit]]'
-- '[[Windows - PowerShell Remoting Protocol with PSSESSION]]'
-- '[[XLM Excel 4.0 - SharpShooter Payload Creation]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
+- '[[asp-razor-server-side-template-injection-with-csharp-command-execution]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]'
+- '[[Jinja2-SSTI-to-RCE-via-Flask-Hook]]'
+- '[[Jinjava-SSTI-Command-Execution]]'
+- '[[Enable-and-Execute-External-Scripts-in-MSSQL]]'
+- '[[Reflective-Assembly-Loading-with-PowerShell]]'
+- '[[Exploit-SSTI-in-Django-Templates-using-Burp-Payloads]]'
+- '[[Session-Management-with-Metasploit]]'
+- '[[windows-powershell-remoting-with-pssession]]'
+- '[[xlm-excel-4-macro-sharpshooter-payload-creation]]'
 ---
 
 # PowerShell
@@ -56,15 +56,15 @@ This sub-technique is used in the following tactics:
 
 There are 12 procedures using this sub-technique:
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
-- [[ASP Razor Server Side Template Injection with C# Command Execution]]
-- [[Dart Reverse PowerShell Shell]]
-- [[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]
-- [[Jinja2 Server Side Template Injection with Remote Code Execution]]
-- [[Jinjava Command Execution]]
-- [[MSSQL Server External Script Execution]]
-- [[Reflective Assembly Loading with Powershell]]
-- [[Server Side Template Injection with Django Templates using Burp Payload Calculation]]
-- [[Session Management with Metasploit]]
-- [[Windows - PowerShell Remoting Protocol with PSSESSION]]
-- [[XLM Excel 4.0 - SharpShooter Payload Creation]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
+- [[asp-razor-server-side-template-injection-with-csharp-command-execution]]
+- [[Dart-Reverse-PowerShell-Shell]]
+- [[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]
+- [[Jinja2-SSTI-to-RCE-via-Flask-Hook]]
+- [[Jinjava-SSTI-Command-Execution]]
+- [[Enable-and-Execute-External-Scripts-in-MSSQL]]
+- [[Reflective-Assembly-Loading-with-PowerShell]]
+- [[Exploit-SSTI-in-Django-Templates-using-Burp-Payloads]]
+- [[Session-Management-with-Metasploit]]
+- [[windows-powershell-remoting-with-pssession]]
+- [[xlm-excel-4-macro-sharpshooter-payload-creation]]

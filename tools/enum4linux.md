@@ -1,91 +1,143 @@
 ---
 id: a2ff76ae-b98d-44c1-a806-d6721e120bad
-name: enum4linux
 type: tool
-verified: false
-created_at: '2019-08-28T21:17:24.449525+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[enum4linux Enumerate SMB/RPC Services]]'
+verified: true
+created_at: '2019-08-28T21:17:24.449525Z'
+updated_at: '2023-10-01T00:00:00Z'
 platforms:
-- Linux
-- Windows
+  - Linux
+  - Windows
 tags:
-- '[[Enumeration]]'
-- '[[rpc]]'
-- '[[samba]]'
-- '[[smb]]'
+  - Enumeration
+  - rpc
+  - samba
+  - smb
+url: 'https://github.com/CiscoCXSecurity/enum4linux'
+commands:
+  - '[[commands/enum4linux-enumerate-smb-rpc-services]]'
+validated: true
 ---
 
 # enum4linux
 
+**Status**: Unverified
+
 ## Overview
 
-enum4linux  is a Windows and Samba enumeration tool written in Perl. It wraps the common tools smbclient, rpclient, nmblookup to gather information from a target host. Features: RID cycling User listing Group membership information Share enumeration Domain and workgroup detection OS identification 
+enum4linux is a Perl-based tool for enumerating information from Windows and Samba systems. It automates common enumeration tasks by wrapping tools like smbclient, rpcclient, and nmblookup, making it ideal for reconnaissance in offensive security operations targeting SMB/RPC services.
 
 ## Description
 
-# Description
+enum4linux collects detailed information about target hosts, including user accounts, group memberships, shares, domain SIDs, OS versions, and password policies. It is particularly useful for identifying weak configurations or potential entry points in Active Directory or Samba environments without requiring authentication in many cases.
 
-enum4linux  is a Windows and Samba enumeration tool written in Perl. It wraps the common tools smbclient, rpclient, nmblookup to gather information from a target host.
+## Features
 
-
-
-Features:
-
-- RID cycling
-
-- User listing 
-
-- Group membership information
-
-- Share enumeration
-
+- RID cycling for user enumeration
+- Listing of users and group memberships
+- Share enumeration and access testing
 - Domain and workgroup detection
-
 - OS identification
-
 - Password policy retrieval
+- NetBIOS name resolution
 
+## Installation
 
+### Requirements
 
-# Example
+- Perl (version 5 or later)
+- smbclient, rpcclient, and nmblookup (from Samba suite)
 
+### Install Commands
 
+```bash
+# On Debian/Ubuntu (includes dependencies)
+apt update && apt install enum4linux
 
-{{EMBEDDED_COMMAND_433d22a4-beff-4106-87f1-2d69f833766d}}
+# Manual install from GitHub
+apt install git perl libnet-smb-perl smbclient
+cd /opt && git clone https://github.com/CiscoCXSecurity/enum4linux.git
+cd enum4linux && chmod +x enum4linux.pl
+```
 
+For Windows, use Cygwin or WSL with the above dependencies.
 
+## Basic Usage
 
-# Installation
+```bash
+enum4linux --help
+```
 
-## Install on Debian/Ubuntu
+### Common Options
 
-> apt install enum4linux
+| Option | Description |
+|--------|-------------|
+| -a | Perform all enumeration (default comprehensive scan) |
+| -U | Enumerate users only |
+| -G | Enumerate groups only |
+| -S | Enumerate shares only |
+| -P | Enumerate password policy |
+| -o | Enumerate OS information |
+| -i | Interactive mode for credentialed scans |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+enum4linux 192.168.1.100
+```
 
+Performs a standard enumeration without the -a flag, focusing on basic info.
 
-## Platforms
+### Example 2: Advanced Usage
 
-- Linux
-- Windows
+```bash
+enum4linux -a -u username -p password 192.168.1.100
+```
 
-## Services
+Uses provided credentials for a more thorough, authenticated enumeration.
 
-- netbios-ss
-- smb
+## MITRE ATT&CK Mapping
 
-## Commands (1)
+This tool is commonly associated with:
 
-- [[enum4linux Enumerate SMB/RPC Services]]
+### Techniques
 
-## Tags
+- [[Account Discovery]] Account Discovery
+- [[Permission Groups Discovery]] Permission Groups Discovery
+- [[External Remote Services]] Network Share Discovery
 
-- [[Enumeration]]
-- [[rpc]]
-- [[samba]]
-- [[smb]]
+### Tactics
 
+- [[Discovery]] Discovery
 
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Network traffic to port 445 (SMB) or 139 (NetBIOS) with enumeration patterns
+- Process monitoring for enum4linux.pl or wrapped tools like smbclient
+- Log analysis for failed authentication attempts or RID cycling queries
+- IDS rules for unusual RPC calls from external IPs
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/smbclient]]
+- [[tools/rpcclient]]
+- [[tools/CrackMapExec]]
+
+## References
+
+- Official GitHub: https://github.com/CiscoCXSecurity/enum4linux
+- Samba Documentation: https://www.samba.org/
+- MITRE ATT&CK: https://attack.mitre.org/

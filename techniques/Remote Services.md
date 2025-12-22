@@ -9,56 +9,56 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[AWS SSM Command Execution - EC2 Shell Script]]'
-- '[[Azure Generate Shared Access Signature (SAS) URLs for Blob Storage]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Web Apps: Remote SSH Connection]]'
-- '[[Bash TCP Reverse Shell Connection]]'
-- '[[Cloudflare Tunnel Exposer Pivoting]]'
-- '[[Copying EC2 Instances using AMI Image in AWS]]'
-- '[[DCOM Lateral Movement]]'
-- '[[DCOM Office Remote Code Execution]]'
-- '[[DCOM ShellBrowserWindow Calculator Execution]]'
-- '[[DCOM ShellExecute Calculator Execution]]'
+- '[[aws-ssm-command-execution-ec2-shell-script]]'
+- '[[Generate-Azure-Blob-Storage-SAS-URLs]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[azure-web-apps-remote-ssh-connection]]'
+- '[[Establish-Bash-TCP-Reverse-Shell]]'
+- '[[Cloudflare-Tunnel-Pivoting-for-Lateral-Movement]]'
+- '[[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]'
+- '[[dcom-lateral-movement]]'
+- '[[DCOM-Office-Remote-Code-Execution]]'
+- '[[dcom-shellbrowserwindow-calculator-execution]]'
+- '[[dcom-shellexecute-calculator-execution]]'
 - '[[Disable LLMNR and NetBIOS over TCP/IP]]'
-- '[[GitHack - Exploiting Insecure Source Code Management]]'
-- '[[Go Application Proxification with Graftcp]]'
-- '[[Inter-User Messaging]]'
-- '[[Java RMI Server RCE using Metasploit]]'
-- '[[Linked Database Column Extraction]]'
-- '[[Linked Database Top 5 Columns Extraction]]'
-- '[[Linux Meterpreter Reverse TCP Shell]]'
-- '[[Linux Reverse Shell Persistence with Ncat]]'
-- '[[Linux Staged Reverse TCP Meterpreter Shell]]'
-- '[[Metasploit Network Pivoting with Meterpreter Port Forwarding and Routing]]'
-- '[[Meterpreter Payload Generation]]'
-- '[[Ncat Reverse Shell]]'
-- '[[Network Pivoting with Gost]]'
-- '[[Network Pivoting with plink Port Forwarding]]'
-- '[[Network Pivoting with sshuttle]]'
+- '[[GitHack-Exploiting-Insecure-Source-Code-Management]]'
+- '[[Proxify-Go-Application-with-Graftcp]]'
+- '[[Inter-User-Messaging]]'
+- '[[Java-RMI-Server-RCE-using-Metasploit]]'
+- '[[Extract-Data-from-Linked-SQL-Server-Database]]'
+- '[[Extract-Top-5-Columns-from-Linked-Database]]'
+- '[[Establish-Linux-Meterpreter-Reverse-TCP-Shell]]'
+- '[[linux-reverse-shell-persistence-via-ncat-systemd]]'
+- '[[Linux-Staged-Reverse-TCP-Meterpreter-Shell]]'
+- '[[Meterpreter-Network-Pivoting-via-Port-Forwarding-and-Routing]]'
+- '[[Meterpreter-Payload-Generation]]'
+- '[[Establish-Reverse-Shell-with-Ncat]]'
+- '[[Network-Pivoting-with-Gost]]'
+- '[[Network-Pivoting-with-Plink-Port-Forwarding]]'
+- '[[network-pivoting-with-sshuttle]]'
 - '[[NGINX/ALB Bypass Directory Traversal]]'
-- '[[PrintNightmare Remote Code Execution]]'
-- '[[RDS Lateral Movement - Listing Subnets]]'
-- '[[RDS Lateral Movement: List Instances on Specified Subnet]]'
-- '[[RDS Lateral Movement through EC2 Instances in VPC]]'
-- '[[RDS Lateral Movement via EC2 Route Tables]]'
-- '[[RDS Lateral Movement via VPC Peering Connections]]'
-- '[[RDS Routing Tables Destination and Target Rules]]'
-- '[[Remote DPAPI Credential Dumping with DonPAPI]]'
-- '[[Remote File Inclusion via SMB]]'
-- '[[Remote Port Forwarding with Reverse SSH Tunneling]]'
-- '[[Ruby Bind Shell]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[SSH Beacon Payload with Cobalt Strike]]'
-- '[[Subversion Source Code Disclosure]]'
-- '[[WebDAV Relay Attack]]'
-- '[[Windows - Impacket Psexec Remote Command Execution]]'
-- '[[Windows - PowerShell Remoting Protocol with PSSESSION]]'
-- '[[Windows Remote Share Connection]]'
-- '[[Windows - SMBExec with Impacket for Command Execution]]'
-- '[[Windows - Using Impacket and PSExec with Credentials]]'
-- '[[Windows WinRM Credential Access]]'
-- '[[Workstation Takeover with RBCD]]'
+- '[[PrintNightmare-Remote-Code-Execution]]'
+- '[[List-Subnets-in-VPC-for-Lateral-Movement]]'
+- '[[List-EC2-Instances-in-Specific-Subnet-for-Lateral-Movement]]'
+- '[[rds-lateral-movement-via-ec2-instances-in-vpc]]'
+- '[[RDS-Lateral-Movement-via-EC2-Route-Tables]]'
+- '[[rds-lateral-movement-via-vpc-peering-connections]]'
+- '[[Modify-AWS-VPC-Route-Tables-for-RDS-Traffic-Redirection]]'
+- '[[Remote-DPAPI-Credential-Dumping-with-DonPAPI]]'
+- '[[Remote-File-Inclusion-via-SMB]]'
+- '[[Establish-Reverse-SSH-Tunnel-for-Remote-Port-Forwarding]]'
+- '[[Ruby-Bind-Shell]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[Deploy-SSH-Beacon-via-Cobalt-Strike]]'
+- '[[Subversion-Source-Code-Disclosure]]'
+- '[[WebDAV-Relay-Attack]]'
+- '[[Windows-Impacket-Psexec-Remote-Command-Execution]]'
+- '[[windows-powershell-remoting-with-pssession]]'
+- '[[Connect-to-Windows-Remote-Share]]'
+- '[[windows-smbexec-impacket-remote-command-execution]]'
+- '[[windows-impacket-psexec-remote-execution-with-credentials]]'
+- '[[windows-winrm-credential-access]]'
+- '[[Workstation-Takeover-with-RBCD]]'
 ---
 
 # Remote Services
@@ -68,6 +68,8 @@ procedures:
 ## Description
 
 An adversary may use Valid Accounts to log into a service specifically designed to accept remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.
+
+
 
 # Detection
 
@@ -109,25 +111,27 @@ Limit the number of accounts that may use remote services. Use multifactor authe
 
 ## Related Procedures (50)
 
-- [[AWS SSM Command Execution - EC2 Shell Script]]
-- [[Azure Generate Shared Access Signature (SAS) URLs for Blob Storage]]
-- [[Azure Pass the Certificate: AD Cert Request and RCE]]
-- [[Azure Web Apps: Remote SSH Connection]]
-- [[Bash TCP Reverse Shell Connection]]
-- [[Cloudflare Tunnel Exposer Pivoting]]
-- [[Copying EC2 Instances using AMI Image in AWS]]
-- [[DCOM Lateral Movement]]
-- [[DCOM Office Remote Code Execution]]
-- [[DCOM ShellBrowserWindow Calculator Execution]]
-- [[DCOM ShellExecute Calculator Execution]]
+- [[aws-ssm-command-execution-ec2-shell-script]]
+- [[Generate-Azure-Blob-Storage-SAS-URLs]]
+- [[azure-pass-the-certificate-ad-cert-request-and-rce]]
+- [[azure-web-apps-remote-ssh-connection]]
+- [[Establish-Bash-TCP-Reverse-Shell]]
+- [[Cloudflare-Tunnel-Pivoting-for-Lateral-Movement]]
+- [[Copy-EC2-Instance-via-AMI-Creation-in-AWS]]
+- [[dcom-lateral-movement]]
+- [[DCOM-Office-Remote-Code-Execution]]
+- [[dcom-shellbrowserwindow-calculator-execution]]
+- [[dcom-shellexecute-calculator-execution]]
 - [[Disable LLMNR and NetBIOS over TCP/IP]]
-- [[GitHack - Exploiting Insecure Source Code Management]]
-- [[Go Application Proxification with Graftcp]]
-- [[Inter-User Messaging]]
-- [[Java RMI Server RCE using Metasploit]]
-- [[Linked Database Column Extraction]]
-- [[Linked Database Top 5 Columns Extraction]]
-- [[Linux Meterpreter Reverse TCP Shell]]
-- [[Linux Reverse Shell Persistence with Ncat]]
+- [[GitHack-Exploiting-Insecure-Source-Code-Management]]
+- [[Proxify-Go-Application-with-Graftcp]]
+- [[Inter-User-Messaging]]
+- [[Java-RMI-Server-RCE-using-Metasploit]]
+- [[Extract-Data-from-Linked-SQL-Server-Database]]
+- [[Extract-Top-5-Columns-from-Linked-Database]]
+- [[Establish-Linux-Meterpreter-Reverse-TCP-Shell]]
+- [[linux-reverse-shell-persistence-via-ncat-systemd]]
 
 *...and 30 more*
+
+

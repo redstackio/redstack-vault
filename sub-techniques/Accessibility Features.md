@@ -9,14 +9,14 @@ updated_at: '2023-04-06T00:31:26.348061+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[AWS Lambda Function Policy Enumeration]]'
-- '[[Linux - Docker Privilege Escalation]]'
-- '[[Linux Password Looting via Recently Modified Files]]'
-- '[[Linux - TMUX Session Hijacking]]'
-- '[[PrinterNightmare Privilege Escalation]]'
-- '[[Printer Spooler Service Elevation of Privilege]]'
+- '[[aws-lambda-function-policy-enumeration]]'
+- '[[Linux-Docker-Privilege-Escalation]]'
+- '[[Linux-Password-Looting-via-Recently-Modified-Files]]'
+- '[[Linux-TMUX-Session-Hijacking]]'
+- '[[PrinterNightmare-Privilege-Escalation]]'
+- '[[Printer-Spooler-Service-Elevation-of-Privilege]]'
 ---
 
 # Accessibility Features
@@ -54,15 +54,15 @@ Other accessibility features exist that may also be leveraged in a similar fashi
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 6 procedures using this sub-technique:
 
-- [[AWS Lambda Function Policy Enumeration]]
-- [[Linux - Docker Privilege Escalation]]
-- [[Linux Password Looting via Recently Modified Files]]
-- [[Linux - TMUX Session Hijacking]]
-- [[PrinterNightmare Privilege Escalation]]
-- [[Printer Spooler Service Elevation of Privilege]]
+- [[aws-lambda-function-policy-enumeration]]
+- [[Linux-Docker-Privilege-Escalation]]
+- [[Linux-Password-Looting-via-Recently-Modified-Files]]
+- [[Linux-TMUX-Session-Hijacking]]
+- [[PrinterNightmare-Privilege-Escalation]]
+- [[Printer-Spooler-Service-Elevation-of-Privilege]]

@@ -20,107 +20,107 @@ techniques:
 - '[[Trusted Relationship|T1199 - Trusted Relationship]]'
 - '[[Valid Accounts|T1078 - Valid Accounts]]'
 procedures:
-- '[[Account Takeover Through Password Reset Poisoning]]'
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[AdminSDHolder Group Rights Abuse]]'
-- '[[ASCII Conversion XSS Filter Bypass]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS Lambda Backdoor Persistence]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS Metadata Key Grabbing]]'
-- '[[AWS RCE for Credential Access]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS SSH Key Persistence]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Azure AD App Secrets for Service Principal Authentication]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Phishing with Evilginx2]]'
-- '[[Basic Expression Language EL Injection]]'
-- '[[Basic RFI using Remote File Inclusion]]'
-- '[[Blind XSS Hunting with XSS Payloads]]'
-- '[[Cassandra Login Bypass using Injection]]'
-- '[[Cassandra Login Bypass via SQL Injection]]'
-- '[[Client-side Desynchronization through Request Smuggling]]'
-- '[[Cloud Instance SSRF through OpenStack Metadata URL]]'
+- '[[Account-Takeover-Through-Password-Reset-Poisoning]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[Abuse-AdminSDHolder-for-Privilege-Escalation]]'
+- '[[ASCII-Conversion-XSS-Filter-Bypass]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[aws-lambda-backdoor-persistence]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[Retrieve-AWS-EC2-Instance-Metadata-Keys]]'
+- '[[aws-rce-for-credential-access]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[aws-ssh-key-persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Azure-Phishing-with-Evilginx2]]'
+- '[[Basic-EL-Injection-in-Java-Web-Applications]]'
+- '[[Execute-Basic-Remote-File-Inclusion]]'
+- '[[Blind-XSS-Detection-Using-External-Payloads]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Exploit-Client-Side-Desynchronization-via-HTTP-Request-Smuggling]]'
+- '[[Exploit-SSRF-to-Access-OpenStack-Metadata]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[Connect to an SSH Server with a Private Key]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation with Wildcard Origin and No Credentials]]'
-- '[[CORS Misconfiguration Exploitation with Wildcard Origin and No Credentials]]'
-- '[[CORS Misconfiguration Exploitation with Wildcard Origin and No Credentials]]'
-- '[[CORS Misconfiguration Exploitation with Wildcard Origin and No Credentials]]'
-- '[[Create Windows Credentials Object]]'
-- '[[CRLF Injection Phishing Attack]]'
-- '[[CRLF Injection Phishing Attack]]'
-- '[[CRLF Injection Phishing Attack]]'
+- '[[connect-to-ssh-server-with-private-key]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[CORS-Misconfiguration-Exploitation-with-Wildcard-Origin-and-No-Credentials]]'
+- '[[CORS-Misconfiguration-Exploitation-with-Wildcard-Origin-and-No-Credentials]]'
+- '[[CORS-Misconfiguration-Exploitation-with-Wildcard-Origin-and-No-Credentials]]'
+- '[[CORS-Misconfiguration-Exploitation-with-Wildcard-Origin-and-No-Credentials]]'
+- '[[create-windows-pscredential-object]]'
+- '[[CRLF-Injection-Phishing-Attack]]'
+- '[[CRLF-Injection-Phishing-Attack]]'
+- '[[CRLF-Injection-Phishing-Attack]]'
 - '[[Cross Site Scripting - Bypassing cookie blacklist with window.cookieStore.get()
   method]]'
-- '[[Cross Site Scripting - Javascript Keylogger]]'
-- '[[Cross Site Scripting - Single Quote Bypass on MouseDown Event Handler]]'
-- '[[Cross Site Scripting (XSS) using Burp Collaborator to Steal Cookies]]'
-- '[[CSRF Attack via HTML GET Payload]]'
-- '[[CSRF Attack via HTML GET Payload]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF JSON GET Request]]'
-- '[[CSRF JSON GET Request]]'
-- '[[CSRF with Question Mark Payload]]'
-- '[[CSRF with Question Mark Payload]]'
-- '[[CSRF with Semicolon Payload]]'
-- '[[CSRF with Semicolon Payload]]'
-- '[[Custom DL and Execution via Malicious Macro Generator]]'
-- '[[CVE-2014-6271 Shellshock Remote Code Execution]]'
-- '[[CVE-2014-6271 Shellshock Remote Code Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[DB2 Injection: Retrieval of DB2PATH]]'
-- '[[DB2 Privilege Escalation]]'
-- '[[DNS Rebinding to Localhost]]'
+- '[[Cross-Site-Scripting-JavaScript-Keylogger]]'
+- '[[Cross-Site-Scripting-Single-Quote-Bypass-on-MouseDown-Event-Handler]]'
+- '[[XSS-Cookie-Theft-Using-Burp-Collaborator]]'
+- '[[CSRF-Attack-via-HTML-GET-Payload]]'
+- '[[CSRF-Attack-via-HTML-GET-Payload]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[Perform-CSRF-Attack-via-JSON-GET-Request]]'
+- '[[Perform-CSRF-Attack-via-JSON-GET-Request]]'
+- '[[csrf-referer-bypass-with-question-mark-injection]]'
+- '[[csrf-referer-bypass-with-question-mark-injection]]'
+- '[[perform-csrf-attack-with-semicolon-referer-bypass]]'
+- '[[perform-csrf-attack-with-semicolon-referer-bypass]]'
+- '[[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]'
+- '[[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]'
+- '[[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Retrieve-DB2PATH-via-SQL-Injection]]'
+- '[[Enumerate-DB2-User-Privileges]]'
+- '[[DNS-Rebinding-to-Localhost]]'
 - '[[DOM Based XSS Sink Detection]]'
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
-- '[[Drupal 7.x Services Module RCE (CVE-2019-6340)]]'
-- '[[Dynamic Group Membership - Set Secondary Email for Azure AD User]]'
-- '[[Eternal Blue Exploitation]]'
-- '[[Exotic Payloads for Bypassing Space Filter]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
+- '[[drupal-7-x-services-module-rce-cve-2019-6340]]'
+- '[[Set-Secondary-Email-for-Azure-AD-User]]'
+- '[[EternalBlue-SMB-Exploitation]]'
+- '[[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]'
 - '[[Exploit a Web App''s SQL Injection Vulnerability (SQLMap)]]'
-- '[[Exploit ImageMagick (ImageTragick) for Code Execution]]'
-- '[[Exploiting .NET Serialization with NetDataContractSerializer and TypeConfuseDelegate]]'
-- '[[Exploit Shellshock on a Vulnerable Web App]]'
-- '[[Exploit the Heartbleed Vulnerability]]'
-- '[[GitHack - Exploiting Insecure Source Code Management]]'
+- '[[Exploit-ImageMagick-ImageTragick-for-Code-Execution]]'
+- '[[Exploiting-NET-Serialization-with-NetDataContractSerializer-and-TypeConfuseDelegate]]'
+- '[[exploit-shellshock-vulnerable-web-app]]'
+- '[[exploit-heartbleed-vulnerability]]'
+- '[[GitHack-Exploiting-Insecure-Source-Code-Management]]'
 - '[[Gitlab/Github CI Command Execution]]'
-- '[[Gopher SMTP Back Connect SSRF]]'
-- '[[Gopher SMTP Email Spoofing via SSRF]]'
-- '[[GraphQL Data Extraction]]'
-- '[[GraphQL Injection Exploit: Identifying Injection Points]]'
-- '[[Hibernate Query Language Injection with $-quoted strings]]'
-- '[[HockeyApp API Token Exploitation]]'
-- '[[HockeyApp API Token Exploitation]]'
-- '[[HockeyApp API Token Exploitation]]'
-- '[[HTML POST CSRF Attack]]'
-- '[[HTML POST CSRF Attack]]'
-- '[[HTTP Request Smuggling Detection and Exploitation]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[Identifying and Exploiting XSS Vulnerabilities]]'
-- '[[Image Tragik Exploit]]'
-- '[[Image Tragik Exploit]]'
-- '[[Incapsula WAF Bypass via Common Cross-Site Scripting (XSS) Attack]]'
+- '[[Gopher-Protocol-SSRF-for-SMTP-Back-Connect]]'
+- '[[Gopher-SMTP-Email-Spoofing-via-SSRF]]'
+- '[[GraphQL-Introspection-for-Data-Extraction]]'
+- '[[Identify-GraphQL-Injection-Points]]'
+- '[[Hibernate-Query-Language-Injection-with-Dollar-Quoted-Strings]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
+- '[[HTML-POST-CSRF-Attack]]'
+- '[[HTML-POST-CSRF-Attack]]'
+- '[[http-request-smuggling-detection-and-exploitation]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[Identify-and-Exploit-XSS-Vulnerabilities]]'
+- '[[ImageTragick-Exploit-for-RCE-via-Crafted-Image-Conversion]]'
+- '[[ImageTragick-Exploit-for-RCE-via-Crafted-Image-Conversion]]'
+- '[[Incapsula-WAF-Bypass-via-XSS-Attack]]'
 - '[[IPv6/IPv4 Address Embedding SSRF]]'
-- '[[JWT Token Creation]]'
-- '[[LFI to RCE via Apache and Nginx Log Files]]'
+- '[[Forge-Custom-JWT-Token-for-Auth-Bypass]]'
+- '[[LFI-to-RCE-via-Apache-and-Nginx-Log-Files]]'
 - '[[Linux Privilege Escalation via LXC/LXD Alpine Image]]'
-- '[[Linux Privilege Escalation via SSH Key]]'
-- '[[Linux Privilege Escalation via Wildcard and GTFOBins]]'
+- '[[Linux-Privilege-Escalation-via-SSH-Key]]'
+- '[[Linux-Privilege-Escalation-via-Wildcard-and-GTFOBins]]'
 ---
 
 # Initial Access
@@ -130,6 +130,8 @@ procedures:
 ## Description
 
 The initial access tactic represents the vectors adversaries use to gain an initial foothold within a network.
+
+
 
 ## Techniques
 
@@ -152,25 +154,27 @@ This tactic includes 12 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Account Takeover Through Password Reset Poisoning]]
-- [[Active Directory Object Owner Hijacking]]
-- [[AdminSDHolder Group Rights Abuse]]
-- [[ASCII Conversion XSS Filter Bypass]]
-- [[AWS Console Access via API Keys]]
-- [[AWS EC2 Instance Connect with SSH Key Push]]
-- [[AWS IAM Access Key Creation]]
-- [[AWS Lambda Backdoor Persistence]]
-- [[AWS Managed Policies Enumeration]]
-- [[AWS Metadata Key Grabbing]]
-- [[AWS RCE for Credential Access]]
-- [[AWS Role Assumption for Persistence]]
-- [[AWS SSH Key Persistence]]
-- [[AWS SSH Persistence with Authorized Keys]]
-- [[Azure AD App Secrets for Service Principal Authentication]]
-- [[Azure Pass the Certificate: AD Cert Request and RCE]]
-- [[Azure Phishing with Evilginx2]]
-- [[Basic Expression Language EL Injection]]
-- [[Basic RFI using Remote File Inclusion]]
-- [[Blind XSS Hunting with XSS Payloads]]
+- [[Account-Takeover-Through-Password-Reset-Poisoning]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[Abuse-AdminSDHolder-for-Privilege-Escalation]]
+- [[ASCII-Conversion-XSS-Filter-Bypass]]
+- [[AWS-Console-Access-via-API-Keys]]
+- [[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]
+- [[aws-iam-create-access-key-for-user]]
+- [[aws-lambda-backdoor-persistence]]
+- [[Enumerate-AWS-Managed-Policies-for-IAM-User]]
+- [[Retrieve-AWS-EC2-Instance-Metadata-Keys]]
+- [[aws-rce-for-credential-access]]
+- [[Assume-AWS-Role-for-Persistence]]
+- [[aws-ssh-key-persistence]]
+- [[aws-ssh-persistence-via-authorized-keys]]
+- [[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]
+- [[azure-pass-the-certificate-ad-cert-request-and-rce]]
+- [[Azure-Phishing-with-Evilginx2]]
+- [[Basic-EL-Injection-in-Java-Web-Applications]]
+- [[Execute-Basic-Remote-File-Inclusion]]
+- [[Blind-XSS-Detection-Using-External-Payloads]]
 
 *...and 80 more*
+
+

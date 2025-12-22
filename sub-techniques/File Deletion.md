@@ -10,9 +10,9 @@ parent_technique: '[[Indicator Removal on Host|T1070 - Indicator Removal on Host
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Linux Command History Evasion]]'
-- '[[Obfuscating AWS CloudTrail and GuardDuty Logs]]'
-- '[[SQLite Injection - Remote Command Execution using Load_extension]]'
+- '[[Linux-Command-History-Evasion]]'
+- '[[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]'
+- '[[SQLite-Injection-Remote-Command-Execution-via-Load-Extension]]'
 ---
 
 # File Deletion
@@ -43,6 +43,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[Linux Command History Evasion]]
-- [[Obfuscating AWS CloudTrail and GuardDuty Logs]]
-- [[SQLite Injection - Remote Command Execution using Load_extension]]
+- [[Linux-Command-History-Evasion]]
+- [[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]
+- [[SQLite-Injection-Remote-Command-Execution-via-Load-Extension]]

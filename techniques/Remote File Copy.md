@@ -10,29 +10,29 @@ tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[BITSAdmin Download and Execute]]'
-- '[[Browse an FTP Site with an Interactive Session]]'
-- '[[Copy file from HTTP to remote host WinRS + BitsAdmin]]'
-- '[[Copy file to remote machine with xcopy (LOL)]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Insecure File Upload Exploit via Picture Compression]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[Mshta Remote HTA Execution]]'
-- '[[MYSQL Dumpfile PHP Shell Creation]]'
-- '[[Perl Reverse Shell Cheat Sheet]]'
-- '[[RDP Remote Code Execution]]'
-- '[[Redis SSRF Exploitation with Webshell and Reverse Shell]]'
-- '[[Rundll32 Download and Execute via WebDAV and Remote Script Execution]]'
-- '[[SCF and URL File Attack Against Writeable Share]]'
-- '[[SCF and URL File Attack Against Writeable Share]]'
-- '[[Upload Insecure Configuration Files]]'
-- '[[WebDAV Batch File Execution via Cmd]]'
-- '[[Web Delivery and Proxy Credential Stealing]]'
-- '[[Windows - Privileged DiagHub Exploit]]'
-- '[[XSLT Injection - Remote Code Execution with PHP wrapper]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[BITSAdmin-Download-and-Execute-Payload]]'
+- '[[Browse-FTP-Site-with-Interactive-Session]]'
+- '[[Copy-File-to-Remote-Windows-Host-Using-WinRS-and-BitsAdmin]]'
+- '[[Copy-File-to-Remote-Windows-Machine-via-Xcopy]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[Insecure-File-Upload-Exploit-via-Picture-Compression]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[Mshta-Remote-HTA-Execution]]'
+- '[[MySQL-Dumpfile-PHP-Shell-Creation]]'
+- '[[Establish-Reverse-Shell-Using-Perl]]'
+- '[[RDP-Remote-Code-Execution]]'
+- '[[Redis-SSRF-Exploitation-for-Webshell-and-Reverse-Shell]]'
+- '[[Rundll32-Download-and-Execute-via-WebDAV-or-Remote-Script]]'
+- '[[SCF-URL-File-Attack-Against-Writable-Share]]'
+- '[[SCF-URL-File-Attack-Against-Writable-Share]]'
+- '[[Upload-Malicious-Package-Manager-Configurations-for-RCE]]'
+- '[[WebDAV-Batch-File-Execution-via-Cmd]]'
+- '[[Deliver-Meterpreter-Payload-via-Web-Delivery-and-Steal-Proxy-Credentials]]'
+- '[[Windows-Privileged-DiagHub-Exploit]]'
+- '[[xslt-injection-for-php-remote-code-execution]]'
 ---
 
 # Remote File Copy
@@ -42,6 +42,8 @@ procedures:
 ## Description
 
 Files may be copied from one system to another to stage adversary tools or other files over the course of an operation. Files may be copied from an external adversary-controlled system through the Command and Control channel to bring tools into the victim network or through alternate protocols with another tool such as FTP. Files can also be copied over on Mac and Linux with native tools like scp, rsync, and sftp.Adversaries may also copy files laterally between internal victim systems to support Lateral Movement with remote Execution using inherent file sharing protocols such as file sharing over SMB to connected network shares or with authenticated connections with Windows Admin Shares or Remote Desktop Protocol.
+
+
 
 # Detection
 
@@ -434,25 +436,27 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (23)
 
-- [[AWS IAM Policy Version Retrieval]]
-- [[Azure SSRF for VM Metadata Service]]
-- [[Basic Directory Traversal Exploitation]]
-- [[BITSAdmin Download and Execute]]
-- [[Browse an FTP Site with an Interactive Session]]
-- [[Copy file from HTTP to remote host WinRS + BitsAdmin]]
-- [[Copy file to remote machine with xcopy (LOL)]]
-- [[Enclosed Alphanumeric Server-Side Request Forgery]]
-- [[Insecure File Upload Exploit via Picture Compression]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[Mshta Remote HTA Execution]]
-- [[MYSQL Dumpfile PHP Shell Creation]]
-- [[Perl Reverse Shell Cheat Sheet]]
-- [[RDP Remote Code Execution]]
-- [[Redis SSRF Exploitation with Webshell and Reverse Shell]]
-- [[Rundll32 Download and Execute via WebDAV and Remote Script Execution]]
-- [[SCF and URL File Attack Against Writeable Share]]
-- [[SCF and URL File Attack Against Writeable Share]]
-- [[Upload Insecure Configuration Files]]
-- [[WebDAV Batch File Execution via Cmd]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]
+- [[Basic-Directory-Traversal-Exploitation]]
+- [[BITSAdmin-Download-and-Execute-Payload]]
+- [[Browse-FTP-Site-with-Interactive-Session]]
+- [[Copy-File-to-Remote-Windows-Host-Using-WinRS-and-BitsAdmin]]
+- [[Copy-File-to-Remote-Windows-Machine-via-Xcopy]]
+- [[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]
+- [[Insecure-File-Upload-Exploit-via-Picture-Compression]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[Mshta-Remote-HTA-Execution]]
+- [[MySQL-Dumpfile-PHP-Shell-Creation]]
+- [[Establish-Reverse-Shell-Using-Perl]]
+- [[RDP-Remote-Code-Execution]]
+- [[Redis-SSRF-Exploitation-for-Webshell-and-Reverse-Shell]]
+- [[Rundll32-Download-and-Execute-via-WebDAV-or-Remote-Script]]
+- [[SCF-URL-File-Attack-Against-Writable-Share]]
+- [[SCF-URL-File-Attack-Against-Writable-Share]]
+- [[Upload-Malicious-Package-Manager-Configurations-for-RCE]]
+- [[WebDAV-Batch-File-Execution-via-Cmd]]
 
 *...and 3 more*
+
+

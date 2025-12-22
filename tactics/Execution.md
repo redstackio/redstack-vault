@@ -47,107 +47,107 @@ techniques:
 - '[[Windows Remote Management|T1028 - Windows Remote Management]]'
 - '[[XSL Script Processing|T1220 - XSL Script Processing]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]'
-- '[[Advanced XSS in Angular and AngularJS]]'
-- '[[Akamai WAF Bypass via Common XSS Injection Attack]]'
-- '[[Akamai WAF Bypass via Prompt User Input]]'
-- '[[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]'
-- '[[Argument Injection - Find Files]]'
-- '[[ASP Razor Server Side Template Injection with C# Command Execution]]'
-- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
-- '[[Automated SQL Injection with SQLmap]]'
-- '[[Automatic Sanitization Bypass in Angular and AngularJS]]'
-- '[[AWS Lambda Function Invocation]]'
-- '[[AWS Lambda Role Privilege Escalation]]'
-- '[[AWS Metadata Information Retrieval]]'
-- '[[AWS RCE for Credential Access]]'
-- '[[AWS Userdata Retrieval via Instance Metadata Service]]'
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Azure Runbook Automation]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Azure VM RunCommand Execution]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Backgrounding Long Running Commands]]'
-- '[[Bash TCP Reverse Shell Connection]]'
-- '[[Basic Command Injection Exploitation]]'
-- '[[Basic LFI Filter Bypass]]'
-- '[[Basic LFI via UTF-8 encoding]]'
-- '[[Basic LFI with Path Truncation]]'
-- '[[Basic RFI with Double Encoding]]'
-- '[[Blind XSS Data Exfiltration]]'
-- '[[Blind XSS Hunting with XSS Payloads]]'
-- '[[Blind XXE Data Exfiltration via OOB Attack]]'
-- '[[Blind XXE Out-of-Band Data Exfiltration]]'
-- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
-- '[[Bypassing XSS Filters using UTF BOM Character]]'
-- '[[Cassandra Login Bypass using Injection]]'
-- '[[Certutil Download and Execute]]'
-- '[[Client Side Template Injection using Blind XSS]]'
-- '[[Cloudflare XSS Bypass via Common WAF and HTML Injection]]'
-- '[[Cloudflare XSS Bypass via SVG Onload Alert]]'
-- '[[Cloud Security Assessment and Auditing]]'
-- '[[Cobalt Strike Persistence Kit]]'
-- '[[Command Execution via xp_cmdshell - MSSQL Server]]'
-- '[[Command Injection - Chaining Commands]]'
-- '[[Command Injection Filter Bypass with $() and variable expansion]]'
-- '[[Command Injection Filter Bypass with Backslash and Slash]]'
-- '[[Command Injection - Filter Bypass with Backslash Newline]]'
-- '[[Command Injection Filter Bypass with PowerShell]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]'
+- '[[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]'
+- '[[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]'
+- '[[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]'
+- '[[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]'
+- '[[Argument-Injection-via-Find-Command]]'
+- '[[asp-razor-server-side-template-injection-with-csharp-command-execution]]'
+- '[[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]'
+- '[[Automated-SQL-Injection-Detection-and-Exploitation-with-SQLmap]]'
+- '[[Bypass-Angular-DomSanitizer-for-XSS-Injection]]'
+- '[[Invoke-AWS-Lambda-Function-via-API-Gateway]]'
+- '[[aws-lambda-role-privilege-escalation]]'
+- '[[AWS-Metadata-Information-Retrieval]]'
+- '[[aws-rce-for-credential-access]]'
+- '[[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[Create-and-Execute-Malicious-Azure-Runbook]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[azure-vm-runcommand-execution]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Background-Long-Running-Commands]]'
+- '[[Establish-Bash-TCP-Reverse-Shell]]'
+- '[[Basic-Command-Injection-Exploitation]]'
+- '[[Basic-LFI-Filter-Bypass-Using-Directory-Traversal]]'
+- '[[Basic-LFI-via-UTF-8-Encoding]]'
+- '[[Basic-LFI-with-Path-Truncation]]'
+- '[[Basic-RFI-with-Double-Encoding]]'
+- '[[Blind-XSS-Data-Exfiltration]]'
+- '[[Blind-XSS-Detection-Using-External-Payloads]]'
+- '[[Blind-XXE-Data-Exfiltration-via-OOB-Attack]]'
+- '[[Blind-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]'
+- '[[Bypassing-XSS-Filters-Using-UTF-BOM-Character]]'
+- '[[Cassandra-Login-Bypass-via-SQL-Injection]]'
+- '[[Certutil-Download-and-Execute]]'
+- '[[Client-Side-Template-Injection-using-Blind-XSS]]'
+- '[[Cloudflare-XSS-Bypass-via-Common-WAF-and-HTML-Injection]]'
+- '[[Cloudflare-XSS-Bypass-via-SVG-Onload-Alert]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
+- '[[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]'
+- '[[Command-Execution-via-xp-cmdshell-MSSQL-Server]]'
+- '[[Command-Injection-Chaining-Commands]]'
+- '[[Command-Injection-Filter-Bypass-Using-Variable-Expansion]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-and-Slash]]'
+- '[[Command-Injection-Filter-Bypass-with-Backslash-Newline]]'
+- '[[Command-Injection-Filter-Bypass-with-PowerShell]]'
 - '[[Command Injection - Reading /etc/passwd]]'
-- '[[Command Injection - Time Based Data Exfiltration]]'
-- '[[Command Injection via Curl Arguments]]'
-- '[[Command Injection with $@]]'
-- '[[Command Injection with $() Filter Bypass]]'
-- '[[Command Injection with Double Quote Bypass]]'
-- '[[Command Injection with Filter Bypass using Line Return]]'
-- '[[Command Injection with Filter Bypass using Single Quote]]'
-- '[[Connect to WinRM from a Linux System (Pass-the-Hash)]]'
+- '[[Time-Based-Data-Exfiltration-via-Command-Injection]]'
+- '[[Command-Injection-via-Curl-Arguments]]'
+- '[[Command-Injection-Bypass-Using-$@-Syntax]]'
+- '[[Command-Injection-with-Subshell-Filter-Bypass]]'
+- '[[Command-Injection-with-Double-Quote-Bypass]]'
+- '[[Command-Injection-with-Line-Return-Bypass]]'
+- '[[Command-Injection-with-Filter-Bypass-using-Single-Quote]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[Create a .LNK with a Custom Payload]]'
-- '[[Create a Malicious NodeJS npm Package]]'
-- '[[Create a Windows Scheduled Task]]'
-- '[[Credential Harvesting from Task Scheduler using Mimikatz]]'
-- '[[C Reverse Shell]]'
-- '[[Cross Site Scripting Alert Bypass using Alternate Function]]'
-- '[[Cross Site Scripting - Alert Parent Location Filter Bypass]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Create-LNK-File-with-Custom-PowerShell-Payload]]'
+- '[[Create-Malicious-NodeJS-NPM-Package]]'
+- '[[Create-Windows-Scheduled-Task-for-Persistence]]'
+- '[[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]'
+- '[[Establish-C-Reverse-Shell]]'
+- '[[Bypass-XSS-Alert-Filter-Using-Alternate-Functions]]'
+- '[[Cross-Site-Scripting-Alert-Parent-Location-Filter-Bypass]]'
 - '[[Cross Site Scripting - Bypassing cookie blacklist with window.cookieStore.get()
   method]]'
-- '[[Cross Site Scripting - Javascript Keylogger]]'
-- '[[Cross Site Scripting - Single Quote Bypass on MouseDown Event Handler]]'
-- '[[Cross Site Scripting (XSS) using Burp Collaborator to Steal Cookies]]'
-- '[[CSP Bypass via Unsafe Inline Script Injection]]'
-- '[[CSP Bypass via XSS Injection]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF Payload to Set Role to Admin via JSON POST]]'
-- '[[CSRF Payload to Set Role to Admin via JSON POST]]'
-- '[[CSV Injection - Exploit]]'
-- '[[CURL Argument Injection]]'
-- '[[Custom DL and Execution via Malicious Macro Generator]]'
-- '[[Custom Metadata PHP Injection]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[CVE-2021-44228 Log4Shell Remote Command Execution]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[DB2 Injection - ASCII Value Extraction]]'
-- '[[DB2 Injection: Retrieval of DB2PATH]]'
-- '[[DC PrintSpooler Service Check and ntlmrelayx with printerbug.py]]'
-- '[[Docker Security Assessment]]'
-- '[[DOCM Download and Execute via PowerShell]]'
+- '[[Cross-Site-Scripting-JavaScript-Keylogger]]'
+- '[[Cross-Site-Scripting-Single-Quote-Bypass-on-MouseDown-Event-Handler]]'
+- '[[XSS-Cookie-Theft-Using-Burp-Collaborator]]'
+- '[[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]'
+- '[[CSP-Bypass-via-XSS-Injection]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]'
+- '[[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]'
+- '[[Exploit-CSV-Injection-for-Command-Execution]]'
+- '[[Curl-Argument-Injection-for-Arbitrary-Command-Execution]]'
+- '[[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]'
+- '[[Inject-PHP-Code-into-Image-Metadata-for-RCE]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Exploit-Log4Shell-for-Remote-Command-Execution]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[DB2-SQL-Injection-ASCII-Value-Extraction]]'
+- '[[Retrieve-DB2PATH-via-SQL-Injection]]'
+- '[[Exploit-ZeroLogon-and-PrinterBug-for-DC-System-Access]]'
+- '[[Docker-Security-Assessment]]'
+- '[[DOCM-Download-and-Execute-via-PowerShell]]'
 - '[[DOM Based XSS Sink Detection]]'
-- '[[Download and Execute a PowerShell Script]]'
-- '[[ECMAScript6 Filter Bypass Script Injection]]'
-- '[[Encode and Execute a Base64 PowerShell Command]]'
-- '[[Error Based XXE Injection Attack]]'
+- '[[download-and-execute-remote-powershell-script]]'
+- '[[ecmascript6-filter-bypass-script-injection]]'
+- '[[Encode-and-Execute-Base64-PowerShell-Command]]'
+- '[[Error-Based-XXE-Injection-Attack]]'
 ---
 
 # Execution
@@ -157,6 +157,8 @@ procedures:
 ## Description
 
 The execution tactic represents techniques that result in execution of adversary-controlled code on a local or remote system. This tactic is often used in conjunction with initial access as the means of executing code once access is obtained, and lateral movement to expand access to remote systems on a network.
+
+
 
 ## Techniques
 
@@ -206,25 +208,27 @@ This tactic includes 39 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]
-- [[Advanced XSS in Angular and AngularJS]]
-- [[Akamai WAF Bypass via Common XSS Injection Attack]]
-- [[Akamai WAF Bypass via Prompt User Input]]
-- [[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]
-- [[Argument Injection - Find Files]]
-- [[ASP Razor Server Side Template Injection with C# Command Execution]]
-- [[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]
-- [[Automated SQL Injection with SQLmap]]
-- [[Automatic Sanitization Bypass in Angular and AngularJS]]
-- [[AWS Lambda Function Invocation]]
-- [[AWS Lambda Role Privilege Escalation]]
-- [[AWS Metadata Information Retrieval]]
-- [[AWS RCE for Credential Access]]
-- [[AWS Userdata Retrieval via Instance Metadata Service]]
-- [[Azure Automation Account Runbook Persistence]]
-- [[Azure Runbook Automation]]
-- [[Azure SSRF for VM Metadata Service]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]
+- [[Advanced-XSS-Bypass-in-Angular-and-AngularJS]]
+- [[Akamai-WAF-Bypass-via-Common-XSS-Injection-Attack]]
+- [[Akamai-WAF-Bypass-via-XSS-Prompt-Injection]]
+- [[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]
+- [[Argument-Injection-via-Find-Command]]
+- [[asp-razor-server-side-template-injection-with-csharp-command-execution]]
+- [[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]
+- [[Automated-SQL-Injection-Detection-and-Exploitation-with-SQLmap]]
+- [[Bypass-Angular-DomSanitizer-for-XSS-Injection]]
+- [[Invoke-AWS-Lambda-Function-via-API-Gateway]]
+- [[aws-lambda-role-privilege-escalation]]
+- [[AWS-Metadata-Information-Retrieval]]
+- [[aws-rce-for-credential-access]]
+- [[Retrieve-AWS-EC2-User-Data-via-Instance-Metadata-Service]]
+- [[Azure-Automation-Account-Runbook-Persistence]]
+- [[Create-and-Execute-Malicious-Azure-Runbook]]
+- [[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]
 
 *...and 80 more*
+
+

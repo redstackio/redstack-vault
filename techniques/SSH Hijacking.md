@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Cross-Site Request Forgery with File Upload]]'
-- '[[Cross-Site Request Forgery with File Upload]]'
-- '[[Docker API Port Scanning and Container Management]]'
-- '[[SSH-Agent Forwarding Hijack]]'
-- '[[Windows SSH with Kerberos Authentication]]'
+- '[[Perform-CSRF-Attack-via-File-Upload]]'
+- '[[Perform-CSRF-Attack-via-File-Upload]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
+- '[[SSH-Agent-Forwarding-Hijack]]'
+- '[[Windows-SSH-with-Kerberos-Authentication]]'
 ---
 
 # SSH Hijacking
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Secure Shell (SSH) is a standard means of remote access on Linux and macOS systems. It allows a user to connect to another system via an encrypted tunnel, commonly authenticating through a password, certificate or the use of an asymmetric encryption key pair.In order to move laterally from a compromised host, adversaries may take advantage of trust relationships established with other systems via public key authentication in active SSH sessions by hijacking an existing connection to another system. This may occur through compromising the SSH agent itself or by having access to the agent's socket. If an adversary is able to obtain root access, then hijacking SSH sessions is likely trivial. [1] [2] [3] Compromising the SSH agent also provides access to intercept SSH credentials. [4]SSH Hijacking differs from use of Remote Services because it injects into an existing SSH session rather than creating a new session using Valid Accounts.
+
+
 
 # Detection
 
@@ -56,8 +58,10 @@ Ensure SSH key pairs have strong passwords and refrain from using key-store tech
 
 ## Related Procedures (5)
 
-- [[Cross-Site Request Forgery with File Upload]]
-- [[Cross-Site Request Forgery with File Upload]]
-- [[Docker API Port Scanning and Container Management]]
-- [[SSH-Agent Forwarding Hijack]]
-- [[Windows SSH with Kerberos Authentication]]
+- [[Perform-CSRF-Attack-via-File-Upload]]
+- [[Perform-CSRF-Attack-via-File-Upload]]
+- [[Exploit-Open-Docker-API-for-Container-Management]]
+- [[SSH-Agent-Forwarding-Hijack]]
+- [[Windows-SSH-with-Kerberos-Authentication]]
+
+

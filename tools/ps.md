@@ -6,72 +6,13 @@ verified: true
 created_at: '2020-02-28T00:46:12.508465+00:00'
 updated_at: '2023-05-30T19:54:31.775981+00:00'
 commands:
-- '[[ActiveDirectory Get SID of a Foreign Group in Trusted Domain]]'
-- '[[Add-Content Embed a Data Stream Within a File]]'
-- '[[BitsTransfer Download a File from a Web Server]]'
-- '[[Clean up After a PSSession]]'
-- '[[Create a PSSession and Enter It]]'
-- '[[Create a PSSession and Execute a Command]]'
-- '[[Create a Windows PSCredential Object]]'
-- '[[Create a Windows Secure String]]'
-- '[[Disable PowerShell Execution Policy Restrictions]]'
-- '[[Download and Execute PowerShell Script (Invoke-Expression)]]'
-- '[[Enumeate Windows for Privilesge Escalation Paths]]'
-- '[[Enumerate Azure Blobs with Microburst]]'
-- '[[Enumerate Local Users'' PowerShell History]]'
-- '[[Exclude a Folder from Windows Defender (PowerShell 4+)]]'
-- '[[Export AppLocker Rules in XML]]'
-- '[[Get PowerShell Execution Policy]]'
-- '[[Get-ADDomain Get Domain Information from Active Directory]]'
-- '[[Get-ChildItem Grep Files Recursively for a String]]'
-- '[[Get-ChildItem List Files with ADS]]'
-- '[[Inveigh Intercept and Log NTLMv2 Hashes via LLMNR and NetBIOS Requests]]'
-- '[[Invoke-Expression Download a File from a Web Server]]'
-- '[[Invoke-WebRequest Download a File from a Web Server]]'
-- '[[JAWS Enumerate for Privilege Escalation ]]'
-- '[[Launch a Neo4j Instance]]'
-- '[[Launch a Program on Login with Userinit]]'
-- '[[List Open Named Pipes on Windows (PowerShell)]]'
-- '[[List a Local Windows User''s Info and Group Membership]]'
-- '[[MSBuild Build Package from XML]]'
-- '[[Mimikatz Create a Golden Ticket with the krbtgt hash]]'
-- '[[PSSession Spawn a WinRM Session on a Remote System]]'
-- '[[PowerShell Check for Anti-Virus in Windows (SecurityCenter2)]]'
-- '[[PowerShell Create a .LNK File with a PowerShell Payload]]'
-- '[[PowerShell Execute a Base64 Encoded Command]]'
-- '[[PowerShell Extract Password from Secure String Credentials]]'
-- '[[PowerShell Generate Credentials Using a Secure String]]'
-- '[[PowerShell Generate a Secure String]]'
-- '[[PowerShell Import a Module]]'
-- '[[PowerShell Print a Secure String]]'
-- '[[PowerShell Show Current Language Mode]]'
-- '[[PowerView Add Active Directory Group Privileges]]'
-- '[[PowerView Add DCSync Rights to a User]]'
-- '[[PowerView Add SPN to a Domain User]]'
-- '[[PowerView Get Global Catalogs for the Current Forest]]'
-- '[[PowerView List AD Accounts with SPN Set]]'
-- '[[PowerView List Domain Users with Kerberos Preauthentication Disabled]]'
-- '[[PowerView Recursively List Users of a Group]]'
-- '[[PowerView Recursively List a User''s Groups]]'
-- '[[PowerView Remove SPN to a Domain User]]'
-- '[[PowerView Reset a Domain User''s Password]]'
-- '[[Query Active Directory User by SID for DCSync Rights]]'
-- '[[Query Windows Registry for Auto Logon Credentials]]'
-- '[[SeatBelt Run All Windows Enumeration Checks]]'
-- '[[Sherlock Import Module and Enumerate Vulnerabilities]]'
-- '[[WinRM.rb Open a Shell Connection to the Target]]'
-- '[[YSoSerial Generate a .NET Deserialization Payload]]'
-- '[[evil-winrm.rb Connect to a WinRM Server (NTLM)]]'
-- '[[evil-winrm.rb Connect to a WinRM Server]]'
-- '[[msfvenom Powershell Script Reverse Shell]]'
-- '[[ps List All Running Processes]]'
-- '[[setspn List AD Accounts with SPN Set]]'
-- '[[xxd Convert Hex Dump to Binary]]'
+  - '[[commands/ps-list-all-running-processes]]'
 platforms:
-- Linux
+  - Linux
 tags:
-- '[[Enumeration]]'
-- '[[process]]'
+  - Enumeration
+  - process
+validated: true
 ---
 
 # ps
@@ -80,47 +21,98 @@ tags:
 
 ## Overview
 
-ps displays information about a selection of the active processes. 
+ps is a command-line utility in Unix-like operating systems that displays information about active processes. It is commonly used for process enumeration, monitoring system resource usage, and identifying running services or applications during security assessments or system administration.
 
 ## Description
 
-# Description
+The ps command provides snapshots of current processes and their status, including details like process ID (PID), user, CPU/memory usage, and command arguments. It supports various output formats (BSD, System V, GNU) and can filter processes based on user, terminal, or other criteria. In offensive security, ps is essential for discovering running services, identifying potential privilege escalation vectors, or verifying if specific processes are active after exploitation.
 
-ps** **displays information about a selection of the active processes.
+## Features
 
+- Feature 1: Flexible output formatting with BSD-style (-aux) or System V-style (ps -ef) options.
+- Feature 2: Filtering by user, PID, or process group to target specific processes.
+- Feature 3: Integration with pipes and grep for quick searching of process lists.
 
+## Installation
 
-# Example
+### Requirements
 
+- Standard on most Unix-like systems; no additional dependencies.
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_6aaac1ca-041c-41ee-b21a-b5fc134b6989}}
+ps is typically pre-installed on Linux distributions. If missing:
 
+```bash
+# On Debian/Ubuntu (part of procps package)
+apt update && apt install procps
 
+# On Red Hat/CentOS/Fedora
+yum install procps-ng  # or dnf install procps-ng on newer versions
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+ps --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| -a | Select all processes except session leaders (BSD style). |
+| -u | Display user-oriented format. |
+| -x | Include processes without controlling ttys. |
+| -f | Full-format listing (System V style). |
+| -e | Show all processes (System V style). |
+| -o | Specify output format (e.g., -o pid,ppid,cmd). |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+ps aux
+```
 
+This lists all processes in user-oriented format.
 
+### Example 2: Advanced Usage
 
+```bash
+ps -eo pid,ppid,cmd,user | grep apache
+```
 
-## Platforms
+This shows PID, parent PID, command, and user for processes matching 'apache'.
 
-- Linux
+## MITRE ATT&CK Mapping
 
-## Commands (1)
+This tool is commonly associated with:
 
-- [[ps List All Running Processes]]
+### Techniques
 
-## Tags
+- [[Process Discovery]] Process Discovery
 
-- [[Enumeration]]
-- [[process]]
+### Tactics
 
+- [[Discovery]] Discovery
 
+## Detection
+
+- Detection method 1: Process auditing tools like auditd can log executions of ps, though it's a standard system command and often whitelisted.
+- Detection method 2: Monitor for unusual piping with grep or awk on ps output, which may indicate targeted enumeration (e.g., via Sysmon or EDR tools).
+
+## Related Procedures
+
+No related procedures linked yet.
+
+## Related Tools
+
+- [[tools/top]]
+- [[tools/htop]]
+
+## References
+
+- Official man page: man ps
+- GNU Coreutils documentation: https://www.gnu.org/software/coreutils/ps

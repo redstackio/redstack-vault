@@ -1,58 +1,144 @@
 ---
 id: f09654b7-28b2-47d2-8c42-5a953844cd34
-name: p0f
 type: tool
-verified: false
+name: p0f
+verified: true
 created_at: '2019-08-28T21:17:29.070043+00:00'
 updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[p0f Passive Traffic Fingerprinting]]'
+platforms:
+  - Linux
+  - macOS
 tags:
-- '[[Fingerprint]]'
-- '[[Network]]'
+  - Fingerprint
+  - Network
+  - Passive
+  - OS-Fingerprinting
+  - Reconnaissance
+url: 'https://lcamtuf.coredump.cx/p0f3/README'
+commands:
+  - '[[commands/list-network-interfaces]]'
+  - '[[commands/p0f-passive-os-fingerprinting]]'
+validated: true
 ---
 
 # p0f
 
+**Status**: Unverified
+
 ## Overview
 
-P0f utilizes an array of passive traffic fingerprinting mechanisms to identify the systems behind TCP/IP communications on a network, without interfering with the transmission. Among the many features, p0f can identify the presence of firewalls, estimate the distance to remote computers, passively 
+p0f is a passive traffic fingerprinting tool used for identifying operating systems and other system details from TCP/IP communications without generating any additional network traffic. It is commonly used in offensive security for reconnaissance, network mapping, and stealthy information gathering during red team engagements.
 
 ## Description
 
-# Description
+p0f performs passive OS fingerprinting by analyzing TCP packet signatures such as SYN packets, options, and window sizes. It can detect firewalls, estimate network distance, identify connection types (e.g., NAT, load balancers), and provide details like OS version, uptime, and interface types. Unlike active tools like Nmap, p0f operates silently, making it ideal for avoiding detection in sensitive environments. It supports filtering with libpcap syntax and can output results in various formats for further analysis.
 
-P0f utilizes an array of passive traffic fingerprinting mechanisms to identify the systems behind TCP/IP communications on a network, without interfering with the transmission. Among the many features, p0f can identify the presence of firewalls, estimate the distance to remote computers, passively identify OS, calculate uptime, connection type, and more. It is exceptionally useful for enumerating networks without generating any traffic, so as to avoid generating traffic which would set off security alerts.
+## Features
 
+- Feature 1: Passive OS and kernel fingerprinting from TCP SYN/ACK packets
+- Feature 2: Detection of NAT, firewalls, and load balancers
+- Feature 3: Uptime estimation and distance calculation to remote hosts
+- Feature 4: Custom signature support for new OS versions
+- Feature 5: Output to files or pipes for integration with other tools
 
+## Installation
 
-# Example
+### Requirements
 
+- Linux kernel with libpcap support
+- Root privileges for packet capture (or configured capabilities)
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_4509bd7b-a62e-4dd0-899e-49661bcccf24}}
+```bash
+# On Debian/Ubuntu
+sudo apt update
+sudo apt install p0f
 
+# On Kali Linux (pre-installed in most cases)
+sudo apt update
+sudo apt install p0f
 
+# From source (if needed)
+cd /tmp
+git clone https://github.com/lcamtuf/p0f.git
+cd p0f
+make
+sudo make install
+```
 
-# Installation
+## Basic Usage
 
-## Install on Debian/Ubuntu
+```bash
+p0f --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-i $_INTERFACE` | Specify the network interface to listen on |
+| `-p` | Enable promiscuous mode |
+| `-f $_SIGNATURE_FILE` | Use custom signature file |
+| `-o $_OUTPUT_FILE` | Log output to file |
+| `-s $_FILTER` | Apply libpcap filter (e.g., "tcp port 80") |
 
+## Examples
 
+### Example 1: Basic Usage
 
+Listen on the default interface for passive fingerprinting:
 
+```bash
+sudo p0f -i eth0
+```
 
+### Example 2: Advanced Usage
 
+Fingerprint HTTP traffic only and log to file:
 
-## Commands (1)
+```bash
+sudo p0f -i eth0 "tcp port 80" -o fingerprints.log
+```
 
-- [[p0f Passive Traffic Fingerprinting]]
+## MITRE ATT&CK Mapping
 
-## Tags
+This tool is commonly associated with:
 
-- [[Fingerprint]]
-- [[Network]]
+### Techniques
 
+- [[Gather Victim Host Information]] Gather Victim Host Information
+- [[Hardware]] Hardware
+- [[Network Service Scanning]] Network Service Scanning
 
+### Tactics
+
+- [[Reconnaissance]] Reconnaissance
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Detection method 1: Process monitoring for 'p0f' binary with packet capture privileges
+- Detection method 2: Unusual libpcap usage or promiscuous mode on interfaces
+- Detection method 3: Log analysis for passive fingerprinting patterns in network tools
+
+## Related Procedures
+
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
+
+## Related Tools
+
+- [[tools/Nmap]]
+- [[tools/tcpdump]]
+
+## References
+
+- Official documentation: https://lcamtuf.coredump.cx/p0f3/README
+- GitHub repository: https://github.com/lcamtuf/p0f

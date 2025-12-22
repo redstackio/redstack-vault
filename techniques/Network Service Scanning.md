@@ -9,48 +9,48 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory Recon using BloodHound and Certipy]]'
-- '[[Azure AD Connect Sync Connector Check]]'
-- '[[Azure AD Endpoint Enumeration]]'
-- '[[Basic Nmap Scan Procedure]]'
-- '[[Basic Port Scan and Scripted Service Enumeration]]'
-- '[[Basic Port Scan with Aggressive Service Enumeration]]'
-- '[[Basic Port Scan with Service Enumeration]]'
-- '[[Bettercap Proxy Spoofing Procedure]]'
-- '[[Brute Force Virtual Host Domains (Gobuster)]]'
-- '[[Brute Force Virtual Host Domains (Wfuzz)]]'
-- '[[Docker API Port Scanning and Container Management]]'
-- '[[Domain Trust Enumeration]]'
-- '[[Dynamic Group Membership and Guest Vendor Email Rule]]'
-- '[[Enumerate an SNMP Server (Authenticated)]]'
-- '[[Enumerate Windows Samba Services]]'
-- '[[Filter Bypass for Server-Side Request Forgery using URL Port Scanner]]'
-- '[[Linked Database Crawling for MSSQL Server Enumeration]]'
-- '[[MSSQL Database Enumeration]]'
-- '[[MSSQL Instance Discovery]]'
-- '[[MSSQL Linked Database Crawler]]'
-- '[[MSSQL Server Linked Database Enumeration]]'
-- '[[Netdiscover Network Discovery]]'
-- '[[Network Discovery using Nmap]]'
-- '[[Network Discovery with Masscan]]'
+- '[[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]'
+- '[[Check-Azure-AD-Connect-Sync-Connector-Status]]'
+- '[[Azure-AD-Endpoint-Enumeration]]'
+- '[[Basic-Nmap-Service-Version-Scan]]'
+- '[[Basic-Port-Scan-and-Scripted-Service-Enumeration]]'
+- '[[Perform-Aggressive-Port-Scan-with-Nmap]]'
+- '[[basic-port-scan-with-service-enumeration]]'
+- '[[intercept-network-traffic-with-bettercap-proxy-spoofing]]'
+- '[[Brute-Force-Virtual-Host-Domains-Gobuster]]'
+- '[[brute-force-virtual-hosts-with-wfuzz]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
+- '[[Domain-Trust-Enumeration]]'
+- '[[Abuse-Azure-Dynamic-Group-Membership-and-Guest-Vendor-Rules]]'
+- '[[Enumerate-Authenticated-SNMP-Server]]'
+- '[[Enumerate-Samba-Services-on-Windows]]'
+- '[[Bypass-PHP-Filter-Var-for-SSRF-Port-Scanning]]'
+- '[[Enumerate-Linked-MSSQL-Servers-via-Database-Crawling]]'
+- '[[MSSQL-Database-Enumeration]]'
+- '[[MSSQL-Instance-Discovery]]'
+- '[[MSSQL-Linked-Database-Crawler]]'
+- '[[mssql-server-linked-database-enumeration]]'
+- '[[Netdiscover-Network-Discovery]]'
+- '[[Network-Discovery-and-Vulnerability-Search-with-Nmap-and-Searchsploit]]'
+- '[[Network-Discovery-with-Masscan]]'
 - '[[Network Discovery with Nmap]]'
 - '[[Network Discovery with Nmap]]'
-- '[[Network Discovery with Nmap Full Scan]]'
-- '[[Network Discovery with Nmap Scripting Engine]]'
-- '[[Network Discovery with Nmap Service Version Detection]]'
-- '[[Network Reconnaissance Procedure]]'
-- '[[Octal IP Format Server-Side Request Forgery]]'
-- '[[Port Scan All TCP Ports with FIN Bit Set]]'
-- '[[Port Scan with Vulnerability Enumeration]]'
-- '[[Problematic Host Port Scan with Basic Enumeration]]'
+- '[[Network-Discovery-with-Nmap-Full-Scan]]'
+- '[[Network-Discovery-with-Nmap-Scripting-Engine]]'
+- '[[network-discovery-with-nmap-service-version-detection]]'
+- '[[Perform-Network-Reconnaissance-with-Reconnoitre]]'
+- '[[Octal-IP-Format-SSRF-Bypass]]'
+- '[[Port-Scan-All-TCP-Ports-with-FIN-Scan]]'
+- '[[port-scan-with-vulnerability-enumeration]]'
+- '[[Scan-Problematic-Hosts-with-Nmap-Timing-Templates]]'
 - '[[RDS Enumeration: Listing Routing Tables]]'
-- '[[RDS Enumeration - Listing VPCs in us-west-1 region]]'
-- '[[RDS Lateral Movement via VPC Peering Connections]]'
-- '[[RDS Network ACL Enumeration]]'
-- '[[RDS Security Group Enumeration]]'
-- '[[RDS Subnet Enumeration]]'
-- '[[RDS Subnet Group Enumeration]]'
-- '[[Scan Ports for Services with No Host Discovery]]'
+- '[[enumerate-vpcs-in-aws-us-west-1-region]]'
+- '[[rds-lateral-movement-via-vpc-peering-connections]]'
+- '[[Enumerate-Network-ACLs-for-RDS-Instances]]'
+- '[[RDS-Security-Group-Enumeration]]'
+- '[[enumerate-rds-subnets-via-ec2-describe-subnets]]'
+- '[[rds-subnet-group-enumeration]]'
+- '[[scan-ports-for-services-without-host-discovery]]'
 ---
 
 # Network Service Scanning
@@ -60,6 +60,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to get a listing of services running on remote hosts, including those that may be vulnerable to remote software exploitation. Methods to acquire this information include port scans and vulnerability scans using tools that are brought onto a system.
+
+
 
 # Detection
 
@@ -143,25 +145,27 @@ Identify unnecessary
 
 ## Related Procedures (42)
 
-- [[Active Directory Recon using BloodHound and Certipy]]
-- [[Azure AD Connect Sync Connector Check]]
-- [[Azure AD Endpoint Enumeration]]
-- [[Basic Nmap Scan Procedure]]
-- [[Basic Port Scan and Scripted Service Enumeration]]
-- [[Basic Port Scan with Aggressive Service Enumeration]]
-- [[Basic Port Scan with Service Enumeration]]
-- [[Bettercap Proxy Spoofing Procedure]]
-- [[Brute Force Virtual Host Domains (Gobuster)]]
-- [[Brute Force Virtual Host Domains (Wfuzz)]]
-- [[Docker API Port Scanning and Container Management]]
-- [[Domain Trust Enumeration]]
-- [[Dynamic Group Membership and Guest Vendor Email Rule]]
-- [[Enumerate an SNMP Server (Authenticated)]]
-- [[Enumerate Windows Samba Services]]
-- [[Filter Bypass for Server-Side Request Forgery using URL Port Scanner]]
-- [[Linked Database Crawling for MSSQL Server Enumeration]]
-- [[MSSQL Database Enumeration]]
-- [[MSSQL Instance Discovery]]
-- [[MSSQL Linked Database Crawler]]
+- [[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]
+- [[Check-Azure-AD-Connect-Sync-Connector-Status]]
+- [[Azure-AD-Endpoint-Enumeration]]
+- [[Basic-Nmap-Service-Version-Scan]]
+- [[Basic-Port-Scan-and-Scripted-Service-Enumeration]]
+- [[Perform-Aggressive-Port-Scan-with-Nmap]]
+- [[basic-port-scan-with-service-enumeration]]
+- [[intercept-network-traffic-with-bettercap-proxy-spoofing]]
+- [[Brute-Force-Virtual-Host-Domains-Gobuster]]
+- [[brute-force-virtual-hosts-with-wfuzz]]
+- [[Exploit-Open-Docker-API-for-Container-Management]]
+- [[Domain-Trust-Enumeration]]
+- [[Abuse-Azure-Dynamic-Group-Membership-and-Guest-Vendor-Rules]]
+- [[Enumerate-Authenticated-SNMP-Server]]
+- [[Enumerate-Samba-Services-on-Windows]]
+- [[Bypass-PHP-Filter-Var-for-SSRF-Port-Scanning]]
+- [[Enumerate-Linked-MSSQL-Servers-via-Database-Crawling]]
+- [[MSSQL-Database-Enumeration]]
+- [[MSSQL-Instance-Discovery]]
+- [[MSSQL-Linked-Database-Crawler]]
 
 *...and 22 more*
+
+

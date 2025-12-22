@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[Disable Windows Defender]]'
-- '[[Disable Windows Firewall]]'
-- '[[Exclude a Folder from Windows Defender]]'
-- '[[Obfuscating AWS CloudTrail and GuardDuty Logs]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[disable-windows-defender]]'
+- '[[Disable-Windows-Firewall]]'
+- '[[exclude-folder-from-windows-defender]]'
+- '[[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]'
 ---
 
 # Disabling Security Tools
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Adversaries may disable security tools to avoid possible detection of their tools and activities. This can take the form of killing security software or event logging processes, deleting Registry keys so that tools do not start at run time, or other methods to interfere with security scanning or event reporting.
+
+
 
 # Detection
 
@@ -120,8 +122,10 @@ Ensure proper process, registry, and file permissions are in place to prevent ad
 
 ## Related Procedures (5)
 
-- [[AWS ECR Repository Policy Enumeration]]
-- [[Disable Windows Defender]]
-- [[Disable Windows Firewall]]
-- [[Exclude a Folder from Windows Defender]]
-- [[Obfuscating AWS CloudTrail and GuardDuty Logs]]
+- [[AWS-ECR-Repository-Policy-Enumeration]]
+- [[disable-windows-defender]]
+- [[Disable-Windows-Firewall]]
+- [[exclude-folder-from-windows-defender]]
+- [[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]
+
+

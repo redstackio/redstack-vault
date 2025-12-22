@@ -79,106 +79,106 @@ techniques:
   Instrumentation Event Subscription]]'
 - '[[Winlogon Helper DLL|T1004 - Winlogon Helper DLL]]'
 procedures:
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
-- '[[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]'
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[Add a Local Administrator to Windows]]'
-- '[[Add and Execute Code on a WordPress Site (Authenticated)]]'
-- '[[Add User to Active Directory Domain Group]]'
-- '[[Apache Karaf XXE Out-of-Band Data Exfiltration]]'
-- '[[ASCII Conversion XSS Filter Bypass]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS Lambda Function Policy Enumeration]]'
-- '[[AWS Lambda Role Privilege Escalation]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS Shadow Admin Access]]'
-- '[[AWS SSH Key Persistence]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Azure AD App Secrets for Service Principal Authentication]]'
-- '[[Azure AD Connect Monitoring Disable and Password Reset]]'
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Bashrc Backdoor Persistence]]'
-- '[[Basic Directory Traversal Exploitation]]'
-- '[[BITS Job Persistence with Backdoor Command]]'
-- '[[Blind XPATH Injection]]'
-- '[[Blind XXE Out-of-Band Data Exfiltration]]'
-- '[[Bypassing Quotes in Script Tag for XSS Injection]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
+- '[[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[Add-Local-Administrator-to-Windows]]'
+- '[[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]'
+- '[[Add-User-to-Active-Directory-Domain-Group]]'
+- '[[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[ASCII-Conversion-XSS-Filter-Bypass]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[configure-aws-cli-profile-for-persistence]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[aws-lambda-function-policy-enumeration]]'
+- '[[aws-lambda-role-privilege-escalation]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[AWS-Shadow-Admin-Access]]'
+- '[[aws-ssh-key-persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]'
+- '[[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[Basic-Directory-Traversal-Exploitation]]'
+- '[[Establish-Persistence-Using-BITS-Jobs-with-Backdoor-Execution]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
+- '[[Blind-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[Bypass-Quotes-in-Script-Tag-for-XSS-Injection]]'
 - '[[Change an AD Domain User''s Password]]'
 - '[[Change Password in a Writable /etc/passwd]]'
-- '[[Cloud Instance SSRF through OpenStack Metadata URL]]'
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
-- '[[Cobalt Strike Persistence Kit]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
+- '[[Exploit-SSRF-to-Access-OpenStack-Metadata]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
+- '[[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[Connect to an SSH Server with a Private Key]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[CORS Misconfiguration Exploitation with XSS on Trusted Origin]]'
-- '[[Create and Run a Windows Service as SYSTEM (Administrator)]]'
-- '[[Create a Systemd Service]]'
-- '[[Create a Windows Scheduled Task]]'
-- '[[Create Windows Credentials Object]]'
-- '[[Credential Harvesting from Task Scheduler using Mimikatz]]'
-- '[[CSP Bypass via Unsafe Inline Script Injection]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[DB2 Injection - Time Delay]]'
-- '[[DCOM Office Remote Code Execution]]'
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
-- '[[Docker Privilege Escalation Using Docker Group]]'
-- '[[DOCM Download and Execute via PowerShell]]'
-- '[[Dynamic Group Membership - Set Secondary Email for Azure AD User]]'
-- '[[Elevated Registry Persistence with GlobalFlag]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Exotic Payloads for Bypassing Space Filter]]'
-- '[[Exploit a Modifiable Program Autorun by Windows on Login]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Extracting GMSA Passwords from Active Directory]]'
-- '[[Filter Bypass using UTF-7 Encoding for XSS Injection]]'
-- '[[Filter Bypass with Incomplete HTML Tag for XSS Attacks]]'
-- '[[Find Linux Files with Elevated Privileges]]'
-- '[[ForceChangePassword Active Directory Attack]]'
-- '[[GitHack - Exploiting Insecure Source Code Management]]'
-- '[[Git Hook Backdoor Persistence]]'
-- '[[Git Hook Persistence]]'
-- '[[GitLeak Secrets Harvesting]]'
-- '[[Git Repository Secrets Harvesting with Trufflehog]]'
-- '[[GMSA Password Forging]]'
-- '[[Golden SAML Attack via ADFS]]'
-- '[[Gopher SMTP Back Connect SSRF]]'
-- '[[Gopher SMTP Email Spoofing via SSRF]]'
-- '[[HiveNightmare Password Looting]]'
-- '[[HTAccess and PHP Shell Upload]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[IIS Raid Backdoor Persistence]]'
-- '[[Insecure Docker Registry Pentest]]'
-- '[[Insecure File Upload Exploit via Picture Compression]]'
-- '[[Java RMI Exploitation for Remote Command Execution using sjet or mjet]]'
+- '[[connect-to-ssh-server-with-private-key]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[CORS-Misconfiguration-Exploitation-via-XSS-on-Trusted-Origin]]'
+- '[[Create-and-Run-Windows-Service-as-SYSTEM-Administrator]]'
+- '[[Create-Systemd-Service-for-Persistence]]'
+- '[[Create-Windows-Scheduled-Task-for-Persistence]]'
+- '[[create-windows-pscredential-object]]'
+- '[[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]'
+- '[[CSP-Bypass-via-Unsafe-Inline-Script-Injection]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[DB2-Time-Based-Blind-SQL-Injection]]'
+- '[[DCOM-Office-Remote-Code-Execution]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
+- '[[Enumerate-and-Analyze-SSL-TLS-Certificate]]'
+- '[[DOCM-Download-and-Execute-via-PowerShell]]'
+- '[[Set-Secondary-Email-for-Azure-AD-User]]'
+- '[[Elevated-Registry-Persistence-with-GlobalFlag]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[enumerate-windows-missing-patches-hotfixes-sherlock]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]'
+- '[[Exploit-Modifiable-Autorun-Program-on-Windows-Login]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[extract-gmsa-passwords-from-active-directory]]'
+- '[[Filter-Bypass-using-UTF-7-Encoding-for-XSS-Injection]]'
+- '[[Bypass-XSS-Filter-with-Incomplete-HTML-Tag]]'
+- '[[Find-Linux-Files-with-Elevated-Privileges]]'
+- '[[Force-Change-Domain-User-Password-via-ACL-Abuse]]'
+- '[[GitHack-Exploiting-Insecure-Source-Code-Management]]'
+- '[[Git-Hook-Backdoor-Persistence]]'
+- '[[Git-Hook-Persistence]]'
+- '[[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]'
+- '[[Git-Repository-Secrets-Harvesting-with-TruffleHog]]'
+- '[[Forge-GMSA-Password-for-Domain-Access]]'
+- '[[Golden-SAML-Attack-via-ADFS]]'
+- '[[Gopher-Protocol-SSRF-for-SMTP-Back-Connect]]'
+- '[[Gopher-SMTP-Email-Spoofing-via-SSRF]]'
+- '[[HiveNightmare-SAM-Dump-via-Shadow-Copies]]'
+- '[[HTAccess-and-PHP-Shell-Upload]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[IIS-Raid-Backdoor-Persistence]]'
+- '[[Insecure-Docker-Registry-Pentest]]'
+- '[[Insecure-File-Upload-Exploit-via-Picture-Compression]]'
+- '[[Exploit-Java-RMI-for-RCE-Using-Sjet-or-Mjet]]'
 ---
 
 # Persistence
@@ -188,6 +188,8 @@ procedures:
 ## Description
 
 Persistence is any access, action, or configuration change to a system that gives an adversary a persistent presence on that system. Adversaries will often need to maintain access to systems through interruptions such as system restarts, loss of credentials, or other failures that would require a remote access tool to restart or alternate backdoor for them to regain access.
+
+
 
 ## Techniques
 
@@ -268,25 +270,27 @@ This tactic includes 70 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[Abusing Shadow Copies for Privilege Escalation]]
-- [[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]
-- [[Active Directory Object Owner Hijacking]]
-- [[Add a Local Administrator to Windows]]
-- [[Add and Execute Code on a WordPress Site (Authenticated)]]
-- [[Add User to Active Directory Domain Group]]
-- [[Apache Karaf XXE Out-of-Band Data Exfiltration]]
-- [[ASCII Conversion XSS Filter Bypass]]
-- [[AWS API Gateway Stage Enumeration]]
-- [[AWS CLI Profile Configuration for Persistence and Backdooring]]
-- [[AWS Console Access via API Keys]]
-- [[AWS EC2 Instance Connect with SSH Key Push]]
-- [[AWS ECR Repository Policy Enumeration]]
-- [[AWS IAM Access Key Creation]]
-- [[AWS IAM Policy Version Retrieval]]
-- [[AWS Lambda Function Policy Enumeration]]
-- [[AWS Lambda Role Privilege Escalation]]
-- [[AWS Managed Policies Enumeration]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]
+- [[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[Add-Local-Administrator-to-Windows]]
+- [[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]
+- [[Add-User-to-Active-Directory-Domain-Group]]
+- [[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]
+- [[ASCII-Conversion-XSS-Filter-Bypass]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[configure-aws-cli-profile-for-persistence]]
+- [[AWS-Console-Access-via-API-Keys]]
+- [[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]
+- [[AWS-ECR-Repository-Policy-Enumeration]]
+- [[aws-iam-create-access-key-for-user]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[aws-lambda-function-policy-enumeration]]
+- [[aws-lambda-role-privilege-escalation]]
+- [[Enumerate-AWS-Managed-Policies-for-IAM-User]]
 
 *...and 80 more*
+
+

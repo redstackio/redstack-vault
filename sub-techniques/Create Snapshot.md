@@ -11,7 +11,7 @@ parent_technique: '[[Modify Cloud Compute Infrastructure|T1578 - Modify Cloud Co
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Mounted Docker Socket Pentest]]'
+- '[[Escape-Container-Using-Mounted-Docker-Socket]]'
 ---
 
 # Create Snapshot
@@ -42,4 +42,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Mounted Docker Socket Pentest]]
+- [[Escape-Container-Using-Mounted-Docker-Socket]]

@@ -10,10 +10,10 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[CSRF Payload to Set Role to Admin via JSON POST]]'
-- '[[CSRF Payload to Set Role to Admin via JSON POST]]'
-- '[[Subdomain CSRF Attack]]'
-- '[[Subdomain CSRF Attack]]'
+- '[[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]'
+- '[[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]'
+- '[[Subdomain-CSRF-Attack]]'
+- '[[Subdomain-CSRF-Attack]]'
 ---
 
 # Control Panel Items
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Windows Control Panel items are utilities that allow users to view and adjust computer settings. Control Panel items are registered executable (.exe) or Control Panel (.cpl) files, the latter are actually renamed dynamic-link library (.dll) files that export a CPlApplet function. [1] [2] Control Panel items can be executed directly from the command line, programmatically via an application programming interface (API) call, or by simply double-clicking the file. [1] [2] [3]For ease of use, Control Panel items typically include graphical menus available to users after being registered and loaded into the Control Panel. [1]Adversaries can use Control Panel items as execution payloads to execute arbitrary commands. Malicious Control Panel items can be delivered via Spearphishing Attachment campaigns [2] [3] or executed as part of multi-stage malware. [4] Control Panel items, specifically CPL files, may also bypass application and/or file extension whitelisting.
+
+
 
 # Detection
 
@@ -73,7 +75,9 @@ This type of attack technique cannot be easily mitigated with preventive control
 
 ## Related Procedures (4)
 
-- [[CSRF Payload to Set Role to Admin via JSON POST]]
-- [[CSRF Payload to Set Role to Admin via JSON POST]]
-- [[Subdomain CSRF Attack]]
-- [[Subdomain CSRF Attack]]
+- [[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]
+- [[CSRF-Attack-to-Set-User-Role-to-Admin-via-JSON-POST]]
+- [[Subdomain-CSRF-Attack]]
+- [[Subdomain-CSRF-Attack]]
+
+

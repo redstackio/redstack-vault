@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Browse an SMB Share]]'
-- '[[Recursively Download Files From an SMB Share]]'
-- '[[Search SMB by Filename and Download Matches]]'
+- '[[browse-smb-share-interactive]]'
+- '[[Recursively-Download-Files-From-SMB-Share]]'
+- '[[search-and-download-smb-files-by-name]]'
 ---
 
 # Data from Network Shared Drive
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Sensitive data can be collected from remote systems via shared network drives (host shared directory, network file server, etc.) that are accessible from the current system prior to Exfiltration.Adversaries may search network shares on computers they have compromised to find files of interest. Interactive command shells may be in use, and common functionality within cmd may be used to gather information.
+
+
 
 # Detection
 
@@ -62,6 +64,8 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (3)
 
-- [[Browse an SMB Share]]
-- [[Recursively Download Files From an SMB Share]]
-- [[Search SMB by Filename and Download Matches]]
+- [[browse-smb-share-interactive]]
+- [[Recursively-Download-Files-From-SMB-Share]]
+- [[search-and-download-smb-files-by-name]]
+
+

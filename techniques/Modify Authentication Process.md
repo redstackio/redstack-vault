@@ -11,20 +11,20 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
-- '[[GitLeak Secrets Harvesting]]'
-- '[[Git Repository Secrets Harvesting with Trufflehog]]'
-- '[[Golden SAML Attack via ADFS]]'
-- '[[Insecure Docker Registry Pentest]]'
-- '[[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]'
-- '[[JWT Token Signing with JWKS Injection]]'
-- '[[Microsoft Graph API Access Token]]'
-- '[[NTLM Reflection SMB Relay Attack]]'
-- '[[SAML Injection Authentication Bypass]]'
-- '[[Shadow Credentials for Windows Hello]]'
-- '[[SSL MITM Network Discovery with OpenSSL]]'
-- '[[Web Sockets Authentication Exploitation]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
+- '[[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]'
+- '[[Git-Repository-Secrets-Harvesting-with-TruffleHog]]'
+- '[[Golden-SAML-Attack-via-ADFS]]'
+- '[[Insecure-Docker-Registry-Pentest]]'
+- '[[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]'
+- '[[JWT-Token-Forgery-via-JWKS-Header-Injection]]'
+- '[[Obtain-Microsoft-Graph-API-Access-Token-via-Device-Code-Flow]]'
+- '[[ntlm-reflection-smb-relay-attack]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[Shadow-Credentials-for-Windows-Hello]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
+- '[[Web-Sockets-Authentication-Exploitation]]'
 ---
 
 # Modify Authentication Process
@@ -37,6 +37,8 @@ Adversaries may modify authentication mechanisms and processes to access user cr
 
 Adversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.
 
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
@@ -45,17 +47,19 @@ Adversaries may maliciously modify a part of this process to either reveal crede
 
 ## Related Procedures (14)
 
-- [[AWS ECR Repository Policy Enumeration]]
-- [[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]
-- [[GitLeak Secrets Harvesting]]
-- [[Git Repository Secrets Harvesting with Trufflehog]]
-- [[Golden SAML Attack via ADFS]]
-- [[Insecure Docker Registry Pentest]]
-- [[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]
-- [[JWT Token Signing with JWKS Injection]]
-- [[Microsoft Graph API Access Token]]
-- [[NTLM Reflection SMB Relay Attack]]
-- [[SAML Injection Authentication Bypass]]
-- [[Shadow Credentials for Windows Hello]]
-- [[SSL MITM Network Discovery with OpenSSL]]
-- [[Web Sockets Authentication Exploitation]]
+- [[AWS-ECR-Repository-Policy-Enumeration]]
+- [[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]
+- [[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]
+- [[Git-Repository-Secrets-Harvesting-with-TruffleHog]]
+- [[Golden-SAML-Attack-via-ADFS]]
+- [[Insecure-Docker-Registry-Pentest]]
+- [[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]
+- [[JWT-Token-Forgery-via-JWKS-Header-Injection]]
+- [[Obtain-Microsoft-Graph-API-Access-Token-via-Device-Code-Flow]]
+- [[ntlm-reflection-smb-relay-attack]]
+- [[SAML-Injection-Authentication-Bypass]]
+- [[Shadow-Credentials-for-Windows-Hello]]
+- [[SSL-MITM-Network-Discovery-with-OpenSSL]]
+- [[Web-Sockets-Authentication-Exploitation]]
+
+

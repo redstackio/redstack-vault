@@ -9,18 +9,18 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Cobalt Strike Persistence Kit]]'
-- '[[Elevated Registry Persistence with GlobalFlag]]'
-- '[[Exploit a Modifiable Program Autorun by Windows on Login]]'
-- '[[HiveNightmare Password Looting]]'
-- '[[Linux Kernel Exploit - CVE-2012-0056 (Mempodipper)]]'
-- '[[Linux RDS Privilege Escalation]]'
-- '[[Windows - Elevated RDP Backdoor with Sticky Keys]]'
-- '[[Windows Persistence with Meterpreter]]'
-- '[[Windows Registry HKLM Run Key Persistence]]'
-- '[[Windows Registry HKLM Winlogon Helper DLL Persistence]]'
-- '[[Windows - Simple User Registry Persistence]]'
-- '[[Windows Startup Elevated Persistence via User Startup Folder]]'
+- '[[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]'
+- '[[Elevated-Registry-Persistence-with-GlobalFlag]]'
+- '[[Exploit-Modifiable-Autorun-Program-on-Windows-Login]]'
+- '[[HiveNightmare-SAM-Dump-via-Shadow-Copies]]'
+- '[[Linux-Kernel-Privilege-Escalation-via-CVE-2012-0056-Mempodipper]]'
+- '[[Linux-RDS-Privilege-Escalation]]'
+- '[[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]'
+- '[[Windows-Persistence-with-Meterpreter]]'
+- '[[Windows-Registry-HKLM-Run-Key-Persistence]]'
+- '[[windows-registry-hklm-winlogon-persistence]]'
+- '[[windows-simple-user-registry-persistence]]'
+- '[[Windows-Startup-Elevated-Persistence-via-User-Startup-Folder]]'
 ---
 
 # Registry Run Keys / Startup Folder
@@ -30,6 +30,8 @@ procedures:
 ## Description
 
 Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in. [1] These programs will be executed under the context of the user and will have the account's associated permissions level.The following run keys are created by default on Windows systems: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceThe HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx is also available but is not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency. [2] For example, it is possible to load a DLL at logon using a "Depend" key with RunOnceEx: reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\temp\evil[.]dll" [3]The following Registry keys can be used to set startup folder items for persistence: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell FoldersAdversaries can use these configuration locations to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use Masquerading to make the Registry entries look as if they are associated with legitimate programs.
+
+
 
 # Detection
 
@@ -337,15 +339,17 @@ Identify and block potentially malicious software that may be executed through r
 
 ## Related Procedures (12)
 
-- [[Cobalt Strike Persistence Kit]]
-- [[Elevated Registry Persistence with GlobalFlag]]
-- [[Exploit a Modifiable Program Autorun by Windows on Login]]
-- [[HiveNightmare Password Looting]]
-- [[Linux Kernel Exploit - CVE-2012-0056 (Mempodipper)]]
-- [[Linux RDS Privilege Escalation]]
-- [[Windows - Elevated RDP Backdoor with Sticky Keys]]
-- [[Windows Persistence with Meterpreter]]
-- [[Windows Registry HKLM Run Key Persistence]]
-- [[Windows Registry HKLM Winlogon Helper DLL Persistence]]
-- [[Windows - Simple User Registry Persistence]]
-- [[Windows Startup Elevated Persistence via User Startup Folder]]
+- [[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]
+- [[Elevated-Registry-Persistence-with-GlobalFlag]]
+- [[Exploit-Modifiable-Autorun-Program-on-Windows-Login]]
+- [[HiveNightmare-SAM-Dump-via-Shadow-Copies]]
+- [[Linux-Kernel-Privilege-Escalation-via-CVE-2012-0056-Mempodipper]]
+- [[Linux-RDS-Privilege-Escalation]]
+- [[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]
+- [[Windows-Persistence-with-Meterpreter]]
+- [[Windows-Registry-HKLM-Run-Key-Persistence]]
+- [[windows-registry-hklm-winlogon-persistence]]
+- [[windows-simple-user-registry-persistence]]
+- [[Windows-Startup-Elevated-Persistence-via-User-Startup-Folder]]
+
+

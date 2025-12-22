@@ -10,10 +10,10 @@ tactics:
 - '[[Collection|TA0009 - Collection]]'
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Network Discovery Responder]]'
-- '[[SAML Injection Authentication Bypass]]'
-- '[[SMB and HTTP Relay Attack]]'
-- '[[SSL MITM Network Discovery with OpenSSL]]'
+- '[[LLMNR-NBT-NS-Poisoning-with-Responder]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[Perform-NTLM-Relay-Attack-with-Responder-and-Impacket]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
 ---
 
 # Adversary-in-the-Middle
@@ -28,6 +28,8 @@ For example, adversaries may manipulate victim DNS settings to enable other mali
 
 Adversaries may also leverage the AiTM position to attempt to monitor and/or modify traffic, such as in [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002). Adversaries can setup a position similar to AiTM to prevent traffic from flowing to the appropriate destination, potentially to [Impair Defenses](https://attack.mitre.org/techniques/T1562) and/or in support of a [Network Denial of Service](https://attack.mitre.org/techniques/T1498).
 
+
+
 ## Tactics
 
 - [[Collection|TA0009 - Collection]]
@@ -35,7 +37,9 @@ Adversaries may also leverage the AiTM position to attempt to monitor and/or mod
 
 ## Related Procedures (4)
 
-- [[Network Discovery Responder]]
-- [[SAML Injection Authentication Bypass]]
-- [[SMB and HTTP Relay Attack]]
-- [[SSL MITM Network Discovery with OpenSSL]]
+- [[LLMNR-NBT-NS-Poisoning-with-Responder]]
+- [[SAML-Injection-Authentication-Bypass]]
+- [[Perform-NTLM-Relay-Attack-with-Responder-and-Impacket]]
+- [[SSL-MITM-Network-Discovery-with-OpenSSL]]
+
+

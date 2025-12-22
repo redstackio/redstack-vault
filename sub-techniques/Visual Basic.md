@@ -10,9 +10,9 @@ parent_technique: '[[Command-Line Interface|T1059 - Command-Line Interface]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]'
-- '[[Macro Delivery of Meterpreter Shellcode]]'
-- '[[Office Word Macro Payload Delivery with Metasploit]]'
+- '[[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]'
+- '[[Macro-Delivery-of-Meterpreter-Shellcode]]'
+- '[[Office-Word-Macro-Payload-Delivery-with-Metasploit]]'
 ---
 
 # Visual Basic
@@ -45,6 +45,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[Exotic Payloads for Bypassing Tag Blacklist in Cross Site Scripting Attacks]]
-- [[Macro Delivery of Meterpreter Shellcode]]
-- [[Office Word Macro Payload Delivery with Metasploit]]
+- [[Exotic-Payloads-for-Bypassing-Tag-Blacklist-in-XSS-Attacks]]
+- [[Macro-Delivery-of-Meterpreter-Shellcode]]
+- [[Office-Word-Macro-Payload-Delivery-with-Metasploit]]

@@ -9,9 +9,9 @@ updated_at: '2023-04-06T00:31:26.826752+00:00'
 parent_technique: '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
 ---
 
 # Component Object Model Hijacking
@@ -37,10 +37,10 @@ Adversaries can use the COM system to insert malicious code that can be executed
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 1 procedures using this sub-technique:
 
-- [[Cobalt Strike Elevate Kit with Beacon Command Elevators]]
+- [[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]

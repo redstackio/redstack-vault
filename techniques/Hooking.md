@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Patching AmsiScanBuffer to Bypass AMSI Scanning]]'
+- '[[Patch-AmsiScanBuffer-to-Bypass-AMSI]]'
 ---
 
 # Hooking
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Windows processes often leverage application programming interface (API) functions to perform tasks that require reusable system resources. Windows API functions are typically stored in dynamic-link libraries (DLLs) as exported functions. Hooking involves redirecting calls to these functions and can be implemented via:Hooks procedures, which intercept and execute designated code in response to events such as messages, keystrokes, and mouse inputs. [1] [2]Import address table (IAT) hooking, which use modifications to a process’s IAT, where pointers to imported API functions are stored. [2] [3] [4]Inline hooking, which overwrites the first bytes in an API function to redirect code flow. [2] [5] [4]Similar to Process Injection, adversaries may use hooking to load and execute malicious code within the context of another process, masking the execution while also allowing access to the process's memory and possibly elevated privileges. Installing hooking mechanisms may also provide Persistence via continuous invocation when the functions are called through normal use.Malicious hooking mechanisms may also capture API calls that include parameters that reveal user authentication credentials for Credential Access. [6]Hooking is commonly utilized by Rootkits to conceal files, processes, Registry keys, and other objects in order to hide malware and associated behaviors. [7]
+
+
 
 # Detection
 
@@ -88,8 +90,10 @@ This type of attack technique cannot be easily mitigated with preventive control
 
 - [[Credential Access|TA0006 - Credential Access]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (1)
 
-- [[Patching AmsiScanBuffer to Bypass AMSI Scanning]]
+- [[Patch-AmsiScanBuffer-to-Bypass-AMSI]]
+
+

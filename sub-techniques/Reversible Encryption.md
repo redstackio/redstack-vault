@@ -12,7 +12,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
 ---
 
 # Reversible Encryption
@@ -54,4 +54,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]
+- [[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]

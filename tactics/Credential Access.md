@@ -24,7 +24,7 @@ techniques:
 - '[[Hooking|T1179 - Hooking]]'
 - '[[Input Capture|T1056 - Input Capture]]'
 - '[[Input Prompt|T1141 - Input Prompt]]'
-- '[[Kerberoasting|T1208 - Kerberoasting]]'
+- '[[cme-smb-enable-rdp|T1208 - Kerberoasting]]'
 - '[[Keychain|T1142 - Keychain]]'
 - '[[LLMNR/NBT-NS Poisoning and Relay|T1171 - LLMNR/NBT-NS Poisoning and Relay]]'
 - '[[Modify Authentication Process|T1556 - Modify Authentication Process]]'
@@ -42,106 +42,106 @@ techniques:
 - '[[Two-Factor Authentication Interception|T1111 - Two-Factor Authentication Interception]]'
 - '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 procedures:
-- '[[2FA Bypass via Force Browsing]]'
-- '[[2FA Bypass via Response Manipulation]]'
-- '[[2FA Bypass with Array of OTPs]]'
-- '[[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]'
-- '[[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]'
+- '[[Bypass-2FA-via-Force-Browsing]]'
+- '[[2FA-Bypass-via-Response-Manipulation]]'
+- '[[Bypass-2FA-with-OTP-Array]]'
+- '[[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]'
+- '[[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Certificate Services ESC9 Attack]]'
-- '[[Active Directory Credential Dumping via Vssadmin]]'
-- '[[Active Directory Recon using BloodHound and Certipy]]'
-- '[[Active Directory Trust Ticket Forgery with Mimikatz]]'
-- '[[AD CS Relay Attack with Rubeus and PetitPotam]]'
-- '[[Add DCSync Rights with WriteDACL Active Directory Permissions]]'
-- '[[Add SPN to a Domain User and Kerberoast for NTLMv2 Hash]]'
-- '[[Add User to Active Directory Domain Group]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[ASCII Conversion XSS Filter Bypass]]'
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Configuration]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Active-Directory-Certificate-Services-ESC9-Attack]]'
+- '[[Active-Directory-Credential-Dumping-via-Vssadmin]]'
+- '[[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]'
+- '[[Forge-AD-Trust-Ticket-with-Mimikatz]]'
+- '[[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]'
+- '[[Add-DCSync-Rights-via-WriteDACL-Permissions]]'
+- '[[Add-SPN-to-Domain-User-and-Kerberoast-for-NTLMv2-Hash]]'
+- '[[Add-User-to-Active-Directory-Domain-Group]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[ASCII-Conversion-XSS-Filter-Bypass]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[AWS-CLI-Configuration]]'
 - '[[AWS Configuration Exploitation for Credential Access]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS Credential Export]]'
-- '[[AWS Credential Testing]]'
-- '[[AWS EC2 IAM Instance Profile Enumeration]]'
-- '[[AWS EC2 Instance Profile Privilege Escalation]]'
-- '[[AWS ECR Repository Enumeration]]'
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[AWS ECS Task Enumeration]]'
-- '[[AWS IAM Access Key Enumeration]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM User Enumeration and Credential Checking]]'
-- '[[AWS Instance Profile Enumeration]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS Lambda Backdoor Persistence]]'
-- '[[AWS Lambda Event Source Mapping Enumeration]]'
-- '[[AWS Lambda Layer Enumeration]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS Metadata Credential Theft]]'
-- '[[AWS Privilege Escalation via Attached User Policies]]'
-- '[[AWS Privilege Escalation via Default Policy Information]]'
-- '[[AWS Secret Manager Listing]]'
-- '[[AWS Secrets Manager - Describe Secret]]'
-- '[[AWS Secrets Manager Resource-Based Policy Exfiltration]]'
-- '[[Azure Access Token Retrieval for Management and Graph APIs using Python]]'
-- '[[Azure Access Tokens and Service Principal Secrets in Azure CLI and PowerShell]]'
-- '[[Azure AD Connect Monitoring Disable and Password Reset]]'
-- '[[Azure AD Connect - Password Extraction via AD Sync Account DCSync]]'
-- '[[Azure AD Connect - Silver Ticket Attack]]'
-- '[[Azure AD Password Spray]]'
-- '[[Azure Device Management and Token Generation with SharpAzToken]]'
-- '[[Azure Graph API Refresh Token]]'
-- '[[Azure Key Vault Access and Query with PowerShell]]'
-- '[[Azure Managed Identity Token Theft via Environment Variables]]'
-- '[[Azure Pass The PRT with Mimikatz]]'
-- '[[Azure Password Spraying]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
-- '[[Azure Retrieving Passwords using Microburst]]'
-- '[[Azure Token Generation and Authentication with SharpAzToken]]'
-- '[[Basic Jinja2 Server Side Template Injection]]'
-- '[[BigQuery SQL Injection Attack]]'
-- '[[Blind NoSQL Injection via Brute Force]]'
-- '[[Breaking JWT Secrets]]'
-- '[[Brute Force and Mount a LUKS1 Encrypted File System (EFS)]]'
-- '[[Brute Force a Password Hash using John the Ripper]]'
-- '[[Brute Force a Password Protected XLSX File]]'
-- '[[Brute Force a Web Login Form]]'
-- '[[Brute Force MongoDB Password via POST with urlencoded body]]'
-- '[[Brute Force Password Hashes (Hashcat)]]'
-- '[[Brute Force Private SSH Key Password]]'
-- '[[Brute Force Shadow Hashes]]'
-- '[[Brute Force SMB Usernames and Passwords]]'
-- '[[Brute Force SMB Users Using RID (Authenticated)]]'
-- '[[Brute Force Users with "Do Not Require Kerberos Preauth." Set]]'
-- '[[Brute Force Valid Users from a Forgotten Password Form]]'
-- '[[Build a Password List for Online Dictionary Attack]]'
-- '[[CCACHE Ticket Reuse from Keyring with Tickey]]'
-- '[[CCACHE Ticket Reuse from Keytab]]'
-- '[[CCACHE Ticket Reuse from SSSD KCM and Android Devices]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Export-AWS-Credentials-to-Environment]]'
+- '[[AWS-Credential-Testing]]'
+- '[[AWS-EC2-IAM-Instance-Profile-Enumeration]]'
+- '[[AWS-EC2-Instance-Profile-Privilege-Escalation]]'
+- '[[Enumerate-AWS-ECR-Repositories]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[aws-ecs-task-enumeration]]'
+- '[[AWS-IAM-Access-Key-Enumeration]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-IAM-User-Enumeration-and-Credential-Checking]]'
+- '[[AWS-Instance-Profile-Enumeration]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[aws-lambda-backdoor-persistence]]'
+- '[[AWS-Lambda-Event-Source-Mapping-Enumeration]]'
+- '[[AWS-Lambda-Layer-Enumeration]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[Retrieve-AWS-EC2-Instance-Credentials-via-Metadata-Service]]'
+- '[[AWS-Privilege-Escalation-via-Attached-User-Policies]]'
+- '[[AWS-Privilege-Escalation-via-Creating-Admin-Policy]]'
+- '[[List-Secrets-in-AWS-Secrets-Manager]]'
+- '[[Describe-AWS-Secrets-Manager-Secret]]'
+- '[[aws-secretsmanager-resource-based-policy-exfiltration]]'
+- '[[Azure-Access-Token-Retrieval-for-Management-and-Graph-APIs-using-Python]]'
+- '[[Extract-Azure-Access-Tokens-and-Service-Principal-Secrets-from-CLI-and-PowerShell]]'
+- '[[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]'
+- '[[azure-ad-connect-password-extraction-via-ad-sync-dcsync]]'
+- '[[Azure-AD-Connect-Silver-Ticket-Attack]]'
+- '[[Azure-AD-Password-Spray]]'
+- '[[azure-device-management-and-token-generation-with-sharpaztoken]]'
+- '[[Device-Code-Flow-Authentication-to-Microsoft-Graph-API-in-PowerShell]]'
+- '[[Access-Azure-Key-Vault-Using-Managed-Identity]]'
+- '[[Azure-Managed-Identity-Token-Theft-via-Environment-Variables]]'
+- '[[Azure-Pass-The-PRT-with-Mimikatz]]'
+- '[[Azure-Password-Spraying]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
+- '[[Retrieve-Azure-Passwords-Using-Microburst]]'
+- '[[Generate-Azure-Tokens-with-SharpAzToken]]'
+- '[[Basic-Jinja2-Server-Side-Template-Injection]]'
+- '[[BigQuery-Boolean-Based-SQL-Injection]]'
+- '[[Blind-NoSQL-Injection-via-Brute-Force]]'
+- '[[Brute-Force-JWT-Signing-Secret]]'
+- '[[Brute-Force-and-Mount-LUKS1-Encrypted-Filesystem]]'
+- '[[Brute-Force-Password-Hash-with-John-the-Ripper]]'
+- '[[Brute-Force-Password-Protected-XLSX-File]]'
+- '[[Brute-Force-Web-Login-Form-with-Hydra]]'
+- '[[Brute-Force-MongoDB-Login-via-NoSQL-Regex-Injection]]'
+- '[[brute-force-hashes-with-hashcat-dictionary]]'
+- '[[Brute-Force-Private-SSH-Key-Password]]'
+- '[[Brute-Force-Shadow-Hashes]]'
+- '[[find-interesting-strings-in-raw-memory-dump]]'
+- '[[build-user-list-from-public-webpage]]'
+- '[[Brute-Force-Users-Without-Kerberos-Preauthentication]]'
+- '[[Brute-Force-Valid-Users-via-Forgotten-Password-Form]]'
+- '[[Build-Custom-Password-List-for-Dictionary-Attack]]'
+- '[[extract-ccache-tickets-from-linux-keyring-with-tickey]]'
+- '[[Extract-and-Reuse-Kerberos-Tickets-from-Keytab]]'
+- '[[CCACHE-Ticket-Reuse-from-SSSD-KCM-and-Android-Devices]]'
 - '[[CCACHE Ticket Reuse from /tmp]]'
 - '[[Change an AD Domain User''s Password]]'
-- '[[Checksum Validation Exploitation for Active Directory]]'
-- '[[Cloud Instance SSRF through OpenStack Metadata URL]]'
-- '[[Cloud Security Assessment and Auditing]]'
+- '[[Exploit-MS14-068-Kerberos-Checksum-Validation-for-AD-Privilege-Escalation]]'
+- '[[Exploit-SSRF-to-Access-OpenStack-Metadata]]'
+- '[[aws-cloud-security-assessment-and-auditing]]'
 - '[[CLR Assembly Creation and Execution]]'
-- '[[CL.TE Request Smuggling]]'
+- '[[Perform-CL.TE-HTTP-Request-Smuggling]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[CORS Misconfiguration Exploitation via Wildcard Origin `*` without Credentials]]'
-- '[[Credential Dumping and Golden Ticket Creation with Metasploit and Mimikatz]]'
-- '[[Credential Harvesting from DynamoDB]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Exploit-CORS-Misconfiguration-with-Wildcard-Origin-without-Credentials]]'
+- '[[Credential-Dumping-and-Golden-Ticket-Creation-with-Metasploit-and-Mimikatz]]'
+- '[[Scan-DynamoDB-Table-for-Credentials]]'
 ---
 
 # Credential Access
@@ -151,6 +151,8 @@ procedures:
 ## Description
 
 Credential access represents techniques resulting in access to or control over system, domain, or service credentials that are used within an enterprise environment. Adversaries will likely attempt to obtain legitimate credentials from users or administrator accounts (local system administrator or domain users with administrator access) to use within the network. This allows the adversary to assume the identity of the account, with all of that account's permissions on the system and network, and makes it harder for defenders to detect the adversary. With sufficient access within a network, an adversary can create accounts for later use within the environment.
+
+
 
 ## Techniques
 
@@ -173,7 +175,7 @@ This tactic includes 32 techniques:
 - [[Hooking|T1179 - Hooking]]
 - [[Input Capture|T1056 - Input Capture]]
 - [[Input Prompt|T1141 - Input Prompt]]
-- [[Kerberoasting|T1208 - Kerberoasting]]
+- [[cme-smb-enable-rdp|T1208 - Kerberoasting]]
 - [[Keychain|T1142 - Keychain]]
 - [[LLMNR/NBT-NS Poisoning and Relay|T1171 - LLMNR/NBT-NS Poisoning and Relay]]
 - [[Modify Authentication Process|T1556 - Modify Authentication Process]]
@@ -193,25 +195,27 @@ This tactic includes 32 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[2FA Bypass via Force Browsing]]
-- [[2FA Bypass via Response Manipulation]]
-- [[2FA Bypass with Array of OTPs]]
-- [[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]
-- [[Active Directory ACL Abuse via Kerberoasting and AS-REP Roasting]]
+- [[Bypass-2FA-via-Force-Browsing]]
+- [[2FA-Bypass-via-Response-Manipulation]]
+- [[Bypass-2FA-with-OTP-Array]]
+- [[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]
+- [[Active-Directory-ACL-Abuse-via-Kerberoasting-and-AS-REP-Roasting]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Certificate Services ESC9 Attack]]
-- [[Active Directory Credential Dumping via Vssadmin]]
-- [[Active Directory Recon using BloodHound and Certipy]]
-- [[Active Directory Trust Ticket Forgery with Mimikatz]]
-- [[AD CS Relay Attack with Rubeus and PetitPotam]]
-- [[Add DCSync Rights with WriteDACL Active Directory Permissions]]
-- [[Add SPN to a Domain User and Kerberoast for NTLMv2 Hash]]
-- [[Add User to Active Directory Domain Group]]
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[API Key Leaks Detection with TruffleHog]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Active-Directory-Certificate-Services-ESC9-Attack]]
+- [[Active-Directory-Credential-Dumping-via-Vssadmin]]
+- [[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]
+- [[Forge-AD-Trust-Ticket-with-Mimikatz]]
+- [[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]
+- [[Add-DCSync-Rights-via-WriteDACL-Permissions]]
+- [[Add-SPN-to-Domain-User-and-Kerberoast-for-NTLMv2-Hash]]
+- [[Add-User-to-Active-Directory-Domain-Group]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[api-key-leaks-detection-with-trufflehog]]
 
 *...and 80 more*
+
+

@@ -9,13 +9,13 @@ updated_at: '2023-04-06T03:56:44.273450+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[Billion Laugh Attack to Perform Denial of Service using XML External Entity]]'
-- '[[Docker Security Assessment]]'
-- '[[Exploiting .NET BinaryFormatter Deserialization]]'
+- '[[Billion-Laugh-Attack-via-XXE-for-DoS]]'
+- '[[Docker-Security-Assessment]]'
+- '[[Exploit-DotNET-BinaryFormatter-Deserialization]]'
 - '[[HTTP/2 Request Smuggling]]'
-- '[[Jinja2 Config Information Extraction]]'
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
-- '[[Linux - Docker Privilege Escalation]]'
+- '[[Jinja2-Config-Information-Extraction]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
+- '[[Linux-Docker-Privilege-Escalation]]'
 ---
 
 # System Shutdown/Reboot
@@ -28,16 +28,20 @@ Adversaries may shutdown/reboot systems to interrupt access to, or aid in the de
 
 Adversaries may attempt to shutdown/reboot a system after impacting it in other ways, such as [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) or [Inhibit System Recovery](https://attack.mitre.org/techniques/T1490), to hasten the intended effects on system availability.(Citation: Talos Nyetya June 2017)(Citation: Talos Olympic Destroyer 2018)
 
+
+
 ## Tactics
 
 - [[Impact|TA0040 - Impact]]
 
 ## Related Procedures (7)
 
-- [[Billion Laugh Attack to Perform Denial of Service using XML External Entity]]
-- [[Docker Security Assessment]]
-- [[Exploiting .NET BinaryFormatter Deserialization]]
+- [[Billion-Laugh-Attack-via-XXE-for-DoS]]
+- [[Docker-Security-Assessment]]
+- [[Exploit-DotNET-BinaryFormatter-Deserialization]]
 - [[HTTP/2 Request Smuggling]]
-- [[Jinja2 Config Information Extraction]]
-- [[Lessjs Server Side Template Injection via Inline Import]]
-- [[Linux - Docker Privilege Escalation]]
+- [[Jinja2-Config-Information-Extraction]]
+- [[Exploit-Lessjs-SSTI-via-Inline-Import]]
+- [[Linux-Docker-Privilege-Escalation]]
+
+

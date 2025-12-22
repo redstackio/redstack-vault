@@ -9,11 +9,11 @@ updated_at: '2023-04-06T03:56:40.911686+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[DNS Beacon Payload with Cobalt Strike]]'
-- '[[DNS Rebinding Protection Bypass via CNAME]]'
-- '[[Git Index File Recovery]]'
-- '[[Git Source Code Leakage]]'
-- '[[Image-Based .htaccess Upload]]'
+- '[[configure-dns-for-cobalt-strike-dns-beacon]]'
+- '[[DNS-Rebinding-Protection-Bypass-via-CNAME]]'
+- '[[Git-Index-File-Recovery]]'
+- '[[Recover-Git-Repository-from-Exposed-Dot-Git-Directory]]'
+- '[[Image-Based-htaccess-Upload-Bypass]]'
 ---
 
 # Dynamic Resolution
@@ -26,14 +26,18 @@ Adversaries may dynamically establish connections to command and control infrast
 
 Adversaries may use dynamic resolution for the purpose of [Fallback Channels](https://attack.mitre.org/techniques/T1008). When contact is lost with the primary command and control server malware may employ dynamic resolution as a means to reestablishing command and control.(Citation: Talos CCleanup 2017)(Citation: FireEye POSHSPY April 2017)(Citation: ESET Sednit 2017 Activity)
 
+
+
 ## Tactics
 
 - [[Command and Control|TA0011 - Command and Control]]
 
 ## Related Procedures (5)
 
-- [[DNS Beacon Payload with Cobalt Strike]]
-- [[DNS Rebinding Protection Bypass via CNAME]]
-- [[Git Index File Recovery]]
-- [[Git Source Code Leakage]]
-- [[Image-Based .htaccess Upload]]
+- [[configure-dns-for-cobalt-strike-dns-beacon]]
+- [[DNS-Rebinding-Protection-Bypass-via-CNAME]]
+- [[Git-Index-File-Recovery]]
+- [[Recover-Git-Repository-from-Exposed-Dot-Git-Directory]]
+- [[Image-Based-htaccess-Upload-Bypass]]
+
+

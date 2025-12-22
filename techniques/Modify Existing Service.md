@@ -9,13 +9,13 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Git Hook Backdoor Persistence]]'
-- '[[Git Hook Persistence]]'
-- '[[Linux APT Backdoor Persistence]]'
-- '[[Windows Local Service Permissions Escalation]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Git-Hook-Backdoor-Persistence]]'
+- '[[Git-Hook-Persistence]]'
+- '[[Establish-Persistence-via-Linux-APT-Backdoor]]'
+- '[[Windows-Local-Service-Permissions-Escalation]]'
 ---
 
 # Modify Existing Service
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 Windows service configuration information, including the file path to the service's executable or recovery programs/commands, is stored in the Registry. Service configurations can be modified using utilities such as sc.exe and Reg.Adversaries can modify an existing service to persist malware on a system by using system utilities or by using custom tools to interact with the Windows API. Use of existing services is a type of Masquerading that may make detection analysis more challenging. Modifying existing services may interrupt their functionality or may enable services that are disabled or otherwise not commonly used.Adversaries may also intentionally corrupt or kill services to execute malicious recovery programs/commands. [1] [2]
+
+
 
 # Detection
 
@@ -96,10 +98,12 @@ Use auditing tools capable of detecting privilege and service abuse opportunitie
 
 ## Related Procedures (7)
 
-- [[Active Directory Object Owner Hijacking]]
-- [[Backdooring Git User Configurations]]
-- [[Enumerate Windows for Privilege Escalation (PowerUp)]]
-- [[Git Hook Backdoor Persistence]]
-- [[Git Hook Persistence]]
-- [[Linux APT Backdoor Persistence]]
-- [[Windows Local Service Permissions Escalation]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[Backdoor-Git-User-Configurations-for-Persistence]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]
+- [[Git-Hook-Backdoor-Persistence]]
+- [[Git-Hook-Persistence]]
+- [[Establish-Persistence-via-Linux-APT-Backdoor]]
+- [[Windows-Local-Service-Permissions-Escalation]]
+
+

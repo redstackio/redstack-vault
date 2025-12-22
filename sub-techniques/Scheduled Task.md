@@ -10,10 +10,10 @@ parent_technique: '[[Scheduled Task|T1053 - Scheduled Task]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Office Macro Payload Generation with Unicorn]]'
-- '[[Windows - Run Programs with Different Permissions using Runas Command]]'
+- '[[Generate-Office-Macro-Payload-with-Unicorn]]'
+- '[[windows-run-programs-as-different-user-using-runas]]'
 ---
 
 # Scheduled Task
@@ -44,11 +44,11 @@ This sub-technique is used in the following tactics:
 
 - [[Execution|TA0002 - Execution]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 2 procedures using this sub-technique:
 
-- [[Office Macro Payload Generation with Unicorn]]
-- [[Windows - Run Programs with Different Permissions using Runas Command]]
+- [[Generate-Office-Macro-Payload-with-Unicorn]]
+- [[windows-run-programs-as-different-user-using-runas]]

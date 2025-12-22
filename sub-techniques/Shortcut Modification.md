@@ -10,7 +10,7 @@ parent_technique: '[[Boot or Logon Autostart Execution|T1547 - Boot or Logon Aut
   Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Shortcut Modification
@@ -40,4 +40,4 @@ Shortcuts can also be abused to establish persistence by implementing other meth
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

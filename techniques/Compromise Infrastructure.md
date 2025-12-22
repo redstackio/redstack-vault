@@ -22,6 +22,10 @@ Use of compromised infrastructure allows an adversary to stage, launch, and exec
 
 By using compromised infrastructure, adversaries may make it difficult to tie their actions back to them. Prior to targeting, adversaries may compromise the infrastructure of other adversaries.(Citation: NSA NCSC Turla OilRig)
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
+
+

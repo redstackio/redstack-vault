@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Groovy Java Reverse Shell]]'
+- '[[Establish-Groovy-Java-Reverse-Shell]]'
 ---
 
 # Standard Non-Application Layer Protocol
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Use of a standard non-application layer protocol for communication between host and C2 server or among infected hosts within a network. The list of possible protocols is extensive. [1] Specific examples include use of network layer protocols, such as the Internet Control Message Protocol (ICMP), transport layer protocols, such as the User Datagram Protocol (UDP), session layer protocols, such as Socket Secure (SOCKS), as well as redirected/tunneled protocols, such as Serial over LAN (SOL).ICMP communication between hosts is one example. Because ICMP is part of the Internet Protocol Suite, it is required to be implemented by all IP-compatible hosts; [2] however, it is not as commonly monitored as other Internet Protocols such as TCP or UDP and may be used by adversaries to hide communications.
+
+
 
 # Detection
 
@@ -84,4 +86,6 @@ Network intrusion detection and preve
 
 ## Related Procedures (1)
 
-- [[Groovy Java Reverse Shell]]
+- [[Establish-Groovy-Java-Reverse-Shell]]
+
+

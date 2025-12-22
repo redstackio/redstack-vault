@@ -9,19 +9,19 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory Domain Controller Lookup]]'
-- '[[Active Directory Recon using BloodHound Custom Queries]]'
-- '[[Domain SQL Server Discovery]]'
-- '[[Kubelet API Address Enumeration]]'
-- '[[Kubernetes Endpoint Enumeration]]'
-- '[[Linked Database Enumeration]]'
-- '[[Ping Sweep a Subnet for Online Hosts]]'
-- '[[RDS Enumeration of Routing Tables by VPC-id]]'
-- '[[RDS Subnet Enumeration]]'
-- '[[RDS Subnet Group Enumeration]]'
-- '[[S3 Bucket File Listing]]'
-- '[[S3 Bucket File Listing]]'
-- '[[SID Enumeration and WMI Query for MS14-068 Checksum Validation]]'
+- '[[Active-Directory-Domain-Controller-Lookup]]'
+- '[[Active-Directory-Recon-Using-BloodHound-Custom-Queries]]'
+- '[[Domain-SQL-Server-Discovery]]'
+- '[[Kubelet-API-Enumeration-via-Curl]]'
+- '[[Kubernetes-Endpoint-Enumeration]]'
+- '[[Enumerate-Linked-Databases-in-MSSQL]]'
+- '[[Ping-Sweep-a-Subnet-for-Online-Hosts]]'
+- '[[Enumerate-EC2-Route-Tables-by-VPC-ID]]'
+- '[[enumerate-rds-subnets-via-ec2-describe-subnets]]'
+- '[[rds-subnet-group-enumeration]]'
+- '[[List-Files-in-S3-Bucket]]'
+- '[[List-Files-in-S3-Bucket]]'
+- '[[sid-enumeration-and-wmi-query-for-ms14-068-exploitation]]'
 ---
 
 # Remote System Discovery
@@ -31,6 +31,8 @@ procedures:
 ## Description
 
 Adversaries will likely attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system. Functionality could exist within remote access tools to enable this, but utilities available on the operating system could also be used. Adversaries may also use local host files in order to discover the hostname to IP address mappings of remote systems. WindowsExamples of tools and commands that acquire this information include "ping" or "net view" using Net. The contents of the C:\Windows\System32\Drivers\etc\hosts file can be viewed to gain insight into the existing hostname to IP mappings on the system.MacSpecific to Mac, the bonjour protocol to discover additional Mac-based systems within the same broadcast domain. Utilities such as "ping" and others can be used to gather information about remote systems. The contents of the /etc/hosts file can be viewed to gain insight into existing hostname to IP mappings on the system.LinuxUtilities such as "ping" and others can be used to gather information about remote systems. The contents of the /etc/hosts file can be viewed to gain insight into existing hostname to IP mappings on the system.
+
+
 
 # Detection
 
@@ -124,16 +126,18 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (13)
 
-- [[Active Directory Domain Controller Lookup]]
-- [[Active Directory Recon using BloodHound Custom Queries]]
-- [[Domain SQL Server Discovery]]
-- [[Kubelet API Address Enumeration]]
-- [[Kubernetes Endpoint Enumeration]]
-- [[Linked Database Enumeration]]
-- [[Ping Sweep a Subnet for Online Hosts]]
-- [[RDS Enumeration of Routing Tables by VPC-id]]
-- [[RDS Subnet Enumeration]]
-- [[RDS Subnet Group Enumeration]]
-- [[S3 Bucket File Listing]]
-- [[S3 Bucket File Listing]]
-- [[SID Enumeration and WMI Query for MS14-068 Checksum Validation]]
+- [[Active-Directory-Domain-Controller-Lookup]]
+- [[Active-Directory-Recon-Using-BloodHound-Custom-Queries]]
+- [[Domain-SQL-Server-Discovery]]
+- [[Kubelet-API-Enumeration-via-Curl]]
+- [[Kubernetes-Endpoint-Enumeration]]
+- [[Enumerate-Linked-Databases-in-MSSQL]]
+- [[Ping-Sweep-a-Subnet-for-Online-Hosts]]
+- [[Enumerate-EC2-Route-Tables-by-VPC-ID]]
+- [[enumerate-rds-subnets-via-ec2-describe-subnets]]
+- [[rds-subnet-group-enumeration]]
+- [[List-Files-in-S3-Bucket]]
+- [[List-Files-in-S3-Bucket]]
+- [[sid-enumeration-and-wmi-query-for-ms14-068-exploitation]]
+
+

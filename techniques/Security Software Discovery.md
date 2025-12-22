@@ -9,13 +9,13 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
-- '[[Check PowerShell Session Language Mode]]'
-- '[[Enumerate AppLocker Rules]]'
-- '[[PrintNightmare WebDAV Attack]]'
-- '[[Reflection Method with WMF5 Autologging Bypass]]'
-- '[[Windows Defender Antivirus Overview and Configuration]]'
-- '[[Windows Defender Firewall Configuration Dump and Blocked Ports Listing]]'
+- '[[Enumerate-Installed-Antivirus-Products-Windows]]'
+- '[[Check-PowerShell-Session-Language-Mode]]'
+- '[[Enumerate-AppLocker-Rules]]'
+- '[[PrintNightmare-WebDAV-Attack]]'
+- '[[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]'
+- '[[Discover-and-Impair-Windows-Defender-Antivirus]]'
+- '[[Dump-Windows-Defender-Firewall-Configuration-and-List-Blocked-Ports]]'
 ---
 
 # Security Software Discovery
@@ -25,6 +25,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to get a listing of security software, configurations, defensive tools, and sensors that are installed on the system. This may include things such as local firewall rules and anti-virus. These checks may be built into early-stage remote access tools.WindowsExample commands that can be used to obtain security software information are netsh, reg query with Reg, dir with cmd, and Tasklist, but other indicators of discovery behavior may be more specific to the type of software or security system the adversary is looking for.MacIt's becoming more common to see macOS malware perform checks for LittleSnitch and KnockKnock software.
+
+
 
 # Detection
 
@@ -156,10 +158,12 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (7)
 
-- [[Antivirus Enumeration - Windows Privilege Escalation]]
-- [[Check PowerShell Session Language Mode]]
-- [[Enumerate AppLocker Rules]]
-- [[PrintNightmare WebDAV Attack]]
-- [[Reflection Method with WMF5 Autologging Bypass]]
-- [[Windows Defender Antivirus Overview and Configuration]]
-- [[Windows Defender Firewall Configuration Dump and Blocked Ports Listing]]
+- [[Enumerate-Installed-Antivirus-Products-Windows]]
+- [[Check-PowerShell-Session-Language-Mode]]
+- [[Enumerate-AppLocker-Rules]]
+- [[PrintNightmare-WebDAV-Attack]]
+- [[Bypass-AMSI-and-WMF5-Autologging-Using-Reflection]]
+- [[Discover-and-Impair-Windows-Defender-Antivirus]]
+- [[Dump-Windows-Defender-Firewall-Configuration-and-List-Blocked-Ports]]
+
+

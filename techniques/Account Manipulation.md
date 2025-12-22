@@ -10,22 +10,22 @@ tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]'
-- '[[Add User to Active Directory Domain Group]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[Azure AD Connect Monitoring Disable and Password Reset]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
+- '[[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]'
+- '[[Add-User-to-Active-Directory-Domain-Group]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
 - '[[Change an AD Domain User''s Password]]'
-- '[[Extracting GMSA Passwords from Active Directory]]'
-- '[[ForceChangePassword Active Directory Attack]]'
-- '[[GMSA Password Forging]]'
-- '[[Kubernetes API Request Simulation]]'
-- '[[Kubernetes Privileged Service Account Token Retrieval]]'
-- '[[Kubernetes RBAC Privilege Escalation via Malicious RoleBinding]]'
-- '[[Kubernetes Service Account Token Theft]]'
-- '[[Linux - Add Root User Persistence]]'
-- '[[PXE Boot Image Attack - Local Admin Account Hijack]]'
-- '[[Skeleton Key Persistence]]'
+- '[[extract-gmsa-passwords-from-active-directory]]'
+- '[[Force-Change-Domain-User-Password-via-ACL-Abuse]]'
+- '[[Forge-GMSA-Password-for-Domain-Access]]'
+- '[[Simulate-Kubectl-API-Requests-with-Curl-and-Python]]'
+- '[[Kubernetes-Privileged-Service-Account-Token-Retrieval]]'
+- '[[kubernetes-rbac-privilege-escalation-via-malicious-rolebinding]]'
+- '[[Kubernetes-Service-Account-Token-Theft]]'
+- '[[Linux-Add-Root-User-Persistence]]'
+- '[[pxe-boot-image-attack-local-admin-hijack]]'
+- '[[Skeleton-Key-Persistence]]'
 ---
 
 # Account Manipulation
@@ -35,6 +35,8 @@ procedures:
 ## Description
 
 Account manipulation may aid adversaries in maintaining access to credentials and certain permission levels within an environment. Manipulation could consist of modifying permissions, modifying credentials, adding or changing permission groups, modifying account settings, or modifying how authentication is performed. These actions could also include account activity designed to subvert security policies, such as performing iterative password updates to subvert password duration policies and preserve the life of compromised credentials. In order to create or manipulate accounts, the adversary must already have sufficient permissions on systems or the domain.
+
+
 
 # Detection
 
@@ -87,19 +89,21 @@ Protect domain controllers by ensuring proper security configuration for critica
 
 ## Related Procedures (16)
 
-- [[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]
-- [[Add User to Active Directory Domain Group]]
-- [[AWS IAM Policy Version Retrieval]]
-- [[Azure AD Connect Monitoring Disable and Password Reset]]
-- [[Azure Resource Management and Privilege Checking with PowerShell]]
-- [[Change an AD Domain User's Password]]
-- [[Extracting GMSA Passwords from Active Directory]]
-- [[ForceChangePassword Active Directory Attack]]
-- [[GMSA Password Forging]]
-- [[Kubernetes API Request Simulation]]
-- [[Kubernetes Privileged Service Account Token Retrieval]]
-- [[Kubernetes RBAC Privilege Escalation via Malicious RoleBinding]]
-- [[Kubernetes Service Account Token Theft]]
-- [[Linux - Add Root User Persistence]]
-- [[PXE Boot Image Attack - Local Admin Account Hijack]]
-- [[Skeleton Key Persistence]]
+- [[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]
+- [[Add-User-to-Active-Directory-Domain-Group]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[Disable-Azure-AD-Connect-Monitoring-and-Reset-On-Premises-Admin-Password]]
+- [[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]
+- [[change-ad-domain-user-password]]
+- [[extract-gmsa-passwords-from-active-directory]]
+- [[Force-Change-Domain-User-Password-via-ACL-Abuse]]
+- [[Forge-GMSA-Password-for-Domain-Access]]
+- [[Simulate-Kubectl-API-Requests-with-Curl-and-Python]]
+- [[Kubernetes-Privileged-Service-Account-Token-Retrieval]]
+- [[kubernetes-rbac-privilege-escalation-via-malicious-rolebinding]]
+- [[Kubernetes-Service-Account-Token-Theft]]
+- [[Linux-Add-Root-User-Persistence]]
+- [[pxe-boot-image-attack-local-admin-hijack]]
+- [[Skeleton-Key-Persistence]]
+
+

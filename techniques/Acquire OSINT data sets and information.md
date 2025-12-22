@@ -9,10 +9,10 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Organizational Information Gathering|TA0017 - Organizational Information Gathering]]'
 procedures:
-- '[[Build a User List from a Public Webpage]]'
-- '[[Domain Record Enumeration using OSINT]]'
+- '[[brute-force-smb-users-using-rid-authenticated]]'
+- '[[Enumerate-Domain-Subdomains-using-OSINT]]'
 - '[[Enumerate and Analyze an SSL/TLS Certificate]]'
-- '[[Search Google for Public Information]]'
+- '[[Search-Google-for-Public-Information-on-Target-Domain]]'
 ---
 
 # Acquire OSINT data sets and information
@@ -29,7 +29,9 @@ Data sets can be anything from Security Exchange Commission (SEC) filings to pub
 
 ## Related Procedures (4)
 
-- [[Build a User List from a Public Webpage]]
-- [[Domain Record Enumeration using OSINT]]
+- [[brute-force-smb-users-using-rid-authenticated]]
+- [[Enumerate-Domain-Subdomains-using-OSINT]]
 - [[Enumerate and Analyze an SSL/TLS Certificate]]
-- [[Search Google for Public Information]]
+- [[Search-Google-for-Public-Information-on-Target-Domain]]
+
+

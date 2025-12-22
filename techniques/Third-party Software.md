@@ -10,7 +10,7 @@ tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[LFI to RCE via SSH Log File Inclusion]]'
+- '[[LFI-to-RCE-via-SSH-Log-File-Inclusion]]'
 ---
 
 # Third-party Software
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, VNC, HBSS, Altiris, etc.). If an adversary gains access to these systems, then they may be able to execute code.Adversaries may gain access to and use third-party application deployment systems installed within an enterprise network. Access to a network-wide or enterprise-wide software deployment system enables an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.The permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the deployment server, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform software deployment.
+
+
 
 # Detection
 
@@ -56,4 +58,6 @@ Evaluate the security of third-party software that could be used in the enterpri
 
 ## Related Procedures (1)
 
-- [[LFI to RCE via SSH Log File Inclusion]]
+- [[LFI-to-RCE-via-SSH-Log-File-Inclusion]]
+
+

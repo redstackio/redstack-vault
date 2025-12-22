@@ -10,8 +10,8 @@ tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Linux - Privilege Escalation via Shared Library Dependencies]]'
-- '[[Schedule a Cron Job with Write Privileges (root)]]'
+- '[[Linux-Privilege-Escalation-via-Shared-Library-Dependencies]]'
+- '[[Schedule-Cron-Job-with-Root-Write-Privileges]]'
 ---
 
 # Local Job Scheduling
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 On Linux and macOS systems, multiple methods are supported for creating pre-scheduled and periodic background jobs: cron, [1] at, [2] and launchd. [3] Unlike Scheduled Task on Windows systems, job scheduling on Linux-based systems cannot be done remotely unless used in conjunction within an established remote session, like secure shell (SSH).cronSystem-wide cron jobs are installed by modifying /etc/crontab file, /etc/cron.d/ directory or other locations supported by the Cron daemon, while per-user cron jobs are installed using crontab with specifically formatted crontab files. [3] This works on macOS and Linux systems.Those methods allow for commands or scripts to be executed at specific, periodic intervals in the background without user interaction. An adversary may use job scheduling to execute programs at system startup or on a scheduled basis for Persistence, [4] [5] [6] [7] to conduct Execution as part of Lateral Movement, to gain root privileges, or to run a process under the context of a specific account.atThe at program is another means on POSIX-based systems, including macOS and Linux, to schedule a program or script job for execution at a later date and/or time, which could also be used for the same purposes.launchdEach launchd job is described by a different configuration property list (plist) file similar to Launch Daemon or Launch Agent, except there is an additional key called StartCalendarInterval with a dictionary of time values. [3] This only works on macOS and OS X.
+
+
 
 # Detection
 
@@ -63,5 +65,7 @@ Limit privileges of user accounts and remediate Privilege Escalation vectors so 
 
 ## Related Procedures (2)
 
-- [[Linux - Privilege Escalation via Shared Library Dependencies]]
-- [[Schedule a Cron Job with Write Privileges (root)]]
+- [[Linux-Privilege-Escalation-via-Shared-Library-Dependencies]]
+- [[Schedule-Cron-Job-with-Root-Write-Privileges]]
+
+

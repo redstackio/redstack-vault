@@ -10,9 +10,9 @@ parent_technique: '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
 ---
 
 # Cloud Instance Metadata API
@@ -49,6 +49,6 @@ This sub-technique is used in the following tactics:
 
 There are 3 procedures using this sub-technique:
 
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]

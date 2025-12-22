@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:16.945589+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Docker Security Assessment]]'
-- '[[Mounted Docker Socket Pentest]]'
+- '[[Docker-Security-Assessment]]'
+- '[[Escape-Container-Using-Mounted-Docker-Socket]]'
 ---
 
 # Container Administration Command
@@ -23,11 +23,15 @@ Adversaries may abuse a container administration service to execute commands wit
 
 In Docker, adversaries may specify an entrypoint during container deployment that executes a script or command, or they may use a command such as <code>docker exec</code> to execute a command within a running container.(Citation: Docker Entrypoint)(Citation: Docker Exec) In Kubernetes, if an adversary has sufficient permissions, they may gain remote execution in a container in the cluster via interaction with the Kubernetes API server, the kubelet, or by running a command such as <code>kubectl exec</code>.(Citation: Kubectl Exec Get Shell)
 
+
+
 ## Tactics
 
 - [[Execution|TA0002 - Execution]]
 
 ## Related Procedures (2)
 
-- [[Docker Security Assessment]]
-- [[Mounted Docker Socket Pentest]]
+- [[Docker-Security-Assessment]]
+- [[Escape-Container-Using-Mounted-Docker-Socket]]
+
+

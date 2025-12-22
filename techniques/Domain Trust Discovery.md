@@ -10,33 +10,33 @@ tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]'
-- '[[Active Directory Account Enumeration using CrackMapExec]]'
+- '[[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Integrated DNS Enumeration]]'
-- '[[Active Directory Recon - Using AD Module]]'
-- '[[Active Directory Recon using BloodHound and Certipy]]'
-- '[[Active Directory Recon with PowerView]]'
-- '[[Active Directory User Enumeration]]'
-- '[[Add Domain Admin to RODC Password Replication Group Procedure]]'
-- '[[AdminCount Abuse]]'
-- '[[Analyze BloodHound Data for Relationships]]'
-- '[[Azure Reconnaissance]]'
-- '[[Azure Subdomain Enumeration]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Active-Directory-Integrated-DNS-Enumeration]]'
+- '[[active-directory-recon-using-ad-module]]'
+- '[[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]'
+- '[[Active-Directory-Recon-with-PowerView]]'
+- '[[Active-Directory-User-Enumeration]]'
+- '[[Add-Domain-Admin-to-RODC-Password-Replication-Group]]'
+- '[[AdminCount-Abuse]]'
+- '[[Analyze-BloodHound-Data-for-AD-Relationships]]'
+- '[[Azure-Reconnaissance]]'
+- '[[Enumerate-Azure-Subdomains-with-MicroBurst]]'
 - '[[Domain Admins Group Access]]'
-- '[[Domain Takeover via Certifried CVE-2022-26923]]'
-- '[[Establishing and Enumerating PAM Trust between lab.local and bastion.local]]'
-- '[[Forest to Forest Trust Ticket Hash Dump]]'
-- '[[Forest Trust Ticket Dumping]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[Kerberos Constrained Delegation - Identify Trusted Computers and Delegation Permissions]]'
-- '[[Linked Database Crawling for MSSQL Server Enumeration]]'
-- '[[Map an Active Directory Environment (SharpHound)]]'
-- '[[Query LDAP and Enumerate the Base DN (Nmap)]]'
-- '[[Query LDAP for Root DSE Object Information]]'
-- '[[samAccountName Spoofing Attack]]'
-- '[[Subdomain Enumeration using AltDNS]]'
-- '[[Subdomain Enumeration with Findomain]]'
+- '[[Domain-Takeover-via-Certifried-CVE-2022-26923]]'
+- '[[Establish-and-Enumerate-PAM-Trust-Between-Domains]]'
+- '[[Dump-Forest-Trust-Ticket-Hash-Using-DCSync]]'
+- '[[Forest-Trust-Ticket-Dumping]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[kerberos-constrained-delegation-identify-trusted-computers-and-delegation-permissions]]'
+- '[[Enumerate-Linked-MSSQL-Servers-via-Database-Crawling]]'
+- '[[Map-Active-Directory-with-SharpHound]]'
+- '[[Query-LDAP-and-Enumerate-Base-DN-with-Nmap]]'
+- '[[Query-LDAP-Root-DSE-for-Domain-Enumeration]]'
+- '[[Sam-Account-Name-Spoofing-for-User-Impersonation]]'
+- '[[Subdomain-Enumeration-using-AltDNS]]'
+- '[[Subdomain-Enumeration-with-Findomain]]'
 ---
 
 # Domain Trust Discovery
@@ -46,6 +46,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to gather information on domain trust relationships that may be used to identify Lateral Movement opportunities in Windows multi-domain/forest environments. Domain trusts provide a mechanism for a domain to allow access to resources based on the authentication procedures of another domain.[1] Domain trusts allow the users of the trusted domain to access resources in the trusting domain. The information discovered may help the adversary conduct SID-History Injection, Pass the Ticket, and Kerberoasting.[2][3] Domain trusts can be enumerated using the DSEnumerateDomainTrusts() Win32 API call, .NET methods, and LDAP.[3] The Windows utility Nltest is known to be used by adversaries to enumerate domain trusts.[4]
+
+
 
 # Detection
 
@@ -92,24 +94,26 @@ Map the trusts within existing domains/forests and keep trust relationships to a
 ## Related Procedures (28)
 
 - [[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]
-- [[Active Directory Account Enumeration using CrackMapExec]]
+- [[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Integrated DNS Enumeration]]
-- [[Active Directory Recon - Using AD Module]]
-- [[Active Directory Recon using BloodHound and Certipy]]
-- [[Active Directory Recon with PowerView]]
-- [[Active Directory User Enumeration]]
-- [[Add Domain Admin to RODC Password Replication Group Procedure]]
-- [[AdminCount Abuse]]
-- [[Analyze BloodHound Data for Relationships]]
-- [[Azure Reconnaissance]]
-- [[Azure Subdomain Enumeration]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Active-Directory-Integrated-DNS-Enumeration]]
+- [[active-directory-recon-using-ad-module]]
+- [[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]
+- [[Active-Directory-Recon-with-PowerView]]
+- [[Active-Directory-User-Enumeration]]
+- [[Add-Domain-Admin-to-RODC-Password-Replication-Group]]
+- [[AdminCount-Abuse]]
+- [[Analyze-BloodHound-Data-for-AD-Relationships]]
+- [[Azure-Reconnaissance]]
+- [[Enumerate-Azure-Subdomains-with-MicroBurst]]
 - [[Domain Admins Group Access]]
-- [[Domain Takeover via Certifried CVE-2022-26923]]
-- [[Establishing and Enumerating PAM Trust between lab.local and bastion.local]]
-- [[Forest to Forest Trust Ticket Hash Dump]]
-- [[Forest Trust Ticket Dumping]]
-- [[Golden Certificate Domain Persistence]]
+- [[Domain-Takeover-via-Certifried-CVE-2022-26923]]
+- [[Establish-and-Enumerate-PAM-Trust-Between-Domains]]
+- [[Dump-Forest-Trust-Ticket-Hash-Using-DCSync]]
+- [[Forest-Trust-Ticket-Dumping]]
+- [[Golden-Certificate-Domain-Persistence]]
 
 *...and 8 more*
+
+

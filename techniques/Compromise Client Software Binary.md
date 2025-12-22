@@ -9,8 +9,8 @@ updated_at: '2023-04-06T03:56:32.199971+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[SAML Injection Authentication Bypass]]'
-- '[[SAML Injection for Authentication Bypass and User Enumeration]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-User-Enumeration]]'
 ---
 
 # Compromise Client Software Binary
@@ -23,11 +23,15 @@ Adversaries may modify client software binaries to establish persistent access t
 
 Adversaries may make modifications to client software binaries to carry out malicious tasks when those applications are in use. For example, an adversary may copy source code for the client software, add a backdoor, compile for the target, and replace the legitimate application binary (or support files) with the backdoored one. Since these applications may be routinely executed by the user, the adversary can leverage this for persistent access to the host.
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
 
 ## Related Procedures (2)
 
-- [[SAML Injection Authentication Bypass]]
-- [[SAML Injection for Authentication Bypass and User Enumeration]]
+- [[SAML-Injection-Authentication-Bypass]]
+- [[SAML-Injection-for-Authentication-Bypass-and-User-Enumeration]]
+
+

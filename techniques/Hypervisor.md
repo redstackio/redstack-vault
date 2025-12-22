@@ -18,6 +18,8 @@ tactics:
 
 A type-1 hypervisor is a software layer that sits between the guest operating systems and system's hardware. [1] It presents a virtual running environment to an operating system. An example of a common hypervisor is Xen. [2] A type-1 hypervisor operates at a level below the operating system and could be designed with Rootkit functionality to hide its existence from the guest operating system. [3] A malicious hypervisor of this nature could be used to persist on systems through interruption.
 
+
+
 # Detection
 
 Type-1 hypervisors may be detected by performing timing analysis. Hypervisors emulate certain CPU instructions that would normally be executed by the hardware. If an instruction takes orders of magnitude longer to execute than normal on a system that should not contain a hypervisor, one may be present. [4]
@@ -43,3 +45,5 @@ Prevent adversary access to privileged accounts necessary to install a hyperviso
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

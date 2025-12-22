@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[PostgreSQL Time Based Table Dump]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
 ---
 
 # Exfiltration Over Physical Medium
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a physical medium or device introduced by a user. Such media could be an external hard drive, USB drive, cellular phone, MP3 player, or other removable storage and processing device. The physical medium or device could be used as the final exfiltration point or to hop between otherwise disconnected systems.
+
+
 
 # Detection
 
@@ -52,4 +54,6 @@ Disable Autorun if it is unnecessary. (Citation: Microsoft Disable Autorun) Disa
 
 ## Related Procedures (1)
 
-- [[PostgreSQL Time Based Table Dump]]
+- [[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]
+
+

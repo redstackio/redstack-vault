@@ -22,6 +22,10 @@ Adversaries may gather this information in various ways, such as direct elicitat
 
 Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593) or [Phishing for Information](https://attack.mitre.org/techniques/T1598)), establishing operational resources (ex: [Compromise Accounts](https://attack.mitre.org/techniques/T1586)), and/or initial access (ex: [Phishing](https://attack.mitre.org/techniques/T1566) or [Valid Accounts](https://attack.mitre.org/techniques/T1078)).
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
+
+

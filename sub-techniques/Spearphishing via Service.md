@@ -10,7 +10,7 @@ parent_technique: '[[Phishing|T1566 - Phishing]]'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[Account Takeover Through Password Reset Poisoning]]'
+- '[[Account-Takeover-Through-Password-Reset-Poisoning]]'
 ---
 
 # Spearphishing via Service
@@ -43,4 +43,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Account Takeover Through Password Reset Poisoning]]
+- [[Account-Takeover-Through-Password-Reset-Poisoning]]

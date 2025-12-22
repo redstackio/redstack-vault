@@ -9,16 +9,16 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[AWS Lambda Function Invocation]]'
-- '[[AWS Lambda Role Privilege Escalation]]'
-- '[[AWS Metadata Information Retrieval]]'
-- '[[Azure VM RunCommand Execution]]'
-- '[[Kubernetes API Request Simulation]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[MYSQL UDF Command Execution via lib_mysqludf_sys.so]]'
-- '[[Oracle SQL and Java Command Execution]]'
-- '[[Rundll32 Download and Execute via WebDAV and Remote Script Execution]]'
-- '[[Windows - Privilege Escalation via Operating System Information Gathering]]'
+- '[[Invoke-AWS-Lambda-Function-via-API-Gateway]]'
+- '[[aws-lambda-role-privilege-escalation]]'
+- '[[AWS-Metadata-Information-Retrieval]]'
+- '[[azure-vm-runcommand-execution]]'
+- '[[Simulate-Kubectl-API-Requests-with-Curl-and-Python]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[MySQL-UDF-Command-Execution-via-lib_mysqludf_sys.so]]'
+- '[[Oracle-SQL-and-Java-Command-Execution]]'
+- '[[Rundll32-Download-and-Execute-via-WebDAV-or-Remote-Script]]'
+- '[[windows-os-information-gathering-for-privilege-escalation]]'
 ---
 
 # Execution through API
@@ -28,6 +28,8 @@ procedures:
 ## Description
 
 Adversary tools may directly use the Windows application programming interface (API) to execute binaries. Functions such as the Windows API CreateProcess will allow programs and scripts to start other processes with proper path and argument parameters. [1]Additional Windows API calls that can be used to execute binaries include: [2]CreateProcessA() and CreateProcessW(),CreateProcessAsUserA() and CreateProcessAsUserW(),CreateProcessInternalA() and CreateProcessInternalW(),CreateProcessWithLogonW(), CreateProcessWithTokenW(),LoadLibraryA() and LoadLibraryW(),LoadLibraryExA() and LoadLibraryExW(),LoadModule(),LoadPackagedLibrary(),WinExec(),ShellExecuteA() and ShellExecuteW(),ShellExecuteExA() and ShellExecuteExW()
+
+
 
 # Detection
 
@@ -95,13 +97,15 @@ Mitigating specific API calls will likely have unintended side effects, such as 
 
 ## Related Procedures (10)
 
-- [[AWS Lambda Function Invocation]]
-- [[AWS Lambda Role Privilege Escalation]]
-- [[AWS Metadata Information Retrieval]]
-- [[Azure VM RunCommand Execution]]
-- [[Kubernetes API Request Simulation]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[MYSQL UDF Command Execution via lib_mysqludf_sys.so]]
-- [[Oracle SQL and Java Command Execution]]
-- [[Rundll32 Download and Execute via WebDAV and Remote Script Execution]]
-- [[Windows - Privilege Escalation via Operating System Information Gathering]]
+- [[Invoke-AWS-Lambda-Function-via-API-Gateway]]
+- [[aws-lambda-role-privilege-escalation]]
+- [[AWS-Metadata-Information-Retrieval]]
+- [[azure-vm-runcommand-execution]]
+- [[Simulate-Kubectl-API-Requests-with-Curl-and-Python]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[MySQL-UDF-Command-Execution-via-lib_mysqludf_sys.so]]
+- [[Oracle-SQL-and-Java-Command-Execution]]
+- [[Rundll32-Download-and-Execute-via-WebDAV-or-Remote-Script]]
+- [[windows-os-information-gathering-for-privilege-escalation]]
+
+

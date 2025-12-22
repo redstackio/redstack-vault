@@ -11,7 +11,7 @@ tactics:
 - '[[Collection|TA0009 - Collection]]'
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[SSL MITM Network Discovery with OpenSSL]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
 ---
 
 # ARP Cache Poisoning
@@ -49,4 +49,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[SSL MITM Network Discovery with OpenSSL]]
+- [[SSL-MITM-Network-Discovery-with-OpenSSL]]

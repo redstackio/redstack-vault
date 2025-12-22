@@ -9,11 +9,11 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[DCOM Office Remote Code Execution]]'
-- '[[DOCM Download and Execute via PowerShell]]'
-- '[[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]'
-- '[[Office Macro-Based Malware]]'
-- '[[XLM Excel 4.0 - SharpShooter Payload Creation]]'
+- '[[DCOM-Office-Remote-Code-Execution]]'
+- '[[DOCM-Download-and-Execute-via-PowerShell]]'
+- '[[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]'
+- '[[Create-Office-Macro-Malware-with-BadAssMacros]]'
+- '[[xlm-excel-4-macro-sharpshooter-payload-creation]]'
 ---
 
 # Office Application Startup
@@ -23,6 +23,8 @@ procedures:
 ## Description
 
 Microsoft Office is a fairly common application suite on Windows-based operating systems within an enterprise network. There are multiple mechanisms that can be used with Office for persistence when an Office-based application is started.Office Template MacrosMicrosoft Office contains templates that are part of common Office applications and are used to customize styles. The base templates within the application are used each time an application starts. [1]Office Visual Basic for Applications (VBA) macros [2] can inserted into the base templated and used to execute code when the respective Office application starts in order to obtain persistence. Examples for both Word and Excel have been discovered and published. By default, Word has a Normal.dotm template created that can be modified to include a malicious macro. Excel does not have a template file created by default, but one can be added that will automatically be loaded. [3] [4]Word Normal.dotm location:C:\Users(username)\AppData\Roaming\Microsoft\Templates\Normal.dotmExcel Personal.xlsb location:C:\Users(username)\AppData\Roaming\Microsoft\Excel\XLSTART\PERSONAL.XLSBAn adversary may need to enable macros to execute unrestricted depending on the system or enterprise security policy on use of macros.Office TestA Registry location was found that when a DLL reference was placed within it the corresponding DLL pointed to by the binary path would be executed every time an Office application is started [5]HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\PerfAdd-insOffice add-ins can be used to add functionality to Office programs. [6]Add-ins can also be used to obtain persistence because they can be set to execute code when an Office application starts. There are different types of add-ins that can be used by the various Office products; including Word/Excel add-in Libraries (WLL/XLL), VBA add-ins, Office Component Object Model (COM) add-ins, automation add-ins, VBA Editor (VBE), Visual Studio Tools for Office (VSTO) add-ins, and Outlook add-ins. [7][8]Outlook Rules, Forms, and Home PageA variety of features have been discovered in Outlook that can be abused to obtain persistence, such as Outlook rules, forms, and Home Page.[9] Outlook rules allow a user to define automated behavior to manage email messages. A benign rule might, for example, automatically move an email to a particular folder in Outlook if it contains specific words from a specific sender. Malicious Outlook rules can be created that can trigger code execution when an adversary sends a specifically crafted email to that user.[10]Outlook forms are used as templates for presentation and functionality in Outlook messages. Custom Outlook Forms can be created that will execute code when a specifically crafted email is sent by an adversary utilizing the same custom Outlook form.[11]Outlook Home Page is a legacy feature used to customize the presentation of Outlook folders. This feature allows for an internal or external URL to be loaded and presented whenever a folder is opened. A malicious HTML page can be crafted that will execute code when loaded by Outlook Home Page.[12]To abuse these features, an adversary requires prior access to the user’s Outlook mailbox, either via an Exchange/OWA server or via the client application. Once malicious rules, forms, or Home Pages have been added to the user’s mailbox, they will be loaded when Outlook is started. Malicious Home Pages will execute when the right Outlook folder is loaded/reloaded while malicious rules and forms will execute when an adversary sends a specifically crafted email to the user.[10][11][12]
+
+
 
 # Detection
 
@@ -96,8 +98,10 @@ Follow Office macro security best practices suitable for your environment. Disab
 
 ## Related Procedures (5)
 
-- [[DCOM Office Remote Code Execution]]
-- [[DOCM Download and Execute via PowerShell]]
-- [[Metasploit Scripting with Meterpreter Reverse HTTPS Payload]]
-- [[Office Macro-Based Malware]]
-- [[XLM Excel 4.0 - SharpShooter Payload Creation]]
+- [[DCOM-Office-Remote-Code-Execution]]
+- [[DOCM-Download-and-Execute-via-PowerShell]]
+- [[Metasploit-Scripting-with-Meterpreter-Reverse-HTTPS-Payload]]
+- [[Create-Office-Macro-Malware-with-BadAssMacros]]
+- [[xlm-excel-4-macro-sharpshooter-payload-creation]]
+
+

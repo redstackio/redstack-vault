@@ -9,15 +9,15 @@ updated_at: '2023-04-06T03:56:25.846335+00:00'
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Azure Reconnaissance]]'
-- '[[DNS Reconnaissance with ADIDNS Search Commands]]'
-- '[[Subdomain Enumeration and Takeover using SubOver]]'
-- '[[Subdomain Enumeration and Takeover with tko-subs]]'
-- '[[Subdomain Enumeration using Subfinder]]'
-- '[[Subdomain Enumeration with Aquatone Scan]]'
-- '[[Subdomain Enumeration with DNS Dumpster]]'
-- '[[Subdomain Enumeration with Google Dorks]]'
-- '[[Subdomain Enumeration with MassDNS]]'
+- '[[Azure-Reconnaissance]]'
+- '[[dns-reconnaissance-using-standin-adidns-queries]]'
+- '[[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]'
+- '[[Subdomain-Enumeration-and-Takeover-with-tko-subs]]'
+- '[[Subdomain-Enumeration-with-Subfinder]]'
+- '[[Subdomain-Enumeration-and-Scan-with-Aquatone]]'
+- '[[Subdomain-Enumeration-Using-DNS-Dumpster]]'
+- '[[Subdomain-Enumeration-with-Google-Dorks]]'
+- '[[Subdomain-Enumeration-with-MassDNS]]'
 ---
 
 # Search Open Technical Databases
@@ -30,18 +30,22 @@ Adversaries may search freely available technical databases for information abou
 
 Adversaries may search in different open databases depending on what information they seek to gather. Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593)), establishing operational resources (ex: [Acquire Infrastructure](https://attack.mitre.org/techniques/T1583) or [Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Trusted Relationship](https://attack.mitre.org/techniques/T1199)).
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
 
 ## Related Procedures (9)
 
-- [[Azure Reconnaissance]]
-- [[DNS Reconnaissance with ADIDNS Search Commands]]
-- [[Subdomain Enumeration and Takeover using SubOver]]
-- [[Subdomain Enumeration and Takeover with tko-subs]]
-- [[Subdomain Enumeration using Subfinder]]
-- [[Subdomain Enumeration with Aquatone Scan]]
-- [[Subdomain Enumeration with DNS Dumpster]]
-- [[Subdomain Enumeration with Google Dorks]]
-- [[Subdomain Enumeration with MassDNS]]
+- [[Azure-Reconnaissance]]
+- [[dns-reconnaissance-using-standin-adidns-queries]]
+- [[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]
+- [[Subdomain-Enumeration-and-Takeover-with-tko-subs]]
+- [[Subdomain-Enumeration-with-Subfinder]]
+- [[Subdomain-Enumeration-and-Scan-with-Aquatone]]
+- [[Subdomain-Enumeration-Using-DNS-Dumpster]]
+- [[Subdomain-Enumeration-with-Google-Dorks]]
+- [[Subdomain-Enumeration-with-MassDNS]]
+
+

@@ -18,6 +18,8 @@ tactics:
 
 MacOS provides the option to list specific applications to run when a user logs in. These applications run under the logged in user's context, and will be started every time the user logs in. Login items installed using the Service Management Framework are not visible in the System Preferences and can only be removed by the application that created them [1]. Users have direct control over login items installed using a shared file list which are also visible in System Preferences [1]. These login items are stored in the user's ~/Library/Preferences/ directory in a plist file called com.apple.loginitems.plist [2]. Some of these applications can open visible dialogs to the user, but they don’t all have to since there is an option to ‘Hide’ the window. If an adversary can register their own login item or modified an existing one, then they can use it to execute their code for a persistence mechanism each time the user logs in [3] [4]. The API method  SMLoginItemSetEnabled  can be used to set Login Items, but scripting languages like AppleScript can do this as well  [1].
 
+
+
 # Detection
 
 All the login items created via shared file lists are viewable by going to the Apple menu -> System Preferences -> Users & Groups -> Login items. This area (and the corresponding file locations) should be monitored and whitelisted for known good applications. Otherwise, Login Items are located in  Contents/Library/LoginItems  within an application bundle, so these paths should be monitored as well  [1]. Monitor process execution resulting from login actions for unusual or unknown applications.
@@ -47,3 +49,5 @@ Restrict users from being able to create their own login items. Additionally, ho
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

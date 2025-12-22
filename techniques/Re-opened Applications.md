@@ -18,6 +18,8 @@ tactics:
 
 Starting in Mac OS X 10.7 (Lion), users can specify certain applications to be re-opened when a user reboots their machine. While this is usually done via a Graphical User Interface (GUI) on an app-by-app basis, there are property list files (plist) that contain this information as well located at ~/Library/Preferences/com.apple.loginwindow.plist and ~/Library/Preferences/ByHost/com.apple.loginwindow.* .plist. An adversary can modify one of these files directly to include a link to their malicious executable to provide a persistence mechanism each time the user reboots their machine [1].
 
+
+
 # Detection
 
 Monitoring the specific plist files associated with reopening applications can indicate when an application has registered itself to be reopened.
@@ -39,3 +41,5 @@ Holding the Shift key while logging in prevents apps from opening automatically 
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

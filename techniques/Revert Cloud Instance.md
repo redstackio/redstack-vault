@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:09.767765+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Disable CloudTrail on AWS]]'
+- '[[Disable-CloudTrail-on-AWS]]'
 ---
 
 # Revert Cloud Instance
@@ -22,10 +22,14 @@ An adversary may revert changes made to a cloud instance after they have perform
 
 Another variation of this technique is to utilize temporary storage attached to the compute instance. Most cloud providers provide various types of storage including persistent, local, and/or ephemeral, with the ephemeral types often reset upon stop/restart of the VM.(Citation: Tech Republic - Restore AWS Snapshots)(Citation: Google - Restore Cloud Snapshot)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (1)
 
-- [[Disable CloudTrail on AWS]]
+- [[Disable-CloudTrail-on-AWS]]
+
+

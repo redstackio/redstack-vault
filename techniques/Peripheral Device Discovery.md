@@ -18,6 +18,8 @@ tactics:
 
 Adversaries may attempt to gather information about attached peripheral devices and components connected to a computer system. The information may be used to enhance their awareness of the system and network environment or may be used for further actions.
 
+
+
 # Detection
 
 System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities based on the information obtained.
@@ -79,3 +81,5 @@ Identify unnecessary system utilities or potentially malicious software that may
 ## Tactics
 
 - [[Discovery|TA0007 - Discovery]]
+
+

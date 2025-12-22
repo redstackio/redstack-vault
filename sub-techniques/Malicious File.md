@@ -10,11 +10,11 @@ parent_technique: '[[User Execution|T1204 - User Execution]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Certutil Download and Execute]]'
-- '[[LFI to RCE via uploaded file]]'
-- '[[VBA Shell Execute Comment]]'
+- '[[Certutil-Download-and-Execute]]'
+- '[[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]'
+- '[[Execute-Shell-Command-via-VBA-Comment-Metadata]]'
 - '[[Windows - Cscript / Wscript JScript Payload Execution]]'
-- '[[Windows Defender Application Control Enforcement Mode]]'
+- '[[Check-WDAC-Enforcement-Mode]]'
 ---
 
 # Malicious File
@@ -47,8 +47,8 @@ This sub-technique is used in the following tactics:
 
 There are 5 procedures using this sub-technique:
 
-- [[Certutil Download and Execute]]
-- [[LFI to RCE via uploaded file]]
-- [[VBA Shell Execute Comment]]
+- [[Certutil-Download-and-Execute]]
+- [[Exploit-LFI-to-RCE-via-Malicious-File-Upload]]
+- [[Execute-Shell-Command-via-VBA-Comment-Metadata]]
 - [[Windows - Cscript / Wscript JScript Payload Execution]]
-- [[Windows Defender Application Control Enforcement Mode]]
+- [[Check-WDAC-Enforcement-Mode]]

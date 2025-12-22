@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:21.759464+00:00'
 tactics:
 - '[[Reconnaissance|TA0043 - Reconnaissance]]'
 procedures:
-- '[[Passive Recon and Information Gathering]]'
+- '[[passive-reconnaissance-information-gathering]]'
 ---
 
 # Search Victim-Owned Websites
@@ -22,10 +22,14 @@ Adversaries may search websites owned by the victim for information that can be 
 
 Adversaries may search victim-owned websites to gather actionable information. Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)), establishing operational resources (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)), and/or initial access (ex: [Trusted Relationship](https://attack.mitre.org/techniques/T1199) or [Phishing](https://attack.mitre.org/techniques/T1566)).
 
+
+
 ## Tactics
 
 - [[Reconnaissance|TA0043 - Reconnaissance]]
 
 ## Related Procedures (1)
 
-- [[Passive Recon and Information Gathering]]
+- [[passive-reconnaissance-information-gathering]]
+
+

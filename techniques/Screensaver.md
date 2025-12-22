@@ -18,6 +18,8 @@ tactics:
 
 Screensavers are programs that execute after a configurable time of user inactivity and consist of Portable Executable (PE) files with a .scr file extension.[1] The Windows screensaver application scrnsave.scr is located in C:\Windows\System32\, and C:\Windows\sysWOW64\ on 64-bit Windows systems, along with screensavers included with base Windows installations. The following screensaver settings are stored in the Registry (HKCU\Control Panel\Desktop\) and could be manipulated to achieve persistence:SCRNSAVE.exe - set to malicious PE pathScreenSaveActive - set to '1' to enable the screensaverScreenSaverIsSecure - set to '0' to not require a password to unlockScreenSaverTimeout - sets user inactivity timeout before screensaver is executedAdversaries can use screensaver settings to maintain persistence by setting the screensaver to run malware after a certain timeframe of user inactivity. [2]
 
+
+
 # Detection
 
 Monitor process execution and command-line parameters of .scr files. Monitor changes to screensaver configuration changes in the Registry that may not correlate with typical user behavior.
@@ -43,3 +45,5 @@ Block .scr files from being executed from non-standard locations. Set Group Poli
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

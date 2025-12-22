@@ -9,10 +9,10 @@ updated_at: '2023-04-06T00:31:27.185617+00:00'
 parent_technique: '[[Process Injection|T1055 - Process Injection]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[MSSQL Server Extended Stored Procedure DLL Injection]]'
-- '[[Windows - Run Programs with Different Permissions using Runas Command]]'
+- '[[mssql-server-extended-stored-procedure-dll-injection]]'
+- '[[windows-run-programs-as-different-user-using-runas]]'
 ---
 
 # Dynamic-link Library Injection
@@ -46,11 +46,11 @@ Running code in the context of another process may allow access to the process's
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 2 procedures using this sub-technique:
 
-- [[MSSQL Server Extended Stored Procedure DLL Injection]]
-- [[Windows - Run Programs with Different Permissions using Runas Command]]
+- [[mssql-server-extended-stored-procedure-dll-injection]]
+- [[windows-run-programs-as-different-user-using-runas]]

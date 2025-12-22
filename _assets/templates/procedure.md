@@ -68,30 +68,3 @@ command --flag argument
 
 > Explanation of the command and expected output.
 
-## MITRE ATT&CK Mapping
-
-### Tactics
-
-- [[Tactic Name]]
-
-### Techniques
-
-- [[Technique Name]]
-
-### Sub-Techniques
-
-- [[Sub-Technique Name]]
-
-## Commands Used
-
-- [[Command 1]]
-- [[Command 2]]
-
-## Tools Used
-
-- [[Tool Name]]
-
-## Tags
-
-- [[Tag 1]]
-- [[Tag 2]]

@@ -18,6 +18,8 @@ tactics:
 
 Process hollowing occurs when a process is created in a suspended state then its memory is unmapped and replaced with malicious code. Similar to Process Injection, execution of the malicious code is masked under a legitimate process and may evade defenses and detection analysis. [1] [2]
 
+
+
 # Detection
 
 Monitoring API calls may generate a significant amount of data and may not be directly useful for defense unless collected under specific circumstances for known bad sequences of calls, since benign use of API functions may be common and difficult to distinguish from malicious behavior. API calls that unmap process memory, such as ZwUnmapViewOfSection or NtUnmapViewOfSection, and those that can be used to modify memory within another process, such as WriteProcessMemory, may be used for this technique. [2]
@@ -85,3 +87,5 @@ This type of attack technique cannot be easily mitigated with preventive control
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

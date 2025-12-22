@@ -9,7 +9,7 @@ updated_at: '2023-04-06T00:31:26.335939+00:00'
 parent_technique: '[[Process Injection|T1055 - Process Injection]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Process Doppelgänging
@@ -50,4 +50,4 @@ This behavior will likely not result in elevated privileges since the injected p
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

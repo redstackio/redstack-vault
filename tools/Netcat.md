@@ -1,79 +1,118 @@
 ---
-id: 7e7f4297-8a04-4c6d-a583-d872b6addbb4
-name: Netcat
+id: tool-netcat
+url: 'https://nc110.sourceforge.net/'
+tags:
+  - network
+  - shell
+  - listener
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:40.581707+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
-commands:
-- '[[Create a Netcat Listener]]'
-- '[[Netcat Command]]'
-- '[[Netcat Download a File to a Listener]]'
-- '[[Netcat Download a File with a Listener]]'
-- '[[Netcat Upload a File to a Listener]]'
-- '[[Netcat Upload a File with a Listener]]'
-- '[[Netcat windows in listening mode on port 80]]'
-- '[[Netcat windows reverse shell is observed]]'
 platforms:
-- Linux
-- Windows
-tags:
-- '[[Exfiltration]]'
-- '[[Network]]'
-- '[[Service Attacks]]'
+  - Linux
+  - Windows
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:57.507Z'
+validated: true
+submitted: true
 ---
+---
+# netcat
 
-# Netcat
+**Status**: Unverified
 
 ## Overview
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-ric
+Netcat (nc) is a versatile networking utility for reading/writing data across TCP/UDP, commonly used in security testing for reverse shells and port scanning.
 
 ## Description
 
-# Description
+In offensive operations, netcat excels at creating listeners for reverse shells, transferring files, or simple port forwarding. Here, it's used to catch shells from RCE exploits in environments like LGTM sandboxes.
 
-Netcat (also known as ncat, nc), is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and investigation tool, since it can produce almost any kind of connection its user could need and has a number of built-in capabilities.
+## Features
 
-Netcat is most commonly used in penetration testing to connect to and receive connections from remote servers, often with a command prompt or Bash terminal session. Netcat is often set to either listen on a system and catch reverse shells, or connect to a remote system which is listening with a bind shell.
+- Feature 1: TCP/UDP support for connections
+- Feature 2: Shell execution over network (-e flag)
+- Feature 3: Verbose logging and port binding
 
-There are multiple versions of Netcat with slightly different features. The main difference between them is the OpenBSD version does not support the "-e" argument, which executes a program and connects the stdin/stdout/stderr to a network socket.
+## Installation
 
+### Requirements
 
+- Standard Unix-like system
 
-# Example
+### Install Commands
 
+```bash
+# On Debian/Ubuntu
+apt install netcat
 
+# On Alpine
+apk add netcat-openbsd
+```
 
-{{EMBEDDED_COMMAND_e9aff3c0-e1ef-4e0e-9494-1ee946a32778}}
+## Basic Usage
 
+```bash
+nc --help
+```
 
+### Common Options
 
-# Installation
+| Option | Description |
+|--------|-------------|
+| `-l` | Listen mode |
+| `-p` | Specify port |
+| `-v` | Verbose |
 
-## Install on Debian/Ubuntu
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+nc -vlp 4444
+```
 
-Note: Depending on the package manager and sources, Netcat may need to be installed using the name "nc" , "ncat" , or "netcat". 
+### Example 2: Advanced Usage
 
+```bash
+nc -l -p 4444 -k  # Persistent listener
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Unix Shell]] Unix Shell
+- [[Protocol Tunneling]] Protocol Tunneling
 
-- Linux
-- Windows
+### Tactics
 
-## Commands (1)
+- [[Execution]] Execution
+- [[Lateral Movement]] Lateral Movement
 
-- [[Netcat Connect to a Remote Server]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Exfiltration]]
-- [[Network]]
-- [[Service Attacks]]
+- Network logs showing nc processes on high ports
+- IDS signatures for netcat traffic patterns
+- Process monitoring for nc binaries
 
+## Related Procedures
 
+### Requirements
+
+## Related Tools
+
+- [[tools/SSH]]
+- [[tools/socat]]
+
+## References
+
+- Official documentation: https://nc110.sourceforge.net/
+- Related resources: Man pages for nc
+
+---

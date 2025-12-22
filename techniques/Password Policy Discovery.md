@@ -10,17 +10,17 @@ tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Recon - DNS Zone Transfer Enumeration]]'
-- '[[Cloudflare XSS Prompt Bypass]]'
-- '[[GraphQL Injection Exploit: Identifying Injection Points]]'
-- '[[GraphQL SQL Injection Exploitation]]'
+- '[[DNS-Zone-Transfer-Enumeration]]'
+- '[[Bypass-Cloudflare-XSS-Protection-with-Obfuscated-Prompt-Payloads]]'
+- '[[Identify-GraphQL-Injection-Points]]'
+- '[[GraphQL-SQL-Injection-Exploitation]]'
 - '[[HQL Injection via Unsupported Comment Error]]'
-- '[[LDAP Injection Password Brute Force]]'
-- '[[LDAP Injection with Default Attributes]]'
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
-- '[[LFI to RCE via Mail Log File Inclusion]]'
-- '[[MYSQL Error Based - UpdateXML function Data Extraction]]'
-- '[[Subdomain Enumeration with Knockpy and EyeWitness]]'
+- '[[Blind-LDAP-Injection-Password-Brute-Force]]'
+- '[[LDAP-Injection-with-Default-Attributes]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
+- '[[LFI-to-RCE-via-Mail-Log-File-Inclusion]]'
+- '[[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]'
+- '[[Subdomain-Enumeration-with-Knockpy-and-EyeWitness]]'
 ---
 
 # Password Policy Discovery
@@ -30,6 +30,8 @@ procedures:
 ## Description
 
 Password policies for networks are a way to enforce complex passwords that are difficult to guess or crack through Brute Force. An adversary may attempt to access detailed information about the password policy used within an enterprise network. This would help the adversary to create a list of common passwords and launch dictionary and/or brute force attacks which adheres to the policy (e.g. if the minimum password length should be 8, then not trying passwords such as 'pass123'; not checking for more than 3-4 passwords per account if the lockout is set to 6 as to not lock out accounts).Password policies can be set and discovered on Windows, Linux, and macOS systems. [1] [2]Windowsnet accountsnet accounts /domainLinuxchage -l cat /etc/pam.d/common-passwordmacOSpwpolicy getaccountpolicies
+
+
 
 # Detection
 
@@ -66,14 +68,16 @@ Mitigating discovery of password policies is not advised since the information i
 ## Related Procedures (12)
 
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Recon - DNS Zone Transfer Enumeration]]
-- [[Cloudflare XSS Prompt Bypass]]
-- [[GraphQL Injection Exploit: Identifying Injection Points]]
-- [[GraphQL SQL Injection Exploitation]]
+- [[DNS-Zone-Transfer-Enumeration]]
+- [[Bypass-Cloudflare-XSS-Protection-with-Obfuscated-Prompt-Payloads]]
+- [[Identify-GraphQL-Injection-Points]]
+- [[GraphQL-SQL-Injection-Exploitation]]
 - [[HQL Injection via Unsupported Comment Error]]
-- [[LDAP Injection Password Brute Force]]
-- [[LDAP Injection with Default Attributes]]
-- [[Lessjs Server Side Template Injection via Inline Import]]
-- [[LFI to RCE via Mail Log File Inclusion]]
-- [[MYSQL Error Based - UpdateXML function Data Extraction]]
-- [[Subdomain Enumeration with Knockpy and EyeWitness]]
+- [[Blind-LDAP-Injection-Password-Brute-Force]]
+- [[LDAP-Injection-with-Default-Attributes]]
+- [[Exploit-Lessjs-SSTI-via-Inline-Import]]
+- [[LFI-to-RCE-via-Mail-Log-File-Inclusion]]
+- [[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]
+- [[Subdomain-Enumeration-with-Knockpy-and-EyeWitness]]
+
+

@@ -11,7 +11,7 @@ parent_technique: '[[Data from Information Repositories|T1213 - Data from Inform
 tactics:
 - '[[Collection|TA0009 - Collection]]'
 procedures:
-- '[[Lessjs Server Side Template Injection via Inline Import]]'
+- '[[Exploit-Lessjs-SSTI-via-Inline-Import]]'
 ---
 
 # Confluence
@@ -49,4 +49,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Lessjs Server Side Template Injection via Inline Import]]
+- [[Exploit-Lessjs-SSTI-via-Inline-Import]]

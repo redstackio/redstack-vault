@@ -9,60 +9,60 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Admin Site URL Leak via Server Side Template Injection in Django Templates]]'
-- '[[ASP.NET Razor Basic Injection with Addition Command]]'
-- '[[Blind XXE Data Exfiltration with DTD and PHP Filter]]'
-- '[[DB2 Injection - Find Tables From Column Name]]'
-- '[[DB2 Injection - List Tables]]'
-- '[[DB2 List DBA Accounts Procedure]]'
-- '[[Freemarker Code Execution]]'
-- '[[Freemarker Sandbox Bypass Remote Code Execution]]'
-- '[[Gopher Server-Side Request Forgery via SMTP Spoofing Attack]]'
-- '[[GraphQL Injection using Mutations to Steal Credentials and Add Users]]'
-- '[[GraphQL Projection Data Extraction]]'
-- '[[GraphQL SQL Injection Exploitation]]'
-- '[[Groovy Sandbox Bypass for Server Side Template Injection]]'
-- '[[Groovy Server Side Template Injection with Command Execution]]'
+- '[[Admin-Site-URL-Leak-via-SSTI-in-Django-Templates]]'
+- '[[ASP.NET-Razor-Server-Side-Template-Injection-Basic]]'
+- '[[Blind-XXE-Data-Exfiltration-with-DTD-and-PHP-Filter]]'
+- '[[DB2-SQL-Injection-to-Find-Tables-by-Column-Name]]'
+- '[[List-Tables-via-DB2-SQL-Injection]]'
+- '[[DB2-List-DBA-Accounts-via-SQL-Injection]]'
+- '[[Freemarker-Server-Side-Template-Injection-for-Code-Execution]]'
+- '[[Freemarker-Sandbox-Bypass-for-RCE]]'
+- '[[Exploit-SSRF-with-Gopher-for-SMTP-Spoofing]]'
+- '[[GraphQL-Injection-via-Mutations-for-Credential-Theft-and-User-Addition]]'
+- '[[GraphQL-Projection-Data-Extraction]]'
+- '[[GraphQL-SQL-Injection-Exploitation]]'
+- '[[Groovy-Sandbox-Bypass-for-Server-Side-Template-Injection]]'
+- '[[Groovy-Server-Side-Template-Injection-for-Command-Execution]]'
 - '[[Java Server Side Template Injection for Retrieving /etc/passwd]]'
-- '[[Java Server Side Template Injection - Retrieve System Environment Variables]]'
-- '[[Java Velocity Server Side Template Injection]]'
-- '[[Jinja2 Filter Bypass for Server Side Template Injection]]'
-- '[[Jinja2 RCE via Server Side Template Injection]]'
-- '[[Jinja2 Server Side Template Injection Debugging]]'
-- '[[Jinja2 SSTI Remote Code Execution via subprocess.Popen]]'
-- '[[Jinjava Uppercase String and Request Object Injection]]'
-- '[[Lessjs Command Execution via Server Side Template Injection]]'
-- '[[MYSQL Union Based Column Enumeration]]'
-- '[[Oracle SQL Injection - User and Version Information Retrieval]]'
-- '[[Pebble Server Side Template Injection - Code Execution]]'
-- '[[Phishing Word Document Injection]]'
-- '[[Remote Template Injection via Malicious Macro and Attachment]]'
+- '[[Java-Server-Side-Template-Injection-to-Retrieve-Environment-Variables]]'
+- '[[Java-Velocity-Server-Side-Template-Injection]]'
+- '[[Bypass-Jinja2-Filters-for-SSTI-Code-Execution]]'
+- '[[Jinja2-RCE-via-Server-Side-Template-Injection]]'
+- '[[Exploit-Jinja2-Debug-Statement-for-SSTI]]'
+- '[[Jinja2-SSTI-Remote-Code-Execution-via-subprocess-Popen]]'
+- '[[Jinjava-SSTI-Uppercase-String-and-Request-Object-Injection]]'
+- '[[Lessjs-Command-Execution-via-SSTI]]'
+- '[[MySQL-Union-Based-Column-Enumeration]]'
+- '[[Oracle-SQL-Injection-User-and-Version-Retrieval]]'
+- '[[Pebble-Server-Side-Template-Injection-Code-Execution]]'
+- '[[Inject-Phishing-Template-into-Word-Document]]'
+- '[[Create-DOCX-with-Remote-Template-Injection]]'
 - '[[Safe Script Tag Injection via Django Templates]]'
-- '[[SAML Injection for Authentication Bypass and XML External Entity Attacks]]'
-- '[[Server Side Template Injection Detection]]'
-- '[[Server Side Template Injection - Django Templates - Admin Credentials Leak]]'
-- '[[Server Side Template Injection - Freemarker Read File]]'
-- '[[Server Side Template Injection - Groovy File Manipulation]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-XXE-Exploitation]]'
+- '[[Server-Side-Template-Injection-Detection]]'
+- '[[Exploit-Django-SSTI-for-Admin-Credential-Leak]]'
+- '[[Freemarker-SSTI-to-Read-Server-Files]]'
+- '[[Server-Side-Template-Injection-Groovy-File-Manipulation]]'
 - '[[Server Side Template Injection - Java Basic Injection using Java ClassLoader
   and Resource Retrieval]]'
 - '[[Server Side Template Injection using Jade/Codepen to execute commands and list
   system users]]'
 - '[[Server Side Template Injection using Plates]]'
-- '[[Server Side Template Injection with Debug Information Leak]]'
-- '[[Server Side Template Injection with Django Templates using Burp Payload Calculation]]'
+- '[[Server-Side-Template-Injection-with-Debug-Information-Leak]]'
+- '[[Exploit-SSTI-in-Django-Templates-using-Burp-Payloads]]'
 - '[[Server Side Template Injection with Groovy - Basic Injection - Multiplication
   Result]]'
-- '[[Server Side Template Injection with Groovy HTTP Request]]'
-- '[[Server Side Template Injection with Java Spring]]'
-- '[[Server Side Template Injection with Less.js Plugins]]'
-- '[[Server Side Template Injection with patTemplate]]'
+- '[[Server-Side-Template-Injection-via-Groovy-HTTP-Request]]'
+- '[[Server-Side-Template-Injection-with-Java-Spring]]'
+- '[[Exploit-SSTI-in-Less.js-Plugins-for-RCE]]'
+- '[[Exploit-Server-Side-Template-Injection-in-patTemplate]]'
 - '[[Server Side Template Injection with Pebble - Basic Injection using Convert String
   to Uppercase]]'
-- '[[Server Side Template Injection with tplmap and SSTImap]]'
-- '[[Twig Template Injection - Arbitrary File Reading]]'
-- '[[XML External Entity Injection Detection and Mitigation]]'
-- '[[XXE File Retrieval with PHP Wrapper]]'
-- '[[XXE in DOCX Files]]'
+- '[[Exploit-Server-Side-Template-Injection-with-tplmap-and-sstimap]]'
+- '[[Twig-Template-Injection-Arbitrary-File-Reading]]'
+- '[[Detect-and-Mitigate-XXE-Injection]]'
+- '[[XXE-File-Retrieval-with-PHP-Wrapper]]'
+- '[[Exploit-XXE-in-DOCX-Files]]'
 ---
 
 # Template Injection
@@ -72,6 +72,8 @@ procedures:
 ## Description
 
 Microsoft’s Open Office XML (OOXML) specification defines an XML-based format for Office documents (.docx, xlsx, .pptx) to replace older binary formats (.doc, .xls, .ppt). OOXML files are packed together ZIP archives compromised of various XML files, referred to as parts, containing properties that collectively define how a document is rendered. [1]Properties within parts may reference shared public resources accessed via online URLs. For example, template properties reference a file, serving as a pre-formatted document blueprint, that is fetched when the document is loaded.Adversaries may abuse this technology to initially conceal malicious code to be executed via documents (i.e. Scripting). Template references injected into a document may enable malicious payloads to be fetched and executed when the document is loaded. [2] These documents can be delivered via other techniques such as Spearphishing Attachment and/or Taint Shared Content and may evade static detections since no typical indicators (VBA macro, script, etc.) are present until after the malicious payload is fetched. [3] Examples have been seen in the wild where template injection was used to load malicious code containing an exploit. [4]This technique may also enable Forced Authentication by injecting a SMB/HTTPS (or other credential prompting) URL and triggering an authentication attempt. [5] [6] [7]
+
+
 
 # Detection
 
@@ -121,25 +123,27 @@ Consider disabling Microsoft Office macros/active content to prevent the executi
 
 ## Related Procedures (50)
 
-- [[Admin Site URL Leak via Server Side Template Injection in Django Templates]]
-- [[ASP.NET Razor Basic Injection with Addition Command]]
-- [[Blind XXE Data Exfiltration with DTD and PHP Filter]]
-- [[DB2 Injection - Find Tables From Column Name]]
-- [[DB2 Injection - List Tables]]
-- [[DB2 List DBA Accounts Procedure]]
-- [[Freemarker Code Execution]]
-- [[Freemarker Sandbox Bypass Remote Code Execution]]
-- [[Gopher Server-Side Request Forgery via SMTP Spoofing Attack]]
-- [[GraphQL Injection using Mutations to Steal Credentials and Add Users]]
-- [[GraphQL Projection Data Extraction]]
-- [[GraphQL SQL Injection Exploitation]]
-- [[Groovy Sandbox Bypass for Server Side Template Injection]]
-- [[Groovy Server Side Template Injection with Command Execution]]
+- [[Admin-Site-URL-Leak-via-SSTI-in-Django-Templates]]
+- [[ASP.NET-Razor-Server-Side-Template-Injection-Basic]]
+- [[Blind-XXE-Data-Exfiltration-with-DTD-and-PHP-Filter]]
+- [[DB2-SQL-Injection-to-Find-Tables-by-Column-Name]]
+- [[List-Tables-via-DB2-SQL-Injection]]
+- [[DB2-List-DBA-Accounts-via-SQL-Injection]]
+- [[Freemarker-Server-Side-Template-Injection-for-Code-Execution]]
+- [[Freemarker-Sandbox-Bypass-for-RCE]]
+- [[Exploit-SSRF-with-Gopher-for-SMTP-Spoofing]]
+- [[GraphQL-Injection-via-Mutations-for-Credential-Theft-and-User-Addition]]
+- [[GraphQL-Projection-Data-Extraction]]
+- [[GraphQL-SQL-Injection-Exploitation]]
+- [[Groovy-Sandbox-Bypass-for-Server-Side-Template-Injection]]
+- [[Groovy-Server-Side-Template-Injection-for-Command-Execution]]
 - [[Java Server Side Template Injection for Retrieving /etc/passwd]]
-- [[Java Server Side Template Injection - Retrieve System Environment Variables]]
-- [[Java Velocity Server Side Template Injection]]
-- [[Jinja2 Filter Bypass for Server Side Template Injection]]
-- [[Jinja2 RCE via Server Side Template Injection]]
-- [[Jinja2 Server Side Template Injection Debugging]]
+- [[Java-Server-Side-Template-Injection-to-Retrieve-Environment-Variables]]
+- [[Java-Velocity-Server-Side-Template-Injection]]
+- [[Bypass-Jinja2-Filters-for-SSTI-Code-Execution]]
+- [[Jinja2-RCE-via-Server-Side-Template-Injection]]
+- [[Exploit-Jinja2-Debug-Statement-for-SSTI]]
 
 *...and 30 more*
+
+

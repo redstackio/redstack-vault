@@ -10,7 +10,7 @@ parent_technique: '[[Scheduled Task|T1053 - Scheduled Task]]'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Systemd Timers
@@ -39,4 +39,4 @@ This sub-technique is used in the following tactics:
 
 - [[Execution|TA0002 - Execution]]
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

@@ -10,7 +10,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[BITS Job Persistence with Backdoor Command]]'
+- '[[Establish-Persistence-Using-BITS-Jobs-with-Backdoor-Execution]]'
 ---
 
 # BITS Jobs
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Windows Background Intelligent Transfer Service (BITS) is a low-bandwidth, asynchronous file transfer mechanism exposed through Component Object Model (COM). [1] [2] BITS is commonly used by updaters, messengers, and other applications preferred to operate in the background (using available idle bandwidth) without interrupting other networked applications. File transfer tasks are implemented as BITS jobs, which contain a queue of one or more file operations.The interface to create and manage BITS jobs is accessible through PowerShell  [2] and the BITSAdmin tool. [3]Adversaries may abuse BITS to download, execute, and even clean up after running malicious code. BITS tasks are self-contained in the BITS job database, without new files or registry modifications, and often permitted by host firewalls. [4] [5] [6] BITS enabled execution may also allow Persistence by creating long-standing jobs (the default maximum lifetime is 90 days and extendable) or invoking an arbitrary program when a job completes or errors (including after system reboots). [7] [4]BITS upload functionalities can also be used to perform Exfiltration Over Alternative Protocol. [4]
+
+
 
 # Detection
 
@@ -76,4 +78,6 @@ This type of attack technique cannot be easily mitigated with preventive control
 
 ## Related Procedures (1)
 
-- [[BITS Job Persistence with Backdoor Command]]
+- [[Establish-Persistence-Using-BITS-Jobs-with-Backdoor-Execution]]
+
+

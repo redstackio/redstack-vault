@@ -18,6 +18,8 @@ tactics:
 
 The Windows Time service (W32Time) enables time synchronization across and within domains. [1] W32Time time providers are responsible for retrieving time stamps from hardware/network resources and outputting these values to other network clients. [2]Time providers are implemented as dynamic-link libraries (DLLs) that are registered in the subkeys of  HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\W32Time\TimeProviders\. [2] The time provider manager, directed by the service control manager, loads and starts time providers listed and enabled under this key at system startup and/or whenever parameters are changed. [2]Adversaries may abuse this architecture to establish Persistence, specifically by registering and enabling a malicious DLL as a time provider. Administrator privileges are required for time provider registration, though execution will run in context of the Local Service account. [3]
 
+
+
 # Detection
 
 Baseline values and monitor/analyze activity related to modifying W32Time information in the Registry, including application programming interface (API) calls such as RegCreateKeyEx and RegSetValueEx as well as execution of the W32tm.exe utility. [7] There is no restriction on the number of custom time providers registrations, though each may require a DLL payload written to disk. [3]
@@ -55,3 +57,5 @@ Identify and block potentially malicious software that may be executed as a time
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
+
+

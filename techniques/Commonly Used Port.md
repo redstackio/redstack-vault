@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Springboot-Actuator Health Monitoring]]'
-- '[[Windows Meterpreter Shell using Reverse TCP]]'
+- '[[Enumerate-Spring-Boot-Actuator-Health-Endpoint]]'
+- '[[Generate-Windows-Meterpreter-Reverse-TCP-Payload]]'
 ---
 
 # Commonly Used Port
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may communicate over a commonly used port to bypass firewalls or network detection systems and to blend with normal network activity to avoid more detailed inspection. They may use commonly open ports such asTCP:80 (HTTP)TCP:443 (HTTPS)TCP:25 (SMTP)TCP/UDP:53 (DNS)They may use the protocol associated with the port or a completely different protocol. For connections that occur internally within an enclave (such as those between a proxy or pivot node and other nodes), examples of common ports are TCP/UDP:135 (RPC)TCP/UDP:22 (SSH)TCP/UDP:3389 (RDP)
+
+
 
 # Detection
 
@@ -199,5 +201,7 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (2)
 
-- [[Springboot-Actuator Health Monitoring]]
-- [[Windows Meterpreter Shell using Reverse TCP]]
+- [[Enumerate-Spring-Boot-Actuator-Health-Endpoint]]
+- [[Generate-Windows-Meterpreter-Reverse-TCP-Payload]]
+
+

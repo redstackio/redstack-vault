@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[DB2 Injection - Time Delay]]'
-- '[[ECMAScript6 Filter Bypass Script Injection]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
-- '[[MSSQL Read File via INI Disclosure]]'
-- '[[MSSQL Server Extended Stored Procedure DLL Injection]]'
-- '[[POP Gadget .NET Serialization]]'
+- '[[DB2-Time-Based-Blind-SQL-Injection]]'
+- '[[ecmascript6-filter-bypass-script-injection]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
+- '[[MSSQL-Read-File-via-INI-Disclosure]]'
+- '[[mssql-server-extended-stored-procedure-dll-injection]]'
+- '[[Exploit-DotNET-Serialization-with-POP-Gadgets]]'
 - '[[Windows Defender Application Control Device Guard Configuration]]'
 - '[[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]'
 ---
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Code signing provides a level of authenticity on a binary from the developer and a guarantee that the binary has not been tampered with. [1] However, adversaries are known to use code signing certificates to masquerade malware and tools as legitimate binaries [2]. The certificates used during an operation may be created, forged, or stolen by the adversary. [3] [4]Code signing to verify software on first run can be used on modern Windows and macOS/OS X systems. It is not used on Linux due to the decentralized nature of the platform. [1]Code signing certificates may be used to bypass security policies that require signed code to execute on a system.
+
+
 
 # Detection
 
@@ -115,11 +117,13 @@ Process whitelisting and trusted publishers to verify authenticity of software c
 
 ## Related Procedures (8)
 
-- [[DB2 Injection - Time Delay]]
-- [[ECMAScript6 Filter Bypass Script Injection]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
-- [[MSSQL Read File via INI Disclosure]]
-- [[MSSQL Server Extended Stored Procedure DLL Injection]]
-- [[POP Gadget .NET Serialization]]
+- [[DB2-Time-Based-Blind-SQL-Injection]]
+- [[ecmascript6-filter-bypass-script-injection]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+- [[MSSQL-Read-File-via-INI-Disclosure]]
+- [[mssql-server-extended-stored-procedure-dll-injection]]
+- [[Exploit-DotNET-Serialization-with-POP-Gadgets]]
 - [[Windows Defender Application Control Device Guard Configuration]]
 - [[XSS in Angular and AngularJS - Stored/Reflected XSS with Simple Alert]]
+
+

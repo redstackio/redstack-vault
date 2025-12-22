@@ -9,14 +9,14 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF Attack with Bypassed Referer Header Validation]]'
-- '[[CSRF with Semicolon Payload]]'
-- '[[CSRF with Semicolon Payload]]'
-- '[[HTML POST CSRF Attack]]'
-- '[[HTML POST CSRF Attack]]'
-- '[[SCF and URL File Attack Against Writable Share Procedure]]'
-- '[[Whitelisted Domain Open URL Redirection Fuzzing]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[CSRF-Attack-Bypassing-Referer-Validation]]'
+- '[[perform-csrf-attack-with-semicolon-referer-bypass]]'
+- '[[perform-csrf-attack-with-semicolon-referer-bypass]]'
+- '[[HTML-POST-CSRF-Attack]]'
+- '[[HTML-POST-CSRF-Attack]]'
+- '[[SCF-and-URL-File-Attack-Against-Writable-Share]]'
+- '[[Whitelisted-Domain-Open-URL-Redirection-Fuzzing]]'
 ---
 
 # Spearphishing Attachment
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 Spearphishing attachment is a specific variant of spearphishing. Spearphishing attachment is different from other forms of spearphishing in that it employs the use of malware attached to an email. All forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this scenario, adversaries attach a file to the spearphishing email and usually rely upon User Execution to gain execution.There are many options for the attachment such as Microsoft Office documents, executables, PDFs, or archived files. Upon opening the attachment (and potentially clicking past protections), the adversary's payload exploits a vulnerability or directly executes on the user's system. The text of the spearphishing email usually tries to give a plausible reason why the file should be opened, and may explain how to bypass system protections in order to do so. The email may also contain instructions on how to decrypt an attachment, such as a zip file password, in order to evade email boundary defenses. Adversaries frequently manipulate file extensions and icons in order to make attached executables appear to be document files, or files exploiting one application appear to be a file for a different one.
+
+
 
 # Detection
 
@@ -195,11 +197,13 @@ Network intrusion prevention systems and systems designed to scan and remove mal
 
 ## Related Procedures (8)
 
-- [[CSRF Attack with Bypassed Referer Header Validation]]
-- [[CSRF Attack with Bypassed Referer Header Validation]]
-- [[CSRF with Semicolon Payload]]
-- [[CSRF with Semicolon Payload]]
-- [[HTML POST CSRF Attack]]
-- [[HTML POST CSRF Attack]]
-- [[SCF and URL File Attack Against Writable Share Procedure]]
-- [[Whitelisted Domain Open URL Redirection Fuzzing]]
+- [[CSRF-Attack-Bypassing-Referer-Validation]]
+- [[CSRF-Attack-Bypassing-Referer-Validation]]
+- [[perform-csrf-attack-with-semicolon-referer-bypass]]
+- [[perform-csrf-attack-with-semicolon-referer-bypass]]
+- [[HTML-POST-CSRF-Attack]]
+- [[HTML-POST-CSRF-Attack]]
+- [[SCF-and-URL-File-Attack-Against-Writable-Share]]
+- [[Whitelisted-Domain-Open-URL-Redirection-Fuzzing]]
+
+

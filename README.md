@@ -242,7 +242,7 @@ tactics:
 techniques:
   - "[[Steal or Forge Kerberos Tickets|T1558 - Steal or Forge Kerberos Tickets]]"
 sub_techniques:
-  - "[[Kerberoasting|T1558.003 - Kerberoasting]]"
+  - "[[cme-smb-enable-rdp|T1558.003 - Kerberoasting]]"
 platforms:
   - "[[Windows]]"
 tools:

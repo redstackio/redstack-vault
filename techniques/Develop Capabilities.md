@@ -20,6 +20,10 @@ Adversaries may build capabilities that can be used during targeting. Rather tha
 
 As with legitimate development efforts, different skill sets may be required for developing capabilities. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the capability.
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
+
+

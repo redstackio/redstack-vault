@@ -8,40 +8,40 @@ created_at: '2019-08-28T21:17:20.745458+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abusing Backup Operators Group for Sensitive File Access]]'
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[AWS EC2 Metadata SSRF]]'
-- '[[AWS IAM User Policy Attachment]]'
-- '[[AWS Lambda Function Privilege Escalation via IAM Policy Attachment]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS Shadow Admin Access]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Docker API Port Scanning and Container Management]]'
-- '[[Elevating Privileges via RottenPotato and Token Impersonation]]'
-- '[[Escalate Windows Privileges with Juicy Potato]]'
-- '[[Execute PowerShell Commands as Another User (PSSession)]]'
-- '[[Forge an Internal Forest Trust Ticket and Escalate to DA in Parent (SIDHistory)]]'
-- '[[HiveNightmare Password Looting]]'
-- '[[Kubernetes Service Account Token Access]]'
-- '[[LAPS Password Retrieval]]'
-- '[[Linux - Privilege Escalation via Capabilities]]'
-- '[[Local Administrator to NT SYSTEM Privilege Escalation]]'
-- '[[Meterpreter Get System]]'
-- '[[Misconfigured Certificate Templates]]'
-- '[[Misconfigured Certificate Templates]]'
-- '[[MSSQL Server Impersonation Exploitation]]'
-- '[[SAML Injection with XML Signature Wrapping Attack]]'
-- '[[Windows - Default Writeable Folders Privilege Escalation]]'
-- '[[Windows - EoP Looting for Passwords]]'
-- '[[Windows - Impersonation Privileges Elevation with Meterpreter]]'
-- '[[Windows - JuicyPotatoNG Privilege Escalation]]'
-- '[[Windows - Password Looting via Alternate Data Stream]]'
-- '[[Windows Privilege Escalation via IIS Web Config Looting]]'
-- '[[Windows - SAM and SYSTEM Hash Extraction]]'
-- '[[XLM Excel 4.0 GruntHttp Payload Generation]]'
+- '[[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]'
+- '[[AWS-IAM-Attach-Inline-Policy-to-User]]'
+- '[[AWS-Lambda-Function-Privilege-Escalation-via-IAM-Policy-Attachment]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[AWS-Shadow-Admin-Access]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
+- '[[Elevating-Privileges-via-RottenPotato-and-Token-Impersonation]]'
+- '[[Escalate-Privileges-Using-Juicy-Potato]]'
+- '[[execute-powershell-commands-as-another-user-using-pssession]]'
+- '[[Forge-Internal-Forest-Trust-Ticket-and-Escalate-to-Parent-DA-via-SIDHistory]]'
+- '[[HiveNightmare-SAM-Dump-via-Shadow-Copies]]'
+- '[[Access-Kubernetes-Service-Account-Token]]'
+- '[[Retrieve-LAPS-Password-via-Group-Manipulation]]'
+- '[[Linux-Privilege-Escalation-via-Capabilities]]'
+- '[[Local-Administrator-to-NT-SYSTEM-Privilege-Escalation]]'
+- '[[meterpreter-getsystem-privilege-escalation]]'
+- '[[Abuse-Misconfigured-Certificate-Templates-for-Privilege-Escalation]]'
+- '[[Abuse-Misconfigured-Certificate-Templates-for-Privilege-Escalation]]'
+- '[[Exploit-MSSQL-Impersonation-for-Privilege-Escalation]]'
+- '[[SAML-Injection-with-XML-Signature-Wrapping]]'
+- '[[Exploit-Windows-Default-Writable-Folders-for-Privilege-Escalation]]'
+- '[[Windows-EoP-Looting-for-Passwords]]'
+- '[[windows-impersonation-privileges-elevation-with-meterpreter]]'
+- '[[Windows-JuicyPotatoNG-Privilege-Escalation]]'
+- '[[Loot-Passwords-from-Alternate-Data-Stream]]'
+- '[[Windows-Privilege-Escalation-via-IIS-Web-Config-Looting]]'
+- '[[Windows-SAM-and-SYSTEM-Hash-Extraction]]'
+- '[[Generate-XLM-Excel-4.0-GruntHttp-Payload]]'
 ---
 
 # Access Token Manipulation
@@ -51,6 +51,8 @@ procedures:
 ## Description
 
 Windows uses access tokens to determine the ownership of a running process. A user can manipulate access tokens to make a running process appear as though it belongs to someone other than the user that started the process. When this occurs, the process also takes on the security context associated with the new token. For example, Microsoft promotes the use of access tokens as a security best practice. Administrators should log in as a standard user but run their tools with administrator privileges using the built-in access token manipulation command runas. [1]Adversaries may use access tokens to operate under a different user or system security context to perform actions and evade detection. An adversary can use built-in Windows API functions to copy access tokens from existing processes; this is known as token stealing. An adversary must already be in a privileged user context (i.e. administrator) to steal a token. However, adversaries commonly use token stealing to elevate their security context from the administrator level to the SYSTEM level. An adversary can use a token to authenticate to a remote system as the account for that token if the account has appropriate permissions on the remote system. [2]Access tokens can be leveraged by adversaries through three methods: [3]Token Impersonation/Theft - An adversary creates a new access token that duplicates an existing token using DuplicateToken(Ex). The token can then be used with ImpersonateLoggedOnUser to allow the calling thread to impersonate a logged on user's security context, or with SetThreadToken to assign the impersonated token to a thread. This is useful for when the target user has a non-network logon session on the system.Create Process with a Token - An adversary creates a new access token with DuplicateToken(Ex) and uses it with CreateProcessWithTokenW to create a new process running under the security context of the impersonated user. This is useful for creating a new process under the security context of a different user.Make and Impersonate Token - An adversary has a username and password but the user is not logged onto the system. The adversary can then create a logon session for the user using the LogonUser function. The function will return a copy of the new session's access token and the adversary can use SetThreadToken to assign the token to a thread.Any standard user can use the runas command, and the Windows API functions, to create impersonation tokens; it does not require access to an administrator account.Metasploit’s Meterpreter payload allows arbitrary token manipulation and uses token impersonation to escalate privileges. [4]  The Cobalt Strike beacon payload allows arbitrary token impersonation and can also create tokens. [5]
+
+
 
 # Detection
 
@@ -133,29 +135,31 @@ Access tokens are an integral part of the security system within Windows and can
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (32)
 
-- [[Abusing Backup Operators Group for Sensitive File Access]]
-- [[Active Directory Object Owner Hijacking]]
-- [[AWS EC2 Metadata SSRF]]
-- [[AWS IAM User Policy Attachment]]
-- [[AWS Lambda Function Privilege Escalation via IAM Policy Attachment]]
-- [[AWS Role Assumption for Persistence]]
-- [[AWS Shadow Admin Access]]
-- [[AWS SSH Persistence with Authorized Keys]]
-- [[Backdooring Git User Configurations]]
-- [[Docker API Port Scanning and Container Management]]
-- [[Elevating Privileges via RottenPotato and Token Impersonation]]
-- [[Escalate Windows Privileges with Juicy Potato]]
-- [[Execute PowerShell Commands as Another User (PSSession)]]
-- [[Forge an Internal Forest Trust Ticket and Escalate to DA in Parent (SIDHistory)]]
-- [[HiveNightmare Password Looting]]
-- [[Kubernetes Service Account Token Access]]
-- [[LAPS Password Retrieval]]
-- [[Linux - Privilege Escalation via Capabilities]]
-- [[Local Administrator to NT SYSTEM Privilege Escalation]]
-- [[Meterpreter Get System]]
+- [[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]
+- [[AWS-IAM-Attach-Inline-Policy-to-User]]
+- [[AWS-Lambda-Function-Privilege-Escalation-via-IAM-Policy-Attachment]]
+- [[Assume-AWS-Role-for-Persistence]]
+- [[AWS-Shadow-Admin-Access]]
+- [[aws-ssh-persistence-via-authorized-keys]]
+- [[Backdoor-Git-User-Configurations-for-Persistence]]
+- [[Exploit-Open-Docker-API-for-Container-Management]]
+- [[Elevating-Privileges-via-RottenPotato-and-Token-Impersonation]]
+- [[Escalate-Privileges-Using-Juicy-Potato]]
+- [[execute-powershell-commands-as-another-user-using-pssession]]
+- [[Forge-Internal-Forest-Trust-Ticket-and-Escalate-to-Parent-DA-via-SIDHistory]]
+- [[HiveNightmare-SAM-Dump-via-Shadow-Copies]]
+- [[Access-Kubernetes-Service-Account-Token]]
+- [[Retrieve-LAPS-Password-via-Group-Manipulation]]
+- [[Linux-Privilege-Escalation-via-Capabilities]]
+- [[Local-Administrator-to-NT-SYSTEM-Privilege-Escalation]]
+- [[meterpreter-getsystem-privilege-escalation]]
 
 *...and 12 more*
+
+

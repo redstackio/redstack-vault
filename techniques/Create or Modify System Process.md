@@ -8,16 +8,16 @@ created_at: '2023-04-06T00:31:25.547583+00:00'
 updated_at: '2023-04-06T03:56:28.341639+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Bashrc Backdoor Persistence]]'
-- '[[IIS Raid Backdoor Persistence]]'
-- '[[Linux - Backdooring User Startup File]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Windows Simple User Startup Persistence]]'
-- '[[Windows Subsystem for Linux Persistence]]'
+- '[[configure-aws-cli-profile-for-persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[IIS-Raid-Backdoor-Persistence]]'
+- '[[Linux-Backdoor-User-Autostart-File]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[Windows-User-Startup-Folder-Persistence]]'
+- '[[Install-and-Persist-via-WSL-with-Kali-Linux]]'
 ---
 
 # Create or Modify System Process
@@ -32,18 +32,22 @@ Adversaries may install new services, daemons, or agents that can be configured 
 
 Services, daemons, or agents may be created with administrator privileges but executed under root/SYSTEM privileges. Adversaries may leverage this functionality to create or modify system processes in order to escalate privileges.(Citation: OSX Malware Detection)  
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (8)
 
-- [[AWS CLI Profile Configuration for Persistence and Backdooring]]
-- [[AWS SSH Persistence with Authorized Keys]]
-- [[Bashrc Backdoor Persistence]]
-- [[IIS Raid Backdoor Persistence]]
-- [[Linux - Backdooring User Startup File]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Windows Simple User Startup Persistence]]
-- [[Windows Subsystem for Linux Persistence]]
+- [[configure-aws-cli-profile-for-persistence]]
+- [[aws-ssh-persistence-via-authorized-keys]]
+- [[Implement-Sudo-Backdoor-via-Bashrc-Alias]]
+- [[IIS-Raid-Backdoor-Persistence]]
+- [[Linux-Backdoor-User-Autostart-File]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[Windows-User-Startup-Folder-Persistence]]
+- [[Install-and-Persist-via-WSL-with-Kali-Linux]]
+
+

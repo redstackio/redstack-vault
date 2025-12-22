@@ -8,23 +8,23 @@ created_at: '2019-08-28T21:17:44.532547+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
 - '[[CLR Assembly Creation and Execution]]'
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
-- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
-- '[[DirtyPipe Kernel Exploit Privilege Escalation]]'
-- '[[Enumerate MSSQL Server Permissions]]'
-- '[[Kubernetes RBAC Privilege Escalation via Malicious RoleBinding]]'
-- '[[Linux - Docker Privilege Escalation]]'
-- '[[Linux - List Capabilities of Executables]]'
-- '[[Memory Execution of Calculator and WCE with Meterpreter]]'
-- '[[MSSQL Server Extended Stored Procedure DLL Injection]]'
-- '[[Upgrade Windows Meterpreter x32 Shell to x64]]'
-- '[[Windows - Impersonation Privileges Elevation with Meterpreter]]'
-- '[[Windows - Privileged DiagHub Exploit]]'
-- '[[Windows Privilege Escalation - Processes and Tasks Enumeration]]'
-- '[[Windows - Run Programs with Different Permissions using Runas Command]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
+- '[[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]'
+- '[[DirtyPipe-Kernel-Exploit-for-Privilege-Escalation]]'
+- '[[Enumerate-MSSQL-Server-Permissions]]'
+- '[[kubernetes-rbac-privilege-escalation-via-malicious-rolebinding]]'
+- '[[Linux-Docker-Privilege-Escalation]]'
+- '[[Linux-List-Capabilities-of-Executables]]'
+- '[[Memory-Execution-of-Calculator-and-WCE-with-Meterpreter]]'
+- '[[mssql-server-extended-stored-procedure-dll-injection]]'
+- '[[upgrade-windows-meterpreter-x32-to-x64]]'
+- '[[windows-impersonation-privileges-elevation-with-meterpreter]]'
+- '[[Windows-Privileged-DiagHub-Exploit]]'
+- '[[windows-processes-and-tasks-enumeration-for-privilege-escalation]]'
+- '[[windows-run-programs-as-different-user-using-runas]]'
 ---
 
 # Process Injection
@@ -34,6 +34,8 @@ procedures:
 ## Description
 
 Process injection is a method of executing arbitrary code in the address space of a separate live process. Running code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via process injection may also evade detection from security products since the execution is masked under a legitimate process.WindowsThere are multiple approaches to injecting code into a live process. Windows implementations include: [1]Dynamic-link library (DLL) injection involves writing the path to a malicious DLL inside a process then invoking execution by creating a remote thread.Portable executable injection involves writing malicious code directly into the process (without a file on disk) then invoking execution with either additional code or by creating a remote thread. The displacement of the injected code introduces the additional requirement for functionality to remap memory references. Variations of this method such as reflective DLL injection (writing a self-mapping DLL into a process) and memory module (map DLL when writing into process) overcome the address relocation issue. [2]Thread execution hijacking involves injecting malicious code or the path to a DLL into a thread of a process. Similar to Process Hollowing, the thread must first be suspended.Asynchronous Procedure Call (APC) injection involves attaching malicious code to the APC Queue [3] of a process's thread. Queued APC functions are executed when the thread enters an alterable state. A variation of APC injection, dubbed "Early Bird injection", involves creating a suspended process in which malicious code can be written and executed before the process' entry point (and potentially subsequent anti-malware hooks) via an APC. [4]  AtomBombing  [5] is another variation that utilizes APCs to invoke malicious code previously written to the global atom table. [6]Thread Local Storage (TLS) callback injection involves manipulating pointers inside a portable executable (PE) to redirect a process to malicious code before reaching the code's legitimate entry point. [7]Mac and LinuxImplementations for Linux and OS X/macOS systems include: [8] [9]LD_PRELOAD, LD_LIBRARY_PATH (Linux), DYLD_INSERT_LIBRARIES (Mac OS X) environment variables, or the dlfcn application programming interface (API) can be used to dynamically load a library (shared object) in a process which can be used to intercept API calls from the running process. [10]Ptrace system calls can be used to attach to a running process and modify it in runtime. [9]/proc/[pid]/mem provides access to the memory of the process and can be used to read/write arbitrary data to it. This technique is very rare due to its complexity. [9]VDSO hijacking performs runtime injection on ELF binaries by manipulating code stubs mapped in from the linux-vdso.so shared object. [11]Malware commonly utilizes process injection to access system resources through which Persistence and other environment modifications can be made. More sophisticated samples may perform multiple process injections to segment modules and further evade detection, utilizing named pipes or other inter-process communication (IPC) mechanisms as a communication channel.
+
+
 
 # Detection
 
@@ -246,22 +248,24 @@ This type of attack technique cannot be easily mitigated with preventive control
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (15)
 
 - [[CLR Assembly Creation and Execution]]
-- [[Cobalt Strike Elevate Kit with Beacon Command Elevators]]
-- [[Creating and Importing a CLR Assembly for MSSQL Server]]
-- [[DirtyPipe Kernel Exploit Privilege Escalation]]
-- [[Enumerate MSSQL Server Permissions]]
-- [[Kubernetes RBAC Privilege Escalation via Malicious RoleBinding]]
-- [[Linux - Docker Privilege Escalation]]
-- [[Linux - List Capabilities of Executables]]
-- [[Memory Execution of Calculator and WCE with Meterpreter]]
-- [[MSSQL Server Extended Stored Procedure DLL Injection]]
-- [[Upgrade Windows Meterpreter x32 Shell to x64]]
-- [[Windows - Impersonation Privileges Elevation with Meterpreter]]
-- [[Windows - Privileged DiagHub Exploit]]
-- [[Windows Privilege Escalation - Processes and Tasks Enumeration]]
-- [[Windows - Run Programs with Different Permissions using Runas Command]]
+- [[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]
+- [[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]
+- [[DirtyPipe-Kernel-Exploit-for-Privilege-Escalation]]
+- [[Enumerate-MSSQL-Server-Permissions]]
+- [[kubernetes-rbac-privilege-escalation-via-malicious-rolebinding]]
+- [[Linux-Docker-Privilege-Escalation]]
+- [[Linux-List-Capabilities-of-Executables]]
+- [[Memory-Execution-of-Calculator-and-WCE-with-Meterpreter]]
+- [[mssql-server-extended-stored-procedure-dll-injection]]
+- [[upgrade-windows-meterpreter-x32-to-x64]]
+- [[windows-impersonation-privileges-elevation-with-meterpreter]]
+- [[Windows-Privileged-DiagHub-Exploit]]
+- [[windows-processes-and-tasks-enumeration-for-privilege-escalation]]
+- [[windows-run-programs-as-different-user-using-runas]]
+
+

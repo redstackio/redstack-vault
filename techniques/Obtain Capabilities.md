@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:37.979880+00:00'
 tactics:
 - '[[Resource Development|TA0042 - Resource Development]]'
 procedures:
-- '[[Gopher SMTP Email Spoofing via SSRF]]'
+- '[[Gopher-SMTP-Email-Spoofing-via-SSRF]]'
 ---
 
 # Obtain Capabilities
@@ -24,10 +24,14 @@ In addition to downloading free malware, software, and exploits from the interne
 
 In addition to purchasing capabilities, adversaries may steal capabilities from third-party entities (including other adversaries). This can include stealing software licenses, malware, SSL/TLS and code-signing certificates, or raiding closed databases of vulnerabilities or exploits.(Citation: DiginotarCompromise)
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
 
 ## Related Procedures (1)
 
-- [[Gopher SMTP Email Spoofing via SSRF]]
+- [[Gopher-SMTP-Email-Spoofing-via-SSRF]]
+
+

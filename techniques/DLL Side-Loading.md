@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Command Execution via xp_cmdshell - MSSQL Server]]'
+- '[[Command-Execution-via-xp-cmdshell-MSSQL-Server]]'
 ---
 
 # DLL Side-Loading
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 Programs may specify DLLs that are loaded at runtime. Programs that improperly or vaguely specify a required DLL may be open to a vulnerability in which an unintended DLL is loaded. Side-loading vulnerabilities specifically occur when Windows Side-by-Side (WinSxS) manifests [1] are not explicit enough about characteristics of the DLL to be loaded. Adversaries may take advantage of a legitimate program that is vulnerable to side-loading to load a malicious DLL. [2]Adversaries likely use this technique as a means of masking actions they perform under a legitimate, trusted system or software process.
+
+
 
 # Detection
 
@@ -94,4 +96,6 @@ Update software regularly. Install software in write-protected locations. Use th
 
 ## Related Procedures (1)
 
-- [[Command Execution via xp_cmdshell - MSSQL Server]]
+- [[Command-Execution-via-xp-cmdshell-MSSQL-Server]]
+
+

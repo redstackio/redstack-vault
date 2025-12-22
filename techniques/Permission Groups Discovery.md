@@ -9,24 +9,24 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]'
-- '[[Active Directory ACL Scanning for User]]'
-- '[[Add user to group using ADModule (credentials)]]'
-- '[[Analyze BloodHound Data for Relationships]]'
-- '[[AWS IAM User Inline Policies Enumeration]]'
-- '[[Enumerate GenericAll rights on AD Object for specific user (credentials)]]'
-- '[[Enumerate GPO with LAPS (Credentials)]]'
-- '[[Enumerate LAPS artifacts local machine]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate OU with LAPS (credentials)]]'
-- '[[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Map an Active Directory Environment (SharpHound)]]'
-- '[[Query an Active Directory User for DCSync Rights]]'
+- '[[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]'
+- '[[Active-Directory-ACL-Scanning-for-User]]'
+- '[[Add-User-to-Group-Using-ADModule-With-Credentials]]'
+- '[[Analyze-BloodHound-Data-for-AD-Relationships]]'
+- '[[AWS-IAM-User-Inline-Policies-Enumeration]]'
+- '[[Enumerate-GenericAll-Rights-on-AD-Object-for-Specific-User]]'
+- '[[Enumerate-Domain-GPOs-Containing-LAPS]]'
+- '[[Enumerate-LAPS-Artifacts-on-Local-Machine]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-OUs-for-LAPS-Permissions]]'
+- '[[enumerate-windows-missing-patches-hotfixes-sherlock]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Map-Active-Directory-with-SharpHound]]'
+- '[[Query-Active-Directory-User-for-DCSync-Rights]]'
 ---
 
 # Permission Groups Discovery
@@ -36,6 +36,8 @@ procedures:
 ## Description
 
 Adversaries may attempt to find local system or domain-level groups and permissions settings. WindowsExamples of commands that can list groups are net group /domain and net localgroup using the Net utility.MacOn Mac, this same thing can be accomplished with the dscacheutil -q group for the domain, or dscl . -list /Groups for local groups.LinuxOn Linux, local groups can be enumerated with the groups command and domain groups via the ldapsearch command.
+
+
 
 # Detection
 
@@ -103,21 +105,23 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (18)
 
-- [[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]
-- [[Active Directory ACL Scanning for User]]
-- [[Add user to group using ADModule (credentials)]]
-- [[Analyze BloodHound Data for Relationships]]
-- [[AWS IAM User Inline Policies Enumeration]]
-- [[Enumerate GenericAll rights on AD Object for specific user (credentials)]]
-- [[Enumerate GPO with LAPS (Credentials)]]
-- [[Enumerate LAPS artifacts local machine]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate OU with LAPS (credentials)]]
-- [[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (PowerUp)]]
-- [[Enumerate Windows for Privilege Escalation (SharpUp)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
-- [[Map an Active Directory Environment (SharpHound)]]
-- [[Query an Active Directory User for DCSync Rights]]
+- [[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]
+- [[Active-Directory-ACL-Scanning-for-User]]
+- [[Add-User-to-Group-Using-ADModule-With-Credentials]]
+- [[Analyze-BloodHound-Data-for-AD-Relationships]]
+- [[AWS-IAM-User-Inline-Policies-Enumeration]]
+- [[Enumerate-GenericAll-Rights-on-AD-Object-for-Specific-User]]
+- [[Enumerate-Domain-GPOs-Containing-LAPS]]
+- [[Enumerate-LAPS-Artifacts-on-Local-Machine]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-OUs-for-LAPS-Permissions]]
+- [[enumerate-windows-missing-patches-hotfixes-sherlock]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+- [[Map-Active-Directory-with-SharpHound]]
+- [[Query-Active-Directory-User-for-DCSync-Rights]]
+
+

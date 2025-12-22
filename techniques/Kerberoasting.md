@@ -9,16 +9,16 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Trust Ticket Forgery with Mimikatz]]'
-- '[[Add SPN to a Domain User and Kerberoast for NTLMv2 Hash]]'
-- '[[Drop the MIC - Resource Based Constrained Delegation Attack]]'
-- '[[Get TGT of User with "Do Not Require Preauthentication" Set]]'
-- '[[Golden Ticket Kerberos Attack on Linux]]'
-- '[[Kerberoasting with Rubeus]]'
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
-- '[[Query Domain for SPN and Attempt to Kerberoast (Authenticated)]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Forge-AD-Trust-Ticket-with-Mimikatz]]'
+- '[[Add-SPN-to-Domain-User-and-Kerberoast-for-NTLMv2-Hash]]'
+- '[[resource-based-constrained-delegation-via-printerbug]]'
+- '[[Get-AS-REP-TGT-for-Users-Without-Preauthentication]]'
+- '[[Forge-and-Use-Golden-Ticket-on-Linux]]'
+- '[[Kerberoasting-with-Rubeus]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
+- '[[Query-Domain-for-SPNS-and-Kerberoast-Authenticated]]'
 ---
 
 # Kerberoasting
@@ -28,6 +28,8 @@ procedures:
 ## Description
 
 Service principal names (SPNs) are used to uniquely identify each instance of a Windows service. To enable authentication, Kerberos requires that SPNs be associated with at least one service logon account (an account specifically tasked with running a service [1]). [2] [3] [4] [5]Adversaries possessing a valid Kerberos ticket-granting ticket (TGT) may request one or more Kerberos ticket-granting service (TGS) service tickets for any SPN from a domain controller (DC). [6] [7] Portions of these tickets may be encrypted with the RC4 algorithm, meaning the Kerberos 5 TGS-REP etype 23 hash of the service account associated with the SPN is used as the private key and is thus vulnerable to offline Brute Force attacks that may expose plaintext credentials. [7] [6] [5]This same attack could be executed using service tickets captured from network traffic. [7]Cracked hashes may enable Persistence, Privilege Escalation, and  Lateral Movement via access to Valid Accounts. [4]
+
+
 
 # Detection
 
@@ -73,13 +75,15 @@ Ensure strong password length (ideally 25+ characters) and complexity for servic
 
 ## Related Procedures (10)
 
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Trust Ticket Forgery with Mimikatz]]
-- [[Add SPN to a Domain User and Kerberoast for NTLMv2 Hash]]
-- [[Drop the MIC - Resource Based Constrained Delegation Attack]]
-- [[Get TGT of User with "Do Not Require Preauthentication" Set]]
-- [[Golden Ticket Kerberos Attack on Linux]]
-- [[Kerberoasting with Rubeus]]
-- [[Kerberos Unconstrained Delegation via SpoolService Abuse]]
-- [[Kerberos Unconstrained Delegation via SpoolService Abuse]]
-- [[Query Domain for SPN and Attempt to Kerberoast (Authenticated)]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Forge-AD-Trust-Ticket-with-Mimikatz]]
+- [[Add-SPN-to-Domain-User-and-Kerberoast-for-NTLMv2-Hash]]
+- [[resource-based-constrained-delegation-via-printerbug]]
+- [[Get-AS-REP-TGT-for-Users-Without-Preauthentication]]
+- [[Forge-and-Use-Golden-Ticket-on-Linux]]
+- [[Kerberoasting-with-Rubeus]]
+- [[abuse-kerberos-unconstrained-delegation-via-spoolservice]]
+- [[abuse-kerberos-unconstrained-delegation-via-spoolservice]]
+- [[Query-Domain-for-SPNS-and-Kerberoast-Authenticated]]
+
+

@@ -9,20 +9,20 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Creating Files with Zero-Width Spaces]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[CRLF Filter Bypass with UTF-8 Encoding]]'
-- '[[DB2 Injection - Select Nth Char Extraction]]'
-- '[[Embed a File In an Image Using Steghide]]'
-- '[[Exotic Payloads for Bypassing Email Filters]]'
-- '[[Extract a Hidden File In an Image Using Steghide]]'
-- '[[MYSQL Error Based - UpdateXML function Data Extraction]]'
-- '[[MYSQL Union Based Injection to Extract Data from Users Table]]'
-- '[[Out Of Band XPATH Injection]]'
-- '[[PostgreSQL Time Based Table Dump]]'
-- '[[TE Header Obfuscation]]'
-- '[[XXE Injection in SOAP Messages]]'
+- '[[Creating-Files-with-Zero-Width-Spaces]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[CRLF-Filter-Bypass-with-UTF-8-Encoding]]'
+- '[[DB2-SQL-Injection-Select-Nth-Character-Extraction]]'
+- '[[Embed-File-in-Image-Using-Steghide]]'
+- '[[Bypass-Email-Filters-with-Exotic-XSS-Payloads]]'
+- '[[extract-hidden-file-from-image-with-steghide]]'
+- '[[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]'
+- '[[MySQL-Union-Based-Injection-to-Extract-Users-Table-Data]]'
+- '[[Out-of-Band-XPath-Injection]]'
+- '[[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]'
+- '[[Obfuscate-TE-Header-for-HTTP-Request-Smuggling]]'
+- '[[XXE-Injection-in-SOAP-Messages]]'
 ---
 
 # Data Obfuscation
@@ -32,6 +32,8 @@ procedures:
 ## Description
 
 Command and control (C2) communications are hidden (but not necessarily encrypted) in an attempt to make the content more difficult to discover or decipher and to make the communication less conspicuous and hide commands from being seen. This encompasses many methods, such as adding junk data to protocol traffic, using steganography, commingling legitimate traffic with C2 communications traffic, or using a non-standard data encoding system, such as a modified Base64 encoding for the message body of an HTTP request.
+
+
 
 # Detection
 
@@ -95,17 +97,19 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (14)
 
-- [[Creating Files with Zero-Width Spaces]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[CRLF Filter Bypass with UTF-8 Encoding]]
-- [[DB2 Injection - Select Nth Char Extraction]]
-- [[Embed a File In an Image Using Steghide]]
-- [[Exotic Payloads for Bypassing Email Filters]]
-- [[Extract a Hidden File In an Image Using Steghide]]
-- [[MYSQL Error Based - UpdateXML function Data Extraction]]
-- [[MYSQL Union Based Injection to Extract Data from Users Table]]
-- [[Out Of Band XPATH Injection]]
-- [[PostgreSQL Time Based Table Dump]]
-- [[TE Header Obfuscation]]
-- [[XXE Injection in SOAP Messages]]
+- [[Creating-Files-with-Zero-Width-Spaces]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[CRLF-Filter-Bypass-with-UTF-8-Encoding]]
+- [[DB2-SQL-Injection-Select-Nth-Character-Extraction]]
+- [[Embed-File-in-Image-Using-Steghide]]
+- [[Bypass-Email-Filters-with-Exotic-XSS-Payloads]]
+- [[extract-hidden-file-from-image-with-steghide]]
+- [[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]
+- [[MySQL-Union-Based-Injection-to-Extract-Users-Table-Data]]
+- [[Out-of-Band-XPath-Injection]]
+- [[PostgreSQL-Time-Based-Blind-SQL-Injection-for-Table-Dump]]
+- [[Obfuscate-TE-Header-for-HTTP-Request-Smuggling]]
+- [[XXE-Injection-in-SOAP-Messages]]
+
+

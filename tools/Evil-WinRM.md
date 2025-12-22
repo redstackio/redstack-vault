@@ -1,19 +1,16 @@
 ---
-id: e7ae7a92-f6d8-462c-a665-ee0823c768c7
-name: Evil-WinRM
 type: tool
 verified: true
-created_at: '2020-03-16T01:49:25.694116+00:00'
-updated_at: '2023-05-30T19:59:15.025255+00:00'
-commands:
-- '[[evil-winrm.rb Connect to a WinRM Server (NTLM)]]'
-- '[[evil-winrm.rb Connect to a WinRM Server]]'
 platforms:
-- Linux
-- Windows
+  - Linux
+  - Windows
 tags:
-- '[[Defense Bypass]]'
-- '[[shell]]'
+  - '[[Defense Bypass]]'
+  - '[[shell]]'
+commands:
+  - '[[commands/dump-process-memory-out-minidump]]'
+url: 'https://github.com/Hackplayers/evil-winrm'
+validated: true
 ---
 
 # Evil-WinRM
@@ -22,95 +19,103 @@ tags:
 
 ## Overview
 
-Spawn a PowerShell instance on a remote Windows system using the WinRM protocol (usually port 5985). Evil-WinRM is written in Ruby and can be run on Linux or Windows systems. Notable features: Load in memory PowerShell scripts Load in memory DLL files to bypass some AV Load in memory C# to bypass s
+Evil-WinRM is a Ruby-based tool for spawning interactive PowerShell sessions on remote Windows systems via the WinRM protocol (typically over port 5985). It is commonly used in penetration testing and red team operations to gain shell access to Windows hosts after obtaining valid credentials or hashes.
 
 ## Description
 
-# Description
+Evil-WinRM enables remote PowerShell execution on Windows targets using WinRM, supporting features like in-memory loading of scripts, DLLs, and C# assemblies to evade antivirus detection. It supports authentication methods including pass-the-hash, Kerberos, and SSL with certificates, as well as file upload/download capabilities.
 
-Spawn a PowerShell instance on a remote Windows system using the WinRM protocol (usually port 5985). Evil-WinRM is written in Ruby and can be run on Linux or Windows systems.
+## Features
 
-
-
-Notable features:
-
-- Load in memory PowerShell scripts
-
-- Load in memory DLL files to bypass some AV
-
-- Load in memory C# to bypass some AV
-
-- Bypass AMSI
-
-- Pass-the-hash support
-
+- Load in-memory PowerShell scripts for stealthy execution
+- Load in-memory DLL files to bypass some AV solutions
+- Load in-memory C# code to bypass AV
+- Bypass AMSI (Antimalware Scan Interface)
+- Pass-the-hash support for credential reuse
 - Kerberos authentication
+- SSL support with certificates
+- Upload and download files to/from the target
 
-- SSL with certificates
+## Installation
 
-- Upload/download files
+### Requirements
 
+- Ruby 2.3 or later
+- Build tools (for gem compilation on Linux)
 
+### Install on Debian/Ubuntu
 
-# Example
+1. Update system and install Ruby with build essentials:
 
-
-
-{{EMBEDDED_COMMAND_4a0275b1-f59a-49b6-baf8-ad85ca69e52e}}
-
-
-
-# Installation
-
-## Install on Debian/Ubuntu
-
-1. Install Ruby and build tools
-
-
+```bash
+sudo apt update
+sudo apt install ruby ruby-dev build-essential
+```
 
 Note: When prompted by the installer to choose a toolchain, select either 1 or 3.
 
+2. Install Evil-WinRM via RubyGems:
 
+```bash
+gem install evil-winrm
+```
 
-2. Install Evil-WinRM via gem
+### Install on Windows
 
+1. Download and install the latest Ruby + Devkit from [rubyinstaller.org](https://rubyinstaller.org/downloads/).
 
+2. Open a command prompt and install Evil-WinRM:
 
+```cmd
+gem install evil-winrm
+```
 
+## Basic Usage
 
-## Install on Windows
+```bash
+evil-winrm -i $_TARGET_IP -u $_USERNAME -p $_PASSWORD
+```
 
-1. Install the latest version of Ruby + Devkit: [Download from rubyinstaller.org](https://rubyinstaller.org/downloads/)
+### Common Options
 
-2. Install Evil-WinRM using Ruby's package manager
+| Option | Description |
+|--------|-------------|
+| `-i, --ip IP` | Target IP address |
+| `-u, --user USER` | Username for authentication |
+| `-p, --password PASS` | Password (or use `-H` for hash) |
+| `-H, --hash HASH` | NTLM hash for pass-the-hash |
+| `-r, --realm REALM` | Kerberos realm |
+| `-S, --ssl` | Enable SSL |
+| `-c, --cert CERT` | Path to SSL certificate |
+| `-P, --port PORT` | WinRM port (default 5985) |
 
+## Examples
 
+### Example 1: Basic Connection with Password
 
+```bash
+evil-winrm -i 192.168.1.100 -u administrator -p Password123
+```
 
+Once connected, you get an interactive PowerShell prompt where you can run commands like `whoami` or load modules.
 
+### Example 2: Pass-the-Hash Authentication
 
+```bash
+evil-winrm -i 192.168.1.100 -u administrator -H aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0
+```
 
+### Example 3: SSL Connection
 
+```bash
+evil-winrm -i target.contoso.com -u user -p pass -S -c /path/to/cert.pem
+```
 
+## Related Commands
 
+- [[commands/dump-process-memory-out-minidump]]
 
-## Platforms
+## References
 
-- Linux
-- Windows
-
-## Services
-
-- winrm
-- winrm
-
-## Commands (1)
-
-- [[evil-winrm.rb Connect to a WinRM Server]]
-
-## Tags
-
-- [[Defense Bypass]]
-- [[shell]]
-
-
+- Official GitHub: https://github.com/Hackplayers/evil-winrm
+- WinRM Protocol: https://docs.microsoft.com/en-us/windows/win32/winrm/portal

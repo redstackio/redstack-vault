@@ -15,11 +15,11 @@ techniques:
 - '[[Obtain Capabilities|T1588 - Obtain Capabilities]]'
 - '[[Stage Capabilities|T1608 - Stage Capabilities]]'
 procedures:
-- '[[Docker Security Assessment]]'
-- '[[Gopher SMTP Email Spoofing via SSRF]]'
-- '[[RDS Enumeration - Listing Subnets by VPC-id]]'
-- '[[SSL Certificate Discovery with Spyse and Microsoft]]'
-- '[[Subdomain Enumeration and Takeover using SubOver]]'
+- '[[Docker-Security-Assessment]]'
+- '[[Gopher-SMTP-Email-Spoofing-via-SSRF]]'
+- '[[Enumerate-AWS-Subnets-by-VPC-ID]]'
+- '[[SSL-Certificate-Discovery-using-Spyse]]'
+- '[[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]'
 ---
 
 # Resource Development
@@ -31,6 +31,8 @@ procedures:
 The adversary is trying to establish resources they can use to support operations.
 
 Resource Development consists of techniques that involve adversaries creating, purchasing, or compromising/stealing resources that can be used to support targeting. Such resources include infrastructure, accounts, or capabilities. These resources can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using purchased domains to support Command and Control, email accounts for phishing as a part of Initial Access, or stealing code signing certificates to help with Defense Evasion.
+
+
 
 ## Techniques
 
@@ -48,8 +50,10 @@ This tactic includes 7 techniques:
 
 There are 5 procedures implementing this tactic:
 
-- [[Docker Security Assessment]]
-- [[Gopher SMTP Email Spoofing via SSRF]]
-- [[RDS Enumeration - Listing Subnets by VPC-id]]
-- [[SSL Certificate Discovery with Spyse and Microsoft]]
-- [[Subdomain Enumeration and Takeover using SubOver]]
+- [[Docker-Security-Assessment]]
+- [[Gopher-SMTP-Email-Spoofing-via-SSRF]]
+- [[Enumerate-AWS-Subnets-by-VPC-ID]]
+- [[SSL-Certificate-Discovery-using-Spyse]]
+- [[Subdomain-Enumeration-and-Takeover-Detection-using-SubOver]]
+
+

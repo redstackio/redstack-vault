@@ -11,7 +11,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
 - '[[Windows 10+ Binary Replacement via HID.dll]]'
-- '[[XLSM - Hot Manchego VBA Macro Generation]]'
+- '[[Generate-Obfuscated-VBA-Macro-Using-Hot-Manchego]]'
 ---
 
 # Software Packing
@@ -43,4 +43,4 @@ This sub-technique is used in the following tactics:
 There are 2 procedures using this sub-technique:
 
 - [[Windows 10+ Binary Replacement via HID.dll]]
-- [[XLSM - Hot Manchego VBA Macro Generation]]
+- [[Generate-Obfuscated-VBA-Macro-Using-Hot-Manchego]]

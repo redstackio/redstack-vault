@@ -1,21 +1,23 @@
 ---
 id: 6ba0bee0-c6c3-4f37-abcb-25eb215efdb0
-name: Chisel
 type: tool
 verified: true
 created_at: '2020-02-20T07:17:13.475860+00:00'
-updated_at: '2023-05-30T19:47:09.397765+00:00'
-commands:
-- '[[Chisel Deploy a Reverse Port Forwarding Client (Target)]]'
-- '[[Chisel Deploy a Reverse Port Forwarding Server]]'
-- '[[Chisel Deploy a SOCKS5 Client (Attacker)]]'
-- '[[Chisel Deploy a SOCKS5 Proxy Server (Target)]]'
-- '[[cmd-abe53f5a]]'
+updated_at: '2023-10-01T00:00:00Z'
+platforms:
+  - Linux
+  - Windows
+  - macOS
 tags:
-- '[[Network]]'
-- '[[Pivot]]'
-- '[[proxy]]'
-- '[[tunnel]]'
+  - network
+  - pivot
+  - proxy
+  - tunnel
+url: 'https://github.com/jpillora/chisel'
+commands:
+  - '[[commands/chisel-client-reverse-port-forward]]'
+  - '[[commands/chisel-server-enable-reverse-tunneling]]'
+validated: true
 ---
 
 # Chisel
@@ -24,76 +26,128 @@ tags:
 
 ## Overview
 
-Chisel is a fast TCP tunnel, transported over HTTP, secured via SSH. It can be built for multiple OS and architectures and is compiled to a single executable which includes both client and server. Written in Go (golang). Chisel is mainly useful for passing through firewalls, though it can also be u
+Chisel is a fast TCP/UDP tunnel over HTTP, secured with SSH-like authentication. It is written in Go and compiles to a single binary that includes both client and server modes. Chisel is particularly useful for bypassing firewalls by disguising traffic as HTTP, creating secure endpoints into networks, and enabling port forwarding for pivoting during security assessments.
 
 ## Description
 
-# Description
+Chisel transports tunnel traffic over HTTP using WebSockets, making it stealthy and effective for restricted environments. It supports both forward and reverse port forwarding, SOCKS5 proxying, and authentication via username/password or keys. The tool is lightweight, cross-platform, and ideal for red team operations involving network pivoting, C2 infrastructure, or accessing internal services from compromised hosts.
 
-Chisel is a fast TCP tunnel, transported over HTTP, secured via SSH. It can be built for multiple OS and architectures and is compiled to a single executable which includes both client and server. Written in Go (golang). Chisel is mainly useful for passing through firewalls, though it can also be used to provide a secure endpoint into your network. It supports reverse port forwarding and dynamic port forwarding through a SOCKS5 proxy.
+## Features
 
-# Example
+- Feature 1: HTTP/WebSocket transport for firewall evasion
+- Feature 2: Reverse and dynamic (SOCKS5) port forwarding
+- Feature 3: Built-in authentication and fingerprint verification
+- Feature 4: Multi-platform support (Windows, Linux, macOS, ARM)
+- Feature 5: UDP tunneling for DNS or other protocols
 
+## Installation
 
+### Requirements
 
-{{EMBEDDED_COMMAND_6d7635ae-c7d1-4125-b1e7-1d3e7539821a}}
+- Go 1.13 or later (for building from source)
+- Network access to download binaries
 
+### Install Commands
 
+For Kali Linux/Ubuntu (download pre-built binary):
 
-# Installation
+```bash
+wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz
+ gunzip chisel_1.9.1_linux_amd64.gz
+ chmod +x chisel
+ sudo mv chisel /usr/local/bin/
+```
 
+For building from source:
 
+```bash
+go install github.com/jpillora/chisel@latest
+```
 
+For Windows: Download the .exe from GitHub releases and add to PATH.
 
+For cross-compilation (e.g., Windows from Linux):
 
-## Building Chisel for Other Platforms
+```bash
+export GOOS=windows
+ export GOARCH=amd64
+go build -o chisel.exe github.com/jpillora/chisel
+```
 
-Set the  "GOOS" and "GOARCH" environment variables to compile Chisel to run on other platforms. To build Chisel to run on a Windows x64 machine:
+Common GOOS: windows, linux, darwin, android
+Common GOARCH: 386, amd64, arm, arm64
 
+## Basic Usage
 
+```bash
+chisel --help
+```
 
-Common GOOS values:
+### Common Options
 
-- windows
+| Option | Description |
+|--------|-------------|
+| -h, --help | Show help message |
+| -v, --version | Display version |
+| --auth | Enable authentication (username:password) |
+| --fingerprint | Show server fingerprint |
+| --keep-alive | Set keep-alive interval |
 
-- linux
+## Examples
 
-- android
+### Example 1: Basic Usage (Server Mode)
 
-- darwin
+Start server with reverse tunneling enabled:
 
-Common GOARCH values:
+```bash
+./chisel server -p :9000 --reverse
+```
 
-- 386
+### Example 2: Advanced Usage (Client SOCKS Proxy)
 
-- amd64
+```bash
+./chisel client server.example.com:9000 R:1080:socks
+```
 
-- arm
+## MITRE ATT&CK Mapping
 
-- arm64
+This tool is commonly associated with:
 
-For a full list, see: [https://golang.org/doc/install/source](https://golang.org/doc/install/source)
+### Techniques
 
+- [[Protocol Tunneling]] Protocol Tunneling
+- [[Connection Proxy]] Proxy
+- [[Communication Through Removable Media]] Communication Through Removable Media (for binary transfer)
 
+### Tactics
 
+- [[Command and Control]] Command and Control
+- [[Lateral Movement]] Lateral Movement
 
+## Detection
 
+- Unusual HTTP/WebSocket traffic to non-standard ports
+- Presence of chisel binary or Go-related artifacts
+- Anomalous outbound connections with low entropy payloads
+- Network logs showing persistent TCP/UDP tunnels
+- Process monitoring for chisel.exe or chisel processes
 
+## Related Procedures
 
-## Services
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
-- http
-- http
+## Related Tools
 
-## Commands (1)
+- [[tools/Socat]]
+- [[tools/Ncat]]
 
-- [[Chisel Deploy a Reverse Port Forwarding Server]]
+## References
 
-## Tags
-
-- [[Network]]
-- [[Pivot]]
-- [[proxy]]
-- [[tunnel]]
-
-
+- Official GitHub: https://github.com/jpillora/chisel
+- Documentation: https://github.com/jpillora/chisel#usage

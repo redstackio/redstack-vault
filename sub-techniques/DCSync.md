@@ -10,7 +10,7 @@ parent_technique: '[[Credential Dumping|T1003 - Credential Dumping]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
 ---
 
 # DCSync
@@ -43,4 +43,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Kerberos Unconstrained Delegation via SpoolService Abuse]]
+- [[abuse-kerberos-unconstrained-delegation-via-spoolservice]]

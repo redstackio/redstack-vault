@@ -10,7 +10,7 @@ parent_technique: '[[Obfuscated Files or Information|T1027 - Obfuscated Files or
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[VBA Obfuscation in Git Repositories]]'
+- '[[Obfuscate-VBA-Macros-Using-vba-obfuscator]]'
 ---
 
 # Steganography
@@ -45,4 +45,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[VBA Obfuscation in Git Repositories]]
+- [[Obfuscate-VBA-Macros-Using-vba-obfuscator]]

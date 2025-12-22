@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Backdoored Docker Image Creation]]'
+- '[[Create-Backdoored-Docker-Image]]'
 ---
 
 # Multi-hop Proxy
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 To disguise the source of malicious traffic, adversaries may chain together multiple proxies. Typically, a defender will be able to identify the last proxy traffic traversed before it enters their network; the defender may or may not be able to identify any previous proxies before the last-hop proxy. This technique makes identifying the original source of the malicious traffic even more difficult by requiring the defender to trace malicious traffic through several proxies to identify its source.
+
+
 
 # Detection
 
@@ -54,4 +56,6 @@ Traffic to known anonymity networks and C2 infrastructure can be blocked through
 
 ## Related Procedures (1)
 
-- [[Backdoored Docker Image Creation]]
+- [[Create-Backdoored-Docker-Image]]
+
+

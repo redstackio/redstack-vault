@@ -11,10 +11,10 @@ parent_technique: '[[Exfiltration Over Alternative Protocol|T1048 - Exfiltration
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[AWS S3 Download by Authenticated User]]'
-- '[[IAM-Based Authentication Data Exfiltration via RDS]]'
-- '[[RDS Password-based Authentication Data Exfiltration]]'
-- '[[Remote File Read via Jinja2 Server-Side Template Injection]]'
+- '[[AWS-S3-Download-by-Authenticated-User]]'
+- '[[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]'
+- '[[Exfiltrate-Data-from-AWS-RDS-via-Password-Authentication]]'
+- '[[Remote-File-Read-via-Jinja2-SSTI]]'
 ---
 
 # Exfiltration Over Unencrypted Non-C2 Protocol
@@ -47,7 +47,7 @@ This sub-technique is used in the following tactics:
 
 There are 4 procedures using this sub-technique:
 
-- [[AWS S3 Download by Authenticated User]]
-- [[IAM-Based Authentication Data Exfiltration via RDS]]
-- [[RDS Password-based Authentication Data Exfiltration]]
-- [[Remote File Read via Jinja2 Server-Side Template Injection]]
+- [[AWS-S3-Download-by-Authenticated-User]]
+- [[IAM-Based-Authentication-Data-Exfiltration-via-RDS]]
+- [[Exfiltrate-Data-from-AWS-RDS-via-Password-Authentication]]
+- [[Remote-File-Read-via-Jinja2-SSTI]]

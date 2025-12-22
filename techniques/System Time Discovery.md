@@ -9,7 +9,7 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Powershell Script Execution with Cobalt Strike]]'
+- '[[powershell-script-execution-with-cobalt-strike]]'
 ---
 
 # System Time Discovery
@@ -19,6 +19,8 @@ procedures:
 ## Description
 
 The system time is set and stored by the Windows Time Service within a domain to maintain time synchronization between systems and services in an enterprise network. [1] [2]An adversary may gather the system time and/or time zone from a local or remote system. This information may be gathered in a number of ways, such as with Net on Windows by performing net time \hostname to gather the system time on a remote system. The victim's time zone may also be inferred from the current system time or gathered by using w32tm /tz. [2] The information could be useful for performing other techniques, such as executing a file with a Scheduled Task [3], or to discover locality information based on time zone to assist in victim targeting.
+
+
 
 # Detection
 
@@ -106,4 +108,6 @@ Benign software uses legitimate processes to gather system time. Efforts should 
 
 ## Related Procedures (1)
 
-- [[Powershell Script Execution with Cobalt Strike]]
+- [[powershell-script-execution-with-cobalt-strike]]
+
+

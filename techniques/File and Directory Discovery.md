@@ -9,40 +9,40 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
-- '[[Detection of .NET Serialization Attacks]]'
+- '[[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]'
+- '[[Detect-.NET-Serialization-Attacks]]'
 - '[[Directory Brute Force a Web App (GoBuster)]]'
-- '[[Directory Brute Force a Web App (Wfuzz)]]'
-- '[[Directory Brute Force a Web App with Extensions (GoBuster)]]'
-- '[[Double URL encoded Directory Traversal]]'
-- '[[EBS Enumeration via EC2 Volumes Description]]'
-- '[[Enumerate a Web CMS for Usernames and Passwords]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Find Files and Folders with Regex (PowerShell)]]'
-- '[[GitLab Repository Enumeration and Search]]'
-- '[[GitLeak Secrets Harvesting]]'
-- '[[Git Repository Dumping with GoGitDumper]]'
-- '[[Identify Sensitive Information in MSSQL Server Columns]]'
-- '[[Linux File Enumeration]]'
-- '[[Meterpreter File Transfer]]'
-- '[[Open Amazon S3 Bucket Enumeration]]'
-- '[[Open Amazon S3 Bucket Enumeration]]'
-- '[[Password Looting from SharePoint and SMB Shares]]'
-- '[[PostgreSQL File Read Procedure]]'
-- '[[Ruby Server Side Template Injection - List Files and Directories]]'
-- '[[Server Side Template Injection - Freemarker Read File]]'
-- '[[Server Side Template Injection - Groovy File Manipulation]]'
-- '[[Subversion Source Code Disclosure]]'
-- '[[Thorough Port Scan with Service Enumeration]]'
-- '[[Twig Template Injection - Arbitrary File Reading]]'
-- '[[Windows - EoP Looting for Passwords]]'
-- '[[Windows Password Looting via File Contents Search]]'
-- '[[XML External Entity Injection to Disclose HTTP Response]]'
-- '[[XXE in DTD File Contents Extractor]]'
+- '[[directory-brute-force-web-app-with-wfuzz]]'
+- '[[directory-brute-force-web-app-with-extensions-gobuster]]'
+- '[[Exploit-Directory-Traversal-with-Double-URL-Encoding]]'
+- '[[Enumerate-EBS-Volumes-via-AWS-CLI]]'
+- '[[enumerate-web-cms-for-usernames-and-passwords]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Find-Files-and-Folders-with-Regex-PowerShell]]'
+- '[[GitLab-Repository-Enumeration-and-Search]]'
+- '[[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]'
+- '[[Dump-Git-Repository-with-GoGitDumper]]'
+- '[[Identify-Sensitive-Information-in-MSSQL-Server-Columns]]'
+- '[[Linux-File-Enumeration]]'
+- '[[Meterpreter-File-Transfer]]'
+- '[[Enumerate-Open-Amazon-S3-Buckets]]'
+- '[[Enumerate-Open-Amazon-S3-Buckets]]'
+- '[[Password-Looting-from-SharePoint-and-SMB-Shares]]'
+- '[[Read-Files-via-PostgreSQL-Server-Functions]]'
+- '[[Ruby-Server-Side-Template-Injection-List-Files-and-Directories]]'
+- '[[Freemarker-SSTI-to-Read-Server-Files]]'
+- '[[Server-Side-Template-Injection-Groovy-File-Manipulation]]'
+- '[[Subversion-Source-Code-Disclosure]]'
+- '[[thorough-port-scan-with-service-enumeration]]'
+- '[[Twig-Template-Injection-Arbitrary-File-Reading]]'
+- '[[Windows-EoP-Looting-for-Passwords]]'
+- '[[Windows-Password-Looting-via-File-Contents-Search]]'
+- '[[XXE-Injection-to-Disclose-HTTP-Response]]'
+- '[[Exploit-XXE-in-DTD-to-Exfiltrate-File-Contents]]'
 ---
 
 # File and Directory Discovery
@@ -52,6 +52,8 @@ procedures:
 ## Description
 
 Adversaries may enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system. WindowsExample utilities used to obtain this information are dir and tree. [1] Custom tools may also be used to gather file and directory information and interact with the Windows API.Mac and LinuxIn Mac and Linux, this kind of discovery is accomplished with the ls, find, and locate commands.
+
+
 
 # Detection
 
@@ -325,25 +327,30 @@ File system activity is a common part of an operating system, so it is unlikely 
 
 ## Related Procedures (34)
 
-- [[Application Escape and Breakout via Context Menus and File Search Command]]
-- [[Detection of .NET Serialization Attacks]]
+- [[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]
+- [[Detect-.NET-Serialization-Attacks]]
 - [[Directory Brute Force a Web App (GoBuster)]]
-- [[Directory Brute Force a Web App (Wfuzz)]]
-- [[Directory Brute Force a Web App with Extensions (GoBuster)]]
-- [[Double URL encoded Directory Traversal]]
-- [[EBS Enumeration via EC2 Volumes Description]]
-- [[Enumerate a Web CMS for Usernames and Passwords]]
-- [[Enumerate Linux Privilege Escalation Paths (LinEnum)]]
-- [[Enumerate Linux Privilege Escalation Paths (linPEAS)]]
-- [[Enumerate Windows for Privilege Escalation (JAWS)]]
-- [[Enumerate Windows for Privilege Escalation (SharpUp)]]
-- [[Enumerate Windows for Privilege Escalation (winPEAS)]]
-- [[Find Files and Folders with Regex (PowerShell)]]
-- [[GitLab Repository Enumeration and Search]]
-- [[GitLeak Secrets Harvesting]]
-- [[Git Repository Dumping with GoGitDumper]]
-- [[Identify Sensitive Information in MSSQL Server Columns]]
-- [[Linux File Enumeration]]
-- [[Meterpreter File Transfer]]
+- [[directory-brute-force-web-app-with-wfuzz]]
+- [[directory-brute-force-web-app-with-extensions-gobuster]]
+- [[Exploit-Directory-Traversal-with-Double-URL-Encoding]]
+- [[Enumerate-EBS-Volumes-via-AWS-CLI]]
+- [[enumerate-web-cms-for-usernames-and-passwords]]
+- [[enumerate-linux-privilege-escalation-paths-with-linenum]]
+- [[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-JAWS]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]
+- [[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]
+- [[Find-Files-and-Folders-with-Regex-PowerShell]]
+- [[GitLab-Repository-Enumeration-and-Search]]
+- [[Detect-Secrets-in-Git-Repositories-with-Gitleaks]]
+- [[Dump-Git-Repository-with-GoGitDumper]]
+- [[Identify-Sensitive-Information-in-MSSQL-Server-Columns]]
+- [[Linux-File-Enumeration]]
+- [[Meterpreter-File-Transfer]]
 
 *...and 14 more*
+
+
+4 more*
+
+

@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[Active Directory SCCM Loot Inventory and Download]]'
-- '[[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]'
-- '[[Mercurial Source Code Extraction with rip-hg.pl]]'
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
-- '[[PostgreSQL Time Based Injection for Database Dump]]'
-- '[[RDS List Instance Details Exfiltration]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
+- '[[chisel-port-forwarding-and-socks-proxy-network-pivoting]]'
+- '[[mercurial-source-code-extraction-with-rip-hg-pl]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
+- '[[PostgreSQL-Time-Based-Blind-Injection-for-Database-Dump]]'
+- '[[List-AWS-RDS-DB-Instances-for-Exfiltration]]'
 ---
 
 # Exfiltration Over Command and Control Channel
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Data exfiltration is performed over the Command and Control channel. Data is encoded into the normal communications channel using the same protocol as command and control communications.
+
+
 
 # Detection
 
@@ -91,9 +93,11 @@ Mitigations for command and control apply. Network intrusion detection and preve
 
 ## Related Procedures (6)
 
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[Chisel Port Forwarding and SOCKS Proxy Network Pivoting]]
-- [[Mercurial Source Code Extraction with rip-hg.pl]]
-- [[MYSQL Injection with Out of Band DNS Exfiltration]]
-- [[PostgreSQL Time Based Injection for Database Dump]]
-- [[RDS List Instance Details Exfiltration]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[chisel-port-forwarding-and-socks-proxy-network-pivoting]]
+- [[mercurial-source-code-extraction-with-rip-hg-pl]]
+- [[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]
+- [[PostgreSQL-Time-Based-Blind-Injection-for-Database-Dump]]
+- [[List-AWS-RDS-DB-Instances-for-Exfiltration]]
+
+

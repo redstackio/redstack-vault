@@ -9,18 +9,18 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
-- '[[Bypassing filters using Curl with Verbose Output]]'
-- '[[Clear Linux Logs to Hide an Attack]]'
-- '[[Clear Windows Event Logs with a Meterpreter Session]]'
-- '[[Disable Script Logging and Clear Signatures]]'
-- '[[Jinja2 Server Side Template Injection with os.popen().read()]]'
-- '[[Linux APT Backdoor Persistence]]'
-- '[[Linux Command History Evasion]]'
-- '[[Obfuscating AWS CloudTrail and GuardDuty Logs]]'
-- '[[Race Condition Turbo Intruder 2 Requests]]'
-- '[[SQLite Injection - Remote Command Execution using Load_extension]]'
-- '[[Windows - Clear Event Logs for Anti-Virus Evasion]]'
+- '[[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]'
+- '[[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]'
+- '[[Clear-Linux-Logs-to-Hide-Attack]]'
+- '[[Clear-Windows-Event-Logs-via-Meterpreter]]'
+- '[[Disable-PowerShell-Script-Logging-and-Clear-Signatures]]'
+- '[[Jinja2-Server-Side-Template-Injection-with-os-popen-read]]'
+- '[[Establish-Persistence-via-Linux-APT-Backdoor]]'
+- '[[Linux-Command-History-Evasion]]'
+- '[[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]'
+- '[[Exploit-TOCTOU-Race-Condition-with-Turbo-Intruder]]'
+- '[[SQLite-Injection-Remote-Command-Execution-via-Load-Extension]]'
+- '[[Clear-Windows-Event-Logs-for-Evasion]]'
 ---
 
 # Indicator Removal on Host
@@ -30,6 +30,8 @@ procedures:
 ## Description
 
 Adversaries may delete or alter generated artifacts on a host system, including logs and potentially captured files such as quarantined malware. Locations and format of logs will vary, but typical organic system logs are captured as Windows events or Linux/macOS files such as Bash History and /var/log/* .Actions that interfere with eventing and other notifications that can be used to detect intrusion activity may compromise the integrity of security solutions, causing events to go unreported. They may also make forensic analysis and incident response more difficult due to lack of sufficient data to determine what occurred.Clear Windows Event LogsWindows event logs are a record of a computer's alerts and notifications. Microsoft defines an event as "any significant occurrence in the system or in a program that requires users to be notified or an entry added to a log." There are three system-defined sources of Events: System, Application, and Security.Adversaries performing actions related to account management, account logon and directory service access, etc. may choose to clear the events in order to hide their activities.The event logs can be cleared with the following utility commands:wevtutil cl systemwevtutil cl applicationwevtutil cl securityLogs may also be cleared through other mechanisms, such as PowerShell.
+
+
 
 # Detection
 
@@ -111,15 +113,17 @@ Automatically forward events to a log server or data repository to prevent condi
 
 ## Related Procedures (12)
 
-- [[Application Escape and Breakout via Context Menus and File Search Command]]
-- [[Bypassing filters using Curl with Verbose Output]]
-- [[Clear Linux Logs to Hide an Attack]]
-- [[Clear Windows Event Logs with a Meterpreter Session]]
-- [[Disable Script Logging and Clear Signatures]]
-- [[Jinja2 Server Side Template Injection with os.popen().read()]]
-- [[Linux APT Backdoor Persistence]]
-- [[Linux Command History Evasion]]
-- [[Obfuscating AWS CloudTrail and GuardDuty Logs]]
-- [[Race Condition Turbo Intruder 2 Requests]]
-- [[SQLite Injection - Remote Command Execution using Load_extension]]
-- [[Windows - Clear Event Logs for Anti-Virus Evasion]]
+- [[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]
+- [[Bypass-SSRF-Filters-Using-Bash-Variables-and-Curl-Verbose]]
+- [[Clear-Linux-Logs-to-Hide-Attack]]
+- [[Clear-Windows-Event-Logs-via-Meterpreter]]
+- [[Disable-PowerShell-Script-Logging-and-Clear-Signatures]]
+- [[Jinja2-Server-Side-Template-Injection-with-os-popen-read]]
+- [[Establish-Persistence-via-Linux-APT-Backdoor]]
+- [[Linux-Command-History-Evasion]]
+- [[Obfuscate-AWS-CloudTrail-and-GuardDuty-Logs]]
+- [[Exploit-TOCTOU-Race-Condition-with-Turbo-Intruder]]
+- [[SQLite-Injection-Remote-Command-Execution-via-Load-Extension]]
+- [[Clear-Windows-Event-Logs-for-Evasion]]
+
+

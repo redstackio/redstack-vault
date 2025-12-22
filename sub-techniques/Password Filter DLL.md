@@ -12,12 +12,12 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[Golden SAML Attack via ADFS]]'
-- '[[Insecure Docker Registry Pentest]]'
-- '[[JWT Token Signing with JWKS Injection]]'
-- '[[SSL MITM Network Discovery with OpenSSL]]'
-- '[[Web Sockets Authentication Exploitation]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[Golden-SAML-Attack-via-ADFS]]'
+- '[[Insecure-Docker-Registry-Pentest]]'
+- '[[JWT-Token-Forgery-via-JWKS-Header-Injection]]'
+- '[[SSL-MITM-Network-Discovery-with-OpenSSL]]'
+- '[[Web-Sockets-Authentication-Exploitation]]'
 ---
 
 # Password Filter DLL
@@ -54,9 +54,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[AWS ECR Repository Policy Enumeration]]
-- [[Golden SAML Attack via ADFS]]
-- [[Insecure Docker Registry Pentest]]
-- [[JWT Token Signing with JWKS Injection]]
-- [[SSL MITM Network Discovery with OpenSSL]]
-- [[Web Sockets Authentication Exploitation]]
+- [[AWS-ECR-Repository-Policy-Enumeration]]
+- [[Golden-SAML-Attack-via-ADFS]]
+- [[Insecure-Docker-Registry-Pentest]]
+- [[JWT-Token-Forgery-via-JWKS-Header-Injection]]
+- [[SSL-MITM-Network-Discovery-with-OpenSSL]]
+- [[Web-Sockets-Authentication-Exploitation]]

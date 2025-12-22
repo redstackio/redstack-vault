@@ -98,18 +98,6 @@ graph LR
 2. Achievement 2
 3. Achievement 3
 
-## Technique & Tactic Coverage
-
-### MITRE ATT&CK Techniques
-
-- [[Technique 1]]
-- [[Technique 2]]
-
-### MITRE ATT&CK Tactics
-
-- [[Tactic 1]]
-- [[Tactic 2]]
-
 ---
 
 *Last updated: <% tp.date.now("YYYY-MM-DD HH:mm") %>*

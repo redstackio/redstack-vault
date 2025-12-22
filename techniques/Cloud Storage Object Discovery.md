@@ -20,6 +20,10 @@ Adversaries may enumerate objects in cloud storage infrastructure. Adversaries m
 
 Cloud service providers offer APIs allowing users to enumerate objects stored within cloud storage. Examples include ListObjectsV2 in AWS (Citation: ListObjectsV2) and List Blobs in Azure(Citation: List Blobs) .
 
+
+
 ## Tactics
 
 - [[Discovery|TA0007 - Discovery]]
+
+

@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:16.882695+00:00'
 tactics:
 - '[[Resource Development|TA0042 - Resource Development]]'
 procedures:
-- '[[Docker Security Assessment]]'
+- '[[Docker-Security-Assessment]]'
 ---
 
 # Stage Capabilities
@@ -27,10 +27,14 @@ Staging of capabilities can aid the adversary in a number of initial access and 
 * Uploading malware or tools to a location accessible to a victim network to enable [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105).(Citation: Volexity Ocean Lotus November 2020)
 * Installing a previously acquired SSL/TLS certificate to use to encrypt command and control traffic (ex: [Asymmetric Cryptography](https://attack.mitre.org/techniques/T1573/002) with [Web Protocols](https://attack.mitre.org/techniques/T1071/001)).(Citation: DigiCert Install SSL Cert)
 
+
+
 ## Tactics
 
 - [[Resource Development|TA0042 - Resource Development]]
 
 ## Related Procedures (1)
 
-- [[Docker Security Assessment]]
+- [[Docker-Security-Assessment]]
+
+

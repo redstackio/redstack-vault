@@ -10,8 +10,8 @@ parent_technique: '[[Obfuscated Files or Information|T1027 - Obfuscated Files or
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[VBA Obfuscation in Git Repositories]]'
-- '[[XLSM - Hot Manchego VBA Macro Generation]]'
+- '[[Obfuscate-VBA-Macros-Using-vba-obfuscator]]'
+- '[[Generate-Obfuscated-VBA-Macro-Using-Hot-Manchego]]'
 ---
 
 # Compile After Delivery
@@ -42,5 +42,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[VBA Obfuscation in Git Repositories]]
-- [[XLSM - Hot Manchego VBA Macro Generation]]
+- [[Obfuscate-VBA-Macros-Using-vba-obfuscator]]
+- [[Generate-Obfuscated-VBA-Macro-Using-Hot-Manchego]]

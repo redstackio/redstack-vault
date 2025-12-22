@@ -20,7 +20,7 @@ techniques:
 - '[[Dylib Hijacking|T1157 - Dylib Hijacking]]'
 - '[[Elevated Execution with Prompt|T1514 - Elevated Execution with Prompt]]'
 - '[[Emond|T1519 - Emond]]'
-- '[[Escape to Host|T1611 - Escape to Host]]'
+- '[[create-nginx-container-via-socket|T1611 - Escape to Host]]'
 - '[[Event Triggered Execution|T1546 - Event Triggered Execution]]'
 - '[[Exploitation for Privilege Escalation|T1068 - Exploitation for Privilege Escalation]]'
 - '[[Extra Window Memory Injection|T1181 - Extra Window Memory Injection]]'
@@ -48,107 +48,107 @@ techniques:
 - '[[Valid Accounts|T1078 - Valid Accounts]]'
 - '[[Web Shell|T1100 - Web Shell]]'
 procedures:
-- '[[Abuse GPO with PowerView to Push Empire Stager]]'
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
+- '[[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
 - '[[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]'
-- '[[Abusing Backup Operators Group for Sensitive File Access]]'
-- '[[Abusing DNSAdmins Group to Change DNS Service DLL]]'
-- '[[Abusing Golden Privileges with Juicy Potato]]'
+- '[[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]'
+- '[[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]'
+- '[[Abusing-Golden-Privileges-with-Juicy-Potato]]'
 - '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
   User Rights]]'
-- '[[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]'
-- '[[Abusing Shadow Copies for Privilege Escalation]]'
+- '[[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]'
+- '[[Abusing-Shadow-Copies-for-Privilege-Escalation]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Directory Certificate Services Access Control Vulnerabilities]]'
-- '[[Active Directory Certificate Services ESC9 Attack]]'
-- '[[Active Directory Object Owner Hijacking]]'
-- '[[Add and Execute Code on a WordPress Site (Authenticated)]]'
-- '[[AdminCount Abuse]]'
-- '[[Alternative Name Certificate Request]]'
-- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
-- '[[Apache Karaf XXE Out-of-Band Data Exfiltration]]'
-- '[[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Profile Configuration for Persistence and Backdooring]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS EC2 Instance Connect with SSH Key Push]]'
-- '[[AWS EC2 Metadata SSRF]]'
-- '[[AWS IAM Access Key Creation]]'
-- '[[AWS IAM User Policy Attachment]]'
-- '[[AWS Lambda Function Invocation for Privilege Escalation]]'
-- '[[AWS Lambda Function Policy Enumeration]]'
-- '[[AWS Lambda Function Privilege Escalation via IAM Policy Attachment]]'
-- '[[AWS Lambda Role Privilege Escalation]]'
-- '[[AWS Managed Policies Enumeration]]'
-- '[[AWS Role Assumption for Persistence]]'
-- '[[AWS Shadow Admin Access]]'
-- '[[AWS SSH Key Persistence]]'
-- '[[AWS SSH Persistence with Authorized Keys]]'
-- '[[Azure AD App Secrets for Service Principal Authentication]]'
-- '[[Azure Automation Account Runbook Persistence]]'
-- '[[Azure Pass the Certificate: AD Cert Request and RCE]]'
-- '[[Azure SSRF for VM Metadata Service]]'
-- '[[Backdooring Git User Configurations]]'
-- '[[Bashrc Backdoor Persistence]]'
-- '[[Blind XPATH Injection]]'
+- '[[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]'
+- '[[Active-Directory-Certificate-Services-ESC9-Attack]]'
+- '[[Active-Directory-Object-Owner-Hijacking]]'
+- '[[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]'
+- '[[AdminCount-Abuse]]'
+- '[[Request-Alternative-Name-Certificate-via-AD-CS]]'
+- '[[Enumerate-Installed-Antivirus-Products-Windows]]'
+- '[[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]'
+- '[[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[configure-aws-cli-profile-for-persistence]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[Push-SSH-Key-to-EC2-Instance-via-AWS-Instance-Connect]]'
+- '[[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]'
+- '[[aws-iam-create-access-key-for-user]]'
+- '[[AWS-IAM-Attach-Inline-Policy-to-User]]'
+- '[[AWS-Lambda-Function-Invocation-for-Privilege-Escalation]]'
+- '[[aws-lambda-function-policy-enumeration]]'
+- '[[AWS-Lambda-Function-Privilege-Escalation-via-IAM-Policy-Attachment]]'
+- '[[aws-lambda-role-privilege-escalation]]'
+- '[[Enumerate-AWS-Managed-Policies-for-IAM-User]]'
+- '[[Assume-AWS-Role-for-Persistence]]'
+- '[[AWS-Shadow-Admin-Access]]'
+- '[[aws-ssh-key-persistence]]'
+- '[[aws-ssh-persistence-via-authorized-keys]]'
+- '[[Add-Azure-AD-App-Secret-for-Service-Principal-Authentication]]'
+- '[[Azure-Automation-Account-Runbook-Persistence]]'
+- '[[azure-pass-the-certificate-ad-cert-request-and-rce]]'
+- '[[Exploit-Azure-SSRF-to-Access-VM-Metadata-Service]]'
+- '[[Backdoor-Git-User-Configurations-for-Persistence]]'
+- '[[Implement-Sudo-Backdoor-via-Bashrc-Alias]]'
+- '[[Perform-Blind-XPath-Injection-for-Data-Extraction]]'
 - '[[Change Password in a Writable /etc/passwd]]'
-- '[[Cloudflare XSS Bypass via SVG Onload Alert]]'
+- '[[Cloudflare-XSS-Bypass-via-SVG-Onload-Alert]]'
 - '[[CLR Assembly Creation and Execution]]'
-- '[[Cobalt Strike Elevate Kit with Beacon Command Elevators]]'
-- '[[Cobalt Strike Persistence Kit]]'
+- '[[Elevate-Privileges-Using-Cobalt-Strike-Beacon-Runasadmin]]'
+- '[[Establish-Persistence-Using-SharPersist-in-Cobalt-Strike]]'
 - '[[Compromise of Personal Access Token for Gitlab Source Code Management and CI/CD]]'
-- '[[Connect to an SSH Server with a Private Key]]'
+- '[[connect-to-ssh-server-with-private-key]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
 - '[[CORS Misconfiguration Exploitation - Expanding the Origin / Regex Issues]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[Create and Run a Windows Service as SYSTEM (Administrator)]]'
-- '[[Create a Windows Scheduled Task]]'
-- '[[Create Windows Credentials Object]]'
-- '[[Creating and Importing a CLR Assembly for MSSQL Server]]'
-- '[[Credential Harvesting from Task Scheduler using Mimikatz]]'
-- '[[Dart Reverse PowerShell Shell]]'
-- '[[DB2 Privilege Escalation]]'
-- '[[DCOM Shell Command Execution via MMC Application Class]]'
-- '[[DC PrintSpooler Service Check and ntlmrelayx with printerbug.py]]'
-- '[[DirtyPipe Kernel Exploit Privilege Escalation]]'
-- '[[Docker API Port Scanning and Container Management]]'
-- '[[Docker Privilege Escalation Using Docker Group]]'
-- '[[Domain Takeover via Certifried CVE-2022-26923]]'
-- '[[Dynamic Group Membership - Set Secondary Email for Azure AD User]]'
-- '[[EFSPotato Privilege Escalation]]'
-- '[[Elevating Privileges via RottenPotato and Token Impersonation]]'
-- '[[Enumerate Linux Privilege Escalation Paths (LinEnum)]]'
-- '[[Enumerate Linux Privilege Escalation Paths (linPEAS)]]'
-- '[[Enumerate MSSQL Server Permissions]]'
-- '[[Enumerate Windows for Missing Patches and Hotfixes (Sherlock)]]'
-- '[[Enumerate Windows for Privilege Escalation (JAWS)]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (SharpUp)]]'
-- '[[Enumerate Windows for Privilege Escalation (winPEAS)]]'
-- '[[Escalate Windows Privileges with Juicy Potato]]'
-- '[[Eternal Blue Exploitation]]'
-- '[[Execute PowerShell Commands as Another User (PSSession)]]'
-- '[[Exotic Payloads for Bypassing Space Filter]]'
-- '[[Exploit Group Policy Objects with Write Access]]'
-- '[[Exploiting PrintNightmare to gain SYSTEM shell on DC]]'
-- '[[Exploit the ClientCopyImage Vulnerability (MS15-051)]]'
-- '[[Exploit the Dirty Cow Vulnerability]]'
-- '[[Find Linux Files with Elevated Privileges]]'
-- '[[Forge an Internal Forest Trust Ticket and Escalate to DA in Parent (SIDHistory)]]'
-- '[[GitHack - Exploiting Insecure Source Code Management]]'
-- '[[Git Hook Persistence]]'
-- '[[Golden Certificate Domain Persistence]]'
-- '[[GPO Abuse with PowerGPOAbuse]]'
-- '[[HiveNightmare Password Looting]]'
-- '[[HQL List Columns Injection]]'
-- '[[HTAccess and PHP Shell Upload]]'
-- '[[IAM-Based Authentication for RDS MySQL Database]]'
-- '[[IIS Raid Backdoor Persistence]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[Create-and-Run-Windows-Service-as-SYSTEM-Administrator]]'
+- '[[Create-Windows-Scheduled-Task-for-Persistence]]'
+- '[[create-windows-pscredential-object]]'
+- '[[Creating-and-Importing-CLR-Assembly-for-OS-Command-Execution-in-MSSQL]]'
+- '[[Credential-Harvesting-from-Task-Scheduler-using-Mimikatz]]'
+- '[[Dart-Reverse-PowerShell-Shell]]'
+- '[[Enumerate-DB2-User-Privileges]]'
+- '[[DCOM-Shell-Command-Execution-via-MMC-Application-Class]]'
+- '[[Exploit-ZeroLogon-and-PrinterBug-for-DC-System-Access]]'
+- '[[DirtyPipe-Kernel-Exploit-for-Privilege-Escalation]]'
+- '[[Exploit-Open-Docker-API-for-Container-Management]]'
+- '[[Enumerate-and-Analyze-SSL-TLS-Certificate]]'
+- '[[Domain-Takeover-via-Certifried-CVE-2022-26923]]'
+- '[[Set-Secondary-Email-for-Azure-AD-User]]'
+- '[[efs-potato-privilege-escalation]]'
+- '[[Elevating-Privileges-via-RottenPotato-and-Token-Impersonation]]'
+- '[[enumerate-linux-privilege-escalation-paths-with-linenum]]'
+- '[[Enumerate-Linux-Privilege-Escalation-Paths-linPEAS]]'
+- '[[Enumerate-MSSQL-Server-Permissions]]'
+- '[[enumerate-windows-missing-patches-hotfixes-sherlock]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-JAWS]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-SharpUp]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-with-winPEAS]]'
+- '[[Escalate-Privileges-Using-Juicy-Potato]]'
+- '[[EternalBlue-SMB-Exploitation]]'
+- '[[execute-powershell-commands-as-another-user-using-pssession]]'
+- '[[Bypass-Space-Filter-in-XSS-with-Exotic-Payloads]]'
+- '[[Exploit-Group-Policy-Objects-with-Write-Access]]'
+- '[[Exploit-PrintNightmare-for-SYSTEM-Shell-on-Domain-Controller]]'
+- '[[exploit-clientcopyimage-vulnerability-ms15-051]]'
+- '[[Exploit-Dirty-Cow-Vulnerability]]'
+- '[[Find-Linux-Files-with-Elevated-Privileges]]'
+- '[[Forge-Internal-Forest-Trust-Ticket-and-Escalate-to-Parent-DA-via-SIDHistory]]'
+- '[[GitHack-Exploiting-Insecure-Source-Code-Management]]'
+- '[[Git-Hook-Persistence]]'
+- '[[Golden-Certificate-Domain-Persistence]]'
+- '[[GPO-Abuse-with-PowerGPOAbuse]]'
+- '[[HiveNightmare-SAM-Dump-via-Shadow-Copies]]'
+- '[[HQL-Error-Based-Column-Enumeration]]'
+- '[[HTAccess-and-PHP-Shell-Upload]]'
+- '[[IAM-Authentication-for-RDS-MySQL-Database]]'
+- '[[IIS-Raid-Backdoor-Persistence]]'
 ---
 
 # Privilege Escalation
@@ -158,6 +158,8 @@ procedures:
 ## Description
 
 Privilege escalation is the result of actions that allows an adversary to obtain a higher level of permissions on a system or network. Certain tools or actions require a higher level of privilege to work and are likely necessary at many points throughout an operation. Adversaries can enter a system with unprivileged access and must take advantage of a system weakness to obtain local administrator or SYSTEM/root level privileges. A user account with administrator-like access can also be used. User accounts with permissions to access specific systems or perform specific functions necessary for adversaries to achieve their objective may also be considered an escalation of privilege.
+
+
 
 ## Techniques
 
@@ -176,7 +178,7 @@ This tactic includes 40 techniques:
 - [[Dylib Hijacking|T1157 - Dylib Hijacking]]
 - [[Elevated Execution with Prompt|T1514 - Elevated Execution with Prompt]]
 - [[Emond|T1519 - Emond]]
-- [[Escape to Host|T1611 - Escape to Host]]
+- [[create-nginx-container-via-socket|T1611 - Escape to Host]]
 - [[Event Triggered Execution|T1546 - Event Triggered Execution]]
 - [[Exploitation for Privilege Escalation|T1068 - Exploitation for Privilege Escalation]]
 - [[Extra Window Memory Injection|T1181 - Extra Window Memory Injection]]
@@ -208,25 +210,27 @@ This tactic includes 40 techniques:
 
 There are 100 procedures implementing this tactic:
 
-- [[Abuse GPO with PowerView to Push Empire Stager]]
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
+- [[Abuse-GPO-with-PowerView-to-Push-Empire-Stager]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]
 - [[Abusing Active Directory ACLs/ACEs - GenericWrite and Remote Connection Manager]]
-- [[Abusing Backup Operators Group for Sensitive File Access]]
-- [[Abusing DNSAdmins Group to Change DNS Service DLL]]
-- [[Abusing Golden Privileges with Juicy Potato]]
-- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
-- [[Abusing Linux cgroup v1 with CAP_SYS_ADMIN]]
-- [[Abusing Shadow Copies for Privilege Escalation]]
+- [[Abusing-Backup-Operators-Group-for-Sensitive-File-Access]]
+- [[Abuse-DNSAdmins-for-DLL-Hijacking-Privilege-Escalation]]
+- [[Abusing-Golden-Privileges-with-Juicy-Potato]]
+- [[Abusing-Group-Policy-Objects-with-StandIn-to-Manage-Local-Administrators-and-User-Rights]]
+- [[Abuse-Linux-Cgroup-v1-with-CAP-SYS-ADMIN-for-Host-Privilege-Escalation]]
+- [[Abusing-Shadow-Copies-for-Privilege-Escalation]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Directory Certificate Services Access Control Vulnerabilities]]
-- [[Active Directory Certificate Services ESC9 Attack]]
-- [[Active Directory Object Owner Hijacking]]
-- [[Add and Execute Code on a WordPress Site (Authenticated)]]
-- [[AdminCount Abuse]]
-- [[Alternative Name Certificate Request]]
-- [[Antivirus Enumeration - Windows Privilege Escalation]]
-- [[Apache Karaf XXE Out-of-Band Data Exfiltration]]
-- [[Application Escape and Breakout via Unassociated Protocols in Internet Explorer]]
-- [[AWS API Gateway Stage Enumeration]]
+- [[Active-Directory-Certificate-Services-Access-Control-Vulnerabilities]]
+- [[Active-Directory-Certificate-Services-ESC9-Attack]]
+- [[Active-Directory-Object-Owner-Hijacking]]
+- [[Add-and-Execute-PHP-Code-on-Authenticated-WordPress-Site]]
+- [[AdminCount-Abuse]]
+- [[Request-Alternative-Name-Certificate-via-AD-CS]]
+- [[Enumerate-Installed-Antivirus-Products-Windows]]
+- [[Apache-Karaf-XXE-Out-of-Band-Data-Exfiltration]]
+- [[Application-Escape-and-Breakout-via-Unassociated-Protocols-in-Firefox]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
 
 *...and 80 more*
+
+

@@ -10,21 +10,21 @@ tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]'
-- '[[Cobalt Strike Team Server Installation and Execution]]'
-- '[[DNS Beacon Payload with Cobalt Strike]]'
-- '[[GitTools Insecure Source Code Management]]'
-- '[[Golang Reverse Shell Cheat Sheet]]'
-- '[[Linux APT Backdoor Persistence]]'
-- '[[Linux Crontab Reverse Shell Persistence]]'
-- '[[MSSQL Out of Band DNS Exfiltration]]'
-- '[[Multi-Platform Reverse Shell Payload]]'
-- '[[Netcat OpenBSD Bind Shell]]'
-- '[[PHP Bind Shell]]'
-- '[[Python Bind Shell]]'
-- '[[Python Reverse Shell Cheat Sheet]]'
-- '[[SSH Tunneling and SOCKS Proxy]]'
-- '[[Windows Staged Reverse TCP Meterpreter Shell]]'
-- '[[XXE File Retrieval via XInclude Attack]]'
+- '[[Cobalt-Strike-Team-Server-Installation-and-Execution]]'
+- '[[configure-dns-for-cobalt-strike-dns-beacon]]'
+- '[[Exploit-Insecure-Git-Repository-with-GitTools]]'
+- '[[Establish-Golang-Reverse-Shell]]'
+- '[[Establish-Persistence-via-Linux-APT-Backdoor]]'
+- '[[Linux-Crontab-Reverse-Shell-Persistence]]'
+- '[[mssql-out-of-band-dns-exfiltration]]'
+- '[[generate-multi-platform-reverse-shell-payloads]]'
+- '[[Create-Bind-Shell-with-Netcat-OpenBSD]]'
+- '[[Establish-PHP-Bind-Shell]]'
+- '[[Python-Bind-Shell]]'
+- '[[Establish-Python-Reverse-Shell]]'
+- '[[SSH-Tunneling-for-SOCKS-Proxy]]'
+- '[[Generate-Windows-Staged-Reverse-TCP-Meterpreter-Payload]]'
+- '[[XXE-File-Retrieval-via-XInclude-Attack]]'
 ---
 
 # Standard Application Layer Protocol
@@ -34,6 +34,8 @@ procedures:
 ## Description
 
 Adversaries may communicate using a common, standardized application layer protocol such as HTTP, HTTPS, SMTP, or DNS to avoid detection by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server.For connections that occur internally within an enclave (such as those between a proxy or pivot node and other nodes), commonly used protocols are RPC, SSH, or RDP.
+
+
 
 # Detection
 
@@ -376,18 +378,20 @@ Network intrusion detection and prevention systems that use network signatures t
 ## Related Procedures (16)
 
 - [[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]
-- [[Cobalt Strike Team Server Installation and Execution]]
-- [[DNS Beacon Payload with Cobalt Strike]]
-- [[GitTools Insecure Source Code Management]]
-- [[Golang Reverse Shell Cheat Sheet]]
-- [[Linux APT Backdoor Persistence]]
-- [[Linux Crontab Reverse Shell Persistence]]
-- [[MSSQL Out of Band DNS Exfiltration]]
-- [[Multi-Platform Reverse Shell Payload]]
-- [[Netcat OpenBSD Bind Shell]]
-- [[PHP Bind Shell]]
-- [[Python Bind Shell]]
-- [[Python Reverse Shell Cheat Sheet]]
-- [[SSH Tunneling and SOCKS Proxy]]
-- [[Windows Staged Reverse TCP Meterpreter Shell]]
-- [[XXE File Retrieval via XInclude Attack]]
+- [[Cobalt-Strike-Team-Server-Installation-and-Execution]]
+- [[configure-dns-for-cobalt-strike-dns-beacon]]
+- [[Exploit-Insecure-Git-Repository-with-GitTools]]
+- [[Establish-Golang-Reverse-Shell]]
+- [[Establish-Persistence-via-Linux-APT-Backdoor]]
+- [[Linux-Crontab-Reverse-Shell-Persistence]]
+- [[mssql-out-of-band-dns-exfiltration]]
+- [[generate-multi-platform-reverse-shell-payloads]]
+- [[Create-Bind-Shell-with-Netcat-OpenBSD]]
+- [[Establish-PHP-Bind-Shell]]
+- [[Python-Bind-Shell]]
+- [[Establish-Python-Reverse-Shell]]
+- [[SSH-Tunneling-for-SOCKS-Proxy]]
+- [[Generate-Windows-Staged-Reverse-TCP-Meterpreter-Payload]]
+- [[XXE-File-Retrieval-via-XInclude-Attack]]
+
+

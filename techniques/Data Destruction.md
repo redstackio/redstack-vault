@@ -11,8 +11,8 @@ tactics:
 procedures:
 - '[[Abusing Group Policy Objects with StandIn to Manage Local Administrators and
   User Rights]]'
-- '[[AWS Delete EBS Volumes]]'
-- '[[AWS Delete File from S3 Bucket]]'
+- '[[aws-delete-ebs-volumes]]'
+- '[[Delete-Objects-from-AWS-S3-Bucket]]'
 ---
 
 # Data Destruction
@@ -22,6 +22,8 @@ procedures:
 ## Description
 
 Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. Data destruction is likely to render stored data irrecoverable by forensic techniques through overwriting files or data on local and remote drives.[1][2][3][4][5][6] Common operating system file deletion commands such as del and rm often only remove pointers to files without wiping the contents of the files themselves, making the files recoverable by proper forensic methodology. This behavior is distinct from Disk Content Wipe and Disk Structure Wipe because individual files are destroyed rather than sections of a storage disk or the disk's logical structure.Adversaries may attempt to overwrite files and directories with randomly generated data to make it irrecoverable.[4][5] In some cases politically oriented image files have been used to overwrite data.[2][3][4]To maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware designed for destroying data may have worm-like features to propagate across a network by leveraging additional techniques like Valid Accounts, Credential Dumping, and Windows Admin Shares.[1][2][3][4][6]
+
+
 
 # Detection
 
@@ -79,6 +81,8 @@ Identify potentially malicious software and audit and/or block it by using white
 
 ## Related Procedures (3)
 
-- [[Abusing Group Policy Objects with StandIn to Manage Local Administrators and User Rights]]
-- [[AWS Delete EBS Volumes]]
-- [[AWS Delete File from S3 Bucket]]
+- [[Abusing-Group-Policy-Objects-with-StandIn-to-Manage-Local-Administrators-and-User-Rights]]
+- [[aws-delete-ebs-volumes]]
+- [[Delete-Objects-from-AWS-S3-Bucket]]
+
+

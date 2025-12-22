@@ -10,8 +10,8 @@ tactics:
 - '[[Execution|TA0002 - Execution]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[Execute .NET Remote Execution with Beacon Post-Exploitation Job]]'
-- '[[Local DTD Injection in Citrix XenMobile Server]]'
+- '[[Execute-NET-Assembly-via-Cobalt-Strike-Beacon]]'
+- '[[Local-DTD-Injection-in-Citrix-XenMobile-Server]]'
 ---
 
 # Distributed Component Object Model
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Windows Distributed Component Object Model (DCOM) is transparent middleware that extends the functionality of Component Object Model (COM) [1] beyond a local computer using remote procedure call (RPC) technology. COM is a component of the Windows application programming interface (API) that enables interaction between software objects. Through COM, a client object can call methods of server objects, which are typically Dynamic Link Libraries (DLL) or executables (EXE).Permissions to interact with local and remote server COM objects are specified by access control lists (ACL) in the Registry. [2] [3] [4] By default, only Administrators may remotely activate and launch COM objects through DCOM.Adversaries may use DCOM for lateral movement. Through DCOM, adversaries operating in the context of an appropriately privileged user can remotely obtain arbitrary and even direct shellcode execution through Office applications [5] as well as other Windows objects that contain insecure methods. [6] [7] DCOM can also execute macros in existing documents [8] and may also invoke Dynamic Data Exchange (DDE) execution directly through a COM created instance of a Microsoft Office application [9], bypassing the need for a malicious document.DCOM may also expose functionalities that can be leveraged during other areas of the adversary chain of activity such as Privilege Escalation and Persistence. [10]
+
+
 
 # Detection
 
@@ -89,5 +91,7 @@ Modify
 
 ## Related Procedures (2)
 
-- [[Execute .NET Remote Execution with Beacon Post-Exploitation Job]]
-- [[Local DTD Injection in Citrix XenMobile Server]]
+- [[Execute-NET-Assembly-via-Cobalt-Strike-Beacon]]
+- [[Local-DTD-Injection-in-Citrix-XenMobile-Server]]
+
+

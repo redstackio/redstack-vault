@@ -10,31 +10,31 @@ parent_technique: '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[AWS CLI Configuration]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS Secret Manager Listing]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Git Index File Recovery]]'
-- '[[Golden SAML Attack via ADFS]]'
-- '[[Golden SAML Attack with Shimit Installation and Configuration]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[Shadow Credentials for Windows Hello]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[AWS-CLI-Configuration]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[List-Secrets-in-AWS-Secrets-Manager]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Git-Index-File-Recovery]]'
+- '[[Golden-SAML-Attack-via-ADFS]]'
+- '[[Golden-SAML-Attack-Using-Shimit]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[Shadow-Credentials-for-Windows-Hello]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
 ---
 
 # Private Keys
@@ -69,25 +69,25 @@ This sub-technique is used in the following tactics:
 
 There are 25 procedures using this sub-technique:
 
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[AWS CLI Configuration]]
-- [[AWS Console Access via API Keys]]
-- [[AWS Secret Manager Listing]]
-- [[Facebook Access Token Leakage]]
-- [[Facebook Access Token Leakage]]
-- [[Facebook Access Token Leakage]]
-- [[Git Index File Recovery]]
-- [[Golden SAML Attack via ADFS]]
-- [[Golden SAML Attack with Shimit Installation and Configuration]]
-- [[Mapbox API Token Leakage]]
-- [[Mapbox API Token Leakage]]
-- [[Mapbox API Token Leakage]]
-- [[Shadow Credentials for Windows Hello]]
-- [[Twilio API Key Leakage]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[AWS-CLI-Configuration]]
+- [[AWS-Console-Access-via-API-Keys]]
+- [[List-Secrets-in-AWS-Secrets-Manager]]
+- [[Debug-Facebook-Access-Token]]
+- [[Debug-Facebook-Access-Token]]
+- [[Debug-Facebook-Access-Token]]
+- [[Git-Index-File-Recovery]]
+- [[Golden-SAML-Attack-via-ADFS]]
+- [[Golden-SAML-Attack-Using-Shimit]]
+- [[Mapbox-API-Token-Leakage]]
+- [[Mapbox-API-Token-Leakage]]
+- [[Mapbox-API-Token-Leakage]]
+- [[Shadow-Credentials-for-Windows-Hello]]
+- [[Exploit-Leaked-Twilio-API-Credentials]]
 
 *...and 5 more*

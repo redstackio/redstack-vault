@@ -9,12 +9,12 @@ updated_at: '2023-04-06T03:56:32.274610+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AD CS Relay Attack with Rubeus and PetitPotam]]'
-- '[[CL.TE Request Smuggling]]'
-- '[[SAML Injection Authentication Bypass]]'
-- '[[SAML Injection for Authentication Bypass and XML External Entity Attacks]]'
-- '[[SAML Injection with XML Signature Wrapping Attack]]'
-- '[[Windows - Disable Antivirus and Security (Elastic Agent and Cortex XDR)]]'
+- '[[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]'
+- '[[Perform-CL.TE-HTTP-Request-Smuggling]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[SAML-Injection-for-Authentication-Bypass-and-XXE-Exploitation]]'
+- '[[SAML-Injection-with-XML-Signature-Wrapping]]'
+- '[[disable-elastic-agent-and-cortex-xdr-on-windows]]'
 ---
 
 # Forge Web Credentials
@@ -29,15 +29,19 @@ Adversaries may generate these credential materials in order to gain access to w
 
 Once forged, adversaries may use these web credentials to access resources (ex: [Use Alternate Authentication Material](https://attack.mitre.org/techniques/T1550)), which may bypass multi-factor and other authentication protection mechanisms.(Citation: Pass The Cookie)(Citation: Unit 42 Mac Crypto Cookies January 2019)(Citation: Microsoft SolarWinds Customer Guidance)
 
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
 
 ## Related Procedures (6)
 
-- [[AD CS Relay Attack with Rubeus and PetitPotam]]
-- [[CL.TE Request Smuggling]]
-- [[SAML Injection Authentication Bypass]]
-- [[SAML Injection for Authentication Bypass and XML External Entity Attacks]]
-- [[SAML Injection with XML Signature Wrapping Attack]]
-- [[Windows - Disable Antivirus and Security (Elastic Agent and Cortex XDR)]]
+- [[AD-CS-Relay-Attack-with-Rubeus-and-PetitPotam]]
+- [[Perform-CL.TE-HTTP-Request-Smuggling]]
+- [[SAML-Injection-Authentication-Bypass]]
+- [[SAML-Injection-for-Authentication-Bypass-and-XXE-Exploitation]]
+- [[SAML-Injection-with-XML-Signature-Wrapping]]
+- [[disable-elastic-agent-and-cortex-xdr-on-windows]]
+
+

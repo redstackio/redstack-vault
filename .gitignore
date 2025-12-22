@@ -3,3 +3,4 @@ mcp-server.log
 .venv/
 __pycache__/
 *.pyc
+.obsidian/workspace.json

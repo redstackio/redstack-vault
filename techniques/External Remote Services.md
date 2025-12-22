@@ -10,20 +10,20 @@ tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Cloud Instance SSRF through OpenStack Metadata URL]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[CORS Misconfiguration Exploitation: Origin Reflection]]'
-- '[[Gopher SMTP Email Spoofing via SSRF]]'
-- '[[Metasploit Multiple Transports Payload Generator]]'
-- '[[Octal IP Format Server-Side Request Forgery]]'
-- '[[RDS Enumeration - Listing Subnets by VPC-id]]'
-- '[[SCF and URL File Attack Against Writable Share Procedure]]'
-- '[[Socat Bind Shell]]'
-- '[[SQLite Boolean-Based Order By Injection]]'
-- '[[SSRF via SFTP URL Scheme]]'
-- '[[SSRF via XXE Injection]]'
+- '[[Exploit-SSRF-to-Access-OpenStack-Metadata]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[CORS-Misconfiguration-Exploitation-Origin-Reflection]]'
+- '[[Gopher-SMTP-Email-Spoofing-via-SSRF]]'
+- '[[Metasploit-Multiple-Transports-Payload-Generator]]'
+- '[[Octal-IP-Format-SSRF-Bypass]]'
+- '[[Enumerate-AWS-Subnets-by-VPC-ID]]'
+- '[[SCF-and-URL-File-Attack-Against-Writable-Share]]'
+- '[[Socat-Bind-Shell]]'
+- '[[SQLite-Boolean-Based-Order-By-Injection]]'
+- '[[Exploit-SSRF-via-SFTP-URL-Scheme]]'
+- '[[SSRF-via-XXE-Injection]]'
 ---
 
 # External Remote Services
@@ -33,6 +33,8 @@ procedures:
 ## Description
 
 Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as Windows Remote Management can also be used externally.Adversaries may use remote services to initially access and/or persist within a network. [1] Access to Valid Accounts to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network. Access to remote services may be used as part of Redundant Access during an operation.
+
+
 
 # Detection
 
@@ -79,17 +81,19 @@ Limit access to remote services through centrally managed concentrators such as 
 
 ## Related Procedures (14)
 
-- [[Cloud Instance SSRF through OpenStack Metadata URL]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[CORS Misconfiguration Exploitation: Origin Reflection]]
-- [[Gopher SMTP Email Spoofing via SSRF]]
-- [[Metasploit Multiple Transports Payload Generator]]
-- [[Octal IP Format Server-Side Request Forgery]]
-- [[RDS Enumeration - Listing Subnets by VPC-id]]
-- [[SCF and URL File Attack Against Writable Share Procedure]]
-- [[Socat Bind Shell]]
-- [[SQLite Boolean-Based Order By Injection]]
-- [[SSRF via SFTP URL Scheme]]
-- [[SSRF via XXE Injection]]
+- [[Exploit-SSRF-to-Access-OpenStack-Metadata]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[CORS-Misconfiguration-Exploitation-Origin-Reflection]]
+- [[Gopher-SMTP-Email-Spoofing-via-SSRF]]
+- [[Metasploit-Multiple-Transports-Payload-Generator]]
+- [[Octal-IP-Format-SSRF-Bypass]]
+- [[Enumerate-AWS-Subnets-by-VPC-ID]]
+- [[SCF-and-URL-File-Attack-Against-Writable-Share]]
+- [[Socat-Bind-Shell]]
+- [[SQLite-Boolean-Based-Order-By-Injection]]
+- [[Exploit-SSRF-via-SFTP-URL-Scheme]]
+- [[SSRF-via-XXE-Injection]]
+
+

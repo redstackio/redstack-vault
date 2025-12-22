@@ -8,7 +8,7 @@ created_at: '2019-08-28T21:17:44.758976+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # Port Monitors
@@ -18,6 +18,8 @@ tactics:
 ## Description
 
 A port monitor can be set through the  [1] API call to set a DLL to be loaded at startup. [1] This DLL can be located in C:\Windows\System32 and will be loaded by the print spooler service, spoolsv.exe, on boot. The spoolsv.exe process also runs under SYSTEM level permissions. [2] Alternatively, an arbitrary DLL can be loaded if permissions allow writing a fully-qualified pathname for that DLL to HKLM\SYSTEM\CurrentControlSet\Control\Print\Monitors. The Registry key contains entries for the following:Local PortStandard TCP/IP PortUSB MonitorWSD PortAdversaries can use this technique to load malicious code at startup that will persist on system reboot and execute as SYSTEM.
+
+
 
 # Detection
 
@@ -46,4 +48,6 @@ Identify and block potentially malicious software that may persist in this manne
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
+
+

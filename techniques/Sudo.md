@@ -7,10 +7,10 @@ mitre_url: null
 created_at: '2019-08-28T21:17:48.005946+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Linux Privilege Escalation Enumeration]]'
-- '[[Spawn a Root Shell using Sudo and Perl]]'
+- '[[Linux-Privilege-Escalation-Enumeration]]'
+- '[[spawn-root-shell-using-sudo-perl]]'
 ---
 
 # Sudo
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 The sudoers file, /etc/sudoers, describes which users can run which commands and from which terminals. This also describes which commands users can run as other users or groups. This provides the idea of least privilege such that users are running in their lowest possible permissions for most of the time and only elevate to other users or permissions as needed, typically by prompting for a password. However, the sudoers file can also specify when to not prompt users for passwords with a line like user1 ALL=(ALL) NOPASSWD: ALL [1]. Adversaries can take advantage of these configurations to execute commands as other users or spawn processes with higher privileges. You must have elevated privileges to edit this file though.
+
+
 
 # Detection
 
@@ -39,9 +41,11 @@ The sudoers file should be strictly edited such that passwords are always requir
 
 ## Tactics
 
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (2)
 
-- [[Linux Privilege Escalation Enumeration]]
-- [[Spawn a Root Shell using Sudo and Perl]]
+- [[Linux-Privilege-Escalation-Enumeration]]
+- [[spawn-root-shell-using-sudo-perl]]
+
+

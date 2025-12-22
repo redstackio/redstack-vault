@@ -9,7 +9,7 @@ updated_at: '2023-04-06T03:56:05.652738+00:00'
 tactics:
 - '[[Exfiltration|TA0010 - Exfiltration]]'
 procedures:
-- '[[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]'
+- '[[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]'
 ---
 
 # Exfiltration Over Web Service
@@ -22,10 +22,14 @@ Adversaries may use an existing, legitimate external Web service to exfiltrate d
 
 Web service providers also commonly use SSL/TLS encryption, giving adversaries an added level of protection.
 
+
+
 ## Tactics
 
 - [[Exfiltration|TA0010 - Exfiltration]]
 
 ## Related Procedures (1)
 
-- [[DNS Poisoning and Credential Dumping via mitm6 Relay Attack]]
+- [[dns-poisoning-and-credential-dumping-via-mitm6-relay-attack]]
+
+

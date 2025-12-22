@@ -10,7 +10,7 @@ parent_technique: '[[Brute Force|T1110 - Brute Force]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Kerberos Pre-Auth Bruteforcing]]'
+- '[[Kerberos-Pre-Auth-Bruteforcing]]'
 ---
 
 # Password Spraying
@@ -58,4 +58,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Kerberos Pre-Auth Bruteforcing]]
+- [[Kerberos-Pre-Auth-Bruteforcing]]

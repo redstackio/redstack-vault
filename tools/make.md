@@ -1,72 +1,105 @@
 ---
-id: 6461a9ff-fd66-4a07-8536-16eea9f811c0
-name: make
-type: tool
-verified: true
-created_at: '2020-02-27T20:25:07.916749+00:00'
-updated_at: '2023-05-30T19:50:22.128974+00:00'
-commands:
-- '[[Uniscan Command to Scan the Application]]'
-- '[[make Compile an Application with a Makefile]]'
-- '[[rbash Escape using make to launch bash]]'
-platforms:
-- Linux
+id: tool-make
+url: 'https://www.gnu.org/software/make/'
 tags:
-- '[[Build]]'
+  - build-tool
+type: tool
+verified: false
+platforms:
+  - Linux
+  - macOS
+  - Unix
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:30:46.733Z'
+validated: true
+submitted: true
 ---
-
+---
 # make
 
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-The GNU make utility is used to automatically determine which pieces of a large program need to be recompiled, and issue the appropriate commands to recompile them. To prepare to use make, you must write a Makefile that describes the relationship among files in the program, and the states of comman
+GNU Make is a build automation tool used to compile software projects, here for building Cosmos SDK Go binaries.
 
 ## Description
 
-# Description
+Make executes Makefile targets to manage dependencies and compile code, essential for reproducing vulnerabilities in open-source blockchain projects like Cosmos SDK.
 
-The GNU make utility is used to automatically determine which pieces of a large program need to be recompiled, and issue the appropriate commands to recompile them. To prepare to use make, you must write a Makefile that describes the relationship among files in the program, and the states of commands for updating each file.
+## Features
 
+- Feature 1: Dependency resolution for multi-file builds
+- Feature 2: Parallel compilation support
+- Feature 3: Customizable targets for clean/build/install
 
+## Installation
 
-Basic Makefile which compiles a single .c file:
+### Requirements
 
+- Unix-like OS
 
+### Install Commands
 
-{{EMBEDDED_CODE_7aac1771-0261-4151-9df6-c1f5c7a61fb1}}
+```bash
+# On Ubuntu
+apt install make
+```
 
+## Basic Usage
 
+```bash
+make --help
+```
 
+### Common Options
 
+| Option | Description |
+|--------|-------------|
+| `-j` | Parallel jobs |
+| `-f` | Specify Makefile |
 
-{{EMBEDDED_COMMAND_6a811acc-e73f-46f3-a77b-4d0ab2584a83}}
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+make build
+```
 
-# Installation
+### Example 2: Advanced Usage
 
-## Install on Debian/Ubuntu
+```bash
+make -j4 build
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
+- [[Windows Command Shell]] Unix Shell
 
+### Tactics
 
+- [[Execution]] Execution
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
-## Platforms
+- Process monitoring for make invocations in build dirs
+- Log analysis for compilation artifacts
 
-- Linux
+## Related Procedures
 
-## Commands (1)
+- [[procedures/Build-Cosmos-SDK-Binaries]]
 
-- [[make Compile an Application with a Makefile]]
+## Related Tools
 
-## Tags
+- [[tools/Go]]
 
-- [[Build]]
+## References
 
-
+- Official documentation: https://www.gnu.org/software/make/manual/

@@ -9,20 +9,20 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Initial Access|TA0001 - Initial Access]]'
 procedures:
-- '[[ASCII Conversion XSS Filter Bypass]]'
-- '[[Custom DL and Execution via Malicious Macro Generator]]'
-- '[[CVE-2014-6271 Shellshock Remote Code Execution]]'
-- '[[CVE-2014-6271 Shellshock Remote Code Execution]]'
+- '[[ASCII-Conversion-XSS-Filter-Bypass]]'
+- '[[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]'
+- '[[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]'
+- '[[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]'
 - '[[Linux Privilege Escalation via LXC/LXD Alpine Image]]'
-- '[[Open URL Redirection via Injection Parameters]]'
-- '[[Remote JavaScript Injection via SVG Onload Fetch Command]]'
+- '[[Open-URL-Redirection-via-Injection-Parameters]]'
+- '[[Inject-Remote-JavaScript-via-SVG-Onload-Fetch]]'
 - '[[SCF and URL File Attack Against Writable Share via Windows Search Connectors
   Files]]'
-- '[[SCF and URL File Attack Against Writeable Share]]'
-- '[[SCF and URL File Attack Against Writeable Share]]'
-- '[[SSRF Exploiting URL Parser Bypass]]'
-- '[[Windows - Download and execute via WebDAV]]'
-- '[[XSS in SWF Flash Application]]'
+- '[[SCF-URL-File-Attack-Against-Writable-Share]]'
+- '[[SCF-URL-File-Attack-Against-Writable-Share]]'
+- '[[SSRF-Exploiting-URL-Parser-Bypass]]'
+- '[[Windows-Download-and-Execute-via-WebDAV]]'
+- '[[Exploit-XSS-in-SWF-Flash-Application]]'
 ---
 
 # Drive-by Compromise
@@ -32,6 +32,8 @@ procedures:
 ## Description
 
 A drive-by compromise is when an adversary gains access to a system through a user visiting a website over the normal course of browsing. With this technique, the user's web browser is targeted for exploitation.Multiple ways of delivering exploit code to a browser exist, including:A legitimate website is compromised where adversaries have injected some form of malicious code such as JavaScript, iFrames, cross-site scripting.Malicious ads are paid for and served through legitimate ad providers.Built-in web application interfaces are leveraged for the insertion of any other kind of object that can be used to display web content or contain a script that executes on the visiting client (e.g. forum posts, comments, and other user controllable web content).Often the website used by an adversary is one visited by a specific community, such as government, a particular industry, or region, where the goal is to compromise a specific user or set of users based on a shared interest. This kind of targeted attack is referred to a strategic web compromise or watering hole attack. There are several known examples of this occurring. [1]Typical drive-by compromise process:A user visits a website that is used to host the adversary controlled content.Scripts automatically execute, typically searching versions of the browser and plugins for a potentially vulnerable version. The user may be required to assist in this process by enabling scripting or active website components and ignoring warning dialog boxes.Upon finding a vulnerable version, exploit code is delivered to the browser.If exploitation is successful, then it will give the adversary code execution on the user's system unless other protections are in place.In some cases a second visit to the website after the initial scan is required before exploit code is delivered.Unlike Exploit Public-Facing Application, the focus of this technique is to exploit software on a client endpoint upon visiting a website. This will commonly give an adversary access to systems on the internal network instead of external systems that may be in a DMZ.
+
+
 
 # Detection
 
@@ -113,16 +115,18 @@ F
 
 ## Related Procedures (13)
 
-- [[ASCII Conversion XSS Filter Bypass]]
-- [[Custom DL and Execution via Malicious Macro Generator]]
-- [[CVE-2014-6271 Shellshock Remote Code Execution]]
-- [[CVE-2014-6271 Shellshock Remote Code Execution]]
+- [[ASCII-Conversion-XSS-Filter-Bypass]]
+- [[Generate-Malicious-VBA-Macro-for-Payload-Download-and-Execution-Using-MMG]]
+- [[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]
+- [[Exploit-Shellshock-Vulnerability-for-Remote-Code-Execution]]
 - [[Linux Privilege Escalation via LXC/LXD Alpine Image]]
-- [[Open URL Redirection via Injection Parameters]]
-- [[Remote JavaScript Injection via SVG Onload Fetch Command]]
-- [[SCF and URL File Attack Against Writable Share via Windows Search Connectors Files]]
-- [[SCF and URL File Attack Against Writeable Share]]
-- [[SCF and URL File Attack Against Writeable Share]]
-- [[SSRF Exploiting URL Parser Bypass]]
-- [[Windows - Download and execute via WebDAV]]
-- [[XSS in SWF Flash Application]]
+- [[Open-URL-Redirection-via-Injection-Parameters]]
+- [[Inject-Remote-JavaScript-via-SVG-Onload-Fetch]]
+- [[SCF-and-URL-File-Attack-Against-Writable-Share-via-Windows-Search-Connectors-Files]]
+- [[SCF-URL-File-Attack-Against-Writable-Share]]
+- [[SCF-URL-File-Attack-Against-Writable-Share]]
+- [[SSRF-Exploiting-URL-Parser-Bypass]]
+- [[Windows-Download-and-Execute-via-WebDAV]]
+- [[Exploit-XSS-in-SWF-Flash-Application]]
+
+

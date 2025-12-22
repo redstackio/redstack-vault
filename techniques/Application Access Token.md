@@ -10,27 +10,27 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Lateral Movement|TA0008 - Lateral Movement]]'
 procedures:
-- '[[AWS EKS Service Account Token Theft]]'
-- '[[AWS IAM Group Managed Policies Enumeration]]'
-- '[[AWS IAM Inline Policy Enumeration]]'
-- '[[AWS IAM Policy Version Information Retrieval]]'
-- '[[AWS IAM Role Inline Policy Enumeration]]'
-- '[[AWS IAM User Policy Enumeration]]'
-- '[[AWS Lambda Backdoor Persistence]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS S3 Bucket Configuration]]'
-- '[[AWS User Policy Enumeration]]'
+- '[[AWS-EKS-Service-Account-Token-Theft]]'
+- '[[AWS-IAM-Group-Managed-Policies-Enumeration]]'
+- '[[Enumerate-AWS-IAM-Inline-Policies]]'
+- '[[Retrieve-AWS-IAM-Policy-Version-Details]]'
+- '[[AWS-IAM-Role-Inline-Policy-Enumeration]]'
+- '[[Enumerate-IAM-User-Attached-Policies]]'
+- '[[aws-lambda-backdoor-persistence]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[Configure-AWS-CLI-for-S3-Access]]'
+- '[[AWS-User-Policy-Enumeration]]'
 - '[[Azure - Illicit Consent Grant Prevention]]'
-- '[[Azure Managed Identity Token Retrieval]]'
-- '[[Azure Resource Management and Privilege Checking with PowerShell]]'
-- '[[EKS Fargate Profile Enumeration]]'
-- '[[HockeyApp API Token Exploitation]]'
-- '[[HockeyApp API Token Exploitation]]'
-- '[[HockeyApp API Token Exploitation]]'
+- '[[Retrieve-Access-Tokens-from-Azure-Managed-Identity]]'
+- '[[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]'
+- '[[EKS-Fargate-Profile-Enumeration]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
+- '[[Exploit-Leaked-HockeyApp-API-Token]]'
 - '[[Jetty RCE via Insecure XML File Upload]]'
-- '[[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]'
-- '[[LDAP Server Statistics Retrieval via SSRF Exploitation]]'
-- '[[MYSQL Time Based Injection using SLEEP in a subselect]]'
+- '[[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]'
+- '[[LDAP-Server-Statistics-Retrieval-via-SSRF-Exploitation]]'
+- '[[mysql-time-based-blind-injection-using-sleep-subselect]]'
 ---
 
 # Application Access Token
@@ -47,6 +47,9 @@ For example, with a cloud-based email service once an OAuth access token is gran
 
 Compromised access tokens may be used as an initial step in compromising other services. For example, if a token grants access to a victim’s primary email, the adversary may be able to extend access to all other services which the target subscribes by triggering forgotten password routines. Direct API access through a token negates the effectiveness of a second authentication factor and may be immune to intuitive countermeasures like changing passwords. Access abuse over an API channel can be difficult to detect even from the service provider end, as the access can still align well with a legitimate workflow.
 
+
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
@@ -54,25 +57,27 @@ Compromised access tokens may be used as an initial step in compromising other s
 
 ## Related Procedures (21)
 
-- [[AWS EKS Service Account Token Theft]]
-- [[AWS IAM Group Managed Policies Enumeration]]
-- [[AWS IAM Inline Policy Enumeration]]
-- [[AWS IAM Policy Version Information Retrieval]]
-- [[AWS IAM Role Inline Policy Enumeration]]
-- [[AWS IAM User Policy Enumeration]]
-- [[AWS Lambda Backdoor Persistence]]
-- [[AWS S3 Bucket Configuration]]
-- [[AWS S3 Bucket Configuration]]
-- [[AWS User Policy Enumeration]]
+- [[AWS-EKS-Service-Account-Token-Theft]]
+- [[AWS-IAM-Group-Managed-Policies-Enumeration]]
+- [[Enumerate-AWS-IAM-Inline-Policies]]
+- [[Retrieve-AWS-IAM-Policy-Version-Details]]
+- [[AWS-IAM-Role-Inline-Policy-Enumeration]]
+- [[Enumerate-IAM-User-Attached-Policies]]
+- [[aws-lambda-backdoor-persistence]]
+- [[Configure-AWS-CLI-for-S3-Access]]
+- [[Configure-AWS-CLI-for-S3-Access]]
+- [[AWS-User-Policy-Enumeration]]
 - [[Azure - Illicit Consent Grant Prevention]]
-- [[Azure Managed Identity Token Retrieval]]
-- [[Azure Resource Management and Privilege Checking with PowerShell]]
-- [[EKS Fargate Profile Enumeration]]
-- [[HockeyApp API Token Exploitation]]
-- [[HockeyApp API Token Exploitation]]
-- [[HockeyApp API Token Exploitation]]
+- [[Retrieve-Access-Tokens-from-Azure-Managed-Identity]]
+- [[Azure-Resource-Management-and-Privilege-Checking-with-PowerShell]]
+- [[EKS-Fargate-Profile-Enumeration]]
+- [[Exploit-Leaked-HockeyApp-API-Token]]
+- [[Exploit-Leaked-HockeyApp-API-Token]]
+- [[Exploit-Leaked-HockeyApp-API-Token]]
 - [[Jetty RCE via Insecure XML File Upload]]
-- [[JWT Signature Key Confusion Attack RS256 to HS256 (CVE-2016-5431)]]
-- [[LDAP Server Statistics Retrieval via SSRF Exploitation]]
+- [[jwt-signature-key-confusion-attack-rs256-to-hs256-cve-2016-5431]]
+- [[LDAP-Server-Statistics-Retrieval-via-SSRF-Exploitation]]
 
 *...and 1 more*
+
+

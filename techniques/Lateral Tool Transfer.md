@@ -20,6 +20,10 @@ Adversaries may transfer tools or other files between systems in a compromised e
 
 Files can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).
 
+
+
 ## Tactics
 
 - [[Lateral Movement|TA0008 - Lateral Movement]]
+
+

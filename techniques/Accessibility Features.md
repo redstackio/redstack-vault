@@ -8,13 +8,13 @@ created_at: '2019-08-28T21:17:38.028958+00:00'
 updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
 - '[[Werkzeug Debugger Panel Read/Write RCE]]'
-- '[[Windows - Elevated RDP Backdoor with Sticky Keys]]'
-- '[[Windows - RDP Backdoor using utilman.exe]]'
-- '[[Windows Registry HKLM Winlogon Helper DLL Persistence]]'
-- '[[Windows Sticky Keys Persistence]]'
+- '[[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]'
+- '[[Windows-RDP-Backdoor-using-utilman.exe]]'
+- '[[windows-registry-hklm-winlogon-persistence]]'
+- '[[Windows-Sticky-Keys-Persistence]]'
 ---
 
 # Accessibility Features
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Windows contains accessibility features that may be launched with a key combination before a user has logged in (for example, when the user is on the Windows logon screen). An adversary can modify the way these programs are launched to get a command prompt or backdoor without logging in to the system.Two common accessibility programs are C:\Windows\System32\sethc.exe, launched when the shift key is pressed five times and C:\Windows\System32\utilman.exe, launched when the Windows + U key combination is pressed. The sethc.exe program is often referred to as "sticky keys", and has been used by adversaries for unauthenticated access through a remote desktop login screen. [1]Depending on the version of Windows, an adversary may take advantage of these features in different ways because of code integrity enhancements. In newer versions of Windows, the replaced binary needs to be digitally signed for x64 systems, the binary must reside in %systemdir%\, and it must be protected by Windows File or Resource Protection (WFP/WRP). [2] The debugger method was likely discovered as a potential workaround because it does not require the corresponding accessibility feature binary to be replaced. Examples for both methods:For simple binary replacement on Windows XP and later as well as and Windows Server 2003/R2 and later, for example, the program (e.g., C:\Windows\System32\utilman.exe) may be replaced with "cmd.exe" (or another program that provides backdoor access). Subsequently, pressing the appropriate key combination at the login screen while sitting at the keyboard or when connected over Remote Desktop Protocol will cause the replaced file to be executed with SYSTEM privileges. [3]For the debugger method on Windows Vista and later as well as Windows Server 2008 and later, for example, a Registry key may be modified that configures "cmd.exe," or another program that provides backdoor access, as a "debugger" for the accessibility program (e.g., "utilman.exe"). After the Registry is modified, pressing the appropriate key combination at the login screen while at the keyboard or when connected with RDP will cause the "debugger" program to be executed with SYSTEM privileges. [3]Other accessibility features exist that may also be leveraged in a similar fashion: [2]On-Screen Keyboard: C:\Windows\System32\osk.exeMagnifier: C:\Windows\System32\Magnify.exeNarrator: C:\Windows\System32\Narrator.exeDisplay Switcher: C:\Windows\System32\DisplaySwitch.exeApp Switcher: C:\Windows\System32\AtBroker.exe
+
+
 
 # Detection
 
@@ -78,12 +80,14 @@ To use this technique remotely, an adversary must use it in conjunction with RDP
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (5)
 
 - [[Werkzeug Debugger Panel Read/Write RCE]]
-- [[Windows - Elevated RDP Backdoor with Sticky Keys]]
-- [[Windows - RDP Backdoor using utilman.exe]]
-- [[Windows Registry HKLM Winlogon Helper DLL Persistence]]
-- [[Windows Sticky Keys Persistence]]
+- [[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]
+- [[Windows-RDP-Backdoor-using-utilman.exe]]
+- [[windows-registry-hklm-winlogon-persistence]]
+- [[Windows-Sticky-Keys-Persistence]]
+
+

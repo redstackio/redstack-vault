@@ -18,6 +18,8 @@ tactics:
 
 Some security tools inspect files with static signatures to determine if they are known malicious. Adversaries may add data to files to increase the size beyond what security tools are capable of handling or to change the file hash to avoid hash-based blacklists.
 
+
+
 # Detection
 
 Depending on the method used to pad files, a file-based signature may be capable of detecting padding using a scanning or on-access based tool. 
@@ -79,3 +81,5 @@ Identify potentially malicious software that may be executed from a padded or ot
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

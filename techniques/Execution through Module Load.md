@@ -18,6 +18,8 @@ tactics:
 
 The Windows module loader can be instructed to load DLLs from arbitrary local paths and arbitrary Universal Naming Convention (UNC) network paths. This functionality resides in NTDLL.dll and is part of the Windows Native API which is called from functions like CreateProcess(), LoadLibrary(), etc. of the Win32 API. [1]The module loader can load DLLs:via specification of the (fully-qualified or relative) DLL pathname in the IMPORT directory;via EXPORT forwarded to another DLL, specified with (fully-qualified or relative) pathname (but without extension);via an NTFS junction or symlink program.exe.local with the fully-qualified or relative pathname of a directory containing the DLLs specified in the IMPORT directory or forwarded EXPORTs;via <file name="filename.extension" loadFrom="fully-qualified or relative pathname"> in an embedded or external "application manifest". The file name refers to an entry in the IMPORT directory or a forwarded EXPORT.Adversaries can use this functionality as a way to execute arbitrary code on a system.
 
+
+
 # Detection
 
 Monitoring DLL module loads may generate a significant amount of data and may not be directly useful for defense unless collected under specific circumstances, since benign use of Windows modules load functions are common and may be difficult to distinguish from malicious behavior. Legitimate software will likely only need to load routine, bundled DLL modules or Windows system DLLs such that deviation from known module loads may be suspicious. Limiting DLL module loads to %SystemRoot% and %ProgramFiles% directories will protect against module loads from unsafe paths. 
@@ -47,3 +49,5 @@ Directly mitigating module loads and API calls related to module loads will like
 ## Tactics
 
 - [[Execution|TA0002 - Execution]]
+
+

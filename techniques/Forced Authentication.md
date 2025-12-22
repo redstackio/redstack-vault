@@ -18,6 +18,8 @@ tactics:
 
 The Server Message Block (SMB) protocol is commonly used in Windows networks for authentication and communication between systems for access to resources and file sharing. When a Windows system attempts to connect to an SMB resource it will automatically attempt to authenticate and send credential information for the current user to the remote system. [1] This behavior is typical in enterprise environments so that users do not need to enter credentials to access network resources. Web Distributed Authoring and Versioning (WebDAV) is typically used by Windows systems as a backup protocol when SMB is blocked or fails. WebDAV is an extension of HTTP and will typically operate over TCP ports 80 and 443. [2] [3]Adversaries may take advantage of this behavior to gain access to user account hashes through forced SMB authentication. An adversary can send an attachment to a user through spearphishing that contains a resource link to an external server controlled by the adversary (i.e. Template Injection), or place a specially crafted file on navigation path for privileged accounts (e.g. .SCF file placed on desktop) or on a publicly accessible share to be accessed by victim(s). When the user's system accesses the untrusted resource it will attempt authentication and send information including the user's hashed credentials over SMB to the adversary controlled server. [4] With access to the credential hash, an adversary can perform off-line Brute Force cracking to gain access to plaintext credentials, or reuse it for Pass the Hash. [5]There are several different ways this can occur. [6] Some specifics from in-the-wild use include:A spearphishing attachment containing a document with a resource that is automatically loaded when the document is opened (i.e. Template Injection). The document can include, for example, a request similar to file[:]//[remote address]/Normal.dotm to trigger the SMB request. [7]A modified .LNK or .SCF file with the icon filename pointing to an external reference such as \[remote address]\pic.png that will force the system to load the resource when the icon is rendered to repeatedly gather credentials. [7]
 
+
+
 # Detection
 
 Monitor for SMB traffic on TCP ports 139, 445 and UDP port 137 and WebDAV traffic attempting to exit the network to unknown external systems. If attempts are detected, then investigate endpoint data sources to find the root cause.
@@ -61,3 +63,5 @@ Block SMB  traffic from exiting an enterprise network with egress filtering or b
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
+
+

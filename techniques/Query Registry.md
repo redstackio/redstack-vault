@@ -9,28 +9,28 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Discovery|TA0007 - Discovery]]'
 procedures:
-- '[[Active Directory Integrated DNS Enumeration]]'
-- '[[DB2 Current User Information Retrieval]]'
-- '[[DB2 Injection - List Columns]]'
-- '[[Domain Trust Enumeration]]'
-- '[[Enumerate Database Users for a MSSQL Server Database]]'
-- '[[Enumerate Windows for Privilege Escalation (PowerUp)]]'
-- '[[Extracting Database Information using MySQL Union Based Injection]]'
-- '[[Impersonation Credential Check]]'
-- '[[Linked Database Column Extraction]]'
-- '[[Linked Database Top 5 Columns Extraction]]'
-- '[[MSSQL Database Name Enumeration]]'
-- '[[MSSQL Injection - List Permissions]]'
-- '[[MSSQL Read File via INI Disclosure]]'
-- '[[MSSQL Server Effective Permissions Query]]'
+- '[[Active-Directory-Integrated-DNS-Enumeration]]'
+- '[[DB2-Current-User-Information-Retrieval-via-SQL-Injection]]'
+- '[[DB2-SQL-Injection-to-List-Table-Columns]]'
+- '[[Domain-Trust-Enumeration]]'
+- '[[Enumerate-MSSQL-Database-Users]]'
+- '[[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]'
+- '[[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]'
+- '[[mssql-impersonation-credential-check]]'
+- '[[Extract-Data-from-Linked-SQL-Server-Database]]'
+- '[[Extract-Top-5-Columns-from-Linked-Database]]'
+- '[[MSSQL-Database-Name-Enumeration]]'
+- '[[mssql-injection-list-permissions]]'
+- '[[MSSQL-Read-File-via-INI-Disclosure]]'
+- '[[Query-MSSQL-Effective-Database-Permissions]]'
 - '[[MSSQL Server - Identify Sensitive Information - Gather Top 5 Entries from a Specific
   Table]]'
-- '[[MSSQL Server Linked Database Enumeration]]'
-- '[[MSSQL UNC Path Out-of-Band Data Retrieval]]'
-- '[[MYSQL Out of Band UNC Path Hash Stealing]]'
-- '[[MYSQL Union-Based Injection to Extract Column Names]]'
-- '[[Oracle SQL Database Enumeration]]'
-- '[[Oracle SQL List Tables and Columns]]'
+- '[[mssql-server-linked-database-enumeration]]'
+- '[[MSSQL-UNC-Path-Out-of-Band-Data-Retrieval]]'
+- '[[MySQL-Out-of-Band-UNC-Path-NTLM-Hash-Stealing]]'
+- '[[MySQL-Union-Based-Injection-to-Extract-Column-Names]]'
+- '[[Oracle-SQL-Database-Enumeration-via-SQL-Injection]]'
+- '[[Oracle-SQL-List-Tables-and-Columns]]'
 ---
 
 # Query Registry
@@ -40,6 +40,8 @@ procedures:
 ## Description
 
 Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software.The Registry contains a significant amount of information about the operating system, configuration, software, and security. [1] Some of the information may help adversaries to further their operation within a network.
+
+
 
 # Detection
 
@@ -173,25 +175,27 @@ Identify unnecessary system utilities or potentially malicious software that may
 
 ## Related Procedures (21)
 
-- [[Active Directory Integrated DNS Enumeration]]
-- [[DB2 Current User Information Retrieval]]
-- [[DB2 Injection - List Columns]]
-- [[Domain Trust Enumeration]]
-- [[Enumerate Database Users for a MSSQL Server Database]]
-- [[Enumerate Windows for Privilege Escalation (PowerUp)]]
-- [[Extracting Database Information using MySQL Union Based Injection]]
-- [[Impersonation Credential Check]]
-- [[Linked Database Column Extraction]]
-- [[Linked Database Top 5 Columns Extraction]]
-- [[MSSQL Database Name Enumeration]]
-- [[MSSQL Injection - List Permissions]]
-- [[MSSQL Read File via INI Disclosure]]
-- [[MSSQL Server Effective Permissions Query]]
-- [[MSSQL Server - Identify Sensitive Information - Gather Top 5 Entries from a Specific Table]]
-- [[MSSQL Server Linked Database Enumeration]]
-- [[MSSQL UNC Path Out-of-Band Data Retrieval]]
-- [[MYSQL Out of Band UNC Path Hash Stealing]]
-- [[MYSQL Union-Based Injection to Extract Column Names]]
-- [[Oracle SQL Database Enumeration]]
+- [[Active-Directory-Integrated-DNS-Enumeration]]
+- [[DB2-Current-User-Information-Retrieval-via-SQL-Injection]]
+- [[DB2-SQL-Injection-to-List-Table-Columns]]
+- [[Domain-Trust-Enumeration]]
+- [[Enumerate-MSSQL-Database-Users]]
+- [[Enumerate-Windows-for-Privilege-Escalation-Using-PowerUp]]
+- [[Extracting-Database-Information-using-MySQL-Union-Based-Injection]]
+- [[mssql-impersonation-credential-check]]
+- [[Extract-Data-from-Linked-SQL-Server-Database]]
+- [[Extract-Top-5-Columns-from-Linked-Database]]
+- [[MSSQL-Database-Name-Enumeration]]
+- [[mssql-injection-list-permissions]]
+- [[MSSQL-Read-File-via-INI-Disclosure]]
+- [[Query-MSSQL-Effective-Database-Permissions]]
+- [[Gather-Top-5-Entries-from-MSSQL-Table]]
+- [[mssql-server-linked-database-enumeration]]
+- [[MSSQL-UNC-Path-Out-of-Band-Data-Retrieval]]
+- [[MySQL-Out-of-Band-UNC-Path-NTLM-Hash-Stealing]]
+- [[MySQL-Union-Based-Injection-to-Extract-Column-Names]]
+- [[Oracle-SQL-Database-Enumeration-via-SQL-Injection]]
 
 *...and 1 more*
+
+

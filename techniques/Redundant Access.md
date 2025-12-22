@@ -10,7 +10,7 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
 ---
 
 # Redundant Access
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may use more than one remote access tool with varying command and control protocols as a hedge against detection. If one type of tool is detected and blocked or removed as a response but the organization did not gain a full understanding of the adversary's tools and access, then the adversary will be able to retain access to the network. Adversaries may also attempt to gain access to Valid Accounts to use External Remote Services such as external VPNs as a way to maintain access despite interruptions to remote access tools deployed within a target network. [1]Use of a Web Shell is one such way to maintain access to a network through an externally accessible Web server.
+
+
 
 # Detection
 
@@ -80,4 +82,6 @@ Identify and block potentially malicious software that may be used as a remote a
 
 ## Related Procedures (1)
 
-- [[Linux Privilege Escalation - Writable Files Escalation]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+
+

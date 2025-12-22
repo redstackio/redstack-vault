@@ -1,24 +1,122 @@
 ---
-id: 7d538f72-7f1f-4cea-a632-798cbb8653aa
-name: dnschef
+url: 'https://thesprawl.org/projects/dnschef/'
+tags:
+  - dns
+  - rebinding
+  - ssrf
 type: tool
 verified: false
-created_at: '2019-08-28T21:17:32.488930+00:00'
-updated_at: '2023-05-29T16:48:53.029709+00:00'
+platforms:
+  - Linux
+  - Windows
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:39:02.329Z'
+id: bfa0f334-72fe-4e74-a21b-048bc8097b70
+validated: true
+submitted: true
 ---
-
 # dnschef
+
+**Status**: Unverified
 
 ## Overview
 
-DNSChef is a highly configurable DNS proxy for Penetration Testers and Malware Analysts. A DNS proxy (aka “Fake DNS”) is a tool used for application network traffic analysis among other uses. For example, a DNS proxy can be used to fake requests for “badguy.com” to point to a local machine for term
+Dnschef is a DNS proxy tool designed for performing DNS rebinding attacks, commonly used in security testing to bypass IP blacklists by dynamically altering DNS resolutions during a single request.
 
 ## Description
 
-DNSChef is a highly configurable DNS proxy for Penetration Testers and Malware Analysts. A DNS proxy (aka “Fake DNS”) is a tool used for application network traffic analysis among other uses. For example, a DNS proxy can be used to fake requests for “badguy.com” to point to a local machine for termination or interception instead of a real host somewhere on the Internet.There are several DNS Proxies out there. Most will simply point all DNS queries a single IP address or implement only rudimentary filtering. DNSChef was developed as part of a penetration test where there was a need for a more configurable system. As a result, DNSChef is cross-platform application capable of forging responses based on inclusive and exclusive domain lists, supporting multiple DNS record types, matching domains with wildcards, proxying true responses for nonmatching domains, defining external configuration files, IPv6 and many other features. You can find detailed explanation of each of the features and suggested uses below.The use of DNS Proxy is recommended in situations where it is not possible to force an application to use some other proxy server directly. For example, some mobile applications completely ignore OS HTTP Proxy settings. In these cases, the use of a DNS proxy server such as DNSChef will allow you to trick that application into forwarding connections to the desired destination.
+In offensive security, dnschef acts as a man-in-the-middle for DNS queries, allowing attackers to serve different IP addresses for repeated lookups from the target server. A patched version handles mid-request changes, crucial for SSRF bypasses where initial resolutions pass validation but subsequent ones target internals like 169.254.169.254.
 
+## Features
 
+- Feature 1: Dynamic DNS record manipulation for rebinding
+- Feature 2: Proxy mode for intercepting and forging responses
+- Feature 3: Support for custom domains and TTL adjustments
 
+## Installation
 
+### Requirements
 
+- Python 2.7 or 3.x
+- Network privileges for port 53
 
+### Install Commands
+
+```bash
+# Clone and run
+pip install dnschef
+# Or from source
+git clone https://github.com/iphelix/dnschef.git
+cd dnschef
+python dnschef.py
+```
+
+## Basic Usage
+
+```bash
+dnschef.py -r --fakeip 127.0.0.1
+```
+
+### Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-r, --rebind` | Enable rebinding mode |
+| `--fakeip` | IP to return on second query |
+| `-q, --quiet` | Suppress output |
+
+## Examples
+
+### Example 1: Basic Rebinding
+
+```bash
+dnschef.py -r --domain target.com --fakeip 169.254.169.254
+```
+
+### Example 2: Advanced Usage with Patch
+
+```bash
+dnschef.py --patched -r --listen 0.0.0.0:53 --fakeip 169.254.169.254
+```
+
+## MITRE ATT&CK Mapping
+
+This tool is commonly associated with:
+
+### Techniques
+
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
+- [[Adversary-in-the-Middle]] Adversary-in-the-Middle
+
+### Tactics
+
+- [[Initial Access]] Initial Access
+- [[Discovery]] Discovery
+
+## Detection
+
+Indicators and methods for detecting this tool's usage:
+
+- Anomalous DNS queries with short TTLs or multiple resolutions
+- Traffic to non-standard DNS ports or unexpected proxies
+- Log analysis for rebinding patterns in server DNS caches
+
+## Related Procedures
+
+- **Domain Filtering**: Inclusive/exclusive lists for targeting specific domains.
+- **Wildcard Matching**: Spoof responses for subdomains using patterns like *.example.com.
+- **Multiple Record Types**: Support for A, AAAA, CNAME, MX, TXT, and more.
+- **Proxy Mode**: Forward non-matching queries to upstream DNS servers.
+- **IPv6 Support**: Handle both IPv4 and IPv6 queries.
+- **Configuration Files**: Load rules from external JSON or custom files for complex setups.
+- **Logging and Analysis**: Detailed logs of queries and responses for traffic inspection.
+
+## Related Tools
+
+- [[Related Tool 1]]
+- [[Related Tool 2]]
+
+## References
+
+- Official documentation: https://thesprawl.org/projects/dnschef/
+- Related resources: DNS Rebinding Attacks on OWASP

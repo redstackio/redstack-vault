@@ -1,20 +1,17 @@
 ---
 id: c4796d49-c5df-402f-ab40-dab968fd6b3f
-name: mona
 type: tool
 verified: true
 created_at: '2020-03-07T02:03:16.469422+00:00'
 updated_at: '2023-05-30T01:08:15.809339+00:00'
-commands:
-- '[[mona Calculate Unique Pattern Offset to EIP]]'
-- '[[mona Config Working Directory]]'
-- '[[mona Create Unique Cylic Pattern]]'
-- '[[mona Generate Byte Array excluding known badchars]]'
-- '[[mona Generate egghunter]]'
 platforms:
-- Windows
+  - Windows
 tags:
-- '[[exploit dev]]'
+  - exploit-dev
+url: 'https://github.com/corelan/mona'
+commands:
+  - '[[commands/mona-jmp-esp-search]]'
+validated: true
 ---
 
 # mona
@@ -23,73 +20,111 @@ tags:
 
 ## Overview
 
-Immunity debugger plugin made by Corelan with a number of tools which aid in exploitation and debugging.
-
-Popular mona tools: egg - create an egghunter routine find - search for strings, bytes, instructions or files in files and memory findmsp - search memory for all instances or references to a cy
+Mona is an Immunity Debugger plugin developed by Corelan Team, designed to assist in exploitation development and debugging tasks. It provides a suite of utilities for tasks such as searching memory for specific patterns, generating cyclic patterns for buffer overflows, finding ROP/JOP gadgets, and analyzing modules for exploitation opportunities. Commonly used in offensive security for developing exploits against Windows applications, particularly in scenarios involving stack overflows, SEH overwrites, and advanced exploitation techniques.
 
 ## Description
 
-# Description
+Mona extends the capabilities of Immunity Debugger by offering specialized commands for exploit developers. It automates repetitive tasks like locating useful instructions (e.g., jmp esp), identifying safe modules without ASLR/SafeSEH, and building ROP chains. Key features include memory searching, pattern generation, and gadget discovery, making it invaluable for crafting reliable exploits in controlled environments like vulnerability research and red teaming.
 
-Immunity debugger plugin made by Corelan with a number of tools which aid in exploitation and debugging.
+## Features
 
-Popular mona tools:
+- **Pattern Tools**: Generate cyclic patterns (`pattern_create`) and calculate offsets (`pattern_offset`) for buffer overflow exploitation.
+- **Search Functions**: Find strings, bytes, instructions, or pointers in memory and files (`find`, `jmp`, `seh`, `jop`, `rop`).
+- **Memory Analysis**: Locate references to cyclic patterns (`findmsp`), list process heaps (`heap`), and inspect loaded modules (`modules`).
+- **Gadget Building**: Discover gadgets for ROP/JOP chains and egghunters (`egg`).
+- **Module Filtering**: Identify exploitable modules based on protections like ASLR, SafeSEH, and DEP.
 
+## Installation
 
+### Requirements
 
-- egg - create an egghunter routine
+- Immunity Debugger installed on Windows.
+- Python support enabled in Immunity Debugger.
 
-- find - search for strings, bytes, instructions or files in files and memory
+### Install Commands
 
-- findmsp - search memory for all instances or references to a cyclic pattern
+1. Download the latest mona.py from the official repository:
+   ```bash
+   # Use browser or wget/curl to download from https://github.com/corelan/mona
+   git clone https://github.com/corelan/mona.git
+   ```
+2. Copy `mona.py` to Immunity Debugger's PyCommands directory (typically `C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands`).
+3. Restart Immunity Debugger and type `!mona` in the command bar to verify installation.
 
-- heap - list heaps available in the process
+## Basic Usage
 
-- jmp - search for pointers that will lead to the code located at the address pointed by a given register
+Load a target process in Immunity Debugger, then use mona commands prefixed with `!` (e.g., `!mona jmp -r esp`).
 
-- jop - search for gadgets that can be used in Jump Orientated Programming
+```immunity
+!mona help
+```
 
-- modules - show information on loaded modules
+### Common Options
 
-- pattern_create/pattern_offset - generate a cyclic pattern find the offsets
+| Option | Description |
+|--------|-------------|
+| `-h, --help` | Display help for a specific mona command |
+| `-cpb` | Filter modules by protections (e.g., no ASLR, no SafeSEH) |
+| `-module` | Specify a module to search within |
 
-- rop - build ROP gadgets
+## Examples
 
-- seh - search for pointers to routines that will lead to code execution
+### Example 1: Basic Usage
 
+Search for jmp esp instructions:
 
+```immunity
+!mona jmp -r esp
+```
 
-# Example
+### Example 2: Advanced Usage
 
+Generate a 500-byte cyclic pattern:
 
+```immunity
+!mona pattern_create 500
+```
 
-{{EMBEDDED_COMMAND_1abf33ab-e658-4148-a552-f6a34a3582d3}}
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-# Installation
+- [[Process Injection]] Process Injection (for debugging injected code)
+- [[Remote Services]] Remote Services (in conjunction with debugging remote processes)
 
-## Install on Windows
+### Tactics
 
-1. Download the latest version of mona.py here: [https://github.com/corelan/mona](https://github.com/corelan/mona)
-2. Copy mona.py to Immunity's "PyCommands" directory (usually C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands)
+- [[Execution]] Execution
+- [[Privilege Escalation]] Privilege Escalation
 
+## Detection
 
+Indicators and methods for detecting this tool's usage:
 
+- Presence of `mona.py` in Immunity Debugger directories.
+- Debugger processes (e.g., `ImmunityDebugger.exe`) running on production systems.
+- Memory patterns or cyclic data indicative of exploit development testing.
+- Network logs showing downloads from Corelan GitHub repository.
 
+## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
+## Related Tools
 
-## Platforms
+- [[Immunity Debugger]]
+- [[pwntools]]
 
-- Windows
+## References
 
-## Commands (1)
-
-- [[mona Search for a JMP to ESP Instruction]]
-
-## Tags
-
-- [[exploit dev]]
-
-
+- Official GitHub Repository: https://github.com/corelan/mona
+- Corelan Exploit Writing Tutorial: https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/
+- Immunity Debugger Documentation: https://debugger.immunityinc.com/

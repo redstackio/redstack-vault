@@ -12,8 +12,8 @@ tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 - '[[Persistence|TA0003 - Persistence]]'
 procedures:
-- '[[Insecure Docker Registry Pentest]]'
-- '[[Web Sockets Authentication Exploitation]]'
+- '[[Insecure-Docker-Registry-Pentest]]'
+- '[[Web-Sockets-Authentication-Exploitation]]'
 ---
 
 # Pluggable Authentication Modules
@@ -48,5 +48,5 @@ This sub-technique is used in the following tactics:
 
 There are 2 procedures using this sub-technique:
 
-- [[Insecure Docker Registry Pentest]]
-- [[Web Sockets Authentication Exploitation]]
+- [[Insecure-Docker-Registry-Pentest]]
+- [[Web-Sockets-Authentication-Exploitation]]

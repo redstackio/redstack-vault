@@ -18,6 +18,8 @@ tactics:
 
 Rootkits are programs that hide the existence of malware by intercepting (i.e., Hooking) and modifying operating system API calls that supply system information. [1] Rootkits or rootkit enabling functionality may reside at the user or kernel level in the operating system or lower, to include a Hypervisor, Master Boot Record, or the System Firmware. [2]Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Rootkits have been seen for Windows, Linux, and Mac OS X systems. [3] [4]
 
+
+
 # Detection
 
 Some rootkit protections may be built into anti-virus or operating system software. There are dedicated rootkit detection tools that look for specific types of rootkit behavior. Monitor for the existence of unrecognized DLLs, devices, services, and changes to the MBR. [2]
@@ -71,3 +73,5 @@ Identify potentially malicious software that may contain rootkit functionality, 
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
+
+

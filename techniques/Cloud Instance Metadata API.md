@@ -9,12 +9,12 @@ updated_at: '2023-04-06T03:56:39.565403+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AWS EC2 Instance Profile Privilege Escalation]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS Instance Profile Enumeration]]'
-- '[[Basic Jinja2 Server Side Template Injection]]'
-- '[[JWT Token Creation and Verification]]'
-- '[[SSRF for AWS Metadata and User Data Commands]]'
+- '[[AWS-EC2-Instance-Profile-Privilege-Escalation]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-Instance-Profile-Enumeration]]'
+- '[[Basic-Jinja2-Server-Side-Template-Injection]]'
+- '[[Create-and-Verify-JWT-Tokens-for-Forgery]]'
+- '[[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]'
 ---
 
 # Cloud Instance Metadata API
@@ -31,15 +31,20 @@ If adversaries have a presence on the running virtual instance, they may query t
 
 The de facto standard across cloud service providers is to host the Instance Metadata API at <code>http[:]//169.254.169.254</code>.
 
+
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
 
 ## Related Procedures (6)
 
-- [[AWS EC2 Instance Profile Privilege Escalation]]
-- [[AWS IAM Policy Version Retrieval]]
-- [[AWS Instance Profile Enumeration]]
-- [[Basic Jinja2 Server Side Template Injection]]
-- [[JWT Token Creation and Verification]]
-- [[SSRF for AWS Metadata and User Data Commands]]
+- [[AWS-EC2-Instance-Profile-Privilege-Escalation]]
+- [[Retrieve-AWS-IAM-Policy-Version]]
+- [[AWS-Instance-Profile-Enumeration]]
+- [[Basic-Jinja2-Server-Side-Template-Injection]]
+- [[Create-and-Verify-JWT-Tokens-for-Forgery]]
+- [[Exploit-SSRF-to-Access-AWS-Instance-Metadata]]
+
+

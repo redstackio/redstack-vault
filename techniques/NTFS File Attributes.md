@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Embed an Alternate Data Stream (ADS) in a File]]'
-- '[[Extract an Alternate Data Stream From a File]]'
-- '[[SSH Local Port Forwarding]]'
+- '[[Embed-Alternate-Data-Stream-in-File]]'
+- '[[Extract-Alternate-Data-Stream-from-File]]'
+- '[[SSH-Local-Port-Forwarding]]'
 ---
 
 # NTFS File Attributes
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Every New Technology File System (NTFS) formatted partition contains a Master File Table (MFT) that maintains a record for every file/directory on the partition. [1] Within MFT entries are file attributes, [2] such as Extended Attributes (EA) and Data [known as Alternate Data Streams (ADSs) when more than one Data attribute is present], that can be used to store arbitrary data (and even complete files). [1] [3] [4] [5]Adversaries may store malicious data or binaries in file attribute metadata instead of directly in files. This may be done to evade some defenses, such as static indicator scanning tools and anti-virus. [6] [4]
+
+
 
 # Detection
 
@@ -92,6 +94,8 @@ It may be difficult or inadvisable to block access to EA and ADSs. (Citation: Mi
 
 ## Related Procedures (3)
 
-- [[Embed an Alternate Data Stream (ADS) in a File]]
-- [[Extract an Alternate Data Stream From a File]]
-- [[SSH Local Port Forwarding]]
+- [[Embed-Alternate-Data-Stream-in-File]]
+- [[Extract-Alternate-Data-Stream-from-File]]
+- [[SSH-Local-Port-Forwarding]]
+
+

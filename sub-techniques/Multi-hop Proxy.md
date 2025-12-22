@@ -10,7 +10,7 @@ parent_technique: '[[Connection Proxy|T1090 - Connection Proxy]]'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[Web SOCKS Pivoting with Pivotnacci]]'
+- '[[Web-SOCKS-Pivoting-with-Pivotnacci]]'
 ---
 
 # Multi-hop Proxy
@@ -41,4 +41,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Web SOCKS Pivoting with Pivotnacci]]
+- [[Web-SOCKS-Pivoting-with-Pivotnacci]]

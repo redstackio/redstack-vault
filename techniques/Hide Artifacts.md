@@ -9,14 +9,14 @@ updated_at: '2023-04-06T03:56:41.245756+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Linux - Backdoor MOTD Persistence]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Linux - Text Hiding and Payload Creation]]'
-- '[[Malicious HLS playlist inside an AVI video]]'
-- '[[Windows - Elevated RDP Backdoor with Sticky Keys]]'
-- '[[Windows - Mimikatz Hidden Persistence]]'
-- '[[Windows - Simple User File Hidden Persistence]]'
-- '[[Zip Slip Basic Exploit - Unix Server Shell Upload]]'
+- '[[Linux-MOTD-Backdoor-for-Persistence]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]'
+- '[[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]'
+- '[[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]'
+- '[[Hide-Mimikatz-Executable-for-Persistence]]'
+- '[[windows-hide-file-for-persistence]]'
+- '[[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]'
 ---
 
 # Hide Artifacts
@@ -29,17 +29,21 @@ Adversaries may attempt to hide artifacts associated with their behaviors to eva
 
 Adversaries may also attempt to hide artifacts associated with malicious behavior by creating computing regions that are isolated from common security instrumentation, such as through the use of virtualization technology.(Citation: Sophos Ragnar May 2020)
 
+
+
 ## Tactics
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
 
 ## Related Procedures (8)
 
-- [[Linux - Backdoor MOTD Persistence]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Linux - Text Hiding and Payload Creation]]
-- [[Malicious HLS playlist inside an AVI video]]
-- [[Windows - Elevated RDP Backdoor with Sticky Keys]]
-- [[Windows - Mimikatz Hidden Persistence]]
-- [[Windows - Simple User File Hidden Persistence]]
-- [[Zip Slip Basic Exploit - Unix Server Shell Upload]]
+- [[Linux-MOTD-Backdoor-for-Persistence]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[hide-artifacts-using-hidden-files-and-obfuscated-scripts-on-linux]]
+- [[Exploit-FFmpeg-HLS-Vulnerability-via-Malicious-AVI-for-Arbitrary-File-Read]]
+- [[Windows-Elevated-RDP-Backdoor-with-Sticky-Keys]]
+- [[Hide-Mimikatz-Executable-for-Persistence]]
+- [[windows-hide-file-for-persistence]]
+- [[Zip-Slip-Exploit-for-PHP-Shell-Upload-on-Unix-Server]]
+
+

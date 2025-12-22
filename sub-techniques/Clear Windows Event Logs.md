@@ -10,7 +10,7 @@ parent_technique: '[[Indicator Removal on Host|T1070 - Indicator Removal on Host
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Linux Command History Evasion]]'
+- '[[Linux-Command-History-Evasion]]'
 ---
 
 # Clear Windows Event Logs
@@ -47,4 +47,4 @@ This sub-technique is used in the following tactics:
 
 There are 1 procedures using this sub-technique:
 
-- [[Linux Command History Evasion]]
+- [[Linux-Command-History-Evasion]]

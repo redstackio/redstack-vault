@@ -11,12 +11,12 @@ parent_technique: '[[Modify Cloud Compute Infrastructure|T1578 - Modify Cloud Co
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Abusing coredumps and core_pattern in Docker containers]]'
-- '[[EBS Volume Attachment]]'
-- '[[Kubernetes Pentest with BishopFox BadPods]]'
-- '[[Kubernetes RBAC Pod Exec Privilege Escalation]]'
-- '[[Mounted Docker Socket Pentest]]'
-- '[[Windows Subsystem for Linux Persistence]]'
+- '[[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]'
+- '[[Attach-EBS-Volume-to-EC2-Instance]]'
+- '[[Deploy-BadPods-for-Kubernetes-Security-Testing]]'
+- '[[Kubernetes-RBAC-Pod-Exec-Privilege-Escalation]]'
+- '[[Escape-Container-Using-Mounted-Docker-Socket]]'
+- '[[Install-and-Persist-via-WSL-with-Kali-Linux]]'
 ---
 
 # Create Cloud Instance
@@ -47,9 +47,9 @@ This sub-technique is used in the following tactics:
 
 There are 6 procedures using this sub-technique:
 
-- [[Abusing coredumps and core_pattern in Docker containers]]
-- [[EBS Volume Attachment]]
-- [[Kubernetes Pentest with BishopFox BadPods]]
-- [[Kubernetes RBAC Pod Exec Privilege Escalation]]
-- [[Mounted Docker Socket Pentest]]
-- [[Windows Subsystem for Linux Persistence]]
+- [[Abuse-Core-Dumps-and-Core-Pattern-for-Privilege-Escalation-in-Docker]]
+- [[Attach-EBS-Volume-to-EC2-Instance]]
+- [[Deploy-BadPods-for-Kubernetes-Security-Testing]]
+- [[Kubernetes-RBAC-Pod-Exec-Privilege-Escalation]]
+- [[Escape-Container-Using-Mounted-Docker-Socket]]
+- [[Install-and-Persist-via-WSL-with-Kali-Linux]]

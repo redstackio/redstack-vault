@@ -40,105 +40,105 @@ techniques:
 - '[[Virtualization/Sandbox Evasion|T1497 - Virtualization/Sandbox Evasion]]'
 procedures:
 - '[[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]'
-- '[[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]'
-- '[[Active Directory Account Enumeration using CrackMapExec]]'
+- '[[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]'
+- '[[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]'
 - '[[Active Directory ACLs/ACEs Password Reset]]'
-- '[[Active Directory ACL Scanning for User]]'
-- '[[Active Directory Assessment and Privilege Escalation]]'
-- '[[Active Directory Domain Controller Lookup]]'
-- '[[Active Directory Integrated DNS Enumeration]]'
-- '[[Active Directory Recon - Using AD Module]]'
-- '[[Active Directory Recon using BloodHound and Certipy]]'
-- '[[Active Directory Recon using BloodHound Custom Queries]]'
-- '[[Active Directory Recon with PowerView]]'
-- '[[Active Directory SCCM Loot Inventory and Download]]'
-- '[[Active Directory User Enumeration]]'
-- '[[Active Recon - DNS Zone Transfer Enumeration]]'
-- '[[Add Domain Admin to RODC Password Replication Group Procedure]]'
-- '[[Add user to group using ADModule (credentials)]]'
-- '[[AdminCount Abuse]]'
-- '[[AMSI Provider Enumeration]]'
-- '[[Analyze BloodHound Data for Relationships]]'
-- '[[Antivirus Enumeration - Windows Privilege Escalation]]'
-- '[[Application Escape and Breakout via Context Menus and File Search Command]]'
-- '[[Automated Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[AWS Account Identity Check]]'
-- '[[AWS Account Identity Enumeration]]'
-- '[[AWS Account Identity Enumeration]]'
-- '[[AWS Account Identity Enumeration]]'
-- '[[AWS Account ID Retrieval with STS Get Caller Identity]]'
-- '[[AWS API Gateway Information Gathering]]'
-- '[[AWS API Gateway Method Information Enumeration]]'
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS API Gateway Resource Enumeration]]'
-- '[[AWS API Gateway Resource Listing]]'
-- '[[AWS API Gateway Stage Information Gathering]]'
-- '[[AWS API Gateway Stage Information Gathering]]'
-- '[[AWS API Gateway Version Enumeration]]'
-- '[[AWS API Key Enumeration]]'
-- '[[AWS API Key Enumeration]]'
-- '[[AWS CloudFront List Distributions]]'
-- '[[AWS Cloud - Kubernetes Service Account Secrets Enumeration]]'
-- '[[AWS Credential Export]]'
-- '[[AWS DynamoDB Table Enumeration]]'
-- '[[AWS EC2 IAM Instance Profile Enumeration]]'
-- '[[AWS EC2 Instance Enumeration]]'
-- '[[AWS EC2 Instance Enumeration]]'
-- '[[AWS EC2 Metadata SSRF]]'
-- '[[AWS ECR Image Enumeration]]'
-- '[[AWS ECR Image Listing]]'
-- '[[AWS ECR Image Listing]]'
+- '[[Active-Directory-ACL-Scanning-for-User]]'
+- '[[Active-Directory-Assessment-and-Privilege-Escalation]]'
+- '[[Active-Directory-Domain-Controller-Lookup]]'
+- '[[Active-Directory-Integrated-DNS-Enumeration]]'
+- '[[active-directory-recon-using-ad-module]]'
+- '[[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]'
+- '[[Active-Directory-Recon-Using-BloodHound-Custom-Queries]]'
+- '[[Active-Directory-Recon-with-PowerView]]'
+- '[[Active-Directory-SCCM-Loot-Inventory-and-Download]]'
+- '[[Active-Directory-User-Enumeration]]'
+- '[[DNS-Zone-Transfer-Enumeration]]'
+- '[[Add-Domain-Admin-to-RODC-Password-Replication-Group]]'
+- '[[Add-User-to-Group-Using-ADModule-With-Credentials]]'
+- '[[AdminCount-Abuse]]'
+- '[[Enumerate-AMSI-Providers-via-Registry]]'
+- '[[Analyze-BloodHound-Data-for-AD-Relationships]]'
+- '[[Enumerate-Installed-Antivirus-Products-Windows]]'
+- '[[Application-Escape-and-Breakout-via-Context-Menues-and-File-Search-Command]]'
+- '[[Automated-Password-Extraction-from-SYSVOL-and-Group-Policy-Preferences]]'
+- '[[AWS-Account-Identity-Check]]'
+- '[[AWS-Account-Identity-Enumeration]]'
+- '[[AWS-Account-Identity-Enumeration]]'
+- '[[AWS-Account-Identity-Enumeration]]'
+- '[[AWS-Account-ID-Retrieval-with-STS-Get-Caller-Identity]]'
+- '[[AWS-API-Gateway-Information-Gathering]]'
+- '[[Enumerate-AWS-API-Gateway-Methods]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[aws-api-gateway-resource-enumeration]]'
+- '[[AWS-API-Gateway-Resource-Listing]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[Enumerate-AWS-API-Gateway-Stages]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[AWS-API-Key-Enumeration]]'
+- '[[List-AWS-CloudFront-Distributions]]'
+- '[[Enumerate-Kubernetes-Service-Account-Secrets-via-Pod-RCE]]'
+- '[[Export-AWS-Credentials-to-Environment]]'
+- '[[AWS-DynamoDB-Table-Enumeration]]'
+- '[[AWS-EC2-IAM-Instance-Profile-Enumeration]]'
+- '[[Enumerate-AWS-EC2-Instances]]'
+- '[[Enumerate-AWS-EC2-Instances]]'
+- '[[Exploit-AWS-EC2-Metadata-SSRF-for-Credential-Extraction]]'
+- '[[Enumerate-AWS-ECR-Images]]'
+- '[[Enumerate-AWS-ECR-Images]]'
+- '[[Enumerate-AWS-ECR-Images]]'
 - '[[AWS ECR Repositories Enumeration]]'
-- '[[AWS ECR Repository Enumeration]]'
-- '[[AWS ECR Repository Image Enumeration]]'
-- '[[AWS ECR Repository Policy Enumeration]]'
-- '[[AWS ECS Cluster Enumeration]]'
-- '[[AWS ECS Cluster Information Gathering]]'
-- '[[AWS ECS Container Enumeration]]'
-- '[[AWS ECS Service Enumeration]]'
-- '[[AWS ECS Services Enumeration]]'
-- '[[AWS ECS Task Enumeration]]'
-- '[[AWS ECS Task Information Gathering]]'
-- '[[AWS EKS Cluster Enumeration]]'
-- '[[AWS EKS Cluster Information Gathering]]'
-- '[[AWS EKS Fargate Enumeration]]'
-- '[[AWS EKS Node Group Enumeration]]'
-- '[[AWS EKS Node Group Information Enumeration]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS Extract Backup to EC2 Instance]]'
-- '[[AWS IAM Group Enumeration]]'
-- '[[AWS IAM Group Inline Policies Enumeration]]'
-- '[[AWS IAM Group Managed Policies Enumeration]]'
-- '[[AWS IAM Inline Policy Enumeration]]'
-- '[[AWS IAM List Access Keys]]'
-- '[[AWS IAM Permissions Enumeration]]'
-- '[[AWS IAM Policy Enumeration]]'
-- '[[AWS IAM Policy Information Gathering]]'
-- '[[AWS IAM Policy Information Retrieval]]'
-- '[[AWS IAM Policy Version Enumeration]]'
-- '[[AWS IAM Policy Version Information Gathering]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Policy Version Retrieval]]'
-- '[[AWS IAM Role Enumeration]]'
-- '[[AWS IAM Role Enumeration]]'
-- '[[AWS IAM Role Inline Policy Enumeration]]'
-- '[[AWS IAM Role Policies Enumeration]]'
-- '[[AWS IAM Role Policy Enumeration]]'
-- '[[AWS IAM Role Trust Relationship Enumeration]]'
-- '[[AWS IAM User ARN Enumeration]]'
-- '[[AWS IAM User Enumeration]]'
-- '[[AWS IAM User Enumeration and Credential Checking]]'
-- '[[AWS IAM User Group Enumeration]]'
-- '[[AWS IAM User Inline Policies Enumeration]]'
-- '[[AWS IAM User Policy Attachment]]'
-- '[[AWS IAM User Policy Enumeration]]'
-- '[[AWS Inline Policy Enumeration]]'
-- '[[AWS Instance Profile Enumeration]]'
-- '[[AWS Key Owner Enumeration and Initial Compromise]]'
-- '[[AWS Key Policy Enumeration]]'
-- '[[AWS KMS Key Enumeration]]'
-- '[[AWS KMS Key Policy Enumeration]]'
+- '[[Enumerate-AWS-ECR-Repositories]]'
+- '[[aws-ecr-repository-image-enumeration]]'
+- '[[AWS-ECR-Repository-Policy-Enumeration]]'
+- '[[Enumerate-AWS-ECS-Clusters]]'
+- '[[aws-ecs-cluster-information-gathering]]'
+- '[[Enumerate-ECS-Container-Instances]]'
+- '[[aws-ecs-service-enumeration]]'
+- '[[aws-ecs-services-enumeration]]'
+- '[[aws-ecs-task-enumeration]]'
+- '[[AWS-ECS-Task-Information-Gathering]]'
+- '[[aws-eks-cluster-enumeration]]'
+- '[[AWS-EKS-Cluster-Information-Gathering]]'
+- '[[AWS-EKS-Fargate-Enumeration]]'
+- '[[AWS-EKS-Node-Group-Enumeration]]'
+- '[[Enumerate-AWS-EKS-Node-Group-Information]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-Extract-EBS-Backup-to-EC2-Instance]]'
+- '[[AWS-IAM-Group-Enumeration]]'
+- '[[AWS-IAM-Group-Inline-Policies-Enumeration]]'
+- '[[AWS-IAM-Group-Managed-Policies-Enumeration]]'
+- '[[Enumerate-AWS-IAM-Inline-Policies]]'
+- '[[List-AWS-IAM-Access-Keys]]'
+- '[[AWS-IAM-Permissions-Enumeration]]'
+- '[[AWS-IAM-Policy-Enumeration]]'
+- '[[AWS-IAM-Policy-Information-Gathering]]'
+- '[[AWS-IAM-Policy-Information-Retrieval]]'
+- '[[aws-iam-policy-version-enumeration]]'
+- '[[Gather-AWS-IAM-Policy-Version-Information]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[Retrieve-AWS-IAM-Policy-Version]]'
+- '[[AWS-IAM-Role-Enumeration]]'
+- '[[AWS-IAM-Role-Enumeration]]'
+- '[[AWS-IAM-Role-Inline-Policy-Enumeration]]'
+- '[[List-Attached-Policies-for-AWS-IAM-Role]]'
+- '[[aws-iam-enumerate-attached-role-policies]]'
+- '[[Enumerate-AWS-IAM-Role-Trust-Relationships]]'
+- '[[Enumerate-AWS-IAM-User-ARNS]]'
+- '[[AWS-IAM-User-Enumeration]]'
+- '[[AWS-IAM-User-Enumeration-and-Credential-Checking]]'
+- '[[aws-iam-list-groups-for-user]]'
+- '[[AWS-IAM-User-Inline-Policies-Enumeration]]'
+- '[[AWS-IAM-Attach-Inline-Policy-to-User]]'
+- '[[Enumerate-IAM-User-Attached-Policies]]'
+- '[[AWS-IAM-Inline-Policy-Enumeration]]'
+- '[[AWS-Instance-Profile-Enumeration]]'
+- '[[Enumerate-AWS-Key-Owner-and-Gain-Initial-Access]]'
+- '[[aws-kms-enumerate-key-policies]]'
+- '[[AWS-KMS-Key-Enumeration]]'
+- '[[AWS-KMS-Key-Policy-Enumeration]]'
 ---
 
 # Discovery
@@ -148,6 +148,8 @@ procedures:
 ## Description
 
 Discovery consists of techniques that allow the adversary to gain knowledge about the system and internal network. When adversaries gain access to a new system, they must orient themselves to what they now have control of and what benefits operating from that system give to their current objective or overall goals during the intrusion. The operating system provides many native tools that aid in this post-compromise information-gathering phase.
+
+
 
 ## Techniques
 
@@ -190,24 +192,26 @@ This tactic includes 31 techniques:
 There are 100 procedures implementing this tactic:
 
 - [[Abusing Active Directory ACLs/ACEs to Retrieve LAPS Passwords]]
-- [[Abusing WriteDACL to Grant Permissions to Interesting Group for User1]]
-- [[Active Directory Account Enumeration using CrackMapExec]]
+- [[Abuse-WriteDACL-to-Grant-Group-Membership-Permissions]]
+- [[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]
 - [[Active Directory ACLs/ACEs Password Reset]]
-- [[Active Directory ACL Scanning for User]]
-- [[Active Directory Assessment and Privilege Escalation]]
-- [[Active Directory Domain Controller Lookup]]
-- [[Active Directory Integrated DNS Enumeration]]
-- [[Active Directory Recon - Using AD Module]]
-- [[Active Directory Recon using BloodHound and Certipy]]
-- [[Active Directory Recon using BloodHound Custom Queries]]
-- [[Active Directory Recon with PowerView]]
-- [[Active Directory SCCM Loot Inventory and Download]]
-- [[Active Directory User Enumeration]]
-- [[Active Recon - DNS Zone Transfer Enumeration]]
-- [[Add Domain Admin to RODC Password Replication Group Procedure]]
-- [[Add user to group using ADModule (credentials)]]
-- [[AdminCount Abuse]]
-- [[AMSI Provider Enumeration]]
-- [[Analyze BloodHound Data for Relationships]]
+- [[Active-Directory-ACL-Scanning-for-User]]
+- [[Active-Directory-Assessment-and-Privilege-Escalation]]
+- [[Active-Directory-Domain-Controller-Lookup]]
+- [[Active-Directory-Integrated-DNS-Enumeration]]
+- [[active-directory-recon-using-ad-module]]
+- [[Active-Directory-Reconnaissance-with-BloodHound-and-Certipy]]
+- [[Active-Directory-Recon-Using-BloodHound-Custom-Queries]]
+- [[Active-Directory-Recon-with-PowerView]]
+- [[Active-Directory-SCCM-Loot-Inventory-and-Download]]
+- [[Active-Directory-User-Enumeration]]
+- [[DNS-Zone-Transfer-Enumeration]]
+- [[Add-Domain-Admin-to-RODC-Password-Replication-Group]]
+- [[Add-User-to-Group-Using-ADModule-With-Credentials]]
+- [[AdminCount-Abuse]]
+- [[Enumerate-AMSI-Providers-via-Registry]]
+- [[Analyze-BloodHound-Data-for-AD-Relationships]]
 
 *...and 80 more*
+
+

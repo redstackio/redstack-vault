@@ -10,10 +10,10 @@ parent_technique: '[[Boot or Logon Autostart Execution|T1547 - Boot or Logon Aut
   Execution]]'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
-- '[[Windows VM Persistence with VirtualBox and VHD]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
+- '[[Windows-VM-Persistence-with-VirtualBox-and-VHD]]'
 ---
 
 # Print Processors
@@ -41,11 +41,11 @@ Adversaries may abuse the print spooler service by adding print processors that 
 This sub-technique is used in the following tactics:
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures
 
 There are 2 procedures using this sub-technique:
 
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
-- [[Windows VM Persistence with VirtualBox and VHD]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]
+- [[Windows-VM-Persistence-with-VirtualBox-and-VHD]]

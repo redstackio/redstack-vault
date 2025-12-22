@@ -9,61 +9,61 @@ updated_at: '2023-05-24T20:13:51.754141+00:00'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[Algolia API Key Leak Exploit]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[API Key Leaks Detection with TruffleHog]]'
-- '[[AWS API Gateway Stage Enumeration]]'
-- '[[AWS CLI Configuration]]'
-- '[[AWS Console Access via API Keys]]'
-- '[[AWS IAM Access Key Enumeration]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS Secret Manager Listing]]'
-- '[[AWS Secrets Manager - Describe Secret]]'
-- '[[AWS Secrets Manager Resource-Based Policy Exfiltration]]'
-- '[[Azure Access Token Retrieval for Management and Graph APIs using Python]]'
-- '[[Azure Access Tokens and Service Principal Secrets in Azure CLI and PowerShell]]'
-- '[[Azure Managed Identity Token Theft via Environment Variables]]'
-- '[[Credential Harvesting from DynamoDB]]'
-- '[[Domain Takeover via Certifried CVE-2022-26923]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Extracting Network Credentials using Powershell]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Git Index File Recovery]]'
-- '[[Git Repository Secrets Harvesting with Trufflehog]]'
-- '[[Gitrob Secret Harvesting]]'
-- '[[Git Source Code Leakage]]'
-- '[[Golden SAML Attack via ADFS]]'
-- '[[Golden SAML Attack with Shimit Installation and Configuration]]'
-- '[[IIS Machine Key Exploitation]]'
-- '[[IIS Machine Key Exploitation]]'
-- '[[IIS Machine Key Exploitation]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[Kerberos Unconstrained Delegation via SpoolService Abuse]]'
-- '[[Linux Privilege Escalation via SSH Key]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[Mapbox API Token Leakage]]'
-- '[[MS-EFSRPC Abuse with Unconstrained Delegation and PetitPotam Attack]]'
-- '[[Password Extraction from SYSVOL and Group Policy Preferences]]'
-- '[[Shadow Credentials for Windows Hello]]'
-- '[[SSRF Wrapper Credential Access]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twilio API Key Leakage]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Windows - Password Looting via System and Application Logs]]'
-- '[[Windows Privilege Escalation - Powershell History Looting]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[api-key-leaks-detection-with-trufflehog]]'
+- '[[AWS-API-Gateway-Stage-Enumeration]]'
+- '[[AWS-CLI-Configuration]]'
+- '[[AWS-Console-Access-via-API-Keys]]'
+- '[[AWS-IAM-Access-Key-Enumeration]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[List-Secrets-in-AWS-Secrets-Manager]]'
+- '[[Describe-AWS-Secrets-Manager-Secret]]'
+- '[[aws-secretsmanager-resource-based-policy-exfiltration]]'
+- '[[Azure-Access-Token-Retrieval-for-Management-and-Graph-APIs-using-Python]]'
+- '[[Extract-Azure-Access-Tokens-and-Service-Principal-Secrets-from-CLI-and-PowerShell]]'
+- '[[Azure-Managed-Identity-Token-Theft-via-Environment-Variables]]'
+- '[[Scan-DynamoDB-Table-for-Credentials]]'
+- '[[Domain-Takeover-via-Certifried-CVE-2022-26923]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Extract-Credentials-from-SecureString-PowerShell]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Git-Index-File-Recovery]]'
+- '[[Git-Repository-Secrets-Harvesting-with-TruffleHog]]'
+- '[[Gitrob-Secret-Harvesting]]'
+- '[[Recover-Git-Repository-from-Exposed-Dot-Git-Directory]]'
+- '[[Golden-SAML-Attack-via-ADFS]]'
+- '[[Golden-SAML-Attack-Using-Shimit]]'
+- '[[IIS-Machine-Key-Exploitation]]'
+- '[[IIS-Machine-Key-Exploitation]]'
+- '[[IIS-Machine-Key-Exploitation]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[abuse-kerberos-unconstrained-delegation-via-spoolservice]]'
+- '[[Linux-Privilege-Escalation-via-SSH-Key]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[Mapbox-API-Token-Leakage]]'
+- '[[MS-EFSRPC-Abuse-via-PetitPotam-and-Unconstrained-Delegation]]'
+- '[[Extract-and-Decrypt-GPP-Passwords-from-SYSVOL]]'
+- '[[Shadow-Credentials-for-Windows-Hello]]'
+- '[[Exploit-SSRF-to-Access-AWS-Instance-Metadata-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Exploit-Leaked-Twilio-API-Credentials]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Windows-Password-Looting-via-System-and-Application-Logs]]'
+- '[[Windows-Privilege-Escalation-via-Powershell-History-Looting]]'
 ---
 
 # Unsecured Credentials
@@ -74,31 +74,35 @@ procedures:
 
 Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).
 
+
+
 ## Tactics
 
 - [[Credential Access|TA0006 - Credential Access]]
 
 ## Related Procedures (55)
 
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[Algolia API Key Leak Exploit]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[API Key Leaks Detection with TruffleHog]]
-- [[AWS API Gateway Stage Enumeration]]
-- [[AWS CLI Configuration]]
-- [[AWS Console Access via API Keys]]
-- [[AWS IAM Access Key Enumeration]]
-- [[AWS KMS Key Listing]]
-- [[AWS Secret Manager Listing]]
-- [[AWS Secrets Manager - Describe Secret]]
-- [[AWS Secrets Manager Resource-Based Policy Exfiltration]]
-- [[Azure Access Token Retrieval for Management and Graph APIs using Python]]
-- [[Azure Access Tokens and Service Principal Secrets in Azure CLI and PowerShell]]
-- [[Azure Managed Identity Token Theft via Environment Variables]]
-- [[Credential Harvesting from DynamoDB]]
-- [[Domain Takeover via Certifried CVE-2022-26923]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[Exploit-Leaked-Algolia-API-Key-for-Highlight-Pre-Tag-Injection]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[api-key-leaks-detection-with-trufflehog]]
+- [[AWS-API-Gateway-Stage-Enumeration]]
+- [[AWS-CLI-Configuration]]
+- [[AWS-Console-Access-via-API-Keys]]
+- [[AWS-IAM-Access-Key-Enumeration]]
+- [[Describe-AWS-KMS-Key]]
+- [[List-Secrets-in-AWS-Secrets-Manager]]
+- [[Describe-AWS-Secrets-Manager-Secret]]
+- [[aws-secretsmanager-resource-based-policy-exfiltration]]
+- [[Azure-Access-Token-Retrieval-for-Management-and-Graph-APIs-using-Python]]
+- [[Extract-Azure-Access-Tokens-and-Service-Principal-Secrets-from-CLI-and-PowerShell]]
+- [[Azure-Managed-Identity-Token-Theft-via-Environment-Variables]]
+- [[Scan-DynamoDB-Table-for-Credentials]]
+- [[Domain-Takeover-via-Certifried-CVE-2022-26923]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
 
 *...and 35 more*
+
+

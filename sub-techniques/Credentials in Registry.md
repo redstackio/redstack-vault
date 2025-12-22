@@ -10,24 +10,24 @@ parent_technique: '[[Unsecured Credentials|T1552 - Unsecured Credentials]]'
 tactics:
 - '[[Credential Access|TA0006 - Credential Access]]'
 procedures:
-- '[[AWS CLI Configuration]]'
-- '[[AWS IAM Access Key Enumeration]]'
-- '[[AWS KMS Key Listing]]'
-- '[[AWS Secrets Manager - Describe Secret]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Exploiting IIS Machine Keys to Generate ViewState for RCE]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[Facebook Access Token Leakage]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[IIS Machine Key Exploitation via API Key Leaks]]'
-- '[[SSRF Wrapper Credential Access]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Twitter API Key Leak Exploitation]]'
-- '[[Windows Privilege Escalation - Powershell History Looting]]'
+- '[[AWS-CLI-Configuration]]'
+- '[[AWS-IAM-Access-Key-Enumeration]]'
+- '[[Describe-AWS-KMS-Key]]'
+- '[[Describe-AWS-Secrets-Manager-Secret]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Debug-Facebook-Access-Token]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]'
+- '[[Exploit-SSRF-to-Access-AWS-Instance-Metadata-Credentials]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]'
+- '[[Windows-Privilege-Escalation-via-Powershell-History-Looting]]'
 ---
 
 # Credentials in Registry
@@ -61,21 +61,21 @@ This sub-technique is used in the following tactics:
 
 There are 18 procedures using this sub-technique:
 
-- [[AWS CLI Configuration]]
-- [[AWS IAM Access Key Enumeration]]
-- [[AWS KMS Key Listing]]
-- [[AWS Secrets Manager - Describe Secret]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[Exploiting IIS Machine Keys to Generate ViewState for RCE]]
-- [[Facebook Access Token Leakage]]
-- [[Facebook Access Token Leakage]]
-- [[Facebook Access Token Leakage]]
-- [[IIS Machine Key Exploitation via API Key Leaks]]
-- [[IIS Machine Key Exploitation via API Key Leaks]]
-- [[IIS Machine Key Exploitation via API Key Leaks]]
-- [[SSRF Wrapper Credential Access]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Twitter API Key Leak Exploitation]]
-- [[Windows Privilege Escalation - Powershell History Looting]]
+- [[AWS-CLI-Configuration]]
+- [[AWS-IAM-Access-Key-Enumeration]]
+- [[Describe-AWS-KMS-Key]]
+- [[Describe-AWS-Secrets-Manager-Secret]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[Generate-Malicious-ViewState-for-IIS-RCE-Using-Machine-Keys]]
+- [[Debug-Facebook-Access-Token]]
+- [[Debug-Facebook-Access-Token]]
+- [[Debug-Facebook-Access-Token]]
+- [[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]
+- [[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]
+- [[Exploit-IIS-Machine-Key-via-API-Key-Leaks]]
+- [[Exploit-SSRF-to-Access-AWS-Instance-Metadata-Credentials]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Authenticate-with-Twitter-API-Using-Leaked-Key-and-Secret]]
+- [[Windows-Privilege-Escalation-via-Powershell-History-Looting]]

@@ -9,9 +9,9 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]'
-- '[[Enclosed Alphanumeric Server-Side Request Forgery]]'
-- '[[Linux Privilege Escalation - Writable Files Escalation]]'
+- '[[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]'
+- '[[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]'
+- '[[Linux-Privilege-Escalation-via-Writable-Files]]'
 ---
 
 # File Deletion
@@ -21,6 +21,8 @@ procedures:
 ## Description
 
 Malware, tools, or other non-native files dropped or created on a system by an adversary may leave traces behind as to what was done within a network and how. Adversaries may remove these files over the course of an intrusion to keep their footprint low or remove them at the end as part of the post-intrusion cleanup process.There are tools available from the host operating system to perform cleanup, but adversaries may use other tools as well. Examples include native cmd functions such as DEL, secure deletion tools such as Windows Sysinternals SDelete, or other third-party file deletion tools. [1]
+
+
 
 # Detection
 
@@ -268,6 +270,8 @@ Identify unnecessary system utilities, third-party tools, or potentially malicio
 
 ## Related Procedures (3)
 
-- [[Azure AD Connect PTA Backdoor Installation and Log Retrieval]]
-- [[Enclosed Alphanumeric Server-Side Request Forgery]]
-- [[Linux Privilege Escalation - Writable Files Escalation]]
+- [[Install-Azure-AD-Connect-PTA-Backdoor-and-Retrieve-Logs]]
+- [[Bypass-SSRF-Filters-Using-Enclosed-Alphanumerics]]
+- [[Linux-Privilege-Escalation-via-Writable-Files]]
+
+

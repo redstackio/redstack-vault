@@ -8,15 +8,15 @@ created_at: '2023-04-06T00:31:25.692148+00:00'
 updated_at: '2023-05-25T04:23:14.566185+00:00'
 tactics:
 - '[[Persistence|TA0003 - Persistence]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 procedures:
-- '[[Abuse Group Policy Objects with pyGPOAbuse]]'
-- '[[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]'
-- '[[Linux Reverse Shell Persistence with Ncat]]'
-- '[[Linux - SSH Key Predictable PRNG Privilege Escalation]]'
-- '[[Linux - Startup Service Backdoor with Reverse Shell]]'
-- '[[Windows Simple User Startup Persistence]]'
-- '[[Windows VM Persistence with VirtualBox and VHD]]'
+- '[[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]'
+- '[[linux-privilege-escalation-via-ld_preload-and-nopasswd]]'
+- '[[linux-reverse-shell-persistence-via-ncat-systemd]]'
+- '[[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]'
+- '[[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]'
+- '[[Windows-User-Startup-Folder-Persistence]]'
+- '[[Windows-VM-Persistence-with-VirtualBox-and-VHD]]'
 ---
 
 # Boot or Logon Autostart Execution
@@ -29,17 +29,21 @@ Adversaries may configure system settings to automatically execute a program dur
 
 Since some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.
 
+
+
 ## Tactics
 
 - [[Persistence|TA0003 - Persistence]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]
 
 ## Related Procedures (7)
 
-- [[Abuse Group Policy Objects with pyGPOAbuse]]
-- [[Linux - Privilege Escalation via LD_PRELOAD and NOPASSWD]]
-- [[Linux Reverse Shell Persistence with Ncat]]
-- [[Linux - SSH Key Predictable PRNG Privilege Escalation]]
-- [[Linux - Startup Service Backdoor with Reverse Shell]]
-- [[Windows Simple User Startup Persistence]]
-- [[Windows VM Persistence with VirtualBox and VHD]]
+- [[Abuse-Group-Policy-Objects-with-pyGPOAbuse]]
+- [[linux-privilege-escalation-via-ld_preload-and-nopasswd]]
+- [[linux-reverse-shell-persistence-via-ncat-systemd]]
+- [[Linux-SSH-Key-Predictable-PRNG-Privilege-Escalation]]
+- [[Linux-Startup-Service-Backdoor-with-Reverse-Shell]]
+- [[Windows-User-Startup-Folder-Persistence]]
+- [[Windows-VM-Persistence-with-VirtualBox-and-VHD]]
+
+

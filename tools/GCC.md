@@ -1,67 +1,104 @@
 ---
-id: a93b7715-48a8-4b30-8e43-e0183cac847b
-name: GCC
-type: tool
-verified: true
-created_at: '2020-02-15T00:51:20.966969+00:00'
-updated_at: '2023-05-30T19:49:18.315065+00:00'
-commands:
-- '[[gcc Build a Program with pthread and libcrypt]]'
-- '[[gcc Compile C Code Binary]]'
-- '[[linuxprivchecker.py Scan a Linux Filesystem for Vulnerabilities]]'
-- '[[make Compile an Application with a Makefile]]'
-platforms:
-- Linux
+url: 'https://gcc.gnu.org/'
 tags:
-- '[[Build]]'
+  - compiler
+  - c
+type: tool
+verified: false
+platforms:
+  - Linux
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:29:56.933Z'
+id: 71090631-fce7-41fc-a92d-4fa3f1c4f399
+validated: true
+submitted: true
 ---
+# gcc
 
-# GCC
-
-**Status**: ✓ Verified
+**Status**: Unverified
 
 ## Overview
 
-The GNU project C and C++ compiler (GCC) is used to invoke the processing, compilation, assembly and linking of software when building it from C/C++ source code. While GCC can be invoked from the command line, it is often used in conjunction with a "Makefile", which specifies the options required t
+GCC (GNU Compiler Collection) is used to compile the logrotten C source into an executable for the privilege escalation exploit.
 
 ## Description
 
-# Description
+Compiles C programs on Unix-like systems, essential for building custom exploits from source in environments without pre-built binaries.
 
-The GNU project C and C++ compiler (GCC) is used to invoke the processing, compilation, assembly and linking of software when building it from C/C++ source code. While GCC can be invoked from the command line, it is often used in conjunction with a "Makefile", which specifies the options required to build more complex programs. GCC can also be used to build libraries and kernel modules, and can cross-compile for other systems and architectures, assuming the proper supporting packages are installed.
+## Features
 
+- Feature 1: C/C++ compilation
+- Feature 2: Optimization flags
+- Feature 3: Linking libraries
 
+## Installation
 
-# Example
+### Requirements
 
+- build-essential package
 
+### Install Commands
 
-{{EMBEDDED_COMMAND_725d499e-30f5-4584-92fa-65ebb36f4ca3}}
+```bash
+apt-get install build-essential
+```
 
+## Basic Usage
 
+```bash
+gcc --help
+```
 
-# Installation
+### Common Options
 
-## Install on Debian/Ubuntu
+| Option | Description |
+|--------|-------------|
+| -o | Output file name |
+| -Wall | Enable warnings |
 
+## Examples
 
+### Example 1: Basic Usage
 
+```bash
+gcc -o logrotten logrotten.c
+```
 
+### Example 2: Advanced Usage
 
+```bash
+gcc -O2 -o logrotten logrotten.c
+```
 
+## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
 
+### Techniques
 
-## Platforms
+- [[Remote File Copy]] Ingress Tool Transfer (via compilation)
 
-- Linux
+### Tactics
 
-## Commands (1)
+- [[Execution]] Execution
 
-- [[gcc Compile C Code Binary]]
+## Detection
 
-## Tags
+Indicators and methods for detecting this tool's usage:
 
-- [[Build]]
+- gcc process spawning in /tmp/
+- New executables created post-clone
+- Compilation errors in logs
 
+## Related Procedures
 
+- [[procedures/Compile-and-Execute-Logrotten-Exploit]]
+
+## Related Tools
+
+- [[tools/git]]
+- [[tools/clang]]
+
+## References
+
+- Official site: https://gcc.gnu.org/

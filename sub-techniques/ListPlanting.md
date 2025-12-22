@@ -9,7 +9,7 @@ updated_at: '2023-04-06T00:31:27.130844+00:00'
 parent_technique: '[[Process Injection|T1055 - Process Injection]]'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
-- '[[Privilege Escalation|TA0004 - Privilege Escalation]]'
+- '[[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]'
 ---
 
 # ListPlanting
@@ -41,4 +41,4 @@ Finally, the payload is triggered by sending the <code>LVM_SORTITEMS</code> mess
 This sub-technique is used in the following tactics:
 
 - [[Defense Evasion|TA0005 - Defense Evasion]]
-- [[Privilege Escalation|TA0004 - Privilege Escalation]]
+- [[Privilege-Escalation-via-Direct-URL-Access|TA0004 - Privilege Escalation]]

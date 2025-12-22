@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Impact|TA0040 - Impact]]'
 procedures:
-- '[[Active Directory Account Enumeration using CrackMapExec]]'
-- '[[Active Directory User Enumeration]]'
+- '[[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]'
+- '[[Active-Directory-User-Enumeration]]'
 ---
 
 # Data Encrypted for Impact
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources. They can attempt to render stored data inaccessible by encrypting files or data on local and remote drives and withholding access to a decryption key. This may be done in order to extract monetary compensation from a victim in exchange for decryption or a decryption key (ransomware) or to render data permanently inaccessible in cases where the key is not saved or transmitted.[1][2][3][4] In the case of ransomware, it is typical that common user files like Office documents, PDFs, images, videos, audio, text, and source code files will be encrypted. In some cases, adversaries may encrypt critical system files, disk partitions, and the MBR.[3]To maximize impact on the target organization, malware designed for encrypting data may have worm-like features to propagate across a network by leveraging other attack techniques like Valid Accounts, Credential Dumping, and Windows Admin Shares.[2][3]
+
+
 
 # Detection
 
@@ -87,5 +89,7 @@ In some cases, the means to decrypt files affected by a ra
 
 ## Related Procedures (2)
 
-- [[Active Directory Account Enumeration using CrackMapExec]]
-- [[Active Directory User Enumeration]]
+- [[Active-Directory-Machine-Account-Enumeration-using-CrackMapExec]]
+- [[Active-Directory-User-Enumeration]]
+
+

@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Command and Control|TA0011 - Command and Control]]'
 procedures:
-- '[[MYSQL Injection with Out of Band DNS Exfiltration]]'
-- '[[PHP Juggling Type and Magic Hashes for Hashing an Empty Array]]'
+- '[[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]'
+- '[[Demonstrate-PHP-Type-Juggling-with-Empty-Array-Hashing]]'
 ---
 
 # Standard Cryptographic Protocol
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Adversaries may explicitly employ a known encryption algorithm to conceal command and control traffic rather than relying on any inherent protections provided by a communication protocol. Despite the use of a secure algorithm, these implementations may be vulnerable to reverse engineering if necessary secret keys are encoded and/or generated within malware samples/configuration files.
+
+
 
 # Detection
 
@@ -175,5 +177,7 @@ Network intrusion detection and prevention systems that use network signatures t
 
 ## Related Procedures (2)
 
-- [[MYSQL Injection with Out of Band DNS Exfiltration]]
-- [[PHP Juggling Type and Magic Hashes for Hashing an Empty Array]]
+- [[MySQL-SQL-Injection-for-Out-of-Band-DNS-Exfiltration]]
+- [[Demonstrate-PHP-Type-Juggling-with-Empty-Array-Hashing]]
+
+

@@ -9,12 +9,12 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[Linked Database Query Execution]]'
-- '[[Search Windows for Installed Patches and Hotfixes]]'
-- '[[Windows Privilege Escalation via Runas]]'
-- '[[Windows - WMIExec with Impacket]]'
-- '[[WMI COM Functions for Code Execution]]'
-- '[[WMI Remote Calculator Execution]]'
+- '[[Execute-Queries-via-Linked-SQL-Servers]]'
+- '[[search-windows-installed-patches-hotfixes]]'
+- '[[windows-privilege-escalation-via-runas]]'
+- '[[remote-command-execution-via-wmi-using-impacket]]'
+- '[[Execute-Code-via-WMI-COM-Functions-in-DOCM-Files]]'
+- '[[WMI-Remote-Process-Creation-via-WMIC]]'
 ---
 
 # Windows Management Instrumentation
@@ -24,6 +24,8 @@ procedures:
 ## Description
 
 Windows Management Instrumentation (WMI) is a Windows administration feature that provides a uniform environment for local and remote access to Windows system components. It relies on the WMI service for local and remote access and the server message block (SMB) [1] and Remote Procedure Call Service (RPCS) [2] for remote access. RPCS operates over port 135. [3]An adversary can use WMI to interact with local and remote systems and use it as a means to perform many tactic functions, such as gathering information for Discovery and remote Execution of files as part of Lateral Movement. [4]
+
+
 
 # Detection
 
@@ -155,9 +157,11 @@ Disabling WMI or RPCS may cause system instability and should be evaluated to as
 
 ## Related Procedures (6)
 
-- [[Linked Database Query Execution]]
-- [[Search Windows for Installed Patches and Hotfixes]]
-- [[Windows Privilege Escalation via Runas]]
-- [[Windows - WMIExec with Impacket]]
-- [[WMI COM Functions for Code Execution]]
-- [[WMI Remote Calculator Execution]]
+- [[Execute-Queries-via-Linked-SQL-Servers]]
+- [[search-windows-installed-patches-hotfixes]]
+- [[windows-privilege-escalation-via-runas]]
+- [[remote-command-execution-via-wmi-using-impacket]]
+- [[Execute-Code-via-WMI-COM-Functions-in-DOCM-Files]]
+- [[WMI-Remote-Process-Creation-via-WMIC]]
+
+

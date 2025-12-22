@@ -9,8 +9,8 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Defense Evasion|TA0005 - Defense Evasion]]'
 procedures:
-- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
-- '[[VBA-AMSI Bypass]]'
+- '[[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]'
+- '[[VBA-AMSI-Bypass-via-Memory-Patching]]'
 ---
 
 # Software Packing
@@ -20,6 +20,8 @@ procedures:
 ## Description
 
 Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory.Utilities used to perform software packing are called packers. Example packers are MPRESS and UPX. A more comprehensive list of known packers is available, [1] but adversaries may create their own packing techniques that do not leave the same artifacts as well-known packers to evade defenses.
+
+
 
 # Detection
 
@@ -115,5 +117,7 @@ Identify and prevent execution of potentially malicious software that may have b
 
 ## Related Procedures (2)
 
-- [[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]
-- [[VBA-AMSI Bypass]]
+- [[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]
+- [[VBA-AMSI-Bypass-via-Memory-Patching]]
+
+

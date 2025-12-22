@@ -9,14 +9,14 @@ updated_at: '2023-05-29T16:48:53.672970+00:00'
 tactics:
 - '[[Execution|TA0002 - Execution]]'
 procedures:
-- '[[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]'
-- '[[Download and Execute a PowerShell Script]]'
-- '[[Encode and Execute a Base64 PowerShell Command]]'
-- '[[MSSQL Server Python Script Execution]]'
-- '[[Powershell Script Execution with Cobalt Strike]]'
-- '[[PowerView Download and Execution]]'
-- '[[SQL Agent Job PowerShell Execution]]'
-- '[[Windows - Download and execute via WebDAV]]'
+- '[[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]'
+- '[[download-and-execute-remote-powershell-script]]'
+- '[[Encode-and-Execute-Base64-PowerShell-Command]]'
+- '[[MSSQL-Execute-Python-and-PowerShell-Scripts]]'
+- '[[powershell-script-execution-with-cobalt-strike]]'
+- '[[Download-and-Execute-PowerView-for-AD-Reconnaissance]]'
+- '[[sql-agent-job-powershell-execution]]'
+- '[[Windows-Download-and-Execute-via-WebDAV]]'
 ---
 
 # PowerShell
@@ -26,6 +26,8 @@ procedures:
 ## Description
 
 PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system. [1] Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the Start-Process cmdlet which can be used to run an executable and the Invoke-Command cmdlet which runs a command locally or on a remote computer. PowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.Administrator permissions are required to use PowerShell to connect to remote systems.A number of PowerShell-based offensive testing tools are available, including Empire,  PowerSploit, [2] and PSAttack. [3]PowerShell commands/scripts can also be executed without directly invoking the powershell.exe binary through interfaces to PowerShell's underlying System.Management.Automation assembly exposed through the .NET framework and Windows Common Language Interface (CLI). [4][5] [6]
+
+
 
 # Detection
 
@@ -235,11 +237,13 @@ It may be possible to remove PowerShell from systems when not needed, but a revi
 
 ## Related Procedures (8)
 
-- [[ASR Bypass Create Child Process Rule 5 and Open PowerShell from Command Prompt]]
-- [[Download and Execute a PowerShell Script]]
-- [[Encode and Execute a Base64 PowerShell Command]]
-- [[MSSQL Server Python Script Execution]]
-- [[Powershell Script Execution with Cobalt Strike]]
-- [[PowerView Download and Execution]]
-- [[SQL Agent Job PowerShell Execution]]
-- [[Windows - Download and execute via WebDAV]]
+- [[Bypass-ASR-Rule-5-via-WMI-to-Execute-PowerShell]]
+- [[download-and-execute-remote-powershell-script]]
+- [[Encode-and-Execute-Base64-PowerShell-Command]]
+- [[MSSQL-Execute-Python-and-PowerShell-Scripts]]
+- [[powershell-script-execution-with-cobalt-strike]]
+- [[Download-and-Execute-PowerView-for-AD-Reconnaissance]]
+- [[sql-agent-job-powershell-execution]]
+- [[Windows-Download-and-Execute-via-WebDAV]]
+
+
