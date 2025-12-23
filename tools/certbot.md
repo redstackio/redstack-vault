@@ -1,47 +1,47 @@
 ---
 id: tool-certbot
-url: 'https://certbot.eff.org/#ubuntutrusty-apache'
+url: 'https://certbot.eff.org/'
 tags:
   - ssl
-  - lets-encrypt
+  - tls
 type: tool
 verified: false
 platforms:
   - Linux
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:31:43.042Z'
+updated_at: '2025-12-14T04:38:39.609Z'
 validated: true
 submitted: true
 ---
-# certbot
+# Certbot
 
 **Status**: Unverified
 
 ## Overview
 
-Utility for obtaining free SSL/TLS certificates from Let's Encrypt, used to secure taken-over subdomains for HTTPS exploitation.
+Certbot is an automated tool for obtaining and installing free Let's Encrypt SSL/TLS certificates, crucial for securing taken-over subdomains to handle secure cookies.
 
 ## Description
 
-Automates domain validation via HTTP challenge, installing certs for Apache/Nginx, critical for mimicking legitimate HTTPS traffic.
+In attacks, it's used post-takeover to enable HTTPS on malicious servers, bypassing secure flag restrictions on session cookies like UBIC_AUTH.
 
 ## Features
 
-- Feature 1: Automated renewal
-- Feature 2: Webroot validation
-- Feature 3: Integration with web servers
+- Feature 1: Automated domain validation and cert renewal
+- Feature 2: Integration with Apache/Nginx
+- Feature 3: HTTP-01 challenge via file hosting
 
 ## Installation
 
 ### Requirements
 
-- Python 3
-- Web server with document root
+- Ubuntu/Debian with Apache
 
 ### Install Commands
 
 ```bash
-apt install certbot
+# On Ubuntu
+apt install certbot python3-certbot-apache
 ```
 
 ## Basic Usage
@@ -54,7 +54,7 @@ certbot --help
 
 | Option | Description |
 |--------|-------------|
-| --webroot | Use webroot plugin |
+| --apache | Auto-configure for Apache |
 | -d | Domain to certify |
 
 ## Examples
@@ -62,13 +62,13 @@ certbot --help
 ### Example 1: Basic Usage
 
 ```bash
-certbot certonly --webroot -w /var/www -d example.com
+certbot certonly --standalone -d example.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-certbot renew --dry-run
+certbot --apache -d ping.ubnt.com
 ```
 
 ## MITRE ATT&CK Mapping
@@ -77,27 +77,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[External Remote Services]] External Remote Services
+- [[Remote File Copy]]
 
 ### Tactics
 
-- [[Initial Access]] Initial Access
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Let's Encrypt rate limit hits
-- Unusual cert issuances for subdomains
+- Certificate Transparency logs showing new certs for subdomains
+- Validation file requests during issuance
 
 ## Related Procedures
 
-- [[procedures/Create-AWS-Cloudfront-Distribution-for-Takeover]]
+- [[procedures/Host-Malicious-Content-on-Taken-Over-Subdomain]]
 
 ## Related Tools
 
-- [[GoDaddy Domain Verification]]
+- [[tools/acme.sh]]
+- [[tools/GoDaddy-Domain-Verification]]
 
 ## References
 
-- EFF Certbot docs
+- Official documentation: https://certbot.eff.org/docs/

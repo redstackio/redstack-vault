@@ -1,78 +1,84 @@
 ---
-url: ''
+url: 'https://www.openssl.org/'
 tags:
-  - ssl-test
-  - debug
+  - https
+  - network
+  - tls
 type: tool
-verified: false
 platforms:
   - Linux
-  - Windows
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:31:11.028Z'
-id: af223ee3-4b90-4fbc-b200-b0dbf0411046
+  - Windows
+description: >-
+  Command-line tool for establishing HTTPS connections and sending custom
+  requests quietly.
+id: 4ac14abe-222a-4216-877c-49595e3434e0
+created_at: '2025-12-14T03:16:25.616Z'
+updated_at: '2025-12-14T03:16:25.616Z'
+verified: false
 validated: true
 submitted: true
 ---
-# openssl-s-client
+# OpenSSL-s-client
 
 **Status**: Unverified
 
 ## Overview
 
-OpenSSL command for establishing SSL/TLS client connections to test handshakes, certificates, and ciphers in security testing.
+OpenSSL's s_client is a diagnostic tool for testing SSL/TLS connections, used here to pipe raw HTTP data over HTTPS without verbose output, enabling precise request crafting for vulnerability exploitation.
 
 ## Description
 
-Used to verify anonymous ciphers on SMTP ports by restricting to aNULL, simulating MITM without auth on targets like apps.owncloud.com.
+It establishes a client-side TLS connection to a server, allowing manual HTTP request input. In security testing, it's paired with scripts to send unencoded payloads to web applications, as in this stored XSS injection.
 
 ## Features
 
-- Feature 1: Custom cipher specification
-- Feature 2: Certificate inspection
-- Feature 3: STARTTLS support
+- Feature 1: Quiet mode to suppress handshake details
+- Feature 2: Connect to specific host/port for HTTPS
+- Feature 3: Bidirectional data piping for custom protocols
 
 ## Installation
 
 ### Requirements
 
-- OpenSSL package
+- OpenSSL library (usually pre-installed on Unix-like systems)
 
 ### Install Commands
 
 ```bash
-# On Ubuntu
-apt install openssl
-# On macOS
+# On Ubuntu/Debian
+sudo apt update && sudo apt install openssl
+
+# On macOS (via Homebrew)
 brew install openssl
 ```
 
 ## Basic Usage
 
 ```bash
-openssl s_client --help
+openssl s_client -connect example.com:443 -quiet
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -connect | Host:port |
-| -cipher | Cipher list |
+| `-connect` | Host:port to connect to |
+| `-quiet` | Suppress verbose output |
+| `-showcerts` | Display server certificates |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-openssl s_client -connect target:443
+openssl s_client -connect drive.uber.com:443 -quiet
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-openssl s_client -connect target:465 -cipher aNULL
+echo "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n" | openssl s_client -connect example.com:443 -quiet
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,28 +87,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[LLMNR-NBT-NS Poisoning and SMB Relay]]
+- [[Standard Application Layer Protocol]]
+- [[Network Service Scanning]]
 
 ### Tactics
 
-- [[Initial Access]]
+- [[Command and Control]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Logs of incomplete handshakes or cipher mismatches
-- Specific error patterns in SSL logs
+- Firewall logs for outbound TLS connections from openssl
+- IDS alerts on anomalous HTTPS requests
 
 ## Related Procedures
 
-- [[procedures/Test-Anonymous-Cipher-Handshake-with-OpenSSL]]
+- [[procedures/Inject-Malformed-HTTP-Request-to-Trigger-Stored-XSS]]
 
 ## Related Tools
 
-- [[tools/testssl-sh]]
-- [[tools/sslyze]]
+- [[tools/Perl]]
 
 ## References
 
-- OpenSSL docs: https://www.openssl.org/docs/man1.1.1/man1/s_client.html
+- Official documentation: https://www.openssl.org/docs/man1.1.1/man1/s_client.html

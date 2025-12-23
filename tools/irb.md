@@ -1,16 +1,20 @@
 ---
-url: ''
+url: 'https://ruby-doc.org/stdlib-2.7.0/libdoc/irb/rdoc/IRB.html'
 tags:
   - ruby
-  - console
+  - interactive
+  - testing
 type: tool
-verified: false
 platforms:
-  - GitLab
   - Ruby
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:29:20.395Z'
-id: 0c83f49a-e926-41ca-99e5-c25339d9d0d9
+  - Linux
+  - macOS
+  - Windows
+description: Interactive Ruby shell for executing and testing Ruby code snippets.
+id: bb9d1743-2442-48d5-95ea-3b8c8b57347c
+created_at: '2025-12-14T04:08:48.861Z'
+updated_at: '2025-12-14T04:08:48.861Z'
+verified: false
 validated: true
 submitted: true
 ---
@@ -20,60 +24,62 @@ submitted: true
 
 ## Overview
 
-Interactive Ruby Shell (IRB), used in GitLab's Rails console to test code, permissions, and object interactions during vulnerability research.
+IRB (Interactive Ruby) is the standard REPL for Ruby, used here to test gems like private_address_check by executing code interactively, ideal for quick vulnerability verification in security research.
 
 ## Description
 
-IRB is Ruby's REPL, extended in GitLab via 'gitlab-rails console' for backend testing. In security testing, it's crucial for verifying authorization logic like Ability.allowed? without type checks, aiding in exploit validation.
+IRB provides an interactive environment to load Ruby libraries, run methods, and inspect outputs without writing full scripts. In offensive security, it's commonly used for prototyping exploits, testing library behaviors, and debugging Ruby-based applications.
 
 ## Features
 
-- Feature 1: Live code execution in Rails environment
-- Feature 2: Access to models like User, Project, Group
-- Feature 3: Permission and ability testing
+- Feature 1: Interactive code execution with immediate feedback
+- Feature 2: Support for requiring gems and running class methods
+- Feature 3: History and auto-completion for efficient testing
 
 ## Installation
 
 ### Requirements
 
-- GitLab installation
-- SSH/root access to server
+- Ruby 2.0+ installed
 
 ### Install Commands
 
 ```bash
-# Enter Rails console
-sudo gitlab-rails console
+# IRB comes with Ruby; install Ruby if needed
+# On Ubuntu: sudo apt install ruby
+# On macOS: brew install ruby
 ```
 
 ## Basic Usage
 
 ```bash
-gitlab-rails console
-irb(main):001:0>
+irb
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -r file | Require a library |
-| exit | Quit IRB |
+| `-r` | Require a library on startup, e.g., `irb -r private_address_check` |
+| `--repl` | Use a specific REPL mode |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```ruby
-User.find(1)
+```bash
+irb
+> require 'private_address_check'
+> PrivateAddressCheck.private_address?("0.0.0.0")
+false
 ```
 
 ### Example 2: Advanced Usage
 
-Test permissions:
-
-```ruby
-Ability.allowed?(User.find(2), :delete_metrics_dashboard_annotation, Group.find(7))
+```bash
+irb -r private_address_check
+> PrivateAddressCheck.private_address?("127.0.0.1")
+true
 ```
 
 ## MITRE ATT&CK Mapping
@@ -82,27 +88,27 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]]
+- [[Command-Line Interface]]
 
 ### Tactics
 
-- [[Discovery]]
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Console access logs on server
-- Unusual Ruby executions in production
+- Process monitoring for `irb` executions in non-development contexts
+- Log analysis for Ruby gem loads in security-sensitive environments
 
 ## Related Procedures
 
+- [[procedures/Test-Private-Address-Check-Gem-Bypass]]
 
 ## Related Tools
 
-- [[tools/GraphQL-Explorer]]
+- [[Ruby]]
 
 ## References
 
-- Ruby IRB Documentation
-- GitLab Rails Console Guide
+- Official Ruby IRB documentation

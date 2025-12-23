@@ -1,8 +1,9 @@
 ---
-id: uuid-tool-3
+id: kafka-python-001
 url: 'https://kafka-python.readthedocs.io/'
 tags:
   - kafka
+  - api
   - library
 type: tool
 verified: false
@@ -10,27 +11,27 @@ platforms:
   - Linux
   - Python
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:23:54.027Z'
+updated_at: '2025-12-14T03:46:09.275Z'
 validated: true
 submitted: true
 ---
-# kafka-python
+# Kafka-Python
 
 **Status**: Unverified
 
 ## Overview
 
-kafka-python is a Python client library for Apache Kafka, used in exploit scripts to configure connectors and interact with Kafka services like Aiven's managed Connect.
+kafka-python is a Python client library for interacting with Apache Kafka, including Connect REST APIs, used here to configure connectors for exploitation.
 
 ## Description
 
-This library enables programmatic creation and management of Kafka topics and connectors, crucial for exploits involving sink connectors to upload files or send SSRF requests in RCE chains.
+It provides classes for producers, consumers, and admin clients, enabling script-based management of Kafka Connect. In the PoC, it's used to POST connector configurations for JdbcSink and HttpSink to trigger upload and SSRF.
 
 ## Features
 
-- Feature 1: Producer/consumer APIs for Kafka
-- Feature 2: Connector configuration support
-- Feature 3: Admin client for cluster management
+- Feature 1: REST API client for Connect management
+- Feature 2: JSON serialization for configs
+- Feature 3: Error handling for cluster interactions
 
 ## Installation
 
@@ -47,29 +48,28 @@ pip install kafka-python
 ## Basic Usage
 
 ```bash
-python -c "from kafka import KafkaAdminClient"
+python3 -c "from kafka import KafkaAdminClient; print('Installed')"
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Library imported in scripts |
+| N/A | Library, used via import |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-```python
-from kafka.admin import KafkaAdminClient
-admin_client = KafkaAdminClient(bootstrap_servers='localhost:9092')
+```bash
+python3 -c "from kafka.admin import KafkaAdminClient; admin = KafkaAdminClient(bootstrap_servers='localhost:9092')"
 ```
 
 ### Example 2: Advanced Usage
 
-```python
-# Create connector config
-config = {'connector.class': 'io.confluent.connect.jdbc.JdbcSinkConnector'}
+```bash
+# In script: configure connector
+python3 poc.py
 ```
 
 ## MITRE ATT&CK Mapping
@@ -78,29 +78,35 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]] Python
 - [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Initial Access]] Initial Access
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Python import logs for kafka modules
-- Anomalous connector creations via API
-- Traffic to Kafka endpoints from non-standard clients
+- Detection method 1: Monitor pip installs and python imports in logs
+- Detection method 2: API audit logs for connector creations from unknown clients
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/python3]]
+- [[Related Tool: Kafka Tools]]
+- [[Related Tool: Python3]]
 
 ## References
 
 - Official documentation: https://kafka-python.readthedocs.io/
-- Related resources: Kafka Connect API docs
+- Related resources: Kafka Connect API Guide

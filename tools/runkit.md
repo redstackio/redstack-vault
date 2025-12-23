@@ -1,38 +1,36 @@
 ---
-id: m3n4o5p6-q7r8-9012-mnop-345678901234
-name: runkit
+id: tool-runkit
+url: 'http://runkit.com/phra/notevil---sandbox-escape'
+tags:
+  - nodejs
+  - online-ide
 type: tool
 verified: false
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:23:24.299Z'
 platforms:
   - Web
   - Node.js
-tags:
-  - playground
-  - testing
-url: 'http://runkit.com/phra/notevil---sandbox-escape'
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T03:16:08.422Z'
 validated: true
 submitted: true
 ---
-
-# runkit
+# RunKit
 
 **Status**: Unverified
 
 ## Overview
 
-Runkit is an online Node.js playground for executing and sharing code snippets, useful for quickly testing vulnerabilities like the notevil sandbox escape without local setup.
+RunKit is an online Node.js environment for executing and sharing JavaScript code snippets, ideal for testing POCs like the notevil sandbox escape.
 
 ## Description
 
-It provides a REPL-like interface with npm integration, ideal for PoC development in offensive security. The specific example at the URL demonstrates the notevil exploit.
+It provides a REPL-like interface in the browser, supporting npm requires and console output, used here to demonstrate RCE without local setup.
 
 ## Features
 
-- Feature 1: Instant Node.js execution in browser
-- Feature 2: npm package require support
-- Feature 3: Shareable notebooks for PoCs
+- Feature 1: Instant Node.js execution
+- Feature 2: npm package integration
+- Feature 3: Shareable notebooks
 
 ## Installation
 
@@ -42,29 +40,29 @@ It provides a REPL-like interface with npm integration, ideal for PoC developmen
 
 ### Install Commands
 
-No installation; access via web.
+No installation; access via URL.
 
 ## Basic Usage
 
 ```bash
-# Visit https://runkit.com and paste code
+# Visit and paste code
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| N/A | Web-based, no CLI |
+| N/A | Browser-based |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Paste require('notevil') and safeEval code into a new notebook.
+Visit http://runkit.com and run require('notevil').
 
 ### Example 2: Advanced Usage
 
-Use for multi-step exploits with console.log outputs.
+Paste full POC for sandbox escape.
 
 ## MITRE ATT&CK Mapping
 
@@ -72,28 +70,21 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[JavaScript]] JavaScript
+- [[JavaScript]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Execution]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Traffic to runkit.com domains
-- Embedded runkit iframes in testing docs
+- Network traffic to runkit.com
+- Embedded Node.js execution logs
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
@@ -101,4 +92,4 @@ LIMIT 10
 
 ## References
 
-- http://runkit.com/phra/notevil---sandbox-escape
+- Official site: runkit.com

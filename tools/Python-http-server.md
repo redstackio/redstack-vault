@@ -1,77 +1,80 @@
 ---
-id: tool-python-http-server
+id: tool-python-http-001
 url: 'https://docs.python.org/3/library/http.server.html'
+name: Python-HTTP-Server
 tags:
-  - hosting
-  - static-server
+  - listener
+  - http
+  - poc
 type: tool
 verified: false
 platforms:
+  - Linux
   - macOS
+  - Windows
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:28:12.925Z'
+updated_at: '2025-12-14T04:39:02.092Z'
 validated: true
 submitted: true
 ---
-# Python-http-server
+# Python-HTTP-Server
 
 **Status**: Unverified
 
 ## Overview
 
-Python's http.server is a built-in module for creating a simple HTTP server to host static files, ideal for quick demos of web exploits like burp.html in security testing.
+Python's built-in HTTP server module is a lightweight tool for serving files or acting as a request listener in security testing, commonly used in SSRF POCs to capture application fetches without needing external dependencies.
 
 ## Description
 
-This tool serves files from the current directory over HTTP, defaulting to port 8000. In the Burp attack, it's used to host the exploit page locally, allowing the browser to access JS payloads without complex setup. No installation needed beyond Python 3.
+The http.server module provides a simple, single-threaded HTTP server ideal for development and testing. In offensive security, it's used to listen for inbound connections from vulnerable apps, logging requests to confirm exploits like SSRF. It supports GET/POST handling and can be bound to specific interfaces/ports. No installation beyond Python is required.
 
 ## Features
 
-- Feature 1: Serves static HTML/JS files
-- Feature 2: Directory listing if no index.html
-- Feature 3: Customizable port and bindings
+- Feature 1: Basic HTTP/1.1 request handling and logging
+- Feature 2: Customizable port and bind address
+- Feature 3: Serves directory contents or responds to all paths
 
 ## Installation
 
 ### Requirements
 
-- Python 3.6+
+- Python 3.x
 
 ### Install Commands
 
 ```bash
-# Built-in, no install needed
-python3 --version
+# Python is pre-installed on most systems; otherwise:
+sudo apt install python3  # On Debian/Ubuntu
 ```
 
 ## Basic Usage
 
 ```bash
-python -m http.server
+python3 -m http.server --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| Port arg | e.g., python -m http.server 8080 |
-| --bind | Bind to specific IP (default 0.0.0.0) |
+| `-p PORT, --port PORT` | Port to serve on (default 8000) |
+| `--bind ADDRESS` | IP to bind to (default 0.0.0.0) |
+| `-d DIRECTORY` | Directory to serve |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-python -m http.server
+python3 -m http.server 4444
 ```
-Serves on port 8000.
 
 ### Example 2: Advanced Usage
 
 ```bash
-python -m http.server 9000 --bind 127.0.0.1
+python3 -m http.server 4444 --bind 127.0.0.1
 ```
-Local-only on port 9000.
 
 ## MITRE ATT&CK Mapping
 
@@ -79,27 +82,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Remote File Copy]] Ingress Tool Transfer
+- [[Active Scanning]] Active Scanning
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Reconnaissance]] Reconnaissance
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Process: python -m http.server
-- Network: Listening on port 8000
-- Logs: Console output in terminal
+- Network scans showing port 4444 open with basic HTTP responses
+- Logs of simple 200/404 responses without advanced features
+- Process lists including python3 -m http.server
 
 ## Related Procedures
 
-- [[procedures/Host-Burp-Exploit-Page]]
+- [[procedures/Setup-HTTP-Listener-for-SSRF-POC]]
 
 ## Related Tools
 
-- [[tools/Burp-Suite]]
+- [[netcat]]
+- [[SimpleHTTPServer]]
 
 ## References
 

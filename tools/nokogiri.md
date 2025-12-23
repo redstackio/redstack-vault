@@ -1,41 +1,43 @@
 ---
-id: tool-005
+id: tool-uuid-1
 url: 'https://nokogiri.org/'
 tags:
-  - library
-  - parsing
+  - parser
+  - xml
+  - html
 type: tool
 verified: false
 platforms:
-  - Linux
-created_at: '2024-01-01T00:00:00Z'
-updated_at: '2025-12-14T17:23:36.594Z'
+  - Ruby
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T03:16:25.817Z'
 validated: true
 submitted: true
 ---
-# nokogiri
+# Nokogiri
 
 **Status**: Unverified
 
 ## Overview
 
-Nokogiri is a Ruby gem for parsing HTML and XML, dependency for Drupalgeddon2 to handle form data.
+Nokogiri is an XML/HTML parsing library for Ruby, used by Rails for sanitization. Implementation differences between JRuby (nekohtml) and CRuby cause the XSS vulnerability in this context.
 
 ## Description
 
-Enables secure parsing in exploits, extracting elements like form_build_id from Drupal responses.
+Nokogiri provides robust parsing but the JRuby variant uses Java's nekohtml, leading to quirks in handling self-closing tags and nesting, allowing script preservation in sanitizers.
 
 ## Features
 
-- Feature 1: HTML/XML parsing
-- Feature 2: XPath/CSS selectors
-- Feature 3: Fast performance
+- Feature 1: Fast XML/HTML parsing with XPath/CSS selectors
+- Feature 2: Sanitization support via Rails integration
+- Feature 3: Cross-implementation (native Ruby vs. Java)
 
 ## Installation
 
 ### Requirements
 
-- Ruby
+- Ruby 2.5+ or JRuby
+- libxml2 and libxslt (for CRuby)
 
 ### Install Commands
 
@@ -45,25 +47,44 @@ gem install nokogiri
 
 ## Basic Usage
 
-```bash
-# Via Ruby script
+```ruby
+require 'nokogiri'
+doc = Nokogiri::HTML('<html><body></body></html>')
+puts doc
 ```
 
 ### Common Options
 
-N/A; library usage.
+| Option | Description |
+|--------|-------------|
+| `-n` | No strict parsing |
+| `--use-dlibs` | Use system libs (CRuby) |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-In script: require 'nokogiri'; doc = Nokogiri::HTML(response)
+```ruby
+html = '<select><style>script</style></select>'
+doc = Nokogiri::HTML(html)
+puts doc.to_html
+```
+
+### Example 2: Advanced Usage
+
+```ruby
+doc = Nokogiri::HTML(input, nil, 'UTF-8')
+doc.css('script').remove  # Manual scrubbing
+```
 
 ## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
+
 ### Techniques
 
-- [[Python]]
+- [[Exploit Public-Facing Application]]
+- [[JavaScript]]
 
 ### Tactics
 
@@ -71,16 +92,20 @@ In script: require 'nokogiri'; doc = Nokogiri::HTML(response)
 
 ## Detection
 
-- Gem installation logs
+Indicators and methods for detecting this tool's usage:
+
+- Gemfile entries for nokogiri
+- Parsing errors in JRuby logs indicating nekohtml
+- Anomalous HTML outputs in app responses
 
 ## Related Procedures
 
-- [[procedures/Download-and-Setup-Drupalgeddon2-Exploit]]
 
 ## Related Tools
 
-- [[Related Tool: BeautifulSoup]]
+- [[tools/rails-html-sanitizer]]
 
 ## References
 
-- https://nokogiri.org/tutorials
+- Official documentation: https://nokogiri.org/tutorials
+- Vulnerability report: https://hackerone.com/reports/1530898

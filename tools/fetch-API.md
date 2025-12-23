@@ -1,18 +1,16 @@
 ---
 url: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'
 tags:
-  - http-client
+  - http
+  - upload
   - javascript
 type: tool
+verified: false
 platforms:
   - Web
-description: >-
-  Native JavaScript API for making HTTP requests in browsers, used for
-  cross-origin testing and vulnerability exploitation.
-id: 14545159-9537-4b66-8b69-d3c4f76e1242
-created_at: '2025-12-14T17:32:48.567Z'
-updated_at: '2025-12-14T17:32:48.567Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-13T23:55:20.687Z'
+id: 2e0eb0e4-2301-4fa6-af64-ab2ab24d69f3
 validated: true
 submitted: true
 ---
@@ -22,56 +20,56 @@ submitted: true
 
 ## Overview
 
-The Fetch API is a modern JavaScript interface for fetching resources across the network, replacing XMLHttpRequest. It's ideal for security testing of web APIs, enabling cross-origin requests to probe CORS policies, headers, and caching behaviors without server-side code.
+The Fetch API is a modern JavaScript interface for making HTTP requests, commonly used in browsers for uploading data like FormData to APIs during security testing.
 
 ## Description
 
-Built into browsers, Fetch supports promises for async requests and allows inspection of response headers like ACAO. In offensive security, it's used to send custom Origin headers (browser-enforced) to endpoints like WP-JSON, triggering echoes and cache poisoning for DoS attacks.
+Fetch provides a promise-based way to perform network requests, ideal for POSTing multipart data such as malicious files in web exploits. It's native to browsers, requiring no installation.
 
 ## Features
 
-- Feature 1: Promise-based async HTTP requests
-- Feature 2: Access to full response objects, including headers
-- Feature 3: CORS mode control (e.g., 'cors' for cross-origin)
+- Feature 1: Promise-based asynchronous requests
+- Feature 2: Support for FormData and various content types
+- Feature 3: Easy handling of responses and errors
 
 ## Installation
 
 ### Requirements
 
-- Browser supporting ES6+ (all modern browsers)
+- Modern browser (Chrome, Firefox, etc.)
 
 ### Install Commands
 
-No installation; native.
+No installation needed; available via window.fetch.
 
 ## Basic Usage
 
 ```javascript
-fetch('https://example.com').then(r => r.text()).then(t => console.log(t));
+fetch(url, options).then(response => response.text())
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| mode: 'cors' | Enforce CORS checks |
-| credentials: 'include' | Send cookies if needed |
-| headers | Custom request headers |
+| method | HTTP method (e.g., POST) |
+| body | Request body (e.g., FormData) |
+| headers | Custom headers |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```javascript
-fetch('https://api.example.com/data');
+fetch('https://example.com/api', {method: 'POST', body: new FormData()})
 ```
 
 ### Example 2: Advanced Usage
 
 ```javascript
-fetch('https://target.com/wp-json/?test', {method: 'GET'}).then(r => {
-  console.log(r.headers.get('Access-Control-Allow-Origin'));
-});
+fetch('http://graphie-to-png.kasandbox.org/svg', {method: 'POST', body: form})
+  .then(r => r.text())
+  .then(data => console.log(data));
 ```
 
 ## MITRE ATT&CK Mapping
@@ -81,6 +79,7 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[JavaScript]]
+- [[Remote File Copy]]
 
 ### Tactics
 
@@ -90,17 +89,17 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Browser network logs showing Fetch-initiated requests
-- CORS preflight OPTIONS requests
+- Network logs showing POST requests with FormData to internal APIs
+- Browser console activity during testing
 
 ## Related Procedures
 
-- [[procedures/Verify-DoS-via-Poisoned-CORS-Response]]
+- [[procedures/Upload-Malicious-Graphie-via-Legacy-API]]
 
 ## Related Tools
 
-- [[tools/Browser-JavaScript-Console]]
+- [[XMLHttpRequest]]
 
 ## References
 
-- MDN: Fetch API Documentation
+- MDN Fetch API Documentation

@@ -1,98 +1,112 @@
 ---
-url: 'https://developer.android.com/studio/command-line/adb'
+url: 'https://developer.android.com/tools/adb'
 tags:
   - android
   - debug
 type: tool
-verified: false
 platforms:
   - Linux
-  - macOS
   - Windows
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:33:05.897Z'
-id: d4c6faa6-ac06-463c-b319-90ca534dacb2
+  - macOS
+description: >-
+  Android Debug Bridge for device interaction, including shell access and
+  activity launches.
+id: b97d0f2c-c4d6-43a1-8e24-03af60b63047
+created_at: '2025-12-13T23:52:44.004Z'
+updated_at: '2025-12-13T23:52:44.004Z'
+verified: false
 validated: true
 submitted: true
 ---
-# adb
+# ADB
 
 **Status**: Unverified
 
 ## Overview
 
-Android Debug Bridge for device interaction, APK install, and activity triggering.
+ADB (Android Debug Bridge) is a versatile command-line tool for communicating with Android devices, essential for debugging, installing apps, and simulating attacks like intent-based exploits.
 
 ## Description
 
-Used to install APK and trigger deep links for reverse engineering in the mobile component.
+ADB enables shell access, file pushes, and activity starts via 'am' commands. In security testing, it's used to reproduce mobile vulnerabilities without root, such as launching exported activities with malicious intents.
 
 ## Features
 
-- Feature 1: Shell access
-- Feature 2: App management
-- Feature 3: Logcat monitoring
+- Feature 1: Interactive shell for running device commands
+- Feature 2: Intent manipulation for app exploitation
+- Feature 3: Logcat for monitoring app behavior
 
 ## Installation
 
 ### Requirements
 
-- Android SDK
+- Java JDK
+- Android SDK Platform-Tools
 
 ### Install Commands
 
-Part of Android Studio or platform-tools download.
+```bash
+# Download from Android SDK
+sdkmanager "platform-tools"
+# Or direct: wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+unzip platform-tools-latest-linux.zip
+export PATH=$PATH:$PWD/platform-tools
+```
 
 ## Basic Usage
 
 ```bash
-adb devices
+adb --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| shell | Run shell command |
-| install | Install APK |
+| -h, --help | Show help |
+| -d | Device-specific |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-adb install app.apk
+adb devices
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-adb shell am start -d deep://link package
+adb shell am start -n com.example/.Activity
 ```
 
 ## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
+
 ### Techniques
 
-- [[Unsecured Credentials]]
+- [[JavaScript]]
 
 ### Tactics
 
-- [[Collection]]
+- [[Execution]]
 
 ## Detection
 
-- USB debugging enabled
-- adb process running
+Indicators and methods for detecting this tool's usage:
+
+- USB debugging enabled in developer options
+- adb processes on host or logcat entries on device
 
 ## Related Procedures
 
-- [[procedures/Reverse-Engineer-Android-APK-for-API-Token]]
+- [[procedures/Launch-ActionBarContentActivity-with-Malicious-HTML-via-ADB]]
 
 ## Related Tools
 
-- [[tools/scrcpy]]
+- [[Android Studio]]
 
 ## References
 
-- Android developer docs
+- Official documentation: https://developer.android.com/tools/adb

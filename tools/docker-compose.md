@@ -1,16 +1,16 @@
 ---
-url: 'https://docs.docker.com/compose'
+id: tool-docker-compose
+url: 'https://docs.docker.com/compose/'
 tags:
-  - container-orchestration
+  - container
+  - orchestration
 type: tool
 verified: false
 platforms:
   - Linux
-  - Windows
-  - macOS
+  - Docker
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:32:20.375Z'
-id: 8826dec9-1af4-4651-803b-a8c4295be821
+updated_at: '2025-12-14T03:46:19.837Z'
 validated: true
 submitted: true
 ---
@@ -20,34 +20,35 @@ submitted: true
 
 ## Overview
 
-Tool for defining and running multi-container Docker applications, used to spin up Rocket.Chat with MongoDB.
+Docker Compose orchestrates the multi-container setup for Rocket.Chat and MongoDB, launching a local vulnerable instance for testing the exploit.
 
 ## Description
 
-Orchestrates the vulnerable stack from the repo's docker-compose.yml, starting services in background.
+It defines services in docker-compose.yml and starts them in background, simulating production with MongoDB backend.
 
 ## Features
 
-- Feature 1: YAML config for services
-- Feature 2: Detached mode
-- Feature 3: Dependency management
+- Feature 1: Multi-container management
+- Feature 2: YAML configuration
+- Feature 3: Detached mode for background runs
 
 ## Installation
 
 ### Requirements
 
-- Docker
+- Docker Engine
 
 ### Install Commands
 
 ```bash
+# Ubuntu
 sudo apt install docker-compose
 ```
 
 ## Basic Usage
 
 ```bash
-docker-compose --help
+docker-compose --version
 ```
 
 ### Common Options
@@ -55,6 +56,7 @@ docker-compose --help
 | Option | Description |
 |--------|-------------|
 | up -d | Start in detached |
+| down | Stop containers |
 
 ## Examples
 
@@ -67,25 +69,31 @@ docker-compose up -d
 ### Example 2: Advanced Usage
 
 ```bash
-docker-compose up -d --build
+docker-compose up --build -d
 ```
 
 ## MITRE ATT&CK Mapping
 
+This tool is commonly associated with:
+
 ### Techniques
 
-- [[Deploy Container]] Deploy Container
+- [[Deploy Container]]
 
 ### Tactics
 
-- [[Persistence]]
+- [[Privilege Escalation]]
 
 ## Detection
 
-- Docker container startups
+Indicators and methods for detecting this tool's usage:
+
+- docker-compose processes starting specific images
+- Port 3000 bindings
 
 ## Related Procedures
 
+- [[procedures/Request-Password-Reset-for-Target-User]]
 
 ## Related Tools
 
@@ -93,4 +101,4 @@ docker-compose up -d --build
 
 ## References
 
-- Docker Compose docs
+- Official documentation: https://docs.docker.com/compose/

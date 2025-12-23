@@ -1,47 +1,48 @@
 ---
-url: ''
+id: uuid-t3
+url: 'https://gradle.org/'
 tags:
   - build
   - java
 type: tool
+verified: false
 platforms:
   - Linux
   - Windows
-description: Build tool to fetch and manage dependencies for Hive JDBC
-id: 163b04e5-af19-4419-a33a-3a2273b44adc
-created_at: '2025-12-13T09:00:27.721Z'
-updated_at: '2025-12-13T09:00:27.721Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:08:55.586Z'
 validated: true
 submitted: true
 ---
-# gradle
+# Gradle
 
 **Status**: Unverified
 
 ## Overview
 
-Gradle is a build automation tool used for managing Java dependencies, commonly in POCs for security reproductions.
+Gradle is a build automation tool for Java projects, used to manage dependencies like Hive JDBC for custom exploitation POCs.
 
 ## Description
 
-Used to fetch Hive JDBC and Hadoop client dependencies for custom Java tools.
+Automates downloading and classpath setup for Hive/Hadoop JARs via build scripts.
 
 ## Features
 
-- Dependency management
-- Build scripting
+- Feature 1: Dependency management with Maven repos
+- Feature 2: Custom tasks like getDeps
+- Feature 3: Java plugin support
 
 ## Installation
 
 ### Requirements
 
-- Java
+- Java 8+
 
 ### Install Commands
 
 ```bash
-# Install via SDKMAN or package manager
+# Via SDKMAN
+sdk install gradle
 ```
 
 ## Basic Usage
@@ -54,11 +55,17 @@ gradle --help
 
 | Option | Description |
 |--------|-------------|
-| `--help` | Show help |
+| -v | Version info |
 
 ## Examples
 
 ### Example 1: Basic Usage
+
+```bash
+gradle build
+```
+
+### Example 2: Advanced Usage
 
 ```bash
 gradle getDeps
@@ -66,11 +73,9 @@ gradle getDeps
 
 ## MITRE ATT&CK Mapping
 
-This tool is commonly associated with:
-
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[System Time Discovery]] System Binary Proxy Execution
 
 ### Tactics
 
@@ -78,19 +83,12 @@ This tool is commonly associated with:
 
 ## Detection
 
-Indicators and methods for detecting this tool's usage:
-
-- Build process monitoring
+- Gradle wrapper executions
+- Network to repo1.maven.org
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
+- [[procedures/Select-and-Configure-Hive-JDBC-Client]]
 
 ## Related Tools
 
@@ -98,4 +96,4 @@ LIMIT 10
 
 ## References
 
-- Gradle official site
+- Official: https://gradle.org/guides/

@@ -1,80 +1,75 @@
 ---
+id: tool-python3
 url: 'https://www.python.org/'
 tags:
+  - runtime
   - scripting
-  - payload-generation
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
-  - Windows
+  - Web
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:32:39.255Z'
-id: ad34f698-e104-4c2f-ae24-bb82148547b3
+updated_at: '2025-12-14T03:46:19.846Z'
 validated: true
 submitted: true
 ---
-# python3
+# Python3
 
 **Status**: Unverified
 
 ## Overview
 
-Python 3 is a versatile programming language used here for generating test payloads, particularly string repetitions for exploit testing.
+Python 3 is the runtime environment for executing the custom exploit script, handling API interactions, and automating the NoSQL injection and RCE steps in this Rocket.Chat attack.
 
 ## Description
 
-In security contexts, Python 3 is ideal for quick scripting of malicious inputs, such as repeating patterns to trigger parser vulnerabilities. Its print and string multiplication features enable easy payload creation for tools like cmark-gfm.
+Python3 provides a flexible scripting language for offensive security, with libraries like requests for HTTP and json for payload crafting. It's used here to send DDP messages to the anonymous method endpoint and parse blind responses.
 
 ## Features
 
-- Feature 1: Dynamic string manipulation
-- Feature 2: One-liner execution via -c flag
-- Feature 3: Cross-platform compatibility
+- Feature 1: Rich standard library for networking and data handling
+- Feature 2: Easy integration with external modules like requests
+- Feature 3: Cross-platform scripting for exploit development
 
 ## Installation
 
 ### Requirements
 
-- None (pre-installed on most systems)
+- OS with package manager
 
 ### Install Commands
 
 ```bash
 # On Ubuntu/Debian
-sudo apt update && sudo apt install python3
-
-# On macOS (via Homebrew)
-brew install python
+sudo apt update && sudo apt install python3 python3-pip
 ```
 
 ## Basic Usage
 
 ```bash
-python3 --help
+python3 --version
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-c` | Execute code from command line |
-| `-V` | Show version |
-| `-i` | Interactive mode |
+| -V, --version | Show version |
+| -c | Execute code from command line |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-python3 -c 'print("Hello")'
+python3 script.py
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-python3 -c 'print("test" * 10)'
+python3 -c "import requests; print('Test')"
 ```
 
 ## MITRE ATT&CK Mapping
@@ -93,16 +88,17 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Process monitoring for python3 with -c flag
-- Log suspicious string generations
+- Monitor for python3 processes spawning HTTP connections
+- Log script executions in /tmp or user dirs
+- Network logs showing repeated API calls
 
 ## Related Procedures
 
-- [[procedures/Craft-Malicious-Markdown-Payload-for-cmark-gfm]]
+- [[procedures/Leak-Password-Reset-Token-via-Blind-NoSQL-Injection]]
 
 ## Related Tools
 
-- [[tools/cmark-gfm]]
+- [[tools/requests]]
 
 ## References
 

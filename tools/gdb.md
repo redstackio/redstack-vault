@@ -1,16 +1,15 @@
 ---
-url: 'http://www.gnu.org/software/gdb/'
+id: tool-uuid-1
+url: 'https://www.gnu.org/software/gdb/'
 tags:
-  - debugging
-  - crash-analysis
+  - debug
+  - gdb
 type: tool
+verified: false
 platforms:
   - Linux
-description: GNU Debugger for analyzing program crashes and runtime behavior
-id: cdda5a7d-8908-48f2-892e-474bc7a8468b
-created_at: '2025-12-11T03:47:48.046Z'
-updated_at: '2025-12-11T03:47:48.046Z'
-verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:31:19.169Z'
 validated: true
 submitted: true
 ---
@@ -20,29 +19,32 @@ submitted: true
 
 ## Overview
 
-GDB is the GNU Debugger, used for debugging programs by attaching to processes, setting breakpoints, and inspecting memory, stacks, and registers during crashes or runtime.
+GNU Debugger (GDB) is a powerful tool for debugging programs, attaching to processes, and inspecting crashes like the Squid heap overflow.
 
 ## Description
 
-In offensive security, GDB is employed to analyze exploits like the mruby Decimal crash, providing backtraces and register dumps to understand vulnerability root causes.
+GDB allows attaching to running processes, printing backtraces, and examining variables during exploitation analysis. In this context, it's used to capture SIGABRT details and confirm decodedLen overflow.
 
 ## Features
 
-- Process attachment and continuation
-- Backtrace inspection
-- Register and memory examination
+- Feature 1: Process attachment and control
+- Feature 2: Backtrace and variable printing
+- Feature 3: Breakpoint setting and stepping
 
 ## Installation
 
 ### Requirements
 
-- Linux system
-- GCC toolchain
+- Linux with development tools
 
 ### Install Commands
 
 ```bash
-sudo apt install gdb
+# On Ubuntu/Debian
+apt install gdb
+
+# On CentOS/RHEL
+yum install gdb
 ```
 
 ## Basic Usage
@@ -55,23 +57,22 @@ gdb --help
 
 | Option | Description |
 |--------|-------------|
-| `-h, --help` | Show help message |
-| `attach <pid>` | Attach to running process |
+| -q, --quiet | Suppress welcome messages |
+| -p PID | Attach to process |
+| -ex "cmd" | Execute command on startup |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-gdb attach 10251
+gdb ./squid
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-gdb attach 10251
-c
-bt
+gdb -q -p 1234 -ex "bt"
 ```
 
 ## MITRE ATT&CK Mapping
@@ -80,35 +81,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Exploitation for Client Execution]]
+- [[Exploit Public-Facing Application]] Exploit Public-Facing Application
 
 ### Tactics
 
-- [[Discovery]]
+- [[Execution]] Execution
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Monitor for GDB process attachments to sensitive applications
-- Log debugger invocations in production environments
+- Process named 'gdb' attaching to targets
+- ptrace system calls in logs
+- GDB in running processes
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
+- [[procedures/Verify-ASAN-Linkage-and-Monitor-Crash-with-GDB]]
 
 ## Related Tools
 
-- #lldb
-- #valgrind
+- [[tools/AddressSanitizer]]
 
 ## References
 
-- Official documentation: http://www.gnu.org/software/gdb/
-- Related resources: GDB manual
+- Official documentation: https://www.gnu.org/software/gdb/documentation/

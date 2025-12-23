@@ -1,19 +1,18 @@
 ---
-url: ''
+id: tool-python
+url: 'https://www.python.org/'
 tags:
-  - automation
   - scripting
+  - automation
+  - poc
 type: tool
+verified: false
 platforms:
   - Linux
   - Windows
-description: >-
-  Scripting language used to automate testing by running curl commands via
-  subprocess.
-id: 940d9e7b-b39a-4f8d-9c36-c30c23b85543
-created_at: '2025-12-13T09:01:21.743Z'
-updated_at: '2025-12-13T09:01:21.743Z'
-verified: false
+  - macOS
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T17:32:48.413Z'
 validated: true
 submitted: true
 ---
@@ -23,56 +22,63 @@ submitted: true
 
 ## Overview
 
-Python is a versatile scripting language used for automating security tests, including executing external commands like cURL.
+Python is a high-level programming language used for scripting, automation, and developing proof-of-concept exploits in security testing, such as HTTP request automation for API vulnerabilities.
 
 ## Description
 
-Uses modules like subprocess to run commands and capture output for reproducible vulnerability testing.
+In this context, Python runs a custom poc.py script leveraging the requests library to interact with the Flink API, sending crafted parameters for RCE. It's ideal for rapid prototyping of web exploits due to its simplicity and extensive libraries.
 
 ## Features
 
-- Feature 1: Easy scripting
-- Feature 2: Subprocess for command execution
-- Feature 3: Extensive libraries
+- Feature 1: Rich standard library including http.client and requests for API calls
+- Feature 2: Cross-platform scripting for PoC development
+- Feature 3: Easy integration with gadgets like JavaScript loaders
 
 ## Installation
 
 ### Requirements
 
-- None specific
+- OS with package manager
 
 ### Install Commands
 
 ```bash
-# On Ubuntu: sudo apt install python3
+# On Linux
+apt install python3 python3-pip
+pip3 install requests
+
+# On macOS
+brew install python
 ```
 
 ## Basic Usage
 
 ```bash
-python --help
+python3 --help
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| `-m` | Run module |
-| `-c` | Command string |
+| `-h, --help` | Show help message |
+| `-V` | Version info |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-python script.py
+python3 script.py
 ```
+(Run a PoC script.)
 
 ### Example 2: Advanced Usage
 
 ```bash
-python -c 'import subprocess; subprocess.call(["curl", "--help"])'
+python3 -m requests.get https://target/api
 ```
+(Direct module use for HTTP.)
 
 ## MITRE ATT&CK Mapping
 
@@ -80,7 +86,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Command-Line Interface]]
+- [[Python]]
 
 ### Tactics
 
@@ -90,23 +96,19 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Detection method 1: Python processes executing external commands
-- Detection method 2: Script files with subprocess imports
+- Monitor for python3 processes spawning HTTP connections to internal APIs
+- Log anomalous script executions with requests library
+- Behavioral analysis for PoC-like file runs
 
 ## Related Procedures
 
-```dataview
-TABLE name as "Procedure", verified as "Verified"
-FROM "procedures"
-WHERE contains(tools, this.file.link)
-SORT name ASC
-LIMIT 10
-```
 
 ## Related Tools
 
-- [[tools/curl]]
+- [[Related Tool: curl]]
+- [[Related Tool: requests library]]
 
 ## References
 
-- Official documentation: https://www.python.org/doc/
+- Official documentation: https://www.python.org/
+- Related resources: PyPI requests

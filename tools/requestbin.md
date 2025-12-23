@@ -1,35 +1,36 @@
 ---
-id: tool-requestbin
-url: 'https://requestbin.fullcontact.com'
+url: 'https://requestbin.com'
 tags:
-  - ssrf
   - request-capture
+  - web-testing
 type: tool
-verified: false
 platforms:
   - Web
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T05:32:13.375Z'
+description: Online service for capturing and inspecting HTTP requests.
+id: 4f499f4e-5cb6-412c-87b3-a443f0b99007
+created_at: '2025-12-13T09:01:21.860Z'
+updated_at: '2025-12-13T09:01:21.860Z'
+verified: false
 validated: true
 submitted: true
 ---
-# requestbin
+# RequestBin
 
 **Status**: Unverified
 
 ## Overview
 
-RequestBin is an online service for creating temporary endpoints (bins) to inspect and debug HTTP requests, useful for capturing SSRF payloads and analyzing server behavior.
+RequestBin is a web-based tool for creating temporary endpoints to capture and inspect incoming HTTP requests, commonly used in security testing to validate exploits like redirects or smuggling.
 
 ## Description
 
-Users create a bin to receive requests, viewing headers, body, and source IP. In security testing, it's used to confirm SSRF by seeing internal server requests hit the bin.
+It provides real-time request logging, useful for debugging and verifying the impact of web vulnerabilities in offensive scenarios.
 
 ## Features
 
-- Feature 1: Instant bin creation with unique URLs
-- Feature 2: Real-time request inspection (headers, params, IP)
-- Feature 3: Export and sharing of captured data
+- Feature 1: Temporary request bins
+- Feature 2: Real-time inspection
+- Feature 3: Header and body logging
 
 ## Installation
 
@@ -39,25 +40,31 @@ Users create a bin to receive requests, viewing headers, body, and source IP. In
 
 ### Install Commands
 
-N/A - Web-based service.
+```bash
+# No installation needed, access via web
+```
 
 ## Basic Usage
 
-Visit https://requestbin.fullcontact.com and create a bin.
+```bash
+# Visit https://requestbin.com and create a bin
+```
 
 ### Common Options
 
-N/A
+| Option | Description |
+|--------|-------------|
+| N/A | Web-based interface |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Create bin at https://requestbin.fullcontact.com, get URL like /r/abc123, direct SSRF to it, and monitor incoming requests.
+Create a bin and send a test request.
 
 ### Example 2: Advanced Usage
 
-Use bin to capture multiple requests and filter by IP or headers.
+Use with specific bin URL like https://requestbin.com/r/enjv2g5042bg for exploit validation.
 
 ## MITRE ATT&CK Mapping
 
@@ -66,28 +73,32 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Steal Application Access Token]]
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Outbound traffic to requestbin domains
-- Unusual request patterns from servers
-- Log analysis for bin URLs in payloads
+- Detection method 1: Traffic to requestbin.com domains
+- Detection method 2: Anomalous redirect patterns
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/ngrok]]
-- [[tools/burp-suite]]
+- [[tools/Burp-Suite]]
 
 ## References
 
-- Official site: https://requestbin.fullcontact.com
+- Official site: https://requestbin.com

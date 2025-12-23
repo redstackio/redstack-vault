@@ -1,84 +1,73 @@
 ---
-id: tool-003
-url: 'https://www.perl.org/'
+url: null
 tags:
   - scripting
-  - parsing
-  - recon
+  - socket
 type: tool
 verified: false
 platforms:
   - Linux
-  - macOS
-  - Windows
+  - Docker
 created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:29:57.302Z'
+updated_at: '2025-12-14T04:08:55.217Z'
+id: 3759bad5-6715-47bc-b01d-9ab5c9e158a9
 validated: true
 submitted: true
 ---
-# perl
+# Perl
 
 **Status**: Unverified
 
 ## Overview
 
-Perl (Practical Extraction and Report Language) is a versatile scripting language for text processing, automation, and one-liners. In security contexts, it's used for quick parsing of outputs like certificates or logs via regex.
+Perl is a versatile scripting language with strong text processing and networking capabilities, ideal for quick PoC tools like TCP listeners in pentesting.
 
 ## Description
 
-Perl excels at handling multi-line input, regex matching, and transforming data streams. In this attack, a Perl one-liner extracts DNS names from openssl output, enabling rapid verification without full scripts.
+Used here to create a one-liner TCP server for capturing SSRF traffic in constrained environments like Docker containers, leveraging modules like IO::Socket::INET.
 
 ## Features
 
-- Feature 1: Powerful regex engine for pattern matching
-- Feature 2: One-liner mode for command-line processing
-- Feature 3: Slurp mode (-0777) for entire file handling
+- Feature 1: One-liner scripting for rapid prototyping
+- Feature 2: Built-in socket support
+- Feature 3: Cross-platform compatibility
 
 ## Installation
 
 ### Requirements
 
-- Standard on Unix-like systems
+- Most Linux/Docker images include Perl
 
 ### Install Commands
 
 ```bash
-# On Ubuntu/Debian
-sudo apt update && sudo apt install perl
-
-# On macOS (pre-installed)
-
-# On Windows: Download from perl.org
+apt install perl -y
 ```
 
 ## Basic Usage
 
 ```bash
-perl -e 'print "Hello World\n";'
+perl -e 'print "Hello";'
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| -l | Add line ending processing |
-| -0777 | Slurp entire input as single string |
-| -ne | Execute code for each line |
-| -p | Implicit print loop |
+| -MModule | Load module |
+| -e | Execute code |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-perl -l -ne 'print if /pattern/'
+perl -e 'print "Test";'
 ```
 
-### Example 2: Advanced Usage (as in attack)
+### Example 2: Advanced Usage
 
-```bash
-perl -l -0777 -ne '@names=/\bDNS:([^\s,]+)/g; print join("\n", sort @names);'
-```
+TCP listener as in command.
 
 ## MITRE ATT&CK Mapping
 
@@ -86,7 +75,7 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Python]] Perl
+- [[PowerShell]] PowerShell (adapted for Perl)
 
 ### Tactics
 
@@ -96,18 +85,18 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- Process monitoring for perl.exe with suspicious arguments
-- Inline regex patterns in command lines
+- Perl processes binding to ports
+- One-liner executions in logs
+- IO::Socket usage
 
 ## Related Procedures
 
-- [[procedures/Verify-Origin-IP-Using-SSL-Certificate-Inspection]]
+- [[procedures/Setup-Perl-TCP-Listener-in-Container]]
 
 ## Related Tools
 
-- [[awk]]
-- [[sed]]
+- [[tools/Python]]
 
 ## References
 
-- Official documentation: https://perldoc.perl.org/perlrun
+- perl.org

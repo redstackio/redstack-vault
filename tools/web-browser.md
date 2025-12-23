@@ -1,77 +1,78 @@
 ---
-url: null
+url: ''
 tags:
   - web
+  - rendering
   - exploitation
 type: tool
 platforms:
   - Web
-  - Linux
-  - Windows
-  - macOS
 description: >-
-  Standard browser for accessing, inspecting, and manipulating web URLs during
-  testing.
-id: 4f3bb4f6-4e74-479e-8cf3-fadd67920a03
-created_at: '2025-12-14T17:33:24.363Z'
-updated_at: '2025-12-14T17:33:24.363Z'
+  Standard web browser for navigating, rendering, and interacting with web
+  applications to deliver and observe payloads.
+id: 62fed7f7-07fd-4955-9b17-d3edd7167a25
+created_at: '2025-12-14T03:47:18.592Z'
+updated_at: '2025-12-14T03:47:18.592Z'
 verified: false
 validated: true
 submitted: true
 ---
-# Web Browser
+# Web-Browser
 
 **Status**: Unverified
 
 ## Overview
 
-A web browser like Chrome or Firefox is essential for manual web exploitation, including URL manipulation, cookie inspection, and direct endpoint testing in security assessments.
+A web browser like Chrome or Firefox is used to visit vulnerable endpoints, render malicious SVGs, and trigger reflections for XSS or markup injection testing.
 
 ## Description
 
-Browsers enable loading URLs, editing parameters in the address bar, and observing responses. In attacks, they're used for token editing, redirect following, and verifying access without automated tools.
+Browsers parse and execute web content, making them the primary vector for client-side exploits. In this context, they render the Nextcloud SVG with injected payloads, showing alerts or forms for phishing validation.
 
 ## Features
 
-- Address bar for URL editing
-- Developer tools for inspecting requests/responses
-- Cookie and session management
+- Feature 1: URL navigation and rendering
+- Feature 2: JavaScript execution (subject to CSP)
+- Feature 3: Form handling and submission
 
 ## Installation
 
 ### Requirements
 
-- Operating system with GUI
+- OS with graphical interface
 
 ### Install Commands
 
 ```bash
-# For Chrome on Ubuntu
+# Ubuntu example for Chrome
 sudo apt install google-chrome-stable
 ```
 
 ## Basic Usage
 
-```
-Open URL in address bar
+```bash
+# Launch and navigate
+google-chrome https://example.com
 ```
 
 ### Common Options
 
 | Option | Description |
 |--------|-------------|
-| F12 | Open DevTools |
-| Ctrl+Shift+I | Inspect elements |
+| --disable-web-security | Bypass CSP for testing |
+| --user-data-dir | Isolated profile |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
-Load https://example.com
+Open browser, enter URL with payload to render SVG.
 
 ### Example 2: Advanced Usage
 
-Edit token in address bar and reload
+```bash
+chrome --disable-web-security --user-data-dir=/tmp/test https://server.test/endpoint
+```
 
 ## MITRE ATT&CK Mapping
 
@@ -80,7 +81,7 @@ This tool is commonly associated with:
 ### Techniques
 
 - [[Exploit Public-Facing Application]]
-- [[Valid Accounts]]
+- [[JavaScript]]
 
 ### Tactics
 
@@ -90,16 +91,17 @@ This tool is commonly associated with:
 
 Indicators and methods for detecting this tool's usage:
 
-- User-agent strings in logs
-- Direct URL access patterns
+- Suspicious URL visits in logs
+- Anomalous flags in process lists
 
 ## Related Procedures
 
 
 ## Related Tools
 
-- [[tools/Google-Search]]
+- [[tools/Browser-Developer-Tools]]
 
 ## References
 
-- Browser documentation (e.g., Chrome DevTools)
+- Browser security guides
+- OWASP testing resources

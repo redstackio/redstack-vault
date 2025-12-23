@@ -1,47 +1,49 @@
 ---
-url: 'https://wiki.debian.org/apt'
-tags:
-  - package-manager
+id: tool-uuid-003
+name: Apt
 type: tool
 verified: false
+created_at: '2023-10-01T00:00:00Z'
+updated_at: '2025-12-14T04:08:47.842Z'
 platforms:
   - Linux
-  - Debian
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:28:44.870Z'
-id: d2664e1a-4998-4071-a2ce-3706ea0fbd29
+tags:
+  - package-manager
+url: 'https://wiki.debian.org/Apt'
 validated: true
 submitted: true
 ---
-# apt
+
+# Apt
 
 **Status**: Unverified
 
 ## Overview
 
-Debian/Ubuntu package manager for installing software, used in containers to acquire tools like Scapy for exploits.
+Apt (Advanced Package Tool) is the default package manager for Debian-based systems, used here to install netcat in the GitLab Docker container.
 
 ## Description
 
-apt handles dependency resolution and installation from repositories. In attacks, it's used to install runtime dependencies in non-immutable containers.
+Apt handles package installation, updates, and removal. In containerized environments like GitLab's Ubuntu base, it's essential for adding tools during testing without rebuilding images.
 
 ## Features
 
-- Feature 1: Update package lists (apt update)
-- Feature 2: Install packages (apt install)
-- Feature 3: Auto-resolve dependencies
+- Feature 1: High-level interface for dpkg
+- Feature 2: Repository management and updates
+- Feature 3: Non-interactive installation with -y flag
 
 ## Installation
 
 ### Requirements
 
-- Debian-based OS
+- Debian/Ubuntu-based OS
 
 ### Install Commands
 
 ```bash
-# Already available on Ubuntu
-apt update
+# Apt is pre-installed on Debian systems
+# Update repositories
+dpkg --configure -a
 ```
 
 ## Basic Usage
@@ -54,23 +56,22 @@ apt --help
 
 | Option | Description |
 |--------|-------------|
-| -y | Yes to prompts |
-| update | Refresh repos |
-| install | Install package |
+| `-y` | Assume yes to prompts |
+| `update` | Refresh package lists |
+| `install` | Install packages |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-apt update
-apt install vim
+apt install netcat
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-apt install -y python3-pip curl wget
+apt update && apt upgrade -y
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,27 +80,36 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Audio Capture]] (Tool acquisition via packages)
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Execution]] Execution
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- apt logs in /var/log/apt
-- Unexpected package installs in container
+- /var/log/apt/history.log entries
+- Process monitoring for apt-get/apt
+- Unexpected package installations in containers
 
 ## Related Procedures
 
-- [[procedures/Install-Dependencies-and-Generate-SSH-Key]]
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
-- [[tools/yum]]
+- [[tools/Yum]]
+- [[tools/Dnf]]
 
 ## References
 
-- Official documentation: https://manpages.debian.org/buster/apt/apt.8.en.html
+- Official documentation: https://wiki.debian.org/Apt
+- Related resources: Debian package management guide

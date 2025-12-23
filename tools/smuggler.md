@@ -1,49 +1,52 @@
 ---
-url: null
+url: ''
 tags:
-  - smuggling
-  - testing
+  - http-request-smuggling
+  - web-exploitation
 type: tool
-verified: false
 platforms:
   - Linux
   - macOS
-created_at: '2023-10-01T00:00:00Z'
-updated_at: '2025-12-14T17:33:34.485Z'
-id: c63d212d-6c95-439a-9ba8-d8672c16ec06
+  - Windows
+description: Custom tool for testing advanced HTTP Request Smuggling exploits.
+id: 335ae371-76b6-4d4e-9ab4-da17ec9441bc
+created_at: '2025-12-13T09:01:26.213Z'
+updated_at: '2025-12-13T09:01:26.213Z'
+verified: false
 validated: true
 submitted: true
 ---
-# smuggler
+# Smuggler
 
 **Status**: Unverified
 
 ## Overview
 
-Smuggler is a custom open-source tool for detecting HTTP Request Smuggling vulnerabilities by sending various payloads to test server parsing behaviors.
+Smuggler is a custom tool designed to actively target and test for advanced HTTP Request Smuggling vulnerabilities, focusing on desyncs between servers.
 
 ## Description
 
-Designed for offensive security, it automates tests for CL.TE, TE.CL, and other variants, including edge cases like spaces in headers. Commonly used in bug bounty hunting to identify desyncs in load-balanced web apps.
+This tool automates the testing of various smuggling payloads, such as CL.TE variants, by sending crafted requests and analyzing responses. It's used in offensive security to identify exploitable web configurations.
 
 ## Features
 
-- Feature 1: Exhaustive payload testing including 'space1' for CL.TE
-- Feature 2: Detailed reporting of vulnerable vectors
-- Feature 3: Support for HTTPS targets
+- Feature 1: Automated desync testing
+- Feature 2: Support for multiple payload types
+- Feature 3: Detailed output on vulnerabilities
 
 ## Installation
 
 ### Requirements
 
-- Go 1.16+
-- Git
+- Python environment
+- Git for cloning repository
 
 ### Install Commands
 
 ```bash
-# Clone and build
-go install github.com/defparam/smuggler@latest
+git clone https://github.com/defparam/smuggler.git
+cd smuggler
+python3 smuggler.py --help
 ```
 
 ## Basic Usage
@@ -56,21 +59,21 @@ smuggler --help
 
 | Option | Description |
 |--------|-------------|
-| `-u, --url` | Target URL |
-| `-v, --verbose` | Verbose output |
+| `-h, --help` | Show help message |
+| `-u` | Target URL |
 
 ## Examples
 
 ### Example 1: Basic Usage
 
 ```bash
-smuggler -u https://slackb.com
+smuggler -u https://target.com
 ```
 
 ### Example 2: Advanced Usage
 
 ```bash
-smuggler -u https://target.com -t space1
+smuggler -u https://target.com --test space1
 ```
 
 ## MITRE ATT&CK Mapping
@@ -79,21 +82,28 @@ This tool is commonly associated with:
 
 ### Techniques
 
-- [[Active Scanning]]
+- [[Exploit Public-Facing Application]]
 
 ### Tactics
 
-- [[Reconnaissance]]
+- [[Initial Access]]
 
 ## Detection
 
 Indicators and methods for detecting this tool's usage:
 
-- Network scans with smuggling payloads
-- Anomalous HTTP requests in WAF logs
+- Detection method 1: Unusual HTTP requests in access logs
+- Detection method 2: Anomalous header patterns
 
 ## Related Procedures
 
+```dataview
+TABLE name as "Procedure", verified as "Verified"
+FROM "procedures"
+WHERE contains(tools, this.file.link)
+SORT name ASC
+LIMIT 10
+```
 
 ## Related Tools
 
@@ -101,4 +111,4 @@ Indicators and methods for detecting this tool's usage:
 
 ## References
 
-- GitHub repo for smuggler
+- GitHub repository: https://github.com/defparam/smuggler
