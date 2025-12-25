@@ -353,7 +353,7 @@ Kerberoasting exploits Kerberos TGS tickets to extract service account credentia
 
 ```bash path=null start=null
 # Clone the repository
-git clone https://github.com/yourusername/redstack-vault.git
+git clone https://github.com/redstackio/redstack-vault.git
 cd redstack-vault
 
 # Open in Obsidian
@@ -558,8 +558,8 @@ If you find Redstack Vault useful, please consider starring the repository!
 
 *"The quieter you become, the more you are able to hear."*
 
-🌐 [Website](#) • 🐦 [Twitter](#) • 💬 [Discord](#) • 📝 [Blog](#)
+🌐 [Website](https://redstack.io) • 🐦 [Twitter](https://x.com/redstackio)
 
-© 2024 Redstack Vault Contributors
+© 2025 RedStack Labs Corp.
 
 </div>
